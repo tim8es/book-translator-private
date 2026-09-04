@@ -1,0 +1,26 @@
+name: Export final validation workspace
+
+on:
+  push:
+    branches:
+      - work/good-intentions-ru-20260903
+    paths:
+      - .github/workflows/export-final-validation-workspace.yml
+
+permissions:
+  contents: read
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: work/good-intentions-ru-20260903
+      - name: Pack workspace
+        run: tar -czf /tmp/good-intentions-workspace.tgz --exclude=.git .
+      - uses: actions/upload-artifact@v4
+        with:
+          name: good-intentions-final-validation-workspace
+          path: /tmp/good-intentions-workspace.tgz
+          retention-days: 1
