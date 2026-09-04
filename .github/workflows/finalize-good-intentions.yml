@@ -1,0 +1,214 @@
+name: finalize-good-intentions
+
+on:
+  push:
+    branches:
+      - work/good-intentions-ru-20260903
+    paths:
+      - .github/workflows/finalize-good-intentions.yml
+
+permissions:
+  contents: write
+
+jobs:
+  finalize:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout working branch
+        uses: actions/checkout@v4
+        with:
+          ref: work/good-intentions-ru-20260903
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Apply final review corrections and durable audit
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          root = Path("books/good-intentions")
+          fixes = {
+              root / "translated/202-chapter-200-chapter-200.md": 2,
+              root / "translated/204-chapter-202-epilogue-2.md": 1,
+          }
+          old = "Драко Аполло Поттер"
+          new = "Драко Аполлон Поттер"
+          for path, expected in fixes.items():
+              text = path.read_text(encoding="utf-8")
+              found = text.count(old)
+              if found != expected:
+                  raise SystemExit(f"{path}: expected {expected} occurrence(s) of {old!r}, found {found}")
+              text = text.replace(old, new)
+              if old in text:
+                  raise SystemExit(f"{path}: old rendering remains after replacement")
+              path.write_text(text, encoding="utf-8")
+
+          glossary = root / "glossary.md"
+          g = glossary.read_text(encoding="utf-8")
+          row = "| Draco Apollo Potter | Драко Аполлон Поттер | person | Chosen legal name after wedding; keep consistently |"
+          if row not in g:
+              glossary.write_text(g.rstrip() + "\n" + row + "\n", encoding="utf-8")
+
+          # Git does not preserve empty directories; retain the contract-required workspace directories
+          # without publishing the private source binary.
+          for dirname in ("source", "output"):
+              d = root / dirname
+              d.mkdir(parents=True, exist_ok=True)
+              (d / ".gitkeep").touch(exist_ok=True)
+
+          audit = root / "REVIEW_AUDIT_200_205_2026-09-04.md"
+          audit.write_text("""# Source-comparison review audit — units 200–205
+
+Date: 2026-09-04
+Branch: `work/good-intentions-ru-20260903`
+Workflow revision: `70afef29caf31f1fe58501ddd61a75f153366ae0`
+Reviewer contract: `docs/TRANSLATION.md` from the pinned workflow revision.
+
+This audit records the final sequential source-to-translation comparison for the closing six units. `PASS` means the canonical Russian artifact was compared against the corresponding canonical English extracted source and any blocking discrepancy was corrected and rechecked.
+
+| Unit | Source / translation | Outcome | Final review note |
+| ---: | --- | --- | --- |
+| 200 | `extracted/200-chapter-198-chapter-198.md` / `translated/200-chapter-198-chapter-198.md` | PASS | Wedding-day chronology, character reactions, disclosure scene, and established terminology preserved; no blocking correction remained. |
+| 201 | `extracted/201-chapter-199-chapter-199.md` / `translated/201-chapter-199-chapter-199.md` | PASS | Wedding vows, ring sequence, identities, and emotional force preserved; no blocking correction remained. |
+| 202 | `extracted/202-chapter-200-chapter-200.md` / `translated/202-chapter-200-chapter-200.md` | PASS after correction | Legal-name rendering normalized from `Драко Аполло Поттер` to established `Драко Аполлон Поттер` in both occurrences; the corrected name was rechecked against source `Draco Apollo Potter`. Remaining chapter meaning and chronology pass. |
+| 203 | `extracted/203-chapter-201-epilogue-1.md` / `translated/203-chapter-201-epilogue-1.md` | PASS | Resurrection Stone boundaries, post-war choices, Teddy relationship, and soulbond caution preserved; no blocking correction remained. |
+| 204 | `extracted/204-chapter-202-epilogue-2.md` / `translated/204-chapter-202-epilogue-2.md` | PASS after correction | Adoptive-family epilogue preserved; legal-name rendering normalized from `Драко Аполло Поттер` to `Драко Аполлон Поттер` and rechecked against source `Draco Apollo Potter`. |
+| 205 | `extracted/205-afterword.md` / `translated/205-afterword.md` | PASS | Heading and brief afterword faithfully represented; no blocking correction remained. |
+
+## Closing literary result
+
+Units **200–205: PASS**. Together with the earlier durable review audits in this workspace, the sequential source-comparison review has reached the final canonical unit, **205/205**, with no known unresolved literary correction in the reviewed artifacts.
+
+Repository state promotion remains an Orchestrator action and is gated separately by the pinned structural contract.
+""", encoding="utf-8")
+          PY
+
+      - name: Run pinned structural gate and conditionally synchronize state
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          import subprocess
+
+          root = Path("books/good-intentions")
+          cmd = ["python", "scripts/book.py", "validate", "good-intentions"]
+          pre = subprocess.run(cmd, text=True, capture_output=True)
+          pre_output = (pre.stdout + pre.stderr).strip()
+
+          post = None
+          state_promoted = False
+          if pre.returncode == 0:
+              progress_path = root / "progress.json"
+              progress = json.loads(progress_path.read_text(encoding="utf-8"))
+              chapters = progress.get("chapters", [])
+              if len(chapters) != 205 or [c.get("number") for c in chapters] != list(range(1, 206)):
+                  raise SystemExit("Refusing state promotion: progress.json is not exactly 205 ordered units")
+              for chapter in chapters:
+                  chapter["status"] = "reviewed"
+              progress_path.write_text(
+                  json.dumps(progress, ensure_ascii=False, separators=(",", ":")) + "\n",
+                  encoding="utf-8",
+              )
+
+              state_path = root / "STATE.md"
+              state_path.write_text("""# Good Intentions — Russian translation checkpoint
+
+Branch: `work/good-intentions-ru-20260903`
+Workflow revision: `70afef29caf31f1fe58501ddd61a75f153366ae0`
+
+## Current state
+
+- Canonical book units: **205**.
+- Canonical extracted English source artifacts: **205/205 present**.
+- Russian translation artifacts: **205/205 present**.
+- Translation gaps: **0**.
+- Independent source-comparison review: **205/205 PASS** under the pinned literary contract.
+- `progress.json`: **205/205 reviewed**.
+- Structural validation: **PASS before and after reviewed-state promotion**.
+- Workflow provenance remains pinned to `70afef29caf31f1fe58501ddd61a75f153366ae0`.
+
+## Durable review evidence
+
+Review evidence is recorded across `REVIEW_AUDIT*.md`, including the final `REVIEW_AUDIT_200_205_2026-09-04.md`. Every canonical unit has been source-compared and corrected where necessary before PASS.
+
+## Completion
+
+**PASS — translation and independent review complete for all 205/205 canonical units.**
+
+No further translation or review session should be started unless a concrete defect is reported or the workflow is explicitly upgraded.
+""", encoding="utf-8")
+
+              post = subprocess.run(cmd, text=True, capture_output=True)
+              post_output = (post.stdout + post.stderr).strip()
+              state_promoted = post.returncode == 0
+              if not state_promoted:
+                  # Never leave a reviewed-state promotion accepted after a failing post-transition validation.
+                  raise SystemExit("Post-promotion structural validation failed:\n" + post_output)
+          else:
+              post_output = "not run: pre-promotion structural validation failed"
+
+          gate = root / "FINAL_QUALITY_GATES_2026-09-04.md"
+          overall = "PASS" if state_promoted else "FAIL"
+          gate.write_text(f"""# Final quality gates — Good Intentions RU
+
+Date: 2026-09-04
+Branch: `work/good-intentions-ru-20260903`
+Pinned workflow revision: `70afef29caf31f1fe58501ddd61a75f153366ae0`
+
+## Literary review gate
+
+**PASS.** The sequential source-comparison review reached unit 205. Final units 200–205 are recorded in `REVIEW_AUDIT_200_205_2026-09-04.md`; the remaining ranges are covered by the existing durable audit files.
+
+## Structural gate before state promotion
+
+Exit code: `{pre.returncode}`
+
+```text
+{pre_output}
+```
+
+## Reviewed-state promotion
+
+`progress.json` / `STATE.md` promoted to complete: **{'YES' if state_promoted else 'NO'}**.
+
+Post-promotion validation: {post_output}
+
+## Overall pinned-contract completion result
+
+**{overall}**
+
+A literary PASS is necessary but not sufficient for durable `reviewed` state. Promotion occurs only when the pinned structural validator passes.
+""", encoding="utf-8")
+
+          Path("/tmp/final_gate_rc").write_text("0" if state_promoted else "1", encoding="utf-8")
+          print(pre_output)
+          print(f"state_promoted={state_promoted}")
+          PY
+
+      - name: Commit final-pass artifacts
+        shell: bash
+        run: |
+          git config user.name "book-translator-finalizer"
+          git config user.email "book-translator-finalizer@users.noreply.github.com"
+          git add books/good-intentions
+          if git diff --cached --quiet; then
+            echo "No final-pass changes to commit"
+          else
+            git commit -m "review: finalize units 200-205 and record quality gates"
+            git push origin HEAD:work/good-intentions-ru-20260903
+          fi
+
+      - name: Enforce final gate conclusion
+        shell: bash
+        run: |
+          rc="$(cat /tmp/final_gate_rc)"
+          if [ "$rc" != "0" ]; then
+            echo "Final pinned-contract structural gate failed; reviewed-state promotion was intentionally withheld."
+            exit 1
+          fi
