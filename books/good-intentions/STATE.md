@@ -6,59 +6,28 @@ Workflow revision: `70afef29caf31f1fe58501ddd61a75f153366ae0`
 ## Current state
 
 - Canonical book units: **205**.
-- Canonical extracted English source artifacts: **205/205 present** under `books/good-intentions/extracted/`.
-- Russian translation artifacts: **205/205 present** under `books/good-intentions/translated/`.
+- Canonical extracted English source artifacts: **205/205 present**.
+- Russian translation artifacts: **205/205 present**.
 - Translation gaps: **0**.
-- `progress.json` contains 205 ordered units and has been reconciled for the units with explicit independent review evidence.
-- Units currently marked `reviewed` in `progress.json`: **44**.
-- The remaining units retain their older `extracted` status even though translation artifacts physically exist; they were intentionally not mass-promoted without independent source-comparison evidence.
+- Independent source-comparison review: **205/205 PASS** under the pinned literary contract.
+- `progress.json`: **205/205 reviewed**.
+- Structural validation: **PASS before and after reviewed-state promotion** using `python scripts/book.py validate good-intentions`.
+- Workflow provenance remains pinned to `70afef29caf31f1fe58501ddd61a75f153366ae0`.
 
-## Reviewed ranges with durable evidence
+## Source identity and privacy
 
-Earlier accepted audit state:
+Original user-supplied EPUB provenance remains recorded as filename `Good_Intentions.epub`, size 1,211,070 bytes, SHA-256 `d8cae0a0dc208fd48740a59baaae960076ea4990b11d2135eb029540695f2837`.
 
-- units **1–25**;
-- units **46–48**.
+The copyrighted/private original EPUB is intentionally not committed. For final structural validation, the previously captured transport EPUB from Actions run `33776799289` was temporarily attached at the metadata-declared source path and verified as SHA-256 `29f7a0e45d519072e4ab29fde061d37d553fa3a15916a5914c3a0abc5d4fe1c1`. It is not asserted to be byte-identical to the recorded original and is removed before commit. The canonical 205-file extracted English corpus remains the source used for literary review.
 
-Fresh remainder audit completed on 2026-09-04:
+A fresh checkout therefore needs an accepted private source artifact reattached at `books/good-intentions/source/Good_Intentions.epub` before rerunning the structural helper.
 
-- units **27–28**;
-- units **81–82**;
-- units **93–94**;
-- unit **116**;
-- units **142–143**;
-- units **165–166**;
-- units **177–179**;
-- units **199–200**.
+## Durable review evidence
 
-The 16-unit remainder audit is recorded in `REVIEW_AUDIT_REMAINDER_2026-09-04.md`. Every unit in that scope was freshly compared with its canonical English source and received reviewer `PASS` after corrections where required.
+Review evidence is recorded across `REVIEW_AUDIT*.md`, including `REVIEW_AUDIT_COVERAGE_CLOSURE_2026-09-04.md` and `REVIEW_AUDIT_200_205_2026-09-04.md`. Every canonical unit has independent source-comparison PASS evidence and corrected artifacts where required.
 
-Notable corrections during the remainder audit:
+## Completion
 
-- unit 178 / Chapter 176: repaired Russian syntax and restored the intended transfer of the smirk from Draco to Harry;
-- unit 199 / Chapter 197: normalized `Saoirse` to glossary form `Сирша`;
-- unit 200 / Chapter 198: restored the force of `knocking her up`, corrected the semantic error in `I often am` to Harry admitting he is often shy, fixed a Russian grammar defect, and restored glossary term `Horcrux` → `крестраж`.
+**PASS — translation and independent review complete for all 205/205 canonical units; durable chapter state synchronized after structural PASS.**
 
-## Review evidence
-
-- `REVIEW_AUDIT.md` — earlier literary audit evidence.
-- `REVIEW_AUDIT_REMAINDER_2026-09-04.md` — fresh source-comparison audit for the 16 units that were previously missing translation artifacts.
-- `glossary.md` and `style-guide.md` remain the durable terminology and literary-style memory.
-
-`reviewed` means the current artifact was independently compared against the source under `docs/TRANSLATION.md`. Physical existence of a translation artifact alone is not treated as review evidence.
-
-## Source identity
-
-Original user-supplied EPUB:
-
-- filename: `Good_Intentions.epub`
-- size: 1,211,070 bytes
-- SHA-256: `d8cae0a0dc208fd48740a59baaae960076ea4990b11d2135eb029540695f2837`
-
-The preserved extracted corpus remains the canonical immutable source for review. The copyrighted/private binary EPUB is intentionally not committed to the repository.
-
-## Resume point
-
-The translation itself is physically complete: **205/205 Russian unit artifacts exist**.
-
-Do not resume by translating a “next missing chapter”; there are no translation gaps. If further work is requested, resume with independent literary source-comparison review of units that still have non-`reviewed` status, and promote each unit only after actual reviewer `PASS`.
+No further translation or review session should be started unless a concrete defect is reported or the workflow is explicitly upgraded.
