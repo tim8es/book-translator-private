@@ -50,6 +50,10 @@ jobs:
           rm -f books/good-intentions/source/Good_Intentions.epub
           rm -f scripts/finalize_good_intentions_review.py
           rm -f .github/workflows/export-final-validation-workspace.yml
+          sed -i 's/[[:space:]]\+$//' \
+            books/good-intentions/FINAL_QUALITY_GATES_2026-09-04.md \
+            books/good-intentions/REVIEW_AUDIT_200_205_2026-09-04.md \
+            books/good-intentions/REVIEW_AUDIT_COVERAGE_CLOSURE_2026-09-04.md
           git config user.name "book-translator-finalizer"
           git config user.email "book-translator-finalizer@users.noreply.github.com"
           git add -A
