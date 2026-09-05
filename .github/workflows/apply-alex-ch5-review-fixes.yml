@@ -1,0 +1,52 @@
+name: Apply Alex Cole chapter 5 review corrections
+
+on:
+  push:
+    paths:
+      - 'books/alex-cole-ten-commandments/.review-fix/READY'
+
+permissions:
+  contents: write
+
+jobs:
+  apply-review-corrections:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply verified corrections
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PYFIX'
+          from pathlib import Path
+          import base64, gzip, hashlib, json
+          root = Path('books/alex-cole-ten-commandments')
+          data = json.loads(gzip.decompress(base64.b64decode((root/'.review-fix/patch.b64').read_text())).decode())
+          path = root/'translated/005-the-third-commandment-part-one.md'
+          assert hashlib.sha256(path.read_bytes()).hexdigest() == data['before_sha256']
+          text = path.read_text(encoding='utf-8')
+          for old, new in data['replacements']:
+              assert text.count(old) == 1, old[:80]
+              text = text.replace(old, new)
+          path.write_text(text, encoding='utf-8')
+          got = hashlib.sha256(path.read_bytes()).hexdigest()
+          assert got == data['after_sha256'], got
+          assert hashlib.sha256((root/'extracted/005-the-third-commandment-part-one.md').read_bytes()).hexdigest() == data['source_sha256']
+          assert '"' not in text and '— —' not in text and 'не не хватало' not in text
+          review = root/'review'; review.mkdir(exist_ok=True)
+          (review/'005-the-third-commandment-part-one-corrections.md').write_text(
+              '# Chapter 5 review corrections\n\nOutcome: `CORRECTIONS_REQUIRED`\n\n'
+              'First independent source-comparison pass identified fidelity, calque, target-language polish, and dialogue-punctuation issues. '
+              'Corrections were applied deterministically to the canonical artifact. A fresh independent review is required before `reviewed`.\n\n'
+              f'Corrected translation SHA-256: `{got}`\n', encoding='utf-8')
+          PYFIX
+      - name: Commit corrected translation
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf books/alex-cole-ten-commandments/.review-fix
+          git config user.name 'book-translator-bot'
+          git config user.email 'book-translator-bot@users.noreply.github.com'
+          git add books/alex-cole-ten-commandments/translated/005-the-third-commandment-part-one.md books/alex-cole-ten-commandments/review
+          git commit -m 'book: apply chapter 5 independent review corrections'
+          git push
