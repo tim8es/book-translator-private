@@ -1,0 +1,152 @@
+name: Build Alex Cole Russian EPUB
+
+on:
+  push:
+    paths:
+      - 'books/alex-cole-ten-commandments/.epub-build/READY'
+
+permissions:
+  contents: write
+
+jobs:
+  build-epub:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Build and validate EPUB3
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          import json, html, re, zipfile, hashlib, uuid, xml.etree.ElementTree as ET
+
+          book = Path('books/alex-cole-ten-commandments')
+          out = book / 'output'
+          out.mkdir(exist_ok=True)
+          epub_path = out / 'alex-cole-ten-commandments-ru.epub'
+
+          metadata = json.loads((book / 'metadata.json').read_text('utf-8'))
+          progress = json.loads((book / 'progress.json').read_text('utf-8'))
+          chapters = progress['chapters']
+          assert len(chapters) == 5
+          assert all(ch['status'] == 'reviewed' for ch in chapters)
+
+          def inline_md(s):
+              s = html.escape(s, quote=False)
+              s = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', s)
+              s = re.sub(r'(?<!\*)\*(?!\s)(.+?)(?<!\s)\*(?!\*)', r'<em>\1</em>', s)
+              s = re.sub(r'(?<!_)_(?!\s)(.+?)(?<!\s)_(?!_)', r'<em>\1</em>', s)
+              return s
+
+          def md_to_body(text):
+              lines = text.splitlines()
+              parts, para = [], []
+              def flush():
+                  nonlocal para
+                  if para:
+                      content = ' '.join(x.strip() for x in para).strip()
+                      if content:
+                          parts.append('<p>' + inline_md(content) + '</p>')
+                      para = []
+              for raw in lines:
+                  line = raw.rstrip()
+                  if not line.strip():
+                      flush(); continue
+                  m = re.match(r'^(#{1,6})\s+(.*)$', line)
+                  if m:
+                      flush(); level = min(len(m.group(1)) + 1, 6)
+                      parts.append(f'<h{level}>' + inline_md(m.group(2).strip()) + f'</h{level}>')
+                      continue
+                  if re.match(r'^\s*(\*\s*\*\s*\*|-\s*-\s*-|___)\s*$', line):
+                      flush(); parts.append('<hr/>'); continue
+                  if line.startswith('> '):
+                      flush(); parts.append('<blockquote><p>' + inline_md(line[2:].strip()) + '</p></blockquote>'); continue
+                  para.append(line)
+              flush()
+              return '\n'.join(parts)
+
+          title = metadata['title']
+          author = metadata.get('author', '')
+          lang = 'ru'
+          uid = 'urn:uuid:' + str(uuid.uuid5(uuid.NAMESPACE_URL, 'https://github.com/tim8es/book-translator-private/books/alex-cole-ten-commandments'))
+
+          work = Path('/tmp/alex-epub')
+          if work.exists():
+              import shutil; shutil.rmtree(work)
+          (work / 'META-INF').mkdir(parents=True)
+          (work / 'OEBPS').mkdir(parents=True)
+          (work / 'mimetype').write_text('application/epub+zip', encoding='ascii')
+          (work / 'META-INF' / 'container.xml').write_text('''<?xml version="1.0" encoding="UTF-8"?>\n<container version="1.0" xmlns="urn:oasis:names:tc:opendocument:xmlns:container">\n  <rootfiles><rootfile full-path="OEBPS/content.opf" media-type="application/oebps-package+xml"/></rootfiles>\n</container>\n''', 'utf-8')
+          (work / 'OEBPS' / 'style.css').write_text('''body { font-family: serif; line-height: 1.45; margin: 5%; }\nh1,h2,h3 { text-align: center; margin-top: 2em; }\np { margin: 0 0 0.8em 0; text-indent: 1.2em; }\nblockquote p { text-indent: 0; margin-left: 1.5em; }\nhr { border: 0; text-align: center; margin: 1.5em 0; }\nhr::after { content: "* * *"; }\n.titlepage { text-align:center; margin-top:25%; }\n.titlepage p { text-indent:0; }\n''', 'utf-8')
+
+          chapter_items = []
+          nav_links = []
+          spine = []
+          for i, ch in enumerate(chapters, 1):
+              md = (book / ch['translation_path']).read_text('utf-8')
+              body = md_to_body(md)
+              fn = f'chapter-{i:02d}.xhtml'
+              ch_title = ch['title']
+              xhtml = f'''<?xml version="1.0" encoding="UTF-8"?>\n<!DOCTYPE html>\n<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru">\n<head><meta charset="utf-8"/><title>{html.escape(ch_title)}</title><link rel="stylesheet" type="text/css" href="style.css"/></head>\n<body>\n{body}\n</body></html>\n'''
+              (work / 'OEBPS' / fn).write_text(xhtml, 'utf-8')
+              chapter_items.append(f'<item id="c{i}" href="{fn}" media-type="application/xhtml+xml"/>')
+              spine.append(f'<itemref idref="c{i}"/>')
+              nav_links.append(f'<li><a href="{fn}">{html.escape(ch_title)}</a></li>')
+
+          title_xhtml = f'''<?xml version="1.0" encoding="UTF-8"?>\n<!DOCTYPE html>\n<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru"><head><meta charset="utf-8"/><title>{html.escape(title)}</title><link rel="stylesheet" type="text/css" href="style.css"/></head><body><section class="titlepage"><h1>{html.escape(title)}</h1><p>{html.escape(author)}</p><p>Русский перевод</p></section></body></html>\n'''
+          (work / 'OEBPS' / 'title.xhtml').write_text(title_xhtml, 'utf-8')
+
+          nav = f'''<?xml version="1.0" encoding="UTF-8"?>\n<!DOCTYPE html>\n<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="ru" lang="ru"><head><meta charset="utf-8"/><title>Содержание</title><link rel="stylesheet" type="text/css" href="style.css"/></head><body><nav epub:type="toc" id="toc"><h1>Содержание</h1><ol>{''.join(nav_links)}</ol></nav></body></html>\n'''
+          (work / 'OEBPS' / 'nav.xhtml').write_text(nav, 'utf-8')
+
+          opf = f'''<?xml version="1.0" encoding="UTF-8"?>\n<package xmlns="http://www.idpf.org/2007/opf" version="3.0" unique-identifier="pub-id" xml:lang="ru">\n<metadata xmlns:dc="http://purl.org/dc/elements/1.1/">\n<dc:identifier id="pub-id">{uid}</dc:identifier><dc:title>{html.escape(title)}</dc:title><dc:creator>{html.escape(author)}</dc:creator><dc:language>{lang}</dc:language>\n<meta property="dcterms:modified">2026-09-05T22:00:00Z</meta>\n</metadata>\n<manifest><item id="nav" href="nav.xhtml" media-type="application/xhtml+xml" properties="nav"/><item id="title" href="title.xhtml" media-type="application/xhtml+xml"/><item id="css" href="style.css" media-type="text/css"/>{''.join(chapter_items)}</manifest>\n<spine><itemref idref="title"/>{''.join(spine)}</spine>\n</package>\n'''
+          (work / 'OEBPS' / 'content.opf').write_text(opf, 'utf-8')
+
+          if epub_path.exists(): epub_path.unlink()
+          with zipfile.ZipFile(epub_path, 'w') as z:
+              z.write(work / 'mimetype', 'mimetype', compress_type=zipfile.ZIP_STORED)
+              for path in sorted(work.rglob('*')):
+                  if path.is_file() and path.name != 'mimetype':
+                      z.write(path, path.relative_to(work).as_posix(), compress_type=zipfile.ZIP_DEFLATED)
+
+          with zipfile.ZipFile(epub_path) as z:
+              assert z.namelist()[0] == 'mimetype'
+              assert z.getinfo('mimetype').compress_type == zipfile.ZIP_STORED
+              assert z.read('mimetype') == b'application/epub+zip'
+              assert z.testzip() is None
+              required = {'META-INF/container.xml','OEBPS/content.opf','OEBPS/nav.xhtml','OEBPS/title.xhtml'} | {f'OEBPS/chapter-{i:02d}.xhtml' for i in range(1,6)}
+              assert required.issubset(set(z.namelist()))
+              for name in required:
+                  ET.fromstring(z.read(name))
+
+          digest = hashlib.sha256(epub_path.read_bytes()).hexdigest()
+          report = book / 'output' / 'alex-cole-ten-commandments-ru.epub.sha256'
+          report.write_text(digest + '  ' + epub_path.name + '\n', 'utf-8')
+          print(f'EPUB={epub_path}')
+          print(f'SHA256={digest}')
+          print(f'SIZE={epub_path.stat().st_size}')
+          PY
+
+      - name: Commit durable EPUB output
+        shell: bash
+        run: |
+          set -euo pipefail
+          BOOK='books/alex-cole-ten-commandments'
+          rm -rf "$BOOK/.epub-build"
+          git config user.name 'book-translator-bot'
+          git config user.email 'book-translator-bot@users.noreply.github.com'
+          git add "$BOOK/output/alex-cole-ten-commandments-ru.epub" "$BOOK/output/alex-cole-ten-commandments-ru.epub.sha256" "$BOOK/.epub-build" || true
+          git commit -m 'book: build validated Alex Cole Russian EPUB'
+          git push
+
+      - name: Upload EPUB artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: alex-cole-ten-commandments-ru-epub
+          path: books/alex-cole-ten-commandments/output/alex-cole-ten-commandments-ru.epub
+          if-no-files-found: error
+          compression-level: 0
