@@ -1,0 +1,52 @@
+name: Import Alex Cole checkpoint
+
+on:
+  push:
+    branches:
+      - book/alex-cole-import-active
+    paths:
+      - 'books/alex-cole-ten-commandments/.import/**'
+      - '.github/workflows/import-alex-cole-checkpoint.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Check complete bundle and import
+        shell: bash
+        run: |
+          set -euo pipefail
+          book='books/alex-cole-ten-commandments'
+          parts="$book/.import"
+          expected=19
+          count=$(find "$parts" -maxdepth 1 -type f -name 'bundle.part-*' | wc -l)
+          if [ "$count" -ne "$expected" ]; then
+            echo "Bundle incomplete: $count/$expected parts; nothing to import yet."
+            exit 0
+          fi
+          cat "$parts"/bundle.part-* | base64 -d > /tmp/alex-cole-checkpoint.tar.xz
+          actual=$(sha256sum /tmp/alex-cole-checkpoint.tar.xz | awk '{print $1}')
+          expected_bundle='ffb5b663978b9c33e66b3e7bb6ad342300855b406a2b69b980c813085aa9f5cc'
+          test "$actual" = "$expected_bundle"
+          tar -xJf /tmp/alex-cole-checkpoint.tar.xz -C "$book"
+          source_sha=$(sha256sum "$book/source/alex-cole-ten-commandments_414809252.epub" | awk '{print $1}')
+          test "$source_sha" = 'fcfedf4a253a22df3c0baa767cbe5ccdb30916a5957515f4d68b5b5f0be590dc'
+          python scripts/book.py validate alex-cole-ten-commandments
+          python scripts/corpus.py verify alex-cole-ten-commandments
+          rm -rf "$parts"
+          rm -f "$book/MIGRATION.md"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add "$book"
+          if git diff --cached --quiet; then
+            echo 'Nothing to commit.'
+            exit 0
+          fi
+          git commit -m 'book: materialize Alex Cole checkpoint corpus'
+          git push
