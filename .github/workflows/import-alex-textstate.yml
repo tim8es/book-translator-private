@@ -1,0 +1,80 @@
+name: Import Alex Cole text checkpoint
+
+on:
+  push:
+    paths:
+      - 'books/alex-cole-ten-commandments/.import2/READY'
+
+permissions:
+  contents: write
+
+jobs:
+  import-textstate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Reconstruct and verify checkpoint
+        shell: bash
+        run: |
+          set -euo pipefail
+          BOOK='books/alex-cole-ten-commandments'
+          IMPORT="$BOOK/.import2"
+
+          {
+            cat "$IMPORT"/fix000-0 "$IMPORT"/fix000-1 "$IMPORT"/fix000-2 "$IMPORT"/fix000-3
+            for i in $(seq -w 1 9); do cat "$IMPORT/part-0$i"; done
+            cat "$IMPORT"/fix010a-0 "$IMPORT"/fix010a-1 "$IMPORT"/fix010a-2
+            cat "$IMPORT"/fix010-1 "$IMPORT"/fix010-2 "$IMPORT"/fix010-3
+            cat "$IMPORT"/part-011 "$IMPORT"/part-012
+          } > /tmp/alex-textstate.b64
+
+          base64 -d /tmp/alex-textstate.b64 > /tmp/alex-textstate.tar.xz
+          test "$(sha256sum /tmp/alex-textstate.tar.xz | awk '{print $1}')" = '8a02ee0614724cfbfda9e29fe56b2bcccb5338299315860b8d28862a5b796811'
+
+          mkdir -p /tmp/alex-textstate
+          tar -xJf /tmp/alex-textstate.tar.xz -C /tmp/alex-textstate
+
+          python - <<'PY'
+          import hashlib, json, pathlib, shutil
+          book = pathlib.Path('books/alex-cole-ten-commandments')
+          imported = pathlib.Path('/tmp/alex-textstate')
+          manifest = json.loads((book / 'source-manifest.json').read_text(encoding='utf-8'))
+
+          for item in manifest['extracted']:
+              path = imported / item['path']
+              assert path.is_file(), f"missing extracted artifact: {path}"
+              got = hashlib.sha256(path.read_bytes()).hexdigest()
+              assert got == item['sha256'], f"hash mismatch for {item['path']}: {got}"
+
+          expected_translations = [
+              '001-the-first-commandment-part-one.md',
+              '002-the-first-commandment-part-two.md',
+              '003-the-second-commandment-part-one.md',
+              '004-the-second-commandment-part-two.md',
+          ]
+          for name in expected_translations:
+              path = imported / 'translated' / name
+              assert path.is_file() and path.stat().st_size > 0, f"missing translation: {name}"
+
+          for name in ('extracted', 'translated'):
+              src = imported / name
+              dst = book / name
+              if dst.exists():
+                  shutil.rmtree(dst)
+              shutil.copytree(src, dst)
+          PY
+
+      - name: Commit canonical text checkpoint
+        shell: bash
+        run: |
+          set -euo pipefail
+          BOOK='books/alex-cole-ten-commandments'
+          rm -rf "$BOOK/.import2"
+          git config user.name 'book-translator-bot'
+          git config user.email 'book-translator-bot@users.noreply.github.com'
+          git add "$BOOK"
+          git commit -m 'book: materialize Alex Cole extracted and reviewed text checkpoint'
+          git push
