@@ -48,7 +48,7 @@ jobs:
           xz -dc /tmp/alex-source.epub.xz > /tmp/alex-source.epub
           test "$(sha256sum /tmp/alex-source.epub | awk '{print $1}')" = 'fcfedf4a253a22df3c0baa767cbe5ccdb30916a5957515f4d68b5b5f0be590dc'
 
-          mkdir -p "$BOOK/source"
+          mkdir -p "$BOOK/source" "$BOOK/output"
           cp /tmp/alex-source.epub "$BOOK/source/$SOURCE_NAME"
 
           python scripts/book.py validate alex-cole-ten-commandments
