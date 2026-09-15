@@ -26,9 +26,8 @@ jobs:
           path: .workflow-engine
           fetch-depth: 1
 
-      - name: Stage pinned runner and runtime directories
+      - name: Prepare runtime directories
         run: |
-          cp -R .workflow-engine/scripts ./scripts
           mkdir -p books/blood-and-honey-rbmk-caleb-pov/source
           mkdir -p books/blood-and-honey-rbmk-caleb-pov/output
 
@@ -37,10 +36,11 @@ jobs:
           python - <<'PY'
           import sys
           from pathlib import Path
-          sys.path.insert(0, str(Path('scripts').resolve()))
-          import book  # noqa: F401
-          from workflow.status_cli import default_preflight
           root = Path('.').resolve()
+          sys.path.insert(0, str((root / '.workflow-engine' / 'scripts').resolve()))
+          import book
+          book.REPO_ROOT = root
+          from workflow.status_cli import default_preflight
           errors, corpus = default_preflight(root, 'blood-and-honey-rbmk-caleb-pov')
           if errors:
               raise SystemExit('Structural preflight failed:\n- ' + '\n- '.join(map(str, errors)))
@@ -54,11 +54,12 @@ jobs:
           python - <<'PY'
           import argparse, os, sys
           from pathlib import Path
-          sys.path.insert(0, str(Path('scripts').resolve()))
-          import book  # noqa: F401
+          root = Path('.').resolve()
+          sys.path.insert(0, str((root / '.workflow-engine' / 'scripts').resolve()))
+          import book
+          book.REPO_ROOT = root
           from workflow.finalize_cli import finalize_command
           from workflow.status_cli import default_preflight
-          root = Path('.').resolve()
           slug = 'blood-and-honey-rbmk-caleb-pov'
           args = argparse.Namespace(slug=slug, session_id=f"gha-{os.environ['GITHUB_RUN_ID']}-finalizer", json=False)
           finalize_command(args, root, lambda s: default_preflight(root, s))
@@ -69,10 +70,11 @@ jobs:
           python - <<'PY'
           import argparse, sys
           from pathlib import Path
-          sys.path.insert(0, str(Path('scripts').resolve()))
-          import book  # noqa: F401
-          from workflow.epub_cli import epub_build_command, build_status_command
           root = Path('.').resolve()
+          sys.path.insert(0, str((root / '.workflow-engine' / 'scripts').resolve()))
+          import book
+          book.REPO_ROOT = root
+          from workflow.epub_cli import epub_build_command, build_status_command
           slug = 'blood-and-honey-rbmk-caleb-pov'
           build_args = argparse.Namespace(slug=slug, output='Blood_and_Honey_RU.epub', allow_unreviewed=False, format='epub')
           epub_build_command(build_args, root)
@@ -102,7 +104,7 @@ jobs:
 
       - name: Commit finalized durable state and EPUB
         run: |
-          rm -rf .workflow-engine scripts
+          rm -rf .workflow-engine
           git rm .github/workflows/blood-honey-finalize-epub.yml
           git config user.name "book-translator-bot"
           git config user.email "actions@users.noreply.github.com"
