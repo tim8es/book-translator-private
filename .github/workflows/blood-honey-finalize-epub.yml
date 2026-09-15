@@ -1,0 +1,74 @@
+name: Finalize Blood and Honey EPUB
+
+on:
+  push:
+    paths:
+      - .github/workflows/blood-honey-finalize-epub.yml
+
+permissions:
+  contents: write
+
+jobs:
+  finalize:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out private book state
+        uses: actions/checkout@v4
+        with:
+          repository: tim8es/book-translator-private
+          fetch-depth: 1
+
+      - name: Check out pinned Book Translator workflow
+        uses: actions/checkout@v4
+        with:
+          repository: tim8es/book-translator
+          ref: a0c1a3c450a8251d2d90f4de5d5a988b5466958f
+          path: .workflow-engine
+          fetch-depth: 1
+
+      - name: Strict source and workflow validation
+        run: python .workflow-engine/scripts/book.py validate blood-and-honey-rbmk-caleb-pov
+
+      - name: Finalize reviewed corpus
+        run: python .workflow-engine/scripts/book.py finalize blood-and-honey-rbmk-caleb-pov --session-id "gha-${GITHUB_RUN_ID}-finalizer"
+
+      - name: Build deterministic EPUB
+        run: python .workflow-engine/scripts/book.py build blood-and-honey-rbmk-caleb-pov --format epub --output Blood_and_Honey_RU.epub
+
+      - name: Verify current EPUB identity
+        run: python .workflow-engine/scripts/book.py build-status blood-and-honey-rbmk-caleb-pov --format epub --json
+
+      - name: Inspect EPUB ZIP structure
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from zipfile import ZipFile
+          p = Path('books/blood-and-honey-rbmk-caleb-pov/output/Blood_and_Honey_RU.epub')
+          with ZipFile(p) as z:
+              bad = z.testzip()
+              if bad:
+                  raise SystemExit(f'Bad EPUB member: {bad}')
+              names = z.namelist()
+              if not names or names[0] != 'mimetype':
+                  raise SystemExit('EPUB mimetype is not first')
+              if z.read('mimetype') != b'application/epub+zip':
+                  raise SystemExit('Invalid EPUB mimetype')
+          print(f'EPUB verified: {p} ({p.stat().st_size} bytes)')
+          PY
+
+      - name: Commit finalized durable state and EPUB
+        run: |
+          rm -rf .workflow-engine
+          git rm .github/workflows/blood-honey-finalize-epub.yml
+          git config user.name "book-translator-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add books/blood-and-honey-rbmk-caleb-pov
+          git commit -m "Finalize Blood and Honey Russian EPUB"
+          git push
+
+      - name: Upload EPUB artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Blood_and_Honey_RU
+          path: books/blood-and-honey-rbmk-caleb-pov/output/Blood_and_Honey_RU.epub
+          if-no-files-found: error
