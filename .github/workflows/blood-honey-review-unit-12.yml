@@ -1,0 +1,118 @@
+name: Correct and review Blood and Honey unit 12
+
+on:
+  push:
+    paths:
+      - '.github/workflows/blood-honey-review-unit-12.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: tim8es/book-translator
+          ref: a0c1a3c450a8251d2d90f4de5d5a988b5466958f
+          path: .workflow-engine
+      - name: Claim translator correction for unit 12
+        shell: python
+        run: |
+          import os, sys
+          from pathlib import Path
+          sys.path.insert(0, str((Path('.workflow-engine') / 'scripts').resolve()))
+          from workflow.claims import ClaimManager
+          from workflow.filesystem import FilesystemStorage
+          from workflow.repository import WorkflowStateRepository
+          from workflow.schemas import SchemaKind
+          book = Path('books/blood-and-honey-rbmk-caleb-pov').resolve()
+          repo = WorkflowStateRepository(FilesystemStorage(book))
+          progress = repo.read('progress.json', SchemaKind.PROGRESS)
+          metadata = repo.read('metadata.json', SchemaKind.METADATA).data
+          ClaimManager(repo).acquire(progress.data, '12', role='translator',
+              session_id=f"gha-{os.environ['GITHUB_RUN_ID']}-translator-012-reviewfix",
+              base_revision=progress.version, base_commit=os.environ['GITHUB_SHA'],
+              workflow_revision=metadata['workflow']['resolved_revision'])
+      - name: Apply independent review corrections
+        shell: python
+        run: |
+          from pathlib import Path
+          p = Path('books/blood-and-honey-rbmk-caleb-pov/translated/012-chapter-10.md')
+          text = p.read_text(encoding='utf-8')
+          replacements = [
+            ('— А где твой новый лучший друг с бонусами?', '— А где твой новый лучший друг с привилегиями?'),
+            ('— Расслабься. Ты ничего не обязан мне объяснять. Наши отношения целиком строятся на взаимном использовании.', '— Расслабься. Ты ничего не обязан мне объяснять. Наши отношения целиком строятся на взаимных манипуляциях.'),
+            ('— Я *знаменит* тем, что совершенно безрассуден. Для меня всё это никогда ничего *не значит*.', '— Я *знаменит* своим безрассудством; для меня всё это никогда ничего *не значит*.'),
+            ('— Этот конь принадлежал моему брату. Пять лет назад он предал семью, и разобраться с этим должен был я. Мой отец… мой отец не смог. Он слишком сильно его любил. И в тот единственный момент милосердия брат вместо этого убил его. Тогда я застрелил брата и стал самым молодым Крёстным отцом в истории семьи Конти.', '— Этот конь принадлежал моему брату. Пять лет назад он предал семью, и разобраться с ним стало моей обязанностью — потому что отец не смог бы: он слишком сильно его любил. И в тот единственный момент милосердия брат убил вместо этого его. Тогда я застрелил брата и стал самым молодым Крёстным отцом в истории семьи Конти.'),
+            ('Нельзя позволить Ариану продолжать отрезать жизненно важные куски его сердца.', 'Нельзя позволить Ариану и дальше отрезать жизненно важные куски его сердца.'),
+          ]
+          for old, new in replacements:
+              count = text.count(old)
+              if count != 1:
+                  raise RuntimeError(f'expected exactly one match, got {count}: {old}')
+              text = text.replace(old, new)
+          p.write_text(text, encoding='utf-8')
+      - name: Reaccept corrected translation
+        shell: python
+        run: |
+          import os, sys
+          from pathlib import Path
+          sys.path.insert(0, str((Path('.workflow-engine') / 'scripts').resolve()))
+          from workflow.claims import ClaimManager
+          from workflow.filesystem import FilesystemStorage
+          from workflow.repository import WorkflowStateRepository
+          from workflow.schemas import SchemaKind
+          from workflow.translations import TranslationAcceptanceManager
+          book = Path('books/blood-and-honey-rbmk-caleb-pov').resolve()
+          repo = WorkflowStateRepository(FilesystemStorage(book))
+          reader = lambda p: (book / p).read_bytes()
+          progress = repo.read('progress.json', SchemaKind.PROGRESS)
+          metadata = repo.read('metadata.json', SchemaKind.METADATA).data
+          session = f"gha-{os.environ['GITHUB_RUN_ID']}-translator-012-reviewfix"
+          TranslationAcceptanceManager(repo, artifact_reader=reader).accept(
+              progress.data, progress.version, metadata, 12, session_id=session)
+          progress = repo.read('progress.json', SchemaKind.PROGRESS)
+          ClaimManager(repo).release(progress.data, '12', session_id=session,
+              detail='review corrections applied and exact translation reaccepted')
+      - name: Record PASS and promote reviewed
+        shell: python
+        run: |
+          import os, sys
+          from pathlib import Path
+          sys.path.insert(0, str((Path('.workflow-engine') / 'scripts').resolve()))
+          from workflow.claims import ClaimManager
+          from workflow.filesystem import FilesystemStorage
+          from workflow.repository import WorkflowStateRepository
+          from workflow.reviews import ReviewLedgerManager
+          from workflow.schemas import SchemaKind
+          book = Path('books/blood-and-honey-rbmk-caleb-pov').resolve()
+          repo = WorkflowStateRepository(FilesystemStorage(book))
+          reader = lambda p: (book / p).read_bytes()
+          progress = repo.read('progress.json', SchemaKind.PROGRESS)
+          metadata = repo.read('metadata.json', SchemaKind.METADATA).data
+          session = f"gha-{os.environ['GITHUB_RUN_ID']}-reviewer-012"
+          claims = ClaimManager(repo)
+          claims.acquire(progress.data, '12', role='reviewer', session_id=session,
+              base_revision=progress.version, base_commit=os.environ['GITHUB_SHA'],
+              workflow_revision=metadata['workflow']['resolved_revision'])
+          reviews = ReviewLedgerManager(repo, artifact_reader=reader)
+          reviews.record(progress.data, progress.version, metadata, 12, outcome='PASS',
+              reviewer_session_id=session, review_commit=None)
+          claims.release(progress.data, '12', session_id=session,
+              detail='independent full source-comparison review PASS')
+          progress = repo.read('progress.json', SchemaKind.PROGRESS)
+          reviews.accept_review(progress.data, progress.version, metadata, 12)
+          final = repo.read('progress.json', SchemaKind.PROGRESS).data
+          if next(c for c in final['chapters'] if c['number'] == 12)['status'] != 'reviewed':
+              raise RuntimeError('unit 12 was not promoted to reviewed')
+      - name: Commit reviewed durable state
+        run: |
+          rm -rf .workflow-engine
+          git config user.name "book-translator-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add books/blood-and-honey-rbmk-caleb-pov
+          git commit -m "Correct and review Blood and Honey chapter 10"
+          git push
