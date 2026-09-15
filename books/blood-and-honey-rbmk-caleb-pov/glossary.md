@@ -8,6 +8,7 @@
 | Andrew Whitmore | Эндрю Уитмор | character | Caleb's elder brother / royal family member. |
 | Valentina Caruso | Валентина Карузо | character | Daughter of the Caruso family; expected marriage match for Arian. |
 | Cecily | Сесили | character | Caleb's youngest sister. |
+| Lucien Windsor | Люсьен Виндзор | character | Member of the shipping Windsor family; saved Arian's life twenty years earlier. |
 | Conti family | семья Конти | organization | Mafia family. |
 | Caruso family | семья Карузо | organization | Sicilian family with a long-standing proposed marriage alliance with the Contis. |
 | the Crown | Корона | institution | British monarchy as institution; preserve capitalization when institutional. |
