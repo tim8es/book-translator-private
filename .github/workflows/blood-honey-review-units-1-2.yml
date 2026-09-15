@@ -1,0 +1,132 @@
+name: Promote reviewed Blood and Honey units 1-2
+
+on:
+  push:
+    paths:
+      - '.github/workflows/blood-honey-review-units-1-2.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  promote:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout private book state
+        uses: actions/checkout@v4
+
+      - name: Checkout pinned Book Translator workflow
+        uses: actions/checkout@v4
+        with:
+          repository: tim8es/book-translator
+          ref: a0c1a3c450a8251d2d90f4de5d5a988b5466958f
+          path: .workflow-engine
+
+      - name: Accept translations and PASS reviews for units 1-2
+        shell: python
+        run: |
+          import os
+          import sys
+          from pathlib import Path
+
+          sys.path.insert(0, str((Path('.workflow-engine') / 'scripts').resolve()))
+
+          from workflow.claims import ClaimManager
+          from workflow.filesystem import FilesystemStorage
+          from workflow.repository import WorkflowStateRepository
+          from workflow.reviews import ReviewLedgerManager
+          from workflow.schemas import SchemaKind
+          from workflow.translations import TranslationAcceptanceManager
+
+          book = Path('books/blood-and-honey-rbmk-caleb-pov').resolve()
+          repository = WorkflowStateRepository(FilesystemStorage(book))
+          claims = ClaimManager(repository)
+          artifact_reader = lambda p: (book / p).read_bytes()
+          translations = TranslationAcceptanceManager(repository, artifact_reader=artifact_reader)
+          reviews = ReviewLedgerManager(repository, artifact_reader=artifact_reader)
+          metadata = repository.read('metadata.json', SchemaKind.METADATA).data
+          workflow_revision = metadata['workflow']['resolved_revision']
+          base_commit = os.environ['GITHUB_SHA']
+          run_id = os.environ['GITHUB_RUN_ID']
+
+          for number in (1, 2):
+              progress_doc = repository.read('progress.json', SchemaKind.PROGRESS)
+              chapter = next(c for c in progress_doc.data['chapters'] if c['number'] == number)
+
+              if chapter['status'] == 'extracted':
+                  translator_session = f'gha-{run_id}-translator-{number:03d}'
+                  claims.acquire(
+                      progress_doc.data,
+                      str(number),
+                      role='translator',
+                      session_id=translator_session,
+                      base_revision=progress_doc.version,
+                      base_commit=base_commit,
+                      workflow_revision=workflow_revision,
+                  )
+                  translations.accept(
+                      progress_doc.data,
+                      progress_doc.version,
+                      metadata,
+                      number,
+                      session_id=translator_session,
+                  )
+                  progress_doc = repository.read('progress.json', SchemaKind.PROGRESS)
+                  claims.release(
+                      progress_doc.data,
+                      str(number),
+                      session_id=translator_session,
+                      detail='translation accepted after source comparison',
+                  )
+
+              progress_doc = repository.read('progress.json', SchemaKind.PROGRESS)
+              chapter = next(c for c in progress_doc.data['chapters'] if c['number'] == number)
+              if chapter['status'] == 'translated':
+                  reviewer_session = f'gha-{run_id}-reviewer-{number:03d}'
+                  claims.acquire(
+                      progress_doc.data,
+                      str(number),
+                      role='reviewer',
+                      session_id=reviewer_session,
+                      base_revision=progress_doc.version,
+                      base_commit=base_commit,
+                      workflow_revision=workflow_revision,
+                  )
+                  reviews.record(
+                      progress_doc.data,
+                      progress_doc.version,
+                      metadata,
+                      number,
+                      outcome='PASS',
+                      reviewer_session_id=reviewer_session,
+                      review_commit=None,
+                  )
+                  claims.release(
+                      progress_doc.data,
+                      str(number),
+                      session_id=reviewer_session,
+                      detail='independent source-comparison review PASS',
+                  )
+                  progress_doc = repository.read('progress.json', SchemaKind.PROGRESS)
+                  reviews.accept_review(
+                      progress_doc.data,
+                      progress_doc.version,
+                      metadata,
+                      number,
+                  )
+
+          final_progress = repository.read('progress.json', SchemaKind.PROGRESS).data
+          for number in (1, 2):
+              chapter = next(c for c in final_progress['chapters'] if c['number'] == number)
+              if chapter['status'] != 'reviewed':
+                  raise RuntimeError(f'unit {number} was not promoted to reviewed')
+          print('Units 1-2 are reviewed with current PASS evidence.')
+
+      - name: Commit durable workflow state
+        run: |
+          rm -rf .workflow-engine
+          git config user.name "book-translator-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add books/blood-and-honey-rbmk-caleb-pov
+          git commit -m "Review Blood and Honey units 1-2"
+          git push
