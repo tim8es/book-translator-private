@@ -26,17 +26,20 @@ jobs:
           path: .workflow-engine
           fetch-depth: 1
 
+      - name: Stage pinned runner at workspace root
+        run: cp -R .workflow-engine/scripts ./scripts
+
       - name: Strict source and workflow validation
-        run: python .workflow-engine/scripts/book.py validate blood-and-honey-rbmk-caleb-pov
+        run: python scripts/book.py validate blood-and-honey-rbmk-caleb-pov
 
       - name: Finalize reviewed corpus
-        run: python .workflow-engine/scripts/book.py finalize blood-and-honey-rbmk-caleb-pov --session-id "gha-${GITHUB_RUN_ID}-finalizer"
+        run: python scripts/book.py finalize blood-and-honey-rbmk-caleb-pov --session-id "gha-${GITHUB_RUN_ID}-finalizer"
 
       - name: Build deterministic EPUB
-        run: python .workflow-engine/scripts/book.py build blood-and-honey-rbmk-caleb-pov --format epub --output Blood_and_Honey_RU.epub
+        run: python scripts/book.py build blood-and-honey-rbmk-caleb-pov --format epub --output Blood_and_Honey_RU.epub
 
       - name: Verify current EPUB identity
-        run: python .workflow-engine/scripts/book.py build-status blood-and-honey-rbmk-caleb-pov --format epub --json
+        run: python scripts/book.py build-status blood-and-honey-rbmk-caleb-pov --format epub --json
 
       - name: Inspect EPUB ZIP structure
         run: |
@@ -58,7 +61,7 @@ jobs:
 
       - name: Commit finalized durable state and EPUB
         run: |
-          rm -rf .workflow-engine
+          rm -rf .workflow-engine scripts
           git rm .github/workflows/blood-honey-finalize-epub.yml
           git config user.name "book-translator-bot"
           git config user.email "actions@users.noreply.github.com"
