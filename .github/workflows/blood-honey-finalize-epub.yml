@@ -26,20 +26,61 @@ jobs:
           path: .workflow-engine
           fetch-depth: 1
 
-      - name: Stage pinned runner at workspace root
-        run: cp -R .workflow-engine/scripts ./scripts
+      - name: Stage pinned runner and runtime directories
+        run: |
+          cp -R .workflow-engine/scripts ./scripts
+          mkdir -p books/blood-and-honey-rbmk-caleb-pov/source
+          mkdir -p books/blood-and-honey-rbmk-caleb-pov/output
 
-      - name: Strict source and workflow validation
-        run: python scripts/book.py validate blood-and-honey-rbmk-caleb-pov
+      - name: Strict source and workflow preflight
+        run: |
+          python - <<'PY'
+          import sys
+          from pathlib import Path
+          sys.path.insert(0, str(Path('scripts').resolve()))
+          import book  # noqa: F401
+          from workflow.status_cli import default_preflight
+          root = Path('.').resolve()
+          errors, corpus = default_preflight(root, 'blood-and-honey-rbmk-caleb-pov')
+          if errors:
+              raise SystemExit('Structural preflight failed:\n- ' + '\n- '.join(map(str, errors)))
+          if corpus.get('state') != 'verified':
+              raise SystemExit(f'Source corpus is not verified: {corpus}')
+          print('preflight=verified')
+          PY
 
       - name: Finalize reviewed corpus
-        run: python scripts/book.py finalize blood-and-honey-rbmk-caleb-pov --session-id "gha-${GITHUB_RUN_ID}-finalizer"
+        run: |
+          python - <<'PY'
+          import argparse, os, sys
+          from pathlib import Path
+          sys.path.insert(0, str(Path('scripts').resolve()))
+          import book  # noqa: F401
+          from workflow.finalize_cli import finalize_command
+          from workflow.status_cli import default_preflight
+          root = Path('.').resolve()
+          slug = 'blood-and-honey-rbmk-caleb-pov'
+          args = argparse.Namespace(slug=slug, session_id=f"gha-{os.environ['GITHUB_RUN_ID']}-finalizer", json=False)
+          finalize_command(args, root, lambda s: default_preflight(root, s))
+          PY
 
       - name: Build deterministic EPUB
-        run: python scripts/book.py build blood-and-honey-rbmk-caleb-pov --format epub --output Blood_and_Honey_RU.epub
-
-      - name: Verify current EPUB identity
-        run: python scripts/book.py build-status blood-and-honey-rbmk-caleb-pov --format epub --json
+        run: |
+          python - <<'PY'
+          import argparse, sys
+          from pathlib import Path
+          sys.path.insert(0, str(Path('scripts').resolve()))
+          import book  # noqa: F401
+          from workflow.epub_cli import epub_build_command, build_status_command
+          root = Path('.').resolve()
+          slug = 'blood-and-honey-rbmk-caleb-pov'
+          build_args = argparse.Namespace(slug=slug, output='Blood_and_Honey_RU.epub', allow_unreviewed=False, format='epub')
+          epub_build_command(build_args, root)
+          status_args = argparse.Namespace(slug=slug, allow_unreviewed=False, json=True, format='epub')
+          rc = build_status_command(status_args, root)
+          if rc != 0:
+              raise SystemExit(rc)
+          PY
 
       - name: Inspect EPUB ZIP structure
         run: |
