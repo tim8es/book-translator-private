@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "book_slug": "you-feel-like-home",
+  "status": "staged_source_update",
+  "observed_at": "2026-10-04",
+  "workflow": {
+    "repository": "https://github.com/tim8es/book-translator",
+    "resolved_revision": "dca1e7db6974d5c4354e4850ecf82b42cda06f42"
+  },
+  "canonical_source": {
+    "filename": "You_Feel_Like_Home (1).epub",
+    "sha256": "cfe3a150553340a1c92d7f823ac0821e2307fbda43dc040f6e11287fae4e2df3",
+    "chapter_count": 9
+  },
+  "previous_staged_update": {
+    "observed_at": "2026-09-26",
+    "filename": "You_Feel_Like_Home.epub",
+    "sha256": "9d7747a5f0cf36e649764ef9b046be9dc5868b3618bfcc0f7ce00ff84716ab87",
+    "chapter_count": 10
+  },
+  "supplied_update": {
+    "filename": "You_Feel_Like_Home 2.epub",
+    "size_bytes": 141947,
+    "sha256": "86617f0ea38b3aa7c23000a09f0c467b4ca507df664ffbfbfec9c166e1842226",
+    "chapter_count": 11,
+    "note": "This EPUB is a later source version, not a byte-identical replacement for the canonical source. Canonical metadata/progress/source-manifest were intentionally left unchanged."
+  },
+  "comparison": [
+    {
+      "number": 1,
+      "title": "Preface",
+      "sha256": "e80c534139ba8c127467d81620e59efbdff3507b179621212fb32d958ba156ba",
+      "relation": "changed_vs_canonical_and_2026-09-26_update"
+    },
+    {
+      "number": 2,
+      "title": "You Feel Like Home",
+      "sha256": "0bc124d04466ef52321fec776f993111154816527b49a5c93f565cfffa69a86f",
+      "relation": "matches_canonical_unit_2"
+    },
+    {
+      "number": 3,
+      "title": "Chapter 1: Prologue",
+      "sha256": "c6c5b308b897f18f25d60240ab790d199810bd18b2509e5738d3f6dfaa016468",
+      "relation": "matches_canonical_unit_3"
+    },
+    {
+      "number": 4,
+      "title": "Chapter 2",
+      "sha256": "97edd6a041cc8e925b7653f315b6eb05e76b907474dd32d006e0a75c3a0508af",
+      "relation": "matches_canonical_unit_4"
+    },
+    {
+      "number": 5,
+      "title": "Chapter 3: Chapter 3",
+      "sha256": "61f17e80288d724aab523c84ebbd9b9bf0b414008fc863c108de65b23ba6702c",
+      "relation": "matches_canonical_unit_5"
+    },
+    {
+      "number": 6,
+      "title": "Chapter 4: Chapter 4",
+      "sha256": "53d53d3b7cdad84df9eb2dec0b0fe97943a3637319eac2e3823310942c10b37e",
+      "relation": "matches_canonical_unit_6"
+    },
+    {
+      "number": 7,
+      "title": "Chapter 5",
+      "sha256": "21a46510038ffc4a2656d428b6ffe8bad1025ca8922dfb7e91b0c093967cb5e1",
+      "relation": "matches_canonical_unit_7"
+    },
+    {
+      "number": 8,
+      "title": "Chapter 6",
+      "sha256": "63b78ca0040b596e26c577a489889932a2106d229bb51c9afb0a8eb44edf2587",
+      "relation": "matches_canonical_unit_8"
+    },
+    {
+      "number": 9,
+      "title": "Chapter 7",
+      "sha256": "bc724cb9700d5ddff7cd0508e31790a72a4c9b1eb40573d357581174b508249d",
+      "relation": "matches_2026-09-26_staged_unit_9"
+    },
+    {
+      "number": 10,
+      "title": "Chapter 8",
+      "sha256": "de5f1766c7a855d8779b0b3025c68733f33582386636615dbc5957256589f67a",
+      "relation": "new"
+    },
+    {
+      "number": 11,
+      "title": "Afterword",
+      "sha256": "a3271626986be4f7e47786e5e03520e6e7c5921eaf38c1b1d8965548d71ffb92",
+      "relation": "matches_canonical_unit_9_and_2026-09-26_unit_10"
+    }
+  ],
+  "staged_artifacts": {
+    "source_path": "extracted/010-chapter-8.md",
+    "source_sha256": "de5f1766c7a855d8779b0b3025c68733f33582386636615dbc5957256589f67a",
+    "translation_path": "translated/010-chapter-8.md",
+    "translation_sha256": "90e2c5a71196ce1c00d26750da5b42fb9856c1fcdeb25aaab04f395e944e44c5",
+    "review_path": "review/010-chapter-8-review.md",
+    "review_outcome": "PASS"
+  }
+}
