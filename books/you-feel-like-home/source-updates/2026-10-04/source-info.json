@@ -16,21 +16,22 @@
     "observed_at": "2026-09-26",
     "filename": "You_Feel_Like_Home.epub",
     "sha256": "9d7747a5f0cf36e649764ef9b046be9dc5868b3618bfcc0f7ce00ff84716ab87",
-    "chapter_count": 10
+    "chapter_count": 10,
+    "chapter_7_sha256": "bc724cb9700d5ddff7cd0508e31790a72a4c9b1eb40573d357581174b508249d"
   },
   "supplied_update": {
     "filename": "You_Feel_Like_Home 2.epub",
     "size_bytes": 141947,
     "sha256": "86617f0ea38b3aa7c23000a09f0c467b4ca507df664ffbfbfec9c166e1842226",
     "chapter_count": 11,
-    "note": "This EPUB is a later source version, not a byte-identical replacement for the canonical source. Canonical metadata/progress/source-manifest were intentionally left unchanged."
+    "note": "This EPUB is a later source version. Canonical metadata/progress/source-manifest remain pinned to the original source; this update is staged separately."
   },
   "comparison": [
     {
       "number": 1,
       "title": "Preface",
       "sha256": "e80c534139ba8c127467d81620e59efbdff3507b179621212fb32d958ba156ba",
-      "relation": "changed_vs_canonical_and_2026-09-26_update"
+      "relation": "changed_vs_canonical_and_previous_staged_update"
     },
     {
       "number": 2,
@@ -78,7 +79,7 @@
       "number": 9,
       "title": "Chapter 7",
       "sha256": "bc724cb9700d5ddff7cd0508e31790a72a4c9b1eb40573d357581174b508249d",
-      "relation": "matches_2026-09-26_staged_unit_9"
+      "relation": "matches_2026-09-26_staged_update"
     },
     {
       "number": 10,
@@ -90,15 +91,14 @@
       "number": 11,
       "title": "Afterword",
       "sha256": "a3271626986be4f7e47786e5e03520e6e7c5921eaf38c1b1d8965548d71ffb92",
-      "relation": "matches_canonical_unit_9_and_2026-09-26_unit_10"
+      "relation": "matches_canonical_unit_9"
     }
   ],
   "staged_artifacts": {
     "source_path": "extracted/010-chapter-8.md",
     "source_sha256": "de5f1766c7a855d8779b0b3025c68733f33582386636615dbc5957256589f67a",
     "translation_path": "translated/010-chapter-8.md",
-    "translation_sha256": "90e2c5a71196ce1c00d26750da5b42fb9856c1fcdeb25aaab04f395e944e44c5",
-    "review_path": "review/010-chapter-8-review.md",
-    "review_outcome": "PASS"
+    "translation_sha256": "524d4a80de896810de66efbdb521920d9ffea15af21a1d35f5b2e059d7fa29aa",
+    "review_path": "review/010-chapter-8-review.md"
   }
 }
