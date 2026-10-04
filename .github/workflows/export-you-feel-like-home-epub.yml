@@ -1,0 +1,227 @@
+name: Export You Feel Like Home Russian EPUB
+
+on:
+  push:
+    paths:
+      - '.github/workflows/export-you-feel-like-home-epub.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build Russian EPUB
+        shell: python
+        run: |
+          import html
+          import re
+          import uuid
+          import zipfile
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          root = Path("books/you-feel-like-home/source-updates/2026-10-04")
+          tr = root / "translated"
+          out_dir = Path("books/you-feel-like-home/output")
+          out_dir.mkdir(parents=True, exist_ok=True)
+          out = out_dir / "You_Feel_Like_Home_RU_chapters_1-8.epub"
+
+          sections = [
+              ("001-frontmatter.md", "С тобой как дома"),
+              ("003-chapter-1-prologue.md", "Глава 1: Пролог"),
+              ("004-chapter-2.md", "Глава 2"),
+              ("005-chapter-3.md", "Глава 3"),
+              ("006-chapter-4.md", "Глава 4"),
+              ("007-chapter-5.md", "Глава 5"),
+              ("008-chapter-6.md", "Глава 6"),
+              ("009-chapter-7.md", "Глава 7"),
+              ("010-chapter-8.md", "Глава 8"),
+              ("011-afterword.md", "Послесловие"),
+          ]
+
+          missing = [name for name, _ in sections if not (tr / name).is_file()]
+          if missing:
+              raise SystemExit("Missing translation files: " + ", ".join(missing))
+
+          def inline_md(s: str) -> str:
+              s = html.escape(s, quote=False)
+              s = re.sub(r'\[([^\]]+)\]\((https?://[^)]+)\)', r'<a href="\2">\1</a>', s)
+              s = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', s)
+              s = re.sub(r'(?<!\*)\*([^*\n]+?)\*(?!\*)', r'<em>\1</em>', s)
+              return s
+
+          def markdown_to_body(text: str) -> str:
+              lines = text.replace("\r\n", "\n").replace("\r", "\n").split("\n")
+              out_parts = []
+              buf = []
+
+              def flush():
+                  nonlocal buf
+                  if not buf:
+                      return
+                  if all(x.startswith("- ") for x in buf):
+                      items = "".join(f"<li>{inline_md(x[2:].strip())}</li>" for x in buf)
+                      out_parts.append(f"<ul>{items}</ul>")
+                  else:
+                      joined = "<br/>".join(inline_md(x.strip()) for x in buf)
+                      out_parts.append(f"<p>{joined}</p>")
+                  buf = []
+
+              for line in lines:
+                  stripped = line.strip()
+                  if not stripped:
+                      flush()
+                      continue
+                  if stripped == "++++":
+                      flush()
+                      out_parts.append('<div class="scene">++++</div>')
+                      continue
+                  m = re.match(r'^(#{1,6})\s+(.+)$', stripped)
+                  if m:
+                      flush()
+                      level = len(m.group(1))
+                      out_parts.append(f"<h{level}>{inline_md(m.group(2))}</h{level}>")
+                      continue
+                  buf.append(stripped)
+              flush()
+              return "\n".join(out_parts)
+
+          uid = str(uuid.uuid4())
+          modified = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+          epub_root = Path("/tmp/yflh_epub")
+          if epub_root.exists():
+              import shutil
+              shutil.rmtree(epub_root)
+          (epub_root / "META-INF").mkdir(parents=True)
+          (epub_root / "OEBPS").mkdir(parents=True)
+
+          (epub_root / "mimetype").write_text("application/epub+zip", encoding="ascii")
+          (epub_root / "META-INF" / "container.xml").write_text("""<?xml version="1.0" encoding="UTF-8"?>
+          <container version="1.0" xmlns="urn:oasis:names:tc:opendocument:xmlns:container">
+            <rootfiles>
+              <rootfile full-path="OEBPS/content.opf" media-type="application/oebps-package+xml"/>
+            </rootfiles>
+          </container>
+          """.strip() + "\n", encoding="utf-8")
+
+          css = """body { font-family: serif; line-height: 1.45; margin: 5%; }
+          h1, h2, h3 { text-align: center; margin-top: 1.5em; }
+          p { margin: 0.55em 0; text-indent: 1.2em; }
+          h1 + p, h2 + p, h3 + p, .scene + p { text-indent: 0; }
+          .scene { text-align: center; margin: 1.5em 0; letter-spacing: 0.15em; }
+          ul { margin: 1em 0 1em 1.5em; }
+          a { color: inherit; text-decoration: none; }
+          """
+          (epub_root / "OEBPS" / "styles.css").write_text(css, encoding="utf-8")
+
+          manifest_items = []
+          spine_items = []
+          nav_links = []
+          ncx_points = []
+
+          for idx, (filename, label) in enumerate(sections, 1):
+              md = (tr / filename).read_text(encoding="utf-8")
+              body = markdown_to_body(md)
+              xname = f"section-{idx:02d}.xhtml"
+              xhtml = f"""<?xml version="1.0" encoding="UTF-8"?>
+          <!DOCTYPE html>
+          <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru">
+            <head>
+              <title>{html.escape(label)}</title>
+              <link rel="stylesheet" type="text/css" href="styles.css"/>
+            </head>
+            <body>
+          {body}
+            </body>
+          </html>
+          """
+              (epub_root / "OEBPS" / xname).write_text(xhtml, encoding="utf-8")
+              item_id = f"sec{idx}"
+              manifest_items.append(f'<item id="{item_id}" href="{xname}" media-type="application/xhtml+xml"/>')
+              spine_items.append(f'<itemref idref="{item_id}"/>')
+              nav_links.append(f'<li><a href="{xname}">{html.escape(label)}</a></li>')
+              ncx_points.append(
+                  f'<navPoint id="navPoint-{idx}" playOrder="{idx}"><navLabel><text>{html.escape(label)}</text></navLabel><content src="{xname}"/></navPoint>'
+              )
+
+          nav = f"""<?xml version="1.0" encoding="UTF-8"?>
+          <!DOCTYPE html>
+          <html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="ru">
+            <head><title>Оглавление</title><link rel="stylesheet" type="text/css" href="styles.css"/></head>
+            <body>
+              <nav epub:type="toc" id="toc">
+                <h1>Оглавление</h1>
+                <ol>{''.join(nav_links)}</ol>
+              </nav>
+            </body>
+          </html>
+          """
+          (epub_root / "OEBPS" / "nav.xhtml").write_text(nav, encoding="utf-8")
+
+          ncx = f"""<?xml version="1.0" encoding="UTF-8"?>
+          <ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1">
+            <head><meta name="dtb:uid" content="urn:uuid:{uid}"/></head>
+            <docTitle><text>С тобой как дома</text></docTitle>
+            <docAuthor><text>Hazellury</text></docAuthor>
+            <navMap>{''.join(ncx_points)}</navMap>
+          </ncx>
+          """
+          (epub_root / "OEBPS" / "toc.ncx").write_text(ncx, encoding="utf-8")
+
+          opf = f"""<?xml version="1.0" encoding="UTF-8"?>
+          <package xmlns="http://www.idpf.org/2007/opf" version="3.0" unique-identifier="bookid" xml:lang="ru">
+            <metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
+              <dc:identifier id="bookid">urn:uuid:{uid}</dc:identifier>
+              <dc:title>С тобой как дома</dc:title>
+              <dc:creator>Hazellury</dc:creator>
+              <dc:language>ru</dc:language>
+              <meta property="dcterms:modified">{modified}</meta>
+            </metadata>
+            <manifest>
+              <item id="nav" href="nav.xhtml" media-type="application/xhtml+xml" properties="nav"/>
+              <item id="ncx" href="toc.ncx" media-type="application/x-dtbncx+xml"/>
+              <item id="css" href="styles.css" media-type="text/css"/>
+              {''.join(manifest_items)}
+            </manifest>
+            <spine toc="ncx">{''.join(spine_items)}</spine>
+          </package>
+          """
+          (epub_root / "OEBPS" / "content.opf").write_text(opf, encoding="utf-8")
+
+          with zipfile.ZipFile(out, "w") as zf:
+              zf.write(epub_root / "mimetype", "mimetype", compress_type=zipfile.ZIP_STORED)
+              for p in sorted(epub_root.rglob("*")):
+                  if p.is_file() and p.name != "mimetype":
+                      zf.write(p, p.relative_to(epub_root).as_posix(), compress_type=zipfile.ZIP_DEFLATED)
+
+          with zipfile.ZipFile(out) as zf:
+              names = zf.namelist()
+              assert names[0] == "mimetype"
+              assert zf.getinfo("mimetype").compress_type == zipfile.ZIP_STORED
+              assert zf.read("mimetype") == b"application/epub+zip"
+              assert "OEBPS/content.opf" in names
+              assert len([n for n in names if n.startswith("OEBPS/section-") and n.endswith(".xhtml")]) == len(sections)
+
+          print(out)
+
+      - name: Commit EPUB
+        run: |
+          git config user.name "book-translator-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add books/you-feel-like-home/output/You_Feel_Like_Home_RU_chapters_1-8.epub
+          git commit -m "Build You Feel Like Home Russian EPUB through Chapter 8"
+          git pull --rebase origin main
+          git push
+
+      - name: Upload EPUB artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: you-feel-like-home-ru-epub
+          path: books/you-feel-like-home/output/You_Feel_Like_Home_RU_chapters_1-8.epub
+          if-no-files-found: error
+          retention-days: 30
