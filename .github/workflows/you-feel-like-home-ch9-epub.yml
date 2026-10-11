@@ -1,0 +1,26 @@
+name: Build You Feel Like Home RU Chapter 9 EPUB
+
+on:
+  push:
+    paths:
+      - '.github/workflows/you-feel-like-home-ch9-epub.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Assemble and validate translated EPUB
+        run: python books/you-feel-like-home/source-updates/2026-10-11/build_epub.py
+      - name: Save EPUB in private book workspace
+        shell: bash
+        run: |
+          git config user.name "book-translator-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add books/you-feel-like-home/output/You_Feel_Like_Home_RU_chapters_1-9.epub
+          git commit -m "Build You Feel Like Home Russian EPUB with chapter 9"
+          git pull --rebase origin main
+          git push
