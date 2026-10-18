@@ -5,21 +5,31 @@ on:
     branches: [main]
   pull_request:
 
+concurrency:
+  # Only supersede checks for the same PR, never runs on main.
+  group: ${{ github.workflow }}-${{ github.event_name == 'pull_request' && github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
 permissions:
   contents: read
 
 jobs:
   unit-tests:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version: ["3.10", "3.12"]
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Set up Python
+      - name: Set up Python 3.10
         uses: actions/setup-python@v5
         with:
-          python-version: ${{ matrix.python-version }}
-      - name: Run tests
+          python-version: "3.10"
+      - name: Test with Python 3.10
+        run: python -m unittest discover -s tests -v
+      - name: Set up Python 3.12
+        if: ${{ success() || failure() }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Test with Python 3.12
+        if: ${{ success() || failure() }}
         run: python -m unittest discover -s tests -v
