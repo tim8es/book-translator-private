@@ -73,7 +73,7 @@ jobs:
               inputs.append({"path":path.relative_to(book).as_posix(),"sha256":hashlib.sha256(raw).hexdigest()})
           if set(combined)!=set(range(406)):
               raise SystemExit("Full chapter 7 coverage not established")
-          stage=book/"migration-staging/009-chapter-007-UNREVIEWED.md"
+          stage=book/"migration-staging/009-chapter-007-SOURCE-INDEXED-UNREVIEWED.md"
           ordered="\n\n".join(f"<!-- source-block {i} -->\n{combined[i]}" for i in range(406))+"\n"
           if stage.exists() and stage.read_text(encoding="utf-8")!=ordered:
               raise SystemExit("Existing stage differs; never overwrite")
@@ -139,7 +139,7 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           cp .github/claiming-moon-ch07-plan.json docs/migrations/claiming-moon-accepted-indexed-ch07.json
-          git add -- books/the-claiming-moon/migration-staging/009-chapter-007-UNREVIEWED.md \
+          git add -- books/the-claiming-moon/migration-staging/009-chapter-007-SOURCE-INDEXED-UNREVIEWED.md \
             books/the-claiming-moon/translated books/the-claiming-moon/progress.json \
             books/the-claiming-moon/.workflow docs/migrations/claiming-moon-accepted-indexed-ch07.json
           git rm -- .github/workflows/one-time-claiming-moon-admit-ch07.yml
