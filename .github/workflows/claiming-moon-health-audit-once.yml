@@ -30,8 +30,34 @@ jobs:
           set -euo pipefail
           python scripts/book.py status the-claiming-moon --json
           python scripts/book.py resume the-claiming-moon --json
-          python scripts/book.py build-status the-claiming-moon --format epub --json
+          python - <<'PY'
+          import json
+          import subprocess
+          import sys
+          from pathlib import Path
+
+          result = subprocess.run(
+              [sys.executable, "scripts/book.py", "build-status",
+               "the-claiming-moon", "--format", "epub", "--json"],
+              text=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+              check=False,
+          )
+          payload = json.loads(result.stdout)
+          print("EPUB readiness:", json.dumps(payload, ensure_ascii=False))
+          if result.returncode == 0 and payload.get("state") in {"missing", "current", "stale"}:
+              pass
+          elif payload.get("state") == "invalid" and payload.get("reason", "").startswith("missing translation artifact: "):
+              missing = payload["reason"].split(": ", 1)[1]
+              progress = json.loads(Path("books/the-claiming-moon/progress.json").read_text())
+              matching = [c for c in progress["chapters"] if c["translation_path"] == missing]
+              if len(matching) != 1 or matching[0]["status"] not in {"extracted", "pending"}:
+                  raise SystemExit("INVALID: missing an accepted translation, not an incomplete one")
+              print("EXPECTED: final EPUB is blocked by uncompleted chapter", matching[0]["number"])
+          else:
+              raise SystemExit("INVALID: unexpected EPUB build-status failure")
+          PY
       - name: Assert preflight did not change book files
+        if: always()
         shell: bash
         run: |
           set -euo pipefail
