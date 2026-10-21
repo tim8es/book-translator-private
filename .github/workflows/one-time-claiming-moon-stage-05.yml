@@ -1,0 +1,110 @@
+name: One-time Claiming Moon chapter 5 staging
+on:
+  push:
+    branches:
+      - migration/claiming-moon-chapter5-restore-20261022
+    paths:
+      - .github/workflows/one-time-claiming-moon-stage-05.yml
+permissions:
+  contents: write
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Verify sealed original and reconstruct unreviewed chapter 5 candidate
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          python scripts/book.py validate the-claiming-moon
+          python scripts/corpus.py verify the-claiming-moon
+          python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+          from zipfile import ZipFile
+          import xml.etree.ElementTree as ET
+
+          book = Path("books/the-claiming-moon")
+          source = book / "source/The_Claiming_Moon.epub"
+          expected = "611d1717e7997955619576a667073b79b815bf7606c6ea4513c823b01c53c9bb"
+          if hashlib.sha256(source.read_bytes()).hexdigest() != expected:
+              raise SystemExit("Original source does not match the user's exact EPUB")
+          progress = json.loads((book / "progress.json").read_text(encoding="utf-8"))
+          unit = progress["chapters"][6]
+          if unit["number"] != 7 or unit["unit_id"] != "chapter-000007":
+              raise SystemExit("Chapter 5 canonical unit mapping changed")
+          if unit["status"] != "extracted" or "translation_acceptance" in unit:
+              raise SystemExit("Refusing to stage over an accepted chapter 5")
+          if (book / unit["translation_path"]).exists():
+              raise SystemExit("Canonical translated chapter 5 already exists")
+
+          source_unit = (book / unit["source_path"]).read_text(encoding="utf-8")
+          if not source_unit.strip():
+              raise SystemExit("Missing canonical extracted source")
+          manifest = json.loads((book / "source-manifest.json").read_text(encoding="utf-8"))
+          declared = next(x for x in manifest["extracted"] if x["number"] == 7)
+          if hashlib.sha256((book / unit["source_path"]).read_bytes()).hexdigest() != declared["sha256"]:
+              raise SystemExit("Source extracted chapter 5 SHA mismatch")
+
+          parts = [
+              book / "incoming" / f"chapter-005-ru-draft.part-{part:02d}.md"
+              for part in range(1, 6)
+          ]
+          if any(not part.is_file() for part in parts):
+              raise SystemExit("Missing one or more of the 5 original draft parts")
+          texts = [part.read_text(encoding="utf-8") for part in parts]
+          if any(not s.strip() for s in texts):
+              raise SystemExit("Empty original draft part")
+          candidate = "\n".join(texts)
+          if len(candidate) < 50000:
+              raise SystemExit("Recovered draft is unexpectedly short")
+          if "Глава 5" not in candidate[:100] or "Примечания" not in candidate[-2500:]:
+              raise SystemExit("Recovered draft boundaries do not match intake")
+          stage = book / "migration-staging/007-chapter-005-UNREVIEWED.md"
+          if stage.exists() and stage.read_text(encoding="utf-8") != candidate:
+              raise SystemExit("Existing staged draft differs; never overwrite")
+          stage.parent.mkdir(exist_ok=True)
+          if not stage.exists():
+              with stage.open("x", encoding="utf-8") as out:
+                  out.write(candidate)
+          if stage.read_text(encoding="utf-8") != candidate:
+              raise SystemExit("Staged draft readback mismatch")
+          record = {
+              "book": "the-claiming-moon", "unit_id": "chapter-000007",
+              "chapter": 5, "status": "UNREVIEWED_INTAKE_CANDIDATE",
+              "original_source_sha256": expected,
+              "canonical_extracted_sha256": declared["sha256"],
+              "draft_part_paths": [p.relative_to(book).as_posix() for p in parts],
+              "draft_part_sha256": [hashlib.sha256(p.read_bytes()).hexdigest() for p in parts],
+              "concatenation": "whole UTF-8 strings, single LF between adjacent parts",
+              "staged_path": stage.relative_to(book).as_posix(),
+              "staged_sha256": hashlib.sha256(stage.read_bytes()).hexdigest(),
+              "quality_claim": "No independent source-comparison or Reviewer PASS",
+          }
+          out = Path("docs/migrations/claiming-moon-chapter-005-restoration.json")
+          out.parent.mkdir(parents=True, exist_ok=True)
+          out.write_text(json.dumps(record, ensure_ascii=False, indent=2) + "\n",
+                         encoding="utf-8")
+          print("Staged chapter 5 as UNREVIEWED, sha256=", record["staged_sha256"])
+          PY
+          python scripts/book.py validate the-claiming-moon
+          python scripts/corpus.py verify the-claiming-moon
+          test -z "$(git diff --name-only HEAD -- books/the-claiming-moon/incoming books/the-claiming-moon/source books/the-claiming-moon/extracted books/the-claiming-moon/progress.json books/the-claiming-moon/review-ledger.json)"
+      - name: Commit only new staging and provenance
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- books/the-claiming-moon/migration-staging/007-chapter-005-UNREVIEWED.md docs/migrations/claiming-moon-chapter-005-restoration.json
+          git rm -- .github/workflows/one-time-claiming-moon-stage-05.yml
+          git diff --cached --name-status
+          git commit -m 'migration: restore full chapter 5 draft as UNREVIEWED candidate'
+          git push origin HEAD:migration/claiming-moon-chapter5-restore-20261022
