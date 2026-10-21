@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "the-claiming-moon",
-  "next_sequence": 3,
+  "next_sequence": 4,
   "records": [
     {
       "record_id": "4391ed51978041c5a7239961b1ac727c",
@@ -32,6 +32,22 @@
       "reviewed_at": "2026-10-21T22:27:03Z",
       "state_revision": "2262fec63a598571b4f8ad80cadfb659d94dc75789958a885668cf1b8c250cba",
       "review_commit": "48e0bfcd4f52cfc78306225c522d33ba37e8f484",
+      "correction_round": 0,
+      "supersedes_record_id": null
+    },
+    {
+      "record_id": "14293f08cc8c41a782d9e8c180150d2c",
+      "sequence": 3,
+      "unit_id": "chapter-000001",
+      "outcome": "PASS",
+      "source_sha256": "23c05b17845c0a7f788118df8b6c624f9f8e28b11a055aea7ed45d23c3bf2c0b",
+      "translation_sha256": "fca11c836f06199b3ac1ef5382c33690c2ffd8359ff6ba8ee3ab7b851ce477f5",
+      "workflow_revision": "5e0731da8b7ca81ada5316ed536a8a954008b789",
+      "review_contract_revision": "docs/TRANSLATION.md@5e0731da8b7ca81ada5316ed536a8a954008b789",
+      "reviewer_session_id": "claiming-moon-preface-bounded-reviewer-20261022",
+      "reviewed_at": "2026-10-21T22:31:41Z",
+      "state_revision": "35b19be45fd6adb9f5595fa57993252175d6628bba898a5c565276ee9d7a3696",
+      "review_commit": "3c5b06646cd72e1b9c120f6bd409daf1a064513f",
       "correction_round": 0,
       "supersedes_record_id": null
     }
