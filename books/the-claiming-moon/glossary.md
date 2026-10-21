@@ -22,3 +22,7 @@ Source-grounded terminology for *The Claiming Moon* (English → Russian). Entri
 | scent blockers | средства, блокирующие запах | Omegaverse | From story summary; inflect naturally |
 | knot / knotted (mating) | узел / сцепление узлом | Omegaverse | Physiological mating term, not a rope knot; do not turn subtext into explanation |
 | Boypussy | бойпусси | Archive tag | Retain explicit original metadata register; both occurrences in original preface |
+| Clearwater Rivers | реки Клируотер | Geography | Chapter 1 source and translation; plural rivers |
+| Jee | Джи | Character | Chapter 17 source and translation |
+| Kihyun | Кихён | Character | Chapters 7 and 17 source and translation |
+| Hefter pack | стая Хефтера | Organization | Preferred grammatical genitive when denoting a pack belonging to Hefter; chapter 7 also contains «стая Хефтер» and requires source-comparison correction |
