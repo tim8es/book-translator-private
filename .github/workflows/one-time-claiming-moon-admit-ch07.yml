@@ -1,0 +1,148 @@
+name: One-time Claiming Moon chapter 7 indexed admission
+on:
+  push:
+    branches:
+      - migration/claiming-moon-accept-ch07-indexed-20261022
+    paths:
+      - .github/workflows/one-time-claiming-moon-admit-ch07.yml
+permissions:
+  contents: write
+jobs:
+  admit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Reconstruct chapter 7 from five source-bound indexed files
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          python scripts/book.py validate the-claiming-moon
+          python scripts/corpus.py verify the-claiming-moon
+          python - <<'PY'
+          import hashlib,json,zipfile,xml.etree.ElementTree as ET
+          from pathlib import Path,PurePosixPath
+
+          book=Path("books/the-claiming-moon")
+          source_hash="611d1717e7997955619576a667073b79b815bf7606c6ea4513c823b01c53c9bb"
+          original=book/"source/The_Claiming_Moon.epub"
+          if hashlib.sha256(original.read_bytes()).hexdigest()!=source_hash:
+              raise SystemExit("Source EPUB identity mismatch")
+          progress=json.loads((book/"progress.json").read_text(encoding="utf-8"))
+          entry=progress["chapters"][8]
+          if (entry["unit_id"],entry["number"],entry["status"])!=("chapter-000009",9,"extracted") or "translation_acceptance" in entry:
+              raise SystemExit("Unit 9 already accepted or malformed")
+          if (book/entry["translation_path"]).exists():
+              raise SystemExit("Will not overwrite translated unit 9")
+          ref=json.loads(Path("docs/migrations/the-claiming-moon-source-reference.json").read_text(encoding="utf-8"))
+          source=ref["spine"][8]
+          if source["basename"]!="The_Claiming_Moon_split_008.xhtml" or (source["blocks"],source["nonempty_blocks"])!=(412,406):
+              raise SystemExit("Source chapter reference mismatch")
+          with zipfile.ZipFile(original) as archive:
+              names=[p for p in archive.namelist() if PurePosixPath(p).name==source["basename"]]
+              if len(names)!=1:
+                  raise SystemExit("Source XHTML ambiguous")
+              xml=archive.read(names[0])
+              if hashlib.sha256(xml).hexdigest()!=source["sha256"]:
+                  raise SystemExit("Source XHTML hash mismatch")
+              root=ET.fromstring(xml)
+              src=[node for node in root.iter() if node.tag.split("}")[-1] in {"h1","h2","h3","h4","p"} and "".join(node.itertext()).strip()]
+              if len(src)!=406:
+                  raise SystemExit("Source XHTML nonempty coverage changed")
+          combined={}
+          inputs=[]
+          for part in range(1,6):
+              path=book/f"incoming/chapter-007-ru-draft.part-{part:02d}.json"
+              raw=path.read_bytes()
+              obj=json.loads(raw.decode("utf-8"))
+              if obj.get("chapter")!=7 or obj.get("part")!=part or obj.get("source_path")!=source["basename"]:
+                  raise SystemExit("Wrong source identity or fragment order")
+              mapping=obj.get("draft")
+              if not isinstance(mapping,dict) or set(mapping)!={str(i) for i in range(obj["start_index"],obj["end_index"]+1)}:
+                  raise SystemExit("Fragment has incomplete declared source-index range")
+              for key,value in mapping.items():
+                  idx=int(key)
+                  if idx in combined or not isinstance(value,str) or not value.strip():
+                      raise SystemExit(f"Duplicate or empty block {idx}")
+                  combined[idx]=value.strip()
+              inputs.append({"path":path.relative_to(book).as_posix(),"sha256":hashlib.sha256(raw).hexdigest()})
+          if set(combined)!=set(range(406)):
+              raise SystemExit("Full chapter 7 coverage not established")
+          stage=book/"migration-staging/009-chapter-007-UNREVIEWED.md"
+          ordered="\n\n".join(f"<!-- source-block {i} -->\n{combined[i]}" for i in range(406))+"\n"
+          if stage.exists() and stage.read_text(encoding="utf-8")!=ordered:
+              raise SystemExit("Existing stage differs; never overwrite")
+          if not stage.exists():
+              with stage.open("x",encoding="utf-8") as stream:stream.write(ordered)
+          clean="\n\n".join(combined[i] for i in range(406)).rstrip()+"\n"
+          report={"chapter":7,"unit":9,"source_sha256":source_hash,"source_xhtml_sha256":source["sha256"],
+                  "source_nonempty_blocks":406,"source_total_blocks":412,"inputs":inputs,
+                  "stage_path":stage.relative_to(book).as_posix(),
+                  "stage_sha256":hashlib.sha256(stage.read_bytes()).hexdigest(),
+                  "target_path":entry["translation_path"],
+                  "translation_sha256":hashlib.sha256(clean.encode("utf-8")).hexdigest(),
+                  "review_pass":False}
+          Path(".github/claiming-moon-ch07-plan.json").write_text(json.dumps(report,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+          print("PASS: 406/406 source-matched indexed draft blocks; independent review still outstanding")
+          PY
+      - name: Real Translator claim and hash-bound acceptance
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          python - <<'PY'
+          import json,re,hashlib,subprocess
+          from pathlib import Path
+          book=Path("books/the-claiming-moon")
+          plan=json.loads(Path(".github/claiming-moon-ch07-plan.json").read_text(encoding="utf-8"))
+          session="claiming-moon-complete-indexed-translator-9-20261022"
+          def cli(*args):subprocess.run(["python","scripts/book.py",*map(str,args)],check=True)
+          cli("claim","the-claiming-moon",9,"--role","translator","--session-id",session)
+          content=(book/plan["stage_path"]).read_text(encoding="utf-8")
+          markers=list(re.finditer(r"<!--\s*source-block\s+(\d+)\s*-->",content))
+          if [int(m.group(1)) for m in markers]!=list(range(406)):raise SystemExit("Staging changed since audit")
+          texts=[content[m.end():markers[i+1].start() if i+1<len(markers) else len(content)].strip() for i,m in enumerate(markers)]
+          cleaned="\n\n".join(texts).rstrip()+"\n"
+          target=book/plan["target_path"]
+          with target.open("x",encoding="utf-8") as stream:stream.write(cleaned)
+          if hashlib.sha256(target.read_bytes()).hexdigest()!=plan["translation_sha256"]:raise SystemExit("Translation digest mismatch")
+          cli("accept-translation","the-claiming-moon",9,"--session-id",session,"--json")
+          cli("release","the-claiming-moon",9,"--session-id",session)
+          PY
+      - name: Reverify book corpus and previously reviewed afterword
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          python scripts/book.py validate the-claiming-moon
+          python scripts/corpus.py verify the-claiming-moon
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          book=Path("books/the-claiming-moon")
+          p=json.loads((book/"progress.json").read_text(encoding="utf-8"))
+          ledger=json.loads((book/"review-ledger.json").read_text(encoding="utf-8"))
+          if p["chapters"][8]["status"]!="translated" or not p["chapters"][8].get("translation_acceptance"):
+              raise SystemExit("Source-bound chapter 7 acceptance missing")
+          if p["chapters"][47]["status"]!="reviewed" or len(ledger["records"])!=1:
+              raise SystemExit("Review evidence regression")
+          print("Chapter 7 accepted as translated only; independent review still required")
+          PY
+          test -z "$(git diff --name-only HEAD -- books/the-claiming-moon/incoming books/the-claiming-moon/source books/the-claiming-moon/extracted books/the-claiming-moon/review-ledger.json)"
+      - name: Commit immutable output without leaving one-time workflow
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          cp .github/claiming-moon-ch07-plan.json docs/migrations/claiming-moon-accepted-indexed-ch07.json
+          git add -- books/the-claiming-moon/migration-staging/009-chapter-007-UNREVIEWED.md \
+            books/the-claiming-moon/translated books/the-claiming-moon/progress.json \
+            books/the-claiming-moon/.workflow docs/migrations/claiming-moon-accepted-indexed-ch07.json
+          git rm -- .github/workflows/one-time-claiming-moon-admit-ch07.yml
+          git diff --cached --name-status
+          git commit -m 'migration: accept chapter 7 indexed draft as translated, review pending'
+          git push origin HEAD:migration/claiming-moon-accept-ch07-indexed-20261022
