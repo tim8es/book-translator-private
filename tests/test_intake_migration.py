@@ -141,6 +141,70 @@ class IntakeMigrationTests(unittest.TestCase):
         self.assertFalse((self.book / "migration-staging").exists())
 
 
+
+    def test_source_dual_index_schemes(self):
+        unit = {"all_blocks": 3, "nonempty_blocks": 2}
+        self.assertEqual(migration.resolve_block_scheme({0, 1, 2}, unit), "all_xhtml_blocks")
+        self.assertEqual(migration.resolve_block_scheme({0, 1}, unit), "nonempty_xhtml_blocks")
+        self.assertIsNone(migration.resolve_block_scheme({1, 2}, unit))
+        self.assertIsNone(migration.resolve_block_scheme({0}, unit))
+
+    def test_verified_epub_with_empty_paragraph_tracks_both_counts(self):
+        source = self.source()
+        with zipfile.ZipFile(source, "a") as archive:
+            archive.writestr("split_002.xhtml", "<html><body><h1>Chapter 1</h1><p></p><p>Content</p></body></html>")
+        (self.book / "INTAKE.md").write_text(
+            "Original EPUB SHA-256: " + hashlib.sha256(source.read_bytes()).hexdigest(),
+            encoding="utf-8")
+        (self.book / "incoming/chapter-001-ru-draft.part-01.json").write_text(
+            json.dumps({"draft": {"0": "Глава", "1": "Текст"}, "source_path": "split_002.xhtml"}),
+            encoding="utf-8")
+        report = migration.audit(self.book, source, offset=1)
+        unit = report["chapters"][0]
+        self.assertEqual(unit["status"], "candidate_unreviewed")
+        self.assertEqual(unit["index_scheme"], "nonempty_xhtml_blocks")
+        self.assertEqual(unit["source_blocks"], 2)
+        self.assertEqual(unit["all_source_blocks"], 3)
+        self.assertEqual(unit["nonempty_source_blocks"], 2)
+
+    def test_metadata_source_reference_is_read_only_and_not_source_verification(self):
+        original = self.source()
+        (self.book / "incoming/chapter-001-ru-draft.part-01.json").write_text(
+            json.dumps({"draft": {"0": "Заголовок", "1": "Перевод"},
+                        "source_path": "split_002.xhtml"}), encoding="utf-8")
+        digest = hashlib.sha256(original.read_bytes()).hexdigest()
+        reference = self.book / "source_reference.json"
+        reference.write_text(json.dumps({
+            "schema_version": 1, "book_slug": "test-book",
+            "source_sha256": digest, "source_units": 2,
+            "spine": [
+                {"basename": "split_001.xhtml", "sha256": "a" * 64,
+                 "blocks": 2, "nonempty_blocks": 2},
+                {"basename": "split_002.xhtml", "sha256": "b" * 64,
+                 "blocks": 3, "nonempty_blocks": 2},
+            ],
+        }), encoding="utf-8")
+        report = migration.audit(self.book, offset=1, source_reference=reference)
+        self.assertTrue(report["source_map_loaded"])
+        self.assertFalse(report["source_verified"])
+        self.assertEqual(report["ready_candidates"], 0)
+        self.assertEqual(report["reference_candidates"], 1)
+        self.assertEqual(report["chapters"][0]["status"], "reference_candidate_unreviewed")
+        with self.assertRaises(migration.MigrationError):
+            migration.stage(self.book, report, offset=1)
+
+    def test_metadata_source_reference_rejects_wrong_identity(self):
+        self.source()
+        reference = self.book / "bad.json"
+        reference.write_text(json.dumps({
+            "schema_version": 1, "book_slug": "test-book",
+            "source_sha256": "0" * 64, "source_units": 1,
+            "spine": [{"basename": "one.xhtml", "sha256": "a" * 64,
+                       "blocks": 1, "nonempty_blocks": 1}]
+        }), encoding="utf-8")
+        with self.assertRaises(migration.MigrationError):
+            migration.audit(self.book, offset=1, source_reference=reference)
+
     def test_missing_chapter_cannot_be_promoted(self):
         source = self.source()
         report = migration.audit(self.book, source, offset=1)

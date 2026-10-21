@@ -62,14 +62,30 @@ def spine_entries(epub: Path) -> list[dict]:
                 entry = (PurePosixPath(opf_name).parent /
                          unquote(item.get("href", "").split("#")[0])).as_posix()
                 document = ET.fromstring(archive.read(entry))
-                blocks = sum(n.tag.split("}")[-1] in {"h1", "h2", "h3", "h4", "p"}
-                             for n in document.iter())
-                entries.append({"basename": PurePosixPath(entry).name, "blocks": blocks})
+                block_elements = [n for n in document.iter()
+                                  if n.tag.split("}")[-1] in {"h1", "h2", "h3", "h4", "p"}]
+                all_blocks = len(block_elements)
+                nonempty_blocks = sum(bool("".join(n.itertext()).strip()) for n in block_elements)
+                entries.append({"basename": PurePosixPath(entry).name, "blocks": all_blocks,
+                                "all_blocks": all_blocks, "nonempty_blocks": nonempty_blocks})
             if not entries:
                 raise MigrationError("No readable EPUB spine units")
             return entries
     except (OSError, KeyError, ET.ParseError, zipfile.BadZipFile) as exc:
         raise MigrationError("Unusable source EPUB: " + str(exc)) from exc
+
+
+def resolve_block_scheme(indexes: set[int], spine_unit: dict):
+    """Identify source-block numbering; do not silently mix empty and nonempty schemes."""
+    if not indexes:
+        return None
+    all_count = spine_unit["all_blocks"]
+    nonempty_count = spine_unit["nonempty_blocks"]
+    if indexes == set(range(all_count)):
+        return "all_xhtml_blocks"
+    if indexes == set(range(nonempty_count)):
+        return "nonempty_xhtml_blocks"
+    return None
 
 
 def merge_indexed(parts: list[Path]):
@@ -116,7 +132,41 @@ def merge_markdown(parts: list[Path]):
     return merged, errors
 
 
-def audit(book: Path, source: Path | None = None, offset: int | None = None) -> dict:
+def load_source_reference(path: Path, book: Path, expected: str | None):
+    """Read metadata-only source index, never authorizing canonical staging."""
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, UnicodeError, ValueError) as exc:
+        raise MigrationError("Unreadable source reference: " + str(exc)) from exc
+    if not expected or payload.get("schema_version") != 1 or payload.get("book_slug") != book.name:
+        raise MigrationError("Reference schema/book identity mismatch")
+    if payload.get("source_sha256") != expected:
+        raise MigrationError("Reference original EPUB digest mismatch")
+    spine = payload.get("spine")
+    if not isinstance(spine, list) or not spine or payload.get("source_units") != len(spine):
+        raise MigrationError("Reference spine is invalid")
+    seen = set()
+    result = []
+    for i, obj in enumerate(spine):
+        if not isinstance(obj, dict):
+            raise MigrationError("Invalid source reference unit " + str(i))
+        basename = obj.get("basename")
+        count = obj.get("blocks")
+        nonempty = obj.get("nonempty_blocks")
+        digest = obj.get("sha256")
+        if (not isinstance(basename, str) or not basename or "/" in basename or
+                basename in seen or not isinstance(count, int) or count < 1 or
+                not isinstance(nonempty, int) or not (0 <= nonempty <= count) or
+                not isinstance(digest, str) or not re.fullmatch(r"[0-9a-f]{64}", digest)):
+            raise MigrationError("Invalid source reference unit " + str(i))
+        seen.add(basename)
+        result.append({"basename": basename, "blocks": count, "all_blocks": count,
+                       "nonempty_blocks": nonempty, "sha256": digest})
+    return result
+
+
+def audit(book: Path, source: Path | None = None, offset: int | None = None,
+          source_reference: Path | None = None) -> dict:
     intake = book / "incoming"
     if not intake.is_dir():
         raise MigrationError("Missing incoming directory")
@@ -126,7 +176,15 @@ def audit(book: Path, source: Path | None = None, offset: int | None = None) -> 
              [p for p in CANONICAL if not (book / p).is_file()],
              "chapters": [], "ready_candidates": 0, "reviewed_promotions": 0}
     spine = None
-    if source is None:
+    state["source_map_loaded"] = False
+    if source is not None and source_reference is not None:
+        raise MigrationError("Choose either a trusted EPUB or a metadata reference, not both")
+    if source is None and source_reference is not None:
+        spine = load_source_reference(source_reference, book, expected)
+        state["source_map_loaded"] = True
+        state["source_units"] = len(spine)
+        state["blockers"].append("Reference-only audit: original EPUB not provided for canonical preflight")
+    elif source is None:
         state["blockers"].append("Trusted original EPUB is not available")
     elif not source.is_file() or not expected:
         state["blockers"].append("Original source file or trusted digest missing")
@@ -168,31 +226,51 @@ def audit(book: Path, source: Path | None = None, offset: int | None = None) -> 
             problems.append("Multiple full draft files")
         unit = None
         blocks = None
+        all_blocks = None
+        nonempty_blocks = None
+        block_scheme = None
         if spine is not None and offset is not None:
             pos = number - 1 + offset
             if pos < 0 or pos >= len(spine):
                 problems.append("Chapter outside source spine")
             else:
                 unit = pos + 1
-                blocks = spine[pos]["blocks"]
+                all_blocks = spine[pos]["all_blocks"]
+                nonempty_blocks = spine[pos]["nonempty_blocks"]
                 if sources and any(s != spine[pos]["basename"] for s in sources):
                     problems.append("Draft source path differs from verified EPUB")
-                if method == "indexed_parts" and set(indexed) != set(range(blocks)):
-                    problems.append(f"Indexed coverage {len(indexed)}/{blocks}")
-                if method == "markdown":
+                if method == "indexed_parts":
+                    block_scheme = resolve_block_scheme(set(indexed), spine[pos])
+                    if block_scheme is None:
+                        problems.append(f"Indexed coverage {len(indexed)}/{all_blocks} all blocks "
+                                        f"or {nonempty_blocks} nonempty blocks")
+                elif method == "markdown":
                     markers = [int(x) for x in INDEX.findall((book / candidate).read_text(encoding="utf-8"))]
-                    if markers and (len(markers) != len(set(markers)) or set(markers) != set(range(blocks))):
-                        problems.append(f"Markdown index coverage mismatch: {len(markers)}/{blocks}")
+                    if markers:
+                        block_scheme = resolve_block_scheme(set(markers), spine[pos])
+                        if len(markers) != len(set(markers)) or block_scheme is None:
+                            problems.append(f"Markdown indexed coverage mismatch: {len(markers)}/"
+                                            f"{all_blocks} all or {nonempty_blocks} nonempty")
+                blocks = (all_blocks if block_scheme == "all_xhtml_blocks"
+                          else nonempty_blocks if block_scheme == "nonempty_xhtml_blocks"
+                          else all_blocks)
         if not candidate:
             problems.append("No unambiguous complete candidate")
         status = ("source_unverified" if spine is None else
                   "needs_chapter_offset" if offset is None else
-                  "needs_reconciliation" if problems else "candidate_unreviewed")
+                  "needs_reconciliation" if problems else
+                  "reference_candidate_unreviewed" if state["source_map_loaded"] else
+                  "candidate_unreviewed")
         if status == "candidate_unreviewed":
             state["ready_candidates"] += 1
+        elif status == "reference_candidate_unreviewed":
+            state["reference_candidates"] = state.get("reference_candidates", 0) + 1
         state["chapters"].append({"chapter": number, "unit_number": unit, "status": status,
                                   "candidate": candidate, "method": method, "source_blocks": blocks,
                                   "indexed_blocks": len(indexed),
+                                  "all_source_blocks": all_blocks,
+                                  "nonempty_source_blocks": nonempty_blocks,
+                                  "index_scheme": block_scheme,
                                   "indexed_min": min(indexed) if indexed else None,
                                   "indexed_max": max(indexed) if indexed else None,
                                   "files": len(paths), "issues": problems})
@@ -214,9 +292,13 @@ def audit(book: Path, source: Path | None = None, offset: int | None = None) -> 
                 else:
                     pos = matches[0]
                     afterword["unit_number"] = pos + 1
-                    if set(map(int, block_map)) != set(range(spine[pos]["blocks"])):
+                    afterword["index_scheme"] = resolve_block_scheme(
+                        {int(i) for i in block_map}, spine[pos])
+                    if afterword["index_scheme"] is None:
                         afterword["issues"].append("Afterword coverage mismatch")
-                    afterword["status"] = "needs_reconciliation" if afterword["issues"] else "candidate_unreviewed"
+                    afterword["status"] = ("needs_reconciliation" if afterword["issues"] else
+                                           "reference_candidate_unreviewed" if state["source_map_loaded"] else
+                                           "candidate_unreviewed")
             state["afterword"] = afterword
         except (OSError, UnicodeError, ValueError, TypeError) as exc:
             state["afterword"] = {"status": "needs_reconciliation", "issues": [str(exc)]}
@@ -287,7 +369,10 @@ def main(argv=None):
     parser = argparse.ArgumentParser()
     parser.add_argument("slug")
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[1])
-    parser.add_argument("--source", type=Path)
+    sources = parser.add_mutually_exclusive_group()
+    sources.add_argument("--source", type=Path)
+    sources.add_argument("--source-reference", type=Path,
+                         help="Metadata-only source index; never authorizes staging")
     parser.add_argument("--chapter-offset", type=int)
     parser.add_argument("--stage", action="store_true")
     args = parser.parse_args(argv)
@@ -297,7 +382,8 @@ def main(argv=None):
         if args.chapter_offset is not None and args.chapter_offset < 0:
             raise MigrationError("Negative chapter offset")
         book = args.root / "books" / args.slug
-        report = audit(book, args.source, args.chapter_offset)
+        report = audit(book, args.source, args.chapter_offset,
+                       source_reference=args.source_reference)
         if args.stage:
             if args.chapter_offset is None:
                 raise MigrationError("Staging requires explicit chapter offset")
