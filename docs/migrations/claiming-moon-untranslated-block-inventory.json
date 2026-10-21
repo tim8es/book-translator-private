@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "book_slug": "the-claiming-moon",
+  "source_revision": "source-000001",
+  "original_epub_sha256": "611d1717e7997955619576a667073b79b815bf7606c6ea4513c823b01c53c9bb",
+  "pinned_workflow_revision": "5e0731da8b7ca81ada5316ed536a8a954008b789",
+  "baseline_main_commit": "7f487c332d2ff785fed41f58588d7aeea76de903",
+  "source_spine_and_block_hashes": "reverified from preserved original EPUB and matched 48 reference entries",
+  "corpus_validation": "passed",
+  "lifecycle_counts": {
+    "extracted": 5,
+    "translated": 42,
+    "reviewed": 1
+  },
+  "remaining_chapters": [
+    {
+      "chapter": 15,
+      "unit_number": 17,
+      "unit_id": "chapter-000017",
+      "original_xhtml_sha256": "8f0c380ad84580e26541b64f5abc8653f0dac9abb117166d4a7293c4f1f64edd",
+      "original_nonempty_blocks": 363,
+      "preserved_indexed_draft_blocks": 96,
+      "missing_start_index": 96,
+      "missing_end_index": 362,
+      "missing_count": 267,
+      "incoming_artifacts": [
+        "incoming/chapter-015-ru-PARTIAL-indexed-000-095.json"
+      ],
+      "canonical_translation_status": "extracted",
+      "can_accept_translation": false
+    },
+    {
+      "chapter": 19,
+      "unit_number": 21,
+      "unit_id": "chapter-000021",
+      "original_xhtml_sha256": "8fdcceaa2cb800fe01b151e8fd818e6a44d634e44db71d6989d948b02cb5385c",
+      "original_nonempty_blocks": 324,
+      "preserved_indexed_draft_blocks": 0,
+      "missing_start_index": 0,
+      "missing_end_index": 323,
+      "missing_count": 324,
+      "incoming_artifacts": [],
+      "canonical_translation_status": "extracted",
+      "can_accept_translation": false
+    },
+    {
+      "chapter": 26,
+      "unit_number": 28,
+      "unit_id": "chapter-000028",
+      "original_xhtml_sha256": "6c4e668c62511bb1732367f34da9a6f515fe19e7f35024108e80ff4320bf7cce",
+      "original_nonempty_blocks": 570,
+      "preserved_indexed_draft_blocks": 161,
+      "missing_start_index": 161,
+      "missing_end_index": 569,
+      "missing_count": 409,
+      "incoming_artifacts": [
+        "incoming/chapter-026-ru-draft.part-01.md",
+        "incoming/chapter-026-ru-draft.part-02a.md",
+        "incoming/chapter-026-ru-draft.part-02b.md",
+        "incoming/chapter-026-ru-draft.part-03.md",
+        "incoming/chapter-026-ru-draft.part-04.md"
+      ],
+      "canonical_translation_status": "extracted",
+      "can_accept_translation": false
+    },
+    {
+      "chapter": 27,
+      "unit_number": 29,
+      "unit_id": "chapter-000029",
+      "original_xhtml_sha256": "e678b2a98e5c6b1bb4e97e34e1cced0c4485224f9f03c1ce0f0216838772c1ab",
+      "original_nonempty_blocks": 341,
+      "preserved_indexed_draft_blocks": 91,
+      "missing_start_index": 91,
+      "missing_end_index": 340,
+      "missing_count": 250,
+      "incoming_artifacts": [
+        "incoming/chapter-027-ru-draft.part-01.md",
+        "incoming/chapter-027-ru-draft.part-02.md"
+      ],
+      "canonical_translation_status": "extracted",
+      "can_accept_translation": false
+    },
+    {
+      "chapter": 29,
+      "unit_number": 31,
+      "unit_id": "chapter-000031",
+      "original_xhtml_sha256": "74cad3002e3fd00cd182a8f702ec6da7009d94d0b00f288bb9eebd29824ed6ba",
+      "original_nonempty_blocks": 456,
+      "preserved_indexed_draft_blocks": 291,
+      "missing_start_index": 291,
+      "missing_end_index": 455,
+      "missing_count": 165,
+      "incoming_artifacts": [
+        "incoming/chapter-029-ru-draft.part-01.md",
+        "incoming/chapter-029-ru-draft.part-02.md",
+        "incoming/chapter-029-ru-draft.part-03.md",
+        "incoming/chapter-029-ru-draft.part-04.md",
+        "incoming/chapter-029-ru-draft.part-05.md",
+        "incoming/chapter-029-ru-draft.part-06.md",
+        "incoming/chapter-029-ru-draft.part-07.md",
+        "incoming/chapter-029-ru-draft.part-08.md",
+        "incoming/chapter-029-ru-draft.part-09a.md"
+      ],
+      "canonical_translation_status": "extracted",
+      "can_accept_translation": false
+    }
+  ],
+  "total_missing_indexed_blocks": 1415,
+  "remaining_independent_reviewer_pass_units": 47,
+  "notes": [
+    "Only repo-persisted complete nonempty indexed draft blocks count as preserved.",
+    "Earlier chat-session attachments for chapters 15 and 27 were not present in the durable repository and are not counted as recovered.",
+    "Index coverage establishes structural staging only, not literary fidelity or independent PASS.",
+    "Do not machine-accept a chapter until every original block is represented and the full translation has been inspected.",
+    "No source, translation, progress or review state was mutated by this audit."
+  ]
+}
