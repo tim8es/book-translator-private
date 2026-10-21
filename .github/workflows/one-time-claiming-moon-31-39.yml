@@ -1,0 +1,183 @@
+name: One-time Claiming Moon chapters 31-39 canonical admission
+on:
+  push:
+    branches:
+      - migration/claiming-moon-accept-omitted-headings-31-39-20261022
+    paths:
+      - .github/workflows/one-time-claiming-moon-31-39.yml
+permissions:
+  contents: write
+jobs:
+  admit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Validate exact EPUB and staged all-minus-one heading indexing
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          python scripts/book.py validate the-claiming-moon
+          python scripts/corpus.py verify the-claiming-moon
+          python - <<'PY'
+          import hashlib
+          import json
+          import re
+          import xml.etree.ElementTree as ET
+          import zipfile
+          from pathlib import Path,PurePosixPath
+          book=Path("books/the-claiming-moon")
+          epub=book/"source/The_Claiming_Moon.epub"
+          expected="611d1717e7997955619576a667073b79b815bf7606c6ea4513c823b01c53c9bb"
+          if hashlib.sha256(epub.read_bytes()).hexdigest()!=expected:
+              raise SystemExit("Source identity mismatch")
+          reference=json.loads(Path("docs/migrations/the-claiming-moon-source-reference.json").read_text(encoding="utf-8"))
+          progress=json.loads((book/"progress.json").read_text(encoding="utf-8"))
+          if reference["source_sha256"]!=expected or len(reference["spine"])!=48:
+              raise SystemExit("Incorrect source map")
+          # All nine Russian titles correspond to exact first XHTML headings from
+          # the verified original; the historical source-indexed drafts omit that heading.
+          titles={
+              31:"Опустошённый",
+              32:"То, что следует за нами",
+              33:"Ночь перед войной",
+              34:"Чудо, написанное кровью",
+              35:"Чудовище ради своей пары",
+              36:"Позволь мне узнать тебя целиком",
+              37:"Кто-нибудь, скажите альфе",
+              38:"Один волчонок — сотня благословений",
+              39:"Жизнь, которую нам удалось сохранить",
+          }
+          prepared=[]
+          with zipfile.ZipFile(epub) as archive:
+              for chapter,title in titles.items():
+                  unit=chapter+2
+                  entry=progress["chapters"][unit-1]
+                  if entry["number"]!=unit or entry["unit_id"]!=f"chapter-{unit:06d}":
+                      raise SystemExit(f"Wrong canonical chapter identity {chapter}")
+                  if entry["status"]!="extracted" or "translation_acceptance" in entry:
+                      raise SystemExit(f"Already accepted or invalid unit {unit}")
+                  target=book/entry["translation_path"]
+                  if target.exists():
+                      raise SystemExit(f"Refusing to overwrite {target}")
+                  spine=reference["spine"][unit-1]
+                  names=[n for n in archive.namelist() if PurePosixPath(n).name==spine["basename"]]
+                  if len(names)!=1:
+                      raise SystemExit("Source XHTML path ambiguous")
+                  original=archive.read(names[0])
+                  if hashlib.sha256(original).hexdigest()!=spine["sha256"]:
+                      raise SystemExit("Source XHTML SHA mismatch")
+                  xml=ET.fromstring(original)
+                  nodes=[e for e in xml.iter() if e.tag.split("}")[-1] in {"h1","h2","h3","h4","p"}]
+                  if len(nodes)!=spine["blocks"]:
+                      raise SystemExit(f"Invalid source block count for {chapter}")
+                  if sum(bool("".join(n.itertext()).strip()) for n in nodes)!=spine["nonempty_blocks"]:
+                      raise SystemExit(f"Nonempty source block count drift for {chapter}")
+                  if nodes[0].tag.split("}")[-1]!="h2" or f"Chapter {chapter}" not in "".join(nodes[0].itertext()):
+                      raise SystemExit(f"First excluded XHTML element is not verified chapter heading {chapter}")
+                  staged=book/f"migration-staging/{unit:03d}-chapter-{chapter:03d}-UNREVIEWED.md"
+                  raw=staged.read_text(encoding="utf-8")
+                  markers=list(re.finditer(r"<!--\s*p:(\d+)\s*-->",raw))
+                  index=[int(m.group(1)) for m in markers]
+                  if index!=list(range(len(nodes)-1)):
+                      raise SystemExit(f"Staged source indexes mismatched: chapter {chapter}: "
+                                       f"got {len(index)}, required {len(nodes)-1}")
+                  parts=[raw[m.end():markers[i+1].start() if i+1<len(markers) else len(raw)].strip()
+                         for i,m in enumerate(markers)]
+                  for i,part in enumerate(parts):
+                      if bool("".join(nodes[i+1].itertext()).strip())!=bool(part):
+                          raise SystemExit(f"Unexpected omission or addition in {chapter} source block {i+1}")
+                  cleaned=f"## Глава {chapter}. {title}\n\n"+"\n\n".join(parts).rstrip()+"\n"
+                  prepared.append({
+                      "chapter":chapter,"unit":unit,"target":str(target),
+                      "translated_heading":title,
+                      "omitted_source_heading": "".join(nodes[0].itertext()).strip(),
+                      "source_blocks_including_heading":len(nodes),
+                      "indexed_blocks_excluding_heading":len(parts),
+                      "stage_sha256":hashlib.sha256(staged.read_bytes()).hexdigest(),
+                      "translation_sha256":hashlib.sha256(cleaned.encode("utf-8")).hexdigest()
+                  })
+                  print(f"STRUCTURAL PASS: chapter {chapter}, XHTML blocks {len(nodes)}, "
+                        f"indexed {len(parts)}, draft SHA {prepared[-1]['stage_sha256']}")
+          Path(".github/claiming-moon-headings-admission.json").write_text(
+              json.dumps(prepared,indent=2,ensure_ascii=False)+"\n",encoding="utf-8")
+          PY
+      - name: Translator claim, persist verified indexed text and machine acceptance
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          python - <<'PY'
+          import hashlib
+          import json
+          import re
+          import subprocess
+          from pathlib import Path
+          book=Path("books/the-claiming-moon")
+          rows=json.loads(Path(".github/claiming-moon-headings-admission.json").read_text(encoding="utf-8"))
+          for row in rows:
+              unit,chapter=row["unit"],row["chapter"]
+              session=f"claiming-original-heading-translator-{unit}-20261022"
+              def bookcmd(*args):
+                  subprocess.run(["python","scripts/book.py",*map(str,args)],check=True)
+              bookcmd("claim","the-claiming-moon",unit,"--role","translator","--session-id",session)
+              staged=book/f"migration-staging/{unit:03d}-chapter-{chapter:03d}-UNREVIEWED.md"
+              raw=staged.read_text(encoding="utf-8")
+              matches=list(re.finditer(r"<!--\s*p:(\d+)\s*-->",raw))
+              parts=[raw[m.end():matches[i+1].start() if i+1<len(matches) else len(raw)].strip()
+                     for i,m in enumerate(matches)]
+              data=f"## Глава {chapter}. {row['translated_heading']}\n\n"+"\n\n".join(parts).rstrip()+"\n"
+              target=Path(row["target"])
+              with target.open("x",encoding="utf-8") as fh:
+                  fh.write(data)
+              if hashlib.sha256(target.read_bytes()).hexdigest()!=row["translation_sha256"]:
+                  raise SystemExit(f"Readback translated SHA mismatch {unit}")
+              bookcmd("accept-translation","the-claiming-moon",unit,"--session-id",session,"--json")
+              bookcmd("release","the-claiming-moon",unit,"--session-id",session)
+          PY
+      - name: Verify exact lifecycle and preserve source and existing drafts
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          python scripts/book.py validate the-claiming-moon
+          python scripts/corpus.py verify the-claiming-moon
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          b=Path("books/the-claiming-moon")
+          progress=json.loads((b/"progress.json").read_text(encoding="utf-8"))
+          ledger=json.loads((b/"review-ledger.json").read_text(encoding="utf-8"))
+          translated=[x["number"] for x in progress["chapters"] if x["status"]=="translated"]
+          previously=[13,22,23,24,25,26,27,30,32,43,44,45,46,47]
+          expect=sorted(previously+list(range(33,42)))
+          if translated!=expect:
+              raise SystemExit(f"Unexpected accepted units: {translated} vs {expect}")
+          if len([x for x in progress["chapters"] if x["status"]=="extracted"])!=24:
+              raise SystemExit("Unexpected extracted count")
+          if [x["number"] for x in progress["chapters"] if x["status"]=="reviewed"]!=[48]:
+              raise SystemExit("Previously accepted afterword changed")
+          if len(ledger["records"])!=1 or ledger["records"][0]["unit_id"]!="chapter-000048":
+              raise SystemExit("Unexpected review PASS changes")
+          for unit in expect:
+              x=progress["chapters"][unit-1]
+              if "translation_acceptance" not in x or not (b/x["translation_path"]).is_file():
+                  raise SystemExit(f"Missing canonical accepted translation {unit}")
+          print("PASS: 23 translated (not reviewed), 1 reviewed, 24 extracted")
+          PY
+          test -z "$(git diff --name-only HEAD -- books/the-claiming-moon/incoming books/the-claiming-moon/migration-staging books/the-claiming-moon/extracted books/the-claiming-moon/source books/the-claiming-moon/review-ledger.json)"
+      - name: Commit source-bound changes and delete temporary workflow
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          cp .github/claiming-moon-headings-admission.json docs/migrations/claiming-moon-accepted-translated-31-39.json
+          git add -- books/the-claiming-moon/translated books/the-claiming-moon/progress.json books/the-claiming-moon/.workflow docs/migrations/claiming-moon-accepted-translated-31-39.json
+          git rm -- .github/workflows/one-time-claiming-moon-31-39.yml
+          git diff --cached --name-status
+          git commit -m 'migration: accept source-indexed chapters 31–39 as translated'
+          git push origin HEAD:migration/claiming-moon-accept-omitted-headings-31-39-20261022
