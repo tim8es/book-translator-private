@@ -1,3 +1,11 @@
+> **АРХИВНАЯ ЗАПИСЬ — НЕ ТЕКУЩЕЕ СОСТОЯНИЕ (22 октября 2026 г.)**
+>
+> Дальнейший текст сохранён как исторический журнал прежних чат-сессий. Его утверждения о незаписанном исходном EPUB, отсутствии канонической инициализации, состоянии переводов и «следующей главе» **устарели**. Оригинальный EPUB сохранён и подтверждён по SHA-256, книга инициализирована.
+>
+> Актуальные источники истины: `metadata.json`, `progress.json`, `source-manifest.json`, `source-revisions.json`, `review-ledger.json` и реальные файлы `translated/`. Перед работой выполняйте `python scripts/book.py validate the-claiming-moon`, `python scripts/corpus.py verify the-claiming-moon` и `python scripts/book.py resume the-claiming-moon --json`. Не повышайте статусы и не восстанавливайте «точку продолжения» по историческим заметкам.
+
+---
+
 # The Claiming Moon — current translation checkpoint
 
 **UNREVIEWED INTAKE STATE.** This is NOT an initialized or sealed Book Translator workflow workspace. Do not claim a final, reviewed or full-book translation.
