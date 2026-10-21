@@ -57,7 +57,10 @@ jobs:
               staged = book / "migration-staging" / f"{unit:03d}-chapter-{chapter:03d}-UNREVIEWED.md"
               if not old.is_file() or not staged.is_file() or old.read_bytes() != staged.read_bytes():
                   raise SystemExit(f"Chapter {chapter} stage does not match historical draft")
-              found_sha = subprocess.check_output(["git", "hash-object", str(staged)], text=True).strip()
+              found_sha = subprocess.check_output(
+                  ["git", "rev-parse", f"HEAD:{staged.as_posix()}"], text=True
+              ).strip()
+              subprocess.run(["git", "diff", "--quiet", "HEAD", "--", str(staged), str(old)], check=True)
               if found_sha != sha:
                   raise SystemExit(f"Chapter {chapter} draft blob SHA changed")
               content = staged.read_text(encoding="utf-8")
