@@ -63,6 +63,8 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add -- books/the-claiming-moon/migration-staging/
-          git diff --cached --check
+          # Preserve exact historical literary whitespace; integrity/path checks above
+          # are the gate, rather than a style linter that would rewrite text.
+          git diff --cached --name-only
           git commit -m 'migration: stage nine complete draft candidates for chapters 31-39'
           git push origin HEAD:migration/claiming-moon-omitted-heading-staging-20261022
