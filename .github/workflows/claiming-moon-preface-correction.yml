@@ -1,0 +1,105 @@
+name: Claiming Moon preface source-fidelity correction
+on:
+  push:
+    branches: [review/claiming-moon-preface-source-fidelity-20261022]
+    paths: [.github/workflows/claiming-moon-preface-correction.yml]
+permissions:
+  contents: write
+jobs:
+  correction:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Correct original tags and re-accept with Translator claim
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib, json, subprocess
+          from pathlib import Path
+
+          ROOT = Path("books/the-claiming-moon")
+          SLUG = "the-claiming-moon"
+          REV = "5e0731da8b7ca81ada5316ed536a8a954008b789"
+          def run(*args):
+              subprocess.run(list(map(str, args)), check=True)
+          def out(*args):
+              return subprocess.check_output(list(map(str, args)), text=True).strip()
+          def sha(data):
+              return hashlib.sha256(data).hexdigest()
+
+          meta = json.loads((ROOT / "metadata.json").read_text(encoding="utf-8"))
+          assert meta["workflow"]["resolved_revision"] == REV
+          run("python", "scripts/book.py", "validate", SLUG)
+          run("python", "scripts/corpus.py", "verify", SLUG)
+          assert not json.loads(out("python", "scripts/book.py", "claims", SLUG, "--json")).get("claims")
+          progress = json.loads((ROOT / "progress.json").read_text(encoding="utf-8"))
+          unit = progress["chapters"][0]
+          assert unit["unit_id"] == "chapter-000001" and unit["status"] == "translated"
+          assert progress["chapters"][1]["status"] == "reviewed"
+          source = ROOT / unit["source_path"]
+          target = ROOT / unit["translation_path"]
+          source_text = source.read_text(encoding="utf-8")
+          original = target.read_text(encoding="utf-8")
+          assert sha(source.read_bytes()) == unit["translation_acceptance"]["source_sha256"]
+          assert sha(target.read_bytes()) == unit["translation_acceptance"]["translation_sha256"]
+          assert source_text.count("Boypussy") == 2
+          assert "Cock Slut Kim Taehyung" in source_text
+          assert "Tooth-Rotting Fluff" in source_text
+          replacements = [
+              (
+                  "гениталии омеги Ким Тэхёна; у Ким Тэхёна есть вагина",
+                  "бойпусси Ким Тэхёна; бойпусси; у Ким Тэхёна есть вагина"
+              ),
+              (
+                  "Ким Тэхён — «шлюха для членов»",
+                  "Ким Тэхён — «шлюха, помешанная на членах»"
+              ),
+              ("чрезмерная нежность", "приторно-сладкая нежность"),
+              ("https://archiveofourown.org/works/70374321 .", "https://archiveofourown.org/works/70374321.")
+          ]
+          corrected = original
+          for old, new in replacements:
+              assert corrected.count(old) == 1, f"unexpected original text: {old}"
+              corrected = corrected.replace(old, new)
+          assert corrected.count("бойпусси") == 2
+          session = "claiming-moon-preface-translation-correction-20261022"
+          run("python", "scripts/book.py", "claim", SLUG, 1, "--role", "translator", "--session-id", session)
+          target.write_text(corrected, encoding="utf-8")
+          run("python", "scripts/book.py", "accept-translation", SLUG, 1, "--session-id", session)
+          run("python", "scripts/book.py", "release", SLUG, 1, "--session-id", session)
+          run("python", "scripts/book.py", "validate", SLUG)
+          run("python", "scripts/corpus.py", "verify", SLUG)
+          after = json.loads((ROOT / "progress.json").read_text(encoding="utf-8"))
+          updated = after["chapters"][0]
+          assert updated["status"] == "translated"
+          assert updated["translation_acceptance"]["source_sha256"] == sha(source.read_bytes())
+          assert updated["translation_acceptance"]["translation_sha256"] == sha(target.read_bytes())
+          assert updated["translation_acceptance"]["workflow_revision"] == REV
+          assert after["chapters"][1]["status"] == "reviewed"
+          Path("docs/migrations/claiming-moon-preface-correction.json").write_text(
+              json.dumps({
+                  "schema_version": 1,
+                  "unit_id": "chapter-000001",
+                  "source_sha256": sha(source.read_bytes()),
+                  "translation_before_sha256": sha(original.encode("utf-8")),
+                  "translation_after_sha256": sha(target.read_bytes()),
+                  "workflow_revision": REV,
+                  "reason": "restore both distinct Boypussy tags and original blunt register; preserve extreme-sweetness metaphor and fix punctuation",
+                  "lifecycle": "translated",
+                  "reviewer_pass": False
+              }, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+          PY
+      - name: Commit corrected unit and self-delete
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git rm .github/workflows/claiming-moon-preface-correction.yml
+          git add -A books/the-claiming-moon/progress.json books/the-claiming-moon/translated/001-preface.md books/the-claiming-moon/.workflow docs/migrations/claiming-moon-preface-correction.json
+          git commit -m "Restore source fidelity in Claiming Moon preface tags"
+          git push origin HEAD:refs/heads/review/claiming-moon-preface-source-fidelity-20261022
