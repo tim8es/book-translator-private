@@ -48,3 +48,28 @@ original EPUB or a full extracted original corpus there.
 **Review warning:** Source identity and structural checks do not certify the
 Russian literary translations. All imported drafts remain UNREVIEWED pending
 actual hash-bound acceptance and independent Reviewer PASS.
+
+## Confirmed indexed-fragment gaps from GitHub reads
+
+Original EPUB verification is recorded above. A separate readback of source-index
+markers in existing GitHub Markdown fragments established the following current
+scope, without modifying the underlying book files:
+
+| Narrative chapter | Current durable indexed coverage | Original nonempty XHTML blocks | Missing translation indices |
+|---:|---:|---:|---:|
+| 15 | 0–95 (per existing checkpoint; full file not persisted) | 363 | 96–362 |
+| 19 | no draft file in repository | 324 | 0–323 |
+| 26 | 0–160 (five GitHub Markdown fragments) | 570 | 161–569 |
+| 27 | 0–90 (two GitHub Markdown fragments) | 341 | 91–340 |
+| 29 | 0–290 (nine GitHub Markdown fragments) | 456 | 291–455 |
+
+For chapters 26, 27 and 29, these index spans were read from GitHub and were
+contiguous without duplicated markers. For chapter 15 the indexed span is
+based on the recorded durable checkpoint; the missing full attachment from an
+older chat is not assumed recoverable. Chapter 19 had no saved chapter draft
+in the surveyed repository tree.
+
+**Do not fill these gaps by fabricating state.** Continue the missing text under
+real Translator claims and independently review recovered chapters. This table
+is a partial structural inventory and does not prove semantic translation
+quality, canonical translation acceptance, or reviewer PASS.
