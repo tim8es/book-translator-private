@@ -6,7 +6,6 @@ on:
   pull_request:
 
 concurrency:
-  # Only supersede checks for the same PR, never runs on main.
   group: ${{ github.workflow }}-${{ github.event_name == 'pull_request' && github.event.pull_request.number || github.run_id }}
   cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
@@ -14,22 +13,66 @@ permissions:
   contents: read
 
 jobs:
-  unit-tests:
+  checks:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - name: Checkout full history for accurate changed-file scope
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - name: Decide which checks to run
+        id: scope
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          import subprocess
+          from pathlib import Path
+
+          event = json.loads(Path(os.environ["GITHUB_EVENT_PATH"]).read_text(encoding="utf-8"))
+          head = os.environ["GITHUB_SHA"]
+          if os.environ["GITHUB_EVENT_NAME"] == "pull_request":
+              base = event["pull_request"]["base"]["sha"]
+          else:
+              base = event.get("before", "")
+          full = True
+          paths = []
+          if base and base != "0" * 40:
+              changed = subprocess.run(
+                  ["git", "diff", "--name-only", "-z", base, head],
+                  check=True, stdout=subprocess.PIPE,
+              ).stdout
+              paths = [name.decode("utf-8") for name in changed.split(b"\0") if name]
+              full = not paths or any(not name.startswith("books/") for name in paths)
+          books = any(name.startswith("books/") for name in paths)
+          Path(os.environ["RUNNER_TEMP"], "changed-book-paths.json").write_text(
+              json.dumps([name for name in paths if name.startswith("books/")], ensure_ascii=False),
+              encoding="utf-8",
+          )
+          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as stream:
+              print(f"full={str(full).lower()}", file=stream)
+              print(f"books={str(books).lower()}", file=stream)
+          print(f"Changed paths: {len(paths)}. Full engine tests: {full}. Book artifact check: {books}.")
+          PY
+
       - name: Set up Python 3.10
-        uses: actions/setup-python@v5
+        if: steps.scope.outputs.full == 'true' || steps.scope.outputs.books == 'true'
+        uses: actions/setup-python@v6
         with:
           python-version: "3.10"
-      - name: Test with Python 3.10
+      - name: Validate changed book artifacts without translating or rewriting them
+        if: steps.scope.outputs.books == 'true'
+        shell: bash
+        run: python .github/scripts/verify_changed_books.py "$RUNNER_TEMP/changed-book-paths.json"
+      - name: Full engine test suite on Python 3.10
+        if: steps.scope.outputs.full == 'true'
         run: python -m unittest discover -s tests -v
       - name: Set up Python 3.12
-        if: ${{ success() || failure() }}
-        uses: actions/setup-python@v5
+        if: always() && steps.scope.outputs.full == 'true'
+        uses: actions/setup-python@v6
         with:
           python-version: "3.12"
-      - name: Test with Python 3.12
-        if: ${{ success() || failure() }}
+      - name: Full engine test suite on Python 3.12
+        if: always() && steps.scope.outputs.full == 'true'
         run: python -m unittest discover -s tests -v
