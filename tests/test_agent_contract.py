@@ -40,14 +40,30 @@ class AgentContractTests(unittest.TestCase):
                 "global": "AGENTS.md",
                 "setup": "docs/AGENT_SETUP.md",
                 "orchestration": "docs/ORCHESTRATION.md",
+                "source_updates": "docs/SOURCE_UPDATES.md",
                 "translation": "docs/TRANSLATION.md",
             },
         )
         self.assertEqual(manifest["context_profiles"]["bootstrap"], ["global", "setup"])
-        self.assertEqual(manifest["context_profiles"]["orchestrator"], ["global", "orchestration"])
+        self.assertEqual(
+            manifest["context_profiles"]["orchestrator"],
+            ["global", "orchestration", "source_updates"],
+        )
         self.assertEqual(manifest["context_profiles"]["translator"], ["global", "translation"])
         self.assertEqual(manifest["context_profiles"]["reviewer"], ["global", "translation"])
         self.assertNotIn("contract_read_order", manifest)
+
+    def test_source_update_contract_preserves_revision_guarantees(self):
+        text = (PROJECT_ROOT / "docs" / "SOURCE_UPDATES.md").read_text(encoding="utf-8").lower()
+        for phrase in (
+            "stable unit identity",
+            "source-revisions.json",
+            "staged_requires_decision",
+            "crash-safe promotion",
+            "reuse is allowed only",
+            "epub/markdown assembly is a pure projection",
+        ):
+            self.assertIn(phrase, text)
 
     def test_context_profiles_reference_only_declared_contracts(self):
         manifest = self.load_manifest()
@@ -66,6 +82,7 @@ class AgentContractTests(unittest.TestCase):
         self.assertNotIn("orchestration", profiles["bootstrap"])
         self.assertNotIn("setup", profiles["orchestrator"])
         self.assertNotIn("translation", profiles["orchestrator"])
+        self.assertIn("source_updates", profiles["orchestrator"])
         self.assertNotIn("setup", profiles["translator"])
         self.assertNotIn("orchestration", profiles["translator"])
         self.assertNotIn("setup", profiles["reviewer"])
@@ -154,6 +171,12 @@ class AgentContractTests(unittest.TestCase):
         self.assertNotIn("Reviewer worker", setup)
         self.assertNotIn("target-language literary polish", setup)
 
+    def test_setup_runtime_set_includes_workflow_package(self):
+        setup = (PROJECT_ROOT / "docs" / "AGENT_SETUP.md").read_text(encoding="utf-8")
+
+        self.assertIn("`scripts/workflow/`;", setup)
+        self.assertIn(".book-translator/scripts/workflow/", setup)
+
     def test_setup_contract_defines_persistent_multi_book_workspace_policy(self):
         setup = (PROJECT_ROOT / "docs" / "AGENT_SETUP.md").read_text(encoding="utf-8").lower()
 
@@ -190,6 +213,34 @@ class AgentContractTests(unittest.TestCase):
 
         self.assertNotIn("20. Is meaningful formatting preserved?", text)
         self.assertNotIn("git checkout --detach <resolved-revision>", text)
+
+    def test_orchestration_contract_requires_durable_claim_gate(self):
+        text = (PROJECT_ROOT / "docs" / "ORCHESTRATION.md").read_text(encoding="utf-8")
+
+        for phrase in (
+            "python scripts/book.py claim",
+            "python scripts/book.py claims",
+            "python scripts/book.py release",
+            "python scripts/book.py cleanup-claims",
+        ):
+            self.assertIn(phrase, text)
+
+    def test_orchestration_contract_requires_machine_review_evidence(self):
+        text = (PROJECT_ROOT / "docs" / "ORCHESTRATION.md").read_text(encoding="utf-8")
+        lowered = text.lower()
+
+        for phrase in (
+            "python scripts/book.py review-record",
+            "python scripts/book.py reviews",
+            "python scripts/book.py accept-review",
+            "current pass",
+            "stale",
+        ):
+            self.assertIn(phrase.lower(), lowered)
+
+        self.assertIn("markdown", lowered)
+        self.assertIn("not authoritative", lowered)
+        self.assertIn("review coverage", lowered)
 
     def test_translation_contract_preserves_literary_guarantees(self):
         text = (PROJECT_ROOT / "docs" / "TRANSLATION.md").read_text(encoding="utf-8")

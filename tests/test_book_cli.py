@@ -10,6 +10,7 @@ from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 SCRIPT = PROJECT_ROOT / "scripts" / "book.py"
+WORKFLOW = PROJECT_ROOT / "scripts" / "workflow"
 TEMPLATES = PROJECT_ROOT / "docs" / "templates"
 
 
@@ -19,6 +20,7 @@ class BookCliSmokeTests(unittest.TestCase):
         self.repo = Path(self.tmp.name) / "repo"
         (self.repo / "scripts").mkdir(parents=True)
         shutil.copy2(SCRIPT, self.repo / "scripts" / "book.py")
+        shutil.copytree(WORKFLOW, self.repo / "scripts" / "workflow")
         if TEMPLATES.exists():
             shutil.copytree(TEMPLATES, self.repo / "docs" / "templates")
 
@@ -95,10 +97,11 @@ class BookCliSmokeTests(unittest.TestCase):
                 "repository": "https://github.com/tim8es/book-translator",
                 "requested_ref": "agent-compatibility-and-skill",
                 "resolved_revision": "0123456789abcdef",
+                "review_evidence": "review-ledger-v1",
             },
         )
 
-    def test_build_requires_reviewed_by_default(self):
+    def test_build_rejects_translated_or_reviewed_state_without_translation_acceptance(self):
         source = self.repo / "sample.txt"
         source.write_text(
             "Chapter 1\n\nOriginal one.\n\nChapter 2\n\nOriginal two.\n",
@@ -125,15 +128,43 @@ class BookCliSmokeTests(unittest.TestCase):
             chapter["status"] = "translated"
         progress_path.write_text(json.dumps(progress, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
-        self.run_cli("validate", "sample-book")
-        self.run_cli("build", "sample-book", expect=1)
-        self.run_cli("build", "sample-book", "--allow-unreviewed")
+        validate = self.run_cli("validate", "sample-book", expect=1)
+        self.assertIn("translation_acceptance", validate.stderr)
+        preview = self.run_cli("build", "sample-book", "--allow-unreviewed", expect=1)
+        self.assertIn("translation_acceptance", preview.stderr)
 
         for chapter in progress["chapters"]:
             chapter["status"] = "reviewed"
         progress_path.write_text(json.dumps(progress, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-        self.run_cli("build", "sample-book")
-        self.assertTrue((book / "output" / "sample-book.md").is_file())
+        final = self.run_cli("build", "sample-book", expect=1)
+        self.assertIn("translation_acceptance", final.stderr)
+
+    def test_validate_and_build_reject_tampered_preserved_source(self):
+        source = self.repo / "sample.md"
+        source.write_text("# A\n\nOne.\n\n# B\n\nTwo.\n", encoding="utf-8")
+        self.run_cli("extract", str(source), "--slug", "sample", "--target-language", "ru")
+
+        preserved = self.repo / "books" / "sample" / "source" / "sample.md"
+        preserved.write_text(preserved.read_text(encoding="utf-8") + "\nTAMPERED\n", encoding="utf-8")
+
+        validate = self.run_cli("validate", "sample", expect=1)
+        self.assertIn("source hash mismatch", validate.stderr.lower())
+        build = self.run_cli("build", "sample", "--allow-unreviewed", expect=1)
+        self.assertIn("source hash mismatch", build.stderr.lower())
+
+    def test_validate_and_build_reject_tampered_extracted_artifact(self):
+        source = self.repo / "sample.md"
+        source.write_text("# A\n\nOne.\n\n# B\n\nTwo.\n", encoding="utf-8")
+        self.run_cli("extract", str(source), "--slug", "sample", "--target-language", "ru")
+        book = self.repo / "books" / "sample"
+        progress = json.loads((book / "progress.json").read_text(encoding="utf-8"))
+        extracted = book / progress["chapters"][0]["source_path"]
+        extracted.write_text(extracted.read_text(encoding="utf-8") + "\nTAMPERED\n", encoding="utf-8")
+
+        validate = self.run_cli("validate", "sample", expect=1)
+        self.assertIn("extracted artifact hash mismatch", validate.stderr.lower())
+        build = self.run_cli("build", "sample", "--allow-unreviewed", expect=1)
+        self.assertIn("extracted artifact hash mismatch", build.stderr.lower())
 
     def test_validate_requires_style_guide(self):
         source = self.repo / "sample.md"
@@ -142,6 +173,40 @@ class BookCliSmokeTests(unittest.TestCase):
         (self.repo / "books" / "sample" / "style-guide.md").unlink()
         result = self.run_cli("validate", "sample", expect=1)
         self.assertIn("Missing style-guide.md", result.stderr)
+
+    def test_validate_rejects_unsupported_explicit_schema_version(self):
+        source = self.repo / "sample.md"
+        source.write_text("# A\n\nOne.\n\n# B\n\nTwo.\n", encoding="utf-8")
+        self.run_cli("extract", str(source), "--slug", "sample", "--target-language", "ru")
+
+        metadata_path = self.repo / "books" / "sample" / "metadata.json"
+        metadata = json.loads(metadata_path.read_text(encoding="utf-8"))
+        metadata["schema_version"] = 2
+        metadata_path.write_text(json.dumps(metadata, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+        result = self.run_cli("validate", "sample", expect=1)
+        self.assertIn("unsupported version 2", result.stderr)
+
+    def test_validate_rejects_unversioned_state_without_rewriting(self):
+        source = self.repo / "sample.md"
+        source.write_text("# A\n\nOne.\n\n# B\n\nTwo.\n", encoding="utf-8")
+        self.run_cli("extract", str(source), "--slug", "sample", "--target-language", "ru")
+
+        book = self.repo / "books" / "sample"
+        paths = [book / "metadata.json", book / "progress.json"]
+        original_bytes = {}
+        for path in paths:
+            data = json.loads(path.read_text(encoding="utf-8"))
+            del data["schema_version"]
+            content = (json.dumps(data, ensure_ascii=False, indent=2) + "\n").encode("utf-8")
+            path.write_bytes(content)
+            original_bytes[path.name] = content
+
+        result = self.run_cli("validate", "sample", expect=1)
+        self.assertIn("schema_version", result.stderr)
+
+        for path in paths:
+            self.assertEqual(path.read_bytes(), original_bytes[path.name])
 
     def test_extract_minimal_epub_uses_spine_order_and_metadata(self):
         source = self.repo / "sample.epub"

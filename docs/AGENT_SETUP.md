@@ -64,7 +64,7 @@ Do not claim that a private repository, remote, push, or cloud workspace was cre
 
 One Book Translator installation may contain **multiple books** under separate `books/<book-slug>/` workspaces.
 
-The book directory is the default durable storage boundary for one book. Each book keeps its own source, extraction, translation, metadata/provenance, progress, glossary, style guide, source-integrity state, and output.
+The book directory is the default durable storage boundary for one book. Each book keeps its own source, extraction, translation, metadata/provenance, progress, glossary, style guide, source-integrity state, source-edition revision history, and output.
 
 Do **not** require a permanent branch per book as the default storage model. Permanent per-book branches make book discovery, shared workflow updates, and beginner operation harder.
 
@@ -114,6 +114,7 @@ For a namespaced installation, examples include:
 .book-translator/docs/TRANSLATION.md
 .book-translator/scripts/book.py
 .book-translator/scripts/corpus.py
+.book-translator/scripts/workflow/
 .book-translator/books/<book-slug>/
 ```
 
@@ -139,6 +140,7 @@ Relative to `install_root`, a normal runtime installation contains:
 - `docs/templates/`;
 - `scripts/book.py`;
 - `scripts/corpus.py`;
+- `scripts/workflow/`;
 - `books/.gitkeep` for an empty book root.
 
 A development copy additionally contains repository-development files such as:
@@ -147,7 +149,10 @@ A development copy additionally contains repository-development files such as:
 - `.github/`;
 - `.gitignore`;
 - `LICENSE`;
-- `README.md`.
+- `README.md`;
+- `docs/COMMIT_DISCIPLINE.md`.
+
+`docs/COMMIT_DISCIPLINE.md` defines contributor Git boundaries, revert/recovery expectations, and release-integration history guidance. It is development/audit guidance, not part of the bounded runtime context for Translator or Reviewer roles.
 
 Do not copy a real book workspace from the canonical repository into a new installation.
 
@@ -179,7 +184,7 @@ If the required inputs are already available, setup should continue without an e
 
 ## Helper and source-format capability
 
-`scripts/book.py` and `scripts/corpus.py` are optional command-line helpers and use only the Python standard library. When Python is available, `book.py` handles structural extraction/validation/build operations and `corpus.py` handles source-corpus sealing, SHA-256 verification, and batch recovery.
+`scripts/book.py` and `scripts/corpus.py` are optional command-line helpers and use only the Python standard library. When Python is available, `book.py` handles structural extraction/validation/build operations plus later-source revision staging/promotion, and `corpus.py` handles source-corpus sealing, SHA-256 verification, and batch recovery of the active edition.
 
 The source formats `book.py` can extract automatically are declared in `agent-manifest.json.source_formats.automatic_helper`. Formats declared in `agent_dependent` require reliable format handling by the active agent or an explicit minimal conversion/extraction step.
 
@@ -208,3 +213,13 @@ Setup is complete when:
 - manifest-required semantic inputs are available or are the only identified missing inputs.
 
 Then transition to the `orchestrator` context profile. Do not carry this setup document into Translator or Reviewer context merely because it was read during bootstrap.
+
+## GitHub API storage capabilities
+
+GitHub API storage is available when the environment can address a concrete repository, branch, and optional book root prefix. The root prefix scopes logical Workflow paths such as `progress.json` to the selected book without leaking repository-relative mechanics into domain code.
+
+Read capability requires GitHub Contents metadata plus tree and blob reads. Mutable coordination additionally requires Contents write capability on the selected branch. A permission failure is a capability failure; do not substitute a different repository or branch silently.
+
+Credentials are runtime transport secrets and are never persisted in book metadata, progress, claims, review ledgers, generated reports, or installation provenance. Do not log or echo authorization tokens in failure text.
+
+GitHub Actions are not required for GitHub API storage execution. They may remain a development CI harness, but runtime orchestration must work directly through the GitHub API backend.

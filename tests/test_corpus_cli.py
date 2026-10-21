@@ -12,7 +12,9 @@ from pathlib import Path
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 BOOK_SCRIPT = PROJECT_ROOT / "scripts" / "book.py"
 CORPUS_SCRIPT = PROJECT_ROOT / "scripts" / "corpus.py"
+WORKFLOW = PROJECT_ROOT / "scripts" / "workflow"
 TEMPLATES = PROJECT_ROOT / "docs" / "templates"
+REVISION = "0123456789abcdef"
 
 
 class CorpusCliTests(unittest.TestCase):
@@ -23,8 +25,22 @@ class CorpusCliTests(unittest.TestCase):
         shutil.copy2(BOOK_SCRIPT, self.repo / "scripts" / "book.py")
         self.assertTrue(CORPUS_SCRIPT.is_file(), "scripts/corpus.py must provide source-corpus integrity tooling")
         shutil.copy2(CORPUS_SCRIPT, self.repo / "scripts" / "corpus.py")
+        shutil.copytree(WORKFLOW, self.repo / "scripts" / "workflow")
         if TEMPLATES.exists():
             shutil.copytree(TEMPLATES, self.repo / "docs" / "templates")
+        (self.repo / ".book-translator-install.json").write_text(
+            json.dumps(
+                {
+                    "schema_version": 1,
+                    "canonical_repository": "https://github.com/tim8es/book-translator",
+                    "requested_ref": "refactor/workflow-engine-v2",
+                    "resolved_revision": REVISION,
+                    "install_root": ".",
+                }
+            )
+            + "\n",
+            encoding="utf-8",
+        )
 
     def tearDown(self):
         self.tmp.cleanup()
@@ -107,7 +123,7 @@ class CorpusCliTests(unittest.TestCase):
             handle.write(b"tampered")
 
         result = self.run_cli("corpus.py", "verify", "sample", expect=1)
-        self.assertIn("Preserved source hash mismatch", result.stderr)
+        self.assertIn("Preserved source size mismatch", result.stderr)
 
     def test_restore_rebuilds_complete_corpus_without_mutating_translation_state(self):
         source = self.repo / "sample.epub"
@@ -116,13 +132,25 @@ class CorpusCliTests(unittest.TestCase):
 
         self.run_cli("book.py", "extract", str(source), "--slug", "sample", "--target-language", "ru")
         book = self.repo / "books" / "sample"
+
         progress_path = book / "progress.json"
         progress = json.loads(progress_path.read_text(encoding="utf-8"))
         translation_path = book / progress["chapters"][0]["translation_path"]
         translation_path.parent.mkdir(parents=True, exist_ok=True)
         translation_path.write_text("# Первая\n\nПеревод.\n", encoding="utf-8")
-        progress["chapters"][0]["status"] = "reviewed"
-        progress_path.write_text(json.dumps(progress, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        self.run_cli(
+            "book.py", "claim", "sample", "1",
+            "--role", "translator", "--session-id", "translator-a", "--json"
+        )
+        self.run_cli(
+            "book.py", "accept-translation", "sample", "1",
+            "--session-id", "translator-a", "--json"
+        )
+        self.run_cli(
+            "book.py", "release", "sample", "1",
+            "--session-id", "translator-a", "--json"
+        )
+        progress = json.loads(progress_path.read_text(encoding="utf-8"))
 
         shutil.rmtree(book / "extracted")
         (book / "extracted").mkdir()
@@ -155,7 +183,9 @@ class CorpusCliTests(unittest.TestCase):
         expected_sha = hashlib.sha256(source.read_bytes()).hexdigest()
         self.run_cli("book.py", "extract", str(source), "--slug", "sample", "--target-language", "ru")
 
-        wrong = self.repo / "wrong.epub"
+        wrong_dir = self.repo / "wrong-source"
+        wrong_dir.mkdir()
+        wrong = wrong_dir / "sample.epub"
         self.make_epub(wrong, body_suffix=" changed")
         book = self.repo / "books" / "sample"
         shutil.rmtree(book / "extracted")
@@ -172,6 +202,106 @@ class CorpusCliTests(unittest.TestCase):
         )
         self.assertIn("SHA-256 mismatch", result.stderr)
         self.assertEqual(list((book / "extracted").glob("*.md")), [])
+
+    def test_private_restore_rebuilds_without_persisting_binary(self):
+        source = self.repo / "sample.epub"
+        self.make_epub(source)
+        self.run_cli(
+            "book.py",
+            "extract",
+            str(source),
+            "--slug",
+            "sample",
+            "--target-language",
+            "ru",
+            "--private-source",
+        )
+
+        book = self.repo / "books" / "sample"
+        progress = json.loads((book / "progress.json").read_text(encoding="utf-8"))
+        missing = book / progress["chapters"][0]["source_path"]
+        missing.unlink()
+        self.assertFalse((book / "source" / "sample.epub").exists())
+
+        self.run_cli("corpus.py", "restore", "sample", str(source))
+
+        self.assertTrue(missing.is_file())
+        self.assertFalse((book / "source" / "sample.epub").exists())
+        self.run_cli("corpus.py", "verify", "sample")
+
+    def test_private_restore_rejects_wrong_filename_before_writes(self):
+        source = self.repo / "sample.epub"
+        self.make_epub(source)
+        self.run_cli(
+            "book.py",
+            "extract",
+            str(source),
+            "--slug",
+            "sample",
+            "--target-language",
+            "ru",
+            "--private-source",
+        )
+        book = self.repo / "books" / "sample"
+        before_manifest = (book / "source-manifest.json").read_bytes()
+        before_extracted = {
+            path.relative_to(book).as_posix(): path.read_bytes()
+            for path in (book / "extracted").glob("*.md")
+        }
+
+        wrong_name = self.repo / "renamed.epub"
+        shutil.copy2(source, wrong_name)
+        result = self.run_cli("corpus.py", "restore", "sample", str(wrong_name), expect=1)
+
+        self.assertIn("filename mismatch", result.stderr.lower())
+        self.assertEqual((book / "source-manifest.json").read_bytes(), before_manifest)
+        self.assertEqual(
+            {
+                path.relative_to(book).as_posix(): path.read_bytes()
+                for path in (book / "extracted").glob("*.md")
+            },
+            before_extracted,
+        )
+        self.assertFalse((book / "source" / "sample.epub").exists())
+
+    def test_private_restore_rejects_same_name_different_hash_before_writes(self):
+        original_dir = self.repo / "original"
+        original_dir.mkdir()
+        source = original_dir / "sample.epub"
+        self.make_epub(source)
+        self.run_cli(
+            "book.py",
+            "extract",
+            str(source),
+            "--slug",
+            "sample",
+            "--target-language",
+            "ru",
+            "--private-source",
+        )
+        book = self.repo / "books" / "sample"
+        before_manifest = (book / "source-manifest.json").read_bytes()
+        before_extracted = {
+            path.relative_to(book).as_posix(): path.read_bytes()
+            for path in (book / "extracted").glob("*.md")
+        }
+
+        replacement_dir = self.repo / "replacement"
+        replacement_dir.mkdir()
+        replacement = replacement_dir / "sample.epub"
+        self.make_epub(replacement, body_suffix=" changed")
+        result = self.run_cli("corpus.py", "restore", "sample", str(replacement), expect=1)
+
+        self.assertIn("SHA-256 mismatch", result.stderr)
+        self.assertEqual((book / "source-manifest.json").read_bytes(), before_manifest)
+        self.assertEqual(
+            {
+                path.relative_to(book).as_posix(): path.read_bytes()
+                for path in (book / "extracted").glob("*.md")
+            },
+            before_extracted,
+        )
+        self.assertFalse((book / "source" / "sample.epub").exists())
 
 
 if __name__ == "__main__":
