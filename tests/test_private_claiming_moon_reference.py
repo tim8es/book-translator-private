@@ -1,4 +1,5 @@
 """Workspace-level source-reference safety checks; no literary promotion."""
+import hashlib
 import importlib.util
 import json
 import unittest
@@ -26,7 +27,11 @@ class ClaimingMoonSourceReferenceTests(unittest.TestCase):
         self.assertEqual(report["source_units"], 48)
         self.assertEqual(report["reviewed_promotions"], 0)
         self.assertTrue(report["blockers"])
-        self.assertIn("metadata.json", report["missing_canonical_files"])
+        # This test must work before AND after canonical book initialization.
+        # The reference by itself is never equivalent to opening trusted source.
+        self.assertEqual(report["missing_canonical_files"],
+                         [p for p in migration.CANONICAL if not (BOOK / p).exists()])
+        self.assertFalse(any(ch["status"] == "reviewed" for ch in report["chapters"]))
         self.assertEqual({item["chapter"] for item in report["chapters"]}.difference(range(1, 46)), set())
         print("THE_CLAIMING_MOON_REFERENCE_AUDIT=" + json.dumps({
             "numbered_chapters_with_any_draft": len(report["chapters"]),
@@ -36,10 +41,29 @@ class ClaimingMoonSourceReferenceTests(unittest.TestCase):
         }, sort_keys=True))
 
     def test_reference_alone_cannot_stage(self):
+        staging = BOOK / "migration-staging"
+        before_staging = {
+            str(p.relative_to(staging)): hashlib.sha256(p.read_bytes()).hexdigest()
+            for p in staging.rglob("*") if p.is_file()
+        } if staging.exists() else {}
+        protected = [BOOK / "progress.json", BOOK / "review-ledger.json"]
+        before_state = {
+            str(p): hashlib.sha256(p.read_bytes()).hexdigest()
+            for p in protected if p.exists()
+        }
         report = migration.audit(BOOK, offset=2, source_reference=REFERENCE)
         with self.assertRaises(migration.MigrationError):
             migration.stage(BOOK, report, offset=2)
-        self.assertFalse((BOOK / "migration-staging").exists())
+        after_staging = {
+            str(p.relative_to(staging)): hashlib.sha256(p.read_bytes()).hexdigest()
+            for p in staging.rglob("*") if p.is_file()
+        } if staging.exists() else {}
+        after_state = {
+            str(p): hashlib.sha256(p.read_bytes()).hexdigest()
+            for p in protected if p.exists()
+        }
+        self.assertEqual(before_staging, after_staging)
+        self.assertEqual(before_state, after_state)
 
 
 if __name__ == "__main__":
