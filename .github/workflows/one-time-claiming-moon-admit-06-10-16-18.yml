@@ -1,0 +1,151 @@
+name: One-time Claiming Moon remaining full Markdown drafts
+on:
+  push:
+    branches: [migration/claiming-moon-admit-06-10-16-18-20261022]
+    paths: [.github/workflows/one-time-claiming-moon-admit-06-10-16-18.yml]
+permissions:
+  contents: write
+jobs:
+  admit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Preflight preserved source and complete-length draft identities
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          python scripts/book.py validate the-claiming-moon
+          python scripts/corpus.py verify the-claiming-moon
+          python - <<'PY'
+          import hashlib
+          import json
+          import subprocess
+          from pathlib import Path
+
+          book = Path("books/the-claiming-moon")
+          source = book / "source/The_Claiming_Moon.epub"
+          if hashlib.sha256(source.read_bytes()).hexdigest() != "611d1717e7997955619576a667073b79b815bf7606c6ea4513c823b01c53c9bb":
+              raise SystemExit("Canonical source EPUB identity mismatch")
+          progress = json.loads((book / "progress.json").read_text(encoding="utf-8"))
+          manifest = json.loads((book / "source-manifest.json").read_text(encoding="utf-8"))
+          expected = {
+              6: "82d4772c236c2e282f154bacfd0452e2f548d846",
+              8: "7f69abad02cbd7f7ecc9a35d2c411451e747de",
+              9: "476715b4b2243fc468892cc90bacfb629e4a5f72",
+              10: "1bbcc7ec789557ba1046f1a98898d0a0a48f09c2",
+              16: "d20b31134b685d6f8daf900350a4797fd695d599",
+              17: "57d76ac7d6c8964a9623b89937578fc1399f248c",
+              18: "f1bf0dda6ad22c36c0bd6549d2c0c2d88407c924",
+          }
+          if len(progress["chapters"]) != 48:
+              raise SystemExit("Unexpected canonical unit count")
+          plans = []
+          for chapter, sha in expected.items():
+              unit = chapter + 2
+              entry = progress["chapters"][unit - 1]
+              if (entry["unit_id"], entry["number"], entry["status"]) != (f"chapter-{unit:06d}", unit, "extracted"):
+                  raise SystemExit(f"Unit {unit} is not eligible for new acceptance")
+              if "translation_acceptance" in entry or (book / entry["translation_path"]).exists():
+                  raise SystemExit(f"Unit {unit} already has an accepted translation")
+              old = book / "incoming" / f"chapter-{chapter:03d}-ru-draft.md"
+              staged = book / "migration-staging" / f"{unit:03d}-chapter-{chapter:03d}-UNREVIEWED.md"
+              if not old.is_file() or not staged.is_file() or old.read_bytes() != staged.read_bytes():
+                  raise SystemExit(f"Chapter {chapter} stage does not match historical draft")
+              found_sha = subprocess.check_output(["git", "hash-object", str(staged)], text=True).strip()
+              if found_sha != sha:
+                  raise SystemExit(f"Chapter {chapter} draft blob SHA changed")
+              content = staged.read_text(encoding="utf-8")
+              if len(content) < 40000 or "Глава" not in content[:1200]:
+                  raise SystemExit(f"Chapter {chapter} draft appears truncated")
+              if sum("\u0400" <= x <= "\u04FF" for x in content) < 13000:
+                  raise SystemExit(f"Chapter {chapter} Russian draft is unexpectedly short")
+              extracted = book / entry["source_path"]
+              sealed = next(x for x in manifest["extracted"] if x["number"] == unit)
+              if hashlib.sha256(extracted.read_bytes()).hexdigest() != sealed["sha256"]:
+                  raise SystemExit(f"Chapter {chapter}: source differs from sealed artifact")
+              plans.append({"chapter": chapter, "unit": unit,
+                            "source_sha256": sealed["sha256"],
+                            "incoming_path": old.relative_to(book).as_posix(),
+                            "draft_git_sha": sha,
+                            "staged_path": staged.relative_to(book).as_posix(),
+                            "translation_path": entry["translation_path"],
+                            "translation_sha256": hashlib.sha256(staged.read_bytes()).hexdigest(),
+                            "state_after_acceptance": "translated",
+                            "review_status": "NOT_REVIEWED"})
+          Path(".github/claiming-moon-full-draft-plan.json").write_text(
+              json.dumps(plans, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+          )
+          PY
+      - name: Run actual Translator claims and machine acceptances
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          python - <<'PY'
+          import hashlib
+          import json
+          import subprocess
+          from pathlib import Path
+
+          book = Path("books/the-claiming-moon")
+          plan = json.loads(Path(".github/claiming-moon-full-draft-plan.json").read_text(encoding="utf-8"))
+          for item in plan:
+              unit = item["unit"]
+              session = f"claiming-moon-import-draft-{unit}-20261022"
+              def cli(*args):
+                  subprocess.run(["python", "scripts/book.py", *map(str,args)], check=True)
+              cli("claim", "the-claiming-moon", unit, "--role", "translator", "--session-id", session)
+              destination = book / item["translation_path"]
+              destination.parent.mkdir(parents=True, exist_ok=True)
+              with destination.open("xb") as output:
+                  output.write((book / item["staged_path"]).read_bytes())
+              if hashlib.sha256(destination.read_bytes()).hexdigest() != item["translation_sha256"]:
+                  raise SystemExit("Imported translation content changed")
+              cli("accept-translation", "the-claiming-moon", unit, "--session-id", session, "--json")
+              cli("release", "the-claiming-moon", unit, "--session-id", session)
+          PY
+      - name: Verify canonical status and preservation of previously reviewed evidence
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          python scripts/book.py validate the-claiming-moon
+          python scripts/corpus.py verify the-claiming-moon
+          python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+          book = Path("books/the-claiming-moon")
+          progress = json.loads((book / "progress.json").read_text(encoding="utf-8"))
+          plans = json.loads(Path(".github/claiming-moon-full-draft-plan.json").read_text(encoding="utf-8"))
+          for item in plans:
+              unit = item["unit"]
+              row = progress["chapters"][unit-1]
+              if row["status"] != "translated" or row.get("translation_acceptance",{}).get("unit_id") != row["unit_id"]:
+                  raise SystemExit(f"Unit {unit} lacks canonical machine acceptance")
+              if hashlib.sha256((book / row["translation_path"]).read_bytes()).hexdigest() != item["translation_sha256"]:
+                  raise SystemExit(f"Unit {unit}: post-acceptance content changed")
+          ledger = json.loads((book / "review-ledger.json").read_text(encoding="utf-8"))
+          if not any(r.get("unit_id") == "chapter-000048" and r.get("outcome") == "PASS" for r in ledger["records"]):
+              raise SystemExit("Prior independent afterword review evidence was lost")
+          if progress["chapters"][47]["status"] != "reviewed":
+              raise SystemExit("Prior afterword status was altered")
+          PY
+          test -z "$(git diff --name-only HEAD -- books/the-claiming-moon/incoming books/the-claiming-moon/migration-staging books/the-claiming-moon/source books/the-claiming-moon/extracted books/the-claiming-moon/source-manifest.json books/the-claiming-moon/source-revisions.json books/the-claiming-moon/review-ledger.json)"
+      - name: Save authentic imported draft state and remove one-time workflow
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          mkdir -p docs/migrations
+          cp .github/claiming-moon-full-draft-plan.json docs/migrations/claiming-moon-remaining-markdown-machine-acceptance.json
+          git add -- books/the-claiming-moon/translated books/the-claiming-moon/progress.json books/the-claiming-moon/.workflow docs/migrations/claiming-moon-remaining-markdown-machine-acceptance.json
+          git rm -- .github/workflows/one-time-claiming-moon-admit-06-10-16-18.yml
+          git diff --cached --name-status
+          git commit -m 'migration: accept seven source-bound historical full chapter drafts as translated'
+          git push origin HEAD:migration/claiming-moon-admit-06-10-16-18-20261022
