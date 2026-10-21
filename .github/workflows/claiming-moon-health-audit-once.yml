@@ -1,0 +1,43 @@
+name: One-time Claiming Moon canonical health audit
+on:
+  push:
+    branches:
+      - audit/claiming-moon-readonly-canonical-health-20261022
+    paths:
+      - .github/workflows/claiming-moon-health-audit-once.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Verify byte-identical original EPUB and manifest
+        shell: bash
+        run: |
+          set -euo pipefail
+          printf '%s  %s\n' '611d1717e7997955619576a667073b79b815bf7606c6ea4513c823b01c53c9bb' 'books/the-claiming-moon/source/The_Claiming_Moon.epub' | sha256sum --check
+          python scripts/book.py validate the-claiming-moon
+          python scripts/corpus.py verify the-claiming-moon
+      - name: Report canonical state and next operation
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/book.py status the-claiming-moon --json
+          python scripts/book.py resume the-claiming-moon --json
+          python scripts/book.py build-status the-claiming-moon --format epub --json
+      - name: Assert preflight did not change book files
+        shell: bash
+        run: |
+          set -euo pipefail
+          if test -n "$(git status --porcelain -- books/the-claiming-moon)"; then
+            echo 'ERROR: Read-only audit changed book files' >&2
+            git status --short -- books/the-claiming-moon
+            exit 1
+          fi
+          echo 'PASS: Book files unchanged'
