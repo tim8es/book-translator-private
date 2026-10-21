@@ -23,3 +23,26 @@ This is a **read-only repository tree inventory**, not verified source coverage 
 7. Verify canonical `resume`, complete the book, and build final EPUB from accepted durable state.
 
 Do not treat this document or any historical checkpoint as source-of-truth progress. Preserve `incoming/` unchanged throughout migration.
+
+## Verified original EPUB (uploaded October 21, 2026)
+
+Original EPUB was inspected locally, **not committed into this public repository**.
+- SHA-256 matches: `611d1717e7997955619576a667073b79b815bf7606c6ea4513c823b01c53c9bb`
+- EPUB spine: **48** documents, preface (1), summary (2), chapters 1–45 (units 3–47), afterword (48).
+- Source XHTML file identity matches existing checkpoint SHA-256 for chapters 20, 30 and 40.
+- Historical draft index conventions vary: e.g. chapter 20 uses **577 nonempty** text elements out of **580 total**; chapter 41 has **363 total**, **359 nonempty**. The current public importer detects both schemes.
+- Repositories remain public during technical development. Do **not** commit this original EPUB or extracted copyrighted source text during this phase.
+
+### Verified partial draft coverage (GitHub blob markers vs EPUB)
+
+| Chapter | GitHub source-indexed draft | Nonempty original source blocks | Missing from end |
+|---|---:|---:|---:|
+| 15 | 96 | 363 | 267 (full attachment not yet recovered) |
+| 19 | 0 | 324 | 324 |
+| 26 | 161 | 570 | 409 |
+| 27 | 91 | 341 | 250 |
+| 29 | 291 | 456 | 165 |
+
+Chapters 26, 27 and 29 have contiguous marker coverage from index 0 and no duplicate source indexes among their currently saved Markdown fragments. This is structural only; it does **not** certify translation accuracy or Reviewer PASS.
+
+Canonical `progress.json` still cannot be created honestly in the public workspace without a durable source corpus. Continue preparing tooling in the public repository, preserve `incoming/`, and initialize/seal the book in an isolated private workspace when source storage has been chosen.
