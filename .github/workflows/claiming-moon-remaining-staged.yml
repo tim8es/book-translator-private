@@ -1,0 +1,157 @@
+name: Claiming Moon — accept preserved historical drafts
+
+on:
+  push:
+    branches:
+      - migration/claiming-moon-accept-remaining-staged-20261022
+    paths:
+      - .github/workflows/claiming-moon-remaining-staged.yml
+
+permissions:
+  contents: write
+
+jobs:
+  accept:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out exact migration snapshot
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Preflight, preserve sources, and accept only complete historical artifacts
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib
+          import json
+          import shutil
+          import subprocess
+          from pathlib import Path
+
+          ROOT = Path("books/the-claiming-moon")
+          SLUG = "the-claiming-moon"
+          WORKFLOW_SHA = "5e0731da8b7ca81ada5316ed536a8a954008b789"
+          SOURCE_SHA = "611d1717e7997955619576a667073b79b815bf7606c6ea4513c823b01c53c9bb"
+          EXPECTED_BASE = "9a5ee9523cb7b2903b43dd82283c6b88578c97bb"
+          # Original narrative chapter number, staged filename, immutable Git blob SHA.
+          CANDIDATES = [
+              (5, "007-chapter-005-UNREVIEWED.md", "56bc5397686a7afe175d6890eeb5e3b2e497b294"),
+              (6, "008-chapter-006-UNREVIEWED.md", "82d4772c236c2e282f154bacfd0452e2f548d846"),
+              (8, "010-chapter-008-UNREVIEWED.md", "7f69abad02cbd7f7e7ecc9a35d2c411451e747de"),
+              (9, "011-chapter-009-UNREVIEWED.md", "476715b4b2243fc468892cc90bacfb629e4a5f72"),
+              (10, "012-chapter-010-UNREVIEWED.md", "1bbcc7ec789557ba1046f1a98898d0a0a48f09c2"),
+              (16, "018-chapter-016-UNREVIEWED.md", "d20b31134b685d6f8daf900350a4797fd695d599"),
+              (17, "019-chapter-017-UNREVIEWED.md", "57d76ac7d6c8964a9623b89937578fc1399f248c"),
+              (18, "020-chapter-018-UNREVIEWED.md", "f1bf0dda6ad22c36c0bd6549d2c0c2d88407c924"),
+          ]
+
+          def run(*args):
+              subprocess.run(list(map(str, args)), check=True)
+
+          def output(*args):
+              return subprocess.check_output(list(map(str, args)), text=True).strip()
+
+          def sha256(data):
+              return hashlib.sha256(data).hexdigest()
+
+          def byte_content(path):
+              return path.read_bytes()
+
+          assert output("git", "merge-base", "HEAD", "origin/main") == EXPECTED_BASE, "main diverged; manual reconciliation required"
+          meta = json.loads((ROOT / "metadata.json").read_text(encoding="utf-8"))
+          assert meta["workflow"]["resolved_revision"] == WORKFLOW_SHA
+          assert meta["source"]["revision_id"] == "source-000001"
+          assert meta["source"]["sha256"] == SOURCE_SHA
+          assert sha256(byte_content(ROOT / "source" / meta["source"]["filename"])) == SOURCE_SHA
+          run("python", "scripts/book.py", "validate", SLUG)
+          run("python", "scripts/corpus.py", "verify", SLUG)
+          claims = json.loads(output("python", "scripts/book.py", "claims", SLUG, "--json"))
+          assert not claims.get("claims"), "another worker currently owns a claim"
+
+          progress = json.loads((ROOT / "progress.json").read_text(encoding="utf-8"))
+          selected = []
+          for chapter_number, stage_name, blob_sha in CANDIDATES:
+              unit_number = chapter_number + 2  # preface and summary are the first two spine units
+              units = [item for item in progress["chapters"] if item["number"] == unit_number]
+              assert len(units) == 1
+              unit = units[0]
+              assert unit["status"] == "extracted" and "translation_acceptance" not in unit
+              source_path = ROOT / unit["source_path"]
+              target_path = ROOT / unit["translation_path"]
+              stage_path = ROOT / "migration-staging" / stage_name
+              assert source_path.is_file() and stage_path.is_file() and not target_path.exists()
+              stage_data = byte_content(stage_path)
+              assert len(stage_data) >= 20000, "implausibly short preserved draft"
+              assert output("git", "hash-object", stage_path) == blob_sha, f"staged blob changed: {stage_path}"
+
+              if chapter_number == 5:
+                  parts = [ROOT / "incoming" / f"chapter-005-ru-draft.part-{n:02d}.md" for n in range(1, 6)]
+                  incoming = b"\n".join(byte_content(path) for path in parts)
+              else:
+                  incoming = byte_content(ROOT / "incoming" / f"chapter-{chapter_number:03d}-ru-draft.md")
+              assert incoming == stage_data, f"incoming/staging divergence in chapter {chapter_number}"
+              selected.append((chapter_number, unit_number, unit, source_path, target_path, stage_path, stage_data))
+
+          evidence = []
+          for chapter_number, unit_number, unit, source_path, target_path, stage_path, stage_data in selected:
+              session = f"claiming-moon-staged-migration-{unit_number}-20261022"
+              run("python", "scripts/book.py", "claim", SLUG, unit_number, "--role", "translator", "--session-id", session)
+              target_path.parent.mkdir(parents=True, exist_ok=True)
+              target_path.write_bytes(stage_data)
+              run("python", "scripts/book.py", "accept-translation", SLUG, unit_number, "--session-id", session)
+              run("python", "scripts/book.py", "release", SLUG, unit_number, "--session-id", session)
+              evidence.append({
+                  "narrative_chapter": chapter_number,
+                  "unit_number": unit_number,
+                  "unit_id": unit["unit_id"],
+                  "source_path": unit["source_path"],
+                  "source_sha256": sha256(byte_content(source_path)),
+                  "staged_path": str(stage_path.relative_to(ROOT)),
+                  "translation_path": unit["translation_path"],
+                  "translation_sha256": sha256(stage_data),
+                  "independent_reviewer_pass": False,
+              })
+
+          run("python", "scripts/book.py", "validate", SLUG)
+          run("python", "scripts/corpus.py", "verify", SLUG)
+          final = json.loads((ROOT / "progress.json").read_text(encoding="utf-8"))
+          counts = {name: sum(item["status"] == name for item in final["chapters"]) for name in ("extracted", "translated", "reviewed")}
+          assert counts == {"extracted": 5, "translated": 42, "reviewed": 1}, f"unexpected counts: {counts}"
+          for _, n, _, source_path, target_path, _, payload in selected:
+              unit = next(item for item in final["chapters"] if item["number"] == n)
+              assert unit["status"] == "translated"
+              assert unit["translation_acceptance"]["translation_sha256"] == sha256(payload)
+              assert unit["translation_acceptance"]["source_sha256"] == sha256(byte_content(source_path))
+              assert unit["translation_acceptance"]["workflow_revision"] == WORKFLOW_SHA
+              assert byte_content(target_path) == payload
+
+          output_path = Path("docs/migrations/claiming-moon-remaining-staged-machine-acceptance.json")
+          output_path.write_text(json.dumps({
+              "schema_version": 1,
+              "book_slug": SLUG,
+              "source_revision": "source-000001",
+              "original_sha256": SOURCE_SHA,
+              "pinned_workflow_revision": WORKFLOW_SHA,
+              "base_commit": EXPECTED_BASE,
+              "classification": "historical_draft_machine_accepted_NOT_literary_reviewed",
+              "lifecycle_counts_after": counts,
+              "accepted_units": evidence,
+              "review_warning": "Canonical machine acceptance does not establish completeness of literary comparison or Reviewer PASS.",
+          }, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+          print("ACCEPTANCE_OK", json.dumps(counts, sort_keys=True))
+          PY
+
+      - name: Commit successful acceptance only, remove one-time workflow
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git rm .github/workflows/claiming-moon-remaining-staged.yml
+          git add -A books/the-claiming-moon/translated books/the-claiming-moon/progress.json books/the-claiming-moon/.workflow docs/migrations/claiming-moon-remaining-staged-machine-acceptance.json
+          git commit -m "Accept eight preserved Claiming Moon drafts as translated, not reviewed"
+          git push origin HEAD:refs/heads/migration/claiming-moon-accept-remaining-staged-20261022
