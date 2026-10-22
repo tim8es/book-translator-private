@@ -13,7 +13,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           repository: tim8es/book-translator
-          ref: 208a02c7696d83e5c83e87afb3e1266b86e17953
+          ref: 2b248d465937ce21581362e6d6978b3ceb1474c1
           path: codec
       - name: Run non-mutating structural compatibility audit
         env:
@@ -88,6 +88,7 @@ jobs:
               translations=[u[1] for u in units],
               target_language='en',title='The Claiming Moon'
             )
+            Path('migration-roundtrip-check.epub').write_bytes(output)
             report['structural_roundtrip']='passed'
             report['roundtrip_sha256']=hashlib.sha256(output).hexdigest()
             report['roundtrip_validation']=validate_structural_epub(output, expected_documents=48)
@@ -148,6 +149,42 @@ jobs:
             'error':report.get('afterword_error'),
             'link_preserved':report.get('afterword_preserved_external_comment_link')
           },ensure_ascii=False))
+          PY
+      - name: EPUBCheck conformance regression against exact original
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq epubcheck
+          python - <<'PY'
+          from pathlib import Path
+          import collections, json, re, subprocess
+          original = Path("books/the-claiming-moon/source/The_Claiming_Moon.epub")
+          output = Path("migration-roundtrip-check.epub")
+          if not original.is_file() or not output.is_file():
+              raise SystemExit("EPUBCheck inputs missing; EPUB roundtrip gate did not succeed")
+          def check(path):
+              p = subprocess.run(["epubcheck", str(path)], capture_output=True, text=True)
+              raw = p.stdout + "\n" + p.stderr
+              errors = collections.Counter(re.findall(r"(?:ERROR|FATAL)\(([^)]+)\)", raw))
+              warns = collections.Counter(re.findall(r"WARNING\(([^)]+)\)", raw))
+              if p.returncode != 0 and not errors:
+                  raise SystemExit("EPUBCheck itself failed without classified diagnostics")
+              return {"returncode": p.returncode, "errors": errors, "warnings": warns}
+          baseline = check(original)
+          rebuilt = check(output)
+          new_errors = rebuilt["errors"] - baseline["errors"]
+          report = {
+              "validator": "epubcheck-apt",
+              "original_errors": sum(baseline["errors"].values()),
+              "rebuilt_errors": sum(rebuilt["errors"].values()),
+              "new_error_codes": dict(new_errors),
+              "original_warnings": sum(baseline["warnings"].values()),
+              "rebuilt_warnings": sum(rebuilt["warnings"].values()),
+          }
+          print("EPUBCHECK_REGRESSION=" + json.dumps(report, sort_keys=True))
+          Path("migration-epubcheck-summary.json").write_text(json.dumps(report, indent=2) + "\n")
+          if new_errors:
+              raise SystemExit("EPUBCheck identified new EPUB conformance error codes in reconstructed output")
+          print("EPUBCHECK NO-NEW-ERRORS GATE: PASS")
           PY
       - name: Fail closed if any real-book gate is blocked
         run: |
