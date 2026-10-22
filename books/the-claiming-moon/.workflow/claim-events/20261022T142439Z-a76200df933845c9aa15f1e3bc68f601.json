@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "event_id": "a76200df933845c9aa15f1e3bc68f601",
+  "action": "cleanup_requested",
+  "unit_id": "chapter-000021",
+  "claim_revision": "4fb5fba9a9fff6cda6eb92036145ed1fbaa7d9ec",
+  "claim": {
+    "schema_version": 1,
+    "claim_id": "97e9d90dfa6b43cfa150ec1f3bfd59bc",
+    "unit_id": "chapter-000021",
+    "role": "translator",
+    "session_id": "cm-20261022-ch19-first-draft",
+    "base_revision": "a4eaffe8a5a0f076b95f9afdd232f34fc319ed88",
+    "base_commit": null,
+    "workflow_revision": "5e0731da8b7ca81ada5316ed536a8a954008b789",
+    "claimed_at": "2026-10-22T10:47:16Z",
+    "expires_at": "2026-10-22T12:27:16Z"
+  },
+  "occurred_at": "2026-10-22T14:24:39Z",
+  "reason": "lease_expired",
+  "detail": "Expired translator session; complete indexed draft is preserved. Prepare resumption under new ownership."
+}
