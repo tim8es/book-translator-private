@@ -30,6 +30,18 @@ The opening Russian author's note translates the surrounding announcement but om
 
 These are concrete source-text omissions, albeit small. Do **not** report `PASS` for affected chapters until corrected and independently re-reviewed. Do **not** edit canonical accepted translations in place; use the documented Translator claim, artifact write, `accept-translation`, Reviewer claim, review ledger evidence, and `accept-review` flow, bound to current revisions.
 
+## Expanded systematic finding — all chapters 36–45
+
+A follow-up opening-note comparison found the **same omitted source-authored line in every narrative chapter 36–45**, not only 39 and 45. In each chapter, the source starts with `Chapter Notes`, sometimes with a content warning or other author note, then a separate `See the end of the chapter for more notes` (chapter 39 uses `for notes`) before narrative prose. The Russian opening skips that separate instruction. The story body still appears afterward; the omission is **the author-note navigation sentence**, not a demonstrated missing narrative scene.
+
+Affected units and narrative chapters: unit 38/chapter 36; 39/37; 40/38; 41/39; 42/40; 43/41; 44/42; 45/43; 46/44; 47/45. The omitted text was confirmed by comparing the opening original and Russian text for every unit. This finding supersedes the earlier implication that chapters 39 and 45 alone were affected.
+
+Correction proposal for each chapter (in its opening author-notes block, following any other opening notes):
+- Source `See the end of the chapter for more notes` → `Дополнительные примечания автора — в конце главы.`
+- Source `See the end of the chapter for notes` → `Примечания автора — в конце главы.`
+
+The same issue was also found in **chapters 31–35**; see the separate reverse technical QA record for that range. This is a systematic pattern that warrants a source-note check in the chapters handled by the other agent as well, **without independently editing their active scope**.
+
 ## Next reverse-work order
 
 1. Refresh source/progress/claims state; run full canonical corpus preflight (`book.py validate`, `corpus.py verify`) in a capable workspace. This connector-only run independently checked selected artifact hashes but did **not** execute those Python commands or the complete 48-unit corpus verification.
