@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import re
+import json
 from collections.abc import Callable, Mapping
 from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
@@ -211,6 +212,50 @@ class ClaimManager:
             claims.append(ActiveClaim(path=path, data=loaded.data, version=loaded.version))
         return sorted(claims, key=lambda claim: (claim.data["unit_id"], claim.path))
 
+    def _live_wave_review_ready(
+        self, progress: Mapping[str, Any], unit_ids: list[str],
+        workflow_revision: str, session_id: str, manifest: Mapping[str, Any],
+    ) -> bool:
+        """Allow one live Reviewer claim only for current accepted wave work.
+
+        This is the narrow dynamic alternative to an immutable session dispatch:
+        never authorize translation, batch claims, or unaccepted artifacts.
+        """
+        if len(unit_ids) != 1:
+            return False
+        try:
+            latest = self.repository.read("progress.json", SchemaKind.PROGRESS).data
+            metadata = self.repository.read("metadata.json", SchemaKind.METADATA).data
+            pointer = json.loads(self.repository.storage.read(
+                ".workflow/literary-memory/active.json"
+            ).content.decode("utf-8"))
+            if (pointer.get("revision") != manifest["memory_revision"]
+                    or latest != progress
+                    or metadata.get("source", {}).get("sha256") != manifest["source_sha256"]):
+                return False
+            chapter = next(
+                (entry for entry in latest["chapters"]
+                 if unit_id_for_chapter(entry) == unit_ids[0]), None,
+            )
+            if chapter is None or chapter["status"] != "translated":
+                return False
+            acceptance = chapter.get("translation_acceptance")
+            if (not isinstance(acceptance, Mapping)
+                    or acceptance.get("unit_id") != unit_ids[0]
+                    or acceptance.get("workflow_revision") != workflow_revision
+                    or acceptance.get("session_id") == session_id):
+                return False
+            from .reviews import ReviewLedgerManager
+            from .operations import next_unit_operation
+            manager = ReviewLedgerManager(
+                self.repository,
+                artifact_reader=lambda path: self.repository.storage.read(path).content,
+            )
+            reviewed = manager.resolve_unit(latest, metadata, chapter["number"])
+            return next_unit_operation(chapter["status"], reviewed.state) == "review"
+        except Exception as exc:
+            raise ClaimError(f"cannot verify live Reviewer admission: {exc}") from exc
+
     def acquire(
         self,
         progress: Mapping[str, Any],
@@ -255,6 +300,60 @@ class ClaimManager:
                     raise ClaimError("claim admission blocked while finalization is active")
             except CoordinationError as exc:
                 raise ClaimError(f"claim admission blocked: {exc}") from exc
+
+            # Wave workers use pinned dispatches, except a live Reviewer may
+            # acquire one already accepted, still unreviewed wave unit.
+            try:
+                wave = self.repository.storage.read(".workflow/waves/active.json")
+            except StorageNotFound:
+                wave = None
+            if wave is not None:
+                try:
+                    pointer = json.loads(wave.content.decode("utf-8"))
+                    wave_id = pointer["wave_id"]
+                    manifest = json.loads(self.repository.storage.read(
+                        f".workflow/waves/{wave_id}/manifest.json"
+                    ).content.decode("utf-8"))
+                    phase = json.loads(self.repository.storage.read(
+                        f".workflow/waves/{wave_id}/state.json"
+                    ).content.decode("utf-8"))["phase"]
+                except (ValueError, KeyError, StorageError, UnicodeError) as exc:
+                    raise ClaimError(f"invalid pinned wave state: {exc}") from exc
+                if phase != "ACTIVE" or not set(unit_ids).issubset(set(manifest["unit_ids"])):
+                    raise ClaimError("chapter claims must be inside ACTIVE literary wave")
+                if frozen_shared_state != manifest["shared_state_revisions"]:
+                    raise ClaimError("wave claims require exact pinned glossary/style revisions")
+                if workflow_revision != manifest["workflow_revision"]:
+                    raise ClaimError("wave claim references another workflow revision")
+                authorized: set[str] = set()
+                for dispatch_path in self.repository.storage.list(".workflow/session-dispatches"):
+                    if not dispatch_path.endswith(".json"):
+                        continue
+                    try:
+                        plan = json.loads(self.repository.storage.read(dispatch_path).content.decode("utf-8"))
+                    except (ValueError, UnicodeError, StorageError):
+                        continue
+                    for pack in plan.get("sessions", []):
+                        ctx = pack.get("context", {})
+                        if (pack.get("session_id") != session_id
+                                or ctx.get("wave_id") != wave_id
+                                or ctx.get("base_commit") != base_commit
+                                or ctx.get("memory_revision") != manifest["memory_revision"]):
+                            continue
+                        authorized.update(
+                            unit["unit_id"] for unit in pack.get("units", [])
+                            if unit.get("role") == role
+                        )
+                if not set(unit_ids).issubset(authorized):
+                    if (role != "reviewer" or not base_commit
+                            or not self._live_wave_review_ready(
+                                progress, unit_ids, workflow_revision,
+                                session_id, manifest,
+                            )):
+                        raise ClaimError(
+                            "session is not authorized by a pinned wave dispatch"
+                            " or live Reviewer admission"
+                        )
 
             if frozen_shared_state is not None:
                 try:
@@ -319,6 +418,57 @@ class ClaimManager:
             self._rollback_created(created, exc)
             raise ClaimError(f"claim admission could not release coordination mutex: {exc}") from exc
         return created
+
+    def renew(
+        self,
+        progress: Mapping[str, Any],
+        selector: str,
+        *,
+        session_id: str,
+        lease_seconds: int = 3600,
+    ) -> list[ActiveClaim]:
+        """Extend live claims held by this session; never revive expired claims.
+
+        An auditable request precedes each conditional write. The existing claim
+        identity and snapshots remain unchanged; competing renew/release attempts
+        must win the same storage version.
+        """
+        session_id = self._require_nonempty(session_id, "session_id")
+        if type(lease_seconds) is not int or not 1 <= lease_seconds <= 86400:
+            raise ClaimError("lease_seconds must be between 1 and 86400")
+        unit_ids = resolve_selector(progress, selector)
+        updated: list[ActiveClaim] = []
+        for unit_id in unit_ids:
+            try:
+                previous = self._read_claim(unit_id)
+            except StorageNotFound as exc:
+                raise ClaimConflict(unit_id, f"unit {unit_id} has no active claim") from exc
+            if previous.data["session_id"] != session_id:
+                raise ClaimOwnershipError(unit_id, previous.data["session_id"])
+            now = self._now()
+            old_expiry = _parse_claim_timestamp(previous.data["expires_at"])
+            if old_expiry <= now:
+                raise ClaimConflict(unit_id, f"unit {unit_id} claim has expired; cleanup and reacquire")
+            extended = dict(previous.data)
+            extended["expires_at"] = _format_utc(
+                max(old_expiry, now) + timedelta(seconds=lease_seconds)
+            )
+            request_id = self._request_event(
+                action="renew_requested", claim=previous, occurred_at=now,
+                reason="owner_renewal",
+            )
+            try:
+                new_version = self.repository.write_if_version(
+                    previous.path, SchemaKind.CLAIM, extended, previous.version
+                )
+            except (StorageNotFound, StorageVersionConflict) as exc:
+                raise ClaimConflict(unit_id, f"unit {unit_id} claim changed before renewal") from exc
+            self._completion_event(
+                action="renewed", unit_id=unit_id,
+                request_event_id=request_id, occurred_at=self._now(),
+            )
+            updated.append(ActiveClaim(previous.path, extended, new_version))
+        return updated
 
     def _rollback_created(self, created: list[ActiveClaim], cause: Exception) -> None:
         unresolved: list[str] = []

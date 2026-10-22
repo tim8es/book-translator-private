@@ -38,6 +38,7 @@ from workflow.review_cli import ReviewCliError, register_review_commands
 from workflow.reviews import REVIEW_EVIDENCE_VERSION
 from workflow.schemas import SCHEMA_VERSION
 from workflow.source_updates import historical_extracted_paths
+from workflow.source_coverage import COVERAGE_PATH, SourceCoverageError, audit_epub
 
 
 ALLOWED_STATUSES = {"pending", "extracted", "translated", "reviewed"}
@@ -60,7 +61,11 @@ class BlockHTMLParser(HTMLParser):
 
     BLOCK_TAGS = {"p", "div", "li", "blockquote", "pre"}
     HEADING_TAGS = {"h1", "h2", "h3", "h4", "h5", "h6"}
-    SKIP_TAGS = {"script", "style", "svg"}
+    SKIP_TAGS = {"script", "style", "svg", "head"}
+    INLINE_MARKERS = {"em": "*", "i": "*", "strong": "**", "b": "**", "code": "`"}
+    # The plain-text extractor cannot represent these structures faithfully.
+    UNSUPPORTED_SEMANTICS = {"a", "img", "table", "figure", "figcaption", "aside",
+                             "sup", "sub", "math", "ruby", "audio", "video"}
 
     def __init__(self) -> None:
         super().__init__(convert_charrefs=True)
@@ -68,6 +73,7 @@ class BlockHTMLParser(HTMLParser):
         self._tag: str | None = None
         self._parts: list[str] = []
         self._skip_depth = 0
+        self._inline_stack: list[tuple[str, str]] = []
 
     def handle_starttag(self, tag: str, attrs) -> None:
         tag = tag.lower()
@@ -75,6 +81,13 @@ class BlockHTMLParser(HTMLParser):
             self._skip_depth += 1
             return
         if self._skip_depth:
+            return
+        if tag in self.UNSUPPORTED_SEMANTICS:
+            raise BookError(f"Unsupported semantic HTML element <{tag}>; extraction would lose structure")
+        if tag in self.INLINE_MARKERS:
+            marker = self.INLINE_MARKERS[tag]
+            self._parts.append(marker)
+            self._inline_stack.append((tag, marker))
             return
         if tag in self.HEADING_TAGS or tag in self.BLOCK_TAGS:
             self._flush()
@@ -89,6 +102,11 @@ class BlockHTMLParser(HTMLParser):
             return
         if self._skip_depth:
             return
+        if tag in self.INLINE_MARKERS:
+            if not self._inline_stack or self._inline_stack[-1][0] != tag:
+                raise BookError(f"Unbalanced inline HTML closing tag </{tag}>")
+            self._parts.append(self._inline_stack.pop()[1])
+            return
         if self._tag == tag:
             self._flush()
 
@@ -101,6 +119,8 @@ class BlockHTMLParser(HTMLParser):
         self._flush()
 
     def _flush(self) -> None:
+        if self._inline_stack:
+            raise BookError("Unclosed inline HTML formatting at block boundary")
         if not self._parts:
             self._tag = None
             return
@@ -225,6 +245,9 @@ def split_markdown(text: str, fallback_title: str) -> list[Chapter]:
 
     starts = [(index, title) for index, level, title in headings if level == split_level]
     chapters: list[Chapter] = []
+    preamble = "\n".join(lines[:starts[0][0]]).strip()
+    if preamble:
+        chapters.append(Chapter(f"{fallback_title} — front matter", preamble + "\n"))
     for item_index, (start, title) in enumerate(starts):
         end = starts[item_index + 1][0] if item_index + 1 < len(starts) else len(lines)
         content = "\n".join(lines[start:end]).strip()
@@ -246,6 +269,9 @@ def split_txt(text: str, fallback_title: str) -> list[Chapter]:
         return [Chapter(fallback_title, text.strip() + "\n")]
 
     chapters: list[Chapter] = []
+    preamble = "\n".join(lines[:starts[0][0]]).strip()
+    if preamble:
+        chapters.append(Chapter(f"{fallback_title} — front matter", preamble + "\n"))
     for item_index, (start, title) in enumerate(starts):
         end = starts[item_index + 1][0] if item_index + 1 < len(starts) else len(lines)
         content = "\n".join(lines[start:end]).strip()
@@ -309,10 +335,12 @@ def read_epub(source: Path) -> tuple[list[Chapter], dict[str, str | None]]:
         for idref in spine_ids:
             item = manifest.get(idref)
             if not item:
-                continue
+                raise BookError(f"EPUB spine references unknown manifest item: {idref}")
             href, media_type, properties = item
-            if "nav" in properties.split() or media_type not in {"application/xhtml+xml", "text/html"}:
+            if "nav" in properties.split():
                 continue
+            if media_type not in {"application/xhtml+xml", "text/html"}:
+                raise BookError(f"Unsupported EPUB spine media type {media_type!r}: {idref}")
             epub_path = (opf_dir / unquote(href.split("#", 1)[0])).as_posix()
             try:
                 raw = zf.read(epub_path)
@@ -322,8 +350,8 @@ def read_epub(source: Path) -> tuple[list[Chapter], dict[str, str | None]]:
             fallback = Path(epub_path).stem.replace("_", " ").replace("-", " ").strip() or idref
             try:
                 chapters.extend(split_html_document(text, fallback))
-            except BookError:
-                continue
+            except BookError as exc:
+                raise BookError(f"Cannot extract EPUB spine document {epub_path}: {exc}") from exc
 
         if not chapters:
             raise BookError("No readable XHTML/HTML chapters found in EPUB spine.")
@@ -393,6 +421,39 @@ def create_support_files(book_dir: Path) -> None:
     (book_dir / "style-guide.md").write_text(template_text("style-guide.md", style_fallback), encoding="utf-8")
 
 
+def require_compatible_workflow_revision(slug: str) -> None:
+    """Block writes by a different installation revision than the pinned book.
+
+    Existing read-only diagnostics remain usable. An unrecorded installation
+    retains its legacy behavior; it cannot claim pin compatibility.
+    """
+    installed = repo_root() / ".book-translator-install.json"
+    if not isinstance(slug, str) or Path(slug).name != slug or slug in {".", ".."}:
+        raise BookError("unsafe book slug")
+    book_metadata = repo_root() / "books" / slug / "metadata.json"
+    if not installed.is_file() or not book_metadata.is_file():
+        return
+    try:
+        installation = json.loads(installed.read_text(encoding="utf-8"))
+        metadata = json.loads(book_metadata.read_text(encoding="utf-8"))
+    except (OSError, ValueError, UnicodeError) as exc:
+        raise BookError(f"cannot verify pinned workflow revision: {exc}") from exc
+
+    if not isinstance(installation, dict) or not isinstance(metadata, dict):
+        raise BookError("cannot verify pinned workflow revision: invalid metadata")
+    workflow = metadata.get("workflow")
+    installed_revision = installation.get("resolved_revision")
+    book_revision = workflow.get("resolved_revision") if isinstance(workflow, dict) else None
+    if (not isinstance(installed_revision, str) or not installed_revision.strip()
+            or not isinstance(book_revision, str) or not book_revision.strip()):
+        raise BookError("a concrete installed and book workflow revision is required before writing")
+    if installed_revision != book_revision:
+        raise BookError(
+            f"book requires workflow revision {book_revision}; "
+            f"installed revision is {installed_revision}; select the pinned installation"
+        )
+
+
 def workflow_provenance() -> dict[str, str | None]:
     provenance = {
         "repository": CANONICAL_REPOSITORY,
@@ -439,6 +500,16 @@ def extract_command(args: argparse.Namespace) -> int:
         shutil.copy2(source, stored_source)
 
     chapters, detected = extract_chapters(stored_source, source_format)
+    coverage = None
+    if source_format == "epub":
+        try:
+            coverage = audit_epub(
+                stored_source, chapters,
+                extract_document=split_html_document,
+                decode_text=decode_text,
+            )
+        except SourceCoverageError as exc:
+            raise BookError(f"EPUB source coverage blocked: {exc}") from exc
     chapter_records: list[dict] = []
     used_slugs: set[str] = set()
 
@@ -501,6 +572,11 @@ def extract_command(args: argparse.Namespace) -> int:
     except (SchemaError, RepositoryError, StorageError) as exc:
         raise BookError(f"Cannot write workflow state for books/{slug}: {exc}") from exc
     create_support_files(book_dir)
+    if coverage is not None:
+        (book_dir / COVERAGE_PATH).write_text(
+            json.dumps(coverage, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
+            encoding="utf-8",
+        )
 
     print(f"Extracted {len(chapter_records)} chapter(s) into books/{slug}/extracted/")
     return 0
@@ -546,11 +622,19 @@ def _review_artifact_reader(book_dir: Path):
     return read
 
 
-def validate_book(slug: str) -> tuple[list[str], list[str]]:
+def validate_book(
+    slug: str,
+    *,
+    check_review_evidence: bool = True,
+    loaded_state: tuple[Path, dict, dict] | None = None,
+) -> tuple[list[str], list[str]]:
+    """Validate a workspace; reuse a freshly loaded state within one preflight."""
     errors: list[str] = []
     warnings: list[str] = []
     try:
-        book_dir, metadata, progress = load_book(slug)
+        book_dir, metadata, progress = (
+            load_book(slug) if loaded_state is None else loaded_state
+        )
     except BookError as exc:
         return [str(exc)], []
 
@@ -646,7 +730,7 @@ def validate_book(slug: str) -> tuple[list[str], list[str]]:
         for path in sorted(referenced_extracted - actual):
             errors.append(f"progress.json references missing extracted chapter: {path}")
 
-    if isinstance(workflow, dict) and workflow.get("review_evidence") == REVIEW_EVIDENCE_VERSION:
+    if check_review_evidence and isinstance(workflow, dict) and workflow.get("review_evidence") == REVIEW_EVIDENCE_VERSION:
         repository = state_repository(book_dir)
         ledger_valid = False
         try:
@@ -702,6 +786,17 @@ def build_command(args: argparse.Namespace) -> int:
         raise BookError("Book structure is invalid; run validate first:\n- " + "\n- ".join(errors))
 
     book_dir, _, progress = load_book(args.slug)
+    if not args.allow_unreviewed:
+        from workflow.waves import WaveManager, WaveError
+        from workflow.filesystem import FilesystemStorage
+        try:
+            waves = WaveManager(FilesystemStorage(book_dir))
+            if waves.active() is not None:
+                raise BookError("Cannot build final output while a literary wave is active")
+            if waves.impact_queue():
+                raise BookError("Cannot build final output with pending literary impact reviews")
+        except WaveError as exc:
+            raise BookError(f"Cannot verify literary wave completion: {exc}") from exc
     parts: list[str] = []
     incomplete: list[int] = []
 
@@ -766,6 +861,18 @@ def build_parser() -> argparse.ArgumentParser:
 def main(argv: list[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
     try:
+        # Only mutating commands require a pinned installation match.
+        # Read-only commands still allow recovery and diagnosis of old books.
+        readonly = {
+            "validate", "status", "resume", "session-next", "benchmark-sessions",
+            "wave-plan", "wave-status", "memory-impact", "memory-context",
+        }
+        if getattr(args, "slug", None) and args.command != "extract":
+            mutating = args.command not in readonly
+            if args.command == "plan-sessions":
+                mutating = bool(args.save)
+            if mutating:
+                require_compatible_workflow_revision(args.slug)
         return args.func(args)
     except (BookError, ClaimCliError, PatchCliError, ReviewCliError) as exc:
         print(f"ERROR: {exc}", file=sys.stderr)
