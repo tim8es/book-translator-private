@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "kind": "proposed_corrections_only",
+  "book_slug": "the-claiming-moon",
+  "unit_id": "chapter-000047",
+  "narrative_chapter": 45,
+  "workflow_revision": "5e0731da8b7ca81ada5316ed536a8a954008b789",
+  "source_revision": "source-000001",
+  "base_progress_sha": "a4eaffe8a5a0f076b95f9afdd232f34fc319ed88",
+  "base_translation_blob_sha": "5110df144b3e6d5423a47edf5257f1405f73e3ec",
+  "base_translation_accepted_sha256": "98d883627115149a82b4736d4dee4fca9af194f047879e0f5380942e516c6ce1",
+  "review_outcome": "NOT_REVIEWED",
+  "apply_requirements": "Do not modify canonical accepted translation outside live Translator claim + accept-translation + independent Reviewer claim. Revalidate all before snippets against latest hashes. No PASS claimed.",
+  "proposals": [
+    {
+      "finding": "QA-45-001",
+      "severity": "omission",
+      "description": "Author note about chapter-end notes missing",
+      "source_excerpt": "See the end of the chapter for more notes",
+      "before": "Они будут совершенно бесплатными.",
+      "after": "Они будут совершенно бесплатными.\n\nДополнительные примечания автора — в конце главы."
+    },
+    {
+      "finding": "QA-45-002",
+      "severity": "omission",
+      "description": "Taehyung swinging his legs and watching his toes omitted in palace kitchen",
+      "source_excerpt": "Taehyung sat with his legs swinging off the counter and watched his toes for a while.",
+      "before": "Чонгук допустил маленькую ошибку: позволил Тэхёну посидеть наедине со своими мыслями. А это всегда было опасно, потому что Тэхён слишком много обо всём думал.",
+      "after": "Тэхён сидел на краю стола, болтая свешенными ногами, и какое-то время разглядывал пальцы ног. Чонгук допустил маленькую ошибку: позволил Тэхёну побыть наедине со своими мыслями. А это всегда было опасно, потому что Тэхён слишком много обо всём думал."
+    },
+    {
+      "finding": "QA-45-003",
+      "severity": "stylistic_fidelity",
+      "description": "Source repeats It was cold twice in one paragraph; Russian elides second repetition",
+      "source_excerpt": "It was cold, and Taehyung was trying to warm Jungkook up. It was cold, and a little hail had begun to fall on the blanket.",
+      "before": "После этого оба притихли, прижавшись друг к другу. Было холодно, и Тэхён старался согреть Чонгука. На одеяло уже начал падать мелкий град.",
+      "after": "После этого оба притихли, прижавшись друг к другу. Было холодно, и Тэхён старался согреть Чонгука. Было холодно, и на одеяло уже начал падать мелкий град."
+    },
+    {
+      "finding": "QA-45-004",
+      "severity": "pronoun_clarity",
+      "description": "Russian feminine pronoun referring grammatically to пара obscures male referent Jin and Namjoon as actor",
+      "source_excerpt": "Namjoon came up behind his mate and wrapped his arms around him from the back, resting his chin on Jin's shoulder.",
+      "before": "Он подошёл к своей паре сзади, обнял её и опустил подбородок Джину на плечо.",
+      "after": "Намджун подошёл к Джину сзади, обнял его и положил подбородок ему на плечо."
+    }
+  ]
+}
