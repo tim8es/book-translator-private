@@ -152,17 +152,24 @@ jobs:
           PY
       - name: EPUBCheck conformance regression against exact original
         run: |
-          timeout 180 sudo apt-get update -qq
-          timeout 180 sudo apt-get install -y -qq epubcheck
+          curl --fail --location --retry 3 --connect-timeout 20 --max-time 180 \
+            --output /tmp/epubcheck-5.4.0.zip \
+            https://github.com/w3c/epubcheck/releases/download/v5.4.0/epubcheck-5.4.0.zip
+          unzip -q /tmp/epubcheck-5.4.0.zip -d /tmp/epubcheck-5.4.0
+          EPUBCHECK_JAR="$(find /tmp/epubcheck-5.4.0 -name epubcheck.jar -type f | head -1)"
+          test -n "$EPUBCHECK_JAR"
+          export EPUBCHECK_JAR
+          java -jar "$EPUBCHECK_JAR" --version
           python - <<'PY'
           from pathlib import Path
-          import collections, json, re, subprocess
+          import collections, json, os, re, subprocess
           original = Path("books/the-claiming-moon/source/The_Claiming_Moon.epub")
           output = Path("migration-roundtrip-check.epub")
           if not original.is_file() or not output.is_file():
               raise SystemExit("EPUBCheck inputs missing; EPUB roundtrip gate did not succeed")
           def check(path):
-              p = subprocess.run(["epubcheck", str(path)], capture_output=True, text=True)
+              p = subprocess.run(["java", "-jar", os.environ["EPUBCHECK_JAR"], str(path)],
+                                 capture_output=True, text=True)
               raw = p.stdout + "\n" + p.stderr
               errors = collections.Counter(re.findall(r"(?:ERROR|FATAL)\(([^)]+)\)", raw))
               warns = collections.Counter(re.findall(r"WARNING\(([^)]+)\)", raw))
