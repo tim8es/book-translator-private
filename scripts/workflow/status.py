@@ -3,7 +3,11 @@
 from __future__ import annotations
 
 from collections.abc import Callable, Mapping, Sequence
+from pathlib import Path
 from typing import Any
+
+from .context_routing import ContextRoutingError, contract_paths, read_manifest
+from .operations import next_unit_operation
 
 from .claims import ClaimManager, unit_id_for_chapter
 from .coordination import FINALIZATION_PATH
@@ -39,6 +43,7 @@ class StatusResolver:
     ):
         self.repository = repository
         self._artifact_reader = artifact_reader
+        self._routing: dict | None = None
 
     def status(
         self,
@@ -47,7 +52,11 @@ class StatusResolver:
         corpus: Mapping[str, Any] | None = None,
     ) -> dict[str, Any]:
         metadata_doc = self.repository.read("metadata.json", SchemaKind.METADATA)
-        progress_doc = self.repository.read("progress.json", SchemaKind.PROGRESS)
+        # The review pass below hashes every source/translation pair. Reuse those
+        # fresh hashes for acceptance verification instead of reading each file twice.
+        progress_doc = self.repository.read(
+            "progress.json", SchemaKind.PROGRESS, verify_artifacts=False
+        )
         metadata = metadata_doc.data
         progress = progress_doc.data
 
@@ -119,10 +128,18 @@ class StatusResolver:
                 self.repository,
                 artifact_reader=self._artifact_reader,
             )
+            verified_hashes: dict[tuple[str, str], str | None] = {}
             for resolution in review_manager.resolve_all(progress, metadata):
                 review_states_by_number[resolution.chapter_number] = resolution.state
+                verified_hashes[(resolution.unit_id, "source_sha256")] = resolution.source_sha256
+                verified_hashes[(resolution.unit_id, "translation_sha256")] = resolution.translation_sha256
+            # Keep translation-acceptance integrity mandatory for every status
+            # decision. Only the redundant artifact reads are eliminated.
+            self.repository._verify_translation_acceptance_integrity(
+                progress, verified_hashes=verified_hashes
+            )
         except (ReviewEvidenceError, RepositoryError, SchemaError, StorageError, StorageNotFound) as exc:
-            errors.append(f"review evidence is unavailable or invalid: {exc}")
+            errors.append(f"review/translation evidence is unavailable or invalid: {exc}")
 
         reviews = {state: 0 for state in _REVIEW_STATES}
         units: list[dict[str, Any]] = []
@@ -264,8 +281,8 @@ class StatusResolver:
                 if unit_id in claims_by_unit:
                     continue
 
-                operation = self._parallel_worker_operation(lifecycle, review)
-                if operation is None:
+                operation = next_unit_operation(lifecycle, review)
+                if operation not in {"translate", "correct_translation", "review"}:
                     break
                 assignments.append(
                     {
@@ -307,15 +324,8 @@ class StatusResolver:
                     "context": self._context("blocked", unit, status),
                 }
 
-            if lifecycle == "extracted":
-                operation = "translate"
-            elif lifecycle == "translated" and review == "pass":
-                operation = "accept_review"
-            elif lifecycle == "translated" and review == "corrections_required":
-                operation = "correct_translation"
-            elif lifecycle == "translated" and review in {"missing", "stale"}:
-                operation = "review"
-            elif lifecycle == "pending":
+            operation = next_unit_operation(lifecycle, review)
+            if lifecycle == "pending":
                 return {
                     "schema_version": STATUS_SCHEMA_VERSION,
                     "operation": "blocked",
@@ -325,7 +335,7 @@ class StatusResolver:
                     "errors": [f"{unit_id} has not been extracted"],
                     "context": self._context("blocked", unit, status),
                 }
-            else:
+            if operation is None:
                 return {
                     "schema_version": STATUS_SCHEMA_VERSION,
                     "operation": "blocked",
@@ -352,31 +362,21 @@ class StatusResolver:
             "context": self._context("complete", None, status),
         }
 
-    @staticmethod
-    def _parallel_worker_operation(lifecycle: Any, review: Any) -> str | None:
-        if lifecycle == "extracted":
-            return "translate"
-        if lifecycle == "translated" and review == "corrections_required":
-            return "correct_translation"
-        if lifecycle == "translated" and review in {"missing", "stale"}:
-            return "review"
-        return None
-
-    @staticmethod
     def _context(
+        self,
         operation: str,
         unit: Mapping[str, Any] | None,
         status: Mapping[str, Any],
     ) -> dict[str, Any]:
-        if operation in {"translate", "correct_translation"}:
-            role = "translator"
-            contracts = ["AGENTS.md", "docs/TRANSLATION.md"]
-        elif operation == "review":
-            role = "reviewer"
-            contracts = ["AGENTS.md", "docs/TRANSLATION.md"]
-        else:
-            role = "orchestrator"
-            contracts = ["AGENTS.md", "docs/ORCHESTRATION.md"]
+        role = ("reviewer" if operation == "review"
+                else "translator" if operation in {"translate", "correct_translation"}
+                else "orchestrator")
+        try:
+            if self._routing is None:
+                self._routing = read_manifest(Path(__file__).resolve().parents[2])
+            contracts = contract_paths(self._routing, role)
+        except ContextRoutingError as exc:
+            raise StatusError(f"cannot resolve {role} instructions: {exc}") from exc
 
         files = ["metadata.json", "progress.json"]
         if role in {"translator", "reviewer"}:
