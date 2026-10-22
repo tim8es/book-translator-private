@@ -6,8 +6,8 @@ on:
   pull_request:
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.event_name == 'pull_request' && github.event.pull_request.number || github.run_id }}
-  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+  group: tests-${{ github.event_name }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
 
 permissions:
   contents: read
@@ -17,9 +17,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout full history for accurate changed-file scope
-        uses: actions/checkout@v5
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
+          persist-credentials: false
       - name: Decide which checks to run
         id: scope
         shell: bash
@@ -56,23 +57,23 @@ jobs:
           print(f"Changed paths: {len(paths)}. Full engine tests: {full}. Book artifact check: {books}.")
           PY
 
-      - name: Set up Python 3.10
+      - name: Set up Python 3.12
         if: steps.scope.outputs.full == 'true' || steps.scope.outputs.books == 'true'
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@v7
         with:
-          python-version: "3.10"
+          python-version: "3.12"
       - name: Validate changed book artifacts without translating or rewriting them
         if: steps.scope.outputs.books == 'true'
         shell: bash
         run: python .github/scripts/verify_changed_books.py "$RUNNER_TEMP/changed-book-paths.json"
-      - name: Full engine test suite on Python 3.10
+      - name: Full engine test suite on Python 3.12
         if: steps.scope.outputs.full == 'true'
         run: python -m unittest discover -s tests -v
-      - name: Set up Python 3.12
+      - name: Set up Python 3.14
         if: always() && steps.scope.outputs.full == 'true'
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@v7
         with:
-          python-version: "3.12"
-      - name: Full engine test suite on Python 3.12
+          python-version: "3.14"
+      - name: Full engine test suite on Python 3.14
         if: always() && steps.scope.outputs.full == 'true'
         run: python -m unittest discover -s tests -v
