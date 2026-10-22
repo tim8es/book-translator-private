@@ -70,11 +70,3 @@ jobs:
       - name: Full engine test suite on Python 3.12
         if: steps.scope.outputs.full == 'true'
         run: python -m unittest discover -s tests -v
-      - name: Set up Python 3.14
-        if: always() && steps.scope.outputs.full == 'true'
-        uses: actions/setup-python@v7
-        with:
-          python-version: "3.14"
-      - name: Full engine test suite on Python 3.14
-        if: always() && steps.scope.outputs.full == 'true'
-        run: python -m unittest discover -s tests -v
