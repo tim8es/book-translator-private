@@ -1,0 +1,71 @@
+name: Build The Claiming Moon EPUB
+
+on:
+  push:
+    paths:
+      - .github/workflows/build-claiming-moon-epub.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: claiming-moon-epub
+  cancel-in-progress: false
+
+jobs:
+  build-epub:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Structural validation
+        run: python scripts/book.py validate the-claiming-moon
+      - name: Original source and extracted corpus SHA-256 verification
+        run: python scripts/corpus.py verify the-claiming-moon
+      - name: Assemble reviewed Russian translation as EPUB
+        run: python scripts/book.py build the-claiming-moon --format epub
+      - name: Validate current EPUB build manifest
+        run: python scripts/book.py build-status the-claiming-moon --format epub --json
+      - name: Check EPUB ZIP integrity, required entries, and reading-order count
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json, pathlib, zipfile
+          output = pathlib.Path('books/the-claiming-moon/output')
+          manifest = json.loads((output / 'manifest.json').read_text(encoding='utf-8'))
+          epub = pathlib.Path('books/the-claiming-moon') / manifest['artifact_path']
+          assert manifest['unit_count'] == 48, manifest
+          assert epub.is_file(), epub
+          with zipfile.ZipFile(epub) as z:
+              assert z.testzip() is None
+              assert z.namelist()[0] == 'mimetype'
+              assert z.read('mimetype') == b'application/epub+zip'
+              assert 'META-INF/container.xml' in z.namelist()
+              assert any(x.endswith('.opf') for x in z.namelist())
+              assert len([x for x in z.namelist() if x.endswith('.xhtml')]) >= 48
+          print(f'EPUB validated: {epub} ({epub.stat().st_size} bytes)')
+          PY
+      - name: Publish downloadable EPUB artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: The_Claiming_Moon_RU_EPUB
+          path: books/the-claiming-moon/output/*.epub
+          if-no-files-found: error
+          retention-days: 30
+      - name: Commit book output and manifest to book repository
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -f books/the-claiming-moon/output/*.epub books/the-claiming-moon/output/manifest.json
+          if git diff --cached --quiet; then
+            echo 'Generated output already matches the repository'
+          else
+            git commit -m 'build(the-claiming-moon): validated reviewed Russian EPUB'
+            git push origin HEAD:main
+          fi
