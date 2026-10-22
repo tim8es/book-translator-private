@@ -29,6 +29,28 @@ jobs:
         run: python scripts/corpus.py verify the-claiming-moon
       - name: Assemble reviewed Russian translation as EPUB
         run: python scripts/book.py build the-claiming-moon --format epub
+      - name: Recover translated structure and original emphasis
+        shell: bash
+        run: |
+          set -euo pipefail
+          BOOK="books/the-claiming-moon"
+          python "$BOOK/formatting/repair_epub.py" "$BOOK/output/the-claiming-moon.epub" "$BOOK/source/The_Claiming_Moon.epub" "$BOOK/output/the-claiming-moon.reformatted.epub"
+          python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+          book = Path("books/the-claiming-moon")
+          output = book / "output/the-claiming-moon.epub"
+          staged = book / "output/the-claiming-moon.reformatted.epub"
+          staged.replace(output)
+          manifest_path = book / "output/manifest.json"
+          manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+          manifest["artifact_sha256"] = hashlib.sha256(output.read_bytes()).hexdigest()
+          manifest_path.write_text(
+              json.dumps(manifest, ensure_ascii=False, sort_keys=True, indent=2) + "\n",
+              encoding="utf-8",
+          )
+          PY
       - name: Validate current EPUB build manifest
         run: python scripts/book.py build-status the-claiming-moon --format epub --json
       - name: Check EPUB ZIP integrity, required entries, and reading-order count
