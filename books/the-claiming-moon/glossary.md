@@ -26,3 +26,5 @@ Source-grounded terminology for *The Claiming Moon* (English → Russian). Entri
 | Jee | Джи | Character | Chapter 17 source and translation |
 | Kihyun | Кихён | Character | Chapters 7 and 17 source and translation |
 | Hefter pack | стая Хефтера | Organization | Preferred grammatical genitive when denoting a pack belonging to Hefter; chapter 7 also contains «стая Хефтер» and requires source-comparison correction |
+| Luna | Луна | Omegaverse title | Chapter 15: Jungkook addresses Taehyung as Luna; keep the title capitalized but masculine grammatical agreement for Taehyung |
+| pup | волчонок | Endearment | Chapter 15: Jungkook's address to Taehyung; not the generic meaning of an actual wolf pup |
