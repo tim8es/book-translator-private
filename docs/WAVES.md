@@ -1,0 +1,75 @@
+# Literary Memory & Waves (v1)
+
+The implementation extends Book Translator, without introducing a second chapter progress or review database. One wave per book. Python commands are registered in scripts/book.py and use the existing conditional StorageBackend.
+
+## Operational flow
+
+1. Run current source/corpus preflight; preview with `wave-plan BOOK --count 6`.
+2. Start with `wave-start BOOK --count 6`.
+3. Obtain session workpacks with `wave-dispatch BOOK --sessions 3 --base-commit HEAD`.
+4. Each user-opened chat calls `wave-next BOOK --dispatch-id ID --session-id SESSION`; normal durable claim and translation/review acceptance rules remain mandatory.
+5. Read bounded `memory-context BOOK --unit-id chapter-000001`.
+6. A claimed worker submits source-grounded `memory-propose BOOK --entry entry.json --session-id SESSION`.
+7. Finish translations, record independent PASS and release claims.
+8. Prepare decisions JSON mapping each proposal ID to accepted or rejected. Preview `wave-reconcile BOOK --decisions decisions.json`, then freeze via `--prepare`.
+9. Publish `wave-close BOOK`. If interrupted after preparing, execute `wave-recover BOOK` using frozen data.
+10. Check `memory-impact BOOK`; affected reviewed chapters require explicit independent re-review. Final output and finalization remain blocked until impact checks are resolved.
+
+## Durable paths
+
+Under books/BOOK/.workflow/: waves/active.json, waves/WAVE/manifest.json, waves/WAVE/state.json, waves/WAVE/reconciliation.json, waves/WAVE/proposals/; literary-memory/active.json, literary-memory/snapshots/, literary-memory/impacts/, literary-memory/resolutions/, and existing session-dispatches/.
+
+Snapshots and manifest are immutable. State and active pointers are version-guarded. A multi-file GitHub transition is not atomic, so RECONCILING remains a visible recovery barrier. Previous accepted translations are never rewritten by wave closure.
+
+## Evidence
+
+Literary memory entries have memory_id, kind, subject, statement, translation_decision, evidence (unit_id and verbatim original quote), source_revision_id, status and supersedes. Source evidence must be verified against the chapter before acceptance. An accepted change can produce conservative text-match impact candidates. This is not semantic proof of every affected passage.
+
+Glossary and style-guide remain authoritative; proposals to those existing documents are not automatically merged in the wave. New entries never override established glossary terms. Keep proposed/shared literary changes separate until reconciled. A changed shared-state revision blocks stale workpacks.
+
+## GitHub-native ChatGPT limitation
+
+ChatGPT GitHub sessions can inspect authoritatively stored files, workpacks, claims and artifacts. They cannot assume Python ran or manufacture SHA-256 memory revisions. Before any mutation, validate the contract, verify current state, use create-if-absent or compare-and-swap, then read back results. If the connector cannot execute a required deterministic transition or perform its cryptographic checks, stop and request execution by a verified runtime. Full GitHub-only feature parity requires a dedicated execution adapter and equivalence tests; it is not yet implemented by instructions alone.
+
+## Worker context routing and lazy chapter loading
+
+`agent-manifest.json.context_profiles` selects base instructions by role; when
+an ACTIVE wave exists, apply only that role's `context_overlays.waves`. For
+Translator/Reviewer this adds the short [WAVE_WORKER.md](WAVE_WORKER.md) contract;
+for Orchestrator it routes to this document. Do not load wave instructions
+outside an active wave.
+
+`wave-next` now includes `load_plan` for `claim` and `work` actions.
+It lists instruction paths, pinned glossary/style revisions, original source,
+translation/review input paths as applicable, the immutable memory snapshot,
+and the command to prepare bounded `memory-context`. **It does not include
+chapter bytes, full prior chapters, or memory contents.** With `claim`, fetch
+that chapter working context only *after* successfully acquiring the matching
+claim. With `work`, verify ownership/expiry before loading. No work context
+is returned for `wait`, `blocked`, or `complete`.
+
+For consecutive chapters, re-run `wave-next` to revalidate authority; reuse
+unchanged role instructions already in the same chat but reload current
+chapter-specific source, target and bounded memory. Role changes require
+reloading the corresponding role contract. The response is advisory metadata,
+not a runtime claim or a complete GitHub-native execution adapter.
+
+## Publication integrity and stale impact protection
+
+Reconciliation now pins a `publication_seal` containing current metadata,
+progress, review-ledger, glossary and style-guide revisions, the validated
+original source fingerprint, and source/translation SHA-256 for every reviewed
+unit used in impact analysis. `wave-close` and unfinished `wave-recover`
+recompute this seal from authoritative files under the existing coordination
+lock. Any change since preparation stops publication in `RECONCILING` rather
+than silently committing a stale literary-memory snapshot. A wave that already
+reached durable `CLOSED` can safely finish deleting its active pointer without
+revalidating chapter content changed after that committed publication.
+
+An impact resolution is not a permanent boolean: it is accepted as closed only
+while the referenced current independent PASS record, translation hash and
+literary-memory revision still match. An invalidated resolution returns to
+`memory-impact` as pending and blocks normal finalization. Historical review
+and impact evidence are retained. If inputs drift during `RECONCILING`, stop
+and inspect the recorded frozen state; do not force-update the memory pointer or
+invent a replacement seal.

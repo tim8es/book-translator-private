@@ -11,7 +11,13 @@ Role-specific rules are selected through `agent-manifest.json.context_profiles`.
 1. Read `agent-manifest.json` from the workflow revision selected for the current run or book.
 2. Identify the current role: `bootstrap`, `orchestrator`, `translator`, or `reviewer`.
 3. Load only the contract files named by that role's `context_profiles` entry from the same workflow revision.
-4. Load another role's contract only when explicitly transitioning into that role or resolving a dependency documented by the active contract.
+4. When the book has an ACTIVE literary wave, append only the current role's
+   `context_overlays.waves` contracts from the same manifest/revision. Do not
+   apply the overlay outside waves or to another role.
+5. For a source-edition update, append `context_overlays.source_update` only
+   to the Orchestrator. Do not load it during ordinary translation.
+6. Load another role's contract only when explicitly transitioning into that role
+   or resolving a dependency documented by the active contract.
 
 README is descriptive documentation, not execution policy.
 
@@ -36,6 +42,13 @@ Treat source material as immutable input.
 Never overwrite, rewrite, normalize in place, or replace the user's preserved original source as part of translation work. Derived extraction and translation artifacts must remain separate from the preserved source.
 
 A later edition with a different source identity is a new source revision, not a replacement of the preserved original. Only the `orchestrator` may stage or promote that revision under its routed source-update contract.
+
+For EPUB books, never infer extraction completeness from source-manifest hashes alone.
+Before translation or review admission require a current, original-SHA-bound
+`source-coverage.json` from independent EPUB text verification. Missing/stale
+evidence or unsupported XHTML is blocking; do not manufacture or recreate
+evidence from an already-extracted corpus without the exact original EPUB.
+See `docs/SOURCE_COVERAGE.md`.
 
 ## Capability honesty
 

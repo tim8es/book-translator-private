@@ -186,6 +186,35 @@ Advanced users or agents may use temporary branches/worktrees when they need iso
 
 If one book needs stronger privacy or organizational isolation, putting that book in its own private repository is usually easier to understand than using a permanent branch as storage.
 
+## Parallel translation across separate chats
+
+Persisted workpacks, restart-safe step selection, and the empirical benchmark format
+are documented in [Session Runtime and Benchmark](docs/SESSION_RUNTIME.md).
+The runtime reuses durable claims and review evidence; it does not spawn chats
+or bypass source-admission checks.
+
+
+You create the chats manually. Each session uses the same private working
+repository and the same pinned workflow revision, but processes its own units.
+
+For environments with the Python helper, create advisory, source-size-balanced
+workpacks (without creating any agents or modifying book state):
+
+```bash
+python scripts/book.py plan-sessions <book-slug> --sessions 3 --json
+```
+
+Paste each workpack's `instructions`, `session_id`, and `units` into its own
+chat. The workpacks are **not** locks: each chat must acquire a durable claim
+before translating or reviewing a specific unit, then accept and release its
+result. A long-running chapter claim can be extended by the owning session
+with `renew-claim`.
+
+If the chat has only GitHub tools, it can inspect and coordinate the same
+repository state without inventing local Python execution; conditional GitHub
+writes and the pinned version/claim contracts remain mandatory. See
+[the orchestration protocol](docs/ORCHESTRATION.md) for the precise rules.
+
 ## How resuming works
 
 Book Translator stores the state needed to continue in files, not only in chat history.
@@ -342,6 +371,15 @@ The Reviewer compares source and translation. The Orchestrator owns durable shar
 
 When the source corpus is sealed, `source-manifest.json` records SHA-256 identities for the preserved source and extracted artifacts. Before literary work resumes, those hashes can be checked so incomplete or changed source material is detected rather than silently accepted.
 
+For EPUB, a separate independent [text coverage audit](docs/SOURCE_COVERAGE.md)
+compares the original XHTML inventory with the extracted chapters. Only the
+strict supported textual subset can be marked verified. Missing, lossy or
+unsupported content blocks the workflow rather than being silently omitted.
+A verified report certifies ordered text tokens for the supported XHTML subset,
+not visual layout, images, footnote semantics, or arbitrary EPUB markup.
+Previously imported EPUB books must be independently re-audited against their
+exact original file before translation can resume; nothing is auto-certified.
+
 ## Supported source formats
 
 The included standard-library helper can automatically extract:
@@ -364,6 +402,7 @@ Typical commands:
 ```bash
 python scripts/book.py extract /path/to/book.epub --target-language ru
 python scripts/book.py validate <book-slug>
+python scripts/book.py source-coverage <book-slug> --source /path/to/original.epub --json
 python scripts/book.py update-source <book-slug> /path/to/later-edition.epub --json
 python scripts/book.py build <book-slug> --format epub
 ```
@@ -411,3 +450,13 @@ Contract tests protect role routing and documentation boundaries. CLI/corpus tes
 ## License
 
 MIT. See [`LICENSE`](LICENSE).
+
+## Evidence-based literary review
+
+Optional v2 review evidence binds literary review findings to verifiable original
+and translated excerpts, with explicit follow-up tracking. See
+[translation contract](docs/TRANSLATION.md). Historical v1 reports are preserved.
+
+## Literary Memory & Waves
+
+The optional wave runtime coordinates source-pinned multi-chat translation, bounded source-grounded literary memory, and explicit consistency reviews. See [docs/WAVES.md](docs/WAVES.md). Full GitHub-only execution parity for memory publication is not yet available without a compatible deterministic execution adapter.
