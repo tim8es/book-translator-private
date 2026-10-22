@@ -42,6 +42,16 @@ Correction proposal for each chapter (in its opening author-notes block, followi
 
 The same issue was also found in **chapters 31–35**; see the separate reverse technical QA record for that range. This is a systematic pattern that warrants a source-note check in the chapters handled by the other agent as well, **without independently editing their active scope**.
 
+## Further narrative fidelity findings — chapter 45
+
+Targeted paragraph-to-paragraph spot comparisons identified an **actual missing narrative sentence**, separate from the author-note issue:
+
+- Source (palace kitchen): `Taehyung sat with his legs swinging off the counter and watched his toes for a while.` The canonical Russian paragraph begins with `Чонгук допустил маленькую ошибку`, omitting this preceding depiction of Taehyung's action. High-confidence omission. Restore the source action in Russian.
+- The source repeats `It was cold` twice in one paragraph about cuddling and hail. The Russian version keeps only one instance. Reviewer should assess whether source-function fidelity requires preserving the repetition (recommended: preserve).
+- Namjoon/Jin nursery scene: English explicitly names Namjoon and uses masculine object `him`; Russian says `Он подошёл к своей паре сзади, обнял её`. The pronoun grammatically agrees with feminine noun `пара` but risks suggesting Jin is female. Suggested clearer wording names Namjoon and uses `обнял его`. This is an editorial ambiguity/clarity issue, not evidence of a missing passage.
+
+Exact before/after patch suggestions, with a SHA-bound baseline and match-once checks, are durably staged in `incoming/QA_chapter_45_correction_proposals_2026-10-22.json`. Opening author-note correction instructions for **all chapters 31–44** are also queued separately in `incoming/QA_reverse_author_notes_correction_queue_2026-10-22.json`. Neither queue is an accepted canonical translation; no lifecycle states have been promoted.
+
 ## Next reverse-work order
 
 1. Refresh source/progress/claims state; run full canonical corpus preflight (`book.py validate`, `corpus.py verify`) in a capable workspace. This connector-only run independently checked selected artifact hashes but did **not** execute those Python commands or the complete 48-unit corpus verification.
