@@ -69,6 +69,38 @@ jobs:
           print('MIGRATION_AUDIT_JSON='+json.dumps(result,ensure_ascii=False,sort_keys=True))
           (Path('migration-test-report.json')).write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n')
           PY
+      - name: Attempt exact original-XHTML roundtrip with full link validation
+        env:
+          PYTHONPATH: codec/scripts
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json, hashlib
+          from workflow.epub_structure import read_chapters, build, validate_structural_epub
+          book=Path('books/the-claiming-moon')
+          source=book/'source/The_Claiming_Moon.epub'
+          report_path=Path('migration-test-report.json')
+          report=json.loads(report_path.read_text())
+          try:
+            units,layout=read_chapters(source)
+            output=build(
+              source.read_bytes(),document_paths=[u[2] for u in units],
+              translations=[u[1] for u in units],
+              target_language='en',title='The Claiming Moon'
+            )
+            report['structural_roundtrip']='passed'
+            report['roundtrip_sha256']=hashlib.sha256(output).hexdigest()
+            report['roundtrip_validation']=validate_structural_epub(output, expected_documents=48)
+          except Exception as ex:
+            report['structural_roundtrip']='blocked'
+            report['roundtrip_error']=repr(ex)
+          report_path.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
+          print('ROUNDTRIP_JSON='+json.dumps({
+            'result':report['structural_roundtrip'],
+            'error':report.get('roundtrip_error'),
+            'validation':report.get('roundtrip_validation')
+          },ensure_ascii=False))
+          PY
       - uses: actions/upload-artifact@v4
         with:
           name: claiming-moon-structural-migration-audit
