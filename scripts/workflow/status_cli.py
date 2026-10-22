@@ -6,14 +6,19 @@ import argparse
 import importlib
 import json
 import subprocess
+from uuid import uuid4
 from collections.abc import Callable, Mapping, Sequence
 from pathlib import Path
 from typing import Any
 
 from .filesystem import FilesystemStorage
 from .repository import RepositoryError, WorkflowStateRepository
+from .session_planner import SessionPlanError, plan_sessions
+from .session_runtime import SessionRuntimeError, save_dispatch, load_dispatch, next_action
+from .session_benchmark import BenchmarkError, evaluate_file
 from .schemas import SchemaError
 from .source_cli import normalize_structural_errors, register_source_overrides, source_storage_mode
+from .source_coverage import coverage_integrity_errors
 from .status import StatusError, StatusResolver
 from .storage import StorageError
 
@@ -67,14 +72,21 @@ def default_preflight(root: Path, slug: str) -> tuple[Sequence[str], Mapping[str
 
     try:
         book_module = importlib.import_module("book")
-        structural_errors, _ = book_module.validate_book(slug)
+        # Load and verify progress once. Structural validation and corpus
+        # verification share that same freshly read state within this preflight.
         book_dir, metadata, progress = book_module.load_book(slug)
+        # The status resolver verifies review evidence; do not duplicate that pass.
+        structural_errors, _ = book_module.validate_book(
+            slug, check_review_evidence=False,
+            loaded_state=(book_dir, metadata, progress),
+        )
         structural_errors = normalize_structural_errors(book_dir, metadata, structural_errors)
     except Exception as exc:
         raise StatusCliError(f"cannot run structural preflight: {exc}") from exc
 
     mode = source_storage_mode(metadata)
     if mode is None:
+        structural_errors.extend(coverage_integrity_errors(book_dir, metadata, progress))
         return structural_errors, {
             "state": "invalid",
             "error": "metadata.json source identity is required by the current workflow",
@@ -82,6 +94,7 @@ def default_preflight(root: Path, slug: str) -> tuple[Sequence[str], Mapping[str
 
     manifest_path = book_dir / "source-manifest.json"
     if not manifest_path.is_file():
+        structural_errors.extend(coverage_integrity_errors(book_dir, metadata, progress))
         return structural_errors, {
             "state": "invalid",
             "storage_mode": mode,
@@ -92,13 +105,11 @@ def default_preflight(root: Path, slug: str) -> tuple[Sequence[str], Mapping[str
         corpus_module = importlib.import_module("corpus")
         manifest = corpus_module.load_source_manifest(book_dir)
         if manifest is None:
-            return structural_errors, {
-                "state": "invalid",
-                "storage_mode": mode,
-                "error": "source-manifest.json is required by the current workflow",
-            }
+            raise StatusCliError("source-manifest.json is required by the current workflow")
         verified = corpus_module.verify_manifest(book_dir, metadata, progress, manifest)
     except Exception as exc:
+        # An invalid seal cannot justify trusting its declared chapter hashes.
+        structural_errors.extend(coverage_integrity_errors(book_dir, metadata, progress))
         payload: dict[str, Any] = {
             "state": "invalid",
             "storage_mode": mode,
@@ -106,6 +117,11 @@ def default_preflight(root: Path, slug: str) -> tuple[Sequence[str], Mapping[str
         }
         return structural_errors, payload
 
+    # The manifest verifier has just hashed all extracted chapter bytes.
+    fingerprints = {item["path"]: item["sha256"] for item in manifest["extracted"]}
+    structural_errors.extend(coverage_integrity_errors(
+        book_dir, metadata, progress, verified_extracted_sha256=fingerprints
+    ))
     return structural_errors, dict(verified)
 
 
@@ -141,8 +157,10 @@ def _git_head(root: Path) -> str | None:
 def _parallel_dispatch_snapshot(
     status: Mapping[str, Any],
     root: Path,
+    *,
+    explicit_commit: str | None = None,
 ) -> tuple[str, dict[str, str]]:
-    base_commit = _git_head(root)
+    base_commit = explicit_commit or _git_head(root)
     if base_commit is None:
         raise StatusCliError(
             "parallel resume requires Git HEAD so dispatch can bind a fixed base_commit"
@@ -192,6 +210,128 @@ def status_command(args: argparse.Namespace, root: Path, preflight: Preflight) -
     return 0
 
 
+def plan_sessions_command(args: argparse.Namespace, root: Path, preflight: Preflight) -> int:
+    """Create advisory, balanced workpacks without taking claims or writing state."""
+    status = _snapshot(args, root, preflight)
+    base_commit, _ = _parallel_dispatch_snapshot(
+        status, root, explicit_commit=args.base_commit
+    )
+    reader = _artifact_reader(_book_directory(root, args.slug))
+    sizes: dict[str, int] = {}
+    try:
+        for unit in status["units"]:
+            if unit["lifecycle"] != "reviewed":
+                sizes[unit["unit_id"]] = len(reader(unit["source_path"]))
+        plan = plan_sessions(
+            status, sessions=args.sessions, source_sizes=sizes,
+            base_commit=base_commit, dispatch_id=args.dispatch_id or uuid4().hex,
+        )
+        if args.save:
+            save_dispatch(FilesystemStorage(_book_directory(root, args.slug)), plan)
+    except (OSError, SessionPlanError, SessionRuntimeError) as exc:
+        raise StatusCliError(str(exc)) from exc
+    if args.json:
+        _print_json(plan)
+    else:
+        print(f"book={args.slug} remaining={plan['remaining_units']} sessions={len(plan['sessions'])}")
+        for assignment in plan["sessions"]:
+            chapters = ",".join(str(number) for number in assignment["chapter_numbers"])
+            print(f"session={assignment['session_id']} chapters={chapters} source_bytes={assignment['source_bytes']}")
+    return 0
+
+
+def benchmark_sessions_command(args: argparse.Namespace) -> int:
+    """Analyze supplied observations; no timers, LLM calls or workspace writes."""
+    try:
+        payload = evaluate_file(Path(args.record).expanduser())
+    except (OSError, BenchmarkError) as exc:
+        raise StatusCliError(str(exc)) from exc
+    if args.json:
+        _print_json(payload)
+    else:
+        print(f"dataset={payload['dataset_id']} protocol={payload['evaluation_protocol']}")
+        for row in payload["summary"]:
+            print(
+                f"sessions={row['sessions']} samples={row['samples']} "
+                f"words_per_hour={row['median_words_per_hour']}"
+            )
+        for comparison in payload["comparisons"]:
+            print(
+                f"sessions={comparison['sessions']} speedup={comparison['throughput_speedup']} "
+                f"provisional_target={comparison['meets_provisional_2x_target']}"
+            )
+        print(payload["qualification"])
+    return 0
+
+
+def review_next_command(args: argparse.Namespace, root: Path, preflight: Preflight) -> int:
+    """Freshly select an accepted translation for a long-lived Reviewer chat."""
+    from .review_queue import next_review
+    from .waves import WaveManager, WaveError
+
+    status = _snapshot(args, root, preflight)
+    storage = FilesystemStorage(_book_directory(root, args.slug))
+    manager = WaveManager(storage)
+    wave = None
+    try:
+        if manager.active() is not None:
+            manifest, state, _ = manager._active_state()
+            if state["phase"] != "ACTIVE":
+                decision = {
+                    "schema_version": 1, "action": "blocked",
+                    "reason": "wave_reconciliation_active", "session_id": args.session_id,
+                }
+                _print_json(decision)
+                return 1
+            if manager.memory()["revision"] != manifest["memory_revision"]:
+                raise WaveError("active wave literary memory revision changed")
+            wave = manifest
+        decision = next_review(status, args.session_id, wave=wave)
+        if decision["action"] in {"claim", "work"}:
+            base_commit, shared = _parallel_dispatch_snapshot(
+                status, root, explicit_commit=args.base_commit,
+            )
+            decision["claim_snapshot"] = {
+                "base_commit": base_commit, "shared_state_revisions": shared,
+                "workflow_revision": status["workflow_revision"],
+                "source_sha256": status["corpus"]["source_sha256"],
+            }
+            if wave is not None:
+                from .wave_cli import _wave_load_plan, _read_role_routing
+                routed = dict(decision, context={
+                    "wave_id": wave["wave_id"],
+                    "memory_revision": wave["memory_revision"],
+                    "source_sha256": wave["source_sha256"],
+                    "workflow_revision": wave["workflow_revision"],
+                    "shared_state_revisions": wave["shared_state_revisions"],
+                })
+                decision["load_plan"] = _wave_load_plan(
+                    routed, status, wave, _read_role_routing(root),
+                )
+    except (ValueError, WaveError) as exc:
+        raise StatusCliError(str(exc)) from exc
+    _print_json(decision)
+    return 1 if decision["action"] == "blocked" else 0
+
+
+def session_next_command(args: argparse.Namespace, root: Path, preflight: Preflight) -> int:
+    """Read a saved workpack and derive the next safe step from current state."""
+    status = _snapshot(args, root, preflight)
+    storage = FilesystemStorage(_book_directory(root, args.slug))
+    try:
+        plan = load_dispatch(storage, args.dispatch_id)
+        decision = next_action(plan, status, args.session_id)
+    except SessionRuntimeError as exc:
+        raise StatusCliError(str(exc)) from exc
+    if args.json:
+        _print_json(decision)
+    else:
+        print(f"session={decision['session_id']} next={decision['action']}"
+              + (f" unit={decision['unit_id']}" if "unit_id" in decision else "")
+              + (f" reason={decision['reason']}" if "reason" in decision else ""))
+    return 1 if decision["action"] == "blocked" else 0
+
+
 def resume_command(args: argparse.Namespace, root: Path, preflight: Preflight) -> int:
     status = _snapshot(args, root, preflight)
     resolver = _resolver(root, args.slug)
@@ -201,7 +341,9 @@ def resume_command(args: argparse.Namespace, root: Path, preflight: Preflight) -
         raise StatusCliError(str(exc)) from exc
 
     if payload["operation"] == "parallel":
-        base_commit, shared_state_revisions = _parallel_dispatch_snapshot(status, root)
+        base_commit, shared_state_revisions = _parallel_dispatch_snapshot(
+            status, root, explicit_commit=getattr(args, "base_commit", None)
+        )
         assignments = payload.get("assignments")
         if not isinstance(assignments, list):
             raise StatusCliError("parallel resume returned invalid assignments")
@@ -287,6 +429,10 @@ def register_status_commands(
     resume.add_argument("slug", help="Book slug under books/.")
     resume.add_argument("--json", action="store_true", help="Emit deterministic machine-readable JSON.")
     resume.add_argument(
+        "--base-commit",
+        help="Explicit HEAD SHA from GitHub for environments without local Git.",
+    )
+    resume.add_argument(
         "--parallel",
         type=int,
         metavar="N",
@@ -298,6 +444,63 @@ def register_status_commands(
             error_factory,
         )
     )
+
+    sessions = subparsers.add_parser(
+        "plan-sessions", help="Generate balanced, read-only workpacks for manually opened chats."
+    )
+    sessions.add_argument("slug", help="Book slug under books/.")
+    sessions.add_argument("--sessions", type=int, required=True, metavar="N")
+    sessions.add_argument("--base-commit", help="Explicit repository HEAD SHA when local Git is unavailable.")
+    sessions.add_argument(
+        "--dispatch-id", help="Reuse the 32-hex ID only when replaying the SAME saved plan."
+    )
+    sessions.add_argument("--save", action="store_true", help="Atomically persist workpacks for chat restarts.")
+    sessions.add_argument("--json", action="store_true")
+    sessions.set_defaults(
+        func=_adapt_errors(
+            lambda args: plan_sessions_command(args, root, resolved_preflight),
+            error_factory,
+        )
+    )
+
+    live_reviewer = subparsers.add_parser(
+        "review-next", help="Select next currently accepted chapter for independent Reviewer."
+    )
+    live_reviewer.add_argument("slug")
+    live_reviewer.add_argument("--session-id", required=True)
+    live_reviewer.add_argument("--base-commit",
+                               help="Pinned Git HEAD from GitHub when local Git is unavailable.")
+    live_reviewer.add_argument("--json", action="store_true")
+    live_reviewer.set_defaults(func=_adapt_errors(
+        lambda args: review_next_command(args, root, resolved_preflight),
+        error_factory,
+    ))
+
+    next_session = subparsers.add_parser(
+        "session-next", help="Resume one saved chat workpack from authoritative GitHub/file state."
+    )
+    next_session.add_argument("slug", help="Book slug under books/.")
+    next_session.add_argument("--dispatch-id", required=True)
+    next_session.add_argument("--session-id", required=True)
+    next_session.add_argument("--json", action="store_true")
+    next_session.set_defaults(
+        func=_adapt_errors(
+            lambda args: session_next_command(args, root, resolved_preflight),
+            error_factory,
+        )
+    )
+
+    benchmark = subparsers.add_parser(
+        "benchmark-sessions", help="Compare measured 1/N-chat runs on an identical book corpus."
+    )
+    benchmark.add_argument("record", help="JSON file containing measured, independently reviewed runs.")
+    benchmark.add_argument("--json", action="store_true")
+    benchmark.set_defaults(
+        func=_adapt_errors(benchmark_sessions_command, error_factory)
+    )
+
+    from .wave_cli import register_wave_commands
+    register_wave_commands(subparsers, root, resolved_preflight, error_factory)
 
     from .finalize_cli import register_finalize_command
 

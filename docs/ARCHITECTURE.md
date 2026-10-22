@@ -27,3 +27,28 @@ Source integrity is independent from literary review. A valid source corpus does
 ## Completion
 
 A book is complete only when all intended units have current machine-verifiable PASS evidence, durable lifecycle state is reviewed, structural and corpus checks pass, and requested output artifacts are built and verified.
+
+## Storage backend equivalence
+
+The same Python workflow operates through the `StorageBackend` contract for
+filesystem and GitHub-backed book state. Cross-backend tests cover identical
+read-only chapter decisions, parallel dispatches, stale-review rejection and
+compare-and-swap conflicts. Backend revision strings can differ and must not
+be treated as identical hashes across installations.
+
+The GitHub API connector alone **does not execute Python**. A real GitHub-backed
+run therefore requires an executable runtime with verified GitHub API access;
+never substitute prose descriptions of commands for completed operations.
+These tests use a deterministic fake API and do not establish real remote
+latency, rate-limit behavior or end-to-end ChatGPT bookability.
+
+## Pinned runtime admission
+
+For installations with `.book-translator-install.json`, mutating CLI commands
+reject books whose `metadata.json.workflow.resolved_revision` differs from the
+installed `resolved_revision`. Read-only diagnostics still work to help
+recover an old book. An installation with no provenance record remains a
+legacy compatibility case, **not** proof that its runtime matches the book;
+users should install the pinned revision before mutation. This check prevents
+accidental cross-version CLI use but does not prove the integrity of the
+installed files or authorize an unattended workflow upgrade.

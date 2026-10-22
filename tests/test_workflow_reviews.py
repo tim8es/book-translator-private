@@ -146,6 +146,141 @@ class WorkflowReviewTests(unittest.TestCase):
             review_commit=None,
         )
 
+    def test_structured_review_evidence_is_bound_to_record(self):
+        self.claim()
+        evidence = {
+            "context": "bounded_context",
+            "checks": dict.fromkeys(
+                ["coverage", "meaning", "terminology", "style", "structure"], True
+            ),
+            "findings": [],
+        }
+        result = self.manager().record(
+            self.progress, self.progress_revision, self.metadata, 1,
+            outcome="PASS", reviewer_session_id="reviewer-a",
+            quality_report=evidence,
+        )
+        self.assertEqual(result.record["quality_report"], evidence)
+        saved = self.repository.read("review-ledger.json", SchemaKind.REVIEW_LEDGER)
+        self.assertEqual(saved.data["records"][0]["quality_report"], evidence)
+
+    def test_anchored_review_requires_real_quotes_and_rechecks_corrections(self):
+        self.claim()
+        manager = self.manager()
+
+        def evidence(*findings):
+            return {
+                "evidence_version": 2, "context": "bounded_context",
+                "checks": dict.fromkeys(
+                    ["coverage", "meaning", "terminology", "style", "structure"], True
+                ),
+                "findings": list(findings),
+            }
+
+        first = {
+            "id": "meaning-1", "category": "meaning", "severity": "major",
+            "detail": "Source and target are not semantically equivalent.",
+            "resolved": False,
+            "source_anchor": {"quote": "Source.", "occurrence": 0},
+            "translation_anchor": {"quote": "Перевод.", "occurrence": 0},
+            "resolves": None,
+        }
+        bad = dict(first, source_anchor={"quote": "Missing source.", "occurrence": 0})
+        with self.assertRaisesRegex(ReviewEvidenceError, "absent"):
+            manager.record(
+                self.progress, self.progress_revision, self.metadata, 1,
+                outcome="CORRECTIONS_REQUIRED", reviewer_session_id="reviewer-a",
+                quality_report=evidence(bad),
+            )
+        ledger = self.repository.read("review-ledger.json", SchemaKind.REVIEW_LEDGER)
+        self.assertEqual(ledger.data["records"], [])
+
+        correction = manager.record(
+            self.progress, self.progress_revision, self.metadata, 1,
+            outcome="CORRECTIONS_REQUIRED", reviewer_session_id="reviewer-a",
+            quality_report=evidence(first),
+        )
+        with self.assertRaisesRegex(ReviewEvidenceError, "v2 evidence"):
+            self.record(manager, outcome="PASS")
+        with self.assertRaisesRegex(ReviewEvidenceError, "explicit rechecks"):
+            manager.record(
+                self.progress, self.progress_revision, self.metadata, 1,
+                outcome="PASS", reviewer_session_id="reviewer-a",
+                quality_report=evidence(),
+            )
+        next_finding = dict(
+            first, id="meaning-recheck", resolved=True,
+            resolves={"record_id": correction.record["record_id"], "finding_id": "meaning-1"},
+        )
+        with self.assertRaisesRegex(ReviewEvidenceError, "changed translation"):
+            manager.record(
+                self.progress, self.progress_revision, self.metadata, 1,
+                outcome="PASS", reviewer_session_id="reviewer-a",
+                quality_report=evidence(next_finding),
+            )
+
+        self.artifacts["translated/001-one.md"] = "# Один\\n\\nИсправленный перевод.\\n".encode("utf-8")
+        next_finding["translation_anchor"] = {"quote": "Исправленный перевод.", "occurrence": 0}
+        accepted = manager.record(
+            self.progress, self.progress_revision, self.metadata, 1,
+            outcome="PASS", reviewer_session_id="reviewer-a",
+            quality_report=evidence(next_finding),
+        )
+        self.assertEqual(
+            accepted.record["quality_report"]["findings"][0]["resolves"]["record_id"],
+            correction.record["record_id"],
+        )
+        self.assertEqual(
+            self.repository.read("review-ledger.json", SchemaKind.REVIEW_LEDGER).data["records"][-1]["outcome"],
+            "PASS",
+        )
+
+    def test_v2_corrections_snapshot_is_immutable_and_hash_bound(self):
+        self.claim()
+        from workflow.review_delta import baseline_path, compare, sha
+        original = self.artifacts["translated/001-one.md"]
+        report = {
+            "evidence_version": 2, "context": "bounded_context",
+            "checks": dict.fromkeys(
+                ["coverage", "meaning", "terminology", "style", "structure"], True,
+            ),
+            "findings": [{
+                "id": "meaning-1", "category": "meaning", "severity": "major",
+                "detail": "Incorrect rendering.", "resolved": False,
+                "source_anchor": {"quote": "Source.", "occurrence": 0},
+                "translation_anchor": {"quote": "Перевод.", "occurrence": 0},
+                "resolves": None,
+            }],
+        }
+        manager = self.manager()
+        manager.record(
+            self.progress, self.progress_revision, self.metadata, 1,
+            outcome="CORRECTIONS_REQUIRED", reviewer_session_id="reviewer-a",
+            quality_report=report,
+        )
+        saved = self.storage.read(baseline_path(sha(original))).content
+        self.assertEqual(saved, original)
+        changed = original.replace("Перевод.".encode(), "Уточнённый перевод.".encode())
+        scope = compare(saved, changed)
+        self.assertEqual(scope["mode"], "full")  # short chapter exceeds 25% threshold
+        self.assertEqual(scope["change_groups"], 1)
+        self.assertNotIn("PASS", str(scope))
+        self.assertEqual(compare(saved, saved)["mode"], "full")
+
+    def test_bulk_resolution_reads_review_ledger_once(self):
+        manager = self.manager()
+        original = manager._load_ledger
+        loaded = []
+
+        def counted(progress):
+            loaded.append(True)
+            return original(progress)
+
+        manager._load_ledger = counted
+        resolutions = manager.resolve_all(self.progress, self.metadata)
+        self.assertEqual(len(loaded), 1)
+        self.assertEqual([item.chapter_number for item in resolutions], [1, 2])
+
     def test_pass_binds_exact_source_and_translation_bytes_and_restores_when_bytes_restore(self):
         self.claim()
         manager = self.manager()

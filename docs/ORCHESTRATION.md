@@ -2,9 +2,9 @@
 
 This file is authoritative for Book Translator execution topology, durable state transitions, claims, review evidence, source integrity, resume behavior, finalization, and output sequencing. The repository supports one current workflow contract; older workspace formats must be converted outside the production runtime before use.
 
-The Orchestrator loads the current `agent-manifest.json`, follows its `context_profiles`, and uses `metadata.json.workflow` as durable provenance. `contract_read_order` is not a supported routing mechanism. Do not silently reinterpret an incompatible workspace as current state.
+The Orchestrator loads the selected revision's `agent-manifest.json`, follows its `context_profiles` and action-specific `context_overlays`, and uses `metadata.json.workflow` as durable provenance. Load `source_update` instructions only when updating an edition, and `waves` instructions only when managing an active literary wave. `contract_read_order` is not a supported routing mechanism. Do not silently reinterpret an incompatible workspace as current state.
 
-Literary translation and review quality belong to `docs/TRANSLATION.md`. Commit boundaries and recovery-friendly history are defined in `docs/COMMIT_DISCIPLINE.md`.
+The literary fidelity standard lives in `docs/TRANSLATION.md`; role-specific instructions live in `docs/TRANSLATOR.md` and `docs/REVIEWER.md`. Commit boundaries and recovery-friendly history are defined in `docs/COMMIT_DISCIPLINE.md`.
 
 ## Execution topology
 
@@ -39,6 +39,7 @@ books/<book-slug>/
 ├── progress.json
 ├── review-ledger.json
 ├── source-manifest.json
+├── source-coverage.json (required for verified EPUB)
 ├── source-revisions.json
 ├── glossary.md
 └── style-guide.md
@@ -65,6 +66,14 @@ python scripts/corpus.py verify <book-slug>
 ```
 
 The preflight verifies chapter counts and paths, preserved source identity, every extracted artifact, and the SHA-256 values in `source-manifest.json`. A mismatch is blocking; never regenerate a manifest merely to bless changed bytes.
+
+For EPUB, SHA seals alone do not prove extraction completeness. The current
+workflow additionally requires an independent `source-coverage.json` attestation
+bound to the original EPUB and every extracted chapter. Missing or stale
+coverage blocks translation, review dispatch, and build. Before migrating an
+older EPUB workspace, use `book.py source-coverage <slug> --source <exact-epub>`
+without writing, then `--record` only on success; see
+[coverage contract](SOURCE_COVERAGE.md). Never treat an unrun command as proof.
 
 If the exact trusted source is available but the extracted tree is damaged, restore the complete source corpus in one batch:
 
@@ -127,6 +136,44 @@ T1 -> R1 -> durable state -> T2 -> R2 -> durable state
 
 Explicit parallel execution is invocation-scoped only through `resume --parallel N` with `N > 1`.
 
+## Manually opened parallel chat sessions
+
+The user creates chat sessions explicitly. The workflow **never assumes it can
+create agents or start other conversations**. A session may process a bounded
+sequence of chapters while independently acquiring and releasing a claim for
+each unit. The plan is not a durable lock.
+
+Generate balanced, read-only session workpacks:
+
+```bash
+python scripts/book.py plan-sessions <book-slug> --sessions 3 --json
+```
+
+The command partitions available translation/review work by extracted-source
+byte size into contiguous groups; it skips reviewed and currently claimed units.
+Every new planning invocation creates a fresh cryptographic dispatch ID so
+independently opened chats cannot accidentally share a claim owner identity.
+To reconstruct the **same saved dispatch** only, pass its exact
+`--dispatch-id <32-hex-id>`; never reuse that ID for a new dispatch.
+The response contains stable unit IDs, current operations, a session identifier,
+the pinned workflow revision, Git HEAD, glossary/style revisions, and instructions
+to paste into separate conversations. Each chat must re-read authoritative
+state before acting; proposals cannot authorize writes.
+
+If local Git is unavailable, obtain the repository HEAD SHA using GitHub and
+pass `--base-commit <sha>` to the planner or `resume --parallel`. A GitHub-only
+chat may assemble equivalent workpacks from the same repository state without
+pretending it executed a local command.
+
+Persisted dispatches and read-only restart recovery are documented in
+[Session Runtime and Benchmark](SESSION_RUNTIME.md). Use plan-sessions --save
+to preserve workpacks and session-next to re-evaluate live state. Neither
+command authorizes a chapter mutation or substitutes accepted checkpoints.
+
+A workpack is advisory: use the claim/acceptance protocol below to coordinate
+real concurrent writes. If a snapshot changes, re-plan or refresh affected
+chapters. Do not reserve an entire range for the duration of a lengthy session.
+
 ## Durable claims
 
 A worker may not start literary work without owning a durable claim for the exact unit and role:
@@ -142,6 +189,19 @@ Inspect ownership with:
 ```bash
 python scripts/book.py claims <book-slug>
 ```
+
+Long-running sessions should renew a live claim before the lease expires:
+
+```bash
+python scripts/book.py renew-claim <book-slug> <chapter> \
+  --session-id <session-id> --lease-seconds 3600
+```
+
+Renewal preserves the original claim identity, recorded workflow revision, and
+frozen glossary/style snapshot. It cannot resurrect an expired claim or take
+another session's claim. After an interruption, inspect claims and the existing
+translation draft; an expired claim requires explicit cleanup followed by fresh
+admission and revalidation before acceptance.
 
 Expired claims remain occupied until auditable cleanup:
 
@@ -185,7 +245,7 @@ python scripts/book.py accept-translation <book-slug> <chapter> \
 
 ## Reviewer boundary
 
-Reviewer context contains the exact source, canonical translation, current glossary/style decisions, bounded continuity context, and `docs/TRANSLATION.md`. It does not receive hidden Translator reasoning.
+Reviewer context contains the exact source, canonical translation, current glossary/style decisions, bounded continuity context, and the shared `docs/TRANSLATION.md` and role-specific `docs/REVIEWER.md` contracts. It does not receive hidden Translator reasoning.
 
 The Reviewer outcome is `PASS` or `CORRECTIONS_REQUIRED`. Chat output alone is not authoritative review coverage. Record the outcome while the Reviewer claim is live:
 
@@ -257,3 +317,42 @@ Assembly is a pure projection of durable state. A build operation must never tra
 GitHub API storage is a supported durable backend for environments without a local checkout. It preserves the same create-if-absent and compare-and-swap semantics as filesystem storage. GitHub Actions are not required for runtime orchestration.
 
 Transport failures or ambiguous mutations must not be blindly retried. Re-read authoritative GitHub state, classify what actually happened, and replan. GitHub-specific mechanics remain at the storage boundary; Translator and Reviewer contracts stay backend-agnostic.
+
+## Source-linked review evidence
+
+Optional v2 review reports bind exact source/translation excerpts and immutable
+finding IDs to the existing review ledger. Same-source follow-up reviews must
+explicitly address each prior unresolved v2 finding. See REVIEWER.md for
+the evidence contract. Review reports never directly modify translations.
+
+## On-demand Reviewer queue (opt-in)
+
+For long-lived manually opened Reviewer chats use `review-next` instead of
+prematurely assigning chapters that have not yet been translated:
+
+```bash
+python scripts/book.py review-next <slug> --session-id <unique-reviewer-session> --json
+```
+
+The result is an **advisory** `claim`, `work`, `wait`, `complete`, or
+`blocked` response, recomputed from accepted translations, live claims,
+current review evidence and (when active) the wave manifest. The endpoint
+does not spawn chats, create claims, or persist a second queue. On `claim`,
+acquire the role-scoped claim with the returned pinned snapshot, **then**
+fetch the source/translation and perform independent review. Concurrent
+reviewers may receive the same proposed unit; only the winner of actual
+claim CAS may work. After release, poll again to pick up another accepted
+chapter while translators continue other units. A live wave limits selection
+to its assigned chapters and blocks while reconciling.
+
+No implicit PASS, no reassignment of translator work, no edits to globally
+shared state by the Reviewer. Existing frozen `wave-next` workpacks remain
+valid; the live Reviewer queue is an optional, read-only alternative.
+
+**Live wave Reviewer claim admission:** `review-next` may return a one-chapter
+Reviewer assignment without a saved workpack. The normal `claim` admission
+accepts it only when that exact unit is inside the ACTIVE wave, the source and
+memory revisions remain pinned, the accepted translation is current, review is
+still required, the Reviewer session differs from the accepted Translator session,
+and the supplied Git/shared-state snapshot matches. Existing CAS and lease
+requirements apply. Translator claims still require a saved wave dispatch.
