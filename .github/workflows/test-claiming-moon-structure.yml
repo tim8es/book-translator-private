@@ -1,0 +1,75 @@
+name: Test The Claiming Moon structural migration
+on:
+  push:
+    branches: [test/claiming-moon-structure-migration-20261022]
+    paths: ['.github/workflows/test-claiming-moon-structure.yml']
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: tim8es/book-translator
+          ref: 25c311cbf9627279095d5e6da0485fd7a18ef4f1
+          path: codec
+      - name: Run non-mutating structural compatibility audit
+        env:
+          PYTHONPATH: codec/scripts
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json, zipfile, collections, re, sys, traceback
+          from xml.etree import ElementTree as ET
+          from workflow.epub_structure import read_chapters, StructureError
+          book = Path('books/the-claiming-moon')
+          meta = json.loads((book/'metadata.json').read_text())
+          progress = json.loads((book/'progress.json').read_text())
+          source = book/'source'/meta['source_file']
+          result={'book':'the-claiming-moon','source_sha256':meta['source']['sha256'], 'reviewed_units':sum(c['status']=='reviewed' for c in progress['chapters'])}
+          try:
+            units, layout = read_chapters(source)
+            result['structural_extract'] = 'passed'
+            result['source_units'] = len(units)
+            result['total_structural_blocks'] = sum(u[3] for u in units)
+            result['total_protected_markers'] = sum(len(re.findall('⟦BT:[OCV]:',u[1])) for u in units)
+          except Exception as e:
+            result['structural_extract'] = 'blocked'
+            result['error'] = str(e)
+            units = []
+          with zipfile.ZipFile(source) as z:
+            files = [f for f in z.namelist() if f.endswith('.xhtml')]
+            result['source_xhtml_count'] = len(files)
+            original_counts=collections.Counter()
+            total_nonempty_p=0
+            for path in files:
+              root=ET.fromstring(z.read(path))
+              original_counts.update(e.tag.rsplit('}',1)[-1] for e in root.iter())
+              total_nonempty_p += sum(1 for e in root.iter() if e.tag.rsplit('}',1)[-1]=='p' and ''.join(e.itertext()).strip())
+            result['original_nonempty_p']=total_nonempty_p
+            result['original_br']=original_counts['br']
+            result['original_links']=original_counts['a']
+            result['original_emphasis_nodes']=sum(original_counts[t] for t in ('em','strong','b','i'))
+            result['original_blockquotes']=original_counts['blockquote']
+          counts=[]
+          for c in progress['chapters']:
+            md=(book/c['translation_path']).read_text()
+            blocks = [x.strip() for x in re.split(r'\n\s*\n', md) if x.strip()]
+            counts.append(len(blocks))
+          result['russian_md_blocks']=sum(counts)
+          result['russian_translation_all_reviewed']=all(c['status']=='reviewed' for c in progress['chapters'])
+          if units:
+            result['alignment_differences']=[
+              {'number':i+1,'structural_blocks':u[3],'translated_blocks':counts[i],'delta':counts[i]-u[3]}
+              for i,u in enumerate(units) if i<len(counts) and u[3]!=counts[i]
+            ]
+            result['matching_unit_block_counts']=len(units)-len(result['alignment_differences'])
+          print('MIGRATION_AUDIT_JSON='+json.dumps(result,ensure_ascii=False,sort_keys=True))
+          (Path('migration-test-report.json')).write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: claiming-moon-structural-migration-audit
+          path: migration-test-report.json
