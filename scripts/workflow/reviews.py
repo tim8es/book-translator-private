@@ -14,9 +14,15 @@ from uuid import uuid4
 from .claims import unit_id_for_chapter
 from .coordination import FINALIZATION_PATH, SOURCE_PROMOTION_PATH
 from .repository import LoadedDocument, RepositoryError, WorkflowStateRepository
+from .review_quality import ReviewQualityError, validate_quality_report
+from .review_anchors import (
+    EvidenceAnchorError,
+    verify_evidence_anchors,
+    verify_correction_lineage,
+)
 from .schemas import SCHEMA_VERSION, SchemaError, SchemaKind, parse_document
 from .shared_state import SharedStateError, SharedStateStale, require_current_shared_state
-from .storage import StorageError, StorageNotFound, StorageVersionConflict
+from .storage import StorageAlreadyExists, StorageError, StorageNotFound, StorageVersionConflict
 
 
 LEDGER_PATH = "review-ledger.json"
@@ -241,8 +247,9 @@ class ReviewLedgerManager:
         chapter_number: int,
         *,
         allow_untranslated: bool,
+        chapter_record: Mapping[str, Any] | None = None,
     ) -> tuple[str, Mapping[str, Any], str, str | None]:
-        chapter = self._chapter(progress, chapter_number)
+        chapter = chapter_record if chapter_record is not None else self._chapter(progress, chapter_number)
         unit_id = unit_id_for_chapter(chapter)
         source = self._read_artifact(
             chapter.get("source_path"),
@@ -267,15 +274,22 @@ class ReviewLedgerManager:
         progress: Mapping[str, Any],
         metadata: Mapping[str, Any],
         chapter_number: int,
+        *,
+        chapter_record: Mapping[str, Any] | None = None,
+        indexed_history: list[dict[str, Any]] | None = None,
     ) -> ReviewResolution:
         workflow_revision, contract_revision = self._workflow_context(metadata)
         unit_id, _, source_sha256, translation_sha256 = self._artifact_identity(
             progress,
             chapter_number,
             allow_untranslated=True,
+            chapter_record=chapter_record,
         )
-        ledger = self._load_ledger(progress).data
-        history = self._history_for(ledger, unit_id)
+        history = (
+            copy.deepcopy(indexed_history)
+            if indexed_history is not None
+            else self._history_for(self._load_ledger(progress).data, unit_id)
+        )
 
         if translation_sha256 is None:
             return ReviewResolution(
@@ -324,7 +338,13 @@ class ReviewLedgerManager:
         chapters = progress.get("chapters") if isinstance(progress, Mapping) else None
         if not isinstance(chapters, list):
             raise ReviewEvidenceError("progress state must contain a chapters array")
-        numbers: list[int] = []
+        # Load and index the append-only ledger only once for an entire book.
+        ledger = self._load_ledger(progress).data
+        by_unit: dict[str, list[dict[str, Any]]] = {}
+        for record in ledger["records"]:
+            by_unit.setdefault(record["unit_id"], []).append(record)
+
+        resolutions: list[ReviewResolution] = []
         seen: set[int] = set()
         for index, chapter in enumerate(chapters):
             if not isinstance(chapter, Mapping):
@@ -335,8 +355,15 @@ class ReviewLedgerManager:
             if number in seen:
                 raise ReviewEvidenceError(f"progress contains duplicate chapter number {number}")
             seen.add(number)
-            numbers.append(number)
-        return [self.resolve_unit(progress, metadata, number) for number in sorted(numbers)]
+            unit_id = unit_id_for_chapter(chapter)
+            resolutions.append(
+                self.resolve_unit(
+                    progress, metadata, number,
+                    chapter_record=chapter,
+                    indexed_history=by_unit.get(unit_id, []),
+                )
+            )
+        return sorted(resolutions, key=lambda resolution: resolution.chapter_number)
 
     @staticmethod
     def _correction_round(history: list[dict[str, Any]], outcome: str) -> int:
@@ -353,6 +380,7 @@ class ReviewLedgerManager:
         outcome: str,
         reviewer_session_id: str,
         review_commit: str | None = None,
+        quality_report: Mapping[str, Any] | None = None,
     ) -> ReviewRecordResult:
         if outcome not in {"PASS", "CORRECTIONS_REQUIRED"}:
             raise ReviewEvidenceError("review outcome must be PASS or CORRECTIONS_REQUIRED")
@@ -369,15 +397,78 @@ class ReviewLedgerManager:
             raise ReviewConflict("progress state changed; re-read before recording review evidence")
 
         workflow_revision, contract_revision = self._workflow_context(metadata)
-        unit_id, _, source_sha256, translation_sha256 = self._artifact_identity(
+        unit_id, chapter, source_sha256, translation_sha256 = self._artifact_identity(
             progress,
             chapter_number,
             allow_untranslated=False,
         )
         assert translation_sha256 is not None
+        validated_quality = None
+        if quality_report is not None:
+            try:
+                validated_quality = validate_quality_report(quality_report, outcome=outcome)
+            except ReviewQualityError as exc:
+                raise ReviewEvidenceError(f"invalid literary quality report: {exc}") from exc
+            accepted = chapter.get("translation_acceptance")
+            if (
+                validated_quality["context"] == "independent_session"
+                and isinstance(accepted, Mapping)
+                and accepted.get("session_id") == reviewer_session_id
+            ):
+                raise ReviewEvidenceError(
+                    "independent_session review cannot reuse the translator session identity"
+                )
         claim = self._require_reviewer_claim(unit_id, reviewer_session_id, workflow_revision)
         loaded = self._load_ledger(progress)
         history = self._history_for(loaded.data, unit_id)
+        try:
+            if validated_quality is not None and validated_quality.get("evidence_version") == 2:
+                source_bytes = self._read_artifact(
+                    chapter.get("source_path"), kind="source", allow_untranslated=False
+                )
+                translation_bytes = self._read_artifact(
+                    chapter.get("translation_path"), kind="translation", allow_untranslated=False
+                )
+                assert source_bytes is not None and translation_bytes is not None
+                if (_sha256(source_bytes) != source_sha256
+                        or _sha256(translation_bytes) != translation_sha256):
+                    raise EvidenceAnchorError(
+                        "source or translation changed while validating anchored review; retry from current state"
+                    )
+                verify_evidence_anchors(validated_quality, source_bytes, translation_bytes)
+            verify_correction_lineage(
+                validated_quality, previous=history[-1] if history else None,
+                source_sha256=source_sha256, translation_sha256=translation_sha256,
+                outcome=outcome,
+            )
+        except EvidenceAnchorError as exc:
+            raise ReviewEvidenceError(f"source-linked review evidence failed: {exc}") from exc
+        # Persist an immutable rejected-version baseline for bounded follow-up.
+        # Only v2 anchored corrections opt in. Orphan snapshots after a ledger
+        # CAS conflict are harmless, never authoritative and content-addressed.
+        if (outcome == "CORRECTIONS_REQUIRED"
+                and validated_quality is not None
+                and validated_quality.get("evidence_version") == 2):
+            from .review_delta import MAX_BYTES, baseline_path
+            original_translation = self._read_artifact(
+                chapter.get("translation_path"), kind="translation", allow_untranslated=False
+            )
+            assert original_translation is not None
+            if (_sha256(original_translation) != translation_sha256):
+                raise ReviewEvidenceError("translation changed while capturing review baseline")
+            if len(original_translation) <= MAX_BYTES:
+                path = baseline_path(translation_sha256)
+                try:
+                    self.repository.storage.create_if_absent(path, original_translation)
+                except StorageAlreadyExists:
+                    try:
+                        existing = self.repository.storage.read(path).content
+                    except StorageError as exc:
+                        raise ReviewEvidenceError(f"review baseline unavailable: {exc}") from exc
+                    if existing != original_translation:
+                        raise ReviewEvidenceError("review baseline differs from its content hash")
+                except StorageError as exc:
+                    raise ReviewEvidenceError(f"cannot persist immutable review baseline: {exc}") from exc
         record_id = self._new_id()
         sequence = loaded.data["next_sequence"]
         record = {
@@ -396,6 +487,8 @@ class ReviewLedgerManager:
             "correction_round": self._correction_round(history, outcome),
             "supersedes_record_id": history[-1]["record_id"] if history else None,
         }
+        if validated_quality is not None:
+            record["quality_report"] = validated_quality
         if "shared_state_revisions" in claim:
             record["shared_state_revisions"] = copy.deepcopy(
                 claim["shared_state_revisions"]

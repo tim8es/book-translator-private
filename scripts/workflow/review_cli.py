@@ -240,6 +240,69 @@ def _write_review_report(book_dir: Path, markdown: str) -> str:
     return "updated"
 
 
+def review_delta_command(args: argparse.Namespace, root: Path) -> int:
+    """Inspect exact rejected and current accepted bytes without changing state."""
+    from .review_delta import baseline_path, compare, sha
+
+    book_dir, repository = _repository(root, args.slug)
+    progress, _ = _load_progress(repository)
+    metadata = _load_metadata(repository)
+    _require_current_translation_acceptance(progress, metadata, args.chapter)
+    chapter = next(ch for ch in progress["chapters"] if ch["number"] == args.chapter)
+    manager = _manager(book_dir, repository)
+    unit_id = unit_id_for_chapter(chapter)
+    history = manager.resolve_unit(progress, metadata, args.chapter).history
+    source = _artifact_reader(book_dir)(chapter["source_path"])
+    current = _artifact_reader(book_dir)(chapter["translation_path"])
+    response = {
+        "schema_version": 1, "unit_id": unit_id,
+        "source_sha256": sha(source), "translation_sha256": sha(current),
+        "advisory_only": True, "mode": "full", "reason": "no_anchored_corrections",
+        "sections": [],
+    }
+    previous = history[-1] if history else None
+    if (previous is not None and previous["outcome"] == "CORRECTIONS_REQUIRED"
+            and previous["source_sha256"] == response["source_sha256"]
+            and previous.get("quality_report", {}).get("evidence_version") == 2):
+        path = baseline_path(previous["translation_sha256"])
+        try:
+            prior = repository.storage.read(path).content
+        except StorageNotFound:
+            response["reason"] = "baseline_unavailable"
+        else:
+            if sha(prior) != previous["translation_sha256"]:
+                raise ReviewCliError("stored reviewer baseline is corrupted")
+            response.update(compare(prior, current))
+            response["previous_record_id"] = previous["record_id"]
+            response["baseline_sha256"] = previous["translation_sha256"]
+    _print_json(response)
+    return 0
+
+
+def review_preflight_command(args: argparse.Namespace, root: Path) -> int:
+    """Read-only advisory checks after durable translation acceptance."""
+    from .review_preflight import inspect
+
+    book_dir, repository = _repository(root, args.slug)
+    progress, _ = _load_progress(repository)
+    metadata = _load_metadata(repository)
+    _require_current_translation_acceptance(progress, metadata, args.chapter)
+    chapter = next(ch for ch in progress["chapters"] if ch["number"] == args.chapter)
+    read = _artifact_reader(book_dir)
+    try:
+        glossary = read("glossary.md").decode("utf-8")
+        result = inspect(read(chapter["source_path"]), read(chapter["translation_path"]), glossary)
+    except (OSError, UnicodeError) as exc:
+        raise ReviewCliError(f"review preflight inputs are unavailable: {exc}") from exc
+    evidence = chapter["translation_acceptance"]
+    if (result["source_sha256"] != evidence["source_sha256"]
+            or result["translation_sha256"] != evidence["translation_sha256"]):
+        raise ReviewCliError("review preflight must run on the exact accepted source and translation")
+    result["unit_id"] = unit_id_for_chapter(chapter)
+    _print_json(result)
+    return 0
+
+
 def review_record_command(args: argparse.Namespace, root: Path) -> int:
     book_dir, repository = _repository(root, args.slug)
     progress, progress_revision = _load_progress(repository)
@@ -247,6 +310,15 @@ def review_record_command(args: argparse.Namespace, root: Path) -> int:
     _require_current_translation_acceptance(progress, metadata, args.chapter)
     manager = _manager(book_dir, repository)
     review_commit = args.review_commit if args.review_commit is not None else _git_head(root)
+    quality_report = None
+    if args.quality_report:
+        try:
+            path = Path(args.quality_report)
+            if path.stat().st_size > 32768:
+                raise ValueError("quality report exceeds 32 KiB")
+            quality_report = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, UnicodeError, ValueError) as exc:
+            raise ReviewCliError(f"cannot load quality report: {exc}") from exc
     try:
         result = manager.record(
             progress,
@@ -256,6 +328,7 @@ def review_record_command(args: argparse.Namespace, root: Path) -> int:
             outcome=args.outcome,
             reviewer_session_id=args.session_id,
             review_commit=review_commit,
+            quality_report=quality_report,
         )
     except (ReviewError, SchemaError, RepositoryError, StorageError) as exc:
         raise ReviewCliError(str(exc)) from exc
@@ -378,12 +451,32 @@ def _positive_chapter(value: str) -> int:
 def register_review_commands(subparsers: argparse._SubParsersAction, root: Path) -> None:
     """Register review evidence and workflow orchestration commands."""
 
+    delta = subparsers.add_parser(
+        "review-delta", help="Read-only, hash-bound candidate scope for v2 correction follow-up."
+    )
+    delta.add_argument("slug")
+    delta.add_argument("chapter", type=_positive_chapter)
+    delta.add_argument("--json", action="store_true")
+    delta.set_defaults(func=lambda args: review_delta_command(args, root))
+
+    preflight = subparsers.add_parser(
+        "review-preflight", help="Read-only, hash-bound advisory QA before independent review."
+    )
+    preflight.add_argument("slug")
+    preflight.add_argument("chapter", type=_positive_chapter)
+    preflight.add_argument("--json", action="store_true", help="Emit advisory JSON.")
+    preflight.set_defaults(func=lambda args: review_preflight_command(args, root))
+
     record = subparsers.add_parser("review-record", help="Record hash-bound Reviewer evidence.")
     record.add_argument("slug", help="Book slug under books/.")
     record.add_argument("chapter", type=_positive_chapter, help="Positive chapter number.")
     record.add_argument("--outcome", choices=("PASS", "CORRECTIONS_REQUIRED"), required=True)
     record.add_argument("--session-id", required=True, help="Owning reviewer session identity.")
     record.add_argument("--review-commit", help="Relevant Git commit; best-effort HEAD when omitted.")
+    record.add_argument(
+        "--quality-report", metavar="FILE",
+        help="JSON evidence of independent/bounded review checks and findings.",
+    )
     record.add_argument("--json", action="store_true", help="Emit deterministic machine-readable JSON.")
     record.set_defaults(func=lambda args: review_record_command(args, root))
 
