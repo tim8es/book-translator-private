@@ -117,7 +117,7 @@ jobs:
           try:
             units,layout=read_chapters(source)
             afterword_path=book/'translated/048-afterword.md'
-            paragraphs=[p.strip() for p in afterword_path.read_text().split('\\n\\n') if p.strip()]
+            paragraphs=[p.strip() for p in afterword_path.read_text().split('\n\n') if p.strip()]
             if len(paragraphs)!=2 or not paragraphs[0].startswith('## '):
               raise ValueError('afterword must consist of reviewed title and one paragraph')
             heading=paragraphs[0][3:].strip()
@@ -125,7 +125,7 @@ jobs:
             selected='загляните в Архив и оставьте комментарий'
             if para.count(selected)!=1: raise ValueError('link phrase not unique in translation')
             para=para.replace(selected,'⟦BT:O:0001⟧'+selected+'⟦BT:C:0001⟧')
-            russian='⟦BT:SEG:000001⟧\\n'+heading+'\\n\\n⟦BT:SEG:000002⟧\\n'+para+'\\n'
+            russian='⟦BT:SEG:000001⟧\n'+heading+'\n\n⟦BT:SEG:000002⟧\n'+para+'\n'
             output=build(source.read_bytes(),document_paths=[u[2] for u in units],
                          translations=[u[1] for u in units[:-1]]+[russian],
                          target_language='ru',title='Луна присвоения')
@@ -142,7 +142,7 @@ jobs:
           except Exception as ex:
             report['real_russian_afterword']='blocked'
             report['afterword_error']=repr(ex)
-          report_path.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\\n')
+          report_path.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
           print('AFTERWORD_JSON='+json.dumps({
             'result':report['real_russian_afterword'],
             'error':report.get('afterword_error'),
