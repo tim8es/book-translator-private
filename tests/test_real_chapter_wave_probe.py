@@ -113,6 +113,18 @@ class Chapter11WaveProbe(unittest.TestCase):
             read_source=self.read, read_translation=self.read,
         )
 
+    def test_legacy_book_requires_source_revision_migration_for_direct_wave(self):
+        # The historical source identity predates versioned source revisions.
+        # Confirm that the current runtime refuses direct admission rather
+        # than pretending the legacy workspace is a modern wave-ready book.
+        self.assertNotIn("revision_id", self.legacy_metadata["source"])
+        with self.assertRaisesRegex(WaveError, "source revision identity required"):
+            self.manager.start(
+                self.status, self.legacy_metadata, count=1, wave_id=WAVE_ID
+            )
+        self.assertIsNone(self.manager.active())
+        print("PASS legacy workspace rejected for direct wave; isolated adapter required")
+
     def test_existing_chapter_and_hash_bound_pass_are_real(self):
         self.assertTrue(self.original_source.startswith(b"## Chapter 11"))
         self.assertTrue(self.original_translation.startswith("## Глава 11".encode()))
