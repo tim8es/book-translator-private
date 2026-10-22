@@ -151,5 +151,13 @@ jobs:
           PY
       - uses: actions/upload-artifact@v4
         with:
+          name: claiming-moon-canonical-translations
+          path: |
+            books/the-claiming-moon/translated/*.md
+            books/the-claiming-moon/progress.json
+            books/the-claiming-moon/metadata.json
+          retention-days: 2
+      - uses: actions/upload-artifact@v4
+        with:
           name: claiming-moon-structural-migration-audit
           path: migration-test-report.json
