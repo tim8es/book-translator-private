@@ -13,7 +13,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           repository: tim8es/book-translator
-          ref: 2b248d465937ce21581362e6d6978b3ceb1474c1
+          ref: a9bfaf77eb9f267201f17a502b98d26636fbdb8f
           path: codec
       - name: Run non-mutating structural compatibility audit
         env:
@@ -152,8 +152,8 @@ jobs:
           PY
       - name: EPUBCheck conformance regression against exact original
         run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y -qq epubcheck
+          timeout 180 sudo apt-get update -qq
+          timeout 180 sudo apt-get install -y -qq epubcheck
           python - <<'PY'
           from pathlib import Path
           import collections, json, re, subprocess
