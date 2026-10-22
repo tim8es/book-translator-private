@@ -101,6 +101,54 @@ jobs:
             'validation':report.get('roundtrip_validation')
           },ensure_ascii=False))
           PY
+      - name: Test real reviewed Russian afterword against original XHTML anchor
+        env:
+          PYTHONPATH: codec/scripts
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json, zipfile, io
+          from xml.etree import ElementTree as ET
+          from workflow.epub_structure import read_chapters, build, validate_structural_epub
+          book=Path('books/the-claiming-moon')
+          source=book/'source/The_Claiming_Moon.epub'
+          report_path=Path('migration-test-report.json')
+          report=json.loads(report_path.read_text())
+          try:
+            units,layout=read_chapters(source)
+            afterword_path=book/'translated/048-afterword.md'
+            paragraphs=[p.strip() for p in afterword_path.read_text().split('\\n\\n') if p.strip()]
+            if len(paragraphs)!=2 or not paragraphs[0].startswith('## '):
+              raise ValueError('afterword must consist of reviewed title and one paragraph')
+            heading=paragraphs[0][3:].strip()
+            para=paragraphs[1]
+            selected='загляните в Архив и оставьте комментарий'
+            if para.count(selected)!=1: raise ValueError('link phrase not unique in translation')
+            para=para.replace(selected,'⟦BT:O:0001⟧'+selected+'⟦BT:C:0001⟧')
+            russian='⟦BT:SEG:000001⟧\\n'+heading+'\\n\\n⟦BT:SEG:000002⟧\\n'+para+'\\n'
+            output=build(source.read_bytes(),document_paths=[u[2] for u in units],
+                         translations=[u[1] for u in units[:-1]]+[russian],
+                         target_language='ru',title='Луна присвоения')
+            with zipfile.ZipFile(io.BytesIO(output)) as z:
+              root=ET.fromstring(z.read(units[-1][2]))
+              links=[x for x in root.iter() if x.tag.endswith('}a')]
+              assert any(x.get('href')=='https://archiveofourown.org/works/70374321/comments/new'
+                         and ''.join(x.itertext())==selected for x in links)
+              assert any(x.tag.endswith('}h2') and ''.join(x.itertext())==heading
+                         for x in root.iter())
+            validate_structural_epub(output,expected_documents=48)
+            report['real_russian_afterword']='passed'
+            report['afterword_preserved_external_comment_link']=True
+          except Exception as ex:
+            report['real_russian_afterword']='blocked'
+            report['afterword_error']=repr(ex)
+          report_path.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\\n')
+          print('AFTERWORD_JSON='+json.dumps({
+            'result':report['real_russian_afterword'],
+            'error':report.get('afterword_error'),
+            'link_preserved':report.get('afterword_preserved_external_comment_link')
+          },ensure_ascii=False))
+          PY
       - uses: actions/upload-artifact@v4
         with:
           name: claiming-moon-structural-migration-audit
