@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "record_type": "migration_preflight_and_preview",
+  "book_slug": "you-feel-like-home",
+  "recorded_on": "2026-10-22",
+  "source": {
+    "filename": "You_Feel_Like_Home 2.epub",
+    "sha256": "8efac63cf78817b821008ee001fb33aea40b29d5c8c9d69cb9f52f14b0bd28a2",
+    "size_bytes": 191460,
+    "source_spine_units": 14,
+    "source_zip_integrity": "passed",
+    "repository_binary_persisted": false
+  },
+  "existing_translation": {
+    "filename": "You_Feel_Like_Home_RU_chapters_1-11.epub",
+    "sha256": "6297c4570c776ce6de609926a9c9942bf044b63ebc6e44c0944d7818feeb03d2"
+  },
+  "reader_preview": {
+    "filename": "You_Feel_Like_Home_RU_1-11_formatting_repaired_PREVIEW.epub",
+    "sha256": "06caea7203ef998c6c6dc2321f290f2c85971392dcf859a936976d9736e06f75",
+    "size_bytes": 225196,
+    "locally_created": true,
+    "persisted_in_repository": false,
+    "preview_only": true,
+    "checks": {
+      "zip_crc": "PASS",
+      "spine_documents": 14,
+      "navigation_items": 14,
+      "internal_links_checked": 10,
+      "broken_internal_links": 0,
+      "translation_visible_text_token_comparison": "EXACT_MATCH_WITH_EXISTING_RUSSIAN_EPUB",
+      "encoding_mojibake_xml_text_nodes_fixed": 28,
+      "independent_literary_review": "NOT_PERFORMED",
+      "source_typographic_equivalence": "NOT_CERTIFIED"
+    }
+  },
+  "recovery_package": {
+    "filename": "You_Feel_Like_Home_migration_recovery_2026-10-22.zip",
+    "sha256": "c3f8df64a5e6129a64d791b80ce9fec8f23009144ae270efda5cd27c21768ee2",
+    "size_bytes": 832798,
+    "locally_created": true,
+    "persisted_in_repository": false,
+    "payload": "original English source EPUB;14 original source XHTML;14 Russian staging XHTML;reader preview;checksum manifest"
+  },
+  "workflow": {
+    "canonical_current_revision": "dca1e7db6974d5c4354e4850ecf82b42cda06f42",
+    "requested_target_revision": "0fe7fd86356d27dafbb409daa7e5ece23fdf62f4",
+    "target_promoted": false,
+    "source_coverage_certified": false,
+    "review_pass_count": 0,
+    "lifecycle_changed": false,
+    "blocked_reasons": [
+      "Legacy canonical corpus contains only 3/9 required extracted files; original legacy source not stored",
+      "Current original EPUB XHTML contains unsupported tags for source-coverage v1 and layout-fidelity migration",
+      "Current book source edition and progress state require dedicated conversion, not a direct metadata workflow SHA edit",
+      "GitHub connector cannot read local binary artifact content by filesystem path; source and preview binaries have not been uploaded"
+    ]
+  },
+  "policy": "No promotion, source coverage PASS, translation acceptance or literary review may be inferred from reader-preview validation."
+}
