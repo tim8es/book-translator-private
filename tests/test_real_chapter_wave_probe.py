@@ -237,16 +237,38 @@ class Chapter11WaveProbe(unittest.TestCase):
         }))
         self.assertEqual(self.manager.impact_queue(), [])
         current = self.storage.read(TRANSLATION_PATH)
-        self.storage.write_if_version(TRANSLATION_PATH,
-                                      self.original_translation+b"\nchanged\n", current.version)
+        changed = self.original_translation + b"\nchanged\n"
+        self.storage.write_if_version(
+            TRANSLATION_PATH, changed, current.version
+        )
+        # Tampering with the artifact without an authorized acceptance is
+        # corrupted state: the repository must fail closed, not return pending.
+        with self.assertRaisesRegex(WaveError, "translation_acceptance sha256 mismatch"):
+            self.manager.impact_queue()
+
+        # A newly accepted translation invalidates the old PASS/review record.
+        # Simulate that transition only in the isolated copy of progress.json.
+        original_progress = self.read("progress.json")
+        updated_progress = json.loads(original_progress)
+        chapter = next(ch for ch in updated_progress["chapters"] if ch["number"] == 13)
+        chapter["translation_acceptance"]["translation_sha256"] = sha(changed)
+        progress_value = self.storage.read("progress.json")
+        self.storage.write_if_version("progress.json", canonical(updated_progress),
+                                      progress_value.version)
         pending = self.manager.impact_queue()
         self.assertEqual(len(pending), 1)
         self.assertEqual(pending[0]["reason"], "previous_resolution_stale")
+
         restored = self.storage.read(TRANSLATION_PATH)
-        self.storage.write_if_version(TRANSLATION_PATH, self.original_translation,
-                                      restored.version)
+        self.storage.write_if_version(
+            TRANSLATION_PATH, self.original_translation, restored.version
+        )
+        progress_value = self.storage.read("progress.json")
+        self.storage.write_if_version(
+            "progress.json", original_progress, progress_value.version
+        )
         self.assertEqual(self.manager.impact_queue(), [])
-        print("PASS real chapter 11 impact resolution invalidated by translation change")
+        print("PASS real chapter 11: tampering blocked; accepted change reopens impact")
 
 
 if __name__ == "__main__":
