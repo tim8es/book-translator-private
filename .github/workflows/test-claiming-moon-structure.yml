@@ -13,7 +13,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           repository: tim8es/book-translator
-          ref: 66b5500ceb1971d554771dc4347fc6c058062a6c
+          ref: b71bc1f4cb35912c73986fcc5a881971b3fa28fe
           path: codec
       - name: Run non-mutating structural compatibility audit
         env:
