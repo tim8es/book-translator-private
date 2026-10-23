@@ -1,27 +1,19 @@
-# You Feel Like Home — stage-only Chapter 9 review corrections
+# You Feel Like Home — corrected reader preview audit (2026-10-24)
 
-Date: 2026-10-24. **This is a noncanonical, historical-source correction record, not a Reviewer PASS or a promotion of lifecycle state.**
+Exact English source received in conversation and validated: `You_Feel_Like_Home 2.epub` (191460 bytes; SHA-256 `8efac63cf78817b821008ee001fb33aea40b29d5c8c9d69cb9f52f14b0bd28a2`; ZIP CRC pass). The binary remains a conversation upload; it has **not** been durably uploaded to GitHub.
 
-## Reference artifacts
-- Historical English Chapter 9: `books/you-feel-like-home/source-updates/2026-10-11/extracted/011-chapter-9.md`; Git blob `2aeacaf147e47d534d25a7335a4391ba2fdc126e`
-- Original Russian Chapter 9: `books/you-feel-like-home/source-updates/2026-10-11/translated/011-chapter-9.md`; Git blob `1ae4e0218172bf9ce1297589b7f2386134866b0e`
-- **Corrected staging artifact:** `011-chapter-9.md`; Git blob `2164b8141f5701b8c04ac07b98bf1c8c573492e3`. Verified after commit.
-- New Russian *reader PREVIEW* `You_Feel_Like_Home_RU_chapters_1-11_review_ch09_PREVIEW.epub`, SHA-256 `7a692b132a38c1eb758c6984ff2b6317663e8997b876d1e1efa88c22996e4fcd`. Produced as a **conversation attachment**, not persisted as binary in GitHub. Compared to the prior reader preview, only `OEBPS/section-09a.xhtml` changed. EPUB ZIP CRC and 17 XML/OPF/NCX/XHTML parses passed; the other sections were byte-for-byte identical. The six previously corrected chapter 8/11 snippets remain inherited from the prior preview.
+Corrected RU reader preview: `You_Feel_Like_Home_RU_chapters_1-11_review_corrected_PREVIEW.epub`, SHA-256 `8d60a267ed87045addda160150fe390e45cbb4c0dbd4962cf96256c3ec1fbe7e`. Generated locally from the 14-spine-document `You_Feel_Like_Home_RU_1-11_formatting_repaired_PREVIEW.epub`; this EPUB is **not** uploaded to GitHub.
 
-## Concrete phrase corrections, Chapter 9
-| English historical source | Russian before | Russian after | Finding |
-|---|---|---|---|
-| `You don't have the permission.` | `— У тебя нет разрешения.` | `— Я тебе не разрешаю.` | Direct speech calque; speaker is withholding consent, better natural Russian |
-| `For how long?` | `— На какой срок?` | `— И надолго?` | Bureaucratic register in an intimate exchange |
-| `Arian’s jaw tightens` | `Ариан сжимает челюсти, а Винсент тихо посмеивается.` | `Ариан стискивает зубы, а Винсент тихо посмеивается.` | Unnatural Russian collocation replaced with a fitting idiom |
+12 contextual text adjustments in story chapters 2 (1), 6 (1), 8 (1), 9 (3), 10 (1), 11 (5). Compared against English original and verified in the output EPUB. Most recent new corrections:
+- Ch 2: restore crude force of `assassination shit show`.
+- Ch 6: fix Russian calque for `complete fucking mess`.
+- Ch 10: fix awkward literal rendering of `Well. Shit.`.
+- Existing changes for Chs 8, 9 and 11 retained from prior review stages.
 
-The historical `Chapter 8` and `Chapter 11` review-correction staging artifacts remain under `maintenance/review-corrections-2026-10-23/`; no new source-linked Chapter 8/11 PASS review occurred in this session.
+An earlier suspected omission, `Tomorrow, I will still want you.` in Ch 11, was **disproved**: the Russian equivalent is present in the existing XHTML, as a separate italicized paragraph, and was not duplicated.
 
-## Canonical workflow gating
-- Book metadata remains pinned to `dca1e7db6974d5c4354e4850ecf82b42cda06f42`, **not** the proposed `0fe7fd86356d27dafbb409daa7e5ece23fdf62f4`.
-- Canonical `metadata.json`/`progress.json` track 9 units of the old edition; all are `extracted`, while the reader edition has 11 story chapters / 14 spine units.
-- `review-ledger.json` contains zero verified current PASS records.
-- Latest original EPUB `You_Feel_Like_Home 2.epub` (SHA-256 `8efac63cf78817b821008ee001fb33aea40b29d5c8c9d69cb9f52f14b0bd28a2`) was supplied in another chat, but is not present in the current container or repository. No source-coverage certificate or complete canonical corpus is available for a full review.
-- This session did not perform a full current-edition chapter review. The above stage-only edits must not be accepted as complete latest-edition coverage or used to write `review-record PASS`.
+Validated ZIP CRC, XML document parsing, 14 manifest/spine units, navigational links, and unchanged EPUB members outside six modified chapters. Meaningful original XHTML `br`/`blockquote`/`hr` markup remains incompletely reproduced in the preview and **layout fidelity is not certified**.
 
-No workflow architectural changes were made.
+Canonical metadata/progress still represent the old nine-unit source, extracted corpus is incomplete, the 14-unit latest source edition is not yet integrated with sealed provenance; pinned workflow remains `dca1e7db6974d5c4354e4850ecf82b42cda06f42`. No exact hash-bound independent PASS is recorded for any of 11 story chapters. This report is observational staging/preview evidence only; it must not be used to promote chapter status or misrepresent full independent literary review.
+
+Durable full-text staging patches already present for Chs 8, 9, 11 are in previous maintenance subdirectories. New Chs 2, 6, 10 corrections are in the attached corrected reader EPUB, **not in canonical GitHub translation files**: tool-side GitHub full-text write was blocked and no success is claimed.
