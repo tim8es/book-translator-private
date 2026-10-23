@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "record_type": "non_authoritative_review_preflight",
+  "book_slug": "you-feel-like-home",
+  "assessed_on": "2026-10-24",
+  "requested_scope": "All 11 story chapters without current canonical reviewed coverage",
+  "workflow": {
+    "current_revision": "dca1e7db6974d5c4354e4850ecf82b42cda06f42",
+    "requested_but_unpromoted_target_revision": "0fe7fd86356d27dafbb409daa7e5ece23fdf62f4"
+  },
+  "current_authoritative_state": {
+    "metadata_chapter_count": 9,
+    "progress_entry_count": 9,
+    "chapter_states": {
+      "extracted": 9,
+      "translated": 0,
+      "reviewed": 0
+    },
+    "review_ledger_record_count": 0
+  },
+  "latest_observed_source": {
+    "filename": "You_Feel_Like_Home 2.epub",
+    "sha256": "8efac63cf78817b821008ee001fb33aea40b29d5c8c9d69cb9f52f14b0bd28a2",
+    "spine_units": 14,
+    "story_chapters": 11,
+    "latest_binary_available_in_repository": false,
+    "latest_binary_available_in_current_conversation": false
+  },
+  "available_historic_source_units": [
+    {
+      "story_chapter": 8,
+      "stage": "source-updates/2026-10-04/extracted/010-chapter-8.md",
+      "staged_russian_revision": "maintenance/review-corrections-2026-10-23/010-chapter-8.md",
+      "historical_literary_pass_file": "source-updates/2026-10-04/review/010-chapter-8-review.md",
+      "canonical_review_pass": false
+    },
+    {
+      "story_chapter": 9,
+      "stage": "source-updates/2026-10-11/extracted/011-chapter-9.md",
+      "staged_russian_revision": "source-updates/2026-10-11/translated/011-chapter-9.md",
+      "current_literary_review": "NOT_COMPLETED",
+      "stage_scene_separators_source": 6,
+      "stage_scene_separators_translation": 6,
+      "stage_emphasis_italics_source": 2,
+      "stage_emphasis_italics_translation": 2,
+      "stage_emphasis_bold_source": 2,
+      "stage_emphasis_bold_translation": 2
+    }
+  ],
+  "work_this_session": "Re-read canonical GitHub state and pinned workflow contracts; checked current conversation and available Library for exact source; inspected book source directories and relevant GitHub branches/PRs; performed limited historical staged Chapter 9 source/translation spot-comparison and checked scene separators/inline Markdown emphasis. No whole-chapter source-comparison PASS was performed.",
+  "review_outcome": "BLOCKED_BEFORE_CANONICAL_REVIEW",
+  "blocking_reasons": [
+    "Canonical nine-unit extracted corpus incomplete (3 of 9), no exact sealed nine-unit original",
+    "Latest fourteen-unit original EPUB of verified SHA-256 not available to this run or GitHub",
+    "Latest fourteen-unit edition not represented in canonical metadata/progress",
+    "Previous corrected texts remain staged; no canonical translation acceptance or current hash-bound Reviewer PASS",
+    "The proposed workflow revision has not been upgraded into book metadata"
+  ],
+  "actions_needed": "Recover exact latest original EPUB with verified SHA-256, complete source-aware migration and corpus verification, admit current translated artifacts, run independent full literary review per chapter and record signed/hash-bound outcomes through workflow mechanisms.",
+  "integrity_notice": "This maintenance report is observational; it does not mark any chapter reviewed, does not update review-ledger.json, and must never be treated as authoritative PASS coverage."
+}
