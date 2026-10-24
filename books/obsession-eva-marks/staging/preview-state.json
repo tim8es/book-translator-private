@@ -1,0 +1,46 @@
+{
+  "type": "preview-staging-not-canonical-workflow-state",
+  "created_at_utc": "2026-10-24",
+  "source": {
+    "name": "_OceanofPDF.com_Obsession_-_Eva_marks.epub",
+    "sha256": "a5e3fbdf654dd3ceadf3f3dea5ea82df1b87c78dd42cab2ed5c71061f3b06cff",
+    "size_bytes": 1409230,
+    "repository_path": "books/obsession-eva-marks/source/Obsession_Eva_Marks.epub"
+  },
+  "workflow_candidate": {
+    "canonical_repository": "https://github.com/tim8es/book-translator",
+    "revision": "8f70b1c1c108926599c36ce40021860bed581400",
+    "note": "New-book workspace not yet initialized by canonical book.py; do not treat this staging note as metadata.json.workflow"
+  },
+  "scope": {
+    "target_language": "ru",
+    "inclusive_through": "chapter_two",
+    "source_xhtml": [
+      "text/part0000.html",
+      "text/part0001.html",
+      "text/part0002.html",
+      "text/part0003.html",
+      "text/part0004.html",
+      "text/part0005.html",
+      "text/part0006.html",
+      "text/part0007.html",
+      "text/part0008.html"
+    ],
+    "translations": "staging/ru-through-chapter-2.md"
+  },
+  "preview": {
+    "file": "output/Obsession_RU_ch1-2_PREVIEW.epub",
+    "sha256": "72452818b325ef5330fe547d2961c6e178182010c37af4a29183bf1e890f1dc9",
+    "size_bytes": 437030,
+    "validation": {
+      "zip_integrity": "passed",
+      "xml_wellformedness": "passed",
+      "spine_and_manifest": "passed",
+      "toc_links": "passed",
+      "all_paragraph_slots_translated": "passed",
+      "canonical_source_coverage": "not_run",
+      "canonical_review_ledger": "not_recorded"
+    }
+  },
+  "status": "staged_translation_pending_canonical_admission_and_independent_review"
+}
