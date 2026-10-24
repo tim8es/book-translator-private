@@ -1,6 +1,6 @@
 {
   "book_slug": "obsession-eva-marks",
-  "next_sequence": 51,
+  "next_sequence": 52,
   "records": [
     {
       "record_id": "0a6e7a112373b1111111111111111111",
@@ -1739,6 +1739,58 @@
           "structure": true
         },
         "findings": []
+      }
+    },
+    {
+      "record_id": "211e8ccf67afecafc1ef554fc432b50f",
+      "sequence": 51,
+      "unit_id": "chapter-000042",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "36c7f3ae88ed1908aada227863c5e582a16617abbfa30a6559aede1e6c9123a9",
+      "translation_sha256": "6f05234ea2f05a53d653ee91a47fe86892126522332ce7628a93498449247dff",
+      "workflow_revision": "8f70b1c1c108926599c36ce40021860bed581400",
+      "review_contract_revision": "docs/TRANSLATION.md@8f70b1c1c108926599c36ce40021860bed581400",
+      "reviewer_session_id": "obsession-review-chat-20261024-u42-7b83a412",
+      "reviewed_at": "2026-10-24T18:24:32Z",
+      "state_revision": "e1857fc566f9848d3cef21b561dffabbf563b03c",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "major",
+            "detail": "Глава 34, абзац 7: исходное 'The resentment and desire to kill I had bottled up inside' — затаённая обида/неприязнь и желание убивать. Русское 'Накопленные внутри ненависть и жажда убийства' необоснованно усиливает resentment до ненависти. Восстановить уровень эмоций: 'Затаённая обида и жажда убийства' либо эквивалент.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Глава 34, абзац 36: 'pressing hard against my jeans' описывает сильное давление о джинсы, без утверждения о боли. Русское 'болезненно упирается в джинсы' добавляет болезненность. Убрать придуманную боль ('сильно упирается в джинсы').",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Глава 34, абзац 55: 'It’s been inside her, triggered by the events of the weekend' — наличие темноты внутри и её пробуждение событиями выходных. Русский вариант 'Она всегда жила внутри Дарлин' добавляет абсолютное 'всегда', которого в оригинале нет. Передать без необоснованной абсолютной временной характеристики.",
+            "resolved": false
+          },
+          {
+            "severity": "major",
+            "detail": "Глава 34, отдельный абзац 97: самостоятельная фраза 'My gift.' передана как 'Моём подарке.' — грамматически несостоятельный предложный падеж без предлога и утрата самостоятельного притяжательного утверждения. Исправить на 'Мой подарок.' (с сохранением отдельного абзаца).",
+            "resolved": false
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "2d9792a642499d2b8671d4c52893177fea212ab0",
+        "style_guide": "878aeaec4cfbd6a3bee3f76ed0ac6f0e9598ee74"
       }
     }
   ],
