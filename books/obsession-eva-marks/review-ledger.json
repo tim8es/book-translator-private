@@ -1,6 +1,6 @@
 {
   "book_slug": "obsession-eva-marks",
-  "next_sequence": 9,
+  "next_sequence": 10,
   "records": [
     {
       "record_id": "0a6e7a112373b1111111111111111111",
@@ -216,6 +216,39 @@
           "structure": true
         },
         "findings": []
+      }
+    },
+    {
+      "record_id": "a79b80ea836710c4f72cd0ea7491eda8",
+      "sequence": 9,
+      "unit_id": "chapter-000021",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "65db8bff1e30b4528132298a1b6d24bcb4e7f35afc778025a2ced14bc0330fae",
+      "translation_sha256": "436a9d8eaa1ff10829bad55042432a08416c3b05835ca33c954d373bea7c45c6",
+      "workflow_revision": "8f70b1c1c108926599c36ce40021860bed581400",
+      "review_contract_revision": "docs/REVIEWER.md@8f70b1c1c108926599c36ce40021860bed581400",
+      "reviewer_session_id": "obsession-review-20261024-5d8e7f19",
+      "reviewed_at": "2026-10-24T15:12:00Z",
+      "state_revision": "0ae86f7383c60510bbfc3c785026a1ed3433f925",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Chapter thirteen: English present-tense 'Roy lets out a cry in fear, then pees himself' is mistranslated in Russian as 'Рой вскрикивает от страха и обмочится прямо на стуле.' Future-tense 'обмочится' disrupts chronology. Correct to 'Рой вскрикивает от страха и мочится прямо на стуле.' Then recheck against source.",
+            "resolved": false
+          }
+        ]
       }
     }
   ],
