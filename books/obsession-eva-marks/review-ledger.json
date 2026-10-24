@@ -1,6 +1,6 @@
 {
   "book_slug": "obsession-eva-marks",
-  "next_sequence": 79,
+  "next_sequence": 80,
   "records": [
     {
       "record_id": "0a6e7a112373b1111111111111111111",
@@ -2913,6 +2913,53 @@
           {
             "severity": "minor",
             "detail": "The unintelligible feminine pronoun is removed; desire for Vaughn to take the initiative is preserved.",
+            "resolved": true
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "2d9792a642499d2b8671d4c52893177fea212ab0",
+        "style_guide": "878aeaec4cfbd6a3bee3f76ed0ac6f0e9598ee74"
+      }
+    },
+    {
+      "record_id": "4e57be04006f086645b219c8f6cc883e",
+      "sequence": 79,
+      "unit_id": "chapter-000024",
+      "outcome": "PASS",
+      "source_sha256": "6686b536488bd15def96315de73df66baafd344e0efada68c6948bc8bc13a06b",
+      "translation_sha256": "b013044e3ffd41d20d952a7f17b17ad8cb3ee8c21d0e9a48237dfc577036afa8",
+      "workflow_revision": "8f70b1c1c108926599c36ce40021860bed581400",
+      "review_contract_revision": "docs/TRANSLATION.md@8f70b1c1c108926599c36ce40021860bed581400",
+      "reviewer_session_id": "obsession-finish24-3rd-reviewer-05ade566",
+      "reviewed_at": "2026-10-24T20:57:03Z",
+      "state_revision": "b0eed25417ab753cf0e34d3abb866a2da52b9151",
+      "review_commit": null,
+      "correction_round": 4,
+      "supersedes_record_id": "1725f531a7ec4d51a10f44ce3844af87",
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Whole-word imperative now preserves staccato rhythm without artificial syllable splitting.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Three-word command now correctly aligns with the narrator's explicit word count.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Unwarranted pain was removed from the cotton-sensitivity passage.",
             "resolved": true
           }
         ]
