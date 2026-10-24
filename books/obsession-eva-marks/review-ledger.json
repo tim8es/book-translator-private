@@ -1,6 +1,6 @@
 {
   "book_slug": "obsession-eva-marks",
-  "next_sequence": 58,
+  "next_sequence": 59,
   "records": [
     {
       "record_id": "0a6e7a112373b1111111111111111111",
@@ -2017,6 +2017,53 @@
             "resolved": true
           }
         ]
+      }
+    },
+    {
+      "record_id": "ca3f96044ada08b037d2bc5d6c4e34f0",
+      "sequence": 58,
+      "unit_id": "chapter-000020",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "d5fef4265bd567291590cab1c6b2fe450b7c145471e07541570bc8eb15160c14",
+      "translation_sha256": "cb14300150f1761d1df9ee16561c49b2cf70dffa414f3ef79df6ac154dbb2700",
+      "workflow_revision": "8f70b1c1c108926599c36ce40021860bed581400",
+      "review_contract_revision": "docs/TRANSLATION.md@8f70b1c1c108926599c36ce40021860bed581400",
+      "reviewer_session_id": "obsession-rereview-chat-20261024-u20-27d49aec",
+      "reviewed_at": "2026-10-24T18:36:50Z",
+      "state_revision": "e1857fc566f9848d3cef21b561dffabbf563b03c",
+      "review_commit": null,
+      "correction_round": 2,
+      "supersedes_record_id": "5034623dc438a207d1227f509508d53a",
+      "quality_report": {
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Замечание из 5034623dc438a207d1227f509508d53a о 'again and again and again' устранено: 'Снова, снова и снова' восстанавливает трёхкратный повтор.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Замечание о 'punching the others behind the campus' устранено: 'избивал других позади кампуса' возвращает конкретное место.",
+            "resolved": true
+          },
+          {
+            "severity": "major",
+            "detail": "Глава 12, диалог в гостиной, абзац 33: английское 'Lincoln hisses at Caroline' ясно устанавливает, что Линкольн обращается к девушке Кэролайн. В реплике 'You said this shit would be easy ... You said one day...' перевод 'Ты говорил ... Ты сказал' использует мужской род и неверно отражает адресата. Требуется 'Ты говорила ... Ты сказала'. После изменения заново проверить диалог и связанные местоимения.",
+            "resolved": false
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "2d9792a642499d2b8671d4c52893177fea212ab0",
+        "style_guide": "878aeaec4cfbd6a3bee3f76ed0ac6f0e9598ee74"
       }
     }
   ],
