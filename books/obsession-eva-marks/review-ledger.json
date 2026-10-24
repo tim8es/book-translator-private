@@ -1,6 +1,6 @@
 {
   "book_slug": "obsession-eva-marks",
-  "next_sequence": 93,
+  "next_sequence": 94,
   "records": [
     {
       "record_id": "0a6e7a112373b1111111111111111111",
@@ -3545,6 +3545,53 @@
           {
             "severity": "major",
             "detail": "Previous mistaken addressee inference (mother waited for Darlene) is removed. Russian now only states that her mother stayed briefly to say hello before bringing dinner.",
+            "resolved": true
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "2d9792a642499d2b8671d4c52893177fea212ab0",
+        "style_guide": "878aeaec4cfbd6a3bee3f76ed0ac6f0e9598ee74"
+      }
+    },
+    {
+      "record_id": "49d132a8ce39496b91e9b079d9ac835d",
+      "sequence": 93,
+      "unit_id": "chapter-000014",
+      "outcome": "PASS",
+      "source_sha256": "1c528ae64257db72125f6efb052b7c03142222ba49ac9131680072623da9f796",
+      "translation_sha256": "12e490f73f86a2be0fbb235a7fa2e4ca7739aca3cc85b0a2d4aafd6af1c9face",
+      "workflow_revision": "8f70b1c1c108926599c36ce40021860bed581400",
+      "review_contract_revision": "docs/TRANSLATION.md@8f70b1c1c108926599c36ce40021860bed581400",
+      "reviewer_session_id": "obsession-finishing-20261025-review14-final-6c9f02b1",
+      "reviewed_at": "2026-10-24T22:26:39Z",
+      "state_revision": "8d6f52f2399e84857b663e3c50c35f3322d2a361",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": "336e2c7477aa4683b6aaed824a46698a",
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "major",
+            "detail": "Original 104-paragraph layout restored by joining the 'Hush now' line to the preceding narration.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Source 'stood up to Mr. Hopkins' now denotes verbal confrontation without inventing literal rising.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Comparison of Darlene to others rewritten in grammatical Russian without incorrectly calling her a man.",
             "resolved": true
           }
         ]
