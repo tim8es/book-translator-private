@@ -1,6 +1,6 @@
 {
   "book_slug": "obsession-eva-marks",
-  "next_sequence": 52,
+  "next_sequence": 53,
   "records": [
     {
       "record_id": "0a6e7a112373b1111111111111111111",
@@ -1791,6 +1791,39 @@
       "shared_state_revisions": {
         "glossary": "2d9792a642499d2b8671d4c52893177fea212ab0",
         "style_guide": "878aeaec4cfbd6a3bee3f76ed0ac6f0e9598ee74"
+      }
+    },
+    {
+      "record_id": "cec09c22a87ca2c0493ab5ee46c82f02",
+      "sequence": 52,
+      "unit_id": "chapter-000008",
+      "outcome": "PASS",
+      "source_sha256": "321d6cbbaf83f5ff0347144f544c4f6f929ccbc5980f1a8c012170324c4dbaa7",
+      "translation_sha256": "94d647b16990e4c69c0d7f00cb69f17c1226318dc73e359532309a0e12e0504b",
+      "workflow_revision": "8f70b1c1c108926599c36ce40021860bed581400",
+      "review_contract_revision": "docs/TRANSLATION.md@8f70b1c1c108926599c36ce40021860bed581400",
+      "reviewer_session_id": "obsession-review-chat-20261024-7b612bf4",
+      "reviewed_at": "2026-10-24T18:25:53Z",
+      "state_revision": "e1857fc566f9848d3cef21b561dffabbf563b03c",
+      "review_commit": null,
+      "correction_round": 2,
+      "supersedes_record_id": "ec1c453627f77d8f1d39cfc0ce5f2654",
+      "quality_report": {
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Rechecked previous finding about breathy voice in prologue; current translation uses 'голос с придыханием' and accurately preserves the original. Issue resolved on updated accepted translation SHA256.",
+            "resolved": true
+          }
+        ]
       }
     }
   ],
