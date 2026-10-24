@@ -1,6 +1,6 @@
 {
   "book_slug": "obsession-eva-marks",
-  "next_sequence": 40,
+  "next_sequence": 41,
   "records": [
     {
       "record_id": "0a6e7a112373b1111111111111111111",
@@ -1345,6 +1345,44 @@
           "structure": true
         },
         "findings": []
+      }
+    },
+    {
+      "record_id": "d67a7894e4df4188aaacd75e8e1f1b0e",
+      "sequence": 40,
+      "unit_id": "chapter-000030",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "e27176636fc051442240542b42ea8740001b87f921500c0caa4bf00f5933788c",
+      "translation_sha256": "c003b9efd51646ab4c37d910645f50fc89b54c09f7f25c2bf31e48180a16ed43",
+      "workflow_revision": "8f70b1c1c108926599c36ce40021860bed581400",
+      "review_contract_revision": "docs/TRANSLATION.md@8f70b1c1c108926599c36ce40021860bed581400",
+      "reviewer_session_id": "obsession-review-20261024-8fd38a11",
+      "reviewed_at": "2026-10-24T17:37:19Z",
+      "state_revision": "9f5af5ecb08feec483f15071f5b507b6f2968cec",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Chapter 22 near 'Which I will': source standalone dialog 'I am.' is rendered as '— Да.' despite an explicit 'I am' self-assertion, followed later by 'I'm yours.' Reassess the referent/speaker and preserve the explicit statement in context (rather than replacing it with generic assent); maintain the author's fragmented pacing.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Chapter 22, description of Darlene before 'I won't waste another second': original 'She's sucking in her bottom lip, looking at me with the desire for what's next' explicitly conveys desire for what follows. Russian 'Она закусывает нижнюю губу и смотрит на меня, ожидая того, что будет дальше' preserves anticipation but omits desire. Preserve the eager/desiring quality, e.g. 'с нетерпеливым желанием того, что будет дальше', in natural Russian.",
+            "resolved": false
+          }
+        ]
       }
     }
   ],
