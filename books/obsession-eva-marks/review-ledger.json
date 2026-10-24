@@ -1,6 +1,6 @@
 {
   "book_slug": "obsession-eva-marks",
-  "next_sequence": 41,
+  "next_sequence": 42,
   "records": [
     {
       "record_id": "0a6e7a112373b1111111111111111111",
@@ -1380,6 +1380,39 @@
           {
             "severity": "minor",
             "detail": "Chapter 22, description of Darlene before 'I won't waste another second': original 'She's sucking in her bottom lip, looking at me with the desire for what's next' explicitly conveys desire for what follows. Russian 'Она закусывает нижнюю губу и смотрит на меня, ожидая того, что будет дальше' preserves anticipation but omits desire. Preserve the eager/desiring quality, e.g. 'с нетерпеливым желанием того, что будет дальше', in natural Russian.",
+            "resolved": false
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "fba737bc57f7c4dd5e5199ca75463749",
+      "sequence": 41,
+      "unit_id": "chapter-000031",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "a7a80cb61c239c7aa4eec0146824cdc786fd84027440b42b2995bee6922b5a59",
+      "translation_sha256": "baee969701e0965bd1bcc102b7f7204aace46ab78b4ea96fd6af5a30f3e8bb2c",
+      "workflow_revision": "8f70b1c1c108926599c36ce40021860bed581400",
+      "review_contract_revision": "docs/TRANSLATION.md@8f70b1c1c108926599c36ce40021860bed581400",
+      "reviewer_session_id": "obsession-review-20261024-8fd38a11",
+      "reviewed_at": "2026-10-24T17:39:50Z",
+      "state_revision": "9f5af5ecb08feec483f15071f5b507b6f2968cec",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "major",
+            "detail": "Chapter 23 flashback, Vaughn explains why Darlene's parents were absent: original 'Your mom stayed to say hi before she drove off with dinner to take to him' does not say she waited to greet Darlene. Russian 'Мама дождалась тебя, чтобы поздороваться, а потом уехала отвезти ему ужин' explicitly claims mother waited for Darlene, which conflicts with the daughter arriving home and finding both parents already gone. Preserve original without inventing addressee, e.g. 'Мама ещё задержалась, чтобы поздороваться, а потом уехала отвезти ему ужин'.",
             "resolved": false
           }
         ]
