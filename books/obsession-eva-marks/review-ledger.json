@@ -1,6 +1,6 @@
 {
   "book_slug": "obsession-eva-marks",
-  "next_sequence": 97,
+  "next_sequence": 98,
   "records": [
     {
       "record_id": "0a6e7a112373b1111111111111111111",
@@ -3714,6 +3714,58 @@
             "severity": "minor",
             "detail": "Source-aligned paragraph boundaries restored for five embedded dialogue fragments in original paragraphs 36, 37, 103, 107 and 113; the full translation now retains all 126 paragraphs without lost utterances.",
             "resolved": true
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "2d9792a642499d2b8671d4c52893177fea212ab0",
+        "style_guide": "878aeaec4cfbd6a3bee3f76ed0ac6f0e9598ee74"
+      }
+    },
+    {
+      "record_id": "7a264a454bd445f7b9cb921634d92087",
+      "sequence": 97,
+      "unit_id": "chapter-000028",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "b830793dc1b359e5f1f01034690cd53abaedfa3e6c1decfa838a6b9188706daa",
+      "translation_sha256": "4aa9da93d8d9021687e1f51070b34e18c73196f23032be575df2748ad069d00b",
+      "workflow_revision": "8f70b1c1c108926599c36ce40021860bed581400",
+      "review_contract_revision": "docs/TRANSLATION.md@8f70b1c1c108926599c36ce40021860bed581400",
+      "reviewer_session_id": "obsession-finishing-20261025-review28-9ab6fe4a",
+      "reviewed_at": "2026-10-24T22:39:26Z",
+      "state_revision": "15cf3ba9ef449f713943a072de8839160660390a",
+      "review_commit": null,
+      "correction_round": 2,
+      "supersedes_record_id": "8c675b8e1ccbf7c8440a77a31815f034",
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "major",
+            "detail": "Prior finding resolved: paragraph 18 correctly assigns the decision to join Lincoln's search to Lane.",
+            "resolved": true
+          },
+          {
+            "severity": "major",
+            "detail": "Prior finding resolved: paragraph 87 now renders 'ravage' as rough passion without inventing literal rape.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Source paragraphs 3 and 59 include dialogue inline; translation unnecessarily inserts separate paragraphs for 'Пожалуйста' and 'Почему тебе не всё равно', creating 127 target paragraphs versus 125 source. Restore segmentation.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Paragraph 104 has ungrammatical Russian 'контролируя дыхание, но не душа'. Correct to a grammatical rendering preserving the distinction between controlling breathing and strangling.",
+            "resolved": false
           }
         ]
       },
