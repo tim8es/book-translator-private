@@ -1,6 +1,6 @@
 {
   "book_slug": "obsession-eva-marks",
-  "next_sequence": 101,
+  "next_sequence": 102,
   "records": [
     {
       "record_id": "0a6e7a112373b1111111111111111111",
@@ -3921,6 +3921,58 @@
           {
             "severity": "minor",
             "detail": "Original 53-paragraph chapter structure is restored including inline dialogue in paragraphs 21, 31, 34 and 50.",
+            "resolved": true
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "2d9792a642499d2b8671d4c52893177fea212ab0",
+        "style_guide": "878aeaec4cfbd6a3bee3f76ed0ac6f0e9598ee74"
+      }
+    },
+    {
+      "record_id": "127860123d5342cf9097beaa3f484dfb",
+      "sequence": 101,
+      "unit_id": "chapter-000036",
+      "outcome": "PASS",
+      "source_sha256": "0c5ad22f4813256eb67460e08b82bb58f7330b0bef804ed76d087b3120750a6f",
+      "translation_sha256": "6f0d2f57207d3589beda904b04cf30c80dc7f2ebb303cec9040fdace3d657706",
+      "workflow_revision": "8f70b1c1c108926599c36ce40021860bed581400",
+      "review_contract_revision": "docs/TRANSLATION.md@8f70b1c1c108926599c36ce40021860bed581400",
+      "reviewer_session_id": "obsession-finisher-20261025-review-1",
+      "reviewed_at": "2026-10-24T23:46:56Z",
+      "state_revision": "7dc975f3bc1cdffd2270aec5517d3026a5ff1801",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": "41022b837c8a67651b8bfe07348b6aea",
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Previously dropped salivating bodily image is now restored in chapter paragraph 6.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "The British exclamation is now rendered by idiomatic Russian in paragraph 103.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Seven artificial Russian paragraph splits are repaired to match all 118 original paragraph boundaries.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Final source comparison corrected anatomical reference, missing verb object, unnatural metaphors, conditional tense and Russian literary phrasing.",
             "resolved": true
           }
         ]
