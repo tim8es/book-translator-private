@@ -1,6 +1,6 @@
 {
   "book_slug": "obsession-eva-marks",
-  "next_sequence": 49,
+  "next_sequence": 50,
   "records": [
     {
       "record_id": "0a6e7a112373b1111111111111111111",
@@ -1665,6 +1665,53 @@
             "resolved": false
           }
         ]
+      }
+    },
+    {
+      "record_id": "69189ba6272d1fb628a1e42802bb8dd4",
+      "sequence": 49,
+      "unit_id": "chapter-000047",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "e50be9674996f464519fab72b1f07da89710c20a1cb42352dd30d3ddb1c085ca",
+      "translation_sha256": "c12837e69022fba99603aba5c93063d9b5791e967bf070eaba235c44e67f6496",
+      "workflow_revision": "8f70b1c1c108926599c36ce40021860bed581400",
+      "review_contract_revision": "docs/TRANSLATION.md@8f70b1c1c108926599c36ce40021860bed581400",
+      "reviewer_session_id": "obsession-review-chat-20261024-u47-62d925e4",
+      "reviewed_at": "2026-10-24T18:21:01Z",
+      "state_revision": "e1857fc566f9848d3cef21b561dffabbf563b03c",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "STALKED, глава 1, про комплименты: 'I would’ve thanked Michelle and not made a big deal out of it like most people would' описывает, что сама Пру поблагодарила бы Мишель, как большинство людей. Русское 'Большинство людей просто поблагодарили бы Мишель' переносит условное действие с героини на других людей. Восстановить субъект: 'Я бы просто поблагодарила Мишель и не стала придавать этому значения, как большинство людей'.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "STALKED, глава 1: 'I might’ve donated my bible, haven’t hung a cross in my apartment, and stopped going to church on Sundays' — допущение/уступка о совершённых поступках и нынешних привычках. Русское 'Я могла отдать кому-нибудь свою Библию, не вешать крест... и перестать ходить...' читается как гипотетическая возможность, а не перечисление того, от чего героиня отошла. Сохранить уступительный смысл: 'Пусть я и отдала свою Библию, не повесила крест и перестала ходить по воскресеньям в церковь, ...'.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "STALKED, глава 1: английское 'Eighteen years of tough love' — идиоматическое описание жёсткой 'воспитательной любви'. Русское 'Восемнадцать лет суровой любви' звучит как неуместная прямая калька и сдвигает тон. Предложение: 'Восемнадцать лет любви со строгими нравоучениями' либо естественный контекстный эквивалент.",
+            "resolved": false
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "2d9792a642499d2b8671d4c52893177fea212ab0",
+        "style_guide": "878aeaec4cfbd6a3bee3f76ed0ac6f0e9598ee74"
       }
     }
   ],
