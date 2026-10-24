@@ -1,6 +1,6 @@
 {
   "book_slug": "obsession-eva-marks",
-  "next_sequence": 10,
+  "next_sequence": 11,
   "records": [
     {
       "record_id": "0a6e7a112373b1111111111111111111",
@@ -246,6 +246,39 @@
           {
             "severity": "minor",
             "detail": "Chapter thirteen: English present-tense 'Roy lets out a cry in fear, then pees himself' is mistranslated in Russian as 'Рой вскрикивает от страха и обмочится прямо на стуле.' Future-tense 'обмочится' disrupts chronology. Correct to 'Рой вскрикивает от страха и мочится прямо на стуле.' Then recheck against source.",
+            "resolved": false
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "ec1c453627f77d8f1d39cfc0ce5f2654",
+      "sequence": 10,
+      "unit_id": "chapter-000008",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "321d6cbbaf83f5ff0347144f544c4f6f929ccbc5980f1a8c012170324c4dbaa7",
+      "translation_sha256": "9163d6070b39228b0af1396d0bc26c646495040fa3021798d808b2679fa0d37f",
+      "workflow_revision": "8f70b1c1c108926599c36ce40021860bed581400",
+      "review_contract_revision": "docs/REVIEWER.md@8f70b1c1c108926599c36ce40021860bed581400",
+      "reviewer_session_id": "obsession-review-20261024-5d8e7f19",
+      "reviewed_at": "2026-10-24T15:15:32Z",
+      "state_revision": "523f4186f61c6e454bbb1aa0fc1affcc984905c7",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Prologue: source 'her breathy, almost inaudible voice' means a faint breathy/whispered voice; Russian 'её хрипловатый, почти неслышный голос' invents hoarseness not present in source. Replace 'хрипловатый' with 'с придыханием' or 'тихий, с придыханием'; recheck against source.",
             "resolved": false
           }
         ]
