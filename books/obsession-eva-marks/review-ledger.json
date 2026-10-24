@@ -1,6 +1,6 @@
 {
   "book_slug": "obsession-eva-marks",
-  "next_sequence": 71,
+  "next_sequence": 72,
   "records": [
     {
       "record_id": "0a6e7a112373b1111111111111111111",
@@ -2559,6 +2559,43 @@
             "severity": "minor",
             "detail": "Chapter 24, Darlene's reflection 'I consented to him long before he asked' concerns consent. Current Russian 'Я согласилась принадлежать ему задолго до того, как он спросил' adds an agreement to ownership/belonging absent from this sentence. Preserve consent explicitly, e.g. 'Я дала ему согласие задолго до того, как он спросил', checking surrounding possessive language does not override this distinction.",
             "resolved": false
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "2d9792a642499d2b8671d4c52893177fea212ab0",
+        "style_guide": "878aeaec4cfbd6a3bee3f76ed0ac6f0e9598ee74"
+      }
+    },
+    {
+      "record_id": "3d48d602c64779d0d24a3463915ed533",
+      "sequence": 71,
+      "unit_id": "chapter-000033",
+      "outcome": "PASS",
+      "source_sha256": "1f3dbba81f58712571fd91657bec089933d8d145213f80fee9c4cfd6a83efe49",
+      "translation_sha256": "d6dd2358344bf41624edc2026c91300e9d24998c225e351ee7eab8d556392a01",
+      "workflow_revision": "8f70b1c1c108926599c36ce40021860bed581400",
+      "review_contract_revision": "docs/TRANSLATION.md@8f70b1c1c108926599c36ce40021860bed581400",
+      "reviewer_session_id": "obsession-review-chat-20261024-u33-7d6fc38b",
+      "reviewed_at": "2026-10-24T19:09:37Z",
+      "state_revision": "8e8d44bb2c0cf228535f28b976b9f36aba492e2e",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": "58abd9ed0e20df8abf47ed45d3144d8f",
+      "quality_report": {
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "major",
+            "detail": "Prior anatomical/action mismatch resolved: source 'carving out their guts, cutting out the tops of their scalps' now rendered 'вырезает у них внутренности и срезает кожу с макушек'. Both removal of internal organs and cutting scalp skin (not skull bone) are preserved; surrounding recollection source-compared.",
+            "resolved": true
           }
         ]
       },
