@@ -36,7 +36,9 @@ jobs:
         uses: actions/checkout@v7
         with:
           repository: tim8es/book-translator
-          ref: main
+          # Fixed reviewed bridge revision, independent of per-book workflow pin.
+          # Re-pin to the final public merge SHA before production activation.
+          ref: b9f2c5f6f22315f29232f735b3fd04a32f95b083
           path: engine
           fetch-depth: 1
           persist-credentials: false
