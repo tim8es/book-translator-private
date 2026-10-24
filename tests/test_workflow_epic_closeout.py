@@ -46,10 +46,11 @@ class WorkflowEpicCloseoutContractTests(unittest.TestCase):
             orchestration,
         )
 
-    def test_only_generic_ci_and_explicit_manual_apify_workflows_exist(self):
+    def test_only_approved_ci_and_chat_runner_workflows_exist(self):
         workflow_dir = PROJECT_ROOT / ".github" / "workflows"
         workflows = sorted(path.name for path in workflow_dir.glob("*.yml"))
-        allowed = {"tests.yml", "deploy-apify-private.yml", "smoke-apify-private.yml"}
+        allowed = {"tests.yml", "deploy-apify-private.yml", "smoke-apify-private.yml",
+                   "chat-operations.yml"}
         self.assertIn("tests.yml", workflows)
         self.assertEqual(set(workflows) - allowed, set())
         for filename in workflows:
@@ -57,8 +58,16 @@ class WorkflowEpicCloseoutContractTests(unittest.TestCase):
                 continue
             source = (workflow_dir / filename).read_text(encoding="utf-8")
             self.assertIn("workflow_dispatch:", source)
-            self.assertNotIn("  push:", source)
             self.assertNotIn("  pull_request:", source)
+            if filename == "chat-operations.yml":
+                self.assertIn("  push:", source)
+                self.assertIn("branches: [main]", source)
+                self.assertIn("'.chat-ops/requests/*.json'", source)
+                self.assertIn("cancel-in-progress: false", source)
+                self.assertIn("contents: write", source)
+                self.assertIn("  schedule:", source)
+            else:
+                self.assertNotIn("  push:", source)
 
         setup = (PROJECT_ROOT / "docs" / "AGENT_SETUP.md").read_text(encoding="utf-8")
         orchestration = (PROJECT_ROOT / "docs" / "ORCHESTRATION.md").read_text(
