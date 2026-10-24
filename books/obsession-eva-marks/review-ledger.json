@@ -1,6 +1,6 @@
 {
   "book_slug": "obsession-eva-marks",
-  "next_sequence": 86,
+  "next_sequence": 87,
   "records": [
     {
       "record_id": "0a6e7a112373b1111111111111111111",
@@ -3272,6 +3272,53 @@
           {
             "severity": "minor",
             "detail": "Unsupported conversation during the sleepover is removed; the original stated plan is preserved.",
+            "resolved": true
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "2d9792a642499d2b8671d4c52893177fea212ab0",
+        "style_guide": "878aeaec4cfbd6a3bee3f76ed0ac6f0e9598ee74"
+      }
+    },
+    {
+      "record_id": "4891973255ef42f2870e04c4a9a50a60",
+      "sequence": 86,
+      "unit_id": "chapter-000047",
+      "outcome": "PASS",
+      "source_sha256": "e50be9674996f464519fab72b1f07da89710c20a1cb42352dd30d3ddb1c085ca",
+      "translation_sha256": "be458f5b1177cabbe0589b61d2ca363a412c2970eac14413417891c953d9e4aa",
+      "workflow_revision": "8f70b1c1c108926599c36ce40021860bed581400",
+      "review_contract_revision": "docs/TRANSLATION.md@8f70b1c1c108926599c36ce40021860bed581400",
+      "reviewer_session_id": "obsession-finishing-20261025-u47-review-603a41bc",
+      "reviewed_at": "2026-10-24T22:10:35Z",
+      "state_revision": "7b88c899c1c2505a5ee1863f589bb9345a32a006",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": "69189ba6272d1fb628a1e42802bb8dd4",
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Prue is restored as the grammatical subject of her hypothetical response to Michelle's praise.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Her donation of the Bible, absence of a cross, and stopping Sunday church attendance are expressed as prior choices and present habits, not hypothetical future options.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Eighteen years of tough love now describes strict, demanding upbringing rather than unnatural literal severe love.",
             "resolved": true
           }
         ]
