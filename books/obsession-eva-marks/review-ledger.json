@@ -1,6 +1,6 @@
 {
   "book_slug": "obsession-eva-marks",
-  "next_sequence": 100,
+  "next_sequence": 101,
   "records": [
     {
       "record_id": "0a6e7a112373b1111111111111111111",
@@ -3870,6 +3870,58 @@
             "severity": "minor",
             "detail": "Four paragraph splits in source paragraphs 21, 31, 34, and 50 break inline dialogue and narrative; translation has 57 paragraphs versus 53 source paragraphs. Merge the corresponding target fragments.",
             "resolved": false
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "2d9792a642499d2b8671d4c52893177fea212ab0",
+        "style_guide": "878aeaec4cfbd6a3bee3f76ed0ac6f0e9598ee74"
+      }
+    },
+    {
+      "record_id": "16510ab86f9c4564a263c2360571c635",
+      "sequence": 100,
+      "unit_id": "chapter-000035",
+      "outcome": "PASS",
+      "source_sha256": "a9ba512ccb7b83a3c37f77b0854f9aa51b68e54cba15acae8f3256439fe56d0e",
+      "translation_sha256": "c6a98f9e6daeea71ffaa9751209ffb7535d57e7786a253f61726d0e4c6d54b6e",
+      "workflow_revision": "8f70b1c1c108926599c36ce40021860bed581400",
+      "review_contract_revision": "docs/TRANSLATION.md@8f70b1c1c108926599c36ce40021860bed581400",
+      "reviewer_session_id": "obsession-finishing-20261025-review35-final-f3a61699",
+      "reviewed_at": "2026-10-24T22:53:15Z",
+      "state_revision": "c5fd154ff4d731751a5a5b87a4d8198a906ec906",
+      "review_commit": null,
+      "correction_round": 2,
+      "supersedes_record_id": "a4aaf575e8724d45bd71907318551226",
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Paragraph 15 retains Darlene as agent resolving her doubts.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Paragraph 20 expresses Vaughn's support as factual without added uncertainty.",
+            "resolved": true
+          },
+          {
+            "severity": "major",
+            "detail": "Paragraph 33 preserves an inference of probable dislike without exaggerating it into rage.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Original 53-paragraph chapter structure is restored including inline dialogue in paragraphs 21, 31, 34 and 50.",
+            "resolved": true
           }
         ]
       },
