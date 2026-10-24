@@ -53,6 +53,10 @@ class WorkflowEpicCloseoutContractTests(unittest.TestCase):
                    "chat-operations.yml"}
         self.assertIn("tests.yml", workflows)
         self.assertEqual(set(workflows) - allowed, set())
+        ci = (workflow_dir / "tests.yml").read_text(encoding="utf-8")
+        self.assertIn("paths-ignore:", ci)
+        self.assertIn("'.chat-ops/requests/**'", ci)
+        self.assertIn("'.chat-ops/results/**'", ci)
         for filename in workflows:
             if filename == "tests.yml":
                 continue
