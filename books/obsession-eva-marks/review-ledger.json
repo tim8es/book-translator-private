@@ -1,6 +1,6 @@
 {
   "book_slug": "obsession-eva-marks",
-  "next_sequence": 74,
+  "next_sequence": 75,
   "records": [
     {
       "record_id": "0a6e7a112373b1111111111111111111",
@@ -2676,6 +2676,58 @@
           "structure": true
         },
         "findings": []
+      },
+      "shared_state_revisions": {
+        "glossary": "2d9792a642499d2b8671d4c52893177fea212ab0",
+        "style_guide": "878aeaec4cfbd6a3bee3f76ed0ac6f0e9598ee74"
+      }
+    },
+    {
+      "record_id": "69c3f161f889166c4f33d781367f0179",
+      "sequence": 74,
+      "unit_id": "chapter-000026",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "8329c13012dd1c466e7f3ee3661142ee48498359e579dfc01d00ba04238536ab",
+      "translation_sha256": "85920401c44f5aa7597c4e86f627a3b3b5cc02238a96c81f5d1e80a30870d580",
+      "workflow_revision": "8f70b1c1c108926599c36ce40021860bed581400",
+      "review_contract_revision": "docs/TRANSLATION.md@8f70b1c1c108926599c36ce40021860bed581400",
+      "reviewer_session_id": "obsession-finishing-20261024-reviewer-0f842ad3",
+      "reviewed_at": "2026-10-24T19:48:57Z",
+      "state_revision": "c169aa6cb1f8c79d3d28ee350fa87ad8d2973ed2",
+      "review_commit": null,
+      "correction_round": 3,
+      "supersedes_record_id": "882523cfa64ee97cfca9e01f82af906f",
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Paragraph 50 contains an unidiomatic Russian calque for the English phrase about crossing an emotional threshold.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Paragraph 105 contains a literal calque about a straight cut and bleeding that needs natural Russian phrasing.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Paragraph 119 has a clumsy literal rendering of a figurative exaggeration.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Paragraph 137 is semantically closer after the earlier fix but needs a natural Russian formulation of delayed departure.",
+            "resolved": false
+          }
+        ]
       },
       "shared_state_revisions": {
         "glossary": "2d9792a642499d2b8671d4c52893177fea212ab0",
