@@ -38,7 +38,7 @@ jobs:
           repository: tim8es/book-translator
           # Fixed reviewed bridge revision, independent of per-book workflow pin.
           # Re-pin to the final public merge SHA before production activation.
-          ref: b9f2c5f6f22315f29232f735b3fd04a32f95b083
+          ref: d2c8812c8fbcd0b5512ddd3aad3f1470154b872b
           path: engine
           fetch-depth: 1
           persist-credentials: false
