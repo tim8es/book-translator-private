@@ -1,6 +1,6 @@
 {
   "book_slug": "obsession-eva-marks",
-  "next_sequence": 54,
+  "next_sequence": 55,
   "records": [
     {
       "record_id": "0a6e7a112373b1111111111111111111",
@@ -1857,6 +1857,58 @@
             "resolved": true
           }
         ]
+      }
+    },
+    {
+      "record_id": "c67c1258df0132ba0d1806ab1c0a6c81",
+      "sequence": 54,
+      "unit_id": "chapter-000048",
+      "outcome": "PASS",
+      "source_sha256": "e2fed4b102902481df5d0c0559aac5b8d176f9cba346cf0c07e6dc51d0d65996",
+      "translation_sha256": "7cd2e040726a30ae9dbe4c3bd8b72c65e63a07660d926a7041c15776d2500318",
+      "workflow_revision": "8f70b1c1c108926599c36ce40021860bed581400",
+      "review_contract_revision": "docs/TRANSLATION.md@8f70b1c1c108926599c36ce40021860bed581400",
+      "reviewer_session_id": "obsession-rereview-chat-20261024-u48-6c7a3e89",
+      "reviewed_at": "2026-10-24T18:29:38Z",
+      "state_revision": "e1857fc566f9848d3cef21b561dffabbf563b03c",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": "cbb43d84f1cbac6e619802a16fbf7baf",
+      "quality_report": {
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Замечание из cbb43d84f1cbac6e619802a16fbf7baf о 'I march into the lobby' устранено: 'Я решительно шагаю через вестибюль'. Проверено на новой принятой версии.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Замечание о 'sneakers—AKA, my sensible shoes' устранено: 'кроссовки — мою «практичную обувь»'.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Замечание о 'smutty book' устранено: 'эротическая книжка'.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Замечание о 'I don’t have it in me to care anymore' устранено: 'У меня больше нет сил об этом переживать'.",
+            "resolved": true
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "2d9792a642499d2b8671d4c52893177fea212ab0",
+        "style_guide": "878aeaec4cfbd6a3bee3f76ed0ac6f0e9598ee74"
       }
     }
   ],
