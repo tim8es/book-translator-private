@@ -3,6 +3,11 @@ name: tests
 on:
   push:
     branches: [main]
+    # Chat requests are validated and committed by chat-operations.yml.
+    # Do not run the full test suite once per queue request.
+    paths-ignore:
+      - '.chat-ops/requests/**'
+      - '.chat-ops/results/**'
   pull_request:
 
 # Stable per-branch / per-PR concurrency stops superseded pushes from accumulating.
