@@ -1,6 +1,6 @@
 {
   "book_slug": "obsession-eva-marks",
-  "next_sequence": 33,
+  "next_sequence": 34,
   "records": [
     {
       "record_id": "0a6e7a112373b1111111111111111111",
@@ -1054,6 +1054,48 @@
             "resolved": false
           }
         ]
+      }
+    },
+    {
+      "record_id": "44c9a8ec54d3bb67cf2f91862a7ef1a5",
+      "sequence": 33,
+      "unit_id": "chapter-000025",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "a9b96f8bd22669df13e25656ba0b464577f20e0208f4679cb2d294c804528db4",
+      "translation_sha256": "8ebf07333dd2cbd1207529e747fee1c7bc0ee3fc43129bcbdb72299d9022ecab",
+      "workflow_revision": "8f70b1c1c108926599c36ce40021860bed581400",
+      "review_contract_revision": "docs/TRANSLATION.md@8f70b1c1c108926599c36ce40021860bed581400",
+      "reviewer_session_id": "obsession-review-20261024-ae15dc96",
+      "reviewed_at": "2026-10-24T17:00:22Z",
+      "state_revision": "9f5af5ecb08feec483f15071f5b507b6f2968cec",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Chapter 17: 'little raven' appears twice in Vaughn's dialogue, but both instances translate to 'маленькая ворона', whereas earlier chapters established affectionate 'воронёнок'. Harmonize nickname throughout chapter to preserve raven/crow distinction and established character voice.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Chapter 17: 'I am' follows 'Daddy’s ... *Mine*'; translation has just 'Да', dropping Darlene's explicit claim of belonging to him. Restore concise response 'Я твоя' or equivalent, preserving the echo and emotional function.",
+            "resolved": false
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "2d9792a642499d2b8671d4c52893177fea212ab0",
+        "style_guide": "878aeaec4cfbd6a3bee3f76ed0ac6f0e9598ee74"
       }
     }
   ],
