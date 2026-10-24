@@ -1,6 +1,6 @@
 {
   "book_slug": "obsession-eva-marks",
-  "next_sequence": 63,
+  "next_sequence": 64,
   "records": [
     {
       "record_id": "0a6e7a112373b1111111111111111111",
@@ -2229,6 +2229,44 @@
       "shared_state_revisions": {
         "glossary": "2d9792a642499d2b8671d4c52893177fea212ab0",
         "style_guide": "878aeaec4cfbd6a3bee3f76ed0ac6f0e9598ee74"
+      }
+    },
+    {
+      "record_id": "b63b6b90f4ead6bccf2160d983e89726",
+      "sequence": 63,
+      "unit_id": "chapter-000019",
+      "outcome": "PASS",
+      "source_sha256": "764d580b02a409bdf28b45fec593d78908cfdbce045e3a249d4f1cab89a3d815",
+      "translation_sha256": "887fdb7832556a08aae8063e476aab3ef415b6d43291ca05579d356654cf7faf",
+      "workflow_revision": "8f70b1c1c108926599c36ce40021860bed581400",
+      "review_contract_revision": "docs/TRANSLATION.md@8f70b1c1c108926599c36ce40021860bed581400",
+      "reviewer_session_id": "obsession-review-chat-20261024-7b612bf4",
+      "reviewed_at": "2026-10-24T18:44:58Z",
+      "state_revision": "e1857fc566f9848d3cef21b561dffabbf563b03c",
+      "review_commit": null,
+      "correction_round": 2,
+      "supersedes_record_id": "36034e43db0ecdd5f5c4d4da1c4fd29f",
+      "quality_report": {
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Prior 'No one lays their stinking hands on the innocent' no longer mistranslated 'рядом'; updated 'Никто не смеет поднимать свои вонючие руки на невиновных' correctly marks innocent people as physical targets.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Prior awkward bare fragment 'Какого-нибудь грёбаного Джона Доу' corrected to standalone 'Просто грёбаный Джон Доу', matching narrator's identity statement.",
+            "resolved": true
+          }
+        ]
       }
     }
   ],
