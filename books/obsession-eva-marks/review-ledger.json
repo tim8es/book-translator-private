@@ -1,6 +1,6 @@
 {
   "book_slug": "obsession-eva-marks",
-  "next_sequence": 31,
+  "next_sequence": 32,
   "records": [
     {
       "record_id": "0a6e7a112373b1111111111111111111",
@@ -975,6 +975,44 @@
           {
             "severity": "minor",
             "detail": "Chapter 14 flashback, sound effects: English standalone 'Boom. Boom. Bang.' is outside italics, surrounded by italicized past-tense recollection paragraphs. Russian '*Бум. Бум. Бах.*' adds italics that blur the intentional formatting distinction. Reproduce the source emphasis/formatting accurately.",
+            "resolved": false
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "cc2c6cce87e4f8924d535ed2c38cbc86",
+      "sequence": 31,
+      "unit_id": "chapter-000024",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "6686b536488bd15def96315de73df66baafd344e0efada68c6948bc8bc13a06b",
+      "translation_sha256": "cf17f9019eb513f05fdaa81d3567168bde86abec9a7e2001344f7ac9a6c8513b",
+      "workflow_revision": "8f70b1c1c108926599c36ce40021860bed581400",
+      "review_contract_revision": "docs/TRANSLATION.md@8f70b1c1c108926599c36ce40021860bed581400",
+      "reviewer_session_id": "obsession-review-20261024-5cf23bd9",
+      "reviewed_at": "2026-10-24T16:39:36Z",
+      "state_revision": "7035e6a7fbc20d43052d154b756bec31355975c3",
+      "review_commit": null,
+      "correction_round": 2,
+      "supersedes_record_id": "85d87c399d4c6b5b98039d3ba3521c50",
+      "quality_report": {
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "major",
+            "detail": "Chapter 16 recurring nickname 'little raven' and 'raven' repeatedly rendered as 'маленькая ворона' / 'ворона' (lines near the opening confrontation, kiss and oral-sex scene). Previous chapters use 'воронёнок' for Vaughn's affectionate 'raven' nickname. 'Ворона' means crow, breaks recurring term and changes intimacy; harmonize consistently with existing book usage, inflecting 'воронёнок' naturally across the chapter.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Chapter 16 kiss-to-oral transition: English 'my tongue slipping out to lick my lips while wishing I could taste him instead' explicitly says she wishes to taste HIM. Russian 'хотя мечтаю попробовать совсем другое' replaces him with a vague 'something else', losing the deliberate explicit object. Restore 'мечтая вместо этого попробовать его на вкус' or equivalent.",
             "resolved": false
           }
         ]
