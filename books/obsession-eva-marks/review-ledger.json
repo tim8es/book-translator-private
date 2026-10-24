@@ -1,6 +1,6 @@
 {
   "book_slug": "obsession-eva-marks",
-  "next_sequence": 68,
+  "next_sequence": 69,
   "records": [
     {
       "record_id": "0a6e7a112373b1111111111111111111",
@@ -2435,6 +2435,44 @@
           {
             "severity": "minor",
             "detail": "Original affectionate 'Be my good little raven' now 'Будь моим хорошим воронёнком', matching established character nickname. Fixed.",
+            "resolved": true
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "4ff3dceb2af8a1ff98190c2fc1897e1c",
+      "sequence": 68,
+      "unit_id": "chapter-000030",
+      "outcome": "PASS",
+      "source_sha256": "e27176636fc051442240542b42ea8740001b87f921500c0caa4bf00f5933788c",
+      "translation_sha256": "3f9a0c46e4b66d79b11a0a460e2ee1aeb33efa841d74f42fcb64f121e12762cd",
+      "workflow_revision": "8f70b1c1c108926599c36ce40021860bed581400",
+      "review_contract_revision": "docs/TRANSLATION.md@8f70b1c1c108926599c36ce40021860bed581400",
+      "reviewer_session_id": "obsession-review-chat-20261024-f9c1df20",
+      "reviewed_at": "2026-10-24T19:00:03Z",
+      "state_revision": "56ba1e3774f7b20b9e2f292cb683f3efe5f037f8",
+      "review_commit": null,
+      "correction_round": 2,
+      "supersedes_record_id": "d67a7894e4df4188aaacd75e8e1f1b0e",
+      "quality_report": {
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Previously generic assent '— Да' replacing standalone source 'I am' after 'Which I will' changed to explicit '— Я такая' and nearby parallel affirmation '— Я твоя' (for the earlier 'I am'), restoring the self-description instead of generic agreement.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Previous source 'looking at me with the desire for what's next' lost her wanting; updated 'смотрит на меня с явным желанием продолжения' correctly restores desire beyond merely waiting.",
             "resolved": true
           }
         ]
