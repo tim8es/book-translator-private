@@ -1,6 +1,6 @@
 {
   "book_slug": "obsession-eva-marks",
-  "next_sequence": 66,
+  "next_sequence": 67,
   "records": [
     {
       "record_id": "0a6e7a112373b1111111111111111111",
@@ -2343,6 +2343,48 @@
             "resolved": false
           }
         ]
+      }
+    },
+    {
+      "record_id": "5c60d624eda305f03e1a1c789d77107c",
+      "sequence": 66,
+      "unit_id": "chapter-000025",
+      "outcome": "PASS",
+      "source_sha256": "a9b96f8bd22669df13e25656ba0b464577f20e0208f4679cb2d294c804528db4",
+      "translation_sha256": "48237d5daec45ab1d3a990f70a5d9053842b19aab414f45d589a12f2b6f8c1c3",
+      "workflow_revision": "8f70b1c1c108926599c36ce40021860bed581400",
+      "review_contract_revision": "docs/TRANSLATION.md@8f70b1c1c108926599c36ce40021860bed581400",
+      "reviewer_session_id": "obsession-review-chat-20261024-u25-6e0d4f82",
+      "reviewed_at": "2026-10-24T18:56:48Z",
+      "state_revision": "56ba1e3774f7b20b9e2f292cb683f3efe5f037f8",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": "44c9a8ec54d3bb67cf2f91862a7ef1a5",
+      "quality_report": {
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Both 'little raven' uses now use the established 'воронёнок' in this corrected chapter; prior nickname inconsistency resolved.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Original 'I am' following 'Mine.' now reads 'Я твоя'; the explicit reply and echo of belonging are restored.",
+            "resolved": true
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "2d9792a642499d2b8671d4c52893177fea212ab0",
+        "style_guide": "878aeaec4cfbd6a3bee3f76ed0ac6f0e9598ee74"
       }
     }
   ],
