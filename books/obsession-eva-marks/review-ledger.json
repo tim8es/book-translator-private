@@ -1,6 +1,6 @@
 {
   "book_slug": "obsession-eva-marks",
-  "next_sequence": 60,
+  "next_sequence": 61,
   "records": [
     {
       "record_id": "0a6e7a112373b1111111111111111111",
@@ -2102,6 +2102,48 @@
             "resolved": true
           }
         ]
+      }
+    },
+    {
+      "record_id": "980f65488a893727bceae6dce9e68ece",
+      "sequence": 60,
+      "unit_id": "chapter-000023",
+      "outcome": "PASS",
+      "source_sha256": "1bed03e0d369922b48860ac5dcd09b48c67857b03816830db7088d8160ce0c90",
+      "translation_sha256": "69dd311b8d7cd8a84df3ab91e4a2c457d5e64ef5242373d1ad308d41ce07cb50",
+      "workflow_revision": "8f70b1c1c108926599c36ce40021860bed581400",
+      "review_contract_revision": "docs/TRANSLATION.md@8f70b1c1c108926599c36ce40021860bed581400",
+      "reviewer_session_id": "obsession-rereview-chat-20261024-u23-0c238ed1",
+      "reviewed_at": "2026-10-24T18:40:33Z",
+      "state_revision": "e1857fc566f9848d3cef21b561dffabbf563b03c",
+      "review_commit": null,
+      "correction_round": 2,
+      "supersedes_record_id": "a1dca45b026089beb316a8acfa6ef822",
+      "quality_report": {
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "major",
+            "detail": "Глава 15: предыдущее замечание о 'Caroline is getting scolded ... over the murder scene' устранено — 'за то, что не выдержала вида изуродованного тела' больше не утверждает, будто Кэролайн видела само убийство. Сверены все 93 блока.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Глава 15: 'His face had been horribly abused' исправлено на 'Его лицо страшно изуродовано', удалено неподтверждённое 'до неузнаваемости'.",
+            "resolved": true
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "2d9792a642499d2b8671d4c52893177fea212ab0",
+        "style_guide": "878aeaec4cfbd6a3bee3f76ed0ac6f0e9598ee74"
       }
     }
   ],
