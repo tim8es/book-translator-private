@@ -1,6 +1,6 @@
 {
   "book_slug": "obsession-eva-marks",
-  "next_sequence": 94,
+  "next_sequence": 95,
   "records": [
     {
       "record_id": "0a6e7a112373b1111111111111111111",
@@ -3592,6 +3592,53 @@
           {
             "severity": "minor",
             "detail": "Comparison of Darlene to others rewritten in grammatical Russian without incorrectly calling her a man.",
+            "resolved": true
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "2d9792a642499d2b8671d4c52893177fea212ab0",
+        "style_guide": "878aeaec4cfbd6a3bee3f76ed0ac6f0e9598ee74"
+      }
+    },
+    {
+      "record_id": "750c578125b94d66b613f27ec2d415a1",
+      "sequence": 94,
+      "unit_id": "chapter-000040",
+      "outcome": "PASS",
+      "source_sha256": "28e5fa55d0f035ad5825dcf3ef69131538a709ae18f64e0811e54c6cb51dcd5d",
+      "translation_sha256": "0588e4a37725b4b8d92732a654888f4a7f381b0aa06be0f1f0173d5d8eca769c",
+      "workflow_revision": "8f70b1c1c108926599c36ce40021860bed581400",
+      "review_contract_revision": "docs/TRANSLATION.md@8f70b1c1c108926599c36ce40021860bed581400",
+      "reviewer_session_id": "obsession-review-20261025-u40-59ca3fe1",
+      "reviewed_at": "2026-10-24T22:28:56Z",
+      "state_revision": "e8fa65cc6eb856a9f70a384acaf2659b0d00b8a8",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": "e4d2e680d819e115a5645fdcbff835db",
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Devoted watchman is restored as 'преданным стражем' instead of a generic protector.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Get out of your head now has idiomatic wording 'Хватит себя накручивать'.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "The body-position description now specifies the lip pressed into the ground accurately.",
             "resolved": true
           }
         ]
