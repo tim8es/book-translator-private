@@ -1,6 +1,6 @@
 {
   "book_slug": "obsession-eva-marks",
-  "next_sequence": 62,
+  "next_sequence": 63,
   "records": [
     {
       "record_id": "0a6e7a112373b1111111111111111111",
@@ -2187,6 +2187,48 @@
             "resolved": true
           }
         ]
+      }
+    },
+    {
+      "record_id": "2ac1914e39369d8827d1d2e8b878bbb6",
+      "sequence": 62,
+      "unit_id": "chapter-000022",
+      "outcome": "PASS",
+      "source_sha256": "2c1d362feb6e0f2db3b63c6541c1b4c4431a3db9ead3fbfbde45a79ca2b1ad9a",
+      "translation_sha256": "42d931664eac098f5cd9a3e4c73a90e22164ffa90e702ce7424f4f2bddef1d1a",
+      "workflow_revision": "8f70b1c1c108926599c36ce40021860bed581400",
+      "review_contract_revision": "docs/TRANSLATION.md@8f70b1c1c108926599c36ce40021860bed581400",
+      "reviewer_session_id": "obsession-rereview-chat-20261024-u22-ef87d303",
+      "reviewed_at": "2026-10-24T18:44:07Z",
+      "state_revision": "e1857fc566f9848d3cef21b561dffabbf563b03c",
+      "review_commit": null,
+      "correction_round": 2,
+      "supersedes_record_id": "9e40317508d2be41330f351d8fd7d567",
+      "quality_report": {
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "major",
+            "detail": "Предыдущее замечание из 9e40317508d2be41330f351d8fd7d567 о 'All I wanted was to have someone to care for' исправлено: 'чтобы у меня был кто-то, о ком я могла бы заботиться'. Субъект заботы верен.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Предыдущее замечание о 'Boom. Boom. Bang.' исправлено: 'Бум. Бум. Бах.' стоит отдельным обычным абзацем без лишнего курсива, несмотря на курсивное воспоминание вокруг.",
+            "resolved": true
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "2d9792a642499d2b8671d4c52893177fea212ab0",
+        "style_guide": "878aeaec4cfbd6a3bee3f76ed0ac6f0e9598ee74"
       }
     }
   ],
