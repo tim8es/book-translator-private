@@ -1,6 +1,6 @@
 {
   "book_slug": "obsession-eva-marks",
-  "next_sequence": 91,
+  "next_sequence": 92,
   "records": [
     {
       "record_id": "0a6e7a112373b1111111111111111111",
@@ -3472,6 +3472,43 @@
             "severity": "minor",
             "detail": "Chapter 6, paragraph 92: 'Darlene is no other man or woman' means she is unlike anyone else; Russian 'не обычный мужчина и не обычная женщина' is an unidiomatic literal construction that mischaracterizes the female subject. Rephrase naturally.",
             "resolved": false
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "2d9792a642499d2b8671d4c52893177fea212ab0",
+        "style_guide": "878aeaec4cfbd6a3bee3f76ed0ac6f0e9598ee74"
+      }
+    },
+    {
+      "record_id": "c9f5abe046aa4658a89d10e7d19763ef",
+      "sequence": 91,
+      "unit_id": "chapter-000038",
+      "outcome": "PASS",
+      "source_sha256": "2402da10247cb8bce11e9cc049b1c92367fdfe83e2fed021a48d64e2210322af",
+      "translation_sha256": "190c400c61452b86cc3fa08bc846f71f21ffd0679716e2bd3fd99e01297e8635",
+      "workflow_revision": "8f70b1c1c108926599c36ce40021860bed581400",
+      "review_contract_revision": "docs/TRANSLATION.md@8f70b1c1c108926599c36ce40021860bed581400",
+      "reviewer_session_id": "obsession-review-20261025-u38-a16fd92e",
+      "reviewed_at": "2026-10-24T22:22:40Z",
+      "state_revision": "8f584051e4702661a9db3bbdb79f2f28072eb5c9",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": "efb47279604554d125ef8f18c3867c00",
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Original survival/flourishing contrast is restored by Russian 'Он сумел расцвести', resolving the previous 'добился своего' drift.",
+            "resolved": true
           }
         ]
       },
