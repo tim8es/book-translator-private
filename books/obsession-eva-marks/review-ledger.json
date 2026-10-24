@@ -1,6 +1,6 @@
 {
   "book_slug": "obsession-eva-marks",
-  "next_sequence": 64,
+  "next_sequence": 65,
   "records": [
     {
       "record_id": "0a6e7a112373b1111111111111111111",
@@ -2264,6 +2264,39 @@
           {
             "severity": "minor",
             "detail": "Prior awkward bare fragment 'Какого-нибудь грёбаного Джона Доу' corrected to standalone 'Просто грёбаный Джон Доу', matching narrator's identity statement.",
+            "resolved": true
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "d4110d8982529269f1404fe0125caf15",
+      "sequence": 64,
+      "unit_id": "chapter-000021",
+      "outcome": "PASS",
+      "source_sha256": "65db8bff1e30b4528132298a1b6d24bcb4e7f35afc778025a2ced14bc0330fae",
+      "translation_sha256": "b6567fb0786a413994ef1982c72dd86dcad4db7d69c449e0ee854f1e20fb2b5e",
+      "workflow_revision": "8f70b1c1c108926599c36ce40021860bed581400",
+      "review_contract_revision": "docs/TRANSLATION.md@8f70b1c1c108926599c36ce40021860bed581400",
+      "reviewer_session_id": "obsession-review-chat-20261024-7b612bf4",
+      "reviewed_at": "2026-10-24T18:47:55Z",
+      "state_revision": "e1857fc566f9848d3cef21b561dffabbf563b03c",
+      "review_commit": null,
+      "correction_round": 2,
+      "supersedes_record_id": "a79b80ea836710c4f72cd0ea7491eda8",
+      "quality_report": {
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Earlier future-tense 'обмочится' for source present 'Roy ... pees himself' is corrected to 'Рой вскрикивает от страха и мочится прямо на стуле.' Full current chapter independently compared; chronology preserved.",
             "resolved": true
           }
         ]
