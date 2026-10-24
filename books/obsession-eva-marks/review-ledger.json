@@ -1,6 +1,6 @@
 {
   "book_slug": "obsession-eva-marks",
-  "next_sequence": 23,
+  "next_sequence": 24,
   "records": [
     {
       "record_id": "0a6e7a112373b1111111111111111111",
@@ -648,6 +648,44 @@
           {
             "severity": "minor",
             "detail": "Chapter 10: source 'He’ll never poke me when I’ll call him out for being an ass' refers to poking/prodding her; Russian 'И уж точно он не станет огрызаться' changes it to a verbal retort. Clarify the original action in Russian without inserting a different one; check the immediately preceding comparison of Vaughn and Roy.",
+            "resolved": false
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "36034e43db0ecdd5f5c4d4da1c4fd29f",
+      "sequence": 23,
+      "unit_id": "chapter-000019",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "764d580b02a409bdf28b45fec593d78908cfdbce045e3a249d4f1cab89a3d815",
+      "translation_sha256": "71e449bf4f9d6f642f5aea2be07704d6f8d421112e25b8df6fbbb3a3f4d984ba",
+      "workflow_revision": "8f70b1c1c108926599c36ce40021860bed581400",
+      "review_contract_revision": "docs/TRANSLATION.md@8f70b1c1c108926599c36ce40021860bed581400",
+      "reviewer_session_id": "obsession-review-chat-20261024-e3bf72a6",
+      "reviewed_at": "2026-10-24T16:24:45Z",
+      "state_revision": "62bd406c663acd62f132c68cc8424fdf11fdc3c9",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Chapter 11: source 'No one lays their stinking hands on the innocent' prohibits touching or harming the innocent. Russian 'Никто не посмеет распускать свои вонючие руки рядом с невиновными' adds 'рядом' (near) instead of the person as the target, weakening the physical threat. Use 'Никто не смеет поднимать свои вонючие руки на невиновных' or an equally direct rendering; recheck the narrator's moral code.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Chapter 11: source has emphatic standalone fragment 'John fucking Doe.' Russian 'Какого-нибудь грёбаного Джона Доу.' is an awkward accusative/genitive fragment after 'Я неприметен. Меня сразу забудут.' Recast as a natural standalone self-description such as 'Просто грёбаный Джон Доу.' while preserving the blunt register.",
             "resolved": false
           }
         ]
