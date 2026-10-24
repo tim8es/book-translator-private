@@ -1,6 +1,34 @@
 {
   "book_slug": "obsession-eva-marks",
-  "next_sequence": 1,
-  "records": [],
+  "next_sequence": 2,
+  "records": [
+    {
+      "record_id": "0a6e7a112373b1111111111111111111",
+      "sequence": 1,
+      "unit_id": "chapter-000001",
+      "outcome": "PASS",
+      "source_sha256": "d234236b3b99f59a724eac96a1f1f3826674beebf0e4685fbbb6962855172aa9",
+      "translation_sha256": "d234236b3b99f59a724eac96a1f1f3826674beebf0e4685fbbb6962855172aa9",
+      "workflow_revision": "8f70b1c1c108926599c36ce40021860bed581400",
+      "review_contract_revision": "docs/TRANSLATION.md@8f70b1c1c108926599c36ce40021860bed581400",
+      "reviewer_session_id": "obsession-eva-marks-review-bounded-20261024",
+      "reviewed_at": "2026-10-24T10:58:44Z",
+      "state_revision": "43070483bae5ac5ba5921e91c94854e366e2780d",
+      "review_commit": "369a89cf26f33d0989464483a96ff90dc0828117",
+      "correction_round": 0,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": []
+      }
+    }
+  ],
   "schema_version": 1
 }
