@@ -1,6 +1,6 @@
 {
   "book_slug": "obsession-eva-marks",
-  "next_sequence": 34,
+  "next_sequence": 35,
   "records": [
     {
       "record_id": "0a6e7a112373b1111111111111111111",
@@ -1089,6 +1089,48 @@
           {
             "severity": "minor",
             "detail": "Chapter 17: 'I am' follows 'Daddy’s ... *Mine*'; translation has just 'Да', dropping Darlene's explicit claim of belonging to him. Restore concise response 'Я твоя' or equivalent, preserving the echo and emotional function.",
+            "resolved": false
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "2d9792a642499d2b8671d4c52893177fea212ab0",
+        "style_guide": "878aeaec4cfbd6a3bee3f76ed0ac6f0e9598ee74"
+      }
+    },
+    {
+      "record_id": "f208ac687a3fd0d85b501e0fdfac38b1",
+      "sequence": 34,
+      "unit_id": "chapter-000041",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "04d366f060fc26511976e08ead60090576bfcdf27d2d9b8cfb115f33e7dde194",
+      "translation_sha256": "a0c3ba36bbb8bfb165a539842827ba181c8098f6e989672e6327ae74ee39dda1",
+      "workflow_revision": "8f70b1c1c108926599c36ce40021860bed581400",
+      "review_contract_revision": "docs/TRANSLATION.md@8f70b1c1c108926599c36ce40021860bed581400",
+      "reviewer_session_id": "obsession-review-chat-20261024-u41-83b1ac42",
+      "reviewed_at": "2026-10-24T17:00:58Z",
+      "state_revision": "9f5af5ecb08feec483f15071f5b507b6f2968cec",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Chapter 33 opening: English 'Vaughn grips my bicep, hoisting me up' identifies an upper-arm grip; Russian 'Вон обхватывает меня за плечо и поднимает' shifts to shoulder. Preserve the physical action more precisely: 'Вон хватает меня за руку выше локтя и поднимает' (or equivalent).",
+            "resolved": false
+          },
+          {
+            "severity": "major",
+            "detail": "Source 'Your parents put in a lot of effort to hide their identity, to go undercover for your sake' specifies concealing identity and going undercover. Russian 'чтобы ради тебя жить под чужими именами' adds a factual method (using false names) not established by the sentence. Replace with 'скрыть свои личности и ради тебя жить под прикрытием' or an equivalent preserving the unspecified details.",
             "resolved": false
           }
         ]
