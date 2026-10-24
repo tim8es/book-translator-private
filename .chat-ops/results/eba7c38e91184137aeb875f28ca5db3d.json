@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "request_id": "eba7c38e91184137aeb875f28ca5db3d",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "aa73516b9d100d45d3d8d3b120e2fd0fb57dbc739e88423d872dfd01680969c2",
+    "record": {
+      "correction_round": 0,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "findings": []
+      },
+      "record_id": "2daa64c2be564bff9028a7b86e02b69a",
+      "review_commit": "05cc2bfe4ca249b92cb0de120f24e7fb2d770534",
+      "review_contract_revision": "docs/TRANSLATION.md@8f70b1c1c108926599c36ce40021860bed581400",
+      "reviewed_at": "2026-10-24T13:35:49Z",
+      "reviewer_session_id": "obsession-review-chat-20261024-44e0c177",
+      "sequence": 5,
+      "source_sha256": "f5fb842face725034f897ebb5c5314c50b5637e199ecbf92efec5b42fdb8a90e",
+      "state_revision": "855080263d2e8f3f5a0e46d0bfb20be880264cf588fefe2063e2e6947418d4d5",
+      "supersedes_record_id": null,
+      "translation_sha256": "c38ef671a34f4491c6a7a58ecda3736554acd5ab52b8d6294672795a5fffb96f",
+      "unit_id": "chapter-000005",
+      "workflow_revision": "8f70b1c1c108926599c36ce40021860bed581400"
+    }
+  },
+  "error": null
+}
