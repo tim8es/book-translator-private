@@ -1,6 +1,6 @@
 {
   "book_slug": "obsession-eva-marks",
-  "next_sequence": 75,
+  "next_sequence": 76,
   "records": [
     {
       "record_id": "0a6e7a112373b1111111111111111111",
@@ -2726,6 +2726,58 @@
             "severity": "minor",
             "detail": "Paragraph 137 is semantically closer after the earlier fix but needs a natural Russian formulation of delayed departure.",
             "resolved": false
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "2d9792a642499d2b8671d4c52893177fea212ab0",
+        "style_guide": "878aeaec4cfbd6a3bee3f76ed0ac6f0e9598ee74"
+      }
+    },
+    {
+      "record_id": "a3934a427f2afb6209e66f41d28e5dd5",
+      "sequence": 75,
+      "unit_id": "chapter-000026",
+      "outcome": "PASS",
+      "source_sha256": "8329c13012dd1c466e7f3ee3661142ee48498359e579dfc01d00ba04238536ab",
+      "translation_sha256": "ed9ee7cb7bd0d93990579a65f24f727ab6ac9fd6867d087fd932b706e127dfbb",
+      "workflow_revision": "8f70b1c1c108926599c36ce40021860bed581400",
+      "review_contract_revision": "docs/TRANSLATION.md@8f70b1c1c108926599c36ce40021860bed581400",
+      "reviewer_session_id": "obsession-finishing-20261024-reviewer-second-4ac71fa6",
+      "reviewed_at": "2026-10-24T19:54:54Z",
+      "state_revision": "09459c0bd8b4c5f1c6e4d1d4e6297bd58dc25c5e",
+      "review_commit": null,
+      "correction_round": 3,
+      "supersedes_record_id": "69c3f161f889166c4f33d781367f0179",
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Paragraph 50: the broken edge-metaphor calque was rephrased while preserving the source meaning.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Paragraph 105: natural Russian wording now retains the straight cut and blood detail.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Paragraph 119: the awkward literal figurative exaggeration was rewritten.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Paragraph 137: the final exchange now preserves delayed departure and deliberate staccato emphasis without malformed punctuation.",
+            "resolved": true
           }
         ]
       },
