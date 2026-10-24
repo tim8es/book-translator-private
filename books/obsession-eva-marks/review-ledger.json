@@ -1,6 +1,6 @@
 {
   "book_slug": "obsession-eva-marks",
-  "next_sequence": 35,
+  "next_sequence": 36,
   "records": [
     {
       "record_id": "0a6e7a112373b1111111111111111111",
@@ -1131,6 +1131,63 @@
           {
             "severity": "major",
             "detail": "Source 'Your parents put in a lot of effort to hide their identity, to go undercover for your sake' specifies concealing identity and going undercover. Russian 'чтобы ради тебя жить под чужими именами' adds a factual method (using false names) not established by the sentence. Replace with 'скрыть свои личности и ради тебя жить под прикрытием' or an equivalent preserving the unspecified details.",
+            "resolved": false
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "2d9792a642499d2b8671d4c52893177fea212ab0",
+        "style_guide": "878aeaec4cfbd6a3bee3f76ed0ac6f0e9598ee74"
+      }
+    },
+    {
+      "record_id": "0d361ced11fe55e93457c7d81c6fd345",
+      "sequence": 35,
+      "unit_id": "chapter-000026",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "8329c13012dd1c466e7f3ee3661142ee48498359e579dfc01d00ba04238536ab",
+      "translation_sha256": "467f4e8f8924376536a6fb29d56f664a6dd26d7a9a6a44232b9395a953b1d1a6",
+      "workflow_revision": "8f70b1c1c108926599c36ce40021860bed581400",
+      "review_contract_revision": "docs/TRANSLATION.md@8f70b1c1c108926599c36ce40021860bed581400",
+      "reviewer_session_id": "obsession-review-20261024-ae15dc96",
+      "reviewed_at": "2026-10-24T17:02:55Z",
+      "state_revision": "9f5af5ecb08feec483f15071f5b507b6f2968cec",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "major",
+            "detail": "Chapter 18 final exchange: English 'You do need it. And not. Yet' means Vaughn asserts she does need vengeance and reiterates that leaving together is not permitted yet. Russian 'Она тебе нужна. И пока. Что. Нет' is syntactically incoherent and loses the reply's logic. Reformulate, e.g. '— Месть тебе нужна. А уйти отсюда — ещё. Не. Сейчас.' while preserving emphatic fragmentation and matching preceding 'Not yet'.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Chapter 18 opening: English 'Darlene might be sitting. She might be physically beneath me. Definitely not in a position of power. Except she is' uses concessive 'might', not uncertainty about whether she is sitting. Russian 'Дарлин может сидеть' makes it sound like permission/possibility. Use 'Пусть Дарлин и сидит...' or equivalent to preserve the reversal of who holds power.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Chapter 18 after 'What is it?': source fragment 'The speed with which I crouch down in front of her' contains no narrator surprise. Russian 'Я приседаю перед ней так быстро, что сам удивляюсь' invents surprise. Preserve speed without adding an emotion, and keep source's abrupt rhythm.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Chapter 18: 'Just that she gasps' following 'Darlene sucks in a breath' describes a gasp. Russian 'Главное, что она задыхается' turns it into choking/breathlessness. Choose 'Главное, что она судорожно вдыхает' or an idiomatic concise equivalent.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Chapter 18: 'Be my good little raven' is translated 'Будь моей хорошей маленькой вороной' despite established 'воронёнок' for the same repeated nickname. Align the epithet with established usage and character voice.",
             "resolved": false
           }
         ]
