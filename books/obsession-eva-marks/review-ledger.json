@@ -1,6 +1,6 @@
 {
   "book_slug": "obsession-eva-marks",
-  "next_sequence": 59,
+  "next_sequence": 60,
   "records": [
     {
       "record_id": "0a6e7a112373b1111111111111111111",
@@ -2064,6 +2064,44 @@
       "shared_state_revisions": {
         "glossary": "2d9792a642499d2b8671d4c52893177fea212ab0",
         "style_guide": "878aeaec4cfbd6a3bee3f76ed0ac6f0e9598ee74"
+      }
+    },
+    {
+      "record_id": "fa40960bafd259466fbe672c3304c63f",
+      "sequence": 59,
+      "unit_id": "chapter-000015",
+      "outcome": "PASS",
+      "source_sha256": "fef4812294ba16b9e96d52f0598492e4274c93274a4622834b385267f4f1a53d",
+      "translation_sha256": "cdb777af42f0dc98331d033376c1fa2cb1533b05ffc96ec25d8d1c38748993c8",
+      "workflow_revision": "8f70b1c1c108926599c36ce40021860bed581400",
+      "review_contract_revision": "docs/TRANSLATION.md@8f70b1c1c108926599c36ce40021860bed581400",
+      "reviewer_session_id": "obsession-review-chat-20261024-7b612bf4",
+      "reviewed_at": "2026-10-24T18:39:18Z",
+      "state_revision": "e1857fc566f9848d3cef21b561dffabbf563b03c",
+      "review_commit": null,
+      "correction_round": 2,
+      "supersedes_record_id": "0e659eec74b44725b2407f26127db3fd",
+      "quality_report": {
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "major",
+            "detail": "Earlier malformed Russian split 'мол. Чать.' is corrected to 'молчи. Тихо.' for source 'be. Quiet.', retaining separate clipped imperative words.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Earlier malformed 'Ни. Зву. Ка.' is corrected to 'Ни. Единого. Звука.', matching original three full-word beats 'Not. A. Sound.' aligned to three strikes. Full updated chapter independently compared.",
+            "resolved": true
+          }
+        ]
       }
     }
   ],
