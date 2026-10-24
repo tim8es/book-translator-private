@@ -1,6 +1,6 @@
 {
   "book_slug": "obsession-eva-marks",
-  "next_sequence": 8,
+  "next_sequence": 9,
   "records": [
     {
       "record_id": "0a6e7a112373b1111111111111111111",
@@ -181,6 +181,33 @@
       "supersedes_record_id": null,
       "quality_report": {
         "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": []
+      }
+    },
+    {
+      "record_id": "df41bfb2b87b75ca0f2f50805a4efbd6",
+      "sequence": 8,
+      "unit_id": "chapter-000045",
+      "outcome": "PASS",
+      "source_sha256": "ada6cdf2e4c8faa9a5bc631a9840bd75b1cfefd2313b091dec44ab5f5db48a56",
+      "translation_sha256": "8cef02a541cdc4ec623fdd5d353c3848388da1b08bfee25a0a7921095b28e13e",
+      "workflow_revision": "8f70b1c1c108926599c36ce40021860bed581400",
+      "review_contract_revision": "docs/REVIEWER.md@8f70b1c1c108926599c36ce40021860bed581400",
+      "reviewer_session_id": "obsession-review-20261024-5d8e7f19",
+      "reviewed_at": "2026-10-24T15:09:33Z",
+      "state_revision": "8ca0d6a884032219f15a83465c17bbbf5eac92ff",
+      "review_commit": null,
+      "correction_round": 0,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "independent_session",
         "checks": {
           "coverage": true,
           "meaning": true,
