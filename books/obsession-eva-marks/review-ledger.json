@@ -1,6 +1,6 @@
 {
   "book_slug": "obsession-eva-marks",
-  "next_sequence": 85,
+  "next_sequence": 86,
   "records": [
     {
       "record_id": "0a6e7a112373b1111111111111111111",
@@ -3230,6 +3230,48 @@
           {
             "severity": "minor",
             "detail": "Six recurring 'raven/little raven' forms in paragraphs 8, 16, 25, 60, 94 and 95 standardized as 'воронёнок' with natural inflections.",
+            "resolved": true
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "2d9792a642499d2b8671d4c52893177fea212ab0",
+        "style_guide": "878aeaec4cfbd6a3bee3f76ed0ac6f0e9598ee74"
+      }
+    },
+    {
+      "record_id": "b55cc24f626740f39e38626e09dd85e7",
+      "sequence": 85,
+      "unit_id": "chapter-000013",
+      "outcome": "PASS",
+      "source_sha256": "1857d9a4d49fbe8d80428cc8e7636a582275c0d04dac59015ef071b1e3d85474",
+      "translation_sha256": "22d02bff079ee73d7d80375099348bdf9459e611fa37b8c9ec0d71f44b18fd3c",
+      "workflow_revision": "8f70b1c1c108926599c36ce40021860bed581400",
+      "review_contract_revision": "docs/TRANSLATION.md@8f70b1c1c108926599c36ce40021860bed581400",
+      "reviewer_session_id": "obsession-review-20261025-u13-c87f6411",
+      "reviewed_at": "2026-10-24T22:06:40Z",
+      "state_revision": "53179238adaf896b47f2e2eb965a3fc77d85f7fa",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": "f799e2067c6849b88922939be0e372b0",
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "major",
+            "detail": "Previously overstated certainty about Lincoln's intentions is replaced by the narrator's uncertain distrust.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Unsupported conversation during the sleepover is removed; the original stated plan is preserved.",
             "resolved": true
           }
         ]
