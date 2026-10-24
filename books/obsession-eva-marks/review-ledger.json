@@ -1,6 +1,6 @@
 {
   "book_slug": "obsession-eva-marks",
-  "next_sequence": 44,
+  "next_sequence": 45,
   "records": [
     {
       "record_id": "0a6e7a112373b1111111111111111111",
@@ -1479,6 +1479,44 @@
           {
             "severity": "major",
             "detail": "Chapter 25 in Vaughn's memory of Harvey Fletcher mutilating his parents: English 'carving out their guts, cutting out the tops of their scalps' describes extracting their intestines and cutting their scalp (skin covering skull). Translation 'вспарывает им животы, вырезает верхушки черепов' only opens bellies instead of removing guts and substitutes cutting off parts of skull bone for scalp. Restore the described actions with anatomically correct terms, preserving the source's brutality.",
+            "resolved": false
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "06c54e5b3ff3535ba61f95ba5d58a5d4",
+      "sequence": 44,
+      "unit_id": "chapter-000034",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "005e4aaeae2167f5b2b6ce8f803792587310c9d52af607a7f52b2c751ee199c5",
+      "translation_sha256": "697de6f7375fb991d0594afadd59c21f9fd62504e3a4311ed8a6ea35b8fc08b0",
+      "workflow_revision": "8f70b1c1c108926599c36ce40021860bed581400",
+      "review_contract_revision": "docs/TRANSLATION.md@8f70b1c1c108926599c36ce40021860bed581400",
+      "reviewer_session_id": "obsession-review-chat-20261024-9cae137d",
+      "reviewed_at": "2026-10-24T17:52:03Z",
+      "state_revision": "9f5af5ecb08feec483f15071f5b507b6f2968cec",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Chapter 26 opening: original 'The window slides open, the whooshing noise drawing my attention' conveys a swishing/rushing noise; Russian 'Окно со скрипом открывается. Шорох...' invents an audible creak of the window. Preserve the original whoosh/swishing motion without adding an unexplained mechanical squeak.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Chapter 26 Darlene's reaction to Vaughn's revenge: source 'I’m sickened by how my lover’s revenge sends warmth throughout me. I should be. The girl I was before would’ve been ashamed of it.' moves from experienced disgust to self-judgment. Russian 'Мне должно быть противно ... Должно' presents only moral obligation and omits the initial feeling. Preserve the internal contradiction and progression without flattening both statements into 'должно'.",
             "resolved": false
           }
         ]
