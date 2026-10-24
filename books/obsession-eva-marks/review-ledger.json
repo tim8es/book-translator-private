@@ -1,6 +1,6 @@
 {
   "book_slug": "obsession-eva-marks",
-  "next_sequence": 77,
+  "next_sequence": 78,
   "records": [
     {
       "record_id": "0a6e7a112373b1111111111111111111",
@@ -2820,6 +2820,53 @@
             "severity": "minor",
             "detail": "Consent wording now states explicit agreement without adding ownership or belonging, matching 'I consented to him long before he asked'.",
             "resolved": true
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "2d9792a642499d2b8671d4c52893177fea212ab0",
+        "style_guide": "878aeaec4cfbd6a3bee3f76ed0ac6f0e9598ee74"
+      }
+    },
+    {
+      "record_id": "1725f531a7ec4d51a10f44ce3844af87",
+      "sequence": 77,
+      "unit_id": "chapter-000024",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "6686b536488bd15def96315de73df66baafd344e0efada68c6948bc8bc13a06b",
+      "translation_sha256": "8dff2173931c76d4d2b247e55de32a5811765dd90288378f17e611559e58c04a",
+      "workflow_revision": "8f70b1c1c108926599c36ce40021860bed581400",
+      "review_contract_revision": "docs/TRANSLATION.md@8f70b1c1c108926599c36ce40021860bed581400",
+      "reviewer_session_id": "obsession-20261024-finish-u24-reviewer-a88b7001",
+      "reviewed_at": "2026-10-24T20:52:21Z",
+      "state_revision": "aa5c0a500818e41ae652a5e0a1ac6ca00198d271",
+      "review_commit": null,
+      "correction_round": 4,
+      "supersedes_record_id": "1e66ed1bff53f350b39fb742f44687b5",
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Earlier syllable-hyphenated staccato command was replaced with three complete Russian words. Resolved.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Early utterance introduced as three words is translated using only two words, making the narrator's count inaccurate. Use a three-word Russian imperative.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "The line about sensitivity of the clitoris against cotton adds physical pain to the Russian despite no pain in the source. Remove the unsupported addition.",
+            "resolved": false
           }
         ]
       },
