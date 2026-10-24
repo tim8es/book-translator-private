@@ -1,6 +1,6 @@
 {
   "book_slug": "obsession-eva-marks",
-  "next_sequence": 87,
+  "next_sequence": 88,
   "records": [
     {
       "record_id": "0a6e7a112373b1111111111111111111",
@@ -3320,6 +3320,43 @@
             "severity": "minor",
             "detail": "Eighteen years of tough love now describes strict, demanding upbringing rather than unnatural literal severe love.",
             "resolved": true
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "2d9792a642499d2b8671d4c52893177fea212ab0",
+        "style_guide": "878aeaec4cfbd6a3bee3f76ed0ac6f0e9598ee74"
+      }
+    },
+    {
+      "record_id": "dc0d83affc9540e69630dc20f2dfed11",
+      "sequence": 87,
+      "unit_id": "chapter-000010",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "ea35a569971afed2e1b217771b0e5be70c41c2b3830e1a8b6120d769d338d259",
+      "translation_sha256": "d51242f7500faafacec7a9f605a14584850fba11881d77edb8bc53aa5b155af6",
+      "workflow_revision": "8f70b1c1c108926599c36ce40021860bed581400",
+      "review_contract_revision": "docs/TRANSLATION.md@8f70b1c1c108926599c36ce40021860bed581400",
+      "reviewer_session_id": "obsession-review-20261025-u10-4892e0c1",
+      "reviewed_at": "2026-10-24T22:11:52Z",
+      "state_revision": "c491839ba405ec54866edb135f35b11e0b210666",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": "05d2db7708717c837b9347988f7326d7",
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Chapter 2: source 'Elle or Caroline showed me pictures of their own parents’ impressive mansions' names an alternative (or); Russian 'Элль и Кэролайн показывали мне фотографии' changes it to both (and). Preserve the source's alternative without adding that both independently showed pictures.",
+            "resolved": false
           }
         ]
       },
