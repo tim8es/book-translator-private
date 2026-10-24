@@ -1,6 +1,6 @@
 {
   "book_slug": "obsession-eva-marks",
-  "next_sequence": 69,
+  "next_sequence": 70,
   "records": [
     {
       "record_id": "0a6e7a112373b1111111111111111111",
@@ -2476,6 +2476,53 @@
             "resolved": true
           }
         ]
+      }
+    },
+    {
+      "record_id": "9b07f6e8617c3e685a57ed0835bb9d51",
+      "sequence": 69,
+      "unit_id": "chapter-000020",
+      "outcome": "PASS",
+      "source_sha256": "d5fef4265bd567291590cab1c6b2fe450b7c145471e07541570bc8eb15160c14",
+      "translation_sha256": "5a9c0dab6568e8edaf16d27b86a9c760fdc9fb9800c11711d1787ed053777474",
+      "workflow_revision": "8f70b1c1c108926599c36ce40021860bed581400",
+      "review_contract_revision": "docs/TRANSLATION.md@8f70b1c1c108926599c36ce40021860bed581400",
+      "reviewer_session_id": "obsession-review-chat-20261024-u20-c2d604ae",
+      "reviewed_at": "2026-10-24T19:01:10Z",
+      "state_revision": "7cff7e4afe3365c09cec0c09559ce4780ad95232",
+      "review_commit": null,
+      "correction_round": 2,
+      "supersedes_record_id": "ca3f96044ada08b037d2bc5d6c4e34f0",
+      "quality_report": {
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Original triple 'again and again and again' is now restored to 'Снова, снова и снова' in Vaughn's desire, preserving emphatic threefold repetition.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Original 'punching the others behind the campus' is now 'избивал других позади кампуса' rather than outside anywhere; precise location restored.",
+            "resolved": true
+          },
+          {
+            "severity": "major",
+            "detail": "'Lincoln hisses at Caroline ... You said this shit would be easy ... You said one day' now correctly addresses female Caroline in 'Ты говорила ... Ты сказала' rather than masculine 'говорил/сказал'. The exchange and neighboring speakers were rechecked.",
+            "resolved": true
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "2d9792a642499d2b8671d4c52893177fea212ab0",
+        "style_guide": "878aeaec4cfbd6a3bee3f76ed0ac6f0e9598ee74"
       }
     }
   ],
