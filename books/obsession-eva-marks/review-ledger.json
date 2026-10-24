@@ -1,6 +1,6 @@
 {
   "book_slug": "obsession-eva-marks",
-  "next_sequence": 61,
+  "next_sequence": 62,
   "records": [
     {
       "record_id": "0a6e7a112373b1111111111111111111",
@@ -2144,6 +2144,49 @@
       "shared_state_revisions": {
         "glossary": "2d9792a642499d2b8671d4c52893177fea212ab0",
         "style_guide": "878aeaec4cfbd6a3bee3f76ed0ac6f0e9598ee74"
+      }
+    },
+    {
+      "record_id": "1deb073187ee36f1b7e9fdd3c187a2d6",
+      "sequence": 61,
+      "unit_id": "chapter-000018",
+      "outcome": "PASS",
+      "source_sha256": "90545b42372e5a60a77a3ed0fb90e0063a06233bd7c15ea6cd15331d2fe1ac24",
+      "translation_sha256": "2d608b9f11837e16cddb63952add48f9c72945526c135b21f5768163e46b37ea",
+      "workflow_revision": "8f70b1c1c108926599c36ce40021860bed581400",
+      "review_contract_revision": "docs/TRANSLATION.md@8f70b1c1c108926599c36ce40021860bed581400",
+      "reviewer_session_id": "obsession-review-chat-20261024-7b612bf4",
+      "reviewed_at": "2026-10-24T18:41:33Z",
+      "state_revision": "e1857fc566f9848d3cef21b561dffabbf563b03c",
+      "review_commit": null,
+      "correction_round": 2,
+      "supersedes_record_id": "3569ecaa3f50454256ed5345de9d49a3",
+      "quality_report": {
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Prior opening running invention 'выбегаю' fixed to 'выхожу'; matches 'push through the front door'.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Prior roadside rest stop incorrectly 'остановка' fixed to 'придорожной стоянки' in plan to call for help.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Prior substitution of verbal retort 'огрызаться' for physical poke now 'тыкать в меня пальцем', matching source 'He'll never poke me'.",
+            "resolved": true
+          }
+        ]
       }
     }
   ],
