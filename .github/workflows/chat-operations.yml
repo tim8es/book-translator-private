@@ -1,0 +1,55 @@
+name: Chat operations
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.chat-ops/requests/*.json'
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# A pending run can be replaced by GitHub concurrency; each surviving run
+# scans all durable requests missing receipts, not only the triggering push.
+concurrency:
+  group: chat-operations-main
+  cancel-in-progress: false
+
+jobs:
+  process:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Check out book state with permission to publish accepted transitions
+        uses: actions/checkout@v7
+        with:
+          path: books-repo
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Check out public Chat executor
+        uses: actions/checkout@v7
+        with:
+          repository: tim8es/book-translator
+          ref: main
+          path: engine
+          fetch-depth: 1
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+
+      - name: Execute and publish canonical state transitions
+        shell: bash
+        run: |
+          python engine/scripts/chat_ops_bridge.py \
+            --root books-repo \
+            --engine engine \
+            --max-requests 100
