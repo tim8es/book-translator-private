@@ -1,6 +1,6 @@
 {
   "book_slug": "obsession-eva-marks",
-  "next_sequence": 99,
+  "next_sequence": 100,
   "records": [
     {
       "record_id": "0a6e7a112373b1111111111111111111",
@@ -3818,6 +3818,58 @@
             "severity": "minor",
             "detail": "Paragraph 104 grammatical error is corrected while preserving the difference between restraining breath and choking.",
             "resolved": true
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "2d9792a642499d2b8671d4c52893177fea212ab0",
+        "style_guide": "878aeaec4cfbd6a3bee3f76ed0ac6f0e9598ee74"
+      }
+    },
+    {
+      "record_id": "a4aaf575e8724d45bd71907318551226",
+      "sequence": 99,
+      "unit_id": "chapter-000035",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "a9ba512ccb7b83a3c37f77b0854f9aa51b68e54cba15acae8f3256439fe56d0e",
+      "translation_sha256": "a61dcc5f5e9ac92560bb8eaaf7e0554ab31cc848452247ef47f130816ade07fe",
+      "workflow_revision": "8f70b1c1c108926599c36ce40021860bed581400",
+      "review_contract_revision": "docs/TRANSLATION.md@8f70b1c1c108926599c36ce40021860bed581400",
+      "reviewer_session_id": "obsession-finishing-20261025-review35-7f3acc42",
+      "reviewed_at": "2026-10-24T22:47:16Z",
+      "state_revision": "cc3e97a5b7f069a26e3012c4fae1a1bb074adeb7",
+      "review_commit": null,
+      "correction_round": 2,
+      "supersedes_record_id": "af7635b5208a95b45e8a16d68fed1d51",
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Prior paragraph 15 error resolved: narrator's 'I' responsibility restored.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Prior paragraph 20 error resolved: Vaughn lends strength without introduced uncertainty.",
+            "resolved": true
+          },
+          {
+            "severity": "major",
+            "detail": "Prior paragraph 33 error resolved: probable dislike preserved without inventing certainty and rage.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Four paragraph splits in source paragraphs 21, 31, 34, and 50 break inline dialogue and narrative; translation has 57 paragraphs versus 53 source paragraphs. Merge the corresponding target fragments.",
+            "resolved": false
           }
         ]
       },
