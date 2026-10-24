@@ -1,0 +1,29 @@
+name: Isolated Chapter 11 wave probe
+
+on:
+  pull_request:
+    paths:
+      - 'tests/test_real_chapter_wave_probe.py'
+      - '.github/workflows/isolated-chapter-wave.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  wave-probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Fetch pinned public runtime (book text stays private)
+        run: |
+          git clone --quiet https://github.com/tim8es/book-translator.git runtime
+          git -C runtime checkout --quiet --detach 98a382cdc644ab1a8773f82748e9e4c22d40a871
+      - name: Exercise real source and translation in a disposable workspace
+        env:
+          BOOK_TRANSLATOR_RUNTIME: runtime
+          EXPECTED_ENGINE_REVISION: 98a382cdc644ab1a8773f82748e9e4c22d40a871
+        run: python tests/test_real_chapter_wave_probe.py
