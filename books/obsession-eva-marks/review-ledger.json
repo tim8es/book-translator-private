@@ -1,6 +1,6 @@
 {
   "book_slug": "obsession-eva-marks",
-  "next_sequence": 3,
+  "next_sequence": 4,
   "records": [
     {
       "record_id": "0a6e7a112373b1111111111111111111",
@@ -42,6 +42,33 @@
       "reviewed_at": "2026-10-24T11:01:07Z",
       "state_revision": "9f84606ea2b448a6796e8d04a3c213d94e6f79c8",
       "review_commit": "d114279b31ab0a6290275a931f322f28f6c63ebc",
+      "correction_round": 0,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": []
+      }
+    },
+    {
+      "record_id": "92b8a1f1935938222222222222222222",
+      "sequence": 3,
+      "unit_id": "chapter-000003",
+      "outcome": "PASS",
+      "source_sha256": "892eb74d7639125b370b863d8534c1d872d7e339c30948ce48ac54faf112a11b",
+      "translation_sha256": "0cf1b16592d945094e58943a4ca84dc64a27123a763aa52297c0dbe6261255a0",
+      "workflow_revision": "8f70b1c1c108926599c36ce40021860bed581400",
+      "review_contract_revision": "docs/TRANSLATION.md@8f70b1c1c108926599c36ce40021860bed581400",
+      "reviewer_session_id": "obsession-review-bounded-3-20261024",
+      "reviewed_at": "2026-10-24T11:03:14Z",
+      "state_revision": "0f4f38fe4bf1c699e318638744da275d2845f8be",
+      "review_commit": "03a902376be8f78a6291410652ea42d07d1d83d9",
       "correction_round": 0,
       "supersedes_record_id": null,
       "quality_report": {
