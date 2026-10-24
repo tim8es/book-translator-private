@@ -1,6 +1,6 @@
 {
   "book_slug": "obsession-eva-marks",
-  "next_sequence": 17,
+  "next_sequence": 18,
   "records": [
     {
       "record_id": "0a6e7a112373b1111111111111111111",
@@ -462,6 +462,44 @@
           "structure": true
         },
         "findings": []
+      }
+    },
+    {
+      "record_id": "0e659eec74b44725b2407f26127db3fd",
+      "sequence": 17,
+      "unit_id": "chapter-000015",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "fef4812294ba16b9e96d52f0598492e4274c93274a4622834b385267f4f1a53d",
+      "translation_sha256": "be562389079028af019bd9e84d52593bb1b88eb9b52fc4656f36c2451adf7f67",
+      "workflow_revision": "8f70b1c1c108926599c36ce40021860bed581400",
+      "review_contract_revision": "docs/REVIEWER.md@8f70b1c1c108926599c36ce40021860bed581400",
+      "reviewer_session_id": "obsession-review-20261024-076ceb6dcf7e48ec96699f6848ace5c0",
+      "reviewed_at": "2026-10-24T16:05:25Z",
+      "state_revision": "62bd406c663acd62f132c68cc8424fdf11fdc3c9",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "major",
+            "detail": "Chapter 7: English 'I said ... be. Quiet.' uses two deliberately separated words for a staccato command. Russian 'мол. Чать.' splits an ordinary Russian word into invalid fragments and reads like a typo. Replace with two complete, emphatic words, e.g. 'молчи. Тихо.', preserving the intentional clipped pace.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Chapter 7: English threat 'Not. A. Sound.' has three whole-word beats corresponding to successive slaps. Russian 'Ни. Зву. Ка.' splits the word 'звука' into malformed fragments. Prefer 'Ни. Единого. Звука.' to preserve three distinct beats and grammatical Russian.",
+            "resolved": false
+          }
+        ]
       }
     }
   ],
