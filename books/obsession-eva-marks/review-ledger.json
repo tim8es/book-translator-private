@@ -1,6 +1,6 @@
 {
   "book_slug": "obsession-eva-marks",
-  "next_sequence": 70,
+  "next_sequence": 71,
   "records": [
     {
       "record_id": "0a6e7a112373b1111111111111111111",
@@ -2517,6 +2517,48 @@
             "severity": "major",
             "detail": "'Lincoln hisses at Caroline ... You said this shit would be easy ... You said one day' now correctly addresses female Caroline in 'Ты говорила ... Ты сказала' rather than masculine 'говорил/сказал'. The exchange and neighboring speakers were rechecked.",
             "resolved": true
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "2d9792a642499d2b8671d4c52893177fea212ab0",
+        "style_guide": "878aeaec4cfbd6a3bee3f76ed0ac6f0e9598ee74"
+      }
+    },
+    {
+      "record_id": "5803a1c52855ac27b37bc332984282e5",
+      "sequence": 70,
+      "unit_id": "chapter-000032",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "d5cf018f0272523d0c799882aa56b603d6483604209fadfb4a63ae465eb207b7",
+      "translation_sha256": "c6cd36d376fc6d057aac16d445788dc3e7bf9cc703cc07e0aab7b6f7a03d5626",
+      "workflow_revision": "8f70b1c1c108926599c36ce40021860bed581400",
+      "review_contract_revision": "docs/TRANSLATION.md@8f70b1c1c108926599c36ce40021860bed581400",
+      "reviewer_session_id": "obsession-review-chat-20261024-u32-ae485e13",
+      "reviewed_at": "2026-10-24T19:06:08Z",
+      "state_revision": "e3a6721f80fc9b8e4081a5543995898bc6c5426f",
+      "review_commit": null,
+      "correction_round": 2,
+      "supersedes_record_id": "2f8f6bce517e447baee24a63de771f58",
+      "quality_report": {
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "major",
+            "detail": "Previous major finding resolved: original 'But I’m subdued by it. I become more alive thanks to it' now reads 'Но он подавляет меня. И вместе с тем благодаря ему я словно оживаю ещё сильнее', preserving combined paralysis and heightened awareness caused by fear.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Chapter 24, Darlene's reflection 'I consented to him long before he asked' concerns consent. Current Russian 'Я согласилась принадлежать ему задолго до того, как он спросил' adds an agreement to ownership/belonging absent from this sentence. Preserve consent explicitly, e.g. 'Я дала ему согласие задолго до того, как он спросил', checking surrounding possessive language does not override this distinction.",
+            "resolved": false
           }
         ]
       },
