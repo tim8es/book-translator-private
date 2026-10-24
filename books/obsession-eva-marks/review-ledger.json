@@ -1,6 +1,6 @@
 {
   "book_slug": "obsession-eva-marks",
-  "next_sequence": 27,
+  "next_sequence": 28,
   "records": [
     {
       "record_id": "0a6e7a112373b1111111111111111111",
@@ -817,6 +817,53 @@
             "resolved": false
           }
         ]
+      }
+    },
+    {
+      "record_id": "af7635b5208a95b45e8a16d68fed1d51",
+      "sequence": 27,
+      "unit_id": "chapter-000035",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "a9ba512ccb7b83a3c37f77b0854f9aa51b68e54cba15acae8f3256439fe56d0e",
+      "translation_sha256": "323dced3891c0cd2fef11aded04f2c10c4e13bc01a6f3d62867848537e5d9c53",
+      "workflow_revision": "8f70b1c1c108926599c36ce40021860bed581400",
+      "review_contract_revision": "docs/TRANSLATION.md@8f70b1c1c108926599c36ce40021860bed581400",
+      "reviewer_session_id": "obsession-review-chat-20261024-35-2edb9b",
+      "reviewed_at": "2026-10-24T16:33:20Z",
+      "state_revision": "62bd406c663acd62f132c68cc8424fdf11fdc3c9",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Source 'If I don’t have it sorted out, if I don’t understand why Vaughn said what he did' is about Darlene resolving her own doubts. The Russian 'Если мы не разберёмся с этим' changes the subject from I to we; restore her agency, e.g. 'Если я не разберусь в этом'.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Source 'He lends his strength to me while holding me down' states the narrator's perceived support as fact. Russian 'он словно делится со мной своей силой' adds uncertainty ('словно') that is absent in the source; preserve certainty if idiomatic.",
+            "resolved": false
+          },
+          {
+            "severity": "major",
+            "detail": "Source 'given how his fingers burrow deeper into my flesh, he probably hates it' expresses an uncertain inference of Vaughn's dislike. Russian 'это наверняка приводит его в ярость' converts probability to near certainty and dislike to rage. Correct to a tentative, restrained inference, preserving the original emotional intensity.",
+            "resolved": false
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "2d9792a642499d2b8671d4c52893177fea212ab0",
+        "style_guide": "878aeaec4cfbd6a3bee3f76ed0ac6f0e9598ee74"
       }
     }
   ],
