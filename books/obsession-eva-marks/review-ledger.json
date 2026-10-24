@@ -1,6 +1,6 @@
 {
   "book_slug": "obsession-eva-marks",
-  "next_sequence": 14,
+  "next_sequence": 15,
   "records": [
     {
       "record_id": "0a6e7a112373b1111111111111111111",
@@ -372,6 +372,39 @@
           {
             "severity": "major",
             "detail": "Chapter three: source 'The fire I lit from them was supposed to keep me warm this evening' refers to an already-lit fire; current Russian 'Костёр, который я собирался из них развести' changes completed action to unrealized intention. Render 'Костёр, который я из них развёл, должен был согревать меня вечером' or equivalent faithful sequence; check consistency with subsequent lines.",
+            "resolved": false
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "ce7deb5b654e234385edf617ee378d76",
+      "sequence": 14,
+      "unit_id": "chapter-000012",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "4f940cbe51f8006799624d65da749a11744a970e40d93739d8aac37cba908744",
+      "translation_sha256": "f1f57ba364c791859c84717506a4b2af46bacecf238fa9a152aae6334f35a5b4",
+      "workflow_revision": "8f70b1c1c108926599c36ce40021860bed581400",
+      "review_contract_revision": "docs/REVIEWER.md@8f70b1c1c108926599c36ce40021860bed581400",
+      "reviewer_session_id": "obsession-review-20261024-a74c2190e8ef4e12",
+      "reviewed_at": "2026-10-24T15:37:55Z",
+      "state_revision": "09b48a4464b86e7a973dfd0851475a9502b8ccd2",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "major",
+            "detail": "Chapter 4: source «small family law firm he worked at» describes a small FAMILY-LAW practice, not a family-owned law firm. Russian «в небольшой семейной юридической фирме, где тот работал» changes specialty to ownership. Correct to «в небольшой юридической фирме, специализирующейся на семейном праве», preserving father’s role.",
             "resolved": false
           }
         ]
