@@ -1,6 +1,6 @@
 {
   "book_slug": "obsession-eva-marks",
-  "next_sequence": 42,
+  "next_sequence": 43,
   "records": [
     {
       "record_id": "0a6e7a112373b1111111111111111111",
@@ -1413,6 +1413,39 @@
           {
             "severity": "major",
             "detail": "Chapter 23 flashback, Vaughn explains why Darlene's parents were absent: original 'Your mom stayed to say hi before she drove off with dinner to take to him' does not say she waited to greet Darlene. Russian 'Мама дождалась тебя, чтобы поздороваться, а потом уехала отвезти ему ужин' explicitly claims mother waited for Darlene, which conflicts with the daughter arriving home and finding both parents already gone. Preserve original without inventing addressee, e.g. 'Мама ещё задержалась, чтобы поздороваться, а потом уехала отвезти ему ужин'.",
+            "resolved": false
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "2f8f6bce517e447baee24a63de771f58",
+      "sequence": 42,
+      "unit_id": "chapter-000032",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "d5cf018f0272523d0c799882aa56b603d6483604209fadfb4a63ae465eb207b7",
+      "translation_sha256": "26440675249c7b1d481f9f3ca1b6f9270b86daefac6d2425956bdcde76e521d3",
+      "workflow_revision": "8f70b1c1c108926599c36ce40021860bed581400",
+      "review_contract_revision": "docs/TRANSLATION.md@8f70b1c1c108926599c36ce40021860bed581400",
+      "reviewer_session_id": "obsession-review-20261024-8fd38a11",
+      "reviewed_at": "2026-10-24T17:42:36Z",
+      "state_revision": "9f5af5ecb08feec483f15071f5b507b6f2968cec",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "major",
+            "detail": "Chapter 24: 'But I'm subdued by it. I become more alive thanks to it' depicts fear both overpowering the narrator and sharpening her awareness. The translation 'Но он не заставляет меня полностью оцепенеть. Наоборот, я словно оживаю ещё сильнее' removes the first effect by negating it. Preserve the contradictory combination of subdued fear and heightened awareness.",
             "resolved": false
           }
         ]
