@@ -1,6 +1,6 @@
 {
   "book_slug": "obsession-eva-marks",
-  "next_sequence": 48,
+  "next_sequence": 49,
   "records": [
     {
       "record_id": "0a6e7a112373b1111111111111111111",
@@ -1632,6 +1632,39 @@
       "shared_state_revisions": {
         "glossary": "2d9792a642499d2b8671d4c52893177fea212ab0",
         "style_guide": "878aeaec4cfbd6a3bee3f76ed0ac6f0e9598ee74"
+      }
+    },
+    {
+      "record_id": "efb47279604554d125ef8f18c3867c00",
+      "sequence": 48,
+      "unit_id": "chapter-000038",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "2402da10247cb8bce11e9cc049b1c92367fdfe83e2fed021a48d64e2210322af",
+      "translation_sha256": "0e46ca9686340cb95593d7fa63b78cb7d20662996ac3cf986fed67570e68104f",
+      "workflow_revision": "8f70b1c1c108926599c36ce40021860bed581400",
+      "review_contract_revision": "docs/TRANSLATION.md@8f70b1c1c108926599c36ce40021860bed581400",
+      "reviewer_session_id": "obsession-review-chat-20261024-7b612bf4",
+      "reviewed_at": "2026-10-24T18:18:57Z",
+      "state_revision": "e1857fc566f9848d3cef21b561dffabbf563b03c",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Chapter 30, Darlene reflects on Vaughn's recovery from his traumatic past: English 'despite everything, he more than survived. He *thrived*.' contrasts survival with flourishing/prospering. Russian 'он не просто выжил. Он *добился своего*' replaces that meaning with success at a specific goal, unsupported by the sentence. Restore 'он не просто выжил — он *сумел преуспеть/расцвёл*' or an idiomatic equivalent about flourishing, preserving emphasis.",
+            "resolved": false
+          }
+        ]
       }
     }
   ],
