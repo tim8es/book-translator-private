@@ -1,6 +1,6 @@
 {
   "book_slug": "obsession-eva-marks",
-  "next_sequence": 67,
+  "next_sequence": 68,
   "records": [
     {
       "record_id": "0a6e7a112373b1111111111111111111",
@@ -2385,6 +2385,59 @@
       "shared_state_revisions": {
         "glossary": "2d9792a642499d2b8671d4c52893177fea212ab0",
         "style_guide": "878aeaec4cfbd6a3bee3f76ed0ac6f0e9598ee74"
+      }
+    },
+    {
+      "record_id": "882523cfa64ee97cfca9e01f82af906f",
+      "sequence": 67,
+      "unit_id": "chapter-000026",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "8329c13012dd1c466e7f3ee3661142ee48498359e579dfc01d00ba04238536ab",
+      "translation_sha256": "06e6d89ea258ea346872b98b6eec08cfd5e9324f85eb442854b7594a745a7678",
+      "workflow_revision": "8f70b1c1c108926599c36ce40021860bed581400",
+      "review_contract_revision": "docs/TRANSLATION.md@8f70b1c1c108926599c36ce40021860bed581400",
+      "reviewer_session_id": "obsession-review-chat-20261024-f9c1df20",
+      "reviewed_at": "2026-10-24T18:56:57Z",
+      "state_revision": "56ba1e3774f7b20b9e2f292cb683f3efe5f037f8",
+      "review_commit": null,
+      "correction_round": 2,
+      "supersedes_record_id": "0d361ced11fe55e93457c7d81c6fd345",
+      "quality_report": {
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "major",
+            "detail": "Chapter 18 final exchange still requires repair. Source 'You do need it. And not. Yet' says revenge is needed, but leaving together is not allowed yet. Current Russian 'Месть тебе нужна. А уехать — ещё. Не. Сейчас., — произношу я напоследок.' is syntactically forced and has invalid dialogue punctuation 'Сейчас.,'. Correct to idiomatic Russian preserving the refusal and deliberate clipped cadence, with a valid dialogue tag punctuation; recheck the whole exchange.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Original concessive 'Darlene might be sitting... She might be physically beneath me' is now translated 'Пусть Дарлин и сидит. И пусть физически она ниже меня', resolving previous incorrect 'может сидеть'.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Original fragment 'The speed with which I crouch down in front of her' now 'Я мгновенно приседаю перед ней' without previously invented narrator surprise. Fixed.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Original 'Just that she gasps' now 'Главное — её судорожный вдох', preserving gasp instead of implying choking. Fixed.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Original affectionate 'Be my good little raven' now 'Будь моим хорошим воронёнком', matching established character nickname. Fixed.",
+            "resolved": true
+          }
+        ]
       }
     }
   ],
