@@ -2,7 +2,9 @@ name: Obsession native-style EPUB (one-shot)
 on:
   push:
     branches: [main]
-    paths: ['.github/workflows/one-shot-obsession-native-style.yml']
+    paths:
+      - '.github/workflows/one-shot-obsession-native-style.yml'
+      - 'books/obsession-eva-marks/staging/native_style_build.py'
   workflow_dispatch:
 permissions:
   contents: write
