@@ -15,6 +15,7 @@ import sys
 import zipfile
 from pathlib import Path
 from urllib.parse import urlsplit
+from urllib.request import urlopen
 from xml.etree import ElementTree as ET
 
 X = "http://www.w3.org/1999/xhtml"
@@ -31,6 +32,36 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from workflow.epub_output import render_markdown_xhtml  # exact pinned workflow
 SLUG = "obsession-eva-marks"
 SHA = lambda data: hashlib.sha256(data).hexdigest()
+FONT_UPSTREAM = "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0"
+# Open Font License fonts provide Cyrillic glyphs missing from the original
+# Latin-only Rock Salt and Cantarell fonts. Original fonts stay intact.
+EXTRA_FILES = {
+    "fonts/FiraSansCyrillic.ttf": ("ofl/firasans/FiraSans-Regular.ttf", "7544de9cc8d102e1597dac2fb71951c2019a08cd"),
+    "fonts/NeuchaCyrillic.ttf": ("ofl/neucha/Neucha.ttf", "d495d8361c36203e6d3b31dad61d2d199ad44d05"),
+    "META-INF/licenses/FiraSans-OFL.txt": ("ofl/firasans/OFL.txt", "a2c1ae225f24bc345413e0764c0ddcf2a0e6d4da"),
+    "META-INF/licenses/Neucha-OFL.txt": ("ofl/neucha/OFL.txt", "7ffb27e3b6e7decdb60bb8ab5f96fe1a33aaa9f0"),
+}
+EXTRA_CSS = b"""@font-face { font-family: CantarellRegular; src: url('fonts/FiraSansCyrillic.ttf') format('truetype'); unicode-range: U+0400-052F; }
+@font-face { font-family: RockSaltRegular; src: url('fonts/NeuchaCyrillic.ttf') format('truetype'); unicode-range: U+0400-052F; }
+"""
+EXTRA_NAMES = set(EXTRA_FILES) | {"cyrillic-fonts.css"}
+
+def github_blob_sha(blob):
+    return hashlib.sha1(b"blob "+str(len(blob)).encode()+b"\x00"+blob).hexdigest()
+
+def font_assets():
+    fetched={"cyrillic-fonts.css":EXTRA_CSS}
+    for target,(remote,blob_sha) in EXTRA_FILES.items():
+        url=f"https://raw.githubusercontent.com/google/fonts/{FONT_UPSTREAM}/{remote}"
+        with urlopen(url,timeout=30) as reader:
+            contents=reader.read(2_000_000)
+        need(github_blob_sha(contents)==blob_sha,f"External OFL asset hash changed: {remote}")
+        if target.endswith(".ttf"):
+            need(len(contents)>10000 and contents[:4] in (b"\x00\x01\x00\x00", b"OTTO"),f"Not a valid TrueType font: {remote}")
+        else:
+            need(b"OPEN FONT LICENSE" in contents.upper(),f"Missing OFL license declaration: {remote}")
+        fetched[target]=contents
+    return fetched
 
 def need(value, reason):
     if not value:
@@ -148,7 +179,7 @@ def canonical_title(markdown_blocks):
                 return text
     return None
 
-def copy_epub(z, replacements, target):
+def copy_epub(z, replacements, target, additions):
     with zipfile.ZipFile(target,"w") as out:
         # The original container may be accepted by readers but fail EPUB ZIP
         # rules. Normalize ONLY the mandated first, uncompressed mimetype entry.
@@ -160,6 +191,10 @@ def copy_epub(z, replacements, target):
             payload = replacements.get(old.filename)
             if payload is None:payload=z.read(old.filename)
             out.writestr(old,payload)
+        for name in sorted(additions):
+            info=zipfile.ZipInfo(name,date_time=(1980,1,1,0,0,0))
+            info.compress_type=zipfile.ZIP_DEFLATED
+            out.writestr(info,additions[name])
 
 def build():
     meta=json.loads((BASE/"metadata.json").read_text("utf8"))
@@ -199,12 +234,18 @@ def build():
         path_to_unit={p:i+1 for i,p in enumerate(files)}
         need(all(f in z.namelist() for f in files),"Original source XHTML absent")
         labels={i:canonical_title(rendered[i]) for i in range(1,49)}
+        additions=font_assets()
         replacements={}
         report={"format":"native-style-epub-v1","book":SLUG,"chapter_count":48,"modified_xhtml":[],"paragraph_split_units":[],"source_assets_retained":[],"localized_toc_links":0,"localized_ncx_labels":0}
         for num,(file,unit) in enumerate(zip(files,chapters),1):
             old_tree=ET.fromstring(z.read(file))
             old_tree.set("lang","ru")
             old_tree.set("{"+XML+"}lang","ru")
+            if num != 1:
+                head=old_tree.find(PREFIX+"head")
+                need(head is not None,f"Missing XHTML head unit {num}")
+                prefix="../" if "/" in file else ""
+                head.append(ET.Element(PREFIX+"link",{"rel":"stylesheet","type":"text/css","href":prefix+"cyrillic-fonts.css"}))
             blocks=rendered[num]
             new_h=[x for x in blocks if local(x) in {"h1","h2","h3","h4","h5","h6"}]
             new_p=[x for x in blocks if local(x)=="p"]
@@ -284,6 +325,16 @@ def build():
         languages=[el for el in pkg.iter() if el.tag=="{"+DC+"}language"]
         need(languages,"Original package language metadata missing")
         for el in languages:el.text="ru"
+        package_manifest=next((e for e in pkg.iter() if local(e)=="manifest"),None)
+        need(package_manifest is not None,"Original OPF manifest is missing")
+        first_media=next((e.tag for e in package_manifest if local(e)=="item"),None)
+        need(first_media is not None,"Original OPF manifest is empty")
+        for ident,href,typ in (
+            ("localized-cyrillic-styles","cyrillic-fonts.css","text/css"),
+            ("localized-neucha-font","fonts/NeuchaCyrillic.ttf","font/ttf"),
+            ("localized-firasans-font","fonts/FiraSansCyrillic.ttf","font/ttf"),
+        ):
+            package_manifest.append(ET.Element(first_media,{"id":ident,"href":href,"media-type":typ}))
         replacements[package_path]=ET.tostring(pkg,encoding="utf-8",xml_declaration=True)
         for name in z.namelist():
             if not name.lower().endswith(".ncx"):continue
@@ -304,9 +355,11 @@ def build():
             replacements[name]=ET.tostring(toc,encoding="utf-8",xml_declaration=True)
         output=BASE/"output/obsession-eva-marks-original-style.epub"
         output.parent.mkdir(exist_ok=True)
-        copy_epub(z,replacements,output)
+        copy_epub(z,replacements,output,additions)
         report["source_assets_retained"]=[x for x in z.namelist() if re.search(r'\.(css|ttf|otf|woff2?|jpe?g|png|svg)$',x,re.I)]
         report["source_sha256"]=SHA(source.read_bytes())
+        report["cyrillic_font_overrides"]=["Neucha","Fira Sans"]
+        report["font_license_paths"]=[n for n in additions if n.endswith("OFL.txt")]
         report["artifact_sha256"]=SHA(output.read_bytes())
         report["artifact_bytes"]=output.stat().st_size
         report["status"]="built_unverified"
@@ -314,12 +367,16 @@ def build():
     # every internal resource/fragment, no text omission or English resurrection.
     with zipfile.ZipFile(source) as oldz,zipfile.ZipFile(output) as newz:
         need(newz.testzip() is None,"Corrupt EPUB ZIP member")
-        need(set(newz.namelist())-{"mimetype"}==set(oldz.namelist())-{"mimetype"},"Original package members changed")
+        need(set(newz.namelist())-set(oldz.namelist())==EXTRA_NAMES,"Unexpected additional EPUB members")
+        need(set(oldz.namelist())-set(newz.namelist())==set(),"Original package member lost")
         need(newz.namelist()[0]=="mimetype" and newz.read("mimetype")==b"application/epub+zip","Invalid EPUB mimetype")
         need(newz.getinfo("mimetype").compress_type==zipfile.ZIP_STORED,"EPUB mimetype is compressed")
         for asset in report["source_assets_retained"]:
             need(newz.read(asset)==oldz.read(asset),f"Source CSS/font/image bytes mutated: {asset}")
         allnames=set(newz.namelist())
+        need(newz.read("cyrillic-fonts.css")==EXTRA_CSS,"Cyrillic CSS is missing")
+        for asset in EXTRA_NAMES:
+            need(asset in allnames and newz.read(asset),"Embedded OFL asset missing")
         xml_files=[x for x in allnames if x.endswith((".html",".xhtml",".opf",".ncx",".xml"))]
         ids={}
         rootmap={}
