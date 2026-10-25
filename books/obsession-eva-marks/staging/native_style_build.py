@@ -87,7 +87,7 @@ def transfer_text(target, localized):
         target.remove(child)
     for child in list(localized):
         target.append(copy.deepcopy(child))
-    if drop and target.text and target.text[0].isalpha():
+    if drop is not None and target.text and target.text[0].isalpha():
         first=target.text[0]
         tail=target.text[1:]
         replica=ET.Element(PREFIX+"span", {"class":drop.attrib.get("class","dropcap")})
@@ -150,7 +150,13 @@ def canonical_title(markdown_blocks):
 
 def copy_epub(z, replacements, target):
     with zipfile.ZipFile(target,"w") as out:
+        # The original container may be accepted by readers but fail EPUB ZIP
+        # rules. Normalize ONLY the mandated first, uncompressed mimetype entry.
+        info=zipfile.ZipInfo("mimetype",date_time=(1980,1,1,0,0,0))
+        info.compress_type=zipfile.ZIP_STORED
+        out.writestr(info,b"application/epub+zip")
         for old in z.infolist():
+            if old.filename=="mimetype":continue
             payload = replacements.get(old.filename)
             if payload is None:payload=z.read(old.filename)
             out.writestr(old,payload)
@@ -308,7 +314,7 @@ def build():
     # every internal resource/fragment, no text omission or English resurrection.
     with zipfile.ZipFile(source) as oldz,zipfile.ZipFile(output) as newz:
         need(newz.testzip() is None,"Corrupt EPUB ZIP member")
-        need(newz.namelist()==oldz.namelist(),"Original package members changed")
+        need(set(newz.namelist())-{"mimetype"}==set(oldz.namelist())-{"mimetype"},"Original package members changed")
         need(newz.namelist()[0]=="mimetype" and newz.read("mimetype")==b"application/epub+zip","Invalid EPUB mimetype")
         need(newz.getinfo("mimetype").compress_type==zipfile.ZIP_STORED,"EPUB mimetype is compressed")
         for asset in report["source_assets_retained"]:
