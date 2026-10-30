@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "policy-change",
-  "next_sequence": 12,
+  "next_sequence": 13,
   "records": [
     {
       "record_id": "1f8894cd56d99429b1bb61e7540a8db1",
@@ -634,6 +634,83 @@
           "structure": true
         },
         "findings": []
+      }
+    },
+    {
+      "record_id": "3be2b994596e874a86d142d53af600c1",
+      "sequence": 12,
+      "unit_id": "chapter-000013",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "fcf91acf6543a9a7167618ce26e4a6bcacacc9055ce9d0941eba5b6659b8ccbb",
+      "translation_sha256": "bf0841de2fef9fb5b013b573ebd07604dc9033a0d28d80596eb694f2766f4962",
+      "workflow_revision": "c76159e4939ed00ac19172228f8972af87cadbb8",
+      "review_contract_revision": "docs/TRANSLATION.md@c76159e4939ed00ac19172228f8972af87cadbb8",
+      "reviewer_session_id": "policy-change-reviewer-20261030-1815-b7f4a932",
+      "reviewed_at": "2026-10-30T18:30:52Z",
+      "state_revision": "e252a31dc48de7590fa6c1e83bbd5c06f7ecb3e3",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "spectrum-opaque-calque",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "Выражение «On the spectrum» в разговоре о нейроразнообразии означает нахождение в аутистическом спектре. Буквальное «В спектре» без определения неестественно и не сообщает русскому читателю, о каком спектре идёт речь. Передать естественно («В аутистическом спектре» / «У неё РАС») с сохранением разговорной краткости.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "On the spectrum. We’ve definitely talked about this.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "В спектре. Мы же точно об этом говорили.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "concentrated-conversation-to-visibility",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "«This was too concentrated» после признания, что разговор вели почти только Шейн и Джей-Джей, означает слишком узкий круг/слишком сконцентрированное обсуждение. «Мы слишком бросаемся в глаза» добавляет иной мотив — видимость со стороны. Сохранить мысль о чрезмерной концентрации разговора, а не о заметности.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "I think… I think we need more people. This was too concentrated.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "думаю, нам нужно больше людей. А то мы слишком бросаемся в глаза.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "washcloths-as-wet-wipes",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Washcloths здесь — небольшие тканевые полотенца/мочалки для обтирания, не одноразовые «влажные салфетки», как можно понять из перевода. Уточнить предмет, учитывая, что потом он бросает их в сторону ванной с влажным шлепком.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Rozanov returned, two washcloths in his hand.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Розанов вернулся с двумя влажными салфетками в руках.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
       }
     }
   ]
