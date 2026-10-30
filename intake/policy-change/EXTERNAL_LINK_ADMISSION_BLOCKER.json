@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "kind": "source_admission_compatibility_diagnostic_not_canonical_coverage",
+  "observed_on": "2026-10-30",
+  "original": "Policy Change.epub",
+  "original_sha256": "b27e61a767dd5ba93451cf0b1df5ad8d6c40b11bdead7435e0ca682768378639",
+  "original_bytes": 488072,
+  "pinned_workflow_candidate": "9131fbaad53af98490c8e21ed67710e87b6474ab",
+  "code_contract": {
+    "source_coverage_file": "scripts/workflow/source_coverage.py",
+    "match_expression": "SAFE_HREF_RE = re.compile(r'(?:https?://|mailto:)[^\\s()\\[\\]]+\\Z')",
+    "canonical_href_rule": "_canonical_href requires SAFE_HREF_RE for external links; otherwise throws SourceCoverageError",
+    "extraction_file": "scripts/book.py",
+    "extraction_rule": "HTML parser requires safe external links or same-document fragment links"
+  },
+  "source_inventory": {
+    "xhtml_files_in_spine": 65,
+    "body_anchor_hrefs": 51,
+    "failing_external_href_instances": 8,
+    "unique_failing_external_urls": 4,
+    "failing_document": "index_split_000.html",
+    "unsupported_semantic_elements_seen_in_xhtml_bodies": 0,
+    "xml_parse_errors_seen": 0
+  },
+  "distinct_hrefs": [
+    {
+      "href": "https://archiveofourown.org/tags/Heated%20Rivalry%20(TV)",
+      "count": 1
+    },
+    {
+      "href": "https://archiveofourown.org/tags/Shane%20Hollander*s*Original%20Male%20Character(s)",
+      "count": 2
+    },
+    {
+      "href": "https://archiveofourown.org/tags/Montreal%20Voyageurs%20%7C%20Montreal%20Metros%20Team%20Ensemble%20(Game%20Changers)",
+      "count": 3
+    },
+    {
+      "href": "https://archiveofourown.org/tags/Original%20Male%20Character(s)",
+      "count": 2
+    }
+  ],
+  "expected_blocker": "EPUB source coverage blocked: index_split_000.html: unsupported anchor destination [external URL containing parentheses]",
+  "scope_limits": [
+    "Exact official extraction and canonical coverage have not been executed; this is contract-matched static diagnosis.",
+    "Do not rewrite the immutable original, counterfeit official coverage, accept drafts, or silently select another workflow revision."
+  ],
+  "resolution_proposal": "With explicit authorization to improve the public workflow, implement semantics-preserving external link canonicalization in extractor and independent auditor (e.g. encode literal parentheses as %28/%29 for Markdown-safe hrefs), cover exact source failure in tests, merge reviewed fix, and initialize this not-yet-created book on the new resolved revision. Source SHA remains unchanged.",
+  "additional_ingress_blocker": "Local container DNS blocks github.com, while linked GitHub connector accepts text but cannot directly ingest the local binary EPUB; exact source has not been uploaded to GitHub.",
+  "canonical_workspace_created": false
+}
