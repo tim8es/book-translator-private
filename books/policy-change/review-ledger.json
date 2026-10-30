@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "policy-change",
-  "next_sequence": 8,
+  "next_sequence": 9,
   "records": [
     {
       "record_id": "1f8894cd56d99429b1bb61e7540a8db1",
@@ -419,6 +419,83 @@
             },
             "translation_anchor": {
               "quote": "первый детский тренер Шейна, Тедди «Медведь» Дайерс",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "5f77119ee591d8c33caa53b614421b8f",
+      "sequence": 8,
+      "unit_id": "chapter-000009",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "3d143aae3da9e5d91e0b821877843e530e3459512f424ca0e854971104933086",
+      "translation_sha256": "34a29faf10385189c1e0c083d6d042179f070142f18641aa4af035062be890f7",
+      "workflow_revision": "c76159e4939ed00ac19172228f8972af87cadbb8",
+      "review_contract_revision": "docs/TRANSLATION.md@c76159e4939ed00ac19172228f8972af87cadbb8",
+      "reviewer_session_id": "policy-change-reviewer-20261030-1815-b7f4a932",
+      "reviewed_at": "2026-10-30T18:17:58Z",
+      "state_revision": "6da6322ebb71cb9125c11f3b8988182a462ea70b",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "step-grandmother-kinship",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Русское «мачеха дедушки» меняет родственную связь: step-grandmother Шейна — супруга его дедушки, мачеха отца Шейна, а не мачеха самого дедушки. Уточнить родственную связь, согласовав с переводом начального абзаца.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "his interest in his step-grandmother being minimal",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Поскольку мачеха дедушки интересовала его мало",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "chapter-5-chat-emphasis",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "В исходнике текст переписки с Lily/Jane и с портным оформлен курсивом, в переводе курсив исчез и выделены жирным только имена отправителей. Восстановить значимый курсив текста сообщений при сохранении содержания, порядка и ников.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Lily: *When?*",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "**Лили:** Когда?",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "admirals-games-count",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "«A couple of games ... at the end of January and in March» — пара матчей в двух временных точках, а не «по несколько матчей» и в январе, и в марте. Не увеличивать количество игр; допустимо «пара матчей с „Адмиралами“ — в конце января и в марте».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "a couple of games against the Admirals at the end of January and in March",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "в конце января и в марте у них намечалось по несколько матчей против «Адмиралов»",
               "occurrence": 0
             },
             "resolves": null
