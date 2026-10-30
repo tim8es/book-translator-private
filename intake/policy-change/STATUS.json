@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "kind": "provisional_intake_backup_not_canonical_workflow_state",
+  "book": "Policy Change",
+  "author": "josie_ides (josephides)",
+  "source_language": "en",
+  "target_language": "ru",
+  "source_original_name": "Policy Change.epub",
+  "source_sha256": "b27e61a767dd5ba93451cf0b1df5ad8d6c40b11bdead7435e0ca682768378639",
+  "source_size_bytes": 488072,
+  "source_saved_in_user_library": "/Book translates/Policy Change/Policy Change - original.epub",
+  "source_verified_in_canonical_workflow": false,
+  "workflow_revision_during_prior_drafts": "a2d83c1de76255d8b98cfbd6bc4c769d6b11a38d",
+  "canonical_workspace_initialized": false,
+  "canonical_status": "not initialized; no accepted translations, no reviews, no active claims",
+  "blocker": "EPUB in-text relative fragment anchors rejected by current source coverage/Markdown renderer; needs planned workflow change",
+  "drafts": [
+    {
+      "chapter": 1,
+      "path": "intake/policy-change/drafts/chapter-01-ru.md",
+      "git_blob_sha": "27a334a94eab70a92621297fb50bfdbcd9e6b13f",
+      "validation": "UNVERIFIED_DRAFT",
+      "completeness": "claimed_complete_unreviewed"
+    },
+    {
+      "chapter": 2,
+      "path": "intake/policy-change/drafts/chapter-02-ru.md",
+      "git_blob_sha": "023db3029a479a5a236d3b3ffab14bd6d7d38e9e",
+      "validation": "UNVERIFIED_DRAFT",
+      "completeness": "claimed_complete_unreviewed"
+    },
+    {
+      "chapter": 3,
+      "path": "intake/policy-change/drafts/chapter-03-ru.md",
+      "git_blob_sha": "f03b88697d84980ef2de005adaf891b6baa27792",
+      "validation": "UNVERIFIED_DRAFT",
+      "completeness": "claimed_complete_unreviewed"
+    },
+    {
+      "chapter": 4,
+      "path": "intake/policy-change/drafts/chapter-04-ru.md",
+      "git_blob_sha": "a0e8c4ff71ebbefaed94a8d96ab8bea6e793f496",
+      "validation": "UNVERIFIED_DRAFT",
+      "completeness": "claimed_complete_unreviewed"
+    },
+    {
+      "chapter": 5,
+      "path": "intake/policy-change/drafts/chapter-05-ru.md",
+      "git_blob_sha": "370938b726c4eb7076533dff942765f73a7d1aa3",
+      "validation": "UNVERIFIED_DRAFT",
+      "completeness": "claimed_complete_unreviewed"
+    },
+    {
+      "chapter": 6,
+      "path": "intake/policy-change/drafts/chapter-06-ru.md",
+      "git_blob_sha": "fd1737a99eba6d73a12b946e15a90c0ee469c4ce",
+      "validation": "UNVERIFIED_DRAFT",
+      "completeness": "claimed_complete_unreviewed"
+    },
+    {
+      "chapter": 7,
+      "path": "intake/policy-change/drafts/chapter-07-ru.md",
+      "git_blob_sha": "a3d3f5f702b9b17b672bf713311b1ee7ef7f51cd",
+      "validation": "UNVERIFIED_DRAFT",
+      "completeness": "incomplete"
+    }
+  ],
+  "todo": [
+    "Implement and test EPUB relative link remapping in public workflow repository with PR",
+    "Initialize canonical Policy Change workspace with validated source coverage",
+    "Reconcile drafted chapter files with extracted source units and accept only after claims/verification",
+    "Perform independent review",
+    "Finish chapters 7-10"
+  ],
+  "source_audit_notes": "19 relative source XHTML links with valid fragment targets in original; report saved to Library, not formal source-coverage certification"
+}
