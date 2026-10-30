@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "policy-change",
-  "next_sequence": 2,
+  "next_sequence": 3,
   "records": [
     {
       "record_id": "1f8894cd56d99429b1bb61e7540a8db1",
@@ -28,6 +28,83 @@
           "structure": true
         },
         "findings": []
+      }
+    },
+    {
+      "record_id": "1723ca807f287553398553f6ebf369fa",
+      "sequence": 2,
+      "unit_id": "chapter-000003",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "dd09fee608c8fd64954fa572b5ef5f9b11afe8341a9a73b9f6c8f264b7b0d518",
+      "translation_sha256": "165c7a5cd1b3e7f8ce400379f19693877240153bce750fd33cde06f66d60ee6f",
+      "workflow_revision": "c76159e4939ed00ac19172228f8972af87cadbb8",
+      "review_contract_revision": "docs/TRANSLATION.md@c76159e4939ed00ac19172228f8972af87cadbb8",
+      "reviewer_session_id": "policy-change-reviewer-20261030-chat-cd7f2a4e",
+      "reviewed_at": "2026-10-30T16:39:51Z",
+      "state_revision": "cbd1a1feea54ce6d00ac8b8ef6a3378a9f74d3a1",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "knife-sound-addition",
+            "category": "addition",
+            "severity": "minor",
+            "detail": "Оригинал описывает удовлетворение от разрезания арбуза под нажимом, но не упоминает звук. Перевод вводит вымышленный «необыкновенно приятный звук». Убрать эту конкретизацию, сохранить телесную удовлетворённость действия.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "The big knife parted the watermelon very satisfyingly under some not-inconsiderable pressure from Shane.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Под довольно-таки сильным нажимом массивного ножа арбуз с необыкновенно приятным звуком разошёлся надвое.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "sarcastic-laugh-shift",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Саркастическое «Ha. Fucking. Ha.» (иронический смех) передано «Ха. Хрен. Там.» (отрицание/невозможность), что меняет функцию реплики. Восстановить язвительный, нарочито разбитый на части смех.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "*Ha. Fucking. Ha.*",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "*Ха. Хрен. Там.*",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "pink-buzzcut-detail",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "В оригинале «pink buzz cut» — очень короткая, почти под машинку, розовая стрижка, а не просто «короткие розовые волосы». Восстановить указание на стрижку под машинку, сохранив сомнение «женщина — может быть?».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "There was a woman – maybe? – with a pink buzz cut.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Там была женщина — кажется? — с короткими розовыми волосами.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
       }
     }
   ]
