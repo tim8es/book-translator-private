@@ -9,11 +9,11 @@
   "source_sha256": "b27e61a767dd5ba93451cf0b1df5ad8d6c40b11bdead7435e0ca682768378639",
   "source_size_bytes": 488072,
   "source_saved_in_user_library": "/Book translates/Policy Change/Policy Change - original.epub",
-  "source_verified_in_canonical_workflow": false,
+  "source_verified_in_canonical_workflow": true,
   "workflow_revision_during_prior_drafts": "a2d83c1de76255d8b98cfbd6bc4c769d6b11a38d",
-  "canonical_workspace_initialized": false,
-  "canonical_status": "not initialized; no accepted translations, no reviews, no active claims",
-  "blocker": "Exact original EPUB has been reuploaded in this chat and matches expected SHA-256/size; a static full-body scan of 65 source XHTML files finds no currently unsupported semantic tags/attributes and verifies 51 links. BUT source bytes remain confined to the ChatGPT local container: its GitHub DNS/TCP access is blocked, and available authenticated GitHub connector has no direct user-file binary upload. Repo remains PUBLIC. Canonical extract, original-bound independent source-coverage, seal, validate and verify are NOT run; no books/policy-change/",
+  "canonical_workspace_initialized": true,
+  "canonical_status": "initialized: 65 structural source units extracted, source-coverage verified, 0 translations accepted, 0 reviews",
+  "blocker": null,
   "drafts": [
     {
       "chapter": 1,
@@ -66,9 +66,9 @@
     }
   ],
   "todo": [
-    "Move exact 488072-byte EPUB into an authorized GitHub-connected runtime (ensure intended repository visibility); run the installed one-shot GitHub Action from the precise source SHA",
-    "Do not claim admission before repo books/policy-change/metadata, source-coverage, progress, corpus seal and validate/verify are checked",
-    "Reconcile legacy provisional drafts with exact source units, then claim/CAS translator, independent review, corrections and final build"
+    "Read books/policy-change/ authoritative metadata, progress, review-ledger, source-coverage and claims before literary work.",
+    "Map the 7 provisional drafts to 65 stable extracted source units, repair known omissions and markup, admit only through claim/CAS and machine checks.",
+    "Run independent reviews, corrections and canonical output build."
   ],
   "source_audit_notes": "19 relative source XHTML links with valid fragment targets in original; report saved to Library, not formal source-coverage certification",
   "workflow_fix": {
@@ -94,14 +94,14 @@
     "canonical_source_coverage": false
   },
   "source_intake": {
-    "status": "SOURCE_REUPLOAD_VERIFIED_LOCALLY_GITHUB_BINARY_INGRESS_PENDING",
+    "status": "CANONICAL_SOURCE_ADMITTED_VERIFIED",
     "workflow_path": ".github/workflows/policy-change-source-intake.yml",
     "expected_upload_path": "intake/policy-change/source/Policy Change.epub",
     "expected_sha256": "b27e61a767dd5ba93451cf0b1df5ad8d6c40b11bdead7435e0ca682768378639",
     "expected_bytes": 488072,
     "workflow_revision_for_new_book": "c76159e4939ed00ac19172228f8972af87cadbb8",
     "workflow_committed": true,
-    "workflow_executed_successfully": false,
+    "workflow_executed_successfully": true,
     "warning": "Repository visibility is public; uploading the EPUB publishes copyrighted source and Git history.",
     "leaves_existing_books_unmodified": true
   },
@@ -131,5 +131,18 @@
     "static_strict_preflight_file": "intake/policy-change/PRELIMINARY_STRICT_XHTML_PREFLIGHT.json",
     "static_xhtml_anomaly_count": 0,
     "full_workflow_executed": false
+  },
+  "previous_blocker": "Exact original EPUB has been reuploaded in this chat and matches expected SHA-256/size; a static full-body scan of 65 source XHTML files finds no currently unsupported semantic tags/attributes and verifies 51 links. BUT source bytes remain confined to the ChatGPT local container: its GitHub DNS/TCP access is blocked, and available authenticated GitHub connector has no direct user-file binary upload. Repo remains PUBLIC. Canonical extract, original-bound independent source-coverage, seal, validate and verify are NOT run; no books/policy-change/",
+  "legacy_intake_state_superseded": true,
+  "canonical_workspace": "books/policy-change/",
+  "canonical_transition": {
+    "source_commit": "65c126b578b3b548e2b1a54559b7b54c54c01e8d",
+    "admission_commit": "39c51280bd68d1e8a072b9bf96c3c8aa2f2ea507",
+    "action_run_url": "https://github.com/tim8es/book-translator-private/actions/runs/41080752239",
+    "action_conclusion": "success",
+    "workflow_revision": "c76159e4939ed00ac19172228f8972af87cadbb8",
+    "source_sha256": "b27e61a767dd5ba93451cf0b1df5ad8d6c40b11bdead7435e0ca682768378639",
+    "source_coverage_state": "verified",
+    "unit_count": 65
   }
 }
