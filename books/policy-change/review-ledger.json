@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "policy-change",
-  "next_sequence": 7,
+  "next_sequence": 8,
   "records": [
     {
       "record_id": "1f8894cd56d99429b1bb61e7540a8db1",
@@ -342,6 +342,83 @@
             },
             "translation_anchor": {
               "quote": "Ничего такого Шейн раньше не слышал. Вернее, слышал уже множество раз.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "b7c0aa3d3ed8830ec53821b59d07b87d",
+      "sequence": 7,
+      "unit_id": "chapter-000008",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "7311c8def44fbe02165755882c7922ebf5f4756b7fe5e33784902dc015239630",
+      "translation_sha256": "1da6e3d7b097b7ee013b66fe1748ac2e1ad51dcd2f7730f212680486a7df63ce",
+      "workflow_revision": "c76159e4939ed00ac19172228f8972af87cadbb8",
+      "review_contract_revision": "docs/TRANSLATION.md@c76159e4939ed00ac19172228f8972af87cadbb8",
+      "reviewer_session_id": "policy-change-reviewer-20261030-44de51ac",
+      "reviewed_at": "2026-10-30T17:20:33Z",
+      "state_revision": "6acc8966afb1615043f0430e208d08b79bd817dc",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "tailor-chat-emphasis",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "В исходных сообщениях Шейна и Сарджента текст сообщений выделен курсивом (Shane: *...*, Sargent: *...*). В переводе вместо этого жирным выделены имена, курсив снят. Восстановить исходную семантику выделения всего второго блока переписки с портным; первая и третья переписки главы уже оформлены иначе.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Shane: *Hi, this is Shane Hollander.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "**Шейн:** Здравствуйте, это Шейн Холландер.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "late-lunch-becomes-dinner",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Оригинал определяет еду Петрова как поздний обед (late lunch), несмотря на время 17:30. В переводе это названо ужином, что меняет явно заданный тип приёма пищи. Сохранить «поздно обедает» или «поздний обед».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Petrov had apologized for eating a late lunch while they talked.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Петров извинился за то, что вынужден ужинать, пока они беседуют.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "peewee-coach-is-not-first",
+            "category": "referent",
+            "severity": "minor",
+            "detail": "Pee Wee coach обозначает тренера в конкретной детской хоккейной возрастной категории, но не обязательно первого тренера. «Первый детский тренер» добавляет отсутствующий хронологический факт. Передать как «тренер Шейна в детской лиге» либо сохранить термин Pee Wee.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Shane’s Pee Wee coach Teddy ‘Bear’ Dyers",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "первый детский тренер Шейна, Тедди «Медведь» Дайерс",
               "occurrence": 0
             },
             "resolves": null
