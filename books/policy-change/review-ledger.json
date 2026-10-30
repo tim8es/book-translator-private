@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "policy-change",
-  "next_sequence": 31,
+  "next_sequence": 32,
   "records": [
     {
       "record_id": "1f8894cd56d99429b1bb61e7540a8db1",
@@ -1398,6 +1398,115 @@
           "structure": true
         },
         "findings": []
+      }
+    },
+    {
+      "record_id": "f20f6af16d3d52bf3821ca7552a08e99",
+      "sequence": 31,
+      "unit_id": "chapter-000020",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "c30f86167ba11e13b6b70a2b4bf469965876c97e9260efbd17ddc541ad6fef7d",
+      "translation_sha256": "973c293f02030c1cbcdaa919815ed79d62013f21f1cd6229188854dcf3c9026e",
+      "workflow_revision": "c76159e4939ed00ac19172228f8972af87cadbb8",
+      "review_contract_revision": "docs/TRANSLATION.md@c76159e4939ed00ac19172228f8972af87cadbb8",
+      "reviewer_session_id": "policy-change-reviewer-20261030-1903-72d29f8b",
+      "reviewed_at": "2026-10-30T19:05:52Z",
+      "state_revision": "a4423fc3ad3820377e83fc7c0ef0326b33616ac3",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "owner-involvement-negation",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "В оригинале владелец клуба обычно не настолько активно вовлечён в жизнь команды (Owners aren’t usually as involved). Перевод «Обычно владельцы настолько не вовлечены» неестественен и смещает степень участия. Восстановить прямое сравнение «Обычно владельцы не настолько вовлечены [в дела команды]».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Owners aren’t usually as involved.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Обычно владельцы настолько не вовлечены.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "wiebe-name-chapter-11",
+            "category": "terminology",
+            "severity": "major",
+            "detail": "Фамилия тренера Wiebe в этой главе по всему тексту переведена как «Уиб», а в ранее проверенных блоках (№ 11, 13) использовался вариант «Вибе». Исправить упоминания и имя контакта «Тренер У» с соблюдением общекнижного именования, согласовав с замечанием по блоку № 18.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Sighing, Shane opened up his chat with Wiebe.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Вздохнув, Шейн открыл переписку с Уибом.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "valentine-partner-referent-chapter-body",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "В исходнике «no one with whom he could admit to wanting to celebrate» указывает на желанного партнёра, с которым нельзя открыто признать желание отмечать. В переводе «не с кем-то, с кем ты мог бы открыто признаться» ошибочно превращает такого человека в адресата признания. Исправить здесь так же, как в кратком содержании (блок № 19), сохранив смысл тайной связи.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "no one with whom he could admit to wanting to celebrate.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "не с кем-то, с кем ты мог бы открыто признаться в желании его отпраздновать.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "hotel-rooms-made-into-homes",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Исходник говорит, что при очных матчах партнёры «went to each other’s places» — встречались там, где остановился другой, без утверждения, что оба ехали к друг другу домой. В контексте они живут и играют в разных городах; «всегда ездили друг к другу домой» добавляет фактическую деталь о месте встреч. Передать без выдуманного «домой», например «всегда встречались друг у друга».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "They always went to each other’s places when they played each other.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Когда они играли друг против друга, они всегда ездили друг к другу домой.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "invented-hypothetical-reaction",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Оригинал о реакции Розанова ограничивается «He looked stricken» (выглядел потрясённым). Перевод добавляет отсутствующую авторскую гипотезу о том, что Шейну стало бы не по себе, будь он способен задуматься. Убрать добавленную фразу, сохранив потрясённый вид Ильи.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "He looked stricken.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "На лице было такое горе, что Шейну стало бы не по себе, если бы он мог сейчас об этом думать.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
       }
     }
   ]
