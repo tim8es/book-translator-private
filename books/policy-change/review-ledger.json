@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "policy-change",
-  "next_sequence": 26,
+  "next_sequence": 27,
   "records": [
     {
       "record_id": "1f8894cd56d99429b1bb61e7540a8db1",
@@ -1207,6 +1207,51 @@
           "structure": true
         },
         "findings": []
+      }
+    },
+    {
+      "record_id": "49f5c96a411adf35005ac7e8861ac0f4",
+      "sequence": 26,
+      "unit_id": "chapter-000019",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "55f93680f549823bb0df408ec0d470ca53d5ffb6853d56f1f248f6c41a1b0c1d",
+      "translation_sha256": "e7f082126101bc54dfda85bb8af1bfa6919827520c81e7bf09242502e4e2b0e3",
+      "workflow_revision": "c76159e4939ed00ac19172228f8972af87cadbb8",
+      "review_contract_revision": "docs/TRANSLATION.md@c76159e4939ed00ac19172228f8972af87cadbb8",
+      "reviewer_session_id": "policy-change-reviewer-20261030-resume-e517c6ab",
+      "reviewed_at": "2026-10-30T18:59:25Z",
+      "state_revision": "e252a31dc48de7590fa6c1e83bbd5c06f7ecb3e3",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "valentine-secret-partner-referent",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "В исходнике «no one with whom he could admit to wanting to celebrate» означает, что Шейн не может открыто признаться в желании отметить праздник с человеком, которого он хотел бы видеть рядом. Русская фраза «не было никого, с кем он мог бы открыто признаться, что хочет его отпраздновать» делает этого человека адресатом признания и утрачивает указание на желанного партнёра. Переформулировать естественно, сохранив второе «с кем» в значении потенциального партнёра по празднику.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "no one with whom he could admit to wanting to celebrate.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "не было никого, с кем он мог бы открыто признаться, что хочет его отпраздновать.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
       }
     }
   ]
