@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "kind": "preliminary_source_integrity_audit_not_canonical_source_coverage",
+  "checked_at": "2026-10-30",
+  "book": "Policy Change",
+  "source_library_path": "/Book translates/Policy Change/Policy Change - original.epub",
+  "source_sha256": "b27e61a767dd5ba93451cf0b1df5ad8d6c40b11bdead7435e0ca682768378639",
+  "source_size_bytes": 488072,
+  "checks": {
+    "epub_zip_crc": "PASS",
+    "zip_entries": 72,
+    "opf_path": "content.opf",
+    "opf_spine_items": 65,
+    "html_resources": 65,
+    "anchor_links_total": 51,
+    "external_links": 32,
+    "same_document_relative_with_fragment": 19,
+    "verified_same_document_fragment_targets": 19,
+    "missing_relative_targets": 0,
+    "invalid_fragment_targets": 0
+  },
+  "workflow": {
+    "proposed_new_book_revision": "9131fbaad53af98490c8e21ed67710e87b6474ab",
+    "existing_private_install_revision": "0fe7fd86356d27dafbb409daa7e5ece23fdf62f4",
+    "canonical_book_metadata_exists": false
+  },
+  "limits": [
+    "Local source metadata and EPUB link audit only; not the canonical book.py source-coverage certification.",
+    "No canonical book extraction, source corpus seal, translation acceptance, or review evidence has been created.",
+    "Binary original exists in authorized user Library but is not present at books/policy-change/source/ in GitHub; chat GitHub API connector cannot read local binary file bytes."
+  ],
+  "next_gate": "Stage exact trusted EPUB in writable canonical installation at the selected revision, run book.py extract, corpus.py seal, book.py validate, corpus.py verify, and EPUB independent source-coverage audit; only then admit roles."
+}
