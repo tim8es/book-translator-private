@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "policy-change",
-  "next_sequence": 29,
+  "next_sequence": 30,
   "records": [
     {
       "record_id": "1f8894cd56d99429b1bb61e7540a8db1",
@@ -1325,6 +1325,51 @@
           "structure": true
         },
         "findings": []
+      }
+    },
+    {
+      "record_id": "94620bfef6dac484d38a4f34bef61629",
+      "sequence": 29,
+      "unit_id": "chapter-000015",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "8ab47070ffd96c49755753bbcb231b98aced5b425501ad608fbe78056d519a24",
+      "translation_sha256": "150fcdb5607a7984962ecc0d9e242d865ee3b050c5718e682855131deab4b261",
+      "workflow_revision": "c76159e4939ed00ac19172228f8972af87cadbb8",
+      "review_contract_revision": "docs/TRANSLATION.md@c76159e4939ed00ac19172228f8972af87cadbb8",
+      "reviewer_session_id": "policy-change-reviewer-20261030-resume-e517c6ab",
+      "reviewed_at": "2026-10-30T19:03:19Z",
+      "state_revision": "a4423fc3ad3820377e83fc7c0ef0326b33616ac3",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "wiebe-name-inconsistent-ch8",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "Фамилия одного и того же тренера Wiebe в ранее проверенных блоках № 6, 8, 11, 13 передаётся как «Вибе», однако в главе 8 (блок № 15) последовательно написано «Уиб» (в том числе в описании тренировочного лагеря и сцены с Хейденом). Унифицировать имя с принятой в других главах формой, не меняя реплики и содержание.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Wiebe repeatedly called him over to stand with him and the other coaches",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Уиб то и дело подзывал его постоять вместе с собой и другими тренерами",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
       }
     }
   ]
