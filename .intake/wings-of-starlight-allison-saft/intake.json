@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "record_kind": "source-intake-not-canonical-workspace",
+  "status": "blocked_by_source_extraction",
+  "book": {
+    "slug": "wings-of-starlight-allison-saft",
+    "title": "Wings of Starlight",
+    "author": "Allison Saft",
+    "source_language": "en",
+    "target_language": "ru",
+    "desired_output_format": "epub"
+  },
+  "original": {
+    "filename": "Wings_of_Starlight.epub",
+    "relative_path": ".intake/wings-of-starlight-allison-saft/Wings_of_Starlight.epub",
+    "size_bytes": 1348872,
+    "sha256": "3cd1ad7fd5cfc7ef3b51993f96357e563bb7ba4f2646dc07cc28e38612ff3092",
+    "git_blob_sha1": "b659c7ac789c7871cba09c0cec4e2f8e094ee7ef",
+    "epub_zip_integrity": "PASS",
+    "spine_count": 36,
+    "image_bearing_spine_xhtml": 33
+  },
+  "workflow": {
+    "repository": "https://github.com/tim8es/book-translator",
+    "requested_ref": "main",
+    "resolved_revision": "8bb9a88da6b68d1c6a914c9f9d7b7e828b837790"
+  },
+  "extraction": {
+    "command": "python scripts/book.py extract /mnt/data/Wings_of_Starlight.epub --slug wings-of-starlight-allison-saft --title 'Wings of Starlight' --author 'Allison Saft' --source-language en --target-language ru",
+    "outcome": "BLOCKED",
+    "error": "Cannot extract EPUB spine document titlepage.xhtml: No readable text found in titlepage.",
+    "additional_risk": "32 in-spine XHTML files contain <img> unsupported by strict extraction/coverage; no certified text coverage.",
+    "canonical_metadata_created": false,
+    "canonical_progress_created": false,
+    "source_coverage_certified": false,
+    "translation_admitted": false
+  },
+  "next_action": "Resolve image-only and in-spine image semantics in the source intake/coverage pathway, with explicit workflow upgrade if changing pinned revision; then initialize books/<slug> canonically from this original. Do not treat this intake as a book workspace."
+}
