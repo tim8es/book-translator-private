@@ -13,7 +13,7 @@
   "workflow_revision_during_prior_drafts": "a2d83c1de76255d8b98cfbd6bc4c769d6b11a38d",
   "canonical_workspace_initialized": false,
   "canonical_status": "not initialized; no accepted translations, no reviews, no active claims",
-  "blocker": "Link handler fix merged. Canonical extraction/coverage verification of exact Policy Change EPUB and initialization of book workspace not yet executed; original EPUB is backed up in user Library but not available as a GitHub repository binary through Chat connector.",
+  "blocker": "Exact original EPUB was recovered from user Library and SHA-256 matched. Canonical book.py extract + independent source-coverage.json and seal/verify have NOT been executed. In this Chat environment the local EPUB bytes cannot be passed into GitHub's connector-managed repository/runtime; no canonical book workspace or accepted translation exists.",
   "drafts": [
     {
       "chapter": 1,
@@ -66,11 +66,11 @@
     }
   ],
   "todo": [
-    "Transfer original exact EPUB to canonical workspace and run book.py extract with current merged revision and source coverage audit",
-    "Compare extracted reading-order units with unaccepted drafts and repair missing source link markup",
-    "Accept translations only with canonical claims and machine acceptance",
-    "Run independent source-comparison review",
-    "Translate chapters 7-10"
+    "Initialize books/policy-change from exact SHA-256 verified original EPUB using revision selected at initialization, preferably in a private writable Git workspace with Python runtime",
+    "Run canonical book.py extract, source coverage, corpus.py seal and verify; repair any coverage blockers before literary admission",
+    "Map existing provisional drafts 1-7 to verified stable source units, preserve fragment anchors/links, compare and correct",
+    "Admit via claims and accept-translation; then perform independent source-comparison review",
+    "Continue chapter 7 from its existing incomplete draft; translate remaining chapters in user's selected scope"
   ],
   "source_audit_notes": "19 relative source XHTML links with valid fragment targets in original; report saved to Library, not formal source-coverage certification",
   "workflow_fix": {
@@ -80,5 +80,19 @@
     "ci_run": "https://github.com/tim8es/book-translator/actions/runs/41056487427",
     "ci_conclusion": "success",
     "scope": "same-document XHTML fragment links; cross-document relative links still blocked"
+  },
+  "preliminary_source_preflight": {
+    "observed_on": "2026-10-30",
+    "type": "local_zip_xml_inventory_only",
+    "source_sha256_verified": true,
+    "source_sha256": "b27e61a767dd5ba93451cf0b1df5ad8d6c40b11bdead7435e0ca682768378639",
+    "xhtml_spine_units": 65,
+    "same_document_fragment_links": 19,
+    "all_link_targets_unique": true,
+    "all_target_tags": "p",
+    "no_undeclared_or_unspined_html": true,
+    "no_malformed_xhtml": true,
+    "evidence_path": "intake/policy-change/source-preflight-inventory.json",
+    "canonical_source_coverage": false
   }
 }
