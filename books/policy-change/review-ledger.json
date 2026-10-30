@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "policy-change",
-  "next_sequence": 20,
+  "next_sequence": 21,
   "records": [
     {
       "record_id": "1f8894cd56d99429b1bb61e7540a8db1",
@@ -924,6 +924,67 @@
           "structure": true
         },
         "findings": []
+      }
+    },
+    {
+      "record_id": "8fb01a7f34579b186ce7f85b408a059b",
+      "sequence": 20,
+      "unit_id": "chapter-000001",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "7ad87d98f668604b5a0620fcaa3109da2e141f9d41a6d34f54cffeeb9604e5a4",
+      "translation_sha256": "d778543365fb06998366eebd1db947ffc0a9f18cc01ce1c91b27757a3a4c6f9b",
+      "workflow_revision": "c76159e4939ed00ac19172228f8972af87cadbb8",
+      "review_contract_revision": "docs/TRANSLATION.md@c76159e4939ed00ac19172228f8972af87cadbb8",
+      "reviewer_session_id": "policy-change-reviewer-20261030-1833-d947a2be",
+      "reviewed_at": "2026-10-30T18:48:52Z",
+      "state_revision": "e252a31dc48de7590fa6c1e83bbd5c06f7ecb3e3",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "male-character-tag-agreement",
+            "category": "style",
+            "severity": "minor",
+            "detail": "В теге Relationships и повторе Characters английское Original Male Character(s) передано калькой «оригинальный мужской персонаж(и)». Формула с прилепленным «(и)» неграмматична в русском и особенно заметна в метаданных. Использовать естественную форму («оригинальный мужской персонаж / персонажи» либо «оригинальный мужской персонаж или персонажи»), сохранив обе соответствующие Markdown-ссылки и их URL.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "[Shane Hollander/Original Male](",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "[Шейн Холландер/оригинальный мужской](",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "no-rose-tag-russian-grammar",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Исходный разговорный тег «No Rose guys sorry» передан сломанной фразой «никакого Роуз ребята, простите». Русское согласование и пунктуация неестественны. Передать значение ясно, например «Роуз здесь не будет, ребята, извините», не меняя URL и разделение ссылок, заданное исходным Markdown.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "No Rose",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "никакого Роуз",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
       }
     }
   ]
