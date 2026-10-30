@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "event_id": "fbe84339d12a47adbbce83465305a883",
+  "action": "cleanup_requested",
+  "unit_id": "chapter-000062",
+  "claim_revision": "8314ff8f6e87bcd94a30d8aea6d69a6d57d2305a",
+  "claim": {
+    "schema_version": 1,
+    "claim_id": "2104df530ea849c29811257c7c5d4a59",
+    "unit_id": "chapter-000062",
+    "role": "translator",
+    "session_id": "policy-change-20261030-epilogue-13b05711",
+    "base_revision": "95c9a8801a92ec9e90131c4d934eb23f8f9744d1",
+    "base_commit": "36be0af2c4ee085b47a855079c4e9c42dd25ad05",
+    "workflow_revision": "c76159e4939ed00ac19172228f8972af87cadbb8",
+    "claimed_at": "2026-10-30T19:56:51Z",
+    "expires_at": "2026-10-30T20:56:51Z"
+  },
+  "occurred_at": "2026-10-30T22:21:07Z",
+  "reason": "lease_expired",
+  "detail": "Recover expired accepted translator claim; previous release-request audit exists."
+}
