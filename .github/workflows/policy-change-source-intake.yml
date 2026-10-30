@@ -1,0 +1,131 @@
+name: Policy Change — verified EPUB intake
+
+# One-shot, source-SHA-bound bootstrap. No changes to other books or global runtime.
+# The initial upload to this repository is a separate, explicit user action.
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'intake/policy-change/source/Policy Change.epub'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: policy-change-source-admission-main
+  cancel-in-progress: false
+
+jobs:
+  initialize:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout durable book repository
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Verify exact original before any installation or write
+        shell: bash
+        env:
+          EXPECTED_SOURCE_SHA: b27e61a767dd5ba93451cf0b1df5ad8d6c40b11bdead7435e0ca682768378639
+        run: |
+          set -euo pipefail
+          SOURCE="intake/policy-change/source/Policy Change.epub"
+          test -f "$SOURCE" || { echo "::error::Missing original EPUB at $SOURCE"; exit 1; }
+          printf '%s  %s\n' "$EXPECTED_SOURCE_SHA" "$SOURCE" | sha256sum --check --status || {
+            echo "::error::Source EPUB SHA-256 does not match the verified original"
+            exit 1
+          }
+          test "$(stat -c '%s' "$SOURCE")" -eq 488072 || {
+            echo "::error::Original EPUB size is not 488072 bytes"
+            exit 1
+          }
+          test ! -e books/policy-change || {
+            echo "::error::Canonical book workspace already exists. Refusing a second initialization."
+            exit 1
+          }
+
+      - name: Python 3.12
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+
+      - name: Fetch and pin canonical Book Translator runtime
+        shell: bash
+        env:
+          PINNED_REVISION: 9131fbaad53af98490c8e21ed67710e87b6474ab
+        run: |
+          set -euo pipefail
+          ENGINE="$RUNNER_TEMP/policy-change-engine"
+          git clone --quiet https://github.com/tim8es/book-translator.git "$ENGINE"
+          git -C "$ENGINE" checkout --quiet --detach "$PINNED_REVISION"
+          test "$(git -C "$ENGINE" rev-parse HEAD)" = "$PINNED_REVISION"
+          ENGINE="$ENGINE" python - <<'PY'
+          import json, os
+          from pathlib import Path
+          install = {
+              "schema_version": 1,
+              "canonical_repository": "https://github.com/tim8es/book-translator",
+              "requested_ref": "main",
+              "resolved_revision": os.environ["PINNED_REVISION"],
+              "install_root": ".",
+          }
+          (Path(os.environ["ENGINE"]) / ".book-translator-install.json").write_text(
+              json.dumps(install, indent=2) + "\n", encoding="utf-8"
+          )
+          PY
+
+      - name: Extract, attest source coverage, seal and verify under pinned runtime
+        shell: bash
+        env:
+          PINNED_REVISION: 9131fbaad53af98490c8e21ed67710e87b6474ab
+          EXPECTED_SOURCE_SHA: b27e61a767dd5ba93451cf0b1df5ad8d6c40b11bdead7435e0ca682768378639
+        run: |
+          set -euo pipefail
+          ENGINE="$RUNNER_TEMP/policy-change-engine"
+          SOURCE="$GITHUB_WORKSPACE/intake/policy-change/source/Policy Change.epub"
+          cd "$ENGINE"
+          python scripts/book.py extract "$SOURCE" --slug policy-change --target-language ru
+          python scripts/corpus.py seal policy-change
+          python scripts/book.py validate policy-change
+          python scripts/corpus.py verify policy-change
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          book = Path("books/policy-change")
+          metadata = json.loads((book / "metadata.json").read_text(encoding="utf-8"))
+          progress = json.loads((book / "progress.json").read_text(encoding="utf-8"))
+          coverage = json.loads((book / "source-coverage.json").read_text(encoding="utf-8"))
+          assert metadata["workflow"]["resolved_revision"] == os.environ["PINNED_REVISION"], "wrong workflow revision"
+          assert metadata["source"]["sha256"] == os.environ["EXPECTED_SOURCE_SHA"], "metadata/source hash mismatch"
+          assert coverage["source_sha256"] == os.environ["EXPECTED_SOURCE_SHA"], "coverage/source hash mismatch"
+          assert progress["chapters"], "no extracted source units"
+          assert all(c["status"] == "extracted" for c in progress["chapters"]), "unexpected pre-accepted units"
+          assert (book / "review-ledger.json").is_file(), "missing review ledger"
+          assert (book / "source-revisions.json").is_file(), "missing immutable source revision record"
+          print(f"Source coverage recorded, pinned revision verified, extracted units: {len(progress['chapters'])}")
+          PY
+
+      - name: Commit verified canonical state only, without touching legacy drafts
+        shell: bash
+        run: |
+          set -euo pipefail
+          test ! -e books/policy-change || {
+            echo "::error::Canonical workspace appeared during extraction; refusing overwrite."
+            exit 1
+          }
+          cp -a "$RUNNER_TEMP/policy-change-engine/books/policy-change" books/policy-change
+          git add -- books/policy-change
+          git diff --cached --quiet && { echo "::error::No canonical artifacts to publish"; exit 1; }
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m "init(policy-change): pin workflow and admit verified EPUB source"
+          git fetch --quiet origin main
+          test "$(git rev-parse HEAD^)" = "$(git rev-parse origin/main)" || {
+            echo "::error::Main changed while extracting. Do not force-push; rerun from a fresh checkout."
+            exit 1
+          }
+          git push origin HEAD:main
