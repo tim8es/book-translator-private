@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "policy-change",
-  "next_sequence": 40,
+  "next_sequence": 41,
   "records": [
     {
       "record_id": "1f8894cd56d99429b1bb61e7540a8db1",
@@ -1765,6 +1765,67 @@
           "structure": true
         },
         "findings": []
+      }
+    },
+    {
+      "record_id": "6729fa77b22448d89b6952106ea44f03",
+      "sequence": 40,
+      "unit_id": "chapter-000046",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "682d5dd7247123c83fcf81473c80db1620b25be49518fa40a16b15ce3d38f014",
+      "translation_sha256": "f08187c7d2123b251d034e6d8098143f1c1b7e6dfff1603bfbc4c43d84c7d528",
+      "workflow_revision": "c76159e4939ed00ac19172228f8972af87cadbb8",
+      "review_contract_revision": "docs/TRANSLATION.md@c76159e4939ed00ac19172228f8972af87cadbb8",
+      "reviewer_session_id": "policy-change-reviewer-20261030-1921-557f0e0b",
+      "reviewed_at": "2026-10-30T19:21:01Z",
+      "state_revision": "79f783be8dfac59cfecf6f94b04777b0c0c94c0b",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "conditional-would-shift",
+            "category": "modality",
+            "severity": "minor",
+            "detail": "«Would see more of» передано как обещание «увидим»; условно-ретроспективная перспектива оригинала утрачена. Передать «узнали бы/увидели бы подробнее» в подходящем контексте, без уверенного будущего.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "things that we would see more of in the Long Game.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "что мы подробнее увидим в «Долгой игре».",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "unsourced-again",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "В исходной фразе только увеличение числа глав, «снова» добавляет не утверждённую здесь повторность. Убрать «снова», если дополнительный контекст не подтверждает его.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "the chapter count has gone up.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "количество глав снова увеличилось.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
       }
     }
   ]
