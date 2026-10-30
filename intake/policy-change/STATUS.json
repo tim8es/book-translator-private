@@ -13,7 +13,7 @@
   "workflow_revision_during_prior_drafts": "a2d83c1de76255d8b98cfbd6bc4c769d6b11a38d",
   "canonical_workspace_initialized": false,
   "canonical_status": "not initialized; no accepted translations, no reviews, no active claims",
-  "blocker": "EPUB in-text relative fragment anchors rejected by current source coverage/Markdown renderer; needs planned workflow change",
+  "blocker": "Link handler fix merged. Canonical extraction/coverage verification of exact Policy Change EPUB and initialization of book workspace not yet executed; original EPUB is backed up in user Library but not available as a GitHub repository binary through Chat connector.",
   "drafts": [
     {
       "chapter": 1,
@@ -66,11 +66,19 @@
     }
   ],
   "todo": [
-    "Implement and test EPUB relative link remapping in public workflow repository with PR",
-    "Initialize canonical Policy Change workspace with validated source coverage",
-    "Reconcile drafted chapter files with extracted source units and accept only after claims/verification",
-    "Perform independent review",
-    "Finish chapters 7-10"
+    "Transfer original exact EPUB to canonical workspace and run book.py extract with current merged revision and source coverage audit",
+    "Compare extracted reading-order units with unaccepted drafts and repair missing source link markup",
+    "Accept translations only with canonical claims and machine acceptance",
+    "Run independent source-comparison review",
+    "Translate chapters 7-10"
   ],
-  "source_audit_notes": "19 relative source XHTML links with valid fragment targets in original; report saved to Library, not formal source-coverage certification"
+  "source_audit_notes": "19 relative source XHTML links with valid fragment targets in original; report saved to Library, not formal source-coverage certification",
+  "workflow_fix": {
+    "pr": "https://github.com/tim8es/book-translator/pull/112",
+    "merged": true,
+    "resolved_revision": "9131fbaad53af98490c8e21ed67710e87b6474ab",
+    "ci_run": "https://github.com/tim8es/book-translator/actions/runs/41056487427",
+    "ci_conclusion": "success",
+    "scope": "same-document XHTML fragment links; cross-document relative links still blocked"
+  }
 }
