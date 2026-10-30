@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "policy-change",
-  "next_sequence": 6,
+  "next_sequence": 7,
   "records": [
     {
       "record_id": "1f8894cd56d99429b1bb61e7540a8db1",
@@ -222,6 +222,131 @@
           "structure": true
         },
         "findings": []
+      }
+    },
+    {
+      "record_id": "5af3353f4da070dd6922fd496987e557",
+      "sequence": 6,
+      "unit_id": "chapter-000006",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "57420a78227a428f8385f7bc1d09300de087e2a2a084c865f04c576c8531fa96",
+      "translation_sha256": "acfaffd93b9bdd927926957d3cc68d0daddbe4796b40829fdbf67f93b819495b",
+      "workflow_revision": "c76159e4939ed00ac19172228f8972af87cadbb8",
+      "review_contract_revision": "docs/TRANSLATION.md@c76159e4939ed00ac19172228f8972af87cadbb8",
+      "reviewer_session_id": "policy-change-reviewer-20261030-44de51ac",
+      "reviewed_at": "2026-10-30T17:18:00Z",
+      "state_revision": "cbd1a1feea54ce6d00ac8b8ef6a3378a9f74d3a1",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "pink-buzzcut-lost",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Исходное pink buzzcut описывает очень короткую стрижку под машинку, а не просто короткие розовые волосы. Восстановить точный тип причёски Алекса Готье; аналогичный сдвиг найден в главе 1.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "the person with the pink buzzcut, who was identified as Alex Gauthier, from Montreal.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "тот самый с короткими розовыми волосами. Алекс Готье, родом из Монреаля.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "jaw-grammar-agreement",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Грамматическая ошибка согласования «отвалилось челюсть». Исправить на грамматически корректное и естественное описание реакции Шейна, например «Шейн разинул рот».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Shane’s mouth dropped open.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "У Шейна отвалилось челюсть.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "misread-fuck-exclamation",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "В имитации реплик Розанова английское Fuck перед Hollander — эмоциональное ругательство, а не повеление. «Трахайся, Холландер» приписывает говорящему другое действие/смысл; заменить на экспрессивное междометие («Блядь, Холландер…»), сохранив повтор имени.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "*Fuck Hollander, you’re so good Hollander, I’m going to come, Hollander,*",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Трахайся, Холландер, ты такой хороший, Холландер, я сейчас кончу, Холландер»",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "untuck-not-unbutton",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Untucked his shirt означает вынул полы рубашки из брюк, а не расстегнул её. Перевод меняет физическое действие; исправить его.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Shane stripped down to his smart pants and untucked his shirt",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Шейн остался в строгих брюках и расстегнул рубашку, выбравшись из пиджака",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "chat-italics-lost",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "В оригинале сообщения Jane/Lily используют курсив текста (*...*), тогда как в переводе выделены жирным только имена отправителей, а сообщения лишены курсива. Восстановить смысловое форматирование всей переписки этого фрагмента, не меняя адресатов, код и порядок сообщений.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Jane: *I’m going to be late after. Have a dinner thing.*",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "**Джейн:** Я потом задержусь. У меня ужин.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "invented-self-correction",
+            "category": "voice",
+            "severity": "minor",
+            "detail": "Исходник прямо сообщает, что Шейн уже много раз слышал такие похвалы, без самоисправления. В переводе добавлена противоположная фраза и её немедленная отмена («Вернее…»), что меняет ритм и голос. Убрать вымышленное самоисправление.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "It was nothing Shane hadn’t heard before.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Ничего такого Шейн раньше не слышал. Вернее, слышал уже множество раз.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
       }
     }
   ]
