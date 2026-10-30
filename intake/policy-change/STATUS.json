@@ -13,7 +13,7 @@
   "workflow_revision_during_prior_drafts": "a2d83c1de76255d8b98cfbd6bc4c769d6b11a38d",
   "canonical_workspace_initialized": false,
   "canonical_status": "not initialized; no accepted translations, no reviews, no active claims",
-  "blocker": "Exact original EPUB was recovered from user Library and SHA-256 matched. Canonical book.py extract + independent source-coverage.json and seal/verify have NOT been executed. In this Chat environment the local EPUB bytes cannot be passed into GitHub's connector-managed repository/runtime; no canonical book workspace or accepted translation exists.",
+  "blocker": "One-shot SHA-pinned GitHub Actions EPUB intake is now installed, but the exact original binary has not been placed in GitHub at intake/policy-change/source/Policy Change.epub. The Chat attachment is separate from GitHub. No canonical books/policy-change/ workspace or original-bound source-coverage PASS exists yet.",
   "drafts": [
     {
       "chapter": 1,
@@ -66,11 +66,11 @@
     }
   ],
   "todo": [
-    "Initialize books/policy-change from exact SHA-256 verified original EPUB using revision selected at initialization, preferably in a private writable Git workspace with Python runtime",
-    "Run canonical book.py extract, source coverage, corpus.py seal and verify; repair any coverage blockers before literary admission",
-    "Map existing provisional drafts 1-7 to verified stable source units, preserve fragment anchors/links, compare and correct",
-    "Admit via claims and accept-translation; then perform independent source-comparison review",
-    "Continue chapter 7 from its existing incomplete draft; translate remaining chapters in user's selected scope"
+    "Place exact EPUB binary at intake/policy-change/source/Policy Change.epub on main, only with intended repository visibility; GitHub Actions will run the pinned one-shot source intake",
+    "Verify GitHub Actions run success and actual books/policy-change metadata, source-coverage, sealed corpus and SHA bindings; do not infer PASS from workflow installation",
+    "Map prior provisional drafts 1-7 against the canonical 65 extracted reading-order units and restore missing author end notes and fragment anchors/links",
+    "Admit each translation under its own translator claim and CAS acceptance; then independent reviewer evidence and accept-review",
+    "Continue remaining units to final verified EPUB"
   ],
   "source_audit_notes": "19 relative source XHTML links with valid fragment targets in original; report saved to Library, not formal source-coverage certification",
   "workflow_fix": {
@@ -94,5 +94,17 @@
     "no_malformed_xhtml": true,
     "evidence_path": "intake/policy-change/source-preflight-inventory.json",
     "canonical_source_coverage": false
+  },
+  "source_intake": {
+    "status": "WAITING_FOR_EXACT_BINARY_IN_REPOSITORY",
+    "workflow_path": ".github/workflows/policy-change-source-intake.yml",
+    "expected_upload_path": "intake/policy-change/source/Policy Change.epub",
+    "expected_sha256": "b27e61a767dd5ba93451cf0b1df5ad8d6c40b11bdead7435e0ca682768378639",
+    "expected_bytes": 488072,
+    "workflow_revision_for_new_book": "9131fbaad53af98490c8e21ed67710e87b6474ab",
+    "workflow_committed": true,
+    "workflow_executed_successfully": false,
+    "warning": "Repository visibility is public; uploading the EPUB publishes copyrighted source and Git history.",
+    "leaves_existing_books_unmodified": true
   }
 }
