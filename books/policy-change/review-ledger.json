@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "policy-change",
-  "next_sequence": 24,
+  "next_sequence": 25,
   "records": [
     {
       "record_id": "1f8894cd56d99429b1bb61e7540a8db1",
@@ -1118,6 +1118,67 @@
           "structure": true
         },
         "findings": []
+      }
+    },
+    {
+      "record_id": "732b31541cc9d6ee66d6aa71c8edabd4",
+      "sequence": 24,
+      "unit_id": "chapter-000023",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "ca25474724caa2d062361cb73d3c109d1f9d6997ea8fbd161cca56e0ef262df0",
+      "translation_sha256": "db386f5c8d6d1a4df5a2f342dda098a45a00b2e2d15f40a6e1df4593f2ad486c",
+      "workflow_revision": "c76159e4939ed00ac19172228f8972af87cadbb8",
+      "review_contract_revision": "docs/TRANSLATION.md@c76159e4939ed00ac19172228f8972af87cadbb8",
+      "reviewer_session_id": "policy-change-reviewer-20261030-1833-d947a2be",
+      "reviewed_at": "2026-10-30T18:57:47Z",
+      "state_revision": "e252a31dc48de7590fa6c1e83bbd5c06f7ecb3e3",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "petrov-out-of-picture-referent",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "В исходнике «Petrov was out of the picture now» означает, что Петров больше не рассматривается как участник личной ситуации/возможных отношений Шейна; Петров остаётся его руководителем. Перевод «исчез из жизни Шейна» неверно сообщает об исчезновении человека из жизни героя. Кроме того, последующее «сплетничать о нём» двусмысленно, хотя имеется в виду риск распространения личных сведений о Шейне. Уточнить оба референта без добавления факта разрыва связи с Петровым.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "He knew Petrov but Petrov was out of the picture now, as well",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Петрова он знал, но тот теперь тоже исчез из жизни Шейна",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "came-out-text-clumsy",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Исходное сообщение «I came out to my parents just like you said I would» передано неестественной конструкцией «Я признался родителям, как ты и говорил, что я сделаю»; последняя часть грамматически плохо связана с действием, и каминг-аут не назван ясно. Упростить, например: «Я рассказал родителям о себе — прямо как ты и говорил, что я сделаю», сохранив факт признания и тон сообщения.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Jane*: I came out to my parents just like you said I would*",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Джейн: *Я признался родителям, как ты и говорил, что я сделаю.*",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
       }
     }
   ]
