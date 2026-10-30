@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "kind": "strict_local_static_preflight_not_canonical_source_coverage",
+  "observed_on": "2026-10-30",
+  "source_sha256": "b27e61a767dd5ba93451cf0b1df5ad8d6c40b11bdead7435e0ca682768378639",
+  "source_bytes": 488072,
+  "workflow_revision_candidate": "c76159e4939ed00ac19172228f8972af87cadbb8",
+  "original_sha_matches_intake": true,
+  "checks": {
+    "spine_xhtml": 65,
+    "manifest_xhtml": 65,
+    "archive_xhtml": 65,
+    "body_element_count": 65,
+    "xhtml_body_nodes_scanned": 9700,
+    "paragraph_nodes": 7274,
+    "anchor_count": 51,
+    "safe_external_href_count": 24,
+    "external_href_needing_parentheses_encoding": 8,
+    "verified_same_document_fragment_links": 19,
+    "missing_relative_targets": 0,
+    "xml_parse_failures": 0,
+    "unsupported_body_elements": 0,
+    "unsupported_semantic_attributes": 0,
+    "off_spine_xhtml": 0
+  },
+  "static_failures": [],
+  "diagnostic_limits": "This independent local structural inventory verifies the exact original, but it does NOT execute the pinned book.py extractor, the independent original-bound token/block parity check, corpus.py seal/verify, or the canonical source-coverage gate. No canonical PASS may be inferred.",
+  "remaining_blocker": "Source EPUB bytes are in the ChatGPT local container, which has outbound network blocked (DNS and TCP). GitHub's connector can write UTF-8 text but does not expose a direct local-attachment binary upload operation. GitHub books repository remains PUBLIC.",
+  "next_gate": "Run pinned c76159e.. book.py extract, independent EPUB source coverage, corpus seal, book validate, corpus verify in an authorized private/writable runtime with exact source bytes."
+}
