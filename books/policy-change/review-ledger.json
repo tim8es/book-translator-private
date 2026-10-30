@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "policy-change",
-  "next_sequence": 43,
+  "next_sequence": 44,
   "records": [
     {
       "record_id": "1f8894cd56d99429b1bb61e7540a8db1",
@@ -1867,6 +1867,34 @@
       "review_contract_revision": "docs/TRANSLATION.md@c76159e4939ed00ac19172228f8972af87cadbb8",
       "reviewer_session_id": "policy-change-reviewer-20261030-1903-72d29f8b",
       "reviewed_at": "2026-10-30T19:24:44Z",
+      "state_revision": "e03195ceea349d24eae2a6f7be97b670c2bdec9b",
+      "review_commit": null,
+      "correction_round": 0,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": []
+      }
+    },
+    {
+      "record_id": "673d9a6d97f832fce02c17280d5a3de5",
+      "sequence": 43,
+      "unit_id": "chapter-000055",
+      "outcome": "PASS",
+      "source_sha256": "ce06c5d963c86c34e0f8ced48a1cb376ff1338e5fcc83e410c79f6fc1e1d69b8",
+      "translation_sha256": "ccfe077499c22ba1fe65eb4c2b6ed6c9eddf3809b390310cd808a3f2e4fa60d8",
+      "workflow_revision": "c76159e4939ed00ac19172228f8972af87cadbb8",
+      "review_contract_revision": "docs/TRANSLATION.md@c76159e4939ed00ac19172228f8972af87cadbb8",
+      "reviewer_session_id": "policy-change-reviewer-20261030-1925-396c177a",
+      "reviewed_at": "2026-10-30T19:26:03Z",
       "state_revision": "e03195ceea349d24eae2a6f7be97b670c2bdec9b",
       "review_commit": null,
       "correction_round": 0,
