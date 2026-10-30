@@ -13,7 +13,7 @@
   "workflow_revision_during_prior_drafts": "a2d83c1de76255d8b98cfbd6bc4c769d6b11a38d",
   "canonical_workspace_initialized": false,
   "canonical_status": "not initialized; no accepted translations, no reviews, no active claims",
-  "blocker": "Two confirmed independent admission blockers: (1) 8 original XHTML external anchor href instances in index_split_000.html contain literal parentheses rejected by pinned 9131fba revision's SAFE_HREF_RE/_canonical_href, so exact original EPUB cannot pass extraction/coverage unmodified; (2) exact source EPUB binary has not been transported from ChatGPT/local FS into GitHub (local github.com DNS unavailable; connector does not accept local binary bytes). Current GitHub Actions intake is installed but unexecuted, and cannot produce a canonical workspace until both gates are resolved.",
+  "blocker": "Canonical source admission is still pending: byte-identical original EPUB is available in ChatGPT/local storage but has not been transferred to the GitHub repository/runtime. The GitHub repository is PUBLIC and publishing the original EPUB would expose copyrighted source and Git history. The workflow link-compatibility fix is merged and full CI is PASS, but the complete original-specific extract/coverage/seal/verify gate has NOT been executed. No canonical book exists.",
   "drafts": [
     {
       "chapter": 1,
@@ -66,11 +66,10 @@
     }
   ],
   "todo": [
-    "Resolve the confirmed unsafe external href handling through a properly reviewed workflow fix, without mutating exact original EPUB; select resolved revision at initial book setup (not yet initialized)",
-    "Transport original exact 488072-byte EPUB to a GitHub-connected writable workspace with safe publication/access; verify original SHA-256",
-    "Run canonical book.py extract and original-bound independent source-coverage audit, corpus.py seal, validate, verify; publish only successful checked artifacts",
-    "Map unaccepted drafts to source reading-order units; preserve anchors and restore missing author note in draft chapter 6",
-    "Apply live claims and CAS translation acceptance; separate independent source comparison and machine review; never mark PASS without evidence"
+    "Safely transfer exact original EPUB bytes (SHA-256 b27e61a767dd5ba93451cf0b1df5ad8d6c40b11bdead7435e0ca682768378639) into a private or explicitly authorized writable GitHub Actions runtime; do not confuse public upload with a private source transfer",
+    "Run pinned merged c76159e4939ed00ac19172228f8972af87cadbb8 book.py extract; verify source-coverage original-bound PASS, corpus seal/verify and book validate; create canonical books/policy-change only after all gates actually succeed",
+    "Compare old provisional chapter drafts 1-7 to exact source-unit mapping, correct missing original notes and links, do not promote from draft without current machine acceptance",
+    "Claim and accept translation per source unit under CAS, then independent reviewer and current source-comparison evidence, fix/recheck, and final build"
   ],
   "source_audit_notes": "19 relative source XHTML links with valid fragment targets in original; report saved to Library, not formal source-coverage certification",
   "workflow_fix": {
@@ -96,26 +95,31 @@
     "canonical_source_coverage": false
   },
   "source_intake": {
-    "status": "WAITING_FOR_EXACT_BINARY_IN_REPOSITORY",
+    "status": "WAITING_FOR_EXACT_BINARY_IN_AUTHORIZED_GITHUB_RUNTIME",
     "workflow_path": ".github/workflows/policy-change-source-intake.yml",
     "expected_upload_path": "intake/policy-change/source/Policy Change.epub",
     "expected_sha256": "b27e61a767dd5ba93451cf0b1df5ad8d6c40b11bdead7435e0ca682768378639",
     "expected_bytes": 488072,
-    "workflow_revision_for_new_book": "9131fbaad53af98490c8e21ed67710e87b6474ab",
+    "workflow_revision_for_new_book": "c76159e4939ed00ac19172228f8972af87cadbb8",
     "workflow_committed": true,
     "workflow_executed_successfully": false,
     "warning": "Repository visibility is public; uploading the EPUB publishes copyrighted source and Git history.",
     "leaves_existing_books_unmodified": true
   },
   "source_link_compatibility": {
-    "status": "CONFIRMED_ADMISSION_BLOCKER",
+    "status": "FIX_MERGED_CI_PASS_ORIGINAL_ADMISSION_NOT_RUN",
     "verified_against_original_sha256": "b27e61a767dd5ba93451cf0b1df5ad8d6c40b11bdead7435e0ca682768378639",
     "verified_against_revision": "9131fbaad53af98490c8e21ed67710e87b6474ab",
     "source_path": "index_split_000.html",
     "rejected_href_instances": 8,
     "unique_rejected_hrefs": 4,
     "evidence_path": "intake/policy-change/EXTERNAL_LINK_ADMISSION_BLOCKER.json",
-    "requires_workflow_fix": true,
-    "public_workflow_not_modified": true
-  }
+    "requires_workflow_fix": false,
+    "public_workflow_not_modified": false,
+    "merge_revision": "c76159e4939ed00ac19172228f8972af87cadbb8",
+    "regression_pull_request": "https://github.com/tim8es/book-translator/pull/113",
+    "full_ci_run": "https://github.com/tim8es/book-translator/actions/runs/41075372205",
+    "full_ci_conclusion": "success"
+  },
+  "proposed_new_workspace_revision": "c76159e4939ed00ac19172228f8972af87cadbb8"
 }
