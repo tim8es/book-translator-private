@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "policy-change",
-  "next_sequence": 59,
+  "next_sequence": 60,
   "records": [
     {
       "record_id": "1f8894cd56d99429b1bb61e7540a8db1",
@@ -2464,6 +2464,51 @@
           "structure": true
         },
         "findings": []
+      }
+    },
+    {
+      "record_id": "7c25c69264e947b3a3a20c120b5b27d3",
+      "sequence": 59,
+      "unit_id": "chapter-000037",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "48e519e08a7ec436b2135158f248c1688b4130529cbbf84b411937533b3d0a2e",
+      "translation_sha256": "b65c41c884501047f59197da505145b02b227b8002598541f2a852cd57b2d832",
+      "workflow_revision": "c76159e4939ed00ac19172228f8972af87cadbb8",
+      "review_contract_revision": "docs/TRANSLATION.md@c76159e4939ed00ac19172228f8972af87cadbb8",
+      "reviewer_session_id": "policy-change-reviewer-20261031-0120-b4d6f04e",
+      "reviewed_at": "2026-10-30T22:40:02Z",
+      "state_revision": "cb661860f0cd9104b17a965bc7fcb67d5445041d",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "half-sibling-kinship-shift",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "В контексте разговора о кровном родстве «Full or otherwise» означает отсутствие и полнородных, и неполнородных братьев/сестёр (с одним общим родителем). Русское «ни родных, ни сводных» смещает значение к сводным членам семьи, не связанным кровным родством, и упускает неполнородных. Передать например «Ни полнородных, ни неполнородных братьев и сестёр» либо «Ни родных, ни по одному родителю».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "None. Full or otherwise.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Никого. Ни родных, ни сводных.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
       }
     }
   ]
