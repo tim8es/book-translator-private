@@ -13,7 +13,7 @@
   "workflow_revision_during_prior_drafts": "a2d83c1de76255d8b98cfbd6bc4c769d6b11a38d",
   "canonical_workspace_initialized": false,
   "canonical_status": "not initialized; no accepted translations, no reviews, no active claims",
-  "blocker": "Canonical source admission is still pending: byte-identical original EPUB is available in ChatGPT/local storage but has not been transferred to the GitHub repository/runtime. The GitHub repository is PUBLIC and publishing the original EPUB would expose copyrighted source and Git history. The workflow link-compatibility fix is merged and full CI is PASS, but the complete original-specific extract/coverage/seal/verify gate has NOT been executed. No canonical book exists.",
+  "blocker": "Exact original EPUB has been reuploaded in this chat and matches expected SHA-256/size; a static full-body scan of 65 source XHTML files finds no currently unsupported semantic tags/attributes and verifies 51 links. BUT source bytes remain confined to the ChatGPT local container: its GitHub DNS/TCP access is blocked, and available authenticated GitHub connector has no direct user-file binary upload. Repo remains PUBLIC. Canonical extract, original-bound independent source-coverage, seal, validate and verify are NOT run; no books/policy-change/",
   "drafts": [
     {
       "chapter": 1,
@@ -66,10 +66,9 @@
     }
   ],
   "todo": [
-    "Safely transfer exact original EPUB bytes (SHA-256 b27e61a767dd5ba93451cf0b1df5ad8d6c40b11bdead7435e0ca682768378639) into a private or explicitly authorized writable GitHub Actions runtime; do not confuse public upload with a private source transfer",
-    "Run pinned merged c76159e4939ed00ac19172228f8972af87cadbb8 book.py extract; verify source-coverage original-bound PASS, corpus seal/verify and book validate; create canonical books/policy-change only after all gates actually succeed",
-    "Compare old provisional chapter drafts 1-7 to exact source-unit mapping, correct missing original notes and links, do not promote from draft without current machine acceptance",
-    "Claim and accept translation per source unit under CAS, then independent reviewer and current source-comparison evidence, fix/recheck, and final build"
+    "Move exact 488072-byte EPUB into an authorized GitHub-connected runtime (ensure intended repository visibility); run the installed one-shot GitHub Action from the precise source SHA",
+    "Do not claim admission before repo books/policy-change/metadata, source-coverage, progress, corpus seal and validate/verify are checked",
+    "Reconcile legacy provisional drafts with exact source units, then claim/CAS translator, independent review, corrections and final build"
   ],
   "source_audit_notes": "19 relative source XHTML links with valid fragment targets in original; report saved to Library, not formal source-coverage certification",
   "workflow_fix": {
@@ -95,7 +94,7 @@
     "canonical_source_coverage": false
   },
   "source_intake": {
-    "status": "WAITING_FOR_EXACT_BINARY_IN_AUTHORIZED_GITHUB_RUNTIME",
+    "status": "SOURCE_REUPLOAD_VERIFIED_LOCALLY_GITHUB_BINARY_INGRESS_PENDING",
     "workflow_path": ".github/workflows/policy-change-source-intake.yml",
     "expected_upload_path": "intake/policy-change/source/Policy Change.epub",
     "expected_sha256": "b27e61a767dd5ba93451cf0b1df5ad8d6c40b11bdead7435e0ca682768378639",
@@ -121,5 +120,16 @@
     "full_ci_run": "https://github.com/tim8es/book-translator/actions/runs/41075372205",
     "full_ci_conclusion": "success"
   },
-  "proposed_new_workspace_revision": "c76159e4939ed00ac19172228f8972af87cadbb8"
+  "proposed_new_workspace_revision": "c76159e4939ed00ac19172228f8972af87cadbb8",
+  "local_original_reuploaded_verification": {
+    "checked_on": "2026-10-30",
+    "attachment_id": "file_00000000ca0c81f594a78190fbc1c296",
+    "size_bytes": 488072,
+    "source_sha256": "b27e61a767dd5ba93451cf0b1df5ad8d6c40b11bdead7435e0ca682768378639",
+    "matches_recorded_original": true,
+    "zip_crc_ok": true,
+    "static_strict_preflight_file": "intake/policy-change/PRELIMINARY_STRICT_XHTML_PREFLIGHT.json",
+    "static_xhtml_anomaly_count": 0,
+    "full_workflow_executed": false
+  }
 }
