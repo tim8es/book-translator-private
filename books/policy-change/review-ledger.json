@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "policy-change",
-  "next_sequence": 22,
+  "next_sequence": 23,
   "records": [
     {
       "record_id": "1f8894cd56d99429b1bb61e7540a8db1",
@@ -1013,6 +1013,83 @@
           "structure": true
         },
         "findings": []
+      }
+    },
+    {
+      "record_id": "31b6505e9bbed91c24bc91db2db05c0e",
+      "sequence": 22,
+      "unit_id": "chapter-000018",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "33f0846d72d7c7023f37f67f1cae590508c7ad5bf2db289668cbdabaa010191f",
+      "translation_sha256": "aed4afd576b39ebb50b15ea17072fe1864470a5c1f5e9e0d26c304bf2edf6ec8",
+      "workflow_revision": "c76159e4939ed00ac19172228f8972af87cadbb8",
+      "review_contract_revision": "docs/TRANSLATION.md@c76159e4939ed00ac19172228f8972af87cadbb8",
+      "reviewer_session_id": "policy-change-reviewer-20261030-resume-e517c6ab",
+      "reviewed_at": "2026-10-30T18:54:54Z",
+      "state_revision": "e252a31dc48de7590fa6c1e83bbd5c06f7ecb3e3",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "wiebe-name-inconsistent",
+            "category": "terminology",
+            "severity": "major",
+            "detail": "Фамилия тренера Wiebe в ранее проверенных главах переводилась как «Вибе» (например, блоки № 11 и 13), а весь блок № 18 систематически использует «Уиб». Это разрывает узнаваемость одного персонажа и согласованность книги. Унифицировать с установленным ранее вариантом в этом блоке, сохраняя соответствующие окончания.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Wiebe was leaning back on his chair",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Уиб откинулся на спинку кресла",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "alex-pronouns-masculine-agreement",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "В оригинале Алекс использует they/them; предыдущие русские главы согласуют глаголы с Алекс во множественном числе («Алекс сказали/пожали»). Здесь русская наррация внезапно переводит Алекс в мужской род: «Алекс оказался», «Алекс улыбнулся», что нарушает установленное представление персонажа и связность с обращениями «они/сказали» в той же сцене. Привести согласование по всей главе к принятому варианту, не меняя идентичность персонажа.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "To Shane’s absolute surprise, Alex was on his side.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "К совершенному удивлению Шейна, Алекс оказался на его стороне.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "marlene-missing-question-mark",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "Оригинальное письмо Марлен заканчивается вопросительной по смыслу фразой «Will you be hungry.» с намеренно сухой точкой вместо вопросительного знака. В переводе стоит «Вы будете голодны?», что сглаживает её характерную манеру писать без вопросительного знака (такой приём встречается и ранее). Сохранить пунктуационную особенность и смысл.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Will you be hungry.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Вы будете голодны?",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
       }
     }
   ]
