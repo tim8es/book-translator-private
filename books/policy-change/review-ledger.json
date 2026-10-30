@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "policy-change",
-  "next_sequence": 27,
+  "next_sequence": 28,
   "records": [
     {
       "record_id": "1f8894cd56d99429b1bb61e7540a8db1",
@@ -1247,6 +1247,51 @@
             },
             "translation_anchor": {
               "quote": "не было никого, с кем он мог бы открыто признаться, что хочет его отпраздновать.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "8f86c457705847bca5633bb7dfb4d7f0",
+      "sequence": 27,
+      "unit_id": "chapter-000043",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "27b375f24122b2cec486180ffe859a912e143c1c574d1cd67eef5e8a2ceff957",
+      "translation_sha256": "0ca5192855449321bb984417bdd90264640cf3fda0dcbc1e51450868a195dad4",
+      "workflow_revision": "c76159e4939ed00ac19172228f8972af87cadbb8",
+      "review_contract_revision": "docs/TRANSLATION.md@c76159e4939ed00ac19172228f8972af87cadbb8",
+      "reviewer_session_id": "policy-change-reviewer-20261030-1857-b6e39f20",
+      "reviewed_at": "2026-10-30T19:00:20Z",
+      "state_revision": "a4423fc3ad3820377e83fc7c0ef0326b33616ac3",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "pov-russian-calque",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Калька «оставаясь только в точке зрения Шейна» неестественна по-русски и нарушает разговорный тон авторского примечания. Передать смысл POV естественно, например: «когда всё показано лишь глазами Шейна», сохранив лёгкую интонацию и «ахаха».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "it is so hard to convey through just Shane's POV hahaha.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "и ужасно трудно передать это, оставаясь только в точке зрения Шейна, ахаха.",
               "occurrence": 0
             },
             "resolves": null
