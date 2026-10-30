@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "policy-change",
-  "next_sequence": 3,
+  "next_sequence": 4,
   "records": [
     {
       "record_id": "1f8894cd56d99429b1bb61e7540a8db1",
@@ -100,6 +100,67 @@
             },
             "translation_anchor": {
               "quote": "Там была женщина — кажется? — с короткими розовыми волосами.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "1cc3f543bb30a9b128651bf086b86dca",
+      "sequence": 3,
+      "unit_id": "chapter-000004",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "1a5d2d0b0b488ba655c032c1a679c805d216a50f32df0bbe5a2476c359e4948d",
+      "translation_sha256": "10947b0b81eee0e3b5733f601c2ac0e69d3da8a3cbb6bd388cbea14ae5845f39",
+      "workflow_revision": "c76159e4939ed00ac19172228f8972af87cadbb8",
+      "review_contract_revision": "docs/TRANSLATION.md@c76159e4939ed00ac19172228f8972af87cadbb8",
+      "reviewer_session_id": "policy-change-reviewer-20261030-chat-cd7f2a4e",
+      "reviewed_at": "2026-10-30T16:42:39Z",
+      "state_revision": "cbd1a1feea54ce6d00ac8b8ef6a3378a9f74d3a1",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "chat-emphasis-format",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "В исходной главе сообщения переписки целиком выделены курсивом (*Lily: ...* и *Jane: ...*), а перевод меняет систему оформления: жирным выделяется только имя, остальное не выделено. Привести блок переписки к оригинальному смысловому форматированию, сохранив названия отправителей и последовательность сообщений.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "*Lily: Who are you talking to*",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "**Лили:** С кем ты разговариваешь",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "you-are-the-worst-idiom",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Английская идиома «You are the worst» в этой реплике выражает раздражённо-ласковое «Ты просто невыносим / Ты ужасен», а дословное «Ты худший» по-русски звучит как оценка в рейтинге, меняет оттенок речи Розанова. Передать идиому функционально.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "You are the worst, Hollander. See you in October.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Ты худший, Холландер. Увидимся в октябре.",
               "occurrence": 0
             },
             "resolves": null
