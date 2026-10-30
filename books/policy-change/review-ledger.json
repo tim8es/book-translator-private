@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "policy-change",
-  "next_sequence": 64,
+  "next_sequence": 65,
   "records": [
     {
       "record_id": "1f8894cd56d99429b1bb61e7540a8db1",
@@ -2869,6 +2869,92 @@
             "resolves": {
               "record_id": "5af3353f4da070dd6922fd496987e557",
               "finding_id": "invented-self-correction"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "b0feefb6c37f4f43ac3b9b3e232386a3",
+      "sequence": 64,
+      "unit_id": "chapter-000008",
+      "outcome": "PASS",
+      "source_sha256": "7311c8def44fbe02165755882c7922ebf5f4756b7fe5e33784902dc015239630",
+      "translation_sha256": "02b65b03df9fcd818fe915c5da132cb5c206904e4c6991524ebc0c88a200719e",
+      "workflow_revision": "c76159e4939ed00ac19172228f8972af87cadbb8",
+      "review_contract_revision": "docs/TRANSLATION.md@c76159e4939ed00ac19172228f8972af87cadbb8",
+      "reviewer_session_id": "policy-change-reviewer-20261031-0226-b6d7c21a",
+      "reviewed_at": "2026-10-30T23:41:42Z",
+      "state_revision": "d950d6bb237dfe62db2eb6dba966c64f69e16ed5",
+      "review_commit": null,
+      "correction_round": 2,
+      "supersedes_record_id": "b7c0aa3d3ed8830ec53821b59d07b87d",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "tailor-chat-format-corrected",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "Оформление второй переписки с портным исправлено: текст сообщений снова выделен курсивом; маркеры фото и обозначения отправителей сохранены.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Shane: *Hi, this is Shane Hollander.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Шейн: *Здравствуйте, это Шейн Холландер.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "b7c0aa3d3ed8830ec53821b59d07b87d",
+              "finding_id": "tailor-chat-emphasis"
+            }
+          },
+          {
+            "id": "late-lunch-restored",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Вновь указано, что Петров поздно обедает, а не ужинает.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Petrov had apologized for eating a late lunch while they talked.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Петров извинился за поздний обед во время их беседы.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "b7c0aa3d3ed8830ec53821b59d07b87d",
+              "finding_id": "late-lunch-becomes-dinner"
+            }
+          },
+          {
+            "id": "peewee-coach-restored",
+            "category": "referent",
+            "severity": "minor",
+            "detail": "Убрано неподтверждённое указание на самого первого тренера; сохранена возрастная хоккейная категория Pee Wee.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Shane’s Pee Wee coach Teddy ‘Bear’ Dyers",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "тренер Шейна в детской хоккейной лиге Pee Wee",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "b7c0aa3d3ed8830ec53821b59d07b87d",
+              "finding_id": "peewee-coach-is-not-first"
             }
           }
         ]
