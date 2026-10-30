@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "policy-change",
-  "next_sequence": 48,
+  "next_sequence": 49,
   "records": [
     {
       "record_id": "1f8894cd56d99429b1bb61e7540a8db1",
@@ -2084,6 +2084,51 @@
             },
             "translation_anchor": {
               "quote": "От прикосновения чужой ладони не должно становиться так особенно.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "c28f5df7862d46cc993e0e39f56ce111",
+      "sequence": 48,
+      "unit_id": "chapter-000038",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "5a00557e0481b52bf548c02d1eaf9bbfa5b3e595d81e07d83e3b2c12e8ab3d3c",
+      "translation_sha256": "87bdd58a7a1e8cfbcda47f68064ed5564be240ea5cb285b3eecaff38b9f6d465",
+      "workflow_revision": "c76159e4939ed00ac19172228f8972af87cadbb8",
+      "review_contract_revision": "docs/TRANSLATION.md@c76159e4939ed00ac19172228f8972af87cadbb8",
+      "reviewer_session_id": "policy-change-reviewer-20261030-1949-a0d6c418",
+      "reviewed_at": "2026-10-30T19:46:37Z",
+      "state_revision": "1d729af3f2c2743ad85f3f7154e2253160e204b4",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": "e9ea8978a1a175c8982a6e66801877e8",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "lost-sardonic-register",
+            "category": "style",
+            "severity": "minor",
+            "detail": "В «manly, back-slapping shit» заложены разговорный грубоватый оттенок и насмешка над показным мужским панибратством; русское «мужественную манеру с хлопками по плечу» превращает его в нейтральное описание. Восстановить едкую оценку рассказчика (например: «весь этот показной мужицкий цирк с хлопками по спине»), сохранив контраст со сменой манеры общения с жёнами.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "manly, back-slapping shit that was so popular with male stakeholders",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "мужественную манеру с хлопками по плечу, которую так любят влиятельные мужчины",
               "occurrence": 0
             },
             "resolves": null
