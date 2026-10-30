@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "policy-change",
-  "next_sequence": 10,
+  "next_sequence": 11,
   "records": [
     {
       "record_id": "1f8894cd56d99429b1bb61e7540a8db1",
@@ -529,6 +529,83 @@
           "structure": true
         },
         "findings": []
+      }
+    },
+    {
+      "record_id": "a8015d1920b665a101812f5d37a96941",
+      "sequence": 10,
+      "unit_id": "chapter-000011",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "ff17fd18f25aab96116e54e221a6c63d0a4160fffc8c07e046c97771105e43b2",
+      "translation_sha256": "572f14ef2deb47c63eb49a4634c3258301a63c10f4fa55cb3884f362e232b425",
+      "workflow_revision": "c76159e4939ed00ac19172228f8972af87cadbb8",
+      "review_contract_revision": "docs/TRANSLATION.md@c76159e4939ed00ac19172228f8972af87cadbb8",
+      "reviewer_session_id": "policy-change-reviewer-20261030-1815-b7f4a932",
+      "reviewed_at": "2026-10-30T18:25:22Z",
+      "state_revision": "bcc6374b88294fe53309f8bc2c263626e05c37c6",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "marlene-question-becomes-statement",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "В оригинале Марлен именно спрашивает «Will he know what that means» (нарочно без вопросительного знака), а не утверждает, что Петров поймёт. Русское «Он поймёт, о чём речь, — ответила Марлен» изменяет речевой акт; вернуть вопросительную конструкцию, сохранив намеренное отсутствие знака вопроса.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "*Will he know what that means,* she asked, no question mark.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "*Он поймёт, о чём речь*, — ответила Марлен, даже не поставив вопросительный знак.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "last-year-before-that-grammar",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Грамматически неполная конструкция «как позапрошлом» при сопоставлении подарков; требуется «как позапрошлом году» / «как двумя годами ранее» без потери контекста.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "like the year before that, which had apparently also been Bad.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "как позапрошлом, который, судя по всему, тоже оказался Плохой Идеей.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "bruce-feet-dimensions",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "В оригинале высота Брюса превосходит рост Шейна на целый фут (~30 см), ширина — примерно на фут. В переводе явные количественные детали заменены «на целую голову выше и едва ли не настолько же шире». Сохранить преувеличенно конкретную меру из оригинала.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Bruce was a foot taller and about a foot wider.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Брюс на целую голову выше и едва ли не настолько же шире.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
       }
     }
   ]
