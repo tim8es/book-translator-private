@@ -56,7 +56,7 @@ jobs:
       - name: Fetch and pin canonical Book Translator runtime
         shell: bash
         env:
-          PINNED_REVISION: 9131fbaad53af98490c8e21ed67710e87b6474ab
+          PINNED_REVISION: c76159e4939ed00ac19172228f8972af87cadbb8
         run: |
           set -euo pipefail
           ENGINE="$RUNNER_TEMP/policy-change-engine"
@@ -81,7 +81,7 @@ jobs:
       - name: Extract, attest source coverage, seal and verify under pinned runtime
         shell: bash
         env:
-          PINNED_REVISION: 9131fbaad53af98490c8e21ed67710e87b6474ab
+          PINNED_REVISION: c76159e4939ed00ac19172228f8972af87cadbb8
           EXPECTED_SOURCE_SHA: b27e61a767dd5ba93451cf0b1df5ad8d6c40b11bdead7435e0ca682768378639
         run: |
           set -euo pipefail
