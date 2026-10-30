@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "policy-change",
-  "next_sequence": 57,
+  "next_sequence": 58,
   "records": [
     {
       "record_id": "1f8894cd56d99429b1bb61e7540a8db1",
@@ -2370,6 +2370,67 @@
             },
             "translation_anchor": {
               "quote": "даже когда таким образом сами себе мешали.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "4eeb4b5f81d546a2bc62adcc53409dca",
+      "sequence": 57,
+      "unit_id": "chapter-000054",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "589f0d43faed410b0251f349c1054f08764a6625ecb98bfc217bfadbd6231f87",
+      "translation_sha256": "02ef9425793340ffe3b51af693baf7d4a63f849c23df2352a717bbaa27992bf6",
+      "workflow_revision": "c76159e4939ed00ac19172228f8972af87cadbb8",
+      "review_contract_revision": "docs/TRANSLATION.md@c76159e4939ed00ac19172228f8972af87cadbb8",
+      "reviewer_session_id": "policy-change-reviewer-20261031-0120-b4d6f04e",
+      "reviewed_at": "2026-10-30T22:34:18Z",
+      "state_revision": "cb661860f0cd9104b17a965bc7fcb67d5445041d",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "union-notification-reversed",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "В оригинале профсоюз MLHPA должен БЫТЬ уведомлён лигой и получить возможность участвовать в дисциплинарной процедуре. В переводе «MLHPA должны уведомить» профсоюз ошибочно стал обязанным уведомлять кого-то сам: перепутан субъект действия, и юридический смысл искажён. Исправить: «Соглашение требует уведомить MLHPA и предоставить профсоюзу разумную возможность участвовать».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "The CBA requires the MLHPA to be notified and give reasonable opportunity to participate.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Согласно коллективному соглашению, MLHPA должны уведомить и предоставить профсоюзу разумную возможность участвовать.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "first-person-plural-agreement",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Нестандартное согласование «я позвали» нарушает грамматику русского языка и отвлекает от текста. Сохранить небинарное обращение к Алекс, перестроив реплику без глагола с родовым окончанием, например: «Поэтому я попросил(а) Хэнка...» или лучше «Поэтому Хэнк здесь и объяснит тебе несколько важных моментов».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "So, I’ve got Hank here to talk you through some key points.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Так что я позвали Хэнка, чтобы он объяснил тебе несколько важных моментов.",
               "occurrence": 0
             },
             "resolves": null
