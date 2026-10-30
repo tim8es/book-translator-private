@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "policy-change",
-  "next_sequence": 46,
+  "next_sequence": 47,
   "records": [
     {
       "record_id": "1f8894cd56d99429b1bb61e7540a8db1",
@@ -1983,6 +1983,51 @@
           "structure": true
         },
         "findings": []
+      }
+    },
+    {
+      "record_id": "b43cab47a8c55d976c8e52b962521108",
+      "sequence": 46,
+      "unit_id": "chapter-000064",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "54c27be3a823b0112739223f9ccc71baf2ec8a264a35186a5231895a3f8fce3b",
+      "translation_sha256": "76a8c9bf7c50cd4d4046145e5bb2dffe41f1d45debb1467384f1cad48af3f03f",
+      "workflow_revision": "c76159e4939ed00ac19172228f8972af87cadbb8",
+      "review_contract_revision": "docs/TRANSLATION.md@c76159e4939ed00ac19172228f8972af87cadbb8",
+      "reviewer_session_id": "policy-change-reviewer-20261030-1936-cf389e0d",
+      "reviewed_at": "2026-10-30T19:38:23Z",
+      "state_revision": "1d729af3f2c2743ad85f3f7154e2253160e204b4",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "ao3-navigation-injected-into-endnote",
+            "category": "structure",
+            "severity": "major",
+            "detail": "В извлечённом исходном тексте между «New York join» и «New York teams» вставлен сегмент «and all the other Works inspired by this one», похожий на навигационную надпись AO3. Перевод встроил его как обычную часть авторского предложения («и все остальные произведения, вдохновлённые этой историей»), из-за чего повествование о командах Нью-Йорка стало бессвязным. Требуется сверить этот сегмент с оригинальным XHTML/EPUB, определить его происхождение и после подтверждения исправить исходную структуру и соответствующее место перевода. Не удалять слова из авторского текста без проверки.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "New York join and all the other Works inspired by this one\n\nNew York teams",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "к ним присоединяется Нью-Йорк, и все остальные произведения, вдохновлённые этой историей, и другие нью-йоркские команды.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
       }
     }
   ]
