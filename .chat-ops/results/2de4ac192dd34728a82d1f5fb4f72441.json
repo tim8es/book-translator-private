@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "request_id": "2de4ac192dd34728a82d1f5fb4f72441",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "0bc929335bfec3fe9964e42d758519d5851acac1f85188f2db103f6e2921089d",
+    "record": {
+      "correction_round": 1,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "independent_session",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "meaning",
+            "detail": "Повторная независимая сверка полного эпилога: исходное self-sabotage themselves в обновлённой версии передано «сами себе вредили», что сохраняет негативную саморазрушительную окраску. Сверены остальные смысловые фрагменты, заголовки и пунктуационный ритм; новых проблем не найдено.",
+            "id": "self-sabotage-fixed-epilogue",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "self-sabotage-attenuation",
+              "record_id": "3b9df97c2950432e8398cb97d48beaa0"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "even when they used it to self-sabotage themselves."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "даже когда таким образом сами себе вредили."
+            }
+          }
+        ]
+      },
+      "record_id": "e96e863862eb4c2ead6b51e52b2d00f9",
+      "review_commit": "53dacc3167d9cfe71415467754b2edd6fdf8fc25",
+      "review_contract_revision": "docs/TRANSLATION.md@c76159e4939ed00ac19172228f8972af87cadbb8",
+      "reviewed_at": "2026-10-31T12:47:53Z",
+      "reviewer_session_id": "policy-change-reviewer-20261031-ch62-a34421a49de684d1",
+      "sequence": 90,
+      "source_sha256": "1822704cdf81fcdd6a9a242f45ac12d7aeafb17d66032341a1eb2f8971a52140",
+      "state_revision": "baf93b78dd675acf8cd2e80050558d4cda4b0a71d7062567b67b99ded3253fb1",
+      "supersedes_record_id": "3b9df97c2950432e8398cb97d48beaa0",
+      "translation_sha256": "c0fddf03a5241d16138abb47edd424d04025d2991f1c7ae18ea8a743520a15a2",
+      "unit_id": "chapter-000062",
+      "workflow_revision": "c76159e4939ed00ac19172228f8972af87cadbb8"
+    }
+  },
+  "error": null
+}
