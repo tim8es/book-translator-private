@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "policy-change",
-  "next_sequence": 78,
+  "next_sequence": 79,
   "records": [
     {
       "record_id": "1f8894cd56d99429b1bb61e7540a8db1",
@@ -3778,6 +3778,99 @@
               "record_id": "5f77119ee591d8c33caa53b614421b8f",
               "finding_id": "admirals-games-count"
             }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "063eba4fa296491c64676bbb5ae559f8",
+      "sequence": 78,
+      "unit_id": "chapter-000039",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "0fce41dca9536506de81bd207b9b27791b8047be72a0d4d485abfc8cfb87df81",
+      "translation_sha256": "90f4175d9b55891041f61b151970a12cd06fa7aed8198750b1147670e30c63bd",
+      "workflow_revision": "c76159e4939ed00ac19172228f8972af87cadbb8",
+      "review_contract_revision": "docs/TRANSLATION.md@c76159e4939ed00ac19172228f8972af87cadbb8",
+      "reviewer_session_id": "policy-change-review-039-20261031-925386c8ba4e",
+      "reviewed_at": "2026-10-31T11:13:40Z",
+      "state_revision": "d8932d634f086f550ba5f352c4ce6f74db35b23c",
+      "review_commit": null,
+      "correction_round": 0,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "wiebe-name-inconsistency",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "Фамилия Wiebe в главе 39 передана «Вибе», тогда как в переводе главы 45 — «Уиб». Нужно проверить единое написание по всей книге и привести текущую главу к принятому варианту; во фразах про разговор о плане (блоки 33, 51, 68, 93, 129) заметен дрейф имени.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Wiebe implied that Petrov and Alex are kind of using me.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Вибе намекнул, что Петров и Алекс вроде как используют меня.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "rookie-season-negation",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Вопрос матери «since before your rookie year?» означает «ещё до твоего дебютного сезона?». Русское «с тех пор, как не начал играть» неестественно, меняет временную логику и вводит отрицание. Исправить, например: «Ты с Ильёй Розановым ещё до своего дебютного сезона?»",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "since *before your rookie year?*",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "с тех пор, как не начал играть в лиге",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "asap-letter-gesture-lost",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "В оригинале Юна произносит аббревиатуру ASAP и подчёркивает пальцем каждую её букву. В переводе «как можно скорее» уже не аббревиатура, однако сохранено «на каждой букве последнего выражения», из-за чего жест становится нелогичным. Восстановить произносимую по буквам форму, например «С-Р-О-Ч-Н-О», с соответствующим описанием жеста.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "ASAP",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "на каждой букве последнего выражения",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "yesterday-urgency-vs-time",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "«Yes. Like, yesterday» — гипербола об очень сильном желании матери познакомиться с Ильёй немедленно; русское «Да. Причём ещё вчера» в ответе на вопрос о встрече легко читается как утверждение, что она хотела этого ещё до сегодняшнего признания. Передать срочность без сдвига событий: «Да. Она готова была познакомиться с тобой ещё вчера» или «Да. Хоть прямо сейчас».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Yes. Like, yesterday.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Да. Причём ещё вчера.",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       }
