@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "request_id": "c4869d49bfca4a1b8641bc75f214bd71",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "7df8346f28ee015c0456a60a9773032ff840c7a1d513ab70be0183570f4cf312",
+    "record": {
+      "correction_round": 3,
+      "outcome": "CORRECTIONS_REQUIRED",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "independent_session",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "meaning",
+            "detail": "Повторно проверено: реплика «Может» теперь приписана Алекс, как и в оригинале, вместо Хэнка.",
+            "id": "speaker-restored-ch54",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "speaker-attribution-ch54",
+              "record_id": "7d74ee0cdfbc4bcc9b7c3e1b3da77d2c"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "“He might. He’s been swinging his dick about on the golf course about it,” Alex chimed in."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "— Может. Он уже размахивает своим членом по поводу этой истории на полях для гольфа, — вмешались Алекс."
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Повторно проверено: удалено добавленное переводом отрицание; герои на редких совместных фото за пределами катка показаны в форме команд-соперников.",
+            "id": "jerseys-negation-removed-ch54",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "opposing-jerseys-negated-ch54",
+              "record_id": "7d74ee0cdfbc4bcc9b7c3e1b3da77d2c"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "There were probably only a handful of photos of them together outside of a rink, wearing opposing jerseys."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "фотографий, на которых они вместе за пределами катка, в форме команд-соперников, можно пересчитать по пальцам."
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Исходник явно описывает положение языка внутри тела. Перевод «ласкал его задницу» меняет действие на наружную ласку и смягчает авторскую прямоту. Восстановить точную телесную деталь естественной русской формой, затем проверить соседнюю сцену.",
+            "id": "explicit-action-softened-ch54",
+            "resolved": false,
+            "resolves": null,
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "his boyfriend’s tongue in his ass."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "пока язык его парня ласкал его задницу."
+            }
+          },
+          {
+            "category": "style",
+            "detail": "В условной конструкции нужен инфинитив «трудиться»: «если достаточно усердно трудится» — грамматическая ошибка. Исправить орфографию без изменения смысла.",
+            "id": "verb-infinitive-error-ch54",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "if they work hard enough."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "если достаточно усердно трудится."
+            }
+          }
+        ]
+      },
+      "record_id": "e3592d4743654a3faa00667da6dbc84e",
+      "review_commit": "931001a5fc23e51685a71720072b6695ac1d1fd3",
+      "review_contract_revision": "docs/TRANSLATION.md@c76159e4939ed00ac19172228f8972af87cadbb8",
+      "reviewed_at": "2026-10-31T12:59:48Z",
+      "reviewer_session_id": "policy-change-reviewer-20261031-ch54-26e59d8c6410",
+      "sequence": 93,
+      "source_sha256": "589f0d43faed410b0251f349c1054f08764a6625ecb98bfc217bfadbd6231f87",
+      "state_revision": "d791618ecc16100f7a4f81b6079842087aead47c606acf6ee3d8ac02d9a27194",
+      "supersedes_record_id": "7d74ee0cdfbc4bcc9b7c3e1b3da77d2c",
+      "translation_sha256": "68b56d9543f3730269f498c6a9f1b80e9c62fd640db81b9095f6fe5078e1e12a",
+      "unit_id": "chapter-000054",
+      "workflow_revision": "c76159e4939ed00ac19172228f8972af87cadbb8"
+    }
+  },
+  "error": null
+}
