@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "request_id": "019b1ea06c734baabdaf9f065c769518",
+  "book_slug": "wings-of-starlight-allison-saft",
+  "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+  "operation": "review-record",
+  "chapter": 12,
+  "session_id": "wings-ch9-review-final-20261031-c4902e8f",
+  "outcome": "PASS",
+  "source_sha256": "b04f613fcfb5ec283fce075aaa4c6e9577031d7122f701df1e9f6b0a01b46097",
+  "translation_sha256": "a1f32ab1bac02d33d1e0be2e740ca92bdcda0a6a54a13a7747e0fbd118ce3d2c",
+  "claim_sha256": "7a4fd03791721834104542cd3303aadb6af95c76ab42b6040746674aaece7e6f",
+  "quality_report": {
+    "evidence_version": 2,
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "id": "fixed-1",
+        "category": "structure",
+        "severity": "minor",
+        "detail": "Block 41 rechecked against original: emphasis-petra corrected; structural markers and italic emphasis confirmed.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "Oh, I heard you",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Да я услышала",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "a79bcde284fe4a1892932f005bc80f2d",
+          "finding_id": "emphasis-petra"
+        }
+      },
+      {
+        "id": "fixed-2",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Block 51 rechecked against original: certainty-promise corrected; structural markers and italic emphasis confirmed.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "No one will have to know it was *you* who helped me",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Никому ведь не обязательно знать, что это *ты* мне помогла",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "a79bcde284fe4a1892932f005bc80f2d",
+          "finding_id": "certainty-promise"
+        }
+      }
+    ]
+  }
+}
