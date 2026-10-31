@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "policy-change",
-  "next_sequence": 98,
+  "next_sequence": 99,
   "records": [
     {
       "record_id": "1f8894cd56d99429b1bb61e7540a8db1",
@@ -5244,6 +5244,92 @@
             "resolves": {
               "record_id": "09fb40670db7404b9b38dab18009deaa",
               "finding_id": "boundaries-monologue-omitted"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "6e4e02745bd747358891f0bc7f7c98d0",
+      "sequence": 98,
+      "unit_id": "chapter-000048",
+      "outcome": "PASS",
+      "source_sha256": "5d30c9936b43f344e2f3ba9aa4997fca5dded97b6fb5948b75625a1cbdb2305d",
+      "translation_sha256": "e97918d7e468f5eac43c241d045e280112352e3c8d2b81937a42de279ccb38a1",
+      "workflow_revision": "c76159e4939ed00ac19172228f8972af87cadbb8",
+      "review_contract_revision": "docs/TRANSLATION.md@c76159e4939ed00ac19172228f8972af87cadbb8",
+      "reviewer_session_id": "policy-change-reviewer-20261031-ch48-481f0958c4e8",
+      "reviewed_at": "2026-10-31T13:31:16Z",
+      "state_revision": "4f035a6487b2265142de26206304baf2d44a03f34a905ce4ef0b8d06f88a5a4f",
+      "review_commit": "2ce5551b36cf10eb7905395e058b0a0aba4dd4f0",
+      "correction_round": 1,
+      "supersedes_record_id": "30ae917ae17249cbab4fcf1d8741ec47",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "out-identity-fixed-ch48",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Фраза о двух состоявшихся каминг-аутах теперь не навязывает героям идентичность: «Мы оба уже не скрываем свою ориентацию». Соседний диалог не затронут.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "We’re both out now so.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Мы оба уже не скрываем свою ориентацию.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "30ae917ae17249cbab4fcf1d8741ec47",
+              "finding_id": "out-identity-overreach"
+            }
+          },
+          {
+            "id": "granddad-idiom-fixed-ch48",
+            "category": "referent",
+            "severity": "minor",
+            "detail": "Реплика дедушки верно передаёт сравнение Шейна с ним самим, а не с отцом.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Just like me. A real chip off the old block.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Точно как я. Весь в деда.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "30ae917ae17249cbab4fcf1d8741ec47",
+              "finding_id": "grandfather-chip-idiom"
+            }
+          },
+          {
+            "id": "wiebe-name-fixed-ch48",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "Оба вхождения Wiebe приведены к «Вибе», без оставшихся форм «Уиб».",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Wiebe’s crazy suggestion about Shane",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "безумное предложение Вибе",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "30ae917ae17249cbab4fcf1d8741ec47",
+              "finding_id": "wiebe-name-ch48"
             }
           }
         ]
