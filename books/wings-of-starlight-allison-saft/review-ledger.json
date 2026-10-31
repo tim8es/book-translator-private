@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "wings-of-starlight-allison-saft",
-  "next_sequence": 46,
+  "next_sequence": 47,
   "records": [
     {
       "record_id": "d9b70e4cfbe5487a9f0d5e37bc1826af",
@@ -4848,6 +4848,146 @@
             },
             "translation_anchor": {
               "quote": "*Я всегда хотела того, чего мне не следовало хотеть*, сказала она однажды Милори.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "bde5a4c1c190d1db26f45e3a730dfbbc",
+      "sequence": 46,
+      "unit_id": "chapter-000019",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "a8db5215ee5655c5ff9e9ab7e70937b5f156a91ea311ebeb5db351ecfda96d27",
+      "translation_sha256": "c1dbfd0ede4851090d657e450d0f4e14178691847eab4f2ed36df3fec98fd6cf",
+      "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "review_contract_revision": "docs/TRANSLATION.md@14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "reviewer_session_id": "wings-ch16-rereview-20261031-276af874",
+      "reviewed_at": "2026-10-31T17:08:39Z",
+      "state_revision": "6d2e343f3fd9617a28346bc6a0f2e8d4b667638a",
+      "review_commit": null,
+      "correction_round": 2,
+      "supersedes_record_id": "ccfc242f15a34c2aae4f0e5db4d18c75",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "seasonal-territory",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Перепроверен исправленный вариант: прежнее замечание устранено; исходный смысл, акценты и русский синтаксис сохранены.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "between Winter and the warm seasons",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "между Зимой и тёплыми краями",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "ccfc242f15a34c2aae4f0e5db4d18c75",
+              "finding_id": "seasonal-territory"
+            }
+          },
+          {
+            "id": "thought-italic-split",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Перепроверен исправленный вариант: прежнее замечание устранено; исходный смысл, акценты и русский синтаксис сохранены.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "*Unless,* she thought, *he regrets it.*",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "*Если только,* — подумала она, — *он не жалеет об этом.*",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "ccfc242f15a34c2aae4f0e5db4d18c75",
+              "finding_id": "thought-italic-split"
+            }
+          },
+          {
+            "id": "pixie-hollow-italic",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Перепроверен исправленный вариант: прежнее замечание устранено; исходный смысл, акценты и русский синтаксис сохранены.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "*Not* all *of Pixie Hollow,*",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "*Не* всю *Долину фей*",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "ccfc242f15a34c2aae4f0e5db4d18c75",
+              "finding_id": "pixie-hollow-italic"
+            }
+          },
+          {
+            "id": "warden-betrayal-causation",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Перепроверен исправленный вариант: прежнее замечание устранено; исходный смысл, акценты и русский синтаксис сохранены.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Nightmares caused the warden’s betrayal",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Кошмары стали причиной предательства Стража",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "ccfc242f15a34c2aae4f0e5db4d18c75",
+              "finding_id": "warden-betrayal-causation"
+            }
+          },
+          {
+            "id": "cannot-listen-grammar",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Перепроверен исправленный вариант: прежнее замечание устранено; исходный смысл, акценты и русский синтаксис сохранены.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "She could not listen to another word of this.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Она не могла выслушать об этом больше ни слова.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "ccfc242f15a34c2aae4f0e5db4d18c75",
+              "finding_id": "cannot-listen-grammar"
+            }
+          },
+          {
+            "id": "nightmares-agent-ambiguity",
+            "category": "referent",
+            "severity": "major",
+            "detail": "Блок 000068. В цепочке вопросов Клэрион оригинал подразумевает, что именно Кошмары будут одного за другим уничтожать зимних фей. Русское «Истреблять их одного за другим?» двусмысленно: грамматическим субъектом инфинитива может быть сама Клэрион. Заменить на «И позволить Кошмарам расправляться с ними поодиночке?» или аналогичный однозначный вариант.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Pick them off one by one?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Истреблять их одного за другим?",
               "occurrence": 0
             },
             "resolves": null
