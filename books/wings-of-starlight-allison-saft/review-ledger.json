@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "wings-of-starlight-allison-saft",
-  "next_sequence": 6,
+  "next_sequence": 7,
   "records": [
     {
       "record_id": "d9b70e4cfbe5487a9f0d5e37bc1826af",
@@ -322,6 +322,162 @@
             },
             "translation_anchor": {
               "quote": "Феи света, видимо, уже закончили свою работу на сегодня.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "7c89d0b61fae42b29c20e86fcd57b301",
+      "sequence": 6,
+      "unit_id": "chapter-000004",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "624e636f67eea4f9ab37700521a9f841b31f67efc36b6e338d1ce930c9d33d97",
+      "translation_sha256": "0a62d67491cb2bb2afc39f66b97e510a2d69245f0be891f8d6fe78933b3afb38",
+      "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "review_contract_revision": "docs/TRANSLATION.md@14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "reviewer_session_id": "wings-reviewer-hourly-20261031-0648z-f4c7a02d",
+      "reviewed_at": "2026-10-31T06:48:54.944Z",
+      "state_revision": "12ef36125202093a70d97b102e5bda84c7835734",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": "f12d8a57b62943d5a9f078c0e2b14c36",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-fairy-glimpses",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Сохранена точка зрения Клэрион; неестественное управление устранено.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Through the canopy overhead, she caught glimpses of fairies flitting by.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Сквозь листву над головой она то и дело замечала пролетавших мимо фей.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "f12d8a57b62943d5a9f078c0e2b14c36",
+              "finding_id": "awkward-fairy-glimpses"
+            }
+          },
+          {
+            "id": "recheck-kind-thing",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Реплика исправлена на грамматически естественную, доброжелательный тон сохранён.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "That was a kind thing you did.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Это был очень добрый поступок",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "f12d8a57b62943d5a9f078c0e2b14c36",
+              "finding_id": "kind-thing-grammar"
+            }
+          },
+          {
+            "id": "recheck-emerge-slumber",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Калька «из сна вышли бы» заменена на «проснулись бы» без изменения условности.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "would emerge from their slumber.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "проснулись бы те, кто жил при свете луны",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "f12d8a57b62943d5a9f078c0e2b14c36",
+              "finding_id": "emerge-from-slumber-calque"
+            }
+          },
+          {
+            "id": "recheck-hollow-praise",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Калька заменена субъективной оценкой Клэрион, не приписывая Аурелии неискренность.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "The praise rang hollow",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Похвала показалась Клэрион пустой",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "f12d8a57b62943d5a9f078c0e2b14c36",
+              "finding_id": "hollow-praise-calque"
+            }
+          },
+          {
+            "id": "recheck-afternoon-time",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Осталась неточность: for the afternoon означает завершение работы на вторую половину дня, а «дневными делами» охватывает день вообще. Требуется точное ограничение: «закончили дела, намеченные на вторую половину дня».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "The light-talents had apparently finished their work for the afternoon.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Феи света, видимо, уже управились с дневными делами.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "f12d8a57b62943d5a9f078c0e2b14c36",
+              "finding_id": "afternoon-work-time"
+            }
+          },
+          {
+            "id": "look-almost-like",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Блок 000050: «Ты почти как…» не передаёт внешнее сходство в You look almost like— и звучит неестественно. Предлагается «Ты так похожа на…».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "You look almost like—",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Ты почти как…",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "repeated-name-praise",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Блок 000057: повтор имени «Клэрион ... Клэрион» в пределах одного короткого предложения делает прозу неуклюжей; второе имя заменить местоимением.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "The praise rang hollow, but Clarion forced cheer into her voice.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Похвала показалась Клэрион пустой, но Клэрион заставила себя ответить бодро",
               "occurrence": 0
             },
             "resolves": null
