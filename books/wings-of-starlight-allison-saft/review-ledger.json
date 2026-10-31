@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "wings-of-starlight-allison-saft",
-  "next_sequence": 34,
+  "next_sequence": 35,
   "records": [
     {
       "record_id": "d9b70e4cfbe5487a9f0d5e37bc1826af",
@@ -3227,6 +3227,131 @@
             },
             "translation_anchor": {
               "quote": "пересекла комнату и взмыла в воздух рядом с Эльвиной",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "2f51f844b1d1411a98ec0234241b8eb9",
+      "sequence": 34,
+      "unit_id": "chapter-000017",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "79ac6615c151db4314c1fd53b506827a609486c9ce4885f9d68b0f04e69125a4",
+      "translation_sha256": "d6fb28033cc71643a2016b8e3823c38910118cf6c59aca5f2c90cf76968476e5",
+      "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "review_contract_revision": "docs/TRANSLATION.md@14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "reviewer_session_id": "wings-ch14-review-20261031-6bc9a7e0",
+      "reviewed_at": "2026-10-31T16:23:46Z",
+      "state_revision": "4ce48ee5cdcb6dc0a308d6c291121596c57aad44e3bba5efc846e15ba9a67d46",
+      "review_commit": "4858c7a39cb5b0ad80e114138a8ed8ef5a07d078",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "summer-geographic",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Блок 000038. Summer — географическое название летних земель, не календарное лето. «посреди лета» неверно определяет место. Исправить на «в Лете».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "wearing long sleeves in Summer",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "носить длинные рукава посреди лета",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "realm-not-queendom",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Блок 000119. «an entire realm» относится к зимним владениям, не самостоятельному «королевству»: Долина фей включает летние и зимние земли. «целые земли» вместо «целое королевство».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "leave an entire realm to fend for itself",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "оставлять целое королевство на произвол судьбы",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "laugh-actor",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Блок 000059. «She startled a laugh out of him» — Клэрион неожиданно рассмешила Милори. «Он неожиданно рассмеялся» убирает причинность. «Ей удалось вызвать у него невольный смех».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "She startled a laugh out of him",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Он неожиданно рассмеялся",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "visiting-vs-dating",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Блок 000108. «sneaking out to see a boy» подозревает тайные встречи, но не утверждает, что это формальные «свидания». «Ты тайком выбираешься, чтобы повидаться с *парнем*?» сохраняет двусмысленность.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "sneaking out to see a *boy*",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "тайком ходишь на свидания с *парнем*",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "balsam-fir-botany",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Блок 000041. Balsam fir — «бальзамическая пихта», а «пихтовая хвоя» опускает вид и добавляет неподтверждённую часть растения. «Бальзамическая пихта и грушанка».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Balsam fir and wintergreen",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Пихтовая хвоя и грушанка",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "winter-and-milori-calque",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Блок 000071. «Между Кошмарами и Милори» — калька оборота «Between X and Y», в русском звучит как физическое расположение. «Из-за Кошмаров и Милори» сохраняет сочетание причин.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Between the Nightmares and Milori",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Между Кошмарами и Милори",
               "occurrence": 0
             },
             "resolves": null
