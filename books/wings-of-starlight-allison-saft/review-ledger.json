@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "wings-of-starlight-allison-saft",
-  "next_sequence": 62,
+  "next_sequence": 63,
   "records": [
     {
       "record_id": "d9b70e4cfbe5487a9f0d5e37bc1826af",
@@ -6907,6 +6907,130 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "b8f6fc77a89a6fb3617f1490378311fe",
+      "sequence": 62,
+      "unit_id": "chapter-000027",
+      "outcome": "PASS",
+      "source_sha256": "b6bf0f55fec07e786284376963ca00b3d51293053ce43b4ffb5a338f42d07789",
+      "translation_sha256": "31f7920e74016aadedc11ce731d2bbfa2252ed61a992c4926595956ed3fa742d",
+      "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "review_contract_revision": "docs/REVIEWER.md@14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "reviewer_session_id": "wings-ch24-review-20261031-d21cc6532ae63e54ff1cf1001bc628af",
+      "reviewed_at": "2026-10-31T17:58:08Z",
+      "state_revision": "c5dc229860ebaf644845446a7928eb4f8006e2bbda5114fbcd5b00b257da3140",
+      "review_commit": "9baa4bd57a31bdd6631a0b36abf81d5f331d704f",
+      "correction_round": 1,
+      "supersedes_record_id": "69b02d2a9ed7feb1b3f17c14a3cc317b",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-unknown-watcher-personified",
+            "category": "referent",
+            "severity": "minor",
+            "detail": "Неизвестный наблюдатель сохранён как «нечто»; не добавлена личность наблюдателя.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Something was watching her.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Нечто наблюдало за ней.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "69b02d2a9ed7feb1b3f17c14a3cc317b",
+              "finding_id": "unknown-watcher-personified"
+            }
+          },
+          {
+            "id": "recheck-decaying-leaves-slipping",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Скользкость гниющих листьев описана как свойство; движение листьев не добавлено.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "all the leaves had gone slick with decomposition",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "все листья стали скользкими от гнили",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "69b02d2a9ed7feb1b3f17c14a3cc317b",
+              "finding_id": "decaying-leaves-slipping"
+            }
+          },
+          {
+            "id": "recheck-nightmare-duplicate-adjectives",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Калька с тавтологией заменена на «кошмарное подобие» без потери образа.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "The horrible nightmare version of Pixie Hollow fell away",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Кошмарное подобие Долины фей исчезло",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "69b02d2a9ed7feb1b3f17c14a3cc317b",
+              "finding_id": "nightmare-duplicate-adjectives"
+            }
+          },
+          {
+            "id": "recheck-despair-modality-duty",
+            "category": "modality",
+            "severity": "major",
+            "detail": "Сохранена неспособность поддаться отчаянию вместо добавленного морального запрета.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "she could not succumb to despair",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "она не могла поддаться отчаянию",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "69b02d2a9ed7feb1b3f17c14a3cc317b",
+              "finding_id": "despair-modality-duty"
+            }
+          },
+          {
+            "id": "recheck-daylight-truth-future",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Сохранено актуальное осознание ничтожности чудовища, без прогноза будущего уничтожения.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "In the harsh light of day, it was nothing at all.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "В беспощадном свете дня оно было ничем.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "69b02d2a9ed7feb1b3f17c14a3cc317b",
+              "finding_id": "daylight-truth-future"
+            }
           }
         ]
       }
