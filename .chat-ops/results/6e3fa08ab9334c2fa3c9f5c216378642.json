@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "request_id": "6e3fa08ab9334c2fa3c9f5c216378642",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "a13a7e1a25734f07e38c9c7c00f39642ed3b063eb37d4144ffdb49b9e3b55171",
+    "record": {
+      "correction_round": 1,
+      "outcome": "CORRECTIONS_REQUIRED",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "independent_session",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "style",
+            "detail": "Блок 000009. Конструкция с перечислением пятен и вставным «она искренне надеялась» нарушает русскую грамматику. Сохранить сомнение Клэрион: «…и ещё каких-то пятен — Клэрион искренне надеялась, что это не кровь».",
+            "id": "blood-clause-grammar",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "and something she sincerely hoped was not blood"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "и чего-то такого, что, она искренне надеялась, было не кровью"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Блок 000026. Summer в этом контексте — территория тёплого края Долины фей, а «летом» превращает место в календарное время. Сохранить географическое значение, например «на Летней поляне» или «в летних землях».",
+            "id": "summer-region-versus-season",
+            "resolved": false,
+            "resolves": null,
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "she always felt the most at home in Summer"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "уютнее всего она всегда чувствовала себя летом"
+            }
+          },
+          {
+            "category": "addition",
+            "detail": "Блок 000036. «By the second star» — восклицание, а «помоги» добавляет просьбу, отсутствующую в оригинале. Передать как «Во имя второй звезды!» либо равноценной клятвой.",
+            "id": "second-star-added-plea",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "By the second star"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Вторая звезда, помоги"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Блок 000074. By midafternoon означает середину второй половины дня, не полдень. Исправить «К середине дня» на «К середине второй половины дня» или естественное «Часам к трём пополудни».",
+            "id": "midafternoon-time",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "By midafternoon"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "К середине дня"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Блок 000108. В оригинале разрушенные поля Spring отпечатались как выжженное изображение на внутренней стороне век, сами поля не названы выжженными. Перевод «выжженные весенние поля» меняет характер повреждения. Вернуть «разорённые поля Весны, словно выжженные на внутренней стороне век».",
+            "id": "burned-eyes-not-fields",
+            "resolved": false,
+            "resolves": null,
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "the ruined fields of Spring burned on the backs of her eyes"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "выжженные весенние поля"
+            }
+          }
+        ]
+      },
+      "record_id": "bd2d7dfd9fcc4124a83ed78731e50ddb",
+      "review_commit": "f708e6d3184fe8eaa0a53fa473c1ee3e935d3228",
+      "review_contract_revision": "docs/TRANSLATION.md@14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "reviewed_at": "2026-10-31T15:26:09Z",
+      "reviewer_session_id": "wings-ch10-independent-review-20261031-81cb3b73",
+      "sequence": 24,
+      "source_sha256": "73a6b58fc9bc52cd0a2d05e4876db79bd8544dca8c52673bbd6be6b02a1a99f4",
+      "state_revision": "04667ad7f1f6303e95c47098d9fb06d343c6b62eb36b8943016140bf683f1fd5",
+      "supersedes_record_id": null,
+      "translation_sha256": "4b761df855b6bf191fb3e173cc870cb7cab6e48e1cdc964c45f33cdb3a5cc614",
+      "unit_id": "chapter-000013",
+      "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5"
+    }
+  },
+  "error": null
+}

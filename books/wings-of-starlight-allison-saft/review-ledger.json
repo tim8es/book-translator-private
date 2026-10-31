@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "wings-of-starlight-allison-saft",
-  "next_sequence": 24,
+  "next_sequence": 25,
   "records": [
     {
       "record_id": "d9b70e4cfbe5487a9f0d5e37bc1826af",
@@ -2309,6 +2309,115 @@
               "record_id": "e836c8d430f04158b943740259a5e9f0",
               "finding_id": "winter-fend-idiom"
             }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "bd2d7dfd9fcc4124a83ed78731e50ddb",
+      "sequence": 24,
+      "unit_id": "chapter-000013",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "73a6b58fc9bc52cd0a2d05e4876db79bd8544dca8c52673bbd6be6b02a1a99f4",
+      "translation_sha256": "4b761df855b6bf191fb3e173cc870cb7cab6e48e1cdc964c45f33cdb3a5cc614",
+      "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "review_contract_revision": "docs/TRANSLATION.md@14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "reviewer_session_id": "wings-ch10-independent-review-20261031-81cb3b73",
+      "reviewed_at": "2026-10-31T15:26:09Z",
+      "state_revision": "04667ad7f1f6303e95c47098d9fb06d343c6b62eb36b8943016140bf683f1fd5",
+      "review_commit": "f708e6d3184fe8eaa0a53fa473c1ee3e935d3228",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "blood-clause-grammar",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Блок 000009. Конструкция с перечислением пятен и вставным «она искренне надеялась» нарушает русскую грамматику. Сохранить сомнение Клэрион: «…и ещё каких-то пятен — Клэрион искренне надеялась, что это не кровь».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "and something she sincerely hoped was not blood",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "и чего-то такого, что, она искренне надеялась, было не кровью",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "summer-region-versus-season",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Блок 000026. Summer в этом контексте — территория тёплого края Долины фей, а «летом» превращает место в календарное время. Сохранить географическое значение, например «на Летней поляне» или «в летних землях».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "she always felt the most at home in Summer",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "уютнее всего она всегда чувствовала себя летом",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "second-star-added-plea",
+            "category": "addition",
+            "severity": "minor",
+            "detail": "Блок 000036. «By the second star» — восклицание, а «помоги» добавляет просьбу, отсутствующую в оригинале. Передать как «Во имя второй звезды!» либо равноценной клятвой.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "By the second star",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Вторая звезда, помоги",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "midafternoon-time",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Блок 000074. By midafternoon означает середину второй половины дня, не полдень. Исправить «К середине дня» на «К середине второй половины дня» или естественное «Часам к трём пополудни».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "By midafternoon",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "К середине дня",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "burned-eyes-not-fields",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Блок 000108. В оригинале разрушенные поля Spring отпечатались как выжженное изображение на внутренней стороне век, сами поля не названы выжженными. Перевод «выжженные весенние поля» меняет характер повреждения. Вернуть «разорённые поля Весны, словно выжженные на внутренней стороне век».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "the ruined fields of Spring burned on the backs of her eyes",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "выжженные весенние поля",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       }
