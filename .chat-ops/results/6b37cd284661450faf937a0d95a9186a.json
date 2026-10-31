@@ -1,0 +1,147 @@
+{
+  "schema_version": 1,
+  "request_id": "6b37cd284661450faf937a0d95a9186a",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "86e4f27b00d8d67e6624cb8ff614f3593de414fb5f3ea3ecb851a97c9c6d4c88",
+    "record": {
+      "correction_round": 2,
+      "outcome": "CORRECTIONS_REQUIRED",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "independent_session",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "terminology",
+            "detail": "Все пять вхождений фамилии в главе уже имели форму «Вибе»; с исправлением соседних глав транскрипция корпуса согласована.",
+            "id": "wiebe-naming-consistent-ch39",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "wiebe-name-inconsistency",
+              "record_id": "063eba4fa296491c64676bbb5ae559f8"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Wiebe implied that Petrov and Alex are kind of using me."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Вибе намекнул, что Петров и Алекс вроде как используют меня."
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Исправлено неверное отрицание: исходник говорит о времени до дебютного сезона.",
+            "id": "rookie-timeline-fixed-ch39",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "rookie-season-negation",
+              "record_id": "063eba4fa296491c64676bbb5ae559f8"
+            },
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "since *before your rookie year?*"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "ещё *до своего дебютного сезона?*"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Восстановлено побуквенное срочное требование, синхронное постукиванию по столу.",
+            "id": "asap-gesture-fixed-ch39",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "asap-letter-gesture-lost",
+              "record_id": "063eba4fa296491c64676bbb5ae559f8"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "ASAP"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "С-Р-О-Ч-Н-О, — сказала она, тыкая пальцем в стол на каждой букве."
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "«Хотя прямо сейчас» сохраняет срочность разговорного yesterday, не утверждая, что встреча должна была состояться вчера.",
+            "id": "yesterday-urgency-fixed-ch39",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "yesterday-urgency-vs-time",
+              "record_id": "063eba4fa296491c64676bbb5ae559f8"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Yes. Like, yesterday."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "— Да. Хоть прямо сейчас."
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Оригинальная идиома означает, что Шейна не пришлось просить дважды; русский перевод ошибочно делает его лицом, которое что-то повторяет. Исправить «Шейна не пришлось просить дважды».",
+            "id": "told-twice-agent-shift-ch39",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Shane didn’t have to be told twice."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Шейну не пришлось повторять дважды."
+            }
+          },
+          {
+            "category": "referent",
+            "detail": "Местоимения в исходнике относятся к Илье, который почти физически ощущает Шейна. В переводе дательное «тому» указывает на Шейна и меняет субъект ощущения. Исправить субъектную привязку, сохраняя исходный образ.",
+            "id": "taste-referent-shift-ch39",
+            "resolved": false,
+            "resolves": null,
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "his dick so deep inside Shane he could almost taste him."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "так глубоко внутри Шейна, что тому казалось, будто он может ощутить его на вкус."
+            }
+          }
+        ]
+      },
+      "record_id": "1ec45e63a53d49bba09b5a01e9ad82ad",
+      "review_commit": "40a6a36e533e31dfc7c329658fb6ac9dcb465dcc",
+      "review_contract_revision": "docs/TRANSLATION.md@c76159e4939ed00ac19172228f8972af87cadbb8",
+      "reviewed_at": "2026-10-31T14:06:32Z",
+      "reviewer_session_id": "policy-change-reviewer-20261031-ch39-3a7df26f91d3",
+      "sequence": 103,
+      "source_sha256": "0fce41dca9536506de81bd207b9b27791b8047be72a0d4d485abfc8cfb87df81",
+      "state_revision": "88567f5c7d15f4917e37181ac7acff38032f1cec1db6111737a2af3d9f4ba16f",
+      "supersedes_record_id": "063eba4fa296491c64676bbb5ae559f8",
+      "translation_sha256": "ce79cff1340d5f5a1fde28bfe93a9aae90434ca00bcfadfb50f99739dd2a9075",
+      "unit_id": "chapter-000039",
+      "workflow_revision": "c76159e4939ed00ac19172228f8972af87cadbb8"
+    }
+  },
+  "error": null
+}

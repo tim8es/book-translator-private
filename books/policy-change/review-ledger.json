@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "policy-change",
-  "next_sequence": 103,
+  "next_sequence": 104,
   "records": [
     {
       "record_id": "1f8894cd56d99429b1bb61e7540a8db1",
@@ -5694,6 +5694,143 @@
               "record_id": "4e729acf00fd417f9654e94f332c398a",
               "finding_id": "blank-check-literal"
             }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "1ec45e63a53d49bba09b5a01e9ad82ad",
+      "sequence": 103,
+      "unit_id": "chapter-000039",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "0fce41dca9536506de81bd207b9b27791b8047be72a0d4d485abfc8cfb87df81",
+      "translation_sha256": "ce79cff1340d5f5a1fde28bfe93a9aae90434ca00bcfadfb50f99739dd2a9075",
+      "workflow_revision": "c76159e4939ed00ac19172228f8972af87cadbb8",
+      "review_contract_revision": "docs/TRANSLATION.md@c76159e4939ed00ac19172228f8972af87cadbb8",
+      "reviewer_session_id": "policy-change-reviewer-20261031-ch39-3a7df26f91d3",
+      "reviewed_at": "2026-10-31T14:06:32Z",
+      "state_revision": "88567f5c7d15f4917e37181ac7acff38032f1cec1db6111737a2af3d9f4ba16f",
+      "review_commit": "40a6a36e533e31dfc7c329658fb6ac9dcb465dcc",
+      "correction_round": 2,
+      "supersedes_record_id": "063eba4fa296491c64676bbb5ae559f8",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "wiebe-naming-consistent-ch39",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "Все пять вхождений фамилии в главе уже имели форму «Вибе»; с исправлением соседних глав транскрипция корпуса согласована.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Wiebe implied that Petrov and Alex are kind of using me.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Вибе намекнул, что Петров и Алекс вроде как используют меня.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "063eba4fa296491c64676bbb5ae559f8",
+              "finding_id": "wiebe-name-inconsistency"
+            }
+          },
+          {
+            "id": "rookie-timeline-fixed-ch39",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Исправлено неверное отрицание: исходник говорит о времени до дебютного сезона.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "since *before your rookie year?*",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "ещё *до своего дебютного сезона?*",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "063eba4fa296491c64676bbb5ae559f8",
+              "finding_id": "rookie-season-negation"
+            }
+          },
+          {
+            "id": "asap-gesture-fixed-ch39",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Восстановлено побуквенное срочное требование, синхронное постукиванию по столу.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "ASAP",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "С-Р-О-Ч-Н-О, — сказала она, тыкая пальцем в стол на каждой букве.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "063eba4fa296491c64676bbb5ae559f8",
+              "finding_id": "asap-letter-gesture-lost"
+            }
+          },
+          {
+            "id": "yesterday-urgency-fixed-ch39",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "«Хотя прямо сейчас» сохраняет срочность разговорного yesterday, не утверждая, что встреча должна была состояться вчера.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Yes. Like, yesterday.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "— Да. Хоть прямо сейчас.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "063eba4fa296491c64676bbb5ae559f8",
+              "finding_id": "yesterday-urgency-vs-time"
+            }
+          },
+          {
+            "id": "told-twice-agent-shift-ch39",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Оригинальная идиома означает, что Шейна не пришлось просить дважды; русский перевод ошибочно делает его лицом, которое что-то повторяет. Исправить «Шейна не пришлось просить дважды».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Shane didn’t have to be told twice.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Шейну не пришлось повторять дважды.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "taste-referent-shift-ch39",
+            "category": "referent",
+            "severity": "major",
+            "detail": "Местоимения в исходнике относятся к Илье, который почти физически ощущает Шейна. В переводе дательное «тому» указывает на Шейна и меняет субъект ощущения. Исправить субъектную привязку, сохраняя исходный образ.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "his dick so deep inside Shane he could almost taste him.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "так глубоко внутри Шейна, что тому казалось, будто он может ощутить его на вкус.",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       }
