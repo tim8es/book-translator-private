@@ -1,0 +1,151 @@
+{
+  "schema_version": 1,
+  "request_id": "9a7b38ad947f43e9841c37e46f9b2192",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "b8aa0f593f9a061a98fb7c6fd0ee5034abed9997ee237ddeaf9abbeb0b0f67e5",
+    "record": {
+      "correction_round": 1,
+      "outcome": "CORRECTIONS_REQUIRED",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "independent_session",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "meaning",
+            "detail": "Блок 000020. Восклицание Aurelia «Peace.» прерывает ссору — это «Полно», «Хватит» или «Тише», а не буквальное «Мир». Исправить на «Полно» с естественной пунктуацией.",
+            "id": "peace-interjection",
+            "resolved": false,
+            "resolves": null,
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "“Peace.” Aurelia stifled a yawn."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "«Мир, — сказала Аурелия, подавляя зевок."
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Блок 000027. «entire tea service» означает сервировку чаепития с набором посуды, а не чайную церемонию как особый ритуал. Употребить «целый чайный стол».",
+            "id": "tea-service",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "an entire tea service"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "целой чайной церемонии"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Блок 000038. Aurelia вздыхает, пока Clarion ещё жуёт первый кусочек, а не когда уже проглотила его. «Клэрион ещё не успела прожевать первый кусочек, когда Аурелия вздохнула».",
+            "id": "mouthful-timing",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Halfway through her first mouthful"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Когда Клэрион едва успела проглотить первый кусочек"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Блок 000051. «mountains you could traverse by sled» — горы, которые можно преодолевать на санях, без утверждения, что едут только вниз. «спускаться на санках» добавляет направление.",
+            "id": "winter-mountains-sled",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "mountains you could traverse by sled"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "горы, по которым можно спускаться на санках"
+            }
+          },
+          {
+            "category": "terminology",
+            "detail": "Блок 000068. «Neither of our realms» — два сезонных края (владения Зимы и Весны), а не два независимых королевства. «Ни одному из наших краёв не пришлось бы тревожиться».",
+            "id": "seasonal-realms",
+            "resolved": false,
+            "resolves": null,
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Neither of our realms would have to worry."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Ни одному из наших королевств не пришлось бы тревожиться."
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Блок 000080. «To control my will and shape it» — управление собственной волей, а «Подчинить волю» звучит как подчинение чужой воли. «Управлять своей волей, придавать ей форму».",
+            "id": "will-vs-subjugation",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "To control my will and shape it."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Подчинить волю и придать ей форму."
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Блок 000084. «let go of what she told you» — отступить от усвоенных наставлений, а «отпустишь то, чему она тебя учила» — калька. «А что, если ты попробуешь отступить от её наставлений?»",
+            "id": "letting-go-advice",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "What would happen if you let go of what she told you?"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Что случится, если ты отпустишь то, чему она тебя учила?"
+            }
+          }
+        ]
+      },
+      "record_id": "9489ea5e87d94336a5443f4fda6745bb",
+      "review_commit": "f00790cf6a658c82ddda010fc719368db946a622",
+      "review_contract_revision": "docs/TRANSLATION.md@14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "reviewed_at": "2026-10-31T16:34:32Z",
+      "reviewer_session_id": "wings-ch15-review-20261031-be16fe0d",
+      "sequence": 35,
+      "source_sha256": "ff43fefaa5da9d3b4b8a5091382e30e11727fae96ff4dfba53588a72093486ea",
+      "state_revision": "3b9513893fc16e422a97656239bcb5c0821bad8f7a5fcfd95fa60fa05bd4cc18",
+      "supersedes_record_id": null,
+      "translation_sha256": "7b71be9b559e31c94ec5b6ae13cbe119023146f18ab587406f53c3300079ec02",
+      "unit_id": "chapter-000018",
+      "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5"
+    }
+  },
+  "error": null
+}
