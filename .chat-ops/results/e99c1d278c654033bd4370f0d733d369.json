@@ -1,0 +1,151 @@
+{
+  "schema_version": 1,
+  "request_id": "e99c1d278c654033bd4370f0d733d369",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "8cba556accc5ac945c9e64bcda0225eff3859147f45ca0649152df6642b3b885",
+    "record": {
+      "correction_round": 1,
+      "outcome": "CORRECTIONS_REQUIRED",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "meaning",
+            "detail": "Блок 000016: Оригинал говорит о двух областях единой Долины фей, не о самостоятельных королевствах. Уместно: «наши земли больше не поддерживают друг с другом никаких отношений».",
+            "id": "two-kingdoms-first",
+            "resolved": false,
+            "resolves": null,
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "our two realms have nothing to do with each other anymore"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "наши два королевства больше не имеют друг с другом ничего общего"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Блок 000057: В оригинале exhilarating thrill, а не fear: вернуть восторг и ощущение свободы, например «к восхищению примешивался трепет восторга».",
+            "id": "exhilaration-turned-fear",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "exhilaration prickled at the edges of her wonder"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "к восхищению примешивался волнующий страх"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Блок 000058: Русское согласование нарушено. Исправить «рана на руке заныла» или «рана на руке запульсировала».",
+            "id": "wound-grammar",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "the wound on her arm throbbed"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "рана на руке заныло"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Блок 000079: Longing передаёт тоску/томление по близости, а нежность меняет оттенок. «Клэрион снова пронзила болезненная тоска».",
+            "id": "longing-to-tenderness",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "another pang of longing"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "снова ощутила болезненную нежность"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Блок 000098: Вновь переведены две области Долины фей как отдельные королевства. Исправить на «разделившего их земли» / «разобщившего их владения».",
+            "id": "two-kingdoms-statue",
+            "resolved": false,
+            "resolves": null,
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "driven their realms apart"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "разлучившего их королевства"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Блок 000100: The queen’s означает преемницу королевы. Нельзя приписывать дружбу преемника Стража прежней королеве; исправить «его преемник уже не был так близок с преемницей королевы».",
+            "id": "queen-successor",
+            "resolved": false,
+            "resolves": null,
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "his successor wasn’t as close with the queen’s"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "его преемник уже не был так близок с королевой"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Блок 000112: Care for не равняется безусловному признанию любви; здесь важно оставить чувство не вполне названным. «Будучи просто Клэрион, она могла бы заботиться о нём» / «дорожить им».",
+            "id": "care-vs-love",
+            "resolved": false,
+            "resolves": null,
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "As Clarion, she could care for him"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Клэрион могла любить его"
+            }
+          }
+        ]
+      },
+      "record_id": "8c3c7c94db814a27899fafd6322e5c92",
+      "review_commit": "2e4e281e41cca806ca0f2db6f42c5664e40005bb",
+      "review_contract_revision": "docs/TRANSLATION.md@14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "reviewed_at": "2026-10-31T16:43:45Z",
+      "reviewer_session_id": "wings-ch17-independent-review-20261031-f42f8c51",
+      "sequence": 42,
+      "source_sha256": "2ff09d7fa3750dadc628a3bb4e9d73ea6771a3e1064812c7bf67344235ee4e32",
+      "state_revision": "0e261b6398017686d7db4d036f19933dffe457253fe62cae338383ad9e582cfa",
+      "supersedes_record_id": null,
+      "translation_sha256": "bcb6bee71ee91c325ca410b23155069e9fdd995e4d293493e04099c21a689627",
+      "unit_id": "chapter-000020",
+      "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5"
+    }
+  },
+  "error": null
+}
