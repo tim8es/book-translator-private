@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "policy-change",
-  "next_sequence": 101,
+  "next_sequence": 102,
   "records": [
     {
       "record_id": "1f8894cd56d99429b1bb61e7540a8db1",
@@ -5445,6 +5445,149 @@
             "resolves": {
               "record_id": "b68d384ff5d74d11ada9228ca17e20c9",
               "finding_id": "whiteboard-rules-three-four"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "08f363dbe394412da325a0a41c481360",
+      "sequence": 101,
+      "unit_id": "chapter-000063",
+      "outcome": "PASS",
+      "source_sha256": "bd7c95604e220699f92ef06a8dc38b17bd7443fa6b55bafca11d436de6258093",
+      "translation_sha256": "f74829924757e9450024370fe25553c05577b67d7f4903b75caf0c400155e8a0",
+      "workflow_revision": "c76159e4939ed00ac19172228f8972af87cadbb8",
+      "review_contract_revision": "docs/TRANSLATION.md@c76159e4939ed00ac19172228f8972af87cadbb8",
+      "reviewer_session_id": "policy-change-reviewer-20261031-ch63-a8dc7e72a342",
+      "reviewed_at": "2026-10-31T13:59:17Z",
+      "state_revision": "b8e426a2c7ede3ed082da26d9d77b2535cb9458b71eef8a296703e08e3e1bb3a",
+      "review_commit": "34a05ea86568bcca316cc64b9c16723ea30d3b5c",
+      "correction_round": 1,
+      "supersedes_record_id": "4f16c5fbaa1241a09d53d94475d00682",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "roof-lock-restored-63",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Илья и Марли оказались заперты снаружи на крыше: пассивное положение восстановлено, действий по намеренному запиранию не добавлено.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "got locked out on the roof",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "оказались заперты на крыше",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "4f16c5fbaa1241a09d53d94475d00682",
+              "finding_id": "roof-lock-agency-reversed"
+            }
+          },
+          {
+            "id": "designer-discreet-restored-63",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "В переписке о дизайнере передана именно конфиденциальность, а не просто осторожность.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "they are very discreet.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "они умеют хранить тайны",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "4f16c5fbaa1241a09d53d94475d00682",
+              "finding_id": "designer-discretion-lost"
+            }
+          },
+          {
+            "id": "gym-christening-restored-63",
+            "category": "register",
+            "severity": "minor",
+            "detail": "Сексуальная шутка о первом использовании спортзала восстановлена без значения «обмывать покупку».",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "we are christening the gym so soon",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "мы так скоро опробуем спортзал",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "4f16c5fbaa1241a09d53d94475d00682",
+              "finding_id": "christen-joke-lost"
+            }
+          },
+          {
+            "id": "kitchen-christening-fixed-63",
+            "category": "register",
+            "severity": "minor",
+            "detail": "Повторяющаяся шутка о первом использовании помещения восстановлена в сцене на кухонном полу.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "they were christening the kitchen floor",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "они уже опробовали кухонный пол",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "4f16c5fbaa1241a09d53d94475d00682",
+              "finding_id": "christen-kitchen-lost"
+            }
+          },
+          {
+            "id": "sloppy-intimacy-restored-63",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Смысл sloppy как мокрого, небрежного действия восстановлен; прежняя ложная медлительность устранена.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "a sloppy blow-job",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "делали друг другу мокрый, небрежный минет",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "4f16c5fbaa1241a09d53d94475d00682",
+              "finding_id": "sloppy-intimacy-shift"
+            }
+          },
+          {
+            "id": "hot-idiom-restored-63",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Просторечный восторженный комплимент передан естественной русской фразой без буквализма.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "You are ridiculously hot.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Ты просто неприлично сексуален.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "4f16c5fbaa1241a09d53d94475d00682",
+              "finding_id": "hot-calque"
             }
           }
         ]
