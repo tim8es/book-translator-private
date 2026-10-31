@@ -1,0 +1,153 @@
+{
+  "schema_version": 1,
+  "request_id": "51fb3e71f18b4f95b9f1c8c633cc6250",
+  "book_slug": "wings-of-starlight-allison-saft",
+  "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+  "operation": "review-record",
+  "chapter": 13,
+  "session_id": "wings-ch10-followup-review-20261031-5a08bd92",
+  "outcome": "CORRECTIONS_REQUIRED",
+  "source_sha256": "73a6b58fc9bc52cd0a2d05e4876db79bd8544dca8c52673bbd6be6b02a1a99f4",
+  "translation_sha256": "6c93b061c7fc2554291ea40ee86a2ad95a8f2f1e55d9ed5ed261a9c3ffc96b17",
+  "claim_sha256": "f114c15c89ddb1ee148fedfacc7bc3ea6e9343f046d2a1316e6edfd64317d1e6",
+  "quality_report": {
+    "evidence_version": 2,
+    "context": "independent_session",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "id": "resolved-1",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Block 9: prior blood-clause-grammar resolved; original meaning and surrounding passage checked.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "and something she sincerely hoped was not blood",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "А ещё на пергаменте виднелись какие-то следы — Клэрион искренне надеялась, что это не кровь",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "bd2d7dfd9fcc4124a83ed78731e50ddb",
+          "finding_id": "blood-clause-grammar"
+        }
+      },
+      {
+        "id": "resolved-2",
+        "category": "meaning",
+        "severity": "major",
+        "detail": "Block 26: prior summer-region-versus-season resolved; original meaning and surrounding passage checked.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "she always felt the most at home in Summer",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "уютнее всего она всегда чувствовала себя на Летней поляне",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "bd2d7dfd9fcc4124a83ed78731e50ddb",
+          "finding_id": "summer-region-versus-season"
+        }
+      },
+      {
+        "id": "resolved-3",
+        "category": "addition",
+        "severity": "minor",
+        "detail": "Block 36: prior second-star-added-plea resolved; original meaning and surrounding passage checked.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "By the second star",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Во имя второй звезды",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "bd2d7dfd9fcc4124a83ed78731e50ddb",
+          "finding_id": "second-star-added-plea"
+        }
+      },
+      {
+        "id": "resolved-4",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Block 74: prior midafternoon-time resolved; original meaning and surrounding passage checked.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "By midafternoon",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "К середине второй половины дня",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "bd2d7dfd9fcc4124a83ed78731e50ddb",
+          "finding_id": "midafternoon-time"
+        }
+      },
+      {
+        "id": "resolved-5",
+        "category": "meaning",
+        "severity": "major",
+        "detail": "Block 108: prior burned-eyes-not-fields resolved; original meaning and surrounding passage checked.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "the ruined fields of Spring burned on the backs of her eyes",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "разорённые поля Весны — словно выжженные на внутренней стороне век",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "bd2d7dfd9fcc4124a83ed78731e50ddb",
+          "finding_id": "burned-eyes-not-fields"
+        }
+      },
+      {
+        "id": "iris-emphasis",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Block 42: source emphasis on loving result shifts to certainty («непременно»). Restore emphasized enthusiasm, e.g. «Вы будете *в восторге*».",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "You’re going to *love* it.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Вам *непременно* понравится",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "petra-calque",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Block 77: «преуменьшить дело до нелепости» is unidiomatic calque of gross understatement. Use idiomatic «Назвать Петру увлечённой работой — значит почти ничего не сказать».",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "To say she was single-minded was a gross understatement.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Назвать её увлечённой своим делом значило бы преуменьшить дело до нелепости.",
+          "occurrence": 0
+        },
+        "resolves": null
+      }
+    ]
+  }
+}
