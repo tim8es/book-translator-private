@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "policy-change",
-  "next_sequence": 79,
+  "next_sequence": 80,
   "records": [
     {
       "record_id": "1f8894cd56d99429b1bb61e7540a8db1",
@@ -3868,6 +3868,99 @@
             },
             "translation_anchor": {
               "quote": "Да. Причём ещё вчера.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "4e729acf00fd417f9654e94f332c398a",
+      "sequence": 79,
+      "unit_id": "chapter-000045",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "f8e7aa5286862f7b5d0c4a783756735a51cbe8161fc7edf4724edbbbc1f07dfa",
+      "translation_sha256": "4cffc120ef119a8879130ea70db9367a928a5b35098f27decb625dddd17875ec",
+      "workflow_revision": "c76159e4939ed00ac19172228f8972af87cadbb8",
+      "review_contract_revision": "docs/TRANSLATION.md@c76159e4939ed00ac19172228f8972af87cadbb8",
+      "reviewer_session_id": "policy-change-reviewer-20261031-ch45-6ec2a1",
+      "reviewed_at": "2026-10-31T11:14:07Z",
+      "state_revision": "d8932d634f086f550ba5f352c4ce6f74db35b23c",
+      "review_commit": null,
+      "correction_round": 0,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "wiebe-name-drift",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "Тренер Wiebe последовательно назван в этой главе «Уибом», но в принятом переводе главы 63 встречается «Вибе». Согласовать транскрипцию на уровне всей книги, предпочтительно «Вибе»; проверить все упоминания.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Wiebe nodded and speared a piece of chicken.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Уиб кивнул и наколол на вилку кусок курицы.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "half-siblings-to-stepsiblings",
+            "category": "referent",
+            "severity": "major",
+            "detail": "Original half-siblings = дети с одним общим биологическим родителем (по контексту — отцом-Эдвардсом), не «сводные братья и сёстры» без кровного родства. Исправить на «единокровные» или «неполнородные братья и сёстры» и сохранить, что они хорошо ладят.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "they were actually all half-siblings, but harmonious ones",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "все они были сводными братьями и сёстрами, но прекрасно ладили",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "spilled-drink-agency",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "В исходнике Алекс прямо признают, что сами пролили Gatorade на ноутбук («I poured»). Перевод «на него пролился» делает случившееся безличным, теряя действующее лицо. Исправить: «Я пролил(а) на него Gatorade» с учётом небинарной формы персонажа либо «Я залил(а) его Gatorade»; предпочтительна нейтральная форма «Я случайно облили его Gatorade» не подходит грамматически, выбрать естественную реплику «Это я на него Gatorade пролили» с адаптацией согласования по принятому голосу Алекс.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "I poured Gatorade on it.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "На него пролился Gatorade.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "blank-check-literal",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Английское «blank check» здесь означает право требовать любые суммы с Ильи, а не «пустой чек» (ничего не стоящая бумага). Передать «чек с незаполненной суммой» или естественный эквивалент без смягчения ругательства.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "I am nothing more than a blank *fucking* check.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Я для него всего лишь пустой *ебаный* чек.",
               "occurrence": 0
             },
             "resolves": null
