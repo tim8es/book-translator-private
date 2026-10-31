@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "request_id": "a4bca413e8414b8c86fd3710c9ca9e43",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "ebf7598430df5b96889158232f409a5c5c27f100ba5804a7c8ce9e02ec0a5993",
+    "record": {
+      "correction_round": 1,
+      "outcome": "CORRECTIONS_REQUIRED",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "style",
+            "detail": "Block 43: unnatural literal Russian calque for Petra's enthusiasm washing over Clarion.",
+            "id": "petra-calque",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "let the rush of Petra’s enthusiasm wash over her"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "позволила потоку Петриных восторженных объяснений омыть себя"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Block 47: ungrammatical Russian phrasing of Clarion's excited, dizzy feeling.",
+            "id": "giddy-grammar",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "She felt almost giddy with the rush of it."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "От этого её почти кружило от восторга."
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Block 56: punctuation incorrectly joins narrative panic sentence into quoted speech.",
+            "id": "speech-format",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "“It wasn’t her fault,” Clarion protested. Panic knifed through her."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "«Она не виновата, — запротестовала Клэрион. Её пронзила паника."
+            }
+          }
+        ]
+      },
+      "record_id": "e949aaf5628e43debab73a4e0fae4137",
+      "review_commit": "6663c654ae02c0c2e97d1ddc20d4280ba83a1d76",
+      "review_contract_revision": "docs/TRANSLATION.md@14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "reviewed_at": "2026-10-31T13:17:14Z",
+      "reviewer_session_id": "wings-ch5-review-20261031-449c0e9a",
+      "sequence": 14,
+      "source_sha256": "79bf050d5d827d78a6e37c0191965a044fd34c4eb68f80890967b4d29f081994",
+      "state_revision": "56246359197aaa840f7e37efb37e03a100731768389e9c23b539235ebcd2eb92",
+      "supersedes_record_id": null,
+      "translation_sha256": "430c0f5f17ec20e4e84408c0e22c38f969ac1ad0d6ec292162602ce8661a3a52",
+      "unit_id": "chapter-000008",
+      "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5"
+    }
+  },
+  "error": null
+}

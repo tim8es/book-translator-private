@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "wings-of-starlight-allison-saft",
-  "next_sequence": 14,
+  "next_sequence": 15,
   "records": [
     {
       "record_id": "d9b70e4cfbe5487a9f0d5e37bc1826af",
@@ -1231,6 +1231,83 @@
               "record_id": "426f4aa66c20401889b4ea3a1949f3c6",
               "finding_id": "weakly-thought-calque"
             }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "e949aaf5628e43debab73a4e0fae4137",
+      "sequence": 14,
+      "unit_id": "chapter-000008",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "79bf050d5d827d78a6e37c0191965a044fd34c4eb68f80890967b4d29f081994",
+      "translation_sha256": "430c0f5f17ec20e4e84408c0e22c38f969ac1ad0d6ec292162602ce8661a3a52",
+      "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "review_contract_revision": "docs/TRANSLATION.md@14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "reviewer_session_id": "wings-ch5-review-20261031-449c0e9a",
+      "reviewed_at": "2026-10-31T13:17:14Z",
+      "state_revision": "56246359197aaa840f7e37efb37e03a100731768389e9c23b539235ebcd2eb92",
+      "review_commit": "6663c654ae02c0c2e97d1ddc20d4280ba83a1d76",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "petra-calque",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Block 43: unnatural literal Russian calque for Petra's enthusiasm washing over Clarion.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "let the rush of Petra’s enthusiasm wash over her",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "позволила потоку Петриных восторженных объяснений омыть себя",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "giddy-grammar",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Block 47: ungrammatical Russian phrasing of Clarion's excited, dizzy feeling.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "She felt almost giddy with the rush of it.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "От этого её почти кружило от восторга.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "speech-format",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Block 56: punctuation incorrectly joins narrative panic sentence into quoted speech.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“It wasn’t her fault,” Clarion protested. Panic knifed through her.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Она не виновата, — запротестовала Клэрион. Её пронзила паника.",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       }
