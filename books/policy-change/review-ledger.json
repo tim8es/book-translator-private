@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "policy-change",
-  "next_sequence": 70,
+  "next_sequence": 71,
   "records": [
     {
       "record_id": "1f8894cd56d99429b1bb61e7540a8db1",
@@ -3195,6 +3195,54 @@
             "resolves": {
               "record_id": "49f5c96a411adf35005ac7e8861ac0f4",
               "finding_id": "valentine-secret-partner"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "a8a7903697fb62e2421c084463e1f7c9",
+      "sequence": 70,
+      "unit_id": "chapter-000038",
+      "outcome": "PASS",
+      "source_sha256": "5a00557e0481b52bf548c02d1eaf9bbfa5b3e595d81e07d83e3b2c12e8ab3d3c",
+      "translation_sha256": "8a4c895d417418e35c560a911eb32b7769f06c7ae9aba737f077f9056b33c179",
+      "workflow_revision": "c76159e4939ed00ac19172228f8972af87cadbb8",
+      "review_contract_revision": "docs/TRANSLATION.md@c76159e4939ed00ac19172228f8972af87cadbb8",
+      "reviewer_session_id": "policy-change-reviewer-20261031-0055-38-95bec763",
+      "reviewed_at": "2026-10-31T00:55:41Z",
+      "state_revision": "b7b4ac134f1c38226aa8b9b9dac388d41d816731",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": "c28f5df7862d46cc993e0e39f56ce111",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "sardonic-register-restored",
+            "category": "register",
+            "severity": "minor",
+            "detail": "Повторная сверка полного краткого содержания: разговорное manly, back-slapping shit вновь передано как показное мужицкое панибратство; ирония, контраст с обращением к жёнам и финальная оценка автора сохранены.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "manly, back-slapping shit that was so popular with male stakeholders",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "показной мужицкий цирк с хлопками по спине",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "c28f5df7862d46cc993e0e39f56ce111",
+              "finding_id": "lost-sardonic-register"
             }
           }
         ]
