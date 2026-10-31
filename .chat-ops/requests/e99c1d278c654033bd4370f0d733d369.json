@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "request_id": "e99c1d278c654033bd4370f0d733d369",
+  "book_slug": "wings-of-starlight-allison-saft",
+  "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+  "operation": "review-record",
+  "chapter": 20,
+  "session_id": "wings-ch17-independent-review-20261031-f42f8c51",
+  "outcome": "CORRECTIONS_REQUIRED",
+  "quality_report": {
+    "evidence_version": 2,
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "id": "two-kingdoms-first",
+        "category": "meaning",
+        "severity": "major",
+        "detail": "Блок 000016: Оригинал говорит о двух областях единой Долины фей, не о самостоятельных королевствах. Уместно: «наши земли больше не поддерживают друг с другом никаких отношений».",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "our two realms have nothing to do with each other anymore",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "наши два королевства больше не имеют друг с другом ничего общего",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "exhilaration-turned-fear",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Блок 000057: В оригинале exhilarating thrill, а не fear: вернуть восторг и ощущение свободы, например «к восхищению примешивался трепет восторга».",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "exhilaration prickled at the edges of her wonder",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "к восхищению примешивался волнующий страх",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "wound-grammar",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Блок 000058: Русское согласование нарушено. Исправить «рана на руке заныла» или «рана на руке запульсировала».",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "the wound on her arm throbbed",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "рана на руке заныло",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "longing-to-tenderness",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Блок 000079: Longing передаёт тоску/томление по близости, а нежность меняет оттенок. «Клэрион снова пронзила болезненная тоска».",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "another pang of longing",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "снова ощутила болезненную нежность",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "two-kingdoms-statue",
+        "category": "meaning",
+        "severity": "major",
+        "detail": "Блок 000098: Вновь переведены две области Долины фей как отдельные королевства. Исправить на «разделившего их земли» / «разобщившего их владения».",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "driven their realms apart",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "разлучившего их королевства",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "queen-successor",
+        "category": "meaning",
+        "severity": "major",
+        "detail": "Блок 000100: The queen’s означает преемницу королевы. Нельзя приписывать дружбу преемника Стража прежней королеве; исправить «его преемник уже не был так близок с преемницей королевы».",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "his successor wasn’t as close with the queen’s",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "его преемник уже не был так близок с королевой",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "care-vs-love",
+        "category": "meaning",
+        "severity": "major",
+        "detail": "Блок 000112: Care for не равняется безусловному признанию любви; здесь важно оставить чувство не вполне названным. «Будучи просто Клэрион, она могла бы заботиться о нём» / «дорожить им».",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "As Clarion, she could care for him",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Клэрион могла любить его",
+          "occurrence": 0
+        },
+        "resolves": null
+      }
+    ]
+  },
+  "source_sha256": "2ff09d7fa3750dadc628a3bb4e9d73ea6771a3e1064812c7bf67344235ee4e32",
+  "translation_sha256": "bcb6bee71ee91c325ca410b23155069e9fdd995e4d293493e04099c21a689627",
+  "claim_sha256": "2f6ff2e4bbdf6c7f32c1a27dab2fb242831965b49e1ed6abf230caa0f7346f7f"
+}
