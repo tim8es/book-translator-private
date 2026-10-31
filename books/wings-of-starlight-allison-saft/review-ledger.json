@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "wings-of-starlight-allison-saft",
-  "next_sequence": 71,
+  "next_sequence": 72,
   "records": [
     {
       "record_id": "d9b70e4cfbe5487a9f0d5e37bc1826af",
@@ -8093,6 +8093,92 @@
             "resolves": {
               "record_id": "da375e3bfffd68851acfc7fffb0f96b2",
               "finding_id": "seasons-geography-to-calendar"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "41f411b4f2b544cdb0708572f75a3386",
+      "sequence": 71,
+      "unit_id": "chapter-000023",
+      "outcome": "PASS",
+      "source_sha256": "a6010fd054c99511236949295a2b08f1485e38bb33d09097bb0a6f445adf98f7",
+      "translation_sha256": "e9aa4e004d5320df3e9b6ab5bc82763dc6768e38ad9a3b30bc8fa25f03c1145b",
+      "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "review_contract_revision": "docs/REVIEWER.md@14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "reviewer_session_id": "wings-ch20-review-20261031-904326acaa6a4dcc9e5c4f78a37ecf76",
+      "reviewed_at": "2026-10-31T18:12:32Z",
+      "state_revision": "2bba200aee4ff52c30b931768d945e04c9771a957438a33d21887dd67a54fe92",
+      "review_commit": "ca74bd38728c0cdd9d115490c2cee038263e4894",
+      "correction_round": 2,
+      "supersedes_record_id": "e54776e908256c9aade2163193fbd9a5",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-rainstorm-vs-thunderstorm",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Блок 000035: восстановлен именно ливень, не гроза; противопоставление молнии осталось осмысленным.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "The weather-talents had said nothing about a rainstorm",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Феи с даром погоды не предупреждали о ливне",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "e54776e908256c9aade2163193fbd9a5",
+              "finding_id": "rainstorm-vs-thunderstorm"
+            }
+          },
+          {
+            "id": "recheck-owl-saddle-invented",
+            "category": "referent",
+            "severity": "minor",
+            "detail": "Блок 000060: опасность свалиться со спины Ноктуа и лишиться головы передана без добавления седла.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "losing both her seat *and* her head",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "свалиться со спины Ноктуа *и* лишиться головы",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "e54776e908256c9aade2163193fbd9a5",
+              "finding_id": "owl-saddle-invented"
+            }
+          },
+          {
+            "id": "recheck-tremulous-breath-calque",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Блок 000060: устранена тавтологичная калька о дрожащем дыхании; сохранён судорожный выдох.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "let out a tremulous breath",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "судорожно выдохнула",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "e54776e908256c9aade2163193fbd9a5",
+              "finding_id": "tremulous-breath-calque"
             }
           }
         ]
