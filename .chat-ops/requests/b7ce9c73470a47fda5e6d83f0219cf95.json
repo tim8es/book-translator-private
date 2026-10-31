@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "request_id": "b7ce9c73470a47fda5e6d83f0219cf95",
+  "book_slug": "wings-of-starlight-allison-saft",
+  "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+  "operation": "review-record",
+  "chapter": 8,
+  "session_id": "wings-ch5-review-final-20261031-ff06eacd",
+  "outcome": "PASS",
+  "source_sha256": "79bf050d5d827d78a6e37c0191965a044fd34c4eb68f80890967b4d29f081994",
+  "translation_sha256": "222a7c81f460fbf03b8f7fea715357d37204e386838a3d711873c02d9c5d4700",
+  "claim_sha256": "7c6b2550e50f01557c1a16b999e274b47304dd91831da74561c0dbc11a892a4f",
+  "quality_report": {
+    "evidence_version": 2,
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "id": "speech-final",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Block 56: direct speech punctuation restored in accepted translation. All 82 blocks and 17 italic fragments remain aligned.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "“It was mine.”",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "«Это моя вина».",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "41c89e5a8d6548e0a9e4576ecc39cf62",
+          "finding_id": "speech-partial"
+        }
+      }
+    ]
+  }
+}
