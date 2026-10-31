@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "policy-change",
-  "next_sequence": 87,
+  "next_sequence": 88,
   "records": [
     {
       "record_id": "1f8894cd56d99429b1bb61e7540a8db1",
@@ -4586,6 +4586,70 @@
             },
             "translation_anchor": {
               "quote": "фотографий, на которых они вместе за пределами катка и не в форме команд-соперников, можно пересчитать по пальцам.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "041e25676fc0164e8d57ae48238dbbc1",
+      "sequence": 87,
+      "unit_id": "chapter-000015",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "8ab47070ffd96c49755753bbcb231b98aced5b425501ad608fbe78056d519a24",
+      "translation_sha256": "3abc08354ba2e203bcc95c2f0b31efd9e6d4b112550d0f74ab6dd70fdd4803d3",
+      "workflow_revision": "c76159e4939ed00ac19172228f8972af87cadbb8",
+      "review_contract_revision": "docs/TRANSLATION.md@c76159e4939ed00ac19172228f8972af87cadbb8",
+      "reviewer_session_id": "policy-change-reviewer-20261031-ch15-71c7f2ada69aafeac8a26aaf098d7edb",
+      "reviewed_at": "2026-10-31T12:25:24Z",
+      "state_revision": "ceb658d4b047f1939f99e11c4e79508b0644c7b0",
+      "review_commit": null,
+      "correction_round": 3,
+      "supersedes_record_id": "af9a57245c244809970926f68139aaf1",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "betrayed-look-restored",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Исправленный перевод сохраняет исходный смысл: Вибе смотрит на коробку так, будто она его предала; неверное «предательски взглянул» устранено.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Wiebe gave the box a betrayed look.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Вибе посмотрел на коробку так, словно та его предала.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "af9a57245c244809970926f68139aaf1",
+              "finding_id": "betrayed-look-mistranslated"
+            }
+          },
+          {
+            "id": "final-not-okay-misread",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Финальное «It was not, remotely, okay.» означает, что ситуация для Шейна совсем не в порядке, несмотря на слова Хейдена. Перевод «И ничего, ни в малейшей степени, не было понятно» заменяет эмоциональную оценку на непонимание и разрушает параллель «not ... all Shane wanted» / «not ... okay». Исправить, например: «Но всё было совсем не в порядке.» и сохранить финальную отрицательную эмоциональную интонацию.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "It was not, remotely, okay.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "И ничего, ни в малейшей степени, не было понятно.",
               "occurrence": 0
             },
             "resolves": null
