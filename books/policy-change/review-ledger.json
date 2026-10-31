@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "policy-change",
-  "next_sequence": 74,
+  "next_sequence": 75,
   "records": [
     {
       "record_id": "1f8894cd56d99429b1bb61e7540a8db1",
@@ -3426,6 +3426,131 @@
               "record_id": "732b31541cc9d6ee66d6aa71c8edabd4",
               "finding_id": "came-out-text-clumsy"
             }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "4f16c5fbaa1241a09d53d94475d00682",
+      "sequence": 74,
+      "unit_id": "chapter-000063",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "bd7c95604e220699f92ef06a8dc38b17bd7443fa6b55bafca11d436de6258093",
+      "translation_sha256": "40e118b4099d05dfb0a515469ae20e88d46a7d642fb49cabc244dfd15dca59db",
+      "workflow_revision": "c76159e4939ed00ac19172228f8972af87cadbb8",
+      "review_contract_revision": "docs/TRANSLATION.md@c76159e4939ed00ac19172228f8972af87cadbb8",
+      "reviewer_session_id": "policy-change-reviewer-20261031-1027-ch63-d2c13a",
+      "reviewed_at": "2026-10-31T10:32:02Z",
+      "state_revision": "4f6bfd16556d8bb5cd51352a9b9096e9babc7551",
+      "review_commit": null,
+      "correction_round": 0,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "roof-lock-agency-reversed",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "В оригинале Илья и Марли оказались заперты снаружи на крыше отеля; «заперлись» ошибочно приписывает действие им самим. Исправить на «оказались заперты на крыше» либо «не могли попасть с крыши обратно».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "got locked out on the roof",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "заперлись на крыше",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "designer-discretion-lost",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "В сообщении о дизайнере discreet означает конфиденциальность, умение хранить тайну; «осторожные» теряет смысл. Предпочтительно «умеют хранить тайну» или «работают конфиденциально».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "they are very discreet.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "они очень осторожные",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "christen-joke-lost",
+            "category": "register",
+            "severity": "minor",
+            "detail": "Christen в сексуальном контексте означает впервые опробовать спортзал, а «обмываем» подразумевает праздновать покупку выпивкой. Восстановить шутку о первом использовании, например «мы так скоро опробуем спортзал».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "we are christening the gym so soon",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "мы так скоро обмываем спортзал",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "christen-kitchen-lost",
+            "category": "register",
+            "severity": "minor",
+            "detail": "Повторяющийся образ christening kitchen floor передан «обмывали пол кухни» и отсылает к алкоголю, а не сексуальному «первому использованию» новой комнаты. Например, «уже опробовали кухонный пол».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "they were christening the kitchen floor",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "они уже обмывали пол кухни",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "sloppy-intimacy-shift",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Sloppy blow-job — мокрое/неаккуратное действие, а «лениво сосали» меняет смысл на медлительность. Нужна естественная русская формулировка с сохранением исходной телесности.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "a sloppy blow-job",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "лениво сосали",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "hot-calque",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Ты до нелепого горячий» — неестественная буквальная калька ridiculously hot. Передать непринуждённый восторженный комплимент, например «Ты просто неприлично сексуален».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "You are ridiculously hot.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Ты до нелепого горячий",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       }
