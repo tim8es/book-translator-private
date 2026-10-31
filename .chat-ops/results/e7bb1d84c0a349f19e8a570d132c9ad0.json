@@ -1,0 +1,204 @@
+{
+  "schema_version": 1,
+  "request_id": "e7bb1d84c0a349f19e8a570d132c9ad0",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "09bc2440a6b3b36dadba73b21af4269c5c259a63cdeafbb768da89fcc0a13a57",
+    "record": {
+      "correction_round": 2,
+      "outcome": "CORRECTIONS_REQUIRED",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "independent_session",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "meaning",
+            "detail": "Блок 000020: прежнее буквальное «Мир» заменено естественным пресечением спора «Полно».",
+            "id": "resolved-01",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "peace-interjection",
+              "record_id": "9489ea5e87d94336a5443f4fda6745bb"
+            },
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "“Peace.” Aurelia stifled a yawn."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "«Полно"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Блок 000027: вместо «чайной церемонии» описано устройство чаепития; отдельная грамматическая ошибка фиксируется новым замечанием.",
+            "id": "resolved-02",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "tea-service",
+              "record_id": "9489ea5e87d94336a5443f4fda6745bb"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "an entire tea service"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "устраивали в углу мастерской"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Блок 000038: вздох Аурелии теперь происходит в процессе жевания, не после проглатывания.",
+            "id": "resolved-03",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "mouthful-timing",
+              "record_id": "9489ea5e87d94336a5443f4fda6745bb"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Halfway through her first mouthful"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Клэрион ещё не успела дожевать первый кусочек"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Блок 000051: путешествие на санях без добавленного направления вниз.",
+            "id": "resolved-04",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "winter-mountains-sled",
+              "record_id": "9489ea5e87d94336a5443f4fda6745bb"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "mountains you could traverse by sled"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "горы, по которым можно путешествовать на санях"
+            }
+          },
+          {
+            "category": "terminology",
+            "detail": "Блок 000068: сезонные края единой Долины фей не названы независимыми королевствами.",
+            "id": "resolved-05",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "seasonal-realms",
+              "record_id": "9489ea5e87d94336a5443f4fda6745bb"
+            },
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Neither of our realms would have to worry."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Ни одному из наших краёв не пришлось бы тревожиться"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Блок 000080: управление собственной волей без коннотации подчинения чужой.",
+            "id": "resolved-06",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "will-vs-subjugation",
+              "record_id": "9489ea5e87d94336a5443f4fda6745bb"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "To control my will and shape it."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Управлять своей волей, придавать ей форму"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Блок 000084: исправлена буквальная калька, сохранён смысл отказа от навязанных наставлений.",
+            "id": "resolved-07",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "letting-go-advice",
+              "record_id": "9489ea5e87d94336a5443f4fda6745bb"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "What would happen if you let go of what she told you?"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Что будет, если ты попробуешь отбросить её наставления"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Блок 000027: «пока те устраивали в углу мастерской будто решили устроить целое чаепитие» — грамматически разрушенная фраза, смешаны две конструкции. Исправить на «пока те расставляли в углу мастерской целый чайный сервиз» или «пока те накрывали в углу мастерской стол для чаепития».",
+            "id": "tea-service-syntax",
+            "resolved": false,
+            "resolves": null,
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "they set up what seemed to Clarion an entire tea service"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "устраивали в углу мастерской будто решили устроить целое чаепитие"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Блок 000048: после выделенной курсивом внутренней реплики пропущено тире перед авторским пояснением: «*Я всегда хотела того, чего мне не следовало хотеть*, сказала она однажды Милори». Правильно «*…*, — сказала она однажды Милори» либо «*…* — так она однажды сказала Милори».",
+            "id": "thought-attribution-dash",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "*I’ve always wanted things I shouldn’t,* she’d told Milori once."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "*Я всегда хотела того, чего мне не следовало хотеть*, сказала она однажды Милори."
+            }
+          }
+        ]
+      },
+      "record_id": "20e1f6b5310b445589593104f19892ac",
+      "review_commit": "2a809c646cfdaf31e9c72d92778d303a182a2bef",
+      "review_contract_revision": "docs/TRANSLATION.md@14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "reviewed_at": "2026-10-31T17:08:36Z",
+      "reviewer_session_id": "wings-ch15-recheck-20261031-8a093f64",
+      "sequence": 45,
+      "source_sha256": "ff43fefaa5da9d3b4b8a5091382e30e11727fae96ff4dfba53588a72093486ea",
+      "state_revision": "aba980db7969a0775d113fdee670850280d88d75b3f94039685f894d2cbc987e",
+      "supersedes_record_id": "9489ea5e87d94336a5443f4fda6745bb",
+      "translation_sha256": "406775b1aa758faf0744536653e9538a3681075729bf326caa87c130a8feb267",
+      "unit_id": "chapter-000018",
+      "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5"
+    }
+  },
+  "error": null
+}
