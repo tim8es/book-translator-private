@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "wings-of-starlight-allison-saft",
-  "next_sequence": 37,
+  "next_sequence": 38,
   "records": [
     {
       "record_id": "d9b70e4cfbe5487a9f0d5e37bc1826af",
@@ -3562,6 +3562,187 @@
             "resolves": {
               "record_id": "b56e9b73b420434bad29d7f567ffdb4f",
               "finding_id": "petra-calque"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "23a273956e3aa3f4a1aaf0de2cd54231",
+      "sequence": 37,
+      "unit_id": "chapter-000014",
+      "outcome": "PASS",
+      "source_sha256": "b5c87d5dfdfbd84dc090fb39582e72273a4d5c6541d62cfef2e16d497c7031d4",
+      "translation_sha256": "f2aa6542c2cd9339ef2fb45df1347bfc05c83e21220da416f86697bf5a57aec0",
+      "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "review_contract_revision": "docs/TRANSLATION.md@14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "reviewer_session_id": "wings-ch11-review-20261031-6bce57cd",
+      "reviewed_at": "2026-10-31T16:36:23Z",
+      "state_revision": "86fef307be8ea29d6dbf5b85ea2b657d856851c5",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": "17b9ee0d14204cedade2d865bd59f0d8",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "pull-versus-push",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Повторная проверка: pull-versus-push исправлено; соответствие оригиналу подтверждено.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Perhaps a pull is the better word",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Может быть, правильнее сказать — потянуть",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "17b9ee0d14204cedade2d865bd59f0d8",
+              "finding_id": "pull-versus-push"
+            }
+          },
+          {
+            "id": "breathless-versus-silent",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Повторная проверка: breathless-versus-silent исправлено; соответствие оригиналу подтверждено.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "she let out a breathless laugh",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "она рассмеялась, едва переводя дыхание",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "17b9ee0d14204cedade2d865bd59f0d8",
+              "finding_id": "breathless-versus-silent"
+            }
+          },
+          {
+            "id": "know-better-familiarity",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Повторная проверка: know-better-familiarity исправлено; соответствие оригиналу подтверждено.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "If she didn’t know better",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Можно было бы подумать, что он даже слегка смутился",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "17b9ee0d14204cedade2d865bd59f0d8",
+              "finding_id": "know-better-familiarity"
+            }
+          },
+          {
+            "id": "warm-seasons-calque",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Повторная проверка: warm-seasons-calque исправлено; соответствие оригиналу подтверждено.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "sledding in the warm seasons",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "в тёплых краях на санках не катаются",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "17b9ee0d14204cedade2d865bd59f0d8",
+              "finding_id": "warm-seasons-calque"
+            }
+          },
+          {
+            "id": "suits-you-shift",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Повторная проверка: suits-you-shift исправлено; соответствие оригиналу подтверждено.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "It suits you",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Тебе это идёт",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "17b9ee0d14204cedade2d865bd59f0d8",
+              "finding_id": "suits-you-shift"
+            }
+          },
+          {
+            "id": "find-me-calque",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Повторная проверка: find-me-calque исправлено; соответствие оригиналу подтверждено.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "How do you find me, then",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "А какой же я, по-твоему",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "17b9ee0d14204cedade2d865bd59f0d8",
+              "finding_id": "find-me-calque"
+            }
+          },
+          {
+            "id": "invented-falling-verb",
+            "category": "style",
+            "severity": "major",
+            "detail": "Повторная проверка: invented-falling-verb исправлено; соответствие оригиналу подтверждено.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "You’ve fallen enough today",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "На сегодня с тебя хватит падений",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "17b9ee0d14204cedade2d865bd59f0d8",
+              "finding_id": "invented-falling-verb"
+            }
+          },
+          {
+            "id": "invented-italics",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Повторная проверка: invented-italics исправлено; соответствие оригиналу подтверждено.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "when he was looking at her like this",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "когда он смотрел на неё так",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "17b9ee0d14204cedade2d865bd59f0d8",
+              "finding_id": "invented-italics"
             }
           }
         ]
