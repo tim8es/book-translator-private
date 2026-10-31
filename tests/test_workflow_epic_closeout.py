@@ -50,7 +50,9 @@ class WorkflowEpicCloseoutContractTests(unittest.TestCase):
         workflow_dir = PROJECT_ROOT / ".github" / "workflows"
         workflows = sorted(path.name for path in workflow_dir.glob("*.yml"))
         allowed = {"tests.yml", "deploy-apify-private.yml", "smoke-apify-private.yml",
-                   "chat-operations.yml"}
+                   "chat-operations.yml", "policy-change-source-intake.yml",
+                   "policy-change-final-delivery.yml", "wings-of-starlight-final-delivery.yml",
+                   "auto-translate.yml"}
         self.assertIn("tests.yml", workflows)
         self.assertEqual(set(workflows) - allowed, set())
         ci = (workflow_dir / "tests.yml").read_text(encoding="utf-8")
@@ -70,6 +72,11 @@ class WorkflowEpicCloseoutContractTests(unittest.TestCase):
                 self.assertIn("cancel-in-progress: false", source)
                 self.assertIn("contents: write", source)
                 self.assertIn("  schedule:", source)
+            elif filename in {"policy-change-source-intake.yml",
+                              "policy-change-final-delivery.yml",
+                              "wings-of-starlight-final-delivery.yml"}:
+                self.assertIn("  push:", source)
+                self.assertIn("branches: [main]", source)
             else:
                 self.assertNotIn("  push:", source)
 
