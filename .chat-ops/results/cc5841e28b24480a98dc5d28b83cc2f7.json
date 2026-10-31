@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "request_id": "cc5841e28b24480a98dc5d28b83cc2f7",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "c7ddc9040b990d254559ae0d4ca309c008406f30d89926c4e858ed648c3559a6",
+    "record": {
+      "correction_round": 1,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "independent_session",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "meaning",
+            "detail": "Повторная независимая сверка: coaches в перечислении транспортных средств переведено «в автобусах»; предложение теперь сохраняет поездки и совместное проживание. Соседние абзацы проверены по оригиналу.",
+            "id": "coach-bus-restored-ch42",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "coach-bus-as-trainer",
+              "record_id": "794d3153aa414d158e96ed07af4a9c2b"
+            },
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "he shared a locker room with and coaches and planes and sometimes rooms"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "с кем он делил раздевалку, ездил в автобусах и самолётах, а иногда жил в одном номере"
+            }
+          },
+          {
+            "category": "terminology",
+            "detail": "Имя Wiebe в текущем переводе исправлено с «Уиб» на «Вибе» в точке прежнего замечания. Остальной параграф неизменён.",
+            "id": "wiebe-name-restored-ch42",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "wiebe-name-wrong",
+              "record_id": "794d3153aa414d158e96ed07af4a9c2b"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Wiebe was right."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Вибе был прав."
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Оригинальное odometer теперь передано «одометр», без подмены на спидометр. Соседний диалог и управление автомобилем сохранены.",
+            "id": "odometer-restored-ch42",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "odometer-as-speedometer",
+              "record_id": "794d3153aa414d158e96ed07af4a9c2b"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Shane glanced at the odometer and eased his foot off the gas."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Шейн посмотрел на одометр и чуть отпустил газ."
+            }
+          }
+        ]
+      },
+      "record_id": "bd3dd4b4cde44b13ab5339265b7afd13",
+      "review_commit": "9170507b09c008ad2a4283c1563f5c7e25da6fe4",
+      "review_contract_revision": "docs/TRANSLATION.md@c76159e4939ed00ac19172228f8972af87cadbb8",
+      "reviewed_at": "2026-10-31T13:08:47Z",
+      "reviewer_session_id": "policy-change-reviewer-20261031-ch42-d827a6c59bb7",
+      "sequence": 96,
+      "source_sha256": "bc39e374843fe44f4cd69a76601975b5c59a116bdf0197643120b504e15aaacd",
+      "state_revision": "29ec81cad4665bda922436c4307bd353c9f153b76044f298328ccb8f1ec04cf2",
+      "supersedes_record_id": "794d3153aa414d158e96ed07af4a9c2b",
+      "translation_sha256": "ae801aebfc158fb5d63447cdaa4906bd078ad80b15e000806e79eb2697bf06f9",
+      "unit_id": "chapter-000042",
+      "workflow_revision": "c76159e4939ed00ac19172228f8972af87cadbb8"
+    }
+  },
+  "error": null
+}

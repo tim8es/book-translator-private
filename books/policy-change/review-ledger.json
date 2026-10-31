@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "policy-change",
-  "next_sequence": 96,
+  "next_sequence": 97,
   "records": [
     {
       "record_id": "1f8894cd56d99429b1bb61e7540a8db1",
@@ -5110,6 +5110,92 @@
             "resolves": {
               "record_id": "3f6c85b2c45e4b0998786684e04a9d55",
               "finding_id": "khl-coach-awkward-ch60"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "bd3dd4b4cde44b13ab5339265b7afd13",
+      "sequence": 96,
+      "unit_id": "chapter-000042",
+      "outcome": "PASS",
+      "source_sha256": "bc39e374843fe44f4cd69a76601975b5c59a116bdf0197643120b504e15aaacd",
+      "translation_sha256": "ae801aebfc158fb5d63447cdaa4906bd078ad80b15e000806e79eb2697bf06f9",
+      "workflow_revision": "c76159e4939ed00ac19172228f8972af87cadbb8",
+      "review_contract_revision": "docs/TRANSLATION.md@c76159e4939ed00ac19172228f8972af87cadbb8",
+      "reviewer_session_id": "policy-change-reviewer-20261031-ch42-d827a6c59bb7",
+      "reviewed_at": "2026-10-31T13:08:47Z",
+      "state_revision": "29ec81cad4665bda922436c4307bd353c9f153b76044f298328ccb8f1ec04cf2",
+      "review_commit": "9170507b09c008ad2a4283c1563f5c7e25da6fe4",
+      "correction_round": 1,
+      "supersedes_record_id": "794d3153aa414d158e96ed07af4a9c2b",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "coach-bus-restored-ch42",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Повторная независимая сверка: coaches в перечислении транспортных средств переведено «в автобусах»; предложение теперь сохраняет поездки и совместное проживание. Соседние абзацы проверены по оригиналу.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "he shared a locker room with and coaches and planes and sometimes rooms",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "с кем он делил раздевалку, ездил в автобусах и самолётах, а иногда жил в одном номере",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "794d3153aa414d158e96ed07af4a9c2b",
+              "finding_id": "coach-bus-as-trainer"
+            }
+          },
+          {
+            "id": "wiebe-name-restored-ch42",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "Имя Wiebe в текущем переводе исправлено с «Уиб» на «Вибе» в точке прежнего замечания. Остальной параграф неизменён.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Wiebe was right.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Вибе был прав.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "794d3153aa414d158e96ed07af4a9c2b",
+              "finding_id": "wiebe-name-wrong"
+            }
+          },
+          {
+            "id": "odometer-restored-ch42",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Оригинальное odometer теперь передано «одометр», без подмены на спидометр. Соседний диалог и управление автомобилем сохранены.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Shane glanced at the odometer and eased his foot off the gas.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Шейн посмотрел на одометр и чуть отпустил газ.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "794d3153aa414d158e96ed07af4a9c2b",
+              "finding_id": "odometer-as-speedometer"
             }
           }
         ]
