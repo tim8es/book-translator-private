@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "policy-change",
-  "next_sequence": 84,
+  "next_sequence": 85,
   "records": [
     {
       "record_id": "1f8894cd56d99429b1bb61e7540a8db1",
@@ -4323,6 +4323,92 @@
             "resolves": {
               "record_id": "0e610e47732d6481057603a70c352577",
               "finding_id": "wiebe-name-chapter-14"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "5a37d7877e9943a8aa837b0ee7494119",
+      "sequence": 84,
+      "unit_id": "chapter-000018",
+      "outcome": "PASS",
+      "source_sha256": "33f0846d72d7c7023f37f67f1cae590508c7ad5bf2db289668cbdabaa010191f",
+      "translation_sha256": "f3b8d0e0eca7c937afa6fb2de112235e211909051c8720b5467eae00589d59e3",
+      "workflow_revision": "c76159e4939ed00ac19172228f8972af87cadbb8",
+      "review_contract_revision": "docs/TRANSLATION.md@c76159e4939ed00ac19172228f8972af87cadbb8",
+      "reviewer_session_id": "policy-change-reviewer-20261031-ch18-74fcbd03476c40ec998e5a3943296085",
+      "reviewed_at": "2026-10-31T11:48:51Z",
+      "state_revision": "0461808bb53c2cffbd01dbb8060a36592ee3f60c",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": "31b6505e9bbed91c24bc91db2db05c0e",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "wiebe-name-corrected-ch10",
+            "category": "terminology",
+            "severity": "major",
+            "detail": "Все 26 употреблений фамилии Wiebe в исходнике сверены с переводом, вариант «Уиб» устранён; установлено согласованное «Вибе» с нужным падежом.",
+            "resolved": true,
+            "resolves": {
+              "record_id": "31b6505e9bbed91c24bc91db2db05c0e",
+              "finding_id": "wiebe-name-inconsistent"
+            },
+            "source_anchor": {
+              "quote": "Wiebe was leaning back on his chair",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Вибе откинулся на спинку кресла",
+              "occurrence": 0
+            }
+          },
+          {
+            "id": "alex-pronoun-corrected-ch10",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Согласование Алекс во множественном числе восстановлено: «Алекс оказались», «Алекс улыбнулись», «Алекс сказали»; смысл they/them сохранён.",
+            "resolved": true,
+            "resolves": {
+              "record_id": "31b6505e9bbed91c24bc91db2db05c0e",
+              "finding_id": "alex-masculine-pronouns"
+            },
+            "source_anchor": {
+              "quote": "To Shane’s absolute surprise, Alex was on his side.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "К совершенному удивлению Шейна, Алекс оказались на его стороне.",
+              "occurrence": 0
+            }
+          },
+          {
+            "id": "marlene-punctuation-corrected-ch10",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "Намеренно сухая пунктуация вопроса Марлен сохранена: «Вы будете голодны.» — без вопросительного знака.",
+            "resolved": true,
+            "resolves": {
+              "record_id": "31b6505e9bbed91c24bc91db2db05c0e",
+              "finding_id": "marlene-missing-question-mark"
+            },
+            "source_anchor": {
+              "quote": "Will you be hungry.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Вы будете голодны.",
+              "occurrence": 0
             }
           }
         ]
