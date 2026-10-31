@@ -1,0 +1,166 @@
+{
+  "schema_version": 1,
+  "request_id": "51fb3e71f18b4f95b9f1c8c633cc6250",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "8f0565337203004ee721458eece688e6d50d5e8e1634623fa50d237b7317eb9f",
+    "record": {
+      "correction_round": 2,
+      "outcome": "CORRECTIONS_REQUIRED",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "independent_session",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "style",
+            "detail": "Block 9: prior blood-clause-grammar resolved; original meaning and surrounding passage checked.",
+            "id": "resolved-1",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "blood-clause-grammar",
+              "record_id": "bd2d7dfd9fcc4124a83ed78731e50ddb"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "and something she sincerely hoped was not blood"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "А ещё на пергаменте виднелись какие-то следы — Клэрион искренне надеялась, что это не кровь"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Block 26: prior summer-region-versus-season resolved; original meaning and surrounding passage checked.",
+            "id": "resolved-2",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "summer-region-versus-season",
+              "record_id": "bd2d7dfd9fcc4124a83ed78731e50ddb"
+            },
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "she always felt the most at home in Summer"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "уютнее всего она всегда чувствовала себя на Летней поляне"
+            }
+          },
+          {
+            "category": "addition",
+            "detail": "Block 36: prior second-star-added-plea resolved; original meaning and surrounding passage checked.",
+            "id": "resolved-3",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "second-star-added-plea",
+              "record_id": "bd2d7dfd9fcc4124a83ed78731e50ddb"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "By the second star"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Во имя второй звезды"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Block 74: prior midafternoon-time resolved; original meaning and surrounding passage checked.",
+            "id": "resolved-4",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "midafternoon-time",
+              "record_id": "bd2d7dfd9fcc4124a83ed78731e50ddb"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "By midafternoon"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "К середине второй половины дня"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Block 108: prior burned-eyes-not-fields resolved; original meaning and surrounding passage checked.",
+            "id": "resolved-5",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "burned-eyes-not-fields",
+              "record_id": "bd2d7dfd9fcc4124a83ed78731e50ddb"
+            },
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "the ruined fields of Spring burned on the backs of her eyes"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "разорённые поля Весны — словно выжженные на внутренней стороне век"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Block 42: source emphasis on loving result shifts to certainty («непременно»). Restore emphasized enthusiasm, e.g. «Вы будете *в восторге*».",
+            "id": "iris-emphasis",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "You’re going to *love* it."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Вам *непременно* понравится"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Block 77: «преуменьшить дело до нелепости» is unidiomatic calque of gross understatement. Use idiomatic «Назвать Петру увлечённой работой — значит почти ничего не сказать».",
+            "id": "petra-calque",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "To say she was single-minded was a gross understatement."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Назвать её увлечённой своим делом значило бы преуменьшить дело до нелепости."
+            }
+          }
+        ]
+      },
+      "record_id": "b56e9b73b420434bad29d7f567ffdb4f",
+      "review_commit": "809df1e00033811955e907062ddf98d991b49e9c",
+      "review_contract_revision": "docs/TRANSLATION.md@14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "reviewed_at": "2026-10-31T15:41:02Z",
+      "reviewer_session_id": "wings-ch10-followup-review-20261031-5a08bd92",
+      "sequence": 28,
+      "source_sha256": "73a6b58fc9bc52cd0a2d05e4876db79bd8544dca8c52673bbd6be6b02a1a99f4",
+      "state_revision": "83d67e7763489237389d1a606fb5f2a7ad78e932b68142ffebb0bb51fc7f5995",
+      "supersedes_record_id": "bd2d7dfd9fcc4124a83ed78731e50ddb",
+      "translation_sha256": "6c93b061c7fc2554291ea40ee86a2ad95a8f2f1e55d9ed5ed261a9c3ffc96b17",
+      "unit_id": "chapter-000013",
+      "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5"
+    }
+  },
+  "error": null
+}
