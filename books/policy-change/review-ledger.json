@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "policy-change",
-  "next_sequence": 67,
+  "next_sequence": 68,
   "records": [
     {
       "record_id": "1f8894cd56d99429b1bb61e7540a8db1",
@@ -3051,6 +3051,54 @@
             "resolves": {
               "record_id": "015fdd2364fff6f942eb2bc3a97b3dbb",
               "finding_id": "suspend-disbelief-idiom-calque"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "3f5fbd17d0ad43a1ae78f1449a04e001",
+      "sequence": 67,
+      "unit_id": "chapter-000017",
+      "outcome": "PASS",
+      "source_sha256": "58e2efa6fa54543341d02df8521aff47d65d775a45cd32017252fc13b170971e",
+      "translation_sha256": "ea1c27667ab3eb51e5f4b5ac3e554ab369d328f5f7060c223bab2045c6e69206",
+      "workflow_revision": "c76159e4939ed00ac19172228f8972af87cadbb8",
+      "review_contract_revision": "docs/TRANSLATION.md@c76159e4939ed00ac19172228f8972af87cadbb8",
+      "reviewer_session_id": "policy-change-reviewer-20261031-0230-43c47bd2",
+      "reviewed_at": "2026-10-31T00:28:39Z",
+      "state_revision": "d061a145aceb321b74aad2c1013048d1ddfe65e9",
+      "review_commit": null,
+      "correction_round": 2,
+      "supersedes_record_id": "d3f13a9ab46cde6b1a3d2486a536612d",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "walked-backwards-direction-fixed",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Илья теснит Шейна назад к стене; направление действия соответствует оригиналу, больше не подразумевается, что Илья пятится сам.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Ilya walked Shane backwards until he was pressed against the wall",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Илья теснил Шейна назад, пока тот не оказался прижат к стене.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "d3f13a9ab46cde6b1a3d2486a536612d",
+              "finding_id": "shane-walked-backwards"
             }
           }
         ]
