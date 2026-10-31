@@ -1,24 +1,30 @@
-# Private-only GitHub Actions book translation (opt-in)
+# Existing-repository GitHub Actions book translation (opt-in)
 
 This runner is an **optional automated execution adapter**. The canonical
 Book Translator state machine and all literary contracts remain in the pinned
 public workflow revision. The adapter **does not** change existing books,
 their workflow pins, the chat-operations queue, or manual translation support.
 
-## Security gate — must be addressed before first intake
+## Existing repository visibility
 
-GitHub's repository API reported this repository as **PUBLIC** during development.
-Do not upload or submit any user EPUB or translation while it is public.
-The Actions workflow verifies the repository API reports private=true **before**
-selecting or opening a job. The status of repository visibility must be
-independently checked again before the n8n upload step. A GitHub Secrets key
-does not make a public repository's committed book files private.
+The entire job stays in `tim8es/book-translator-private` alongside current books,
+state, and Actions. **No separate repository** is needed. The repository is
+currently PUBLIC, despite its name; source EPUB, translation chapters, results,
+and Git history can be visible to anyone. This is an intentional deployment
+choice for the current project, not a requirement for GitHub Actions.
 
-Only process material the user is authorized to translate and store. Never send
-copyrighted user books to public repositories. Check model-provider terms and
-data handling before sending text to OmniRoute or its upstream provider.
+Do not upload third-party Telegram customers' books without their explicit
+informed permission to store the material in a public GitHub repository and
+without the necessary rights for this publication. n8n must collect that
+permission **before uploading**. Intake requires
+`"public_release_acknowledged": true` as a defensive check against accidental
+automated uploads. This flag does not establish or verify legal rights. The
+owner is responsible for using materials they are allowed to publish.
 
-## Preparation after the repository is private
+OmniRoute and its upstream LLM providers also receive source passages.
+Review provider terms before enabling paid workloads.
+
+## Configuration
 
 Configure the following GitHub Actions secret and repository variables:
 
@@ -35,8 +41,9 @@ prevent non-force pushes require a separately reviewed publication strategy.
 
 ## n8n intake contract
 
-1. Verify repository visibility with the authenticated GitHub REST repository
-   metadata endpoint. Require private=true; fail closed otherwise.
+1. Confirm the user explicitly authorizes public storage/publication of the
+   EPUB and translation and has the necessary rights. Never assume a Telegram
+   upload implies consent to GitHub publication.
 2. Assign a random 32-character lowercase hex job_id and calculate SHA-256
    over the exact original EPUB bytes. Do not use the Telegram file_id as a
    job ID or expose bot/user identifiers in the book slug.
@@ -49,7 +56,7 @@ prevent non-force pushes require a separately reviewed publication strategy.
    input job_id. Poll automation/status/<job_id>.json. Dispatch is optional for
    recovery: a 15-minute schedule scans for unfinished requests.
 5. When state=done, use the output artifact_path and artifact_sha256 in the
-   status to retrieve and verify the final EPUB (or download the private Actions
+   status to retrieve and verify the final EPUB (or download the Actions
    artifact from the finishing workflow run), then send through Telegram.
    When state is missing, still working, or blocked, **do not deliver**.
 
@@ -60,7 +67,8 @@ into a production commit):
       "schema_version": 1,
       "job_id": "0123456789abcdef0123456789abcdef",
       "source_sha256": "<64-lowercase-hex-digest>",
-      "target_language": "ru"
+      "target_language": "ru",
+      "public_release_acknowledged": true
     }
 
 Optional: workflow_revision (exact 40-hex public commit), title, author.
@@ -106,11 +114,11 @@ This is a **bounded initial MVP**, not unrestricted unattended production:
 - The reviewer is an LLM, not a guarantee of literary correctness; evaluate
   finished books before offering an unqualified quality guarantee.
 - Artifact retention is 30 days; durable final output remains under the
-  private book workspace until deleted under your data retention policy.
+  existing book workspace until deleted under your data retention policy.
 
 For testing, create a small **authorized synthetic** EPUB and assert:
 request hash rejection, source-coverage admission, claim owner, translation
 acceptance, independent PASS and CORRECTIONS_REQUIRED, restart recovery,
 stale Git commit rejection, final EPUB SHA, and delivered artifact parity.
 Run the repo's tests in the PR; do not enable production jobs by merging
-before this integration test and the visibility/security gate are verified.
+before an integration test and the publication authorization flow are verified.
