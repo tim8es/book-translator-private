@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "wings-of-starlight-allison-saft",
-  "next_sequence": 2,
+  "next_sequence": 3,
   "records": [
     {
       "record_id": "d9b70e4cfbe5487a9f0d5e37bc1826af",
@@ -15,6 +15,33 @@
       "reviewer_session_id": "wings-reviewer-20261031-9d635401",
       "reviewed_at": "2026-10-31T01:46:53Z",
       "state_revision": "8ebdfba522567637fa402f9749e4414ec46f6a947423b79600d65ec6238c32f1",
+      "review_commit": null,
+      "correction_round": 0,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": []
+      }
+    },
+    {
+      "record_id": "e9509f00165d4eb38c071c99d3115f83",
+      "sequence": 2,
+      "unit_id": "chapter-000002",
+      "outcome": "PASS",
+      "source_sha256": "696bcae6220287eb12c23acd5da0333f0e5e0fcb85c204ead7f580a33ae9a493",
+      "translation_sha256": "e67cecc401d70edbf352aee56fe9ebe999294904e6b38db3d848f782b569c1bf",
+      "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "review_contract_revision": "docs/TRANSLATION.md@14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "reviewer_session_id": "wings-reviewer-auto2-mvvt1p1i",
+      "reviewed_at": "2026-10-31T02:52:05Z",
+      "state_revision": "33b176e7163504385f9f5f389287853e6b6e031c",
       "review_commit": null,
       "correction_round": 0,
       "supersedes_record_id": null,
