@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "request_id": "519e619848fa4ef3a9d8d12bde529baf",
+  "book_slug": "wings-of-starlight-allison-saft",
+  "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+  "operation": "review-record",
+  "chapter": 17,
+  "session_id": "wings-ch14-review-20261031-e572ec61",
+  "outcome": "PASS",
+  "quality_report": {
+    "evidence_version": 2,
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "id": "fix-check-01",
+        "category": "meaning",
+        "severity": "major",
+        "detail": "Блок 000038: Summer сохранён как географическое Лето, а не календарный сезон.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "wearing long sleeves in Summer",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "носить длинные рукава в Лете",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "2f51f844b1d1411a98ec0234241b8eb9",
+          "finding_id": "summer-geographic"
+        }
+      },
+      {
+        "id": "fix-check-02",
+        "category": "meaning",
+        "severity": "major",
+        "detail": "Блок 000119: прежнее королевство заменено зимними землями без ложного суверенитета.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "leave an entire realm to fend for itself",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "оставлять целые земли на произвол судьбы",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "2f51f844b1d1411a98ec0234241b8eb9",
+          "finding_id": "realm-not-queendom"
+        }
+      },
+      {
+        "id": "fix-check-03",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Блок 000059: восстановлена причинная роль Клэрион в смехе Милори.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "She startled a laugh out of him",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Ей удалось неожиданно рассмешить его",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "2f51f844b1d1411a98ec0234241b8eb9",
+          "finding_id": "laugh-actor"
+        }
+      },
+      {
+        "id": "fix-check-04",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Блок 000108: сохранена неопределённость тайных встреч, не добавлены свидания.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "sneaking out to see a *boy*",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "тайком выбираешься, чтобы повидаться с *парнем*",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "2f51f844b1d1411a98ec0234241b8eb9",
+          "finding_id": "visiting-vs-dating"
+        }
+      },
+      {
+        "id": "fix-check-05",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Блок 000041: уточнено растение бальзамическая пихта.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "Balsam fir and wintergreen",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Бальзамическая пихта и грушанка",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "2f51f844b1d1411a98ec0234241b8eb9",
+          "finding_id": "balsam-fir-botany"
+        }
+      },
+      {
+        "id": "fix-check-06",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Блок 000071: восстановлена причинная связь оборота, устранена калька.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "Between the Nightmares and Milori",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Из-за Кошмаров и Милори",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "2f51f844b1d1411a98ec0234241b8eb9",
+          "finding_id": "winter-and-milori-calque"
+        }
+      }
+    ]
+  },
+  "source_sha256": "79ac6615c151db4314c1fd53b506827a609486c9ce4885f9d68b0f04e69125a4",
+  "translation_sha256": "90a7088c48a34450f7b3254dbd0330e44cbb9d2637f9efd1cca7dd91fc4ff72f",
+  "claim_sha256": "02eee1f34702d4386347c8e84f22df3a870a4e1ae3f34b7d95eb7943b139dac1"
+}
