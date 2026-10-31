@@ -103,8 +103,7 @@ class AutomatedBookTests(unittest.TestCase):
                     "translation_sha256": "a" * 64}]})
                 self.assertEqual(worker.next_operation(slug, status)[0], "corrector")
                 status["correction_rounds"]["chapter-000001"] = worker.MAX_CORRECTIONS
-                with self.assertRaises(worker.JobError):
-                    worker.next_operation(slug, status)
+                self.assertEqual(worker.next_operation(slug, status)[0], "blocked")
 
 
 if __name__ == "__main__":
