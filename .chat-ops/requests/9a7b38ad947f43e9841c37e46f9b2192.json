@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "request_id": "9a7b38ad947f43e9841c37e46f9b2192",
+  "book_slug": "wings-of-starlight-allison-saft",
+  "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+  "operation": "review-record",
+  "chapter": 18,
+  "session_id": "wings-ch15-review-20261031-be16fe0d",
+  "outcome": "CORRECTIONS_REQUIRED",
+  "source_sha256": "ff43fefaa5da9d3b4b8a5091382e30e11727fae96ff4dfba53588a72093486ea",
+  "translation_sha256": "7b71be9b559e31c94ec5b6ae13cbe119023146f18ab587406f53c3300079ec02",
+  "claim_sha256": "2cd81577a17f5ecacc568020f730087532229edff3e4b0c18486ce533ba0a0cc",
+  "quality_report": {
+    "evidence_version": 2,
+    "context": "independent_session",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "id": "peace-interjection",
+        "category": "meaning",
+        "severity": "major",
+        "detail": "Блок 000020. Восклицание Aurelia «Peace.» прерывает ссору — это «Полно», «Хватит» или «Тише», а не буквальное «Мир». Исправить на «Полно» с естественной пунктуацией.",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "“Peace.” Aurelia stifled a yawn.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "«Мир, — сказала Аурелия, подавляя зевок.",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "tea-service",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Блок 000027. «entire tea service» означает сервировку чаепития с набором посуды, а не чайную церемонию как особый ритуал. Употребить «целый чайный стол».",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "an entire tea service",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "целой чайной церемонии",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "mouthful-timing",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Блок 000038. Aurelia вздыхает, пока Clarion ещё жуёт первый кусочек, а не когда уже проглотила его. «Клэрион ещё не успела прожевать первый кусочек, когда Аурелия вздохнула».",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "Halfway through her first mouthful",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Когда Клэрион едва успела проглотить первый кусочек",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "winter-mountains-sled",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Блок 000051. «mountains you could traverse by sled» — горы, которые можно преодолевать на санях, без утверждения, что едут только вниз. «спускаться на санках» добавляет направление.",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "mountains you could traverse by sled",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "горы, по которым можно спускаться на санках",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "seasonal-realms",
+        "category": "terminology",
+        "severity": "major",
+        "detail": "Блок 000068. «Neither of our realms» — два сезонных края (владения Зимы и Весны), а не два независимых королевства. «Ни одному из наших краёв не пришлось бы тревожиться».",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "Neither of our realms would have to worry.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Ни одному из наших королевств не пришлось бы тревожиться.",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "will-vs-subjugation",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Блок 000080. «To control my will and shape it» — управление собственной волей, а «Подчинить волю» звучит как подчинение чужой воли. «Управлять своей волей, придавать ей форму».",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "To control my will and shape it.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Подчинить волю и придать ей форму.",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "letting-go-advice",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Блок 000084. «let go of what she told you» — отступить от усвоенных наставлений, а «отпустишь то, чему она тебя учила» — калька. «А что, если ты попробуешь отступить от её наставлений?»",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "What would happen if you let go of what she told you?",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Что случится, если ты отпустишь то, чему она тебя учила?",
+          "occurrence": 0
+        },
+        "resolves": null
+      }
+    ]
+  }
+}
