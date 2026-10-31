@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "request_id": "c23e8c6b398c49ea9d707a2b54585f0e",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "b8356134c091df75c16f197859f479e2b093ba0e2b9a317b60472143fd765e61",
+    "record": {
+      "correction_round": 1,
+      "outcome": "CORRECTIONS_REQUIRED",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "independent_session",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "meaning",
+            "detail": "Блок 000003. Оригинал спрашивает, почему запечатывание не сработало так, как в прошлом. Перевод добавляет «древнюю легенду» вместо прежнего результата. Заменить на «как прежде».",
+            "id": "past-legend",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "why hadn’t it worked as it had in the past?"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "почему же всё не произошло, как в древней легенде?"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Блок 000020. Утерян курсивный акцент на *pensive*, а bittersweetly сведено к однозначной горести. Восстановить акцент на задумчивость и смешанный оттенок чувств.",
+            "id": "pensive-emphasis",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "bittersweetly *pensive* her guard looked"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "горестная задумчивость стражницы"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Блок 000035. Исходная фраза разбита ремаркой «Elvina had said once» между курсивными фрагментами. Перевод слил три акцента и перенёс ремарку, изменив авторский ритм. Восстановить раздельные выделения.",
+            "id": "elvina-quote-emphasis",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "*A good queen must focus on the task at hand,* Elvina had said once, *and* *help at scale.*"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "*Хорошая королева должна сосредоточиться на главной задаче и помогать как можно большему числу подданных*, говорила Эльвина."
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Блок 000067. Из прямой речи Петры исчезло «for your schemes to work»: именно от неё зависит воплощение двух замыслов. Восстановить эту смысловую связь.",
+            "id": "petra-schemes",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Both you and Elvina are depending on me for your schemes to work."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "И ты, и Эльвина рассчитываете на меня."
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Блок 000097. Артемис не получила желанной награды («missed out»), но прямого отказа в оригинале нет. «которой отказали» добавляет неописанное событие. Перевести «которой не досталось».",
+            "id": "artemis-rejection",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Artemis had missed out on what she so desperately wanted"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Артемис, которой отказали в том, чего она так желала"
+            }
+          },
+          {
+            "category": "addition",
+            "detail": "Блок 000107. Оригинал называет участников бала без уточнения их отношений. «Влюблённые и друзья» в переводе вводит неподтверждённые отношения. Заменить на «Другие».",
+            "id": "dance-relationships",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Seeing the others holding hands, twirling and laughing as they switched partners"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Влюблённые и друзья держались за руки, смеялись, кружились, менялись партнёрами"
+            }
+          }
+        ]
+      },
+      "record_id": "e778acd3db2b42589cfa349ddbbd98b7",
+      "review_commit": "84afe258dca32940aa8c82f8a4771ef8a10edbc9",
+      "review_contract_revision": "docs/TRANSLATION.md@14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "reviewed_at": "2026-10-31T17:08:33Z",
+      "reviewer_session_id": "wings-ch18-review-20261031-a718c2df",
+      "sequence": 44,
+      "source_sha256": "506a27011d6b9ea56beb88e35983fb81c16c194e42f966906069b812cff9c8f0",
+      "state_revision": "aba980db7969a0775d113fdee670850280d88d75b3f94039685f894d2cbc987e",
+      "supersedes_record_id": null,
+      "translation_sha256": "bfb1aa4fde544bd363c79f409f9531b2f6616bfcde6cad122d62a5d44e27c341",
+      "unit_id": "chapter-000021",
+      "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5"
+    }
+  },
+  "error": null
+}

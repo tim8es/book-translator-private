@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "wings-of-starlight-allison-saft",
-  "next_sequence": 44,
+  "next_sequence": 45,
   "records": [
     {
       "record_id": "d9b70e4cfbe5487a9f0d5e37bc1826af",
@@ -4529,6 +4529,131 @@
             },
             "translation_anchor": {
               "quote": "из атриума доносятся голоса — и смех",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "e778acd3db2b42589cfa349ddbbd98b7",
+      "sequence": 44,
+      "unit_id": "chapter-000021",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "506a27011d6b9ea56beb88e35983fb81c16c194e42f966906069b812cff9c8f0",
+      "translation_sha256": "bfb1aa4fde544bd363c79f409f9531b2f6616bfcde6cad122d62a5d44e27c341",
+      "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "review_contract_revision": "docs/TRANSLATION.md@14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "reviewer_session_id": "wings-ch18-review-20261031-a718c2df",
+      "reviewed_at": "2026-10-31T17:08:33Z",
+      "state_revision": "aba980db7969a0775d113fdee670850280d88d75b3f94039685f894d2cbc987e",
+      "review_commit": "84afe258dca32940aa8c82f8a4771ef8a10edbc9",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "past-legend",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Блок 000003. Оригинал спрашивает, почему запечатывание не сработало так, как в прошлом. Перевод добавляет «древнюю легенду» вместо прежнего результата. Заменить на «как прежде».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "why hadn’t it worked as it had in the past?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "почему же всё не произошло, как в древней легенде?",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "pensive-emphasis",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Блок 000020. Утерян курсивный акцент на *pensive*, а bittersweetly сведено к однозначной горести. Восстановить акцент на задумчивость и смешанный оттенок чувств.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "bittersweetly *pensive* her guard looked",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "горестная задумчивость стражницы",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "elvina-quote-emphasis",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Блок 000035. Исходная фраза разбита ремаркой «Elvina had said once» между курсивными фрагментами. Перевод слил три акцента и перенёс ремарку, изменив авторский ритм. Восстановить раздельные выделения.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "*A good queen must focus on the task at hand,* Elvina had said once, *and* *help at scale.*",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "*Хорошая королева должна сосредоточиться на главной задаче и помогать как можно большему числу подданных*, говорила Эльвина.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "petra-schemes",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Блок 000067. Из прямой речи Петры исчезло «for your schemes to work»: именно от неё зависит воплощение двух замыслов. Восстановить эту смысловую связь.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Both you and Elvina are depending on me for your schemes to work.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "И ты, и Эльвина рассчитываете на меня.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "artemis-rejection",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Блок 000097. Артемис не получила желанной награды («missed out»), но прямого отказа в оригинале нет. «которой отказали» добавляет неописанное событие. Перевести «которой не досталось».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Artemis had missed out on what she so desperately wanted",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Артемис, которой отказали в том, чего она так желала",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "dance-relationships",
+            "category": "addition",
+            "severity": "minor",
+            "detail": "Блок 000107. Оригинал называет участников бала без уточнения их отношений. «Влюблённые и друзья» в переводе вводит неподтверждённые отношения. Заменить на «Другие».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Seeing the others holding hands, twirling and laughing as they switched partners",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Влюблённые и друзья держались за руки, смеялись, кружились, менялись партнёрами",
               "occurrence": 0
             },
             "resolves": null
