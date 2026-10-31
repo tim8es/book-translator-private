@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "wings-of-starlight-allison-saft",
-  "next_sequence": 22,
+  "next_sequence": 23,
   "records": [
     {
       "record_id": "d9b70e4cfbe5487a9f0d5e37bc1826af",
@@ -2103,6 +2103,69 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "f6b5d7b7918d450ab2b892077df45331",
+      "sequence": 22,
+      "unit_id": "chapter-000012",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "b04f613fcfb5ec283fce075aaa4c6e9577031d7122f701df1e9f6b0a01b46097",
+      "translation_sha256": "818f66d610922825c78e7651a3464aa30e5f31b399cdb598516413a9729e29e6",
+      "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "review_contract_revision": "docs/TRANSLATION.md@14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "reviewer_session_id": "wings-ch9-review-20261031-6f40e72a",
+      "reviewed_at": "2026-10-31T14:53:07Z",
+      "state_revision": "0bef5636bb603be89f989c634141ed5233c8ffe05988ae6f28f479380664bf51",
+      "review_commit": "ca1a7899a519c4daf7ada21ed0f3d67dc25b526c",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Block 000003: fairy glow was incorrectly specified as emanating from the wings.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Block 000007: hypothetical lead (has an idea) incorrectly rendered as definite knowledge.",
+            "resolved": false
+          },
+          {
+            "severity": "major",
+            "detail": "Block 000019: dangling participial clause wrongly makes scouts, not protagonists, fly past.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Block 000034: molten metal rendered merely as hot metal.",
+            "resolved": false
+          },
+          {
+            "severity": "major",
+            "detail": "Block 000037: ungrammatical Russian construction misrenders character uncertainty.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Block 000059: invented sewing comparison and ambiguous possessive change source imagery.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Block 000116: echoed thought recast into a why-question.",
+            "resolved": false
           }
         ]
       }
