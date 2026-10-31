@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "request_id": "a89a56015aa54c17a9e89119b4c7f8dc",
+  "book_slug": "wings-of-starlight-allison-saft",
+  "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+  "operation": "review-record",
+  "chapter": 29,
+  "session_id": "wings-ch26-review-20261031-188b9697",
+  "outcome": "PASS",
+  "source_sha256": "0348992ccb76892f3dd95172416665b2de972c2be8db3f8c1911072d0e770a3f",
+  "translation_sha256": "d6806fbbe4bdaa1011699d9904d1401cedf4df3bc4e5366c63e3641a95d12066",
+  "claim_sha256": "8b9ffd04ea26c6cfb667ee4e3d02287699e4216e7bda9aafe085f1dc3535ba10",
+  "quality_report": {
+    "evidence_version": 2,
+    "context": "independent_session",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "id": "recheck-narrative-to-dialogue",
+        "category": "voice",
+        "severity": "major",
+        "detail": "Блок 000034: исходная скрытая надежда Клэрион сохранена в авторском повествовании; произнесены только её реплики.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "She had been fully prepared to let Artemis go, but she couldn’t deny that, deep down, she’d hoped for this.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Она была вполне готова отпустить Артемис, но не могла отрицать, что в глубине души надеялась на такой исход.",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "9123657ed4370a5de96111397a278411",
+          "finding_id": "narrative-to-dialogue"
+        }
+      },
+      {
+        "id": "recheck-when-to-if-petra",
+        "category": "modality",
+        "severity": "major",
+        "detail": "Блок 000047: восстановлено ожидаемое «Когда она очнётся…», а не условное «Если».",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "When she does…",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Когда она очнётся…",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "9123657ed4370a5de96111397a278411",
+          "finding_id": "when-to-if-petra"
+        }
+      },
+      {
+        "id": "recheck-weeks-to-week",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Блок 000007: многонедельное напряжение передано без сокращения до одной недели.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "Weeks of stress, of worry",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Напряжение и тревоги, копившиеся неделями",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "9123657ed4370a5de96111397a278411",
+          "finding_id": "weeks-to-week"
+        }
+      },
+      {
+        "id": "recheck-staff-placement",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Блок 000019: расположение трости физически ясно и передано естественным русским языком.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "A staff was propped up beside her, nestled in the crook of her neck and shoulder.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Рядом была прислонена трость: её верхний конец упирался в ложбинку между шеей и плечом.",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "9123657ed4370a5de96111397a278411",
+          "finding_id": "staff-placement-calque"
+        }
+      },
+      {
+        "id": "recheck-atrium-voices",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Блок 000050: восстановлено направление звуков из палаты в атриум.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "voices—and laughter—spilling into the atrium",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "как до атриума доносятся голоса — и смех.",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "9123657ed4370a5de96111397a278411",
+          "finding_id": "atrium-voices-direction"
+        }
+      }
+    ]
+  }
+}
