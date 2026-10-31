@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "wings-of-starlight-allison-saft",
-  "next_sequence": 41,
+  "next_sequence": 42,
   "records": [
     {
       "record_id": "d9b70e4cfbe5487a9f0d5e37bc1826af",
@@ -4173,6 +4173,115 @@
               "record_id": "2f51f844b1d1411a98ec0234241b8eb9",
               "finding_id": "winter-and-milori-calque"
             }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "ccfc242f15a34c2aae4f0e5db4d18c75",
+      "sequence": 41,
+      "unit_id": "chapter-000019",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "a8db5215ee5655c5ff9e9ab7e70937b5f156a91ea311ebeb5db351ecfda96d27",
+      "translation_sha256": "56f4bb0a9c30240dff71242cd92076a41216c0694cc6d7d49d9d7a767f33f6c3",
+      "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "review_contract_revision": "docs/TRANSLATION.md@14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "reviewer_session_id": "wings-ch16-review-20261031-c8dc097e",
+      "reviewed_at": "2026-10-31T16:41:46Z",
+      "state_revision": "eaf9500041564015e964dfc2aedaeba8c3fd9c53f56601291c0b30676bff3f35",
+      "review_commit": "353c3d8924db63935773517a34d0e25e05309773",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "seasonal-territory",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Блок 000040. «warm seasons» — территории тёплых краёв Долины фей, не календарные времена года. «между Зимой и тёплыми временами года» вводит географическую ошибку. Исправить на «между Зимой и тёплыми краями».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "between Winter and the warm seasons",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "между Зимой и тёплыми временами года",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "thought-italic-split",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Блок 000006. Оригинал выделяет курсивом две части мысли, оставляя «she thought» вне курсива. Перевод поместил «подумала она» внутрь курсива. Восстановить два отдельные курсивные фрагмента.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "*Unless,* she thought, *he regrets it.*",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "*Если только, — подумала она, — он не жалеет об этом.*",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "pixie-hollow-italic",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Блок 000046. Оригинал подчёркивает курсивом «Not» и «of Pixie Hollow», русский потерял выделение Долины фей. Восстановить обе части акцента: «*Не* всю *Долину фей*, подумала Клэрион».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "*Not* all *of Pixie Hollow,*",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "*Не всю* Долину фей",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "warden-betrayal-causation",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Блок 000062. «Nightmares caused the warden’s betrayal» выражает возможную причину предательства, а не принуждение. «Кошмары заставили Стража предать королеву» усиливает до прямого насилия над волей. «Кошмары стали причиной предательства Стража».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Nightmares caused the warden’s betrayal",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Кошмары заставили Стража предать королеву",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "cannot-listen-grammar",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Блок 000066. «Слышать больше хоть слово об этом она не могла» — нарушенная русская конструкция. «Она не могла выслушать об этом больше ни слова».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "She could not listen to another word of this.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Слышать больше хоть слово об этом она не могла.",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       }

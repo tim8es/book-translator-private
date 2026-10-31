@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "request_id": "738de84615c04f41a93e490aef125730",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "d87cb46d8855d255dfaa7b0131c22f244d3bfdf06d7802321433e84be84136be",
+    "record": {
+      "correction_round": 1,
+      "outcome": "CORRECTIONS_REQUIRED",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "independent_session",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "meaning",
+            "detail": "Блок 000040. «warm seasons» — территории тёплых краёв Долины фей, не календарные времена года. «между Зимой и тёплыми временами года» вводит географическую ошибку. Исправить на «между Зимой и тёплыми краями».",
+            "id": "seasonal-territory",
+            "resolved": false,
+            "resolves": null,
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "between Winter and the warm seasons"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "между Зимой и тёплыми временами года"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Блок 000006. Оригинал выделяет курсивом две части мысли, оставляя «she thought» вне курсива. Перевод поместил «подумала она» внутрь курсива. Восстановить два отдельные курсивные фрагмента.",
+            "id": "thought-italic-split",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "*Unless,* she thought, *he regrets it.*"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "*Если только, — подумала она, — он не жалеет об этом.*"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Блок 000046. Оригинал подчёркивает курсивом «Not» и «of Pixie Hollow», русский потерял выделение Долины фей. Восстановить обе части акцента: «*Не* всю *Долину фей*, подумала Клэрион».",
+            "id": "pixie-hollow-italic",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "*Not* all *of Pixie Hollow,*"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "*Не всю* Долину фей"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Блок 000062. «Nightmares caused the warden’s betrayal» выражает возможную причину предательства, а не принуждение. «Кошмары заставили Стража предать королеву» усиливает до прямого насилия над волей. «Кошмары стали причиной предательства Стража».",
+            "id": "warden-betrayal-causation",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Nightmares caused the warden’s betrayal"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Кошмары заставили Стража предать королеву"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Блок 000066. «Слышать больше хоть слово об этом она не могла» — нарушенная русская конструкция. «Она не могла выслушать об этом больше ни слова».",
+            "id": "cannot-listen-grammar",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "She could not listen to another word of this."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Слышать больше хоть слово об этом она не могла."
+            }
+          }
+        ]
+      },
+      "record_id": "ccfc242f15a34c2aae4f0e5db4d18c75",
+      "review_commit": "353c3d8924db63935773517a34d0e25e05309773",
+      "review_contract_revision": "docs/TRANSLATION.md@14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "reviewed_at": "2026-10-31T16:41:46Z",
+      "reviewer_session_id": "wings-ch16-review-20261031-c8dc097e",
+      "sequence": 41,
+      "source_sha256": "a8db5215ee5655c5ff9e9ab7e70937b5f156a91ea311ebeb5db351ecfda96d27",
+      "state_revision": "eaf9500041564015e964dfc2aedaeba8c3fd9c53f56601291c0b30676bff3f35",
+      "supersedes_record_id": null,
+      "translation_sha256": "56f4bb0a9c30240dff71242cd92076a41216c0694cc6d7d49d9d7a767f33f6c3",
+      "unit_id": "chapter-000019",
+      "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5"
+    }
+  },
+  "error": null
+}
