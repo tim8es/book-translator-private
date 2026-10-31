@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "request_id": "b3e289722a134d94b7d1e13e792c6d40",
+  "book_slug": "policy-change",
+  "workflow_revision": "c76159e4939ed00ac19172228f8972af87cadbb8",
+  "operation": "review-record",
+  "chapter": 15,
+  "session_id": "policy-change-reviewer-20261031-ch15-f6e112ca3992",
+  "outcome": "PASS",
+  "quality_report": {
+    "evidence_version": 2,
+    "context": "independent_session",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "id": "final-evaluation-restored-ch15",
+        "category": "meaning",
+        "severity": "major",
+        "detail": "Повторное независимое ревью текущей принятой версии: заключительное «It was not, remotely, okay.» теперь точно передано как отрицательная эмоциональная оценка «Но всё было совсем не в порядке», сохранив параллель к «It was not, remotely, all Shane wanted». Последовательная сверка главы, голосов персонажей, сцен и EPUB-якоря не выявила новых проблем.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "It was not, remotely, okay.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Но всё было совсем не в порядке.",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "041e25676fc0164e8d57ae48238dbbc1",
+          "finding_id": "final-not-okay-misread"
+        }
+      }
+    ]
+  },
+  "source_sha256": "8ab47070ffd96c49755753bbcb231b98aced5b425501ad608fbe78056d519a24",
+  "translation_sha256": "690b5dda3fd817977bca9e1e7a1e78351729510d80c04a4c1f57120bc7f3c3d2",
+  "claim_sha256": "9f5609f09f2d3597c713b7118de25f6fc2838b0b3632e80bb09a1ca6b28e048e"
+}
