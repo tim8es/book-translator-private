@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "wings-of-starlight-allison-saft",
-  "next_sequence": 65,
+  "next_sequence": 66,
   "records": [
     {
       "record_id": "d9b70e4cfbe5487a9f0d5e37bc1826af",
@@ -7301,6 +7301,168 @@
             "resolves": {
               "record_id": "945fc80c41354623969bd2a9728467fd",
               "finding_id": "freezing-inside"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "7173ba396b1d49bc948e34ab97cfe8b4",
+      "sequence": 65,
+      "unit_id": "chapter-000025",
+      "outcome": "PASS",
+      "source_sha256": "2a7783e97c276fef46b7bc5a8ed298d62af6afaaa23561f50024463a3fc4e33d",
+      "translation_sha256": "60bba23a33964ce928e3cdf92e0c3089fff91c6c2babe5d3bd026998019ea3cb",
+      "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "review_contract_revision": "docs/REVIEWER.md@14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "reviewer_session_id": "wings-ch22-review-20261031-7fbae2269a024a2083c7183c225c76cb",
+      "reviewed_at": "2026-10-31T18:02:11Z",
+      "state_revision": "5a64a6a6409f1a5e940fb4185283ae4f0e2b0fc55cb7d0d954c7ad88309c98f0",
+      "review_commit": "9b7a856dd133b04d6796160a43dbe82db2050518",
+      "correction_round": 1,
+      "supersedes_record_id": "c62eb1fbc84d4c9faf6b33707f4f4e53",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-remote-perception-mislocated",
+            "category": "referent",
+            "severity": "minor",
+            "detail": "Удалённость заменена на смутное восприятие Клэрион; Милори не перемещён в другое место.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Distantly, she registered that Milori was speaking to Yarrow in low tones.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Сквозь забытьё Клэрион различала, как Милори вполголоса говорил с Ярроу.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "c62eb1fbc84d4c9faf6b33707f4f4e53",
+              "finding_id": "remote-perception-mislocated"
+            }
+          },
+          {
+            "id": "recheck-storm-thought-added-italic",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "Убрано необоснованное курсивное выделение в мысли о закончившейся метели.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "The storm had cleared, she thought hazily.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Метель закончилась, смутно подумала она.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "c62eb1fbc84d4c9faf6b33707f4f4e53",
+              "finding_id": "storm-thought-added-italic"
+            }
+          },
+          {
+            "id": "recheck-let-go-invented-hands",
+            "category": "addition",
+            "severity": "major",
+            "detail": "Исчезло выдуманное действие разжимания рук; сохранён отказ от удержания сознания.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "If she let go, she thought she might drift away.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Клэрион казалось, что стоит ей перестать держаться — и она уплывёт прочь.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "c62eb1fbc84d4c9faf6b33707f4f4e53",
+              "finding_id": "let-go-invented-hands"
+            }
+          },
+          {
+            "id": "recheck-teleport-manage-vs-try",
+            "category": "modality",
+            "severity": "major",
+            "detail": "Вернулась условная возможность успешной телепортации вместо одной лишь попытки.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "If she could manage it just once in her lifetime, it had to be now.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Если ей удастся переместиться хоть раз в жизни, то этот раз должен быть сейчас.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "c62eb1fbc84d4c9faf6b33707f4f4e53",
+              "finding_id": "teleport-manage-vs-try"
+            }
+          },
+          {
+            "id": "recheck-panic-agonized-calque",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Паника плавно уступает боли; Милори не «сменяет» чувства усилием воли.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "his panic slowly melted into agony.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "паника в его глазах постепенно уступала мучительной боли.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "c62eb1fbc84d4c9faf6b33707f4f4e53",
+              "finding_id": "panic-agonized-calque"
+            }
+          },
+          {
+            "id": "recheck-melting-infinitive",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Уместно восстановлено краткое «Тают» с маркированной внутренней речью.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "*No,* she thought. *Melting.*",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "*Нет*, — подумала она. *Тают.*",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "c62eb1fbc84d4c9faf6b33707f4f4e53",
+              "finding_id": "melting-infinitive"
+            }
+          },
+          {
+            "id": "recheck-elvina-unnatural-sound",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Исправлена калькированная конструкция о голосовой реакции Эльвины.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "somewhere between admiration and disbelief.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "в котором смешались восхищение и недоверие.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "c62eb1fbc84d4c9faf6b33707f4f4e53",
+              "finding_id": "elvina-unnatural-sound"
             }
           }
         ]
