@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "wings-of-starlight-allison-saft",
-  "next_sequence": 58,
+  "next_sequence": 59,
   "records": [
     {
       "record_id": "d9b70e4cfbe5487a9f0d5e37bc1826af",
@@ -6390,6 +6390,168 @@
             },
             "resolved": false,
             "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "a6e7c530313648c6a6e9f1010c6cc14a",
+      "sequence": 58,
+      "unit_id": "chapter-000022",
+      "outcome": "PASS",
+      "source_sha256": "1af1861b437c9b027c5763044d075f688f51a22ab727d1489f98908cb33d731d",
+      "translation_sha256": "10acacf9917bc4d4122ad139e609e0ca2493a139ec8a52becb4fd75d3f6ad79f",
+      "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "review_contract_revision": "docs/REVIEWER.md@14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "reviewer_session_id": "wings-ch19-review-20261031-0deea5b30b1b4b458802d5d8c684fa13",
+      "reviewed_at": "2026-10-31T17:54:14Z",
+      "state_revision": "74fcdd7eb73dfdb74b071e3d38062cac2a3eda48a56ac00657ee98e858000d51",
+      "review_commit": "fa0a0f9a76816f9bc071c65d9b87e2a0384692a1",
+      "correction_round": 1,
+      "supersedes_record_id": "b2336ce6579240078ea911129be184cf",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-contradictory-double-negative",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Убрана неестественная двойная отрицательная конструкция, сохранён курсив на смысловом ограничении.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Perhaps Petra hadn’t been *entirely* wrong.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Возможно, Петра ошибалась *не во всём*.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "b2336ce6579240078ea911129be184cf",
+              "finding_id": "contradictory-double-negative"
+            }
+          },
+          {
+            "id": "recheck-patchwork-coat",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Убрана неподтверждённая небрежность; пальто обозначено как сшитое из заплаток.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "this patched-together coat",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "пальто, сшитое из заплаток",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "b2336ce6579240078ea911129be184cf",
+              "finding_id": "patchwork-coat"
+            }
+          },
+          {
+            "id": "recheck-frozen-river",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Река полностью скована льдом, не описывается текущей.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Below them was a river, frozen solid",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Внизу протянулась река, скованная льдом",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "b2336ce6579240078ea911129be184cf",
+              "finding_id": "frozen-river"
+            }
+          },
+          {
+            "id": "recheck-breathless-laugh",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Смех передан без добавленной беззвучности.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "laugh breathlessly",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "рассмеяться, переводя дыхание",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "b2336ce6579240078ea911129be184cf",
+              "finding_id": "breathless-laugh"
+            }
+          },
+          {
+            "id": "recheck-dance-permission",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Разрешение на танец передано прямой репликой вместо вопроса-вызова.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "“You may.”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Позволяю».",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "b2336ce6579240078ea911129be184cf",
+              "finding_id": "dance-permission"
+            }
+          },
+          {
+            "id": "recheck-unidiomatic-resentment",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Неестественное «досадовали ей» заменено живой реакцией героини.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "How she resented her own limitations right now",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Как же её сейчас злили собственные ограничения",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "b2336ce6579240078ea911129be184cf",
+              "finding_id": "unidiomatic-resentment"
+            }
+          },
+          {
+            "id": "recheck-thought-italics",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Убран добавленный курсив; ремарка о мысли возвращена внутрь предложения.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "This, she thought, was enough.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Этого, подумала она, достаточно.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "b2336ce6579240078ea911129be184cf",
+              "finding_id": "thought-italics"
+            }
           }
         ]
       }
