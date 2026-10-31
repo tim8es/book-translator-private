@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "wings-of-starlight-allison-saft",
-  "next_sequence": 4,
+  "next_sequence": 5,
   "records": [
     {
       "record_id": "d9b70e4cfbe5487a9f0d5e37bc1826af",
@@ -130,6 +130,92 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "5226e7c358594da080b5e34d5aefe930",
+      "sequence": 4,
+      "unit_id": "chapter-000003",
+      "outcome": "PASS",
+      "source_sha256": "a5c47765adda9a772e1adde60f9e583d6d7d9ba4aeec720f108ee207323377f1",
+      "translation_sha256": "a1d92cbf1b29f2c25682eb584be637cca095c1259d137f785a028a001c5f5492",
+      "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "review_contract_revision": "docs/TRANSLATION.md@14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "reviewer_session_id": "wings-reviewer-hourly-20261031-29f6e95faa4945d3bd003518255a5bc1",
+      "reviewed_at": "2026-10-31T04:51:20Z",
+      "state_revision": "3c83c4f140b4173587aab8ccba0a87c56a7f7489",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": "7484e4a53050d10e46ba077564e4fa4b",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "calque-generous-pieces-recheck",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Блок 000003: устранена калька «щедрых куска»; «четыре больших куска» сохраняет масштаб сравнения и естественно звучит по-русски.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "like a cake sliced into four generous pieces",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "напоминает пирог, разрезанный на четыре больших куска",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "7484e4a53050d10e46ba077564e4fa4b",
+              "finding_id": "calque-generous-pieces"
+            }
+          },
+          {
+            "id": "awkward-parenthesis-winter-recheck",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Блок 000005: исправлена неестественная вставка; мнение о зимних феях теперь прямо и однозначно атрибутировано феям тёплых краёв.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "The winter fairies—so the warm fairies reason—are best left to their snowy solitude.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Феи тёплых краёв считают, что зимних фей лучше оставить в их снежном одиночестве.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "7484e4a53050d10e46ba077564e4fa4b",
+              "finding_id": "awkward-parenthesis-winter"
+            }
+          },
+          {
+            "id": "unidiomatic-unbeknownst-recheck",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Блок 000006: исправлена неидиоматичная конструкция «неведомо для»; сохранено противопоставление суеверий реальным тёмным силам.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "But unbeknownst to the warm seasons, dark forces do dwell within the Winter Woods.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Но обитатели тёплых краёв и не подозревают, что в Зимнем лесу действительно таятся тёмные силы.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "7484e4a53050d10e46ba077564e4fa4b",
+              "finding_id": "unidiomatic-unbeknownst"
+            }
           }
         ]
       }
