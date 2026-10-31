@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "request_id": "4bf69dc15e7345609af68f44e38c173a",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "b916c9d51078b83b213766f61335febd538876319597a1c7db2999798db9ade8",
+    "record": {
+      "correction_round": 2,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "independent_session",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "style",
+            "detail": "Блок 000024: курсив теперь охватывает только короткую мысль, а поясняющая авторская фраза идёт отдельно.",
+            "id": "resolved-01",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "honestly-emphasis",
+              "record_id": "a53aa473b8024b2cbadd324aedb4e644"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "*Honestly,* Clarion thought. Scouts and their determined stoicism."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "*Ну и ну,* — подумала Клэрион. Разведчики и их упрямая невозмутимость."
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Блок 000130: восстановлена утвердительная интонация внутреннего осознания вместо добавленного вопроса.",
+            "id": "resolved-02",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "petra-oh-question",
+              "record_id": "a53aa473b8024b2cbadd324aedb4e644"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "*Oh.* Was that really all she had to say?"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "*Вот как.* И это всё?"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Блок 000143: восстановлена незавершённость реплики вместо завершающего восклицания.",
+            "id": "resolved-03",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "petra-cutoff",
+              "record_id": "a53aa473b8024b2cbadd324aedb4e644"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "“Clarion, *please*—”"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "«Клэрион, *пожалуйста*…»"
+            }
+          }
+        ]
+      },
+      "record_id": "1331a4639b854cfcaa85e25fe8a3574e",
+      "review_commit": "3770afe73fe582c4d8778d1f502f9b24785dfc51",
+      "review_contract_revision": "docs/TRANSLATION.md@14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "reviewed_at": "2026-10-31T18:04:13Z",
+      "reviewer_session_id": "wings-ch18-rereview-20261031-d50970b5",
+      "sequence": 66,
+      "source_sha256": "506a27011d6b9ea56beb88e35983fb81c16c194e42f966906069b812cff9c8f0",
+      "state_revision": "f7ba8f05b1853bddb5a6b3a68380018521f0eafb3f49692d7bc19101e456b785",
+      "supersedes_record_id": "a53aa473b8024b2cbadd324aedb4e644",
+      "translation_sha256": "7e2d88b0ce1908fd073082ab53cedb66dd5afc81feb0ef91a6150859d41cd6b9",
+      "unit_id": "chapter-000021",
+      "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5"
+    }
+  },
+  "error": null
+}
