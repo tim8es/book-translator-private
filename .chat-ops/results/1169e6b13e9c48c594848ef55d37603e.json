@@ -1,0 +1,201 @@
+{
+  "schema_version": 1,
+  "request_id": "1169e6b13e9c48c594848ef55d37603e",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "f7aa10a1aa0ae6aad63ad04c9cd7f72a1a3f9ce2a8c145f020a24c9ea832fe1c",
+    "record": {
+      "correction_round": 2,
+      "outcome": "CORRECTIONS_REQUIRED",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "independent_session",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "meaning",
+            "detail": "Блок 000003: восстановлено сравнение с прежним результатом, без добавленной «древней легенды».",
+            "id": "fixed-01",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "past-legend",
+              "record_id": "e778acd3db2b42589cfa349ddbbd98b7"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "why hadn’t it worked as it had in the past?"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "почему же всё не сработало так, как прежде?"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Блок 000020: восстановлен акцент на задумчивость и смешанная эмоция.",
+            "id": "fixed-02",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "pensive-emphasis",
+              "record_id": "e778acd3db2b42589cfa349ddbbd98b7"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "bittersweetly *pensive* her guard looked"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "печально-светлой и *задумчивой*"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Блок 000035: авторская ремарка между курсивными фрагментами восстановлена.",
+            "id": "fixed-03",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "elvina-quote-emphasis",
+              "record_id": "e778acd3db2b42589cfa349ddbbd98b7"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "*A good queen must focus on the task at hand,* Elvina had said once, *and* *help at scale.*"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "*Хорошая королева должна сосредоточиться на главной задаче,* — говорила когда-то Эльвина, — *и* *помогать как можно большему числу подданных.*"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Блок 000067: вновь названо назначение помощи Петры — осуществление планов.",
+            "id": "fixed-04",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "petra-schemes",
+              "record_id": "e778acd3db2b42589cfa349ddbbd98b7"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Both you and Elvina are depending on me for your schemes to work."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "И ты, и Эльвина рассчитываете, что я помогу вам осуществить ваши планы."
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Блок 000097: сохранён факт неполученной награды без добавления явного отказа.",
+            "id": "fixed-05",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "artemis-rejection",
+              "record_id": "e778acd3db2b42589cfa349ddbbd98b7"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Artemis had missed out on what she so desperately wanted"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Артемис, которой не досталось того, чего она так отчаянно желала"
+            }
+          },
+          {
+            "category": "addition",
+            "detail": "Блок 000107: не добавляются неподтверждённые отношения между танцующими.",
+            "id": "fixed-06",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "dance-relationships",
+              "record_id": "e778acd3db2b42589cfa349ddbbd98b7"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Seeing the others holding hands, twirling and laughing as they switched partners"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Другие держались за руки, смеялись, кружились, меняясь партнёрами."
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Блок 000024: оригинал выделяет курсивом только короткое *Honestly,* и оставляет «Scouts and their determined stoicism» обычным повествованием. Перевод помещает всю фразу о разведчиках в курсив, смещая границы внутренней речи. Восстановить акцент и авторскую ремарку: «*Ну и ну*, — подумала Клэрион. Разведчики и их упрямое хладнокровие».",
+            "id": "honestly-emphasis",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "*Honestly,* Clarion thought. Scouts and their determined stoicism."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "*Ох уж эти разведчики с их упрямым хладнокровием*, подумала Клэрион."
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Блок 000130: повторённое внутреннее «*Oh.*» передаёт оторопевшее осознание, а «*А?*» превращает это в вопрос/недоумение. Использовать «*Вот как.*» или «*А-а.*», сохранив утвердительную интонацию.",
+            "id": "petra-oh-question",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "*Oh.* Was that really all she had to say?"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "*А?* И это всё?"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Блок 000143: оригинальная просьба «Clarion, *please*—» обрывается на тире, а перевод завершает её восклицательным знаком. Сохранить прерванную реплику: «Клэрион, *пожалуйста*…» или с тире «Клэрион, *пожалуйста* —».",
+            "id": "petra-cutoff",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "“Clarion, *please*—”"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "«Клэрион, *пожалуйста*!»"
+            }
+          }
+        ]
+      },
+      "record_id": "a53aa473b8024b2cbadd324aedb4e644",
+      "review_commit": "c7ee0bbd8e8bb864d58d260715cf08db9a99eda6",
+      "review_contract_revision": "docs/TRANSLATION.md@14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "reviewed_at": "2026-10-31T17:23:12Z",
+      "reviewer_session_id": "wings-ch18-review-20261031-08b1e163",
+      "sequence": 53,
+      "source_sha256": "506a27011d6b9ea56beb88e35983fb81c16c194e42f966906069b812cff9c8f0",
+      "state_revision": "0276116269c7d664f4259cb5a4a9ba7fbe36a01c779bd4edb172f52e4142e346",
+      "supersedes_record_id": "e778acd3db2b42589cfa349ddbbd98b7",
+      "translation_sha256": "5ec3c46c2fa3086910a7140d077342a7df16d97392bddfa18209012e7be330d3",
+      "unit_id": "chapter-000021",
+      "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5"
+    }
+  },
+  "error": null
+}
