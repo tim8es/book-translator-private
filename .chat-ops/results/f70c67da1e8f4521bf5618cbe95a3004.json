@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "request_id": "f70c67da1e8f4521bf5618cbe95a3004",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "f811c6a2d265733854e877f42fd939b8b0874f8616d608dc0b9d331fd013a647",
+    "record": {
+      "correction_round": 1,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "meaning",
+            "detail": "Rechecked the full biographical paragraph against the original. The revised opening now applies bestseller status to the author without claiming that every named title was independently listed on both bestseller lists. Other facts, titles, italic emphasis and the EPUB block marker match the source.",
+            "id": "bestseller-claim-corrected",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "bestseller-list-overstatement",
+              "record_id": "73feff5e82524f60999ac9284951015f"
+            },
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "the *New York Times* and indie bestselling author of"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Эллисон Сафт — автор бестселлеров по версии *New York Times* и независимых книготорговцев."
+            }
+          }
+        ]
+      },
+      "record_id": "6d7c3e391fa94312870de248d3c58cce",
+      "review_commit": "ae92a8705c3983b28f98c796a2b54dd0b60d3681",
+      "review_contract_revision": "docs/TRANSLATION.md@14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "reviewed_at": "2026-10-31T15:43:56Z",
+      "reviewer_session_id": "wings-author-rereview-20261031-16423df3",
+      "sequence": 30,
+      "source_sha256": "784e67c2d234469306e81005603e66bdc873a4c18c7b3a23dd9057a0551ac050",
+      "state_revision": "08f451acb99fc9afd63478bc3da1bf159e8622b91f339a9ea09308cd74478fd4",
+      "supersedes_record_id": "73feff5e82524f60999ac9284951015f",
+      "translation_sha256": "d1f2bdbf1b289439cf5f902eeba9d7c3930a5161670da59ce102669146672a59",
+      "unit_id": "chapter-000032",
+      "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5"
+    }
+  },
+  "error": null
+}

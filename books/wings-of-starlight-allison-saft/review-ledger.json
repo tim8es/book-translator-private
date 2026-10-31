@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "wings-of-starlight-allison-saft",
-  "next_sequence": 30,
+  "next_sequence": 31,
   "records": [
     {
       "record_id": "d9b70e4cfbe5487a9f0d5e37bc1826af",
@@ -2904,6 +2904,54 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "6d7c3e391fa94312870de248d3c58cce",
+      "sequence": 30,
+      "unit_id": "chapter-000032",
+      "outcome": "PASS",
+      "source_sha256": "784e67c2d234469306e81005603e66bdc873a4c18c7b3a23dd9057a0551ac050",
+      "translation_sha256": "d1f2bdbf1b289439cf5f902eeba9d7c3930a5161670da59ce102669146672a59",
+      "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "review_contract_revision": "docs/TRANSLATION.md@14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "reviewer_session_id": "wings-author-rereview-20261031-16423df3",
+      "reviewed_at": "2026-10-31T15:43:56Z",
+      "state_revision": "08f451acb99fc9afd63478bc3da1bf159e8622b91f339a9ea09308cd74478fd4",
+      "review_commit": "ae92a8705c3983b28f98c796a2b54dd0b60d3681",
+      "correction_round": 1,
+      "supersedes_record_id": "73feff5e82524f60999ac9284951015f",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "bestseller-claim-corrected",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Rechecked the full biographical paragraph against the original. The revised opening now applies bestseller status to the author without claiming that every named title was independently listed on both bestseller lists. Other facts, titles, italic emphasis and the EPUB block marker match the source.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "the *New York Times* and indie bestselling author of",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Эллисон Сафт — автор бестселлеров по версии *New York Times* и независимых книготорговцев.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "73feff5e82524f60999ac9284951015f",
+              "finding_id": "bestseller-list-overstatement"
+            }
           }
         ]
       }
