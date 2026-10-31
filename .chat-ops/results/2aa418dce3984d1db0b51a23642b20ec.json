@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "request_id": "2aa418dce3984d1db0b51a23642b20ec",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "f02d8d0d5d9a851a3428959b8a852334cb10354be86cda7fa5a2055faf65a367",
+    "record": {
+      "correction_round": 1,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "independent_session",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "structure",
+            "detail": "Пункты 3 и 4 списка правил приведены к двум самостоятельным нумерованным позициям, и исправлена падежная форма «после появления новых улик». Сверено с исходным XHTML index_split_056.html, содержащим две отдельные смысловые нормы даже внутри одного HTML-абзаца, и с диалогом, в котором позже меняется именно правило 4. Остальной принятый текст неизменён, EPUB-якорь и композиция сохранены.",
+            "id": "whiteboard-rules-restored-ch57",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "whiteboard-rules-three-four",
+              "record_id": "b68d384ff5d74d11ada9228ca17e20c9"
+            },
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "3. *No changing your answer if new ‘evidence’ comes out!!!!* 4. *Winner gets the pot if/when Cap reveals the name himself*"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "3. *Менять ответ после появления новых «улик» ЗАПРЕЩЕНО!!!!*\n\n4. *Победитель забирает банк, если/когда Кэп сам назовёт имя.*"
+            }
+          }
+        ]
+      },
+      "record_id": "666c96d8f3ab4ad1b2330b74b17793ce",
+      "review_commit": "0249f09df0f86a1fab08eecba9bb275a10aee4e0",
+      "review_contract_revision": "docs/TRANSLATION.md@c76159e4939ed00ac19172228f8972af87cadbb8",
+      "reviewed_at": "2026-10-31T13:49:00Z",
+      "reviewer_session_id": "policy-change-reviewer-20261031-ch57-71968e71fa3e",
+      "sequence": 100,
+      "source_sha256": "a30fc87a76a47b0ab9786597a0aa16a4e88b2ca77af0c6c5e9fef2de104f4e06",
+      "state_revision": "043f0c70d8c7c577fe1c45c8f7e149e62df0cc33a5b9c7aa1af48b5ce2a66782",
+      "supersedes_record_id": "b68d384ff5d74d11ada9228ca17e20c9",
+      "translation_sha256": "5255ca44afc647c9cb947843cf51d7c7a6506e14774051c4aef71b363ceaee50",
+      "unit_id": "chapter-000057",
+      "workflow_revision": "c76159e4939ed00ac19172228f8972af87cadbb8"
+    }
+  },
+  "error": null
+}
