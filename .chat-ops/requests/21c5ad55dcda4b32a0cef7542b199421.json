@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "request_id": "21c5ad55dcda4b32a0cef7542b199421",
+  "book_slug": "wings-of-starlight-allison-saft",
+  "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+  "operation": "review-record",
+  "chapter": 10,
+  "session_id": "wings-ch7-review-followup-20261031-c291ae74",
+  "outcome": "PASS",
+  "source_sha256": "0b0470c51d846e5b0f3555db22c59be794f5b4400ba4e903d15d5e1ed45d8eca",
+  "translation_sha256": "5496297e24173dc3c23c51ee2a60cb3176af7282684aecb87f78bfdb078a254a",
+  "claim_sha256": "1511f03bbe6677277279cf23f208afa7903f9d266463edafb58a46809c904652",
+  "quality_report": {
+    "evidence_version": 2,
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "id": "fixed-1",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Rechecked revised block 51 against the source; previously recorded issue crowd-reaction-grammar is corrected.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "Gasps and shouts of alarm met Elvina’s words.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "В ответ на слова Эльвины раздались испуганные возгласы и вскрики.",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "bc581f770f0a4bf48dfd11a8875a098f",
+          "finding_id": "crowd-reaction-grammar"
+        }
+      },
+      {
+        "id": "fixed-2",
+        "category": "meaning",
+        "severity": "major",
+        "detail": "Rechecked revised block 60 against the source; previously recorded issue competence-shift is corrected.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "If she were a more competent governing-talent",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Если бы она лучше справлялась со своим даром управления",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "bc581f770f0a4bf48dfd11a8875a098f",
+          "finding_id": "competence-shift"
+        }
+      },
+      {
+        "id": "fixed-3",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Rechecked revised block 61 against the source; previously recorded issue confidence-calque is corrected.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "with far more confidence than Clarion could muster",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "куда увереннее, чем сумела бы Клэрион",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "bc581f770f0a4bf48dfd11a8875a098f",
+          "finding_id": "confidence-calque"
+        }
+      },
+      {
+        "id": "fixed-4",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Rechecked revised block 65 against the source; previously recorded issue creatures-register is corrected.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "these creatures are active in the darkness",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "эти существа действуют в темноте",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "bc581f770f0a4bf48dfd11a8875a098f",
+          "finding_id": "creatures-register"
+        }
+      },
+      {
+        "id": "fixed-5",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Rechecked revised block 75 against the source; previously recorded issue thought-direction-calque is corrected.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "Clarion flinched at the turn of her own thoughts.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Клэрион вздрогнула, заметив, куда завели её собственные мысли.",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "bc581f770f0a4bf48dfd11a8875a098f",
+          "finding_id": "thought-direction-calque"
+        }
+      },
+      {
+        "id": "fixed-6",
+        "category": "meaning",
+        "severity": "major",
+        "detail": "Rechecked revised block 94 against the source; previously recorded issue agency-opportunity is corrected.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "Clarion could not bear the idea of wasting this opportunity.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Больше всего Клэрион не могла вынести мысли о том, чтобы упустить такую возможность.",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "bc581f770f0a4bf48dfd11a8875a098f",
+          "finding_id": "agency-opportunity"
+        }
+      }
+    ]
+  }
+}
