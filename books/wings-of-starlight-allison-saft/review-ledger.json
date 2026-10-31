@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "wings-of-starlight-allison-saft",
-  "next_sequence": 47,
+  "next_sequence": 48,
   "records": [
     {
       "record_id": "d9b70e4cfbe5487a9f0d5e37bc1826af",
@@ -4990,6 +4990,83 @@
               "quote": "Истреблять их одного за другим?",
               "occurrence": 0
             },
+            "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "66e93d9401d7f13c6a7675cd7f743196",
+      "sequence": 47,
+      "unit_id": "chapter-000024",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "852dd4ccb2572b85b12ad410285178bcc67608776d6f344e76ffe6a49c16ae59",
+      "translation_sha256": "be2469e7b64bc4e133490572da5eb6707caa53648fbc127e6455d48edc66a3a1",
+      "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "review_contract_revision": "docs/TRANSLATION.md@14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "reviewer_session_id": "wings-ch21-independent-review-20261031-ecb71a92",
+      "reviewed_at": "2026-10-31T17:09:21Z",
+      "state_revision": "6d2e343f3fd9617a28346bc6a0f2e8d4b667638a",
+      "review_commit": "a5b2717ea6cc1899a465cd81559c14af79c482c6",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "rending-wind-invented-clothing",
+            "category": "addition",
+            "severity": "minor",
+            "detail": "Block 000001: source describes violent rending winds without clothing being torn. Russian adds unsupported 'ветер рвал одежду'. Replace with natural description of fierce cutting/tugging wind without added event.",
+            "source_anchor": {
+              "quote": "all lashing snow and rending winds",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "снег хлестал со всех сторон, ветер рвал одежду",
+              "occurrence": 0
+            },
+            "resolved": false,
+            "resolves": null
+          },
+          {
+            "id": "dread-intensity-softened",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Block 000003: 'setting her every nerve alight with dread' communicates intense physical terror, while 'наполняя каждый нерв тревогой' softens dread and loses the fiery image. Restore high intensity and bodily metaphor.",
+            "source_anchor": {
+              "quote": "setting her every nerve alight with dread",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "наполняя каждый нерв тревогой",
+              "occurrence": 0
+            },
+            "resolved": false,
+            "resolves": null
+          },
+          {
+            "id": "nightmare-negativity-to-darkness",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Block 000020: 'All the negativity the Nightmares exuded' refers to oppressive emotional/psychic negativity, not literal darkness; 'Весь мрак' replaces the source quality. Render their oppressive negative influence or emanating dread instead.",
+            "source_anchor": {
+              "quote": "All the negativity the Nightmares exuded pressed down on them like a smothering hand.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Весь мрак, который источали Кошмары, давил на них, словно душащая ладонь.",
+              "occurrence": 0
+            },
+            "resolved": false,
             "resolves": null
           }
         ]
