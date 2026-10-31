@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "request_id": "deaa089394ee4556aa3904447e4b02a3",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "db94838ffbc3a7e5a0500791017d4d37a6bb8f0cf6f319bfc15b3233cf7c541e",
+    "record": {
+      "correction_round": 2,
+      "outcome": "CORRECTIONS_REQUIRED",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "style",
+            "detail": "Block 43 corrected idiomatic emotional reaction.",
+            "id": "petra-fixed",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "petra-calque",
+              "record_id": "e949aaf5628e43debab73a4e0fae4137"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "let the rush of Petra’s enthusiasm wash over her"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "позволила Петриным восторженным объяснениям захлестнуть её"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Block 47 corrected grammatical expression.",
+            "id": "giddy-fixed",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "giddy-grammar",
+              "record_id": "e949aaf5628e43debab73a4e0fae4137"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "She felt almost giddy with the rush of it."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "От волнения у неё едва не кружилась голова."
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Block 56: initial quotation is fixed, but an unmatched closing guillemet remains after «Это моя вина». Final speech should be formatted as «Это моя вина».",
+            "id": "speech-partial",
+            "resolved": false,
+            "resolves": {
+              "finding_id": "speech-format",
+              "record_id": "e949aaf5628e43debab73a4e0fae4137"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "“It was mine.”"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "— Это моя вина»."
+            }
+          }
+        ]
+      },
+      "record_id": "41c89e5a8d6548e0a9e4576ecc39cf62",
+      "review_commit": "4d0530fdc7f351568fd92d24756e9def8208fcb6",
+      "review_contract_revision": "docs/TRANSLATION.md@14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "reviewed_at": "2026-10-31T13:20:27Z",
+      "reviewer_session_id": "wings-ch5-review-fix-20261031-74a0be26",
+      "sequence": 15,
+      "source_sha256": "79bf050d5d827d78a6e37c0191965a044fd34c4eb68f80890967b4d29f081994",
+      "state_revision": "3b70b2904bc387c1ae346338d26a074b562a408d253cc133b18cd977c387185e",
+      "supersedes_record_id": "e949aaf5628e43debab73a4e0fae4137",
+      "translation_sha256": "cb53140637e23ead713b85204e1ceebf47e044a983ab71269d1df2a2cf26fa6a",
+      "unit_id": "chapter-000008",
+      "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5"
+    }
+  },
+  "error": null
+}
