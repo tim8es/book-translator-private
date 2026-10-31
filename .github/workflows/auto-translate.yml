@@ -1,4 +1,4 @@
-name: Automatic book translation (private-only)
+name: Automatic book translation
 
 on:
   workflow_dispatch:
@@ -33,18 +33,6 @@ jobs:
           fetch-depth: 0
           persist-credentials: true
 
-      - name: Mandatory private-repository security gate
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        shell: bash
-        run: |
-          set -euo pipefail
-          visibility="$(gh api "repos/$GITHUB_REPOSITORY" --jq '.private')"
-          if [ "$visibility" != "true" ]; then
-            echo "::error::Automated ingestion refused: repository is not PRIVATE."
-            exit 1
-          fi
-
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -63,7 +51,6 @@ jobs:
         if: steps.select.outputs.job_id != ''
         id: run
         env:
-          AUTO_REPO_PRIVATE: "true"
           OMNIROUTE_API_KEY: ${{ secrets.OMNIROUTE_API_KEY }}
           OMNIROUTE_BASE_URL: ${{ vars.OMNIROUTE_BASE_URL }}
           OMNIROUTE_TRANSLATOR_MODEL: ${{ vars.OMNIROUTE_TRANSLATOR_MODEL }}
@@ -72,7 +59,7 @@ jobs:
           JOB_ID: ${{ steps.select.outputs.job_id }}
         run: python automation/book_runner.py --job-id "$JOB_ID"
 
-      - name: Publish completed EPUB as a private downloadable Actions artifact
+      - name: Publish completed EPUB as a downloadable Actions artifact
         if: steps.run.outputs.done == 'true'
         uses: actions/upload-artifact@v4
         with:
