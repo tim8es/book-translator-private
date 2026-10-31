@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "wings-of-starlight-allison-saft",
-  "next_sequence": 3,
+  "next_sequence": 4,
   "records": [
     {
       "record_id": "d9b70e4cfbe5487a9f0d5e37bc1826af",
@@ -55,6 +55,83 @@
           "structure": true
         },
         "findings": []
+      }
+    },
+    {
+      "record_id": "7484e4a53050d10e46ba077564e4fa4b",
+      "sequence": 3,
+      "unit_id": "chapter-000003",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "a5c47765adda9a772e1adde60f9e583d6d7d9ba4aeec720f108ee207323377f1",
+      "translation_sha256": "a902f5f2bba3947696b8e2b63a1646f28191867697b2c8d0d6514e6c5abad63b",
+      "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "review_contract_revision": "docs/TRANSLATION.md@14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "reviewer_session_id": "wings-reviewer-hourly-20261031-eb804dd6",
+      "reviewed_at": "2026-10-31T03:51:42Z",
+      "state_revision": "bb5cd74f82eaee519aa0d9e37c7b69f26cceee20e7a7cfa0e05b71c77471c09e",
+      "review_commit": "c552192efcc318e4266bd2769e8fe92b558eda32",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "calque-generous-pieces",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Блок 000003: «четыре щедрых куска» — буквальная калька generous pieces, неестественное сочетание в русском. Заменить на «четыре больших куска» или равноценный естественный образ без изменения размера долей.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "like a cake sliced into four generous pieces",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "напоминает пирог, разрезанный на четыре щедрых куска",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "awkward-parenthesis-winter",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Блок 000005: вставка «рассуждают феи тёплых краёв» разрывает русскую фразу и звучит синтаксически неестественно. Передать их точку зрения грамматически связно, сохранив атрибуцию именно тёплым феям, а не рассказчику.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "The winter fairies—so the warm fairies reason—are best left to their snowy solitude.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Зимних фей, рассуждают феи тёплых краёв, лучше оставить в их снежном одиночестве.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "unidiomatic-unbeknownst",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Блок 000006: «неведомо для обитателей» — неграмматичная/неидиоматичная конструкция. Например: «Но обитатели тёплых краёв и не подозревают, что в Зимнем лесу и впрямь таятся тёмные силы». Сохранить контраст с предшествующим «большинство страхов».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "But unbeknownst to the warm seasons, dark forces do dwell within the Winter Woods.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Но, неведомо для обитателей тёплых краёв, в Зимнем лесу действительно таятся тёмные силы.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
       }
     }
   ]
