@@ -1,0 +1,2 @@
+<!-- bt-block:000001 -->
+Allison Saft is the *New York Times* and indie bestselling author of *A Far Wilder Magic, A Fragile Enchantment*, and *A Dark and Drowning Tide*. After receiving her MA in English literature from Tulane University, she moved from the Gulf Coast to the West Coast, where she spends her time rolling on eight wheels and practicing aerial silks. She lives with her partner and an Italian greyhound named Marzipan.
