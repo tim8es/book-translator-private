@@ -1,61 +1,51 @@
 # Style Guide
 
-Use this file to record evidence-based stylistic observations and recurring voice decisions for the book. Describe the source; do not invent traits that are not supported by the text.
+Наблюдения ниже основаны на английском прологе (extracted/003-prologue.md). На остальную книгу они автоматически не распространяются; уточнять по следующим главам.
 
 ## Narration
 
-- Point of view:
-- Narrative distance:
-- Register:
-- Typical sentence length and movement:
-- Fragmentation / syntactic complexity:
-- Emotional distance or immediacy:
-- Figurative language density:
-- Humor / irony / sarcasm:
-- Internal thought / free indirect discourse:
-- Meaningful punctuation habits:
+- Point of view: в прологе внешний сказочный рассказчик непосредственно обращается к читателю в условных конструкциях во втором лице («you»); не превращать в безличный пересказ.
+- Narrative distance: сначала широкий обзор природы и страны фей, затем приближение к тревожному озеру и Стражу.
+- Register: литературный, слегка приподнятый, сказовый; допустимы простые разговорные вставки («Alas», «No»), не делать текст целиком архаичным.
+- Typical sentence length and movement: длинные перечисления и периодические фразы перемежаются короткими обособленными предложениями, особенно в тревожной части.
+- Fragmentation / syntactic complexity: значимые обрывы и фрагменты («Here, a tooth. There, an eye, a claw.») сохранять.
+- Emotional distance or immediacy: от восхищения незаметным волшебством — к суеверному страху и прямой угрозе.
+- Figurative language density: много зримых сравнений (пирог, свеча, кошка, клыки, испарина, дым).
+- Humor / irony / sarcasm: лёгкая авторская ирония над страхами фей тёплых краёв, без насмешливого усиления.
+- Internal thought / free indirect discourse: в прологе отдельные суждения маркированы как взгляды фей тёплых краёв; не приписывать их рассказчику как бесспорные факты.
+- Meaningful punctuation habits: двоеточия, тире, повторы «few» и переходы «Then» работают на ритм и напряжение.
 
 ## Prose tendencies
 
-Record only tendencies supported by the source.
-
-- Terse or expansive:
-- Plain or lexically rich:
-- Fast or meditative:
-- Restrained or expressive:
-- Conversational or formal:
-- Repetition-heavy or synonym-rich:
-- Fragmentary or flowing:
-- Concrete or abstract:
-- Understated or emphatic:
+- Terse or expansive: в начале развёрнутые лирические периоды; у озера резкие короткие фразы.
+- Plain or lexically rich: образная лексика с конкретными природными деталями.
+- Fast or meditative: медитативное вступление и ускорение в финале.
+- Restrained or expressive: яркая выразительность без объяснения природы зла.
+- Conversational or formal: сказочная интонация прямого обращения к читателю.
+- Repetition-heavy or synonym-rich: значимы повтор «few» и серия «might»; не убирать их механически.
+- Fragmentary or flowing: чередование плавного и отрывистого.
+- Concrete or abstract: абстрактное «волшебство» дано через конкретные наблюдения.
+- Understated or emphatic: угрозу в финале усиливает недосказанность.
 
 ## Character voices
 
-Add recurring characters as needed.
-
-### Character: <name>
-
-- Formality:
-- Vocabulary / education markers:
-- Age-coded register, if textually supported:
-- Slang / profanity:
-- Verbal habits:
-- Humor:
-- Typical sentence length:
-- Hesitation / confidence:
-- Forms of address:
-- Notes:
+- В прологе недостаточно диалога, чтобы надёжно определить индивидуальные речевые манеры. Заполнить после чтения соответствующих глав.
 
 ## Recurring stylistic decisions
 
 | Source pattern / context | Target-language approach | Reason / evidence |
 | --- | --- | --- |
+| Прямое обращение к читателю («you might», «if you»), пролог | Сохранять условное «вы», не заменять рассказом от третьего лица | Блоки 000001 и 000007–000008. |
+| Короткие фразы и перечисления у озера | Не сливать в одно гладкое предложение | Блоки 000007–000009. |
+| География Долины фей | Единые названия в glossary.md | Блоки 000003–000005. |
 
 ## Ambiguities to preserve
 
 | Source passage / pattern | Ambiguity | Translation approach |
 | --- | --- | --- |
+| «something—barely a wisp of shadow» и «a form it remembered» | Природа и точная форма существа не раскрыты | «нечто», «оно»; не называть монстром или конкретным существом. |
+| «most of their fears are baseless superstition» | Большинство страхов неверно, но не все | Не превращать в категорическое опровержение всех страхов. |
 
 ## Review notes
 
-- 
+- Проверить названия и титул «Warden» на согласованность с дальнейшими главами, не менять автоматически без сверки.
