@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "policy-change",
-  "next_sequence": 86,
+  "next_sequence": 87,
   "records": [
     {
       "record_id": "1f8894cd56d99429b1bb61e7540a8db1",
@@ -4490,6 +4490,105 @@
               "occurrence": 0
             },
             "translation_anchor": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "7d74ee0cdfbc4bcc9b7c3e1b3da77d2c",
+      "sequence": 86,
+      "unit_id": "chapter-000054",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "589f0d43faed410b0251f349c1054f08764a6625ecb98bfc217bfadbd6231f87",
+      "translation_sha256": "eb643aa258c4c36ec4a580d34a8c40f2ac9f86a2059086ec2848205aff214ae4",
+      "workflow_revision": "c76159e4939ed00ac19172228f8972af87cadbb8",
+      "review_contract_revision": "docs/TRANSLATION.md@c76159e4939ed00ac19172228f8972af87cadbb8",
+      "reviewer_session_id": "policy-change-reviewer-20261031-ch54-a2b6e3c488f74c0a91401755154b9a1d",
+      "reviewed_at": "2026-10-31T12:22:29Z",
+      "state_revision": "ceb658d4b047f1939f99e11c4e79508b0644c7b0",
+      "review_commit": null,
+      "correction_round": 2,
+      "supersedes_record_id": "4eeb4b5f81d546a2bc62adcc53409dca",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "union-notification-subject-fixed-ch54",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Субъект обязанности исправлен: лига уведомляет профсоюз.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "The CBA requires the MLHPA to be notified and give reasonable opportunity to participate.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "По коллективному соглашению лига обязана уведомить MLHPA и предоставить профсоюзу разумную возможность участвовать в разбирательстве.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "4eeb4b5f81d546a2bc62adcc53409dca",
+              "finding_id": "union-notification-reversed"
+            }
+          },
+          {
+            "id": "alex-first-person-agreement-fixed-ch54",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Неестественное согласование первого лица исправлено без изменения местоимений Алекс.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "So, I’ve got Hank here to talk you through some key points.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Поэтому Хэнк здесь и объяснит тебе несколько важных моментов.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "4eeb4b5f81d546a2bc62adcc53409dca",
+              "finding_id": "first-person-plural-agreement"
+            }
+          },
+          {
+            "id": "speaker-attribution-ch54",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Реплика «Может» в оригинале принадлежит Алекс, но в переводе приписана Хэнку. Исправить распределение говорящих.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“He might.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "— Может, — ответил Хэнк.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "opposing-jerseys-negated-ch54",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Исходник упоминает форму команд-соперников; перевод добавляет отрицание «не в форме». Убрать смысловую инверсию.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "There were probably only a handful of photos of them together outside of a rink, wearing opposing jerseys.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "фотографий, на которых они вместе за пределами катка и не в форме команд-соперников, можно пересчитать по пальцам.",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       }
