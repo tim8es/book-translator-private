@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "request_id": "c91b38e2bda94f73a3f69d2effa84205",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "dde3eca0119a088eea8b580ac7e9e8d9698a84f636f350eefee9050a5f0e8ee7",
+    "record": {
+      "correction_round": 1,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "independent_session",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "structure",
+            "detail": "Исходный EPUB содержит постороннюю навигационную надпись посередине предложения о хоккейных командах. В исправленном переводе надпись исключена, а смысл предложения восстановлен. Прочие авторские примечания и структура сохранены; исходник и контрольная сумма не менялись.",
+            "id": "ao3-navigation-resolved-ch64",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "ao3-navigation-in-endnote",
+              "record_id": "b43cab47a8c55d976c8e52b962521108"
+            },
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "New York join and all the other Works inspired by this one\n\nNew York teams"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "к ним присоединяются Нью-Йорк и другие нью-йоркские команды."
+            }
+          }
+        ]
+      },
+      "record_id": "f850f9e83f1841f38e477b003adf44ca",
+      "review_commit": "e439572e458410ccb497cc8f57b3add0e9e0282e",
+      "review_contract_revision": "docs/TRANSLATION.md@c76159e4939ed00ac19172228f8972af87cadbb8",
+      "reviewed_at": "2026-10-31T14:21:53Z",
+      "reviewer_session_id": "policy-change-reviewer-20261031-ch64-b8f1a47c827c",
+      "sequence": 105,
+      "source_sha256": "54c27be3a823b0112739223f9ccc71baf2ec8a264a35186a5231895a3f8fce3b",
+      "state_revision": "c4d46adca9133062ff25ee562f03edb985022f83909c0491f98e82e478dd23fd",
+      "supersedes_record_id": "b43cab47a8c55d976c8e52b962521108",
+      "translation_sha256": "3a6b5bf245324f65db5b9c0e815153d8bb6d3419f752393b9528a81a1eeff0ee",
+      "unit_id": "chapter-000064",
+      "workflow_revision": "c76159e4939ed00ac19172228f8972af87cadbb8"
+    }
+  },
+  "error": null
+}
