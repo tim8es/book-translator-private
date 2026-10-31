@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "request_id": "019b1ea06c734baabdaf9f065c769518",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "75e91b94dde2924a399fcdd25e03065920d1f4bcb0a70dd7b48f421524f85732",
+    "record": {
+      "correction_round": 2,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "structure",
+            "detail": "Block 41 rechecked against original: emphasis-petra corrected; structural markers and italic emphasis confirmed.",
+            "id": "fixed-1",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "emphasis-petra",
+              "record_id": "a79bcde284fe4a1892932f005bc80f2d"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Oh, I heard you"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Да я услышала"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Block 51 rechecked against original: certainty-promise corrected; structural markers and italic emphasis confirmed.",
+            "id": "fixed-2",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "certainty-promise",
+              "record_id": "a79bcde284fe4a1892932f005bc80f2d"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "No one will have to know it was *you* who helped me"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Никому ведь не обязательно знать, что это *ты* мне помогла"
+            }
+          }
+        ]
+      },
+      "record_id": "fcb734a12d984482a15316ca5cf538cc",
+      "review_commit": "bd177366f797081eb3fe126bbaecd015e231e134",
+      "review_contract_revision": "docs/TRANSLATION.md@14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "reviewed_at": "2026-10-31T15:31:01Z",
+      "reviewer_session_id": "wings-ch9-review-final-20261031-c4902e8f",
+      "sequence": 26,
+      "source_sha256": "b04f613fcfb5ec283fce075aaa4c6e9577031d7122f701df1e9f6b0a01b46097",
+      "state_revision": "306d94d74cbfddce2d8fcccfd2504b52947318184a3954452f77dc16e074b5b7",
+      "supersedes_record_id": "a79bcde284fe4a1892932f005bc80f2d",
+      "translation_sha256": "a1f32ab1bac02d33d1e0be2e740ca92bdcda0a6a54a13a7747e0fbd118ce3d2c",
+      "unit_id": "chapter-000012",
+      "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5"
+    }
+  },
+  "error": null
+}
