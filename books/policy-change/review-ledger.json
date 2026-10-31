@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "policy-change",
-  "next_sequence": 77,
+  "next_sequence": 78,
   "records": [
     {
       "record_id": "1f8894cd56d99429b1bb61e7540a8db1",
@@ -3692,6 +3692,92 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "8388b7a2457c43a2898b133e418c2ce4",
+      "sequence": 77,
+      "unit_id": "chapter-000009",
+      "outcome": "PASS",
+      "source_sha256": "3d143aae3da9e5d91e0b821877843e530e3459512f424ca0e854971104933086",
+      "translation_sha256": "0beb4ed26834ae97fd0a01531dcb996ae05d707233cd4b3cfc4b8d89e90adc97",
+      "workflow_revision": "c76159e4939ed00ac19172228f8972af87cadbb8",
+      "review_contract_revision": "docs/TRANSLATION.md@c76159e4939ed00ac19172228f8972af87cadbb8",
+      "reviewer_session_id": "policy-change-reviewer-20261031-09-8534bd69",
+      "reviewed_at": "2026-10-31T11:08:06Z",
+      "state_revision": "4f6bfd16556d8bb5cd51352a9b9096e9babc7551",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": "5f77119ee591d8c33caa53b614421b8f",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "step-grandmother-corrected",
+            "category": "referent",
+            "severity": "major",
+            "detail": "Повторно сверены рождественская сцена и последующая мысль Шейна. Step-grandmother правильно соотнесена с мачехой отца (супругой дедушки), а не мачехой дедушки; ошибка предыдущей версии устранена.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "his interest in his step-grandmother being minimal",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Поскольку мачеха отца интересовала его мало",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "5f77119ee591d8c33caa53b614421b8f",
+              "finding_id": "step-grandmother-kinship"
+            }
+          },
+          {
+            "id": "chat-emphasis-restored",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "Повторно проверена переписка Lily/Jane и переписка с портным; текст сообщений оформлен курсивом, ники и последовательность сохранены. Искажение значимого оформления предыдущей версии устранено.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Lily: *When?*",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Лили: *Когда?*",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "5f77119ee591d8c33caa53b614421b8f",
+              "finding_id": "chapter-5-chat-emphasis"
+            }
+          },
+          {
+            "id": "admirals-game-count-fixed",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "В исправленной версии нет увеличения числа игр: «пара матчей с „Адмиралами“ — в конце января и в марте». Обе временные точки сохранены и источник количественной ошибки устранён.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "a couple of games against the Admirals at the end of January and in March",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "у них намечалась пара матчей с «Адмиралами» — в конце января и в марте",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "5f77119ee591d8c33caa53b614421b8f",
+              "finding_id": "admirals-games-count"
+            }
           }
         ]
       }
