@@ -77,6 +77,21 @@ jobs:
           path.write_text(json.dumps(doc, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
           PY
 
+      - name: Render accepted Russian drop-cap emphasis in disposable EPUB engine
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          source=Path('scripts/workflow/epub_preserve.py')
+          data=source.read_text('utf-8')
+          original="                elif drop_cap is not None and translated:\n                    # Preserve either a single styled initial or an opening quote\n                    # plus a styled initial, including italic/bold decorated initials.\n                    prefix_len = 2 if len(initial) == 2 and translated.startswith(initial[0]) and len(translated) > 1 and translated[1].isalpha() else 1\n                    if not translated[prefix_len - 1].isalpha():\n                        raise PreservedEpubError(f\"Invalid translated drop-cap initial: {doc.path}\")\n                    node.text = None\n                    first = ET.SubElement(node, drop_cap.tag, drop_cap.attrib)\n                    first.text = translated[:prefix_len]\n                    wrapper = ET.Element(\"{http://www.w3.org/1999/xhtml}span\")\n                    _render_inline(wrapper, translated[prefix_len:])\n                    first.tail = wrapper.text\n                    node.extend(list(wrapper))\n"
+          compatible="                elif drop_cap is not None and translated:\n                    # EPUB presentation-only compatibility: the accepted Markdown\n                    # may italicize an entire opening line while the original XHTML\n                    # keeps its initial letter in a separate styled drop cap.\n                    # Reuse the original large-initial span and render the remaining\n                    # Markdown with its intended emphasis, without changing the\n                    # canonical accepted chapter artifact.\n                    quotes = (\"«\", \"„\", \"“\", '\"', \"‘\", \"'\")\n                    italic_open = re.match(r\"^\\*([^*\\n]+)\\*\", translated)\n                    if italic_open:\n                        decorated = italic_open.group(1)\n                        prefix_len = (2 if len(decorated) > 1\n                                      and decorated[0] in quotes\n                                      and decorated[1].isalpha() else 1)\n                        if not decorated[prefix_len - 1].isalpha():\n                            raise PreservedEpubError(f\"Invalid translated drop-cap initial: {doc.path}\")\n                        initial_text = decorated[:prefix_len]\n                        remainder = (\n                            (\"*\" + decorated[prefix_len:] + \"*\")\n                            if decorated[prefix_len:] else \"\"\n                        ) + translated[italic_open.end():]\n                    else:\n                        prefix_len = (2 if len(translated) > 1\n                                      and translated[0] in quotes\n                                      and translated[1].isalpha() else 1)\n                        if not translated[prefix_len - 1].isalpha():\n                            raise PreservedEpubError(f\"Invalid translated drop-cap initial: {doc.path}\")\n                        initial_text = translated[:prefix_len]\n                        remainder = translated[prefix_len:]\n                    node.text = None\n                    first = ET.SubElement(node, drop_cap.tag, drop_cap.attrib)\n                    first.text = initial_text\n                    wrapper = ET.Element(\"{http://www.w3.org/1999/xhtml}span\")\n                    _render_inline(wrapper, remainder)\n                    first.tail = wrapper.text\n                    node.extend(list(wrapper))\n"
+          if data.count(original) != 1:
+              raise RuntimeError('Pinned EPUB renderer differs from audited input; refusing presentation fix')
+          source.write_text(data.replace(original, compatible, 1), encoding='utf-8')
+          print('Presentation-only drop-cap compatibility enabled in disposable runner')
+          PY
+
       - name: Run pinned preflight, finalization, EPUB build and independent output checks
         shell: bash
         run: |
