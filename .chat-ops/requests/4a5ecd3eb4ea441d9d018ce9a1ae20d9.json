@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "request_id": "4a5ecd3eb4ea441d9d018ce9a1ae20d9",
+  "book_slug": "wings-of-starlight-allison-saft",
+  "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+  "operation": "review-record",
+  "chapter": 10,
+  "session_id": "wings-ch7-review-20261031-c831ed42",
+  "outcome": "CORRECTIONS_REQUIRED",
+  "source_sha256": "0b0470c51d846e5b0f3555db22c59be794f5b4400ba4e903d15d5e1ed45d8eca",
+  "translation_sha256": "08889b9f9c5320a3570c143d14aa56cfec608f78b72d24ffc714487d8afd58d6",
+  "claim_sha256": "1e2bcde186ec5234a4364c3cf77ee784bd3b0247b012d86446ebb2f65f391b94",
+  "quality_report": {
+    "evidence_version": 2,
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "id": "crowd-reaction-grammar",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Block 51: Russian sentence lacks passive construction and incorrectly makes Elvina's words the agent receiving cries; render «В ответ на слова Эльвины раздались ...».",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "Gasps and shouts of alarm met Elvina’s words.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Слова Эльвины встретили испуганными возгласами и вскриками.",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "competence-shift",
+        "category": "meaning",
+        "severity": "major",
+        "detail": "Block 60: governing-talent here means Clarion herself in that role. «Если бы её дар ... был развит лучше» shifts her self-blame for competence to inherent gift; instead «Если бы она лучше справлялась со своим даром управления».",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "If she were a more competent governing-talent",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Если бы её дар управления был развит лучше",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "confidence-calque",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Block 61: «с куда большей уверенностью, чем могла бы собрать Клэрион» is a literal and ungrammatical calque; express confidence Clarion could not muster naturally.",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "with far more confidence than Clarion could muster",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "с куда большей уверенностью, чем могла бы собрать Клэрион",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "creatures-register",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Block 65: neutral «these creatures» becomes pejorative «эти твари», shifting Elvina's public diplomatic register; use «эти существа» or «эти чудовища».",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "these creatures are active in the darkness",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "эти твари активны в темноте",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "thought-direction-calque",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Block 75: «вздрогнула от направления собственных мыслей» is an unnatural calque; show that Clarion is disturbed by the way her thoughts turned.",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "Clarion flinched at the turn of her own thoughts.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Клэрион вздрогнула от направления собственных мыслей.",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "agency-opportunity",
+        "category": "meaning",
+        "severity": "major",
+        "detail": "Block 94: original focuses on Clarion's own inability to bear wasting the opportunity, while «они упустят» invents a collective future subject; render «упустить эту возможность».",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "Clarion could not bear the idea of wasting this opportunity.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Клэрион не могла вынести мысли, что они упустят такую возможность.",
+          "occurrence": 0
+        },
+        "resolves": null
+      }
+    ]
+  }
+}
