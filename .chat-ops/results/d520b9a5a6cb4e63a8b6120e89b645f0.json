@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "request_id": "d520b9a5a6cb4e63a8b6120e89b645f0",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "3e7c8ebe93729b68f96ec7af00297d2464c899700f2bfc1b9c26c188318359d2",
+    "record": {
+      "correction_round": 0,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "independent_session",
+        "evidence_version": 2,
+        "findings": []
+      },
+      "record_id": "290ce06e541f4bf28e75d78a2cfad754",
+      "review_commit": "cdb34831de6f9e6e8982c6db525675a7f7dc1b0e",
+      "review_contract_revision": "docs/TRANSLATION.md@14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "reviewed_at": "2026-10-31T15:46:29Z",
+      "reviewer_session_id": "wings-ack-independent-review-20261031-3c91e8af",
+      "sequence": 32,
+      "source_sha256": "b8a487335b41406be5ddc5392954d6b583093ce839dc468648743e6eae34a871",
+      "state_revision": "285d88263e5e36347edb412bc5da25c161673f4592c87b4ab6cf643b80f09a5f",
+      "supersedes_record_id": null,
+      "translation_sha256": "646d2b9b1c9ac9884badcd071a7d7d63b366baa85f3ae1131b8ee6a07fc8aca0",
+      "unit_id": "chapter-000031",
+      "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5"
+    }
+  },
+  "error": null
+}

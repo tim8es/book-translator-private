@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "wings-of-starlight-allison-saft",
-  "next_sequence": 32,
+  "next_sequence": 33,
   "records": [
     {
       "record_id": "d9b70e4cfbe5487a9f0d5e37bc1826af",
@@ -3079,6 +3079,34 @@
             "resolves": null
           }
         ]
+      }
+    },
+    {
+      "record_id": "290ce06e541f4bf28e75d78a2cfad754",
+      "sequence": 32,
+      "unit_id": "chapter-000031",
+      "outcome": "PASS",
+      "source_sha256": "b8a487335b41406be5ddc5392954d6b583093ce839dc468648743e6eae34a871",
+      "translation_sha256": "646d2b9b1c9ac9884badcd071a7d7d63b366baa85f3ae1131b8ee6a07fc8aca0",
+      "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "review_contract_revision": "docs/TRANSLATION.md@14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "reviewer_session_id": "wings-ack-independent-review-20261031-3c91e8af",
+      "reviewed_at": "2026-10-31T15:46:29Z",
+      "state_revision": "285d88263e5e36347edb412bc5da25c161673f4592c87b4ab6cf643b80f09a5f",
+      "review_commit": "cdb34831de6f9e6e8982c6db525675a7f7dc1b0e",
+      "correction_round": 0,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": []
       }
     }
   ]
