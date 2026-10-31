@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "request_id": "be08e437efa2484c8c0d326160b9aaf1",
+  "book_slug": "wings-of-starlight-allison-saft",
+  "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+  "operation": "review-record",
+  "chapter": 12,
+  "session_id": "wings-ch9-review-followup-20261031-6a98c24e",
+  "outcome": "CORRECTIONS_REQUIRED",
+  "source_sha256": "b04f613fcfb5ec283fce075aaa4c6e9577031d7122f701df1e9f6b0a01b46097",
+  "translation_sha256": "f726df62855f94aa1c7c16b991f67459b3f63ec8a708d7604dd64dd234fce02c",
+  "claim_sha256": "551ae47aa926a86c1a147bdf4c5ea500a4bc90855e5f69441b3d6d61de7b3b43",
+  "quality_report": {
+    "evidence_version": 2,
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "id": "emphasis-petra",
+        "category": "structure",
+        "severity": "minor",
+        "detail": "Block 41: the source has no italic emphasis, but the Russian adds italics to «услышала». Remove invented emphasis to preserve original typography and tone.",
+        "source_anchor": {
+          "quote": "Oh, I heard you",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Да я *услышала*",
+          "occurrence": 0
+        },
+        "resolved": false,
+        "resolves": null
+      },
+      {
+        "id": "certainty-promise",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Block 51: «No one will have to know» expresses non-necessity or discretion, not a categorical promise «Никто не узнает». Use a formulation such as «Никому необязательно знать, что это *ты* мне помогла».",
+        "source_anchor": {
+          "quote": "No one will have to know it was *you* who helped me",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Никто не узнает, что это *ты* мне помогла",
+          "occurrence": 0
+        },
+        "resolved": false,
+        "resolves": null
+      }
+    ]
+  }
+}
