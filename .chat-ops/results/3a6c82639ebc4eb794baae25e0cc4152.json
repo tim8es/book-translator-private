@@ -1,0 +1,167 @@
+{
+  "schema_version": 1,
+  "request_id": "3a6c82639ebc4eb794baae25e0cc4152",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "8fc39a71033943e7b0f2e5b8b6bbf689d2cb1a4fe1e5ce78b416eced54897b14",
+    "record": {
+      "correction_round": 1,
+      "outcome": "CORRECTIONS_REQUIRED",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "independent_session",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "meaning",
+            "detail": "Блок 000017. Milori предлагает потянуть Клэрион за руку, а не «подтолкнуть». Неверное направление действия: «Может, точнее будет — потянуть?»",
+            "id": "pull-versus-push",
+            "resolved": false,
+            "resolves": null,
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Perhaps a pull is the better word"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "правильнее сказать — подтолкнуть"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Блок 000022. A breathless laugh — смех с перехваченным дыханием, а не беззвучный смех. «От переполнявшего её восторга» — лишняя объясняющая вставка. Предложение: «Не сдержавшись, она рассмеялась, едва переводя дыхание».",
+            "id": "breathless-versus-silent",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "she let out a breathless laugh"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "она беззвучно, от переполнявшего её восторга рассмеялась"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Блок 000030. Idiom «if she didn’t know better» не утверждает, что Клэрион хорошо знакома с Милори. «Если бы ... не знала его лучше» добавляет близость. Передать «Можно было бы подумать, что он слегка смутился».",
+            "id": "know-better-familiarity",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "If she didn’t know better"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Если бы Клэрион не знала его лучше"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Блок 000044. «В тёплых сезонах» — неестественная калька регионального warm seasons. «Полагаю, в тёплых краях на санках не катаются».",
+            "id": "warm-seasons-calque",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "sledding in the warm seasons"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "в тёплых сезонах на санках не катаются"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Блок 000071. «It suits you» — комплимент, что перемена Клэрион ей к лицу. «Тебе здесь хорошо» утверждает лишь её самочувствие. Исправить на «Тебе это идёт».",
+            "id": "suits-you-shift",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "It suits you"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Тебе здесь хорошо"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Блок 000089. «А каким же ты меня находишь?» — неестественная калька. Предложение: «А какой же я, по-твоему?»",
+            "id": "find-me-calque",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "How do you find me, then"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "А каким же ты меня находишь"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Блок 000095. «напáдалась» с искусственным ударением — ошибочное словотворчество, искажающее лёгкую колкость Милори. Заменить на «На сегодня с тебя хватит падений».",
+            "id": "invented-falling-verb",
+            "resolved": false,
+            "resolves": null,
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "You’ve fallen enough today"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "На сегодня ты уже достаточно напáдалась"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Блок 000006. Перевод добавил курсив *так* там, где оригинал не использует курсив. Снять добавленное выделение.",
+            "id": "invented-italics",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "when he was looking at her like this"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "когда он смотрел на неё *так*"
+            }
+          }
+        ]
+      },
+      "record_id": "17b9ee0d14204cedade2d865bd59f0d8",
+      "review_commit": "71638078cab5537cd74cff11e4055b26d24dc906",
+      "review_contract_revision": "docs/TRANSLATION.md@14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "reviewed_at": "2026-10-31T15:37:51Z",
+      "reviewer_session_id": "wings-ch11-independent-review-20261031-74bbdbf1",
+      "sequence": 27,
+      "source_sha256": "b5c87d5dfdfbd84dc090fb39582e72273a4d5c6541d62cfef2e16d497c7031d4",
+      "state_revision": "a36526f0c4867ef68b2d0fe4635914784a731224f27529963b10cf9e7720bd93",
+      "supersedes_record_id": null,
+      "translation_sha256": "bce5f5c85f94d845f98d8f4153813d63da464a8302292bd7e1873cf7c25bf9f6",
+      "unit_id": "chapter-000014",
+      "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5"
+    }
+  },
+  "error": null
+}

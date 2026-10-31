@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "wings-of-starlight-allison-saft",
-  "next_sequence": 27,
+  "next_sequence": 28,
   "records": [
     {
       "record_id": "d9b70e4cfbe5487a9f0d5e37bc1826af",
@@ -2546,6 +2546,163 @@
               "record_id": "a79bcde284fe4a1892932f005bc80f2d",
               "finding_id": "certainty-promise"
             }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "17b9ee0d14204cedade2d865bd59f0d8",
+      "sequence": 27,
+      "unit_id": "chapter-000014",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "b5c87d5dfdfbd84dc090fb39582e72273a4d5c6541d62cfef2e16d497c7031d4",
+      "translation_sha256": "bce5f5c85f94d845f98d8f4153813d63da464a8302292bd7e1873cf7c25bf9f6",
+      "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "review_contract_revision": "docs/TRANSLATION.md@14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "reviewer_session_id": "wings-ch11-independent-review-20261031-74bbdbf1",
+      "reviewed_at": "2026-10-31T15:37:51Z",
+      "state_revision": "a36526f0c4867ef68b2d0fe4635914784a731224f27529963b10cf9e7720bd93",
+      "review_commit": "71638078cab5537cd74cff11e4055b26d24dc906",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "pull-versus-push",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Блок 000017. Milori предлагает потянуть Клэрион за руку, а не «подтолкнуть». Неверное направление действия: «Может, точнее будет — потянуть?»",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Perhaps a pull is the better word",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "правильнее сказать — подтолкнуть",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "breathless-versus-silent",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Блок 000022. A breathless laugh — смех с перехваченным дыханием, а не беззвучный смех. «От переполнявшего её восторга» — лишняя объясняющая вставка. Предложение: «Не сдержавшись, она рассмеялась, едва переводя дыхание».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "she let out a breathless laugh",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "она беззвучно, от переполнявшего её восторга рассмеялась",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "know-better-familiarity",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Блок 000030. Idiom «if she didn’t know better» не утверждает, что Клэрион хорошо знакома с Милори. «Если бы ... не знала его лучше» добавляет близость. Передать «Можно было бы подумать, что он слегка смутился».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "If she didn’t know better",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Если бы Клэрион не знала его лучше",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "warm-seasons-calque",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Блок 000044. «В тёплых сезонах» — неестественная калька регионального warm seasons. «Полагаю, в тёплых краях на санках не катаются».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "sledding in the warm seasons",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "в тёплых сезонах на санках не катаются",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "suits-you-shift",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Блок 000071. «It suits you» — комплимент, что перемена Клэрион ей к лицу. «Тебе здесь хорошо» утверждает лишь её самочувствие. Исправить на «Тебе это идёт».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "It suits you",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Тебе здесь хорошо",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "find-me-calque",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Блок 000089. «А каким же ты меня находишь?» — неестественная калька. Предложение: «А какой же я, по-твоему?»",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "How do you find me, then",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "А каким же ты меня находишь",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "invented-falling-verb",
+            "category": "style",
+            "severity": "major",
+            "detail": "Блок 000095. «напáдалась» с искусственным ударением — ошибочное словотворчество, искажающее лёгкую колкость Милори. Заменить на «На сегодня с тебя хватит падений».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "You’ve fallen enough today",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "На сегодня ты уже достаточно напáдалась",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "invented-italics",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Блок 000006. Перевод добавил курсив *так* там, где оригинал не использует курсив. Снять добавленное выделение.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "when he was looking at her like this",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "когда он смотрел на неё *так*",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       }
