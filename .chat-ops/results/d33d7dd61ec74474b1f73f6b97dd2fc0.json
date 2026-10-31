@@ -1,0 +1,151 @@
+{
+  "schema_version": 1,
+  "request_id": "d33d7dd61ec74474b1f73f6b97dd2fc0",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "7d217557a4ef01ae055e98e2690d60c8e628983d1bae6b68fa35ed5f8e732511",
+    "record": {
+      "correction_round": 1,
+      "outcome": "CORRECTIONS_REQUIRED",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "independent_session",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "meaning",
+            "detail": "Блок 000010. «he’d ensured Pixie Hollow would have her» означает, что Милори сохранил Клэрион для Долины фей; «пришлось терпеть именно её» добавляет пренебрежение со стороны всех подданных и усиливает самоуничижение сверх оригинала. Лучше «он сделал так, что Долине фей предстояло ещё долгие годы жить с ней, со всеми её недостатками».",
+            "id": "pixie-hollow-tolerate",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "he’d ensured Pixie Hollow would have her"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Милори позаботился, чтобы Долине фей пришлось терпеть именно её"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Блок 000018. «голосом, густым от облегчения» — калька с «voice thick with relief». Естественнее «с глубоким облегчением в голосе».",
+            "id": "relief-voice-calque",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "her voice thick with relief"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "голосом, густым от облегчения"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Блок 000037. «voice sounded terribly small ... almost childlike» — эмоциональная беспомощность, не громкость. «Собственный голос показался ей до боли слабым, почти детским».",
+            "id": "small-voice-intensity",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Her voice sounded terribly small to her own ears, almost childlike."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Собственный голос прозвучал для Клэрион ужасно тихо, почти по-детски."
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Блок 000074. «другом, разделяющим с ней дружеское молчание» — тавтология вместо образа дружеского присутствия. «другом, молча составляющим ей компанию».",
+            "id": "friend-silence-tautology",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "a friend, holding its companionate silence with her"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "другом, разделяющим с ней дружеское молчание"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Блок 000089. «укоротила хват» неестественно; «choked up on them» — перехватила поводья покороче, чтобы управлять совой. «перехватила их покороче».",
+            "id": "reins-grip-calque",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "seized hold of the reins and choked up on them"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "ухватила их и укоротила хват"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Блок 000091. «требовались все силы бёдер и предплечий» — калька, мешающая восприятию. «приходилось изо всех сил напрягать бёдра и предплечья».",
+            "id": "body-strength-calque",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "It took all the strength of her thighs and forearms to keep her seat"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Чтобы удержаться на спине совы, требовались все силы бёдер и предплечий"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Блок 000097. «Would it be freezing inside?» — вопрос, будет ли внутри морозно, а «Насколько там холодно?» задаёт вопрос о степени. «Не будет ли там ледяной холод?»",
+            "id": "freezing-inside",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Would it be freezing inside?"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Насколько там холодно?"
+            }
+          }
+        ]
+      },
+      "record_id": "945fc80c41354623969bd2a9728467fd",
+      "review_commit": "436f9aa7f696c1674093cf313cf549da8f56672f",
+      "review_contract_revision": "docs/TRANSLATION.md@14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "reviewed_at": "2026-10-31T17:55:38Z",
+      "reviewer_session_id": "wings-ch23-review-20261031-23e16ac7",
+      "sequence": 59,
+      "source_sha256": "e2d84f71e0efe28d4d6ab8b38a2100178fa3d7b806578ad79ee293ab9263699b",
+      "state_revision": "b467a878d1b8f9e6e7bd51fce91b8dffd2d4545ad07567a72f7c00ee87d91159",
+      "supersedes_record_id": null,
+      "translation_sha256": "a9d1f89af35b8dd5167a3001e6a20c16a71c688ccf7ce533dd5a663bd0e0d710",
+      "unit_id": "chapter-000026",
+      "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5"
+    }
+  },
+  "error": null
+}
