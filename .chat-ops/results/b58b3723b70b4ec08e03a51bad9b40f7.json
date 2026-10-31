@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "request_id": "b58b3723b70b4ec08e03a51bad9b40f7",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "af4c1e37d1692d9dc83531d6e545943ab5c44ec93489c9ce7e4de5baa06946b7",
+    "record": {
+      "correction_round": 2,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "independent_session",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "meaning",
+            "detail": "Ранее пропущенный отдельный абзац полностью восстановлен: Шейн сдерживает желание забраться к Илье на колени и иронически напоминает себе о границах. Соседний диалог и последовательность сцены сохранены, EPUB-якорь не изменён.",
+            "id": "boundaries-monologue-restored-32",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "boundaries-monologue-omitted",
+              "record_id": "09fb40670db7404b9b38dab18009deaa"
+            },
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "This did not sound good. Shane manfully held back the urge to climb into Ilya’s lap. *Boundaries.*"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Это звучало нехорошо. Шейн мужественно сдержал желание забраться к Илье на колени. *Границы.*"
+            }
+          }
+        ]
+      },
+      "record_id": "fc9cc4ffa8cd477686bf9b509ef1d4ab",
+      "review_commit": "2b2ffc3d90c96b83f6250f31f208f6ed2d1e8ba9",
+      "review_contract_revision": "docs/TRANSLATION.md@c76159e4939ed00ac19172228f8972af87cadbb8",
+      "reviewed_at": "2026-10-31T13:19:22Z",
+      "reviewer_session_id": "policy-change-reviewer-20261031-ch32-3d7e6452ac8b",
+      "sequence": 97,
+      "source_sha256": "c497a92c6bfbdc9a6d84db2bc9a80df55c1b35bd63b1eb18b5f8bba5303b769f",
+      "state_revision": "940225b5cb0a94c531820a51b249d758ee73c2b7a8f235589b0e7fae9105724f",
+      "supersedes_record_id": "09fb40670db7404b9b38dab18009deaa",
+      "translation_sha256": "a2dc15cdfe4522c98557af2831389c034f3bffa402a6d66078a6a01098a903d5",
+      "unit_id": "chapter-000032",
+      "workflow_revision": "c76159e4939ed00ac19172228f8972af87cadbb8"
+    }
+  },
+  "error": null
+}

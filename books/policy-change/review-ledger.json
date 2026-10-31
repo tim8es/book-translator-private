@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "policy-change",
-  "next_sequence": 97,
+  "next_sequence": 98,
   "records": [
     {
       "record_id": "1f8894cd56d99429b1bb61e7540a8db1",
@@ -5196,6 +5196,54 @@
             "resolves": {
               "record_id": "794d3153aa414d158e96ed07af4a9c2b",
               "finding_id": "odometer-as-speedometer"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "fc9cc4ffa8cd477686bf9b509ef1d4ab",
+      "sequence": 97,
+      "unit_id": "chapter-000032",
+      "outcome": "PASS",
+      "source_sha256": "c497a92c6bfbdc9a6d84db2bc9a80df55c1b35bd63b1eb18b5f8bba5303b769f",
+      "translation_sha256": "a2dc15cdfe4522c98557af2831389c034f3bffa402a6d66078a6a01098a903d5",
+      "workflow_revision": "c76159e4939ed00ac19172228f8972af87cadbb8",
+      "review_contract_revision": "docs/TRANSLATION.md@c76159e4939ed00ac19172228f8972af87cadbb8",
+      "reviewer_session_id": "policy-change-reviewer-20261031-ch32-3d7e6452ac8b",
+      "reviewed_at": "2026-10-31T13:19:22Z",
+      "state_revision": "940225b5cb0a94c531820a51b249d758ee73c2b7a8f235589b0e7fae9105724f",
+      "review_commit": "2b2ffc3d90c96b83f6250f31f208f6ed2d1e8ba9",
+      "correction_round": 2,
+      "supersedes_record_id": "09fb40670db7404b9b38dab18009deaa",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "boundaries-monologue-restored-32",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Ранее пропущенный отдельный абзац полностью восстановлен: Шейн сдерживает желание забраться к Илье на колени и иронически напоминает себе о границах. Соседний диалог и последовательность сцены сохранены, EPUB-якорь не изменён.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "This did not sound good. Shane manfully held back the urge to climb into Ilya’s lap. *Boundaries.*",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Это звучало нехорошо. Шейн мужественно сдержал желание забраться к Илье на колени. *Границы.*",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "09fb40670db7404b9b38dab18009deaa",
+              "finding_id": "boundaries-monologue-omitted"
             }
           }
         ]
