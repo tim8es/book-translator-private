@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "policy-change",
-  "next_sequence": 69,
+  "next_sequence": 70,
   "records": [
     {
       "record_id": "1f8894cd56d99429b1bb61e7540a8db1",
@@ -3147,6 +3147,54 @@
             "resolves": {
               "record_id": "555f4517dee92af63dfe7d89d1f86318",
               "finding_id": "stair-flights-as-floor-number"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "13420d4592654f03aa256635c0f6e1b9",
+      "sequence": 69,
+      "unit_id": "chapter-000019",
+      "outcome": "PASS",
+      "source_sha256": "55f93680f549823bb0df408ec0d470ca53d5ffb6853d56f1f248f6c41a1b0c1d",
+      "translation_sha256": "f55c0fb638a9fab610de1e70b414e841d83e3cd011ce9f39581db419924159eb",
+      "workflow_revision": "c76159e4939ed00ac19172228f8972af87cadbb8",
+      "review_contract_revision": "docs/TRANSLATION.md@c76159e4939ed00ac19172228f8972af87cadbb8",
+      "reviewer_session_id": "policy-change-reviewer-20261031-0230-43c47bd2",
+      "reviewed_at": "2026-10-31T00:33:59Z",
+      "state_revision": "d061a145aceb321b74aad2c1013048d1ddfe65e9",
+      "review_commit": null,
+      "correction_round": 2,
+      "supersedes_record_id": "49f5c96a411adf35005ac7e8861ac0f4",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "valentine-secret-partner-fixed",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Восстановлено различие: Шейн не может открыто признаться, с кем хотел бы праздновать, а не не имеет адресата для признания.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "no one with whom he could admit to wanting to celebrate.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "он не мог открыто признаться, с кем хотел бы его отметить.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "49f5c96a411adf35005ac7e8861ac0f4",
+              "finding_id": "valentine-secret-partner"
             }
           }
         ]
