@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "request_id": "ab85f24485d9461ba219c25b416b2ce7",
+  "book_slug": "wings-of-starlight-allison-saft",
+  "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+  "operation": "review-record",
+  "chapter": 15,
+  "session_id": "wings-ch12-review-20261031-35c24a5e",
+  "outcome": "CORRECTIONS_REQUIRED",
+  "source_sha256": "e8ce287649aa8e4dbe4cedbd2d1365174f27134fe46c1957012bfe3f9595cdcb",
+  "translation_sha256": "cdee5a1adc019179992692afec377b3ac933b2535d2129c5cf1cc8009c78b480",
+  "claim_sha256": "962fbdb4e528538bc6ad5c167e81991e22a8056590a9a4182270292e3a41376f",
+  "quality_report": {
+    "evidence_version": 2,
+    "context": "independent_session",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "id": "governing-range-confused",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Блок 000044. «couldn’t access the full range» — Клэрион недоступны все возможности дара, а не просто «вся сила» (мощь). Точнее «ей были доступны далеко не все возможности дара правления».",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "couldn’t access the full range of her governing-talent magic",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "ей недоступна вся сила её дара правления",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "hall-name-inconsistent",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Блок 000048. Hall of Winter назван «Зимним чертогом», хотя установленное название — «Зал Зимы». Исправить на «дверях Зала Зимы».",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "Hall of Winter’s doors",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "дверях Зимнего чертога",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "never-sea-inconsistent",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Блок 000058. Never Sea назван «Морем Неверленда», но в главе 10 уже «Неверское море». Согласовать термин с ранее принятой географией: «над Неверским морем».",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "Never Sea",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Морем Неверленда",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "rise-and-fall-drift",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Блок 000067. «Things rise and fall» — естественные расцвет и упадок, не обязательно рождение и исчезновение. Точнее: «Всё переживает расцвет и упадок по её законам».",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "Things rise and fall according to its designs",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Всё рождается и исчезает по её законам",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "entire-talent-lost",
+        "category": "meaning",
+        "severity": "major",
+        "detail": "Блок 000070. «An entire talent of fairy» — исчез целый тип фей с даром сновидений, а не «целый дар фей». Устранить также кальку «исчез во времени»: «целая группа фей с даром сновидений, исчезнувшая с течением веков».",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "an entire talent of fairy, lost to time",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "целый дар фей исчез во времени",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "convince-herself-truncated",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Блок 000114. «почти могла себя убедить» — незавершённая русская конструкция; оригинал передаёт, что она почти могла поверить, будто это правда. «Она почти готова была поверить, что это правда».",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "she could almost convince herself it was true",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "почти могла себя убедить",
+          "occurrence": 0
+        },
+        "resolves": null
+      }
+    ]
+  }
+}
