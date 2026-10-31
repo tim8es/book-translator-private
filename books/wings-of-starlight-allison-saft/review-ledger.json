@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "wings-of-starlight-allison-saft",
-  "next_sequence": 16,
+  "next_sequence": 17,
   "records": [
     {
       "record_id": "d9b70e4cfbe5487a9f0d5e37bc1826af",
@@ -1393,6 +1393,54 @@
             "resolves": {
               "record_id": "e949aaf5628e43debab73a4e0fae4137",
               "finding_id": "speech-format"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "0c742fdac3f44bb6aaf0ad06262b76c3",
+      "sequence": 16,
+      "unit_id": "chapter-000008",
+      "outcome": "PASS",
+      "source_sha256": "79bf050d5d827d78a6e37c0191965a044fd34c4eb68f80890967b4d29f081994",
+      "translation_sha256": "222a7c81f460fbf03b8f7fea715357d37204e386838a3d711873c02d9c5d4700",
+      "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "review_contract_revision": "docs/TRANSLATION.md@14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "reviewer_session_id": "wings-ch5-review-final-20261031-ff06eacd",
+      "reviewed_at": "2026-10-31T13:23:23Z",
+      "state_revision": "7da319d15b5e0551451c60e6bea0f71c229405595044ff8d9c89e548f108572e",
+      "review_commit": "afa6b03877de73a87543408a1b756af439a1ce7c",
+      "correction_round": 2,
+      "supersedes_record_id": "41c89e5a8d6548e0a9e4576ecc39cf62",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "speech-final",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Block 56: direct speech punctuation restored in accepted translation. All 82 blocks and 17 italic fragments remain aligned.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "“It was mine.”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Это моя вина».",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "41c89e5a8d6548e0a9e4576ecc39cf62",
+              "finding_id": "speech-partial"
             }
           }
         ]

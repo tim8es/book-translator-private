@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "request_id": "b7ce9c73470a47fda5e6d83f0219cf95",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "d23cf29ad6ca0052cab5f3c33fe0d936ed1665585ebcde2140c58c4d1d95edb0",
+    "record": {
+      "correction_round": 2,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "style",
+            "detail": "Block 56: direct speech punctuation restored in accepted translation. All 82 blocks and 17 italic fragments remain aligned.",
+            "id": "speech-final",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "speech-partial",
+              "record_id": "41c89e5a8d6548e0a9e4576ecc39cf62"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "“It was mine.”"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "«Это моя вина»."
+            }
+          }
+        ]
+      },
+      "record_id": "0c742fdac3f44bb6aaf0ad06262b76c3",
+      "review_commit": "afa6b03877de73a87543408a1b756af439a1ce7c",
+      "review_contract_revision": "docs/TRANSLATION.md@14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "reviewed_at": "2026-10-31T13:23:23Z",
+      "reviewer_session_id": "wings-ch5-review-final-20261031-ff06eacd",
+      "sequence": 16,
+      "source_sha256": "79bf050d5d827d78a6e37c0191965a044fd34c4eb68f80890967b4d29f081994",
+      "state_revision": "7da319d15b5e0551451c60e6bea0f71c229405595044ff8d9c89e548f108572e",
+      "supersedes_record_id": "41c89e5a8d6548e0a9e4576ecc39cf62",
+      "translation_sha256": "222a7c81f460fbf03b8f7fea715357d37204e386838a3d711873c02d9c5d4700",
+      "unit_id": "chapter-000008",
+      "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5"
+    }
+  },
+  "error": null
+}
