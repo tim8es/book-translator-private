@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "wings-of-starlight-allison-saft",
-  "next_sequence": 5,
+  "next_sequence": 6,
   "records": [
     {
       "record_id": "d9b70e4cfbe5487a9f0d5e37bc1826af",
@@ -216,6 +216,115 @@
               "record_id": "7484e4a53050d10e46ba077564e4fa4b",
               "finding_id": "unidiomatic-unbeknownst"
             }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "f12d8a57b62943d5a9f078c0e2b14c36",
+      "sequence": 5,
+      "unit_id": "chapter-000004",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "624e636f67eea4f9ab37700521a9f841b31f67efc36b6e338d1ce930c9d33d97",
+      "translation_sha256": "7b41875b81004b97af56b3dd4e9bcae4c53aa5e62c397892678dc4fda21f5bd8",
+      "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "review_contract_revision": "docs/TRANSLATION.md@14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "reviewer_session_id": "wings-reviewer-hourly-20261031-0549z-5f33bc82",
+      "reviewed_at": "2026-10-31T05:50:39Z",
+      "state_revision": "5c81ce7bfa80f27396c424e55dffca414443a307",
+      "review_commit": null,
+      "correction_round": 0,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "awkward-fairy-glimpses",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Блок 000025: «ей ... мелькали ... феи» — неестественное управление и перегруженное причастие. Передать fleeting glimpses естественно («сквозь листву она то и дело замечала пролетавших фей»), не меняя точки зрения.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Through the canopy overhead, she caught glimpses of fairies flitting by.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Сквозь листву над головой ей то и дело мелькали пролетавшие мимо феи.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "kind-thing-grammar",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Блок 000045: «Это было очень добро с твоей стороны» грамматически неестественно. Нужна нормативная реплика с тем же тёплым тоном, например «Это был очень добрый поступок» или «Очень мило с твоей стороны».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "That was a kind thing you did.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Это было очень добро с твоей стороны",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "emerge-from-slumber-calque",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Блок 000055: «из сна вышли бы» — калька emerge from their slumber. Заменить естественным «проснулись бы» или равноценной конструкцией, сохранив условность и две группы ночных фей.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "would emerge from their slumber.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "из сна вышли бы те, кто жил при свете луны",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "hollow-praise-calque",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Блок 000057: «Похвала прозвучала пусто» — буквальная неидиоматичная передача rang hollow. Выразить, что похвала показалась Клэрион пустой, без необоснованного утверждения о неискренности Аурелии.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "The praise rang hollow",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Похвала прозвучала пусто",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "afternoon-work-time",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Блок 000071: for the afternoon ограничивает завершённую работу второй половиной дня; «на сегодня» утверждает завершение всех дел за день. Сохранить исходное временное ограничение.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "The light-talents had apparently finished their work for the afternoon.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Феи света, видимо, уже закончили свою работу на сегодня.",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       }
