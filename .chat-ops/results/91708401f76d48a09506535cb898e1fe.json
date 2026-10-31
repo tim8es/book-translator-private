@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "request_id": "91708401f76d48a09506535cb898e1fe",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "96cc8e2d5af1c8cb0ccf18583dfb6badc1d83f2a5f04ce36dd9b36ddae49cc34",
+    "record": {
+      "correction_round": 1,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "independent_session",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "voice",
+            "detail": "Блок 000034: исходная скрытая надежда Клэрион сохранена в авторском повествовании; произнесены только её реплики.",
+            "id": "recheck-narrative-to-dialogue",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "narrative-to-dialogue",
+              "record_id": "9123657ed4370a5de96111397a278411"
+            },
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "She had been fully prepared to let Artemis go, but she couldn’t deny that, deep down, she’d hoped for this."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Она была вполне готова отпустить Артемис, но не могла отрицать, что в глубине души надеялась на такой исход."
+            }
+          },
+          {
+            "category": "modality",
+            "detail": "Блок 000047: восстановлено ожидаемое «Когда она очнётся…», а не условное «Если».",
+            "id": "recheck-when-to-if-petra",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "when-to-if-petra",
+              "record_id": "9123657ed4370a5de96111397a278411"
+            },
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "When she does…"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Когда она очнётся…"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Блок 000007: многонедельное напряжение передано без сокращения до одной недели.",
+            "id": "recheck-weeks-to-week",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "weeks-to-week",
+              "record_id": "9123657ed4370a5de96111397a278411"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Weeks of stress, of worry"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Напряжение и тревоги, копившиеся неделями"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Блок 000019: расположение трости физически ясно и передано естественным русским языком.",
+            "id": "recheck-staff-placement",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "staff-placement-calque",
+              "record_id": "9123657ed4370a5de96111397a278411"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "A staff was propped up beside her, nestled in the crook of her neck and shoulder."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Рядом была прислонена трость: её верхний конец упирался в ложбинку между шеей и плечом."
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Блок 000050: восстановлено направление звуков из палаты в атриум.",
+            "id": "recheck-atrium-voices",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "atrium-voices-direction",
+              "record_id": "9123657ed4370a5de96111397a278411"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "voices—and laughter—spilling into the atrium"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "как до атриума доносятся голоса — и смех."
+            }
+          }
+        ]
+      },
+      "record_id": "c895fbd770874913be238c9a08685625",
+      "review_commit": "770e3aad820f743b0e87be9f72bf3ed887888939",
+      "review_contract_revision": "docs/TRANSLATION.md@14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "reviewed_at": "2026-10-31T18:04:20Z",
+      "reviewer_session_id": "wings-ch26-review-20261031-188b9697",
+      "sequence": 67,
+      "source_sha256": "0348992ccb76892f3dd95172416665b2de972c2be8db3f8c1911072d0e770a3f",
+      "state_revision": "f7ba8f05b1853bddb5a6b3a68380018521f0eafb3f49692d7bc19101e456b785",
+      "supersedes_record_id": "9123657ed4370a5de96111397a278411",
+      "translation_sha256": "d6806fbbe4bdaa1011699d9904d1401cedf4df3bc4e5366c63e3641a95d12066",
+      "unit_id": "chapter-000029",
+      "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5"
+    }
+  },
+  "error": null
+}

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "wings-of-starlight-allison-saft",
-  "next_sequence": 67,
+  "next_sequence": 68,
   "records": [
     {
       "record_id": "d9b70e4cfbe5487a9f0d5e37bc1826af",
@@ -7549,6 +7549,130 @@
             "resolves": {
               "record_id": "a53aa473b8024b2cbadd324aedb4e644",
               "finding_id": "petra-cutoff"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "c895fbd770874913be238c9a08685625",
+      "sequence": 67,
+      "unit_id": "chapter-000029",
+      "outcome": "PASS",
+      "source_sha256": "0348992ccb76892f3dd95172416665b2de972c2be8db3f8c1911072d0e770a3f",
+      "translation_sha256": "d6806fbbe4bdaa1011699d9904d1401cedf4df3bc4e5366c63e3641a95d12066",
+      "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "review_contract_revision": "docs/TRANSLATION.md@14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "reviewer_session_id": "wings-ch26-review-20261031-188b9697",
+      "reviewed_at": "2026-10-31T18:04:20Z",
+      "state_revision": "f7ba8f05b1853bddb5a6b3a68380018521f0eafb3f49692d7bc19101e456b785",
+      "review_commit": "770e3aad820f743b0e87be9f72bf3ed887888939",
+      "correction_round": 1,
+      "supersedes_record_id": "9123657ed4370a5de96111397a278411",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-narrative-to-dialogue",
+            "category": "voice",
+            "severity": "major",
+            "detail": "Блок 000034: исходная скрытая надежда Клэрион сохранена в авторском повествовании; произнесены только её реплики.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "She had been fully prepared to let Artemis go, but she couldn’t deny that, deep down, she’d hoped for this.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Она была вполне готова отпустить Артемис, но не могла отрицать, что в глубине души надеялась на такой исход.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "9123657ed4370a5de96111397a278411",
+              "finding_id": "narrative-to-dialogue"
+            }
+          },
+          {
+            "id": "recheck-when-to-if-petra",
+            "category": "modality",
+            "severity": "major",
+            "detail": "Блок 000047: восстановлено ожидаемое «Когда она очнётся…», а не условное «Если».",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "When she does…",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Когда она очнётся…",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "9123657ed4370a5de96111397a278411",
+              "finding_id": "when-to-if-petra"
+            }
+          },
+          {
+            "id": "recheck-weeks-to-week",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Блок 000007: многонедельное напряжение передано без сокращения до одной недели.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Weeks of stress, of worry",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Напряжение и тревоги, копившиеся неделями",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "9123657ed4370a5de96111397a278411",
+              "finding_id": "weeks-to-week"
+            }
+          },
+          {
+            "id": "recheck-staff-placement",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Блок 000019: расположение трости физически ясно и передано естественным русским языком.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "A staff was propped up beside her, nestled in the crook of her neck and shoulder.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Рядом была прислонена трость: её верхний конец упирался в ложбинку между шеей и плечом.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "9123657ed4370a5de96111397a278411",
+              "finding_id": "staff-placement-calque"
+            }
+          },
+          {
+            "id": "recheck-atrium-voices",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Блок 000050: восстановлено направление звуков из палаты в атриум.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "voices—and laughter—spilling into the atrium",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "как до атриума доносятся голоса — и смех.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "9123657ed4370a5de96111397a278411",
+              "finding_id": "atrium-voices-direction"
             }
           }
         ]
