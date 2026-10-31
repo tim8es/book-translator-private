@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "policy-change",
-  "next_sequence": 81,
+  "next_sequence": 82,
   "records": [
     {
       "record_id": "1f8894cd56d99429b1bb61e7540a8db1",
@@ -4065,6 +4065,130 @@
             "translation_anchor": {
               "quote": "Вибу впервые пришлось повысить голос.",
               "occurrence": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "b3c05b30d3c84388bd81cc4be347cd24",
+      "sequence": 81,
+      "unit_id": "chapter-000020",
+      "outcome": "PASS",
+      "source_sha256": "c30f86167ba11e13b6b70a2b4bf469965876c97e9260efbd17ddc541ad6fef7d",
+      "translation_sha256": "e1cf71969b828a450b05572cf5849601f1c3180aee2ad4a1c440265a22d5c7d0",
+      "workflow_revision": "c76159e4939ed00ac19172228f8972af87cadbb8",
+      "review_contract_revision": "docs/TRANSLATION.md@c76159e4939ed00ac19172228f8972af87cadbb8",
+      "reviewer_session_id": "policy-change-review-020-20261031-55c040ffc71d",
+      "reviewed_at": "2026-10-31T11:19:08Z",
+      "state_revision": "d8932d634f086f550ba5f352c4ce6f74db35b23c",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": "f20f6af16d3d52bf3821ca7552a08e99",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "owner-involvement-negation-resolved",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Восстановлено отрицание степени вовлечённости владельцев; исходное замечание устранено.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Owners aren’t usually as involved.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Обычно владельцы не настолько вовлечены в дела команды.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "f20f6af16d3d52bf3821ca7552a08e99",
+              "finding_id": "owner-involvement-negation"
+            }
+          },
+          {
+            "id": "wiebe-name-chapter-11-resolved",
+            "category": "terminology",
+            "severity": "major",
+            "detail": "В этой главе фамилия Wiebe унифицирована как «Вибе», обращение Coach W дано как «Тренер В»; прежнее разночтение в главе устранено. Общекнижную унификацию следует завершить отдельно для других единиц.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Sighing, Shane opened up his chat with Wiebe.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Вздохнув, Шейн открыл переписку с Вибе.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "f20f6af16d3d52bf3821ca7552a08e99",
+              "finding_id": "wiebe-name-chapter-11"
+            }
+          },
+          {
+            "id": "valentine-partner-in-chapter-resolved",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Восстановлен скрытый желанный партнёр, а не собеседник, которому признались бы в желании праздновать.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "no one with whom he could admit to wanting to celebrate.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Во всяком случае, ты не мог открыто признаться, с кем хотел бы его отметить.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "f20f6af16d3d52bf3821ca7552a08e99",
+              "finding_id": "valentine-partner-in-chapter"
+            }
+          },
+          {
+            "id": "hotel-rooms-made-into-homes-resolved",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Удалено выдуманное указание на встречу дома; место встречи оставлено неопределённым, как в оригинале.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "They always went to each other’s places when they played each other.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Когда они играли друг против друга, они всегда встречались друг у друга.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "f20f6af16d3d52bf3821ca7552a08e99",
+              "finding_id": "hotel-rooms-made-into-homes"
+            }
+          },
+          {
+            "id": "invented-hypothetical-reaction-resolved",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Восстановлена короткая реакция без выдуманной гипотезы о том, что Шейн почувствовал бы.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "He looked stricken.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Илья выглядел потрясённым.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "f20f6af16d3d52bf3821ca7552a08e99",
+              "finding_id": "invented-hypothetical-reaction"
             }
           }
         ]
