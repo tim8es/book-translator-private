@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "wings-of-starlight-allison-saft",
-  "next_sequence": 63,
+  "next_sequence": 64,
   "records": [
     {
       "record_id": "d9b70e4cfbe5487a9f0d5e37bc1826af",
@@ -7031,6 +7031,115 @@
               "record_id": "69b02d2a9ed7feb1b3f17c14a3cc317b",
               "finding_id": "daylight-truth-future"
             }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "cd0485ef270047b1904f7b580cf74e93",
+      "sequence": 63,
+      "unit_id": "chapter-000030",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "06a5e98fbd58b049971ea663d41e89a0cb901a8d2c9ef79a3f65781e8de0cae3",
+      "translation_sha256": "e020c75ce23fdbb10b87f2fd0cb70b028e2c01de91461b6b04aabc8f2f8ec1ff",
+      "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "review_contract_revision": "docs/TRANSLATION.md@14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "reviewer_session_id": "wings-ch27-independent-review-20261031-cb5ec918",
+      "reviewed_at": "2026-10-31T17:58:33Z",
+      "state_revision": "a7ce35ed30ddeadc6e54a359c7d2aaf2f88a3da9",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "midsummer-afternoon-lost",
+            "category": "time",
+            "severity": "major",
+            "detail": "Блок 000001: midsummer afternoon означает прекрасный день в разгар лета, во второй половине дня, а не «летний полдень»; восстановить разгар лета и дневное время без указания полудня.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "a glorious midsummer afternoon",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "великолепный летний полдень",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "gown-gold-material",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Блок 000009: gown was pure, shining gold обозначает сияющий золотой цвет наряда, а перевод «из чистого сияющего золота» без опоры на оригинал утверждает, что платье сделано из металла. Лучше «Её платье сияло чистым золотом» / «Платье было ярко-золотым».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Her gown was pure, shining gold",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Её платье было из чистого сияющего золота",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "repay-grammar",
+            "category": "grammar",
+            "severity": "major",
+            "detail": "Блок 000051: «Клэрион никогда не расплатиться» — грамматически неверная конструкция; передать 'She would never be able to repay him' как «Клэрион никогда не сможет отплатить ему за всё, что он для неё сделал».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "She would never be able to repay him for what he’d done for her.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Клэрион никогда не расплатиться с ним за всё, что он сделал ради неё.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "catch-snowball-invented-ball",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Блок 000060: game of catch относится к перебрасыванию снежком, а не отдельному «мячу со снежком». Устранить выдуманный мяч и оставить шутливую трагичность таяния.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "begun a game of catch, which lasted until the snowball tragically melted",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "затеяла игру в мяч со снежком; та закончилась трагически, когда снежок растаял",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "protect-lives-missing-verb",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Блок 000074: 'you have the lives of many others to look out for' означает необходимость заботиться и защищать жизни других фей. Русское «а тебе — ещё и множество чужих жизней» обрывает смысловое действие, звучит как эллипсис с некорректным управлением. Лучше «а ты отвечаешь ещё и за жизни многих других».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "you have the lives of many others to look out for",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "а тебе — ещё и множество чужих жизней",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       }
