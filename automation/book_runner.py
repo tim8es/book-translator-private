@@ -204,6 +204,9 @@ def init(job_id: str, request: dict, slug: str, revision: str) -> dict:
     if result.returncode:
         raise JobError("corpus sealing failed: " + (result.stderr or result.stdout)[-500:])
     verify(slug)
+    # Git cannot track empty directories; the canonical validator needs both.
+    for directory in ("translated", "output"):
+        (ROOT / "books" / slug / directory / ".gitkeep").touch(exist_ok=True)
     metadata = read_json(ROOT / "books" / slug / "metadata.json")
     if metadata["workflow"]["resolved_revision"] != revision:
         raise JobError("new book did not pin its installed workflow")
@@ -238,7 +241,7 @@ def next_operation(slug: str, status: dict) -> tuple[str, dict | None]:
         if record and record["translation_sha256"] == current_hash:
             if record["outcome"] == "CORRECTIONS_REQUIRED":
                 if status["correction_rounds"].get(chapter["unit_id"], 0) >= MAX_CORRECTIONS:
-                    raise JobError("correction round limit reached")
+                    return "blocked", chapter
                 return "corrector", chapter
             if record["outcome"] == "PASS":
                 return "promote", chapter
@@ -334,14 +337,31 @@ def process_claim(job_id: str, slug: str, status: dict, engine: Path) -> None:
     if owned["session_id"] != active["session_id"]:
         raise JobError("active claim belongs to another session")
     role = active["role"]
-    # REVIEWER is a separate API invocation with only source, accepted artifact
-    # and bounded public context; no translator reasoning is passed to it.
-    system, user, source = context(engine, slug, chapter, role)
-    answer = complete("REVIEWER" if role == "reviewer" else
-                      "CORRECTOR" if role == "corrector" else "TRANSLATOR",
-                      system, user)
+    # Fully validate the model response before changing canonical artifacts.
+    # Model/format failures are safe to checkpoint as retries. CLI failures
+    # after mutation remain fail-closed and must be examined separately.
+    try:
+        system, user, source = context(engine, slug, chapter, role)
+        answer = complete("REVIEWER" if role == "reviewer" else
+                          "CORRECTOR" if role == "corrector" else "TRANSLATOR",
+                          system, user)
+        if role == "reviewer":
+            outcome, report = parse_review(answer)
+        else:
+            check_markers(source, answer)
+            path = ROOT / "books" / slug / chapter["translation_path"]
+            if role == "corrector" and path.read_text("utf-8") == answer:
+                raise JobError("corrector returned unchanged translation")
+    except (ModelError, JobError) as exc:
+        cli("release", slug, str(chapter["number"]), "--session-id", active["session_id"])
+        status["active"] = None
+        status["failures"] = status.get("failures", 0) + 1
+        status["state"] = "blocked" if status["failures"] >= MAX_FAILURES else "running"
+        status["phase"] = "model-blocked" if status["state"] == "blocked" else "model-retry"
+        status["last_error"] = str(exc)[:350]
+        checkpoint(job_id, status, slug)
+        return
     if role == "reviewer":
-        outcome, report = parse_review(answer)
         with tempfile.NamedTemporaryFile("w", encoding="utf-8", suffix=".json") as f:
             json.dump(report, f, ensure_ascii=False)
             f.flush()
@@ -350,11 +370,7 @@ def process_claim(job_id: str, slug: str, status: dict, engine: Path) -> None:
         if outcome == "PASS":
             cli("accept-review", slug, str(chapter["number"]))
     else:
-        check_markers(source, answer)
-        path = ROOT / "books" / slug / chapter["translation_path"]
         path.parent.mkdir(parents=True, exist_ok=True)
-        if role == "corrector" and path.read_text("utf-8") == answer:
-            raise JobError("corrector returned unchanged translation")
         path.write_text(answer, encoding="utf-8")
         cli("accept-translation", slug, str(chapter["number"]),
             "--session-id", active["session_id"])
@@ -414,10 +430,29 @@ def run(job_id: str) -> dict:
         if (folder / ".workflow" / "waves" / "active.json").exists():
             raise JobError("active literary wave requires wave-specific worker routing")
         if status.get("active"):
+            active = status["active"]
+            _, _, chapters = chapter_data(slug)
+            chapter = next((c for c in chapters if c["number"] == active["chapter"]), None)
+            if chapter is None:
+                raise JobError("active chapter was removed")
+            claim_path = folder / ".workflow" / "claims" / (chapter["unit_id"] + ".json")
+            if claim_path.exists():
+                from datetime import datetime
+                expires = datetime.fromisoformat(read_json(claim_path)["expires_at"].replace("Z", "+00:00"))
+                if expires <= datetime.now(timezone.utc):
+                    cli("cleanup-claims", slug)
+                    status["active"] = None
+                    status["phase"] = "expired-claim-cleaned"
+                    checkpoint(job_id, status, slug)
+                    return status
             process_claim(job_id, slug, status, engine)
             return status
         role, chapter = next_operation(slug, status)
-        if role == "promote":
+        if role == "blocked":
+            status.update({"state": "blocked", "phase": "correction-limit-reached",
+                           "blocked_unit_id": chapter["unit_id"]})
+            checkpoint(job_id, status, slug)
+        elif role == "promote":
             cli("accept-review", slug, str(chapter["number"]))
             status["phase"] = "review-promoted"
             checkpoint(job_id, status, slug)
