@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "policy-change",
-  "next_sequence": 91,
+  "next_sequence": 92,
   "records": [
     {
       "record_id": "1f8894cd56d99429b1bb61e7540a8db1",
@@ -4794,6 +4794,51 @@
               "record_id": "3b9df97c2950432e8398cb97d48beaa0",
               "finding_id": "self-sabotage-attenuation"
             }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "3f6c85b2c45e4b0998786684e04a9d55",
+      "sequence": 91,
+      "unit_id": "chapter-000060",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "cf29e7926bcef2d57ca37e1621a11c913e2bfa7dd6d459df217db37fc0acf871",
+      "translation_sha256": "917f606a4481c09589ec7e6ec8e68aaac26e9311110a3e409740aeca23ba474c",
+      "workflow_revision": "c76159e4939ed00ac19172228f8972af87cadbb8",
+      "review_contract_revision": "docs/TRANSLATION.md@c76159e4939ed00ac19172228f8972af87cadbb8",
+      "reviewer_session_id": "policy-change-reviewer-20261031-ch60-c1ae325f423b411b",
+      "reviewed_at": "2026-10-31T12:48:26Z",
+      "state_revision": "3c4c6931c6a0df95889c716871c8b5e00c2a7590",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "khl-coach-comparison-awkward-ch60",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The source compares Ilya's former KHL coach with LeClair: LeClair would seem as harmless as a kitten by comparison. Current Russian phrasing «по сравнению с собой сделал бы Леклера котёнком» is a broken literal calque that suggests the coach turns LeClair into a kitten and lacks idiomatic Russian grammar. Preserve intensity and non-native Ilya's informal register; e.g. «Да на фоне моего бывшего тренера в КХЛ даже Леклер казался котёнком».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "My old coach in KHL made *LeClair *look like a kitten.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Мой бывший тренер в КХЛ по сравнению с собой сделал бы *Леклера* котёнком.",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       }
