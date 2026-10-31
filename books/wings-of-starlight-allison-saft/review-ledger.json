@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "wings-of-starlight-allison-saft",
-  "next_sequence": 12,
+  "next_sequence": 13,
   "records": [
     {
       "record_id": "d9b70e4cfbe5487a9f0d5e37bc1826af",
@@ -963,6 +963,131 @@
               "record_id": "25a61f94def54ba7b7508170fd2f3c3f",
               "finding_id": "anger-flower-imagery"
             }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "426f4aa66c20401889b4ea3a1949f3c6",
+      "sequence": 12,
+      "unit_id": "chapter-000007",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "687f970c0875889d7fca01d80e48b38456e9ee72e681f2043ba7cb84afb5a78a",
+      "translation_sha256": "d9a304064e867a10469e94acfb30a85bd5f9019190ccd6a84ff35375abbed4e6",
+      "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "review_contract_revision": "docs/TRANSLATION.md@14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "reviewer_session_id": "wings-reviewer-bounded-20261031-29f816dc",
+      "reviewed_at": "2026-10-31T12:45:36Z",
+      "state_revision": "64e328a721f41ac8ef9b8fca80a6fa3ca40d89b7ee65169886e8bbe97b0d866b",
+      "review_commit": "18e64ebdb70cecdd4ecabbd50f58fc8345576d4e",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "aura-fragment-grammar",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Блок 000016. «Нет, подумала она, ауру» — грамматически несогласованная внутренняя реплика, возникшая из-за буквального переноса английского фрагмента. Передать самокоррекцию: «*Нет*, подумала она, *это была аура*» с двумя курсивными фрагментами.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "*No,* she thought, *an aura.*",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "*Нет*, подумала она, *ауру*.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "swallow-mortification-calque",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Блок 000018. «Проглотить нарастающее смущение» — буквальная калька swallow her growing mortification; неестественный русский оборот. Сохранить безуспешную попытку подавить всё сильнее охватывающий её стыд.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "tried and failed to swallow her growing mortification",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "попыталась проглотить нарастающее смущение, но безуспешно",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "relief-expression-calque",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Блок 000026. Реплика «это облегчение» калькирует that's a relief и звучит неестественно. Передать сдержанное облегчение персонажа, например «ну и слава богу» или «я рад это слышать» без стилистического скачка.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "that’s a relief",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "это облегчение",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "hopeful-voice-meaning",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Блок 000033. Hopeful voice относится к надежде Клэрион услышать, что её узнают, а не к «обнадёживающему» звучанию вопроса для собеседника. Перевести как «в её голосе прозвучало куда больше надежды, чем она хотела».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "The question sounded far more hopeful than she intended.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Вопрос прозвучал куда более обнадёженно, чем она собиралась.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "help-question-wording",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Блок 000067. «О моей помощи?» плохо передаёт короткую удивлённую реплику My help? и звучит как ответ на вопрос о теме разговора. Сохранить вопросительное удивление «Моей помощи?»",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "My help?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "О моей помощи?",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "weakly-thought-calque",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Блок 000085. «Вот это, слабо подумала она» — неестественная калька thought weakly, в оригинале растерянность от его улыбки. Уточнить по-русски «растерянно подумала она», сохранив трепетный эмоциональный эффект.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "That, she thought weakly, suited him far more than gravity.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Вот это, слабо подумала она, шло ему куда больше, чем суровость.",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       }
