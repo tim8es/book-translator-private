@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "wings-of-starlight-allison-saft",
-  "next_sequence": 20,
+  "next_sequence": 21,
   "records": [
     {
       "record_id": "d9b70e4cfbe5487a9f0d5e37bc1826af",
@@ -1835,6 +1835,149 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "e9057441acea4afdac1710b4fd77f36e",
+      "sequence": 20,
+      "unit_id": "chapter-000010",
+      "outcome": "PASS",
+      "source_sha256": "0b0470c51d846e5b0f3555db22c59be794f5b4400ba4e903d15d5e1ed45d8eca",
+      "translation_sha256": "5496297e24173dc3c23c51ee2a60cb3176af7282684aecb87f78bfdb078a254a",
+      "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "review_contract_revision": "docs/TRANSLATION.md@14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "reviewer_session_id": "wings-ch7-review-followup-20261031-c291ae74",
+      "reviewed_at": "2026-10-31T14:36:50Z",
+      "state_revision": "134bc1caaa7fe8dbb2bac47a6b85604fe87bc59bf8e91c2676b4cf3ebacee428",
+      "review_commit": "ad8d41d50b050375bae0c5eebf2fffea46f013d4",
+      "correction_round": 1,
+      "supersedes_record_id": "bc581f770f0a4bf48dfd11a8875a098f",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "fixed-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Rechecked revised block 51 against the source; previously recorded issue crowd-reaction-grammar is corrected.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Gasps and shouts of alarm met Elvina’s words.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "В ответ на слова Эльвины раздались испуганные возгласы и вскрики.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "bc581f770f0a4bf48dfd11a8875a098f",
+              "finding_id": "crowd-reaction-grammar"
+            }
+          },
+          {
+            "id": "fixed-2",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Rechecked revised block 60 against the source; previously recorded issue competence-shift is corrected.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "If she were a more competent governing-talent",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Если бы она лучше справлялась со своим даром управления",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "bc581f770f0a4bf48dfd11a8875a098f",
+              "finding_id": "competence-shift"
+            }
+          },
+          {
+            "id": "fixed-3",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Rechecked revised block 61 against the source; previously recorded issue confidence-calque is corrected.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "with far more confidence than Clarion could muster",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "куда увереннее, чем сумела бы Клэрион",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "bc581f770f0a4bf48dfd11a8875a098f",
+              "finding_id": "confidence-calque"
+            }
+          },
+          {
+            "id": "fixed-4",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Rechecked revised block 65 against the source; previously recorded issue creatures-register is corrected.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "these creatures are active in the darkness",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "эти существа действуют в темноте",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "bc581f770f0a4bf48dfd11a8875a098f",
+              "finding_id": "creatures-register"
+            }
+          },
+          {
+            "id": "fixed-5",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Rechecked revised block 75 against the source; previously recorded issue thought-direction-calque is corrected.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Clarion flinched at the turn of her own thoughts.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Клэрион вздрогнула, заметив, куда завели её собственные мысли.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "bc581f770f0a4bf48dfd11a8875a098f",
+              "finding_id": "thought-direction-calque"
+            }
+          },
+          {
+            "id": "fixed-6",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Rechecked revised block 94 against the source; previously recorded issue agency-opportunity is corrected.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Clarion could not bear the idea of wasting this opportunity.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Больше всего Клэрион не могла вынести мысли о том, чтобы упустить такую возможность.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "bc581f770f0a4bf48dfd11a8875a098f",
+              "finding_id": "agency-opportunity"
+            }
           }
         ]
       }
