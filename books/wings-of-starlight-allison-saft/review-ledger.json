@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "wings-of-starlight-allison-saft",
-  "next_sequence": 7,
+  "next_sequence": 8,
   "records": [
     {
       "record_id": "d9b70e4cfbe5487a9f0d5e37bc1826af",
@@ -481,6 +481,92 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "8799a2eb91749954a563887a296c996f",
+      "sequence": 7,
+      "unit_id": "chapter-000004",
+      "outcome": "PASS",
+      "source_sha256": "624e636f67eea4f9ab37700521a9f841b31f67efc36b6e338d1ce930c9d33d97",
+      "translation_sha256": "d68cd940cfc1523c00409cd857b9db374622b02044b7e217747a23a66e0be1cb",
+      "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "review_contract_revision": "docs/TRANSLATION.md@14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "reviewer_session_id": "wings-reviewer-hourly-20261031-0750z-run7",
+      "reviewed_at": "2026-10-31T07:50:58Z",
+      "state_revision": "9c5241158f7847c16553c2cda0565002f0e94c83",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": "7c89d0b61fae42b29c20e86fcd57b301",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-afternoon-time-final",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Блок 000071: завершение работы теперь явно ограничено делами, намеченными на вторую половину дня; исходное for the afternoon сохранено.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "The light-talents had apparently finished their work for the afternoon.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Феи света, похоже, уже завершили дела, намеченные на вторую половину дня.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "7c89d0b61fae42b29c20e86fcd57b301",
+              "finding_id": "recheck-afternoon-time"
+            }
+          },
+          {
+            "id": "recheck-look-almost-like-final",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Блок 000050: «Ты так похожа на…» передаёт внешнее сходство и незавершённость реплики You look almost like— без неестественной кальки.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "You look almost like—",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Ты так похожа на…",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "7c89d0b61fae42b29c20e86fcd57b301",
+              "finding_id": "look-almost-like"
+            }
+          },
+          {
+            "id": "recheck-repeated-name-final",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Блок 000057: устранён повтор имени Клэрион; субъективная оценка похвалы и усилие ответить бодро сохранены.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "The praise rang hollow, but Clarion forced cheer into her voice.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Похвала показалась Клэрион пустой, но она заставила себя ответить бодро",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "7c89d0b61fae42b29c20e86fcd57b301",
+              "finding_id": "repeated-name-praise"
+            }
           }
         ]
       }
