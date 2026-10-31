@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "request_id": "f1637798ba424a10bcc4473fed5726a1",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "6309c13ea80043f9ae47c96a8af19e0a86e6c23c0b3dd7af320a79294eee1e44",
+    "record": {
+      "correction_round": 1,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "addition",
+            "detail": "Блок 000002: замечание unfounded-lamp устранено. Повторная сверка подтвердила значение и регистр; 91 прочий блок не изменён относительно отвергнутой версии.",
+            "id": "lamp-recheck",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "unfounded-lamp",
+              "record_id": "46eca3d97e924149b0b0df696fc77281"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "the glow of the light she’d left on in her bedroom"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "свет, который оставила включённым в спальне"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Блок 000039: замечание catastrophizing-meaning устранено. Повторная сверка подтвердила значение и регистр; 91 прочий блок не изменён относительно отвергнутой версии.",
+            "id": "catastrophizing-recheck",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "catastrophizing-meaning",
+              "record_id": "46eca3d97e924149b0b0df696fc77281"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "she considered catastrophizing one of Petra’s many charms"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "привычку превращать любую тревогу в катастрофу"
+            }
+          },
+          {
+            "category": "addition",
+            "detail": "Блок 000047: замечание pining-unrequited-addition устранено. Повторная сверка подтвердила значение и регистр; 91 прочий блок не изменён относительно отвергнутой версии.",
+            "id": "pining-recheck",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "pining-unrequited-addition",
+              "record_id": "46eca3d97e924149b0b0df696fc77281"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Ten years of pining was long enough."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Десять лет любовных томлений — это уже слишком."
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Блок 000051: замечание afternoon-sun-calque устранено. Повторная сверка подтвердила значение и регистр; 91 прочий блок не изменён относительно отвергнутой версии.",
+            "id": "afternoon-recheck",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "afternoon-sun-calque",
+              "record_id": "46eca3d97e924149b0b0df696fc77281"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "a blade of late-afternoon sunlight cut into the walkway"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "острый луч предвечернего солнца"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Блок 000073: замечание fundamental-skill-calque устранено. Повторная сверка подтвердила значение и регистр; 91 прочий блок не изменён относительно отвергнутой версии.",
+            "id": "skill-recheck",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "fundamental-skill-calque",
+              "record_id": "46eca3d97e924149b0b0df696fc77281"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "the most fundamental skill of our magic"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "базовым умением нашей магии"
+            }
+          }
+        ]
+      },
+      "record_id": "90f8a27c052d4e659e496e72a1b7bfe9",
+      "review_commit": "07302c0e9998919c09cfb8842d100e95955b2d77",
+      "review_contract_revision": "docs/TRANSLATION.md@14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "reviewed_at": "2026-10-31T11:47:30Z",
+      "reviewer_session_id": "wings-reviewer-followup-20261031-4b8e5c67",
+      "sequence": 9,
+      "source_sha256": "cbfd137bf15167545b6ff2490567c8093987749ac01c6d0a9d6c7c12943c65f6",
+      "state_revision": "b924e6574de19baa7b33b282470686213e47955b5886be87e838372f6c4f91e0",
+      "supersedes_record_id": "46eca3d97e924149b0b0df696fc77281",
+      "translation_sha256": "3321018b8afc064c6f96f2a70f3788dac3fcd3f5d875bb5611c441b4fd74f9c9",
+      "unit_id": "chapter-000005",
+      "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5"
+    }
+  },
+  "error": null
+}
