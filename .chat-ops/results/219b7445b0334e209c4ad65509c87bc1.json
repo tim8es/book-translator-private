@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "request_id": "219b7445b0334e209c4ad65509c87bc1",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "c856dbca8e5542b4e482015fcf13f9ba30d3521a6dfc389b12fab7e832c0f403",
+    "record": {
+      "correction_round": 1,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "meaning",
+            "detail": "Блок 000040: исправление «color-palette-not-flowers» проверено по английскому оригиналу, значение и метафорика восстановлены. Остальные блоки неизменны по сравнению с контрольной отвергнутой версией.",
+            "id": "colors-palette-recheck",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "color-palette-not-flowers",
+              "record_id": "25a61f94def54ba7b7508170fd2f3c3f"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Talk to me about colors. What do you think of these?"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Давайте обсудим цветовую гамму. Что скажете об этих?"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Блок 000051: исправление «tangent-road-calque» проверено по английскому оригиналу, значение и метафорика восстановлены. Остальные блоки неизменны по сравнению с контрольной отвергнутой версией.",
+            "id": "tangent-road-recheck",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "tangent-road-calque",
+              "record_id": "25a61f94def54ba7b7508170fd2f3c3f"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "wandered down the back roads of their tangent"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "всё глубже уходили в дебри постороннего разговора"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Блок 000082: исправление «anger-flower-imagery» проверено по английскому оригиналу, значение и метафорика восстановлены. Остальные блоки неизменны по сравнению с контрольной отвергнутой версией.",
+            "id": "anger-flower-recheck",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "anger-flower-imagery",
+              "record_id": "25a61f94def54ba7b7508170fd2f3c3f"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "that seed of anger flared into full bloom within her"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "семя гнева внутри неё вдруг расцвело буйным цветом"
+            }
+          }
+        ]
+      },
+      "record_id": "39df889698d54f6ba92c1a78ef17e6de",
+      "review_commit": "8bd3deea0f2e259779a431d9e9440394b8a5623b",
+      "review_contract_revision": "docs/TRANSLATION.md@14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "reviewed_at": "2026-10-31T12:12:03Z",
+      "reviewer_session_id": "wings-reviewer-followup-20261031-bd278e1f",
+      "sequence": 11,
+      "source_sha256": "0695548d5e6e6c3a058806fb6ac3f61fb89dfc3bb3f40a2b9731bad956a094e1",
+      "state_revision": "3f64edfa845e1bb31649161d18d4c223af67191ab5d07861853b07fe524174c1",
+      "supersedes_record_id": "25a61f94def54ba7b7508170fd2f3c3f",
+      "translation_sha256": "686994b280377314493675588ae86f09f3279f7e3c215d71c5683d794c845bf9",
+      "unit_id": "chapter-000006",
+      "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5"
+    }
+  },
+  "error": null
+}

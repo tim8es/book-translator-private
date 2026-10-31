@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "wings-of-starlight-allison-saft",
-  "next_sequence": 11,
+  "next_sequence": 12,
   "records": [
     {
       "record_id": "d9b70e4cfbe5487a9f0d5e37bc1826af",
@@ -877,6 +877,92 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "39df889698d54f6ba92c1a78ef17e6de",
+      "sequence": 11,
+      "unit_id": "chapter-000006",
+      "outcome": "PASS",
+      "source_sha256": "0695548d5e6e6c3a058806fb6ac3f61fb89dfc3bb3f40a2b9731bad956a094e1",
+      "translation_sha256": "686994b280377314493675588ae86f09f3279f7e3c215d71c5683d794c845bf9",
+      "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "review_contract_revision": "docs/TRANSLATION.md@14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "reviewer_session_id": "wings-reviewer-followup-20261031-bd278e1f",
+      "reviewed_at": "2026-10-31T12:12:03Z",
+      "state_revision": "3f64edfa845e1bb31649161d18d4c223af67191ab5d07861853b07fe524174c1",
+      "review_commit": "8bd3deea0f2e259779a431d9e9440394b8a5623b",
+      "correction_round": 1,
+      "supersedes_record_id": "25a61f94def54ba7b7508170fd2f3c3f",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "colors-palette-recheck",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Блок 000040: исправление «color-palette-not-flowers» проверено по английскому оригиналу, значение и метафорика восстановлены. Остальные блоки неизменны по сравнению с контрольной отвергнутой версией.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Talk to me about colors. What do you think of these?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Давайте обсудим цветовую гамму. Что скажете об этих?",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "25a61f94def54ba7b7508170fd2f3c3f",
+              "finding_id": "color-palette-not-flowers"
+            }
+          },
+          {
+            "id": "tangent-road-recheck",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Блок 000051: исправление «tangent-road-calque» проверено по английскому оригиналу, значение и метафорика восстановлены. Остальные блоки неизменны по сравнению с контрольной отвергнутой версией.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "wandered down the back roads of their tangent",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "всё глубже уходили в дебри постороннего разговора",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "25a61f94def54ba7b7508170fd2f3c3f",
+              "finding_id": "tangent-road-calque"
+            }
+          },
+          {
+            "id": "anger-flower-recheck",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Блок 000082: исправление «anger-flower-imagery» проверено по английскому оригиналу, значение и метафорика восстановлены. Остальные блоки неизменны по сравнению с контрольной отвергнутой версией.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "that seed of anger flared into full bloom within her",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "семя гнева внутри неё вдруг расцвело буйным цветом",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "25a61f94def54ba7b7508170fd2f3c3f",
+              "finding_id": "anger-flower-imagery"
+            }
           }
         ]
       }
