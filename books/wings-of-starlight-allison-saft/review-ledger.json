@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "wings-of-starlight-allison-saft",
-  "next_sequence": 48,
+  "next_sequence": 49,
   "records": [
     {
       "record_id": "d9b70e4cfbe5487a9f0d5e37bc1826af",
@@ -5067,6 +5067,248 @@
               "occurrence": 0
             },
             "resolved": false,
+            "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "619a1b7709aeb4296434b1fa2d5d53a0",
+      "sequence": 48,
+      "unit_id": "chapter-000020",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "2ff09d7fa3750dadc628a3bb4e9d73ea6771a3e1064812c7bf67344235ee4e32",
+      "translation_sha256": "2ff7c760c94fa9513b96374185d3008c35aabfcf08e514c7c44492752c499309",
+      "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "review_contract_revision": "docs/TRANSLATION.md@14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "reviewer_session_id": "wings-ch17-rereview-20261031-ddd6cb61",
+      "reviewed_at": "2026-10-31T17:12:15Z",
+      "state_revision": "fa56125d46e315ba348ef9b890848c918ac32324",
+      "review_commit": null,
+      "correction_round": 2,
+      "supersedes_record_id": "8c3c7c94db814a27899fafd6322e5c92",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "two-kingdoms-first",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Повторная сверка полного оригинала и принятого перевода: замечание устранено.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "our two realms have nothing to do with each other anymore",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "наши земли больше никак не связаны друг с другом",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "8c3c7c94db814a27899fafd6322e5c92",
+              "finding_id": "two-kingdoms-first"
+            }
+          },
+          {
+            "id": "exhilaration-turned-fear",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Повторная сверка полного оригинала и принятого перевода: замечание устранено.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "exhilaration prickled at the edges of her wonder",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "к восхищению примешивался пьянящий азарт",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "8c3c7c94db814a27899fafd6322e5c92",
+              "finding_id": "exhilaration-turned-fear"
+            }
+          },
+          {
+            "id": "wound-grammar",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Повторная сверка полного оригинала и принятого перевода: замечание устранено.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "the wound on her arm throbbed",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "рана на руке запульсировала",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "8c3c7c94db814a27899fafd6322e5c92",
+              "finding_id": "wound-grammar"
+            }
+          },
+          {
+            "id": "longing-to-tenderness",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Повторная сверка полного оригинала и принятого перевода: замечание устранено.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "another pang of longing",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "приступ болезненной тоски",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "8c3c7c94db814a27899fafd6322e5c92",
+              "finding_id": "longing-to-tenderness"
+            }
+          },
+          {
+            "id": "two-kingdoms-statue",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Повторная сверка полного оригинала и принятого перевода: замечание устранено.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "driven their realms apart",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "мятежа, разделившего их владения",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "8c3c7c94db814a27899fafd6322e5c92",
+              "finding_id": "two-kingdoms-statue"
+            }
+          },
+          {
+            "id": "queen-successor",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Повторная сверка полного оригинала и принятого перевода: замечание устранено.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "his successor wasn’t as close with the queen’s",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "его преемник уже не был так близок с преемницей королевы",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "8c3c7c94db814a27899fafd6322e5c92",
+              "finding_id": "queen-successor"
+            }
+          },
+          {
+            "id": "care-vs-love",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Повторная сверка полного оригинала и принятого перевода: замечание устранено.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "As Clarion, she could care for him",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Просто Клэрион могла бы заботиться о нём",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "8c3c7c94db814a27899fafd6322e5c92",
+              "finding_id": "care-vs-love"
+            }
+          },
+          {
+            "id": "instinctual-not-ancient",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Блок 000058. Instinctual terror — инстинктивный ужас, а не древний страх. Исправить на «Инстинктивный ужас заставил сердце биться чаще».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Instinctual terror quickened her pulse",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Древний страх ускорил пульс",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "vista-not-platform",
+            "category": "addition",
+            "severity": "minor",
+            "detail": "Блок 000086. Vista at mountain peak не подразумевает сооружённую смотровую площадку. Передать «на вершину другой горы, откуда открывался вид».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "a vista atop another mountain’s peak",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "на смотровую площадку у вершины другой горы",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "disbelief-calque",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Блок 000079. Неестественная калька «тихо издал звук недоверия». Исправить на «Милори тихо охнул, не веря своим глазам».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "let out a soft sound of disbelief",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "тихо издал звук недоверия",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "want-you-softened",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Блок 000125. «How much I want you» — прямое желание к человеку, а не просто желание быть вместе. Сохранить эмоциональную прямоту: «Как сильно я тебя хочу».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "How much I want you.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "То, как сильно я хочу быть с тобой.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "know-better-idiom",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Блок 000128. «If she did not know better» не сообщает, что Клэрион хорошо знает Милори. «Если бы ... не знала его лучше» вносит недоказанную близость. Заменить на «Можно было бы подумать, что он волнуется».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "If she did not know better",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Если бы Клэрион не знала его лучше",
+              "occurrence": 0
+            },
             "resolves": null
           }
         ]
