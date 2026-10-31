@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "request_id": "b3e289722a134d94b7d1e13e792c6d40",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "1c1f9e77fecfc2af53cfbf0a2a77a03846d0488f90be3bedad8747572e79adb7",
+    "record": {
+      "correction_round": 3,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "independent_session",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "meaning",
+            "detail": "Повторное независимое ревью текущей принятой версии: заключительное «It was not, remotely, okay.» теперь точно передано как отрицательная эмоциональная оценка «Но всё было совсем не в порядке», сохранив параллель к «It was not, remotely, all Shane wanted». Последовательная сверка главы, голосов персонажей, сцен и EPUB-якоря не выявила новых проблем.",
+            "id": "final-evaluation-restored-ch15",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "final-not-okay-misread",
+              "record_id": "041e25676fc0164e8d57ae48238dbbc1"
+            },
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "It was not, remotely, okay."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Но всё было совсем не в порядке."
+            }
+          }
+        ]
+      },
+      "record_id": "c006d5b4f5a0410f8d3ce2e080b0661d",
+      "review_commit": "1f6c3d260278a2db4198144fcdc4f264ad0b05d5",
+      "review_contract_revision": "docs/TRANSLATION.md@c76159e4939ed00ac19172228f8972af87cadbb8",
+      "reviewed_at": "2026-10-31T13:02:55Z",
+      "reviewer_session_id": "policy-change-reviewer-20261031-ch15-f6e112ca3992",
+      "sequence": 94,
+      "source_sha256": "8ab47070ffd96c49755753bbcb231b98aced5b425501ad608fbe78056d519a24",
+      "state_revision": "3f27cf70b172c0ff48e1857bff16a7699e5b64658b87d1819d3bd9113a5a59d3",
+      "supersedes_record_id": "041e25676fc0164e8d57ae48238dbbc1",
+      "translation_sha256": "690b5dda3fd817977bca9e1e7a1e78351729510d80c04a4c1f57120bc7f3c3d2",
+      "unit_id": "chapter-000015",
+      "workflow_revision": "c76159e4939ed00ac19172228f8972af87cadbb8"
+    }
+  },
+  "error": null
+}
