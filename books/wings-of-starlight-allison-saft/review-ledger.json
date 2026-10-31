@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "wings-of-starlight-allison-saft",
-  "next_sequence": 13,
+  "next_sequence": 14,
   "records": [
     {
       "record_id": "d9b70e4cfbe5487a9f0d5e37bc1826af",
@@ -1088,6 +1088,149 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "e612bd11bd9d4b798a92fd13dea3690b",
+      "sequence": 13,
+      "unit_id": "chapter-000007",
+      "outcome": "PASS",
+      "source_sha256": "687f970c0875889d7fca01d80e48b38456e9ee72e681f2043ba7cb84afb5a78a",
+      "translation_sha256": "2c369a460a0123f6a761367c24048800328f6462ae2fd9e1ab459bebed00b463",
+      "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "review_contract_revision": "docs/TRANSLATION.md@14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "reviewer_session_id": "wings-reviewer-chapter4followup-20261031-1a3ebc49",
+      "reviewed_at": "2026-10-31T12:49:34Z",
+      "state_revision": "171d5b9bc24a3d5e7b30ee523a3882845221d42c0c870b79036c8106d30adf1b",
+      "review_commit": "113ae9daeb97ae6dcf790842a7bb71cc1afacd0e",
+      "correction_round": 1,
+      "supersedes_record_id": "426f4aa66c20401889b4ea3a1949f3c6",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "aura-recheck",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Блок 000016: устранена проблема aura-fragment-grammar; английский смысл и авторская интонация восстановлены, изменения не затрагивают остальные блоки. Все 87 блоков и курсовые выделения сверены.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "*No,* she thought, *an aura.*",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "*Нет*, подумала она, *это аура*.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "426f4aa66c20401889b4ea3a1949f3c6",
+              "finding_id": "aura-fragment-grammar"
+            }
+          },
+          {
+            "id": "mortification-recheck",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Блок 000018: устранена проблема swallow-mortification-calque; английский смысл и авторская интонация восстановлены, изменения не затрагивают остальные блоки. Все 87 блоков и курсовые выделения сверены.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "tried and failed to swallow her growing mortification",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "попыталась подавить нарастающее чувство стыда, но тщетно",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "426f4aa66c20401889b4ea3a1949f3c6",
+              "finding_id": "swallow-mortification-calque"
+            }
+          },
+          {
+            "id": "relief-recheck",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Блок 000026: устранена проблема relief-expression-calque; английский смысл и авторская интонация восстановлены, изменения не затрагивают остальные блоки. Все 87 блоков и курсовые выделения сверены.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "that’s a relief",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "рад это слышать",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "426f4aa66c20401889b4ea3a1949f3c6",
+              "finding_id": "relief-expression-calque"
+            }
+          },
+          {
+            "id": "hopeful-recheck",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Блок 000033: устранена проблема hopeful-voice-meaning; английский смысл и авторская интонация восстановлены, изменения не затрагивают остальные блоки. Все 87 блоков и курсовые выделения сверены.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "The question sounded far more hopeful than she intended.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "В её вопросе прозвучало куда больше надежды, чем она собиралась показать.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "426f4aa66c20401889b4ea3a1949f3c6",
+              "finding_id": "hopeful-voice-meaning"
+            }
+          },
+          {
+            "id": "help-recheck",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Блок 000067: устранена проблема help-question-wording; английский смысл и авторская интонация восстановлены, изменения не затрагивают остальные блоки. Все 87 блоков и курсовые выделения сверены.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "My help?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Моей помощи?»",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "426f4aa66c20401889b4ea3a1949f3c6",
+              "finding_id": "help-question-wording"
+            }
+          },
+          {
+            "id": "weakly-recheck",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Блок 000085: устранена проблема weakly-thought-calque; английский смысл и авторская интонация восстановлены, изменения не затрагивают остальные блоки. Все 87 блоков и курсовые выделения сверены.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "That, she thought weakly, suited him far more than gravity.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Улыбка, растерянно подумала она, шла ему куда больше, чем суровость.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "426f4aa66c20401889b4ea3a1949f3c6",
+              "finding_id": "weakly-thought-calque"
+            }
           }
         ]
       }

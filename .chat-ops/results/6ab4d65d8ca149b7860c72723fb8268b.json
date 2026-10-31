@@ -1,0 +1,153 @@
+{
+  "schema_version": 1,
+  "request_id": "6ab4d65d8ca149b7860c72723fb8268b",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "a0a73f4108a4822678b82ba730f7dc0a7461ce874eaa8d5a31af603934675637",
+    "record": {
+      "correction_round": 1,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "style",
+            "detail": "Блок 000016: устранена проблема aura-fragment-grammar; английский смысл и авторская интонация восстановлены, изменения не затрагивают остальные блоки. Все 87 блоков и курсовые выделения сверены.",
+            "id": "aura-recheck",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "aura-fragment-grammar",
+              "record_id": "426f4aa66c20401889b4ea3a1949f3c6"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "*No,* she thought, *an aura.*"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "*Нет*, подумала она, *это аура*."
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Блок 000018: устранена проблема swallow-mortification-calque; английский смысл и авторская интонация восстановлены, изменения не затрагивают остальные блоки. Все 87 блоков и курсовые выделения сверены.",
+            "id": "mortification-recheck",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "swallow-mortification-calque",
+              "record_id": "426f4aa66c20401889b4ea3a1949f3c6"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "tried and failed to swallow her growing mortification"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "попыталась подавить нарастающее чувство стыда, но тщетно"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Блок 000026: устранена проблема relief-expression-calque; английский смысл и авторская интонация восстановлены, изменения не затрагивают остальные блоки. Все 87 блоков и курсовые выделения сверены.",
+            "id": "relief-recheck",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "relief-expression-calque",
+              "record_id": "426f4aa66c20401889b4ea3a1949f3c6"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "that’s a relief"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "рад это слышать"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Блок 000033: устранена проблема hopeful-voice-meaning; английский смысл и авторская интонация восстановлены, изменения не затрагивают остальные блоки. Все 87 блоков и курсовые выделения сверены.",
+            "id": "hopeful-recheck",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "hopeful-voice-meaning",
+              "record_id": "426f4aa66c20401889b4ea3a1949f3c6"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "The question sounded far more hopeful than she intended."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "В её вопросе прозвучало куда больше надежды, чем она собиралась показать."
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Блок 000067: устранена проблема help-question-wording; английский смысл и авторская интонация восстановлены, изменения не затрагивают остальные блоки. Все 87 блоков и курсовые выделения сверены.",
+            "id": "help-recheck",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "help-question-wording",
+              "record_id": "426f4aa66c20401889b4ea3a1949f3c6"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "My help?"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "«Моей помощи?»"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Блок 000085: устранена проблема weakly-thought-calque; английский смысл и авторская интонация восстановлены, изменения не затрагивают остальные блоки. Все 87 блоков и курсовые выделения сверены.",
+            "id": "weakly-recheck",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "weakly-thought-calque",
+              "record_id": "426f4aa66c20401889b4ea3a1949f3c6"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "That, she thought weakly, suited him far more than gravity."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Улыбка, растерянно подумала она, шла ему куда больше, чем суровость."
+            }
+          }
+        ]
+      },
+      "record_id": "e612bd11bd9d4b798a92fd13dea3690b",
+      "review_commit": "113ae9daeb97ae6dcf790842a7bb71cc1afacd0e",
+      "review_contract_revision": "docs/TRANSLATION.md@14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "reviewed_at": "2026-10-31T12:49:34Z",
+      "reviewer_session_id": "wings-reviewer-chapter4followup-20261031-1a3ebc49",
+      "sequence": 13,
+      "source_sha256": "687f970c0875889d7fca01d80e48b38456e9ee72e681f2043ba7cb84afb5a78a",
+      "state_revision": "171d5b9bc24a3d5e7b30ee523a3882845221d42c0c870b79036c8106d30adf1b",
+      "supersedes_record_id": "426f4aa66c20401889b4ea3a1949f3c6",
+      "translation_sha256": "2c369a460a0123f6a761367c24048800328f6462ae2fd9e1ab459bebed00b463",
+      "unit_id": "chapter-000007",
+      "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5"
+    }
+  },
+  "error": null
+}
