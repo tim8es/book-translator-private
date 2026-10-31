@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "request_id": "c65820eb19ee476b919da29323a1c719",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "dee73d0ddd68397aa65f1484fa627c750e978090c06267a0b771cad0069f161b",
+    "record": {
+      "correction_round": 2,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "independent_session",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "referent",
+            "detail": "Блок 000068: проверено по оригиналу. Теперь субъект действия остаётся Кошмарами: «Позволить Кошмарам разрушить их дома? Позволить им убивать фей одного за другим?»; прежняя двусмысленность «Истреблять их...» устранена. Полностью сверены все 75 блоков главы.",
+            "id": "nightmares-agent-resolved",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "nightmares-agent-ambiguity",
+              "record_id": "bde5a4c1c190d1db26f45e3a730dfbbc"
+            },
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Pick them off one by one?"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Позволить им убивать фей одного за другим?"
+            }
+          }
+        ]
+      },
+      "record_id": "977257d7b3c5400cb25195ff89be9cfb",
+      "review_commit": "85823ab973d9bcdb1da8af6e4abc3b68f4f5ca12",
+      "review_contract_revision": "docs/TRANSLATION.md@14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "reviewed_at": "2026-10-31T17:20:07Z",
+      "reviewer_session_id": "wings-ch16-review-20261031-176c9b55",
+      "sequence": 50,
+      "source_sha256": "a8db5215ee5655c5ff9e9ab7e70937b5f156a91ea311ebeb5db351ecfda96d27",
+      "state_revision": "b42c58634c77de41a80038d6b78a4ee221d79d305725e0d3467cb54d06e29431",
+      "supersedes_record_id": "bde5a4c1c190d1db26f45e3a730dfbbc",
+      "translation_sha256": "1557ba535a938ffb05abbe11d26df5268fc51ea693c5e7faa03ac991198094bf",
+      "unit_id": "chapter-000019",
+      "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5"
+    }
+  },
+  "error": null
+}
