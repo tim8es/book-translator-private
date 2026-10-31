@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "request_id": "8ccbdc07505c4bb49308fda44f43c87f",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "03bdc3f71aa8643f1ac32312fff5ba2fd8ceb9f06c86b2142618947c26666ccb",
+    "record": {
+      "correction_round": 1,
+      "outcome": "CORRECTIONS_REQUIRED",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "addition",
+            "detail": "Блок 000002. В оригинале оставлен включённым свет; конкретная лампа не названа. «Сияние лампы» добавляет не подтверждённый оригиналом источник освещения. Заменить на нейтральное «свет, который она оставила включённым в спальне».",
+            "id": "unfounded-lamp",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "the glow of the light she’d left on in her bedroom"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "сияние лампы, оставленной в спальне"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Блок 000039. Catastrophizing — склонность воображать худшее и преувеличивать опасности, а не «предвидеть катастрофы» (что предполагает обоснованное предсказание). Исправить, сохранив добрую иронию повествования.",
+            "id": "catastrophizing-meaning",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "she considered catastrophizing one of Petra’s many charms"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "привычку предвидеть катастрофы она считала одним из многочисленных очаровательных качеств Петры"
+            }
+          },
+          {
+            "category": "addition",
+            "detail": "Блок 000047. Ten years of pining не устанавливает, что чувства безответные. «Безответных» навязывает вывод о взаимности, которого в оригинале нет. Оставить «десять лет томления» или близкое по смыслу выражение.",
+            "id": "pining-unrequited-addition",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Ten years of pining was long enough."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Десять лет безответных томлений — это уже слишком."
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Блок 000051. «Луч позднего послеобеденного солнца» — буквальная калька late-afternoon, неестественная в литературном русском. Передать как «луч предвечернего солнца» или равноценным оборотом, не меняя времени суток.",
+            "id": "afternoon-sun-calque",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "a blade of late-afternoon sunlight cut into the walkway"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "острый луч позднего послеобеденного солнца"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Блок 000073. «Самым основным умением» — неудачное избыточное сочетание, не сохраняющее естественный регистр Эльвины. Уместнее «самым главным навыком нашей магии» или «самым простым её умением» с учётом фундаментальности.",
+            "id": "fundamental-skill-calque",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "the most fundamental skill of our magic"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "самым основным умением нашей магии"
+            }
+          }
+        ]
+      },
+      "record_id": "46eca3d97e924149b0b0df696fc77281",
+      "review_commit": "30102c4aef24f5d130ad9382be721ada474f61bc",
+      "review_contract_revision": "docs/TRANSLATION.md@14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "reviewed_at": "2026-10-31T11:18:14Z",
+      "reviewer_session_id": "wings-reviewer-bounded-20261031-6cd902f3",
+      "sequence": 8,
+      "source_sha256": "cbfd137bf15167545b6ff2490567c8093987749ac01c6d0a9d6c7c12943c65f6",
+      "state_revision": "6f69d0adb8f8b07e4a881d84351d74ca33133f1bcecd1a63684130cfd3c1d108",
+      "supersedes_record_id": null,
+      "translation_sha256": "6a4ec10074b2300424f41e10a8176b9d8deed0ce2928b0ea2cf86a1398fca6e0",
+      "unit_id": "chapter-000005",
+      "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5"
+    }
+  },
+  "error": null
+}
