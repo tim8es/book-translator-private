@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "request_id": "2f2e23f344c4492c83082a490c2ba21b",
+  "book_slug": "wings-of-starlight-allison-saft",
+  "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+  "operation": "review-record",
+  "chapter": 21,
+  "session_id": "wings-ch18-rereview-20261031-d50970b5",
+  "outcome": "PASS",
+  "quality_report": {
+    "evidence_version": 2,
+    "context": "independent_session",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "id": "resolved-01",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Блок 000024: курсив теперь охватывает только короткую мысль, а поясняющая авторская фраза идёт отдельно.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "*Honestly,* Clarion thought. Scouts and their determined stoicism.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "*Ну и ну,* — подумала Клэрион. Разведчики и их упрямая невозмутимость.",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "a53aa473b8024b2cbadd324aedb4e644",
+          "finding_id": "honestly-emphasis"
+        }
+      },
+      {
+        "id": "resolved-02",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Блок 000130: восстановлена утвердительная интонация внутреннего осознания вместо добавленного вопроса.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "*Oh.* Was that really all she had to say?",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "*Вот как.* И это всё?",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "a53aa473b8024b2cbadd324aedb4e644",
+          "finding_id": "petra-oh-question"
+        }
+      },
+      {
+        "id": "resolved-03",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Блок 000143: восстановлена незавершённость реплики вместо завершающего восклицания.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "“Clarion, *please*—”",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "«Клэрион, *пожалуйста*…»",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "a53aa473b8024b2cbadd324aedb4e644",
+          "finding_id": "petra-cutoff"
+        }
+      }
+    ]
+  },
+  "source_sha256": "506a27011d6b9ea56beb88e35983fb81c16c194e42f966906069b812cff9c8f0",
+  "translation_sha256": "7e2d88b0ce1908fd073082ab53cedb66dd5afc81feb0ef91a6150859d41cd6b9",
+  "claim_sha256": "107dbd53f72c6ead309aa96e4398a851970adeb304a4bf0928ed65f835cc72f2"
+}
