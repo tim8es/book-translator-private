@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "request_id": "a4bca413e8414b8c86fd3710c9ca9e43",
+  "book_slug": "wings-of-starlight-allison-saft",
+  "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+  "operation": "review-record",
+  "chapter": 8,
+  "session_id": "wings-ch5-review-20261031-449c0e9a",
+  "outcome": "CORRECTIONS_REQUIRED",
+  "source_sha256": "79bf050d5d827d78a6e37c0191965a044fd34c4eb68f80890967b4d29f081994",
+  "translation_sha256": "430c0f5f17ec20e4e84408c0e22c38f969ac1ad0d6ec292162602ce8661a3a52",
+  "claim_sha256": "769c0f3aabcb2f31471f42bc02d546f191832aa175c999438eba46f3bbd7c087",
+  "quality_report": {
+    "evidence_version": 2,
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "id": "petra-calque",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Block 43: unnatural literal Russian calque for Petra's enthusiasm washing over Clarion.",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "let the rush of Petra’s enthusiasm wash over her",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "позволила потоку Петриных восторженных объяснений омыть себя",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "giddy-grammar",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Block 47: ungrammatical Russian phrasing of Clarion's excited, dizzy feeling.",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "She felt almost giddy with the rush of it.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "От этого её почти кружило от восторга.",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "speech-format",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Block 56: punctuation incorrectly joins narrative panic sentence into quoted speech.",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "“It wasn’t her fault,” Clarion protested. Panic knifed through her.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "«Она не виновата, — запротестовала Клэрион. Её пронзила паника.",
+          "occurrence": 0
+        },
+        "resolves": null
+      }
+    ]
+  }
+}
