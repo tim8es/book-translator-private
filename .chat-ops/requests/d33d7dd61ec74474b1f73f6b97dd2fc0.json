@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "request_id": "d33d7dd61ec74474b1f73f6b97dd2fc0",
+  "book_slug": "wings-of-starlight-allison-saft",
+  "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+  "operation": "review-record",
+  "chapter": 26,
+  "session_id": "wings-ch23-review-20261031-23e16ac7",
+  "outcome": "CORRECTIONS_REQUIRED",
+  "source_sha256": "e2d84f71e0efe28d4d6ab8b38a2100178fa3d7b806578ad79ee293ab9263699b",
+  "translation_sha256": "a9d1f89af35b8dd5167a3001e6a20c16a71c688ccf7ce533dd5a663bd0e0d710",
+  "claim_sha256": "430f9c5ef1a5ba838ece3904b1f19c496b1ddb1bf009dd9f5ec0e85fb35dc6cc",
+  "quality_report": {
+    "evidence_version": 2,
+    "context": "independent_session",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "id": "pixie-hollow-tolerate",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Блок 000010. «he’d ensured Pixie Hollow would have her» означает, что Милори сохранил Клэрион для Долины фей; «пришлось терпеть именно её» добавляет пренебрежение со стороны всех подданных и усиливает самоуничижение сверх оригинала. Лучше «он сделал так, что Долине фей предстояло ещё долгие годы жить с ней, со всеми её недостатками».",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "he’d ensured Pixie Hollow would have her",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Милори позаботился, чтобы Долине фей пришлось терпеть именно её",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "relief-voice-calque",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Блок 000018. «голосом, густым от облегчения» — калька с «voice thick with relief». Естественнее «с глубоким облегчением в голосе».",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "her voice thick with relief",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "голосом, густым от облегчения",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "small-voice-intensity",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Блок 000037. «voice sounded terribly small ... almost childlike» — эмоциональная беспомощность, не громкость. «Собственный голос показался ей до боли слабым, почти детским».",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "Her voice sounded terribly small to her own ears, almost childlike.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Собственный голос прозвучал для Клэрион ужасно тихо, почти по-детски.",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "friend-silence-tautology",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Блок 000074. «другом, разделяющим с ней дружеское молчание» — тавтология вместо образа дружеского присутствия. «другом, молча составляющим ей компанию».",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "a friend, holding its companionate silence with her",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "другом, разделяющим с ней дружеское молчание",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "reins-grip-calque",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Блок 000089. «укоротила хват» неестественно; «choked up on them» — перехватила поводья покороче, чтобы управлять совой. «перехватила их покороче».",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "seized hold of the reins and choked up on them",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "ухватила их и укоротила хват",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "body-strength-calque",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Блок 000091. «требовались все силы бёдер и предплечий» — калька, мешающая восприятию. «приходилось изо всех сил напрягать бёдра и предплечья».",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "It took all the strength of her thighs and forearms to keep her seat",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Чтобы удержаться на спине совы, требовались все силы бёдер и предплечий",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "freezing-inside",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Блок 000097. «Would it be freezing inside?» — вопрос, будет ли внутри морозно, а «Насколько там холодно?» задаёт вопрос о степени. «Не будет ли там ледяной холод?»",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "Would it be freezing inside?",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Насколько там холодно?",
+          "occurrence": 0
+        },
+        "resolves": null
+      }
+    ]
+  }
+}
