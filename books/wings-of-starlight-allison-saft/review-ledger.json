@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "wings-of-starlight-allison-saft",
-  "next_sequence": 57,
+  "next_sequence": 58,
   "records": [
     {
       "record_id": "d9b70e4cfbe5487a9f0d5e37bc1826af",
@@ -6281,6 +6281,115 @@
               "record_id": "619a1b7709aeb4296434b1fa2d5d53a0",
               "finding_id": "know-better-idiom"
             }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "b9fa2100ad1042148e3f238802ce81a4",
+      "sequence": 57,
+      "unit_id": "chapter-000023",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "a6010fd054c99511236949295a2b08f1485e38bb33d09097bb0a6f445adf98f7",
+      "translation_sha256": "3d7ea2def9e28b56a48bf54d7ebf6bc5eadac8ad9054311b1c69dd569ba64070",
+      "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "review_contract_revision": "docs/TRANSLATION.md@14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "reviewer_session_id": "wings-ch20-independent-review-20261031-482c59b1",
+      "reviewed_at": "2026-10-31T17:53:37Z",
+      "state_revision": "9e6ac74db4185f6b2831a79558759874d2c9b0eb",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "responsibility-as-blame",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Блок 000009: 'This is my responsibility' — принятие ответственности Милори за ситуацию, не прямое утверждение собственной вины. Русское «Это моя вина» усиливает самообвинение. Исправить на «Я за это отвечаю» или «Это моя ответственность».",
+            "source_anchor": {
+              "quote": "This is my responsibility",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Это моя вина",
+              "occurrence": 0
+            },
+            "resolved": false,
+            "resolves": null
+          },
+          {
+            "id": "hall-of-winter-inconsistent",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "Блоки 000040, 000082, 000089, 000126, 000129: Hall of Winter в ранее проверенных главах передан как «Зал Зимы»; здесь пять раз появляется «Зимний чертог». Привести к принятому «Зал Зимы», не меняя другие топонимы.",
+            "source_anchor": {
+              "quote": "Hall of Winter",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Зимнему чертогу",
+              "occurrence": 0
+            },
+            "resolved": false,
+            "resolves": null
+          },
+          {
+            "id": "feelings-explicit-love",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Блок 000050: feelings for Milori остаётся неопределённым как «чувства к Милори», а русское «любовь к Милори» преждевременно делает подтекст явным. Вернуть «чувства к Милори».",
+            "source_anchor": {
+              "quote": "her feelings for Milori had made her reckless",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "любовь к Милори сделала её безрассудной",
+              "occurrence": 0
+            },
+            "resolved": false,
+            "resolves": null
+          },
+          {
+            "id": "injury-to-emotional-hurt",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Блок 000117: Petra говорит 'I didn’t want you to get hurt' в контексте риска физического вреда, но «чтобы тебе было больно» слишком свободно допускает эмоциональную боль. Лучше: «Я не хотела, чтобы ты пострадала».",
+            "source_anchor": {
+              "quote": "I didn’t want you to get hurt",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Не хотела, чтобы тебе было больно",
+              "occurrence": 0
+            },
+            "resolved": false,
+            "resolves": null
+          },
+          {
+            "id": "singed-arrow-invented",
+            "category": "referent",
+            "severity": "minor",
+            "detail": "Блок 000084: источник говорит о дыме, поднимающемся от поражённого Кошмара/области раны; перевод недоказанно утверждает, что «стрелу обожгло огнём». Передать «над раной вился дым, словно плоть опалило».",
+            "source_anchor": {
+              "quote": "smoke curled slowly up from it as though it had been singed",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "над ним медленно вился дым, словно стрелу обожгло огнём",
+              "occurrence": 0
+            },
+            "resolved": false,
+            "resolves": null
           }
         ]
       }
