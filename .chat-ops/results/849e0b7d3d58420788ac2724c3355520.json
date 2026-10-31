@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "request_id": "849e0b7d3d58420788ac2724c3355520",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "6b4dbce12381451772e8ea2ce7273ed98ad49b75dd28bdf0ce49517d7ea032b6",
+    "record": {
+      "correction_round": 2,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "independent_session",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "meaning",
+            "detail": "Исправлена субъектная привязка: Шейна не пришлось просить дважды выполнить указание Ильи. По оригиналу и соседнему диалогу подтверждено.",
+            "id": "told-twice-agent-fixed-ch39",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "told-twice-agent-shift-ch39",
+              "record_id": "1ec45e63a53d49bba09b5a01e9ad82ad"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Shane didn’t have to be told twice."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Шейна не пришлось просить дважды."
+            }
+          },
+          {
+            "category": "referent",
+            "detail": "Исправлена референция: в новой версии Илье кажется, будто он почти ощущает Шейна на вкус. Это соответствует исходному he = Ilya и him = Shane. Соседние абзацы не изменены.",
+            "id": "taste-referent-fixed-ch39",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "taste-referent-shift-ch39",
+              "record_id": "1ec45e63a53d49bba09b5a01e9ad82ad"
+            },
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "his dick so deep inside Shane he could almost taste him."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "проникнув в Шейна так глубоко, что Илье казалось, будто он почти ощущает его на вкус."
+            }
+          }
+        ]
+      },
+      "record_id": "8f4d0eb561a44902bbcea1fce4159c3a",
+      "review_commit": "9bbe2ccc78a0b53c29bf9727e83c0bb323eddba6",
+      "review_contract_revision": "docs/TRANSLATION.md@c76159e4939ed00ac19172228f8972af87cadbb8",
+      "reviewed_at": "2026-10-31T14:14:33Z",
+      "reviewer_session_id": "policy-change-reviewer-20261031-ch39-fa0988d44f42",
+      "sequence": 104,
+      "source_sha256": "0fce41dca9536506de81bd207b9b27791b8047be72a0d4d485abfc8cfb87df81",
+      "state_revision": "7fe217d563b4547fdafc573381c77116a2357a358afe101836dad5d676f1d085",
+      "supersedes_record_id": "1ec45e63a53d49bba09b5a01e9ad82ad",
+      "translation_sha256": "0c6d745141f1794aa03e77854712843430fa1d59a8f78007b31b24eeccc14203",
+      "unit_id": "chapter-000039",
+      "workflow_revision": "c76159e4939ed00ac19172228f8972af87cadbb8"
+    }
+  },
+  "error": null
+}
