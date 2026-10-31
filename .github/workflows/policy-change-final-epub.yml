@@ -1,0 +1,131 @@
+name: Policy Change - final reviewed EPUB
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.book-ops/policy-change-final-build.json'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: policy-change-final-epub-main
+  cancel-in-progress: false
+
+jobs:
+  assemble:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout authoritative book repository
+        uses: actions/checkout@v7
+        with:
+          path: books-repo
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Checkout exact book-pinned translation engine
+        uses: actions/checkout@v7
+        with:
+          repository: tim8es/book-translator
+          ref: c76159e4939ed00ac19172228f8972af87cadbb8
+          path: engine
+          fetch-depth: 1
+          persist-credentials: false
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+
+      - name: Verify pinned identity and completion without changing book state
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C engine rev-parse HEAD)" = "c76159e4939ed00ac19172228f8972af87cadbb8"
+          python - <<'PY'
+          import hashlib, json
+          from pathlib import Path
+          root = Path("books-repo/books/policy-change")
+          metadata = json.loads((root / "metadata.json").read_text(encoding="utf-8"))
+          progress = json.loads((root / "progress.json").read_text(encoding="utf-8"))
+          assert metadata["workflow"]["resolved_revision"] == "c76159e4939ed00ac19172228f8972af87cadbb8"
+          assert metadata["source"]["sha256"] == "b27e61a767dd5ba93451cf0b1df5ad8d6c40b11bdead7435e0ca682768378639"
+          assert hashlib.sha256((root / "source/Policy Change.epub").read_bytes()).hexdigest() == metadata["source"]["sha256"]
+          assert len(progress["chapters"]) == 65
+          assert all(c["status"] == "reviewed" for c in progress["chapters"])
+          assert not list((root / ".workflow/claims").glob("*.json"))
+          assert not (root / ".workflow/coordination-lock.json").exists()
+          assert not (root / ".workflow/source-promotion.json").exists()
+          print("Review and source preconditions: 65/65, no claims or promotion lock")
+          PY
+
+      - name: Use canonical pinned finalize and EPUB builder
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p engine/books
+          cp -a books-repo/books/policy-change engine/books/policy-change
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          install = {
+              "schema_version": 1,
+              "canonical_repository": "https://github.com/tim8es/book-translator",
+              "requested_ref": "main",
+              "resolved_revision": "c76159e4939ed00ac19172228f8972af87cadbb8",
+              "install_root": ".",
+          }
+          Path("engine/.book-translator-install.json").write_text(json.dumps(install, indent=2)+"\n", encoding="utf-8")
+          PY
+          cd engine
+          python scripts/book.py validate policy-change
+          python scripts/corpus.py verify policy-change
+          python scripts/book.py finalize policy-change --session-id policy-change-final-epub-20261031 --json > "$RUNNER_TEMP/policy-change-final-report.json"
+          python scripts/book.py build policy-change --format epub
+          python scripts/book.py build-status policy-change --format epub --json > "$RUNNER_TEMP/policy-change-epub-status.json"
+          python - <<'PY'
+          import json, zipfile
+          from pathlib import Path
+          status = json.loads((Path(__import__("os").environ["RUNNER_TEMP"]) / "policy-change-epub-status.json").read_text(encoding="utf-8"))
+          assert status["state"] == "current", status
+          epub = Path("books/policy-change/output/policy-change.epub")
+          assert epub.is_file() and epub.stat().st_size > 1000
+          with zipfile.ZipFile(epub) as archive:
+              assert archive.testzip() is None
+              assert archive.namelist()[0] == "mimetype"
+              assert archive.read("mimetype") == b"application/epub+zip"
+          print("EPUB package validation: current, ZIP intact, mimetype correct")
+          PY
+
+      - name: Publish only canonical book output and completion reports
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C books-repo rev-parse HEAD)" = "$(git -C books-repo rev-parse origin/main)" || {
+            echo "::error::Main moved during build. Refusing stale publication."
+            exit 1
+          }
+          cp -a engine/books/policy-change/output/. books-repo/books/policy-change/output/
+          for path in STATE.md FINAL_QUALITY_GATES.md REVIEW_REPORT.md; do
+            cp "engine/books/policy-change/$path" "books-repo/books/policy-change/$path"
+          done
+          cp engine/books/policy-change/progress.json books-repo/books/policy-change/progress.json
+          git -C books-repo add -- books/policy-change/
+          if git -C books-repo diff --cached --quiet; then
+            echo "Current output was already published"
+            exit 0
+          fi
+          git -C books-repo config user.name 'github-actions[bot]'
+          git -C books-repo config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git -C books-repo commit -m "build(policy-change): publish validated reviewed EPUB and final reports"
+          git -C books-repo fetch --quiet origin main
+          test "$(git -C books-repo rev-parse HEAD^)" = "$(git -C books-repo rev-parse origin/main)" || {
+            echo "::error::Main changed before output publication. Refusing non-fast-forward push."
+            exit 1
+          }
+          git -C books-repo push origin HEAD:main
