@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "wings-of-starlight-allison-saft",
-  "next_sequence": 39,
+  "next_sequence": 40,
   "records": [
     {
       "record_id": "d9b70e4cfbe5487a9f0d5e37bc1826af",
@@ -3886,6 +3886,149 @@
             "resolves": {
               "record_id": "5cae49bf044b4b8698abdae4cb6656c4",
               "finding_id": "convince-herself-truncated"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "bb523fcaa66cc202d896513b2f8c3c7b",
+      "sequence": 39,
+      "unit_id": "chapter-000016",
+      "outcome": "PASS",
+      "source_sha256": "cf8b3248d911dfceadacaa1140fff0779dcee7a1f31c2f31d2470f59f219cd38",
+      "translation_sha256": "fe605c61cac3e6adf29a9cc4f02f7d7c60816fc6c894a527cf7dca0ff0c3a985",
+      "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "review_contract_revision": "docs/TRANSLATION.md@14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "reviewer_session_id": "wings-ch13-review-20261031-07ff45f6",
+      "reviewed_at": "2026-10-31T16:40:33Z",
+      "state_revision": "17aadc58156ecf521b799c69d971efc3b6bde652",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": "941e39221ace4185b23e6217d1e9d57e",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "continuing-responsibility",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Повторно проверено: 000048. «No. I am.» противопоставляет её текущую ответственность словам Эльвины «I am handling this». «Это сделаю я» подменяет настоящее будущее. «Нет. С этим р; в текущем переводе исправлено.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "No. I am.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Нет. С этим разбираюсь я.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "941e39221ace4185b23e6217d1e9d57e",
+              "finding_id": "continuing-responsibility"
+            }
+          },
+          {
+            "id": "control-vs-subjugate",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Повторно проверено: 000104. Противопоставление *control* / *protect* — не попытка подчинить кого-то, а намерение управлять своей магией, которой Клэрион ранее не владела. «Не *упра; в текущем переводе исправлено.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "not *control* but *protect*",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "не *управлять*, а *защитить*",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "941e39221ace4185b23e6217d1e9d57e",
+              "finding_id": "control-vs-subjugate"
+            }
+          },
+          {
+            "id": "raven-not-crow",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Повторно проверено: 000114. Raven — ворон, а не ворона. «облик: ворона» противоречит последующим «Ворон» и «Ворон-Кошмар». Исправить на «облик ворона».; в текущем переводе исправлено.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "a raven.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "облик ворона.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "941e39221ace4185b23e6217d1e9d57e",
+              "finding_id": "raven-not-crow"
+            }
+          },
+          {
+            "id": "laugh-worth-calque",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Повторно проверено: 000077. Неестественная калька «Его тёплый смех почти стоил всего пережитого». Точнее и естественнее: «От его тёплого смеха ей почти показалось, что всё это было; в текущем переводе исправлено.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "a warm sound that almost made it all worth it",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "От его тёплого смеха ей почти показалось, что всё это было не зря",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "941e39221ace4185b23e6217d1e9d57e",
+              "finding_id": "laugh-worth-calque"
+            }
+          },
+          {
+            "id": "flower-gown-material",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Повторно проверено: 000010. Платье из цветка каллы, а не просто похожее на неё. Передать «белое платье из цветка каллы с волнистым краем».; в текущем переводе исправлено.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "white gown of calla lily",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "белое платье из цветка каллы",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "941e39221ace4185b23e6217d1e9d57e",
+              "finding_id": "flower-gown-material"
+            }
+          },
+          {
+            "id": "hovering-vs-rise",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Повторно проверено: 000041. «crossing the room so that she floated beside Elvina» — цель пересечения комнаты, а не внезапный взлёт после пересечения. Лучше «подлетела через комнату; в текущем переводе исправлено.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "crossing the room so that she floated beside Elvina",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "подлетела к Эльвине и зависла рядом с ней",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "941e39221ace4185b23e6217d1e9d57e",
+              "finding_id": "hovering-vs-rise"
             }
           }
         ]
