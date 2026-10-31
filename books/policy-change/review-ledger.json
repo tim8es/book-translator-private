@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "policy-change",
-  "next_sequence": 73,
+  "next_sequence": 74,
   "records": [
     {
       "record_id": "1f8894cd56d99429b1bb61e7540a8db1",
@@ -3358,6 +3358,73 @@
             "resolves": {
               "record_id": "7c25c69264e947b3a3a20c120b5b27d3",
               "finding_id": "half-sibling-kinship-shift"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "cafd4ee64d924c95b13e087e8d5106c5",
+      "sequence": 73,
+      "unit_id": "chapter-000023",
+      "outcome": "PASS",
+      "source_sha256": "ca25474724caa2d062361cb73d3c109d1f9d6997ea8fbd161cca56e0ef262df0",
+      "translation_sha256": "1bb834bee7f0529f219774b5ee5c785323b9245fbfeed6b1f57985678ca65509",
+      "workflow_revision": "c76159e4939ed00ac19172228f8972af87cadbb8",
+      "review_contract_revision": "docs/TRANSLATION.md@c76159e4939ed00ac19172228f8972af87cadbb8",
+      "reviewer_session_id": "policy-change-reviewer-20261031-23-3e12bd8c",
+      "reviewed_at": "2026-10-31T10:30:20Z",
+      "state_revision": "ca216ac108cfb430609839797c2051e5ceda8167",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": "732b31541cc9d6ee66d6aa71c8edabd4",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "petrov-referent-fixed",
+            "category": "referent",
+            "severity": "major",
+            "detail": "Повторно проверен весь эпизод признания Шейна Сардженту: Петров не исчез из жизни Шейна, а перестал иметь отношение к рассматриваемой личной ситуации; сплетни теперь относятся к частной жизни Шейна. Искажение из предыдущей версии устранено.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "He knew Petrov but Petrov was out of the picture now, as well",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Петров теперь к этой истории отношения не имел. И Шейн не думал, что Сарджент опустится до сплетен о его личной жизни.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "732b31541cc9d6ee66d6aa71c8edabd4",
+              "finding_id": "petrov-out-of-picture-referent"
+            }
+          },
+          {
+            "id": "came-out-text-fixed",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Сообщение Джейн теперь естественно передаёт совершившийся каминг-аут перед родителями и отсылку к предсказанию собеседника; исправлена неуклюжая грамматика прежнего варианта.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "I came out to my parents just like you said I would",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Джейн: *Я рассказал родителям, что я гей, как ты и говорил.*",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "732b31541cc9d6ee66d6aa71c8edabd4",
+              "finding_id": "came-out-text-clumsy"
             }
           }
         ]
