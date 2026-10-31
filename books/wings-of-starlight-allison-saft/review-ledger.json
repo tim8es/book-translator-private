@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "wings-of-starlight-allison-saft",
-  "next_sequence": 54,
+  "next_sequence": 55,
   "records": [
     {
       "record_id": "d9b70e4cfbe5487a9f0d5e37bc1826af",
@@ -5949,6 +5949,73 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "c24b84ce0b104274a8c8fb924fcc51b4",
+      "sequence": 54,
+      "unit_id": "chapter-000018",
+      "outcome": "PASS",
+      "source_sha256": "ff43fefaa5da9d3b4b8a5091382e30e11727fae96ff4dfba53588a72093486ea",
+      "translation_sha256": "cd303c4a7c6a38b083ef7b556c386cc7cc51ea1ad466e558c1eb14fb6a2985c3",
+      "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "review_contract_revision": "docs/REVIEWER.md@14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "reviewer_session_id": "wings-ch15-independent-review-20261031-86c379e2eaa9463583fabcb33e580a0c",
+      "reviewed_at": "2026-10-31T17:23:16Z",
+      "state_revision": "0276116269c7d664f4259cb5a4a9ba7fbe36a01c779bd4edb172f52e4142e346",
+      "review_commit": "b8c1be03408352aac9d92fd181db924c68a700e3",
+      "correction_round": 2,
+      "supersedes_record_id": "20e1f6b5310b445589593104f19892ac",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "resolved-tea-service-syntax",
+            "category": "style",
+            "severity": "major",
+            "detail": "Блок 000027: синтаксис исправлен, устранено смешение конструкций. Чаепитие описано как сервировка стола; смысл и модальность «what seemed to Clarion» сохранены.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "they set up what seemed to Clarion an entire tea service",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "те, как показалось Клэрион, накрывали в углу мастерской целый стол для чаепития",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "20e1f6b5310b445589593104f19892ac",
+              "finding_id": "tea-service-syntax"
+            }
+          },
+          {
+            "id": "resolved-thought-attribution-dash",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Блок 000048: после выделенной курсивом внутренней реплики восстановлено тире перед пояснением рассказчика.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "*I’ve always wanted things I shouldn’t,* she’d told Milori once.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "*Я всегда хотела того, чего мне не следовало хотеть*, — сказала она однажды Милори.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "20e1f6b5310b445589593104f19892ac",
+              "finding_id": "thought-attribution-dash"
+            }
           }
         ]
       }
