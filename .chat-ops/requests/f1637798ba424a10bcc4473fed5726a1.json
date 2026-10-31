@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "request_id": "f1637798ba424a10bcc4473fed5726a1",
+  "book_slug": "wings-of-starlight-allison-saft",
+  "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+  "operation": "review-record",
+  "chapter": 5,
+  "session_id": "wings-reviewer-followup-20261031-4b8e5c67",
+  "outcome": "PASS",
+  "quality_report": {
+    "evidence_version": 2,
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "id": "lamp-recheck",
+        "category": "addition",
+        "severity": "minor",
+        "detail": "Блок 000002: замечание unfounded-lamp устранено. Повторная сверка подтвердила значение и регистр; 91 прочий блок не изменён относительно отвергнутой версии.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "the glow of the light she’d left on in her bedroom",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "свет, который оставила включённым в спальне",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "46eca3d97e924149b0b0df696fc77281",
+          "finding_id": "unfounded-lamp"
+        }
+      },
+      {
+        "id": "catastrophizing-recheck",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Блок 000039: замечание catastrophizing-meaning устранено. Повторная сверка подтвердила значение и регистр; 91 прочий блок не изменён относительно отвергнутой версии.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "she considered catastrophizing one of Petra’s many charms",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "привычку превращать любую тревогу в катастрофу",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "46eca3d97e924149b0b0df696fc77281",
+          "finding_id": "catastrophizing-meaning"
+        }
+      },
+      {
+        "id": "pining-recheck",
+        "category": "addition",
+        "severity": "minor",
+        "detail": "Блок 000047: замечание pining-unrequited-addition устранено. Повторная сверка подтвердила значение и регистр; 91 прочий блок не изменён относительно отвергнутой версии.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "Ten years of pining was long enough.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Десять лет любовных томлений — это уже слишком.",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "46eca3d97e924149b0b0df696fc77281",
+          "finding_id": "pining-unrequited-addition"
+        }
+      },
+      {
+        "id": "afternoon-recheck",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Блок 000051: замечание afternoon-sun-calque устранено. Повторная сверка подтвердила значение и регистр; 91 прочий блок не изменён относительно отвергнутой версии.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "a blade of late-afternoon sunlight cut into the walkway",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "острый луч предвечернего солнца",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "46eca3d97e924149b0b0df696fc77281",
+          "finding_id": "afternoon-sun-calque"
+        }
+      },
+      {
+        "id": "skill-recheck",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Блок 000073: замечание fundamental-skill-calque устранено. Повторная сверка подтвердила значение и регистр; 91 прочий блок не изменён относительно отвергнутой версии.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "the most fundamental skill of our magic",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "базовым умением нашей магии",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "46eca3d97e924149b0b0df696fc77281",
+          "finding_id": "fundamental-skill-calque"
+        }
+      }
+    ]
+  },
+  "source_sha256": "cbfd137bf15167545b6ff2490567c8093987749ac01c6d0a9d6c7c12943c65f6",
+  "translation_sha256": "3321018b8afc064c6f96f2a70f3788dac3fcd3f5d875bb5611c441b4fd74f9c9",
+  "claim_sha256": "d0972bbc8b418205b92bb06d8c831556f643f1eb00433b85300b1129667e464f"
+}
