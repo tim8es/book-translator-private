@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "request_id": "2a1dc21f8a1e4f44a3223d869691f427",
+  "book_slug": "wings-of-starlight-allison-saft",
+  "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+  "operation": "review-record",
+  "chapter": 9,
+  "session_id": "wings-ch6-review-20261031-497c2e60",
+  "outcome": "CORRECTIONS_REQUIRED",
+  "source_sha256": "86e86b67da09f18d92a7e9944cfa01e8f97e2d82a0953394fbc77eed94594234",
+  "translation_sha256": "a6b575d0f66e585eb1d9ef7767e30866e2bcdba4b86f4f0e1fe933df1bfd24c1",
+  "claim_sha256": "318e5f9676bb3705276f6772b2858e891ceb369f42dc41908f56220a59e2bc00",
+  "quality_report": {
+    "evidence_version": 2,
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "id": "details-idiom",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Block 15: «доверяет мне мелкие подробности» is a misleading literal phrase. Revise as the minister being trusted to handle minor practical details.",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "Elvina typically trusts me to handle all the small details.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Обычно Эльвина доверяет мне мелкие подробности.",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "unquantifiable-calque",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Block 18: «неизмеримые ответы» is an unnatural calque of unquantifiable answers; express the absence of measurable criteria in literary Russian.",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "That was exactly the sort of unquantifiable answer that tormented her.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Именно такие неизмеримые ответы приводили Клэрион в отчаяние.",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "duty-syntax",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Block 60: «звучал как всегда исполненно долга» is ungrammatical. Convey Artemis's habitual sense of duty in a natural Russian construction.",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "Artemis sounded as duty bound as ever",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Голос Артемис звучал как всегда исполненно долга",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "orientation-drift",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Block 72: «пришло в себя» implies regaining consciousness or recovering; reoriented itself means the monster adjusted its direction/position before she landed.",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "it had reoriented itself.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "чудовище уже пришло в себя.",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "rabbit-image-calque",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Block 74: «сквозь кроличий визг ужаса» is stiff literal phrasing. Preserve the peculiar rabbit-scream image while using natural Russian syntax.",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "through the rabbit scream of terror her thoughts had become",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "сквозь кроличий визг ужаса, в который превратились её мысли",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "unqueenly-meaning",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Block 93: «недостойной королевы» implies she is unworthy of the title, whereas unqueenly describes feeling unlike a queen. Preserve emphasis and the self-perceived contrast.",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "so *unqueenly*",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "такой *недостойной королевы*",
+          "occurrence": 0
+        },
+        "resolves": null
+      }
+    ]
+  }
+}
