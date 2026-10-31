@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "policy-change",
-  "next_sequence": 102,
+  "next_sequence": 103,
   "records": [
     {
       "record_id": "1f8894cd56d99429b1bb61e7540a8db1",
@@ -5588,6 +5588,111 @@
             "resolves": {
               "record_id": "4f16c5fbaa1241a09d53d94475d00682",
               "finding_id": "hot-calque"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "b6c89f60623e4639a88a349fbab20e0b",
+      "sequence": 102,
+      "unit_id": "chapter-000045",
+      "outcome": "PASS",
+      "source_sha256": "f8e7aa5286862f7b5d0c4a783756735a51cbe8161fc7edf4724edbbbc1f07dfa",
+      "translation_sha256": "9947c855aa1d829e03f7b2f08645669a1eb538471a2bfccc5ca607158e8e695b",
+      "workflow_revision": "c76159e4939ed00ac19172228f8972af87cadbb8",
+      "review_contract_revision": "docs/TRANSLATION.md@c76159e4939ed00ac19172228f8972af87cadbb8",
+      "reviewer_session_id": "pc-reviewer-20261031-ch45-06a45f667adc4e69beac4f79ebf8580c",
+      "reviewed_at": "2026-10-31T14:00:34Z",
+      "state_revision": "9f7458f0589b83de45793873cc796fed6b49b508",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": "4e729acf00fd417f9654e94f332c398a",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "wiebe-name-reconciled",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "Исправлено написание Wiebe на «Вибе» во всех 25 случаях главы.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Wiebe nodded and speared a piece of chicken.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Вибе кивнул и наколол на вилку кусок курицы.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "4e729acf00fd417f9654e94f332c398a",
+              "finding_id": "wiebe-name-drift"
+            }
+          },
+          {
+            "id": "half-siblings-reconciled",
+            "category": "referent",
+            "severity": "major",
+            "detail": "Сохранена кровная связь по общему отцу и хорошие отношения детей Эдвардса.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "they were actually all half-siblings, but harmonious ones",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "все они были единокровными братьями и сёстрами, но прекрасно ладили",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "4e729acf00fd417f9654e94f332c398a",
+              "finding_id": "half-siblings-to-stepsiblings"
+            }
+          },
+          {
+            "id": "gatorade-agency-restored",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Восстановлено, что напиток на ноутбук пролили сами Алекс, с естественной нейтральной формой.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "I poured Gatorade on it.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Меня угораздило пролить на него Gatorade.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "4e729acf00fd417f9654e94f332c398a",
+              "finding_id": "spilled-drink-agency"
+            }
+          },
+          {
+            "id": "blank-check-restored",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Восстановлено значение неограниченных денежных требований и исходная грубость.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "I am nothing more than a blank *fucking* check.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Я для него всего лишь *ебаный* чек на любую сумму.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "4e729acf00fd417f9654e94f332c398a",
+              "finding_id": "blank-check-literal"
             }
           }
         ]
