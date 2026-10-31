@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "wings-of-starlight-allison-saft",
-  "next_sequence": 25,
+  "next_sequence": 26,
   "records": [
     {
       "record_id": "d9b70e4cfbe5487a9f0d5e37bc1826af",
@@ -2415,6 +2415,67 @@
             },
             "translation_anchor": {
               "quote": "выжженные весенние поля",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "a79bcde284fe4a1892932f005bc80f2d",
+      "sequence": 25,
+      "unit_id": "chapter-000012",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "b04f613fcfb5ec283fce075aaa4c6e9577031d7122f701df1e9f6b0a01b46097",
+      "translation_sha256": "f726df62855f94aa1c7c16b991f67459b3f63ec8a708d7604dd64dd234fce02c",
+      "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "review_contract_revision": "docs/TRANSLATION.md@14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "reviewer_session_id": "wings-ch9-review-followup-20261031-6a98c24e",
+      "reviewed_at": "2026-10-31T15:26:11Z",
+      "state_revision": "04667ad7f1f6303e95c47098d9fb06d343c6b62eb36b8943016140bf683f1fd5",
+      "review_commit": "9cd200bb9eb1a2f70d808a6916b362ea4c94d8a1",
+      "correction_round": 2,
+      "supersedes_record_id": "f6b5d7b7918d450ab2b892077df45331",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "emphasis-petra",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "Block 41: the source has no italic emphasis, but the Russian adds italics to «услышала». Remove invented emphasis to preserve original typography and tone.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Oh, I heard you",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Да я *услышала*",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "certainty-promise",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Block 51: «No one will have to know» expresses non-necessity or discretion, not a categorical promise «Никто не узнает». Use a formulation such as «Никому необязательно знать, что это *ты* мне помогла».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "No one will have to know it was *you* who helped me",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Никто не узнает, что это *ты* мне помогла",
               "occurrence": 0
             },
             "resolves": null
