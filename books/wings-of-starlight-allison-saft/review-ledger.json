@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "wings-of-starlight-allison-saft",
-  "next_sequence": 68,
+  "next_sequence": 69,
   "records": [
     {
       "record_id": "d9b70e4cfbe5487a9f0d5e37bc1826af",
@@ -7674,6 +7674,178 @@
               "record_id": "9123657ed4370a5de96111397a278411",
               "finding_id": "atrium-voices-direction"
             }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "e54776e908256c9aade2163193fbd9a5",
+      "sequence": 68,
+      "unit_id": "chapter-000023",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "a6010fd054c99511236949295a2b08f1485e38bb33d09097bb0a6f445adf98f7",
+      "translation_sha256": "05a4e75bc38c3bb71a0952c26220c1b9c172ce056b930e5c4a47d04160165429",
+      "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "review_contract_revision": "docs/REVIEWER.md@14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "reviewer_session_id": "wings-ch20-independent-rereview-20261031-8e69e934",
+      "reviewed_at": "2026-10-31T18:05:49Z",
+      "state_revision": "3d016185af395160349375efb7f18abe78cf111b6c4ea55db856897d09f0d67b",
+      "review_commit": null,
+      "correction_round": 2,
+      "supersedes_record_id": "b9fa2100ad1042148e3f238802ce81a4",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-responsibility-as-blame",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Фраза Милори теперь означает принятие ответственности без признания своей вины.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "This is my responsibility",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Я за это отвечаю",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "b9fa2100ad1042148e3f238802ce81a4",
+              "finding_id": "responsibility-as-blame"
+            }
+          },
+          {
+            "id": "recheck-hall-of-winter-inconsistent",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "Все упоминания Hall of Winter приведены к единому «Зал Зимы».",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Hall of Winter",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "в Зал Зимы",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "b9fa2100ad1042148e3f238802ce81a4",
+              "finding_id": "hall-of-winter-inconsistent"
+            }
+          },
+          {
+            "id": "recheck-feelings-explicit-love",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Нераскрытые feelings for Milori теперь переданы нейтрально как чувства.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "her feelings for Milori had made her reckless",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "чувства к Милори сделали её безрассудной",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "b9fa2100ad1042148e3f238802ce81a4",
+              "finding_id": "feelings-explicit-love"
+            }
+          },
+          {
+            "id": "recheck-injury-to-emotional-hurt",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Реплика Петры возвращает защиту от вреда, «пострадала», не неопределённую эмоциональную боль.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "I didn’t want you to get hurt",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Я не хотела, чтобы ты пострадала",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "b9fa2100ad1042148e3f238802ce81a4",
+              "finding_id": "injury-to-emotional-hurt"
+            }
+          },
+          {
+            "id": "recheck-singed-arrow-invented",
+            "category": "referent",
+            "severity": "minor",
+            "detail": "Дым теперь относится к ране чудовища, а не к выдуманной обожжённой стреле.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "smoke curled slowly up from it as though it had been singed",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "словно рану опалило огнём",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "b9fa2100ad1042148e3f238802ce81a4",
+              "finding_id": "singed-arrow-invented"
+            }
+          },
+          {
+            "id": "rainstorm-vs-thunderstorm",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Блок 000035: rainstorm — ливень/дождь, а не обязательно гроза; перевод «о грозе» навязывает грозу и противоречит последующему противопоставлению молнии.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "The weather-talents had said nothing about a rainstorm",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Феи с даром погоды не предупреждали о грозе",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "owl-saddle-invented",
+            "category": "referent",
+            "severity": "minor",
+            "detail": "Блок 000060: seat — удержаться верхом на сове, в источнике нет седла. Перевод «места в седле» добавляет деталь. Передать риск свалиться со спины Ноктуа и лишиться головы.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "losing both her seat *and* her head",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "потере и *места в седле*, и головы",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "tremulous-breath-calque",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Блок 000060: «дрожащим дыханием выдохнула» — неестественная тавтологичная конструкция. Источник — let out a tremulous breath; поправить на «судорожно выдохнула» или близкое.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "let out a tremulous breath",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "дрожащим дыханием выдохнула",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       }
