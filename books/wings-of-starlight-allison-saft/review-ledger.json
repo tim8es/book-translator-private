@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "wings-of-starlight-allison-saft",
-  "next_sequence": 18,
+  "next_sequence": 19,
   "records": [
     {
       "record_id": "d9b70e4cfbe5487a9f0d5e37bc1826af",
@@ -1567,6 +1567,149 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "401d2fab30de4fb6800d28afbf35037d",
+      "sequence": 18,
+      "unit_id": "chapter-000009",
+      "outcome": "PASS",
+      "source_sha256": "86e86b67da09f18d92a7e9944cfa01e8f97e2d82a0953394fbc77eed94594234",
+      "translation_sha256": "ce67e464980d07b960fc0097dd158a75f975b8820c6af8ba7cc4d2dc5cd7c316",
+      "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "review_contract_revision": "docs/TRANSLATION.md@14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "reviewer_session_id": "wings-ch6-rereview-20261031-421e698f",
+      "reviewed_at": "2026-10-31T13:53:11Z",
+      "state_revision": "f598d9e7eb0311e9646ef90652bc072909124dece00bdf465f5ab00cca42c655",
+      "review_commit": "6b144736fad55939be1c10c25a786ece5a86d659",
+      "correction_round": 1,
+      "supersedes_record_id": "518be80b4d664d46875ecbad3459b7dd",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "details-fixed",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Block 15: corrected who handles the small details; idiomatic and faithful.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Elvina typically trusts me to handle all the small details.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Обычно Эльвина доверяет мне разбираться со всеми мелочами.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "518be80b4d664d46875ecbad3459b7dd",
+              "finding_id": "details-idiom"
+            }
+          },
+          {
+            "id": "unquantifiable-fixed",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Block 18: now expresses the nonquantifiable criteria instead of a Russian calque.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "That was exactly the sort of unquantifiable answer that tormented her.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Именно такие ответы, которые не поддавались никакой точной оценке, и приводили Клэрион в отчаяние.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "518be80b4d664d46875ecbad3459b7dd",
+              "finding_id": "unquantifiable-calque"
+            }
+          },
+          {
+            "id": "duty-fixed",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Block 60: grammar restored, Artemis's habitual duty and unspoken emotion remain distinct.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Artemis sounded as duty bound as ever",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "В голосе Артемис, как всегда, слышалась решимость исполнить свой долг",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "518be80b4d664d46875ecbad3459b7dd",
+              "finding_id": "duty-syntax"
+            }
+          },
+          {
+            "id": "orientation-fixed",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Block 72: corrected the monster reorienting itself rather than regaining consciousness.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "it had reoriented itself.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "чудовище уже успело сориентироваться.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "518be80b4d664d46875ecbad3459b7dd",
+              "finding_id": "orientation-drift"
+            }
+          },
+          {
+            "id": "rabbit-fixed",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Block 74: the unusual image of a frightened rabbit's scream remains, now in idiomatic Russian syntax.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "through the rabbit scream of terror her thoughts had become",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "хотя её мысли теперь походили на пронзительный крик перепуганного кролика",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "518be80b4d664d46875ecbad3459b7dd",
+              "finding_id": "rabbit-image-calque"
+            }
+          },
+          {
+            "id": "unqueenly-fixed",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Block 93: she feels unlike a queen, matching the narrator's unqueenly contrast.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "so *unqueenly*",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "такой *не похожей на королеву*",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "518be80b4d664d46875ecbad3459b7dd",
+              "finding_id": "unqueenly-meaning"
+            }
           }
         ]
       }
