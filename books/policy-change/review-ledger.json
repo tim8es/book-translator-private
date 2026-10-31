@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "policy-change",
-  "next_sequence": 85,
+  "next_sequence": 86,
   "records": [
     {
       "record_id": "1f8894cd56d99429b1bb61e7540a8db1",
@@ -4410,6 +4410,86 @@
               "quote": "Вы будете голодны.",
               "occurrence": 0
             }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "09fb40670db7404b9b38dab18009deaa",
+      "sequence": 85,
+      "unit_id": "chapter-000032",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "c497a92c6bfbdc9a6d84db2bc9a80df55c1b35bd63b1eb18b5f8bba5303b769f",
+      "translation_sha256": "6605265b09e58f6819c7f9f53cd023144cbb65b30ed0c8790bafb3b7fa461bf3",
+      "workflow_revision": "c76159e4939ed00ac19172228f8972af87cadbb8",
+      "review_contract_revision": "docs/TRANSLATION.md@c76159e4939ed00ac19172228f8972af87cadbb8",
+      "reviewer_session_id": "policy-change-reviewer-20261031-ch32-a560dcded4dc4706aae844e72a689120",
+      "reviewed_at": "2026-10-31T11:53:17Z",
+      "state_revision": "87cfff5cfbb01fb96ce2a1d1b4122c6d68899bea",
+      "review_commit": null,
+      "correction_round": 2,
+      "supersedes_record_id": "3bf964a381fe4f50b97ca9705f0a79b5",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "exclusivity-gender-corrected",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "В реплике Ильи восстановлено обещание верности независимо от пола других потенциальных партнёров: «Никого другого — ни мужчин, ни женщин. Я хочу только тебя».",
+            "resolved": true,
+            "resolves": {
+              "record_id": "3bf964a381fe4f50b97ca9705f0a79b5",
+              "finding_id": "gender-meaning-shift"
+            },
+            "source_anchor": {
+              "quote": "No one else. Of any gender. I just want you.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Никого другого — ни мужчин, ни женщин. Я хочу только тебя.",
+              "occurrence": 0
+            }
+          },
+          {
+            "id": "palm-intimacy-phrase-corrected",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Вместо неестественной кальки восстановлено значение удивления Шейна, что обычное соприкосновение ладоней переживается настолько значимо.",
+            "resolved": true,
+            "resolves": {
+              "record_id": "3bf964a381fe4f50b97ca9705f0a79b5",
+              "finding_id": "palm-unnatural-calque"
+            },
+            "source_anchor": {
+              "quote": "The feeling of someone’s palm shouldn’t be so special.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Обычное прикосновение ладони не должно казаться чем-то настолько особенным.",
+              "occurrence": 0
+            }
+          },
+          {
+            "id": "boundaries-inner-monologue-omitted",
+            "category": "coverage",
+            "severity": "major",
+            "detail": "Между признанием Ильи «I just— broke» и ответным вопросом Шейна в переводе полностью пропущено отдельное предложение о том, что Шейн удерживается от желания забраться Илье на колени, и его внутренняя реплика «Boundaries». Сохранить эту деталь самоконтроля и внутреннего юмора героя (например: «Звучало нехорошо. Шейн мужественно сдержал желание забраться Илье на колени. *Границы.*»), затем проверить соседний диалог.",
+            "resolved": false,
+            "resolves": null,
+            "source_anchor": {
+              "quote": "Shane manfully held back the urge to climb into Ilya’s lap. *Boundaries.*",
+              "occurrence": 0
+            },
+            "translation_anchor": null
           }
         ]
       }
