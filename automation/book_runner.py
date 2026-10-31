@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """One bounded, recoverable step of automated Book Translator execution.
 
-Runs only in a verified PRIVATE GitHub Actions repository. All book mutations
+Runs in the existing repository, including with public visibility. Book mutations
 use the exact per-book pinned workflow CLI, with guarded Git commits.
 """
 from __future__ import annotations
@@ -69,7 +69,7 @@ def store_json(path: Path, value: dict) -> None:
 def request_for(job_id: str) -> dict:
     root = job_path(job_id)
     request = read_json(root / "request.json")
-    required = {"schema_version", "job_id", "source_sha256", "target_language"}
+    required = {"schema_version", "job_id", "source_sha256", "target_language", "public_release_acknowledged"}
     permitted = required | {"workflow_revision", "title", "author"}
     if (not required <= set(request) or not set(request) <= permitted or
             request["schema_version"] != 1 or request["job_id"] != job_id):
@@ -79,6 +79,8 @@ def request_for(job_id: str) -> dict:
     if not isinstance(request["target_language"], str) or not re.fullmatch(
             r"[a-z]{2}(?:-[A-Z]{2})?", request["target_language"]):
         raise JobError("invalid target language")
+    if request.get("public_release_acknowledged") is not True:
+        raise JobError("public repository upload requires explicit requester authorization")
     if "workflow_revision" in request and (
             not isinstance(request["workflow_revision"], str) or
             not SHA.fullmatch(request["workflow_revision"])):
@@ -404,8 +406,6 @@ def finalize(job_id: str, slug: str, status: dict) -> None:
 
 
 def run(job_id: str) -> dict:
-    if os.environ.get("AUTO_REPO_PRIVATE") != "true":
-        raise JobError("repository private-visibility gate was not passed")
     request = request_for(job_id)
     slug = "auto-" + job_id
     folder = ROOT / "books" / slug
