@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "wings-of-starlight-allison-saft",
-  "next_sequence": 51,
+  "next_sequence": 52,
   "records": [
     {
       "record_id": "d9b70e4cfbe5487a9f0d5e37bc1826af",
@@ -5467,6 +5467,147 @@
               "record_id": "bde5a4c1c190d1db26f45e3a730dfbbc",
               "finding_id": "nightmares-agent-ambiguity"
             }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "b2336ce6579240078ea911129be184cf",
+      "sequence": 51,
+      "unit_id": "chapter-000022",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "1af1861b437c9b027c5763044d075f688f51a22ab727d1489f98908cb33d731d",
+      "translation_sha256": "821fcbf8157d69b11978afaa32eb8e620c05312ecf7872266b21f08ce2c2dff3",
+      "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "review_contract_revision": "docs/TRANSLATION.md@14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "reviewer_session_id": "wings-ch19-independent-review-20261031-c94d2b3a",
+      "reviewed_at": "2026-10-31T17:20:11Z",
+      "state_revision": "b42c58634c77de41a80038d6b78a4ee221d79d305725e0d3467cb54d06e29431",
+      "review_commit": "04a34e624fe406b9b19a8d57c7e00c9f47dcf24a",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "patchwork-coat",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Блок 000013. «patched-together coat» означает пальто из заплаток, но «кое-как залатанное» добавляет небрежность, не предусмотренную оригиналом. «пальто, сшитое из заплаток».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "this patched-together coat",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "пальто, кое-как залатанное",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "frozen-river",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Блок 000041. Река «frozen solid» полностью замёрзла, а «Внизу текла река» подразумевает течение. Исправить на «Внизу протянулась река, скованная льдом».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Below them was a river, frozen solid",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Внизу текла река, скованная льдом",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "breathless-laugh",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Блок 000051. «laugh breathlessly» — смех с перехваченным дыханием, не обязательно беззвучный. Убрать добавленное «беззвучно».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "laugh breathlessly",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "беззвучно, с перехваченным дыханием рассмеяться",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "dance-permission",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Блок 000082. «You may» — разрешение на приглашение к танцу, а русское «Осмелишься» означает вопрос или вызов. Передать «Позволяю».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“You may.”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Осмелишься».",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "thought-italics",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Блок 000111. В оригинале «This, she thought, was enough» без курсива; русский вводит лишнее выделение. Убрать курсив и оставить мысль с ремаркой внутри фразы.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "This, she thought, was enough.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "*Этого достаточно,* — подумала она.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "unidiomatic-resentment",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Блок 000107. «Как же досадовали ей сейчас собственные ограничения» — неестественное словоупотребление вместо живого переживания героини. «Как же её сейчас злили собственные ограничения».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "How she resented her own limitations right now",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Как же досадовали ей сейчас собственные ограничения",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "contradictory-double-negative",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Блок 000008. Неудачная двойная отрицательная конструкция «не совсем не права». Передать «Возможно, Петра ошибалась *не во всём*», сохраняя акцент.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Perhaps Petra hadn’t been *entirely* wrong.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Возможно, Петра была *не совсем* не права.",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       }

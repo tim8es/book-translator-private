@@ -1,0 +1,151 @@
+{
+  "schema_version": 1,
+  "request_id": "e24f3c9590d34a53a966c9b2f93fa22f",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "67fe02dddc052037c80204b21cf9d25732716b923e32324b0d6d1950f643380d",
+    "record": {
+      "correction_round": 1,
+      "outcome": "CORRECTIONS_REQUIRED",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "independent_session",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "meaning",
+            "detail": "Блок 000013. «patched-together coat» означает пальто из заплаток, но «кое-как залатанное» добавляет небрежность, не предусмотренную оригиналом. «пальто, сшитое из заплаток».",
+            "id": "patchwork-coat",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "this patched-together coat"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "пальто, кое-как залатанное"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Блок 000041. Река «frozen solid» полностью замёрзла, а «Внизу текла река» подразумевает течение. Исправить на «Внизу протянулась река, скованная льдом».",
+            "id": "frozen-river",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Below them was a river, frozen solid"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Внизу текла река, скованная льдом"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Блок 000051. «laugh breathlessly» — смех с перехваченным дыханием, не обязательно беззвучный. Убрать добавленное «беззвучно».",
+            "id": "breathless-laugh",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "laugh breathlessly"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "беззвучно, с перехваченным дыханием рассмеяться"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Блок 000082. «You may» — разрешение на приглашение к танцу, а русское «Осмелишься» означает вопрос или вызов. Передать «Позволяю».",
+            "id": "dance-permission",
+            "resolved": false,
+            "resolves": null,
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "“You may.”"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "«Осмелишься»."
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Блок 000111. В оригинале «This, she thought, was enough» без курсива; русский вводит лишнее выделение. Убрать курсив и оставить мысль с ремаркой внутри фразы.",
+            "id": "thought-italics",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "This, she thought, was enough."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "*Этого достаточно,* — подумала она."
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Блок 000107. «Как же досадовали ей сейчас собственные ограничения» — неестественное словоупотребление вместо живого переживания героини. «Как же её сейчас злили собственные ограничения».",
+            "id": "unidiomatic-resentment",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "How she resented her own limitations right now"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Как же досадовали ей сейчас собственные ограничения"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Блок 000008. Неудачная двойная отрицательная конструкция «не совсем не права». Передать «Возможно, Петра ошибалась *не во всём*», сохраняя акцент.",
+            "id": "contradictory-double-negative",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Perhaps Petra hadn’t been *entirely* wrong."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Возможно, Петра была *не совсем* не права."
+            }
+          }
+        ]
+      },
+      "record_id": "b2336ce6579240078ea911129be184cf",
+      "review_commit": "04a34e624fe406b9b19a8d57c7e00c9f47dcf24a",
+      "review_contract_revision": "docs/TRANSLATION.md@14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "reviewed_at": "2026-10-31T17:20:11Z",
+      "reviewer_session_id": "wings-ch19-independent-review-20261031-c94d2b3a",
+      "sequence": 51,
+      "source_sha256": "1af1861b437c9b027c5763044d075f688f51a22ab727d1489f98908cb33d731d",
+      "state_revision": "b42c58634c77de41a80038d6b78a4ee221d79d305725e0d3467cb54d06e29431",
+      "supersedes_record_id": null,
+      "translation_sha256": "821fcbf8157d69b11978afaa32eb8e620c05312ecf7872266b21f08ce2c2dff3",
+      "unit_id": "chapter-000022",
+      "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5"
+    }
+  },
+  "error": null
+}
