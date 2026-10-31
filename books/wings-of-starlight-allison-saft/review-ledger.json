@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "wings-of-starlight-allison-saft",
-  "next_sequence": 60,
+  "next_sequence": 61,
   "records": [
     {
       "record_id": "d9b70e4cfbe5487a9f0d5e37bc1826af",
@@ -6693,6 +6693,111 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "314236885cbd46f88755645bcbb0a003",
+      "sequence": 60,
+      "unit_id": "chapter-000024",
+      "outcome": "PASS",
+      "source_sha256": "852dd4ccb2572b85b12ad410285178bcc67608776d6f344e76ffe6a49c16ae59",
+      "translation_sha256": "7a7d4e1ec974118f87a5b35d735d628e583e33a4a8a60f2ed28a9198012b5098",
+      "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "review_contract_revision": "docs/TRANSLATION.md@14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "reviewer_session_id": "wings-ch21-review-20261031-4aa1debd",
+      "reviewed_at": "2026-10-31T17:57:13Z",
+      "state_revision": "c5dc229860ebaf644845446a7928eb4f8006e2bbda5114fbcd5b00b257da3140",
+      "review_commit": "2a222fe07dee860e41a187cc3b52ddec38253ea8",
+      "correction_round": 2,
+      "supersedes_record_id": "a18671b12e0750dfa1b265e88b8916d3",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-01",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "Блок 000016: сохранён авторский обрыв на многоточии, без добавленного вопроса о прочности защиты.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "The protective wards were powerful, but against an onslaught of monsters…",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Защитные чары были сильны, но против натиска чудовищ…",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "a18671b12e0750dfa1b265e88b8916d3",
+              "finding_id": "ward-ellipsis-to-question"
+            }
+          },
+          {
+            "id": "recheck-02",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Блок 000038: золотистая магия передана как свет, а не буквальный металл.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Frost swirled around him as gold pooled in her palms.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Вокруг него кружился иней, а в её ладонях скапливался золотистый свет.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "a18671b12e0750dfa1b265e88b8916d3",
+              "finding_id": "gold-light-literal-metal"
+            }
+          },
+          {
+            "id": "recheck-03",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Блок 000049: естественная русская конструкция сохраняет промах стрелы рядом с плечом.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "it narrowly missed its shoulder.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "та едва не задела его плечо.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "a18671b12e0750dfa1b265e88b8916d3",
+              "finding_id": "arrow-near-miss-calque"
+            }
+          },
+          {
+            "id": "recheck-04",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Блок 000056: естественная фраза без кальки передаёт всплеск эмоций и магии.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "The force of her emotion tore through her, then exploded outward in a blinding arc of light.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Волна чувств прошила Клэрион насквозь, а затем вырвалась наружу ослепительной дугой света.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "a18671b12e0750dfa1b265e88b8916d3",
+              "finding_id": "emotion-through-her-calque"
+            }
           }
         ]
       }

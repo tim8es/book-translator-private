@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "request_id": "d0dc8ff5621747e68dd9f4249fb9a108",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "9c9e76df67d6fe561c7ec1b39c7ee1d26ea21b47136f3ec099dba641b2794829",
+    "record": {
+      "correction_round": 2,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "independent_session",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "structure",
+            "detail": "Блок 000016: сохранён авторский обрыв на многоточии, без добавленного вопроса о прочности защиты.",
+            "id": "recheck-01",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "ward-ellipsis-to-question",
+              "record_id": "a18671b12e0750dfa1b265e88b8916d3"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "The protective wards were powerful, but against an onslaught of monsters…"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Защитные чары были сильны, но против натиска чудовищ…"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Блок 000038: золотистая магия передана как свет, а не буквальный металл.",
+            "id": "recheck-02",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "gold-light-literal-metal",
+              "record_id": "a18671b12e0750dfa1b265e88b8916d3"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Frost swirled around him as gold pooled in her palms."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Вокруг него кружился иней, а в её ладонях скапливался золотистый свет."
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Блок 000049: естественная русская конструкция сохраняет промах стрелы рядом с плечом.",
+            "id": "recheck-03",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "arrow-near-miss-calque",
+              "record_id": "a18671b12e0750dfa1b265e88b8916d3"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "it narrowly missed its shoulder."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "та едва не задела его плечо."
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Блок 000056: естественная фраза без кальки передаёт всплеск эмоций и магии.",
+            "id": "recheck-04",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "emotion-through-her-calque",
+              "record_id": "a18671b12e0750dfa1b265e88b8916d3"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "The force of her emotion tore through her, then exploded outward in a blinding arc of light."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Волна чувств прошила Клэрион насквозь, а затем вырвалась наружу ослепительной дугой света."
+            }
+          }
+        ]
+      },
+      "record_id": "314236885cbd46f88755645bcbb0a003",
+      "review_commit": "2a222fe07dee860e41a187cc3b52ddec38253ea8",
+      "review_contract_revision": "docs/TRANSLATION.md@14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "reviewed_at": "2026-10-31T17:57:13Z",
+      "reviewer_session_id": "wings-ch21-review-20261031-4aa1debd",
+      "sequence": 60,
+      "source_sha256": "852dd4ccb2572b85b12ad410285178bcc67608776d6f344e76ffe6a49c16ae59",
+      "state_revision": "c5dc229860ebaf644845446a7928eb4f8006e2bbda5114fbcd5b00b257da3140",
+      "supersedes_record_id": "a18671b12e0750dfa1b265e88b8916d3",
+      "translation_sha256": "7a7d4e1ec974118f87a5b35d735d628e583e33a4a8a60f2ed28a9198012b5098",
+      "unit_id": "chapter-000024",
+      "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5"
+    }
+  },
+  "error": null
+}
