@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "wings-of-starlight-allison-saft",
-  "next_sequence": 61,
+  "next_sequence": 62,
   "records": [
     {
       "record_id": "d9b70e4cfbe5487a9f0d5e37bc1826af",
@@ -6798,6 +6798,115 @@
               "record_id": "a18671b12e0750dfa1b265e88b8916d3",
               "finding_id": "emotion-through-her-calque"
             }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "da375e3bfffd68851acfc7fffb0f96b2",
+      "sequence": 61,
+      "unit_id": "chapter-000028",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "1fb01f661ca7557b31b86402697b97f38c944d3e1681a0471cba0a92a70e4b1c",
+      "translation_sha256": "5180510c9ec7239a1e5063e40169a483125fdef34e8f267703ea2ffb01ae8ea4",
+      "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "review_contract_revision": "docs/TRANSLATION.md@14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "reviewer_session_id": "wings-ch25-independent-review-20261031-c47bd915",
+      "reviewed_at": "2026-10-31T17:57:54Z",
+      "state_revision": "bdc9c7f17ab56fc6299fc9855502f2f06218ea39",
+      "review_commit": "82d24f674e250ff05c4906513072970d20df76b4",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "winter-governance-direction",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Block 000013: 'We have ... no involvement in Winter' means the existing court/government does not participate in Winter's affairs. Translation reverses the relation to 'Winter does not participate in governing'. Keep the exact directional meaning.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "We have three Seasonal Ministers and no involvement in Winter.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "У нас есть три сезонных министра, но Зима никак не участвует в управлении.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "sparrow-man-image-omitted",
+            "category": "omission",
+            "severity": "minor",
+            "detail": "Block 000054: the distinctive epithet 'sparrow man' is flattened to 'юноша', losing the sparrow image/identification. Restore a natural Russian rendering of the figurative characterization.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "the sparrow man she’d once thought so stoic",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "тем юношей, который когда-то казался ей таким суровым и невозмутимым",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "warm-fairies-glossary",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "Block 000061: 'warm fairies' is established in glossary as 'феи тёплых краёв'; 'тёплые феи' suggests physical warmth or disposition. Restore glossary wording.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "the warm fairies",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "тёплые феи",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "did-not-to-did-not-want",
+            "category": "modality",
+            "severity": "minor",
+            "detail": "Block 000065: 'did not—or could not—answer' preserves the uncertainty between not answering and being unable. Russian 'не хотела или не могла' invents a motive, unwillingness. Preserve source distinction.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "questions she did not—or could not—answer",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "вопросами, на которые она не хотела или не могла отвечать",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "seasons-geography-to-calendar",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Block 000084: 'Unifying the seasons' refers to the seasonal territories/fairy communities, not chronological times of year. 'Объединение времён года' is misleading; use 'объединение сезонных краёв' or equivalent.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Unifying the seasons is a very strong way to begin your reign.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Объединение времён года — очень достойное начало твоего правления.",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       }
