@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "wings-of-starlight-allison-saft",
-  "next_sequence": 21,
+  "next_sequence": 22,
   "records": [
     {
       "record_id": "d9b70e4cfbe5487a9f0d5e37bc1826af",
@@ -1978,6 +1978,131 @@
               "record_id": "bc581f770f0a4bf48dfd11a8875a098f",
               "finding_id": "agency-opportunity"
             }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "e836c8d430f04158b943740259a5e9f0",
+      "sequence": 21,
+      "unit_id": "chapter-000011",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "d7b5db8c94e0d115092d081db33affd1590a1c32dd75eb9123578cf99ac8647e",
+      "translation_sha256": "6340404b3d14f03bb1f27c4f1318aa53ceb8ef38aead38a462df83bc0515153f",
+      "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "review_contract_revision": "docs/TRANSLATION.md@14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "reviewer_session_id": "wings-ch8-independent-review-20261031-8af4dc7e",
+      "reviewed_at": "2026-10-31T14:50:28Z",
+      "state_revision": "fd3ec35addb96b61e07dd7c4a7b67d0be1907ff0abc65a8338be0e34309d1b2e",
+      "review_commit": "80c90925885d3bb9bb44eaf147895b8309dbbbb7",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "invented-self-correction",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Block 9: original states a free afternoon. Russian adds an invented self-correction «То есть остаток дня», changing the speech rhythm and characterization; use «Сегодня после обеда я свободна».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "I have a free afternoon",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "У меня свободный день. То есть остаток дня",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "guard-safety-grammar",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Block 24: «оберегать вашу безопасность» is semantically redundant, grammatically unnatural. Use «мне приказано заботиться о вашей *безопасности*».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "my orders are to keep you *safe*",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "мне приказано оберегать вашу *безопасность*",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "guard-cosseted-reference",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Block 35: in «the cosseted life of a queen-in-training’s personal guard», the cosseted life is Artemis's, not the queen-in-training's. Russian «будущей королевы, окружённой неусыпной заботой» attaches the qualification to the wrong person. Fix the referent.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "the cosseted life of a queen-in-training’s personal guard",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "жизнь личной охранницы будущей королевы, окружённой неусыпной заботой",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "silence-betrayal-calque",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Block 67: «приняв её молчание за чувство предательства» is unidiomatic and imprecise; Milori takes Clarion's silence to signal she feels betrayed. Use «решив, что её молчание означает: она почувствовала себя преданной».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Clearly mistaking her silence for betrayal",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Явно приняв её молчание за чувство предательства",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "answer-abundance-drift",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Block 74: «never want for answers again» means never lack answers, while «не пришлось бы искать ответы наугад» changes the focus to random searching. Use «Теперь она никогда не останется без ответов».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Clarion would never want for answers again.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Клэрион больше никогда не пришлось бы искать ответы наугад.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "winter-fend-idiom",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Block 98: «Вот ещё одна беда, с которой они оставили Зиму справляться самостоятельно» is an awkward calque and dilutes the abandonment by warm seasons. Convey «Вот ещё один пример того, как они бросили Зиму на произвол судьбы».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Here was yet another way they’d left Winter to fend for itself.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Вот ещё одна беда, с которой они оставили Зиму справляться самостоятельно.",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       }
