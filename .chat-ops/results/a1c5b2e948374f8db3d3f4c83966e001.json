@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "request_id": "a1c5b2e948374f8db3d3f4c83966e001",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "e961ba2613bdf6dba6683977fedab35c7e5b35b5e78b6bf7f0f67003e01c4e0e",
+    "record": {
+      "correction_round": 1,
+      "outcome": "CORRECTIONS_REQUIRED",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "independent_session",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "meaning",
+            "detail": "The English describes Saft as a New York Times and indie bestselling author, without asserting that every named book individually appeared on both lists. Russian participial phrase «вошедших в списки» applies to all titles and overstates the factual claim; attach bestseller status to the author instead.",
+            "id": "bestseller-list-overstatement",
+            "resolved": false,
+            "resolves": null,
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "the *New York Times* and indie bestselling author of"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "вошедших в списки *The New York Times* и независимых книжных магазинов"
+            }
+          }
+        ]
+      },
+      "record_id": "73feff5e82524f60999ac9284951015f",
+      "review_commit": "b9655308d9ffce3e6eb9a88cd7e04995e2ea9557",
+      "review_contract_revision": "docs/TRANSLATION.md@14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "reviewed_at": "2026-10-31T15:41:05Z",
+      "reviewer_session_id": "wings-author-review-20261031-d115c8ed",
+      "sequence": 29,
+      "source_sha256": "784e67c2d234469306e81005603e66bdc873a4c18c7b3a23dd9057a0551ac050",
+      "state_revision": "83d67e7763489237389d1a606fb5f2a7ad78e932b68142ffebb0bb51fc7f5995",
+      "supersedes_record_id": null,
+      "translation_sha256": "1d9f5a5865cde0a64925843d37182ab7b895331545a712568aa1e9741e4673cd",
+      "unit_id": "chapter-000032",
+      "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5"
+    }
+  },
+  "error": null
+}

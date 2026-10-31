@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "wings-of-starlight-allison-saft",
-  "next_sequence": 29,
+  "next_sequence": 30,
   "records": [
     {
       "record_id": "d9b70e4cfbe5487a9f0d5e37bc1826af",
@@ -2856,6 +2856,51 @@
             },
             "translation_anchor": {
               "quote": "Назвать её увлечённой своим делом значило бы преуменьшить дело до нелепости.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "73feff5e82524f60999ac9284951015f",
+      "sequence": 29,
+      "unit_id": "chapter-000032",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "784e67c2d234469306e81005603e66bdc873a4c18c7b3a23dd9057a0551ac050",
+      "translation_sha256": "1d9f5a5865cde0a64925843d37182ab7b895331545a712568aa1e9741e4673cd",
+      "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "review_contract_revision": "docs/TRANSLATION.md@14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "reviewer_session_id": "wings-author-review-20261031-d115c8ed",
+      "reviewed_at": "2026-10-31T15:41:05Z",
+      "state_revision": "83d67e7763489237389d1a606fb5f2a7ad78e932b68142ffebb0bb51fc7f5995",
+      "review_commit": "b9655308d9ffce3e6eb9a88cd7e04995e2ea9557",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "bestseller-list-overstatement",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "The English describes Saft as a New York Times and indie bestselling author, without asserting that every named book individually appeared on both lists. Russian participial phrase «вошедших в списки» applies to all titles and overstates the factual claim; attach bestseller status to the author instead.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "the *New York Times* and indie bestselling author of",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "вошедших в списки *The New York Times* и независимых книжных магазинов",
               "occurrence": 0
             },
             "resolves": null
