@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "wings-of-starlight-allison-saft",
-  "next_sequence": 38,
+  "next_sequence": 39,
   "records": [
     {
       "record_id": "d9b70e4cfbe5487a9f0d5e37bc1826af",
@@ -3743,6 +3743,149 @@
             "resolves": {
               "record_id": "17b9ee0d14204cedade2d865bd59f0d8",
               "finding_id": "invented-italics"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "763d81b87fc240a5be4648b85b8fd4bd",
+      "sequence": 38,
+      "unit_id": "chapter-000015",
+      "outcome": "PASS",
+      "source_sha256": "e8ce287649aa8e4dbe4cedbd2d1365174f27134fe46c1957012bfe3f9595cdcb",
+      "translation_sha256": "8f1c18f59a06ab7b4531d653aecd0b9ee598ccf04faeef4963e1db2758881e73",
+      "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "review_contract_revision": "docs/TRANSLATION.md@14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "reviewer_session_id": "wings-ch12-review-20261031-19bd60e8",
+      "reviewed_at": "2026-10-31T16:38:08Z",
+      "state_revision": "cf7c3bb03a05a8c60cb84bb5cea81dd08a8000f378a859ff94918385ac5992ee",
+      "review_commit": "8bd7f82c71822a76cfba35988c00979430fbc1f6",
+      "correction_round": 1,
+      "supersedes_record_id": "5cae49bf044b4b8698abdae4cb6656c4",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-01",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Блок 000044: верно восстановлены все возможности дара правления вместо общей силы.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "couldn’t access the full range of her governing-talent magic",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "ей доступны далеко не все возможности дара правления",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "5cae49bf044b4b8698abdae4cb6656c4",
+              "finding_id": "governing-range-confused"
+            }
+          },
+          {
+            "id": "recheck-02",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Блок 000048: название Зал Зимы согласовано с предыдущими главами.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Hall of Winter’s doors",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "дверях Зала Зимы",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "5cae49bf044b4b8698abdae4cb6656c4",
+              "finding_id": "hall-name-inconsistent"
+            }
+          },
+          {
+            "id": "recheck-03",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Блок 000058: топоним Неверское море теперь соответствует принятому употреблению.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Never Sea",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "над Неверским морем",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "5cae49bf044b4b8698abdae4cb6656c4",
+              "finding_id": "never-sea-inconsistent"
+            }
+          },
+          {
+            "id": "recheck-04",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Блок 000067: противопоставление расцвета и упадка передано без замены на рождение и исчезновение.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Things rise and fall according to its designs",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Всё переживает расцвет и упадок по её законам",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "5cae49bf044b4b8698abdae4cb6656c4",
+              "finding_id": "rise-and-fall-drift"
+            }
+          },
+          {
+            "id": "recheck-05",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Блок 000070: восстановлено исчезновение категории фей, а не их абстрактного дара.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "an entire talent of fairy, lost to time",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "целая группа фей с даром сновидений исчезла с течением веков",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "5cae49bf044b4b8698abdae4cb6656c4",
+              "finding_id": "entire-talent-lost"
+            }
+          },
+          {
+            "id": "recheck-06",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Блок 000114: естественная цельная формулировка про почти обретённую уверенность.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "she could almost convince herself it was true",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "она почти готова была поверить, что это правда",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "5cae49bf044b4b8698abdae4cb6656c4",
+              "finding_id": "convince-herself-truncated"
             }
           }
         ]
