@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "policy-change",
-  "next_sequence": 76,
+  "next_sequence": 77,
   "records": [
     {
       "record_id": "1f8894cd56d99429b1bb61e7540a8db1",
@@ -3612,6 +3612,83 @@
             },
             "translation_anchor": {
               "quote": "Вибе предательски взглянул на коробку.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "794d3153aa414d158e96ed07af4a9c2b",
+      "sequence": 76,
+      "unit_id": "chapter-000042",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "bc39e374843fe44f4cd69a76601975b5c59a116bdf0197643120b504e15aaacd",
+      "translation_sha256": "ce7757c9d1e3ed6f2b133ccae798ff8be0e8cc2254bca54c34878edf5a5314cf",
+      "workflow_revision": "c76159e4939ed00ac19172228f8972af87cadbb8",
+      "review_contract_revision": "docs/TRANSLATION.md@c76159e4939ed00ac19172228f8972af87cadbb8",
+      "reviewer_session_id": "policy-change-reviewer-20261031-ch42-53c6f9",
+      "reviewed_at": "2026-10-31T11:06:38Z",
+      "state_revision": "4f6bfd16556d8bb5cd51352a9b9096e9babc7551",
+      "review_commit": null,
+      "correction_round": 0,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "coach-bus-as-trainer",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "В фразе «... shared a locker room with and coaches and planes and sometimes rooms» coaches — это автобусы (транспорт в поездках), а не тренеры. Русское «раздевалки у тренеров» является ошибочным дополнением и теряет поездки на автобусах. Исправить: «парни, с которыми он делил раздевалку, ездил в автобусах и самолётах, а иногда жил в одном номере».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "he shared a locker room with and coaches and planes and sometimes rooms",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "раздевалку, раздевалки у тренеров, самолёты, а иногда и номера",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "wiebe-name-wrong",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "Имя Wiebe в ранее принятом переводе главы 63 передано как «Вибе»; в главе 42 встречается «Уиб». Согласовать транскрипцию имени на уровне корпуса, предпочтительно «Вибе».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Wiebe was right.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Уиб был прав.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "odometer-as-speedometer",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "В оригинале Shane glanced at the odometer (одометр, счётчик пробега); перевод заменил конкретный прибор на спидометр. Авторское слово сохранению подлежит даже при кажущейся неестественности в контексте сброса скорости. Вернуть «одометр» либо обосновать решение в корректуре.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Shane glanced at the odometer and eased his foot off the gas.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Шейн посмотрел на спидометр и чуть отпустил газ.",
               "occurrence": 0
             },
             "resolves": null
