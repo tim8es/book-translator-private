@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "wings-of-starlight-allison-saft",
-  "next_sequence": 10,
+  "next_sequence": 11,
   "records": [
     {
       "record_id": "d9b70e4cfbe5487a9f0d5e37bc1826af",
@@ -800,6 +800,83 @@
               "record_id": "46eca3d97e924149b0b0df696fc77281",
               "finding_id": "fundamental-skill-calque"
             }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "25a61f94def54ba7b7508170fd2f3c3f",
+      "sequence": 10,
+      "unit_id": "chapter-000006",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "0695548d5e6e6c3a058806fb6ac3f61fb89dfc3bb3f40a2b9731bad956a094e1",
+      "translation_sha256": "fd5f6003cdcf445e4134d5a56ecb44b175d6a5380dfa3db4038ff940ab8444c0",
+      "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "review_contract_revision": "docs/TRANSLATION.md@14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "reviewer_session_id": "wings-reviewer-bounded-20261031-3f8162dc",
+      "reviewed_at": "2026-10-31T12:07:28Z",
+      "state_revision": "2be4d5b2e5c9590bdf2ac4a25826b4a6a0208cb5e32521bfe8bb2adef086e62e",
+      "review_commit": "268aff05f48f75b71dd03cff5f267cb5174bfc2d",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "color-palette-not-flowers",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Блок 000040. Iris asks about the colors of the bouquets. «Поговорим о цветах» in this context may be read as flowers rather than the color palette, which loses the specific question. Convey «Давайте обсудим цветовую гамму» or «Поговорим об оттенках».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Talk to me about colors. What do you think of these?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Давайте поговорим о цветах. Что вы думаете об этих?",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "tangent-road-calque",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Блок 000051. «сворачивали всё дальше на боковые тропинки собственного разговора» is a literal, awkward calque that reads unnaturally in Russian. Preserve the playful metaphor for ministers straying off-topic with idiomatic wording such as «всё дальше забредали в закоулки постороннего разговора».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "wandered down the back roads of their tangent",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "сворачивали всё дальше на боковые тропинки собственного разговора",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "anger-flower-imagery",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Блок 000082. Original uses a seed that bursts into full bloom, reinforcing fairy-world botanical imagery. Translation replaces the metaphor with a spark and fire, rewriting a significant image. Restore growth/blooming metaphor in Russian without exaggerating the anger.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "that seed of anger flared into full bloom within her",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "искра гнева внутри неё разгорелась ярким пламенем",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       }
