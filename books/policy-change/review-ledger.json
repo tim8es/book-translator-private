@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "policy-change",
-  "next_sequence": 92,
+  "next_sequence": 93,
   "records": [
     {
       "record_id": "1f8894cd56d99429b1bb61e7540a8db1",
@@ -4838,6 +4838,83 @@
               "quote": "Мой бывший тренер в КХЛ по сравнению с собой сделал бы *Леклера* котёнком.",
               "occurrence": 0
             },
+            "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "30ae917ae17249cbab4fcf1d8741ec47",
+      "sequence": 92,
+      "unit_id": "chapter-000048",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "5d30c9936b43f344e2f3ba9aa4997fca5dded97b6fb5948b75625a1cbdb2305d",
+      "translation_sha256": "64b9310f41289bb5adaacc779bb63aaf6e1f8f0e9eae916466282259d33a2938",
+      "workflow_revision": "c76159e4939ed00ac19172228f8972af87cadbb8",
+      "review_contract_revision": "docs/TRANSLATION.md@c76159e4939ed00ac19172228f8972af87cadbb8",
+      "reviewer_session_id": "policy-change-reviewer-20261031-ch48-67c2e1b8a42d42a39a8a1c7d444776d6",
+      "reviewed_at": "2026-10-31T12:50:34Z",
+      "state_revision": "f2cd3b5ac2a1a003c6cd62634eb53df925e82378",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "out-identity-overreach",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Исходное «We’re both out now» сообщает, что оба героя уже совершили каминг-аут, но не классифицирует обоих как геев. «Теперь мы оба открытые геи» добавляет не заявленную в оригинале определённость в идентичности; восстановить нейтральное «Мы оба теперь совершили каминг-аут» / «Мы оба уже не скрываем свою ориентацию».",
+            "source_anchor": {
+              "quote": "We’re both out now so.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Теперь мы оба открытые геи.",
+              "occurrence": 0
+            },
+            "resolved": false,
+            "resolves": null
+          },
+          {
+            "id": "grandfather-chip-idiom",
+            "category": "referent",
+            "severity": "minor",
+            "detail": "Дедушка говорит «Just like me. A real chip off the old block» — Шейн похож на самого дедушку. Русское «Настоящий сын своего отца» переносит сходство на Дэвида, противореча предыдущему «Точно как я». Исправить на «Весь в деда» / «Моя кровь».",
+            "source_anchor": {
+              "quote": "Just like me. A real chip off the old block.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Точно как я. Настоящий сын своего отца.",
+              "occurrence": 0
+            },
+            "resolved": false,
+            "resolves": null
+          },
+          {
+            "id": "wiebe-name-ch48",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "Фамилия Wiebe дважды передана как «Уиб» («Уиба», «Уибу»), тогда как в прошедшей принятие версии главы 15 и соседних главах используется «Вибе». Привести обе формы к единому «Вибе» с правильным падежом.",
+            "source_anchor": {
+              "quote": "Wiebe’s crazy suggestion about Shane",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "безумное предложение Уиба",
+              "occurrence": 0
+            },
+            "resolved": false,
             "resolves": null
           }
         ]
