@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "wings-of-starlight-allison-saft",
-  "next_sequence": 55,
+  "next_sequence": 56,
   "records": [
     {
       "record_id": "d9b70e4cfbe5487a9f0d5e37bc1826af",
@@ -6016,6 +6016,147 @@
               "record_id": "20e1f6b5310b445589593104f19892ac",
               "finding_id": "thought-attribution-dash"
             }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "c62eb1fbc84d4c9faf6b33707f4f4e53",
+      "sequence": 55,
+      "unit_id": "chapter-000025",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "2a7783e97c276fef46b7bc5a8ed298d62af6afaaa23561f50024463a3fc4e33d",
+      "translation_sha256": "0e1a769fbf7c7330a3bd5083acae367e21e695e86c4b3359f54e2623595f3430",
+      "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "review_contract_revision": "docs/TRANSLATION.md@14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "reviewer_session_id": "wings-ch22-independent-review-20261031-a8f290a1",
+      "reviewed_at": "2026-10-31T17:49:44Z",
+      "state_revision": "d10e7b4476f86c8b83de5977736412a5e4203d56",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "remote-perception-mislocated",
+            "category": "referent",
+            "severity": "minor",
+            "detail": "Блок 000008: Distantly описывает смутное восприятие Клэрион в полубессознательном состоянии, а не пространственную удалённость Милори. Лучше «Сквозь забытьё Клэрион поняла, что Милори тихо говорит с Ярроу».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Distantly, she registered that Milori was speaking to Yarrow in low tones.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Где-то далеко Милори вполголоса говорил с Ярроу.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "storm-thought-added-italic",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "Блок 000020: оригинал не выделяет мысль курсивом, а перевод добавляет *Метель закончилась*. Убрать дополнительное выделение, сохранив неясную мысль героини.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "The storm had cleared, she thought hazily.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "*Метель закончилась*, смутно подумала она.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "let-go-invented-hands",
+            "category": "addition",
+            "severity": "major",
+            "detail": "Блок 000022: Let go описывает отказ от борьбы/сознания, не конкретное разжимание рук. Перевод изобретает предметное действие «отпустить руки». Возможный вариант: «Стоило ей перестать держаться — и, казалось, она уплывёт прочь».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "If she let go, she thought she might drift away.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "стоит ей отпустить руки — и она уплывёт прочь.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "teleport-manage-vs-try",
+            "category": "modality",
+            "severity": "major",
+            "detail": "Блок 000052: If she could manage it ... означает суметь совершить телепортацию, а не просто попытаться. Лучше: «Если ей суждено суметь сделать это хоть раз в жизни, то именно сейчас».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "If she could manage it just once in her lifetime, it had to be now.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Если уж попробовать хотя бы раз в жизни, то сейчас.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "panic-agonized-calque",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Блок 000055: «Милори медленно сменил панику на мучительную боль» звучит как сознательная замена эмоции и нарушает образ тающей паники. Лучше: «По мере того как он вглядывался в неё, паника на его лице медленно уступала мучительной боли».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "his panic slowly melted into agony.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Милори медленно сменил панику на мучительную боль.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "melting-infinitive",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Блок 000077: английское *Melting* означает крылья тают; русский изолированный инфинитив «*Таять.*» здесь неестественен. Вернуть фрагментарность, передав «*Нет, — подумала она. — Тают.*» с сохранением акцентов и исходного порядка.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "*No,* she thought. *Melting.*",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "*Нет*, подумала она. *Таять.*",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "elvina-unnatural-sound",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Блок 000092: калька «издала звук между восхищением и недоверием» грамматически неестественна. Лучше: «Эльвина издала звук, в котором смешались восхищение и недоверие».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "somewhere between admiration and disbelief.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Эльвина издала звук между восхищением и недоверием.",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       }
