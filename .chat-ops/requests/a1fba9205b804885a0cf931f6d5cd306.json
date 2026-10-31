@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "request_id": "a1fba9205b804885a0cf931f6d5cd306",
+  "book_slug": "wings-of-starlight-allison-saft",
+  "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+  "operation": "review-record",
+  "chapter": 5,
+  "session_id": "wings-reviewer-bounded-20261031-6cd902f3",
+  "outcome": "CORRECTIONS_REQUIRED",
+  "quality_report": {
+    "evidence_version": 2,
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "id": "unfounded-lamp",
+        "category": "addition",
+        "severity": "minor",
+        "detail": "Блок 000002. В оригинале оставлен включённым свет; конкретная лампа не названа. «Сияние лампы» добавляет не подтверждённый оригиналом источник освещения. Заменить на нейтральное «свет, который она оставила включённым в спальне».",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "the glow of the light she’d left on in her bedroom",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "сияние лампы, оставленной в спальне",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "catastrophizing-meaning",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Блок 000039. Catastrophizing — склонность воображать худшее и преувеличивать опасности, а не «предвидеть катастрофы» (что предполагает обоснованное предсказание). Исправить, сохранив добрую иронию повествования.",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "she considered catastrophizing one of Petra’s many charms",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "привычку предвидеть катастрофы она считала одним из многочисленных очаровательных качеств Петры",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "pining-unrequited-addition",
+        "category": "addition",
+        "severity": "minor",
+        "detail": "Блок 000047. Ten years of pining не устанавливает, что чувства безответные. «Безответных» навязывает вывод о взаимности, которого в оригинале нет. Оставить «десять лет томления» или близкое по смыслу выражение.",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "Ten years of pining was long enough.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Десять лет безответных томлений — это уже слишком.",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "afternoon-sun-calque",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Блок 000051. «Луч позднего послеобеденного солнца» — буквальная калька late-afternoon, неестественная в литературном русском. Передать как «луч предвечернего солнца» или равноценным оборотом, не меняя времени суток.",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "a blade of late-afternoon sunlight cut into the walkway",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "острый луч позднего послеобеденного солнца",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "fundamental-skill-calque",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Блок 000073. «Самым основным умением» — неудачное избыточное сочетание, не сохраняющее естественный регистр Эльвины. Уместнее «самым главным навыком нашей магии» или «самым простым её умением» с учётом фундаментальности.",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "the most fundamental skill of our magic",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "самым основным умением нашей магии",
+          "occurrence": 0
+        },
+        "resolves": null
+      }
+    ]
+  },
+  "source_sha256": "cbfd137bf15167545b6ff2490567c8093987749ac01c6d0a9d6c7c12943c65f6",
+  "translation_sha256": "6a4ec10074b2300424f41e10a8176b9d8deed0ce2928b0ea2cf86a1398fca6e0"
+}
