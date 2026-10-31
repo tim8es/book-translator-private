@@ -1,0 +1,153 @@
+{
+  "schema_version": 1,
+  "request_id": "ed7d4fe2f53846bdb801dd548e03b7f5",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "9befa0aa7b1f27a3d1545502ba59e3165a1d658d721efb3f0f764dc303dcb7ba",
+    "record": {
+      "correction_round": 1,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "meaning",
+            "detail": "Verified corrected passage in block 9 against the original; previous meaning finding is resolved.",
+            "id": "fixed-1",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "invented-self-correction",
+              "record_id": "e836c8d430f04158b943740259a5e9f0"
+            },
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "I have a free afternoon"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Сегодня после обеда я свободна"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Verified corrected passage in block 24 against the original; previous style finding is resolved.",
+            "id": "fixed-2",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "guard-safety-grammar",
+              "record_id": "e836c8d430f04158b943740259a5e9f0"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "my orders are to keep you *safe*"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "мне приказано заботиться о вашей *безопасности*"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Verified corrected passage in block 35 against the original; previous meaning finding is resolved.",
+            "id": "fixed-3",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "guard-cosseted-reference",
+              "record_id": "e836c8d430f04158b943740259a5e9f0"
+            },
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "the cosseted life of a queen-in-training’s personal guard"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Артемис не сама выбрала такую жизнь — жизнь личной охранницы будущей королевы, где её опекали и оберегали от опасностей."
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Verified corrected passage in block 67 against the original; previous style finding is resolved.",
+            "id": "fixed-4",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "silence-betrayal-calque",
+              "record_id": "e836c8d430f04158b943740259a5e9f0"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Clearly mistaking her silence for betrayal"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Очевидно, решив, что Клэрион молчит, потому что чувствует себя преданной"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Verified corrected passage in block 74 against the original; previous meaning finding is resolved.",
+            "id": "fixed-5",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "answer-abundance-drift",
+              "record_id": "e836c8d430f04158b943740259a5e9f0"
+            },
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Clarion would never want for answers again."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Теперь Клэрион больше никогда не останется без ответов."
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Verified corrected passage in block 98 against the original; previous style finding is resolved.",
+            "id": "fixed-6",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "winter-fend-idiom",
+              "record_id": "e836c8d430f04158b943740259a5e9f0"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Here was yet another way they’d left Winter to fend for itself."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Вот ещё один пример того, как они бросили Зиму на произвол судьбы."
+            }
+          }
+        ]
+      },
+      "record_id": "e57f32ed436f47f88cbeab4be45201ca",
+      "review_commit": "e5dd4d9e4e0668a0eeaa22aa475dc454418357d6",
+      "review_contract_revision": "docs/TRANSLATION.md@14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "reviewed_at": "2026-10-31T14:55:46Z",
+      "reviewer_session_id": "wings-ch8-bounded-followup-20261031-5b34d8e1",
+      "sequence": 23,
+      "source_sha256": "d7b5db8c94e0d115092d081db33affd1590a1c32dd75eb9123578cf99ac8647e",
+      "state_revision": "9dd0dfe85d3cba199876a750f444615523c7e7267899b5cce3955377a08c54b6",
+      "supersedes_record_id": "e836c8d430f04158b943740259a5e9f0",
+      "translation_sha256": "7335e35c86bce96b172d9317fa3e0db550f3b46356bf6d3a39f7906ab2f646b7",
+      "unit_id": "chapter-000011",
+      "workflow_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5"
+    }
+  },
+  "error": null
+}
