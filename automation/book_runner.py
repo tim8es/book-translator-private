@@ -15,7 +15,11 @@ import shutil
 import subprocess
 import sys
 import tempfile
+import unicodedata
+import xml.etree.ElementTree as ET
+import zipfile
 from datetime import datetime, timezone
+from pathlib import PurePosixPath
 from pathlib import Path
 from uuid import uuid4
 
@@ -33,6 +37,10 @@ MAX_FAILURES = 3
 
 
 class JobError(RuntimeError):
+    pass
+
+
+class BookIdentityError(JobError):
     pass
 
 
@@ -54,6 +62,96 @@ def status_path(job_id: str) -> Path:
     return ROOT / "automation" / "status" / (safe_id(job_id) + ".json")
 
 
+def normalize_identity(value: str) -> str:
+    return " ".join(unicodedata.normalize("NFKC", value).casefold().split())
+
+
+def epub_identity(source: Path) -> tuple[str, str]:
+    try:
+        with zipfile.ZipFile(source) as archive:
+            container = ET.fromstring(archive.read("META-INF/container.xml"))
+            rootfile = next(x for x in container.iter() if x.tag.endswith("rootfile"))
+            opf_path = PurePosixPath(rootfile.attrib["full-path"])
+            if opf_path.is_absolute() or ".." in opf_path.parts:
+                raise JobError("EPUB package path is unsafe")
+            package = ET.fromstring(archive.read(str(opf_path)))
+    except (OSError, KeyError, StopIteration, ET.ParseError, zipfile.BadZipFile) as exc:
+        raise JobError("cannot read EPUB title and author") from exc
+    metadata = next((x for x in package if x.tag.endswith("metadata")), None)
+    if metadata is None:
+        raise JobError("EPUB metadata is missing")
+    fields = {"title": "", "creator": ""}
+    for element in metadata.iter():
+        name = element.tag.rsplit("}", 1)[-1].lower()
+        if name in fields and element.text and not fields[name]:
+            fields[name] = element.text.strip()
+    if not fields["title"]:
+        raise JobError("EPUB title is missing; cannot safely match this book")
+    return fields["title"], fields["creator"]
+
+
+def stable_slug(title: str) -> str:
+    value = title.strip().lower()
+    value = re.sub(r"[^\w\s-]", "", value, flags=re.UNICODE)
+    value = re.sub(r"[\s_]+", "-", value)
+    value = re.sub(r"-{2,}", "-", value).strip("-")
+    if not value:
+        raise BookIdentityError("EPUB title cannot form a stable book slug")
+    return value[:120].rstrip("-") or "book"
+
+
+def locate_book(title: str, author: str, source_filename: str,
+                target_language: str) -> tuple[str, dict]:
+    try:
+        match = find_book(title, author, source_filename)
+    except JobError as exc:
+        raise BookIdentityError(str(exc)) from exc
+    if match is not None:
+        slug, metadata = match
+        if metadata.get("target_language") != target_language:
+            raise BookIdentityError("an existing book uses a different target language")
+        return slug, metadata
+    slug = stable_slug(title)
+    if (ROOT / "books" / slug).exists():
+        raise BookIdentityError("book title maps to an existing workspace with different metadata")
+    return slug, {}
+
+
+def find_book(title: str, author: str, source_filename: str) -> tuple[str, dict] | None:
+    key = normalize_identity(title)
+    filename_key = normalize_identity(Path(source_filename).stem)
+    matches = []
+    books = ROOT / "books"
+    if not books.exists():
+        return None
+    for folder in books.iterdir():
+        metadata_path = folder / "metadata.json"
+        if not folder.is_dir() or not metadata_path.is_file():
+            continue
+        try:
+            metadata = read_json(metadata_path)
+        except (OSError, ValueError, JobError):
+            continue
+        source = metadata.get("source") if isinstance(metadata.get("source"), dict) else {}
+        titles = {metadata.get("title")}
+        filenames = {metadata.get("source_file"), source.get("original_filename"), source.get("filename")}
+        title_matches = key in {normalize_identity(x) for x in titles if isinstance(x, str) and x.strip()}
+        filename_matches = filename_key in {
+            normalize_identity(Path(x).stem) for x in filenames if isinstance(x, str) and x.strip()
+        }
+        if title_matches or filename_matches:
+            matches.append((folder.name, metadata))
+    if len(matches) > 1:
+        raise BookIdentityError("multiple existing books match this title; automatic update is blocked")
+    if not matches:
+        return None
+    slug, metadata = matches[0]
+    old_author = metadata.get("author")
+    if author and old_author and normalize_identity(author) != normalize_identity(old_author):
+        raise BookIdentityError("an existing book has this title but a different author; automatic matching is blocked")
+    return slug, metadata
+
+
 def read_json(path: Path) -> dict:
     value = json.loads(path.read_text("utf-8"))
     if not isinstance(value, dict):
@@ -70,7 +168,7 @@ def request_for(job_id: str) -> dict:
     root = job_path(job_id)
     request = read_json(root / "request.json")
     required = {"schema_version", "job_id", "source_sha256", "target_language"}
-    permitted = required | {"workflow_revision", "title", "author"}
+    permitted = required | {"workflow_revision", "title", "author", "source_filename"}
     if (not required <= set(request) or not set(request) <= permitted or
             request["schema_version"] != 1 or request["job_id"] != job_id):
         raise JobError("invalid or mismatched immutable intake request")
@@ -83,7 +181,7 @@ def request_for(job_id: str) -> dict:
             not isinstance(request["workflow_revision"], str) or
             not SHA.fullmatch(request["workflow_revision"])):
         raise JobError("invalid requested workflow revision")
-    for name in ("title", "author"):
+    for name in ("title", "author", "source_filename"):
         if name in request and (not isinstance(request[name], str) or
                                 not 1 <= len(request[name]) <= 200):
             raise JobError("invalid bibliographic field")
@@ -119,12 +217,15 @@ def git(*args: str) -> str:
     return result.stdout.strip()
 
 
-def checkpoint(job_id: str, status: dict, slug: str) -> None:
+def checkpoint(job_id: str, status: dict, slug: str | None) -> None:
     status["updated_at"] = clock()
     store_json(status_path(job_id), status)
     # Restore temporary pinned engine files before selecting book-only mutations.
     git("restore", "--", "scripts", ".book-translator-install.json")
-    git("add", "-A", "--", f"books/{slug}", f"automation/status/{job_id}.json")
+    paths = [f"automation/status/{job_id}.json"]
+    if slug:
+        paths.insert(0, f"books/{slug}")
+    git("add", "-A", "--", *paths)
     if not git("diff", "--cached", "--name-only"):
         return
     expected = git("rev-parse", "HEAD")
@@ -405,26 +506,69 @@ def finalize(job_id: str, slug: str, status: dict) -> None:
 
 def run(job_id: str) -> dict:
     request = request_for(job_id)
-    slug = "auto-" + job_id
-    folder = ROOT / "books" / slug
     current = status_path(job_id)
     status = read_json(current) if current.exists() else None
     if status and status.get("state") in FINAL:
         return status
-    if status and status.get("book_slug") != slug:
-        raise JobError("stored job slug does not match deterministic identity")
-    if folder.exists() != (status is not None):
-        raise JobError("partial intake without matching status; manual recovery required")
-    revision = read_json(folder / "metadata.json")["workflow"]["resolved_revision"] if folder.exists() else request.get("workflow_revision")
+    source = job_path(job_id) / "source.epub"
+    try:
+        epub_title, epub_author = epub_identity(source)
+    except JobError as exc:
+        raise BookIdentityError(str(exc)) from exc
+    title = request.get("title") or epub_title
+    author = request.get("author") or epub_author
+    slug, metadata = locate_book(
+        title, author, request.get("source_filename", source.name), request["target_language"]
+    )
+    folder = ROOT / "books" / slug
+    if status and status.get("book_slug") not in (None, slug):
+        raise BookIdentityError("stored job is linked to a different book workspace")
+    if not metadata and folder.exists():
+        raise BookIdentityError("book workspace exists but cannot be matched safely")
+    workflow = metadata.get("workflow") if metadata else None
+    if metadata and (not isinstance(workflow, dict) or not SHA.fullmatch(workflow.get("resolved_revision", ""))):
+        raise BookIdentityError("existing book has no valid pinned workflow revision")
+    revision = workflow.get("resolved_revision") if isinstance(workflow, dict) else request.get("workflow_revision")
+    if workflow and request.get("workflow_revision") and request["workflow_revision"] != revision:
+        raise BookIdentityError("existing book is pinned to a different workflow revision")
     engine, actual = install_engine(revision)
     try:
         if not folder.exists():
-            status = init(job_id, request, slug, actual)
+            initial_request = {**request, "title": title}
+            if author:
+                initial_request["author"] = author
+            status = init(job_id, initial_request, slug, actual)
+            status["source_sha256"] = request["source_sha256"]
             checkpoint(job_id, status, slug)
             return status
-        if actual != status["workflow_revision"]:
+        if status is not None and actual != status["workflow_revision"]:
             raise JobError("workflow revision drift")
         verify(slug)
+        if status is None:
+            status = {"schema_version": 1, "job_id": job_id, "book_slug": slug,
+                "source_sha256": request["source_sha256"], "state": "running",
+                "phase": "matched-existing-book", "failures": 0,
+                "correction_rounds": {}, "workflow_revision": actual}
+            checkpoint(job_id, status, slug)
+        metadata = read_json(folder / "metadata.json")
+        active_source = metadata.get("source") if isinstance(metadata.get("source"), dict) else {}
+        if active_source.get("sha256") != request["source_sha256"]:
+            try:
+                update = json.loads(cli("update-source", slug, str(source), "--json"))
+            except (JobError, json.JSONDecodeError) as exc:
+                raise BookIdentityError("existing book cannot be updated safely by its pinned workflow") from exc
+            if update.get("state") == "staged_requires_decision":
+                status = status or {"schema_version": 1, "job_id": job_id,
+                    "book_slug": slug, "state": "blocked", "failures": 0,
+                    "correction_rounds": {}, "workflow_revision": actual}
+                status.update({"state": "blocked", "phase": "source-update-requires-decision",
+                    "book_slug": slug, "source_revision": update.get("revision_id"),
+                    "delta": update.get("delta"), "last_error": update.get("reason", "source deletions require review")})
+                checkpoint(job_id, status, slug)
+                return status
+            if update.get("state") not in ("promoted", "already_active"):
+                raise JobError("canonical source update did not promote safely")
+            verify(slug)
         if (folder / ".workflow" / "waves" / "active.json").exists():
             raise JobError("active literary wave requires wave-specific worker routing")
         if status.get("active"):
@@ -484,9 +628,13 @@ def main() -> int:
         print(select(args.job_id))
         return 0
     job_id = safe_id(args.job_id)
-    slug = "auto-" + job_id
     try:
         status = run(job_id)
+    except BookIdentityError as exc:
+        status = {"schema_version": 1, "job_id": job_id, "book_slug": None,
+            "state": "blocked", "phase": "book-match-requires-review",
+            "failures": 0, "correction_rounds": {}, "last_error": str(exc)[:350]}
+        checkpoint(job_id, status, None)
     except (JobError, ModelError, OSError, ValueError, KeyError, subprocess.TimeoutExpired) as exc:
         # Fail closed. No implicit PASS, force-push, claim takeover, or silent
         # state rewrite after ambiguous filesystem/Git failures.
