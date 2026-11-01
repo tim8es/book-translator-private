@@ -1,10 +1,8 @@
-You Feel Like Home - Hazellury - Royal Blood & Mafia Knight
-
 ## Chapter 2
 
 Chapter Notes
 
-See the end of the chapter for notes
+See the end of the chapter for [notes](#endnotes2)
 
 The newspaper lands in front of Caleb with enough force to make the silverware tremble. He glances down at it, the photograph splashed across the front page is unfortunately, a rather unflattering one.
 
@@ -12,7 +10,7 @@ It’s him in the picture, standing in the middle of the crowded museum hall, on
 
 The headline is actually worse.
 
-CROWN PRINCE ACCUSED OF RECKLESS BEHAVIOR DURING PARIS ATTACK.
+**CROWN PRINCE ACCUSED OF RECKLESS BEHAVIOR DURING PARIS ATTACK.**
 
 Caleb sighs.
 
@@ -124,9 +122,9 @@ Andrew handles alliances but Matilda understands the monarchy from inside, out. 
 
 For a moment Caleb says nothing.
 
-And then Paris returns to him, not the gunshots or the screaming, him. The black baseball cap, the leather jacket, a hand firmly closing around his wrist, and a deep voice telling him…
+And then Paris returns to him, not the gunshots or the screaming, *him*. The black baseball cap, the leather jacket, a hand firmly closing around his wrist, and a deep voice telling him…
 
-Come with me
+*Come with me*
 
 Caleb’s fingers tighten unconsciously around his teacup. The thing is he hasn’t been able to stop his brain from thinking about the man who saved him that night. He could still faintly remember the scent, something warm and woody beneath a trace of smoke. He could still remember the way those dark eyes watched him, as though Caleb was simply….Caleb.
 
@@ -401,7 +399,7 @@ Caleb’s heart sinks, he opens his mouth to speak but nothing comes out.
 
 Suddenly, flashes of a black baseball cap, and dark eyes come back to him, as a quiet voice whispers in his ear.
 
-You need to leave now.
+*You need to leave now. *
 
 Caleb blinks as memories of that night vanish when he feels Landon’s hand gently squeezing his arm.
 
@@ -461,11 +459,11 @@ He wants something he understands right now, something that doesn't make his che
 
 Landon kisses along his jaw, and Caleb closes his eyes.
 
-Focus.
+*Focus. *
 
 But his mind betrays him.
 
-I need to get you out of here.
+*I need to get you out of here. *
 
 He forces his eyes open and Landon is still here, familiar and beautiful. So why does his heart feel like it’s somewhere else?
 
@@ -491,7 +489,7 @@ Landon immediately pulls away.
 
 Caleb stares down at the hat, still lying carelessly on the floor.
 
-His hat.
+*His hat. *
 
 The one he so quietly took with him, and carried it down the staircase when he was terrified. The one that smells faintly of sandalwood and smoke.
 
@@ -509,7 +507,7 @@ Landon’s expression changes instantly, he quickly pulls away from Caleb to giv
 
 Landon gently touches his cheek, and Caleb flinches. Not because Landon had hurt but because the touch felt wrong.
 
-It’s not his.
+*It’s not his. *
 
 The realization scares him more than anything else. He gently removes Landon’s hand.
 
@@ -564,6 +562,8 @@ Caleb falls backwards onto his pillows, and covers his face with both hands. He�
 Yet somehow, none of it has managed to make him feel nearly as helpless as a man whose name he doesn't even know.
 
 He groans into his hands realizing he’s quite possibly, completely screwed.
+
+<!-- bt-anchor:endnotes2 -->
 
 Chapter End Notes
 

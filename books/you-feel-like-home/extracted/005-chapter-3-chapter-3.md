@@ -1,10 +1,8 @@
-You Feel Like Home - Hazellury - Royal Blood & Mafia Knight
-
 ## Chapter 3: Chapter 3
 
 Chapter Notes
 
-See the end of the chapter for notes
+See the end of the chapter for [notes](#endnotes3)
 
 Caleb loves horses.
 
@@ -988,6 +986,8 @@ Caleb leans back and closes his eyes, trying to make the tears go away but he is
 “Fuck.” For the first time, there is no sarcasm in his voice.
 
 Only heartbreak.
+
+<!-- bt-anchor:endnotes3 -->
 
 Chapter End Notes
 

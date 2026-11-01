@@ -1,10 +1,8 @@
-You Feel Like Home - Hazellury - Royal Blood & Mafia Knight
-
 ## Chapter 5
 
 Chapter Notes
 
-See the end of the chapter for notes
+See the end of the chapter for [notes](#endnotes5)
 
 Caleb suspects that The Royal Palace of Brussels is specifically designed to make ordinary people feel poor.
 
@@ -651,6 +649,8 @@ At first, there is nothing remarkable about the scene, just two brothers talking
 Andrew steps closer. Caleb retreats until his back presses against the wall. Every trace of his smile disappears, replaced by something Arian has never seen on his face before.
 
 Fear.
+
+<!-- bt-anchor:endnotes5 -->
 
 Chapter End Notes
 

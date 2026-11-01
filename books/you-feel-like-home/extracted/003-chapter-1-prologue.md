@@ -1,5 +1,3 @@
-You Feel Like Home - Hazellury - Royal Blood & Mafia Knight
-
 ## Chapter 1: Prologue
 
 Paris glitters differently at night.
