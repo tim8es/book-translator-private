@@ -1,5 +1,3 @@
-You Feel Like Home - Hazellury - Royal Blood & Mafia Knight
-
 ## Chapter 4: Chapter 4
 
 Chapter Summary
@@ -8,7 +6,7 @@ The chapter opens in Arian’s POV, following the events of the polo match and l
 
 Chapter Notes
 
-See the end of the chapter for notes
+See the end of the chapter for [notes](#endnotes4)
 
 The prince has always been beautiful. That is hardly an observation.
 
@@ -173,7 +171,7 @@ Instead, he had stood there in silence and watched the prince’s carefully cons
 
 ++++
 
-Present
+**Present**
 
 Caleb has decided that Arian Conti is considerably easier to tolerate from a distance.
 
@@ -751,6 +749,8 @@ Insufferable, completely, relentlessly insufferable.
 His gaze remains on Caleb until he disappears through the doors. He doesn’t even realise there is a small smile betraying him before he could stop it as he stares at the little drawings the prince had drawn on the pages.
 
 This arrangement is going to be a fucking nightmare.
+
+<!-- bt-anchor:endnotes4 -->
 
 Chapter End Notes
 

@@ -1,10 +1,8 @@
-You Feel Like Home - Hazellury - Royal Blood & Mafia Knight
-
 ## Chapter 6
 
 Chapter Notes
 
-See the end of the chapter for notes
+See the end of the chapter for [notes](#endnotes6)
 
 Caleb likes it when the palace is quiet during the night, without constant movement from the staff and advisers coming in and going. Perfect time to work on his speech, where he can sit in his study in silence and concentrate.
 
@@ -832,13 +830,13 @@ Arian is fine.
 
 And the thought doesn’t stop Caleb’s heart hammering harder every time a shadow moves beyond the windscreen. He tries to see between the vehicles ahead, but nothing.
 
-Where are you?
+*Where are you?*
 
 Caleb contemplates if he should just fuck it and roll down the window to ask one of the security guards what's happening, but decides against it.
 
 Another minute passes and Caleb leans forward.
 
-Come back.
+*Come back. *
 
 He doesn’t care about the convoy anymore, or what blocked the road or who fired first or what Arian has discovered. He just wants him back inside the fucking car.
 
@@ -941,6 +939,8 @@ Arian's jaw tightens.
 And Caleb understands something with dreadful certainty.
 
 Arian has no plan.
+
+<!-- bt-anchor:endnotes6 -->
 
 Chapter End Notes
 

@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "book_slug": "you-feel-like-home",
+  "active_revision": "source-000002",
+  "next_sequence": 3,
+  "next_unit_sequence": 15,
+  "revisions": [
+    {
+      "revision_id": "source-000001",
+      "parent_revision_id": null,
+      "state": "superseded",
+      "created_at": "2026-11-01T23:36:11Z",
+      "source_file": "You_Feel_Like_Home (1).epub",
+      "source_format": "epub",
+      "source_sha256": "cfe3a150553340a1c92d7f823ac0821e2307fbda43dc040f6e11287fae4e2df3",
+      "source_storage_mode": "embedded",
+      "source_size_bytes": 99042,
+      "snapshot_path": "source-revisions/source-000001/revision.json",
+      "delta_path": null
+    },
+    {
+      "revision_id": "source-000002",
+      "parent_revision_id": "source-000001",
+      "state": "active",
+      "created_at": "2026-11-01T23:36:23Z",
+      "source_file": "source-000002-1-You_Feel_Like_Home-2.epub",
+      "source_format": "epub",
+      "source_sha256": "8efac63cf78817b821008ee001fb33aea40b29d5c8c9d69cb9f52f14b0bd28a2",
+      "source_storage_mode": "embedded",
+      "source_size_bytes": 191460,
+      "snapshot_path": "source-revisions/source-000002/revision.json",
+      "delta_path": "source-revisions/source-000002/delta.json"
+    }
+  ]
+}
