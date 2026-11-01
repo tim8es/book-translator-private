@@ -69,7 +69,7 @@ def store_json(path: Path, value: dict) -> None:
 def request_for(job_id: str) -> dict:
     root = job_path(job_id)
     request = read_json(root / "request.json")
-    required = {"schema_version", "job_id", "source_sha256", "target_language", "public_release_acknowledged"}
+    required = {"schema_version", "job_id", "source_sha256", "target_language"}
     permitted = required | {"workflow_revision", "title", "author"}
     if (not required <= set(request) or not set(request) <= permitted or
             request["schema_version"] != 1 or request["job_id"] != job_id):
@@ -79,8 +79,6 @@ def request_for(job_id: str) -> dict:
     if not isinstance(request["target_language"], str) or not re.fullmatch(
             r"[a-z]{2}(?:-[A-Z]{2})?", request["target_language"]):
         raise JobError("invalid target language")
-    if request.get("public_release_acknowledged") is not True:
-        raise JobError("public repository upload requires explicit requester authorization")
     if "workflow_revision" in request and (
             not isinstance(request["workflow_revision"], str) or
             not SHA.fullmatch(request["workflow_revision"])):
