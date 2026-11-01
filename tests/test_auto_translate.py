@@ -150,6 +150,31 @@ class AutomatedBookTests(unittest.TestCase):
             self.assertEqual(cli.call_args.args[:2], ("update-source", "stable-title"))
             self.assertEqual(claim.call_args.args[1], "stable-title")
 
+    def test_staged_legacy_translation_blocks_before_dispatch(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            job = "d" * 32
+            intake = root / "intake" / "auto" / job
+            intake.mkdir(parents=True)
+            source = intake / "source.epub"
+            self.make_epub(source, "Stable Title", "Writer")
+            worker.store_json(intake / "request.json", {
+                "schema_version": 1, "job_id": job,
+                "source_sha256": hashlib.sha256(source.read_bytes()).hexdigest(),
+                "target_language": "ru", "source_filename": "book.epub",
+            })
+            book = root / "books" / "stable-title"
+            (book / "source-updates" / "2026-10-11").mkdir(parents=True)
+            (book / "source-updates" / "2026-10-11" / "README.md").write_text("staged translation")
+            worker.store_json(book / "metadata.json", {
+                "title": "Stable Title", "author": "Writer", "target_language": "ru",
+                "workflow": {"resolved_revision": "a" * 40},
+            })
+            with patch.object(worker, "ROOT", root), patch.object(worker, "install_engine") as install:
+                with self.assertRaisesRegex(worker.BookIdentityError, "staged source updates"):
+                    worker.run(job)
+                install.assert_not_called()
+
     def test_strict_review_blocks_unresolved_findings(self):
         payload = {
             "outcome": "PASS",

@@ -534,6 +534,9 @@ def run(job_id: str) -> dict:
         raise BookIdentityError("stored job is linked to a different book workspace")
     if not metadata and folder.exists():
         raise BookIdentityError("book workspace exists but cannot be matched safely")
+    staged = folder / "source-updates"
+    if metadata and staged.is_dir() and any(p.is_file() for p in staged.rglob("*")):
+        raise BookIdentityError("existing book has staged source updates requiring reconciliation")
     workflow = metadata.get("workflow") if metadata else None
     if metadata and (not isinstance(workflow, dict) or not SHA.fullmatch(workflow.get("resolved_revision", ""))):
         raise BookIdentityError("existing book has no valid pinned workflow revision")
