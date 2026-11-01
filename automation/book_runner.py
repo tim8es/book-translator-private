@@ -580,6 +580,8 @@ def run(job_id: str) -> dict:
                 return status
             if update.get("state") not in ("promoted", "already_active"):
                 raise JobError("canonical source update did not promote safely")
+            if update["state"] == "promoted":
+                cli("source-coverage", slug, "--source", str(source), "--record", "--replace-stale", "--json")
             verify(slug)
         if (folder / ".workflow" / "waves" / "active.json").exists():
             raise JobError("active literary wave requires wave-specific worker routing")
