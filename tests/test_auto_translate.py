@@ -178,6 +178,37 @@ class AutomatedBookTests(unittest.TestCase):
                     worker.run(job)
                 install.assert_not_called()
 
+    def test_failed_coverage_blocks_claim_after_source_update(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            job = "e" * 32
+            intake = root / "intake" / "auto" / job
+            intake.mkdir(parents=True)
+            source = intake / "source.epub"
+            self.make_epub(source, "Stable Title", "Writer")
+            worker.store_json(intake / "request.json", {
+                "schema_version": 1, "job_id": job,
+                "source_sha256": hashlib.sha256(source.read_bytes()).hexdigest(),
+                "target_language": "ru", "source_filename": "book.epub",
+            })
+            book = root / "books" / "stable-title"
+            book.mkdir(parents=True)
+            worker.store_json(book / "metadata.json", {
+                "title": "Stable Title", "author": "Writer", "target_language": "ru",
+                "source": {"sha256": "0" * 64},
+                "workflow": {"resolved_revision": "a" * 40},
+            })
+            engine = root / "engine"
+            engine.mkdir()
+            with patch.object(worker, "ROOT", root), \
+                 patch.object(worker, "install_engine", return_value=(engine, "a" * 40)), \
+                 patch.object(worker, "verify"), patch.object(worker, "checkpoint"), \
+                 patch.object(worker, "cli", side_effect=[json.dumps({"state": "promoted"}), worker.JobError("coverage failed")]), \
+                 patch.object(worker, "claim") as claim:
+                with self.assertRaisesRegex(worker.JobError, "coverage failed"):
+                    worker.run(job)
+                claim.assert_not_called()
+
     def test_strict_review_blocks_unresolved_findings(self):
         payload = {
             "outcome": "PASS",
