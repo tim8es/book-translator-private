@@ -147,7 +147,10 @@ class AutomatedBookTests(unittest.TestCase):
                  patch.object(worker, "claim") as claim:
                 status = worker.run(job)
             self.assertEqual(status["book_slug"], "stable-title")
-            self.assertEqual(cli.call_args.args[:2], ("update-source", "stable-title"))
+            self.assertEqual(cli.call_args_list[0].args[:2], ("update-source", "stable-title"))
+            self.assertEqual(cli.call_args_list[1].args,
+                             ("source-coverage", "stable-title", "--source", str(source),
+                              "--record", "--replace-stale", "--json"))
             self.assertEqual(claim.call_args.args[1], "stable-title")
 
     def test_staged_legacy_translation_blocks_before_dispatch(self):
