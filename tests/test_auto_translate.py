@@ -49,12 +49,32 @@ class AutomatedBookTests(unittest.TestCase):
                     "title": "Same Title", "author": "Writer", "target_language": language,
                 })
             with patch.object(worker, "ROOT", root):
-                with self.assertRaisesRegex(worker.BookIdentityError, "multiple existing books"):
+                with self.assertRaisesRegex(worker.BookIdentityError, "multiple distinct editions"):
                     worker.locate_book("Same Title", "Writer", "new.epub", "ru")
             shutil.rmtree(root / "books" / "same-b")
             with patch.object(worker, "ROOT", root):
                 with self.assertRaisesRegex(worker.BookIdentityError, "different target language"):
                     worker.locate_book("Same Title", "Writer", "new.epub", "en")
+
+    def test_duplicate_workspaces_for_same_edition_resolve_to_latest_book(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            for slug, imported in (("auto-old", "2026-01-01T00:00:00Z"), ("auto-new", "2026-02-01T00:00:00Z")):
+                book = root / "books" / slug
+                book.mkdir(parents=True)
+                worker.store_json(book / "metadata.json", {
+                    "title": "Same Title", "author": "Writer", "target_language": "ru",
+                    "imported_at": imported, "source": {"sha256": "a" * 64},
+                    "workflow": {"resolved_revision": "b" * 40},
+                })
+            with patch.object(worker, "ROOT", root):
+                self.assertEqual(worker.locate_book("Same Title", "Writer", "same.epub", "ru")[0], "auto-new")
+                newer = root / "books" / "auto-new" / "metadata.json"
+                value = worker.read_json(newer)
+                value["source"]["sha256"] = "c" * 64
+                worker.store_json(newer, value)
+                with self.assertRaisesRegex(worker.BookIdentityError, "multiple distinct editions"):
+                    worker.locate_book("Same Title", "Writer", "same.epub", "ru")
 
     def test_epub_identity_reads_package_metadata(self):
         with tempfile.TemporaryDirectory() as folder:
