@@ -1,0 +1,80 @@
+{
+  "created_at": "2026-11-01T19:02:37Z",
+  "delta": {
+    "changed": 0,
+    "deleted": 0,
+    "new": 1,
+    "unchanged": 0
+  },
+  "metadata": {
+    "author": "Original Test Fiction",
+    "chapter_count": 1,
+    "imported_at": "2026-11-01T19:02:37+00:00",
+    "schema_version": 1,
+    "source": {
+      "filename": "source.epub",
+      "original_filename": "source.epub",
+      "revision_id": "source-000001",
+      "sha256": "4b315f4e1029d12cb6d90d2e06084f8abdd020d37b913e2b39d92ec459b5384b",
+      "size_bytes": 5768,
+      "storage_mode": "embedded"
+    },
+    "source_file": "source.epub",
+    "source_format": "epub",
+    "source_language": "en",
+    "target_language": "ru",
+    "title": "The Last Light in the Archive — One-Chapter Test",
+    "workflow": {
+      "repository": "https://github.com/tim8es/book-translator",
+      "requested_ref": "main",
+      "resolved_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "review_evidence": "review-ledger-v1"
+    }
+  },
+  "parent_revision_id": null,
+  "progress": {
+    "book_slug": "auto-d24bdb106537c6442c7dab88d39b29a0",
+    "chapters": [
+      {
+        "number": 1,
+        "slug": "chapter-one",
+        "source_path": "extracted/001-chapter-one.md",
+        "status": "extracted",
+        "title": "Chapter One",
+        "translation_path": "translated/001-chapter-one.md",
+        "unit_id": "chapter-000001"
+      }
+    ],
+    "schema_version": 1
+  },
+  "revision_id": "source-000001",
+  "schema_version": 1,
+  "source_manifest": {
+    "chapter_count": 1,
+    "extracted": [
+      {
+        "number": 1,
+        "path": "extracted/001-chapter-one.md",
+        "sha256": "d835cdbda82a9641d8c640770bde1acb4e2555dd3da5a6cdba132ba93bfabbe9",
+        "title": "Chapter One",
+        "unit_id": "chapter-000001"
+      }
+    ],
+    "schema_version": 1,
+    "source_file": "source.epub",
+    "source_format": "epub",
+    "source_sha256": "4b315f4e1029d12cb6d90d2e06084f8abdd020d37b913e2b39d92ec459b5384b",
+    "source_size_bytes": 5768,
+    "source_storage_mode": "embedded"
+  },
+  "units": [
+    {
+      "classification": "initial",
+      "number": 1,
+      "source_path": "extracted/001-chapter-one.md",
+      "staged_path": "source-revisions/source-000001/corpus/001-chapter-000001.md",
+      "title": "Chapter One",
+      "unit_id": "chapter-000001"
+    }
+  ]
+}
