@@ -39,7 +39,12 @@ prevent non-force pushes require a separately reviewed publication strategy.
    over the exact original EPUB bytes. Do not use the Telegram file_id as a
    job ID or expose bot/user identifiers in the book slug.
 2. Commit the original to intake/auto/<job_id>/source.epub and a UTF-8 JSON
-   request to intake/auto/<job_id>/request.json on main. Avoid partial dispatch:
+   request to intake/auto/<job_id>/request.json on main. Include the original
+   source_filename when available. The EPUB title identifies the durable book
+   workspace; job_id identifies only the submitted request. A later edition of
+   the same title goes through the pinned canonical source-update comparison,
+   which reuses only verified unchanged chapters. Ambiguous matches stop for
+   manual review. Avoid partial dispatch:
    upload both paths, verify the returned blob bytes and request content, then
    trigger Actions. Use a Git tree/commit to upload both files atomically where
    possible. Retry a failed push only after rechecking HEAD.
@@ -58,14 +63,14 @@ into a production commit):
       "schema_version": 1,
       "job_id": "0123456789abcdef0123456789abcdef",
       "source_sha256": "<64-lowercase-hex-digest>",
-      "target_language": "ru"
+      "target_language": "ru",
+      "source_filename": "original.epub"
     }
 
-Optional: workflow_revision (exact 40-hex public commit), title, author.
-A new unpinned book resolves public main exactly once and records the commit
-in metadata.json.workflow; subsequent steps use the book's own pin. Only new
-books with deterministic slug auto-<job_id> are admitted. Existing books remain
-untouched, including those on older revisions.
+Optional: workflow_revision (exact 40-hex public commit), title, author,
+source_filename. A new book uses a stable slug derived from its EPUB title and
+resolves public main exactly once. Existing books retain their workflow pin;
+new editions use that pinned revision's source-update contract.
 
 ## Execution and recovery
 
