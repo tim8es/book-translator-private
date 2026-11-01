@@ -1,0 +1,80 @@
+{
+  "created_at": "2026-11-01T18:27:46Z",
+  "delta": {
+    "changed": 0,
+    "deleted": 0,
+    "new": 1,
+    "unchanged": 0
+  },
+  "metadata": {
+    "author": null,
+    "chapter_count": 1,
+    "imported_at": "2026-11-01T18:27:46+00:00",
+    "schema_version": 1,
+    "source": {
+      "filename": "source.epub",
+      "original_filename": "source.epub",
+      "revision_id": "source-000001",
+      "sha256": "7110a9fa7801657018fa6f649b7941bf77d1857fbbc260322c75412cb2ea0fe1",
+      "size_bytes": 1502,
+      "storage_mode": "embedded"
+    },
+    "source_file": "source.epub",
+    "source_format": "epub",
+    "source_language": "en",
+    "target_language": "ru",
+    "title": "Synthetic Integration Test",
+    "workflow": {
+      "repository": "https://github.com/tim8es/book-translator",
+      "requested_ref": "main",
+      "resolved_revision": "14f75c08b5de5ed6ff7cbec9083e6e71308a3ba5",
+      "review_evidence": "review-ledger-v1"
+    }
+  },
+  "parent_revision_id": null,
+  "progress": {
+    "book_slug": "auto-16125e6cf143146723c06adc88909ad5",
+    "chapters": [
+      {
+        "number": 1,
+        "slug": "a-small-test",
+        "source_path": "extracted/001-a-small-test.md",
+        "status": "extracted",
+        "title": "A Small Test",
+        "translation_path": "translated/001-a-small-test.md",
+        "unit_id": "chapter-000001"
+      }
+    ],
+    "schema_version": 1
+  },
+  "revision_id": "source-000001",
+  "schema_version": 1,
+  "source_manifest": {
+    "chapter_count": 1,
+    "extracted": [
+      {
+        "number": 1,
+        "path": "extracted/001-a-small-test.md",
+        "sha256": "2f38970252f4208501c83bc28a7593a74d2967b55a2e69401eeac3b21040c03d",
+        "title": "A Small Test",
+        "unit_id": "chapter-000001"
+      }
+    ],
+    "schema_version": 1,
+    "source_file": "source.epub",
+    "source_format": "epub",
+    "source_sha256": "7110a9fa7801657018fa6f649b7941bf77d1857fbbc260322c75412cb2ea0fe1",
+    "source_size_bytes": 1502,
+    "source_storage_mode": "embedded"
+  },
+  "units": [
+    {
+      "classification": "initial",
+      "number": 1,
+      "source_path": "extracted/001-a-small-test.md",
+      "staged_path": "source-revisions/source-000001/corpus/001-chapter-000001.md",
+      "title": "A Small Test",
+      "unit_id": "chapter-000001"
+    }
+  ]
+}
