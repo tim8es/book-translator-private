@@ -13,13 +13,7 @@ currently PUBLIC, despite its name; source EPUB, translation chapters, results,
 and Git history can be visible to anyone. This is an intentional deployment
 choice for the current project, not a requirement for GitHub Actions.
 
-Do not upload third-party Telegram customers' books without their explicit
-informed permission to store the material in a public GitHub repository and
-without the necessary rights for this publication. n8n must collect that
-permission **before uploading**. Intake requires
-`"public_release_acknowledged": true` as a defensive check against accidental
-automated uploads. This flag does not establish or verify legal rights. The
-owner is responsible for using materials they are allowed to publish.
+The operator is responsible for the material uploaded to the public repository.
 
 OmniRoute and its upstream LLM providers also receive source passages.
 Review provider terms before enabling paid workloads.
@@ -41,21 +35,18 @@ prevent non-force pushes require a separately reviewed publication strategy.
 
 ## n8n intake contract
 
-1. Confirm the user explicitly authorizes public storage/publication of the
-   EPUB and translation and has the necessary rights. Never assume a Telegram
-   upload implies consent to GitHub publication.
-2. Assign a random 32-character lowercase hex job_id and calculate SHA-256
+1. Assign a random 32-character lowercase hex job_id and calculate SHA-256
    over the exact original EPUB bytes. Do not use the Telegram file_id as a
    job ID or expose bot/user identifiers in the book slug.
-3. Commit the original to intake/auto/<job_id>/source.epub and a UTF-8 JSON
+2. Commit the original to intake/auto/<job_id>/source.epub and a UTF-8 JSON
    request to intake/auto/<job_id>/request.json on main. Avoid partial dispatch:
    upload both paths, verify the returned blob bytes and request content, then
    trigger Actions. Use a Git tree/commit to upload both files atomically where
    possible. Retry a failed push only after rechecking HEAD.
-4. POST GitHub Actions workflow_dispatch for auto-translate.yml on main with
+3. POST GitHub Actions workflow_dispatch for auto-translate.yml on main with
    input job_id. Poll automation/status/<job_id>.json. Dispatch is optional for
    recovery: a 15-minute schedule scans for unfinished requests.
-5. When state=done, use the output artifact_path and artifact_sha256 in the
+4. When state=done, use the output artifact_path and artifact_sha256 in the
    status to retrieve and verify the final EPUB (or download the Actions
    artifact from the finishing workflow run), then send through Telegram.
    When state is missing, still working, or blocked, **do not deliver**.
@@ -67,8 +58,7 @@ into a production commit):
       "schema_version": 1,
       "job_id": "0123456789abcdef0123456789abcdef",
       "source_sha256": "<64-lowercase-hex-digest>",
-      "target_language": "ru",
-      "public_release_acknowledged": true
+      "target_language": "ru"
     }
 
 Optional: workflow_revision (exact 40-hex public commit), title, author.
@@ -121,4 +111,4 @@ request hash rejection, source-coverage admission, claim owner, translation
 acceptance, independent PASS and CORRECTIONS_REQUIRED, restart recovery,
 stale Git commit rejection, final EPUB SHA, and delivered artifact parity.
 Run the repo's tests in the PR; do not enable production jobs by merging
-before an integration test and the publication authorization flow are verified.
+before the integration test has been verified.
