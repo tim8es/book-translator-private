@@ -142,7 +142,16 @@ def find_book(title: str, author: str, source_filename: str) -> tuple[str, dict]
         if title_matches or filename_matches:
             matches.append((folder.name, metadata))
     if len(matches) > 1:
-        raise BookIdentityError("multiple existing books match this title; automatic update is blocked")
+        authors = {normalize_identity(str(item[1].get("author") or "")) for item in matches}
+        targets = {item[1].get("target_language") for item in matches}
+        sources = {((item[1].get("source") or {}).get("sha256")) for item in matches}
+        workflows = {(item[1].get("workflow") or {}).get("resolved_revision") for item in matches}
+        if (any(len(values) != 1 for values in (authors, targets, sources, workflows)) or
+                not all(isinstance(value, str) and HEX64.fullmatch(value) for value in sources) or
+                not all(isinstance(value, str) and SHA.fullmatch(value) for value in workflows)):
+            raise BookIdentityError("multiple distinct editions match this title; automatic update is blocked")
+        matches.sort(key=lambda item: (str(item[1].get("imported_at") or ""), item[0]))
+        return matches[-1]
     if not matches:
         return None
     slug, metadata = matches[0]
