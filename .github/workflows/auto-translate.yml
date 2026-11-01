@@ -1,0 +1,76 @@
+name: Automatic book translation
+
+on:
+  workflow_dispatch:
+    inputs:
+      job_id:
+        description: "32-character intake job ID (leave blank for next pending)"
+        type: string
+        required: false
+  schedule:
+    # Recovery when dispatch events are delayed or coalesced.
+    - cron: "*/15 * * * *"
+
+permissions:
+  contents: write
+  actions: write
+
+# One writer at a time for the initial MVP. Other writers are still protected
+# by a non-force Git checkpoint and the canonical Book Translator claims.
+concurrency:
+  group: automatic-book-translation-main
+  cancel-in-progress: false
+
+jobs:
+  process:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Select one pending job
+        id: select
+        env:
+          REQUESTED_JOB: ${{ inputs.job_id }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          job_id="$(python automation/book_runner.py --select --job-id "$REQUESTED_JOB")"
+          echo "job_id=$job_id" >> "$GITHUB_OUTPUT"
+
+      - name: Execute one pinned workflow checkpoint
+        if: steps.select.outputs.job_id != ''
+        id: run
+        env:
+          OMNIROUTE_API_KEY: ${{ secrets.OMNIROUTE_API_KEY }}
+          OMNIROUTE_BASE_URL: ${{ vars.OMNIROUTE_BASE_URL }}
+          OMNIROUTE_TRANSLATOR_MODEL: ${{ vars.OMNIROUTE_TRANSLATOR_MODEL }}
+          OMNIROUTE_REVIEWER_MODEL: ${{ vars.OMNIROUTE_REVIEWER_MODEL }}
+          OMNIROUTE_CORRECTOR_MODEL: ${{ vars.OMNIROUTE_CORRECTOR_MODEL }}
+          JOB_ID: ${{ steps.select.outputs.job_id }}
+        run: python automation/book_runner.py --job-id "$JOB_ID"
+
+      - name: Publish completed EPUB as a downloadable Actions artifact
+        if: steps.run.outputs.done == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: translated-book-${{ steps.select.outputs.job_id }}
+          path: ${{ steps.run.outputs.artifact }}
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Dispatch next bounded step
+        if: steps.run.outputs.continue == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          JOB_ID: ${{ steps.select.outputs.job_id }}
+        run: gh workflow run auto-translate.yml --ref main -f job_id="$JOB_ID"
