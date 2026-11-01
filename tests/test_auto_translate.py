@@ -19,11 +19,11 @@ from omniroute import ModelError, config, parse_review
 
 class AutomatedBookTests(unittest.TestCase):
     @staticmethod
-    def make_epub(path: Path, title: str, author: str = "Author", chapter: str = "<p>Chapter</p>") -> None:
+    def make_epub(path: Path, title: str, author: str = "Author", chapter: str = "<p>Chapter</p>", language: str = "en") -> None:
         with zipfile.ZipFile(path, "w") as archive:
             archive.writestr("mimetype", "application/epub+zip", compress_type=zipfile.ZIP_STORED)
             archive.writestr("META-INF/container.xml", '<container><rootfiles><rootfile full-path="EPUB/package.opf"/></rootfiles></container>')
-            archive.writestr("EPUB/package.opf", f'<package xmlns:dc="http://purl.org/dc/elements/1.1/"><metadata><dc:title>{title}</dc:title><dc:creator>{author}</dc:creator></metadata></package>')
+            archive.writestr("EPUB/package.opf", f'<package xmlns:dc="http://purl.org/dc/elements/1.1/"><metadata><dc:title>{title}</dc:title><dc:creator>{author}</dc:creator><dc:language>{language}</dc:language></metadata></package>')
             archive.writestr("EPUB/chapter.xhtml", chapter)
 
     def test_book_identity_reuses_workspace_by_title_and_filename(self):
@@ -80,7 +80,17 @@ class AutomatedBookTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as folder:
             path = Path(folder) / "input.epub"
             self.make_epub(path, "A New Book", "A Writer")
-            self.assertEqual(worker.epub_identity(path), ("A New Book", "A Writer"))
+            self.assertEqual(worker.epub_identity(path), ("A New Book", "A Writer", "en"))
+
+    def test_same_source_and_target_language_is_blocked(self):
+        worker.validate_translation_direction("en-US", "ru")
+        worker.validate_translation_direction("eng", "ru")
+        with self.assertRaisesRegex(worker.BookIdentityError, "already in the requested"):
+            worker.validate_translation_direction("ru-RU", "ru")
+        with self.assertRaisesRegex(worker.BookIdentityError, "already in the requested"):
+            worker.validate_translation_direction("rus", "ru")
+        with self.assertRaisesRegex(worker.BookIdentityError, "language is missing"):
+            worker.validate_translation_direction("", "ru")
 
     def test_same_edition_resumes_existing_book_without_translation(self):
         with tempfile.TemporaryDirectory() as folder:

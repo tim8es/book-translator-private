@@ -66,7 +66,7 @@ def normalize_identity(value: str) -> str:
     return " ".join(unicodedata.normalize("NFKC", value).casefold().split())
 
 
-def epub_identity(source: Path) -> tuple[str, str]:
+def epub_identity(source: Path) -> tuple[str, str, str]:
     try:
         with zipfile.ZipFile(source) as archive:
             container = ET.fromstring(archive.read("META-INF/container.xml"))
@@ -80,14 +80,28 @@ def epub_identity(source: Path) -> tuple[str, str]:
     metadata = next((x for x in package if x.tag.endswith("metadata")), None)
     if metadata is None:
         raise JobError("EPUB metadata is missing")
-    fields = {"title": "", "creator": ""}
+    fields = {"title": "", "creator": "", "language": ""}
     for element in metadata.iter():
         name = element.tag.rsplit("}", 1)[-1].lower()
         if name in fields and element.text and not fields[name]:
             fields[name] = element.text.strip()
     if not fields["title"]:
         raise JobError("EPUB title is missing; cannot safely match this book")
-    return fields["title"], fields["creator"]
+    if not fields["language"]:
+        raise BookIdentityError("EPUB language is missing; automatic translation is blocked")
+    return fields["title"], fields["creator"], fields["language"]
+
+
+def validate_translation_direction(source_language: str, target_language: str) -> None:
+    aliases = {"eng": "en", "rus": "ru"}
+    source = aliases.get(normalize_identity(source_language).replace("_", "-").split("-", 1)[0],
+                         normalize_identity(source_language).replace("_", "-").split("-", 1)[0])
+    target = aliases.get(normalize_identity(target_language).split("-", 1)[0],
+                         normalize_identity(target_language).split("-", 1)[0])
+    if not source:
+        raise BookIdentityError("EPUB source language is missing; automatic translation is blocked")
+    if source == target:
+        raise BookIdentityError("EPUB is already in the requested target language; automatic translation is blocked")
 
 
 def stable_slug(title: str) -> str:
@@ -521,9 +535,10 @@ def run(job_id: str) -> dict:
         return status
     source = job_path(job_id) / "source.epub"
     try:
-        epub_title, epub_author = epub_identity(source)
+        epub_title, epub_author, source_language = epub_identity(source)
     except JobError as exc:
         raise BookIdentityError(str(exc)) from exc
+    validate_translation_direction(source_language, request["target_language"])
     title = request.get("title") or epub_title
     author = request.get("author") or epub_author
     slug, metadata = locate_book(

@@ -93,6 +93,8 @@ workflow's canonical cleanup-claims procedure.
 This is a **bounded initial MVP**, not unrestricted unattended production:
 
 - Only EPUB, maximum input 15 MB and chapter text 70,000 characters.
+- EPUB source-language metadata must be present and differ from the target language;
+  already-target-language or unknown-language books are blocked for manual review.
 - Unsupported EPUB semantics and complex layout remain blocked by the
   canonical extraction and source-coverage checks.
 - No technical chunking of oversized chapters yet.
