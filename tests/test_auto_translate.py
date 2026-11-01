@@ -70,8 +70,7 @@ class AutomatedBookTests(unittest.TestCase):
                 (source_dir / "source.epub").write_bytes(source)
                 request = {"schema_version": 1, "job_id": job_id,
                            "target_language": "ru",
-                           "source_sha256": hashlib.sha256(source).hexdigest(),
-                           "public_release_acknowledged": True}
+                           "source_sha256": hashlib.sha256(source).hexdigest()}
                 worker.store_json(source_dir / "request.json", request)
                 self.assertEqual(worker.request_for(job_id)["job_id"], job_id)
                 self.assertEqual(worker.select(None), job_id)
@@ -80,23 +79,20 @@ class AutomatedBookTests(unittest.TestCase):
                 with self.assertRaises(worker.JobError):
                     worker.request_for(job_id)
 
-    def test_public_authorization_required_before_source_admission(self):
+    def test_unexpected_intake_fields_are_rejected(self):
         with tempfile.TemporaryDirectory() as folder:
             with patch.object(worker, "ROOT", Path(folder)):
                 job_id = "a" * 32
                 source_dir = worker.job_path(job_id)
                 source_dir.mkdir(parents=True)
-                source = b"PK\\x03\\x04test"
+                source = b"PK\x03\x04test"
                 (source_dir / "source.epub").write_bytes(source)
                 request = {"schema_version": 1, "job_id": job_id,
                            "target_language": "ru",
-                           "source_sha256": hashlib.sha256(source).hexdigest()}
+                           "source_sha256": hashlib.sha256(source).hexdigest(),
+                           "unexpected": True}
                 worker.store_json(source_dir / "request.json", request)
-                with self.assertRaisesRegex(worker.JobError, "public_release_acknowledged|invalid"):
-                    worker.request_for(job_id)
-                request["public_release_acknowledged"] = False
-                worker.store_json(source_dir / "request.json", request)
-                with self.assertRaisesRegex(worker.JobError, "authorization"):
+                with self.assertRaisesRegex(worker.JobError, "invalid"):
                     worker.request_for(job_id)
 
     def test_next_step_requires_independent_review(self):
