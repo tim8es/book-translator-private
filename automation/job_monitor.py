@@ -119,7 +119,9 @@ def verify_done(root: Path, status: dict) -> tuple[int, int, str]:
             for field in ("source_sha256", "translation_sha256"):
                 if record.get(field) != acceptance.get(field):
                     raise ValueError("review is stale for current translation")
-            if record.get("reviewer_session_id") == acceptance.get("session_id"):
+            if (not record.get("reviewer_session_id") or
+                    not acceptance.get("session_id") or
+                    record.get("reviewer_session_id") == acceptance.get("session_id")):
                 raise ValueError("translation was not independently reviewed")
             if any(not finding.get("resolved") for finding in
                    (record.get("quality_report") or {}).get("findings", [])):
@@ -182,6 +184,9 @@ def inspect(root: Path, job_id: str, now: datetime, include_missing: bool) -> di
         kind = "stalled"
         reason = "No durable checkpoint for at least two hours; inspect Actions and claims"
     elif state == "blocked":
+        # A retired intake request must not alert the same user twice.
+        if status.get("superseded_by_job_id") or str(status.get("phase", "")).startswith("superseded-"):
+            return None
         kind = "blocked"
         reason = status.get("last_error") or status.get("phase") or "Blocked"
     elif state == "done":
