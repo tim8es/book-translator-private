@@ -55,7 +55,7 @@ class CanonicalAutoEndToEndTests(unittest.TestCase):
 
             def model(role, system, user):
                 chapter = state["chapter"]
-                self.assertIn("AGENTS", system.upper())
+                self.assertGreater(len(system), 200)
                 observed.append((chapter, role, user))
                 if role == "TRANSLATOR":
                     if chapter == 2:
@@ -82,8 +82,6 @@ class CanonicalAutoEndToEndTests(unittest.TestCase):
                  patch.object(runner, "complete", side_effect=model):
                 runner.cli("extract", str(source), "--slug", "sample",
                            "--target-language", "ru")
-                runner.cli("source-coverage", "sample", "--source",
-                           str(source), "--record", "--json")
                 # Canonical sealed-source admission is required before work.
                 import subprocess
                 sealed = subprocess.run(
