@@ -2,15 +2,15 @@
   "schema_version": 1,
   "job_id": "71e930bbab9570de74ee8fda86a625fc",
   "book_slug": "gothams-fortune-teller",
-  "state": "blocked",
-  "phase": "correction-limit-reached",
+  "state": "running",
+  "phase": "manual-review-accepted-awaiting-finalization",
   "failures": 0,
   "correction_rounds": {
     "chapter-000007": 3
   },
   "workflow_revision": "db253095d36f245f9531da654b93ab72193d3b97",
   "source_sha256": "e88111d85c517d2df032c85f3de44ad7ca1f9cfac0394d5173a6ab2b98f548e9",
-  "updated_at": "2026-11-02T16:54:16.255548+00:00",
+  "updated_at": "2026-11-02T19:26:05.924Z",
   "active": null,
   "model_calls_started": 20,
   "memory_glossary_saved": 50,
@@ -29,5 +29,10 @@
     "user_chars": 65125
   },
   "memory_style_saved": 15,
-  "blocked_unit_id": "chapter-000007"
+  "blocked_unit_id": null,
+  "manual_recovery": {
+    "reason": "Operator resumed finalization after canonical chapter-000007 accept-review; no further model corrections authorized.",
+    "review_record_id": "2f5a41bbf498424f8c9fd9206f8e2374",
+    "translation_sha256": "0ace13da06cea8c34a2ff6c5523ef715faffe32d0e719ce150c69d06bda78103"
+  }
 }
