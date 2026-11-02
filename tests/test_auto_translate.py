@@ -18,6 +18,24 @@ from omniroute import ModelError, config, parse_review
 
 
 class AutomatedBookTests(unittest.TestCase):
+    def test_checkpoint_keeps_pinned_engine_and_stages_only_job_and_book(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            (root / 'automation' / 'status').mkdir(parents=True)
+            (root / 'scripts').mkdir()
+            marker = root / '.book-translator-install.json'
+            marker.write_text('pinned', encoding='utf-8')
+            calls = []
+            def fake_git(*args):
+                calls.append(args)
+                if args[0] == 'restore':
+                    marker.write_text('default', encoding='utf-8')
+                return ''
+            with patch.object(worker, 'ROOT', root), patch.object(worker, 'git', side_effect=fake_git):
+                worker.checkpoint('a' * 32, {'phase': 'matched'}, 'book')
+            self.assertEqual(marker.read_text(encoding='utf-8'), 'pinned')
+            self.assertIn(('add', '-A', '--', 'books/book', 'automation/status/' + 'a' * 32 + '.json'), calls)
+
     def test_user_approved_exact_artifacts_skip_repeat_review_but_new_unit_does_not(self):
         with tempfile.TemporaryDirectory() as folder:
             root = Path(folder)
