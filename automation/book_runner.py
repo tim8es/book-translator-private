@@ -568,6 +568,17 @@ def process_claim(job_id: str, slug: str, status: dict, engine: Path) -> None:
     try:
         system, user, source = context(engine, slug, chapter, role,
                                        pending_style=status.get("pending_style", []))
+        # Record the exact pinned input revisions, not the revisions after a
+        # successful memory update. Never persist source passages in logs.
+        prompt_context = {
+            "role": role,
+            "workflow_revision": status["workflow_revision"],
+            "loaded_contracts": role_contracts(engine, "reviewer" if role == "reviewer" else "translator")[1],
+            "glossary_sha256": fingerprint(ROOT / "books" / slug / "glossary.md"),
+            "style_guide_sha256": fingerprint(ROOT / "books" / slug / "style-guide.md"),
+            "system_chars": len(system),
+            "user_chars": len(user),
+        }
         answer = complete("REVIEWER" if role == "reviewer" else
                           "CORRECTOR" if role == "corrector" else "TRANSLATOR",
                           system, user)
@@ -617,13 +628,7 @@ def process_claim(job_id: str, slug: str, status: dict, engine: Path) -> None:
     cli("release", slug, str(chapter["number"]), "--session-id", active["session_id"])
     status["active"] = None
     status["phase"] = role + "-completed"
-    status["prompt_context"] = {
-        "role": role,
-        "workflow_revision": status["workflow_revision"],
-        "loaded_contracts": role_contracts(engine, "reviewer" if role == "reviewer" else "translator")[1],
-        "glossary_sha256": fingerprint(ROOT / "books" / slug / "glossary.md"),
-        "style_guide_sha256": fingerprint(ROOT / "books" / slug / "style-guide.md"),
-    }
+    status["prompt_context"] = prompt_context
     status["failures"] = 0
     checkpoint(job_id, status, slug)
 
