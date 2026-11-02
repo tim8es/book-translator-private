@@ -40,3 +40,8 @@ Use this file for recurring names, places, organizations, terms, nicknames, titl
 | Titus | Титус | Character | Great Dane dog. |
 | Batcow | Бэт-Корова | Character | The cow Damian likes. |
 | Goliath | Голиаф | Character | The large dog Tim brought back. |
+| Jack Drake | Джек Дрейк | Character | Tim's biological father. |
+| Janet Drake | Джанет Дрейк | Character | Tim's biological mother. |
+| Obeah Man | Обиа-мен | Character | DC villain. |
+| Drake Industries | «Дрейк Индастриз» | Organization | The family business. |
+| Timothy Jackson Drake-Wayne | Тимоти Джексон Дрейк-Уэйн | Character | Tim's full legal name after adoption. |
