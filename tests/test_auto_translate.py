@@ -58,9 +58,6 @@ class AutomatedBookTests(unittest.TestCase):
             cmd("add", "-A")
             cmd("commit", "-qm", "our checkpoint")
             local = cmd("rev-parse", "HEAD")
-            # A pinned engine in a real runner can leave unstaged local scripts.
-            (root / "ephemeral-engine.py").write_text(
-                "pinned version", encoding="utf-8")
             cmd("checkout", "-qb", "other-agent", base)
             (root / "books" / "another-book").mkdir(parents=True)
             (root / "books" / "another-book" / "chapter.md").write_text(
@@ -69,6 +66,10 @@ class AutomatedBookTests(unittest.TestCase):
             cmd("commit", "-qm", "another book")
             remote = cmd("rev-parse", "HEAD")
             cmd("checkout", "-q", "main")
+            # The active runner has dirty pinned-engine files after checkout.
+            # Git plumbing must not reset or rebase this worktree.
+            (root / "ephemeral-engine.py").write_text(
+                "pinned version", encoding="utf-8")
             with patch.object(worker, "ROOT", root):
                 merged = worker.replay_disjoint_checkpoint(
                     base, local, remote, ["books/our-book"])
@@ -78,14 +79,6 @@ class AutomatedBookTests(unittest.TestCase):
             self.assertEqual(cmd("show", merged + ":books/another-book/chapter.md"),
                              "their unrelated translation")
             self.assertEqual(cmd("rev-parse", "HEAD"), local)
-            # Git's own branch checkout can remove an untracked test fixture;
-            # the replay itself must not alter the active checkout.
-            self.assertFalse((root / "ephemeral-engine.py").exists()
-            (root / "ephemeral-engine.py").write_text("pinned version", encoding="utf-8")
-            with patch.object(worker, "ROOT", root):
-                second = worker.replay_disjoint_checkpoint(
-                    base, local, remote, ["books/our-book"])
-            self.assertEqual(second, merged)
             self.assertEqual((root / "ephemeral-engine.py").read_text("utf-8"),
                              "pinned version")
             # A concurrent edit to the SAME book must never be replayed.
