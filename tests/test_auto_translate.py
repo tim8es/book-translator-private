@@ -39,6 +39,30 @@ class AutomatedBookTests(unittest.TestCase):
             self.assertEqual(marker.read_text(encoding='utf-8'), 'pinned')
             self.assertIn(('add', '-A', '--', 'books/book', 'automation/status/' + 'a' * 32 + '.json'), calls)
 
+    def test_checkpoint_accepts_git_terminal_nul_in_changed_paths(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            job_id = "a" * 32
+            slug = "test-book"
+            (root / "books" / slug).mkdir(parents=True)
+            (root / "books" / slug / "chapter.md").write_text(
+                "translation", encoding="utf-8")
+            def fake_git(*args):
+                if args == ("diff", "--cached", "--name-only", "-z"):
+                    return (f"books/{slug}/chapter.md\\0"
+                            f"automation/status/{job_id}.json\\0").replace("\\0", "\0")
+                if args == ("rev-parse", "HEAD") or args == ("rev-parse", "origin/main"):
+                    return "b" * 40
+                return ""
+            with patch.object(worker, "ROOT", root), \
+                 patch.object(worker, "git", side_effect=fake_git), \
+                 patch.object(worker.subprocess, "run") as run:
+                run.return_value.returncode = 0
+                worker.checkpoint(job_id, {"phase": "claimed"}, slug)
+            run.assert_called_once()
+            self.assertIn("git", run.call_args.args[0])
+            self.assertTrue((root / "automation" / "status" / (job_id + ".json")).exists())
+
     def test_disjoint_checkpoint_replays_without_touching_active_checkout(self):
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)
