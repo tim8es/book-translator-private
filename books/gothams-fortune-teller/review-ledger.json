@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "gothams-fortune-teller",
-  "next_sequence": 8,
+  "next_sequence": 9,
   "records": [
     {
       "record_id": "2b1acee459fe476a8d839bf36422633e",
@@ -227,6 +227,58 @@
           {
             "severity": "minor",
             "detail": "The phrase ' la-la-la' implied by the song lyrics 'then he waddled away..waddle, waddle' is translated as 'топ-топ, топ-топ'. While cute, 'топал-топал' or 'переваливался' might better capture 'waddled'.",
+            "resolved": false
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "461bad5d969f5255e2d8c14d3cccfa971ff845426b4c329aeec6a3dcc4df6d03",
+        "style_guide": "aebda9076127c3d02d4ad77beff0654fab40ff954dd5e296dfcba903d1994d87"
+      }
+    },
+    {
+      "record_id": "f43d28d409ff4d9ca967c7253da4fcf2",
+      "sequence": 8,
+      "unit_id": "chapter-000007",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "b0d84a3f03fd3750e9353993235994fefa2e8cfa6cafe084695df1bf5fdeff41",
+      "translation_sha256": "667db1cc0bc9c5933edffe9b2d4a197f55fcceee395508b86655a44553ab0aa2",
+      "workflow_revision": "db253095d36f245f9531da654b93ab72193d3b97",
+      "review_contract_revision": "docs/TRANSLATION.md@db253095d36f245f9531da654b93ab72193d3b97",
+      "reviewer_session_id": "auto-71e930bbab95-reviewer-16ce4233",
+      "reviewed_at": "2026-11-02T16:50:33Z",
+      "state_revision": "c1de2b887bf8573e0563945d602e2a5bc68c084819cadcef1ce8802e76e99af2",
+      "review_commit": "09791dcdf1bcc4308affa94f731785e592f54f2c",
+      "correction_round": 2,
+      "supersedes_record_id": "79c2232e3c124a17a2c42562cee1d24b",
+      "quality_report": {
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "major",
+            "detail": "Mistranslation of 'assault my eyes with it' in the Twitter thread. The translation 'насилуешь мои глаза этой грамматикой' is too literal/aggressive; 'режет глаза' or 'оскорбляет взор' would be more natural for the context of bad grammar.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "In the Twitter thread, '@greengod' asks 'what does abyzmel mean?'. The translation 'что значит отвратительная?' loses the point that the character is confused by a typo/misspelling of 'abysmal'. It should reflect the confusion over the specific word used.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "The phrase 'I volunteer as tribute' is a famous Hunger Games reference. The translation 'Я вызываюсь добровольцем' is correct but loses the specific cultural nod. While not a fidelity error, it's a stylistic loss.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "The translation of 'big ass ray gun' as 'огромная хреновина-пушка' is slightly clunky. 'чертова огромная пушка' or 'гигантская хреновина' would flow better.",
             "resolved": false
           }
         ]
