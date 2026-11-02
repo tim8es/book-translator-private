@@ -4,3 +4,6 @@ Use this file for recurring names, places, organizations, terms, nicknames, titl
 
 | Original | Translation | Type | Notes |
 | --- | --- | --- | --- |
+| Mara | Мара | name | Protagonist |
+| Northbridge | Нортбридж | place | Location of the observatory |
+| Quiet Bell | Колокол Тишины | term | Specific name of the bell |
