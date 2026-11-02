@@ -432,7 +432,10 @@ class AutomatedBookTests(unittest.TestCase):
                 if args[:2] in (("rev-parse", "HEAD"), ("rev-parse", "origin/main")):
                     return "a" * 40
                 if args[:2] == ("diff", "--cached"):
-                    return "automation/status/" + job_id + ".json"
+                    # No staged changes prior to status quarantine; the newly
+                    # staged status is the only staged path after git add.
+                    return "" if sum(call[:2] == ("diff", "--cached") for call in calls) == 1 \\
+                        else "automation/status/" + job_id + ".json"
                 return ""
             with patch.object(worker, "ROOT", root), \
                  patch.object(worker, "git", side_effect=fake_git):
@@ -448,6 +451,17 @@ class AutomatedBookTests(unittest.TestCase):
             self.assertIn(("add", "-A", "--", "automation/status/" + job_id + ".json"), calls)
             self.assertFalse(any(any("books/" in part for part in call) for call in calls))
             self.assertEqual((book / "translated.md").read_text("utf-8"), "uncommitted mutation")
+
+    def test_status_quarantine_refuses_existing_staged_literary_files(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            job_id = "c" * 32
+            with patch.object(worker, "ROOT", root), \
+                 patch.object(worker, "git", return_value="books/other/chapter.md") as git:
+                with self.assertRaisesRegex(worker.JobError, "staged changes"):
+                    worker.block_on_unexpected_failure(job_id, worker.JobError("bad CLI"))
+            self.assertFalse((root / "automation" / "status" / (job_id + ".json")).exists())
+            self.assertEqual(git.call_args_list[0].args, ("diff", "--cached", "--name-only"))
 
     def test_main_records_preflight_failure_and_advances_queue(self):
         with tempfile.TemporaryDirectory() as folder:
