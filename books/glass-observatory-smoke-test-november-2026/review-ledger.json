@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "glass-observatory-smoke-test-november-2026",
-  "next_sequence": 4,
+  "next_sequence": 5,
   "records": [
     {
       "record_id": "229e0c7ed5b74be399d2602cdfac2bc8",
@@ -93,6 +93,43 @@
           {
             "severity": "minor",
             "detail": "The translation 'латунный механизм часов шел верно' adds 'механизм' (mechanism) and 'шел' (ran/went), whereas the source is a simple state: 'the brass clock was correct'. While natural in Russian, it slightly shifts the focus from the state of the clock to the action of the mechanism.",
+            "resolved": false
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "8bb12f9379e76b93d6d617fc632e3f036fd64c01d6374b93136fff4986df6550",
+        "style_guide": "271094bbb0eb33144fbf5528fb713187c9be8c3c0f926e22d4841fcc368766be"
+      }
+    },
+    {
+      "record_id": "408ff6a5309a41c2baba9eeef08123a7",
+      "sequence": 4,
+      "unit_id": "chapter-000003",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "7d6b9aa3a72f08d3bc53155e1222fb8d3e1c27b34b8ca347b5dbdb2d726000f3",
+      "translation_sha256": "490428472194a7f9acb79d7d769efdd48ce6ee80a0c6e807f732f8efda65a3c2",
+      "workflow_revision": "db253095d36f245f9531da654b93ab72193d3b97",
+      "review_contract_revision": "docs/TRANSLATION.md@db253095d36f245f9531da654b93ab72193d3b97",
+      "reviewer_session_id": "auto-f422c9fe51ee-reviewer-1354aed7",
+      "reviewed_at": "2026-11-02T17:29:18Z",
+      "state_revision": "efb3ecab528cff46c7540c9b1e1086384c04d86966c517433f3e5a061e9fdf4a",
+      "review_commit": "954e95501ec28f7e0cf1e270dacb7f664d676f0e",
+      "correction_round": 2,
+      "supersedes_record_id": "dac75ccb1b6d419f81e83bfe107cc041",
+      "quality_report": {
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "major",
+            "detail": "The translation 'были верны' for 'was correct' is a literal calque. In the context of a clock, 'correct' means it shows the right time. 'Были верны' in Russian usually refers to loyalty or truthfulness of a person/statement, not the accuracy of a timepiece. A more natural and faithful rendering would be 'показывали верное время' or 'шли правильно'.",
             "resolved": false
           }
         ]
