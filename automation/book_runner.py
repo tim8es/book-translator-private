@@ -462,7 +462,8 @@ def next_operation(slug: str, status: dict) -> tuple[str, dict | None]:
     return "finalize", None
 
 
-def context(engine: Path, slug: str, chapter: dict, role: str) -> tuple[str, str, str]:
+def context(engine: Path, slug: str, chapter: dict, role: str,
+            pending_style: list[dict] | None = None) -> tuple[str, str, str]:
     book = ROOT / "books" / slug
     instructions, contract_paths = role_contracts(
         engine, "reviewer" if role == "reviewer" else "translator")
@@ -497,12 +498,9 @@ def context(engine: Path, slug: str, chapter: dict, role: str) -> tuple[str, str
             raise JobError("correction requested without recorded reviewer findings")
         user += "\nREVIEW FINDINGS TO CORRECT:\n" + json.dumps(findings, ensure_ascii=False)
     if role == "reviewer":
-        user += (
-            "\nPENDING TRANSLATOR STYLE PROPOSALS (verify against source):\n"
-            + json.dumps((read_json(ROOT / "automation" / "status" /
-                          (read_json(book / "metadata.json").get("automation_job_id", "") + ".json"))
-                          if False else []), ensure_ascii=False)
-        ) if False else ""
+        user += ("\nPENDING TRANSLATOR STYLE PROPOSALS (verify against original, "
+                 "and include only accepted decisions in style_guide):\n"
+                 + json.dumps(pending_style or [], ensure_ascii=False))
         user += (
             "\nIndependently compare EVERY passage against the accepted translation. "
             "Return ONLY JSON with exactly keys outcome, checks, findings, style_guide. "
@@ -568,7 +566,8 @@ def process_claim(job_id: str, slug: str, status: dict, engine: Path) -> None:
     # Model/format failures are safe to checkpoint as retries. CLI failures
     # after mutation remain fail-closed and must be examined separately.
     try:
-        system, user, source = context(engine, slug, chapter, role)
+        system, user, source = context(engine, slug, chapter, role,
+                                       pending_style=status.get("pending_style", []))
         answer = complete("REVIEWER" if role == "reviewer" else
                           "CORRECTOR" if role == "corrector" else "TRANSLATOR",
                           system, user)
