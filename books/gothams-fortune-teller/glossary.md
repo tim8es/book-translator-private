@@ -12,3 +12,10 @@ Use this file for recurring names, places, organizations, terms, nicknames, titl
 | Batfamily | Бэт-семья | Organization | The collective group of Batman's allies. |
 | Tim Drake | Тим Дрейк | Character | Protagonist. |
 | Crime Alley | Крайм-аллея | Place | The alley where Bruce Wayne's parents were killed. |
+| Drake Manor | поместье Дрейков | Place | Tim's childhood home. |
+| Discowing era | эра «диско-короля» | Term | Reference to Dick Grayson's past fashion choices. |
+| Tim Traveler | Тим-Тревел | Term | A pun on 'time traveler' using Tim's name. |
+| Condiment King | Король Кондиментов | Character | DC villain. |
+| Vicki Vale | Вики Вейл | Character | Journalist. |
+| Nightwing | Найтвинг | Character | Dick Grayson's superhero alias. |
+| empty nest syndrome | синдром опустевшего гнезда | Term | Psychological condition of parents after children leave home. |
