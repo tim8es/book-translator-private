@@ -7,13 +7,15 @@ import sys
 import tempfile
 import unittest
 from pathlib import Path
+from datetime import datetime, timezone, timedelta
 from unittest.mock import patch
 
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "automation"))
 import book_runner as runner
 from literary_context import (MAX_SHARED_CHARS, full_shared_context,
                               parse_literary_review, parse_translation, role_contracts,
-                              updated_glossary, updated_style)
+                              save_claim_bound_decisions, updated_glossary, updated_style)
 from omniroute import ModelError
 
 
@@ -150,6 +152,46 @@ class LiteraryContextTests(unittest.TestCase):
             self.assertEqual(runner.next_operation("test", {"correction_rounds": {}})[0], "corrector")
             self.assertEqual(runner.next_operation("test", {
                 "correction_rounds": {}, "memory_recheck_unit": "chapter-000001"})[0], "reviewer")
+
+    def test_canonical_proposal_manager_persists_real_glossary_decision(self):
+        from workflow.filesystem import FilesystemStorage
+        from workflow.repository import WorkflowStateRepository
+        from workflow.schemas import SchemaKind
+        with tempfile.TemporaryDirectory() as tmp:
+            book = Path(tmp) / "books" / "test"
+            book.mkdir(parents=True)
+            (book / "glossary.md").write_text(
+                "# Glossary\n\n| Original | Translation | Type | Notes |\n"
+                "| --- | --- | --- | --- |\n", encoding="utf-8")
+            (book / "style-guide.md").write_text("# Style guide\n", encoding="utf-8")
+            storage = FilesystemStorage(book)
+            repository = WorkflowStateRepository(storage)
+            now = datetime.now(timezone.utc)
+            claim = {
+                "schema_version": 1, "claim_id": "a" * 32,
+                "unit_id": "chapter-000001", "role": "translator",
+                "session_id": "canonical-test-worker", "base_revision": "a" * 64,
+                "base_commit": "b" * 40, "workflow_revision": "c" * 40,
+                "shared_state_revisions": {
+                    "glossary": hashlib.sha256((book / "glossary.md").read_bytes()).hexdigest(),
+                    "style_guide": hashlib.sha256((book / "style-guide.md").read_bytes()).hexdigest()},
+                "claimed_at": (now - timedelta(minutes=5)).isoformat(),
+                "expires_at": (now + timedelta(minutes=30)).isoformat(),
+            }
+            repository.create(".workflow/claims/chapter-000001.json",
+                              SchemaKind.CLAIM, claim)
+            row = {"original": "Northbridge", "translation": "Нортбридж",
+                   "type": "place", "notes": "Town name"}
+            saved = save_claim_bound_decisions(book, "chapter-000001",
+                                              "canonical-test-worker", "glossary", [row])
+            self.assertEqual(saved, 1)
+            self.assertIn("| Northbridge | Нортбридж |",
+                          (book / "glossary.md").read_text("utf-8"))
+            self.assertEqual(save_claim_bound_decisions(
+                book, "chapter-000001", "canonical-test-worker", "glossary", [row]), 0)
+            proposals = list((book / ".workflow" / "proposals").glob("*.json"))
+            self.assertEqual(len(proposals), 2)
+            self.assertEqual(sum(path.name.endswith(".resolution.json") for path in proposals), 1)
 
     def test_claim_includes_frozen_literary_revisions(self):
         with tempfile.TemporaryDirectory() as tmp:
