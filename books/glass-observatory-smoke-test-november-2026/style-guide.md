@@ -59,3 +59,9 @@ Add recurring characters as needed.
 ## Review notes
 
 - 
+
+## Automated reviewed stylistic decisions
+
+| Source pattern / context | Target-language approach | Reason / evidence |
+| --- | --- | --- |
+| Short, declarative sentences | Preserve the terse, rhythmic structure | Mara entered the observatory in Northbridge. At midnight the brass clock rang the Quiet Bell. |
