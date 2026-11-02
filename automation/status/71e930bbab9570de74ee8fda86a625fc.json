@@ -3,48 +3,28 @@
   "job_id": "71e930bbab9570de74ee8fda86a625fc",
   "book_slug": "gothams-fortune-teller",
   "state": "running",
-  "phase": "model-call-reserved",
+  "phase": "reviewer-completed",
   "failures": 0,
   "correction_rounds": {},
   "workflow_revision": "db253095d36f245f9531da654b93ab72193d3b97",
   "source_sha256": "e88111d85c517d2df032c85f3de44ad7ca1f9cfac0394d5173a6ab2b98f548e9",
-  "updated_at": "2026-11-02T16:46:07.554365+00:00",
-  "active": {
-    "role": "reviewer",
-    "chapter": 6,
-    "session_id": "auto-71e930bbab95-reviewer-65f83cea"
-  },
+  "updated_at": "2026-11-02T16:46:13.389135+00:00",
+  "active": null,
   "model_calls_started": 12,
   "memory_glossary_saved": 41,
-  "pending_style": [
-    {
-      "evidence": "Phrases like 'That’s not very respectful, Timothy', 'you’re a burden', 'create the illusion'.",
-      "source_pattern": "Jack and Janet's dialogue",
-      "translation_approach": "Use a cold, condescending, and manipulative tone, contrasting with their superficial 'politeness'."
-    },
-    {
-      "evidence": "'doesn’t feel like the adult he mentally is. He feels his body’s age, just a scared kid'.",
-      "source_pattern": "Tim's internal reaction to parents",
-      "translation_approach": "Maintain the contrast between his mental adult perspective and his physical child-like vulnerability."
-    },
-    {
-      "evidence": "'Baby bird', 'Timmmy', 'Tt. You’re worth it!', 'daily hugs for the rest of your life'.",
-      "source_pattern": "Family banter (Dick, Jason, Damian)",
-      "translation_approach": "Use warm, informal, and slightly chaotic sibling dynamics."
-    }
-  ],
+  "pending_style": [],
   "prompt_context": {
-    "role": "translator",
+    "role": "reviewer",
     "workflow_revision": "db253095d36f245f9531da654b93ab72193d3b97",
     "loaded_contracts": [
       "AGENTS.md",
       "docs/TRANSLATION.md",
-      "docs/TRANSLATOR.md"
+      "docs/REVIEWER.md"
     ],
-    "glossary_sha256": "093a8799155e0851678d4eb4f5305f38e8c22e1fb1e270abb4d199dda1d6f925",
+    "glossary_sha256": "caf39bb301d7e8005e4b50254f1868b4c0fbe71aae21c985dac704ea516c1664",
     "style_guide_sha256": "88e95caea4b1ecf8e409305bc28e15212c27ed40a87f684a01e864f3506446e5",
-    "system_chars": 15301,
-    "user_chars": 35280
+    "system_chars": 21845,
+    "user_chars": 54651
   },
-  "memory_style_saved": 12
+  "memory_style_saved": 15
 }

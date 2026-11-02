@@ -76,3 +76,6 @@ Add recurring characters as needed.
 | Jason's dialogue (angry/defensive) | Use a rougher, more aggressive register with mild profanity (e.g., 'Отъебись', 'дерьмовых'). | Phrases like 'Go the fuck away!', 'shitty bio parents'. |
 | Tim's internal monologue (analytical/protective) | Maintain a blend of strategic thinking and deep emotional attachment to his brothers. | Analysis of the 'shoe to drop', determination to save Jason. |
 | Damian's behavior (clingy child) | Use soft, childish descriptors to contrast with his former assassin persona. | 'clingy monkey', 'cow pajamas', 'stuffed camel'. |
+| Jack and Janet's dialogue | Use a cold, condescending, and manipulative tone, contrasting with their superficial 'politeness'. | Phrases like 'That’s not very respectful, Timothy', 'you’re a burden', 'create the illusion'. |
+| Tim's internal reaction to parents | Maintain the contrast between his mental adult perspective and his physical child-like vulnerability. | 'doesn’t feel like the adult he mentally is. He feels his body’s age, just a scared kid'. |
+| Family banter (Dick, Jason, Damian) | Use warm, informal, and slightly chaotic sibling dynamics. | 'Baby bird', 'Timmmy', 'Tt. You’re worth it!', 'daily hugs for the rest of your life'. |
