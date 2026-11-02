@@ -4,3 +4,4 @@ Use this file for recurring names, places, organizations, terms, nicknames, titl
 
 | Original | Translation | Type | Notes |
 | --- | --- | --- | --- |
+| Gotham | Готэм | Place | The city setting. |
