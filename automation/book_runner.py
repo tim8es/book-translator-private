@@ -452,6 +452,11 @@ def next_operation(slug: str, status: dict) -> tuple[str, dict | None]:
         current_hash = chapter.get("translation_acceptance", {}).get("translation_sha256")
         if record and record["translation_sha256"] == current_hash:
             if record["outcome"] == "CORRECTIONS_REQUIRED":
+                # An accepted memory-only correction leaves the chapter SHA
+                # unchanged, so the same review finding remains hash-current.
+                # Re-review the corrected glossary instead of looping on Corrector.
+                if status.get("memory_recheck_unit") == chapter["unit_id"]:
+                    return "reviewer", chapter
                 if status["correction_rounds"].get(chapter["unit_id"], 0) >= MAX_CORRECTIONS:
                     return "blocked", chapter
                 return "corrector", chapter
@@ -598,6 +603,7 @@ def process_claim(job_id: str, slug: str, status: dict, engine: Path) -> None:
                 if not proposed_glossary or updated_glossary(
                         current_glossary, proposed_glossary) == current_glossary:
                     raise JobError("corrector returned unchanged translation and memory")
+                status["_memory_only_change"] = True
     except (ModelError, JobError) as exc:
         cli("release", slug, str(chapter["number"]), "--session-id", active["session_id"])
         status["active"] = None
@@ -613,6 +619,7 @@ def process_claim(job_id: str, slug: str, status: dict, engine: Path) -> None:
             f.flush()
             cli("review-record", slug, str(chapter["number"]), "--outcome", outcome,
                 "--session-id", active["session_id"], "--quality-report", f.name)
+        status.pop("memory_recheck_unit", None)
         if outcome == "PASS":
             cli("accept-review", slug, str(chapter["number"]))
             saved = save_claim_bound_decisions(
@@ -633,6 +640,9 @@ def process_claim(job_id: str, slug: str, status: dict, engine: Path) -> None:
         if role == "corrector":
             rounds = status["correction_rounds"]
             rounds[unit_id] = rounds.get(unit_id, 0) + 1
+            if status.get("_memory_only_change"):
+                status["memory_recheck_unit"] = unit_id
+        status.pop("_memory_only_change", None)
     cli("release", slug, str(chapter["number"]), "--session-id", active["session_id"])
     status["active"] = None
     status["phase"] = role + "-completed"
