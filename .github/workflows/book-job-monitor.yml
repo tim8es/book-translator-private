@@ -1,0 +1,49 @@
+name: Book job state monitor
+
+on:
+  # A green Actions run may contain a blocked book: inspect durable state.
+  workflow_run:
+    workflows: ["Automatic book translation"]
+    types: [completed]
+  workflow_dispatch:
+    inputs:
+      job_id:
+        description: "Optional job ID; leave blank to check every job"
+        required: false
+        type: string
+  # Recover missed events and monitor stale jobs.
+  schedule:
+    - cron: "7,22,37,52 * * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: book-job-notifications-main
+  cancel-in-progress: false
+
+jobs:
+  inspect:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.head_branch == 'main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate statuses and deliver unacknowledged events
+        env:
+          BOOK_EVENTS_WEBHOOK_URL: ${{ secrets.BOOK_EVENTS_WEBHOOK_URL }}
+          BOOK_EVENTS_SIGNING_SECRET: ${{ secrets.BOOK_EVENTS_SIGNING_SECRET }}
+          JOB_ID: ${{ inputs.job_id }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          args=(--include-missing)
+          if [[ -n "${JOB_ID:-}" ]]; then args+=(--job-id "$JOB_ID"); fi
+          python automation/job_monitor.py "${args[@]}"
