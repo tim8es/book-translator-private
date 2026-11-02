@@ -66,3 +66,6 @@ Add recurring characters as needed.
 | --- | --- | --- |
 | Fanfiction metadata (Rating, Warnings, Tags) | Use standard Russian fanfiction community terminology (e.g., 'Флафф', 'Gen', 'Рейтинг'). | The text is a direct export from Archive of Our Own (AO3). |
 | Informal author's notes | Maintain a friendly, conversational tone with emojis and colloquialisms. | Phrases like 'Hi everyone!', 'fun little story', 'hold tight'. |
+| Social media handles and posts | Maintain the informal, internet-slang style (e.g., 'lmaо', 'бро', 'запощено'), preserving the contrast between the public persona of the account and the private nature of the leaks. | Posts by @tim_is_moneyC8H10N4O2 and responses from @random_gothamite, @life_is_a_soup_and_im_a_fork. |
+| Tim's internal monologue | Use a mix of analytical 'Robin-mode' thinking and typical teenage sarcasm/informality. | Phrases like 'GOD-DAMN IT', 'free chiropractor', 'haha get it?' |
+| Bruce's dialogue with Dick | Transition from stiff, formal, and emotionally stunted to vulnerable and tender. | From 'Okay, chum. I'll try' to 'You are my light, and I could never be happy without you in my life.' |
