@@ -73,3 +73,6 @@ Add recurring characters as needed.
 | Jason's dialogue | Use a rougher, more aggressive register with mild profanity and slang, contrasting with Bruce's formality. | Phrases like 'old man', 'Dickhead', 'fucking smart'. |
 | Alfred's dialogue | Maintain impeccable politeness and a dry, slightly formal tone. | Phrases like 'Mr. Drake', 'Please, do come in', 'Master Bruce, please refrain from yelling'. |
 | Damian's toddler speech | Use simplified, demanding phrasing to reflect a three-year-old's speech patterns, while preserving the contrast of his 'assassin' nature. | Phrases like 'No, want sweets!', 'Gimme!'. |
+| Jason's dialogue (angry/defensive) | Use a rougher, more aggressive register with mild profanity (e.g., 'Отъебись', 'дерьмовых'). | Phrases like 'Go the fuck away!', 'shitty bio parents'. |
+| Tim's internal monologue (analytical/protective) | Maintain a blend of strategic thinking and deep emotional attachment to his brothers. | Analysis of the 'shoe to drop', determination to save Jason. |
+| Damian's behavior (clingy child) | Use soft, childish descriptors to contrast with his former assassin persona. | 'clingy monkey', 'cow pajamas', 'stuffed camel'. |
