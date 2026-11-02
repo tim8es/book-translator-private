@@ -245,7 +245,7 @@ class AutomatedBookTests(unittest.TestCase):
                  patch.object(worker, "install_engine", return_value=(engine, "a" * 40)), \
                  patch.object(worker, "verify"), \
                  patch.object(worker, "checkpoint"), \
-                 patch.object(worker, "next_operation", return_value=("finalize", None)), \
+                 patch.object(worker, "canonical_dispatch", return_value=("finalize", None)), \
                  patch.object(worker, "finalize", side_effect=lambda _job, _slug, status: status.update({"state": "done", "phase": "delivered"})) as finalize, \
                  patch.object(worker, "claim") as claim:
                 status = worker.run(job)
@@ -280,7 +280,7 @@ class AutomatedBookTests(unittest.TestCase):
                  patch.object(worker, "verify"), \
                  patch.object(worker, "checkpoint"), \
                  patch.object(worker, "cli", return_value=json.dumps({"state": "promoted"})) as cli, \
-                 patch.object(worker, "next_operation", return_value=("translator", {"number": 6})), \
+                 patch.object(worker, "canonical_dispatch", return_value=("translator", {"number": 6})), \
                  patch.object(worker, "claim") as claim:
                 status = worker.run(job)
             self.assertEqual(status["book_slug"], "stable-title")

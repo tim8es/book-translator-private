@@ -95,10 +95,17 @@ Reviewer findings cannot use this path.
 
 The workflow intentionally runs at most one state-machine checkpoint per
 invocation. n8n does not orchestrate Translator/Reviewer calls. The Actions
-runner checks out the exact book engine revision into a disposable runner,
-runs standard extract/seal/validate/verify and canonical claim/accept/review/
-release/finalize/build commands, and publishes each checkpoint using a normal
-non-force push to main. A failed compare-and-swap never overwrites remote state.
+runner checks out the exact book engine revision into a disposable runner.
+For normal books it obtains the next operation from the pinned canonical
+`resume --json` endpoint and loads instructions using that revision's
+`workflow.context_routing`; the adapter does not maintain a competing
+lifecycle or instruction-routing state machine. The explicit user-approved
+preview path retains a separate opt-in policy, without claiming Reviewer PASS.
+
+State mutation uses the pinned standard extract/seal/validate/verify and
+claim/accept/review/release/finalize/build commands. Every checkpoint is
+published using a normal non-force push to main. A failed compare-and-swap
+never overwrites remote state.
 
 A Translator claim is committed *before* invoking the model. Reviewer uses a
 separate call, only receiving original, accepted translation, literary role
@@ -120,9 +127,22 @@ This is a **bounded initial MVP**, not unrestricted unattended production:
 - A runner failure or a persistent model/provider error fails the job. A
   stale claim or failed stage requires examination and audited recovery; do
   not delete claim/coordination locks manually or force-push.
-- The current adapter does not automatically reconcile glossary/style change
-  proposals or run active literary waves. Such work must not silently skip
-  existing memory-impact gates.
+- The adapter reads role instructions via the pinned `agent-manifest.json`
+  `context_profiles` and passes the full glossary and style guide. Oversized
+  memory fails explicitly instead of silently dropping early decisions.
+- Translator/Corrector return structured chapter text and glossary/style
+  proposals. The Orchestrator reconciles glossary proposals through the
+  canonical claim-bound `ProposalManager` after accepting the translation.
+  Reviewer independently checks proposed stylistic decisions, then the
+  Orchestrator reconciles those through the same canonical protocol after
+  a successful review. Each new claim binds the exact shared-state revisions.
+- Active literary waves are not automated. This first adapter does not
+  summarize every preceding chapter into a separate plot/continuity memory:
+  only the previous chapter excerpt plus canonical glossary/style decisions
+  are sent. Do not imply unlimited book-wide recall.
+- Automatic model decisions are not a substitute for a human literary review.
+  Memory proposals may legitimately be empty; a syntactically valid model
+  response alone does not prove all names or voice decisions are captured.
 - Model costs depend on provider and tokens. Configure spending caps upstream
   in OmniRoute; this MVP does **not** enforce a book-level monetary limit.
 - The reviewer is an LLM, not a guarantee of literary correctness; evaluate
