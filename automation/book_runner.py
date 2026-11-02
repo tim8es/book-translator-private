@@ -475,6 +475,42 @@ def next_operation(slug: str, status: dict) -> tuple[str, dict | None]:
     return "finalize", None
 
 
+def canonical_dispatch(slug: str, status: dict) -> tuple[str, dict | None]:
+    """Use the pinned engine's authoritative resume decision for automatic work.
+
+    Explicit user-approved previews are a separate adapter policy, not a
+    literary Reviewer PASS: the existing verified approval path handles them.
+    """
+    _, ledger, chapters = chapter_data(slug)
+    if approved_unit_ids(slug, chapters):
+        return next_operation(slug, status)
+    decision = json.loads(cli("resume", slug, "--json"))
+    operation = decision.get("operation")
+    if operation == "blocked":
+        raise JobError("canonical resume blocked automation: "
+                       + str(decision.get("reason", "unknown")))
+    if operation in {"complete", "finalize"}:
+        return "finalize", None
+    mapping = {"translate": "translator", "correct_translation": "corrector",
+               "review": "reviewer", "accept_review": "promote"}
+    if operation not in mapping:
+        raise JobError("unsupported canonical resume operation: " + repr(operation))
+    unit_id = decision.get("unit_id")
+    matches = [chapter for chapter in chapters if chapter.get("unit_id") == unit_id]
+    if len(matches) != 1 or matches[0].get("number") != decision.get("chapter_number"):
+        raise JobError("canonical resume unit no longer matches durable progress")
+    chapter = matches[0]
+    if operation == "correct_translation":
+        record = latest_record(ledger, chapter)
+        if status.get("memory_recheck_unit") == unit_id:
+            if record and (record.get("quality_report") or {}).get("evidence_version") == 2:
+                raise JobError("anchored v2 review requires a changed translation artifact")
+            return "reviewer", chapter
+        if status.get("correction_rounds", {}).get(unit_id, 0) >= MAX_CORRECTIONS:
+            return "blocked", chapter
+    return mapping[operation], chapter
+
+
 def context(engine: Path, slug: str, chapter: dict, role: str,
             pending_style: list[dict] | None = None) -> tuple[str, str, str]:
     book = ROOT / "books" / slug
@@ -785,7 +821,7 @@ def run(job_id: str) -> dict:
                     return status
             process_claim(job_id, slug, status, engine)
             return status
-        role, chapter = next_operation(slug, status)
+        role, chapter = canonical_dispatch(slug, status)
         if role == "blocked":
             status.update({"state": "blocked", "phase": "correction-limit-reached",
                            "blocked_unit_id": chapter["unit_id"]})
