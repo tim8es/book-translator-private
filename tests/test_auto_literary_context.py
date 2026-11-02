@@ -31,7 +31,8 @@ class LiteraryContextTests(unittest.TestCase):
             "contracts": contracts,
             "context_profiles": {
                 "translator": ["global", "translation", "translator"],
-                "reviewer": ["global", "translation", "reviewer"]}}), encoding="utf-8")
+                "reviewer": ["global", "translation", "reviewer"]},
+            "context_overlays": {}}), encoding="utf-8")
         return engine
 
     def test_pinned_manifest_selects_only_role_contracts(self):
