@@ -3,32 +3,44 @@
   "job_id": "71e930bbab9570de74ee8fda86a625fc",
   "book_slug": "gothams-fortune-teller",
   "state": "running",
-  "phase": "model-call-reserved",
+  "phase": "translator-completed",
   "failures": 0,
   "correction_rounds": {},
   "workflow_revision": "db253095d36f245f9531da654b93ab72193d3b97",
   "source_sha256": "e88111d85c517d2df032c85f3de44ad7ca1f9cfac0394d5173a6ab2b98f548e9",
-  "updated_at": "2026-11-02T16:42:15.469389+00:00",
-  "active": {
-    "role": "translator",
-    "chapter": 5,
-    "session_id": "auto-71e930bbab95-translator-73c5ebb1"
-  },
+  "updated_at": "2026-11-02T16:43:19.528008+00:00",
+  "active": null,
   "model_calls_started": 9,
-  "memory_glossary_saved": 27,
-  "pending_style": [],
+  "memory_glossary_saved": 36,
+  "pending_style": [
+    {
+      "evidence": "Phrases like 'Go the fuck away!', 'shitty bio parents'.",
+      "source_pattern": "Jason's dialogue (angry/defensive)",
+      "translation_approach": "Use a rougher, more aggressive register with mild profanity (e.g., 'Отъебись', 'дерьмовых')."
+    },
+    {
+      "evidence": "Analysis of the 'shoe to drop', determination to save Jason.",
+      "source_pattern": "Tim's internal monologue (analytical/protective)",
+      "translation_approach": "Maintain a blend of strategic thinking and deep emotional attachment to his brothers."
+    },
+    {
+      "evidence": "'clingy monkey', 'cow pajamas', 'stuffed camel'.",
+      "source_pattern": "Damian's behavior (clingy child)",
+      "translation_approach": "Use soft, childish descriptors to contrast with his former assassin persona."
+    }
+  ],
   "prompt_context": {
-    "role": "reviewer",
+    "role": "translator",
     "workflow_revision": "db253095d36f245f9531da654b93ab72193d3b97",
     "loaded_contracts": [
       "AGENTS.md",
       "docs/TRANSLATION.md",
-      "docs/REVIEWER.md"
+      "docs/TRANSLATOR.md"
     ],
     "glossary_sha256": "b1e6a4c3ae229e81c19c1d4faa1be0a007469708c0b7be2862aa78ea4fbfa202",
-    "style_guide_sha256": "012b24d1156cb2d90203d30718c5775faa9b33e705da9118ab62fb3d26888c0c",
-    "system_chars": 21845,
-    "user_chars": 92060
+    "style_guide_sha256": "2d1ca4baddcc000d9973bee5f1b2b2f88cd02ec0f41094e543e1cc0f5db3c248",
+    "system_chars": 15301,
+    "user_chars": 39615
   },
   "memory_style_saved": 9
 }

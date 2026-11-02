@@ -31,3 +31,12 @@ Use this file for recurring names, places, organizations, terms, nicknames, titl
 | Lazarus Pits | Ямы Лазаря | Term | Healing pools used by Ra's al Ghul. |
 | Selina | Селина | Character | Catwoman. |
 | Pit Rage | ярость Ямы | Term | Side effect of the Lazarus Pit. |
+| Sheila Haywood | Шейла Хэйвуд | Character | Jason's biological mother. |
+| Felipe Garzonas | Фелипе Гарзонас | Character | The criminal suspect involved in the patrol incident. |
+| Willis | Уиллис | Character | Jason's biological father. |
+| Catherine | Кэтрин | Character | Jason's adoptive mother. |
+| Dinah | Дина | Character | Referring to Black Canary. |
+| Ace | Эйс | Character | German shepherd dog. |
+| Titus | Титус | Character | Great Dane dog. |
+| Batcow | Бэт-Корова | Character | The cow Damian likes. |
+| Goliath | Голиаф | Character | The large dog Tim brought back. |
