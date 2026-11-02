@@ -4,3 +4,4 @@ Use this file for recurring names, places, organizations, terms, nicknames, titl
 
 | Original | Translation | Type | Notes |
 | --- | --- | --- | --- |
+| Mira | Мира | Name | Protagonist |

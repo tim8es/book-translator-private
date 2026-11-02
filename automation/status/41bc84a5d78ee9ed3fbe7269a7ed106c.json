@@ -3,16 +3,33 @@
   "job_id": "41bc84a5d78ee9ed3fbe7269a7ed106c",
   "book_slug": "synthetic-webhook-smoke",
   "state": "running",
-  "phase": "model-call-reserved",
+  "phase": "translator-completed",
   "failures": 0,
   "correction_rounds": {},
   "workflow_revision": "db253095d36f245f9531da654b93ab72193d3b97",
   "source_sha256": "d6647ae530aae25b3c55c5c82fcfc4d0cbc1b46a5c20a15d1437d5ed4ddbabee",
-  "updated_at": "2026-11-02T23:00:47.652379+00:00",
-  "active": {
+  "updated_at": "2026-11-02T23:00:50.986753+00:00",
+  "active": null,
+  "model_calls_started": 1,
+  "memory_glossary_saved": 1,
+  "pending_style": [
+    {
+      "evidence": "Short sentences, focus on visual imagery ('blue light', 'reeds shimmer')",
+      "source_pattern": "Simple, evocative prose with a meditative tone",
+      "translation_approach": "Use clear, lyrical Russian syntax to preserve the atmospheric stillness"
+    }
+  ],
+  "prompt_context": {
     "role": "translator",
-    "chapter": 1,
-    "session_id": "auto-41bc84a5d78e-translator-e3b168a7"
-  },
-  "model_calls_started": 1
+    "workflow_revision": "db253095d36f245f9531da654b93ab72193d3b97",
+    "loaded_contracts": [
+      "AGENTS.md",
+      "docs/TRANSLATION.md",
+      "docs/TRANSLATOR.md"
+    ],
+    "glossary_sha256": "f02e6becb2861881659733c55614d24b49ee0a6906fa607fb2db0ceb6b8d35ad",
+    "style_guide_sha256": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4",
+    "system_chars": 15301,
+    "user_chars": 3318
+  }
 }
