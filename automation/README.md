@@ -59,6 +59,20 @@ prevent non-force pushes require a separately reviewed publication strategy.
    artifact from the finishing workflow run), then send through Telegram.
    When state is missing, still working, or blocked, **do not deliver**.
 
+## Independent monitoring and n8n notifications
+
+A separate GitHub Actions monitor observes every completed automatic workflow
+run (including runs reporting success for durable blocked jobs) and scans again
+every 15 minutes. It validates completed EPUBs against their manifest, checksum
+and current independent review evidence; checks blocked and stale statuses;
+and sends signed, idempotent metadata events to n8n. n8n maps the job ID to
+the original Telegram recipient and delivers errors or verified EPUBs.
+
+Configure GitHub Actions secrets BOOK_EVENTS_WEBHOOK_URL and
+BOOK_EVENTS_SIGNING_SECRET. Without both secrets the monitor inspects but
+cannot send messages. The full receiver specification, HMAC verification and
+recovery procedure are documented in automation/NOTIFICATIONS.md.
+
 Example request (fill in exact source bytes SHA-256, do not paste placeholders
 into a production commit):
 
