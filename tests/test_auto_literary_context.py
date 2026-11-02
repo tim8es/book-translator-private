@@ -141,7 +141,7 @@ class LiteraryContextTests(unittest.TestCase):
     def test_memory_only_correction_triggers_fresh_reviewer(self):
         chapter = {"unit_id": "chapter-000001", "number": 1, "status": "translated",
                    "translation_acceptance": {"translation_sha256": "a" * 64}}
-        record = {"unit_id": "chapter-000001", "outcome": "CORRECTIONS_REQUIRED",
+        record = {"unit_id": "chapter-000001", "sequence": 1, "outcome": "CORRECTIONS_REQUIRED",
                   "translation_sha256": "a" * 64}
         with patch.object(runner, "chapter_data",
                           return_value=({}, {"records": [record]}, [chapter])), patch.object(
