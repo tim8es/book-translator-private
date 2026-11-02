@@ -120,9 +120,22 @@ This is a **bounded initial MVP**, not unrestricted unattended production:
 - A runner failure or a persistent model/provider error fails the job. A
   stale claim or failed stage requires examination and audited recovery; do
   not delete claim/coordination locks manually or force-push.
-- The current adapter does not automatically reconcile glossary/style change
-  proposals or run active literary waves. Such work must not silently skip
-  existing memory-impact gates.
+- The adapter reads role instructions via the pinned `agent-manifest.json`
+  `context_profiles` and passes the full glossary and style guide. Oversized
+  memory fails explicitly instead of silently dropping early decisions.
+- Translator/Corrector return structured chapter text and glossary/style
+  proposals. The Orchestrator reconciles glossary proposals through the
+  canonical claim-bound `ProposalManager` after accepting the translation.
+  Reviewer independently checks proposed stylistic decisions, then the
+  Orchestrator reconciles those through the same canonical protocol after
+  a successful review. Each new claim binds the exact shared-state revisions.
+- Active literary waves are not automated. This first adapter does not
+  summarize every preceding chapter into a separate plot/continuity memory:
+  only the previous chapter excerpt plus canonical glossary/style decisions
+  are sent. Do not imply unlimited book-wide recall.
+- Automatic model decisions are not a substitute for a human literary review.
+  Memory proposals may legitimately be empty; a syntactically valid model
+  response alone does not prove all names or voice decisions are captured.
 - Model costs depend on provider and tokens. Configure spending caps upstream
   in OmniRoute; this MVP does **not** enforce a book-level monetary limit.
 - The reviewer is an LLM, not a guarantee of literary correctness; evaluate
