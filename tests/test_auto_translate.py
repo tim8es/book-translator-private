@@ -18,6 +18,43 @@ from omniroute import ModelError, config, parse_review
 
 
 class AutomatedBookTests(unittest.TestCase):
+    def test_reconciled_history_guard_detects_changes_and_lost_progress(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            book = root / "books" / "stable-title"
+            history = book / "source-updates" / "2026-10-11"
+            history.mkdir(parents=True)
+            (history / "translation.md").write_bytes(b"historical translation\n")
+            rev = "a" * 40
+            unit = {"unit_id": "chapter-000001", "status": "translated",
+                    "translation_acceptance": {"translation_sha256": "b" * 64}}
+            worker.store_json(book / "progress.json", {"chapters": [unit]})
+            worker.store_json(book / "source-manifest.json", {
+                "extracted": [{"unit_id": unit["unit_id"], "sha256": "c" * 64}]})
+            snapshot = book / "source-revisions" / "source-000002" / "revision.json"
+            worker.store_json(snapshot, {
+                "revision_id": "source-000002", "metadata": {"source": {"sha256": "d" * 64}},
+                "source_manifest": {"extracted": [{"unit_id": unit["unit_id"], "sha256": "c" * 64}]}})
+            worker.store_json(book / "source-revisions.json", {"revisions": [{
+                "revision_id": "source-000002", "source_sha256": "d" * 64,
+                "snapshot_path": "source-revisions/source-000002/revision.json"}]})
+            metadata = {"workflow": {"resolved_revision": rev}}
+            worker.store_json(book / "automation-reconciliation.json", {
+                "schema_version": 1, "workflow_revision": rev, "revision_id": "source-000002",
+                "source_sha256": "d" * 64, "history_sha256": worker.history_digest(book / "source-updates"),
+            })
+            worker.verify_legacy_reconciliation(book, metadata)
+            (history / "translation.md").write_bytes(b"changed history\n")
+            with self.assertRaisesRegex(worker.BookIdentityError, "staged source updates"):
+                worker.verify_legacy_reconciliation(book, metadata)
+            (history / "translation.md").write_bytes(b"historical translation\n")
+            unit["status"] = "extracted"
+            worker.store_json(book / "progress.json", {"chapters": [unit]})
+            with self.assertRaisesRegex(worker.BookIdentityError, "staged source updates"):
+                worker.verify_legacy_reconciliation(book, metadata)
+            worker.store_json(book / "source-manifest.json", {
+                "extracted": [{"unit_id": unit["unit_id"], "sha256": "e" * 64}]})
+            worker.verify_legacy_reconciliation(book, metadata)
     @staticmethod
     def make_epub(path: Path, title: str, author: str = "Author", chapter: str = "<p>Chapter</p>") -> None:
         with zipfile.ZipFile(path, "w") as archive:

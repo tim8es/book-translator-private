@@ -168,6 +168,63 @@ def read_json(path: Path) -> dict:
     return value
 
 
+def history_digest(history: Path) -> str:
+    entries = []
+    for path in sorted(history.rglob("*"), key=lambda item: item.relative_to(history).as_posix()):
+        if path.is_symlink():
+            raise BookIdentityError("staged source updates contain a symbolic link")
+        if path.is_file():
+            entries.append([path.relative_to(history).as_posix(), hashlib.sha256(path.read_bytes()).hexdigest()])
+    return hashlib.sha256(json.dumps(entries, ensure_ascii=False, separators=(",", ":")).encode("utf-8")).hexdigest()
+
+
+def verify_legacy_reconciliation(folder: Path, metadata: dict) -> None:
+    history = folder / "source-updates"
+    if history.is_symlink():
+        raise BookIdentityError("existing book has staged source updates requiring reconciliation")
+    if not history.is_dir() or not any(p.is_file() or p.is_symlink() for p in history.rglob("*")):
+        return
+    try:
+        proof = read_json(folder / "automation-reconciliation.json")
+        revision = proof["revision_id"]
+        if (set(proof) != {"schema_version", "workflow_revision", "revision_id", "source_sha256", "history_sha256"}
+                or proof["schema_version"] != 1 or not isinstance(revision, str)
+                or not re.fullmatch(r"source-[0-9]{6}", revision)
+                or proof["workflow_revision"] != (metadata.get("workflow") or {}).get("resolved_revision")
+                or not HEX64.fullmatch(proof["source_sha256"])
+                or proof["history_sha256"] != history_digest(history)):
+            raise ValueError("reconciliation proof mismatch")
+        catalog = read_json(folder / "source-revisions.json")
+        snapshot_path = f"source-revisions/{revision}/revision.json"
+        matches = [x for x in catalog["revisions"] if x.get("revision_id") == revision]
+        if len(matches) != 1 or matches[0].get("source_sha256") != proof["source_sha256"] or matches[0].get("snapshot_path") != snapshot_path:
+            raise ValueError("missing reconciled revision")
+        snapshot = read_json(folder / snapshot_path)
+        if snapshot.get("revision_id") != revision or (snapshot.get("metadata", {}).get("source") or {}).get("sha256") != proof["source_sha256"]:
+            raise ValueError("reconciled revision mismatch")
+        baseline = snapshot["source_manifest"]["extracted"]
+        current = read_json(folder / "source-manifest.json")["extracted"]
+        progress = read_json(folder / "progress.json")["chapters"]
+        if not isinstance(baseline, list) or not baseline or not isinstance(current, list) or not isinstance(progress, list):
+            raise ValueError("invalid reconciliation state")
+        current_by_id = {x["unit_id"]: x for x in current}
+        progress_by_id = {x["unit_id"]: x for x in progress}
+        if len(current_by_id) != len(current) or len(progress_by_id) != len(progress):
+            raise ValueError("duplicate unit identity")
+        seen = set()
+        for item in baseline:
+            unit_id, digest = item["unit_id"], item["sha256"]
+            if unit_id in seen or not isinstance(digest, str) or not HEX64.fullmatch(digest):
+                raise ValueError("invalid baseline unit")
+            seen.add(unit_id)
+            chapter, source = progress_by_id[unit_id], current_by_id[unit_id]
+            if source["sha256"] == digest and (chapter.get("status") not in {"translated", "reviewed"}
+                    or not isinstance(chapter.get("translation_acceptance"), dict)):
+                raise ValueError("unchanged translated unit lost acceptance")
+    except (OSError, ValueError, TypeError, KeyError, AttributeError, JobError) as exc:
+        raise BookIdentityError("existing book has staged source updates requiring reconciliation") from exc
+
+
 def store_json(path: Path, value: dict) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
@@ -534,9 +591,8 @@ def run(job_id: str) -> dict:
         raise BookIdentityError("stored job is linked to a different book workspace")
     if not metadata and folder.exists():
         raise BookIdentityError("book workspace exists but cannot be matched safely")
-    staged = folder / "source-updates"
-    if metadata and staged.is_dir() and any(p.is_file() for p in staged.rglob("*")):
-        raise BookIdentityError("existing book has staged source updates requiring reconciliation")
+    if metadata:
+        verify_legacy_reconciliation(folder, metadata)
     workflow = metadata.get("workflow") if metadata else None
     if metadata and (not isinstance(workflow, dict) or not SHA.fullmatch(workflow.get("resolved_revision", ""))):
         raise BookIdentityError("existing book has no valid pinned workflow revision")
