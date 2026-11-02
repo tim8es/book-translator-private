@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "external_task_id": "493934",
+  "original_name": "Gothams_Fortune_Teller.pdf",
+  "original_format": "pdf",
+  "original_sha256": "2618342bef139b54112f0b5d10f36356e62c3651c61ec47e9f1125fc1c199d54",
+  "original_bytes": 467661,
+  "original_pages": 90,
+  "derived_name": "source.epub",
+  "derived_format": "epub3",
+  "derived_sha256": "45f827f116ff2f42a33407cb0ae3f1dd4f9268054b9d03b210e0df786c15fd6f",
+  "derived_bytes": 69120,
+  "conversion": "pdftotext -layout plus Pandoc EPUB3 split at five source chapter headings, front matter retained",
+  "chapter_count": 5,
+  "extra_frontmatter_unit": true,
+  "note": "source.epub is a faithful structural intermediary for the PDF-only submitted source; original.pdf is immutable original"
+}
