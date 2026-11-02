@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "glass-observatory-smoke-test-november-2026",
-  "next_sequence": 5,
+  "next_sequence": 6,
   "records": [
     {
       "record_id": "229e0c7ed5b74be399d2602cdfac2bc8",
@@ -133,6 +133,37 @@
             "resolved": false
           }
         ]
+      },
+      "shared_state_revisions": {
+        "glossary": "8bb12f9379e76b93d6d617fc632e3f036fd64c01d6374b93136fff4986df6550",
+        "style_guide": "271094bbb0eb33144fbf5528fb713187c9be8c3c0f926e22d4841fcc368766be"
+      }
+    },
+    {
+      "record_id": "2d7f9e07d38744a7b7f99dc18abff433",
+      "sequence": 5,
+      "unit_id": "chapter-000003",
+      "outcome": "PASS",
+      "source_sha256": "7d6b9aa3a72f08d3bc53155e1222fb8d3e1c27b34b8ca347b5dbdb2d726000f3",
+      "translation_sha256": "995245291fc35de41e6f387ab47cc3e7058e817c9f11eb4967bb432b3b23caf5",
+      "workflow_revision": "db253095d36f245f9531da654b93ab72193d3b97",
+      "review_contract_revision": "docs/TRANSLATION.md@db253095d36f245f9531da654b93ab72193d3b97",
+      "reviewer_session_id": "auto-f422c9fe51ee-reviewer-59efcf03",
+      "reviewed_at": "2026-11-02T17:32:37Z",
+      "state_revision": "58a41a6563c25639f1ba810a60c9122230e7201f3952fc0278ce830114d43c3e",
+      "review_commit": "57c7e0d0247e26c482be4c9f78f46fb679b8be44",
+      "correction_round": 2,
+      "supersedes_record_id": "408ff6a5309a41c2baba9eeef08123a7",
+      "quality_report": {
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": []
       },
       "shared_state_revisions": {
         "glossary": "8bb12f9379e76b93d6d617fc632e3f036fd64c01d6374b93136fff4986df6550",
