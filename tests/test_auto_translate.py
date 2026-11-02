@@ -18,6 +18,88 @@ from omniroute import ModelError, config, parse_review
 
 
 class AutomatedBookTests(unittest.TestCase):
+    def test_user_approved_exact_artifacts_skip_repeat_review_but_new_unit_does_not(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            book = root / "books" / "approved-book"
+            (book / "extracted").mkdir(parents=True)
+            (book / "translated").mkdir()
+            source, translated = b"original text", "перевод".encode()
+            (book / "extracted" / "one.md").write_bytes(source)
+            (book / "translated" / "one.md").write_bytes(translated)
+            item = {"unit_id": "chapter-000001", "number": 1, "status": "translated",
+                    "source_path": "extracted/one.md", "translation_path": "translated/one.md",
+                    "translation_acceptance": {"source_sha256": hashlib.sha256(source).hexdigest(),
+                                               "translation_sha256": hashlib.sha256(translated).hexdigest()}}
+            worker.store_json(book / "progress.json", {"chapters": [item]})
+            worker.store_json(book / "review-ledger.json", {"records": []})
+            approvals = root / "automation" / "user-approvals" / "approved-book.json"
+            approvals.parent.mkdir(parents=True)
+            worker.store_json(approvals, {"schema_version": 1, "book_slug": "approved-book",
+                "approved_by": "user", "approved_at": "2026-11-02T10:53:13Z",
+                "workflow_revision": "a" * 40, "units": [{"unit_id": item["unit_id"],
+                **item["translation_acceptance"]}]})
+            with patch.object(worker, "ROOT", root):
+                self.assertEqual(worker.next_operation("approved-book", {"correction_rounds": {}})[0], "finalize")
+                new = {"unit_id": "chapter-000002", "number": 2, "status": "extracted"}
+                worker.store_json(book / "progress.json", {"chapters": [item, new]})
+                self.assertEqual(worker.next_operation("approved-book", {"correction_rounds": {}}), ("translator", new))
+                (book / "translated" / "one.md").write_text("changed", encoding="utf-8")
+                worker.store_json(book / "progress.json", {"chapters": [item]})
+                self.assertEqual(worker.next_operation("approved-book", {"correction_rounds": {}})[0], "reviewer")
+                (book / "translated" / "one.md").write_bytes(translated)
+                (book / "extracted" / "one.md").write_bytes(b"changed source")
+                self.assertEqual(worker.next_operation("approved-book", {"correction_rounds": {}})[0], "reviewer")
+
+    def test_user_approved_output_remains_labelled_as_not_independently_reviewed(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            book = root / "books" / "approved-book"
+            book.mkdir(parents=True)
+            output = book / "output"
+            output.mkdir()
+            artifact = output / "approved-book.epub"
+            artifact.write_bytes(b"PK\x03\x04approved")
+            digest = hashlib.sha256(artifact.read_bytes()).hexdigest()
+            worker.store_json(output / "manifest.json", {"preview": True, "format": "epub",
+                "artifact_path": "output/approved-book.epub", "artifact_sha256": digest})
+            status = {"state": "running", "correction_rounds": {}}
+            chapters = [{"unit_id": "chapter-000001", "status": "translated"}]
+            with patch.object(worker, "ROOT", root), patch.object(worker, "verify"), \
+                 patch.object(worker, "chapter_data", return_value=({}, {"records": []}, chapters)), \
+                 patch.object(worker, "approved_unit_ids", return_value={"chapter-000001"}), \
+                 patch.object(worker, "cli", side_effect=[json.dumps({"errors": [], "claims": [], "finalization": {"active": False}}),
+                                                           json.dumps({"pending": []}), ""]) as cli, \
+                 patch.object(worker, "checkpoint"):
+                worker.finalize("a" * 32, "approved-book", status)
+            self.assertEqual(cli.call_args.args, ("build", "approved-book", "--format", "epub", "--allow-unreviewed"))
+            self.assertEqual(status["state"], "done")
+            self.assertEqual(status["review_provenance"], "user-approved-unreviewed")
+
+    def test_unapproved_translated_unit_cannot_use_user_approved_preview(self):
+        with tempfile.TemporaryDirectory() as folder:
+            chapters = [{"unit_id": "chapter-000001", "status": "translated"},
+                        {"unit_id": "chapter-000002", "status": "translated"}]
+            with patch.object(worker, "ROOT", Path(folder)), patch.object(worker, "verify"), \
+                 patch.object(worker, "chapter_data", return_value=({}, {"records": []}, chapters)), \
+                 patch.object(worker, "approved_unit_ids", return_value={"chapter-000001"}), \
+                 patch.object(worker, "cli") as cli:
+                with self.assertRaisesRegex(worker.JobError, "lack current user approval"):
+                    worker.finalize("a" * 32, "approved-book", {"state": "running"})
+                cli.assert_not_called()
+
+    def test_user_approval_never_overrides_recorded_reviewer_findings(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            book = root / "books" / "approved-book"
+            book.mkdir(parents=True)
+            chapter = {"unit_id": "chapter-000001", "number": 1, "status": "translated",
+                       "translation_acceptance": {"translation_sha256": "a" * 64}}
+            worker.store_json(book / "progress.json", {"chapters": [chapter]})
+            worker.store_json(book / "review-ledger.json", {"records": [{"unit_id": chapter["unit_id"],
+                "sequence": 1, "outcome": "CORRECTIONS_REQUIRED", "translation_sha256": "a" * 64}]})
+            with patch.object(worker, "ROOT", root), patch.object(worker, "approved_unit_ids", return_value={chapter["unit_id"]}):
+                self.assertEqual(worker.next_operation("approved-book", {"correction_rounds": {}})[0], "corrector")
     def test_reconciled_history_guard_detects_changes_and_lost_progress(self):
         with tempfile.TemporaryDirectory() as folder:
             root = Path(folder)

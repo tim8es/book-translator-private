@@ -81,6 +81,16 @@ verifies that proof and prevents unchanged imported units from reverting to
 acceptance blocks processing again. Canonical preflight still validates all
 current book and translation hashes before any model call.
 
+An explicit user approval can cover exact existing source and translation
+hashes in `automation/user-approvals/<book-slug>.json`. Unchanged approved units
+do not need a second Reviewer call; a new or changed unit follows the normal
+translation and review process. This approval is not a Reviewer PASS and does
+not change the canonical review ledger. When a book contains user-approved
+units without independent review, the canonical builder emits an unreviewed
+preview and the job sets `review_provenance=user-approved-unreviewed`; delivery
+must clearly label that provenance. Existing unapproved units and unresolved
+Reviewer findings cannot use this path.
+
 ## Execution and recovery
 
 The workflow intentionally runs at most one state-machine checkpoint per

@@ -394,8 +394,52 @@ def latest_record(ledger: dict, chapter: dict) -> dict | None:
     return max(matches, key=lambda r: r["sequence"]) if matches else None
 
 
+def approved_unit_ids(slug: str, chapters: list) -> set[str]:
+    if not re.fullmatch(r"[\w-]{1,120}", slug):
+        raise JobError("invalid book slug for user approval")
+    path = ROOT / "automation" / "user-approvals" / (slug + ".json")
+    if not path.exists():
+        return set()
+    try:
+        approval = read_json(path)
+        if (set(approval) != {"schema_version", "book_slug", "approved_by", "approved_at", "workflow_revision", "units"}
+                or approval["schema_version"] != 1 or approval["book_slug"] != slug
+                or approval["approved_by"] != "user" or not isinstance(approval["approved_at"], str)
+                or not SHA.fullmatch(approval["workflow_revision"]) or not isinstance(approval["units"], list)):
+            raise ValueError("invalid user approval")
+        if datetime.fromisoformat(approval["approved_at"].replace("Z", "+00:00")).tzinfo is None:
+            raise ValueError("approval timestamp must include a timezone")
+        entries = {}
+        for item in approval["units"]:
+            if (not isinstance(item, dict) or set(item) != {"unit_id", "source_sha256", "translation_sha256"}
+                    or not isinstance(item["unit_id"], str) or not re.fullmatch(r"chapter-[0-9]{6}", item["unit_id"])
+                    or not all(isinstance(item[k], str) and HEX64.fullmatch(item[k]) for k in ("source_sha256", "translation_sha256"))
+                    or item["unit_id"] in entries):
+                raise ValueError("invalid approved unit")
+            entries[item["unit_id"]] = item
+        result = set()
+        folder = (ROOT / "books" / slug).resolve()
+        for chapter in chapters:
+            item = entries.get(chapter.get("unit_id"))
+            acceptance = chapter.get("translation_acceptance")
+            if not item or chapter.get("status") != "translated" or not isinstance(acceptance, dict):
+                continue
+            if any(acceptance.get(k) != item[k] for k in ("source_sha256", "translation_sha256")):
+                continue
+            artifacts = [(chapter.get("source_path"), item["source_sha256"]),
+                         (chapter.get("translation_path"), item["translation_sha256"])]
+            if all(isinstance(rel, str) and (folder / rel).resolve().is_relative_to(folder)
+                   and (folder / rel).is_file() and hashlib.sha256((folder / rel).read_bytes()).hexdigest() == digest
+                   for rel, digest in artifacts):
+                result.add(chapter["unit_id"])
+        return result
+    except (OSError, ValueError, TypeError, KeyError, AttributeError) as exc:
+        raise JobError("invalid user approval; refusing automated processing") from exc
+
+
 def next_operation(slug: str, status: dict) -> tuple[str, dict | None]:
     _, ledger, chapters = chapter_data(slug)
+    approved = approved_unit_ids(slug, chapters)
     for chapter in chapters:
         if chapter["status"] == "reviewed":
             continue
@@ -412,6 +456,8 @@ def next_operation(slug: str, status: dict) -> tuple[str, dict | None]:
                 return "corrector", chapter
             if record["outcome"] == "PASS":
                 return "promote", chapter
+        if chapter["unit_id"] in approved:
+            continue
         return "reviewer", chapter
     return "finalize", None
 
@@ -553,11 +599,28 @@ def process_claim(job_id: str, slug: str, status: dict, engine: Path) -> None:
 
 def finalize(job_id: str, slug: str, status: dict) -> None:
     verify(slug)
-    cli("finalize", slug, "--json")
-    cli("build", slug, "--format", "epub")
+    _, ledger, chapters = chapter_data(slug)
+    approved = approved_unit_ids(slug, chapters)
+    pending = [chapter for chapter in chapters if chapter["status"] != "reviewed"]
+    if pending:
+        if any(chapter["status"] != "translated" or chapter["unit_id"] not in approved for chapter in pending):
+            raise JobError("unreviewed units lack current user approval")
+        for chapter in pending:
+            record = latest_record(ledger, chapter)
+            if record and record.get("translation_sha256") == chapter.get("translation_acceptance", {}).get("translation_sha256"):
+                raise JobError("current reviewer evidence must be resolved before building")
+        state = json.loads(cli("status", slug, "--json"))
+        impact = json.loads(cli("memory-impact", slug))
+        if (state.get("errors") != [] or state.get("claims") != []
+                or (state.get("finalization") or {}).get("active") is not False or impact.get("pending") != []):
+            raise JobError("book has active work or pending literary impacts")
+        cli("build", slug, "--format", "epub", "--allow-unreviewed")
+    else:
+        cli("finalize", slug, "--json")
+        cli("build", slug, "--format", "epub")
     manifest = read_json(ROOT / "books" / slug / "output" / "manifest.json")
-    if manifest.get("preview") is not False or manifest.get("format") != "epub":
-        raise JobError("canonical build was not final EPUB")
+    if manifest.get("preview") is not bool(pending) or manifest.get("format") != "epub":
+        raise JobError("canonical EPUB review provenance is inconsistent")
     rel = manifest["artifact_path"]
     artifact = (ROOT / "books" / slug / rel).resolve()
     if not artifact.is_relative_to((ROOT / "books" / slug).resolve()) or not artifact.is_file():
@@ -567,6 +630,8 @@ def finalize(job_id: str, slug: str, status: dict) -> None:
     status.update({"state": "done", "phase": "delivered",
         "artifact_path": artifact.relative_to(ROOT).as_posix(),
         "artifact_sha256": manifest["artifact_sha256"]})
+    if pending:
+        status["review_provenance"] = "user-approved-unreviewed"
     checkpoint(job_id, status, slug)
 
 
