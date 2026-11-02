@@ -55,7 +55,7 @@ class LiteraryContextTests(unittest.TestCase):
             data = json.loads(manifest_path.read_text("utf-8"))
             data["context_profiles"]["translator"] = ["global"]
             manifest_path.write_text(json.dumps(data), encoding="utf-8")
-            with self.assertRaisesRegex(ValueError, "contract drift"):
+            with self.assertRaisesRegex(ValueError, "missing required"):
                 role_contracts(engine, "translator")
 
     def test_translator_returns_complete_artifact_and_decisions(self):
