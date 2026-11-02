@@ -69,3 +69,7 @@ Add recurring characters as needed.
 | Social media handles and posts | Maintain the informal, internet-slang style (e.g., 'lmaо', 'бро', 'запощено'), preserving the contrast between the public persona of the account and the private nature of the leaks. | Posts by @tim_is_moneyC8H10N4O2 and responses from @random_gothamite, @life_is_a_soup_and_im_a_fork. |
 | Tim's internal monologue | Use a mix of analytical 'Robin-mode' thinking and typical teenage sarcasm/informality. | Phrases like 'GOD-DAMN IT', 'free chiropractor', 'haha get it?' |
 | Bruce's dialogue with Dick | Transition from stiff, formal, and emotionally stunted to vulnerable and tender. | From 'Okay, chum. I'll try' to 'You are my light, and I could never be happy without you in my life.' |
+| Tim's internal monologue/commentary | Maintain a blend of analytical precision and teenage sarcasm, using colloquialisms like 'лол' and 'задрот'. | Phrases like 'this nerd', 'Holy. Shit.', 'I'm a little genius'. |
+| Jason's dialogue | Use a rougher, more aggressive register with mild profanity and slang, contrasting with Bruce's formality. | Phrases like 'old man', 'Dickhead', 'fucking smart'. |
+| Alfred's dialogue | Maintain impeccable politeness and a dry, slightly formal tone. | Phrases like 'Mr. Drake', 'Please, do come in', 'Master Bruce, please refrain from yelling'. |
+| Damian's toddler speech | Use simplified, demanding phrasing to reflect a three-year-old's speech patterns, while preserving the contrast of his 'assassin' nature. | Phrases like 'No, want sweets!', 'Gimme!'. |
