@@ -5,6 +5,7 @@ import hashlib
 import json
 import os
 import shutil
+import subprocess
 import sys
 import tempfile
 import unittest
@@ -31,10 +32,94 @@ class AutomatedBookTests(unittest.TestCase):
                 if args[0] == 'restore':
                     marker.write_text('default', encoding='utf-8')
                 return ''
-            with patch.object(worker, 'ROOT', root), patch.object(worker, 'git', side_effect=fake_git):
+            with patch.object(worker, 'ROOT', root), patch.object(worker, 'git', side_effect=fake_git), \
+                 patch.object(worker.subprocess, 'run') as process:
+                process.return_value.returncode = 0
                 worker.checkpoint('a' * 32, {'phase': 'matched'}, 'book')
             self.assertEqual(marker.read_text(encoding='utf-8'), 'pinned')
             self.assertIn(('add', '-A', '--', 'books/book', 'automation/status/' + 'a' * 32 + '.json'), calls)
+
+    def test_disjoint_checkpoint_replays_without_touching_active_checkout(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            def cmd(*args):
+                return subprocess.check_output(["git", *args], cwd=root, text=True).strip()
+            cmd("init", "-q", "-b", "main")
+            cmd("config", "user.name", "Test Agent")
+            cmd("config", "user.email", "test-agent@example.test")
+            (root / "books" / "our-book").mkdir(parents=True)
+            (root / "books" / "our-book" / "chapter.md").write_text(
+                "base", encoding="utf-8")
+            cmd("add", "-A")
+            cmd("commit", "-qm", "base")
+            base = cmd("rev-parse", "HEAD")
+            (root / "books" / "our-book" / "chapter.md").write_text(
+                "our approved translation", encoding="utf-8")
+            cmd("add", "-A")
+            cmd("commit", "-qm", "our checkpoint")
+            local = cmd("rev-parse", "HEAD")
+            cmd("checkout", "-qb", "other-agent", base)
+            (root / "books" / "another-book").mkdir(parents=True)
+            (root / "books" / "another-book" / "chapter.md").write_text(
+                "their unrelated translation", encoding="utf-8")
+            cmd("add", "-A")
+            cmd("commit", "-qm", "another book")
+            remote = cmd("rev-parse", "HEAD")
+            cmd("checkout", "-q", "main")
+            # The active runner has dirty pinned-engine files after checkout.
+            # Git plumbing must not reset or rebase this worktree.
+            (root / "ephemeral-engine.py").write_text(
+                "pinned version", encoding="utf-8")
+            with patch.object(worker, "ROOT", root):
+                merged = worker.replay_disjoint_checkpoint(
+                    base, local, remote, ["books/our-book"])
+            self.assertEqual(cmd("rev-parse", merged + "^"), remote)
+            self.assertEqual(cmd("show", merged + ":books/our-book/chapter.md"),
+                             "our approved translation")
+            self.assertEqual(cmd("show", merged + ":books/another-book/chapter.md"),
+                             "their unrelated translation")
+            self.assertEqual(cmd("rev-parse", "HEAD"), local)
+            self.assertEqual((root / "ephemeral-engine.py").read_text("utf-8"),
+                             "pinned version")
+            # A concurrent edit to the SAME book must never be replayed.
+            cmd("checkout", "-qb", "conflicting-agent", base)
+            (root / "books" / "our-book" / "chapter.md").write_text(
+                "conflicting agent edit", encoding="utf-8")
+            cmd("add", "-A")
+            cmd("commit", "-qm", "conflicting work")
+            conflicting = cmd("rev-parse", "HEAD")
+            with patch.object(worker, "ROOT", root):
+                with self.assertRaisesRegex(worker.JobError, "remote changed this job"):
+                    worker.replay_disjoint_checkpoint(
+                        base, local, conflicting, ["books/our-book"])
+
+    def test_disjoint_checkpoint_rejects_rewritten_history(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            def cmd(*args):
+                return subprocess.check_output(["git", *args], cwd=root, text=True).strip()
+            cmd("init", "-q", "-b", "main")
+            cmd("config", "user.name", "Test Agent")
+            cmd("config", "user.email", "test-agent@example.test")
+            (root / "base.txt").write_text("base", encoding="utf-8")
+            cmd("add", "-A")
+            cmd("commit", "-qm", "base")
+            base = cmd("rev-parse", "HEAD")
+            (root / "other.txt").write_text("local", encoding="utf-8")
+            cmd("add", "-A")
+            cmd("commit", "-qm", "local")
+            local = cmd("rev-parse", "HEAD")
+            # An unrelated root commit is not a safe fast-forward upstream.
+            cmd("checkout", "--orphan", "rewritten")
+            cmd("rm", "-q", "-rf", ".")
+            (root / "replacement.txt").write_text("unrelated", encoding="utf-8")
+            cmd("add", "-A")
+            cmd("commit", "-qm", "replaced history")
+            rewritten = cmd("rev-parse", "HEAD")
+            with patch.object(worker, "ROOT", root):
+                with self.assertRaisesRegex(worker.JobError, "upstream history diverged"):
+                    worker.replay_disjoint_checkpoint(
+                        base, local, rewritten, ["other.txt"])
 
     def test_user_approved_exact_artifacts_skip_repeat_review_but_new_unit_does_not(self):
         with tempfile.TemporaryDirectory() as folder:
@@ -439,7 +524,9 @@ class AutomatedBookTests(unittest.TestCase):
                     return "automation/status/" + job_id + ".json"
                 return ""
             with patch.object(worker, "ROOT", root), \
-                 patch.object(worker, "git", side_effect=fake_git):
+                 patch.object(worker, "git", side_effect=fake_git), \
+                 patch.object(worker.subprocess, "run") as process:
+                process.return_value.returncode = 0
                 status = worker.block_on_unexpected_failure(
                     job_id, worker.JobError("source coverage blocked"))
             self.assertEqual(status["state"], "blocked")

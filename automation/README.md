@@ -107,8 +107,13 @@ preview path retains a separate opt-in policy, without claiming Reviewer PASS.
 
 State mutation uses the pinned standard extract/seal/validate/verify and
 claim/accept/review/release/finalize/build commands. Every checkpoint is
-published using a normal non-force push to main. A failed compare-and-swap
-never overwrites remote state. A non-model failure (such as unsupported
+published using a normal non-force push to main. If main advanced because an
+unrelated book/job was updated, the runner verifies that its own book and status
+paths are unchanged, replays its exact committed patch through a disposable
+Git index based on the newer main, and attempts a bounded non-force push.
+The runner never rebases or resets the active pinned-engine checkout and never
+force-pushes. Same-book/status collisions, rewritten upstream history, or
+exhausted push retries fail closed without silently overwriting state. A non-model failure (such as unsupported
 EPUB semantics, malformed input, or a failed canonical CLI stage) produces a
 durable **blocked** status when a status-only compare-and-swap publication is
 safe. The runner never commits potentially partial book mutations, does not
