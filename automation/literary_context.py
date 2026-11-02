@@ -82,28 +82,29 @@ def role_contracts(engine: Path, role: str) -> tuple[str, list[str]]:
     """Read selected revision's profile and validate every path before loading."""
     if role not in _ALLOWED_ROLES:
         raise ValueError("unsupported literary role")
-    manifest = json.loads((engine / "agent-manifest.json").read_text("utf-8"))
-    contracts, profiles = manifest["contracts"], manifest["context_profiles"]
-    expected = {"translator": ["global", "translation", "translator"],
-                "reviewer": ["global", "translation", "reviewer"]}[role]
-    keys = profiles[role]
-    if keys != expected:
-        raise ValueError(f"unsupported {role} context profile; refusing silent contract drift")
-    files = []
+    # The version-selected engine defines routing; this adapter must not
+    # maintain a shadow copy of manifest path selection or optional overlays.
+    scripts = str(engine / "scripts")
+    if scripts not in sys.path:
+        sys.path.insert(0, scripts)
+    from workflow.context_routing import contract_paths, read_manifest
+    manifest = read_manifest(engine)
+    files = contract_paths(manifest, role)
+    mandatory = {"AGENTS.md", "docs/TRANSLATION.md",
+                 "docs/TRANSLATOR.md" if role == "translator" else "docs/REVIEWER.md"}
+    if not mandatory.issubset(set(files)):
+        raise ValueError(f"missing required {role} role contracts")
+    other_role = "docs/REVIEWER.md" if role == "translator" else "docs/TRANSLATOR.md"
+    if other_role in files:
+        raise ValueError(f"cross-role contract leakage in {role} profile")
     sections = []
-    for key in keys:
-        path = contracts[key]
-        if not isinstance(path, str) or Path(path).is_absolute() or (
-            any(part in ("", ".", "..") for part in Path(path).parts)
-        ):
-            raise ValueError("unsafe manifest contract path")
+    for path in files:
         target = (engine / path).resolve(strict=True)
         if not target.is_relative_to(engine.resolve()):
-            raise ValueError("contract escapes selected engine")
+            raise ValueError("contract escapes pinned engine")
         contents = target.read_text("utf-8")
         if not contents.strip():
             raise ValueError(f"empty required {role} contract: {path}")
-        files.append(path)
         sections.append(contents)
     return "\n\n".join(sections), files
 
