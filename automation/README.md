@@ -95,10 +95,17 @@ Reviewer findings cannot use this path.
 
 The workflow intentionally runs at most one state-machine checkpoint per
 invocation. n8n does not orchestrate Translator/Reviewer calls. The Actions
-runner checks out the exact book engine revision into a disposable runner,
-runs standard extract/seal/validate/verify and canonical claim/accept/review/
-release/finalize/build commands, and publishes each checkpoint using a normal
-non-force push to main. A failed compare-and-swap never overwrites remote state.
+runner checks out the exact book engine revision into a disposable runner.
+For normal books it obtains the next operation from the pinned canonical
+`resume --json` endpoint and loads instructions using that revision's
+`workflow.context_routing`; the adapter does not maintain a competing
+lifecycle or instruction-routing state machine. The explicit user-approved
+preview path retains a separate opt-in policy, without claiming Reviewer PASS.
+
+State mutation uses the pinned standard extract/seal/validate/verify and
+claim/accept/review/release/finalize/build commands. Every checkpoint is
+published using a normal non-force push to main. A failed compare-and-swap
+never overwrites remote state.
 
 A Translator claim is committed *before* invoking the model. Reviewer uses a
 separate call, only receiving original, accepted translation, literary role
