@@ -306,6 +306,49 @@ def git(*args: str) -> str:
     return result.stdout.strip()
 
 
+def replay_disjoint_checkpoint(base: str, local_commit: str, remote: str,
+                               paths: list[str]) -> str:
+    """Build a new commit atop remote without touching the active checkout.
+
+    The pinned engine can leave tracked scripts modified in the runner worktree.
+    Rebase/reset/autostash of that checkout is unsafe. Instead apply only the
+    committed book/status patch to a temporary Git index based on remote.
+    """
+    ancestor = subprocess.run(
+        ["git", "merge-base", "--is-ancestor", base, remote],
+        cwd=ROOT, capture_output=True)
+    if ancestor.returncode:
+        raise JobError("upstream history diverged; refusing automatic checkpoint")
+    if git("diff", "--name-only", base, remote, "--", *paths):
+        raise JobError("remote changed this job's book/status; refusing stale checkpoint")
+
+    patch = subprocess.run(
+        ["git", "diff", "--binary", "--full-index", base, local_commit, "--", *paths],
+        cwd=ROOT, capture_output=True)
+    if patch.returncode or not patch.stdout:
+        raise JobError("cannot construct isolated checkpoint patch")
+    with tempfile.TemporaryDirectory(prefix="book-auto-git-index-") as tmp:
+        env = os.environ.copy()
+        env["GIT_INDEX_FILE"] = str(Path(tmp) / "index")
+        env.update({"GIT_AUTHOR_NAME": "github-actions[bot]",
+                    "GIT_AUTHOR_EMAIL": "41898282+github-actions[bot]@users.noreply.github.com",
+                    "GIT_COMMITTER_NAME": "github-actions[bot]",
+                    "GIT_COMMITTER_EMAIL": "41898282+github-actions[bot]@users.noreply.github.com"})
+        def isolated(*args: str, data: bytes | None = None) -> str:
+            result = subprocess.run(
+                ["git", *args], cwd=ROOT, env=env, input=data,
+                capture_output=True)
+            if result.returncode:
+                raise JobError("isolated Git checkpoint operation failed")
+            return result.stdout.decode("utf-8").strip()
+
+        isolated("read-tree", remote)
+        isolated("apply", "--cached", "--binary", "-", data=patch.stdout)
+        tree = isolated("write-tree")
+        return isolated("commit-tree", tree, "-p", remote,
+                        data=f"auto: replay disjoint checkpoint {local_commit[:12]}\n".encode())
+
+
 def checkpoint(job_id: str, status: dict, slug: str | None) -> None:
     # A status-only quarantine must never include previously staged literary
     # files left by a failed canonical operation. Otherwise the subsequent Git
@@ -318,16 +361,34 @@ def checkpoint(job_id: str, status: dict, slug: str | None) -> None:
     if slug:
         paths.insert(0, f"books/{slug}")
     git("add", "-A", "--", *paths)
-    if not git("diff", "--cached", "--name-only"):
+    changed = git("diff", "--cached", "--name-only")
+    if not changed:
         return
-    expected = git("rev-parse", "HEAD")
-    git("fetch", "--quiet", "origin", "main")
-    if git("rev-parse", "origin/main") != expected:
-        raise JobError("remote repository changed; refusing a stale checkpoint")
+    # Git may have staged unrelated files before entering this checkpoint.
+    # Never allow them into the bot's commit, even after the safe replay.
+    staged = changed.splitlines()
+    if any(not (p == paths[-1] or
+                (slug is not None and p.startswith(f"books/{slug}/")))
+           for p in staged):
+        raise JobError("checkpoint index contains unrelated staged files")
+    base = git("rev-parse", "HEAD")
     git("-c", "user.name=github-actions[bot]",
         "-c", "user.email=41898282+github-actions[bot]@users.noreply.github.com",
         "commit", "-m", f"auto({job_id[:12]}): {status['phase']}")
-    git("push", "origin", "HEAD:main")
+    local_commit = git("rev-parse", "HEAD")
+    for attempt in range(4):
+        git("fetch", "--quiet", "origin", "main")
+        remote = git("rev-parse", "origin/main")
+        candidate = (local_commit if remote == base else
+                     replay_disjoint_checkpoint(base, local_commit, remote, paths))
+        result = subprocess.run(
+            ["git", "push", "origin", f"{candidate}:refs/heads/main"],
+            cwd=ROOT, capture_output=True, text=True)
+        if result.returncode == 0:
+            return
+        # A competing writer may move main during our push. Recheck every
+        # target path against the ORIGINAL base before trying again.
+    raise JobError("could not publish checkpoint after bounded Git retries")
 
 
 def install_engine(revision: str | None) -> tuple[Path, str]:
