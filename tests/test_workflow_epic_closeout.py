@@ -52,7 +52,7 @@ class WorkflowEpicCloseoutContractTests(unittest.TestCase):
         allowed = {"tests.yml", "deploy-apify-private.yml", "smoke-apify-private.yml",
                    "chat-operations.yml", "policy-change-source-intake.yml",
                    "policy-change-final-delivery.yml", "wings-of-starlight-final-delivery.yml",
-                   "auto-translate.yml"}
+                   "auto-translate.yml", "book-job-monitor.yml"}
         self.assertIn("tests.yml", workflows)
         self.assertEqual(set(workflows) - allowed, set())
         ci = (workflow_dir / "tests.yml").read_text(encoding="utf-8")
