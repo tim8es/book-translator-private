@@ -3,37 +3,28 @@
   "job_id": "41bc84a5d78ee9ed3fbe7269a7ed106c",
   "book_slug": "synthetic-webhook-smoke",
   "state": "running",
-  "phase": "model-call-reserved",
+  "phase": "reviewer-completed",
   "failures": 0,
   "correction_rounds": {},
   "workflow_revision": "db253095d36f245f9531da654b93ab72193d3b97",
   "source_sha256": "d6647ae530aae25b3c55c5c82fcfc4d0cbc1b46a5c20a15d1437d5ed4ddbabee",
-  "updated_at": "2026-11-02T23:02:01.638466+00:00",
-  "active": {
-    "role": "reviewer",
-    "chapter": 1,
-    "session_id": "auto-41bc84a5d78e-reviewer-9f596992"
-  },
+  "updated_at": "2026-11-02T23:02:05.834557+00:00",
+  "active": null,
   "model_calls_started": 2,
   "memory_glossary_saved": 1,
-  "pending_style": [
-    {
-      "evidence": "Short sentences, focus on visual imagery ('blue light', 'reeds shimmer')",
-      "source_pattern": "Simple, evocative prose with a meditative tone",
-      "translation_approach": "Use clear, lyrical Russian syntax to preserve the atmospheric stillness"
-    }
-  ],
+  "pending_style": [],
   "prompt_context": {
-    "role": "translator",
+    "role": "reviewer",
     "workflow_revision": "db253095d36f245f9531da654b93ab72193d3b97",
     "loaded_contracts": [
       "AGENTS.md",
       "docs/TRANSLATION.md",
-      "docs/TRANSLATOR.md"
+      "docs/REVIEWER.md"
     ],
-    "glossary_sha256": "f02e6becb2861881659733c55614d24b49ee0a6906fa607fb2db0ceb6b8d35ad",
+    "glossary_sha256": "54ce0a85e1adbcb085a3ab7c9f706b1334f8ec3e363f669f3975aa8470b3b621",
     "style_guide_sha256": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4",
-    "system_chars": 15301,
-    "user_chars": 3318
-  }
+    "system_chars": 21845,
+    "user_chars": 4263
+  },
+  "memory_style_saved": 1
 }

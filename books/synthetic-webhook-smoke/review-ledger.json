@@ -1,6 +1,38 @@
 {
   "schema_version": 1,
   "book_slug": "synthetic-webhook-smoke",
-  "next_sequence": 1,
-  "records": []
+  "next_sequence": 2,
+  "records": [
+    {
+      "record_id": "9cd231bb89874d999660e03e18af8849",
+      "sequence": 1,
+      "unit_id": "chapter-000001",
+      "outcome": "PASS",
+      "source_sha256": "ae8dd74df0d1f84f215b6e2085a2e032528e2a97feb2a11773d37c54c6823150",
+      "translation_sha256": "7b372b53f5f0ce8c4b7d6ba580a8a9bfacba8dc731efdb84a97d332c8fe35565",
+      "workflow_revision": "db253095d36f245f9531da654b93ab72193d3b97",
+      "review_contract_revision": "docs/TRANSLATION.md@db253095d36f245f9531da654b93ab72193d3b97",
+      "reviewer_session_id": "auto-41bc84a5d78e-reviewer-9f596992",
+      "reviewed_at": "2026-11-02T23:02:05Z",
+      "state_revision": "d680c546b3c59d9552a4c9fd9aef8698df955f0bd5f20228dfc4cc43584fd951",
+      "review_commit": "c45b65534228c9c4e978d1f8256252efab10045d",
+      "correction_round": 0,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": []
+      },
+      "shared_state_revisions": {
+        "glossary": "54ce0a85e1adbcb085a3ab7c9f706b1334f8ec3e363f669f3975aa8470b3b621",
+        "style_guide": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4"
+      }
+    }
+  ]
 }

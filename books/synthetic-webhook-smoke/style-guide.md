@@ -59,3 +59,9 @@ Add recurring characters as needed.
 ## Review notes
 
 - 
+
+## Automated reviewed stylistic decisions
+
+| Source pattern / context | Target-language approach | Reason / evidence |
+| --- | --- | --- |
+| Simple, evocative prose with a meditative tone | Use clear, lyrical Russian syntax to preserve the atmospheric stillness | Short sentences, focus on visual imagery ('blue light', 'reeds shimmer') |
