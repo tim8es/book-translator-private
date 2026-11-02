@@ -48,11 +48,10 @@ prevent non-force pushes require a separately reviewed publication strategy.
    upload both paths, verify the returned blob bytes and request content, then
    trigger Actions. Use a Git tree/commit to upload both files atomically where
    possible. Retry a failed push only after rechecking HEAD.
-3. A new request.json committed on main automatically triggers
-   auto-translate.yml via a paths-filtered push event. To target a particular
-   job or recover an interrupted dispatch, POST workflow_dispatch with
-   input job_id. Poll automation/status/<job_id>.json. A 15-minute schedule
-   also scans unfinished requests as a recovery fallback.
+3. POST GitHub Actions workflow_dispatch for auto-translate.yml on main
+   with input job_id. Poll automation/status/<job_id>.json. If dispatch
+   events are delayed or unavailable, the existing 15-minute schedule
+   scans for unfinished requests as a recovery fallback.
 4. When state=done, use the output artifact_path and artifact_sha256 in the
    status to retrieve and verify the final EPUB (or download the Actions
    artifact from the finishing workflow run), then send through Telegram.
