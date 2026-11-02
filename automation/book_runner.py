@@ -367,7 +367,7 @@ def checkpoint(job_id: str, status: dict, slug: str | None) -> None:
     # Git may have staged unrelated files before entering this checkpoint.
     # NUL-separated paths avoid quoting for Unicode book slugs.
     # Never allow unrelated files into the bot's commit or safe replay.
-    staged = changed.split("\\0")
+    staged = changed.split("\0")
     if any(not (p == paths[-1] or
                 (slug is not None and p.startswith(f"books/{slug}/")))
            for p in staged):
