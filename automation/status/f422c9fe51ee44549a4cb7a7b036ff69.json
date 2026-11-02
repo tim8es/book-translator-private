@@ -3,32 +3,28 @@
   "job_id": "f422c9fe51ee44549a4cb7a7b036ff69",
   "book_slug": "glass-observatory-smoke-test-november-2026",
   "state": "running",
-  "phase": "model-call-reserved",
+  "phase": "translator-completed",
   "failures": 0,
   "correction_rounds": {},
   "workflow_revision": "db253095d36f245f9531da654b93ab72193d3b97",
   "source_sha256": "975a52872ed2b69f66c55b38d1b9e1dfa411d4bfea655be3537afd215ce69962",
-  "updated_at": "2026-11-02T17:24:25.187421+00:00",
-  "active": {
-    "role": "translator",
-    "chapter": 2,
-    "session_id": "auto-f422c9fe51ee-translator-b8cef547"
-  },
+  "updated_at": "2026-11-02T17:24:27.824526+00:00",
+  "active": null,
   "model_calls_started": 3,
-  "memory_glossary_saved": 3,
+  "memory_glossary_saved": 4,
   "pending_style": [],
   "prompt_context": {
-    "role": "reviewer",
+    "role": "translator",
     "workflow_revision": "db253095d36f245f9531da654b93ab72193d3b97",
     "loaded_contracts": [
       "AGENTS.md",
       "docs/TRANSLATION.md",
-      "docs/REVIEWER.md"
+      "docs/TRANSLATOR.md"
     ],
     "glossary_sha256": "6d888cf56316b7dff084f52613b196ff70d3707172c112ce86362ba53acc9d13",
-    "style_guide_sha256": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4",
-    "system_chars": 21845,
-    "user_chars": 4171
+    "style_guide_sha256": "271094bbb0eb33144fbf5528fb713187c9be8c3c0f926e22d4841fcc368766be",
+    "system_chars": 15301,
+    "user_chars": 3826
   },
   "memory_style_saved": 1
 }
