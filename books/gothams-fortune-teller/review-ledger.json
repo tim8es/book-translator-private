@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "gothams-fortune-teller",
-  "next_sequence": 7,
+  "next_sequence": 8,
   "records": [
     {
       "record_id": "2b1acee459fe476a8d839bf36422633e",
@@ -187,6 +187,53 @@
       "shared_state_revisions": {
         "glossary": "caf39bb301d7e8005e4b50254f1868b4c0fbe71aae21c985dac704ea516c1664",
         "style_guide": "88e95caea4b1ecf8e409305bc28e15212c27ed40a87f684a01e864f3506446e5"
+      }
+    },
+    {
+      "record_id": "79c2232e3c124a17a2c42562cee1d24b",
+      "sequence": 7,
+      "unit_id": "chapter-000007",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "b0d84a3f03fd3750e9353993235994fefa2e8cfa6cafe084695df1bf5fdeff41",
+      "translation_sha256": "53b9ec62f21fc9e551cc5575a4a33cb16463fca489b6ed39a9679f555bfef776",
+      "workflow_revision": "db253095d36f245f9531da654b93ab72193d3b97",
+      "review_contract_revision": "docs/TRANSLATION.md@db253095d36f245f9531da654b93ab72193d3b97",
+      "reviewer_session_id": "auto-71e930bbab95-reviewer-0995782a",
+      "reviewed_at": "2026-11-02T16:48:31Z",
+      "state_revision": "e362f1e9a302c86608fcb9c09097e5faf551caedad0dc0b3f600984884b59b25",
+      "review_commit": "3954b9ed11bf426f749ee54b0dacf425f2db09c9",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "major",
+            "detail": "In the social media section, the translation 'и насилует мои глаза этим' is a fragmented sentence that doesn't align with the source structure. The source has a line break/formatting issue where 'and assault my eyes with it' is separated from the previous thought. The translation should be integrated into the flow of the conversation to make sense.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "The translation of 'baby trap' as 'ловушка для создания ребенка' is a bit literal; 'ловушка для замужества/отцовства' or similar would be more idiomatic, though the current version is semantically correct.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "The phrase ' la-la-la' implied by the song lyrics 'then he waddled away..waddle, waddle' is translated as 'топ-топ, топ-топ'. While cute, 'топал-топал' or 'переваливался' might better capture 'waddled'.",
+            "resolved": false
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "461bad5d969f5255e2d8c14d3cccfa971ff845426b4c329aeec6a3dcc4df6d03",
+        "style_guide": "aebda9076127c3d02d4ad77beff0654fab40ff954dd5e296dfcba903d1994d87"
       }
     }
   ]
