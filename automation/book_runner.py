@@ -286,8 +286,6 @@ def git(*args: str) -> str:
 def checkpoint(job_id: str, status: dict, slug: str | None) -> None:
     status["updated_at"] = clock()
     store_json(status_path(job_id), status)
-    # Restore temporary pinned engine files before selecting book-only mutations.
-    git("restore", "--", "scripts", ".book-translator-install.json")
     paths = [f"automation/status/{job_id}.json"]
     if slug:
         paths.insert(0, f"books/{slug}")
