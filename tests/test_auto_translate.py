@@ -434,8 +434,9 @@ class AutomatedBookTests(unittest.TestCase):
                 if args[:2] == ("diff", "--cached"):
                     # No staged changes prior to status quarantine; the newly
                     # staged status is the only staged path after git add.
-                    return "" if sum(call[:2] == ("diff", "--cached") for call in calls) == 1 \\
-                        else "automation/status/" + job_id + ".json"
+                    if sum(call[:2] == ("diff", "--cached") for call in calls) == 1:
+                        return ""
+                    return "automation/status/" + job_id + ".json"
                 return ""
             with patch.object(worker, "ROOT", root), \
                  patch.object(worker, "git", side_effect=fake_git):
