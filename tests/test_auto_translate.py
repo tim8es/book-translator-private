@@ -32,7 +32,9 @@ class AutomatedBookTests(unittest.TestCase):
                 if args[0] == 'restore':
                     marker.write_text('default', encoding='utf-8')
                 return ''
-            with patch.object(worker, 'ROOT', root), patch.object(worker, 'git', side_effect=fake_git):
+            with patch.object(worker, 'ROOT', root), patch.object(worker, 'git', side_effect=fake_git), \
+                 patch.object(worker.subprocess, 'run') as process:
+                process.return_value.returncode = 0
                 worker.checkpoint('a' * 32, {'phase': 'matched'}, 'book')
             self.assertEqual(marker.read_text(encoding='utf-8'), 'pinned')
             self.assertIn(('add', '-A', '--', 'books/book', 'automation/status/' + 'a' * 32 + '.json'), calls)
@@ -76,6 +78,14 @@ class AutomatedBookTests(unittest.TestCase):
             self.assertEqual(cmd("show", merged + ":books/another-book/chapter.md"),
                              "their unrelated translation")
             self.assertEqual(cmd("rev-parse", "HEAD"), local)
+            # Git's own branch checkout can remove an untracked test fixture;
+            # the replay itself must not alter the active checkout.
+            self.assertFalse((root / "ephemeral-engine.py").exists()
+            (root / "ephemeral-engine.py").write_text("pinned version", encoding="utf-8")
+            with patch.object(worker, "ROOT", root):
+                second = worker.replay_disjoint_checkpoint(
+                    base, local, remote, ["books/our-book"])
+            self.assertEqual(second, merged)
             self.assertEqual((root / "ephemeral-engine.py").read_text("utf-8"),
                              "pinned version")
             # A concurrent edit to the SAME book must never be replayed.
@@ -521,7 +531,9 @@ class AutomatedBookTests(unittest.TestCase):
                     return "automation/status/" + job_id + ".json"
                 return ""
             with patch.object(worker, "ROOT", root), \
-                 patch.object(worker, "git", side_effect=fake_git):
+                 patch.object(worker, "git", side_effect=fake_git), \
+                 patch.object(worker.subprocess, "run") as process:
+                process.return_value.returncode = 0
                 status = worker.block_on_unexpected_failure(
                     job_id, worker.JobError("source coverage blocked"))
             self.assertEqual(status["state"], "blocked")
