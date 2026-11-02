@@ -37,6 +37,7 @@ MAX_SOURCE_BYTES = 15_000_000
 MAX_CHAPTER_CHARS = 70_000
 MAX_CORRECTIONS = 3
 MAX_FAILURES = 3
+DEFAULT_MODEL_CALL_LIMIT = 36
 
 
 class JobError(RuntimeError):
@@ -67,6 +68,16 @@ def status_path(job_id: str) -> Path:
 
 def normalize_identity(value: str) -> str:
     return " ".join(unicodedata.normalize("NFKC", value).casefold().split())
+
+
+def model_call_limit() -> int:
+    """Hard cap on provider invocations per job, independent of review retries."""
+    raw = os.environ.get("OMNIROUTE_MODEL_CALL_LIMIT", "").strip()
+    if not raw:
+        return DEFAULT_MODEL_CALL_LIMIT
+    if not raw.isdecimal() or not 1 <= int(raw) <= 200:
+        raise JobError("OMNIROUTE_MODEL_CALL_LIMIT must be an integer from 1 to 200")
+    return int(raw)
 
 
 def epub_identity(source: Path) -> tuple[str, str]:
@@ -632,6 +643,22 @@ def process_claim(job_id: str, slug: str, status: dict, engine: Path) -> None:
             "system_chars": len(system),
             "user_chars": len(user),
         }
+        # Persist the reservation before the external request. A crash cannot
+        # silently reset the number of attempts and launch unlimited paid calls.
+        count = status.get("model_calls_started", 0)
+        if type(count) is not int or count < 0:
+            raise JobError("invalid durable model call counter")
+        if count >= model_call_limit():
+            cli("release", slug, str(chapter["number"]), "--session-id", active["session_id"])
+            status["active"] = None
+            status["state"] = "blocked"
+            status["phase"] = "model-call-limit-reached"
+            status["last_error"] = "configured model invocation cap reached"
+            checkpoint(job_id, status, slug)
+            return
+        status["model_calls_started"] = count + 1
+        status["phase"] = "model-call-reserved"
+        checkpoint(job_id, status, slug)
         answer = complete("REVIEWER" if role == "reviewer" else
                           "CORRECTOR" if role == "corrector" else "TRANSLATOR",
                           system, user)
