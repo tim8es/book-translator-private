@@ -40,9 +40,19 @@ def _entries(raw: object, keys: set[str], field: str) -> list[dict]:
     return result
 
 
+def _json_payload(text: str) -> object:
+    value = text.strip()
+    if value.startswith("```"):
+        lines = value.splitlines()
+        if len(lines) < 3 or not lines[-1].strip().startswith("```"):
+            raise ModelError("incomplete fenced model response")
+        value = "\n".join(lines[1:-1])
+    return json.loads(value)
+
+
 def parse_translation(text: str) -> tuple[str, list[dict], list[dict]]:
     try:
-        data = json.loads(text.strip())
+        data = _json_payload(text)
     except ValueError as exc:
         raise ModelError("translator must return a structured JSON response") from exc
     if not isinstance(data, dict) or set(data) != {"translation", "glossary", "style_guide"}:
@@ -57,7 +67,7 @@ def parse_translation(text: str) -> tuple[str, list[dict], list[dict]]:
 
 def parse_literary_review(text: str) -> tuple[str, dict, list[dict]]:
     try:
-        data = json.loads(text.strip())
+        data = _json_payload(text)
     except ValueError as exc:
         raise ModelError("reviewer must return JSON") from exc
     if not isinstance(data, dict) or set(data) != {"outcome", "checks", "findings", "style_guide"}:
@@ -121,7 +131,7 @@ def updated_glossary(current: str, rows: list[dict]) -> str:
         existing = [line for line in result.splitlines() if line.startswith(prefix)]
         target = f"| {_cell(row['original'])} | {_cell(row['translation'])} | {_cell(row['type'])} | {_cell(row['notes'])} |"
         if existing:
-            if any(line != target for line in existing):
+            if any(line.split("|")[2].strip() != _cell(row["translation"]) for line in existing):
                 raise ValueError(f"conflicting glossary rendering for {row['original']}")
             continue
         result += "\n" + target
