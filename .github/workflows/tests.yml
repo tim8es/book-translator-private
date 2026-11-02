@@ -8,6 +8,8 @@ on:
     paths-ignore:
       - '.chat-ops/requests/**'
       - '.chat-ops/results/**'
+      # Notification receipts are metadata-only; avoid a full suite per event.
+      - 'automation/notifications/sent/**'
   pull_request:
 
 # Stable per-branch / per-PR concurrency stops superseded pushes from accumulating.
