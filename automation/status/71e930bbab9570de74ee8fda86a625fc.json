@@ -2,15 +2,15 @@
   "schema_version": 1,
   "job_id": "71e930bbab9570de74ee8fda86a625fc",
   "book_slug": "gothams-fortune-teller",
-  "state": "running",
-  "phase": "reviewer-completed",
+  "state": "blocked",
+  "phase": "correction-limit-reached",
   "failures": 0,
   "correction_rounds": {
     "chapter-000007": 3
   },
   "workflow_revision": "db253095d36f245f9531da654b93ab72193d3b97",
   "source_sha256": "e88111d85c517d2df032c85f3de44ad7ca1f9cfac0394d5173a6ab2b98f548e9",
-  "updated_at": "2026-11-02T16:53:48.457483+00:00",
+  "updated_at": "2026-11-02T16:54:16.255548+00:00",
   "active": null,
   "model_calls_started": 20,
   "memory_glossary_saved": 50,
@@ -28,5 +28,6 @@
     "system_chars": 21845,
     "user_chars": 65125
   },
-  "memory_style_saved": 15
+  "memory_style_saved": 15,
+  "blocked_unit_id": "chapter-000007"
 }
