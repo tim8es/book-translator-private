@@ -361,12 +361,13 @@ def checkpoint(job_id: str, status: dict, slug: str | None) -> None:
     if slug:
         paths.insert(0, f"books/{slug}")
     git("add", "-A", "--", *paths)
-    changed = git("diff", "--cached", "--name-only")
+    changed = git("diff", "--cached", "--name-only", "-z")
     if not changed:
         return
     # Git may have staged unrelated files before entering this checkpoint.
-    # Never allow them into the bot's commit, even after the safe replay.
-    staged = changed.splitlines()
+    # NUL-separated paths avoid quoting for Unicode book slugs.
+    # Never allow unrelated files into the bot's commit or safe replay.
+    staged = changed.split("\\0")
     if any(not (p == paths[-1] or
                 (slug is not None and p.startswith(f"books/{slug}/")))
            for p in staged):
