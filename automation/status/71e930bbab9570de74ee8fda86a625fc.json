@@ -3,34 +3,30 @@
   "job_id": "71e930bbab9570de74ee8fda86a625fc",
   "book_slug": "gothams-fortune-teller",
   "state": "running",
-  "phase": "model-call-reserved",
+  "phase": "reviewer-completed",
   "failures": 0,
   "correction_rounds": {
     "chapter-000007": 3
   },
   "workflow_revision": "db253095d36f245f9531da654b93ab72193d3b97",
   "source_sha256": "e88111d85c517d2df032c85f3de44ad7ca1f9cfac0394d5173a6ab2b98f548e9",
-  "updated_at": "2026-11-02T16:53:43.142200+00:00",
-  "active": {
-    "role": "reviewer",
-    "chapter": 7,
-    "session_id": "auto-71e930bbab95-reviewer-60c17e13"
-  },
+  "updated_at": "2026-11-02T16:53:48.457483+00:00",
+  "active": null,
   "model_calls_started": 20,
   "memory_glossary_saved": 50,
   "pending_style": [],
   "prompt_context": {
-    "role": "corrector",
+    "role": "reviewer",
     "workflow_revision": "db253095d36f245f9531da654b93ab72193d3b97",
     "loaded_contracts": [
       "AGENTS.md",
       "docs/TRANSLATION.md",
-      "docs/TRANSLATOR.md"
+      "docs/REVIEWER.md"
     ],
     "glossary_sha256": "461bad5d969f5255e2d8c14d3cccfa971ff845426b4c329aeec6a3dcc4df6d03",
     "style_guide_sha256": "aebda9076127c3d02d4ad77beff0654fab40ff954dd5e296dfcba903d1994d87",
-    "system_chars": 15301,
-    "user_chars": 65917
+    "system_chars": 21845,
+    "user_chars": 65125
   },
   "memory_style_saved": 15
 }

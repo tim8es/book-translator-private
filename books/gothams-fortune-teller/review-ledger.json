@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "gothams-fortune-teller",
-  "next_sequence": 10,
+  "next_sequence": 11,
   "records": [
     {
       "record_id": "2b1acee459fe476a8d839bf36422633e",
@@ -327,6 +327,53 @@
             "severity": "minor",
             "detail": "The phrase 'I volunteer as tribute' is a Hunger Games reference. 'Я вызываюсь в качестве трибута' is a literal translation; while understandable, the established Russian dub/translation for this meme is usually 'Я вызываюсь быть трибутом' or 'Я доброволец'.",
             "resolved": false
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "461bad5d969f5255e2d8c14d3cccfa971ff845426b4c329aeec6a3dcc4df6d03",
+        "style_guide": "aebda9076127c3d02d4ad77beff0654fab40ff954dd5e296dfcba903d1994d87"
+      }
+    },
+    {
+      "record_id": "19e8c11c6c654c36968a7cc3d94adf33",
+      "sequence": 10,
+      "unit_id": "chapter-000007",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "b0d84a3f03fd3750e9353993235994fefa2e8cfa6cafe084695df1bf5fdeff41",
+      "translation_sha256": "02751bb5e94adeb326455dff4e477fb2ed0f88c9ccecd647a6a50982a67fb8fe",
+      "workflow_revision": "db253095d36f245f9531da654b93ab72193d3b97",
+      "review_contract_revision": "docs/TRANSLATION.md@db253095d36f245f9531da654b93ab72193d3b97",
+      "reviewer_session_id": "auto-71e930bbab95-reviewer-60c17e13",
+      "reviewed_at": "2026-11-02T16:53:48Z",
+      "state_revision": "4d586949e576725a93268ca47816c2348a5f9f955fb34574feb787d7da552466",
+      "review_commit": "463325a9a869b6ef537c9b51ce9e6010c90d63ef",
+      "correction_round": 4,
+      "supersedes_record_id": "869d56dd122d42998a0d732928fa2524",
+      "quality_report": {
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "major",
+            "detail": "Mistranslation of 'safe ways to defend himself'. The translation 'безопасными ways самообороны' contains an untranslated English word 'ways'.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "In the social media section, '@phoenix_the_badass_bitch' is translated as 'abysmal стиль' in one line, but the original is 'abysmal grammar'. While 'style' is close, 'grammar' is more precise given the context of the argument about punctuation and spelling.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "The phrase 'I volunteer as tribute' is a specific pop-culture reference (Hunger Games). The translation 'Я вызываюсь быть трибутом' is literal; while correct, a more idiomatic Russian equivalent for this meme might be 'Я вызываюсь в качестве трибута' or keeping the reference clear, but the current version is acceptable though slightly stiff.",
+            "resolved": true
           }
         ]
       },
