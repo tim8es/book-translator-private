@@ -390,6 +390,106 @@ class AutomatedBookTests(unittest.TestCase):
         with self.assertRaises(worker.JobError):
             worker.check_markers(source, "<!-- bt-block:000001 -->\nПервый [ссылка](#y)\n<!-- bt-block:000002 -->\n")
 
+    def test_scheduler_skips_blocked_and_unreadable_statuses(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            ids = ["0" * 32, "1" * 32, "2" * 32, "3" * 32]
+            for job_id in ids:
+                request = root / "intake" / "auto" / job_id / "request.json"
+                request.parent.mkdir(parents=True)
+                request.write_text("{}", encoding="utf-8")
+            worker.store_json(root / "automation" / "status" / (ids[0] + ".json"),
+                              {"state": "blocked"})
+            bad = root / "automation" / "status" / (ids[1] + ".json")
+            bad.write_text("{invalid", encoding="utf-8")
+            worker.store_json(root / "automation" / "status" / (ids[2] + ".json"),
+                              {"state": "done"})
+            with patch.object(worker, "ROOT", root):
+                self.assertEqual(worker.select(None), ids[3])
+                # Explicit attempts remain operator-controlled and are never
+                # silently redirected to another request.
+                self.assertEqual(worker.select(ids[0]), ids[0])
+            worker.store_json(root / "automation" / "status" / (ids[3] + ".json"),
+                              {"state": "blocked"})
+            with patch.object(worker, "ROOT", root):
+                self.assertEqual(worker.select(None), "")
+
+    def test_quarantine_failure_preserves_claim_without_staging_book(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            job_id = "f" * 32
+            slug = "existing-book"
+            book = root / "books" / slug
+            book.mkdir(parents=True)
+            (book / "translated.md").write_text("uncommitted mutation", encoding="utf-8")
+            worker.store_json(root / "automation" / "status" / (job_id + ".json"),
+                              {"job_id": job_id, "book_slug": slug, "state": "running",
+                               "phase": "claimed", "model_calls_started": 3,
+                               "active": {"role": "reviewer", "session_id": "owner"}})
+            calls = []
+            def fake_git(*args):
+                calls.append(args)
+                if args[:2] in (("rev-parse", "HEAD"), ("rev-parse", "origin/main")):
+                    return "a" * 40
+                if args[:2] == ("diff", "--cached"):
+                    # No staged changes prior to status quarantine; the newly
+                    # staged status is the only staged path after git add.
+                    if sum(call[:2] == ("diff", "--cached") for call in calls) == 1:
+                        return ""
+                    return "automation/status/" + job_id + ".json"
+                return ""
+            with patch.object(worker, "ROOT", root), \
+                 patch.object(worker, "git", side_effect=fake_git):
+                status = worker.block_on_unexpected_failure(
+                    job_id, worker.JobError("source coverage blocked"))
+            self.assertEqual(status["state"], "blocked")
+            self.assertEqual(status["phase"], "operator-intervention-required")
+            self.assertEqual(status["model_calls_started"], 3)
+            self.assertEqual(status["active"]["session_id"], "owner")
+            self.assertIn("claim", status["recovery_note"])
+            self.assertEqual(worker.read_json(root / "automation" / "status" / (job_id + ".json"))["state"],
+                             "blocked")
+            self.assertIn(("add", "-A", "--", "automation/status/" + job_id + ".json"), calls)
+            self.assertFalse(any(any("books/" in part for part in call) for call in calls))
+            self.assertEqual((book / "translated.md").read_text("utf-8"), "uncommitted mutation")
+
+    def test_status_quarantine_refuses_existing_staged_literary_files(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            job_id = "c" * 32
+            with patch.object(worker, "ROOT", root), \
+                 patch.object(worker, "git", return_value="books/other/chapter.md") as git:
+                with self.assertRaisesRegex(worker.JobError, "staged changes"):
+                    worker.block_on_unexpected_failure(job_id, worker.JobError("bad CLI"))
+            self.assertFalse((root / "automation" / "status" / (job_id + ".json")).exists())
+            self.assertEqual(git.call_args_list[0].args, ("diff", "--cached", "--name-only"))
+
+    def test_main_records_preflight_failure_and_advances_queue(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            job_id = "e" * 32
+            outputs = root / "github_outputs"
+            with patch.object(worker, "ROOT", root), \
+                 patch.object(worker, "run", side_effect=worker.JobError(
+                     "EPUB source coverage blocked: unsupported semantic element <ol>")), \
+                 patch.object(worker, "checkpoint") as checkpoint, \
+                 patch.object(sys, "argv", ["book_runner.py", "--job-id", job_id]), \
+                 patch.dict(os.environ, {"GITHUB_OUTPUT": str(outputs)}):
+                self.assertEqual(worker.main(), 0)
+            stored = checkpoint.call_args.args[1]
+            self.assertEqual(stored["state"], "blocked")
+            self.assertIn("unsupported semantic element <ol>", stored["last_error"])
+            self.assertEqual(checkpoint.call_args.args[2], None)
+            self.assertIn("continue_queue=true", outputs.read_text("utf-8"))
+            self.assertNotIn("continue=true", outputs.read_text("utf-8"))
+
+    def test_quarantine_failure_is_not_claimed_success_if_checkpoint_fails(self):
+        with patch.object(worker, "run", side_effect=worker.JobError("failed")), \
+             patch.object(worker, "block_on_unexpected_failure",
+                          side_effect=worker.JobError("stale git head")), \
+             patch.object(sys, "argv", ["book_runner.py", "--job-id", "d" * 32]):
+            self.assertEqual(worker.main(), 1)
+
     def test_intake_hash_bound_and_source_filename_fixed(self):
         with tempfile.TemporaryDirectory() as folder:
             with patch.object(worker, "ROOT", Path(folder)):

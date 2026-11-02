@@ -75,3 +75,9 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           JOB_ID: ${{ steps.select.outputs.job_id }}
         run: gh workflow run auto-translate.yml --ref main -f job_id="$JOB_ID"
+
+      - name: Dispatch next pending job after terminal checkpoint
+        if: steps.run.outputs.continue_queue == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh workflow run auto-translate.yml --ref main

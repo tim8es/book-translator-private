@@ -285,7 +285,16 @@ def select(explicit: str | None) -> str:
         if not ID.fullmatch(job_id):
             continue
         state = status_path(job_id)
-        if not state.exists() or read_json(state).get("state") not in FINAL:
+        if not state.exists():
+            return job_id
+        try:
+            recorded = read_json(state)
+        except (OSError, ValueError, JobError):
+            # An invalid status must not be overwritten or starve other jobs.
+            # Recovery of this job requires explicit operator intervention.
+            print(f"Skipping unreadable automation status for {job_id}", file=sys.stderr)
+            continue
+        if recorded.get("state") not in FINAL:
             return job_id
     return ""
 
@@ -298,6 +307,11 @@ def git(*args: str) -> str:
 
 
 def checkpoint(job_id: str, status: dict, slug: str | None) -> None:
+    # A status-only quarantine must never include previously staged literary
+    # files left by a failed canonical operation. Otherwise the subsequent Git
+    # commit could accidentally publish half-applied book state.
+    if slug is None and git("diff", "--cached", "--name-only"):
+        raise JobError("status-only checkpoint refused: Git index has staged changes")
     status["updated_at"] = clock()
     store_json(status_path(job_id), status)
     paths = [f"automation/status/{job_id}.json"]
@@ -866,6 +880,33 @@ def run(job_id: str) -> dict:
         shutil.rmtree(engine, ignore_errors=True)
 
 
+def block_on_unexpected_failure(job_id: str, exc: Exception) -> dict:
+    """Quarantine a failed job without committing possibly partial book mutations.
+
+    An interrupted canonical operation may have changed the checkout without
+    completing its claim/review protocol. Preserve prior durable coordination
+    evidence for an operator; never publish that partial book tree.
+    """
+    path = status_path(job_id)
+    previous = read_json(path) if path.exists() else {}
+    if previous.get("state") == "done":
+        raise JobError("cannot replace a completed job with a failure status")
+    error = str(exc)
+    secret = os.environ.get("OMNIROUTE_API_KEY", "")
+    if secret:
+        error = error.replace(secret, "[REDACTED]")
+    state = {**previous, "schema_version": 1, "job_id": job_id,
+             "state": "blocked", "phase": "operator-intervention-required",
+             "failures": previous.get("failures", 0) + 1,
+             "last_error": (type(exc).__name__ + ": " + error)[:350]}
+    state.setdefault("book_slug", None)
+    state.setdefault("correction_rounds", {})
+    if state.get("active"):
+        state["recovery_note"] = "A claim may still be active; inspect canonical state before recovery"
+    checkpoint(job_id, state, None)
+    return state
+
+
 def publish_outputs(job_id: str, status: dict) -> None:
     output = os.environ.get("GITHUB_OUTPUT")
     if not output:
@@ -874,8 +915,13 @@ def publish_outputs(job_id: str, status: dict) -> None:
         if status["state"] == "done":
             print("done=true", file=stream)
             print("artifact=" + status["artifact_path"], file=stream)
+            print("continue_queue=true", file=stream)
         elif status["state"] == "running":
             print("continue=true", file=stream)
+        elif status["state"] == "blocked":
+            # Never re-dispatch the blocked ID. Continue the queue with an
+            # unpinned job selection, allowing unrelated books to progress.
+            print("continue_queue=true", file=stream)
 
 
 def main() -> int:
@@ -895,10 +941,17 @@ def main() -> int:
             "failures": 0, "correction_rounds": {}, "last_error": str(exc)[:350]}
         checkpoint(job_id, status, None)
     except (JobError, ModelError, OSError, ValueError, KeyError, subprocess.TimeoutExpired) as exc:
-        # Fail closed. No implicit PASS, force-push, claim takeover, or silent
-        # state rewrite after ambiguous filesystem/Git failures.
+        # Fail closed on ambiguous canonical mutations. Only commit a separate
+        # blocked status, never the potentially half-updated book workspace.
+        # A broken Git compare-and-swap may prevent even this safe checkpoint:
+        # in that case do not claim durable recovery evidence exists.
         print(f"Automated book step failed: {type(exc).__name__}: {str(exc)[:500]}", file=sys.stderr)
-        return 1
+        try:
+            status = block_on_unexpected_failure(job_id, exc)
+        except (JobError, OSError, ValueError, KeyError, subprocess.TimeoutExpired) as checkpoint_exc:
+            print("Could not persist blocked status safely: "
+                  + type(checkpoint_exc).__name__, file=sys.stderr)
+            return 1
     publish_outputs(job_id, status)
     print(json.dumps({"job_id": job_id, "phase": status["phase"],
                       "state": status["state"]}, ensure_ascii=False))

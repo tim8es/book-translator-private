@@ -51,7 +51,9 @@ prevent non-force pushes require a separately reviewed publication strategy.
 3. POST GitHub Actions workflow_dispatch for auto-translate.yml on main
    with input job_id. Poll automation/status/<job_id>.json. If dispatch
    events are delayed or unavailable, the existing 15-minute schedule
-   scans for unfinished requests as a recovery fallback.
+   scans for unfinished requests as a recovery fallback. Do not assume that
+   publishing request.json triggers Actions: there is intentionally no push
+   trigger for auto-translate.yml. GitHub scheduled runs may be delayed.
 4. When state=done, use the output artifact_path and artifact_sha256 in the
    status to retrieve and verify the final EPUB (or download the Actions
    artifact from the finishing workflow run), then send through Telegram.
@@ -106,7 +108,16 @@ preview path retains a separate opt-in policy, without claiming Reviewer PASS.
 State mutation uses the pinned standard extract/seal/validate/verify and
 claim/accept/review/release/finalize/build commands. Every checkpoint is
 published using a normal non-force push to main. A failed compare-and-swap
-never overwrites remote state.
+never overwrites remote state. A non-model failure (such as unsupported
+EPUB semantics, malformed input, or a failed canonical CLI stage) produces a
+durable **blocked** status when a status-only compare-and-swap publication is
+safe. The runner never commits potentially partial book mutations, does not
+release/take over ambiguous claims and requires operator inspection before
+retry. If the repository changed concurrently and even status-only publication
+is unsafe, the Actions step fails and no durable blocked status is promised.
+The scheduler skips blocked jobs and corrupt status files instead of retrying
+one poisoned request forever. After a terminal job the workflow dispatches
+**the next unpinned pending request**, rather than retrying the blocked ID.
 
 A Translator claim is committed *before* invoking the model. Reviewer uses a
 separate call, only receiving original, accepted translation, literary role
