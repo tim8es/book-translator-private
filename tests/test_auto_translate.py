@@ -475,7 +475,7 @@ class AutomatedBookTests(unittest.TestCase):
                  patch.object(sys, "argv", ["book_runner.py", "--job-id", job_id]), \
                  patch.dict(os.environ, {"GITHUB_OUTPUT": str(outputs)}):
                 self.assertEqual(worker.main(), 0)
-            stored = worker.read_json(root / "automation" / "status" / (job_id + ".json"))
+            stored = checkpoint.call_args.args[1]
             self.assertEqual(stored["state"], "blocked")
             self.assertIn("unsupported semantic element <ol>", stored["last_error"])
             self.assertEqual(checkpoint.call_args.args[2], None)
