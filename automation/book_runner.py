@@ -441,30 +441,37 @@ def approved_unit_ids(slug: str, chapters: list) -> set[str]:
 def next_operation(slug: str, status: dict) -> tuple[str, dict | None]:
     _, ledger, chapters = chapter_data(slug)
     approved = approved_unit_ids(slug, chapters)
+    # Canonical next_unit_operation is the sole lifecycle/review classifier.
+    # The adapter owns only the automatic provider and the opt-in user-approved
+    # preview / bounded correction-round policies.
+    from workflow.operations import next_unit_operation
     for chapter in chapters:
-        if chapter["status"] == "reviewed":
+        state = chapter["status"]
+        if state == "reviewed":
             continue
-        if chapter["status"] == "extracted":
-            return "translator", chapter
-        if chapter["status"] != "translated":
-            raise JobError("unexpected non-reviewed chapter state")
         record = latest_record(ledger, chapter)
         current_hash = chapter.get("translation_acceptance", {}).get("translation_sha256")
-        if record and record["translation_sha256"] == current_hash:
-            if record["outcome"] == "CORRECTIONS_REQUIRED":
-                # An accepted memory-only correction leaves the chapter SHA
-                # unchanged, so the same review finding remains hash-current.
-                # Re-review the corrected glossary instead of looping on Corrector.
-                if status.get("memory_recheck_unit") == chapter["unit_id"]:
-                    return "reviewer", chapter
-                if status["correction_rounds"].get(chapter["unit_id"], 0) >= MAX_CORRECTIONS:
-                    return "blocked", chapter
-                return "corrector", chapter
-            if record["outcome"] == "PASS":
-                return "promote", chapter
-        if chapter["unit_id"] in approved:
-            continue
-        return "reviewer", chapter
+        review = ("pass" if record["outcome"] == "PASS" else "corrections_required"
+                  ) if record and record["translation_sha256"] == current_hash else "missing"
+        operation = next_unit_operation(state, review)
+        if operation == "translate":
+            return "translator", chapter
+        if operation == "accept_review":
+            return "promote", chapter
+        if operation == "correct_translation":
+            # This exceptional re-review is allowed only for an unchanged
+            # translation with a newly accepted glossary revision.
+            if status.get("memory_recheck_unit") == chapter["unit_id"]:
+                return "reviewer", chapter
+            if status["correction_rounds"].get(chapter["unit_id"], 0) >= MAX_CORRECTIONS:
+                return "blocked", chapter
+            return "corrector", chapter
+        if operation == "review":
+            if chapter["unit_id"] in approved:
+                continue
+            return "reviewer", chapter
+        raise JobError(f"canonical workflow cannot schedule {chapter['unit_id']} "
+                       f"from lifecycle={state!r} review={review!r}")
     return "finalize", None
 
 
