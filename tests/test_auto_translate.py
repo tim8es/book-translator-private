@@ -49,8 +49,8 @@ class AutomatedBookTests(unittest.TestCase):
                 "translation", encoding="utf-8")
             def fake_git(*args):
                 if args == ("diff", "--cached", "--name-only", "-z"):
-                    return (f"books/{slug}/chapter.md\\0"
-                            f"automation/status/{job_id}.json\\0").replace("\\0", "\0")
+                    return (f"books/{slug}/chapter.md{chr(0)}"
+                            f"automation/status/{job_id}.json{chr(0)}")
                 if args == ("rev-parse", "HEAD") or args == ("rev-parse", "origin/main"):
                     return "b" * 40
                 return ""
