@@ -25,7 +25,8 @@ from uuid import uuid4
 
 from omniroute import ModelError, complete
 from literary_context import (fingerprint, full_shared_context, parse_literary_review,
-                              parse_translation, role_contracts, save_claim_bound_decisions)
+                              parse_translation, role_contracts, save_claim_bound_decisions,
+                              updated_glossary)
 
 ROOT = Path(__file__).resolve().parents[1]
 ID = re.compile(r"^[0-9a-f]{32}$")
@@ -510,6 +511,10 @@ def context(engine: Path, slug: str, chapter: dict, role: str,
             "style_guide is a list of source-grounded decisions with exactly keys "
             "source_pattern, translation_approach, evidence. "
             "Include only stable, substantiated decisions; [] is valid when none. "
+            "Check that named characters, recurring places and important terms "
+            "in this source have consistent renderings recorded in the glossary. "
+            "If an important rendering is missing, report CORRECTIONS_REQUIRED "
+            "and identify the exact original/translation pair for the corrector. "
             "Any unresolved issue must cause CORRECTIONS_REQUIRED; never invent findings."
         )
     else:
@@ -589,7 +594,10 @@ def process_claim(job_id: str, slug: str, status: dict, engine: Path) -> None:
             check_markers(source, translated)
             path = ROOT / "books" / slug / chapter["translation_path"]
             if role == "corrector" and path.read_text("utf-8") == translated:
-                raise JobError("corrector returned unchanged translation")
+                current_glossary = (ROOT / "books" / slug / "glossary.md").read_text("utf-8")
+                if not proposed_glossary or updated_glossary(
+                        current_glossary, proposed_glossary) == current_glossary:
+                    raise JobError("corrector returned unchanged translation and memory")
     except (ModelError, JobError) as exc:
         cli("release", slug, str(chapter["number"]), "--session-id", active["session_id"])
         status["active"] = None
