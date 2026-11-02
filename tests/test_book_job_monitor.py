@@ -97,6 +97,14 @@ class BookJobMonitorTests(unittest.TestCase):
         self.assertEqual(e["total_units"], 7)
         self.assertEqual(e["correction_rounds"]["chapter-000007"], 3)
 
+    def test_superseded_blocked_request_does_not_duplicate_alert(self):
+        self.blocked()
+        status = monitor.read_json(self.status_file)
+        status["phase"] = "superseded-invalid-converted-epub"
+        status["superseded_by_job_id"] = "b" * 32
+        write_json(self.status_file, status)
+        self.assertIsNone(monitor.inspect(self.root, JOB, NOW, False))
+
     def test_stale_and_recent_running(self):
         write_json(self.status_file, {
             "job_id": JOB, "state": "running",
