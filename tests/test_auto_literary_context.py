@@ -215,6 +215,46 @@ class LiteraryContextTests(unittest.TestCase):
             with self.assertRaisesRegex(runner.JobError, "unit_claimed"):
                 runner.canonical_dispatch("test", {})
 
+    def test_model_call_cap_fails_closed_without_provider_request(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            book = root / "books" / "test"
+            claim_folder = book / ".workflow" / "claims"
+            claim_folder.mkdir(parents=True)
+            (book / "glossary.md").write_text("glossary", encoding="utf-8")
+            (book / "style-guide.md").write_text("style", encoding="utf-8")
+            (claim_folder / "chapter-000001.json").write_text(json.dumps({
+                "session_id": "owner"}), encoding="utf-8")
+            chapter = {"unit_id": "chapter-000001", "number": 1,
+                       "status": "translated"}
+            status = {"active": {"chapter": 1, "role": "reviewer",
+                                 "session_id": "owner"},
+                      "workflow_revision": "f" * 40,
+                      "model_calls_started": 1}
+            with patch.dict("os.environ", {"OMNIROUTE_MODEL_CALL_LIMIT": "1"}), \
+                 patch.object(runner, "ROOT", root), \
+                 patch.object(runner, "chapter_data", return_value=({}, {}, [chapter])), \
+                 patch.object(runner, "context", return_value=("system", "user", "source")), \
+                 patch.object(runner, "role_contracts", return_value=("system", ["AGENTS.md"])), \
+                 patch.object(runner, "checkpoint") as checkpoint, \
+                 patch.object(runner, "cli") as cli, \
+                 patch.object(runner, "complete") as complete:
+                runner.process_claim("c" * 32, "test", status, root)
+            complete.assert_not_called()
+            self.assertEqual(status["state"], "blocked")
+            self.assertEqual(status["phase"], "model-call-limit-reached")
+            self.assertEqual(status["model_calls_started"], 1)
+            self.assertIsNone(status["active"])
+            self.assertEqual(cli.call_args.args[0], "release")
+            checkpoint.assert_called_once()
+
+    def test_model_call_cap_rejects_invalid_settings(self):
+        with patch.dict("os.environ", {"OMNIROUTE_MODEL_CALL_LIMIT": "0"}):
+            with self.assertRaisesRegex(runner.JobError, "integer from"):
+                runner.model_call_limit()
+        with patch.dict("os.environ", {"OMNIROUTE_MODEL_CALL_LIMIT": "3"}):
+            self.assertEqual(runner.model_call_limit(), 3)
+
     def test_claim_includes_frozen_literary_revisions(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
