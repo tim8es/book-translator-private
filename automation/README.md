@@ -72,6 +72,15 @@ source_filename. A new book uses a stable slug derived from its EPUB title and
 resolves public main exactly once. Existing books retain their workflow pin;
 new editions use that pinned revision's source-update contract.
 
+Books with historical `source-updates/` remain blocked until their legacy
+translations have been reconciled into canonical state. A per-book
+`automation-reconciliation.json` may record the pinned workflow, the audited
+source revision and a digest of every historical update file. The adapter
+verifies that proof and prevents unchanged imported units from reverting to
+`extracted`. A changed history, workflow, missing baseline unit or lost
+acceptance blocks processing again. Canonical preflight still validates all
+current book and translation hashes before any model call.
+
 ## Execution and recovery
 
 The workflow intentionally runs at most one state-machine checkpoint per
