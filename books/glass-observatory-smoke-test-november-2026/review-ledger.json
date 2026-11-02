@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "glass-observatory-smoke-test-november-2026",
-  "next_sequence": 3,
+  "next_sequence": 4,
   "records": [
     {
       "record_id": "229e0c7ed5b74be399d2602cdfac2bc8",
@@ -59,6 +59,43 @@
           "structure": true
         },
         "findings": []
+      },
+      "shared_state_revisions": {
+        "glossary": "8bb12f9379e76b93d6d617fc632e3f036fd64c01d6374b93136fff4986df6550",
+        "style_guide": "271094bbb0eb33144fbf5528fb713187c9be8c3c0f926e22d4841fcc368766be"
+      }
+    },
+    {
+      "record_id": "dac75ccb1b6d419f81e83bfe107cc041",
+      "sequence": 3,
+      "unit_id": "chapter-000003",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "7d6b9aa3a72f08d3bc53155e1222fb8d3e1c27b34b8ca347b5dbdb2d726000f3",
+      "translation_sha256": "56d0d25a1f2c81a5925fd9cad8c856f8b9bca7b45e5d43775941b5b8a8239fdd",
+      "workflow_revision": "db253095d36f245f9531da654b93ab72193d3b97",
+      "review_contract_revision": "docs/TRANSLATION.md@db253095d36f245f9531da654b93ab72193d3b97",
+      "reviewer_session_id": "auto-f422c9fe51ee-reviewer-70f8ad43",
+      "reviewed_at": "2026-11-02T17:27:29Z",
+      "state_revision": "c2218ee69012e07c64a81b5ca97ab725a81e35d06d5631ed299981e47fb65df3",
+      "review_commit": "99cc9e5deb9ba149ad5594782898ba47e9eadddf",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "The translation 'латунный механизм часов шел верно' adds 'механизм' (mechanism) and 'шел' (ran/went), whereas the source is a simple state: 'the brass clock was correct'. While natural in Russian, it slightly shifts the focus from the state of the clock to the action of the mechanism.",
+            "resolved": false
+          }
+        ]
       },
       "shared_state_revisions": {
         "glossary": "8bb12f9379e76b93d6d617fc632e3f036fd64c01d6374b93136fff4986df6550",
