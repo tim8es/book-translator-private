@@ -3,32 +3,49 @@
   "job_id": "71e930bbab9570de74ee8fda86a625fc",
   "book_slug": "gothams-fortune-teller",
   "state": "running",
-  "phase": "model-call-reserved",
+  "phase": "translator-completed",
   "failures": 0,
   "correction_rounds": {},
   "workflow_revision": "db253095d36f245f9531da654b93ab72193d3b97",
   "source_sha256": "e88111d85c517d2df032c85f3de44ad7ca1f9cfac0394d5173a6ab2b98f548e9",
-  "updated_at": "2026-11-02T16:39:26.876248+00:00",
-  "active": {
-    "role": "translator",
-    "chapter": 4,
-    "session_id": "auto-71e930bbab95-translator-94e1910b"
-  },
+  "updated_at": "2026-11-02T16:40:35.442266+00:00",
+  "active": null,
   "model_calls_started": 7,
-  "memory_glossary_saved": 15,
-  "pending_style": [],
+  "memory_glossary_saved": 27,
+  "pending_style": [
+    {
+      "evidence": "Phrases like 'this nerd', 'Holy. Shit.', 'I'm a little genius'.",
+      "source_pattern": "Tim's internal monologue/commentary",
+      "translation_approach": "Maintain a blend of analytical precision and teenage sarcasm, using colloquialisms like 'лол' and 'задрот'."
+    },
+    {
+      "evidence": "Phrases like 'old man', 'Dickhead', 'fucking smart'.",
+      "source_pattern": "Jason's dialogue",
+      "translation_approach": "Use a rougher, more aggressive register with mild profanity and slang, contrasting with Bruce's formality."
+    },
+    {
+      "evidence": "Phrases like 'Mr. Drake', 'Please, do come in', 'Master Bruce, please refrain from yelling'.",
+      "source_pattern": "Alfred's dialogue",
+      "translation_approach": "Maintain impeccable politeness and a dry, slightly formal tone."
+    },
+    {
+      "evidence": "Phrases like 'No, want sweets!', 'Gimme!'.",
+      "source_pattern": "Damian's toddler speech",
+      "translation_approach": "Use simplified, demanding phrasing to reflect a three-year-old's speech patterns, while preserving the contrast of his 'assassin' nature."
+    }
+  ],
   "prompt_context": {
-    "role": "reviewer",
+    "role": "translator",
     "workflow_revision": "db253095d36f245f9531da654b93ab72193d3b97",
     "loaded_contracts": [
       "AGENTS.md",
       "docs/TRANSLATION.md",
-      "docs/REVIEWER.md"
+      "docs/TRANSLATOR.md"
     ],
     "glossary_sha256": "3aafe71f2d76e93a928b6b8595cfcf18642e6f207602e534c1611e47e04ea940",
-    "style_guide_sha256": "222bf071b8828b069e25c3d0016a02cb8bbd1bcc09bd767c682dc420292571e9",
-    "system_chars": 21845,
-    "user_chars": 94390
+    "style_guide_sha256": "012b24d1156cb2d90203d30718c5775faa9b33e705da9118ab62fb3d26888c0c",
+    "system_chars": 15301,
+    "user_chars": 51773
   },
   "memory_style_saved": 5
 }

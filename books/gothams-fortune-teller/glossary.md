@@ -19,3 +19,15 @@ Use this file for recurring names, places, organizations, terms, nicknames, titl
 | Vicki Vale | Вики Вейл | Character | Journalist. |
 | Nightwing | Найтвинг | Character | Dick Grayson's superhero alias. |
 | empty nest syndrome | синдром опустевшего гнезда | Term | Psychological condition of parents after children leave home. |
+| Little Wing | Маленькое Крыло | Nickname | Dick's nickname for Jason. |
+| baby bird | птенчик | Nickname | Dick's nickname for Tim. |
+| Parakeet | Паракит | Alias | Tim's codename when acting as the 'Oracle' for the Bats. |
+| Nanda Parbat | Нанда-Парбат | Place | Base of the League of Assassins. |
+| League of Assassins | Лига Убийц | Organization | The organization led by Ra's al Ghul. |
+| Ra's al Ghul | Ра’с аль Гул | Character | Leader of the League of Assassins. |
+| Talia al Ghul | Талия аль Гул | Character | Damian's mother. |
+| Damian | Дэмиен | Character | Bruce's biological son. |
+| Ibn al Xu’ffasch | Ибн аль Ху’ффаш | Term | Formal title/name for Damian in the League. |
+| Lazarus Pits | Ямы Лазаря | Term | Healing pools used by Ra's al Ghul. |
+| Selina | Селина | Character | Catwoman. |
+| Pit Rage | ярость Ямы | Term | Side effect of the Lazarus Pit. |
