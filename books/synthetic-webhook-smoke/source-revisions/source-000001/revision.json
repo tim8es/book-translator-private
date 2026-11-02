@@ -1,0 +1,80 @@
+{
+  "created_at": "2026-11-02T23:00:17Z",
+  "delta": {
+    "changed": 0,
+    "deleted": 0,
+    "new": 1,
+    "unchanged": 0
+  },
+  "metadata": {
+    "author": null,
+    "chapter_count": 1,
+    "imported_at": "2026-11-02T23:00:17+00:00",
+    "schema_version": 1,
+    "source": {
+      "filename": "source.epub",
+      "original_filename": "source.epub",
+      "revision_id": "source-000001",
+      "sha256": "d6647ae530aae25b3c55c5c82fcfc4d0cbc1b46a5c20a15d1437d5ed4ddbabee",
+      "size_bytes": 1555,
+      "storage_mode": "embedded"
+    },
+    "source_file": "source.epub",
+    "source_format": "epub",
+    "source_language": "en",
+    "target_language": "ru",
+    "title": "Synthetic Webhook Smoke",
+    "workflow": {
+      "repository": "https://github.com/tim8es/book-translator",
+      "requested_ref": "main",
+      "resolved_revision": "db253095d36f245f9531da654b93ab72193d3b97",
+      "review_evidence": "review-ledger-v1"
+    }
+  },
+  "parent_revision_id": null,
+  "progress": {
+    "book_slug": "synthetic-webhook-smoke",
+    "chapters": [
+      {
+        "number": 1,
+        "slug": "the-small-lantern",
+        "source_path": "extracted/001-the-small-lantern.md",
+        "status": "extracted",
+        "title": "The Small Lantern",
+        "translation_path": "translated/001-the-small-lantern.md",
+        "unit_id": "chapter-000001"
+      }
+    ],
+    "schema_version": 1
+  },
+  "revision_id": "source-000001",
+  "schema_version": 1,
+  "source_manifest": {
+    "chapter_count": 1,
+    "extracted": [
+      {
+        "number": 1,
+        "path": "extracted/001-the-small-lantern.md",
+        "sha256": "ae8dd74df0d1f84f215b6e2085a2e032528e2a97feb2a11773d37c54c6823150",
+        "title": "The Small Lantern",
+        "unit_id": "chapter-000001"
+      }
+    ],
+    "schema_version": 1,
+    "source_file": "source.epub",
+    "source_format": "epub",
+    "source_sha256": "d6647ae530aae25b3c55c5c82fcfc4d0cbc1b46a5c20a15d1437d5ed4ddbabee",
+    "source_size_bytes": 1555,
+    "source_storage_mode": "embedded"
+  },
+  "units": [
+    {
+      "classification": "initial",
+      "number": 1,
+      "source_path": "extracted/001-the-small-lantern.md",
+      "staged_path": "source-revisions/source-000001/corpus/001-chapter-000001.md",
+      "title": "The Small Lantern",
+      "unit_id": "chapter-000001"
+    }
+  ]
+}
