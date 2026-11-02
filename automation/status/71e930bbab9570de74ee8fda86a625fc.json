@@ -3,43 +3,28 @@
   "job_id": "71e930bbab9570de74ee8fda86a625fc",
   "book_slug": "gothams-fortune-teller",
   "state": "running",
-  "phase": "model-call-reserved",
+  "phase": "reviewer-completed",
   "failures": 0,
   "correction_rounds": {},
   "workflow_revision": "db253095d36f245f9531da654b93ab72193d3b97",
   "source_sha256": "e88111d85c517d2df032c85f3de44ad7ca1f9cfac0394d5173a6ab2b98f548e9",
-  "updated_at": "2026-11-02T16:31:50.411561+00:00",
-  "active": {
-    "role": "reviewer",
-    "chapter": 2,
-    "session_id": "auto-71e930bbab95-reviewer-3f037a66"
-  },
+  "updated_at": "2026-11-02T16:31:55.441110+00:00",
+  "active": null,
   "model_calls_started": 4,
   "memory_glossary_saved": 8,
-  "pending_style": [
-    {
-      "evidence": "The text is a direct export from Archive of Our Own (AO3).",
-      "source_pattern": "Fanfiction metadata (Rating, Warnings, Tags)",
-      "translation_approach": "Use standard Russian fanfiction community terminology (e.g., 'Флафф', 'Gen', 'Рейтинг')."
-    },
-    {
-      "evidence": "Phrases like 'Hi everyone!', 'fun little story', 'hold tight'.",
-      "source_pattern": "Informal author's notes",
-      "translation_approach": "Maintain a friendly, conversational tone with emojis and colloquialisms."
-    }
-  ],
+  "pending_style": [],
   "prompt_context": {
-    "role": "translator",
+    "role": "reviewer",
     "workflow_revision": "db253095d36f245f9531da654b93ab72193d3b97",
     "loaded_contracts": [
       "AGENTS.md",
       "docs/TRANSLATION.md",
-      "docs/TRANSLATOR.md"
+      "docs/REVIEWER.md"
     ],
-    "glossary_sha256": "651399a8e0f3611b6b73109576d45b31705bacbb698256702cd541753e1cff59",
+    "glossary_sha256": "55f410a602eb62326381bb7f5d1a357659c40a8331bc9ad4addbf851d91b8935",
     "style_guide_sha256": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4",
-    "system_chars": 15301,
-    "user_chars": 6041
+    "system_chars": 21845,
+    "user_chars": 10459
   },
-  "memory_style_saved": 0
+  "memory_style_saved": 2
 }

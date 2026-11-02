@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "gothams-fortune-teller",
-  "next_sequence": 2,
+  "next_sequence": 3,
   "records": [
     {
       "record_id": "2b1acee459fe476a8d839bf36422633e",
@@ -31,6 +31,37 @@
       },
       "shared_state_revisions": {
         "glossary": "651399a8e0f3611b6b73109576d45b31705bacbb698256702cd541753e1cff59",
+        "style_guide": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4"
+      }
+    },
+    {
+      "record_id": "03504ee9ab464960b3be7224cba7615a",
+      "sequence": 2,
+      "unit_id": "chapter-000002",
+      "outcome": "PASS",
+      "source_sha256": "00783de680afff3a87893798af9abb75bf640b87878eda4489335e551db0b743",
+      "translation_sha256": "60fb52ba7cdcd7f9808bbd4ebaf8b50f5d63a2202f0ebaa6005d261dfd9e0c3c",
+      "workflow_revision": "db253095d36f245f9531da654b93ab72193d3b97",
+      "review_contract_revision": "docs/TRANSLATION.md@db253095d36f245f9531da654b93ab72193d3b97",
+      "reviewer_session_id": "auto-71e930bbab95-reviewer-3f037a66",
+      "reviewed_at": "2026-11-02T16:31:55Z",
+      "state_revision": "25f1a07f1974a017f94f85f6503ce947d7300f09f0f3361420e6587f126182dc",
+      "review_commit": "80f0f4981751ef66d0022911a08475f0f6bdb389",
+      "correction_round": 0,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": []
+      },
+      "shared_state_revisions": {
+        "glossary": "55f410a602eb62326381bb7f5d1a357659c40a8331bc9ad4addbf851d91b8935",
         "style_guide": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4"
       }
     }

@@ -59,3 +59,10 @@ Add recurring characters as needed.
 ## Review notes
 
 - 
+
+## Automated reviewed stylistic decisions
+
+| Source pattern / context | Target-language approach | Reason / evidence |
+| --- | --- | --- |
+| Fanfiction metadata (Rating, Warnings, Tags) | Use standard Russian fanfiction community terminology (e.g., 'Флафф', 'Gen', 'Рейтинг'). | The text is a direct export from Archive of Our Own (AO3). |
+| Informal author's notes | Maintain a friendly, conversational tone with emojis and colloquialisms. | Phrases like 'Hi everyone!', 'fun little story', 'hold tight'. |
