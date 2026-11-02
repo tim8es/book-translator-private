@@ -30,7 +30,7 @@ class LiteraryContextTests(unittest.TestCase):
             dest = engine / path
             dest.write_text("pinned " + role, encoding="utf-8")
         (engine / "agent-manifest.json").write_text(json.dumps({
-            "contracts": contracts,
+            "schema_version": 3, "contracts": contracts,
             "context_profiles": {
                 "translator": ["global", "translation", "translator"],
                 "reviewer": ["global", "translation", "reviewer"]},
