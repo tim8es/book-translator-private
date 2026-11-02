@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "request_id": "e9bb978c618d48f2abb1c01c27db8764",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "99b84fca976df225385e933205aa55f58ebe083b610a39dcdbad1442632eb1a4",
+    "record": {
+      "correction_round": 4,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "findings": [
+          {
+            "detail": "Corrected untranslated 'ways' in Tim's lesson on safe self-defense, checked against original.",
+            "resolved": true,
+            "severity": "major"
+          },
+          {
+            "detail": "Corrected source phrase 'abysmal grammar' and retained typo 'abyzmel' needed for the social-media joke.",
+            "resolved": true,
+            "severity": "major"
+          },
+          {
+            "detail": "Corrected Russian typo 'гля' to 'глядя' without changing meaning.",
+            "resolved": true,
+            "severity": "minor"
+          }
+        ]
+      },
+      "record_id": "2f5a41bbf498424f8c9fd9206f8e2374",
+      "review_commit": "c1c2121f67b07c4cb0f820c84e4478874199b7b5",
+      "review_contract_revision": "docs/TRANSLATION.md@db253095d36f245f9531da654b93ab72193d3b97",
+      "reviewed_at": "2026-11-02T19:23:25Z",
+      "reviewer_session_id": "manual-20261102-gothams-reviewer-01",
+      "sequence": 11,
+      "source_sha256": "b0d84a3f03fd3750e9353993235994fefa2e8cfa6cafe084695df1bf5fdeff41",
+      "state_revision": "a83dce2bd66667cbec4f0eb30303f3e4b0123d882480ade136cad678dd9f7fdf",
+      "supersedes_record_id": "19e8c11c6c654c36968a7cc3d94adf33",
+      "translation_sha256": "0ace13da06cea8c34a2ff6c5523ef715faffe32d0e719ce150c69d06bda78103",
+      "unit_id": "chapter-000007",
+      "workflow_revision": "db253095d36f245f9531da654b93ab72193d3b97"
+    }
+  },
+  "error": null
+}

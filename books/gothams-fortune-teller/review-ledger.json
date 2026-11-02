@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "gothams-fortune-teller",
-  "next_sequence": 11,
+  "next_sequence": 12,
   "records": [
     {
       "record_id": "2b1acee459fe476a8d839bf36422633e",
@@ -380,6 +380,49 @@
       "shared_state_revisions": {
         "glossary": "461bad5d969f5255e2d8c14d3cccfa971ff845426b4c329aeec6a3dcc4df6d03",
         "style_guide": "aebda9076127c3d02d4ad77beff0654fab40ff954dd5e296dfcba903d1994d87"
+      }
+    },
+    {
+      "record_id": "2f5a41bbf498424f8c9fd9206f8e2374",
+      "sequence": 11,
+      "unit_id": "chapter-000007",
+      "outcome": "PASS",
+      "source_sha256": "b0d84a3f03fd3750e9353993235994fefa2e8cfa6cafe084695df1bf5fdeff41",
+      "translation_sha256": "0ace13da06cea8c34a2ff6c5523ef715faffe32d0e719ce150c69d06bda78103",
+      "workflow_revision": "db253095d36f245f9531da654b93ab72193d3b97",
+      "review_contract_revision": "docs/TRANSLATION.md@db253095d36f245f9531da654b93ab72193d3b97",
+      "reviewer_session_id": "manual-20261102-gothams-reviewer-01",
+      "reviewed_at": "2026-11-02T19:23:25Z",
+      "state_revision": "a83dce2bd66667cbec4f0eb30303f3e4b0123d882480ade136cad678dd9f7fdf",
+      "review_commit": "c1c2121f67b07c4cb0f820c84e4478874199b7b5",
+      "correction_round": 4,
+      "supersedes_record_id": "19e8c11c6c654c36968a7cc3d94adf33",
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "major",
+            "detail": "Corrected untranslated 'ways' in Tim's lesson on safe self-defense, checked against original.",
+            "resolved": true
+          },
+          {
+            "severity": "major",
+            "detail": "Corrected source phrase 'abysmal grammar' and retained typo 'abyzmel' needed for the social-media joke.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Corrected Russian typo 'гля' to 'глядя' without changing meaning.",
+            "resolved": true
+          }
+        ]
       }
     }
   ]
