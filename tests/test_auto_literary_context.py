@@ -193,6 +193,28 @@ class LiteraryContextTests(unittest.TestCase):
             self.assertEqual(len(proposals), 2)
             self.assertEqual(sum(path.name.endswith(".resolution.json") for path in proposals), 1)
 
+    def test_dispatch_follows_pinned_canonical_resume(self):
+        chapter = {"unit_id": "chapter-000001", "number": 1, "status": "extracted"}
+        ledger = {"records": []}
+        with patch.object(runner, "chapter_data", return_value=({}, ledger, [chapter])), \
+             patch.object(runner, "approved_unit_ids", return_value=set()), \
+             patch.object(runner, "cli") as cli:
+            for operation, expected in (
+                ("translate", "translator"), ("review", "reviewer"),
+                ("correct_translation", "corrector"), ("accept_review", "promote")
+            ):
+                cli.return_value = json.dumps({
+                    "operation": operation, "unit_id": "chapter-000001",
+                    "chapter_number": 1})
+                role, selected = runner.canonical_dispatch("test", {"correction_rounds": {}})
+                self.assertEqual(role, expected)
+                self.assertEqual(selected, chapter)
+            cli.return_value = json.dumps({"operation": "complete"})
+            self.assertEqual(runner.canonical_dispatch("test", {})[0], "finalize")
+            cli.return_value = json.dumps({"operation": "blocked", "reason": "unit_claimed"})
+            with self.assertRaisesRegex(runner.JobError, "unit_claimed"):
+                runner.canonical_dispatch("test", {})
+
     def test_claim_includes_frozen_literary_revisions(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
