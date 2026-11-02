@@ -45,3 +45,12 @@ Use this file for recurring names, places, organizations, terms, nicknames, titl
 | Obeah Man | Обиа-мен | Character | DC villain. |
 | Drake Industries | «Дрейк Индастриз» | Organization | The family business. |
 | Timothy Jackson Drake-Wayne | Тимоти Джексон Дрейк-Уэйн | Character | Tim's full legal name after adoption. |
+| Omega Ray | Омега-луч | Term | Power of Darkseid. |
+| Doomsday | Думсдэй | Character | Villain who killed Superman. |
+| Lex Luthor | Лекс Лютор | Character | Villain. |
+| LexCorp | «ЛексКорп» | Organization | Luthor's company. |
+| Alvin Draper | Элвин Дрейпер | Character | Tim's fake identity. |
+| CADMUS | КАДМУС | Organization | Genetic research project. |
+| Kon / Conner Kent | Кон / Коннер Кент | Character | Superboy. |
+| Phoenix | Феникс | Alias | Jason's proposed new vigilante name. |
+| spooky | spooky | Nickname | Green Lantern's nickname for Batman, kept in English as per internet slang style. |
