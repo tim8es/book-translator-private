@@ -1,6 +1,12 @@
 name: Automatic book translation
 
 on:
+  # An atomic n8n intake commit starts work immediately. Status/output commits
+  # do not match this path, so automatic checkpoints do not recurse.
+  push:
+    branches: [main]
+    paths:
+      - 'intake/auto/**/request.json'
   workflow_dispatch:
     inputs:
       job_id:
@@ -56,6 +62,7 @@ jobs:
           OMNIROUTE_TRANSLATOR_MODEL: ${{ vars.OMNIROUTE_TRANSLATOR_MODEL }}
           OMNIROUTE_REVIEWER_MODEL: ${{ vars.OMNIROUTE_REVIEWER_MODEL }}
           OMNIROUTE_CORRECTOR_MODEL: ${{ vars.OMNIROUTE_CORRECTOR_MODEL }}
+          OMNIROUTE_MODEL_CALL_LIMIT: ${{ vars.OMNIROUTE_MODEL_CALL_LIMIT }}
           JOB_ID: ${{ steps.select.outputs.job_id }}
         run: python automation/book_runner.py --job-id "$JOB_ID"
 
