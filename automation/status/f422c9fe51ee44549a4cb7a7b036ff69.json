@@ -3,15 +3,19 @@
   "job_id": "f422c9fe51ee44549a4cb7a7b036ff69",
   "book_slug": "glass-observatory-smoke-test-november-2026",
   "state": "running",
-  "phase": "corrector-completed",
+  "phase": "claimed",
   "failures": 0,
   "correction_rounds": {
     "chapter-000003": 2
   },
   "workflow_revision": "db253095d36f245f9531da654b93ab72193d3b97",
   "source_sha256": "975a52872ed2b69f66c55b38d1b9e1dfa411d4bfea655be3537afd215ce69962",
-  "updated_at": "2026-11-02T17:31:02.034102+00:00",
-  "active": null,
+  "updated_at": "2026-11-02T17:31:16.167707+00:00",
+  "active": {
+    "role": "reviewer",
+    "chapter": 3,
+    "session_id": "auto-f422c9fe51ee-reviewer-59efcf03"
+  },
   "model_calls_started": 9,
   "memory_glossary_saved": 4,
   "pending_style": [],
