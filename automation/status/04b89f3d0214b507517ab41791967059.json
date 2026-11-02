@@ -1,12 +1,11 @@
 {
   "schema_version": 1,
   "job_id": "04b89f3d0214b507517ab41791967059",
-  "book_slug": "you-feel-like-home",
-  "source_sha256": "071b365ece660dce8ed9bf3a51f47eb4f6d1c4c029138c45a3d998f580d0d77d",
-  "state": "running",
-  "phase": "matched-existing-book",
+  "book_slug": null,
+  "state": "blocked",
+  "phase": "book-match-requires-review",
   "failures": 0,
   "correction_rounds": {},
-  "workflow_revision": "db253095d36f245f9531da654b93ab72193d3b97",
-  "updated_at": "2026-11-02T11:37:42.697707+00:00"
+  "last_error": "existing book cannot be updated safely by its pinned workflow",
+  "updated_at": "2026-11-02T11:37:45.923910+00:00"
 }
