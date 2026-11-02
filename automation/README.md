@@ -48,9 +48,11 @@ prevent non-force pushes require a separately reviewed publication strategy.
    upload both paths, verify the returned blob bytes and request content, then
    trigger Actions. Use a Git tree/commit to upload both files atomically where
    possible. Retry a failed push only after rechecking HEAD.
-3. POST GitHub Actions workflow_dispatch for auto-translate.yml on main with
-   input job_id. Poll automation/status/<job_id>.json. Dispatch is optional for
-   recovery: a 15-minute schedule scans for unfinished requests.
+3. A new request.json committed on main automatically triggers
+   auto-translate.yml via a paths-filtered push event. To target a particular
+   job or recover an interrupted dispatch, POST workflow_dispatch with
+   input job_id. Poll automation/status/<job_id>.json. A 15-minute schedule
+   also scans unfinished requests as a recovery fallback.
 4. When state=done, use the output artifact_path and artifact_sha256 in the
    status to retrieve and verify the final EPUB (or download the Actions
    artifact from the finishing workflow run), then send through Telegram.
@@ -143,8 +145,13 @@ This is a **bounded initial MVP**, not unrestricted unattended production:
 - Automatic model decisions are not a substitute for a human literary review.
   Memory proposals may legitimately be empty; a syntactically valid model
   response alone does not prove all names or voice decisions are captured.
-- Model costs depend on provider and tokens. Configure spending caps upstream
-  in OmniRoute; this MVP does **not** enforce a book-level monetary limit.
+- The runner now enforces a durable maximum of 36 model invocations per
+  job by default. Override with repository variable OMNIROUTE_MODEL_CALL_LIMIT
+  (integer 1–200). Each invocation is reserved and checkpointed **before**
+  sending its request; reaching the cap blocks and releases the active claim.
+  Transport retries inside one invocation may still issue additional HTTP
+  attempts. This is **not** a monetary or token-based budget: configure an
+  upstream OmniRoute spending cap and check provider pricing separately.
 - The reviewer is an LLM, not a guarantee of literary correctness; evaluate
   finished books before offering an unqualified quality guarantee.
 - Artifact retention is 30 days; durable final output remains under the
