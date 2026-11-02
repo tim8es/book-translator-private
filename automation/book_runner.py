@@ -307,6 +307,11 @@ def git(*args: str) -> str:
 
 
 def checkpoint(job_id: str, status: dict, slug: str | None) -> None:
+    # A status-only quarantine must never include previously staged literary
+    # files left by a failed canonical operation. Otherwise the subsequent Git
+    # commit could accidentally publish half-applied book state.
+    if slug is None and git("diff", "--cached", "--name-only"):
+        raise JobError("status-only checkpoint refused: Git index has staged changes")
     status["updated_at"] = clock()
     store_json(status_path(job_id), status)
     paths = [f"automation/status/{job_id}.json"]
