@@ -8,3 +8,4 @@ Use this file for recurring names, places, organizations, terms, nicknames, titl
 | Mara | Мара | character | Protagonist |
 | Theo | Тео | character | Boy in yellow raincoat |
 | THE QUIET HOUR | ЧАС ТИШИНЫ | organization | Name of the repair shop |
+| archive | архив | place | The destination of the grandfather |
