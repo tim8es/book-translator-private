@@ -3,16 +3,43 @@
   "job_id": "fe1257705e681cafc1bd482119e41c31",
   "book_slug": "the-map-of-quiet-places-2-chapters-test-edition",
   "state": "running",
-  "phase": "model-call-reserved",
+  "phase": "translator-completed",
   "failures": 0,
   "correction_rounds": {},
   "workflow_revision": "db253095d36f245f9531da654b93ab72193d3b97",
   "source_sha256": "d6b99f983c43bc205f5f7ed6d42d6ec2ecf6e2a3b99ec6a59e0562972c208090",
-  "updated_at": "2026-11-03T10:55:48.181334+00:00",
-  "active": {
+  "updated_at": "2026-11-03T10:55:54.793553+00:00",
+  "active": null,
+  "model_calls_started": 1,
+  "memory_glossary_saved": 4,
+  "pending_style": [
+    {
+      "evidence": "the rain had turned the station windows into sheets of silver; The buildings leaned toward the narrow streets as if sharing secrets.",
+      "source_pattern": "Atmospheric, slightly surreal descriptions (silver sheets, leaning buildings)",
+      "translation_approach": "Maintain poetic imagery and narrative distance without over-explaining the surreal elements."
+    },
+    {
+      "evidence": "Mara kept her suitcase close... 'He was right about one of those.'",
+      "source_pattern": "Contrast between Mara's tension and Theo's casual tone",
+      "translation_approach": "Use a more formal/reserved register for Mara's internal state and a lighter, slightly ironic tone for Theo's dialogue."
+    },
+    {
+      "evidence": "every clock showed a different time... tower... pharmacy clock... café window... hundreds of clocks",
+      "source_pattern": "Repetition of 'clock' and time-related motifs",
+      "translation_approach": "Preserve the frequency of time-related terms to maintain the thematic obsession of the setting."
+    }
+  ],
+  "prompt_context": {
     "role": "translator",
-    "chapter": 1,
-    "session_id": "auto-fe1257705e68-translator-44385fcf"
-  },
-  "model_calls_started": 1
+    "workflow_revision": "db253095d36f245f9531da654b93ab72193d3b97",
+    "loaded_contracts": [
+      "AGENTS.md",
+      "docs/TRANSLATION.md",
+      "docs/TRANSLATOR.md"
+    ],
+    "glossary_sha256": "f02e6becb2861881659733c55614d24b49ee0a6906fa607fb2db0ceb6b8d35ad",
+    "style_guide_sha256": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4",
+    "system_chars": 15301,
+    "user_chars": 5483
+  }
 }

@@ -4,3 +4,7 @@ Use this file for recurring names, places, organizations, terms, nicknames, titl
 
 | Original | Translation | Type | Notes |
 | --- | --- | --- | --- |
+| Northbridge | Нортбридж | place | Town name |
+| Mara | Мара | character | Protagonist |
+| Theo | Тео | character | Boy in yellow raincoat |
+| THE QUIET HOUR | ЧАС ТИШИНЫ | organization | Name of the repair shop |
