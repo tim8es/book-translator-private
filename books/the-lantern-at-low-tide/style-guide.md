@@ -59,3 +59,10 @@ Add recurring characters as needed.
 ## Review notes
 
 - 
+
+## Automated reviewed stylistic decisions
+
+| Source pattern / context | Target-language approach | Reason / evidence |
+| --- | --- | --- |
+| Simple, evocative prose with a focus on concrete objects (green stones, silver spoon, blue wax). | Maintain a clean, understated register; avoid over-embellishing the descriptions to preserve the quiet, atmospheric tone. | Every morning, Ada walked the narrow beach... green stones, pieces of rope... |
+| Short, declarative sentences creating a steady, rhythmic pace. | Preserve the sentence structure and length to maintain the narrative distance and sense of calm curiosity. | The lighthouse had been empty for twenty years. Its keeper had vanished during a storm... |
