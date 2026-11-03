@@ -1,6 +1,38 @@
 {
   "schema_version": 1,
   "book_slug": "the-map-of-quiet-places-2-chapters-test-edition",
-  "next_sequence": 1,
-  "records": []
+  "next_sequence": 2,
+  "records": [
+    {
+      "record_id": "652369a1bb4347afbc6e068482945939",
+      "sequence": 1,
+      "unit_id": "chapter-000001",
+      "outcome": "PASS",
+      "source_sha256": "020b1655ac4cd66748615bac7d79009f6546de35ee03e6a9017c88e0d0c461f9",
+      "translation_sha256": "709e71ca6d7563481858aca1b3af386ebbe5b99460ec57fa8bd435e0752a7ebd",
+      "workflow_revision": "db253095d36f245f9531da654b93ab72193d3b97",
+      "review_contract_revision": "docs/TRANSLATION.md@db253095d36f245f9531da654b93ab72193d3b97",
+      "reviewer_session_id": "auto-fe1257705e68-reviewer-d5b8a14e",
+      "reviewed_at": "2026-11-03T10:56:28Z",
+      "state_revision": "cf2c7f7652b3878793eb3d88a9544996292e799c137692927dd8fa05a3eacb81",
+      "review_commit": "addb070851cea9107e1509f8d73b4448a6eeb1c6",
+      "correction_round": 0,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": []
+      },
+      "shared_state_revisions": {
+        "glossary": "55601a0a2021be6406bd83328a2be5559be61ddebe685430c35d16a2fc5580ec",
+        "style_guide": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4"
+      }
+    }
+  ]
 }

@@ -59,3 +59,11 @@ Add recurring characters as needed.
 ## Review notes
 
 - 
+
+## Automated reviewed stylistic decisions
+
+| Source pattern / context | Target-language approach | Reason / evidence |
+| --- | --- | --- |
+| Atmospheric, slightly surreal descriptions (silver sheets, leaning buildings) | Maintain poetic imagery and narrative distance without over-explaining the surreal elements. | the rain had turned the station windows into sheets of silver; The buildings leaned toward the narrow streets as if sharing secrets. |
+| Contrast between Mara's tension and Theo's casual tone | Use a more formal/reserved register for Mara's internal state and a lighter, slightly ironic tone for Theo's dialogue. | Mara kept her suitcase close... 'He was right about one of those.' |
+| Repetition of 'clock' and time-related motifs | Preserve the frequency of time-related terms to maintain the thematic obsession of the setting. | every clock showed a different time... tower... pharmacy clock... café window... hundreds of clocks |
