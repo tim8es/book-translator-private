@@ -1,0 +1,129 @@
+{
+  "created_at": "2026-11-03T19:12:07Z",
+  "delta": {
+    "changed": 0,
+    "deleted": 0,
+    "new": 3,
+    "unchanged": 0
+  },
+  "metadata": {
+    "author": "Mira Ellery",
+    "chapter_count": 3,
+    "imported_at": "2026-11-03T19:12:07+00:00",
+    "layout_mode": "original_xhtml_v1",
+    "schema_version": 1,
+    "source": {
+      "filename": "source.epub",
+      "original_filename": "source.epub",
+      "revision_id": "source-000001",
+      "sha256": "8d173da4a576b5a2b132985f1dac106364bc161f3736d49dea107804f40c7c81",
+      "size_bytes": 116149,
+      "storage_mode": "embedded"
+    },
+    "source_file": "source.epub",
+    "source_format": "epub",
+    "source_language": "en",
+    "target_language": "ru",
+    "title": "The Lantern at Low Tide",
+    "workflow": {
+      "repository": "https://github.com/tim8es/book-translator",
+      "requested_ref": "main",
+      "resolved_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "review_evidence": "review-ledger-v1"
+    }
+  },
+  "parent_revision_id": null,
+  "progress": {
+    "book_slug": "the-lantern-at-low-tide",
+    "chapters": [
+      {
+        "number": 1,
+        "slug": "title",
+        "source_path": "extracted/001-title.md",
+        "status": "extracted",
+        "title": "title",
+        "translation_path": "translated/001-title.md",
+        "unit_id": "chapter-000001"
+      },
+      {
+        "number": 2,
+        "slug": "copyright",
+        "source_path": "extracted/002-copyright.md",
+        "status": "extracted",
+        "title": "copyright",
+        "translation_path": "translated/002-copyright.md",
+        "unit_id": "chapter-000002"
+      },
+      {
+        "number": 3,
+        "slug": "chapter-1-the-letter-in-the-glass",
+        "source_path": "extracted/003-chapter-1-the-letter-in-the-glass.md",
+        "status": "extracted",
+        "title": "Chapter 1: The Letter in the Glass",
+        "translation_path": "translated/003-chapter-1-the-letter-in-the-glass.md",
+        "unit_id": "chapter-000003"
+      }
+    ],
+    "schema_version": 1
+  },
+  "revision_id": "source-000001",
+  "schema_version": 1,
+  "source_manifest": {
+    "chapter_count": 3,
+    "extracted": [
+      {
+        "number": 1,
+        "path": "extracted/001-title.md",
+        "sha256": "09e8bb2da4f7d2f07cc61f65bcc63939e88b40ef7d5f0cec1094a4d27c90ecec",
+        "title": "title",
+        "unit_id": "chapter-000001"
+      },
+      {
+        "number": 2,
+        "path": "extracted/002-copyright.md",
+        "sha256": "83bf212da8f34f415f39f2134fddcbece5e4db5b0ca60602ccf769ec38707544",
+        "title": "copyright",
+        "unit_id": "chapter-000002"
+      },
+      {
+        "number": 3,
+        "path": "extracted/003-chapter-1-the-letter-in-the-glass.md",
+        "sha256": "79f65d7f94d9bad87aabf556bd7294886946d5fe54849e4a4e781e6042fd16d5",
+        "title": "Chapter 1: The Letter in the Glass",
+        "unit_id": "chapter-000003"
+      }
+    ],
+    "schema_version": 1,
+    "source_file": "source.epub",
+    "source_format": "epub",
+    "source_sha256": "8d173da4a576b5a2b132985f1dac106364bc161f3736d49dea107804f40c7c81",
+    "source_size_bytes": 116149,
+    "source_storage_mode": "embedded"
+  },
+  "units": [
+    {
+      "classification": "initial",
+      "number": 1,
+      "source_path": "extracted/001-title.md",
+      "staged_path": "source-revisions/source-000001/corpus/001-chapter-000001.md",
+      "title": "title",
+      "unit_id": "chapter-000001"
+    },
+    {
+      "classification": "initial",
+      "number": 2,
+      "source_path": "extracted/002-copyright.md",
+      "staged_path": "source-revisions/source-000001/corpus/002-chapter-000002.md",
+      "title": "copyright",
+      "unit_id": "chapter-000002"
+    },
+    {
+      "classification": "initial",
+      "number": 3,
+      "source_path": "extracted/003-chapter-1-the-letter-in-the-glass.md",
+      "staged_path": "source-revisions/source-000001/corpus/003-chapter-000003.md",
+      "title": "Chapter 1: The Letter in the Glass",
+      "unit_id": "chapter-000003"
+    }
+  ]
+}
