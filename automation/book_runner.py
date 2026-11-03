@@ -7,6 +7,9 @@ use the exact per-book pinned workflow CLI, with guarded Git commits.
 from __future__ import annotations
 
 import argparse
+import difflib
+import posixpath
+import urllib.parse
 import hashlib
 import json
 import os
@@ -114,10 +117,116 @@ def stable_slug(title: str) -> str:
     return value[:120].rstrip("-") or "book"
 
 
-def locate_book(title: str, author: str, source_filename: str,
-                target_language: str) -> tuple[str, dict]:
+def _epub_chapter_fingerprints(source: Path) -> tuple[str, ...] | None:
+    """Read the actual EPUB spine without changing the canonical corpus.
+
+    This is identity *evidence*, not source-update extraction. Every matched
+    chapter still passes through the pinned canonical update-source delta gate.
+    Reject incomplete/unsupported spines rather than inferring from filenames
+    or a shared frontmatter chapter.
+    """
     try:
-        match = find_book(title, author, source_filename)
+        if source.stat().st_size > MAX_SOURCE_BYTES:
+            return None
+        with zipfile.ZipFile(source) as archive:
+            names = set(archive.namelist())
+            container = ET.fromstring(archive.read("META-INF/container.xml"))
+            rootfiles = [x for x in container.iter() if x.tag.rsplit("}", 1)[-1] == "rootfile"]
+            if len(rootfiles) != 1:
+                return None
+            opf_name = rootfiles[0].attrib["full-path"]
+            opf = PurePosixPath(opf_name)
+            if opf.is_absolute() or ".." in opf.parts:
+                return None
+            package = ET.fromstring(archive.read(str(opf)))
+            manifest = next(x for x in package if x.tag.rsplit("}", 1)[-1] == "manifest")
+            spine = next(x for x in package if x.tag.rsplit("}", 1)[-1] == "spine")
+            items = {x.get("id"): x for x in manifest
+                     if x.tag.rsplit("}", 1)[-1] == "item"}
+            chapters: list[str] = []
+            references = [x for x in spine if x.tag.rsplit("}", 1)[-1] == "itemref"]
+            if not references or len(references) > 300:
+                return None
+            for reference in references:
+                item = items.get(reference.get("idref"))
+                if item is None or item.get("media-type") != "application/xhtml+xml":
+                    return None
+                href = item.get("href", "")
+                if not href or "://" in href or "?" in href or "#" in href:
+                    return None
+                location = posixpath.normpath(
+                    posixpath.join(str(opf.parent), urllib.parse.unquote(href)))
+                if (location.startswith("../") or location.startswith("/") or
+                        location == ".." or location not in names):
+                    return None
+                info = archive.getinfo(location)
+                if info.file_size > MAX_CHAPTER_CHARS * 10:
+                    return None
+                html = ET.fromstring(archive.read(location))
+                bodies = [x for x in html.iter() if x.tag.rsplit("}", 1)[-1] == "body"]
+                if len(bodies) != 1:
+                    return None
+                text = normalize_identity(" ".join(bodies[0].itertext()))
+                if not text:
+                    return None
+                chapters.append(hashlib.sha256(text.encode("utf-8")).hexdigest())
+            return tuple(chapters) if chapters else None
+    except (OSError, KeyError, ValueError, StopIteration, ET.ParseError,
+            zipfile.BadZipFile, zipfile.LargeZipFile, RuntimeError):
+        return None
+
+
+def _related_titles(left: str, right: str) -> bool:
+    """Only consider a long, closely related title for content-backed reuse.
+
+    Similarity is a candidate search hint, never evidence sufficient to merge.
+    Don't strip chapter numbers, subtitles, or edition markers as identities.
+    """
+    a, b = normalize_identity(left), normalize_identity(right)
+    if not a or not b:
+        return False
+    common = len(os.path.commonprefix([a, b]))
+    return (common >= 18 and
+            difflib.SequenceMatcher(None, a, b, autojunk=False).ratio() >= 0.80)
+
+
+def _book_source_epub(folder: Path, metadata: dict) -> Path | None:
+    source = metadata.get("source") or {}
+    if not isinstance(source, dict) or source.get("storage_mode") != "embedded":
+        return None
+    filename = source.get("filename")
+    if not isinstance(filename, str):
+        return None
+    # The source file is preserved under the book's source/ directory.
+    path = PurePosixPath(filename)
+    if path.name != filename or filename in (".", ".."):
+        return None
+    candidate = folder / "source" / filename
+    return candidate if candidate.is_file() else None
+
+
+def _unique_book(matches: list[tuple[str, dict]]) -> tuple[str, dict]:
+    """Allow legacy duplicate workspaces only for one provably identical edition."""
+    if len(matches) == 1:
+        return matches[0]
+    authors = {normalize_identity(str(item[1].get("author") or "")) for item in matches}
+    targets = {item[1].get("target_language") for item in matches}
+    sources = {((item[1].get("source") or {}).get("sha256")) for item in matches}
+    workflows = {(item[1].get("workflow") or {}).get("resolved_revision") for item in matches}
+    if (any(len(values) != 1 for values in (authors, targets, sources, workflows)) or
+            not all(isinstance(value, str) and HEX64.fullmatch(value) for value in sources) or
+            not all(isinstance(value, str) and SHA.fullmatch(value) for value in workflows)):
+        raise BookIdentityError("multiple distinct editions match this title; automatic update is blocked")
+    matches.sort(key=lambda item: (str(item[1].get("imported_at") or ""), item[0]))
+    return matches[-1]
+
+
+def locate_book(title: str, author: str, source_filename: str,
+                target_language: str, *, source_epub: Path | None = None,
+                source_sha256: str | None = None) -> tuple[str, dict]:
+    try:
+        match = find_book(title, author, source_filename, source_epub=source_epub,
+                          source_sha256=source_sha256)
     except JobError as exc:
         raise BookIdentityError(str(exc)) from exc
     if match is not None:
@@ -131,14 +240,21 @@ def locate_book(title: str, author: str, source_filename: str,
     return slug, {}
 
 
-def find_book(title: str, author: str, source_filename: str) -> tuple[str, dict] | None:
-    key = normalize_identity(title)
-    filename_key = normalize_identity(Path(source_filename).stem)
-    matches = []
+def find_book(title: str, author: str, source_filename: str, *,
+              source_epub: Path | None = None,
+              source_sha256: str | None = None) -> tuple[str, dict] | None:
+    """Resolve book identity deterministically before any model or init work.
+
+    Exact EPUB hash > EPUB title+author > proven, unique chapter-spine identity.
+    Filenames (especially source.epub) are NOT book identity. A similar title
+    with insufficient evidence fails closed rather than creating a duplicate.
+    """
+    title_key, author_key = normalize_identity(title), normalize_identity(author)
     books = ROOT / "books"
     if not books.exists():
         return None
-    for folder in books.iterdir():
+    records: list[tuple[str, dict]] = []
+    for folder in sorted(books.iterdir()):
         metadata_path = folder / "metadata.json"
         if not folder.is_dir() or not metadata_path.is_file():
             continue
@@ -146,33 +262,85 @@ def find_book(title: str, author: str, source_filename: str) -> tuple[str, dict]
             metadata = read_json(metadata_path)
         except (OSError, ValueError, JobError):
             continue
-        source = metadata.get("source") if isinstance(metadata.get("source"), dict) else {}
-        titles = {metadata.get("title")}
-        filenames = {metadata.get("source_file"), source.get("original_filename"), source.get("filename")}
-        title_matches = key in {normalize_identity(x) for x in titles if isinstance(x, str) and x.strip()}
-        filename_matches = filename_key in {
-            normalize_identity(Path(x).stem) for x in filenames if isinstance(x, str) and x.strip()
-        }
-        if title_matches or filename_matches:
-            matches.append((folder.name, metadata))
-    if len(matches) > 1:
-        authors = {normalize_identity(str(item[1].get("author") or "")) for item in matches}
-        targets = {item[1].get("target_language") for item in matches}
-        sources = {((item[1].get("source") or {}).get("sha256")) for item in matches}
-        workflows = {(item[1].get("workflow") or {}).get("resolved_revision") for item in matches}
-        if (any(len(values) != 1 for values in (authors, targets, sources, workflows)) or
-                not all(isinstance(value, str) and HEX64.fullmatch(value) for value in sources) or
-                not all(isinstance(value, str) and SHA.fullmatch(value) for value in workflows)):
-            raise BookIdentityError("multiple distinct editions match this title; automatic update is blocked")
-        matches.sort(key=lambda item: (str(item[1].get("imported_at") or ""), item[0]))
-        return matches[-1]
-    if not matches:
+        records.append((folder.name, metadata))
+
+    def compatible(item: tuple[str, dict]) -> bool:
+        old_author = normalize_identity(str(item[1].get("author") or ""))
+        return not (author_key and old_author and author_key != old_author)
+
+    # An exact binary source digest is sufficient to identify a source edition.
+    # Author and target-language gates are enforced even here.
+    if source_sha256 and HEX64.fullmatch(source_sha256):
+        identical = [x for x in records if
+                     (x[1].get("source") or {}).get("sha256") == source_sha256]
+        if identical:
+            if not all(compatible(x) for x in identical):
+                raise BookIdentityError("source checksum matches a book with a different author")
+            return _unique_book(identical)
+
+    exact = [x for x in records if
+             normalize_identity(str(x[1].get("title") or "")) == title_key]
+    if exact:
+        if not all(compatible(x) for x in exact):
+            raise BookIdentityError("an existing book has this title but a different author; automatic matching is blocked")
+        return _unique_book(exact)
+
+    # Source updates may rename an edition in dc:title (e.g. a chapter-count
+    # suffix). Only a long, similar title plus an identical complete OLD spine
+    # proves a safe additive edition. No filename-based fallback.
+    candidates = [x for x in records if
+                  author_key and normalize_identity(str(x[1].get("author") or "")) == author_key
+                  and _related_titles(title, str(x[1].get("title") or ""))]
+    if not candidates:
         return None
-    slug, metadata = matches[0]
-    old_author = metadata.get("author")
-    if author and old_author and normalize_identity(author) != normalize_identity(old_author):
-        raise BookIdentityError("an existing book has this title but a different author; automatic matching is blocked")
-    return slug, metadata
+    new_spine = _epub_chapter_fingerprints(source_epub) if source_epub else None
+    proven = []
+    for slug, metadata in candidates:
+        original = _book_source_epub(books / slug, metadata)
+        old_spine = _epub_chapter_fingerprints(original) if original else None
+        if (new_spine and old_spine and len(new_spine) >= len(old_spine) and
+                new_spine[:len(old_spine)] == old_spine and
+                all(len(x) == 64 for x in old_spine)):
+            # One hash-identical short boilerplate body is not conclusive.
+            # Require substantive text; source-update still validates every
+            # accepted chapter using its own canonical SHA evidence.
+            if len(old_spine) > 1 or _epub_substantive_first_chapter(original):
+                proven.append((slug, metadata))
+    if len(proven) == 1:
+        return proven[0]
+    if len(proven) > 1:
+        raise BookIdentityError("multiple distinct editions match this title; automatic update is blocked")
+    raise BookIdentityError(
+        "similar book title and author but chapter identity is unproven; "
+        "automatic duplicate initialization is blocked")
+
+
+def _epub_substantive_first_chapter(source: Path) -> bool:
+    """For one-unit source matches require a substantial body, not frontmatter."""
+    try:
+        with zipfile.ZipFile(source) as archive:
+            container = ET.fromstring(archive.read("META-INF/container.xml"))
+            rootfile = next(x for x in container.iter()
+                            if x.tag.rsplit("}", 1)[-1] == "rootfile")
+            opf = PurePosixPath(rootfile.attrib["full-path"])
+            package = ET.fromstring(archive.read(str(opf)))
+            manifest = next(x for x in package if x.tag.rsplit("}", 1)[-1] == "manifest")
+            spine = next(x for x in package if x.tag.rsplit("}", 1)[-1] == "spine")
+            items = {x.get("id"): x for x in manifest}
+            first = next(iter(spine))
+            href = items[first.get("idref")].get("href", "")
+            if not href or "://" in href or "?" in href or "#" in href:
+                return False
+            location = posixpath.normpath(posixpath.join(str(opf.parent),
+                                                         urllib.parse.unquote(href)))
+            if location.startswith("../") or location.startswith("/") or location == "..":
+                return False
+            html = ET.fromstring(archive.read(location))
+            body = next(x for x in html.iter() if x.tag.rsplit("}", 1)[-1] == "body")
+            return len(normalize_identity(" ".join(body.itertext()))) >= 500
+    except (OSError, KeyError, ValueError, StopIteration, ET.ParseError,
+            zipfile.BadZipFile, RuntimeError):
+        return False
 
 
 def read_json(path: Path) -> dict:
@@ -849,7 +1017,8 @@ def run(job_id: str) -> dict:
     title = request.get("title") or epub_title
     author = request.get("author") or epub_author
     slug, metadata = locate_book(
-        title, author, request.get("source_filename", source.name), request["target_language"]
+        title, author, request.get("source_filename", source.name), request["target_language"],
+        source_epub=source, source_sha256=request["source_sha256"]
     )
     folder = ROOT / "books" / slug
     if status and status.get("book_slug") not in (None, slug):
