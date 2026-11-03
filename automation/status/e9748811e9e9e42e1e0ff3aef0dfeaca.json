@@ -4,31 +4,27 @@
   "book_slug": "the-lantern-at-low-tide",
   "source_sha256": "225d594017b335c5b83c600a13385da201a9580958e5cc1478c54278351977b4",
   "state": "running",
-  "phase": "model-call-reserved",
+  "phase": "reviewer-completed",
   "failures": 0,
   "correction_rounds": {},
   "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
-  "updated_at": "2026-11-03T19:47:55.278699+00:00",
-  "active": {
-    "role": "reviewer",
-    "chapter": 4,
-    "session_id": "auto-e9748811e9e9-reviewer-e04b69e3"
-  },
+  "updated_at": "2026-11-03T19:48:01.344019+00:00",
+  "active": null,
   "model_calls_started": 4,
   "memory_glossary_saved": 2,
   "pending_style": [],
   "prompt_context": {
-    "role": "translator",
+    "role": "reviewer",
     "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
     "loaded_contracts": [
       "AGENTS.md",
       "docs/TRANSLATION.md",
-      "docs/TRANSLATOR.md"
+      "docs/REVIEWER.md"
     ],
-    "glossary_sha256": "2bf5ceaa88a894a367a0a05742170d8199d0c93d1529c1f62b7a16fb0b934c28",
+    "glossary_sha256": "d6b62a6f63281e7a7f91a8f29dea6d9bea15dee2793179452f503a37979c7851",
     "style_guide_sha256": "3275b8884b9e1fc92214c7aeab2dcfd5304fb29d3596d4f532bbfacc43f5b322",
-    "system_chars": 15301,
-    "user_chars": 6946
+    "system_chars": 21845,
+    "user_chars": 8785
   },
   "memory_style_saved": 0
 }

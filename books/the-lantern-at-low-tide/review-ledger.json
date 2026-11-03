@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "the-lantern-at-low-tide",
-  "next_sequence": 5,
+  "next_sequence": 6,
   "records": [
     {
       "record_id": "3dfc45e993394e8184635b8e72b67cde",
@@ -124,6 +124,48 @@
       },
       "shared_state_revisions": {
         "glossary": "2bf5ceaa88a894a367a0a05742170d8199d0c93d1529c1f62b7a16fb0b934c28",
+        "style_guide": "3275b8884b9e1fc92214c7aeab2dcfd5304fb29d3596d4f532bbfacc43f5b322"
+      }
+    },
+    {
+      "record_id": "91331e328a5c4a63ac56119d81728283",
+      "sequence": 5,
+      "unit_id": "chapter-000004",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "10a0f9f45ed8460f77037bde676249459bbde88e5913c3279b9b7f3427f3a1bd",
+      "translation_sha256": "5a8a7d67b6cfd80b2c1b52f6ef2050a90517f9a2d19b2d0c1ec04cea6caec351",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewer_session_id": "auto-e9748811e9e9-reviewer-e04b69e3",
+      "reviewed_at": "2026-11-03T19:48:01Z",
+      "state_revision": "4a0a00cb02291a871f7356750498b43a4ef14195be449946bd22f92edcc83994",
+      "review_commit": "c858afa8b0007e67f59e6201e141a9ae9d8898a2",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "major",
+            "detail": "Grammatical error in block 000007: 'коротким белым вспышкой' (masculine adjective/adverb with feminine noun). Should be 'короткой белой вспышкой'.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "In block 000004, 'holding a little girl' is translated as 'держал за руку' (holding by the hand). While natural, the source is more general; however, this is a stylistic choice. The grammatical error in block 000007 is the primary blocker.",
+            "resolved": false
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "d6b62a6f63281e7a7f91a8f29dea6d9bea15dee2793179452f503a37979c7851",
         "style_guide": "3275b8884b9e1fc92214c7aeab2dcfd5304fb29d3596d4f532bbfacc43f5b322"
       }
     }
