@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "the-lantern-at-low-tide",
-  "next_sequence": 2,
+  "next_sequence": 3,
   "records": [
     {
       "record_id": "3dfc45e993394e8184635b8e72b67cde",
@@ -16,6 +16,37 @@
       "reviewed_at": "2026-11-03T19:16:31Z",
       "state_revision": "70af0b1b0bf058ae2654891be3df2a7429422f56f78e28e55868b88c59e68dbf",
       "review_commit": "81385fe0b6f8900805e1c8784a57d2f53b84b1ad",
+      "correction_round": 0,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": []
+      },
+      "shared_state_revisions": {
+        "glossary": "d51344d3b2b77cc59fc888a5f1aa2733931f73690571fb94b24d91c2f618e599",
+        "style_guide": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4"
+      }
+    },
+    {
+      "record_id": "dcd31a0639b44d2d9cedb97923570359",
+      "sequence": 2,
+      "unit_id": "chapter-000002",
+      "outcome": "PASS",
+      "source_sha256": "83bf212da8f34f415f39f2134fddcbece5e4db5b0ca60602ccf769ec38707544",
+      "translation_sha256": "669aa5f341381bf20ac68f6a80e24c0c4c70a532c283f0d3b5375b67ad23fcde",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewer_session_id": "auto-b125af5f128e-reviewer-b21cff0a",
+      "reviewed_at": "2026-11-03T19:20:29Z",
+      "state_revision": "968cd0f5abd909c8cae3e30d1c3e572c64fbafa1ef77390bd50670edca7be98f",
+      "review_commit": "64ca01dcdf069e64dbbc7131af73c2d8516a6f94",
       "correction_round": 0,
       "supersedes_record_id": null,
       "quality_report": {
