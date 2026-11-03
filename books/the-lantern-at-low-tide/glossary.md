@@ -9,3 +9,5 @@ Use this file for recurring names, places, organizations, terms, nicknames, titl
 | NORTHGLASS PRESS | NORTHGLASS PRESS | organization | Publisher; kept in original Latin script as per common publishing standards for logos/presses unless otherwise specified |
 | Ada | Ада | person | Protagonist |
 | The Letter in the Glass | Письмо в стекле | chapter title | Chapter 1 title |
+| Elin | Элин | person | Ada's grandmother |
+| When the Light Returned | Когда свет вернулся | chapter title | Chapter 2 title |

@@ -4,31 +4,27 @@
   "book_slug": "the-lantern-at-low-tide",
   "source_sha256": "225d594017b335c5b83c600a13385da201a9580958e5cc1478c54278351977b4",
   "state": "running",
-  "phase": "model-call-reserved",
+  "phase": "translator-completed",
   "failures": 0,
   "correction_rounds": {},
   "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
-  "updated_at": "2026-11-03T19:45:20.149870+00:00",
-  "active": {
-    "role": "translator",
-    "chapter": 4,
-    "session_id": "auto-e9748811e9e9-translator-bc4083b4"
-  },
+  "updated_at": "2026-11-03T19:45:45.137824+00:00",
+  "active": null,
   "model_calls_started": 3,
-  "memory_glossary_saved": 0,
+  "memory_glossary_saved": 2,
   "pending_style": [],
   "prompt_context": {
-    "role": "reviewer",
+    "role": "translator",
     "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
     "loaded_contracts": [
       "AGENTS.md",
       "docs/TRANSLATION.md",
-      "docs/REVIEWER.md"
+      "docs/TRANSLATOR.md"
     ],
     "glossary_sha256": "2bf5ceaa88a894a367a0a05742170d8199d0c93d1529c1f62b7a16fb0b934c28",
     "style_guide_sha256": "3275b8884b9e1fc92214c7aeab2dcfd5304fb29d3596d4f532bbfacc43f5b322",
-    "system_chars": 21845,
-    "user_chars": 5652
+    "system_chars": 15301,
+    "user_chars": 6946
   },
   "memory_style_saved": 0
 }
