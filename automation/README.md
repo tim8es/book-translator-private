@@ -108,6 +108,55 @@ preview and the job sets `review_provenance=user-approved-unreviewed`; delivery
 must clearly label that provenance. Existing unapproved units and unresolved
 Reviewer findings cannot use this path.
 
+## Deterministic book identity and resume
+
+Book matching happens **before** initialization and before a model request.
+The preferred title and author are read from the EPUB package metadata
+(dc:title / dc:creator); explicit request title/author overrides are supported
+for manually corrected metadata. The source EPUB SHA-256, not a generated EPUB
+UUID or the uploaded filename, identifies the exact edition.
+
+The automated adapter tries these deterministic checks in order:
+
+1. **Exact SHA-256** of the source EPUB: same input edition. Use the existing
+   workspace; do not retranslate previously accepted chapters.
+2. **Exact normalized EPUB title** with author compatibility: existing book,
+   possibly a changed source edition. Wrong author, conflicting workspaces,
+   or incompatible target language block automatic matching.
+3. **Renamed but closely related EPUB title** and identical author: require
+   the candidate source to contain the ENTIRE previously published XHTML
+   spine as an identical text prefix, in reading order. An existing single
+   spine unit must contain at least 500 normalized characters, to avoid
+   mistaking generic frontmatter for a shared novel. The original EPUB
+   must be accessible under the existing book's embedded source storage.
+   A single proven match can continue the old book; several matches or
+   insufficient evidence cause a safe BookIdentityError.
+
+File names, especially the canonical internal name source.epub, are **not**
+book identity and cannot independently trigger a match. Filename changes and
+random EPUB UUID changes do not force a new translation.
+
+Once a book is identified, the pinned canonical update-source command
+performs the authoritative full-corpus delta: unchanged source units keep
+their original unit_id, accepted Russian translation and current independent
+review evidence; changed or new units are extracted for normal translation
+and review. No approximate chapter similarity is ever used to reuse a
+translation. Changing only the EPUB metadata may lead to a new source
+revision or no-op depending on the canonical full-corpus comparison.
+
+A similar name with a changed initial chapter is **not proven** to be the same
+book, and the adapter will block rather than invent a new workspace or
+silently discard prior progress. A totally unrelated title is a new work.
+Ambiguous workspaces need explicit manual reconciliation; no existing book
+is merged or renamed automatically.
+
+Regression scenario: "The Map of Quiet Places — 1 Chapter (Test Edition)"
+followed by "... — 2 Chapters (Test Edition)" under the same author. Their
+first XHTML spine item is identical. The latter is routed to the one-chapter
+workspace and the canonical source-update handles chapter 2 only. Already
+created duplicate workspaces remain untouched; a future update that could
+equally match multiple existing editions is deliberately blocked for review.
+
 ## Execution and recovery
 
 The workflow intentionally runs at most one state-machine checkpoint per
