@@ -1,0 +1,104 @@
+{
+  "created_at": "2026-11-03T10:55:17Z",
+  "delta": {
+    "changed": 0,
+    "deleted": 0,
+    "new": 2,
+    "unchanged": 0
+  },
+  "metadata": {
+    "author": "Original test fiction",
+    "chapter_count": 2,
+    "imported_at": "2026-11-03T10:55:17+00:00",
+    "schema_version": 1,
+    "source": {
+      "filename": "source.epub",
+      "original_filename": "source.epub",
+      "revision_id": "source-000001",
+      "sha256": "d6b99f983c43bc205f5f7ed6d42d6ec2ecf6e2a3b99ec6a59e0562972c208090",
+      "size_bytes": 4916,
+      "storage_mode": "embedded"
+    },
+    "source_file": "source.epub",
+    "source_format": "epub",
+    "source_language": "en",
+    "target_language": "ru",
+    "title": "The Map of Quiet Places — 2 Chapters (Test Edition)",
+    "workflow": {
+      "repository": "https://github.com/tim8es/book-translator",
+      "requested_ref": "main",
+      "resolved_revision": "db253095d36f245f9531da654b93ab72193d3b97",
+      "review_evidence": "review-ledger-v1"
+    }
+  },
+  "parent_revision_id": null,
+  "progress": {
+    "book_slug": "the-map-of-quiet-places-2-chapters-test-edition",
+    "chapters": [
+      {
+        "number": 1,
+        "slug": "chapter-1-the-key-beneath-the-clock",
+        "source_path": "extracted/001-chapter-1-the-key-beneath-the-clock.md",
+        "status": "extracted",
+        "title": "Chapter 1. The Key Beneath the Clock",
+        "translation_path": "translated/001-chapter-1-the-key-beneath-the-clock.md",
+        "unit_id": "chapter-000001"
+      },
+      {
+        "number": 2,
+        "slug": "chapter-2-a-map-that-would-not-stay-still",
+        "source_path": "extracted/002-chapter-2-a-map-that-would-not-stay-still.md",
+        "status": "extracted",
+        "title": "Chapter 2. A Map That Would Not Stay Still",
+        "translation_path": "translated/002-chapter-2-a-map-that-would-not-stay-still.md",
+        "unit_id": "chapter-000002"
+      }
+    ],
+    "schema_version": 1
+  },
+  "revision_id": "source-000001",
+  "schema_version": 1,
+  "source_manifest": {
+    "chapter_count": 2,
+    "extracted": [
+      {
+        "number": 1,
+        "path": "extracted/001-chapter-1-the-key-beneath-the-clock.md",
+        "sha256": "020b1655ac4cd66748615bac7d79009f6546de35ee03e6a9017c88e0d0c461f9",
+        "title": "Chapter 1. The Key Beneath the Clock",
+        "unit_id": "chapter-000001"
+      },
+      {
+        "number": 2,
+        "path": "extracted/002-chapter-2-a-map-that-would-not-stay-still.md",
+        "sha256": "1575a89485b12a062284856d38bd904a57ce013b8751ca6fc5e9883ac3a6d9e5",
+        "title": "Chapter 2. A Map That Would Not Stay Still",
+        "unit_id": "chapter-000002"
+      }
+    ],
+    "schema_version": 1,
+    "source_file": "source.epub",
+    "source_format": "epub",
+    "source_sha256": "d6b99f983c43bc205f5f7ed6d42d6ec2ecf6e2a3b99ec6a59e0562972c208090",
+    "source_size_bytes": 4916,
+    "source_storage_mode": "embedded"
+  },
+  "units": [
+    {
+      "classification": "initial",
+      "number": 1,
+      "source_path": "extracted/001-chapter-1-the-key-beneath-the-clock.md",
+      "staged_path": "source-revisions/source-000001/corpus/001-chapter-000001.md",
+      "title": "Chapter 1. The Key Beneath the Clock",
+      "unit_id": "chapter-000001"
+    },
+    {
+      "classification": "initial",
+      "number": 2,
+      "source_path": "extracted/002-chapter-2-a-map-that-would-not-stay-still.md",
+      "staged_path": "source-revisions/source-000001/corpus/002-chapter-000002.md",
+      "title": "Chapter 2. A Map That Would Not Stay Still",
+      "unit_id": "chapter-000002"
+    }
+  ]
+}
