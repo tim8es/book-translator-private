@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
   "job_id": "b125af5f128e151b1d9b5c39fddb2a35",
-  "state": "blocked",
-  "phase": "operator-intervention-required",
+  "state": "running",
+  "phase": "requeued-after-leaf-div-support",
   "failures": 3,
   "last_error": "JobError: canonical CLI rejected operation: ERROR: EPUB source-preserving extraction blocked: Unmapped prose in <div>\n",
   "book_slug": null,
   "correction_rounds": {},
-  "updated_at": "2026-11-03T19:06:39.738327+00:00",
+  "updated_at": "2026-11-03T19:11:43.294Z",
   "recovery": {
     "reason": "Pre-initialization unsupported <section> is supported in canonical main",
     "authorized_by": "user-requested-canonical-fix-and-retry",
@@ -21,6 +21,12 @@
       "last_error": "JobError: canonical CLI rejected operation: ERROR: EPUB source-preserving extraction blocked: Unsupported semantic element <nav>\n",
       "reason": "strict EPUB3 navigation support merged into canonical engine",
       "workflow_revision": "04e548063bacd7368d5d4aa95c651392c6fc9601"
+    },
+    {
+      "previous_state": "blocked",
+      "last_error": "JobError: canonical CLI rejected operation: ERROR: EPUB source-preserving extraction blocked: Unmapped prose in <div>\n",
+      "reason": "safe leaf div mapping added to canonical parser",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58"
     }
   ]
 }
