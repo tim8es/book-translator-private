@@ -3,32 +3,39 @@
   "job_id": "b125af5f128e151b1d9b5c39fddb2a35",
   "book_slug": "the-lantern-at-low-tide",
   "state": "running",
-  "phase": "model-call-reserved",
+  "phase": "translator-completed",
   "failures": 0,
   "correction_rounds": {},
   "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
   "source_sha256": "8d173da4a576b5a2b132985f1dac106364bc161f3736d49dea107804f40c7c81",
-  "updated_at": "2026-11-03T19:21:33.305329+00:00",
-  "active": {
-    "role": "translator",
-    "chapter": 3,
-    "session_id": "auto-b125af5f128e-translator-a37fa2e4"
-  },
+  "updated_at": "2026-11-03T19:21:38.995789+00:00",
+  "active": null,
   "model_calls_started": 5,
-  "memory_glossary_saved": 3,
-  "pending_style": [],
+  "memory_glossary_saved": 5,
+  "pending_style": [
+    {
+      "evidence": "Every morning, Ada walked the narrow beach... green stones, pieces of rope...",
+      "source_pattern": "Simple, evocative prose with a focus on concrete objects (green stones, silver spoon, blue wax).",
+      "translation_approach": "Maintain a clean, understated register; avoid over-embellishing the descriptions to preserve the quiet, atmospheric tone."
+    },
+    {
+      "evidence": "The lighthouse had been empty for twenty years. Its keeper had vanished during a storm...",
+      "source_pattern": "Short, declarative sentences creating a steady, rhythmic pace.",
+      "translation_approach": "Preserve the sentence structure and length to maintain the narrative distance and sense of calm curiosity."
+    }
+  ],
   "prompt_context": {
-    "role": "reviewer",
+    "role": "translator",
     "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
     "loaded_contracts": [
       "AGENTS.md",
       "docs/TRANSLATION.md",
-      "docs/REVIEWER.md"
+      "docs/TRANSLATOR.md"
     ],
     "glossary_sha256": "d51344d3b2b77cc59fc888a5f1aa2733931f73690571fb94b24d91c2f618e599",
     "style_guide_sha256": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4",
-    "system_chars": 21845,
-    "user_chars": 4762
+    "system_chars": 15301,
+    "user_chars": 5168
   },
   "memory_style_saved": 0
 }
