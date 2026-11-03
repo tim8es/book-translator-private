@@ -272,7 +272,7 @@ class AutomatedBookTests(unittest.TestCase):
             archive.writestr("EPUB/package.opf", f'<package xmlns:dc="http://purl.org/dc/elements/1.1/"><metadata><dc:title>{title}</dc:title><dc:creator>{author}</dc:creator></metadata></package>')
             archive.writestr("EPUB/chapter.xhtml", chapter)
 
-    def test_book_identity_reuses_workspace_by_title_and_filename(self):
+    def test_book_identity_uses_title_not_filename_only(self):
         with tempfile.TemporaryDirectory() as folder:
             root = Path(folder)
             book = root / "books" / "the-same-book"
@@ -283,7 +283,7 @@ class AutomatedBookTests(unittest.TestCase):
             })
             with patch.object(worker, "ROOT", root):
                 self.assertEqual(worker.locate_book("the same book", "Writer", "new.epub", "ru")[0], "the-same-book")
-                self.assertEqual(worker.locate_book("Different title", "Writer", "edition.epub", "ru")[0], "the-same-book")
+                self.assertEqual(worker.locate_book("Different title", "Writer", "edition.epub", "ru")[0], "different-title")
 
     def test_book_identity_blocks_ambiguous_titles_and_language_mismatch(self):
         with tempfile.TemporaryDirectory() as folder:
