@@ -31,6 +31,7 @@ class SourceNavShapeProbe(unittest.TestCase):
             spine = [x.get("idref") for x in package.iter() if local(x.tag) == "itemref"]
             print("SOURCE_NAV_PROBE: spine_count=",len(spine),"manifest_items=",len(items), flush=True)
             navs = 0
+            all_body_tags = {}
             for item_id, (path, props, media) in items.items():
                 if media != "application/xhtml+xml" or path not in z.namelist():
                     continue
@@ -38,6 +39,9 @@ class SourceNavShapeProbe(unittest.TestCase):
                 body = next((x for x in root.iter() if local(x.tag) == "body"), None)
                 if body is None:
                     continue
+                for element in body.iter():
+                    tag = local(element.tag)
+                    all_body_tags[tag] = all_body_tags.get(tag, 0) + 1
                 for nav in (x for x in body.iter() if local(x.tag) == "nav"):
                     navs += 1
                     nodes = list(nav.iter())
@@ -69,6 +73,7 @@ class SourceNavShapeProbe(unittest.TestCase):
                         "local_links":sum(bool(x.get("href")) and not (x.get("href") or "").startswith(("https:","http:","mailto:")) for x in links),
                         "metrics": text_metrics,
                     },flush=True)
+            print("SOURCE_NAV_PROBE: all_body_tags=",dict(sorted(all_body_tags.items())),flush=True)
             print("SOURCE_NAV_PROBE: total_nav_elements=",navs,flush=True)
             self.assertGreater(navs,0)
 
