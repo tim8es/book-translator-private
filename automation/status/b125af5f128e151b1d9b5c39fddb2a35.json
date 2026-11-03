@@ -1,18 +1,26 @@
 {
   "schema_version": 1,
   "job_id": "b125af5f128e151b1d9b5c39fddb2a35",
-  "state": "blocked",
-  "phase": "operator-intervention-required",
+  "state": "running",
+  "phase": "requeued-after-epub3-nav-fix",
   "failures": 2,
   "last_error": "JobError: canonical CLI rejected operation: ERROR: EPUB source-preserving extraction blocked: Unsupported semantic element <nav>\n",
   "book_slug": null,
   "correction_rounds": {},
-  "updated_at": "2026-11-03T18:55:49.957028+00:00",
+  "updated_at": "2026-11-03T19:05:39.384Z",
   "recovery": {
     "reason": "Pre-initialization unsupported <section> is supported in canonical main",
     "authorized_by": "user-requested-canonical-fix-and-retry",
     "previous_state": "blocked",
     "original_error": "JobError: canonical CLI rejected operation: ERROR: EPUB source-preserving extraction blocked: Unsupported semantic element <section>\n",
     "canonical_revision": "c4f695eb083138d78fa8c5aaaa09563996e3612b"
-  }
+  },
+  "recovery_history": [
+    {
+      "previous_state": "blocked",
+      "last_error": "JobError: canonical CLI rejected operation: ERROR: EPUB source-preserving extraction blocked: Unsupported semantic element <nav>\n",
+      "reason": "strict EPUB3 navigation support merged into canonical engine",
+      "workflow_revision": "04e548063bacd7368d5d4aa95c651392c6fc9601"
+    }
+  ]
 }
