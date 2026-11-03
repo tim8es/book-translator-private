@@ -81,3 +81,28 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: gh workflow run auto-translate.yml --ref main
+
+      - name: Wake n8n delivery after a terminal job state
+        if: always() && steps.select.outputs.job_id != '' && (steps.run.outcome != 'success' || steps.run.outputs.done == 'true' || steps.run.outputs.continue_queue == 'true')
+        continue-on-error: true
+        env:
+          N8N_DELIVERY_CALLBACK_URL: ${{ secrets.N8N_DELIVERY_CALLBACK_URL }}
+          JOB_ID: ${{ steps.select.outputs.job_id }}
+          RUN_ID: ${{ github.run_id }}
+          RUN_CONCLUSION: ${{ job.status }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ -z "$N8N_DELIVERY_CALLBACK_URL" ]]; then
+            echo "n8n callback is not configured; scheduled reconciliation remains available."
+            exit 0
+          fi
+          payload="$(jq -n \
+            --arg job_id "$JOB_ID" \
+            --arg run_id "$RUN_ID" \
+            --arg conclusion "$RUN_CONCLUSION" \
+            '{job_id: $job_id, run_id: $run_id, conclusion: $conclusion}')"
+          curl --fail --silent --show-error --max-time 10 \
+            -X POST "$N8N_DELIVERY_CALLBACK_URL" \
+            -H 'Content-Type: application/json' \
+            --data-binary "$payload"
