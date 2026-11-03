@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "book_slug": "the-lantern-at-low-tide",
-  "active_revision": "source-000001",
-  "next_sequence": 2,
-  "next_unit_sequence": 4,
+  "active_revision": "source-000002",
+  "next_sequence": 3,
+  "next_unit_sequence": 5,
   "revisions": [
     {
       "revision_id": "source-000001",
       "parent_revision_id": null,
-      "state": "active",
+      "state": "superseded",
       "created_at": "2026-11-03T19:12:07Z",
       "source_file": "source.epub",
       "source_format": "epub",
@@ -17,6 +17,19 @@
       "source_size_bytes": 116149,
       "snapshot_path": "source-revisions/source-000001/revision.json",
       "delta_path": null
+    },
+    {
+      "revision_id": "source-000002",
+      "parent_revision_id": "source-000001",
+      "state": "active",
+      "created_at": "2026-11-03T19:39:20Z",
+      "source_file": "source-000002-source.epub",
+      "source_format": "epub",
+      "source_sha256": "225d594017b335c5b83c600a13385da201a9580958e5cc1478c54278351977b4",
+      "source_storage_mode": "embedded",
+      "source_size_bytes": 117219,
+      "snapshot_path": "source-revisions/source-000002/revision.json",
+      "delta_path": "source-revisions/source-000002/delta.json"
     }
   ]
 }

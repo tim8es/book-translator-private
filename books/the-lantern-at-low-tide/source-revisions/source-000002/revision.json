@@ -1,0 +1,199 @@
+{
+  "base_revisions": {
+    "metadata": "218a4b2c7322600365956105f905b240c708f7e99ff21b4a708ea57c9f7120e0",
+    "progress": "4fe9d16478f9e2bc658309418725032d8162e8537a441cddcfffa87fc8a94597",
+    "source_manifest": "5828b70f04297cb760d3e78f0b39113dd357ac662cce7adce0ffdc1807bb814b"
+  },
+  "created_at": "2026-11-03T19:39:20Z",
+  "deleted_units": [],
+  "delta": {
+    "changed": 1,
+    "deleted": 0,
+    "new": 1,
+    "unchanged": 2
+  },
+  "metadata": {
+    "author": "Mira Ellery",
+    "chapter_count": 4,
+    "imported_at": "2026-11-03T19:12:07+00:00",
+    "layout_mode": "original_xhtml_v1",
+    "schema_version": 1,
+    "source": {
+      "filename": "source-000002-source.epub",
+      "original_filename": "source.epub",
+      "revision_id": "source-000002",
+      "sha256": "225d594017b335c5b83c600a13385da201a9580958e5cc1478c54278351977b4",
+      "size_bytes": 117219,
+      "storage_mode": "embedded"
+    },
+    "source_file": "source-000002-source.epub",
+    "source_format": "epub",
+    "source_language": "en",
+    "source_updated_at": "2026-11-03T19:39:20Z",
+    "target_language": "ru",
+    "title": "The Lantern at Low Tide",
+    "workflow": {
+      "repository": "https://github.com/tim8es/book-translator",
+      "requested_ref": "main",
+      "resolved_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "review_evidence": "review-ledger-v1"
+    }
+  },
+  "parent_revision_id": "source-000001",
+  "progress": {
+    "book_slug": "the-lantern-at-low-tide",
+    "chapters": [
+      {
+        "number": 1,
+        "slug": "title",
+        "source_path": "extracted/001-title.md",
+        "status": "reviewed",
+        "title": "title",
+        "translation_acceptance": {
+          "accepted_at": "2026-11-03T19:14:16Z",
+          "accepted_from_progress_revision": "a6e04d0d4463fb1b63eaba8047d0a3fa7529a08b5ba5cf0d1419b1af3b54b927",
+          "base_commit": "fc58fe57330341d2d07019762a2be52f20d6fa42",
+          "base_revision": "a6e04d0d4463fb1b63eaba8047d0a3fa7529a08b5ba5cf0d1419b1af3b54b927",
+          "claim_id": "ff9f031452b24e3c808bee3f26c245ab",
+          "claim_revision": "82366e639b685d06ebc0313643ab92a31e59cc673e0e6fddf3cfcc01637eef0c",
+          "role": "translator",
+          "schema_version": 1,
+          "session_id": "auto-b125af5f128e-translator-aca18665",
+          "shared_state_revisions": {
+            "glossary": "f02e6becb2861881659733c55614d24b49ee0a6906fa607fb2db0ceb6b8d35ad",
+            "style_guide": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4"
+          },
+          "source_sha256": "09e8bb2da4f7d2f07cc61f65bcc63939e88b40ef7d5f0cec1094a4d27c90ecec",
+          "translation_sha256": "faa57f5e2574c67d3ec08fc13af3b6626ed7d093fb69baebaceeda8dc5d756a7",
+          "unit_id": "chapter-000001",
+          "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58"
+        },
+        "translation_path": "translated/001-title.md",
+        "unit_id": "chapter-000001"
+      },
+      {
+        "number": 2,
+        "slug": "copyright",
+        "source_path": "extracted/chapter-000002-source-000002.md",
+        "status": "extracted",
+        "title": "copyright",
+        "translation_path": "translated/chapter-000002-source-000002.md",
+        "unit_id": "chapter-000002"
+      },
+      {
+        "number": 3,
+        "slug": "chapter-1-the-letter-in-the-glass",
+        "source_path": "extracted/003-chapter-1-the-letter-in-the-glass.md",
+        "status": "reviewed",
+        "title": "Chapter 1: The Letter in the Glass",
+        "translation_acceptance": {
+          "accepted_at": "2026-11-03T19:21:38Z",
+          "accepted_from_progress_revision": "aed585fcd0db309554e227212ba42e1aa09ee84471a255f0f13d5159cec7a4a8",
+          "base_commit": "390431d21679092bd7d7c840562aa1f3becd1c75",
+          "base_revision": "aed585fcd0db309554e227212ba42e1aa09ee84471a255f0f13d5159cec7a4a8",
+          "claim_id": "cef3882665704fdfaee12cd3c0e61b74",
+          "claim_revision": "fb37ae904d2868c2137981b3efa28c4f8e1332931a488bf8679b1da4f4989d0a",
+          "role": "translator",
+          "schema_version": 1,
+          "session_id": "auto-b125af5f128e-translator-a37fa2e4",
+          "shared_state_revisions": {
+            "glossary": "d51344d3b2b77cc59fc888a5f1aa2733931f73690571fb94b24d91c2f618e599",
+            "style_guide": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4"
+          },
+          "source_sha256": "79f65d7f94d9bad87aabf556bd7294886946d5fe54849e4a4e781e6042fd16d5",
+          "translation_sha256": "1ca781a48213a37fbca4bde864e875206f6ea43eea389d36c40311ef7d5c2d83",
+          "unit_id": "chapter-000003",
+          "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58"
+        },
+        "translation_path": "translated/003-chapter-1-the-letter-in-the-glass.md",
+        "unit_id": "chapter-000003"
+      },
+      {
+        "number": 4,
+        "slug": "chapter-2-when-the-light-returned",
+        "source_path": "extracted/chapter-000004-source-000002.md",
+        "status": "extracted",
+        "title": "Chapter 2: When the Light Returned",
+        "translation_path": "translated/chapter-000004-source-000002.md",
+        "unit_id": "chapter-000004"
+      }
+    ],
+    "schema_version": 1
+  },
+  "revision_id": "source-000002",
+  "schema_version": 1,
+  "source_manifest": {
+    "chapter_count": 4,
+    "extracted": [
+      {
+        "number": 1,
+        "path": "extracted/001-title.md",
+        "sha256": "09e8bb2da4f7d2f07cc61f65bcc63939e88b40ef7d5f0cec1094a4d27c90ecec",
+        "title": "title",
+        "unit_id": "chapter-000001"
+      },
+      {
+        "number": 2,
+        "path": "extracted/chapter-000002-source-000002.md",
+        "sha256": "f68a64c86c68b0d9585d47d5dac8c2718761ecf869d4d22e97277653333a1124",
+        "title": "copyright",
+        "unit_id": "chapter-000002"
+      },
+      {
+        "number": 3,
+        "path": "extracted/003-chapter-1-the-letter-in-the-glass.md",
+        "sha256": "79f65d7f94d9bad87aabf556bd7294886946d5fe54849e4a4e781e6042fd16d5",
+        "title": "Chapter 1: The Letter in the Glass",
+        "unit_id": "chapter-000003"
+      },
+      {
+        "number": 4,
+        "path": "extracted/chapter-000004-source-000002.md",
+        "sha256": "10a0f9f45ed8460f77037bde676249459bbde88e5913c3279b9b7f3427f3a1bd",
+        "title": "Chapter 2: When the Light Returned",
+        "unit_id": "chapter-000004"
+      }
+    ],
+    "schema_version": 1,
+    "source_file": "source-000002-source.epub",
+    "source_format": "epub",
+    "source_sha256": "225d594017b335c5b83c600a13385da201a9580958e5cc1478c54278351977b4",
+    "source_size_bytes": 117219,
+    "source_storage_mode": "embedded"
+  },
+  "units": [
+    {
+      "classification": "unchanged",
+      "number": 1,
+      "source_path": "extracted/001-title.md",
+      "staged_path": "source-revisions/source-000002/corpus/001-chapter-000001.md",
+      "title": "title",
+      "unit_id": "chapter-000001"
+    },
+    {
+      "classification": "changed",
+      "number": 2,
+      "previous_number": 2,
+      "source_path": "extracted/chapter-000002-source-000002.md",
+      "staged_path": "source-revisions/source-000002/corpus/002-chapter-000002.md",
+      "title": "copyright",
+      "unit_id": "chapter-000002"
+    },
+    {
+      "classification": "unchanged",
+      "number": 3,
+      "source_path": "extracted/003-chapter-1-the-letter-in-the-glass.md",
+      "staged_path": "source-revisions/source-000002/corpus/003-chapter-000003.md",
+      "title": "Chapter 1: The Letter in the Glass",
+      "unit_id": "chapter-000003"
+    },
+    {
+      "classification": "new",
+      "number": 4,
+      "source_path": "extracted/chapter-000004-source-000002.md",
+      "staged_path": "source-revisions/source-000002/corpus/004-chapter-000004.md",
+      "title": "Chapter 2: When the Light Returned",
+      "unit_id": "chapter-000004"
+    }
+  ]
+}
