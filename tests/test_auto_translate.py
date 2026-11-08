@@ -15,7 +15,7 @@ from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "automation"))
 import book_runner as worker
-from omniroute import ModelError, config, parse_review
+from omniroute import ModelError, complete, config, parse_review
 
 
 class AutomatedBookTests(unittest.TestCase):
@@ -490,6 +490,27 @@ class AutomatedBookTests(unittest.TestCase):
                 config("TRANSLATOR")
         with self.assertRaises(ModelError):
             config("UNKNOWN")
+
+    def test_model_requests_json_object_mode(self):
+        class Response:
+            def __enter__(self):
+                return self
+            def __exit__(self, *_args):
+                return False
+            def read(self, _limit):
+                return json.dumps({"choices": [{"message": {"content": '{"translation":"ok"}'},
+                                                 "finish_reason": "stop"}]}).encode()
+
+        with patch.dict(os.environ, {
+            "OMNIROUTE_BASE_URL": "https://api.example.com/v1",
+            "OMNIROUTE_API_KEY": "test-placeholder",
+            "OMNIROUTE_TRANSLATOR_MODEL": "test-model",
+        }), patch("omniroute.urlopen", return_value=Response()) as open_url:
+            answer = complete("TRANSLATOR", "system", "user")
+        request = open_url.call_args.args[0]
+        payload = json.loads(request.data.decode())
+        self.assertEqual(payload["response_format"], {"type": "json_object"})
+        self.assertEqual(answer, '{"translation":"ok"}\n')
 
     def test_markers_are_order_and_identity_bound(self):
         source = "<!-- bt-block:000001 -->\nFirst [link](#x)\n<!-- bt-block:000002 -->\n"

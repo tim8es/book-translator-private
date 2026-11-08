@@ -39,6 +39,7 @@ def complete(role: str, system: str, user: str) -> str:
             {"role": "system", "content": system},
             {"role": "user", "content": user},
         ],
+        "response_format": {"type": "json_object"},
         "temperature": 0.2 if role != "TRANSLATOR" else 0.4,
     }, ensure_ascii=False).encode("utf-8")
     request = Request(
