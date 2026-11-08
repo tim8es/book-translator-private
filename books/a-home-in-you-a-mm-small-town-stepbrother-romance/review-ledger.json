@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 2,
+  "next_sequence": 3,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -28,6 +28,43 @@
           "structure": true
         },
         "findings": []
+      },
+      "shared_state_revisions": {
+        "glossary": "f02e6becb2861881659733c55614d24b49ee0a6906fa607fb2db0ceb6b8d35ad",
+        "style_guide": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4"
+      }
+    },
+    {
+      "record_id": "1445554b8f2f48ee97f620646de9ebbc",
+      "sequence": 2,
+      "unit_id": "chapter-000002",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "d234236b3b99f59a724eac96a1f1f3826674beebf0e4685fbbb6962855172aa9",
+      "translation_sha256": "28461d8ed39b134ff9a3480b8beb327fa74ceb92bdd13dd9cff7bd66ce872064",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewer_session_id": "auto-886bde8dfe20-reviewer-74bef3d8",
+      "reviewed_at": "2026-11-08T22:16:29Z",
+      "state_revision": "ecb1c02c8f1080ed4e00beac8d6742d4db54bfa9ad43c5de58d51f15c624072a",
+      "review_commit": "6b2ec6872a35201b6bb98ce8a0f5fe192a267f2a",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "critical",
+            "detail": "The accepted translation is a placeholder error message rather than a translation of the source unit '[*OceanofPDF.com*](https://oceanofpdf.com)'. The source link and Markdown formatting are completely missing.",
+            "resolved": false
+          }
+        ]
       },
       "shared_state_revisions": {
         "glossary": "f02e6becb2861881659733c55614d24b49ee0a6906fa607fb2db0ceb6b8d35ad",
