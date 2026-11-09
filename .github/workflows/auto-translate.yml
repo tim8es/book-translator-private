@@ -12,6 +12,11 @@ on:
         type: boolean
         required: false
         default: false
+      resume_interrupted:
+        description: "Resume an operator-blocked job using its existing live claim"
+        type: boolean
+        required: false
+        default: false
   schedule:
     # Recovery when dispatch events are delayed or coalesced.
     - cron: "*/15 * * * *"
@@ -47,10 +52,11 @@ jobs:
         env:
           REQUESTED_JOB: ${{ inputs.job_id }}
           RESUME_BLOCKED: ${{ inputs.resume_blocked }}
+          RESUME_INTERRUPTED: ${{ inputs.resume_interrupted }}
         shell: bash
         run: |
           set -euo pipefail
-          if [[ "$RESUME_BLOCKED" == "true" ]]; then
+          if [[ "$RESUME_BLOCKED" == "true" || "$RESUME_INTERRUPTED" == "true" ]]; then
             if [[ ! "$REQUESTED_JOB" =~ ^[0-9a-f]{32}$ ]]; then
               echo "Resuming a blocked job requires its explicit job_id." >&2
               exit 1
@@ -73,11 +79,14 @@ jobs:
           OMNIROUTE_MODEL_CALL_LIMIT: ${{ vars.OMNIROUTE_MODEL_CALL_LIMIT }}
           JOB_ID: ${{ steps.select.outputs.job_id }}
           RESUME_BLOCKED: ${{ inputs.resume_blocked }}
+          RESUME_INTERRUPTED: ${{ inputs.resume_interrupted }}
         shell: bash
         run: |
           set -euo pipefail
           if [[ "$RESUME_BLOCKED" == "true" ]]; then
             python automation/book_runner.py --job-id "$JOB_ID" --resume-blocked
+          elif [[ "$RESUME_INTERRUPTED" == "true" ]]; then
+            python automation/book_runner.py --job-id "$JOB_ID" --resume-interrupted
           else
             python automation/book_runner.py --job-id "$JOB_ID"
           fi

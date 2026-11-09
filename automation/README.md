@@ -180,12 +180,14 @@ exhausted push retries fail closed without silently overwriting state. A non-mod
 EPUB semantics, malformed input, or a failed canonical CLI stage) produces a
 durable **blocked** status when a status-only compare-and-swap publication is
 safe. The runner never commits potentially partial book mutations or releases/takes
-over ambiguous claims. An operator may resume only a `phase=model-blocked`
-job by dispatching `auto-translate.yml` with its exact `job_id` and
-`resume_blocked=true`. The runner rechecks the source hash, pinned engine,
-and absence of canonical claims/errors, records the recovery, and preserves
-the cumulative model-call count. Other blocked phases are not eligible for
-this recovery path. If the repository changed concurrently and even status-only
+over ambiguous claims. An operator may resume a `phase=model-blocked` job
+with `resume_blocked=true`, or an `operator-intervention-required` job with
+`resume_interrupted=true` only while its recorded canonical claim is still
+live. Both actions require the original `job_id`, verify the source hash and
+pinned engine, record the recovery, and preserve the cumulative model-call
+count. Interrupted recovery reuses the same claim session; it never deletes or
+replaces a claim. Expired claims still require the pinned canonical cleanup
+procedure. If the repository changed concurrently and even status-only
 publication is unsafe, the Actions step fails and no durable blocked status is
 promised. The scheduler skips blocked jobs and corrupt status files instead of
 retrying one poisoned request forever. After a terminal job the workflow
