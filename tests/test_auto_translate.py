@@ -658,12 +658,12 @@ class AutomatedBookTests(unittest.TestCase):
             })
             engine = root / "engine"
             engine.mkdir()
-            with patch.object(worker, "ROOT", root), \\
-                 patch.object(worker, "install_engine", return_value=(engine, revision)), \\
-                 patch.object(worker, "verify"), \\
-                 patch.object(worker, "chapter_data", return_value=({}, {}, [chapter])), \\
-                 patch.object(worker, "cli", return_value=json.dumps({"claims": [claim], "errors": []})), \\
-                 patch.object(worker, "checkpoint"), \\
+            with patch.object(worker, "ROOT", root), \
+                 patch.object(worker, "install_engine", return_value=(engine, revision)), \
+                 patch.object(worker, "verify"), \
+                 patch.object(worker, "chapter_data", return_value=({}, {}, [chapter])), \
+                 patch.object(worker, "cli", return_value=json.dumps({"claims": [claim], "errors": []})), \
+                 patch.object(worker, "checkpoint"), \
                  patch.object(worker, "process_claim") as process:
                 status = worker.run(job, resume_interrupted=True)
             self.assertEqual(status["state"], "running")
