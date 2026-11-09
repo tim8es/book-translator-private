@@ -229,8 +229,9 @@ This is a **bounded initial MVP**, not unrestricted unattended production:
   Memory proposals may legitimately be empty; a syntactically valid model
   response alone does not prove all names or voice decisions are captured.
 - A source unit consisting only of external Markdown hyperlinks is preserved
-  exactly without a model call. The adapter validates every Markdown link
-  destination and keeps external link labels unchanged.
+  exactly without a model call. The adapter always preserves link destinations;
+  it keeps external labels unchanged for block-preserving EPUB extraction and
+  allows label translation in ordinary text extraction.
 - The runner now enforces a durable maximum of 36 model invocations per
   job by default. Override with repository variable OMNIROUTE_MODEL_CALL_LIMIT
   (integer 1–200). Each invocation is reserved and checkpointed **before**
