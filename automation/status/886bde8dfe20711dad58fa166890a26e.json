@@ -4,67 +4,59 @@
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
   "source_sha256": "3a3fce78317162b68bc1e82501456a74a783cfc96cb2640c463f381866007865",
   "state": "running",
-  "phase": "model-call-reserved",
-  "failures": 1,
+  "phase": "corrector-completed",
+  "failures": 0,
   "correction_rounds": {
     "chapter-000002": 1,
     "chapter-000003": 1,
     "chapter-000006": 2,
-    "chapter-000009": 1
+    "chapter-000009": 1,
+    "chapter-000011": 1
   },
   "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
-  "updated_at": "2026-11-09T13:39:29.657203+00:00",
-  "active": {
-    "role": "corrector",
-    "chapter": 11,
-    "session_id": "auto-886bde8dfe20-corrector-190c84ef"
-  },
+  "updated_at": "2026-11-09T13:41:34.767001+00:00",
+  "active": null,
   "model_calls_started": 45,
   "memory_glossary_saved": 22,
   "pending_style": [
     {
-      "evidence": "I had been apart from him for too long, and I haven’t been whole since he was ripped from me.",
-      "source_pattern": "Free indirect thought shifting into present perfect ('haven’t been whole')",
-      "translation_approach": "Present perfect tense to preserve immediacy of character's perception"
+      "evidence": "Original text contains phrases like 'Fuck, I really needed to get away', 'Shit, and here I was', 'Fucking great', and direct dialogue with informal speech patterns.",
+      "source_pattern": "Direct, colloquial teenage speech with profanity and informal tone",
+      "translation_approach": "Preserve the author's raw, unfiltered voice including explicit language, casual phrasing, and conversational interruptions."
     },
     {
-      "evidence": "The cold weather and snowy setting heighten Dillon's emotional state; his internal monologue about his father and loneliness is rendered with direct emotional language.",
-      "source_pattern": "Narrative distance and emotional immediacy",
-      "translation_approach": "Intimate, close third-person perspective with strong emotional focus on Dillon's isolation and longing"
+      "evidence": "Original describes 'serый зимний послеобеденный день', 'температура замерзала', 'запах лошади', 'уникальный, земный аромат букового сада'.",
+      "source_pattern": "Detailed descriptions of sensory experience (cold, snow, smells)",
+      "translation_approach": "Maintain vivid sensory language while ensuring natural Russian flow; preserve the contrast between cold environment and warmth inside the barn."
     },
     {
-      "evidence": "Dillon's internal thoughts are restrained and reflective; Cade's dialogue is energetic with swearing and exclamation; Mom's narration is warm and nostalgic.",
-      "source_pattern": "Character voice differentiation",
-      "translation_approach": "Distinct voices: Dillon (introverted, quiet, observant), Cade (outgoing, loud, playful), Mom (caring, nostalgic, maternal)"
+      "evidence": "Dillon speaks in short, hesitant sentences with pauses; Cade uses more exclamation points, swearing, and rapid-fire dialogue.",
+      "source_pattern": "Character-specific speech patterns (Dillon's introversion vs Cade's outgoing nature)",
+      "translation_approach": "Distinguish Dillon's quiet, introspective speech from Cade's energetic, talkative style; preserve their distinct voices in Russian."
     },
     {
-      "evidence": "The text emphasizes cold, snow, the smell of horses, the wood-burning stove, and the blue/white decor of the parlor.",
-      "source_pattern": "Setting description and sensory detail",
-      "translation_approach": "Preserve vivid sensory details (cold, snow, smell of horses, wood stove, blue and white decor) to maintain atmosphere"
+      "evidence": "Original shows Dillon's longing for alone time, his fear of Jared and Cade, and his gradual warming toward Cade.",
+      "source_pattern": "Narrative distance and emotional tone",
+      "translation_approach": "Maintain the novel's emotional intimacy and vulnerability; preserve the tension between Dillon's desire for solitude and his growing connection with Cade."
     },
     {
-      "evidence": "The passage balances Dillon's sadness about his father's death with his growing connection to Cade and the comfort of the farm setting.",
-      "source_pattern": "Tone and emotional intensity",
-      "translation_approach": "Maintain the blend of melancholy (Dillon's loneliness, grief over father's death) and warmth (friendship with Cade, love for horses)"
-    },
-    {
-      "evidence": "Cade uses slang, swearing, and exclamation marks; Dillon speaks more quietly and with fewer interruptions.",
-      "source_pattern": "Dialogue naturalness",
-      "translation_approach": "Keep dialogue authentic to each character's voice; Cade's language is casual and expressive; Dillon's speech is more measured"
+      "evidence": "Original mentions 'Xbox', 'Call of Duty', 'boxwood' (самшит), and 'antique shop'.",
+      "source_pattern": "Cultural references (Xbox, Call of Duty, boxwood, antique shop)",
+      "translation_approach": "Keep proper nouns and cultural references intact; translate descriptive elements naturally while preserving meaning."
     }
   ],
   "prompt_context": {
-    "role": "reviewer",
+    "role": "corrector",
     "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
     "loaded_contracts": [
       "AGENTS.md",
       "docs/TRANSLATION.md",
-      "docs/REVIEWER.md"
+      "docs/TRANSLATOR.md"
     ],
     "glossary_sha256": "55be6b8505e649c70ef65db5e586650aeb73168eaf262f496dc16905d60ef481",
     "style_guide_sha256": "161238721ea1ef50a84f53819d7cfc61efda9123427d7d6cdbf695e9288230de",
-    "system_chars": 22384,
-    "user_chars": 39166
+    "system_chars": 15840,
+    "user_chars": 39533
   },
   "memory_style_saved": 3,
   "last_error": "model transport timeout or connection failure",
@@ -92,5 +84,5 @@
     }
   ],
   "recovery_note": "A claim may still be active; inspect canonical state before recovery",
-  "glossary_conflicts_rejected": 3
+  "glossary_conflicts_rejected": 5
 }
