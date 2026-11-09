@@ -7,6 +7,11 @@ on:
         description: "32-character intake job ID (leave blank for next pending)"
         type: string
         required: false
+      resume_blocked:
+        description: "Resume an explicitly selected model-blocked job"
+        type: boolean
+        required: false
+        default: false
   schedule:
     # Recovery when dispatch events are delayed or coalesced.
     - cron: "*/15 * * * *"
@@ -41,10 +46,19 @@ jobs:
         id: select
         env:
           REQUESTED_JOB: ${{ inputs.job_id }}
+          RESUME_BLOCKED: ${{ inputs.resume_blocked }}
         shell: bash
         run: |
           set -euo pipefail
-          job_id="$(python automation/book_runner.py --select --job-id "$REQUESTED_JOB")"
+          if [[ "$RESUME_BLOCKED" == "true" ]]; then
+            if [[ ! "$REQUESTED_JOB" =~ ^[0-9a-f]{32}$ ]]; then
+              echo "Resuming a blocked job requires its explicit job_id." >&2
+              exit 1
+            fi
+            job_id="$REQUESTED_JOB"
+          else
+            job_id="$(python automation/book_runner.py --select --job-id "$REQUESTED_JOB")"
+          fi
           echo "job_id=$job_id" >> "$GITHUB_OUTPUT"
 
       - name: Execute one pinned workflow checkpoint
@@ -58,7 +72,15 @@ jobs:
           OMNIROUTE_CORRECTOR_MODEL: ${{ vars.OMNIROUTE_CORRECTOR_MODEL }}
           OMNIROUTE_MODEL_CALL_LIMIT: ${{ vars.OMNIROUTE_MODEL_CALL_LIMIT }}
           JOB_ID: ${{ steps.select.outputs.job_id }}
-        run: python automation/book_runner.py --job-id "$JOB_ID"
+          RESUME_BLOCKED: ${{ inputs.resume_blocked }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ "$RESUME_BLOCKED" == "true" ]]; then
+            python automation/book_runner.py --job-id "$JOB_ID" --resume-blocked
+          else
+            python automation/book_runner.py --job-id "$JOB_ID"
+          fi
 
       - name: Publish completed EPUB as a downloadable Actions artifact
         if: steps.run.outputs.done == 'true'
