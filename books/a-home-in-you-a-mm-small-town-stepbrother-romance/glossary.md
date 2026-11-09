@@ -8,3 +8,7 @@ Use this file for recurring names, places, organizations, terms, nicknames, titl
 | Dillon | Dillon | character | Recurring character; keep consistent. |
 | Cade | Cade | character | Recurring character; keep consistent. |
 | OceanofPDF.com | OceanofPDF.com | source | External source attribution; retain unchanged. |
+| Courtney W. Dixon | Кортни В. Диксон | person | Author and publisher; keep consistent. |
+| Fae Quinn | Фей Квин | person | Character sketch artist; keep consistent. |
+| Beyond the Bookshelf Publishing Services | Beyond the Bookshelf Publishing Services | organization | Formatting service; retain unchanged. |
+| www.courtneywdixon.com | www.courtneywdixon.com | url | Author website; retain unchanged. |
