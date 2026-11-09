@@ -4,63 +4,54 @@
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
   "source_sha256": "3a3fce78317162b68bc1e82501456a74a783cfc96cb2640c463f381866007865",
   "state": "running",
-  "phase": "model-call-reserved",
-  "failures": 2,
+  "phase": "corrector-completed",
+  "failures": 0,
   "correction_rounds": {
     "chapter-000002": 1,
     "chapter-000003": 1,
     "chapter-000006": 2,
     "chapter-000009": 1,
-    "chapter-000011": 1
+    "chapter-000011": 2
   },
   "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
-  "updated_at": "2026-11-09T17:09:15.251633+00:00",
-  "active": {
-    "role": "corrector",
-    "chapter": 11,
-    "session_id": "auto-886bde8dfe20-corrector-8b509eee"
-  },
+  "updated_at": "2026-11-09T17:16:57.733379+00:00",
+  "active": null,
   "model_calls_started": 58,
-  "memory_glossary_saved": 22,
+  "memory_glossary_saved": 42,
   "pending_style": [
     {
-      "evidence": "Original text contains phrases like 'Fuck, I really needed to get away', 'Shit, and here I was', 'Fucking great', and direct dialogue with informal speech patterns.",
-      "source_pattern": "Direct, colloquial teenage speech with profanity and informal tone",
-      "translation_approach": "Preserve the author's raw, unfiltered voice including explicit language, casual phrasing, and conversational interruptions."
+      "evidence": "The narration moves from past-tense scene description into thoughts such as “Was that what I was afraid of?” and “No, no, no.”",
+      "source_pattern": "First-person past-tense narration closely filtered through Dillon's thoughts, including immediate reactions, self-questioning, and occasional shifts into direct internal commentary.",
+      "translation_approach": "Use conversational first-person Russian and preserve the immediacy of the internal reactions without explaining or smoothing them away."
     },
     {
-      "evidence": "Original describes 'serый зимний послеобеденный день', 'температура замерзала', 'запах лошади', 'уникальный, земный аромат букового сада'.",
-      "source_pattern": "Detailed descriptions of sensory experience (cold, snow, smells)",
-      "translation_approach": "Maintain vivid sensory language while ensuring natural Russian flow; preserve the contrast between cold environment and warmth inside the barn."
+      "evidence": "Dillon says “Fuck, I really needed to get away,” calls the boyfriend “fucking” lame, and reacts with “Fucking great.”",
+      "source_pattern": "Dillon's teenage voice is blunt and profane, with self-conscious, sometimes awkward phrasing and strong emotional reactions.",
+      "translation_approach": "Retain profanity, abruptness, and youthful informality where present; do not sanitize or elevate the voice."
     },
     {
-      "evidence": "Dillon speaks in short, hesitant sentences with pauses; Cade uses more exclamation points, swearing, and rapid-fire dialogue.",
-      "source_pattern": "Character-specific speech patterns (Dillon's introversion vs Cade's outgoing nature)",
-      "translation_approach": "Distinguish Dillon's quiet, introspective speech from Cade's energetic, talkative style; preserve their distinct voices in Russian."
+      "evidence": "Dillon answers “Uh, okay. Cool?” while Cade gives an extended account of his grandmother, horse riding, and games.",
+      "source_pattern": "Dialogue contrasts Dillon's guarded, terse replies with Cade's outgoing, rapid, digressive speech.",
+      "translation_approach": "Keep Dillon's short, hesitant responses distinct from Cade's longer, loosely associative dialogue."
     },
     {
-      "evidence": "Original shows Dillon's longing for alone time, his fear of Jared and Cade, and his gradual warming toward Cade.",
-      "source_pattern": "Narrative distance and emotional tone",
-      "translation_approach": "Maintain the novel's emotional intimacy and vulnerability; preserve the tension between Dillon's desire for solitude and his growing connection with Cade."
-    },
-    {
-      "evidence": "Original mentions 'Xbox', 'Call of Duty', 'boxwood' (самшит), and 'antique shop'.",
-      "source_pattern": "Cultural references (Xbox, Call of Duty, boxwood, antique shop)",
-      "translation_approach": "Keep proper nouns and cultural references intact; translate descriptive elements naturally while preserving meaning."
+      "evidence": "The passage repeatedly describes snow, the horses' smell, the farmhouse's boxwood, wood stoves, animals, and the surrounding fields and mountains.",
+      "source_pattern": "The narration uses concrete sensory details and recurring domestic and rural imagery to establish place and emotional attachment.",
+      "translation_approach": "Preserve tactile, olfactory, and visual details and the quiet accumulation of setting rather than compressing them."
     }
   ],
   "prompt_context": {
-    "role": "reviewer",
+    "role": "corrector",
     "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
     "loaded_contracts": [
       "AGENTS.md",
       "docs/TRANSLATION.md",
-      "docs/REVIEWER.md"
+      "docs/TRANSLATOR.md"
     ],
     "glossary_sha256": "55be6b8505e649c70ef65db5e586650aeb73168eaf262f496dc16905d60ef481",
     "style_guide_sha256": "161238721ea1ef50a84f53819d7cfc61efda9123427d7d6cdbf695e9288230de",
-    "system_chars": 22384,
-    "user_chars": 38203
+    "system_chars": 15840,
+    "user_chars": 38902
   },
   "memory_style_saved": 3,
   "last_error": "model transport timeout or connection failure",
