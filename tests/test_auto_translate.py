@@ -512,6 +512,61 @@ class AutomatedBookTests(unittest.TestCase):
         self.assertEqual(payload["response_format"], {"type": "json_object"})
         self.assertEqual(answer, '{"translation":"ok"}\n')
 
+    def test_context_scopes_model_to_one_supplied_unit(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            (root / "books" / "example" / "extracted").mkdir(parents=True)
+            source = root / "books" / "example" / "extracted" / "001.md"
+            source.write_text("[*OceanofPDF.com*](https://oceanofpdf.com)\n", encoding="utf-8")
+            chapter = {"unit_id": "chapter-000002", "number": 2, "source_path": "extracted/001.md",
+                       "translation_path": "translated/001.md", "status": "extracted"}
+            chapters = [dict(chapter, unit_id=f"chapter-{n:06d}", number=n,
+                             source_path=f"extracted/{n:03d}.md",
+                             translation_path=f"translated/{n:03d}.md")
+                        for n in range(1, 52)]
+            chapters[1] = chapter
+            with patch.object(worker, "ROOT", root), \
+                 patch.object(worker, "role_contracts", return_value=("translator contract", [])), \
+                 patch.object(worker, "full_shared_context", return_value=("", "")), \
+                 patch.object(worker, "chapter_data", return_value=({}, {}, chapters)), \
+                 patch.object(worker, "read_json", return_value={
+                     "title": "Example", "target_language": "ru", "chapter_count": 51,
+                     "source_sha256": "a" * 64,
+                 }):
+                _system, user, _source = worker.context(Path("engine"), "example", chapter, "translator")
+            self.assertIn("source unit 2 of 51", user)
+            self.assertIn('"target_language": "ru"', user)
+            self.assertNotIn("chapter_count", user)
+            self.assertNotIn("source_sha256", user)
+            self.assertIn("Preserve a unit consisting only of external links exactly", _system)
+
+    def test_external_link_only_source_is_deterministically_preserved(self):
+        link = "[*OceanofPDF.com*](https://oceanofpdf.com)\n"
+        self.assertTrue(worker.external_link_only(link))
+        self.assertFalse(worker.external_link_only(link + "A sentence of prose.\n"))
+        self.assertFalse(worker.external_link_only("![cover](https://example.com/cover.jpg)\n"))
+
+    def test_external_links_and_labels_are_protected(self):
+        source = "[*OceanofPDF.com*](https://oceanofpdf.com)\n"
+        worker.check_markers(source, source)
+        with self.assertRaisesRegex(worker.JobError, "link destination differs"):
+            worker.check_markers(source, "[*OceanofPDF.com*](https://example.com)\n")
+        with self.assertRaisesRegex(worker.JobError, "external hyperlink label"):
+            worker.check_markers(source, "[OceanofPDF.com](https://oceanofpdf.com)\n")
+
+    def test_blocked_resume_is_audited_and_preserves_call_count(self):
+        status = {"state": "blocked", "phase": "model-blocked", "active": None,
+                  "failures": 3, "model_calls_started": 7,
+                  "last_error": "marker mismatch"}
+        worker.approve_blocked_resume(status)
+        self.assertEqual(status["state"], "running")
+        self.assertEqual(status["failures"], 0)
+        self.assertEqual(status["model_calls_started"], 7)
+        self.assertEqual(status["recoveries"][0]["previous_error"], "marker mismatch")
+        with self.assertRaisesRegex(worker.JobError, "inactive model-blocked"):
+            worker.approve_blocked_resume({"state": "blocked", "phase": "operator-intervention-required",
+                                          "active": None})
+
     def test_markers_are_order_and_identity_bound(self):
         source = "<!-- bt-block:000001 -->\nFirst [link](#x)\n<!-- bt-block:000002 -->\n"
         worker.check_markers(source, "<!-- bt-block:000001 -->\nПервый [ссылка](#x)\n<!-- bt-block:000002 -->\n")
@@ -681,3 +736,4 @@ class AutomatedBookTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
