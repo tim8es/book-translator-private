@@ -12,3 +12,5 @@ Use this file for recurring names, places, organizations, terms, nicknames, titl
 | Fae Quinn | Фей Квин | person | Character sketch artist; keep consistent. |
 | Beyond the Bookshelf Publishing Services | Beyond the Bookshelf Publishing Services | organization | Formatting service; retain unchanged. |
 | www.courtneywdixon.com | www.courtneywdixon.com | url | Author website; retain unchanged. |
+| Double Up | Double Up | title | Previous book title by Courtney W. Dixon; retain in Latin script. |
+| Blue Ridge Mountains | горы Блу-Ридж | place | Mountain range in the eastern United States. |
