@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 12,
+  "next_sequence": 13,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -365,6 +365,37 @@
       "reviewed_at": "2026-11-09T12:11:09Z",
       "state_revision": "3596a366f709d0a367aaad4141e5dd4b571eb9dbc97deebfc09dc96a3c71ff2d",
       "review_commit": "3c39a790cc9cd0c1368c19e6f5b3e9d7bc5aae06",
+      "correction_round": 0,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": []
+      },
+      "shared_state_revisions": {
+        "glossary": "e5df131d887f24105202fa02d7edc832a0b78370dd7baa1b8fd6d6cbf6833567",
+        "style_guide": "581e06614d85aacf7be455688d7e4f32ded2474010ddf272cde1e791fbb04c65"
+      }
+    },
+    {
+      "record_id": "afc162865d5b43a286fd4076eb930cfe",
+      "sequence": 12,
+      "unit_id": "chapter-000008",
+      "outcome": "PASS",
+      "source_sha256": "4d66a85872a571f397231bd6b06280f514a553ae4d39cd008b65acbdb468b5bc",
+      "translation_sha256": "5ecc27528393b466789d6e03a90b767a061cf54fe31ab6028418c46de88cb32b",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewer_session_id": "auto-886bde8dfe20-reviewer-626ffb2d",
+      "reviewed_at": "2026-11-09T12:13:54Z",
+      "state_revision": "130a767cbfca6270dfbffb7999cecdebeb3202399196898f49e410d357f23af9",
+      "review_commit": "f645562d35eb8e29c5f304d554b4d8e58c204f99",
       "correction_round": 0,
       "supersedes_record_id": null,
       "quality_report": {
