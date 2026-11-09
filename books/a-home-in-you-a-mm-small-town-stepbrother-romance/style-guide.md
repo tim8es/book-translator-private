@@ -59,3 +59,10 @@ Add recurring characters as needed.
 ## Review notes
 
 - 
+
+## Automated reviewed stylistic decisions
+
+| Source pattern / context | Target-language approach | Reason / evidence |
+| --- | --- | --- |
+| Standard copyright disclaimer and all-rights-reserved statement | Формальный юридический регистр, стандартная формулировка для российских изданий | No part of this book may be reproduced... All rights reserved |
+| Author listed as publisher (self-published imprint) | Имя автора сохранено в поле издателя, без добавления издательского дома | Published by Courtney W. Dixon |
