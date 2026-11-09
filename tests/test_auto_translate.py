@@ -543,6 +543,27 @@ class AutomatedBookTests(unittest.TestCase):
             self.assertNotIn("https://oceanofpdf.com", user)
             self.assertIn("Preserve a unit consisting only of external links exactly", _system)
 
+    def test_reviewer_can_audit_nonprose_source_units(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            book = root / "books" / "example"
+            (book / "extracted").mkdir(parents=True)
+            (book / "translated").mkdir()
+            source = "A Home in You Playlist\n[Song](https://example.com/song)\n"
+            (book / "extracted" / "001.md").write_text(source, encoding="utf-8")
+            (book / "translated" / "001.md").write_text(source, encoding="utf-8")
+            chapter = {"unit_id": "chapter-000001", "number": 1,
+                       "source_path": "extracted/001.md",
+                       "translation_path": "translated/001.md", "status": "translated"}
+            with patch.object(worker, "ROOT", root), \
+                 patch.object(worker, "role_contracts", return_value=("reviewer contract", [])), \
+                 patch.object(worker, "full_shared_context", return_value=("", "")), \
+                 patch.object(worker, "chapter_data", return_value=({}, {"records": []}, [chapter])), \
+                 patch.object(worker, "read_json", return_value={"title": "Example", "target_language": "ru"}):
+                _system, user, _source = worker.context(Path("engine"), "example", chapter, "reviewer")
+            self.assertIn("metadata rather than prose", user)
+            self.assertIn("not a failure after confirming it is not applicable", user)
+
     def test_link_boundaries_restore_original_destinations_and_translated_labels(self):
         source = "Before [Read more](https://example.com/book) after.\n"
         masked, links = worker.mask_markdown_links(source)
