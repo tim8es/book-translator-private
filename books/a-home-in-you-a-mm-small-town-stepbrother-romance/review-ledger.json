@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 16,
+  "next_sequence": 17,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -520,6 +520,68 @@
       },
       "shared_state_revisions": {
         "glossary": "7cf482ed54336440f46a6ce87d2fc3c6c0a6dccf8d239f0b5d80f1518d3448ac",
+        "style_guide": "161238721ea1ef50a84f53819d7cfc61efda9123427d7d6cdbf695e9288230de"
+      }
+    },
+    {
+      "record_id": "592db64ed56848488010c65fa96dc986",
+      "sequence": 16,
+      "unit_id": "chapter-000011",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "3a4f227fccd5c0a4d06d99accb39eedc94a401b1ff7b5efdcccedf32b84437b5",
+      "translation_sha256": "bc408757db9c96508c4edae99ebc28cb3cf6ebb2551b050c0c5d00f19fb10880",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewer_session_id": "auto-886bde8dfe20-reviewer-355a5e9c",
+      "reviewed_at": "2026-11-09T12:30:20Z",
+      "state_revision": "7a40130b8cc15974e8b7b2f44efb733039222f91f05b8588892b7c4ef9c1c566",
+      "review_commit": "4bc62705022fe3709236234877ca640ccc97832b",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "critical",
+            "detail": "Пропуск заголовка: в переводе отсутствует исходный заголовок '## *Leesburg, Virginia - February 2017*'.",
+            "resolved": false
+          },
+          {
+            "severity": "critical",
+            "detail": "Катастрофический пропуск текста: вырезано свыше 40 абзацев оригинала (более 60% объема единицы). Пропущен разговор Диллона с матерью в сарае об отношениях с Джаредом и переезде; возвращение в дом через сени; прибытие гостей и встреча у двери; подробный диалог Кейда и Диллона при сервировке стола (рассказ о бабушке, ферме, Xbox, увлечениях); совместный ужин с обсуждением работы дальнобойщика, антикварного магазина и рыбалки на реке Шенандоа; мытье посуды; сцена в гостиной с целующимися взрослыми и предложением съехаться; уход мальчиков в комнату Диллона и игра в моддинговый Skyrim с разговором об умершем отце Диллона и ушедшей матери Кейда.",
+            "resolved": false
+          },
+          {
+            "severity": "critical",
+            "detail": "Грубые смысловые и терминологические искажения: 'dimples' (ямочки на щеках) и 'eyelashes' (ресницы) переведены как 'подбородки и густые подбородки' ('с двумя большими темными подбородками с каждой стороны щек'); 'sketch pad' (альбом для набросков) переведен как 'рисовый блок'; 'kneaded eraser' (ластик-клячка) - как 'сумка с клеенкой'; порода собаки 'Blue Heeler' (австралийский хилер / голубой хилер) - как 'голубой пудель'; 'sixteen hands' (высота лошади в ладонях) - как 'вседозволенную лошадь за шестнадцать дюймов'; 'horses greeted me with snorts' - как 'лошади приветствовали меня хрюканьем'; кустарник 'boxwood' (самшит) - как 'буковый сад'; 'snickered and snorted' - как 'хихикнула и заскрежетала'; 'plowed through five inches of hardened snow' - как 'пролил пять дюймов твердого снега'; 'we'd get school off' (отменили бы уроки) - как 'мы бы получили отпуск'; 'to ride her' - как несуществующее слово 'верхеть на ней'.",
+            "resolved": false
+          },
+          {
+            "severity": "critical",
+            "detail": "Грубый машинный подстрочник и разрушение грамматики в оставшемся тексте: 'Котенок разогнул лицо к моей перчатке, а Сникердодел, карика, вписывалась в мои ноги, ищя ласковость', 'Я уже мог почувствовать, что он был выходками', 'температура замерзала', 'Я достал шапку из шерстяной куртки из кармана'.",
+            "resolved": false
+          },
+          {
+            "severity": "major",
+            "detail": "Искажение эмоционального регистра и стилистическая несостоятельность: подростковые ругательства автора не переданы ('Fuck, I really needed to get away' передано как 'Фу, мне действительно нужно было уйти'; 'Shit, and here I was' - как 'Фу, и вот я').",
+            "resolved": false
+          },
+          {
+            "severity": "major",
+            "detail": "Несогласованность имен и отсутствие обязательных терминов в глоссарии: имя Dillon заменено на 'Дилл' в репликах знакомства, где в оригинале звучит полное имя ('ты должен быть Диллом'). В каноническом глоссарии отсутствуют новые персонажи и географические объекты главы: Jared Beckman -> Джаред Бекман, Evelyn Copeland -> Эвелин Коупленд, Aphrodite -> Афродита, Shenandoah River -> река Шенандоа, Harpers Ferry -> Харперс-Ферри.",
+            "resolved": false
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "55be6b8505e649c70ef65db5e586650aeb73168eaf262f496dc16905d60ef481",
         "style_guide": "161238721ea1ef50a84f53819d7cfc61efda9123427d7d6cdbf695e9288230de"
       }
     }
