@@ -197,6 +197,53 @@ def approve_blocked_resume(status: dict) -> None:
                    "last_error": None})
 
 
+def approve_interrupted_resume(status: dict, unit: dict, claim: dict,
+                               canonical_claims: list[dict]) -> None:
+    active = status.get("active")
+    if (status.get("state") != "blocked" or
+            status.get("phase") != "operator-intervention-required" or
+            not isinstance(active, dict)):
+        raise JobError("resume requires an operator-blocked job with an active claim")
+    if active.get("role") not in {"translator", "corrector", "reviewer"}:
+        raise JobError("unsupported role on interrupted claim")
+    expected_role = "reviewer" if active["role"] == "reviewer" else "translator"
+    identity = {"unit_id": unit.get("unit_id"), "role": expected_role,
+                "session_id": active.get("session_id")}
+    if not all(claim.get(key) == value for key, value in identity.items()):
+        raise JobError("stored claim does not match the active job session")
+    if (len(canonical_claims) != 1 or not isinstance(canonical_claims[0], dict) or
+            not all(canonical_claims[0].get(key) == value for key, value in identity.items())):
+        raise JobError("canonical active claim does not match the recovery target")
+    history = status.get("recoveries", [])
+    if not isinstance(history, list):
+        raise JobError("invalid recovery history")
+    history.append({"action": "resume-interrupted-claim", "approved_at": clock(),
+                    "previous_error": status.get("last_error"),
+                    "session_id": active["session_id"]})
+    status.update({"recoveries": history, "state": "running",
+                   "phase": "operator-resume-authorized", "failures": 0,
+                   "last_error": None})
+
+
+def filter_conflicting_glossary_proposals(book: Path, proposals: list[dict]) -> tuple[list[dict], int]:
+    if not proposals:
+        return [], 0
+    current = (book / "glossary.md").read_text("utf-8")
+    accepted = []
+    rejected = 0
+    for proposal in proposals:
+        try:
+            replacement = updated_glossary(current, [proposal])
+        except ValueError as exc:
+            if str(exc).startswith("conflicting glossary rendering for "):
+                rejected += 1
+                continue
+            raise
+        accepted.append(proposal)
+        current = replacement
+    return accepted, rejected
+
+
 def epub_identity(source: Path) -> tuple[str, str]:
     try:
         with zipfile.ZipFile(source) as archive:
@@ -901,7 +948,8 @@ def context(engine: Path, slug: str, chapter: dict, role: str,
         "and the full EPUB are intentionally outside this request; do not ask for "
         "them or invent their contents. Preserve a unit consisting only of external "
         "links exactly as supplied. Tokens beginning ZXBTLINK mark a visible link "
-        "label; preserve each STARTXZ/ENDXZ token exactly and in order.")
+        "label; preserve each STARTXZ/ENDXZ token exactly and in order. Existing "
+        "glossary entries are canonical; do not propose a conflicting rendering.")
     progress, ledger, chapters = chapter_data(slug)
     index = next(i for i, ch in enumerate(chapters) if ch["unit_id"] == chapter["unit_id"])
     previous = ""
@@ -1079,6 +1127,11 @@ def process_claim(job_id: str, slug: str, status: dict, engine: Path) -> None:
             if not preserve_links:
                 translated = restore_markdown_links(source, translated)
             check_markers(source, translated)
+            proposed_glossary, rejected = filter_conflicting_glossary_proposals(
+                ROOT / "books" / slug, proposed_glossary)
+            if rejected:
+                status["glossary_conflicts_rejected"] = (
+                    status.get("glossary_conflicts_rejected", 0) + rejected)
             path = ROOT / "books" / slug / chapter["translation_path"]
             if role == "corrector" and path.read_text("utf-8") == translated:
                 current_glossary = (ROOT / "books" / slug / "glossary.md").read_text("utf-8")
@@ -1171,16 +1224,24 @@ def finalize(job_id: str, slug: str, status: dict) -> None:
     checkpoint(job_id, status, slug)
 
 
-def run(job_id: str, *, resume_blocked: bool = False) -> dict:
+def run(job_id: str, *, resume_blocked: bool = False,
+        resume_interrupted: bool = False) -> dict:
     request = request_for(job_id)
     current = status_path(job_id)
     status = read_json(current) if current.exists() else None
+    if resume_blocked and resume_interrupted:
+        raise JobError("choose only one recovery mode")
     if resume_blocked and (status is None or status.get("state") != "blocked"):
         raise JobError("resume requires an existing blocked job")
-    if status and status.get("state") in FINAL and not resume_blocked:
+    if resume_interrupted and (status is None or status.get("state") != "blocked"):
+        raise JobError("interrupted recovery requires an existing blocked job")
+    if status and status.get("state") in FINAL and not (resume_blocked or resume_interrupted):
         return status
     if resume_blocked and (status.get("phase") != "model-blocked" or status.get("active") is not None):
         raise JobError("only an inactive model-blocked job can be resumed")
+    if resume_interrupted and (status.get("phase") != "operator-intervention-required"
+                               or not isinstance(status.get("active"), dict)):
+        raise JobError("interrupted recovery requires the recorded active claim")
     source = job_path(job_id) / "source.epub"
     try:
         epub_title, epub_author = epub_identity(source)
@@ -1228,6 +1289,30 @@ def run(job_id: str, *, resume_blocked: bool = False) -> dict:
                     or canonical_state["errors"]):
                 raise JobError("cannot resume while canonical claims or errors remain")
             approve_blocked_resume(status)
+            checkpoint(job_id, status, slug)
+        elif resume_interrupted:
+            if status.get("source_sha256") != request["source_sha256"]:
+                raise BookIdentityError("interrupted job source identity changed")
+            active = status["active"]
+            _, _, chapters = chapter_data(slug)
+            matches = [item for item in chapters if item.get("number") == active.get("chapter")]
+            if len(matches) != 1:
+                raise JobError("interrupted claim no longer maps to one source unit")
+            chapter = matches[0]
+            claim_file = folder / ".workflow" / "claims" / (chapter["unit_id"] + ".json")
+            if not claim_file.is_file():
+                raise JobError("interrupted canonical claim is missing")
+            owned = read_json(claim_file)
+            expires = datetime.fromisoformat(owned["expires_at"].replace("Z", "+00:00"))
+            if expires.tzinfo is None or expires <= datetime.now(timezone.utc):
+                raise JobError("interrupted claim expired; canonical cleanup is required")
+            canonical_state = json.loads(cli("status", slug, "--json"))
+            claims = canonical_state.get("claims")
+            if (not isinstance(canonical_state.get("errors"), list)
+                    or canonical_state["errors"]
+                    or not isinstance(claims, list)):
+                raise JobError("canonical status is not safe for interrupted recovery")
+            approve_interrupted_resume(status, chapter, owned, claims)
             checkpoint(job_id, status, slug)
         if status is None:
             status = {"schema_version": 1, "job_id": job_id, "book_slug": slug,
@@ -1343,17 +1428,19 @@ def main() -> int:
     parser.add_argument("--select", action="store_true")
     parser.add_argument("--job-id")
     parser.add_argument("--resume-blocked", action="store_true")
+    parser.add_argument("--resume-interrupted", action="store_true")
     args = parser.parse_args()
     if args.select:
-        if args.resume_blocked:
-            parser.error("--resume-blocked cannot be combined with --select")
+        if args.resume_blocked or args.resume_interrupted:
+            parser.error("recovery flags cannot be combined with --select")
         print(select(args.job_id))
         return 0
     job_id = safe_id(args.job_id)
     try:
-        status = run(job_id, resume_blocked=args.resume_blocked)
+        status = run(job_id, resume_blocked=args.resume_blocked,
+                     resume_interrupted=args.resume_interrupted)
     except BookIdentityError as exc:
-        if args.resume_blocked and job_is_blocked(job_id):
+        if (args.resume_blocked or args.resume_interrupted) and job_is_blocked(job_id):
             print("Blocked job unchanged; resume preflight failed: " + str(exc)[:350], file=sys.stderr)
             return 1
         status = {"schema_version": 1, "job_id": job_id, "book_slug": None,
@@ -1361,7 +1448,7 @@ def main() -> int:
             "failures": 0, "correction_rounds": {}, "last_error": str(exc)[:350]}
         checkpoint(job_id, status, None)
     except (JobError, ModelError, OSError, ValueError, KeyError, subprocess.TimeoutExpired) as exc:
-        if args.resume_blocked and job_is_blocked(job_id):
+        if (args.resume_blocked or args.resume_interrupted) and job_is_blocked(job_id):
             print("Blocked job unchanged; resume preflight failed: "
                   + type(exc).__name__ + ": " + str(exc)[:300], file=sys.stderr)
             return 1
