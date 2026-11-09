@@ -3,15 +3,15 @@
   "job_id": "886bde8dfe20711dad58fa166890a26e",
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
   "source_sha256": "3a3fce78317162b68bc1e82501456a74a783cfc96cb2640c463f381866007865",
-  "state": "blocked",
-  "phase": "model-blocked",
-  "failures": 3,
+  "state": "running",
+  "phase": "operator-resume-authorized",
+  "failures": 0,
   "correction_rounds": {
     "chapter-000002": 1,
     "chapter-000003": 1
   },
   "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
-  "updated_at": "2026-11-09T11:17:22.574276+00:00",
+  "updated_at": "2026-11-09T11:21:00.085099+00:00",
   "active": null,
   "model_calls_started": 15,
   "memory_glossary_saved": 4,
@@ -30,12 +30,17 @@
     "user_chars": 5161
   },
   "memory_style_saved": 0,
-  "last_error": "Markdown link destination differs at item 1 (source=4, output=2)",
+  "last_error": null,
   "recoveries": [
     {
       "action": "resume-model-blocked",
       "approved_at": "2026-11-09T11:03:12.184991+00:00",
       "previous_error": "model altered protected EPUB markers or link destinations"
+    },
+    {
+      "action": "resume-model-blocked",
+      "approved_at": "2026-11-09T11:21:00.085079+00:00",
+      "previous_error": "Markdown link destination differs at item 1 (source=4, output=2)"
     }
   ]
 }
