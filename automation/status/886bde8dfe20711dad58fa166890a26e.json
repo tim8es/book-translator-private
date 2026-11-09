@@ -4,7 +4,7 @@
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
   "source_sha256": "3a3fce78317162b68bc1e82501456a74a783cfc96cb2640c463f381866007865",
   "state": "running",
-  "phase": "model-call-reserved",
+  "phase": "translator-completed",
   "failures": 0,
   "correction_rounds": {
     "chapter-000002": 1,
@@ -13,27 +13,54 @@
     "chapter-000009": 1
   },
   "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
-  "updated_at": "2026-11-09T12:21:25.306381+00:00",
-  "active": {
-    "role": "translator",
-    "chapter": 11,
-    "session_id": "auto-886bde8dfe20-translator-40635076"
-  },
+  "updated_at": "2026-11-09T12:28:08.836721+00:00",
+  "active": null,
   "model_calls_started": 39,
-  "memory_glossary_saved": 12,
-  "pending_style": [],
+  "memory_glossary_saved": 22,
+  "pending_style": [
+    {
+      "evidence": "I had been apart from him for too long, and I haven’t been whole since he was ripped from me.",
+      "source_pattern": "Free indirect thought shifting into present perfect ('haven’t been whole')",
+      "translation_approach": "Present perfect tense to preserve immediacy of character's perception"
+    },
+    {
+      "evidence": "The cold weather and snowy setting heighten Dillon's emotional state; his internal monologue about his father and loneliness is rendered with direct emotional language.",
+      "source_pattern": "Narrative distance and emotional immediacy",
+      "translation_approach": "Intimate, close third-person perspective with strong emotional focus on Dillon's isolation and longing"
+    },
+    {
+      "evidence": "Dillon's internal thoughts are restrained and reflective; Cade's dialogue is energetic with swearing and exclamation; Mom's narration is warm and nostalgic.",
+      "source_pattern": "Character voice differentiation",
+      "translation_approach": "Distinct voices: Dillon (introverted, quiet, observant), Cade (outgoing, loud, playful), Mom (caring, nostalgic, maternal)"
+    },
+    {
+      "evidence": "The text emphasizes cold, snow, the smell of horses, the wood-burning stove, and the blue/white decor of the parlor.",
+      "source_pattern": "Setting description and sensory detail",
+      "translation_approach": "Preserve vivid sensory details (cold, snow, smell of horses, wood stove, blue and white decor) to maintain atmosphere"
+    },
+    {
+      "evidence": "The passage balances Dillon's sadness about his father's death with his growing connection to Cade and the comfort of the farm setting.",
+      "source_pattern": "Tone and emotional intensity",
+      "translation_approach": "Maintain the blend of melancholy (Dillon's loneliness, grief over father's death) and warmth (friendship with Cade, love for horses)"
+    },
+    {
+      "evidence": "Cade uses slang, swearing, and exclamation marks; Dillon speaks more quietly and with fewer interruptions.",
+      "source_pattern": "Dialogue naturalness",
+      "translation_approach": "Keep dialogue authentic to each character's voice; Cade's language is casual and expressive; Dillon's speech is more measured"
+    }
+  ],
   "prompt_context": {
-    "role": "reviewer",
+    "role": "translator",
     "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
     "loaded_contracts": [
       "AGENTS.md",
       "docs/TRANSLATION.md",
-      "docs/REVIEWER.md"
+      "docs/TRANSLATOR.md"
     ],
     "glossary_sha256": "7cf482ed54336440f46a6ce87d2fc3c6c0a6dccf8d239f0b5d80f1518d3448ac",
     "style_guide_sha256": "161238721ea1ef50a84f53819d7cfc61efda9123427d7d6cdbf695e9288230de",
-    "system_chars": 22384,
-    "user_chars": 7715
+    "system_chars": 15840,
+    "user_chars": 28383
   },
   "memory_style_saved": 3,
   "last_error": null,
@@ -55,5 +82,6 @@
       "session_id": "auto-886bde8dfe20-corrector-ac323eeb"
     }
   ],
-  "recovery_note": "A claim may still be active; inspect canonical state before recovery"
+  "recovery_note": "A claim may still be active; inspect canonical state before recovery",
+  "glossary_conflicts_rejected": 3
 }

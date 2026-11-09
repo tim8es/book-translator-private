@@ -15,3 +15,6 @@ Use this file for recurring names, places, organizations, terms, nicknames, titl
 | Double Up | Double Up | title | Previous book title by Courtney W. Dixon; retain in Latin script. |
 | Blue Ridge Mountains | горы Блу-Ридж | place | Mountain range in the eastern United States. |
 | University of Virginia | Виргинский университет | place | Public research university in Charlottesville, Virginia. |
+| Tilly | Тилли | character | Dillon's Blue Heeler dog; loyal companion. |
+| Artemis | Артемида | character | Dillon's horse; his special place since childhood. |
+| Leesburg, Virginia | Лисбург, Вирджиния | place | Location of the farmhouse and the story setting. |
