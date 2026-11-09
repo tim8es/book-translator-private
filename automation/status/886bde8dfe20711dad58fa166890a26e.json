@@ -3,9 +3,9 @@
   "job_id": "886bde8dfe20711dad58fa166890a26e",
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
   "source_sha256": "3a3fce78317162b68bc1e82501456a74a783cfc96cb2640c463f381866007865",
-  "state": "blocked",
-  "phase": "model-blocked",
-  "failures": 3,
+  "state": "running",
+  "phase": "operator-resume-authorized",
+  "failures": 0,
   "correction_rounds": {
     "chapter-000002": 1,
     "chapter-000003": 1,
@@ -13,7 +13,7 @@
     "chapter-000009": 1
   },
   "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
-  "updated_at": "2026-11-09T13:08:02.576177+00:00",
+  "updated_at": "2026-11-09T13:26:39.991544+00:00",
   "active": null,
   "model_calls_started": 43,
   "memory_glossary_saved": 22,
@@ -63,7 +63,7 @@
     "user_chars": 39166
   },
   "memory_style_saved": 3,
-  "last_error": "model transport timeout or connection failure",
+  "last_error": null,
   "recoveries": [
     {
       "action": "resume-model-blocked",
@@ -80,6 +80,11 @@
       "approved_at": "2026-11-09T12:05:44.715633+00:00",
       "previous_error": "ValueError: conflicting glossary rendering for Dillon",
       "session_id": "auto-886bde8dfe20-corrector-ac323eeb"
+    },
+    {
+      "action": "resume-model-blocked",
+      "approved_at": "2026-11-09T13:26:39.991521+00:00",
+      "previous_error": "model transport timeout or connection failure"
     }
   ],
   "recovery_note": "A claim may still be active; inspect canonical state before recovery",
