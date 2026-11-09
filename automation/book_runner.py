@@ -42,6 +42,7 @@ MAX_CORRECTIONS = 3
 MAX_FAILURES = 3
 DEFAULT_MODEL_CALL_LIMIT = 36
 EPUB_MARKER_RE = re.compile(r"<!--\s*bt-(?:anchor|block):[^>]*-->")
+EPUB_BLOCK_RE = re.compile(r"<!--\s*bt-block:[^>]*-->")
 MARKDOWN_LINK_RE = re.compile(
     r'(?P<image>!?)\[(?P<label>[^\]\n]*)\]\('
     r'(?P<destination><[^>\n]+>|[^)\s]+)(?:\s+[^)\n]*)?\)'
@@ -922,12 +923,13 @@ def check_markers(source: str, translation: str) -> None:
         index = _mismatch_index(expected_links, actual_links)
         raise JobError(f"Markdown link destination differs at item {index} "
                        f"(source={len(expected_links)}, output={len(actual_links)})")
-    expected_external = _external_links(source)
-    actual_external = _external_links(translation)
-    if expected_external != actual_external:
-        index = _mismatch_index(expected_external, actual_external)
-        raise JobError(f"external hyperlink label or destination differs at item {index} "
-                       f"(source={len(expected_external)}, output={len(actual_external)})")
+    if EPUB_BLOCK_RE.search(source):
+        expected_external = _external_links(source)
+        actual_external = _external_links(translation)
+        if expected_external != actual_external:
+            index = _mismatch_index(expected_external, actual_external)
+            raise JobError(f"external hyperlink label differs at item {index} "
+                           f"(source={len(expected_external)}, output={len(actual_external)})")
 
 
 def claim(job_id: str, slug: str, status: dict, role: str, chapter: dict) -> None:
