@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 19,
+  "next_sequence": 20,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -696,6 +696,53 @@
       },
       "shared_state_revisions": {
         "glossary": "afe410553faa003895f096905e6d1581163dfcb918ce4722fa4b473a806eb5c5",
+        "style_guide": "161238721ea1ef50a84f53819d7cfc61efda9123427d7d6cdbf695e9288230de"
+      }
+    },
+    {
+      "record_id": "ec3ad0b270594df3b624432f4b517937",
+      "sequence": 19,
+      "unit_id": "chapter-000011",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "3a4f227fccd5c0a4d06d99accb39eedc94a401b1ff7b5efdcccedf32b84437b5",
+      "translation_sha256": "434555b7baf21ec74f38733f7d9ce877b5bb28bd24703cd67f2a95a98e205f59",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewer_session_id": "auto-886bde8dfe20-reviewer-53c0b788",
+      "reviewed_at": "2026-11-09T18:00:27Z",
+      "state_revision": "f1be89ee8af36bc0b8a35cd7348b54ea98c850b4789838a8760085ee6c5c1e3d",
+      "review_commit": "c166b40d8cf6a401d6a8100c2587f0d2a40ba348",
+      "correction_round": 4,
+      "supersedes_record_id": "887232db4fa84d8ebd41e90fbd0c8ce8",
+      "quality_report": {
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "major",
+            "detail": "В нескольких местах смягчена грубая внутренняя речь Диллона. Например, 'Why did Mom have to fucking date, anyway?' передано как 'С какой стати маме вообще понадобилось встречаться с кем-то?', а 'Fucking great.' как 'Просто прекрасно.' В 'I really didn’t want to fucking talk about it' бранное усиление также опущено. Сохраните резкость исходного регистра подходящими русскими разговорными выражениями.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "'She showed him around' переведено как 'Она показала ему, что у неё есть'. В оригинале она провела его по магазину, а не просто показала товары. Исправьте, например, на 'провела его по магазину'.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "'I didn't want to share' относится к дому. Фраза 'Это был мой дом, и я не хотел им ни с кем делиться' грамматически неясна: 'им' не обозначает дом в подходящей форме. Исправьте, например, на 'Это был мой дом, и я не хотел делить его ни с кем'.",
+            "resolved": false
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "970e9f13b2005f753d202f088dee86e918bc77e479698538cbc55d06a39b8653",
         "style_guide": "161238721ea1ef50a84f53819d7cfc61efda9123427d7d6cdbf695e9288230de"
       }
     }
