@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 4,
+  "next_sequence": 5,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -99,6 +99,58 @@
       },
       "shared_state_revisions": {
         "glossary": "f02e6becb2861881659733c55614d24b49ee0a6906fa607fb2db0ceb6b8d35ad",
+        "style_guide": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4"
+      }
+    },
+    {
+      "record_id": "1ff1b5b0c03e4a06855ea8358e9746e7",
+      "sequence": 4,
+      "unit_id": "chapter-000003",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "a2f7dc086395e220f39cd1e03c1f00647c6f530966b81ce5f6e458ccac3207af",
+      "translation_sha256": "33744bc21e94f7229c398ec14bfede3e9b55da3556809b82668fa039e0339cc5",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewer_session_id": "auto-886bde8dfe20-reviewer-b989c4e1",
+      "reviewed_at": "2026-11-09T11:08:29Z",
+      "state_revision": "550e71950dba32dad87d5e655701210553c9a5db33b4b00c9b63e42e0bd4a123",
+      "review_commit": "7ba962ccc8c8fd20c6cf9693c534d265f9e09e8b",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "critical",
+            "detail": "The unit was not translated into Russian. English structural titles and headings (Contents, An Important Message from the Author, Triggers, Prologue, FREE EPILOGUE, Acknowledgments, About the Author) were left untranslated.",
+            "resolved": false
+          },
+          {
+            "severity": "major",
+            "detail": "Line 17 changed the speaker from Dillon to Cade ('17. Dillon' in source vs '17. Cade' in translation).",
+            "resolved": false
+          },
+          {
+            "severity": "major",
+            "detail": "Line 34 changed the speaker from Dillon to Cade ('34. Dillon' in source vs '34. Cade' in translation).",
+            "resolved": false
+          },
+          {
+            "severity": "major",
+            "detail": "Line 38 changed the speaker from Dillon to Cade ('38. Dillon' in source vs '38. Cade' in translation).",
+            "resolved": false
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "3c4d0f5895421badee15704ec357786d6724ad8e825fa261c6e995c6ce573841",
         "style_guide": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4"
       }
     }
