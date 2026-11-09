@@ -1351,7 +1351,6 @@ def run(job_id: str, *, resume_blocked: bool = False,
                 raise JobError("active chapter was removed")
             claim_path = folder / ".workflow" / "claims" / (chapter["unit_id"] + ".json")
             if claim_path.exists():
-                from datetime import datetime
                 expires = datetime.fromisoformat(read_json(claim_path)["expires_at"].replace("Z", "+00:00"))
                 if expires <= datetime.now(timezone.utc):
                     cli("cleanup-claims", slug)
