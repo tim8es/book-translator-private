@@ -179,13 +179,18 @@ force-pushes. Same-book/status collisions, rewritten upstream history, or
 exhausted push retries fail closed without silently overwriting state. A non-model failure (such as unsupported
 EPUB semantics, malformed input, or a failed canonical CLI stage) produces a
 durable **blocked** status when a status-only compare-and-swap publication is
-safe. The runner never commits potentially partial book mutations, does not
-release/take over ambiguous claims and requires operator inspection before
-retry. If the repository changed concurrently and even status-only publication
-is unsafe, the Actions step fails and no durable blocked status is promised.
-The scheduler skips blocked jobs and corrupt status files instead of retrying
-one poisoned request forever. After a terminal job the workflow dispatches
-**the next unpinned pending request**, rather than retrying the blocked ID.
+safe. The runner never commits potentially partial book mutations or releases/takes
+over ambiguous claims. An operator may resume only a `phase=model-blocked`
+job by dispatching `auto-translate.yml` with its exact `job_id` and
+`resume_blocked=true`. The runner rechecks the source hash, pinned engine,
+and absence of canonical claims/errors, records the recovery, and preserves
+the cumulative model-call count. Other blocked phases are not eligible for
+this recovery path. If the repository changed concurrently and even status-only
+publication is unsafe, the Actions step fails and no durable blocked status is
+promised. The scheduler skips blocked jobs and corrupt status files instead of
+retrying one poisoned request forever. After a terminal job the workflow
+dispatches **the next unpinned pending request**, rather than retrying the
+blocked ID.
 
 A Translator claim is committed *before* invoking the model. Reviewer uses a
 separate call, only receiving original, accepted translation, literary role
@@ -223,6 +228,9 @@ This is a **bounded initial MVP**, not unrestricted unattended production:
 - Automatic model decisions are not a substitute for a human literary review.
   Memory proposals may legitimately be empty; a syntactically valid model
   response alone does not prove all names or voice decisions are captured.
+- A source unit consisting only of external Markdown hyperlinks is preserved
+  exactly without a model call. The adapter validates every Markdown link
+  destination and keeps external link labels unchanged.
 - The runner now enforces a durable maximum of 36 model invocations per
   job by default. Override with repository variable OMNIROUTE_MODEL_CALL_LIMIT
   (integer 1–200). Each invocation is reserved and checkpointed **before**
