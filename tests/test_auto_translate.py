@@ -549,10 +549,13 @@ class AutomatedBookTests(unittest.TestCase):
     def test_external_links_and_labels_are_protected(self):
         source = "[*OceanofPDF.com*](https://oceanofpdf.com)\n"
         worker.check_markers(source, source)
+        worker.check_markers(source, "[OceanofPDF.com](https://oceanofpdf.com)\n")
         with self.assertRaisesRegex(worker.JobError, "link destination differs"):
             worker.check_markers(source, "[*OceanofPDF.com*](https://example.com)\n")
+        block_source = "<!-- bt-block:000001 -->\n" + source
         with self.assertRaisesRegex(worker.JobError, "external hyperlink label"):
-            worker.check_markers(source, "[OceanofPDF.com](https://oceanofpdf.com)\n")
+            worker.check_markers(block_source,
+                                 "<!-- bt-block:000001 -->\n[OceanofPDF.com](https://oceanofpdf.com)\n")
 
     def test_blocked_resume_is_audited_and_preserves_call_count(self):
         status = {"state": "blocked", "phase": "model-blocked", "active": None,
