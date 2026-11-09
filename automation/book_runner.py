@@ -74,6 +74,13 @@ def status_path(job_id: str) -> Path:
     return ROOT / "automation" / "status" / (safe_id(job_id) + ".json")
 
 
+def job_is_blocked(job_id: str) -> bool:
+    try:
+        return read_json(status_path(job_id)).get("state") == "blocked"
+    except (OSError, ValueError, JobError):
+        return False
+
+
 def normalize_identity(value: str) -> str:
     return " ".join(unicodedata.normalize("NFKC", value).casefold().split())
 
@@ -102,6 +109,14 @@ def external_link_only(source: str) -> bool:
 
 def _link_destination(match: re.Match) -> str:
     return match.group("destination").strip("<>")
+
+
+def _external_links(text: str) -> list[tuple[str, str, str]]:
+    return [
+        (match.group("image"), match.group("label"), _link_destination(match))
+        for match in MARKDOWN_LINK_RE.finditer(text)
+        if urllib.parse.urlsplit(_link_destination(match)).scheme.lower() in {"http", "https"}
+    ]
 
 
 def _mismatch_index(expected: list, actual: list) -> int:
@@ -907,13 +922,8 @@ def check_markers(source: str, translation: str) -> None:
         index = _mismatch_index(expected_links, actual_links)
         raise JobError(f"Markdown link destination differs at item {index} "
                        f"(source={len(expected_links)}, output={len(actual_links)})")
-    external = lambda text: [
-        (match.group("image"), match.group("label"), _link_destination(match))
-        for match in MARKDOWN_LINK_RE.finditer(text)
-        if urllib.parse.urlsplit(_link_destination(match)).scheme.lower() in {"http", "https"}
-    ]
-    expected_external = external(source)
-    actual_external = external(translation)
+    expected_external = _external_links(source)
+    actual_external = _external_links(translation)
     if expected_external != actual_external:
         index = _mismatch_index(expected_external, actual_external)
         raise JobError(f"external hyperlink label or destination differs at item {index} "
@@ -1269,11 +1279,18 @@ def main() -> int:
     try:
         status = run(job_id, resume_blocked=args.resume_blocked)
     except BookIdentityError as exc:
+        if args.resume_blocked and job_is_blocked(job_id):
+            print("Blocked job unchanged; resume preflight failed: " + str(exc)[:350], file=sys.stderr)
+            return 1
         status = {"schema_version": 1, "job_id": job_id, "book_slug": None,
             "state": "blocked", "phase": "book-match-requires-review",
             "failures": 0, "correction_rounds": {}, "last_error": str(exc)[:350]}
         checkpoint(job_id, status, None)
     except (JobError, ModelError, OSError, ValueError, KeyError, subprocess.TimeoutExpired) as exc:
+        if args.resume_blocked and job_is_blocked(job_id):
+            print("Blocked job unchanged; resume preflight failed: "
+                  + type(exc).__name__ + ": " + str(exc)[:300], file=sys.stderr)
+            return 1
         # Fail closed on ambiguous canonical mutations. Only commit a separate
         # blocked status, never the potentially half-updated book workspace.
         # A broken Git compare-and-swap may prevent even this safe checkpoint:
