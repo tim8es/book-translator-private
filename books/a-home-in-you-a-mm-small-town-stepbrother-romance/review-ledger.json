@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 18,
+  "next_sequence": 19,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -639,6 +639,63 @@
       },
       "shared_state_revisions": {
         "glossary": "55be6b8505e649c70ef65db5e586650aeb73168eaf262f496dc16905d60ef481",
+        "style_guide": "161238721ea1ef50a84f53819d7cfc61efda9123427d7d6cdbf695e9288230de"
+      }
+    },
+    {
+      "record_id": "887232db4fa84d8ebd41e90fbd0c8ce8",
+      "sequence": 18,
+      "unit_id": "chapter-000011",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "3a4f227fccd5c0a4d06d99accb39eedc94a401b1ff7b5efdcccedf32b84437b5",
+      "translation_sha256": "2f2fb413a638ea2038bf652ef01114aa62f1ba06e9b10930529ce21c14ca4ea8",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewer_session_id": "auto-886bde8dfe20-reviewer-24310ebf",
+      "reviewed_at": "2026-11-09T17:27:01Z",
+      "state_revision": "6aafaca49cfa73fd7bf541b52857759215ae6fa83d151e078a03b5604cf02f29",
+      "review_commit": "deb3bbbe682d185165d4f215a9f9e3696283898c",
+      "correction_round": 3,
+      "supersedes_record_id": "85d6501067294e20ac6d51d56c249270",
+      "quality_report": {
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "major",
+            "detail": "Glossary violation: 'Ms. Copeland' is translated as 'миссис Коупленд', but canonical glossary specifies 'Ms. Copeland is мисс Коупленд'.",
+            "resolved": false
+          },
+          {
+            "severity": "major",
+            "detail": "Grammar and agreement error in paragraph 8: 'синее клетчатое попона, которую я выбрал' uses neuter adjectives and verb with the feminine noun 'попона'. Correct form: 'синяя клетчатая попона, которую я выбрал'.",
+            "resolved": false
+          },
+          {
+            "severity": "major",
+            "detail": "Distortion of meaning in paragraph 27: 'like his smile and dimples made his face brighter somehow' was translated as 'делали его улыбку и ямочки каким-то образом светлее', swapping subject and object. The smile and dimples made his face brighter, not his smile and dimples brighter ('делали его лицо светлее').",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Erroneous double negation in paragraph 27: 'And I didn’t really hate him either' is rendered as 'Да и сам он мне не особо не нравился'. Correct phrasing should avoid the double negative, e.g. 'Да и неприязни я к нему не испытывал'.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Syntactic calque in paragraph 23: '«Дил, не поможете с Cade накрыть на стол...»' is unnatural in Russian. 'Дил, вы с Cade не поможете накрыть на стол...' correctly addresses both boys.",
+            "resolved": false
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "afe410553faa003895f096905e6d1581163dfcb918ce4722fa4b473a806eb5c5",
         "style_guide": "161238721ea1ef50a84f53819d7cfc61efda9123427d7d6cdbf695e9288230de"
       }
     }
