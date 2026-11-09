@@ -4,58 +4,49 @@
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
   "source_sha256": "3a3fce78317162b68bc1e82501456a74a783cfc96cb2640c463f381866007865",
   "state": "running",
-  "phase": "model-call-reserved",
-  "failures": 1,
+  "phase": "corrector-completed",
+  "failures": 0,
   "correction_rounds": {
     "chapter-000002": 1,
     "chapter-000003": 1,
     "chapter-000006": 2,
     "chapter-000009": 1,
-    "chapter-000011": 2
+    "chapter-000011": 3
   },
   "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
-  "updated_at": "2026-11-09T17:40:06.910721+00:00",
-  "active": {
-    "role": "corrector",
-    "chapter": 11,
-    "session_id": "auto-886bde8dfe20-corrector-f88611d7"
-  },
+  "updated_at": "2026-11-09T17:43:59.561796+00:00",
+  "active": null,
   "model_calls_started": 61,
-  "memory_glossary_saved": 42,
+  "memory_glossary_saved": 65,
   "pending_style": [
     {
-      "evidence": "The narration moves from past-tense scene description into thoughts such as “Was that what I was afraid of?” and “No, no, no.”",
-      "source_pattern": "First-person past-tense narration closely filtered through Dillon's thoughts, including immediate reactions, self-questioning, and occasional shifts into direct internal commentary.",
-      "translation_approach": "Use conversational first-person Russian and preserve the immediacy of the internal reactions without explaining or smoothing them away."
+      "evidence": "Dillon описывает происходящее через личные реакции, например размышляет, почему мать встречается с кем-то, и задаётся вопросом, не боится ли он перемен.",
+      "source_pattern": "Повествование от первого лица в прошедшем времени с непосредственными внутренними вопросами и оценками подростка.",
+      "translation_approach": "Сохранять близкую повествовательную перспективу, разговорную лексику и свободные переходы от описания к мыслям персонажа."
     },
     {
-      "evidence": "Dillon says “Fuck, I really needed to get away,” calls the boyfriend “fucking” lame, and reacts with “Fucking great.”",
-      "source_pattern": "Dillon's teenage voice is blunt and profane, with self-conscious, sometimes awkward phrasing and strong emotional reactions.",
-      "translation_approach": "Retain profanity, abruptness, and youthful informality where present; do not sanitize or elevate the voice."
+      "evidence": "Внутренние реплики содержат выражения вроде “Fuck” и “Fucking great”, особенно когда Dillon раздражён или встревожен.",
+      "source_pattern": "Разговорная речь и эмоциональные усилители, включая грубую лексику, характерны для внутренней речи Dillon.",
+      "translation_approach": "Сохранять степень резкости и неформальный регистр, не смягчая брань и не выравнивая внутреннюю речь до нейтрального литературного тона."
     },
     {
-      "evidence": "Dillon answers “Uh, okay. Cool?” while Cade gives an extended account of his grandmother, horse riding, and games.",
-      "source_pattern": "Dialogue contrasts Dillon's guarded, terse replies with Cade's outgoing, rapid, digressive speech.",
-      "translation_approach": "Keep Dillon's short, hesitant responses distinct from Cade's longer, loosely associative dialogue."
-    },
-    {
-      "evidence": "The passage repeatedly describes snow, the horses' smell, the farmhouse's boxwood, wood stoves, animals, and the surrounding fields and mountains.",
-      "source_pattern": "The narration uses concrete sensory details and recurring domestic and rural imagery to establish place and emotional attachment.",
-      "translation_approach": "Preserve tactile, olfactory, and visual details and the quiet accumulation of setting rather than compressing them."
+      "evidence": "Cade подробно рассказывает о доме, семье и увлечениях, тогда как Dillon отвечает короткими репликами вроде “Cool?” и “Yeah, sure”.",
+      "source_pattern": "Cade говорит много, свободно перескакивает между темами и звучит более общительно, чем сдержанный Dillon.",
+      "translation_approach": "Сохранять многословие Cade, его короткие повторы и разговорные вставки; реплики Dillon оставлять заметно более краткими."
     }
   ],
   "prompt_context": {
-    "role": "reviewer",
+    "role": "corrector",
     "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
     "loaded_contracts": [
       "AGENTS.md",
       "docs/TRANSLATION.md",
-      "docs/REVIEWER.md"
+      "docs/TRANSLATOR.md"
     ],
     "glossary_sha256": "afe410553faa003895f096905e6d1581163dfcb918ce4722fa4b473a806eb5c5",
     "style_guide_sha256": "161238721ea1ef50a84f53819d7cfc61efda9123427d7d6cdbf695e9288230de",
-    "system_chars": 22384,
-    "user_chars": 55163
+    "system_chars": 15840,
+    "user_chars": 54198
   },
   "memory_style_saved": 3,
   "last_error": "model transport timeout or connection failure",

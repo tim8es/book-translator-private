@@ -31,3 +31,6 @@ Use this file for recurring names, places, organizations, terms, nicknames, titl
 | Dragon Age Inquisition | Dragon Age Inquisition | title | Video game title; retained in Latin script. |
 | Call of Duty | Call of Duty | title | Video game title; retained in Latin script. |
 | Xbox | Xbox | term | Console name; retained in Latin script. |
+| Dil | Дил | nickname | Краткое обращение к Dillon. |
+| Ev | Ив | nickname | Краткое обращение к Evelyn. |
+| Ms. Copeland | мисс Коупленд | form of address | Обращение согласно канонической записи. |
