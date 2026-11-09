@@ -539,7 +539,20 @@ class AutomatedBookTests(unittest.TestCase):
             self.assertNotIn("chapter_count", user)
             self.assertNotIn("source_sha256", user)
             self.assertIn("0 protected EPUB marker(s) and 1 Markdown link(s)", user)
+            self.assertIn("ZXBTLINK", user)
+            self.assertNotIn("https://oceanofpdf.com", user)
             self.assertIn("Preserve a unit consisting only of external links exactly", _system)
+
+    def test_link_boundaries_restore_original_destinations_and_translated_labels(self):
+        source = "Before [Read more](https://example.com/book) after.\n"
+        masked, links = worker.mask_markdown_links(source)
+        self.assertEqual(len(links), 1)
+        self.assertNotIn("https://example.com/book", masked)
+        translated = masked.replace("Read more", "Подробнее")
+        restored = worker.restore_markdown_links(source, translated)
+        self.assertEqual(restored, "Before [Подробнее](https://example.com/book) after.\n")
+        with self.assertRaisesRegex(worker.JobError, "link boundary sequence differs"):
+            worker.restore_markdown_links(source, "Before Подробнее after.\n")
 
     def test_external_link_only_source_is_deterministically_preserved(self):
         link = "[*OceanofPDF.com*](https://oceanofpdf.com)\n"
