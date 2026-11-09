@@ -567,6 +567,25 @@ class AutomatedBookTests(unittest.TestCase):
             worker.approve_blocked_resume({"state": "blocked", "phase": "operator-intervention-required",
                                           "active": None})
 
+    def test_resume_preflight_failure_does_not_rewrite_blocked_status(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            job_id = "a" * 32
+            worker.store_json(root / "automation" / "status" / (job_id + ".json"), {
+                "schema_version": 1, "job_id": job_id, "state": "blocked",
+                "phase": "model-blocked", "active": None, "failures": 3,
+            })
+            with patch.object(worker, "ROOT", root), \
+                 patch.object(worker, "run", side_effect=worker.JobError("preflight stopped")), \
+                 patch.object(worker, "block_on_unexpected_failure") as quarantine, \
+                 patch.object(sys, "argv", ["book_runner.py", "--job-id", job_id,
+                                               "--resume-blocked"]):
+                self.assertEqual(worker.main(), 1)
+            quarantine.assert_not_called()
+            stored = worker.read_json(root / "automation" / "status" / (job_id + ".json"))
+            self.assertEqual(stored["state"], "blocked")
+            self.assertEqual(stored["phase"], "model-blocked")
+
     def test_markers_are_order_and_identity_bound(self):
         source = "<!-- bt-block:000001 -->\nFirst [link](#x)\n<!-- bt-block:000002 -->\n"
         worker.check_markers(source, "<!-- bt-block:000001 -->\nПервый [ссылка](#x)\n<!-- bt-block:000002 -->\n")
