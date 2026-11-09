@@ -625,6 +625,52 @@ class AutomatedBookTests(unittest.TestCase):
             worker.approve_interrupted_resume(unchanged, unit, claim, [])
         self.assertEqual(unchanged["state"], "blocked")
 
+    def test_run_resumes_live_interrupted_claim(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            job = "f" * 32
+            intake = root / "intake" / "auto" / job
+            intake.mkdir(parents=True)
+            source = intake / "source.epub"
+            self.make_epub(source, "Stable Title", "Writer")
+            digest = hashlib.sha256(source.read_bytes()).hexdigest()
+            worker.store_json(intake / "request.json", {
+                "schema_version": 1, "job_id": job, "source_sha256": digest,
+                "target_language": "ru", "source_filename": "stable-title.epub",
+            })
+            book = root / "books" / "stable-title"
+            book.mkdir(parents=True)
+            revision = "a" * 40
+            worker.store_json(book / "metadata.json", {
+                "title": "Stable Title", "author": "Writer", "target_language": "ru",
+                "source": {"sha256": digest}, "workflow": {"resolved_revision": revision},
+            })
+            chapter = {"unit_id": "chapter-000006", "number": 6}
+            claim = {"unit_id": chapter["unit_id"], "role": "translator",
+                     "session_id": "session-1", "expires_at": "2099-01-01T00:00:00+00:00"}
+            worker.store_json(book / ".workflow" / "claims" / (chapter["unit_id"] + ".json"), claim)
+            worker.store_json(root / "automation" / "status" / (job + ".json"), {
+                "schema_version": 1, "job_id": job, "book_slug": "stable-title",
+                "source_sha256": digest, "workflow_revision": revision,
+                "state": "blocked", "phase": "operator-intervention-required",
+                "active": {"role": "corrector", "chapter": 6, "session_id": "session-1"},
+                "model_calls_started": 26, "failures": 1,
+            })
+            engine = root / "engine"
+            engine.mkdir()
+            with patch.object(worker, "ROOT", root), \\
+                 patch.object(worker, "install_engine", return_value=(engine, revision)), \\
+                 patch.object(worker, "verify"), \\
+                 patch.object(worker, "chapter_data", return_value=({}, {}, [chapter])), \\
+                 patch.object(worker, "cli", return_value=json.dumps({"claims": [claim], "errors": []})), \\
+                 patch.object(worker, "checkpoint"), \\
+                 patch.object(worker, "process_claim") as process:
+                status = worker.run(job, resume_interrupted=True)
+            self.assertEqual(status["state"], "running")
+            self.assertEqual(status["model_calls_started"], 26)
+            self.assertEqual(status["active"]["session_id"], "session-1")
+            process.assert_called_once_with(job, "stable-title", status, engine)
+
     def test_conflicting_glossary_proposal_is_rejected_without_changing_canonical_glossary(self):
         with tempfile.TemporaryDirectory() as folder:
             book = Path(folder)
