@@ -66,3 +66,4 @@ Add recurring characters as needed.
 | --- | --- | --- |
 | Standard copyright disclaimer and all-rights-reserved statement | Формальный юридический регистр, стандартная формулировка для российских изданий | No part of this book may be reproduced... All rights reserved |
 | Author listed as publisher (self-published imprint) | Имя автора сохранено в поле издателя, без добавления издательского дома | Published by Courtney W. Dixon |
+| Free indirect thought shifting into present perfect ('haven’t been whole') | Передавать настоящим временем для сохранения непосредственности переживания в момент мысли персонажа | I had been apart from him for too long, and I haven’t been whole since he was ripped from me. |
