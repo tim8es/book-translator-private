@@ -851,7 +851,7 @@ def context(engine: Path, slug: str, chapter: dict, role: str,
                     ("title", "author", "source_language", "target_language")
                     if isinstance(metadata.get(key), str)}
     user = (
-        f"TASK SCOPE: This call handles extracted source unit {chapter['number']} of "
+        f"TASK SCOPE: This call handles extracted source unit {index + 1} of "
         f"{len(chapters)}. This is an extraction-unit count, not a claim about the "
         "book's editorial chapter count. The complete source for this call is the "
         "single unit below; translate or review only what it contains. Other units "
