@@ -607,6 +607,38 @@ class AutomatedBookTests(unittest.TestCase):
             worker.approve_blocked_resume({"state": "blocked", "phase": "operator-intervention-required",
                                           "active": None})
 
+    def test_interrupted_resume_reuses_only_the_matching_live_claim(self):
+        status = {"state": "blocked", "phase": "operator-intervention-required",
+                  "active": {"role": "corrector", "chapter": 6, "session_id": "session-1"},
+                  "failures": 1, "model_calls_started": 26,
+                  "last_error": "glossary conflict"}
+        unit = {"unit_id": "chapter-000006"}
+        claim = {"unit_id": "chapter-000006", "role": "translator", "session_id": "session-1"}
+        worker.approve_interrupted_resume(status, unit, claim, [claim])
+        self.assertEqual(status["state"], "running")
+        self.assertEqual(status["active"]["session_id"], "session-1")
+        self.assertEqual(status["model_calls_started"], 26)
+        self.assertEqual(status["recoveries"][0]["action"], "resume-interrupted-claim")
+        unchanged = {"state": "blocked", "phase": "operator-intervention-required",
+                     "active": {"role": "corrector", "chapter": 6, "session_id": "session-1"}}
+        with self.assertRaisesRegex(worker.JobError, "canonical active claim"):
+            worker.approve_interrupted_resume(unchanged, unit, claim, [])
+        self.assertEqual(unchanged["state"], "blocked")
+
+    def test_conflicting_glossary_proposal_is_rejected_without_changing_canonical_glossary(self):
+        with tempfile.TemporaryDirectory() as folder:
+            book = Path(folder)
+            current = ("# Glossary\n\n| Original | Translation | Type | Notes |\n"
+                       "| --- | --- | --- | --- |\n| Dillon | Dillon | character | Canonical |\n")
+            (book / "glossary.md").write_text(current, encoding="utf-8")
+            accepted, rejected = worker.filter_conflicting_glossary_proposals(book, [
+                {"original": "Dillon", "translation": "Диллон", "type": "character", "notes": "Conflict"},
+                {"original": "Mara", "translation": "Мара", "type": "character", "notes": "New"},
+            ])
+            self.assertEqual(rejected, 1)
+            self.assertEqual([row["original"] for row in accepted], ["Mara"])
+            self.assertEqual((book / "glossary.md").read_text("utf-8"), current)
+
     def test_resume_preflight_failure_does_not_rewrite_blocked_status(self):
         with tempfile.TemporaryDirectory() as folder:
             root = Path(folder)
