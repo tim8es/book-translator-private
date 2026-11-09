@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 17,
+  "next_sequence": 18,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -576,6 +576,63 @@
           {
             "severity": "major",
             "detail": "Несогласованность имен и отсутствие обязательных терминов в глоссарии: имя Dillon заменено на 'Дилл' в репликах знакомства, где в оригинале звучит полное имя ('ты должен быть Диллом'). В каноническом глоссарии отсутствуют новые персонажи и географические объекты главы: Jared Beckman -> Джаред Бекман, Evelyn Copeland -> Эвелин Коупленд, Aphrodite -> Афродита, Shenandoah River -> река Шенандоа, Harpers Ferry -> Харперс-Ферри.",
+            "resolved": false
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "55be6b8505e649c70ef65db5e586650aeb73168eaf262f496dc16905d60ef481",
+        "style_guide": "161238721ea1ef50a84f53819d7cfc61efda9123427d7d6cdbf695e9288230de"
+      }
+    },
+    {
+      "record_id": "85d6501067294e20ac6d51d56c249270",
+      "sequence": 17,
+      "unit_id": "chapter-000011",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "3a4f227fccd5c0a4d06d99accb39eedc94a401b1ff7b5efdcccedf32b84437b5",
+      "translation_sha256": "3c4cd89a401d6267e7adfe9a30b50c4bf049fe58d7edb5c66508e7527d93afa8",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewer_session_id": "auto-886bde8dfe20-reviewer-64bf9eeb",
+      "reviewed_at": "2026-11-09T13:44:20Z",
+      "state_revision": "eee952feb26400b3687c2c3b2f3faa35ac3dcb742d7e473934139e04a2020728",
+      "review_commit": "17b5dbd4ae3db78bf40dc131a2793c94e8b3928c",
+      "correction_round": 2,
+      "supersedes_record_id": "592db64ed56848488010c65fa96dc986",
+      "quality_report": {
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "critical",
+            "detail": "Catastrophic text omission: approximately 60-70% of the source chapter was completely omitted. Missing passages include: Dillon's reflections on his deceased father and his mother's dating; the full discussion between Dillon and his mother in the barn; walking back to the stone house and entering the mudroom; Jared and Cade's arrival at the front door; Dillon and Cade setting the dining table while Cade speaks at length about his grandmother, riding, and video games; their discussion about hobbies and dating; the full family dinner scene including Jared discussing truck driving and fishing in West Virginia; Dillon and Cade doing the dishes; Jared and Mom kissing in the parlor and discussing moving in; Cade taking Dillon's hand and going up to his room; and the boys playing Skyrim together on the PC.",
+            "resolved": false
+          },
+          {
+            "severity": "critical",
+            "detail": "Pervasive machine-translation errors and nonsense renderings throughout the translated fragments: 'dimples' translated as 'подбородки' (chins), producing 'с двумя большими темными подбородками с каждой стороны щек' and 'Это были подбородки и густые подбородки' (for dimples and thick eyelashes); 'sixteen hands' (equine height measurement) translated as 'вседозволенную лошадь за шестнадцать дюймов'; 'sketch pad' translated as 'рисовый блок'; 'pencil case' as 'карандашный блок'; 'kneaded eraser' as 'клеенка'; 'boxwood' as 'буковый сад'; 'Blue Heeler' as 'голубой пудель'; 'horses greeted me with snorts' as 'лошади приветствовали меня хрюканьем'; and 'temperature was freezing' as 'температура замерзала'.",
+            "resolved": false
+          },
+          {
+            "severity": "major",
+            "detail": "Glossary violations and missing canonical terminology: 'Blue Heeler' is defined in the glossary as Dillon's dog breed, but was translated as 'голубой пудель' instead of 'голубой хилер' / 'австралийский хилер'. The chapter heading 'Leesburg, Virginia' was left in English despite the canonical entry 'Лисбург, Вирджиния'. In addition, the corrector must establish consistent renderings for newly introduced characters, places, and terms: 'Jared Beckman' -> 'Джаред Бекман' ('Jared' -> 'Джаред'); 'Evelyn Copeland' -> 'Эвелин Коупленд' ('Ev' -> 'Ив'); 'Hawk' -> 'Хок'; 'Snickerdoodle' -> 'Сникердудл'; 'Aphrodite' -> 'Афродита'; 'Shenandoah River' -> 'река Шенандоа'; 'Harpers Ferry' -> 'Харперс-Ферри'; 'West Virginia' -> 'Западная Вирджиния'.",
+            "resolved": false
+          },
+          {
+            "severity": "major",
+            "detail": "Severe stylistic distortion and ungrammatical phrasing: Dillon's teenage profanity ('Fuck, I really needed to get away', 'Why did Mom have to fucking date, anyway?') was sanitized into 'Фу' or omitted. Sentences throughout the draft suffer from ungrammatical machine syntax (e.g., 'Она вынесла нос из стойлища, достала к себе', 'Сникердодел, карика, вписывалась в мои ноги, ищя ласковость', 'Я уже мог почувствовать, что он был выходками', 'Я ненавидел, когда она меня колыбелила').",
+            "resolved": false
+          },
+          {
+            "severity": "major",
+            "detail": "Heading formatting and localization: '## *Leesburg, Virginia - February 2017*' must be fully localized into Russian as '## *Лисбург, Вирджиния — февраль 2017 года*'.",
             "resolved": false
           }
         ]
