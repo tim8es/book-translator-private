@@ -538,6 +538,7 @@ class AutomatedBookTests(unittest.TestCase):
             self.assertIn('"target_language": "ru"', user)
             self.assertNotIn("chapter_count", user)
             self.assertNotIn("source_sha256", user)
+            self.assertIn("0 protected EPUB marker(s) and 1 Markdown link(s)", user)
             self.assertIn("Preserve a unit consisting only of external links exactly", _system)
 
     def test_external_link_only_source_is_deterministically_preserved(self):
@@ -552,6 +553,8 @@ class AutomatedBookTests(unittest.TestCase):
         worker.check_markers(source, "[OceanofPDF.com](https://oceanofpdf.com)\n")
         with self.assertRaisesRegex(worker.JobError, "link destination differs"):
             worker.check_markers(source, "[*OceanofPDF.com*](https://example.com)\n")
+        with self.assertRaisesRegex(worker.JobError, "link destination differs"):
+            worker.check_markers(source, "The link was omitted.\n")
         block_source = "<!-- bt-block:000001 -->\n" + source
         with self.assertRaisesRegex(worker.JobError, "external hyperlink label"):
             worker.check_markers(block_source,
