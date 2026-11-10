@@ -46,8 +46,9 @@ secret to this public repository.
      with artifact_sha256, then deliver EPUB to the corresponding chat.
    - completed_preview: perform the same SHA check, but explicitly label
      it as a user-approved UNREVIEWED preview.
-   - blocked: send phase, reason, blocked_unit_id, reviewed_units and
-     total_units; do not send a partial book.
+   - blocked: send phase, reason, blocked_unit_id, optional
+     deferred_review_units, reviewed_units and total_units; do not send a
+     partial book.
    - stalled: alert about a POSSIBLE stall; inspect Actions and live claims
      before deciding whether a job truly crashed.
    - integrity_failed: raise an error and never deliver an unverified EPUB.
