@@ -102,6 +102,16 @@ class BookJobMonitorTests(unittest.TestCase):
         self.assertEqual(e["total_units"], 7)
         self.assertEqual(e["correction_rounds"]["chapter-000007"], 3)
 
+    def test_deferred_review_blocks_delivery_and_identifies_units(self):
+        self.blocked()
+        status = monitor.read_json(self.status_file)
+        status.update({"phase": "review-deferred-requires-operator",
+                       "deferred_review_units": ["chapter-000007"]})
+        write_json(self.status_file, status)
+        event = monitor.inspect(self.root, JOB, NOW, False)
+        self.assertIn("deferred chapters need a current PASS", event["reason"])
+        self.assertEqual(event["deferred_review_units"], ["chapter-000007"])
+
     def test_superseded_blocked_request_does_not_duplicate_alert(self):
         self.blocked()
         status = monitor.read_json(self.status_file)
