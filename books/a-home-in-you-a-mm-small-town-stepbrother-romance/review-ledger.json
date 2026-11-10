@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 25,
+  "next_sequence": 26,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -1230,6 +1230,115 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "c5c8b0bdf74fd6b9a41a3b0676cd9851bcfe155e624ffa0d9e6ed48c070f7a6e",
+        "style_guide": "3ec7c485cf41741084ffe49b72d2b18ed9bd650a00a2ba00554605abadea5e3a"
+      }
+    },
+    {
+      "record_id": "c6d5884afaa941ae85781bd3cf46e3a3",
+      "sequence": 25,
+      "unit_id": "chapter-000013",
+      "outcome": "PASS",
+      "source_sha256": "c8510154419e296bfdf99d257f8e1b8e1baf0c02c0e937e4d3eecd532cb9db46",
+      "translation_sha256": "f98bdee6d9e3506b469869322d4bb947b216af779093732478a6a4c9097f84c6",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewer_session_id": "auto-886bde8dfe20-reviewer-c21c6e24",
+      "reviewed_at": "2026-11-10T12:26:16Z",
+      "state_revision": "e56467a9e1a3229fddadd8b93d31464e02abae5619e16dcd804da4fd6b639d6c",
+      "review_commit": "dfc7971156cc73ba1527a2e3ff1a182d67f4dfbb",
+      "correction_round": 1,
+      "supersedes_record_id": "d47054bee2fb43f794c8c5ea9fc6902e",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "terminology-recheck-1",
+            "category": "terminology",
+            "severity": "major",
+            "detail": "Исправлено: имя Evelyn передано в соответствии с глоссарием как «Эвелин».",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Evelyn was incredibly nice.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Эвелин была невероятно доброй.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "d47054bee2fb43f794c8c5ea9fc6902e",
+              "finding_id": "terminology-1"
+            }
+          },
+          {
+            "id": "meaning-recheck-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Исправлено: романтический смысл “had a crush on me” сохранён формулировкой «он тоже в меня втрескался».",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "I liked to imagine he had a crush on me, too, and that he liked my dimples, so I smiled a lot for him.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Мне нравилось представлять, что он тоже в меня втрескался и что ему нравились мои ямочки, поэтому я часто ему улыбался.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "d47054bee2fb43f794c8c5ea9fc6902e",
+              "finding_id": "meaning-1"
+            }
+          },
+          {
+            "id": "meaning-recheck-2",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Исправлено: «столько силы» не добавляет отсутствующего в оригинале объекта и сохраняет открытость исходного вопроса.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "How did someone so in their shell have so much power? I wasn’t sure that was the right word. Strength?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Как у такого замкнутого человека могло быть столько силы? Не уверен, что это подходящее слово. Стойкости?",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "d47054bee2fb43f794c8c5ea9fc6902e",
+              "finding_id": "meaning-2"
+            }
+          },
+          {
+            "id": "meaning-recheck-3",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Исправлено: физическое давление передано словами «колени были прижаты друг к другу».",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "We sat next to each other in the front row with our knees pressed up against each other despite the heat outside.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Мы сидели рядом в первом ряду, и наши колени были прижаты друг к другу, несмотря на жару.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "d47054bee2fb43f794c8c5ea9fc6902e",
+              "finding_id": "meaning-3"
+            }
           }
         ]
       },
