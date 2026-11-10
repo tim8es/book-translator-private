@@ -72,6 +72,14 @@ class WorkflowEpicCloseoutContractTests(unittest.TestCase):
                 self.assertIn("cancel-in-progress: false", source)
                 self.assertIn("contents: write", source)
                 self.assertIn("  schedule:", source)
+            elif filename == "auto-translate.yml":
+                # Explicit book-scoped mode changes may wake Auto. General book
+                # checkpoint commits must NOT recursively trigger model calls.
+                self.assertIn("  push:", source)
+                self.assertIn("branches: [main]", source)
+                self.assertIn("'books/**/.workflow/auto-control.json'", source)
+                self.assertIn("      - 'books/**/.workflow/auto-control.json'", source)
+                self.assertNotIn("      - 'books/**'", source)
             elif filename in {"policy-change-source-intake.yml",
                               "policy-change-final-delivery.yml",
                               "wings-of-starlight-final-delivery.yml"}:

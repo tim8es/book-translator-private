@@ -612,6 +612,83 @@ def request_for(job_id: str) -> dict:
     return request
 
 
+def auto_mode(slug: str) -> str:
+    """Book-scoped operator preference. Literary authority remains progress/claims."""
+    control = ROOT / "books" / slug / ".workflow" / "auto-control.json"
+    if not control.exists():
+        return "auto"
+    data = read_json(control)
+    if data.get("schema_version") != 1 or data.get("mode") not in {"auto", "chatops"}:
+        raise JobError("invalid book-scoped Auto control")
+    return data["mode"]
+
+
+def auto_resume_requested(status: dict) -> bool:
+    """A newer explicit ChatOps resume-auto can authorize model-blocked recovery."""
+    if (status.get("state") != "blocked" or status.get("phase") != "model-blocked"
+            or status.get("active") is not None):
+        return False
+    slug = status.get("book_slug")
+    if not isinstance(slug, str) or not re.fullmatch(r"[a-z0-9][a-z0-9-]{0,99}", slug):
+        return False
+    path = ROOT / "books" / slug / ".workflow" / "auto-control.json"
+    if not path.exists():
+        return False
+    control = read_json(path)
+    if control.get("schema_version") != 1 or control.get("mode") != "auto":
+        return False
+    try:
+        signal = datetime.fromisoformat(control["updated_at"].replace("Z", "+00:00"))
+        block = datetime.fromisoformat(status["updated_at"].replace("Z", "+00:00"))
+    except (KeyError, TypeError, ValueError) as exc:
+        raise JobError("invalid Auto resume timestamp") from exc
+    if signal.tzinfo is None or block.tzinfo is None:
+        raise JobError("Auto resume timestamps must include time zones")
+    return signal > block
+
+
+def book_key(job_id: str) -> str:
+    """Stable GitHub concurrency key; unlike job IDs it groups the same book."""
+    state = status_path(job_id)
+    if state.exists():
+        slug = read_json(state).get("book_slug")
+        if isinstance(slug, str) and re.fullmatch(r"[a-z0-9][a-z0-9-]{0,99}", slug):
+            return slug
+    request = request_for(job_id)
+    # Before a workspace is initialized, identical source/language jobs share a lane.
+    seed = request["source_sha256"] + ":" + request["target_language"]
+    return "intake-" + hashlib.sha256(seed.encode("utf-8")).hexdigest()[:32]
+
+
+def ready_jobs(limit: int = 200) -> list[dict]:
+    """Discover independent book jobs without prioritizing one long-running book."""
+    work = []
+    keys = set()
+    for path in sorted((ROOT / "intake" / "auto").glob("*/request.json")):
+        job_id = path.parent.name
+        if not ID.fullmatch(job_id):
+            continue
+        state_file = status_path(job_id)
+        try:
+            if state_file.exists():
+                state = read_json(state_file)
+                if state.get("state") in FINAL and not auto_resume_requested(state):
+                    continue
+                if state.get("state") == "paused" and auto_mode(state["book_slug"]) != "auto":
+                    continue
+            key = book_key(job_id)
+        except (OSError, ValueError, KeyError, JobError) as exc:
+            print(f"Skipping invalid job {job_id}: {type(exc).__name__}", file=sys.stderr)
+            continue
+        if key in keys:
+            continue
+        keys.add(key)
+        work.append({"job_id": job_id, "book_key": key})
+        if len(work) >= limit:
+            break
+    return work
+
+
 def select(explicit: str | None) -> str:
     if explicit:
         safe_id(explicit)
@@ -630,7 +707,11 @@ def select(explicit: str | None) -> str:
             # Recovery of this job requires explicit operator intervention.
             print(f"Skipping unreadable automation status for {job_id}", file=sys.stderr)
             continue
-        if recorded.get("state") not in FINAL:
+        if recorded.get("state") == "paused":
+            if auto_mode(recorded["book_slug"]) == "auto":
+                return job_id
+            continue
+        if recorded.get("state") not in FINAL or auto_resume_requested(recorded):
             return job_id
     return ""
 
@@ -663,7 +744,8 @@ def replay_disjoint_checkpoint(base: str, local_commit: str, remote: str,
             cwd=ROOT, capture_output=True)
         if ancestor.returncode == 1 and behind.returncode == 0:
             raise JobError("remote main is behind checkpoint base; retry fetch")
-        raise JobError("upstream history diverged; refusing automatic checkpoint")
+        raise JobError("upstream history diverged; refusing automatic checkpoint "
+                       f"(base={base[:12]}, remote={remote[:12]})")
     if git("diff", "--name-only", base, remote, "--", *paths):
         raise JobError("remote changed this job's book/status; refusing stale checkpoint")
 
@@ -722,17 +804,22 @@ def checkpoint(job_id: str, status: dict, slug: str | None) -> None:
         "-c", "user.email=41898282+github-actions[bot]@users.noreply.github.com",
         "commit", "-m", f"auto({job_id[:12]}): {status['phase']}")
     local_commit = git("rev-parse", "HEAD")
-    for attempt in range(8):
+    for attempt in range(32):
         git("fetch", "--quiet", "origin", "main")
         remote = git("rev-parse", "origin/main")
         try:
             candidate = (local_commit if remote == base else
                          replay_disjoint_checkpoint(base, local_commit, remote, paths))
         except JobError as exc:
-            if str(exc) == "remote main is behind checkpoint base; retry fetch" and attempt < 7:
-                # Bounded re-fetch only. A genuinely rewritten history or any
-                # overlapping book/status write remains an immediate hard stop.
-                time.sleep(1)
+            if str(exc) == "remote main is behind checkpoint base; retry fetch":
+                if attempt == 31:
+                    raise JobError("remote ref remained stale after 32 fetches "
+                                   f"(base={base[:12]}, remote={remote[:12]})") from exc
+                # GitHub's read replicas can briefly lag the runner's checkout.
+                # Never retry a genuine rewrite or a same-book/status conflict.
+                print(f"Stale origin/main at checkpoint {attempt+1}/32: "
+                      f"base={base[:12]} remote={remote[:12]}", file=sys.stderr)
+                time.sleep(1 + attempt // 8)
                 continue
             raise
         result = subprocess.run(
@@ -740,9 +827,16 @@ def checkpoint(job_id: str, status: dict, slug: str | None) -> None:
             cwd=ROOT, capture_output=True, text=True)
         if result.returncode == 0:
             return
-        # A competing writer may move main during our push. Recheck every
-        # target path against the ORIGINAL base before trying again.
-    raise JobError("could not publish checkpoint after bounded Git retries")
+        # Retrying is safe ONLY for a rejected fast-forward update. A different
+        # Git transport/permission error must not replay an ambiguous mutation.
+        rejection = result.stderr.lower()
+        if not any(token in rejection for token in
+                   ("non-fast-forward", "fetch first", "stale info", "rejected")):
+            raise JobError("checkpoint push failed for a non-concurrency reason")
+        print(f"Concurrent checkpoint push rejected at attempt {attempt+1}/32 "
+              f"(base={base[:12]}, remote={remote[:12]})", file=sys.stderr)
+        time.sleep(1 + attempt // 8)
+    raise JobError("could not publish checkpoint after 32 guarded Git retries")
 
 
 def install_engine(revision: str | None) -> tuple[Path, str]:
@@ -1696,6 +1790,8 @@ def run(job_id: str, *, resume_blocked: bool = False,
     request = request_for(job_id)
     current = status_path(job_id)
     status = read_json(current) if current.exists() else None
+    if not resume_blocked and not resume_interrupted and status and auto_resume_requested(status):
+        resume_blocked = True
     if resume_blocked and resume_interrupted:
         raise JobError("choose only one recovery mode")
     if resume_blocked and (status is None or status.get("state") != "blocked"):
@@ -1826,6 +1922,35 @@ def run(job_id: str, *, resume_blocked: bool = False,
             verify(slug)
         if (folder / ".workflow" / "waves" / "active.json").exists():
             raise JobError("active literary wave requires wave-specific worker routing")
+        mode = auto_mode(slug)
+        if mode == "chatops" and status["state"] in {"running", "paused"}:
+            active = status.get("active")
+            if isinstance(active, dict):
+                _, _, chapters = chapter_data(slug)
+                chapter = next((c for c in chapters
+                                if c["number"] == active["chapter"]), None)
+                if chapter is None:
+                    raise JobError("paused Auto claim unit disappeared")
+                claim_path = folder / ".workflow" / "claims" / (chapter["unit_id"] + ".json")
+                if claim_path.exists():
+                    claim_data = read_json(claim_path)
+                    if claim_data.get("session_id") == active["session_id"]:
+                        expiry = datetime.fromisoformat(
+                            claim_data["expires_at"].replace("Z", "+00:00"))
+                        if expiry <= datetime.now(timezone.utc):
+                            cli("cleanup-claims", slug)
+                        else:
+                            cli("release", slug, str(chapter["number"]),
+                                "--session-id", active["session_id"])
+            status.update({"state": "paused", "phase": "paused-for-chatops",
+                           "active": None})
+            checkpoint(job_id, status, slug)
+            return status
+        if status["state"] == "paused":
+            status.update({"state": "running", "phase": "resumed-from-chatops",
+                           "active": None})
+            checkpoint(job_id, status, slug)
+            return status
         if status.get("active"):
             active = status["active"]
             _, _, chapters = chapter_data(slug)
@@ -1833,14 +1958,26 @@ def run(job_id: str, *, resume_blocked: bool = False,
             if chapter is None:
                 raise JobError("active chapter was removed")
             claim_path = folder / ".workflow" / "claims" / (chapter["unit_id"] + ".json")
-            if claim_path.exists():
-                expires = datetime.fromisoformat(read_json(claim_path)["expires_at"].replace("Z", "+00:00"))
-                if expires <= datetime.now(timezone.utc):
-                    cli("cleanup-claims", slug)
-                    status["active"] = None
-                    status["phase"] = "expired-claim-cleaned"
-                    checkpoint(job_id, status, slug)
-                    return status
+            if not claim_path.exists():
+                # Another operator may have completed/released the claim while
+                # Auto was suspended. Replan; do not re-call the model blindly.
+                status["active"] = None
+                status["phase"] = "reconciled-released-claim"
+                checkpoint(job_id, status, slug)
+                return status
+            owned = read_json(claim_path)
+            if owned.get("session_id") != active["session_id"]:
+                status.update({"state": "paused", "phase": "waiting-on-other-claim",
+                               "active": None})
+                checkpoint(job_id, status, slug)
+                return status
+            expires = datetime.fromisoformat(owned["expires_at"].replace("Z", "+00:00"))
+            if expires <= datetime.now(timezone.utc):
+                cli("cleanup-claims", slug)
+                status["active"] = None
+                status["phase"] = "expired-claim-cleaned"
+                checkpoint(job_id, status, slug)
+                return status
             process_claim(job_id, slug, status, engine)
             return status
         role, chapter = canonical_dispatch(slug, status)
@@ -1907,19 +2044,37 @@ def publish_outputs(job_id: str, status: dict) -> None:
             print("continue_queue=true", file=stream)
         elif status["state"] == "running":
             print("continue=true", file=stream)
-        elif status["state"] == "blocked":
-            # Never re-dispatch the blocked ID. Continue the queue with an
-            # unpinned job selection, allowing unrelated books to progress.
+        elif status["state"] in {"blocked", "paused"}:
+            # Handed-off or blocked books must not spawn another Auto model call.
+            # Selection skips paused books until ChatOps resumes their mode.
             print("continue_queue=true", file=stream)
 
 
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--select", action="store_true")
+    parser.add_argument("--book-key", action="store_true")
+    parser.add_argument("--list-ready-json", action="store_true")
     parser.add_argument("--job-id")
     parser.add_argument("--resume-blocked", action="store_true")
     parser.add_argument("--resume-interrupted", action="store_true")
     args = parser.parse_args()
+    if args.list_ready_json:
+        if args.select or args.book_key:
+            parser.error("list-ready cannot be combined with select/book-key")
+        if args.job_id:
+            job_id = safe_id(args.job_id)
+            print(json.dumps([{"job_id": job_id, "book_key": book_key(job_id)}]))
+        else:
+            if args.resume_blocked or args.resume_interrupted:
+                parser.error("blocked resume must select one explicit job ID")
+            print(json.dumps(ready_jobs(), ensure_ascii=False))
+        return 0
+    if args.book_key:
+        if args.select or args.resume_blocked or args.resume_interrupted:
+            parser.error("book key can only be queried for a job")
+        print(book_key(safe_id(args.job_id)))
+        return 0
     if args.select:
         if args.resume_blocked or args.resume_interrupted:
             parser.error("recovery flags cannot be combined with --select")
@@ -1930,7 +2085,8 @@ def main() -> int:
         status = run(job_id, resume_blocked=args.resume_blocked,
                      resume_interrupted=args.resume_interrupted)
     except BookIdentityError as exc:
-        if (args.resume_blocked or args.resume_interrupted) and job_is_blocked(job_id):
+        if (args.resume_blocked or args.resume_interrupted or
+                (job_is_blocked(job_id) and auto_resume_requested(read_json(status_path(job_id))))) and job_is_blocked(job_id):
             print("Blocked job unchanged; resume preflight failed: " + str(exc)[:350], file=sys.stderr)
             return 1
         status = {"schema_version": 1, "job_id": job_id, "book_slug": None,
@@ -1938,7 +2094,8 @@ def main() -> int:
             "failures": 0, "correction_rounds": {}, "last_error": str(exc)[:350]}
         checkpoint(job_id, status, None)
     except (JobError, ModelError, OSError, ValueError, KeyError, subprocess.TimeoutExpired) as exc:
-        if (args.resume_blocked or args.resume_interrupted) and job_is_blocked(job_id):
+        if (args.resume_blocked or args.resume_interrupted or
+                (job_is_blocked(job_id) and auto_resume_requested(read_json(status_path(job_id))))) and job_is_blocked(job_id):
             print("Blocked job unchanged; resume preflight failed: "
                   + type(exc).__name__ + ": " + str(exc)[:300], file=sys.stderr)
             return 1
