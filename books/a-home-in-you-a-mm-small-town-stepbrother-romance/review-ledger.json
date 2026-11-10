@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 50,
+  "next_sequence": 51,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -3771,6 +3771,51 @@
           "structure": true
         },
         "findings": []
+      }
+    },
+    {
+      "record_id": "127eddf297b14fd891661cfdef623dc2",
+      "sequence": 50,
+      "unit_id": "chapter-000050",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "68e504d4c8761a214564117a929168e04841acb5cdbb70fbb990ee78a510f1a1",
+      "translation_sha256": "482e7170dd3b10a216ca659d2e45c6fbf8a0a2f11a3ef2267c6e4c8c4e06ba82",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewer_session_id": "homeinyou-reviewer-ack50-20261110-bac7",
+      "reviewed_at": "2026-11-10T17:55:52Z",
+      "state_revision": "3215f1fc44088ff5f776b3c88353e53373746b59bb68e8a9f8ff5549412dbdbc",
+      "review_commit": "d00664d5916d0eb85c2fa09b949ea689d912b3f1",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "humors-me-register",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "In this affectionate thanks, «humors me» means indulges/supports the author's many creative pursuits; «снисходительно относится» can sound contemptuous or condescending in Russian and changes the husband's supportive tone. Use «с пониманием относится» or «терпеливо поддерживает».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "who humors me in all my creative endeavors (which are a lot)",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "который снисходительно относится ко всем моим творческим затеям (а их немало)",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
       }
     }
   ]

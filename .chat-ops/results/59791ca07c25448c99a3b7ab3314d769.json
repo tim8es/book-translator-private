@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "request_id": "59791ca07c25448c99a3b7ab3314d769",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "ba53fca743ef6c69c19f05f0b73b4f8500e60c9448afd87b542b3d4ccb92f053",
+    "record": {
+      "correction_round": 1,
+      "outcome": "CORRECTIONS_REQUIRED",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "meaning",
+            "detail": "In this affectionate thanks, «humors me» means indulges/supports the author's many creative pursuits; «снисходительно относится» can sound contemptuous or condescending in Russian and changes the husband's supportive tone. Use «с пониманием относится» or «терпеливо поддерживает».",
+            "id": "humors-me-register",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "who humors me in all my creative endeavors (which are a lot)"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "который снисходительно относится ко всем моим творческим затеям (а их немало)"
+            }
+          }
+        ]
+      },
+      "record_id": "127eddf297b14fd891661cfdef623dc2",
+      "review_commit": "d00664d5916d0eb85c2fa09b949ea689d912b3f1",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewed_at": "2026-11-10T17:55:52Z",
+      "reviewer_session_id": "homeinyou-reviewer-ack50-20261110-bac7",
+      "sequence": 50,
+      "source_sha256": "68e504d4c8761a214564117a929168e04841acb5cdbb70fbb990ee78a510f1a1",
+      "state_revision": "3215f1fc44088ff5f776b3c88353e53373746b59bb68e8a9f8ff5549412dbdbc",
+      "supersedes_record_id": null,
+      "translation_sha256": "482e7170dd3b10a216ca659d2e45c6fbf8a0a2f11a3ef2267c6e4c8c4e06ba82",
+      "unit_id": "chapter-000050",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58"
+    }
+  },
+  "error": null
+}
