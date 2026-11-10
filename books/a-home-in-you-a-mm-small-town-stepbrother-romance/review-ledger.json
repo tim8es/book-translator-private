@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 26,
+  "next_sequence": 27,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -1344,6 +1344,103 @@
       },
       "shared_state_revisions": {
         "glossary": "c5c8b0bdf74fd6b9a41a3b0676cd9851bcfe155e624ffa0d9e6ed48c070f7a6e",
+        "style_guide": "3ec7c485cf41741084ffe49b72d2b18ed9bd650a00a2ba00554605abadea5e3a"
+      }
+    },
+    {
+      "record_id": "f26cb221b40048d5b4eef5ab2880b391",
+      "sequence": 26,
+      "unit_id": "chapter-000014",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "f105fb42da1bb93e2f2f41c7c0916bed489cf8a87a9f2f05da3f2193bc825997",
+      "translation_sha256": "f5b50b372dc7f5aaf6542fb6b557d4f3495b8fa3039e273985b623582a28ffbf",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewer_session_id": "auto-886bde8dfe20-reviewer-e440279a",
+      "reviewed_at": "2026-11-10T12:35:17Z",
+      "state_revision": "d4841a7e35ea65f0dab7cc8637c4b953145ff0e81ad4c5510a8a52f1284e9f1d",
+      "review_commit": "34f6136e68d86849cd3775915870dbc6064d69cf",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "meaning-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The source says he did not like her at all, emphasizing the strength of his dislike. «Сразу не понравилась» shifts the emphasis to when he formed that opinion. Replace with wording such as «она мне совсем не понравилась», while retaining the profanity.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Today was the first time I’d met her, and I didn’t fucking like her at all.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Я встретил её сегодня впервые и, блядь, она мне сразу не понравилась.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-2",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "«It didn’t sound fun» means it did not seem enjoyable. «Ничего здорового в этом не было» instead means there was nothing healthy about it, creating an unintended change in meaning. Use wording such as «хотя это совсем не казалось весёлым».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Fuck, it didn’t sound fun at all.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Чёрт, ничего здорового в этом не было.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Мамино умение выращивать цветы было как на ладони» is awkward and does not naturally convey that the garden displayed her gardening skill. Recast the phrase, for example as «наглядно демонстрируя мамино садоводческое мастерство».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "filled with boxwood, hydrangeas in purples and pinks, and some other plants I couldn’t name, showing off Mom’s gardening skills.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Мамино умение выращивать цветы было как на ладони.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-3",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "«Cared about me» is broader and more personal than whether his grandparents were concerned about his fate. «Волнует ли их вообще моя судьба» narrows the thought; preserve the question of whether they care about him.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "I wondered if they cared about me at all.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Мне было интересно, волнует ли их вообще моя судьба.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "13a5723dbb821b2670a8d9c534774432d6f107e1beb03987ee5eb980d2c485ac",
         "style_guide": "3ec7c485cf41741084ffe49b72d2b18ed9bd650a00a2ba00554605abadea5e3a"
       }
     }
