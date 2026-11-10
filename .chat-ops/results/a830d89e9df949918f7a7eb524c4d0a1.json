@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "request_id": "a830d89e9df949918f7a7eb524c4d0a1",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "6eaf8efd12d7d9fa099111ea9ca2b49eddcf3220f8e6adbad96b545d6683fbd2",
+    "record": {
+      "correction_round": 1,
+      "outcome": "CORRECTIONS_REQUIRED",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "meaning",
+            "detail": "The dog is explicitly female in the next paragraph; «псом» wrongly makes the first reference male. Use neutral «собакой».",
+            "id": "dog-sex-inconsistency",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "kneeling in front of the dog laying next to Mr. Morris."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "присаживаясь на корточки перед псом, лежавшим рядом с мистером Моррисом."
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "«Before it got too dark» is about impending darkness, not being generally late. Preserve that practical time constraint.",
+            "id": "darkness-timing",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "headed home before it got too dark."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "отправились домой, пока не стало слишком поздно."
+            }
+          },
+          {
+            "category": "register",
+            "detail": "The English contrast is a mild «Heck» nearly becoming the stronger «hell». «Ух ты» versus «охренеть» overstates the harsher expression. Use a restrained mild/strong contrast fitting the speaker's effort not to swear at dinner.",
+            "id": "heck-hell-register",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "“Heck, yeah!” I said, almost blurting out *‘hell.’*"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "«Ух ты, да!» — воскликнул я, едва не ляпнув *«охренеть»*."
+            }
+          }
+        ]
+      },
+      "record_id": "1fa6a748117f4e6ab35b58413858afa5",
+      "review_commit": "a2c4f8dcc07702ac97f0eb5f9a8a2be349bdf211",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewed_at": "2026-11-10T15:13:21Z",
+      "reviewer_session_id": "homeinyou-reviewer-ch6-20261110-e3b912",
+      "sequence": 33,
+      "source_sha256": "b3d7bb544006a33eb1efef2adcaa224b828ce09cc616d989733bb846f4f8cc70",
+      "state_revision": "ba1930ce91ab4fad7200db7844ac5226992a5ff02349b315198831d2167b862a",
+      "supersedes_record_id": null,
+      "translation_sha256": "16c4c4fbfcbfd87473d356538a9104ff7572216ecd94e938227ec5318d097a20",
+      "unit_id": "chapter-000016",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58"
+    }
+  },
+  "error": null
+}
