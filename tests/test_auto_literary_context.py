@@ -59,14 +59,14 @@ class LiteraryContextTests(unittest.TestCase):
                 role_contracts(engine, "translator")
 
     def test_translator_returns_complete_artifact_and_decisions(self):
-        obj = {"translation": "# Глава\n\nМара у двери.\n",
-               "glossary": [{"original": "Mara", "translation": "Мара",
+        obj = {"translation": "# �����\n\n���� � �����.\n",
+               "glossary": [{"original": "Mara", "translation": "����",
                              "type": "person", "notes": "Protagonist"}],
                "style_guide": [{"source_pattern": "restrained third-person",
                                 "translation_approach": "keep simple narration",
                                 "evidence": "first paragraph"}]}
         translation, glossary, style = parse_translation("```json\n" + json.dumps(obj, ensure_ascii=False) + "\n```")
-        self.assertIn("Мара", translation)
+        self.assertIn("����", translation)
         self.assertEqual(glossary[0]["original"], "Mara")
         self.assertEqual(style[0]["source_pattern"], "restrained third-person")
         for bad in ("only text", json.dumps({"translation": "Hi"})):
@@ -86,15 +86,32 @@ class LiteraryContextTests(unittest.TestCase):
         with self.assertRaises(ModelError):
             parse_literary_review(json.dumps(review))
 
+    def test_v2_review_requires_complete_anchored_findings(self):
+        review = {"evidence_version": 2, "outcome": "CORRECTIONS_REQUIRED", "checks": {
+            "coverage": True, "meaning": True, "terminology": True,
+            "style": True, "structure": True}, "findings": [{
+                "id": "meaning-1", "category": "meaning", "severity": "major",
+                "detail": "Possibility became certainty.", "resolved": False,
+                "source_anchor": {"quote": "She might have known.", "occurrence": 0},
+                "translation_anchor": {"quote": "��� �����.", "occurrence": 0},
+                "resolves": None}], "style_guide": []}
+        outcome, report, _style = parse_literary_review(json.dumps(review))
+        self.assertEqual(outcome, "CORRECTIONS_REQUIRED")
+        self.assertEqual(report["evidence_version"], 2)
+        self.assertEqual(report["findings"][0]["id"], "meaning-1")
+        review["findings"] = [{"severity": "major", "detail": "Incomplete finding.", "resolved": False}]
+        with self.assertRaisesRegex(ModelError, "reviewer evidence is invalid"):
+            parse_literary_review(json.dumps(review))
+
     def test_glossary_append_is_idempotent_and_conflicts_fail(self):
         initial = "# Glossary\n\n| Original | Translation | Type | Notes |\n| --- | --- | --- | --- |\n"
-        value = {"original": "Northbridge", "translation": "Нортбридж",
+        value = {"original": "Northbridge", "translation": "���������",
                  "type": "place", "notes": "Town"}
         first = updated_glossary(initial, [value])
-        self.assertIn("| Northbridge | Нортбридж |", first)
+        self.assertIn("| Northbridge | ��������� |", first)
         self.assertEqual(first, updated_glossary(first, [{**value, "notes": "Town, recurring"}]))
         with self.assertRaisesRegex(ValueError, "conflicting glossary"):
-            updated_glossary(first, [{**value, "translation": "Северный мост"}])
+            updated_glossary(first, [{**value, "translation": "�������� ����"}])
 
     def test_style_is_idempotent(self):
         row = {"source_pattern": "dry dialogue", "translation_approach": "restrained",
@@ -122,9 +139,9 @@ class LiteraryContextTests(unittest.TestCase):
             (book / "extracted").mkdir(parents=True)
             (book / "translated").mkdir()
             (book / "extracted" / "one.md").write_text("Mara walked home.", encoding="utf-8")
-            (book / "translated" / "one.md").write_text("Мара вернулась домой.", encoding="utf-8")
+            (book / "translated" / "one.md").write_text("���� ��������� �����.", encoding="utf-8")
             (book / "metadata.json").write_text('{"target_language": "ru", "title": "Test"}', encoding="utf-8")
-            (book / "glossary.md").write_text("Mara = Мара", encoding="utf-8")
+            (book / "glossary.md").write_text("Mara = ����", encoding="utf-8")
             (book / "style-guide.md").write_text("restrained narration", encoding="utf-8")
             chapter = {"unit_id": "chapter-000001", "source_path": "extracted/one.md",
                        "translation_path": "translated/one.md", "status": "translated"}
@@ -136,7 +153,7 @@ class LiteraryContextTests(unittest.TestCase):
                                     "evidence": "chapter one"}])
             self.assertIn("pinned reviewer", system)
             self.assertNotIn("pinned translator", system)
-            self.assertIn("Mara = Мара", user)
+            self.assertIn("Mara = ����", user)
             self.assertIn("CURRENT ACCEPTED TRANSLATION", user)
             self.assertIn("short clauses", user)
             self.assertEqual(original, "Mara walked home.")
@@ -180,12 +197,12 @@ class LiteraryContextTests(unittest.TestCase):
             }
             repository.create(".workflow/claims/chapter-000001.json",
                               SchemaKind.CLAIM, claim)
-            row = {"original": "Northbridge", "translation": "Нортбридж",
+            row = {"original": "Northbridge", "translation": "���������",
                    "type": "place", "notes": "Town name"}
             saved = save_claim_bound_decisions(book, "chapter-000001",
                                               "canonical-test-worker", "glossary", [row])
             self.assertEqual(saved, 1)
-            self.assertIn("| Northbridge | Нортбридж |",
+            self.assertIn("| Northbridge | ��������� |",
                           (book / "glossary.md").read_text("utf-8"))
             self.assertEqual(save_claim_bound_decisions(
                 book, "chapter-000001", "canonical-test-worker", "glossary", [row]), 0)
