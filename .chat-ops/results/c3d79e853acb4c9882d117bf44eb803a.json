@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "request_id": "c3d79e853acb4c9882d117bf44eb803a",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "16c80279ea91f172b874acc2cce444a5194b641dd5f748ecaade1a454cc2a031",
+    "record": {
+      "correction_round": 1,
+      "outcome": "CORRECTIONS_REQUIRED",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "register",
+            "detail": "«Извращенец» injects a sexual implication absent from the source's self-deprecating «fucking weirdo». Render the coarse self-mockery without changing its meaning.",
+            "id": "register-weirdo-1",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "quietly sniffed like a fucking weirdo."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "тихонько принюхался, как какой-то долбаный извращенец."
+            }
+          },
+          {
+            "category": "style",
+            "detail": "«Что-то, с чем я мог себя соотнести» is an unnatural literal calque of «relatable». Express personal recognition without adding explanation.",
+            "id": "style-relatable-1",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "The video felt… relatable somehow."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "В этом видео было что-то… знакомое мне. Что-то, с чем я мог себя соотнести."
+            }
+          },
+          {
+            "category": "style",
+            "detail": "«Крип» is an unnatural borrowing that weakens the colloquial self-reproach. Render «like a creep» idiomatically in Russian.",
+            "id": "style-creep-1",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "pretending I hadn’t been staring at him like a creep."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "будто вовсе не таращился на него, как какой-то крип."
+            }
+          },
+          {
+            "category": "style",
+            "detail": "«Руки, выглядывавшие из-под майки, не были толстыми» is an unnatural Russian calque. Preserve the contrast between small/not thick arms and wiry muscle with smoother Russian syntax.",
+            "id": "style-arms-1",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "His arms under his tank top weren’t thick, but they had wiry muscles."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Руки, выглядывавшие из-под майки, не были толстыми, зато на них проступали крепкие, жилистые мышцы."
+            }
+          }
+        ]
+      },
+      "record_id": "316e0a48b5ba42989fb353a609ed1b5b",
+      "review_commit": "83943fc3e874249ba1017f74126d64a67fbc48f7",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewed_at": "2026-11-10T14:44:15Z",
+      "reviewer_session_id": "homein-you-reviewer-20261110-9a5bc0",
+      "sequence": 31,
+      "source_sha256": "54c6d49be0f8004bea6663cd7dee8bf76315ba6ee65d6f14778d762404e9742b",
+      "state_revision": "3de5c3ed8a57707e5c5f06d4065bfb057a5d9ed5a757cb17537e10220328f949",
+      "supersedes_record_id": null,
+      "translation_sha256": "561d0855bea1ac1480c39c4eb927daa4ea26a5c3a239954ad86da33783f906c8",
+      "unit_id": "chapter-000015",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58"
+    }
+  },
+  "error": null
+}

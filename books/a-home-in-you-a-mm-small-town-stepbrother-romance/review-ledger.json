@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 31,
+  "next_sequence": 32,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -1994,6 +1994,99 @@
               "record_id": "38c8119b389047fd9bc1b08c37f4470b",
               "finding_id": "register-5"
             }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "316e0a48b5ba42989fb353a609ed1b5b",
+      "sequence": 31,
+      "unit_id": "chapter-000015",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "54c6d49be0f8004bea6663cd7dee8bf76315ba6ee65d6f14778d762404e9742b",
+      "translation_sha256": "561d0855bea1ac1480c39c4eb927daa4ea26a5c3a239954ad86da33783f906c8",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewer_session_id": "homein-you-reviewer-20261110-9a5bc0",
+      "reviewed_at": "2026-11-10T14:44:15Z",
+      "state_revision": "3de5c3ed8a57707e5c5f06d4065bfb057a5d9ed5a757cb17537e10220328f949",
+      "review_commit": "83943fc3e874249ba1017f74126d64a67fbc48f7",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "register-weirdo-1",
+            "category": "register",
+            "severity": "minor",
+            "detail": "«Извращенец» injects a sexual implication absent from the source's self-deprecating «fucking weirdo». Render the coarse self-mockery without changing its meaning.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "quietly sniffed like a fucking weirdo.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "тихонько принюхался, как какой-то долбаный извращенец.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-relatable-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Что-то, с чем я мог себя соотнести» is an unnatural literal calque of «relatable». Express personal recognition without adding explanation.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "The video felt… relatable somehow.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "В этом видео было что-то… знакомое мне. Что-то, с чем я мог себя соотнести.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-creep-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Крип» is an unnatural borrowing that weakens the colloquial self-reproach. Render «like a creep» idiomatically in Russian.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "pretending I hadn’t been staring at him like a creep.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "будто вовсе не таращился на него, как какой-то крип.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-arms-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Руки, выглядывавшие из-под майки, не были толстыми» is an unnatural Russian calque. Preserve the contrast between small/not thick arms and wiry muscle with smoother Russian syntax.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "His arms under his tank top weren’t thick, but they had wiry muscles.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Руки, выглядывавшие из-под майки, не были толстыми, зато на них проступали крепкие, жилистые мышцы.",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       }
