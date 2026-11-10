@@ -20,6 +20,72 @@ from omniroute import ModelError, complete, config, parse_review
 
 
 class AutomatedBookTests(unittest.TestCase):
+    def test_book_key_and_selection_are_book_scoped(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            intake = root / "intake" / "auto"
+            intake.mkdir(parents=True)
+            (root / "automation" / "status").mkdir(parents=True)
+            first, second = "a" * 32, "b" * 32
+            for job_id, slug in ((first, "novel-a"), (second, "novel-b")):
+                folder = intake / job_id
+                folder.mkdir()
+                worker.store_json(folder / "request.json", {
+                    "job_id": job_id, "source_sha256": job_id * 2,
+                    "target_language": "ru"})
+                worker.store_json(root / "automation" / "status" / (job_id + ".json"), {
+                    "state": "paused", "book_slug": slug})
+                control = root / "books" / slug / ".workflow" / "auto-control.json"
+                worker.store_json(control, {"schema_version": 1, "mode": "chatops"})
+            with patch.object(worker, "ROOT", root):
+                self.assertEqual(worker.book_key(first), "novel-a")
+                self.assertEqual(worker.book_key(second), "novel-b")
+                self.assertEqual(worker.select(None), "")
+                control = root / "books" / "novel-b" / ".workflow" / "auto-control.json"
+                worker.store_json(control, {"schema_version": 1, "mode": "auto"})
+                self.assertEqual(worker.select(None), second)
+
+    def test_auto_pause_and_resume_do_not_change_literary_workflow(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            slug, job_id, revision = "handoff", "a" * 32, "b" * 40
+            book = root / "books" / slug
+            book.mkdir(parents=True)
+            request = {"schema_version": 1, "job_id": job_id,
+                       "target_language": "ru", "source_filename": "source.epub",
+                       "source_sha256": "c" * 64, "workflow_revision": revision}
+            meta = {"source": {"sha256": request["source_sha256"]},
+                    "workflow": {"resolved_revision": revision}}
+            worker.store_json(book / "metadata.json", meta)
+            status = {"schema_version": 1, "job_id": job_id, "book_slug": slug,
+                      "state": "running", "phase": "reviewer-completed",
+                      "workflow_revision": revision}
+            worker.store_json(root / "automation" / "status" / (job_id + ".json"), status)
+            control = book / ".workflow" / "auto-control.json"
+            worker.store_json(control, {"schema_version": 1, "mode": "chatops"})
+            with patch.object(worker, "ROOT", root), \\
+                 patch.object(worker, "request_for", return_value=request), \\
+                 patch.object(worker, "epub_identity", return_value=("Book", "Author")), \\
+                 patch.object(worker, "locate_book", return_value=(slug, meta)), \\
+                 patch.object(worker, "verify_legacy_reconciliation"), \\
+                 patch.object(worker, "install_engine", return_value=(root / "engine", revision)), \\
+                 patch.object(worker, "verify"), \\
+                 patch.object(worker, "checkpoint") as checkpoint, \\
+                 patch.object(worker, "cli") as cli:
+                paused = worker.run(job_id)
+                self.assertEqual((paused["state"], paused["phase"]),
+                                 ("paused", "paused-for-chatops"))
+                self.assertNotIn("active", paused)
+                cli.assert_not_called()
+                checkpoint.assert_called_once()
+                # Mimic the durable pause checkpoint, then ChatOps returns mode to Auto.
+                worker.store_json(root / "automation" / "status" / (job_id + ".json"), paused)
+                worker.store_json(control, {"schema_version": 1, "mode": "auto"})
+                resumed = worker.run(job_id)
+                self.assertEqual((resumed["state"], resumed["phase"]),
+                                 ("running", "resumed-from-chatops"))
+            self.assertEqual(worker.read_json(book / "metadata.json"), meta)
+
     def test_checkpoint_keeps_pinned_engine_and_stages_only_job_and_book(self):
         with tempfile.TemporaryDirectory() as folder:
             root = Path(folder)
