@@ -188,7 +188,10 @@ def inspect(root: Path, job_id: str, now: datetime, include_missing: bool) -> di
         if status.get("superseded_by_job_id") or str(status.get("phase", "")).startswith("superseded-"):
             return None
         kind = "blocked"
-        reason = status.get("last_error") or status.get("phase") or "Blocked"
+        if status.get("phase") == "correction-limit-reached":
+            reason = "Automatic correction limit reached; no further correction attempt is authorized for this unit."
+        else:
+            reason = status.get("last_error") or status.get("phase") or "Blocked"
     elif state == "done":
         try:
             total, reviewed, kind = verify_done(root, status)
