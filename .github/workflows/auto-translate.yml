@@ -20,10 +20,6 @@ on:
   schedule:
     # Recovery when dispatch events are delayed or coalesced.
     - cron: "*/15 * * * *"
-  push:
-    branches: [main]
-    paths:
-      - 'books/**/.workflow/auto-control.json'
 
 permissions:
   contents: write
