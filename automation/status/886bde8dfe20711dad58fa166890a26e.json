@@ -4,7 +4,7 @@
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
   "source_sha256": "3a3fce78317162b68bc1e82501456a74a783cfc96cb2640c463f381866007865",
   "state": "running",
-  "phase": "model-call-reserved",
+  "phase": "translator-completed",
   "failures": 0,
   "correction_rounds": {
     "chapter-000002": 1,
@@ -14,28 +14,44 @@
     "chapter-000011": 3
   },
   "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
-  "updated_at": "2026-11-10T10:29:16.045152+00:00",
-  "active": {
-    "role": "translator",
-    "chapter": 12,
-    "session_id": "auto-886bde8dfe20-translator-355ef471"
-  },
+  "updated_at": "2026-11-10T10:32:38.820316+00:00",
+  "active": null,
   "model_calls_started": 69,
-  "memory_glossary_saved": 65,
-  "pending_style": [],
+  "memory_glossary_saved": 78,
+  "pending_style": [
+    {
+      "evidence": "Cade задаётся вопросами о реакции Диллона и родителей, например: “What if our parents got married?” и “Was this what teen crushes felt like?”",
+      "source_pattern": "Повествование от первого лица Cade в прошедшем времени с непосредственными внутренними вопросами, фантазиями и реакциями.",
+      "translation_approach": "Сохранять близкую перспективу персонажа и быстрые переходы от внешнего действия к внутренней речи, не превращая мысли в объяснение отстранённого рассказчика."
+    },
+    {
+      "evidence": "Cade использует выражения “fucking bulldozer”, “fucking beautiful”, “I couldn’t draw worth shit” и “the fucking road”.",
+      "source_pattern": "Подростковая разговорная речь и внутренняя речь с грубой лексикой и эмоциональными усилителями.",
+      "translation_approach": "Сохранять непринуждённый регистр и сопоставимую степень резкости; не смягчать ругань и не заменять её нейтральными формулировками."
+    },
+    {
+      "evidence": "Cade подробно рассказывает о рыбалке и своих переживаниях; Dillon отвечает короткими репликами вроде “Fine”, “Cool” и “I don’t know”.",
+      "source_pattern": "Cade многословен и часто комментирует происходящее, тогда как Dillon отвечает короче и сдержаннее.",
+      "translation_approach": "Сохранять контраст: не сокращать подробные реплики Cade и не дополнять краткие ответы Dillon."
+    },
+    {
+      "evidence": "Cade несколько раз описывает fluttering в животе и tingles от прикосновений, а затем обрывает себя мыслью “Stop. Just stop”.",
+      "source_pattern": "Притяжение Cade к Dillon передаётся через конкретные телесные ощущения, повторяющиеся образы трепета и разрядов, а также самоперебивания.",
+      "translation_approach": "Сохранять повторяемость телесных реакций и неловкую непосредственность внутренней речи, не усиливая их до более откровенного или сентиментального описания."
+    }
+  ],
   "prompt_context": {
-    "role": "reviewer",
+    "role": "translator",
     "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
     "loaded_contracts": [
       "AGENTS.md",
       "docs/TRANSLATION.md",
-      "docs/REVIEWER.md"
+      "docs/TRANSLATOR.md"
     ],
     "glossary_sha256": "970e9f13b2005f753d202f088dee86e918bc77e479698538cbc55d06a39b8653",
-    "style_guide_sha256": "161238721ea1ef50a84f53819d7cfc61efda9123427d7d6cdbf695e9288230de",
-    "system_chars": 22384,
-    "user_chars": 55040,
-    "review_context": "independent_session"
+    "style_guide_sha256": "3ec7c485cf41741084ffe49b72d2b18ed9bd650a00a2ba00554605abadea5e3a",
+    "system_chars": 15840,
+    "user_chars": 33225
   },
   "memory_style_saved": 6,
   "last_error": "model transport timeout or connection failure",

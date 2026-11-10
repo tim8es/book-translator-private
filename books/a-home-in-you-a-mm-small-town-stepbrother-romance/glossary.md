@@ -34,3 +34,6 @@ Use this file for recurring names, places, organizations, terms, nicknames, titl
 | Dil | Дил | nickname | Краткое обращение к Dillon. |
 | Ev | Ив | nickname | Краткое обращение к Evelyn. |
 | Ms. Copeland | мисс Коупленд | form of address | Обращение согласно канонической записи. |
+| Evelyn | Эвелин | character | Каноническая передача имени. |
+| Mrs. Moo | Миссис Му | character | Имя коровы; передаёт игру со звукоподражанием moo. |
+| Yin Yang | Инь-Ян | character | Имя коровы. |
