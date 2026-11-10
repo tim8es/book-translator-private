@@ -39,6 +39,7 @@ FINAL = {"done", "blocked"}
 MAX_SOURCE_BYTES = 15_000_000
 MAX_CHAPTER_CHARS = 70_000
 MAX_CORRECTIONS = 3
+MAX_ACCEPTED_REVIEWS_PER_UNIT = 4
 MAX_CORRECTION_EXTENSIONS = 1
 MAX_FAILURES = 3
 DEFAULT_MODEL_CALL_LIMIT = 36
@@ -189,9 +190,9 @@ def _mismatch_index(expected: list, actual: list) -> int:
 def approve_blocked_resume(status: dict) -> None:
     phase = status.get("phase")
     if (status.get("state") != "blocked" or phase not in
-            {"model-blocked", "correction-limit-reached"}
+            {"model-blocked", "correction-limit-reached", "review-deferred-requires-operator"}
             or status.get("active") is not None):
-        raise JobError("only an inactive model-blocked or correction-limited job can be resumed")
+        raise JobError("only an inactive blocked job with a supported recovery path can be resumed")
     history = status.get("recoveries", [])
     if not isinstance(history, list):
         raise JobError("invalid recovery history")
@@ -839,6 +840,72 @@ def correction_progressed(ledger: dict, chapter: dict) -> bool:
             and correction_severity_score(current) < correction_severity_score(previous))
 
 
+def accepted_review_count(ledger: dict, chapter: dict) -> int:
+    records = ledger.get("records", [])
+    if not isinstance(records, list):
+        raise JobError("invalid review ledger records")
+    if not records:
+        return 0
+    acceptance = chapter.get("translation_acceptance")
+    source_sha = acceptance.get("source_sha256") if isinstance(acceptance, dict) else None
+    if not isinstance(source_sha, str) or not HEX64.fullmatch(source_sha):
+        raise JobError("invalid review ledger records")
+    return sum(1 for item in records if isinstance(item, dict)
+               and item.get("unit_id") == chapter["unit_id"]
+               and item.get("source_sha256") == source_sha
+               and item.get("outcome") in {"PASS", "CORRECTIONS_REQUIRED"})
+
+
+def deferred_review_has_pass(ledger: dict, chapter: dict) -> bool:
+    if chapter.get("status") == "reviewed":
+        return True
+    record = latest_record(ledger, chapter)
+    acceptance = chapter.get("translation_acceptance")
+    return (bool(record) and isinstance(acceptance, dict)
+            and record.get("outcome") == "PASS"
+            and record.get("source_sha256") == acceptance.get("source_sha256")
+            and record.get("translation_sha256") == acceptance.get("translation_sha256"))
+
+
+def deferred_review_unit_ids(status: dict) -> list[str]:
+    units = status.get("deferred_review_units", [])
+    if (not isinstance(units, list) or any(not isinstance(unit, str) or not unit for unit in units)
+            or len(units) != len(set(units))):
+        raise JobError("invalid deferred review unit list")
+    return units
+
+
+def defer_review_unit(status: dict, unit_id: str) -> None:
+    units = deferred_review_unit_ids(status)
+    if unit_id not in units:
+        units.append(unit_id)
+    status["deferred_review_units"] = units
+
+
+def prepare_correction_limit_resume(status: dict, ledger: dict, chapter: dict) -> None:
+    unit_id = chapter["unit_id"]
+    if accepted_review_count(ledger, chapter) >= MAX_ACCEPTED_REVIEWS_PER_UNIT:
+        defer_review_unit(status, unit_id)
+        return
+    counters = status.get("correction_rounds", {})
+    extensions = status.get("correction_extensions", {})
+    if not isinstance(counters, dict) or not isinstance(extensions, dict):
+        raise JobError("invalid correction recovery counters")
+    rounds = counters.get(unit_id, 0)
+    used = extensions.get(unit_id, 0)
+    if (type(rounds) is not int or type(used) is not int or used < 0
+            or rounds != MAX_CORRECTIONS or used >= MAX_CORRECTION_EXTENSIONS
+            or not correction_progressed(ledger, chapter)):
+        raise JobError("no measured correction progress remains for another attempt")
+    status["correction_extension_authorized_unit"] = unit_id
+    record = latest_record(ledger, chapter)
+    quality = record.get("quality_report", {}) if record else {}
+    if not isinstance(quality, dict):
+        quality = {}
+    if quality.get("evidence_version") != 2:
+        status["force_full_review_unit"] = unit_id
+
+
 def _anchor_position(text: str, anchor: dict) -> tuple[int, int]:
     quote = anchor["quote"]
     positions = []
@@ -1036,9 +1103,18 @@ def approved_unit_ids(slug: str, chapters: list) -> set[str]:
 def next_operation(slug: str, status: dict) -> tuple[str, dict | None]:
     _, ledger, chapters = chapter_data(slug)
     approved = approved_unit_ids(slug, chapters)
-    # Canonical next_unit_operation is the sole lifecycle/review classifier.
-    # The adapter owns only the automatic provider and the opt-in user-approved
-    # preview / bounded correction-round policies.
+    deferred = set(deferred_review_unit_ids(status))
+    by_id = {chapter.get("unit_id"): chapter for chapter in chapters}
+    deferred = {unit_id for unit_id in deferred
+                if not (by_id.get(unit_id) and by_id[unit_id].get("status") == "reviewed")}
+    if deferred:
+        status["deferred_review_units"] = [
+            unit_id for unit_id in deferred_review_unit_ids(status) if unit_id in deferred
+        ]
+    else:
+        status.pop("deferred_review_units", None)
+    # The pinned lifecycle classifier still selects each unit operation.
+    # The adapter skips only units explicitly deferred after the review cap.
     from workflow.operations import next_unit_operation
     for chapter in chapters:
         state = chapter["status"]
@@ -1049,10 +1125,12 @@ def next_operation(slug: str, status: dict) -> tuple[str, dict | None]:
         review = ("pass" if record["outcome"] == "PASS" else "corrections_required"
                   ) if record and record["translation_sha256"] == current_hash else "missing"
         operation = next_unit_operation(state, review)
-        if operation == "translate":
-            return "translator", chapter
         if operation == "accept_review":
             return "promote", chapter
+        if chapter.get("unit_id") in deferred:
+            continue
+        if operation == "translate":
+            return "translator", chapter
         if operation == "correct_translation":
             # This exceptional re-review is allowed only for an unchanged
             # translation with a newly accepted glossary revision.
@@ -1072,7 +1150,7 @@ def next_operation(slug: str, status: dict) -> tuple[str, dict | None]:
             return "reviewer", chapter
         raise JobError(f"canonical workflow cannot schedule {chapter['unit_id']} "
                        f"from lifecycle={state!r} review={review!r}")
-    return "finalize", None
+    return ("review-deferred", None) if deferred else ("finalize", None)
 
 
 def canonical_dispatch(slug: str, status: dict) -> tuple[str, dict | None]:
@@ -1100,12 +1178,18 @@ def canonical_dispatch(slug: str, status: dict) -> tuple[str, dict | None]:
     if len(matches) != 1 or matches[0].get("number") != decision.get("chapter_number"):
         raise JobError("canonical resume unit no longer matches durable progress")
     chapter = matches[0]
+    if (chapter["unit_id"] in deferred_review_unit_ids(status)
+            and operation != "accept_review"):
+        return next_operation(slug, status)
     record = latest_record(ledger, chapter)
     report = record.get("quality_report", {}) if record else {}
     if (status.get("force_full_review_unit") == unit_id
             and report.get("evidence_version") != 2):
         return "reviewer", chapter
     if operation == "correct_translation":
+        if accepted_review_count(ledger, chapter) >= MAX_ACCEPTED_REVIEWS_PER_UNIT:
+            defer_review_unit(status, unit_id)
+            return next_operation(slug, status)
         if status.get("memory_recheck_unit") == unit_id:
             if record and report.get("evidence_version") == 2:
                 raise JobError("anchored v2 review requires a changed translation artifact")
@@ -1603,9 +1687,9 @@ def run(job_id: str, *, resume_blocked: bool = False,
     if status and status.get("state") in FINAL and not (resume_blocked or resume_interrupted):
         return status
     if (resume_blocked and (status.get("phase") not in
-            {"model-blocked", "correction-limit-reached"}
+            {"model-blocked", "correction-limit-reached", "review-deferred-requires-operator"}
             or status.get("active") is not None)):
-        raise JobError("resume requires an inactive model-blocked or correction-limited job")
+        raise JobError("resume requires an inactive blocked job")
     if resume_interrupted and (status.get("phase") != "operator-intervention-required"
                                or not isinstance(status.get("active"), dict)):
         raise JobError("interrupted recovery requires the recorded active claim")
@@ -1661,24 +1745,14 @@ def run(job_id: str, *, resume_blocked: bool = False,
                 matches = [item for item in chapters if item.get("unit_id") == unit_id]
                 if len(matches) != 1:
                     raise JobError("correction-limited unit no longer maps to one source unit")
-                chapter = matches[0]
-                counters = status.get("correction_rounds", {})
-                extensions = status.get("correction_extensions", {})
-                if not isinstance(counters, dict) or not isinstance(extensions, dict):
-                    raise JobError("invalid correction recovery counters")
-                rounds = counters.get(unit_id, 0)
-                used = extensions.get(unit_id, 0)
-                if (type(rounds) is not int or type(used) is not int or used < 0
-                        or rounds != MAX_CORRECTIONS or used >= MAX_CORRECTION_EXTENSIONS
-                        or not correction_progressed(ledger, chapter)):
-                    raise JobError("no measured correction progress remains for another attempt")
-                status["correction_extension_authorized_unit"] = unit_id
-                record = latest_record(ledger, chapter)
-                quality = record.get("quality_report", {}) if record else {}
-                if not isinstance(quality, dict):
-                    quality = {}
-                if quality.get("evidence_version") != 2:
-                    status["force_full_review_unit"] = unit_id
+                prepare_correction_limit_resume(status, ledger, matches[0])
+            elif status.get("phase") == "review-deferred-requires-operator":
+                _, ledger, chapters = chapter_data(slug)
+                by_id = {chapter.get("unit_id"): chapter for chapter in chapters}
+                if not any(by_id.get(unit_id)
+                           and deferred_review_has_pass(ledger, by_id[unit_id])
+                           for unit_id in deferred_review_unit_ids(status)):
+                    raise JobError("deferred review units still require a current PASS review")
             approve_blocked_resume(status)
             checkpoint(job_id, status, slug)
         elif resume_interrupted:
@@ -1752,7 +1826,14 @@ def run(job_id: str, *, resume_blocked: bool = False,
             process_claim(job_id, slug, status, engine)
             return status
         role, chapter = canonical_dispatch(slug, status)
-        if role == "blocked":
+        if role == "review-deferred":
+            deferred = deferred_review_unit_ids(status)
+            status.update({"state": "blocked",
+                           "phase": "review-deferred-requires-operator",
+                           "blocked_unit_id": deferred[0] if deferred else None,
+                           "last_error": "All other units are processed; deferred units still require a current PASS review."})
+            checkpoint(job_id, status, slug)
+        elif role == "blocked":
             status.update({"state": "blocked", "phase": "correction-limit-reached",
                            "blocked_unit_id": chapter["unit_id"]})
             status.pop("last_error", None)
