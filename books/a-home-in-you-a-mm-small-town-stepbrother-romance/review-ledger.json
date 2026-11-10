@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 29,
+  "next_sequence": 30,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -1693,6 +1693,176 @@
             },
             "translation_anchor": {
               "quote": "Cade был весь словно соткан из жизни.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "13a5723dbb821b2670a8d9c534774432d6f107e1beb03987ee5eb980d2c485ac",
+        "style_guide": "3ec7c485cf41741084ffe49b72d2b18ed9bd650a00a2ba00554605abadea5e3a"
+      }
+    },
+    {
+      "record_id": "38c8119b389047fd9bc1b08c37f4470b",
+      "sequence": 29,
+      "unit_id": "chapter-000014",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "f105fb42da1bb93e2f2f41c7c0916bed489cf8a87a9f2f05da3f2193bc825997",
+      "translation_sha256": "798225ddafcde7c1d03c9093c124e06af21e95d4c71b9ca8d643c1713d18c70e",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewer_session_id": "auto-886bde8dfe20-reviewer-92509f86",
+      "reviewed_at": "2026-11-10T12:46:46Z",
+      "state_revision": "2752e003aabe4177185d7c513b030570f759a4b2c9f5bc7efa35859f7ec831f2",
+      "review_commit": "dc61b9341a2d708ddfb1f3724271b230881533fc",
+      "correction_round": 4,
+      "supersedes_record_id": "bb9e823de20b4473af9026897492ac13",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-meaning-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Fixed. «Ой, как меня любят» preserves the affectionate meaning of feeling loved.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "I feel so loved",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Ой, как меня любят",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "bb9e823de20b4473af9026897492ac13",
+              "finding_id": "meaning-1"
+            }
+          },
+          {
+            "id": "recheck-register-3",
+            "category": "register",
+            "severity": "minor",
+            "detail": "Fixed. «Послать её на хуй» preserves the blunt profanity of the narrator's imagined response.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "tell her to fuck off and leave him alone",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "послать её на хуй и велеть оставить его в покое",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "bb9e823de20b4473af9026897492ac13",
+              "finding_id": "register-3"
+            }
+          },
+          {
+            "id": "recheck-style-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Fixed. «Такой живчик» is natural and casual while retaining the source's sense of exuberant energy.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Cade was so full of life.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Cade был такой живчик.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "bb9e823de20b4473af9026897492ac13",
+              "finding_id": "style-1"
+            }
+          },
+          {
+            "id": "meaning-2",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The source describes the physical toll of having Cade broadly, while «ей тяжело дались роды» narrows it to childbirth. Use wording that preserves the broader meaning.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "She said having me was rough on her body.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Она говорила, что ей тяжело дались роды.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "terminology-1",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "The canonical name is Dillon, but the translation uses «Диллоном» here and «Диллон» elsewhere in the dialogue. Keep the glossary rendering Dillon consistently.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "what have you done with Dillon?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "что ты сделал с Диллоном?",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-3",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Cross-country is a specific sport, not simply long-distance running. Render the team and the later reference to the sport as cross-country running, for example «кросс» or «бег по пересечённой местности».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "cross-country team this year",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "команду по бегу на длинные дистанции",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "register-4",
+            "category": "register",
+            "severity": "minor",
+            "detail": "«Придурок» softens the source's profane insult. Use a comparably coarse term to preserve the teasing roughness of the line.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Off, asshole!",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Слезь, придурок!",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "register-5",
+            "category": "register",
+            "severity": "minor",
+            "detail": "The translation drops the profanity in «Who the fuck are you». Preserve its blunt, exasperated force.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Who the fuck are you",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Кто ты такой",
               "occurrence": 0
             },
             "resolves": null
