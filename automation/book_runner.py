@@ -1278,7 +1278,9 @@ def context(engine: Path, slug: str, chapter: dict, role: str,
             "severity minor|major|critical. Anchors are exact quotes of at most 300 characters and a "
             "zero-based occurrence; source_anchor must quote the current source unit and "
             "translation_anchor must quote the current accepted translation, not an earlier version. "
-            "Verify each quote occurs exactly at the supplied occurrence before returning. "
+            "Every non-null anchor quote must occur exactly once in its current text. If a quote repeats, " +
+            "lengthen it with adjacent exact words until it is unique; never use occurrence to select among " +
+            "duplicate quotes. Set occurrence to 0 for a unique quote. Verify each quote before returning. "
             "translation_anchor may be null only for an omission. "
             "Example only (invented quotes; replace with exact supplied text): "
             "{\"evidence_version\":2,\"outcome\":\"CORRECTIONS_REQUIRED\","
@@ -1353,6 +1355,7 @@ def claim(job_id: str, slug: str, status: dict, role: str, chapter: dict) -> Non
         "--style-guide-revision", fingerprint(book / "style-guide.md"))
     status.update({"phase": "claimed", "active": {
         "role": role, "chapter": chapter["number"], "session_id": session}})
+    status.pop("last_error", None)
     checkpoint(job_id, status, slug)
 
 
@@ -1543,6 +1546,7 @@ def process_claim(job_id: str, slug: str, status: dict, engine: Path) -> None:
     status["phase"] = role + "-completed"
     status["prompt_context"] = prompt_context
     status.pop("blocked_unit_id", None)
+    status.pop("last_error", None)
     status["failures"] = 0
     checkpoint(job_id, status, slug)
 
@@ -1751,6 +1755,7 @@ def run(job_id: str, *, resume_blocked: bool = False,
         if role == "blocked":
             status.update({"state": "blocked", "phase": "correction-limit-reached",
                            "blocked_unit_id": chapter["unit_id"]})
+            status.pop("last_error", None)
             checkpoint(job_id, status, slug)
         elif role == "promote":
             cli("accept-review", slug, str(chapter["number"]))
