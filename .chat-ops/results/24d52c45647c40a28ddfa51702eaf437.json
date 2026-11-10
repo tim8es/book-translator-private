@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "request_id": "24d52c45647c40a28ddfa51702eaf437",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "213d8e2117a2256f1c6ad29f2ce9f626a7761446922b0494cbcae6acb02b315c",
+    "record": {
+      "correction_round": 1,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "style",
+            "detail": "The revised passage reads naturally and preserves the narrator's conviction that their connection feels right.",
+            "id": "recheck-relationship-calque",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "relationship-calque",
+              "record_id": "a8d25435d1654cd8b573ca79d955ca79"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "This was right. We were right."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Это было правильно. Мы друг другу подходили."
+            }
+          },
+          {
+            "category": "style",
+            "detail": "The revised Russian distinguishes small whimpers and groans in natural phrasing without intensifying the source.",
+            "id": "recheck-kiss-sound-register",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "kiss-sound-register",
+              "record_id": "a8d25435d1654cd8b573ca79d955ca79"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "He gave me little whimpers and groans in my mouth."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Он тихонько поскуливал и постанывал прямо мне в губы."
+            }
+          }
+        ]
+      },
+      "record_id": "4e59b33303d043879833edc71cc4f44c",
+      "review_commit": "06b0efac7da154c91431f93dc2f0b18d8755d666",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewed_at": "2026-11-10T16:25:20Z",
+      "reviewer_session_id": "homeinyou-rereview-ch9-20261110-e95c70",
+      "sequence": 40,
+      "source_sha256": "54389b25a4f2c1ae1ef8d4a190c959ceb060a1fe461d6d4f06a9fe88c2fa7d9e",
+      "state_revision": "b2d0f936957284b2f06c01d59505a17f3f73c1816bc311e309b47d268fe11715",
+      "supersedes_record_id": "a8d25435d1654cd8b573ca79d955ca79",
+      "translation_sha256": "2ec2d29aaa9e0d7153fe19d2c215801afdcf4714a477847a879cd1f3fc4599f1",
+      "unit_id": "chapter-000019",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58"
+    }
+  },
+  "error": null
+}
