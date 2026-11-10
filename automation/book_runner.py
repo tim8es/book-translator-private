@@ -636,6 +636,35 @@ def book_key(job_id: str) -> str:
     return "intake-" + hashlib.sha256(seed.encode("utf-8")).hexdigest()[:32]
 
 
+def ready_jobs(limit: int = 200) -> list[dict]:
+    """Discover independent book jobs without prioritizing one long-running book."""
+    work = []
+    keys = set()
+    for path in sorted((ROOT / "intake" / "auto").glob("*/request.json")):
+        job_id = path.parent.name
+        if not ID.fullmatch(job_id):
+            continue
+        state_file = status_path(job_id)
+        try:
+            if state_file.exists():
+                state = read_json(state_file)
+                if state.get("state") in FINAL:
+                    continue
+                if state.get("state") == "paused" and auto_mode(state["book_slug"]) != "auto":
+                    continue
+            key = book_key(job_id)
+        except (OSError, ValueError, KeyError, JobError) as exc:
+            print(f"Skipping invalid job {job_id}: {type(exc).__name__}", file=sys.stderr)
+            continue
+        if key in keys:
+            continue
+        keys.add(key)
+        work.append({"job_id": job_id, "book_key": key})
+        if len(work) >= limit:
+            break
+    return work
+
+
 def select(explicit: str | None) -> str:
     if explicit:
         safe_id(explicit)
@@ -1999,10 +2028,22 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--select", action="store_true")
     parser.add_argument("--book-key", action="store_true")
+    parser.add_argument("--list-ready-json", action="store_true")
     parser.add_argument("--job-id")
     parser.add_argument("--resume-blocked", action="store_true")
     parser.add_argument("--resume-interrupted", action="store_true")
     args = parser.parse_args()
+    if args.list_ready_json:
+        if args.select or args.book_key:
+            parser.error("list-ready cannot be combined with select/book-key")
+        if args.job_id:
+            job_id = safe_id(args.job_id)
+            print(json.dumps([{"job_id": job_id, "book_key": book_key(job_id)}]))
+        else:
+            if args.resume_blocked or args.resume_interrupted:
+                parser.error("blocked resume must select one explicit job ID")
+            print(json.dumps(ready_jobs(), ensure_ascii=False))
+        return 0
     if args.book_key:
         if args.select or args.resume_blocked or args.resume_interrupted:
             parser.error("book key can only be queried for a job")
