@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "request_id": "8c0a2acc4b74446dba7f03d421b6f0e9",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "8774a93404cc2870c29e6877efdfa5a72d7b6b6bdbbafd7b0a9e046ef23b58e2",
+    "record": {
+      "correction_round": 1,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "style",
+            "detail": "The revised «прийти к счастливому финалу» naturally conveys the romance-genre HEA concept without the earlier syntactic awkwardness.",
+            "id": "recheck-heas-awkward-ending",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "heas-awkward-ending",
+              "record_id": "484d1452505f44b39f72134b0f71976d"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "as they achieve their HEAs."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "прийти к счастливому финалу."
+            }
+          }
+        ]
+      },
+      "record_id": "becc4db3de65446ebd35400d9961f0e0",
+      "review_commit": "17056f5e7a2841f6d21b79d6e8a4d0d208eaa30a",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewed_at": "2026-11-10T18:08:31Z",
+      "reviewer_session_id": "homeinyou-rereviewer-author51-20261110-9f04",
+      "sequence": 53,
+      "source_sha256": "25750334ca8534022f45421d3e1bed8e9587127285e94f7524a8ab84a20f2917",
+      "state_revision": "4f69553aedcc17cd4951d999386bf11142d2b07f6f1ca0de86c2c4326faccbae",
+      "supersedes_record_id": "484d1452505f44b39f72134b0f71976d",
+      "translation_sha256": "9cbce5ed5a4b1039165cf066454565de61ef5b20ffb0daf40db1666b8823b9ed",
+      "unit_id": "chapter-000051",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58"
+    }
+  },
+  "error": null
+}
