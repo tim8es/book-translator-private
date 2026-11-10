@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "reckless-leather-chrome-book-1",
-  "next_sequence": 8,
+  "next_sequence": 9,
   "records": [
     {
       "record_id": "f77b051b1598493e90f406995c7404b7",
@@ -289,6 +289,77 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "610aa6f6815d0bd75721bdd25834ec9ca9d3a8b40bc5fd3d8082a698ccef8bbe",
+        "style_guide": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4"
+      }
+    },
+    {
+      "record_id": "b84d83c2041446508376fb1874efbea1",
+      "sequence": 8,
+      "unit_id": "chapter-000006",
+      "outcome": "PASS",
+      "source_sha256": "fc183960320f7df636a321b3768dbd68e2b85332ed598a67943589ef2e069e58",
+      "translation_sha256": "cf7a3d28671efab930356bde6bc5854cbd4a72f4b524a97f7bef98b0f9b5b971",
+      "workflow_revision": "d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "review_contract_revision": "docs/TRANSLATION.md@d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "reviewer_session_id": "auto-568dee900b06-reviewer-8e2de643",
+      "reviewed_at": "2026-11-10T17:10:46Z",
+      "state_revision": "4c9c40d0d3fe24c21fe0cbb7bb6509b3ca4890d336ed472c8fc9e21ba48f071f",
+      "review_commit": "1a06d1e7a9ebfa6cdad2f0fc406838969c94afeb",
+      "correction_round": 1,
+      "supersedes_record_id": "ad51129573d74ddc85c3e6346c19ee9d",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-meaning-1",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Resolved: «кратко показано в тексте» indicates that the violence itself appears briefly in the text.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "violence (mild, but briefly on page)",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "насилие (незначительное, но кратко показано в тексте)",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "ad51129573d74ddc85c3e6346c19ee9d",
+              "finding_id": "meaning-1"
+            }
+          },
+          {
+            "id": "recheck-style-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Resolved: «лёгкие метки» replaces the awkward calque and preserves the source meaning.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "mild marking",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "лёгкие метки",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "ad51129573d74ddc85c3e6346c19ee9d",
+              "finding_id": "style-1"
+            }
           }
         ]
       },
