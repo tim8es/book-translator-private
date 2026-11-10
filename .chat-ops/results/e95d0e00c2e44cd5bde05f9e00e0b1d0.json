@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "request_id": "e95d0e00c2e44cd5bde05f9e00e0b1d0",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "312871fe0e38a0d62d9bbc6ebe74b3daeb1945272913a7e4d39b054ad1102c81",
+    "record": {
+      "correction_round": 1,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "meaning",
+            "detail": "The correction now conveys both the lack of consent and the specifically deep kiss, without inserting additional erotic detail.",
+            "id": "recheck-coerced-kiss",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "coerced-kiss-specificity",
+              "record_id": "58ce62a1b13e49448a15c8a04df89782"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "but Darcy grabbed his face and forced her tongue into his mouth."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "но Дарси схватила его за лицо и насильно поцеловала взасос."
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Now clearly says Darren grabbed the boy by his fake-blood-stained T-shirt with large fists and lifted him; no impossible image of being carried on fists remains.",
+            "id": "recheck-shirt-grip",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "darren-shirt-grip",
+              "record_id": "58ce62a1b13e49448a15c8a04df89782"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Darren lifted the smaller boy up by his fake blood-stained t-shirt with meaty fists."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Даррен схватил невысокого паренька своими здоровенными кулачищами за футболку, заляпанную искусственной кровью, и приподнял над полом."
+            }
+          }
+        ]
+      },
+      "record_id": "e6db2acabbac4898a730dfb773b18181",
+      "review_commit": "79e43b869592022c87b081db69802e21a59869e6",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewed_at": "2026-11-10T16:55:07Z",
+      "reviewer_session_id": "homeinyou-rereviewer-ch13-20261110-635e12",
+      "sequence": 42,
+      "source_sha256": "385b40d4c830df8e46af6621f7db7b915221f9206d31c4171b8d97bf4cd2f024",
+      "state_revision": "f381e2960920173ba92585246ff0e3540b1a172ab81c0698c3fff25ba2507449",
+      "supersedes_record_id": "58ce62a1b13e49448a15c8a04df89782",
+      "translation_sha256": "ba7d27fedc76df9ae47e3d764004717a87ff1e2122a9efba015a1f9c6be59524",
+      "unit_id": "chapter-000023",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58"
+    }
+  },
+  "error": null
+}
