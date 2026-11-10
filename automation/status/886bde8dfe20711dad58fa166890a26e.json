@@ -4,8 +4,8 @@
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
   "source_sha256": "3a3fce78317162b68bc1e82501456a74a783cfc96cb2640c463f381866007865",
   "state": "running",
-  "phase": "model-call-reserved",
-  "failures": 1,
+  "phase": "reviewer-completed",
+  "failures": 0,
   "correction_rounds": {
     "chapter-000002": 1,
     "chapter-000003": 1,
@@ -14,31 +14,11 @@
     "chapter-000011": 3
   },
   "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
-  "updated_at": "2026-11-10T10:28:39.585810+00:00",
-  "active": {
-    "role": "reviewer",
-    "chapter": 11,
-    "session_id": "auto-886bde8dfe20-reviewer-4aaa53a8"
-  },
+  "updated_at": "2026-11-10T10:28:46.901183+00:00",
+  "active": null,
   "model_calls_started": 68,
   "memory_glossary_saved": 65,
-  "pending_style": [
-    {
-      "evidence": "Dillon описывает происходящее через личные реакции, например размышляет, почему мать встречается с кем-то, и задаётся вопросом, не боится ли он перемен.",
-      "source_pattern": "Повествование от первого лица в прошедшем времени с непосредственными внутренними вопросами и оценками подростка.",
-      "translation_approach": "Сохранять близкую повествовательную перспективу, разговорную лексику и свободные переходы от описания к мыслям персонажа."
-    },
-    {
-      "evidence": "Внутренние реплики содержат выражения вроде “Fuck” и “Fucking great”, особенно когда Dillon раздражён или встревожен.",
-      "source_pattern": "Разговорная речь и эмоциональные усилители, включая грубую лексику, характерны для внутренней речи Dillon.",
-      "translation_approach": "Сохранять степень резкости и неформальный регистр, не смягчая брань и не выравнивая внутреннюю речь до нейтрального литературного тона."
-    },
-    {
-      "evidence": "Cade подробно рассказывает о доме, семье и увлечениях, тогда как Dillon отвечает короткими репликами вроде “Cool?” и “Yeah, sure”.",
-      "source_pattern": "Cade говорит много, свободно перескакивает между темами и звучит более общительно, чем сдержанный Dillon.",
-      "translation_approach": "Сохранять многословие Cade, его короткие повторы и разговорные вставки; реплики Dillon оставлять заметно более краткими."
-    }
-  ],
+  "pending_style": [],
   "prompt_context": {
     "role": "reviewer",
     "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
@@ -50,9 +30,10 @@
     "glossary_sha256": "970e9f13b2005f753d202f088dee86e918bc77e479698538cbc55d06a39b8653",
     "style_guide_sha256": "161238721ea1ef50a84f53819d7cfc61efda9123427d7d6cdbf695e9288230de",
     "system_chars": 22384,
-    "user_chars": 54849
+    "user_chars": 55040,
+    "review_context": "independent_session"
   },
-  "memory_style_saved": 3,
+  "memory_style_saved": 6,
   "last_error": "model transport timeout or connection failure",
   "recoveries": [
     {
@@ -105,6 +86,5 @@
   "recovery_note": "A claim may still be active; inspect canonical state before recovery",
   "glossary_conflicts_rejected": 5,
   "blocked_unit_id": "chapter-000011",
-  "correction_extension_authorized_unit": "chapter-000011",
-  "force_full_review_unit": "chapter-000011"
+  "correction_extension_authorized_unit": "chapter-000011"
 }
