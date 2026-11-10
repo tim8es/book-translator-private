@@ -20,6 +20,11 @@ on:
   schedule:
     # Recovery when dispatch events are delayed or coalesced.
     - cron: "*/15 * * * *"
+  push:
+    branches: [main]
+    paths:
+      # Only explicit operator mode changes wake Auto, never book checkpoints.
+      - 'books/**/.workflow/auto-control.json'
 
 permissions:
   contents: write
