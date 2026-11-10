@@ -3,17 +3,13 @@
   "job_id": "568dee900b0619b04217111d61d2a861",
   "book_slug": "reckless-leather-chrome-book-1",
   "state": "running",
-  "phase": "model-call-reserved",
+  "phase": "translator-completed",
   "failures": 0,
   "correction_rounds": {},
   "workflow_revision": "d87bf1672a59b86e30ede996a99df28bdf47b36f",
   "source_sha256": "c74821fb3271a341a2cea6cb7d70e5b45e90e1286668d45169984402adbf5684",
-  "updated_at": "2026-11-10T16:17:40.751625+00:00",
-  "active": {
-    "role": "translator",
-    "chapter": 1,
-    "session_id": "auto-568dee900b06-translator-269b384a"
-  },
+  "updated_at": "2026-11-10T16:17:54.844202+00:00",
+  "active": null,
   "model_calls_started": 1,
   "prompt_context": {
     "role": "translator",
@@ -27,5 +23,7 @@
     "style_guide_sha256": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4",
     "system_chars": 15840,
     "user_chars": 3662
-  }
+  },
+  "memory_glossary_saved": 0,
+  "pending_style": []
 }
