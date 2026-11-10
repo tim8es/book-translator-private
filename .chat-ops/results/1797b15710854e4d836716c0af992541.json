@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "request_id": "1797b15710854e4d836716c0af992541",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "9eb4c5a31f66da43919ce08f3314a474231519c48de89f5d1d6a51fbcae38610",
+    "record": {
+      "correction_round": 1,
+      "outcome": "CORRECTIONS_REQUIRED",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "style",
+            "detail": "The Romance genre abbreviation «HEAs» refers to happy-ever-after endings for characters; «обрести каждый свой счастливый финал» sounds syntactically awkward in Russian. Render naturally as «прийти к счастливому финалу» or equivalent without adding new meaning.",
+            "id": "heas-awkward-ending",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "as they achieve their HEAs."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "обрести каждый свой счастливый финал."
+            }
+          }
+        ]
+      },
+      "record_id": "484d1452505f44b39f72134b0f71976d",
+      "review_commit": "5ee5db076e3a5edb2ccf8d5d18d6437c4e8bc672",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewed_at": "2026-11-10T18:04:35Z",
+      "reviewer_session_id": "homeinyou-reviewer-author51-20261110-dc1a",
+      "sequence": 52,
+      "source_sha256": "25750334ca8534022f45421d3e1bed8e9587127285e94f7524a8ab84a20f2917",
+      "state_revision": "5d51319faedd97cc949647c255912357bef9fae2f6c9c8b1650a698919f20bb2",
+      "supersedes_record_id": null,
+      "translation_sha256": "2bc0543a24f8d3e066cdb82556892df90e28c7ce3f7a25c7bd26f6881f19e16d",
+      "unit_id": "chapter-000051",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58"
+    }
+  },
+  "error": null
+}
