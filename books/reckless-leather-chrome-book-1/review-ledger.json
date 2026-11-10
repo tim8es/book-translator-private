@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "reckless-leather-chrome-book-1",
-  "next_sequence": 11,
+  "next_sequence": 12,
   "records": [
     {
       "record_id": "f77b051b1598493e90f406995c7404b7",
@@ -756,6 +756,176 @@
             "resolves": null
           }
         ]
+      }
+    },
+    {
+      "record_id": "821c49c24ba04ac7b414793bdabcc9eb",
+      "sequence": 11,
+      "unit_id": "chapter-000007",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "e0b6aa1bf22686032a158c32bb974e20245564c94096a24dae738bc81cd1c537",
+      "translation_sha256": "eea1654fd95fe1f48f35930992a17c8aa9ca24318f0294d2dedb00d7520b5cc7",
+      "workflow_revision": "d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "review_contract_revision": "docs/TRANSLATION.md@d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "reviewer_session_id": "auto-568dee900b06-reviewer-227119a3",
+      "reviewed_at": "2026-11-10T19:26:23Z",
+      "state_revision": "8c3fbbd529c3c7af328aa0740c6b1a7d93263c7725424d4998aea34c09de8454",
+      "review_commit": "a7981a1d97cc307dca5f85a660cde46cfd65bec4",
+      "correction_round": 3,
+      "supersedes_record_id": "86e8d548124c493094e8c73ced2b3a1f",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-register-2",
+            "category": "register",
+            "severity": "minor",
+            "detail": "The current line restores the source's profanity and anger; the earlier register issue is corrected.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "What the fuck do you mean *patch over*?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "— Что, блядь, значит *перевестись*?",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "86e8d548124c493094e8c73ced2b3a1f",
+              "finding_id": "register-2"
+            }
+          },
+          {
+            "id": "recheck-meaning-6",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The current wording no longer makes the envelope itself the object being zipped; the earlier object error is corrected.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "He zipped the envelope inside his cut, pressed close to his body.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Он убрал конверт во внутренний карман жилета на молнии, плотно прижав его к телу.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "86e8d548124c493094e8c73ced2b3a1f",
+              "finding_id": "meaning-6"
+            }
+          },
+          {
+            "id": "recheck-style-2",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The current wording is grammatical and conveys that the pen-pal program settled Tank's decision; the earlier agreement issue is corrected.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "But it had been the new pen pal program he’d signed up for nine months ago that had sealed the deal.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Но всё решила новая программа поиска друзей по переписке, в которой он зарегистрировался девять месяцев назад.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "86e8d548124c493094e8c73ced2b3a1f",
+              "finding_id": "style-2"
+            }
+          },
+          {
+            "id": "meaning-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "“Without any prospects” means he had no promising future or opportunities, not that he had achieved nothing. Render this as having no prospects rather than “ничего не добился.”",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Joining the MC when he was young and dumb had seemed like a good idea to a backwater kid like him without any prospects",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "В юности, когда он был глуп и ничего не добился, вступление в мотоклуб казалось такому захолустному парню, как он, неплохой идеей.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "“A sight for sore eyes” is a pleasing or welcome sight; “зрелище, от которого отдыхали глаза” is an unnatural rendering and does not preserve the idiom. Use a natural equivalent such as “услада для глаз.”",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Sleek black and chrome everywhere, she was a sight for sore eyes.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Гладкий, чёрный, сплошной хром — зрелище, от которого отдыхали глаза.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-2",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The Russian construction “заслуживал большего, чем чтобы его застали” is awkward. Recast the sentence naturally while preserving that Tank will not risk being caught sniffing his boy’s underwear in public.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "His boy deserved better than him getting caught sniffing his underwear out in the open.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Его мальчик заслуживал большего, чем чтобы его застали за обнюхиванием белья на виду у всех.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-3",
+            "category": "style",
+            "severity": "minor",
+            "detail": "“Перекрученной спины” sounds unnatural and can suggest physical distortion rather than the boy’s twisted pose for the photo. Use a more natural description of his turned or twisted back.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "there was strength in the muscles of his twisted back and round thighs as he contorted to take the picture of his ass in what was obviously his bathroom mirror.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "в мышцах его перекрученной спины и округлых бёдер чувствовалась сила: он изогнулся, чтобы сфотографировать свою задницу в зеркале, очевидно, в собственной ванной.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-2",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "“More fully clothed” describes how much clothing the boy is wearing, not whether he is dressed more decently. Avoid the added judgment in “одет куда приличнее.”",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "ones where his boy was more fully clothed",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "на них его мальчик был одет куда приличнее",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "664907cf154903d7077e191eeca692d6b58af74c3d4de9301697620993f2f695",
+        "style_guide": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4"
       }
     }
   ]
