@@ -3,20 +3,17 @@
   "job_id": "568dee900b0619b04217111d61d2a861",
   "book_slug": "reckless-leather-chrome-book-1",
   "state": "running",
-  "phase": "model-call-reserved",
-  "failures": 2,
+  "phase": "corrector-completed",
+  "failures": 0,
   "correction_rounds": {
     "chapter-000005": 1,
-    "chapter-000006": 1
+    "chapter-000006": 1,
+    "chapter-000007": 1
   },
   "workflow_revision": "d87bf1672a59b86e30ede996a99df28bdf47b36f",
   "source_sha256": "c74821fb3271a341a2cea6cb7d70e5b45e90e1286668d45169984402adbf5684",
-  "updated_at": "2026-11-10T19:31:45.580973+00:00",
-  "active": {
-    "role": "corrector",
-    "chapter": 7,
-    "session_id": "auto-568dee900b06-corrector-4fea9561"
-  },
+  "updated_at": "2026-11-10T19:33:25.611802+00:00",
+  "active": null,
   "model_calls_started": 33,
   "prompt_context": {
     "role": "corrector",
@@ -33,23 +30,7 @@
     "correction_mode": "anchored-patches"
   },
   "memory_glossary_saved": 28,
-  "pending_style": [
-    {
-      "evidence": "Сцена передаёт тюремные воспоминания, телесные ощущения и оценки Танка, в том числе его мысли о клубе и письмах.",
-      "source_pattern": "Повествование в третьем лице с близкой фокализацией на Танке; читатель получает его непосредственные оценки, ощущения и мысли.",
-      "translation_approach": "Сохранять близкую перспективу Танка и не добавлять объяснений, которых нет в его восприятии."
-    },
-    {
-      "evidence": "В тексте регулярно встречаются грубые обращения и ругательства, например в репликах Танка и Снейка.",
-      "source_pattern": "Разговорная, грубоватая речь и частая обсценная лексика, особенно в диалогах и внутренней речи.",
-      "translation_approach": "Использовать естественную разговорную русскую речь и сохранять обсценную лексику там, где она есть в оригинале."
-    },
-    {
-      "evidence": "Отдельные фразы вроде “Hidden desires” и “He just hoped what was inside didn’t drown him” соседствуют с подробными описаниями встречи и фотографий.",
-      "source_pattern": "Короткие фрагментарные фразы чередуются с развёрнутыми описательными предложениями; повествование тесно следует за физическими реакциями героя.",
-      "translation_approach": "Сохранять контраст между короткими эмоциональными фразами и более длинными описаниями, не сглаживая ритм."
-    }
-  ],
+  "pending_style": [],
   "memory_style_saved": 0,
   "correction_extensions": {},
   "recoveries": [
@@ -58,6 +39,5 @@
       "approved_at": "2026-11-10T19:22:22.808189+00:00",
       "previous_error": "patch must target the reviewer's exact translation anchor"
     }
-  ],
-  "blocked_unit_id": "chapter-000007"
+  ]
 }
