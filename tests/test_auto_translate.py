@@ -52,6 +52,37 @@ class AutomatedBookTests(unittest.TestCase):
                     {"job_id": first, "book_key": "novel-a"},
                     {"job_id": second, "book_key": "novel-b"}])
 
+    def test_newer_resume_auto_signal_unblocks_only_supported_model_failure(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            slug, job_id = "stalled-book", "a" * 32
+            intake = root / "intake" / "auto" / job_id
+            intake.mkdir(parents=True)
+            worker.store_json(intake / "request.json", {
+                "job_id": job_id, "source_sha256": "c" * 64,
+                "target_language": "ru"})
+            status_path = root / "automation" / "status" / (job_id + ".json")
+            status = {"state": "blocked", "phase": "model-blocked",
+                      "book_slug": slug, "active": None,
+                      "updated_at": "2026-11-10T10:00:00+00:00"}
+            worker.store_json(status_path, status)
+            control = root / "books" / slug / ".workflow" / "auto-control.json"
+            worker.store_json(control, {"schema_version": 1, "mode": "auto",
+                "updated_at": "2026-11-10T10:01:00+00:00"})
+            with patch.object(worker, "ROOT", root):
+                self.assertTrue(worker.auto_resume_requested(status))
+                self.assertEqual(worker.select(None), job_id)
+                self.assertEqual(worker.ready_jobs(), [
+                    {"job_id": job_id, "book_key": slug}])
+                worker.store_json(control, {"schema_version": 1, "mode": "auto",
+                    "updated_at": "2026-11-10T09:59:00+00:00"})
+                self.assertFalse(worker.auto_resume_requested(status))
+                self.assertEqual(worker.select(None), "")
+                status["phase"] = "operator-intervention-required"
+                worker.store_json(control, {"schema_version": 1, "mode": "auto",
+                    "updated_at": "2026-11-10T10:02:00+00:00"})
+                self.assertFalse(worker.auto_resume_requested(status))
+
     def test_auto_pause_and_resume_do_not_change_literary_workflow(self):
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)
