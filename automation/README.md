@@ -241,6 +241,10 @@ This is a **bounded initial MVP**, not unrestricted unattended production:
   Transport retries inside one invocation may still issue additional HTTP
   attempts. This is **not** a monetary or token-based budget: configure an
   upstream OmniRoute spending cap and check provider pricing separately.
+- Each unit may receive at most four accepted Reviewer records. If the fourth
+  still requires corrections, defer that unit and continue with the next one.
+  Deferred units remain unreviewed; the job blocks before final delivery until
+  each deferred unit has a current PASS review.
 - The reviewer is an LLM, not a guarantee of literary correctness; evaluate
   finished books before offering an unqualified quality guarantee.
 - Artifact retention is 30 days; durable final output remains under the
