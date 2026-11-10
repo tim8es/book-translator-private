@@ -3,7 +3,7 @@
   "job_id": "568dee900b0619b04217111d61d2a861",
   "book_slug": "reckless-leather-chrome-book-1",
   "state": "running",
-  "phase": "corrector-completed",
+  "phase": "claimed",
   "failures": 0,
   "correction_rounds": {
     "chapter-000005": 1,
@@ -11,8 +11,12 @@
   },
   "workflow_revision": "d87bf1672a59b86e30ede996a99df28bdf47b36f",
   "source_sha256": "c74821fb3271a341a2cea6cb7d70e5b45e90e1286668d45169984402adbf5684",
-  "updated_at": "2026-11-10T17:08:53.176670+00:00",
-  "active": null,
+  "updated_at": "2026-11-10T17:09:08.822701+00:00",
+  "active": {
+    "role": "reviewer",
+    "chapter": 6,
+    "session_id": "auto-568dee900b06-reviewer-8e2de643"
+  },
   "model_calls_started": 23,
   "prompt_context": {
     "role": "corrector",
