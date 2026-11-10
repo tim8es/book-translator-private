@@ -3,7 +3,7 @@
   "job_id": "568dee900b0619b04217111d61d2a861",
   "book_slug": "reckless-leather-chrome-book-1",
   "state": "running",
-  "phase": "claimed",
+  "phase": "model-call-reserved",
   "failures": 0,
   "correction_rounds": {
     "chapter-000005": 1,
@@ -11,26 +11,26 @@
   },
   "workflow_revision": "d87bf1672a59b86e30ede996a99df28bdf47b36f",
   "source_sha256": "c74821fb3271a341a2cea6cb7d70e5b45e90e1286668d45169984402adbf5684",
-  "updated_at": "2026-11-10T17:18:22.432939+00:00",
+  "updated_at": "2026-11-10T17:18:37.765372+00:00",
   "active": {
     "role": "corrector",
     "chapter": 7,
     "session_id": "auto-568dee900b06-corrector-c5c2a4f0"
   },
-  "model_calls_started": 26,
+  "model_calls_started": 27,
   "prompt_context": {
-    "role": "reviewer",
+    "role": "corrector",
     "workflow_revision": "d87bf1672a59b86e30ede996a99df28bdf47b36f",
     "loaded_contracts": [
       "AGENTS.md",
       "docs/TRANSLATION.md",
-      "docs/REVIEWER.md"
+      "docs/TRANSLATOR.md"
     ],
     "glossary_sha256": "664907cf154903d7077e191eeca692d6b58af74c3d4de9301697620993f2f695",
     "style_guide_sha256": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4",
-    "system_chars": 22384,
-    "user_chars": 51524,
-    "review_context": "independent_session"
+    "system_chars": 15840,
+    "user_chars": 24408,
+    "correction_mode": "anchored-patches"
   },
   "memory_glossary_saved": 28,
   "pending_style": [
