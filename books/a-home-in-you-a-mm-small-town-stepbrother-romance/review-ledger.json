@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 45,
+  "next_sequence": 46,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -3310,6 +3310,115 @@
               "record_id": "0178046cd38249069eec0991b820b9b6",
               "finding_id": "headlock-calque"
             }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "f35ca289e3224d9d80cafce33fd68acd",
+      "sequence": 45,
+      "unit_id": "chapter-000021",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "579114a93b3562d516ab4822538b1159d8b1d272c535b73e88da3d4e2b720002",
+      "translation_sha256": "34c5be9473df7d165e29f5b2972637b8769fd35b9360f8bfc18700628b339dbc",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewer_session_id": "homeinyou-reviewer-ch11-20261110-9bd781",
+      "reviewed_at": "2026-11-10T17:25:13Z",
+      "state_revision": "d8d0eeb73f0dd0f258377d082b995dc635b75f79b7b269c0534651b38278039f",
+      "review_commit": "e43c110c48c92164ad1b0c6f3b6b647056f4b0e4",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "invented-number-new-faces",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "«Много незнакомых лиц» adds an unsupported quantity: the English only says «some new ones». Translate without adding «много».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "some familiar faces and some new ones.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "кое-кого узнал, но было и много незнакомых лиц.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "green-idiom",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The phrase «едва не позеленевшим можно было назвать» is an unnatural Russian description of nervousness. Retain Cade's almost-green appearance in natural syntax.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "looking almost green as he walked away.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "такой бледный, что его едва не позеленевшим можно было назвать.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "kiss-sigh-omission",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The original includes a softly voiced moan and the narrator tasting the kiss; the Russian generalizes to a sigh and «ответил на поцелуй». Restore the specific source details without elaboration.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "I swallowed his sighing moan as I tasted him.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Я ощутил его тихий вздох и ответил на поцелуй.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "physical-reaction-vagueness",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The original names a specific involuntary physical reaction to kissing; «что творилось с моим телом» obscures that meaning and weakens the candid voice. Translate with a clinical, non-ornamental equivalent.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "how I always sported a hard-on when we kissed.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "что творилось с моим телом всякий раз, когда мы целовались.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "touch-everywhere-drift",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The narrator means he would eventually like to touch his boyfriend everywhere, not merely to know him better; «узнать его ещё ближе» changes the stated intention. Restore it concisely.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "I wanted to touch him everywhere.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "мне хотелось узнать его ещё ближе.",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       }

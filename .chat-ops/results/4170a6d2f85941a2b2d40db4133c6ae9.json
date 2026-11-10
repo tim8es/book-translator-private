@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "request_id": "4170a6d2f85941a2b2d40db4133c6ae9",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "24d26c4e5712a2df63675a45402fca5ff791cdf2c53668b77bdcd5985ee4362e",
+    "record": {
+      "correction_round": 1,
+      "outcome": "CORRECTIONS_REQUIRED",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "meaning",
+            "detail": "«Много незнакомых лиц» adds an unsupported quantity: the English only says «some new ones». Translate without adding «много».",
+            "id": "invented-number-new-faces",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "some familiar faces and some new ones."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "кое-кого узнал, но было и много незнакомых лиц."
+            }
+          },
+          {
+            "category": "style",
+            "detail": "The phrase «едва не позеленевшим можно было назвать» is an unnatural Russian description of nervousness. Retain Cade's almost-green appearance in natural syntax.",
+            "id": "green-idiom",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "looking almost green as he walked away."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "такой бледный, что его едва не позеленевшим можно было назвать."
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "The original includes a softly voiced moan and the narrator tasting the kiss; the Russian generalizes to a sigh and «ответил на поцелуй». Restore the specific source details without elaboration.",
+            "id": "kiss-sigh-omission",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "I swallowed his sighing moan as I tasted him."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Я ощутил его тихий вздох и ответил на поцелуй."
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "The original names a specific involuntary physical reaction to kissing; «что творилось с моим телом» obscures that meaning and weakens the candid voice. Translate with a clinical, non-ornamental equivalent.",
+            "id": "physical-reaction-vagueness",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "how I always sported a hard-on when we kissed."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "что творилось с моим телом всякий раз, когда мы целовались."
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "The narrator means he would eventually like to touch his boyfriend everywhere, not merely to know him better; «узнать его ещё ближе» changes the stated intention. Restore it concisely.",
+            "id": "touch-everywhere-drift",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "I wanted to touch him everywhere."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "мне хотелось узнать его ещё ближе."
+            }
+          }
+        ]
+      },
+      "record_id": "f35ca289e3224d9d80cafce33fd68acd",
+      "review_commit": "e43c110c48c92164ad1b0c6f3b6b647056f4b0e4",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewed_at": "2026-11-10T17:25:13Z",
+      "reviewer_session_id": "homeinyou-reviewer-ch11-20261110-9bd781",
+      "sequence": 45,
+      "source_sha256": "579114a93b3562d516ab4822538b1159d8b1d272c535b73e88da3d4e2b720002",
+      "state_revision": "d8d0eeb73f0dd0f258377d082b995dc635b75f79b7b269c0534651b38278039f",
+      "supersedes_record_id": null,
+      "translation_sha256": "34c5be9473df7d165e29f5b2972637b8769fd35b9360f8bfc18700628b339dbc",
+      "unit_id": "chapter-000021",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58"
+    }
+  },
+  "error": null
+}
