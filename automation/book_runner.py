@@ -623,6 +623,30 @@ def auto_mode(slug: str) -> str:
     return data["mode"]
 
 
+def auto_resume_requested(status: dict) -> bool:
+    """A newer explicit ChatOps resume-auto can authorize model-blocked recovery."""
+    if (status.get("state") != "blocked" or status.get("phase") != "model-blocked"
+            or status.get("active") is not None):
+        return False
+    slug = status.get("book_slug")
+    if not isinstance(slug, str) or not re.fullmatch(r"[a-z0-9][a-z0-9-]{0,99}", slug):
+        return False
+    path = ROOT / "books" / slug / ".workflow" / "auto-control.json"
+    if not path.exists():
+        return False
+    control = read_json(path)
+    if control.get("schema_version") != 1 or control.get("mode") != "auto":
+        return False
+    try:
+        signal = datetime.fromisoformat(control["updated_at"].replace("Z", "+00:00"))
+        block = datetime.fromisoformat(status["updated_at"].replace("Z", "+00:00"))
+    except (KeyError, TypeError, ValueError) as exc:
+        raise JobError("invalid Auto resume timestamp") from exc
+    if signal.tzinfo is None or block.tzinfo is None:
+        raise JobError("Auto resume timestamps must include time zones")
+    return signal > block
+
+
 def book_key(job_id: str) -> str:
     """Stable GitHub concurrency key; unlike job IDs it groups the same book."""
     state = status_path(job_id)
@@ -648,7 +672,7 @@ def ready_jobs(limit: int = 200) -> list[dict]:
         try:
             if state_file.exists():
                 state = read_json(state_file)
-                if state.get("state") in FINAL:
+                if state.get("state") in FINAL and not auto_resume_requested(state):
                     continue
                 if state.get("state") == "paused" and auto_mode(state["book_slug"]) != "auto":
                     continue
@@ -687,7 +711,7 @@ def select(explicit: str | None) -> str:
             if auto_mode(recorded["book_slug"]) == "auto":
                 return job_id
             continue
-        if recorded.get("state") not in FINAL:
+        if recorded.get("state") not in FINAL or auto_resume_requested(recorded):
             return job_id
     return ""
 
@@ -1766,6 +1790,8 @@ def run(job_id: str, *, resume_blocked: bool = False,
     request = request_for(job_id)
     current = status_path(job_id)
     status = read_json(current) if current.exists() else None
+    if not resume_blocked and not resume_interrupted and status and auto_resume_requested(status):
+        resume_blocked = True
     if resume_blocked and resume_interrupted:
         raise JobError("choose only one recovery mode")
     if resume_blocked and (status is None or status.get("state") != "blocked"):
@@ -2059,7 +2085,8 @@ def main() -> int:
         status = run(job_id, resume_blocked=args.resume_blocked,
                      resume_interrupted=args.resume_interrupted)
     except BookIdentityError as exc:
-        if (args.resume_blocked or args.resume_interrupted) and job_is_blocked(job_id):
+        if (args.resume_blocked or args.resume_interrupted or
+                (job_is_blocked(job_id) and auto_resume_requested(read_json(status_path(job_id))))) and job_is_blocked(job_id):
             print("Blocked job unchanged; resume preflight failed: " + str(exc)[:350], file=sys.stderr)
             return 1
         status = {"schema_version": 1, "job_id": job_id, "book_slug": None,
@@ -2067,7 +2094,8 @@ def main() -> int:
             "failures": 0, "correction_rounds": {}, "last_error": str(exc)[:350]}
         checkpoint(job_id, status, None)
     except (JobError, ModelError, OSError, ValueError, KeyError, subprocess.TimeoutExpired) as exc:
-        if (args.resume_blocked or args.resume_interrupted) and job_is_blocked(job_id):
+        if (args.resume_blocked or args.resume_interrupted or
+                (job_is_blocked(job_id) and auto_resume_requested(read_json(status_path(job_id))))) and job_is_blocked(job_id):
             print("Blocked job unchanged; resume preflight failed: "
                   + type(exc).__name__ + ": " + str(exc)[:300], file=sys.stderr)
             return 1
