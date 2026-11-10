@@ -118,6 +118,66 @@ class AutomatedBookTests(unittest.TestCase):
                     worker.replay_disjoint_checkpoint(
                         base, local, conflicting, ["books/our-book"])
 
+    def test_disjoint_checkpoint_classifies_stale_remote_as_retryable(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            def cmd(*args):
+                return subprocess.check_output(["git", *args], cwd=root, text=True).strip()
+            cmd("init", "-q", "-b", "main")
+            cmd("config", "user.name", "Test Agent")
+            cmd("config", "user.email", "test-agent@example.test")
+            (root / "original.txt").write_text("first", encoding="utf-8")
+            cmd("add", "-A")
+            cmd("commit", "-qm", "previous remote")
+            older_remote = cmd("rev-parse", "HEAD")
+            (root / "other.txt").write_text("later", encoding="utf-8")
+            cmd("add", "-A")
+            cmd("commit", "-qm", "runner checkout base")
+            base = cmd("rev-parse", "HEAD")
+            (root / "books").mkdir()
+            (root / "books" / "chapter.md").write_text("translated", encoding="utf-8")
+            cmd("add", "-A")
+            cmd("commit", "-qm", "local checkpoint")
+            local = cmd("rev-parse", "HEAD")
+            with patch.object(worker, "ROOT", root):
+                with self.assertRaisesRegex(worker.JobError, "remote main is behind"):
+                    worker.replay_disjoint_checkpoint(
+                        base, local, older_remote, ["books/chapter.md"])
+            self.assertEqual(cmd("rev-parse", "HEAD"), local)
+
+    def test_checkpoint_refetches_behind_remote_without_forcing_or_overwriting(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            (root / "books" / "sample").mkdir(parents=True)
+            (root / "books" / "sample" / "chapter.md").write_text("accepted", encoding="utf-8")
+            heads = iter(["b" * 40, "c" * 40])
+            remotes = iter(["a" * 40, "d" * 40])
+            calls = []
+            def fake_git(*args):
+                calls.append(args)
+                if args == ("diff", "--cached", "--name-only", "-z"):
+                    return "books/sample/chapter.md\0"
+                if args == ("rev-parse", "HEAD"):
+                    return next(heads)
+                if args == ("rev-parse", "origin/main"):
+                    return next(remotes)
+                return ""
+            with patch.object(worker, "ROOT", root), \
+                 patch.object(worker, "git", side_effect=fake_git), \
+                 patch.object(worker, "replay_disjoint_checkpoint",
+                              side_effect=[worker.JobError(
+                                  "remote main is behind checkpoint base; retry fetch"), "e" * 40]) as replay, \
+                 patch.object(worker.time, "sleep") as sleep, \
+                 patch.object(worker.subprocess, "run") as run:
+                run.return_value.returncode = 0
+                worker.checkpoint("a" * 32, {"phase": "reviewer-completed"}, "sample")
+            self.assertEqual(replay.call_count, 2)
+            sleep.assert_called_once_with(1)
+            run.assert_called_once()
+            self.assertEqual(run.call_args.args[0][:3], ["git", "push", "origin"])
+            self.assertNotIn("--force", run.call_args.args[0])
+            self.assertEqual(calls.count(("fetch", "--quiet", "origin", "main")), 2)
+
     def test_disjoint_checkpoint_rejects_rewritten_history(self):
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)

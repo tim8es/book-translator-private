@@ -18,6 +18,7 @@ import shutil
 import subprocess
 import sys
 import tempfile
+import time
 import unicodedata
 import xml.etree.ElementTree as ET
 import zipfile
@@ -653,6 +654,15 @@ def replay_disjoint_checkpoint(base: str, local_commit: str, remote: str,
         ["git", "merge-base", "--is-ancestor", base, remote],
         cwd=ROOT, capture_output=True)
     if ancestor.returncode:
+        # GitHub can briefly serve an older origin/main ref after a successful
+        # concurrent push. An *ancestor* of our checkout base is stale, not
+        # rewritten history. Let checkpoint re-fetch instead of discarding
+        # a model response or weakening the ancestry guard.
+        behind = subprocess.run(
+            ["git", "merge-base", "--is-ancestor", remote, base],
+            cwd=ROOT, capture_output=True)
+        if ancestor.returncode == 1 and behind.returncode == 0:
+            raise JobError("remote main is behind checkpoint base; retry fetch")
         raise JobError("upstream history diverged; refusing automatic checkpoint")
     if git("diff", "--name-only", base, remote, "--", *paths):
         raise JobError("remote changed this job's book/status; refusing stale checkpoint")
@@ -712,11 +722,19 @@ def checkpoint(job_id: str, status: dict, slug: str | None) -> None:
         "-c", "user.email=41898282+github-actions[bot]@users.noreply.github.com",
         "commit", "-m", f"auto({job_id[:12]}): {status['phase']}")
     local_commit = git("rev-parse", "HEAD")
-    for attempt in range(4):
+    for attempt in range(8):
         git("fetch", "--quiet", "origin", "main")
         remote = git("rev-parse", "origin/main")
-        candidate = (local_commit if remote == base else
-                     replay_disjoint_checkpoint(base, local_commit, remote, paths))
+        try:
+            candidate = (local_commit if remote == base else
+                         replay_disjoint_checkpoint(base, local_commit, remote, paths))
+        except JobError as exc:
+            if str(exc) == "remote main is behind checkpoint base; retry fetch" and attempt < 7:
+                # Bounded re-fetch only. A genuinely rewritten history or any
+                # overlapping book/status write remains an immediate hard stop.
+                time.sleep(1)
+                continue
+            raise
         result = subprocess.run(
             ["git", "push", "origin", f"{candidate}:refs/heads/main"],
             cwd=ROOT, capture_output=True, text=True)
