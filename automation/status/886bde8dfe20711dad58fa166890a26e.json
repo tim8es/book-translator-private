@@ -3,8 +3,8 @@
   "job_id": "886bde8dfe20711dad58fa166890a26e",
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
   "source_sha256": "3a3fce78317162b68bc1e82501456a74a783cfc96cb2640c463f381866007865",
-  "state": "blocked",
-  "phase": "correction-limit-reached",
+  "state": "running",
+  "phase": "operator-resume-authorized",
   "failures": 0,
   "correction_rounds": {
     "chapter-000002": 1,
@@ -17,7 +17,7 @@
     "chapter-000014": 3
   },
   "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
-  "updated_at": "2026-11-10T12:47:01.592011+00:00",
+  "updated_at": "2026-11-10T14:57:50.905063+00:00",
   "active": null,
   "model_calls_started": 94,
   "memory_glossary_saved": 90,
@@ -37,7 +37,7 @@
     "review_context": "independent_session"
   },
   "memory_style_saved": 6,
-  "last_error": "reviewer evidence is invalid: findings[7].translation_anchor: quote is repeated; use an unambiguous longer excerpt",
+  "last_error": null,
   "recoveries": [
     {
       "action": "resume-model-blocked",
@@ -101,11 +101,19 @@
       "approved_at": "2026-11-10T12:06:17.164077+00:00",
       "previous_error": "JobError: canonical CLI rejected operation: ERROR: source-linked review evidence failed: findings[2].translation_anchor: quoted passage occurrence 0 is absent from the current artifact\n",
       "session_id": "auto-886bde8dfe20-reviewer-d1037150"
+    },
+    {
+      "action": "resume-correction-limit-reached",
+      "approved_at": "2026-11-10T14:57:50.905042+00:00",
+      "previous_error": "reviewer evidence is invalid: findings[7].translation_anchor: quote is repeated; use an unambiguous longer excerpt"
     }
   ],
   "recovery_note": "A claim may still be active; inspect canonical state before recovery",
   "glossary_conflicts_rejected": 5,
   "correction_extension_authorized_unit": "chapter-000011",
   "correction_extensions": {},
-  "blocked_unit_id": "chapter-000014"
+  "blocked_unit_id": "chapter-000014",
+  "deferred_review_units": [
+    "chapter-000014"
+  ]
 }
