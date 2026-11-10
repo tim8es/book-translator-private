@@ -1240,6 +1240,19 @@ def context(engine: Path, slug: str, chapter: dict, role: str,
             )
         previous_open = [item for item in findings if not item.get("resolved")]
         if record and quality.get("evidence_version") == 2 and previous_open:
+            if not bounded_review:
+                prior_rechecks = [{
+                    "id": item["id"], "category": item["category"],
+                    "severity": item["severity"], "detail": item["detail"],
+                    "source_anchor": item["source_anchor"],
+                    "previous_translation_anchor": item["translation_anchor"],
+                } for item in previous_open]
+                user += (
+                    "\nPRIOR UNRESOLVED FINDINGS TO RECHECK (previous_translation_anchor is "
+                    "historical; do not reuse it):\n"
+                    + json.dumps({"record_id": record["record_id"],
+                                  "findings": prior_rechecks}, ensure_ascii=False)
+                )
             example_id = previous_open[0]["id"]
             resolves = json.dumps({"record_id": record["record_id"],
                                    "finding_id": example_id}, ensure_ascii=False)
