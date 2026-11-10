@@ -7,6 +7,7 @@ import sys
 import tempfile
 import unittest
 from pathlib import Path
+from types import ModuleType
 from datetime import datetime, timezone, timedelta
 from unittest.mock import patch
 
@@ -190,6 +191,8 @@ class LiteraryContextTests(unittest.TestCase):
                 _system, user, _source = runner.context(engine, "test", chapter, "reviewer")
             self.assertIn(json.dumps({"record_id": "record-4", "finding_id": "register-1"}), user)
             self.assertIn("prior unresolved finding", user)
+            self.assertIn("translation_anchor must quote the supplied current accepted translation", user)
+            self.assertIn("do not copy a stale anchor from the previous record", user)
 
     def test_memory_only_correction_triggers_fresh_reviewer(self):
         chapter = {"unit_id": "chapter-000001", "number": 1, "status": "translated",
@@ -336,6 +339,54 @@ class LiteraryContextTests(unittest.TestCase):
             self.assertEqual(status["prompt_context"]["role"], "reviewer")
             self.assertEqual(status["prompt_context"]["user_chars"], len("review prompt"))
             self.assertEqual(status["blocked_unit_id"], "chapter-000012")
+
+    def test_invalid_reviewer_anchor_is_retried_before_canonical_mutation(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            book = root / "books" / "test"
+            claims = book / ".workflow" / "claims"
+            claims.mkdir(parents=True)
+            (book / "glossary.md").write_text("glossary", encoding="utf-8")
+            (book / "style-guide.md").write_text("style", encoding="utf-8")
+            (book / "translated").mkdir()
+            (book / "translated" / "one.md").write_text("current translation", encoding="utf-8")
+            (claims / "chapter-000012.json").write_text(json.dumps({
+                "session_id": "owner"}), encoding="utf-8")
+            chapter = {"unit_id": "chapter-000012", "number": 12,
+                       "source_path": "extracted/one.md",
+                       "translation_path": "translated/one.md", "status": "translated"}
+            status = {"active": {"chapter": 12, "role": "reviewer",
+                                 "session_id": "owner"},
+                      "workflow_revision": "f" * 40,
+                      "model_calls_started": 75, "failures": 0}
+            workflow = ModuleType("workflow")
+            workflow.__path__ = []
+            anchors = ModuleType("workflow.review_anchors")
+            anchors.verify_evidence_anchors = unittest.mock.Mock(
+                side_effect=ValueError("findings[0].translation_anchor is absent"))
+            anchors.verify_correction_lineage = unittest.mock.Mock()
+            report = {"evidence_version": 2, "context": "independent_session",
+                      "checks": {key: True for key in
+                                 ("coverage", "meaning", "terminology", "style", "structure")},
+                      "findings": []}
+            with patch.dict(sys.modules, {"workflow": workflow,
+                                          "workflow.review_anchors": anchors}), \
+                 patch.object(runner, "ROOT", root), \
+                 patch.object(runner, "chapter_data", return_value=({}, {}, [chapter])), \
+                 patch.object(runner, "latest_record", return_value=None), \
+                 patch.object(runner, "context", return_value=("system", "review prompt", "source text")), \
+                 patch.object(runner, "role_contracts", return_value=("", ["AGENTS.md"])), \
+                 patch.object(runner, "model_call_limit", return_value=120), \
+                 patch.object(runner, "parse_literary_review", return_value=("PASS", report, [])), \
+                 patch.object(runner, "checkpoint"), \
+                 patch.object(runner, "cli") as cli, \
+                 patch.object(runner, "complete", return_value="response"):
+                runner.process_claim("c" * 32, "test", status, root)
+            self.assertEqual(status["phase"], "model-retry")
+            self.assertEqual(status["state"], "running")
+            self.assertEqual(status["failures"], 1)
+            anchors.verify_evidence_anchors.assert_called_once()
+            self.assertFalse(any(call.args[0] == "review-record" for call in cli.call_args_list))
 
     def test_claim_includes_frozen_literary_revisions(self):
         with tempfile.TemporaryDirectory() as tmp:
