@@ -41,3 +41,5 @@ Use this file for recurring names, places, organizations, terms, nicknames, titl
 | Injustice 2 | Injustice 2 | title | Название видеоигры; сохранено в оригинальном написании. |
 | Prismacolor Pencils | Prismacolor | brand | Марка художественных карандашей; название бренда сохранено. |
 | Virginia | Вирджиния | place | Штат США. |
+| California | Калифорния | place | Название штата. |
+| Florida | Флорида | place | Название штата. |
