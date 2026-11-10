@@ -1248,7 +1248,10 @@ def context(engine: Path, slug: str, chapter: dict, role: str,
                      "each current finding and set resolves to a JSON object with the prior "
                      "record id and that finding's exact old id. For example, the recheck of "
                      + json.dumps(example_id) + " must contain \"resolves\":" + resolves +
-                     ". Set resolved=true only when fixed; otherwise set it to false. Only "
+                     ". Its source_anchor must quote the supplied current source, and its "
+                     "translation_anchor must quote the supplied current accepted translation; "
+                     "do not copy a stale anchor from the previous record. Set resolved=true "
+                     "only when fixed; otherwise set it to false. Only "
                      "entirely new findings use resolves:null. A response missing any prior "
                      "recheck is invalid.")
         else:
@@ -1260,7 +1263,10 @@ def context(engine: Path, slug: str, chapter: dict, role: str,
             "category, severity, detail, resolved, source_anchor, translation_anchor, resolves. "
             "Use categories omission|addition|meaning|modality|referent|terminology|register|voice|style|structure; "
             "severity minor|major|critical. Anchors are exact quotes of at most 300 characters and a "
-            "zero-based occurrence; translation_anchor may be null only for an omission. "
+            "zero-based occurrence; source_anchor must quote the current source unit and "
+            "translation_anchor must quote the current accepted translation, not an earlier version. "
+            "Verify each quote occurs exactly at the supplied occurrence before returning. "
+            "translation_anchor may be null only for an omission. "
             "Example only (invented quotes; replace with exact supplied text): "
             "{\"evidence_version\":2,\"outcome\":\"CORRECTIONS_REQUIRED\","
             "\"checks\":{\"coverage\":true,\"meaning\":true,\"terminology\":true,\"style\":true,\"structure\":true},"
@@ -1428,6 +1434,20 @@ def process_claim(job_id: str, slug: str, status: dict, engine: Path) -> None:
                     answer, context=review_context)
                 if report.get("evidence_version") != 2:
                     raise ModelError("automatic reviewer must return anchored v2 evidence")
+                try:
+                    from workflow.review_anchors import (
+                        verify_correction_lineage, verify_evidence_anchors)
+                    translation_bytes = (ROOT / "books" / slug / chapter["translation_path"]
+                                         ).read_bytes()
+                    source_bytes = source.encode("utf-8")
+                    verify_evidence_anchors(report, source_bytes, translation_bytes)
+                    verify_correction_lineage(
+                        report, previous=previous_record,
+                        source_sha256=hashlib.sha256(source_bytes).hexdigest(),
+                        translation_sha256=hashlib.sha256(translation_bytes).hexdigest(),
+                        outcome=outcome)
+                except (ImportError, ValueError) as exc:
+                    raise ModelError(f"reviewer evidence is invalid: {exc}") from exc
             elif patch_mode:
                 patches, proposed_glossary, proposed_style = parse_correction_patches(
                     answer, previous_quality["findings"])
