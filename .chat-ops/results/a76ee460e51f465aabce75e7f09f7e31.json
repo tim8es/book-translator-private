@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "request_id": "a76ee460e51f465aabce75e7f09f7e31",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "8e3a6a30065d8e568bcdff264a5997b9c0b669ad061f549898489ec73f8ea4e4",
+    "record": {
+      "correction_round": 1,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "terminology",
+            "detail": "The horse breed is now rendered by its recognizable Russian breed name, not a misleading literal description.",
+            "id": "recheck-breed-quarter-horse",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "breed-quarter-horse",
+              "record_id": "c33b2b02c8c941929b4dab6355717f2f"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "She’s an American quarter horse."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Она породы американский квотерхорс."
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "The team is now the junior/reserve high-school squad; the related later varsity reference is likewise rendered as the main squad.",
+            "id": "recheck-junior-varsity",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "junior-varsity",
+              "record_id": "c33b2b02c8c941929b4dab6355717f2f"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "the starting quarterback on the junior varsity team."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "основным квотербеком младшего состава школьной команды."
+            }
+          },
+          {
+            "category": "register",
+            "detail": "The narrator's colloquial obscenity and evaluative uncertainty are both retained.",
+            "id": "recheck-asshole-register",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "asshole-register",
+              "record_id": "c33b2b02c8c941929b4dab6355717f2f"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "he seemed like kind of an asshole and judgy."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "он показался мне слегка мудаковатым типом, который любит всех осуждать."
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "The revised translation no longer specifies a cosmetic product absent from the source.",
+            "id": "recheck-hair-stuff-ambiguity",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "hair-stuff-ambiguity",
+              "record_id": "c33b2b02c8c941929b4dab6355717f2f"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "I had stuff in my hands to tame them."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "у меня в руках было кое-что, чем я мог их пригладить."
+            }
+          }
+        ]
+      },
+      "record_id": "406b4000c65f4a03a74019a74ca6b32b",
+      "review_commit": "ab11feba12a92df3e1e2e354990edc32503a9639",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewed_at": "2026-11-10T15:49:13Z",
+      "reviewer_session_id": "homeinyou-rereview-ch7-20261110-6d3c57",
+      "sequence": 36,
+      "source_sha256": "3aac7a4beb5b67e7cb9c1ae406b6929518abb801644666e8e7da755175d5f051",
+      "state_revision": "9abcfa67037689e97e64b60994dec39d923fc45cbcde459ffa400c297efe223a",
+      "supersedes_record_id": "c33b2b02c8c941929b4dab6355717f2f",
+      "translation_sha256": "ac016e1f2a0c42cb4e4acfbe838990ecb49bddc9339b3398e58824246425183b",
+      "unit_id": "chapter-000017",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58"
+    }
+  },
+  "error": null
+}
