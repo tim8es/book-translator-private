@@ -3,7 +3,7 @@
   "job_id": "568dee900b0619b04217111d61d2a861",
   "book_slug": "reckless-leather-chrome-book-1",
   "state": "running",
-  "phase": "model-retry",
+  "phase": "claimed",
   "failures": 2,
   "correction_rounds": {
     "chapter-000005": 1,
@@ -11,8 +11,12 @@
   },
   "workflow_revision": "d87bf1672a59b86e30ede996a99df28bdf47b36f",
   "source_sha256": "c74821fb3271a341a2cea6cb7d70e5b45e90e1286668d45169984402adbf5684",
-  "updated_at": "2026-11-10T19:30:54.115109+00:00",
-  "active": null,
+  "updated_at": "2026-11-10T19:31:23.024262+00:00",
+  "active": {
+    "role": "corrector",
+    "chapter": 7,
+    "session_id": "auto-568dee900b06-corrector-4fea9561"
+  },
   "model_calls_started": 32,
   "prompt_context": {
     "role": "corrector",
@@ -55,6 +59,5 @@
       "previous_error": "patch must target the reviewer's exact translation anchor"
     }
   ],
-  "blocked_unit_id": "chapter-000007",
-  "last_error": "patch must target the reviewer's exact translation anchor"
+  "blocked_unit_id": "chapter-000007"
 }
