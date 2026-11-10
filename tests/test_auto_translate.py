@@ -44,6 +44,13 @@ class AutomatedBookTests(unittest.TestCase):
                 control = root / "books" / "novel-b" / ".workflow" / "auto-control.json"
                 worker.store_json(control, {"schema_version": 1, "mode": "auto"})
                 self.assertEqual(worker.select(None), second)
+                self.assertEqual(worker.ready_jobs(), [
+                    {"job_id": second, "book_key": "novel-b"}])
+                other = root / "books" / "novel-a" / ".workflow" / "auto-control.json"
+                worker.store_json(other, {"schema_version": 1, "mode": "auto"})
+                self.assertEqual(worker.ready_jobs(), [
+                    {"job_id": first, "book_key": "novel-a"},
+                    {"job_id": second, "book_key": "novel-b"}])
 
     def test_auto_pause_and_resume_do_not_change_literary_workflow(self):
         with tempfile.TemporaryDirectory() as temp:
