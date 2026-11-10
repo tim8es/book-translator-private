@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "request_id": "7fbf914a88d549a687f0e8fb3dac4d26",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "18ce030888020e1f48497cf653c6e7c4cba0d43be8ff29da6e94f7f6a15f7a35",
+    "record": {
+      "correction_round": 1,
+      "outcome": "CORRECTIONS_REQUIRED",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "meaning",
+            "detail": "The narrator was physically leaning against the funhouse; «возле» loses the contact/posture. Restore the action.",
+            "id": "leaning-against-funhouse",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "leaning against the funhouse."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Я чуть не умер на месте, там, возле комнаты смеха."
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "«Stood on the fence» places Evelyn on the fence rather than beside it. «У забора» changes the physical setting.",
+            "id": "evelyn-on-fence",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "She stood on the fence and ran a hand through my mop of curls"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Она встала у забора и провела рукой по копне моих кудрей"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "«Поводишь её ... верхом» is an unnatural and internally contradictory calque: the rider is meant to ride the saddled horse for fifteen minutes, not lead it.",
+            "id": "horse-ride-warmup",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "ride her around the small field to warm up her muscles for about fifteen minutes"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "минут пятнадцать поводишь её по небольшому полю верхом, чтобы размять мышцы"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "«Haven’t shown you yet» means Dillon has not taken him to or shown him this location, not that Cade has never visited it independently.",
+            "id": "not-shown-place",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "a place I like that I haven’t shown you yet."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "одно любимое место, где ты ещё не был"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "The narrator's «made for each other» expresses destined compatibility; «просто подходить друг другу» loses the heightened fatalistic nuance.",
+            "id": "made-for-each-other",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Why couldn’t we have been made for each other?"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Почему мы не могли просто подходить друг другу?"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "«Схватил меня в захват за шею» is an ungrammatical calque. Render the headlock as a recognizable physical hold.",
+            "id": "headlock-calque",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "because I ended up in a headlock."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "он тут же схватил меня в захват за шею."
+            }
+          }
+        ]
+      },
+      "record_id": "0178046cd38249069eec0991b820b9b6",
+      "review_commit": "c26e17184456b41b0315e53e72fa510d81cc5b0a",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewed_at": "2026-11-10T17:11:57Z",
+      "reviewer_session_id": "homeinyou-reviewer-ch10-20261110-2ef63a",
+      "sequence": 43,
+      "source_sha256": "08cd24bcf70cb15300d98f211a50f7b89275eb4f7ba2f75911ffa7b7ccdde5dc",
+      "state_revision": "db66f189a9cad3c30d22dbda23cd9e62635ec913ffe8fe92bd9e8b6e91b8616f",
+      "supersedes_record_id": null,
+      "translation_sha256": "737a65ea5adae459bcb18ab7b3033f83f74736f9a8d58f80a48a1e35c4e47d13",
+      "unit_id": "chapter-000020",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58"
+    }
+  },
+  "error": null
+}

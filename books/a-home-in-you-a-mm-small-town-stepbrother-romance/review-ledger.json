@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 43,
+  "next_sequence": 44,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -3042,6 +3042,131 @@
               "record_id": "58ce62a1b13e49448a15c8a04df89782",
               "finding_id": "darren-shirt-grip"
             }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "0178046cd38249069eec0991b820b9b6",
+      "sequence": 43,
+      "unit_id": "chapter-000020",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "08cd24bcf70cb15300d98f211a50f7b89275eb4f7ba2f75911ffa7b7ccdde5dc",
+      "translation_sha256": "737a65ea5adae459bcb18ab7b3033f83f74736f9a8d58f80a48a1e35c4e47d13",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewer_session_id": "homeinyou-reviewer-ch10-20261110-2ef63a",
+      "reviewed_at": "2026-11-10T17:11:57Z",
+      "state_revision": "db66f189a9cad3c30d22dbda23cd9e62635ec913ffe8fe92bd9e8b6e91b8616f",
+      "review_commit": "c26e17184456b41b0315e53e72fa510d81cc5b0a",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "leaning-against-funhouse",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The narrator was physically leaning against the funhouse; «возле» loses the contact/posture. Restore the action.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "leaning against the funhouse.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Я чуть не умер на месте, там, возле комнаты смеха.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "evelyn-on-fence",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "«Stood on the fence» places Evelyn on the fence rather than beside it. «У забора» changes the physical setting.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "She stood on the fence and ran a hand through my mop of curls",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Она встала у забора и провела рукой по копне моих кудрей",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "horse-ride-warmup",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Поводишь её ... верхом» is an unnatural and internally contradictory calque: the rider is meant to ride the saddled horse for fifteen minutes, not lead it.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "ride her around the small field to warm up her muscles for about fifteen minutes",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "минут пятнадцать поводишь её по небольшому полю верхом, чтобы размять мышцы",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "not-shown-place",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "«Haven’t shown you yet» means Dillon has not taken him to or shown him this location, not that Cade has never visited it independently.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "a place I like that I haven’t shown you yet.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "одно любимое место, где ты ещё не был",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "made-for-each-other",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The narrator's «made for each other» expresses destined compatibility; «просто подходить друг другу» loses the heightened fatalistic nuance.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Why couldn’t we have been made for each other?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Почему мы не могли просто подходить друг другу?",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "headlock-calque",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Схватил меня в захват за шею» is an ungrammatical calque. Render the headlock as a recognizable physical hold.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "because I ended up in a headlock.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "он тут же схватил меня в захват за шею.",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       }
