@@ -1259,7 +1259,7 @@ def context(engine: Path, slug: str, chapter: dict, role: str,
             "\"findings\":[{\"id\":\"meaning-1\",\"category\":\"meaning\",\"severity\":\"major\","
             "\"detail\":\"Possibility became certainty.\",\"resolved\":false,"
             "\"source_anchor\":{\"quote\":\"She might have known.\",\"occurrence\":0},"
-            "\"translation_anchor\":{\"quote\":\"��� �����.\",\"occurrence\":0},\"resolves\":null}],"
+            "\"translation_anchor\":{\"quote\":\"Она знала.\",\"occurrence\":0},\"resolves\":null}],"
             "\"style_guide\":[]}. Do not use the old three-field finding format. "
             "style_guide contains source-grounded entries with exactly source_pattern, "
             "translation_approach, evidence; [] is valid. Keep stable ids unique, report every unresolved "
@@ -1410,6 +1410,7 @@ def process_claim(job_id: str, slug: str, status: dict, engine: Path) -> None:
                 return
             status["model_calls_started"] = count + 1
             status["phase"] = "model-call-reserved"
+            status["prompt_context"] = prompt_context
             checkpoint(job_id, status, slug)
             answer = complete("REVIEWER" if role == "reviewer" else
                               "CORRECTOR" if role == "corrector" else "TRANSLATOR",
@@ -1454,6 +1455,7 @@ def process_claim(job_id: str, slug: str, status: dict, engine: Path) -> None:
         status["state"] = "blocked" if status["failures"] >= MAX_FAILURES else "running"
         status["phase"] = "model-blocked" if status["state"] == "blocked" else "model-retry"
         status["last_error"] = str(exc)[:350]
+        status["blocked_unit_id"] = unit_id
         checkpoint(job_id, status, slug)
         return
     if role == "reviewer":
@@ -1499,6 +1501,7 @@ def process_claim(job_id: str, slug: str, status: dict, engine: Path) -> None:
     status["active"] = None
     status["phase"] = role + "-completed"
     status["prompt_context"] = prompt_context
+    status.pop("blocked_unit_id", None)
     status["failures"] = 0
     checkpoint(job_id, status, slug)
 
