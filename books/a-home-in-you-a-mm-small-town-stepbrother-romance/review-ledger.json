@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 51,
+  "next_sequence": 52,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -3814,6 +3814,54 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "2d7a638808314a17b40e223094ced5ff",
+      "sequence": 51,
+      "unit_id": "chapter-000050",
+      "outcome": "PASS",
+      "source_sha256": "68e504d4c8761a214564117a929168e04841acb5cdbb70fbb990ee78a510f1a1",
+      "translation_sha256": "6d578e947d3ef7f966c488aff91f33616996b9e74e001b79af025effad902fdb",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewer_session_id": "homeinyou-rereviewer-ack50-20261110-1bf4",
+      "reviewed_at": "2026-11-10T17:59:43Z",
+      "state_revision": "91b0046df7f38c67ebe96f64fc4210618b856ce34c11dbf0072ea40389336f36",
+      "review_commit": "e4bed7523328b0c24675c37dcdb1cc3d7d0a4cb9",
+      "correction_round": 1,
+      "supersedes_record_id": "127eddf297b14fd891661cfdef623dc2",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-humors-me-register",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The corrected «с пониманием относится» preserves the affectionate and indulgent meaning of «humors me» without condescension.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "who humors me in all my creative endeavors (which are a lot)",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "который с пониманием относится ко всем моим творческим затеям (а их немало)",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "127eddf297b14fd891661cfdef623dc2",
+              "finding_id": "humors-me-register"
+            }
           }
         ]
       }

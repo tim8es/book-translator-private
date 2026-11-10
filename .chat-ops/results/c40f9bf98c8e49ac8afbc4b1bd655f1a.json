@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "request_id": "c40f9bf98c8e49ac8afbc4b1bd655f1a",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "8964f683a8ebbf88241779d207765d9c60284ad2132d83909f8cc379a12ff149",
+    "record": {
+      "correction_round": 1,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "meaning",
+            "detail": "The corrected «с пониманием относится» preserves the affectionate and indulgent meaning of «humors me» without condescension.",
+            "id": "recheck-humors-me-register",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "humors-me-register",
+              "record_id": "127eddf297b14fd891661cfdef623dc2"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "who humors me in all my creative endeavors (which are a lot)"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "который с пониманием относится ко всем моим творческим затеям (а их немало)"
+            }
+          }
+        ]
+      },
+      "record_id": "2d7a638808314a17b40e223094ced5ff",
+      "review_commit": "e4bed7523328b0c24675c37dcdb1cc3d7d0a4cb9",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewed_at": "2026-11-10T17:59:43Z",
+      "reviewer_session_id": "homeinyou-rereviewer-ack50-20261110-1bf4",
+      "sequence": 51,
+      "source_sha256": "68e504d4c8761a214564117a929168e04841acb5cdbb70fbb990ee78a510f1a1",
+      "state_revision": "91b0046df7f38c67ebe96f64fc4210618b856ce34c11dbf0072ea40389336f36",
+      "supersedes_record_id": "127eddf297b14fd891661cfdef623dc2",
+      "translation_sha256": "6d578e947d3ef7f966c488aff91f33616996b9e74e001b79af025effad902fdb",
+      "unit_id": "chapter-000050",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58"
+    }
+  },
+  "error": null
+}
