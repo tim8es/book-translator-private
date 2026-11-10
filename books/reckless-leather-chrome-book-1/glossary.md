@@ -4,3 +4,5 @@ Use this file for recurring names, places, organizations, terms, nicknames, titl
 
 | Original | Translation | Type | Notes |
 | --- | --- | --- | --- |
+| Reckless | Безрассудство | название книги | Переведено как существительное, чтобы сохранить значение названия без предположений о том, к кому оно относится. |
+| Leather & Chrome | Кожа и хром | название серии | Название серии. |
