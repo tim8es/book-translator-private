@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 27,
+  "next_sequence": 28,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -1433,6 +1433,147 @@
             },
             "translation_anchor": {
               "quote": "Мне было интересно, волнует ли их вообще моя судьба.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "13a5723dbb821b2670a8d9c534774432d6f107e1beb03987ee5eb980d2c485ac",
+        "style_guide": "3ec7c485cf41741084ffe49b72d2b18ed9bd650a00a2ba00554605abadea5e3a"
+      }
+    },
+    {
+      "record_id": "29d0660e1c894aa98657dbac012ebe3e",
+      "sequence": 27,
+      "unit_id": "chapter-000014",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "f105fb42da1bb93e2f2f41c7c0916bed489cf8a87a9f2f05da3f2193bc825997",
+      "translation_sha256": "a91d0b2ff9d71e06183423fb9907db07d0bfab02447b954c30dc50764b0fef49",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewer_session_id": "auto-886bde8dfe20-reviewer-4a8b8110",
+      "reviewed_at": "2026-11-10T12:38:28Z",
+      "state_revision": "9ceb32104d867eaf62dff04d8283a48898fcbc182d4b1949617ddaa91a00a8ba",
+      "review_commit": "0d9c7eacad3c8dc852940df817220f931e2d793b",
+      "correction_round": 2,
+      "supersedes_record_id": "f26cb221b40048d5b4eef5ab2880b391",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "meaning-recheck-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The correction preserves the source’s emphasis that he strongly disliked her, rather than shifting the emphasis to when he formed that opinion.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Today was the first time I’d met her, and I didn’t fucking like her at all.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Я встретил её сегодня впервые и, блядь, она мне совсем не понравилась.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "f26cb221b40048d5b4eef5ab2880b391",
+              "finding_id": "meaning-1"
+            }
+          },
+          {
+            "id": "meaning-recheck-2",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The correction now conveys that playing football did not seem enjoyable, rather than suggesting it was unhealthy.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Fuck, it didn’t sound fun at all.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Чёрт, это совсем не казалось весёлым.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "f26cb221b40048d5b4eef5ab2880b391",
+              "finding_id": "meaning-2"
+            }
+          },
+          {
+            "id": "style-recheck-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The corrected phrasing naturally conveys that the garden displays his mother’s gardening skill.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "filled with boxwood, hydrangeas in purples and pinks, and some other plants I couldn’t name, showing off Mom’s gardening skills.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Всё это наглядно демонстрировало мамино садоводческое мастерство.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "f26cb221b40048d5b4eef5ab2880b391",
+              "finding_id": "style-1"
+            }
+          },
+          {
+            "id": "meaning-recheck-3",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The correction preserves the broader question of whether his grandparents cared about him.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "I wondered if they cared about me at all.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Я гадал, не было ли им вообще до меня дела.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "f26cb221b40048d5b4eef5ab2880b391",
+              "finding_id": "meaning-3"
+            }
+          },
+          {
+            "id": "register-1",
+            "category": "register",
+            "severity": "minor",
+            "detail": "The translation omits the emphatic profanity in “stupid fucking dimples,” weakening the narrator’s rough, colloquial voice. Restore the profanity, for example with «долбаные ямочки» or an equivalent that fits the sentence.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "I couldn’t stop staring at his stupid fucking dimples.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Боже, и я никак не мог перестать таращиться на его дурацкие ямочки.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "register-2",
+            "category": "register",
+            "severity": "minor",
+            "detail": "«Какой же стыд» drops the profanity and colloquial emphasis of “How fucking embarrassing.” Use a comparably emphatic, rough rendering, such as «Как же это, блядь, стыдно».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "How fucking embarrassing.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Какой же стыд.",
               "occurrence": 0
             },
             "resolves": null
