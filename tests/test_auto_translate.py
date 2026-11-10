@@ -162,12 +162,12 @@ class AutomatedBookTests(unittest.TestCase):
                 if args == ("rev-parse", "origin/main"):
                     return next(remotes)
                 return ""
-            with patch.object(worker, "ROOT", root), \\
-                 patch.object(worker, "git", side_effect=fake_git), \\
+            with patch.object(worker, "ROOT", root), \
+                 patch.object(worker, "git", side_effect=fake_git), \
                  patch.object(worker, "replay_disjoint_checkpoint",
                               side_effect=[worker.JobError(
-                                  "remote main is behind checkpoint base; retry fetch"), "e" * 40]) as replay, \\
-                 patch.object(worker.time, "sleep") as sleep, \\
+                                  "remote main is behind checkpoint base; retry fetch"), "e" * 40]) as replay, \
+                 patch.object(worker.time, "sleep") as sleep, \
                  patch.object(worker.subprocess, "run") as run:
                 run.return_value.returncode = 0
                 worker.checkpoint("a" * 32, {"phase": "reviewer-completed"}, "sample")
