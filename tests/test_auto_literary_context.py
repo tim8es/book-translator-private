@@ -195,6 +195,8 @@ class LiteraryContextTests(unittest.TestCase):
             self.assertIn('"detail": "Register mismatch."', user)
             self.assertIn("translation_anchor must quote the supplied current accepted translation", user)
             self.assertIn("do not copy a stale anchor from the previous record", user)
+            self.assertIn("Every non-null anchor quote must occur exactly once", user)
+            self.assertIn("lengthen it with adjacent exact words", user)
 
     def test_memory_only_correction_triggers_fresh_reviewer(self):
         chapter = {"unit_id": "chapter-000001", "number": 1, "status": "translated",
@@ -402,10 +404,12 @@ class LiteraryContextTests(unittest.TestCase):
             book.mkdir(parents=True)
             (book / "glossary.md").write_text("glossary", encoding="utf-8")
             (book / "style-guide.md").write_text("style", encoding="utf-8")
+            status = {"last_error": "stale reviewer error"}
             with patch.object(runner, "ROOT", root), patch.object(
                 runner, "git", return_value="a" * 40), patch.object(
                 runner, "cli") as cli, patch.object(runner, "checkpoint"):
-                runner.claim("f" * 32, "test", {}, "translator", {"number": 1})
+                runner.claim("f" * 32, "test", status, "translator", {"number": 1})
+            self.assertNotIn("last_error", status)
             args = cli.call_args.args
             self.assertIn("--base-commit", args)
             self.assertEqual(args[args.index("--glossary-revision") + 1],
