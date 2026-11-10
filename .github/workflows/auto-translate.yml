@@ -20,34 +20,34 @@ on:
   schedule:
     # Recovery when dispatch events are delayed or coalesced.
     - cron: "*/15 * * * *"
+  push:
+    branches: [main]
+    paths:
+      - 'books/**/.workflow/auto-control.json'
 
 permissions:
   contents: write
   actions: write
 
-# One writer at a time for the initial MVP. Other writers are still protected
-# by a non-force Git checkpoint and the canonical Book Translator claims.
-concurrency:
-  group: automatic-book-translation-main
-  cancel-in-progress: false
+# Each book is isolated at the process job; a short selector has no global lock.
 
 jobs:
-  process:
+  select:
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-    timeout-minutes: 35
+    outputs:
+      job_id: ${{ steps.select.outputs.job_id }}
+      book_key: ${{ steps.select.outputs.book_key }}
     steps:
       - uses: actions/checkout@v4
         with:
           ref: main
           fetch-depth: 0
-          persist-credentials: true
-
+          persist-credentials: false
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-
-      - name: Select one pending job
+      - name: Select one pending job and book scope
         id: select
         env:
           REQUESTED_JOB: ${{ inputs.job_id }}
@@ -66,9 +66,31 @@ jobs:
             job_id="$(python automation/book_runner.py --select --job-id "$REQUESTED_JOB")"
           fi
           echo "job_id=$job_id" >> "$GITHUB_OUTPUT"
+          if [[ -n "$job_id" ]]; then
+            book_key="$(python automation/book_runner.py --book-key --job-id "$job_id")"
+            echo "book_key=$book_key" >> "$GITHUB_OUTPUT"
+          fi
+
+  process:
+    needs: select
+    if: needs.select.outputs.job_id != ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    concurrency:
+      group: automatic-book-${{ needs.select.outputs.book_key }}
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
 
       - name: Execute one pinned workflow checkpoint
-        if: steps.select.outputs.job_id != ''
+        if: needs.select.outputs.job_id != ''
         id: run
         env:
           OMNIROUTE_API_KEY: ${{ secrets.OMNIROUTE_API_KEY }}
@@ -77,7 +99,7 @@ jobs:
           OMNIROUTE_REVIEWER_MODEL: ${{ vars.OMNIROUTE_REVIEWER_MODEL }}
           OMNIROUTE_CORRECTOR_MODEL: ${{ vars.OMNIROUTE_CORRECTOR_MODEL }}
           OMNIROUTE_MODEL_CALL_LIMIT: ${{ vars.OMNIROUTE_MODEL_CALL_LIMIT }}
-          JOB_ID: ${{ steps.select.outputs.job_id }}
+          JOB_ID: ${{ needs.select.outputs.job_id }}
           RESUME_BLOCKED: ${{ inputs.resume_blocked }}
           RESUME_INTERRUPTED: ${{ inputs.resume_interrupted }}
         shell: bash
@@ -95,7 +117,7 @@ jobs:
         if: steps.run.outputs.done == 'true'
         uses: actions/upload-artifact@v4
         with:
-          name: translated-book-${{ steps.select.outputs.job_id }}
+          name: translated-book-${{ needs.select.outputs.job_id }}
           path: ${{ steps.run.outputs.artifact }}
           if-no-files-found: error
           retention-days: 30
@@ -104,7 +126,7 @@ jobs:
         if: steps.run.outputs.continue == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          JOB_ID: ${{ steps.select.outputs.job_id }}
+          JOB_ID: ${{ needs.select.outputs.job_id }}
         run: gh workflow run auto-translate.yml --ref main -f job_id="$JOB_ID"
 
       - name: Dispatch next pending job after terminal checkpoint
@@ -114,11 +136,11 @@ jobs:
         run: gh workflow run auto-translate.yml --ref main
 
       - name: Wake n8n delivery after a terminal job state
-        if: always() && steps.select.outputs.job_id != '' && (steps.run.outcome != 'success' || steps.run.outputs.done == 'true' || steps.run.outputs.continue_queue == 'true')
+        if: always() && needs.select.outputs.job_id != '' && (steps.run.outcome != 'success' || steps.run.outputs.done == 'true' || steps.run.outputs.continue_queue == 'true')
         continue-on-error: true
         env:
           N8N_DELIVERY_CALLBACK_URL: ${{ secrets.N8N_DELIVERY_CALLBACK_URL }}
-          JOB_ID: ${{ steps.select.outputs.job_id }}
+          JOB_ID: ${{ needs.select.outputs.job_id }}
           RUN_ID: ${{ github.run_id }}
           RUN_CONCLUSION: ${{ job.status }}
         shell: bash
