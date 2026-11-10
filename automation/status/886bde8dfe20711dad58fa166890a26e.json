@@ -3,9 +3,9 @@
   "job_id": "886bde8dfe20711dad58fa166890a26e",
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
   "source_sha256": "3a3fce78317162b68bc1e82501456a74a783cfc96cb2640c463f381866007865",
-  "state": "blocked",
-  "phase": "model-blocked",
-  "failures": 3,
+  "state": "running",
+  "phase": "operator-resume-authorized",
+  "failures": 0,
   "correction_rounds": {
     "chapter-000002": 1,
     "chapter-000003": 1,
@@ -14,7 +14,7 @@
     "chapter-000011": 3
   },
   "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
-  "updated_at": "2026-11-10T10:09:52.715975+00:00",
+  "updated_at": "2026-11-10T10:15:45.861313+00:00",
   "active": null,
   "model_calls_started": 66,
   "memory_glossary_saved": 65,
@@ -49,7 +49,7 @@
     "user_chars": 54849
   },
   "memory_style_saved": 3,
-  "last_error": "reviewer evidence is invalid: findings[0] must contain category, detail, id, resolved, resolves, severity, source_anchor, translation_anchor",
+  "last_error": null,
   "recoveries": [
     {
       "action": "resume-model-blocked",
@@ -91,6 +91,11 @@
       "action": "resume-correction-limit-reached",
       "approved_at": "2026-11-10T10:07:54.420380+00:00",
       "previous_error": "model transport timeout or connection failure"
+    },
+    {
+      "action": "resume-model-blocked",
+      "approved_at": "2026-11-10T10:15:45.861292+00:00",
+      "previous_error": "reviewer evidence is invalid: findings[0] must contain category, detail, id, resolved, resolves, severity, source_anchor, translation_anchor"
     }
   ],
   "recovery_note": "A claim may still be active; inspect canonical state before recovery",
