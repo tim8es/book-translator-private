@@ -75,7 +75,7 @@ class AutomatedBookTests(unittest.TestCase):
                 paused = worker.run(job_id)
                 self.assertEqual((paused["state"], paused["phase"]),
                                  ("paused", "paused-for-chatops"))
-                self.assertNotIn("active", paused)
+                self.assertIsNone(paused["active"])
                 cli.assert_not_called()
                 checkpoint.assert_called_once()
                 # Mimic the durable pause checkpoint, then ChatOps returns mode to Auto.
