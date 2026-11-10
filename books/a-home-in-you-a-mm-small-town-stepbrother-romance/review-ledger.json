@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 28,
+  "next_sequence": 29,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -1574,6 +1574,125 @@
             },
             "translation_anchor": {
               "quote": "Какой же стыд.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "13a5723dbb821b2670a8d9c534774432d6f107e1beb03987ee5eb980d2c485ac",
+        "style_guide": "3ec7c485cf41741084ffe49b72d2b18ed9bd650a00a2ba00554605abadea5e3a"
+      }
+    },
+    {
+      "record_id": "bb9e823de20b4473af9026897492ac13",
+      "sequence": 28,
+      "unit_id": "chapter-000014",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "f105fb42da1bb93e2f2f41c7c0916bed489cf8a87a9f2f05da3f2193bc825997",
+      "translation_sha256": "64d11c632440f84ce5ca252a2e4dadae4c336cf88012286fb703a7052a53c91b",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewer_session_id": "auto-886bde8dfe20-reviewer-500e2e52",
+      "reviewed_at": "2026-11-10T12:41:59Z",
+      "state_revision": "adcb0ad96c101f95d6db57c2b8217ff121a936f3fcc2de49e0195eceb006a61f",
+      "review_commit": "301f2ea2d521ed68c920e61e9ef9a9b1588bc991",
+      "correction_round": 3,
+      "supersedes_record_id": "29d0660e1c894aa98657dbac012ebe3e",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-register-1",
+            "category": "register",
+            "severity": "minor",
+            "detail": "The emphatic profanity is restored in the current translation.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "I couldn’t stop staring at his stupid fucking dimples.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Боже, и я никак не мог перестать таращиться на его долбаные ямочки.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "29d0660e1c894aa98657dbac012ebe3e",
+              "finding_id": "register-1"
+            }
+          },
+          {
+            "id": "recheck-register-2",
+            "category": "register",
+            "severity": "minor",
+            "detail": "The profanity and colloquial emphasis are restored in the current translation.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "How fucking embarrassing.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Как же это, блядь, стыдно.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "29d0660e1c894aa98657dbac012ebe3e",
+              "finding_id": "register-2"
+            }
+          },
+          {
+            "id": "meaning-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "“I feel so loved” expresses feeling loved, not feeling flattered. Replace «как я польщён» with a rendering that keeps the affectionate meaning, such as «Ой, как меня любят!»",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "I feel so loved",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "как я польщён",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "register-3",
+            "category": "register",
+            "severity": "minor",
+            "detail": "The narrator's imagined “fuck off” is softened to «отвалила». Use a comparably blunt, profane expression to preserve his rough internal voice.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "tell her to fuck off and leave him alone",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "например, чтобы она отвалила и оставила его в покое",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Весь словно соткан из жизни» reads as a literal calque and is more elevated than the source’s casual voice. Rephrase naturally while retaining the sense of exuberant energy.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Cade was so full of life.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Cade был весь словно соткан из жизни.",
               "occurrence": 0
             },
             "resolves": null
