@@ -151,7 +151,7 @@ class AutomatedBookTests(unittest.TestCase):
             book = root / "books" / "approved-book"
             (book / "extracted").mkdir(parents=True)
             (book / "translated").mkdir()
-            source, translated = b"original text", "перевод".encode()
+            source, translated = b"original text", "�������".encode()
             (book / "extracted" / "one.md").write_bytes(source)
             (book / "translated" / "one.md").write_bytes(translated)
             item = {"unit_id": "chapter-000001", "number": 1, "status": "translated",
@@ -569,11 +569,11 @@ class AutomatedBookTests(unittest.TestCase):
         masked, links = worker.mask_markdown_links(source)
         self.assertEqual(len(links), 1)
         self.assertNotIn("https://example.com/book", masked)
-        translated = masked.replace("Read more", "Подробнее")
+        translated = masked.replace("Read more", "���������")
         restored = worker.restore_markdown_links(source, translated)
-        self.assertEqual(restored, "Before [Подробнее](https://example.com/book) after.\n")
+        self.assertEqual(restored, "Before [���������](https://example.com/book) after.\n")
         with self.assertRaisesRegex(worker.JobError, "link boundary sequence differs"):
-            worker.restore_markdown_links(source, "Before Подробнее after.\n")
+            worker.restore_markdown_links(source, "Before ��������� after.\n")
 
     def test_external_link_only_source_is_deterministically_preserved(self):
         link = "[*OceanofPDF.com*](https://oceanofpdf.com)\n"
@@ -678,8 +678,8 @@ class AutomatedBookTests(unittest.TestCase):
                        "| --- | --- | --- | --- |\n| Dillon | Dillon | character | Canonical |\n")
             (book / "glossary.md").write_text(current, encoding="utf-8")
             accepted, rejected = worker.filter_conflicting_glossary_proposals(book, [
-                {"original": "Dillon", "translation": "Диллон", "type": "character", "notes": "Conflict"},
-                {"original": "Mara", "translation": "Мара", "type": "character", "notes": "New"},
+                {"original": "Dillon", "translation": "������", "type": "character", "notes": "Conflict"},
+                {"original": "Mara", "translation": "����", "type": "character", "notes": "New"},
             ])
             self.assertEqual(rejected, 1)
             self.assertEqual([row["original"] for row in accepted], ["Mara"])
@@ -706,11 +706,11 @@ class AutomatedBookTests(unittest.TestCase):
 
     def test_markers_are_order_and_identity_bound(self):
         source = "<!-- bt-block:000001 -->\nFirst [link](#x)\n<!-- bt-block:000002 -->\n"
-        worker.check_markers(source, "<!-- bt-block:000001 -->\nПервый [ссылка](#x)\n<!-- bt-block:000002 -->\n")
+        worker.check_markers(source, "<!-- bt-block:000001 -->\n������ [������](#x)\n<!-- bt-block:000002 -->\n")
         with self.assertRaises(worker.JobError):
-            worker.check_markers(source, "<!-- bt-block:000002 -->\nПервый [ссылка](#x)\n<!-- bt-block:000001 -->\n")
+            worker.check_markers(source, "<!-- bt-block:000002 -->\n������ [������](#x)\n<!-- bt-block:000001 -->\n")
         with self.assertRaises(worker.JobError):
-            worker.check_markers(source, "<!-- bt-block:000001 -->\nПервый [ссылка](#y)\n<!-- bt-block:000002 -->\n")
+            worker.check_markers(source, "<!-- bt-block:000001 -->\n������ [������](#y)\n<!-- bt-block:000002 -->\n")
 
     def test_scheduler_skips_blocked_and_unreadable_statuses(self):
         with tempfile.TemporaryDirectory() as folder:
@@ -870,7 +870,52 @@ class AutomatedBookTests(unittest.TestCase):
                 status["correction_rounds"]["chapter-000001"] = worker.MAX_CORRECTIONS
                 self.assertEqual(worker.next_operation(slug, status)[0], "blocked")
 
+    def test_anchored_correction_patches_are_local_and_protect_links(self):
+        finding = {"id": "meaning-1", "resolved": False,
+                   "translation_anchor": {"quote": "wrong", "occurrence": 0}}
+        response = json.dumps({
+            "patches": [{"finding_id": "meaning-1", "operation": "replace",
+                         "target_anchor": finding["translation_anchor"], "replacement": "right"}],
+            "glossary": [], "style_guide": [],
+        })
+        patches, glossary, style = worker.parse_correction_patches(response, [finding])
+        self.assertEqual(worker.apply_correction_patches("before wrong after\n", patches),
+                         "before right after\n")
+        self.assertEqual((glossary, style), ([], []))
+        with self.assertRaisesRegex(worker.JobError, "protected"):
+            worker.apply_correction_patches("[wrong](https://example.test)\n", [{
+                "operation": "replace", "target_anchor": {
+                    "quote": "https://example.test", "occurrence": 0}, "replacement": "https://other.test",
+            }])
+        with self.assertRaisesRegex(worker.JobError, "overlap"):
+            worker.apply_correction_patches("wrong phrase\n", [
+                {"operation": "replace", "target_anchor": {"quote": "wrong phrase", "occurrence": 0},
+                 "replacement": "right phrase"},
+                {"operation": "replace", "target_anchor": {"quote": "phrase", "occurrence": 0},
+                 "replacement": "word"},
+            ])
+
+    def test_one_extra_correction_requires_measured_severity_progress(self):
+        unit_id = "chapter-000011"
+        chapter = {"unit_id": unit_id}
+
+        def record(sequence, translation_sha, severity):
+            return {"unit_id": unit_id, "sequence": sequence,
+                    "outcome": "CORRECTIONS_REQUIRED", "source_sha256": "a" * 64,
+                    "translation_sha256": translation_sha,
+                    "quality_report": {"findings": [{"severity": severity, "resolved": False}]}}
+
+        ledger = {"records": [record(1, "b" * 64, "major"),
+                              record(2, "c" * 64, "minor")]}
+        status = {"correction_rounds": {unit_id: worker.MAX_CORRECTIONS}}
+        self.assertTrue(worker.correction_progressed(ledger, chapter))
+        self.assertTrue(worker.correction_allowed(status, ledger, chapter))
+        status["correction_extensions"] = {unit_id: 1}
+        self.assertFalse(worker.correction_allowed(status, ledger, chapter))
+        status["correction_extensions"] = {}
+        status["correction_rounds"][unit_id] = worker.MAX_CORRECTIONS + 1
+        self.assertFalse(worker.correction_allowed(status, ledger, chapter))
+
 
 if __name__ == "__main__":
     unittest.main()
-

@@ -40,16 +40,16 @@ class CanonicalAutoEndToEndTests(unittest.TestCase):
                       "correction_rounds": {}, "failures": 0}
             observed = []
             glossary_entries = {
-                1: [{"original": "Mara", "translation": "Мара", "type": "person",
+                1: [{"original": "Mara", "translation": "����", "type": "person",
                      "notes": "Protagonist"},
-                    {"original": "Northbridge", "translation": "Нортбридж",
+                    {"original": "Northbridge", "translation": "���������",
                      "type": "place", "notes": "Town"}],
-                2: [{"original": "Theo", "translation": "Тео",
+                2: [{"original": "Theo", "translation": "���",
                      "type": "person", "notes": "Mara's friend"}],
             }
             translated = {
-                1: "# Глава первая\n\nМара приехала в Нортбридж.\n",
-                2: "# Глава вторая\n\nТео встретил Мару в Нортбридже.\n",
+                1: "# ����� ������\n\n���� �������� � ���������.\n",
+                2: "# ����� ������\n\n��� �������� ���� � ����������.\n",
             }
             state = {"chapter": 0}
 
@@ -59,7 +59,7 @@ class CanonicalAutoEndToEndTests(unittest.TestCase):
                 observed.append((chapter, role, user))
                 if role == "TRANSLATOR":
                     if chapter == 2:
-                        self.assertIn("Northbridge | Нортбридж", user)
+                        self.assertIn("Northbridge | ���������", user)
                         self.assertIn("PRIOR APPROVED CONTEXT", user)
                     return json.dumps({
                         "translation": translated[chapter],
@@ -68,6 +68,7 @@ class CanonicalAutoEndToEndTests(unittest.TestCase):
                     }, ensure_ascii=False)
                 if role == "REVIEWER":
                     return json.dumps({
+                        "evidence_version": 2,
                         "outcome": "PASS",
                         "checks": {"coverage": True, "meaning": True,
                                    "terminology": True, "style": True,
@@ -105,9 +106,9 @@ class CanonicalAutoEndToEndTests(unittest.TestCase):
                 self.assertTrue(epub.is_file())
                 self.assertGreater(epub.stat().st_size, 100)
                 glossary = (repo / "books" / "sample" / "glossary.md").read_text("utf-8")
-                self.assertIn("| Mara | Мара |", glossary)
-                self.assertIn("| Northbridge | Нортбридж |", glossary)
-                self.assertIn("| Theo | Тео |", glossary)
+                self.assertIn("| Mara | ���� |", glossary)
+                self.assertIn("| Northbridge | ��������� |", glossary)
+                self.assertIn("| Theo | ��� |", glossary)
                 self.assertEqual(len(observed), 4)
 
 

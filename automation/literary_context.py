@@ -16,9 +16,14 @@ from omniroute import ModelError, parse_review
 
 MAX_SHARED_CHARS = 100_000
 MAX_ITEMS = 40
+# shortcut: patches cap at 30 per response; raise only for a measured unit needing more.
+MAX_PATCHES = 30
+MAX_PATCH_CHARS = 10_000
 _ALLOWED_ROLES = {"translator", "reviewer"}
 _NAME_KEYS = {"original", "translation", "type", "notes"}
 _STYLE_KEYS = {"source_pattern", "translation_approach", "evidence"}
+_PATCH_KEYS = {"finding_id", "operation", "target_anchor", "replacement"}
+_FINDING_ID = re.compile(r"^[a-z][a-z0-9-]{0,31}$")
 
 
 def _one_line(value: object, field: str) -> str:
@@ -65,17 +70,91 @@ def parse_translation(text: str) -> tuple[str, list[dict], list[dict]]:
             _entries(data["style_guide"], _STYLE_KEYS, "style_guide"))
 
 
-def parse_literary_review(text: str) -> tuple[str, dict, list[dict]]:
+def parse_literary_review(
+    text: str, *, context: str = "independent_session",
+) -> tuple[str, dict, list[dict]]:
     try:
         data = _json_payload(text)
     except ValueError as exc:
         raise ModelError("reviewer must return JSON") from exc
-    if not isinstance(data, dict) or set(data) != {"outcome", "checks", "findings", "style_guide"}:
+    if not isinstance(data, dict) or data.get("outcome") not in {"PASS", "CORRECTIONS_REQUIRED"}:
+        raise ModelError("reviewer response has invalid literary memory schema")
+    if set(data) == {"outcome", "checks", "findings", "style_guide"}:
+        core = {key: data[key] for key in ("outcome", "checks", "findings")}
+        outcome, report = parse_review(json.dumps(core, ensure_ascii=False))
+    elif set(data) == {"evidence_version", "outcome", "checks", "findings", "style_guide"}:
+        if type(data["evidence_version"]) is not int or data["evidence_version"] != 2:
+            raise ModelError("unsupported reviewer evidence version")
+        if context not in {"independent_session", "bounded_context"}:
+            raise ModelError("reviewer context is invalid")
+        try:
+            from workflow.review_quality import validate_quality_report
+            report = validate_quality_report({
+                "evidence_version": 2,
+                "context": context,
+                "checks": data["checks"],
+                "findings": data["findings"],
+            }, outcome=data["outcome"])
+        except (ImportError, ValueError) as exc:
+            raise ModelError(f"reviewer evidence is invalid: {exc}") from exc
+        outcome = data["outcome"]
+    else:
         raise ModelError("reviewer response has invalid literary memory schema")
     style = _entries(data["style_guide"], _STYLE_KEYS, "style_guide")
-    core = {key: data[key] for key in ("outcome", "checks", "findings")}
-    outcome, report = parse_review(json.dumps(core, ensure_ascii=False))
     return outcome, report, style
+
+
+def parse_correction_patches(
+    text: str, findings: list[dict],
+) -> tuple[list[dict], list[dict], list[dict]]:
+    """Validate one small anchored edit for each unresolved v2 finding."""
+    try:
+        data = _json_payload(text)
+    except ValueError as exc:
+        raise ModelError("corrector must return a structured patch response") from exc
+    if not isinstance(data, dict) or set(data) != {"patches", "glossary", "style_guide"}:
+        raise ModelError("corrector response must contain patches, glossary, style_guide")
+    unresolved = {item["id"]: item for item in findings if not item["resolved"]}
+    patches = data["patches"]
+    if not unresolved or not isinstance(patches, list) or len(patches) > MAX_PATCHES:
+        raise ModelError("corrector patches are not bounded or no findings are open")
+    result = []
+    seen = set()
+    for patch in patches:
+        if not isinstance(patch, dict) or set(patch) != _PATCH_KEYS:
+            raise ModelError("corrector patch has invalid fields")
+        finding_id = patch["finding_id"]
+        if (not isinstance(finding_id, str) or _FINDING_ID.fullmatch(finding_id) is None
+                or finding_id not in unresolved or finding_id in seen):
+            raise ModelError("corrector patch must identify one unresolved finding exactly once")
+        seen.add(finding_id)
+        operation = patch["operation"]
+        if not isinstance(operation, str) or operation not in {"replace", "insert_before", "insert_after"}:
+            raise ModelError("corrector patch operation is unsupported")
+        anchor = patch["target_anchor"]
+        if (not isinstance(anchor, dict) or set(anchor) != {"quote", "occurrence"}
+                or not isinstance(anchor["quote"], str)
+                or not 1 <= len(anchor["quote"]) <= 300
+                or not anchor["quote"].strip()
+                or type(anchor["occurrence"]) is not int
+                or not 0 <= anchor["occurrence"] < 10000):
+            raise ModelError("corrector patch anchor is invalid")
+        previous_anchor = unresolved[finding_id]["translation_anchor"]
+        if previous_anchor is None and operation == "replace":
+            raise ModelError("an omission requires an insertion patch")
+        if previous_anchor is not None and anchor != previous_anchor:
+            raise ModelError("patch must target the reviewer's exact translation anchor")
+        replacement = patch["replacement"]
+        if (not isinstance(replacement, str) or len(replacement) > MAX_PATCH_CHARS
+                or (not replacement.strip() and operation != "replace")):
+            raise ModelError("corrector replacement is empty or too large")
+        result.append({"finding_id": finding_id, "operation": operation,
+                       "target_anchor": dict(anchor), "replacement": replacement})
+    if seen != set(unresolved):
+        raise ModelError("corrector must address every unresolved review finding")
+    return (result,
+            _entries(data["glossary"], _NAME_KEYS, "glossary"),
+            _entries(data["style_guide"], _STYLE_KEYS, "style_guide"))
 
 
 def role_contracts(engine: Path, role: str) -> tuple[str, list[str]]:

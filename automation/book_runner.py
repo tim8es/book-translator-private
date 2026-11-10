@@ -28,8 +28,8 @@ from uuid import uuid4
 
 from omniroute import ModelError, complete
 from literary_context import (fingerprint, full_shared_context, parse_literary_review,
-                              parse_translation, role_contracts, save_claim_bound_decisions,
-                              updated_glossary)
+                              parse_correction_patches, parse_translation, role_contracts,
+                              save_claim_bound_decisions, updated_glossary)
 
 ROOT = Path(__file__).resolve().parents[1]
 ID = re.compile(r"^[0-9a-f]{32}$")
@@ -39,8 +39,11 @@ FINAL = {"done", "blocked"}
 MAX_SOURCE_BYTES = 15_000_000
 MAX_CHAPTER_CHARS = 70_000
 MAX_CORRECTIONS = 3
+MAX_CORRECTION_EXTENSIONS = 1
 MAX_FAILURES = 3
 DEFAULT_MODEL_CALL_LIMIT = 36
+# shortcut: focused review falls back to a full review above 30k chars; raise only if measured.
+MAX_FOCUSED_CONTEXT_CHARS = 30_000
 EPUB_MARKER_RE = re.compile(r"<!--\s*bt-(?:anchor|block):[^>]*-->")
 EPUB_BLOCK_RE = re.compile(r"<!--\s*bt-block:[^>]*-->")
 MARKDOWN_LINK_RE = re.compile(
@@ -184,13 +187,15 @@ def _mismatch_index(expected: list, actual: list) -> int:
 
 
 def approve_blocked_resume(status: dict) -> None:
-    if (status.get("state") != "blocked" or status.get("phase") != "model-blocked"
+    phase = status.get("phase")
+    if (status.get("state") != "blocked" or phase not in
+            {"model-blocked", "correction-limit-reached"}
             or status.get("active") is not None):
-        raise JobError("only an inactive model-blocked job can be resumed")
+        raise JobError("only an inactive model-blocked or correction-limited job can be resumed")
     history = status.get("recoveries", [])
     if not isinstance(history, list):
         raise JobError("invalid recovery history")
-    history.append({"action": "resume-model-blocked", "approved_at": clock(),
+    history.append({"action": "resume-" + phase, "approved_at": clock(),
                     "previous_error": status.get("last_error")})
     status.update({"recoveries": history, "state": "running",
                    "phase": "operator-resume-authorized", "failures": 0,
@@ -811,6 +816,180 @@ def latest_record(ledger: dict, chapter: dict) -> dict | None:
     return max(matches, key=lambda r: r["sequence"]) if matches else None
 
 
+def correction_severity_score(record: dict | None) -> int:
+    report = record.get("quality_report") if isinstance(record, dict) else None
+    findings = report.get("findings") if isinstance(report, dict) else None
+    weights = {"minor": 1, "major": 3, "critical": 5}
+    if not isinstance(findings, list):
+        return 0
+    return sum(weights.get(item.get("severity"), 0)
+               for item in findings if isinstance(item, dict) and not item.get("resolved"))
+
+
+def correction_progressed(ledger: dict, chapter: dict) -> bool:
+    records = sorted((item for item in ledger.get("records", [])
+                      if item.get("unit_id") == chapter["unit_id"]),
+                     key=lambda item: item.get("sequence", 0))
+    if len(records) < 2:
+        return False
+    previous, current = records[-2:]
+    return (previous.get("outcome") == current.get("outcome") == "CORRECTIONS_REQUIRED"
+            and previous.get("source_sha256") == current.get("source_sha256")
+            and previous.get("translation_sha256") != current.get("translation_sha256")
+            and correction_severity_score(current) < correction_severity_score(previous))
+
+
+def _anchor_position(text: str, anchor: dict) -> tuple[int, int]:
+    quote = anchor["quote"]
+    positions = []
+    offset = 0
+    while True:
+        found = text.find(quote, offset)
+        if found < 0:
+            break
+        positions.append(found)
+        offset = found + len(quote)
+    occurrence = anchor["occurrence"]
+    if occurrence >= len(positions) or (occurrence == 0 and len(positions) > 1):
+        raise JobError("review anchor is absent or ambiguous in the current artifact")
+    start = positions[occurrence]
+    return start, start + len(quote)
+
+
+def _anchor_excerpt(text: str, anchor: dict, *, limit: int = 5000) -> str:
+    start, end = _anchor_position(text, anchor)
+    paragraphs = list(re.finditer(r".+?(?=\n\s*\n|$)", text, re.DOTALL))
+    index = next((i for i, match in enumerate(paragraphs)
+                  if match.start() <= start < match.end()), None)
+    if index is None:
+        raise JobError("review anchor is outside the current text")
+    left = paragraphs[max(0, index - 1)].start()
+    right = paragraphs[min(len(paragraphs) - 1, index + 1)].end()
+    if right - left > limit:
+        left = max(left, start - limit // 2)
+        right = min(right, end + limit // 2)
+    return text[left:right]
+
+
+def apply_correction_patches(translation: str, patches: list[dict]) -> str:
+    edits = []
+    protected = [match.span() for match in EPUB_MARKER_RE.finditer(translation)]
+    for match in MARKDOWN_LINK_RE.finditer(translation):
+        label_start = match.start() + len(match.group("image")) + 1
+        label_end = label_start + len(match.group("label"))
+        protected.extend(((match.start(), label_start), (label_end, label_end + 2),
+                          match.span("destination"), (match.end() - 1, match.end())))
+        if match.group("title"):
+            protected.append(match.span("title"))
+    for patch in patches:
+        start, end = _anchor_position(translation, patch["target_anchor"])
+        if patch["operation"] == "insert_before":
+            end = start
+        elif patch["operation"] == "insert_after":
+            start = end
+        if any((start == end and left < start < right)
+               or (start < right and left < end) for left, right in protected):
+            raise JobError("correction patch touches a protected EPUB marker or Markdown link boundary")
+        edits.append((start, end, patch["replacement"]))
+    for index, (start, end, _) in enumerate(edits):
+        for other_start, other_end, _ in edits[index + 1:]:
+            overlap = (start < other_end and other_start < end)
+            insertion_conflict = (
+                (start == end and other_start <= start <= other_end)
+                or (other_start == other_end and start <= other_start <= end)
+            )
+            if overlap or insertion_conflict:
+                raise JobError("correction patches overlap in the accepted translation")
+    result = translation
+    for start, end, replacement in sorted(edits, key=lambda edit: edit[0], reverse=True):
+        result = result[:start] + replacement + result[end:]
+    return result
+
+
+def focused_review_context(slug: str, chapter: dict, previous: dict,
+                           source: str, translation: str) -> dict | None:
+    report = previous.get("quality_report", {})
+    if not isinstance(report, dict):
+        return None
+    findings = [item for item in report.get("findings", []) if not item.get("resolved")]
+    if (report.get("evidence_version") != 2 or previous.get("outcome") != "CORRECTIONS_REQUIRED"
+            or not findings):
+        return None
+    delta = json.loads(cli("review-delta", slug, str(chapter["number"]), "--json"))
+    source_sha = hashlib.sha256(source.encode("utf-8")).hexdigest()
+    translation_sha = hashlib.sha256(translation.encode("utf-8")).hexdigest()
+    if (delta.get("advisory_only") is not True or delta.get("unit_id") != chapter["unit_id"]
+            or delta.get("source_sha256") != source_sha
+            or delta.get("translation_sha256") != translation_sha):
+        raise JobError("review-delta does not match the current accepted artifacts")
+    if delta.get("mode") != "focused_candidate":
+        return None
+    if delta.get("previous_record_id") != previous.get("record_id"):
+        raise JobError("review-delta baseline does not match the latest anchored review")
+    if any(item.get("category") in {"referent", "register", "style", "structure", "voice"}
+           for item in findings):
+        return None
+    sections = delta.get("sections")
+    if not isinstance(sections, list):
+        raise JobError("review-delta sections are invalid")
+    paragraphs = re.split(r"\n\s*\n", translation)
+    changed = []
+    for section in sections:
+        paragraph_range = section.get("new_paragraph_range")
+        if (not isinstance(paragraph_range, list) or len(paragraph_range) != 2
+                or any(type(value) is not int for value in paragraph_range)):
+            raise JobError("review-delta paragraph range is invalid")
+        start, end = paragraph_range
+        excerpt = ("\n\n".join(paragraphs[start - 1:end])
+                   if start >= 1 and end >= start else "")
+        changed.append({"paragraph_range": paragraph_range,
+                        "current_text": excerpt,
+                        "preceding_context": section.get("preceding_context", ""),
+                        "following_context": section.get("following_context", "")})
+    prior_findings = []
+    for item in findings:
+        prior_findings.append({
+            "finding": item,
+            "source_context": _anchor_excerpt(source, item["source_anchor"]),
+        })
+    payload = {
+        "previous_record_id": previous["record_id"],
+        "previous_source_sha256": previous["source_sha256"],
+        "previous_translation_sha256": previous["translation_sha256"],
+        "previous_checks": report["checks"],
+        "previous_findings": report["findings"],
+        "unresolved_findings": prior_findings,
+        "changed_translation_sections": changed,
+        "delta_reason": delta.get("reason"),
+    }
+    if len(json.dumps(payload, ensure_ascii=False)) > MAX_FOCUSED_CONTEXT_CHARS:
+        return None
+    return payload
+
+
+def correction_allowed(status: dict, ledger: dict, chapter: dict) -> bool:
+    counters = status.get("correction_rounds", {})
+    if not isinstance(counters, dict):
+        raise JobError("invalid durable correction counter")
+    rounds = counters.get(chapter["unit_id"], 0)
+    if type(rounds) is not int or rounds < 0:
+        raise JobError("invalid durable correction counter")
+    if rounds < MAX_CORRECTIONS:
+        return True
+    if rounds >= MAX_CORRECTIONS + MAX_CORRECTION_EXTENSIONS:
+        return False
+    extensions = status.get("correction_extensions", {})
+    if not isinstance(extensions, dict):
+        raise JobError("invalid durable correction extension counter")
+    used = extensions.get(chapter["unit_id"], 0)
+    if type(used) is not int or used < 0:
+        raise JobError("invalid durable correction extension count")
+    if used >= MAX_CORRECTION_EXTENSIONS:
+        return False
+    return (status.get("correction_extension_authorized_unit") == chapter["unit_id"]
+            or correction_progressed(ledger, chapter))
+
+
 def approved_unit_ids(slug: str, chapters: list) -> set[str]:
     if not re.fullmatch(r"[\w-]{1,120}", slug):
         raise JobError("invalid book slug for user approval")
@@ -879,7 +1058,12 @@ def next_operation(slug: str, status: dict) -> tuple[str, dict | None]:
             # translation with a newly accepted glossary revision.
             if status.get("memory_recheck_unit") == chapter["unit_id"]:
                 return "reviewer", chapter
-            if status["correction_rounds"].get(chapter["unit_id"], 0) >= MAX_CORRECTIONS:
+            record = latest_record(ledger, chapter)
+            report = record.get("quality_report", {}) if record else {}
+            if (status.get("force_full_review_unit") == chapter["unit_id"]
+                    and report.get("evidence_version") != 2):
+                return "reviewer", chapter
+            if not correction_allowed(status, ledger, chapter):
                 return "blocked", chapter
             return "corrector", chapter
         if operation == "review":
@@ -916,23 +1100,28 @@ def canonical_dispatch(slug: str, status: dict) -> tuple[str, dict | None]:
     if len(matches) != 1 or matches[0].get("number") != decision.get("chapter_number"):
         raise JobError("canonical resume unit no longer matches durable progress")
     chapter = matches[0]
+    record = latest_record(ledger, chapter)
+    report = record.get("quality_report", {}) if record else {}
+    if (status.get("force_full_review_unit") == unit_id
+            and report.get("evidence_version") != 2):
+        return "reviewer", chapter
     if operation == "correct_translation":
-        record = latest_record(ledger, chapter)
         if status.get("memory_recheck_unit") == unit_id:
-            if record and (record.get("quality_report") or {}).get("evidence_version") == 2:
+            if record and report.get("evidence_version") == 2:
                 raise JobError("anchored v2 review requires a changed translation artifact")
             return "reviewer", chapter
-        if status.get("correction_rounds", {}).get(unit_id, 0) >= MAX_CORRECTIONS:
+        if not correction_allowed(status, ledger, chapter):
             return "blocked", chapter
     return mapping[operation], chapter
 
 
 def context(engine: Path, slug: str, chapter: dict, role: str,
-            pending_style: list[dict] | None = None) -> tuple[str, str, str]:
+            pending_style: list[dict] | None = None, *,
+            force_full_review: bool = False) -> tuple[str, str, str]:
     book = ROOT / "books" / slug
     instructions, contract_paths = role_contracts(
         engine, "reviewer" if role == "reviewer" else "translator")
-    source = (book / chapter["source_path"]).read_text("utf-8")
+    source = (book / chapter["source_path"]).read_bytes().decode("utf-8")
     if len(source) > MAX_CHAPTER_CHARS:
         raise JobError("chapter exceeds safe single-context limit; bounded chunking required")
     marker_count = len(EPUB_MARKER_RE.findall(source))
@@ -952,8 +1141,39 @@ def context(engine: Path, slug: str, chapter: dict, role: str,
         "glossary entries are canonical; do not propose a conflicting rendering.")
     progress, ledger, chapters = chapter_data(slug)
     index = next(i for i, ch in enumerate(chapters) if ch["unit_id"] == chapter["unit_id"])
+    record = latest_record(ledger, chapter) if role in {"reviewer", "corrector"} else None
+    quality = record.get("quality_report", {}) if record else {}
+    if not isinstance(quality, dict):
+        quality = {}
+    findings = quality.get("findings", []) if isinstance(quality, dict) else []
+    target_path = book / chapter["translation_path"]
+    translation_raw = (target_path.read_bytes().decode("utf-8")
+                       if role in {"reviewer", "corrector"} else "")
+    patch_mode = role == "corrector" and quality.get("evidence_version") == 2
+    bounded_review = None
+    if (role == "reviewer" and quality.get("evidence_version") == 2
+            and not force_full_review):
+        bounded_review = focused_review_context(slug, chapter, record, source, translation_raw)
+    if patch_mode:
+        unresolved = [item for item in findings if not item.get("resolved")]
+        if not unresolved:
+            raise JobError("correction requested without unresolved reviewer findings")
+        source_display = json.dumps([
+            {"finding_id": item["id"], "finding": item,
+             "source_context": _anchor_excerpt(source, item["source_anchor"]),
+             "translation_context": (_anchor_excerpt(translation_raw, item["translation_anchor"])
+                                     if item["translation_anchor"] else None)}
+            for item in unresolved
+        ], ensure_ascii=False)
+        if any(item["translation_anchor"] is None for item in unresolved):
+            source_display += ("\nCURRENT TRANSLATION FOR OMITTED-PASSAGE PLACEMENT:\n"
+                               + mask_translation_links(source, translation_raw))
+    elif bounded_review:
+        source_display = json.dumps(bounded_review, ensure_ascii=False)
+    else:
+        source_display = source if role == "reviewer" else prompt_source
     previous = ""
-    if index and chapters[index - 1]["status"] == "reviewed":
+    if index and chapters[index - 1]["status"] == "reviewed" and role in {"translator", "reviewer"}:
         prior = book / chapters[index - 1]["translation_path"]
         previous = prior.read_text("utf-8")[-10000:]
     metadata = read_json(book / "metadata.json")
@@ -972,59 +1192,96 @@ def context(engine: Path, slug: str, chapter: dict, role: str,
         "\nGLOSSARY (entire canonical file):\n" + glossary +
         "\nSTYLE GUIDE (entire canonical file):\n" + style +
         "\nPRIOR APPROVED CONTEXT (for continuity only):\n" + previous +
-        "\nSOURCE UNIT TO TRANSLATE OR REVIEW:\n" + prompt_source
+        "\nSOURCE UNIT OR BOUNDED EVIDENCE FOR THIS REQUEST:\n" + source_display
     )
-    translation = ""
-    if role in {"reviewer", "corrector"}:
-        translation = mask_translation_links(
-            source, (book / chapter["translation_path"]).read_text("utf-8"))
-        user += "\nCURRENT ACCEPTED TRANSLATION:\n" + translation
+    if role == "reviewer":
+        if bounded_review:
+            user += "\nCURRENT ACCEPTED TRANSLATION: see the hash-bound changed sections above."
+        else:
+            user += "\nCURRENT ACCEPTED TRANSLATION:\n" + translation_raw
     if role == "corrector":
-        record = latest_record(ledger, chapter)
-        findings = record.get("quality_report", {}).get("findings", []) if record else []
         if not findings:
             raise JobError("correction requested without recorded reviewer findings")
-        user += "\nREVIEW FINDINGS TO CORRECT:\n" + json.dumps(findings, ensure_ascii=False)
+        if patch_mode:
+            user += (
+                "\nApply only the listed unresolved corrections. Return ONLY JSON with exactly "
+                "keys patches, glossary, style_guide. patches must contain one item per listed "
+                "finding, with exactly finding_id, operation, target_anchor, replacement. "
+                "Use operation replace with the reviewer's exact translation_anchor, or "
+                "insert_before/insert_after for an omission and quote a unique current-translation "
+                "anchor at the intended insertion point. For each existing translation anchor, "
+                "repeat the exact quote and occurrence. Keep replacements local, include needed "
+                "spacing, and do not return or rewrite the full unit. Do not touch EPUB markers, "
+                "Markdown syntax, URLs, or unrelated text. Every listed finding must appear exactly "
+                "once. glossary/style_guide use the normal translator schemas; [] is valid."
+            )
+        else:
+            user += "\nCURRENT ACCEPTED TRANSLATION:\n" + mask_translation_links(source, translation_raw)
+            user += "\nREVIEW FINDINGS TO CORRECT:\n" + json.dumps(findings, ensure_ascii=False)
     if role == "reviewer":
         user += ("\nPENDING TRANSLATOR STYLE PROPOSALS (verify against original, "
                  "and include only accepted decisions in style_guide):\n"
                  + json.dumps(pending_style or [], ensure_ascii=False))
+        if bounded_review:
+            user += (
+                "\nThis is a hash-bound focused follow-up. The previous independent review checked "
+                "the unchanged artifact; the supplied delta contains every changed paragraph plus "
+                "prior source-linked findings. Recheck every prior unresolved finding against its "
+                "source context and the current changed text, inspect adjacent context, and request "
+                "a full review if the change creates a distant continuity or structural concern. "
+                "Do not assume a correction succeeded. Set context=bounded_context."
+            )
+        else:
+            user += (
+                "\nIndependently compare EVERY passage in this source unit against the accepted translation. "
+                "If it is front matter, a list, or metadata rather than prose, assess only the content "
+                "present; a prose-only dimension is not a failure after confirming it is not applicable. "
+                "Set context=independent_session."
+            )
+        previous_open = [item for item in findings if not item.get("resolved")]
+        if record and quality.get("evidence_version") == 2 and previous_open:
+            user += (" Every prior unresolved finding must be represented once with a new id and "
+                     "resolves={record_id: " + json.dumps(record["record_id"]) +
+                     ", finding_id: <prior id>}; do not omit a recheck. New findings use resolves=null.")
+        else:
+            user += " First-pass findings use resolves=null."
         user += (
-            "\nIndependently compare EVERY passage in this source unit against the accepted translation. "
-            "If it is front matter, a list, or metadata rather than prose, assess only the content "
-            "present; a prose-only dimension is not a failure after confirming it is not applicable. "
-            "Return ONLY JSON with exactly keys outcome, checks, findings, style_guide. "
-            "outcome=PASS or CORRECTIONS_REQUIRED. checks must have coverage, meaning, "
-            "terminology, style, structure all true ONLY if checked. "
-            "findings is a list of {severity: minor|major|critical, detail: string, resolved: boolean}. "
-            "style_guide is a list of source-grounded decisions with exactly keys "
-            "source_pattern, translation_approach, evidence. "
-            "Include only stable, substantiated decisions; [] is valid when none. "
-            "Check that named characters, recurring places and important terms "
-            "in this source have consistent renderings recorded in the glossary. "
-            "If an important rendering is missing, report CORRECTIONS_REQUIRED "
-            "and identify the exact original/translation pair for the corrector. "
-            "Any unresolved issue must cause CORRECTIONS_REQUIRED; never invent findings."
+            " Return ONLY JSON with exactly keys evidence_version, outcome, checks, findings, style_guide. "
+            "Set evidence_version=2; outcome=PASS or CORRECTIONS_REQUIRED. checks has coverage, meaning, "
+            "terminology, style, structure, each true only if checked. Each finding has exactly id, "
+            "category, severity, detail, resolved, source_anchor, translation_anchor, resolves. "
+            "Use categories omission|addition|meaning|modality|referent|terminology|register|voice|style|structure; "
+            "severity minor|major|critical. Anchors are exact quotes of at most 300 characters and a "
+            "zero-based occurrence; translation_anchor may be null only for an omission. "
+            "style_guide contains source-grounded entries with exactly source_pattern, "
+            "translation_approach, evidence; [] is valid. Keep stable ids unique, report every unresolved "
+            "issue, and never invent findings."
         )
     else:
-        user += (
-            "\nReturn ONLY one valid JSON object with exactly keys translation, glossary, style_guide. "
-            "translation must contain the COMPLETE assigned source unit including all Markdown and "
-            "EPUB markers, without summary or omissions. glossary must be an array of recurring "
-            "name/place/term decisions with exactly keys original, translation, type, notes. "
-            "Record named entities when present, avoid generic vocabulary. "
-            "style_guide must be an array of source-supported stable literary observations "
-            "with exactly keys source_pattern, translation_approach, evidence. "
-            "Use empty arrays if no decisions are justified; no Markdown fence or commentary."
-        )
-    user += ("\nScope reminder: the source unit above is the complete input for this call. "
-             "Do not report the absence of other chapters or of the full EPUB as a reason "
-             "the supplied unit cannot be handled.")
-    user += (f"\nStructural requirements: this source unit contains {marker_count} protected EPUB "
-             f"marker(s) and {link_count} Markdown link(s). Preserve all of them in their original "
-             "order and do not omit a link. The adapter restores the original link destinations "
-             "after translation, so keep every ZXBTLINK boundary token exactly in place. "
-             "Translate visible link labels only when the pinned role contract permits it.")
+        if not patch_mode:
+            user += (
+                "\nReturn ONLY one valid JSON object with exactly keys translation, glossary, style_guide. "
+                "translation must contain the COMPLETE assigned source unit including all Markdown and "
+                "EPUB markers, without summary or omissions. glossary must be an array of recurring "
+                "name/place/term decisions with exactly keys original, translation, type, notes. "
+                "Record named entities when present, avoid generic vocabulary. "
+                "style_guide must be an array of source-supported stable literary observations "
+                "with exactly keys source_pattern, translation_approach, evidence. "
+                "Use empty arrays if no decisions are justified; no Markdown fence or commentary."
+            )
+    if patch_mode or bounded_review:
+        user += ("\nScope reminder: use only the anchored findings and supplied bounded excerpts; "
+                 "do not infer missing text from other units.")
+    else:
+        user += ("\nScope reminder: the source unit above is the complete input for this call. "
+                 "Do not report the absence of other chapters or of the full EPUB as a reason "
+                 "the supplied unit cannot be handled.")
+    if role == "translator" or (role == "corrector" and not patch_mode):
+        user += (f"\nStructural requirements: this source unit contains {marker_count} protected EPUB "
+                 f"marker(s) and {link_count} Markdown link(s). Preserve all of them in their original "
+                 "order and do not omit a link. The adapter restores the original link destinations "
+                 "after translation, so keep every ZXBTLINK boundary token exactly in place. "
+                 "Translate visible link labels only when the pinned role contract permits it.")
     return system, user, source
 
 
@@ -1082,8 +1339,33 @@ def process_claim(job_id: str, slug: str, status: dict, engine: Path) -> None:
     # Model/format failures are safe to checkpoint as retries. CLI failures
     # after mutation remain fail-closed and must be examined separately.
     try:
+        _, ledger, _ = chapter_data(slug)
+        previous_record = latest_record(ledger, chapter)
+        previous_quality = (previous_record.get("quality_report", {})
+                            if previous_record else {})
+        if not isinstance(previous_quality, dict):
+            previous_quality = {}
+        patch_mode = (role == "corrector" and previous_quality.get("evidence_version") == 2)
+        if role == "corrector":
+            rounds = status.setdefault("correction_rounds", {})
+            if not isinstance(rounds, dict):
+                raise JobError("invalid durable correction counter")
+            if type(rounds.get(unit_id, 0)) is not int or rounds.get(unit_id, 0) < 0:
+                raise JobError("invalid durable correction count for this unit")
+            if not isinstance(status.setdefault("correction_extensions", {}), dict):
+                raise JobError("invalid durable correction extension counter")
+        force_full_review = (role == "reviewer"
+                             and status.get("force_full_review_unit") == unit_id)
         system, user, source = context(engine, slug, chapter, role,
-                                       pending_style=status.get("pending_style", []))
+                                       pending_style=status.get("pending_style", []),
+                                       force_full_review=force_full_review)
+        review_context = "independent_session"
+        if role == "reviewer" and previous_quality.get("evidence_version") == 2 and not force_full_review:
+            current_translation = (ROOT / "books" / slug / chapter["translation_path"]
+                                   ).read_bytes().decode("utf-8")
+            if focused_review_context(slug, chapter, previous_record, source,
+                                      current_translation) is not None:
+                review_context = "bounded_context"
         # Record the exact pinned input revisions, not the revisions after a
         # successful memory update. Never persist source passages in logs.
         prompt_context = {
@@ -1095,7 +1377,12 @@ def process_claim(job_id: str, slug: str, status: dict, engine: Path) -> None:
             "system_chars": len(system),
             "user_chars": len(user),
         }
-        preserve_links = role in {"translator", "corrector"} and external_link_only(source)
+        if role == "reviewer":
+            prompt_context["review_context"] = review_context
+        if patch_mode:
+            prompt_context["correction_mode"] = "anchored-patches"
+        preserve_links = (role in {"translator", "corrector"} and not patch_mode
+                          and external_link_only(source))
         if preserve_links:
             prompt_context["execution_mode"] = "deterministic_external_link_preservation"
             translated, proposed_glossary, proposed_style = source, [], []
@@ -1120,11 +1407,20 @@ def process_claim(job_id: str, slug: str, status: dict, engine: Path) -> None:
                               "CORRECTOR" if role == "corrector" else "TRANSLATOR",
                               system, user)
             if role == "reviewer":
-                outcome, report, reviewed_style = parse_literary_review(answer)
+                outcome, report, reviewed_style = parse_literary_review(
+                    answer, context=review_context)
+                if report.get("evidence_version") != 2:
+                    raise ModelError("automatic reviewer must return anchored v2 evidence")
+            elif patch_mode:
+                patches, proposed_glossary, proposed_style = parse_correction_patches(
+                    answer, previous_quality["findings"])
+                current_translation = (ROOT / "books" / slug / chapter["translation_path"]
+                                       ).read_bytes().decode("utf-8")
+                translated = apply_correction_patches(current_translation, patches)
             else:
                 translated, proposed_glossary, proposed_style = parse_translation(answer)
         if role != "reviewer":
-            if not preserve_links:
+            if not preserve_links and not patch_mode:
                 translated = restore_markdown_links(source, translated)
             check_markers(source, translated)
             proposed_glossary, rejected = filter_conflicting_glossary_proposals(
@@ -1133,7 +1429,11 @@ def process_claim(job_id: str, slug: str, status: dict, engine: Path) -> None:
                 status["glossary_conflicts_rejected"] = (
                     status.get("glossary_conflicts_rejected", 0) + rejected)
             path = ROOT / "books" / slug / chapter["translation_path"]
-            if role == "corrector" and path.read_text("utf-8") == translated:
+            existing_translation = None
+            if role == "corrector":
+                existing_translation = (path.read_bytes().decode("utf-8") if patch_mode
+                                        else path.read_text("utf-8"))
+            if role == "corrector" and existing_translation == translated:
                 current_glossary = (ROOT / "books" / slug / "glossary.md").read_text("utf-8")
                 if not proposed_glossary or updated_glossary(
                         current_glossary, proposed_glossary) == current_glossary:
@@ -1149,12 +1449,14 @@ def process_claim(job_id: str, slug: str, status: dict, engine: Path) -> None:
         checkpoint(job_id, status, slug)
         return
     if role == "reviewer":
-        with tempfile.NamedTemporaryFile("w", encoding="utf-8", suffix=".json") as f:
-            json.dump(report, f, ensure_ascii=False)
-            f.flush()
+        with tempfile.TemporaryDirectory(prefix="book-review-") as directory:
+            quality_report = Path(directory) / "quality-report.json"
+            quality_report.write_text(json.dumps(report, ensure_ascii=False), encoding="utf-8")
             cli("review-record", slug, str(chapter["number"]), "--outcome", outcome,
-                "--session-id", active["session_id"], "--quality-report", f.name)
+                "--session-id", active["session_id"], "--quality-report", str(quality_report))
         status.pop("memory_recheck_unit", None)
+        if status.get("force_full_review_unit") == unit_id:
+            status.pop("force_full_review_unit", None)
         if outcome == "PASS":
             cli("accept-review", slug, str(chapter["number"]))
             saved = save_claim_bound_decisions(
@@ -1164,7 +1466,10 @@ def process_claim(job_id: str, slug: str, status: dict, engine: Path) -> None:
             status["pending_style"] = []
     else:
         path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_text(translated, encoding="utf-8")
+        if role == "corrector" and patch_mode:
+            path.write_bytes(translated.encode("utf-8"))
+        else:
+            path.write_text(translated, encoding="utf-8")
         cli("accept-translation", slug, str(chapter["number"]),
             "--session-id", active["session_id"])
         saved = save_claim_bound_decisions(
@@ -1175,6 +1480,10 @@ def process_claim(job_id: str, slug: str, status: dict, engine: Path) -> None:
         if role == "corrector":
             rounds = status["correction_rounds"]
             rounds[unit_id] = rounds.get(unit_id, 0) + 1
+            if rounds[unit_id] > MAX_CORRECTIONS:
+                extensions = status["correction_extensions"]
+                extensions[unit_id] = rounds[unit_id] - MAX_CORRECTIONS
+                status.pop("correction_extension_authorized_unit", None)
             if status.get("_memory_only_change"):
                 status["memory_recheck_unit"] = unit_id
         status.pop("_memory_only_change", None)
@@ -1237,8 +1546,10 @@ def run(job_id: str, *, resume_blocked: bool = False,
         raise JobError("interrupted recovery requires an existing blocked job")
     if status and status.get("state") in FINAL and not (resume_blocked or resume_interrupted):
         return status
-    if resume_blocked and (status.get("phase") != "model-blocked" or status.get("active") is not None):
-        raise JobError("only an inactive model-blocked job can be resumed")
+    if (resume_blocked and (status.get("phase") not in
+            {"model-blocked", "correction-limit-reached"}
+            or status.get("active") is not None)):
+        raise JobError("resume requires an inactive model-blocked or correction-limited job")
     if resume_interrupted and (status.get("phase") != "operator-intervention-required"
                                or not isinstance(status.get("active"), dict)):
         raise JobError("interrupted recovery requires the recorded active claim")
@@ -1288,6 +1599,30 @@ def run(job_id: str, *, resume_blocked: bool = False,
                     or not isinstance(canonical_state.get("errors"), list)
                     or canonical_state["errors"]):
                 raise JobError("cannot resume while canonical claims or errors remain")
+            if status.get("phase") == "correction-limit-reached":
+                _, ledger, chapters = chapter_data(slug)
+                unit_id = status.get("blocked_unit_id")
+                matches = [item for item in chapters if item.get("unit_id") == unit_id]
+                if len(matches) != 1:
+                    raise JobError("correction-limited unit no longer maps to one source unit")
+                chapter = matches[0]
+                counters = status.get("correction_rounds", {})
+                extensions = status.get("correction_extensions", {})
+                if not isinstance(counters, dict) or not isinstance(extensions, dict):
+                    raise JobError("invalid correction recovery counters")
+                rounds = counters.get(unit_id, 0)
+                used = extensions.get(unit_id, 0)
+                if (type(rounds) is not int or type(used) is not int or used < 0
+                        or rounds != MAX_CORRECTIONS or used >= MAX_CORRECTION_EXTENSIONS
+                        or not correction_progressed(ledger, chapter)):
+                    raise JobError("no measured correction progress remains for another attempt")
+                status["correction_extension_authorized_unit"] = unit_id
+                record = latest_record(ledger, chapter)
+                quality = record.get("quality_report", {}) if record else {}
+                if not isinstance(quality, dict):
+                    quality = {}
+                if quality.get("evidence_version") != 2:
+                    status["force_full_review_unit"] = unit_id
             approve_blocked_resume(status)
             checkpoint(job_id, status, slug)
         elif resume_interrupted:
@@ -1470,4 +1805,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-
