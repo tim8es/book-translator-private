@@ -1,0 +1,239 @@
+{
+  "schema_version": 1,
+  "request_id": "e4f84ced28b348449294a6ecb5df2dfb",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "32dba28dc186e736a8d7b99e9f07029816ec6bbfbb39092bd3b3a7491734d39e",
+    "record": {
+      "correction_round": 2,
+      "outcome": "CORRECTIONS_REQUIRED",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "meaning",
+            "detail": "Previously reported discrepancy rechecked against the corrected English/Russian passages; the current rendering now retains the relevant meaning and register.",
+            "id": "recheck-meaning-1",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "meaning-1",
+              "record_id": "979a4b45c0174f5e9226da920047eba3"
+            },
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "They were looking for an excuse to get rid of the queer guy, and it worked for four years."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Они искали повод избавиться от парня-гея — и на четыре года это сработало."
+            }
+          },
+          {
+            "category": "register",
+            "detail": "Previously reported discrepancy rechecked against the corrected English/Russian passages; the current rendering now retains the relevant meaning and register.",
+            "id": "recheck-register-1",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "register-1",
+              "record_id": "979a4b45c0174f5e9226da920047eba3"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "when Callaway started pushing the club into more illegal shit—drugs, weapons, extortion"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "когда Каллауэй стал втягивать клуб в ещё большее криминальное дерьмо — наркоту, оружие, вымогательство"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Previously reported discrepancy rechecked against the corrected English/Russian passages; the current rendering now retains the relevant meaning and register.",
+            "id": "recheck-meaning-2",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "meaning-2",
+              "record_id": "979a4b45c0174f5e9226da920047eba3"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "stored his clothes, books, and few knickknacks he’d collected over the years in a storage container."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "убрал его одежду, книги и немногочисленные безделушки, которые тот собрал за эти годы, в складской контейнер."
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Previously reported discrepancy rechecked against the corrected English/Russian passages; the current rendering now retains the relevant meaning and register.",
+            "id": "recheck-style-1",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "style-1",
+              "record_id": "979a4b45c0174f5e9226da920047eba3"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "and a permanent frown lingered on his pronounced brow."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "а тяжёлые надбровные дуги придавали его лицу вечно хмурый вид."
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Previously reported discrepancy rechecked against the corrected English/Russian passages; the current rendering now retains the relevant meaning and register.",
+            "id": "recheck-meaning-3",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "meaning-3",
+              "record_id": "979a4b45c0174f5e9226da920047eba3"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "with a barely hidden sneer"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "с едва скрываемой презрительной усмешкой"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Previously reported discrepancy rechecked against the corrected English/Russian passages; the current rendering now retains the relevant meaning and register.",
+            "id": "recheck-meaning-4",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "meaning-4",
+              "record_id": "979a4b45c0174f5e9226da920047eba3"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "while his dad sat sputtering after them."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "пока его отец сидел и захлёбывался возмущёнными возгласами им вслед."
+            }
+          },
+          {
+            "category": "addition",
+            "detail": "Previously reported discrepancy rechecked against the corrected English/Russian passages; the current rendering now retains the relevant meaning and register.",
+            "id": "recheck-addition-1",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "addition-1",
+              "record_id": "979a4b45c0174f5e9226da920047eba3"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Tank interrupted, tone sharper."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "— перебил Танк, и голос его стал резче."
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Previously reported discrepancy rechecked against the corrected English/Russian passages; the current rendering now retains the relevant meaning and register.",
+            "id": "recheck-meaning-5",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "meaning-5",
+              "record_id": "979a4b45c0174f5e9226da920047eba3"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "He knew from their letters that his boy struggled financially but had balked when Tank had told him he was going to send him some money to help out."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Из их писем он знал, что у его мальчика туго с деньгами, но тот воспротивился, когда Танк сказал, что собирается прислать ему немного денег в помощь."
+            }
+          },
+          {
+            "category": "register",
+            "detail": "The forceful 'What the fuck do you mean' is reduced to a neutral question, losing Snake's profanity and anger; restore the rough register.",
+            "id": "register-2",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "What the fuck do you mean *patch over*?"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "— Что значит *перевестись*?"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "'Он застегнул конверт' inaccurately makes the envelope the object being zipped. The source secures the envelope inside a cut/vest; reword to make the pocket/vest fastening clear.",
+            "id": "meaning-6",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "He zipped the envelope inside his cut, pressed close to his body."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Он застегнул конверт внутри жилета, прижав его к телу."
+            }
+          },
+          {
+            "category": "style",
+            "detail": "'Но решающим стала программа' has incorrect agreement; use a grammatically correct natural Russian construction while preserving that the pen-pal program settled Tank's decision.",
+            "id": "style-2",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "But it had been the new pen pal program he’d signed up for nine months ago that had sealed the deal."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Но решающим стала программа поиска друзей по переписке, в которой он зарегистрировался девять месяцев назад."
+            }
+          }
+        ]
+      },
+      "record_id": "86e8d548124c493094e8c73ced2b3a1f",
+      "review_commit": "f7467242d8a9a856d85f6074b3266d6b54b7a8cf",
+      "review_contract_revision": "docs/TRANSLATION.md@d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "reviewed_at": "2026-11-10T19:06:34Z",
+      "reviewer_session_id": "chat-reckless-ch07-review-20261110b",
+      "sequence": 10,
+      "source_sha256": "e0b6aa1bf22686032a158c32bb974e20245564c94096a24dae738bc81cd1c537",
+      "state_revision": "041a0c0eddaab6580aee3beebcf0b115cfd3919f964a006266657cfc862d7a61",
+      "supersedes_record_id": "979a4b45c0174f5e9226da920047eba3",
+      "translation_sha256": "c3f884a24f245d052b15abf6f9250e5100d109879f842e5520a868bf75255de6",
+      "unit_id": "chapter-000007",
+      "workflow_revision": "d87bf1672a59b86e30ede996a99df28bdf47b36f"
+    }
+  },
+  "error": null
+}
