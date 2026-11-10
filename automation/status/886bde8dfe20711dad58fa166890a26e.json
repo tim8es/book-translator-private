@@ -4,7 +4,7 @@
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
   "source_sha256": "3a3fce78317162b68bc1e82501456a74a783cfc96cb2640c463f381866007865",
   "state": "running",
-  "phase": "model-call-reserved",
+  "phase": "corrector-completed",
   "failures": 0,
   "correction_rounds": {
     "chapter-000002": 1,
@@ -13,34 +13,15 @@
     "chapter-000009": 1,
     "chapter-000011": 3,
     "chapter-000012": 2,
-    "chapter-000013": 1
+    "chapter-000013": 1,
+    "chapter-000014": 1
   },
   "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
-  "updated_at": "2026-11-10T12:35:47.724989+00:00",
-  "active": {
-    "role": "corrector",
-    "chapter": 14,
-    "session_id": "auto-886bde8dfe20-corrector-e71e3212"
-  },
+  "updated_at": "2026-11-10T12:36:15.635789+00:00",
+  "active": null,
   "model_calls_started": 89,
   "memory_glossary_saved": 90,
-  "pending_style": [
-    {
-      "evidence": "Повествователь задаётся вопросами о своих чувствах к Cade и пытается понять желание быть рядом и защищать его.",
-      "source_pattern": "Первое лицо, близкая повествовательная перспектива, внутренние вопросы и самооценки.",
-      "translation_approach": "Сохранять непосредственный голос Dillon, его сомнения и спонтанные переходы от наблюдения к внутренней реакции."
-    },
-    {
-      "evidence": "В тексте встречаются “fucking sunshine”, “asshole”, “fuck off” и другие грубые выражения.",
-      "source_pattern": "Разговорный регистр с грубой лексикой и эмоциональными усилителями.",
-      "translation_approach": "Сохранять неформальность и степень резкости, не нейтрализуя ругань и не приглаживая внутреннюю речь."
-    },
-    {
-      "evidence": "Dillon замечает ямочки Cade, соприкосновение коленей и собственное желание защищать его, но стесняется признать свои чувства.",
-      "source_pattern": "Смущение и влечение выражены через телесные реакции, взгляды и прикосновения, часто с самоиронией.",
-      "translation_approach": "Передавать неловкость и физическую непосредственность без усиления романтического подтекста сверх исходного."
-    }
-  ],
+  "pending_style": [],
   "prompt_context": {
     "role": "corrector",
     "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
