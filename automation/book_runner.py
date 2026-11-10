@@ -1240,9 +1240,17 @@ def context(engine: Path, slug: str, chapter: dict, role: str,
             )
         previous_open = [item for item in findings if not item.get("resolved")]
         if record and quality.get("evidence_version") == 2 and previous_open:
-            user += (" Every prior unresolved finding must be represented once with a new id and "
-                     "resolves={record_id: " + json.dumps(record["record_id"]) +
-                     ", finding_id: <prior id>}; do not omit a recheck. New findings use resolves=null.")
+            example_id = previous_open[0]["id"]
+            resolves = json.dumps({"record_id": record["record_id"],
+                                   "finding_id": example_id}, ensure_ascii=False)
+            user += (" This is a follow-up review. Every prior unresolved finding must appear "
+                     "exactly once, even when its correction fixed the issue. Use a new id for "
+                     "each current finding and set resolves to a JSON object with the prior "
+                     "record id and that finding's exact old id. For example, the recheck of "
+                     + json.dumps(example_id) + " must contain \"resolves\":" + resolves +
+                     ". Set resolved=true only when fixed; otherwise set it to false. Only "
+                     "entirely new findings use resolves:null. A response missing any prior "
+                     "recheck is invalid.")
         else:
             user += " First-pass findings use resolves=null."
         user += (
