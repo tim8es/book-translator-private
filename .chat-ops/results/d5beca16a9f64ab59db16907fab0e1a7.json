@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "request_id": "d5beca16a9f64ab59db16907fab0e1a7",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "74f9be684ba51ee0ee78d9a0ad36b3007cd1542cbb6532c6c412b5e43cb09cdd",
+    "record": {
+      "correction_round": 4,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "meaning",
+            "detail": "The new phrase describes the physical cost of his arrival, not only the birth procedure.",
+            "id": "recheck-meaning-2",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "meaning-2",
+              "record_id": "38c8119b389047fd9bc1b08c37f4470b"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "She said having me was rough on her body."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Она говорила, что моё появление на свет далось её организму тяжело."
+            }
+          },
+          {
+            "category": "terminology",
+            "detail": "The proper name follows the established Latin-script glossary rendering. The other dialogue occurrences in this chapter are now also consistently Dillon.",
+            "id": "recheck-terminology-1",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "terminology-1",
+              "record_id": "38c8119b389047fd9bc1b08c37f4470b"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "what have you done with Dillon?"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "что сделал с Dillon?"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "The school team is correctly identified as cross-country running; the later reference to this sport is also corrected.",
+            "id": "recheck-meaning-3",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "meaning-3",
+              "record_id": "38c8119b389047fd9bc1b08c37f4470b"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "cross-country team this year"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "команду по бегу по пересечённой местности"
+            }
+          },
+          {
+            "category": "register",
+            "detail": "The coarse joking insult retains its force rather than being softened to a neutral insult.",
+            "id": "recheck-register-4",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "register-4",
+              "record_id": "38c8119b389047fd9bc1b08c37f4470b"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Off, asshole!"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Слезь, мудак!"
+            }
+          },
+          {
+            "category": "register",
+            "detail": "The exasperated profanity of the original is now retained in the Russian dialogue.",
+            "id": "recheck-register-5",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "register-5",
+              "record_id": "38c8119b389047fd9bc1b08c37f4470b"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Who the fuck are you"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Ты кто, блядь, такой"
+            }
+          }
+        ]
+      },
+      "record_id": "78f3d7fb028846d5a8325aaf252af35a",
+      "review_commit": "9a439b48f2106041c3e935a02ce27bae23d2a95a",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewed_at": "2026-11-10T14:36:13Z",
+      "reviewer_session_id": "homein-you-reviewer-20261110-5f8b42",
+      "sequence": 30,
+      "source_sha256": "f105fb42da1bb93e2f2f41c7c0916bed489cf8a87a9f2f05da3f2193bc825997",
+      "state_revision": "b9e99b7366fe274f06be8b9ba20f38d0a6e47ca6d1ea2372d5b793c04b3c730e",
+      "supersedes_record_id": "38c8119b389047fd9bc1b08c37f4470b",
+      "translation_sha256": "1923275bc94bb44c54a3148d50db7150be4b09476532df29b5c056cda544fdb5",
+      "unit_id": "chapter-000014",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58"
+    }
+  },
+  "error": null
+}

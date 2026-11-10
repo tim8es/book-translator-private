@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 30,
+  "next_sequence": 31,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -1872,6 +1872,130 @@
       "shared_state_revisions": {
         "glossary": "13a5723dbb821b2670a8d9c534774432d6f107e1beb03987ee5eb980d2c485ac",
         "style_guide": "3ec7c485cf41741084ffe49b72d2b18ed9bd650a00a2ba00554605abadea5e3a"
+      }
+    },
+    {
+      "record_id": "78f3d7fb028846d5a8325aaf252af35a",
+      "sequence": 30,
+      "unit_id": "chapter-000014",
+      "outcome": "PASS",
+      "source_sha256": "f105fb42da1bb93e2f2f41c7c0916bed489cf8a87a9f2f05da3f2193bc825997",
+      "translation_sha256": "1923275bc94bb44c54a3148d50db7150be4b09476532df29b5c056cda544fdb5",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewer_session_id": "homein-you-reviewer-20261110-5f8b42",
+      "reviewed_at": "2026-11-10T14:36:13Z",
+      "state_revision": "b9e99b7366fe274f06be8b9ba20f38d0a6e47ca6d1ea2372d5b793c04b3c730e",
+      "review_commit": "9a439b48f2106041c3e935a02ce27bae23d2a95a",
+      "correction_round": 4,
+      "supersedes_record_id": "38c8119b389047fd9bc1b08c37f4470b",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-meaning-2",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The new phrase describes the physical cost of his arrival, not only the birth procedure.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "She said having me was rough on her body.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Она говорила, что моё появление на свет далось её организму тяжело.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "38c8119b389047fd9bc1b08c37f4470b",
+              "finding_id": "meaning-2"
+            }
+          },
+          {
+            "id": "recheck-terminology-1",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "The proper name follows the established Latin-script glossary rendering. The other dialogue occurrences in this chapter are now also consistently Dillon.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "what have you done with Dillon?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "что сделал с Dillon?",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "38c8119b389047fd9bc1b08c37f4470b",
+              "finding_id": "terminology-1"
+            }
+          },
+          {
+            "id": "recheck-meaning-3",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The school team is correctly identified as cross-country running; the later reference to this sport is also corrected.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "cross-country team this year",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "команду по бегу по пересечённой местности",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "38c8119b389047fd9bc1b08c37f4470b",
+              "finding_id": "meaning-3"
+            }
+          },
+          {
+            "id": "recheck-register-4",
+            "category": "register",
+            "severity": "minor",
+            "detail": "The coarse joking insult retains its force rather than being softened to a neutral insult.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Off, asshole!",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Слезь, мудак!",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "38c8119b389047fd9bc1b08c37f4470b",
+              "finding_id": "register-4"
+            }
+          },
+          {
+            "id": "recheck-register-5",
+            "category": "register",
+            "severity": "minor",
+            "detail": "The exasperated profanity of the original is now retained in the Russian dialogue.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Who the fuck are you",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Ты кто, блядь, такой",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "38c8119b389047fd9bc1b08c37f4470b",
+              "finding_id": "register-5"
+            }
+          }
+        ]
       }
     }
   ]
