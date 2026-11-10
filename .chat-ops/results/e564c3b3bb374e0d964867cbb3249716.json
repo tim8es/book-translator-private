@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "request_id": "e564c3b3bb374e0d964867cbb3249716",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "2ef639405edbe8d0f000fe298092033d8e288f2d88d5df2e9148118c08045b56",
+    "record": {
+      "correction_round": 1,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "meaning",
+            "detail": "Now uses «собакой», consistent with later reference to Daisey as female, without changing the action.",
+            "id": "recheck-dog-sex",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "dog-sex-inconsistency",
+              "record_id": "1fa6a748117f4e6ab35b58413858afa5"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "kneeling in front of the dog laying next to Mr. Morris."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "присаживаясь на корточки перед собакой, лежавшей рядом с мистером Моррисом."
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "The corrected translation retains the intention to return before darkness, rather than simply before it becomes late.",
+            "id": "recheck-darkness",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "darkness-timing",
+              "record_id": "1fa6a748117f4e6ab35b58413858afa5"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "headed home before it got too dark."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "отправились домой, пока не стало слишком темно."
+            }
+          },
+          {
+            "category": "register",
+            "detail": "The corrected wording preserves a colloquial euphemism followed by an almost-spoken stronger word, without unnecessary escalation.",
+            "id": "recheck-heck-hell",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "heck-hell-register",
+              "record_id": "1fa6a748117f4e6ab35b58413858afa5"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "“Heck, yeah!” I said, almost blurting out *‘hell.’*"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "«Блин, да!» — воскликнул я, едва не ляпнув *«чёрт»*."
+            }
+          }
+        ]
+      },
+      "record_id": "7d4c87447d9f4bc99b37df46f27fb77e",
+      "review_commit": "5c540f29d4718b2aa09d540edef9c9337fe66fdd",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewed_at": "2026-11-10T15:17:55Z",
+      "reviewer_session_id": "homeinyou-rereview-ch6-20261110-4a2c73",
+      "sequence": 34,
+      "source_sha256": "b3d7bb544006a33eb1efef2adcaa224b828ce09cc616d989733bb846f4f8cc70",
+      "state_revision": "b81a8b35ba34943da6b28308946f9005b89c6a0a83e5abf6931f683f8a2bea6c",
+      "supersedes_record_id": "1fa6a748117f4e6ab35b58413858afa5",
+      "translation_sha256": "ee0f14ce6c9b14db8b9ba327c3119524987517b4af97fa6b593b602ad326cf1e",
+      "unit_id": "chapter-000016",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58"
+    }
+  },
+  "error": null
+}
