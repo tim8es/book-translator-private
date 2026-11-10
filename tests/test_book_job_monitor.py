@@ -90,9 +90,14 @@ class BookJobMonitorTests(unittest.TestCase):
 
     def test_blocked_even_when_actions_was_green(self):
         self.blocked()
+        status = monitor.read_json(self.status_file)
+        status["last_error"] = "reviewer evidence is invalid: stale anchor error"
+        write_json(self.status_file, status)
         e = monitor.inspect(self.root, JOB, NOW, False)
         self.assertEqual(e["type"], "blocked")
         self.assertEqual(e["phase"], "correction-limit-reached")
+        self.assertIn("correction limit reached", e["reason"].lower())
+        self.assertNotIn("stale anchor error", e["reason"])
         self.assertEqual(e["reviewed_units"], 6)
         self.assertEqual(e["total_units"], 7)
         self.assertEqual(e["correction_rounds"]["chapter-000007"], 3)
