@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 24,
+  "next_sequence": 25,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -1138,6 +1138,103 @@
       },
       "shared_state_revisions": {
         "glossary": "f2dfd166d4e8e3c82432765bfbe86862ed3ce7ab0d9376c994d4119db8b374a2",
+        "style_guide": "3ec7c485cf41741084ffe49b72d2b18ed9bd650a00a2ba00554605abadea5e3a"
+      }
+    },
+    {
+      "record_id": "d47054bee2fb43f794c8c5ea9fc6902e",
+      "sequence": 24,
+      "unit_id": "chapter-000013",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "c8510154419e296bfdf99d257f8e1b8e1baf0c02c0e937e4d3eecd532cb9db46",
+      "translation_sha256": "c83ff363c712a025b7bd1c3cbba153bcffaf2859df6eef4551b185fe17c9d651",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewer_session_id": "auto-886bde8dfe20-reviewer-f3c662a5",
+      "reviewed_at": "2026-11-10T12:24:12Z",
+      "state_revision": "5008dc941ac1a8a6cf2d35a7fa0c70123c7971d20d90e1e8762ea78b6efd8958",
+      "review_commit": "5305a09e5691f1843cf0febd34e431404a0b0636",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "terminology-1",
+            "category": "terminology",
+            "severity": "major",
+            "detail": "The glossary specifies Evelyn → Эвелин, but the translation retains Evelyn in Latin script throughout. Replace the occurrences with the canonical Russian rendering.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Evelyn was incredibly nice.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Evelyn была невероятно доброй.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "“Had a crush on me” explicitly describes a romantic crush, while “я ему тоже нравлюсь” can mean only that he likes me. Preserve the romantic force, for example with “он тоже в меня втрескался”.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "I liked to imagine he had a crush on me, too, and that he liked my dimples, so I smiled a lot for him.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Мне нравилось представлять, что я ему тоже нравлюсь и что ему по душе мои ямочки, поэтому я часто ему улыбался.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-2",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "“Власти надо мной” adds an explicit object and narrows the source’s deliberately uncertain “power”; the following self-correction to “Strength?” reinforces that uncertainty. Keep the question open rather than specifying power over the narrator.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "How did someone so in their shell have so much power? I wasn’t sure that was the right word. Strength?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Как у такого замкнутого человека могло быть столько власти надо мной? Не уверен, что это подходящее слово. Силы?",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-3",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "“Колени соприкасались” conveys contact but softens the physical pressure in “pressed up against each other.” Preserve that detail, for example with “колени были прижаты друг к другу”.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "We sat next to each other in the front row with our knees pressed up against each other despite the heat outside.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Мы сидели рядом в первом ряду, и наши колени соприкасались, несмотря на жару.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "c5c8b0bdf74fd6b9a41a3b0676cd9851bcfe155e624ffa0d9e6ed48c070f7a6e",
         "style_guide": "3ec7c485cf41741084ffe49b72d2b18ed9bd650a00a2ba00554605abadea5e3a"
       }
     }
