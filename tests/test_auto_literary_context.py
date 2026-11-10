@@ -272,6 +272,57 @@ class LiteraryContextTests(unittest.TestCase):
             with self.assertRaisesRegex(runner.JobError, "unit_claimed"):
                 runner.canonical_dispatch("test", {})
 
+    def test_fourth_corrections_required_review_defers_and_dispatches_next_unit(self):
+        first = {"unit_id": "chapter-000001", "number": 1, "status": "translated",
+                 "translation_acceptance": {"source_sha256": "b" * 64,
+                                             "translation_sha256": "a" * 64}}
+        second = {"unit_id": "chapter-000002", "number": 2, "status": "extracted"}
+        ledger = {"records": [{"unit_id": first["unit_id"], "sequence": sequence,
+                               "outcome": "CORRECTIONS_REQUIRED",
+                               "source_sha256": "b" * 64,
+                               "translation_sha256": str(sequence)}
+                              for sequence in range(1, 5)]}
+        status = {"correction_rounds": {first["unit_id"]: 3}}
+        workflow = ModuleType("workflow")
+        workflow.__path__ = []
+        operations = ModuleType("workflow.operations")
+        operations.next_unit_operation = lambda lifecycle, review: (
+            "translate" if lifecycle == "extracted" else
+            {"pass": "accept_review", "corrections_required": "correct_translation",
+             "missing": "review", "stale": "review"}.get(review)
+        )
+        with patch.dict(sys.modules, {"workflow": workflow,
+                                      "workflow.operations": operations}), \
+             patch.object(runner, "chapter_data", return_value=({}, ledger, [first, second])), \
+             patch.object(runner, "approved_unit_ids", return_value=set()), \
+             patch.object(runner, "cli", return_value=json.dumps({
+                 "operation": "correct_translation", "unit_id": first["unit_id"],
+                 "chapter_number": 1})):
+            role, selected = runner.canonical_dispatch("test", status)
+            self.assertEqual((role, selected), ("translator", second))
+            self.assertEqual(status["deferred_review_units"], [first["unit_id"]])
+            second["status"] = "reviewed"
+            self.assertEqual(runner.next_operation("test", status), ("review-deferred", None))
+            ledger["records"].append({"unit_id": first["unit_id"], "sequence": 5,
+                                      "outcome": "PASS", "source_sha256": "b" * 64,
+                                      "translation_sha256": "a" * 64})
+            self.assertTrue(runner.deferred_review_has_pass(ledger, first))
+            self.assertEqual(runner.next_operation("test", status), ("promote", first))
+        self.assertEqual(first["status"], "translated")
+
+    def test_correction_limit_resume_defers_instead_of_authorizing_fifth_review(self):
+        chapter = {"unit_id": "chapter-000014",
+                   "translation_acceptance": {"source_sha256": "b" * 64}}
+        ledger = {"records": [{"unit_id": chapter["unit_id"], "sequence": sequence,
+                               "source_sha256": "b" * 64,
+                               "outcome": "CORRECTIONS_REQUIRED"}
+                              for sequence in range(1, 5)]}
+        status = {"correction_rounds": {chapter["unit_id"]: 3},
+                  "correction_extensions": {}}
+        runner.prepare_correction_limit_resume(status, ledger, chapter)
+        self.assertEqual(status["deferred_review_units"], [chapter["unit_id"]])
+        self.assertNotIn("correction_extension_authorized_unit", status)
+
     def test_model_call_cap_fails_closed_without_provider_request(self):
         with tempfile.TemporaryDirectory() as folder:
             root = Path(folder)
