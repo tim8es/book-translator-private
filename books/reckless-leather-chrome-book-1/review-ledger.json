@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "reckless-leather-chrome-book-1",
-  "next_sequence": 7,
+  "next_sequence": 8,
   "records": [
     {
       "record_id": "f77b051b1598493e90f406995c7404b7",
@@ -224,6 +224,71 @@
               "record_id": "70fa4e1850bd4273a96f697858d9b485",
               "finding_id": "meaning-1"
             }
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "610aa6f6815d0bd75721bdd25834ec9ca9d3a8b40bc5fd3d8082a698ccef8bbe",
+        "style_guide": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4"
+      }
+    },
+    {
+      "record_id": "ad51129573d74ddc85c3e6346c19ee9d",
+      "sequence": 7,
+      "unit_id": "chapter-000006",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "fc183960320f7df636a321b3768dbd68e2b85332ed598a67943589ef2e069e58",
+      "translation_sha256": "3cfedfba8b337ec828d7081cb91668c4d019fcc88449acc877a8b4febd0debf4",
+      "workflow_revision": "d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "review_contract_revision": "docs/TRANSLATION.md@d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "reviewer_session_id": "auto-568dee900b06-reviewer-aea1ea5b",
+      "reviewed_at": "2026-11-10T17:08:02Z",
+      "state_revision": "893f51d280333b55577e4c2cc33b33b7a5304fe4a9d0fcadef5be3d9d2222235",
+      "review_commit": "0ba3df0aaa5f8819eb6afc7625a35dae5b84342a",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "meaning-1",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "“Briefly on page” means that the violence itself appears briefly in the text, not merely that it is briefly described. Rephrase to indicate brief depiction, for example: «насилие (незначительное, но кратко показано в тексте)».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "violence (mild, but briefly on page)",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "насилие (незначительное, но кратко описано в тексте)",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Лёгкое мечение» звучит как калька и неестественно по-русски. Consider «лёгкие метки» или близкую естественную формулировку.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "mild marking",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "лёгкое мечение",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       },
