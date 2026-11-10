@@ -11,6 +11,7 @@ import tempfile
 import unittest
 import zipfile
 from pathlib import Path
+from types import ModuleType
 from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "automation"))
@@ -851,7 +852,17 @@ class AutomatedBookTests(unittest.TestCase):
 
     def test_next_step_requires_independent_review(self):
         with tempfile.TemporaryDirectory() as folder:
-            with patch.object(worker, "ROOT", Path(folder)):
+            workflow = ModuleType("workflow")
+            workflow.__path__ = []
+            operations = ModuleType("workflow.operations")
+            operations.next_unit_operation = lambda lifecycle, review: (
+                "translate" if lifecycle == "extracted" else
+                {"pass": "accept_review", "corrections_required": "correct_translation",
+                 "missing": "review", "stale": "review"}.get(review)
+            )
+            with patch.dict(sys.modules, {"workflow": workflow,
+                                           "workflow.operations": operations}), \
+                 patch.object(worker, "ROOT", Path(folder)):
                 slug = "auto-" + "a" * 32
                 book = worker.ROOT / "books" / slug
                 book.mkdir(parents=True)
