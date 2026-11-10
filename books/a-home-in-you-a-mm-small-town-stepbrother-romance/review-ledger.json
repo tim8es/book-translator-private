@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 22,
+  "next_sequence": 23,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -896,6 +896,169 @@
             },
             "translation_anchor": {
               "quote": "Мы бы забыли о холоде и согревали друг друга поцелуями.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "f2dfd166d4e8e3c82432765bfbe86862ed3ce7ab0d9376c994d4119db8b374a2",
+        "style_guide": "3ec7c485cf41741084ffe49b72d2b18ed9bd650a00a2ba00554605abadea5e3a"
+      }
+    },
+    {
+      "record_id": "9ab3d52ac618478ba27dea4703deb29b",
+      "sequence": 22,
+      "unit_id": "chapter-000012",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "2b3bded4b2e76f54411c20c01b11abbbb81cf1dc123f89ba5db63426589e3903",
+      "translation_sha256": "fd3aad6df5bae86677fc7af8f4542b8b0892e9e31d1eaa0f0aba1bb4b6497005",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewer_session_id": "auto-886bde8dfe20-reviewer-488da54a",
+      "reviewed_at": "2026-11-10T12:15:18Z",
+      "state_revision": "b830e35cbce29830305a218726a1ae5534c4da14a2e3f25d7f94d4df6a5a2863",
+      "review_commit": "1b7392a1039740ce19bded37e7b7fe5c4b22be13",
+      "correction_round": 2,
+      "supersedes_record_id": "49cf9d4210a9474d95b8bd5e124f7fb6",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-terminology-1",
+            "category": "terminology",
+            "severity": "major",
+            "detail": "Каноническая форма имени — Dillon. В этом месте и во многих других перевод использует «Диллон», хотя в начале фрагмента имя оставлено латиницей. Приведите все упоминания к форме из глоссария.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Dillon was so fucking beautiful, if you could call a dude that.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Диллон был чертовски красив, если парня вообще можно так назвать.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "49cf9d4210a9474d95b8bd5e124f7fb6",
+              "finding_id": "terminology-1"
+            }
+          },
+          {
+            "id": "recheck-terminology-2",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "Обращение Эвелин сохраняет каноническую форму имени Cade.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Good morning, Cade",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Доброе утро, Cade",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "49cf9d4210a9474d95b8bd5e124f7fb6",
+              "finding_id": "terminology-2"
+            }
+          },
+          {
+            "id": "recheck-style-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Реплика о трёхцветной кошке грамматически завершена.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "The calico cat there is Snickerdoodle, but we call her Snickers.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "А вон ту трёхцветную кошку зовут Сникердудл, но мы зовём её Сникерс",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "49cf9d4210a9474d95b8bd5e124f7fb6",
+              "finding_id": "style-1"
+            }
+          },
+          {
+            "id": "recheck-style-2",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Фраза о кормлении животных построена грамматически верно.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "One of my chores is to feed the animals if you want to help.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Одна из моих обязанностей состоит в том, чтобы кормить животных. Хочешь помочь?",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "49cf9d4210a9474d95b8bd5e124f7fb6",
+              "finding_id": "style-2"
+            }
+          },
+          {
+            "id": "recheck-style-3",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Выражение о постоянных разъездах передано естественно и сохраняет исходный разговорный регистр.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "he’s always on the fucking road.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "он вечно в грёбаных разъездах",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "49cf9d4210a9474d95b8bd5e124f7fb6",
+              "finding_id": "style-3"
+            }
+          },
+          {
+            "id": "recheck-register-1",
+            "category": "register",
+            "severity": "minor",
+            "detail": "Фантазия о продолжительном страстном поцелуе передана с подходящей интенсивностью.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "We’d forget about the cold as we warmed each other with our make out session.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Мы бы забыли о холоде и согревали друг друга, целуясь взасос.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "49cf9d4210a9474d95b8bd5e124f7fb6",
+              "finding_id": "register-1"
+            }
+          },
+          {
+            "id": "meaning-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "В оригинале Cade хочет положить ногу на ногу Dillon. Формулировка «положить ногу на него» может означать прикосновение к его телу в целом. Уточните, что речь о ноге.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "I wish I could’ve put my leg on his again, but the dog was sleeping between us.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Жаль, что я не мог снова положить ногу на него, но между нами спала собака.",
               "occurrence": 0
             },
             "resolves": null
