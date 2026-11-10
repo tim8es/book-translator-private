@@ -236,7 +236,7 @@ This is a **bounded initial MVP**, not unrestricted unattended production:
   allows label translation in ordinary text extraction.
 - The runner now enforces a durable maximum of 36 model invocations per
   job by default. Override with repository variable OMNIROUTE_MODEL_CALL_LIMIT
-  (integer 1–200). Each invocation is reserved and checkpointed **before**
+  (integer 1–400). Each invocation is reserved and checkpointed **before**
   sending its request; reaching the cap blocks and releases the active claim.
   Transport retries inside one invocation may still issue additional HTTP
   attempts. This is **not** a monetary or token-based budget: configure an
