@@ -4,7 +4,7 @@
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
   "source_sha256": "3a3fce78317162b68bc1e82501456a74a783cfc96cb2640c463f381866007865",
   "state": "running",
-  "phase": "model-call-reserved",
+  "phase": "translator-completed",
   "failures": 0,
   "correction_rounds": {
     "chapter-000002": 1,
@@ -15,15 +15,27 @@
     "chapter-000012": 2
   },
   "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
-  "updated_at": "2026-11-10T12:17:54.976073+00:00",
-  "active": {
-    "role": "translator",
-    "chapter": 13,
-    "session_id": "auto-886bde8dfe20-translator-4a6193db"
-  },
+  "updated_at": "2026-11-10T12:20:51.913284+00:00",
+  "active": null,
   "model_calls_started": 82,
-  "memory_glossary_saved": 78,
-  "pending_style": [],
+  "memory_glossary_saved": 85,
+  "pending_style": [
+    {
+      "evidence": "“How did someone so in their shell have so much power? I wasn’t sure that was the right word. Strength?”",
+      "source_pattern": "Повествование от первого лица в прошедшем времени часто переходит в непосредственные вопросы, оценки и самопоправки рассказчика.",
+      "translation_approach": "Сохранять близкую повествовательную перспективу, внутренние вопросы и внезапные уточнения, не превращая их в отстранённое объяснение."
+    },
+    {
+      "evidence": "“I acted so fucking stupid around him all the time” и “I’d die a happy man.”",
+      "source_pattern": "Внутренняя речь Cade разговорная и эмоциональная, с грубой лексикой, гиперболами и короткими фрагментами.",
+      "translation_approach": "Передавать разговорный регистр и резкость без смягчения; сохранять выразительные повторы и отдельные короткие реплики."
+    },
+    {
+      "evidence": "Описание запаха Dillon, прикосновения к шее и мурашек; “my body broke out into goosebumps.”",
+      "source_pattern": "Влечение передаётся через телесные ощущения и конкретные сенсорные детали, особенно прикосновения, запахи и реакцию тела.",
+      "translation_approach": "Сохранять чувственные детали и непосредственность реакции рассказчика, не усиливая их дополнительными объяснениями."
+    }
+  ],
   "prompt_context": {
     "role": "translator",
     "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",

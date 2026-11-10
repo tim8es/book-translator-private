@@ -37,3 +37,7 @@ Use this file for recurring names, places, organizations, terms, nicknames, titl
 | Evelyn | Эвелин | character | Каноническая передача имени. |
 | Mrs. Moo | Миссис Му | character | Имя коровы; передаёт игру со звукоподражанием moo. |
 | Yin Yang | Инь-Ян | character | Имя коровы. |
+| Horizon Zero Dawn | Horizon Zero Dawn | title | Название видеоигры; сохранено в оригинальном написании. |
+| Injustice 2 | Injustice 2 | title | Название видеоигры; сохранено в оригинальном написании. |
+| Prismacolor Pencils | Prismacolor | brand | Марка художественных карандашей; название бренда сохранено. |
+| Virginia | Вирджиния | place | Штат США. |
