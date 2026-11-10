@@ -1,0 +1,153 @@
+{
+  "schema_version": 1,
+  "request_id": "6a178cef271d48c8b39f84af865e73b2",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "7b6b664f20828d8555a1fd2a626e3805f6fc218768d82324da96e43143d8c56d",
+    "record": {
+      "correction_round": 1,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "meaning",
+            "detail": "Physical contact with the funhouse wall is now represented rather than mere proximity.",
+            "id": "recheck-leaning",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "leaning-against-funhouse",
+              "record_id": "0178046cd38249069eec0991b820b9b6"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "leaning against the funhouse."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Я чуть не умер на месте, прислонившись к стене комнаты смеха."
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Evelyn is positioned on the fence, as specified by the original.",
+            "id": "recheck-fence",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "evelyn-on-fence",
+              "record_id": "0178046cd38249069eec0991b820b9b6"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "She stood on the fence and ran a hand through my mop of curls"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Она тоже взобралась на забор и провела рукой по копне моих кудрей"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "The action is now naturally phrased as riding to warm up the horse rather than leading it while mounted.",
+            "id": "recheck-horse",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "horse-ride-warmup",
+              "record_id": "0178046cd38249069eec0991b820b9b6"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "ride her around the small field to warm up her muscles for about fifteen minutes"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "примерно пятнадцать минут покатайся на ней по небольшому полю, чтобы размять ей мышцы"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Dillon has not shown him the place, without claiming he has never been there.",
+            "id": "recheck-place",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "not-shown-place",
+              "record_id": "0178046cd38249069eec0991b820b9b6"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "a place I like that I haven’t shown you yet."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "одно любимое место, которое я тебе ещё не показывал"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "The narrator's fated-compatibility metaphor is restored.",
+            "id": "recheck-destiny",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "made-for-each-other",
+              "record_id": "0178046cd38249069eec0991b820b9b6"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Why couldn’t we have been made for each other?"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Почему мы не могли быть созданы друг для друга?"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "The awkward calque is replaced by a natural, equivalent hold.",
+            "id": "recheck-headlock",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "headlock-calque",
+              "record_id": "0178046cd38249069eec0991b820b9b6"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "because I ended up in a headlock."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "он тут же зажал мою голову под мышкой."
+            }
+          }
+        ]
+      },
+      "record_id": "d26e01a6af9e4488a1343e37dd1703d6",
+      "review_commit": "50c9463b30b04413b115e8d6e7974e8eaac467c4",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewed_at": "2026-11-10T17:15:55Z",
+      "reviewer_session_id": "homeinyou-rereview-ch10-20261110-bfd247",
+      "sequence": 44,
+      "source_sha256": "08cd24bcf70cb15300d98f211a50f7b89275eb4f7ba2f75911ffa7b7ccdde5dc",
+      "state_revision": "369cc1bfe4338542d29d85f26edcfd07cdc92eed0b7c66a6d6026f8e89700d7a",
+      "supersedes_record_id": "0178046cd38249069eec0991b820b9b6",
+      "translation_sha256": "b43644b02084409c331e6c454bd0e92d4d71751f9d9612fd6c837090a5a96558",
+      "unit_id": "chapter-000020",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58"
+    }
+  },
+  "error": null
+}

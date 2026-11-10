@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 44,
+  "next_sequence": 45,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -3167,6 +3167,149 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "d26e01a6af9e4488a1343e37dd1703d6",
+      "sequence": 44,
+      "unit_id": "chapter-000020",
+      "outcome": "PASS",
+      "source_sha256": "08cd24bcf70cb15300d98f211a50f7b89275eb4f7ba2f75911ffa7b7ccdde5dc",
+      "translation_sha256": "b43644b02084409c331e6c454bd0e92d4d71751f9d9612fd6c837090a5a96558",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewer_session_id": "homeinyou-rereview-ch10-20261110-bfd247",
+      "reviewed_at": "2026-11-10T17:15:55Z",
+      "state_revision": "369cc1bfe4338542d29d85f26edcfd07cdc92eed0b7c66a6d6026f8e89700d7a",
+      "review_commit": "50c9463b30b04413b115e8d6e7974e8eaac467c4",
+      "correction_round": 1,
+      "supersedes_record_id": "0178046cd38249069eec0991b820b9b6",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-leaning",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Physical contact with the funhouse wall is now represented rather than mere proximity.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "leaning against the funhouse.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Я чуть не умер на месте, прислонившись к стене комнаты смеха.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "0178046cd38249069eec0991b820b9b6",
+              "finding_id": "leaning-against-funhouse"
+            }
+          },
+          {
+            "id": "recheck-fence",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Evelyn is positioned on the fence, as specified by the original.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "She stood on the fence and ran a hand through my mop of curls",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Она тоже взобралась на забор и провела рукой по копне моих кудрей",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "0178046cd38249069eec0991b820b9b6",
+              "finding_id": "evelyn-on-fence"
+            }
+          },
+          {
+            "id": "recheck-horse",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The action is now naturally phrased as riding to warm up the horse rather than leading it while mounted.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "ride her around the small field to warm up her muscles for about fifteen minutes",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "примерно пятнадцать минут покатайся на ней по небольшому полю, чтобы размять ей мышцы",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "0178046cd38249069eec0991b820b9b6",
+              "finding_id": "horse-ride-warmup"
+            }
+          },
+          {
+            "id": "recheck-place",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Dillon has not shown him the place, without claiming he has never been there.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "a place I like that I haven’t shown you yet.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "одно любимое место, которое я тебе ещё не показывал",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "0178046cd38249069eec0991b820b9b6",
+              "finding_id": "not-shown-place"
+            }
+          },
+          {
+            "id": "recheck-destiny",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The narrator's fated-compatibility metaphor is restored.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Why couldn’t we have been made for each other?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Почему мы не могли быть созданы друг для друга?",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "0178046cd38249069eec0991b820b9b6",
+              "finding_id": "made-for-each-other"
+            }
+          },
+          {
+            "id": "recheck-headlock",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The awkward calque is replaced by a natural, equivalent hold.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "because I ended up in a headlock.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "он тут же зажал мою голову под мышкой.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "0178046cd38249069eec0991b820b9b6",
+              "finding_id": "headlock-calque"
+            }
           }
         ]
       }
