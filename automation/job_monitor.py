@@ -190,6 +190,8 @@ def inspect(root: Path, job_id: str, now: datetime, include_missing: bool) -> di
         kind = "blocked"
         if status.get("phase") == "correction-limit-reached":
             reason = "Automatic correction limit reached; no further correction attempt is authorized for this unit."
+        elif status.get("phase") == "review-deferred-requires-operator":
+            reason = "All other chapters are processed; deferred chapters need a current PASS review before delivery."
         else:
             reason = status.get("last_error") or status.get("phase") or "Blocked"
     elif state == "done":
@@ -210,6 +212,8 @@ def inspect(root: Path, job_id: str, now: datetime, include_missing: bool) -> di
              "correction_rounds": status.get("correction_rounds") or {},
              "failures": status.get("failures", 0),
              "status_updated_at": status.get("updated_at", "")}
+    if status.get("deferred_review_units"):
+        event["deferred_review_units"] = status["deferred_review_units"]
     if state == "done" and kind in {"completed", "completed_preview"}:
         event.update({"artifact_path": status["artifact_path"],
                       "artifact_sha256": status["artifact_sha256"],
