@@ -604,7 +604,7 @@ class AutomatedBookTests(unittest.TestCase):
         self.assertEqual(status["failures"], 0)
         self.assertEqual(status["model_calls_started"], 7)
         self.assertEqual(status["recoveries"][0]["previous_error"], "marker mismatch")
-        with self.assertRaisesRegex(worker.JobError, "inactive model-blocked"):
+        with self.assertRaisesRegex(worker.JobError, "inactive blocked job with a supported recovery path"):
             worker.approve_blocked_resume({"state": "blocked", "phase": "operator-intervention-required",
                                           "active": None})
 
