@@ -12,3 +12,5 @@ Use this file for recurring names, places, organizations, terms, nicknames, titl
 | Sandra Dee | Сандра Ди | имя редактора | Имя передано русской транслитерацией. |
 | One Love Editing | One Love Editing | название редакторской компании | Название оставлено без изменений. |
 | www.kikiclark.com | www.kikiclark.com | адрес сайта | URL сохранён без изменений. |
+| Tank | Танк | прозвище персонажа | Прозвище передано транслитерацией. |
+| Charles "CJ" Crane | Чарльз «Си-Джей» Крейн | имя персонажа | Имя и фамилия переданы русской транслитерацией; инициалы переданы как «Си-Джей». |
