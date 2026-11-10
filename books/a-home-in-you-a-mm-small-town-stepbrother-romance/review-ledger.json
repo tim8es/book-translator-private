@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 46,
+  "next_sequence": 47,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -3419,6 +3419,130 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "8fea91728dcc402bbc9ec51cde7c155c",
+      "sequence": 46,
+      "unit_id": "chapter-000021",
+      "outcome": "PASS",
+      "source_sha256": "579114a93b3562d516ab4822538b1159d8b1d272c535b73e88da3d4e2b720002",
+      "translation_sha256": "a681847e5bb260b1fa51b8a6879978ebaca04da87d4b6eb47b49e43be3c9a8d5",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewer_session_id": "homeinyou-rereview-ch11-20261110-6af2d0",
+      "reviewed_at": "2026-11-10T17:29:24Z",
+      "state_revision": "d70f02dd7f8a9bba121bc486e1c3bd083658aad58233bd13c80822c6d064f618",
+      "review_commit": "2e33bc7501783bd12ce1f76158010ba328cd3304",
+      "correction_round": 1,
+      "supersedes_record_id": "f35ca289e3224d9d80cafce33fd68acd",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "new-faces-resolved",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Unsupported «много» removed; source does not quantify unfamiliar pupils.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "some familiar faces and some new ones.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "кое-кого узнал, но были и незнакомые лица.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "f35ca289e3224d9d80cafce33fd68acd",
+              "finding_id": "invented-number-new-faces"
+            }
+          },
+          {
+            "id": "green-idiom-resolved",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The nervous green-faced hyperbole now reads naturally in Russian.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "looking almost green as he walked away.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "чуть ли не позеленев от волнения.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "f35ca289e3224d9d80cafce33fd68acd",
+              "finding_id": "green-idiom"
+            }
+          },
+          {
+            "id": "sigh-moaning-resolved",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Restores the source's quiet, sigh-like vocalization and sensory reference, without additions.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "I swallowed his sighing moan as I tasted him.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Я поймал губами его тихий, похожий на вздох стон, ощущая вкус его губ.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "f35ca289e3224d9d80cafce33fd68acd",
+              "finding_id": "kiss-sigh-omission"
+            }
+          },
+          {
+            "id": "reaction-resolved",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Restores the specific involuntary physiological reaction through a clinical, non-ornamental term.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "how I always sported a hard-on when we kissed.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "что у меня всякий раз возникала эрекция, когда мы целовались.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "f35ca289e3224d9d80cafce33fd68acd",
+              "finding_id": "physical-reaction-vagueness"
+            }
+          },
+          {
+            "id": "touch-resolved",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Restores the physical intention instead of replacing it with a generic wish to know the other person.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "I wanted to touch him everywhere.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "мне хотелось прикасаться к нему повсюду.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "f35ca289e3224d9d80cafce33fd68acd",
+              "finding_id": "touch-everywhere-drift"
+            }
           }
         ]
       }
