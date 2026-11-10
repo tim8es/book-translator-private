@@ -70,14 +70,14 @@ class AutomatedBookTests(unittest.TestCase):
             worker.store_json(root / "automation" / "status" / (job_id + ".json"), status)
             control = book / ".workflow" / "auto-control.json"
             worker.store_json(control, {"schema_version": 1, "mode": "chatops"})
-            with patch.object(worker, "ROOT", root), \\
-                 patch.object(worker, "request_for", return_value=request), \\
-                 patch.object(worker, "epub_identity", return_value=("Book", "Author")), \\
-                 patch.object(worker, "locate_book", return_value=(slug, meta)), \\
-                 patch.object(worker, "verify_legacy_reconciliation"), \\
-                 patch.object(worker, "install_engine", return_value=(root / "engine", revision)), \\
-                 patch.object(worker, "verify"), \\
-                 patch.object(worker, "checkpoint") as checkpoint, \\
+            with patch.object(worker, "ROOT", root), \
+                 patch.object(worker, "request_for", return_value=request), \
+                 patch.object(worker, "epub_identity", return_value=("Book", "Author")), \
+                 patch.object(worker, "locate_book", return_value=(slug, meta)), \
+                 patch.object(worker, "verify_legacy_reconciliation"), \
+                 patch.object(worker, "install_engine", return_value=(root / "engine", revision)), \
+                 patch.object(worker, "verify"), \
+                 patch.object(worker, "checkpoint") as checkpoint, \
                  patch.object(worker, "cli") as cli:
                 paused = worker.run(job_id)
                 self.assertEqual((paused["state"], paused["phase"]),
