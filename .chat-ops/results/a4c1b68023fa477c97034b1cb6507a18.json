@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "request_id": "a4c1b68023fa477c97034b1cb6507a18",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "d628109bc24c35b701b01deaaf490779de919ca5301ca0a132ad10bc110ad490",
+    "record": {
+      "correction_round": 1,
+      "outcome": "CORRECTIONS_REQUIRED",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "terminology",
+            "detail": "American Quarter Horse is a specific horse breed; the literal «американская четвертьмильная лошадь» is an unnatural rendering that obscures the breed name. Use «лошадь породы американский квотерхорс».",
+            "id": "breed-quarter-horse",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "She’s an American quarter horse."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Это американская четвертьмильная лошадь."
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "«Junior varsity team» denotes the school's junior/reserve squad, not a middle or younger school («младшая школьная команда»). Translate as «младший состав школьной команды» or an equivalent clearly within high school.",
+            "id": "junior-varsity",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "the starting quarterback on the junior varsity team."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "основным квотербеком младшей школьной команды."
+            }
+          },
+          {
+            "category": "register",
+            "detail": "«Довольно неприятным» softens the narrator's distinctly coarse «kind of an asshole». Preserve the coarse, judgmental assessment without adding further certainty.",
+            "id": "asshole-register",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "he seemed like kind of an asshole and judgy."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "он показался мне довольно неприятным и любящим всех осуждать."
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "The original «stuff in my hands to tame them» does not identify the substance; «средство» makes it specifically a cosmetic product. Preserve the unspecified «кое-что в руках» while conveying taming his curls.",
+            "id": "hair-stuff-ambiguity",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "I had stuff in my hands to tame them."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "у меня в руках было средство, чтобы их пригладить."
+            }
+          }
+        ]
+      },
+      "record_id": "c33b2b02c8c941929b4dab6355717f2f",
+      "review_commit": "0886553034edf80a3e3c12c0d66cb7f99fe417a8",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewed_at": "2026-11-10T15:43:08Z",
+      "reviewer_session_id": "homeinyou-review-ch7-20261110-1b6cc4",
+      "sequence": 35,
+      "source_sha256": "3aac7a4beb5b67e7cb9c1ae406b6929518abb801644666e8e7da755175d5f051",
+      "state_revision": "3cebf95ff90412e80ae27fdd05a1cffe42c71bcc39c18f60fe0fa0e523ae1d1a",
+      "supersedes_record_id": null,
+      "translation_sha256": "00df894645311d412c53a09f6823402e88032b82bbc450d2ad5e67cf07481084",
+      "unit_id": "chapter-000017",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58"
+    }
+  },
+  "error": null
+}

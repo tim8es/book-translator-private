@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 35,
+  "next_sequence": 36,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -2355,6 +2355,99 @@
               "record_id": "1fa6a748117f4e6ab35b58413858afa5",
               "finding_id": "heck-hell-register"
             }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "c33b2b02c8c941929b4dab6355717f2f",
+      "sequence": 35,
+      "unit_id": "chapter-000017",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "3aac7a4beb5b67e7cb9c1ae406b6929518abb801644666e8e7da755175d5f051",
+      "translation_sha256": "00df894645311d412c53a09f6823402e88032b82bbc450d2ad5e67cf07481084",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewer_session_id": "homeinyou-review-ch7-20261110-1b6cc4",
+      "reviewed_at": "2026-11-10T15:43:08Z",
+      "state_revision": "3cebf95ff90412e80ae27fdd05a1cffe42c71bcc39c18f60fe0fa0e523ae1d1a",
+      "review_commit": "0886553034edf80a3e3c12c0d66cb7f99fe417a8",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "breed-quarter-horse",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "American Quarter Horse is a specific horse breed; the literal «американская четвертьмильная лошадь» is an unnatural rendering that obscures the breed name. Use «лошадь породы американский квотерхорс».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "She’s an American quarter horse.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Это американская четвертьмильная лошадь.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "junior-varsity",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "«Junior varsity team» denotes the school's junior/reserve squad, not a middle or younger school («младшая школьная команда»). Translate as «младший состав школьной команды» or an equivalent clearly within high school.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "the starting quarterback on the junior varsity team.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "основным квотербеком младшей школьной команды.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "asshole-register",
+            "category": "register",
+            "severity": "minor",
+            "detail": "«Довольно неприятным» softens the narrator's distinctly coarse «kind of an asshole». Preserve the coarse, judgmental assessment without adding further certainty.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "he seemed like kind of an asshole and judgy.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "он показался мне довольно неприятным и любящим всех осуждать.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "hair-stuff-ambiguity",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The original «stuff in my hands to tame them» does not identify the substance; «средство» makes it specifically a cosmetic product. Preserve the unspecified «кое-что в руках» while conveying taming his curls.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "I had stuff in my hands to tame them.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "у меня в руках было средство, чтобы их пригладить.",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       }
