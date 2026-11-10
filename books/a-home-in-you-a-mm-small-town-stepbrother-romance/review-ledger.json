@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 41,
+  "next_sequence": 42,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -2914,6 +2914,67 @@
               "record_id": "a8d25435d1654cd8b573ca79d955ca79",
               "finding_id": "kiss-sound-register"
             }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "58ce62a1b13e49448a15c8a04df89782",
+      "sequence": 41,
+      "unit_id": "chapter-000023",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "385b40d4c830df8e46af6621f7db7b915221f9206d31c4171b8d97bf4cd2f024",
+      "translation_sha256": "be7bb3fbacc4ca6e9bcb18d68fbf4687799bf76ace26006ea47c99b0b1f4cabf",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewer_session_id": "homeinyou-reviewer-ch13-20261110-2872cd",
+      "reviewed_at": "2026-11-10T16:51:18Z",
+      "state_revision": "913ea05877b897b6f50cb09649374719b847a19f87d61c068d68a9cd26984a06",
+      "review_commit": "fd41822d6707993d66e744013d5bc2b41ef951a6",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "coerced-kiss-specificity",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Source explicitly describes an unwanted deeper kiss imposed by Darcy; «насильно поцеловала» conveys force but loses the specific nature of the kiss. Restore this non-graphic detail without eroticization.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "but Darcy grabbed his face and forced her tongue into his mouth.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "но Дарси схватила его за лицо и насильно поцеловала.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "darren-shirt-grip",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Поднял его на вытянутых здоровенных кулаках» is an unnatural and misleading account of lifting a boy by his T-shirt with clenched fists. Clearly preserve the clothing grip and lifting motion.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Darren lifted the smaller boy up by his fake blood-stained t-shirt with meaty fists.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Даррен схватил паренька за заляпанную фальшивой кровью футболку и поднял его на вытянутых здоровенных кулаках.",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       }
