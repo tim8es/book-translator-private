@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "request_id": "57a315c987ab489bacbc4c00e2e5794a",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "72a9c9ded11b06e144f22f37a96962ad09479f0750c64971acb35db57c1ab801",
+    "record": {
+      "correction_round": 1,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "meaning",
+            "detail": "Corrected text makes Darren the agent who directs teasing toward the bully Jesse; the reversal of agency has been removed.",
+            "id": "recheck-bully-agency",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "bully-agency",
+              "record_id": "6a944a8447b145278f302f24097d3d3a"
+            },
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "He was bullying a bully after all."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "В конце концов, Darren сам задирал задиру."
+            }
+          },
+          {
+            "category": "terminology",
+            "detail": "Coach's declaration now includes all prejudiced people, not just fanatics, while separately retaining the reference to racists.",
+            "id": "recheck-bigots-term",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "bigots-term",
+              "record_id": "6a944a8447b145278f302f24097d3d3a"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "We will not have bigots or racists of any kind on this team."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "В моей команде не будет места ни тем, кто ненавидит непохожих на себя, ни расистам."
+            }
+          },
+          {
+            "category": "style",
+            "detail": "The three separately stressed words remain emphatic in Russian without the accidental syllable-splitting effect.",
+            "id": "recheck-coach-emphasis",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "coach-emphasis",
+              "record_id": "6a944a8447b145278f302f24097d3d3a"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Is. That. Understood."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Всем. Всё. Ясно?"
+            }
+          },
+          {
+            "category": "register",
+            "detail": "The narrator's friendly informal address is now present in the corrected reply.",
+            "id": "recheck-aaron-address",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "aaron-address",
+              "record_id": "6a944a8447b145278f302f24097d3d3a"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "“Thanks, man.”"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "«Спасибо, чувак»."
+            }
+          }
+        ]
+      },
+      "record_id": "03ef8fb7aff24761ab4925ac73a7d16b",
+      "review_commit": "7596fc136a7821cbbedec88fdf47ae736ec60e57",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewed_at": "2026-11-10T17:49:23Z",
+      "reviewer_session_id": "homeinyou-rereviewer-ch27-20261110-c08e55",
+      "sequence": 48,
+      "source_sha256": "4b27b6c393523e741259b462ae56af0a8acfbf0679efe5b78c2c175002edc941",
+      "state_revision": "9610d65a881aff56fb7f328f7023cc158e6e2c2c7ddff2412c2d203575e35bf1",
+      "supersedes_record_id": "6a944a8447b145278f302f24097d3d3a",
+      "translation_sha256": "77e89eb451708e47634ceeb0d075c0d5c40c4a09425b7173a64417c4de8740ba",
+      "unit_id": "chapter-000037",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58"
+    }
+  },
+  "error": null
+}
