@@ -59,14 +59,14 @@ class LiteraryContextTests(unittest.TestCase):
                 role_contracts(engine, "translator")
 
     def test_translator_returns_complete_artifact_and_decisions(self):
-        obj = {"translation": "# �����\n\n���� � �����.\n",
-               "glossary": [{"original": "Mara", "translation": "����",
+        obj = {"translation": "# Глава\n\nМара у двери.\n",
+               "glossary": [{"original": "Mara", "translation": "Мара",
                              "type": "person", "notes": "Protagonist"}],
                "style_guide": [{"source_pattern": "restrained third-person",
                                 "translation_approach": "keep simple narration",
                                 "evidence": "first paragraph"}]}
         translation, glossary, style = parse_translation("```json\n" + json.dumps(obj, ensure_ascii=False) + "\n```")
-        self.assertIn("����", translation)
+        self.assertIn("Мара", translation)
         self.assertEqual(glossary[0]["original"], "Mara")
         self.assertEqual(style[0]["source_pattern"], "restrained third-person")
         for bad in ("only text", json.dumps({"translation": "Hi"})):
@@ -93,7 +93,7 @@ class LiteraryContextTests(unittest.TestCase):
                 "id": "meaning-1", "category": "meaning", "severity": "major",
                 "detail": "Possibility became certainty.", "resolved": False,
                 "source_anchor": {"quote": "She might have known.", "occurrence": 0},
-                "translation_anchor": {"quote": "��� �����.", "occurrence": 0},
+                "translation_anchor": {"quote": "Она знала.", "occurrence": 0},
                 "resolves": None}], "style_guide": []}
         outcome, report, _style = parse_literary_review(json.dumps(review))
         self.assertEqual(outcome, "CORRECTIONS_REQUIRED")
@@ -105,13 +105,13 @@ class LiteraryContextTests(unittest.TestCase):
 
     def test_glossary_append_is_idempotent_and_conflicts_fail(self):
         initial = "# Glossary\n\n| Original | Translation | Type | Notes |\n| --- | --- | --- | --- |\n"
-        value = {"original": "Northbridge", "translation": "���������",
+        value = {"original": "Northbridge", "translation": "Нортбридж",
                  "type": "place", "notes": "Town"}
         first = updated_glossary(initial, [value])
-        self.assertIn("| Northbridge | ��������� |", first)
+        self.assertIn("| Northbridge | Нортбридж |", first)
         self.assertEqual(first, updated_glossary(first, [{**value, "notes": "Town, recurring"}]))
         with self.assertRaisesRegex(ValueError, "conflicting glossary"):
-            updated_glossary(first, [{**value, "translation": "�������� ����"}])
+            updated_glossary(first, [{**value, "translation": "Северный мост"}])
 
     def test_style_is_idempotent(self):
         row = {"source_pattern": "dry dialogue", "translation_approach": "restrained",
@@ -139,9 +139,9 @@ class LiteraryContextTests(unittest.TestCase):
             (book / "extracted").mkdir(parents=True)
             (book / "translated").mkdir()
             (book / "extracted" / "one.md").write_text("Mara walked home.", encoding="utf-8")
-            (book / "translated" / "one.md").write_text("���� ��������� �����.", encoding="utf-8")
+            (book / "translated" / "one.md").write_text("Мара вернулась домой.", encoding="utf-8")
             (book / "metadata.json").write_text('{"target_language": "ru", "title": "Test"}', encoding="utf-8")
-            (book / "glossary.md").write_text("Mara = ����", encoding="utf-8")
+            (book / "glossary.md").write_text("Mara = Мара", encoding="utf-8")
             (book / "style-guide.md").write_text("restrained narration", encoding="utf-8")
             chapter = {"unit_id": "chapter-000001", "source_path": "extracted/one.md",
                        "translation_path": "translated/one.md", "status": "translated"}
@@ -153,7 +153,7 @@ class LiteraryContextTests(unittest.TestCase):
                                     "evidence": "chapter one"}])
             self.assertIn("pinned reviewer", system)
             self.assertNotIn("pinned translator", system)
-            self.assertIn("Mara = ����", user)
+            self.assertIn("Mara = Мара", user)
             self.assertIn("CURRENT ACCEPTED TRANSLATION", user)
             self.assertIn("short clauses", user)
             self.assertEqual(original, "Mara walked home.")
@@ -197,12 +197,12 @@ class LiteraryContextTests(unittest.TestCase):
             }
             repository.create(".workflow/claims/chapter-000001.json",
                               SchemaKind.CLAIM, claim)
-            row = {"original": "Northbridge", "translation": "���������",
+            row = {"original": "Northbridge", "translation": "Нортбридж",
                    "type": "place", "notes": "Town name"}
             saved = save_claim_bound_decisions(book, "chapter-000001",
                                               "canonical-test-worker", "glossary", [row])
             self.assertEqual(saved, 1)
-            self.assertIn("| Northbridge | ��������� |",
+            self.assertIn("| Northbridge | Нортбридж |",
                           (book / "glossary.md").read_text("utf-8"))
             self.assertEqual(save_claim_bound_decisions(
                 book, "chapter-000001", "canonical-test-worker", "glossary", [row]), 0)
@@ -271,6 +271,38 @@ class LiteraryContextTests(unittest.TestCase):
                 runner.model_call_limit()
         with patch.dict("os.environ", {"OMNIROUTE_MODEL_CALL_LIMIT": "3"}):
             self.assertEqual(runner.model_call_limit(), 3)
+
+    def test_failed_model_call_saves_current_context_and_unit(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            book = root / "books" / "test"
+            claims = book / ".workflow" / "claims"
+            claims.mkdir(parents=True)
+            (book / "glossary.md").write_text("glossary", encoding="utf-8")
+            (book / "style-guide.md").write_text("style", encoding="utf-8")
+            (claims / "chapter-000012.json").write_text(json.dumps({
+                "session_id": "owner"}), encoding="utf-8")
+            chapter = {"unit_id": "chapter-000012", "number": 12,
+                       "status": "translated"}
+            status = {"active": {"chapter": 12, "role": "reviewer",
+                                 "session_id": "owner"},
+                      "workflow_revision": "f" * 40,
+                      "model_calls_started": 70, "failures": 2,
+                      "blocked_unit_id": "chapter-000011"}
+            with patch.object(runner, "ROOT", root), \
+                 patch.object(runner, "chapter_data", return_value=({}, {}, [chapter])), \
+                 patch.object(runner, "latest_record", return_value=None), \
+                 patch.object(runner, "context", return_value=("system", "review prompt", "source")), \
+                 patch.object(runner, "role_contracts", return_value=("", ["AGENTS.md"])), \
+                 patch.object(runner, "model_call_limit", return_value=120), \
+                 patch.object(runner, "checkpoint"), \
+                 patch.object(runner, "cli"), \
+                 patch.object(runner, "complete", side_effect=ModelError("transport timeout")):
+                runner.process_claim("c" * 32, "test", status, root)
+            self.assertEqual(status["phase"], "model-blocked")
+            self.assertEqual(status["prompt_context"]["role"], "reviewer")
+            self.assertEqual(status["prompt_context"]["user_chars"], len("review prompt"))
+            self.assertEqual(status["blocked_unit_id"], "chapter-000012")
 
     def test_claim_includes_frozen_literary_revisions(self):
         with tempfile.TemporaryDirectory() as tmp:
