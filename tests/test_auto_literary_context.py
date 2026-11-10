@@ -309,6 +309,11 @@ class LiteraryContextTests(unittest.TestCase):
                 runner.model_call_limit()
         with patch.dict("os.environ", {"OMNIROUTE_MODEL_CALL_LIMIT": "3"}):
             self.assertEqual(runner.model_call_limit(), 3)
+        with patch.dict("os.environ", {"OMNIROUTE_MODEL_CALL_LIMIT": "400"}):
+            self.assertEqual(runner.model_call_limit(), 400)
+        with patch.dict("os.environ", {"OMNIROUTE_MODEL_CALL_LIMIT": "401"}):
+            with self.assertRaisesRegex(runner.JobError, "integer from"):
+                runner.model_call_limit()
 
     def test_failed_model_call_saves_current_context_and_unit(self):
         with tempfile.TemporaryDirectory() as folder:
