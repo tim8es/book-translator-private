@@ -36,8 +36,8 @@ jobs:
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     outputs:
-      job_id: ${{ steps.select.outputs.job_id }}
-      book_key: ${{ steps.select.outputs.book_key }}
+      jobs: ${{ steps.select.outputs.jobs }}
+      has_jobs: ${{ steps.select.outputs.has_jobs }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -61,23 +61,27 @@ jobs:
               echo "Resuming a blocked job requires its explicit job_id." >&2
               exit 1
             fi
-            job_id="$REQUESTED_JOB"
-          else
-            job_id="$(python automation/book_runner.py --select --job-id "$REQUESTED_JOB")"
           fi
-          echo "job_id=$job_id" >> "$GITHUB_OUTPUT"
-          if [[ -n "$job_id" ]]; then
-            book_key="$(python automation/book_runner.py --book-key --job-id "$job_id")"
-            echo "book_key=$book_key" >> "$GITHUB_OUTPUT"
+          jobs="$(python automation/book_runner.py --list-ready-json --job-id "$REQUESTED_JOB")"
+          if [[ "$jobs" == '[]' ]]; then
+            echo 'jobs=[{"job_id":"none","book_key":"none"}]' >> "$GITHUB_OUTPUT"
+            echo "has_jobs=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "jobs=$jobs" >> "$GITHUB_OUTPUT"
+            echo "has_jobs=true" >> "$GITHUB_OUTPUT"
           fi
 
   process:
     needs: select
-    if: needs.select.outputs.job_id != ''
+    if: needs.select.outputs.has_jobs == 'true'
+    strategy:
+      fail-fast: false
+      matrix:
+        include: ${{ fromJSON(needs.select.outputs.jobs) }}
     runs-on: ubuntu-latest
     timeout-minutes: 35
     concurrency:
-      group: automatic-book-${{ needs.select.outputs.book_key }}
+      group: automatic-book-${{ matrix.book_key }}
       cancel-in-progress: false
     steps:
       - uses: actions/checkout@v4
@@ -90,7 +94,7 @@ jobs:
           python-version: "3.12"
 
       - name: Execute one pinned workflow checkpoint
-        if: needs.select.outputs.job_id != ''
+        if: matrix.job_id != ''
         id: run
         env:
           OMNIROUTE_API_KEY: ${{ secrets.OMNIROUTE_API_KEY }}
@@ -99,7 +103,7 @@ jobs:
           OMNIROUTE_REVIEWER_MODEL: ${{ vars.OMNIROUTE_REVIEWER_MODEL }}
           OMNIROUTE_CORRECTOR_MODEL: ${{ vars.OMNIROUTE_CORRECTOR_MODEL }}
           OMNIROUTE_MODEL_CALL_LIMIT: ${{ vars.OMNIROUTE_MODEL_CALL_LIMIT }}
-          JOB_ID: ${{ needs.select.outputs.job_id }}
+          JOB_ID: ${{ matrix.job_id }}
           RESUME_BLOCKED: ${{ inputs.resume_blocked }}
           RESUME_INTERRUPTED: ${{ inputs.resume_interrupted }}
         shell: bash
@@ -117,7 +121,7 @@ jobs:
         if: steps.run.outputs.done == 'true'
         uses: actions/upload-artifact@v4
         with:
-          name: translated-book-${{ needs.select.outputs.job_id }}
+          name: translated-book-${{ matrix.job_id }}
           path: ${{ steps.run.outputs.artifact }}
           if-no-files-found: error
           retention-days: 30
@@ -126,7 +130,7 @@ jobs:
         if: steps.run.outputs.continue == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          JOB_ID: ${{ needs.select.outputs.job_id }}
+          JOB_ID: ${{ matrix.job_id }}
         run: gh workflow run auto-translate.yml --ref main -f job_id="$JOB_ID"
 
       - name: Dispatch next pending job after terminal checkpoint
@@ -136,11 +140,11 @@ jobs:
         run: gh workflow run auto-translate.yml --ref main
 
       - name: Wake n8n delivery after a terminal job state
-        if: always() && needs.select.outputs.job_id != '' && (steps.run.outcome != 'success' || steps.run.outputs.done == 'true' || steps.run.outputs.continue_queue == 'true')
+        if: always() && matrix.job_id != '' && (steps.run.outcome != 'success' || steps.run.outputs.done == 'true' || steps.run.outputs.continue_queue == 'true')
         continue-on-error: true
         env:
           N8N_DELIVERY_CALLBACK_URL: ${{ secrets.N8N_DELIVERY_CALLBACK_URL }}
-          JOB_ID: ${{ needs.select.outputs.job_id }}
+          JOB_ID: ${{ matrix.job_id }}
           RUN_ID: ${{ github.run_id }}
           RUN_CONCLUSION: ${{ job.status }}
         shell: bash
