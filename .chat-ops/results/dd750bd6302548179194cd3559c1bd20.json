@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "request_id": "dd750bd6302548179194cd3559c1bd20",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "2e2e9f8a0a3da24087cc5be0c145063a2ad008960cad5afde0252458ecbd89e0",
+    "record": {
+      "correction_round": 1,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "style",
+            "detail": "The corrected Russian naturally conveys ability in music without the unnatural calque.",
+            "id": "recheck-music-calque",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "music-calque",
+              "record_id": "affc4d5e79734466ac2713b65d086ce1"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "but I was pretty good at playing music."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "зато к музыке у меня были способности."
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "The hyperbolic film-shark reference and joke are now conveyed idiomatically.",
+            "id": "recheck-jaws-reference",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "jaws-reference",
+              "record_id": "affc4d5e79734466ac2713b65d086ce1"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "you better have fucking drawn me hauling out Jaws instead."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "ты, блядь, нарисовал, как я вытаскиваю акулу из „Челюстей“»"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "The sketched pose now retains the overlapping foot placement.",
+            "id": "recheck-crossed-feet",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "crossed-feet",
+              "record_id": "affc4d5e79734466ac2713b65d086ce1"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "with one foot crossed over the other."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "положив одну ступню поверх другой."
+            }
+          },
+          {
+            "category": "modality",
+            "detail": "Potentiality is restored rather than promising categorical mastery.",
+            "id": "recheck-could-modality",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "could-modality",
+              "record_id": "affc4d5e79734466ac2713b65d086ce1"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "but with more practice, Dillon could be really good."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "но с практикой Dillon мог бы научиться рисовать по-настоящему здорово."
+            }
+          },
+          {
+            "category": "structure",
+            "detail": "The closing emphasis marker is again placed before the sentence's final period.",
+            "id": "recheck-italic-punctuation",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "italic-punctuation",
+              "record_id": "affc4d5e79734466ac2713b65d086ce1"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "*Gay? Gay? Please let him be gay. Please, please, please*."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "*Гей? Гей? Пожалуйста, пусть он окажется геем. Ну пожалуйста, пожалуйста, пожалуйста*."
+            }
+          }
+        ]
+      },
+      "record_id": "a31acd3ef2b8406a9b0e679ac254adcb",
+      "review_commit": "50c106d190bae48770932f50258c643c3b64210e",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewed_at": "2026-11-10T16:10:05Z",
+      "reviewer_session_id": "homeinyou-rereview-ch8-20261110-71cf26",
+      "sequence": 38,
+      "source_sha256": "a7845b141254296b39d742b94ba3ca4fab0be69761e552eed86063f064844899",
+      "state_revision": "7f80e3f06ad9a555f553167fef30f72a9b65331fc4b444d30b8ead2455871c0f",
+      "supersedes_record_id": "affc4d5e79734466ac2713b65d086ce1",
+      "translation_sha256": "fa664df5d22311bf4af9495358ae4ec21ca83cab8d7a7f6f5b0bc51a12edbc10",
+      "unit_id": "chapter-000018",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58"
+    }
+  },
+  "error": null
+}
