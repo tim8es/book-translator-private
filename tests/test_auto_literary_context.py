@@ -158,6 +158,39 @@ class LiteraryContextTests(unittest.TestCase):
             self.assertIn("short clauses", user)
             self.assertEqual(original, "Mara walked home.")
 
+    def test_reviewer_recheck_prompt_has_explicit_json_resolves_example(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            engine = self.engine(root)
+            book = root / "books" / "test"
+            (book / "extracted").mkdir(parents=True)
+            (book / "translated").mkdir()
+            (book / "extracted" / "one.md").write_text("Mara argues.", encoding="utf-8")
+            (book / "translated" / "one.md").write_text("Мара говорит.", encoding="utf-8")
+            (book / "metadata.json").write_text('{"target_language":"ru"}', encoding="utf-8")
+            (book / "glossary.md").write_text("Mara = Мара", encoding="utf-8")
+            (book / "style-guide.md").write_text("concise dialogue", encoding="utf-8")
+            chapter = {"unit_id": "chapter-000001", "source_path": "extracted/one.md",
+                       "translation_path": "translated/one.md", "status": "translated"}
+            record = {"unit_id": "chapter-000001", "sequence": 4,
+                      "record_id": "record-4", "outcome": "CORRECTIONS_REQUIRED",
+                      "quality_report": {"evidence_version": 2,
+                          "checks": {key: True for key in
+                                     ("coverage", "meaning", "terminology", "style", "structure")},
+                          "findings": [{"id": "register-1", "category": "register",
+                              "severity": "minor", "detail": "Register mismatch.",
+                              "resolved": False,
+                              "source_anchor": {"quote": "argues", "occurrence": 0},
+                              "translation_anchor": {"quote": "говорит", "occurrence": 0},
+                              "resolves": None}]}}
+            with patch.object(runner, "ROOT", root), \
+                 patch.object(runner, "chapter_data", return_value=({}, {"records": [record]}, [chapter])), \
+                 patch.object(runner, "role_contracts", return_value=("pinned reviewer", ["AGENTS.md"])), \
+                 patch.object(runner, "focused_review_context", return_value=None):
+                _system, user, _source = runner.context(engine, "test", chapter, "reviewer")
+            self.assertIn(json.dumps({"record_id": "record-4", "finding_id": "register-1"}), user)
+            self.assertIn("prior unresolved finding", user)
+
     def test_memory_only_correction_triggers_fresh_reviewer(self):
         chapter = {"unit_id": "chapter-000001", "number": 1, "status": "translated",
                    "translation_acceptance": {"translation_sha256": "a" * 64}}
