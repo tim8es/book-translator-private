@@ -191,6 +191,8 @@ class LiteraryContextTests(unittest.TestCase):
                 _system, user, _source = runner.context(engine, "test", chapter, "reviewer")
             self.assertIn(json.dumps({"record_id": "record-4", "finding_id": "register-1"}), user)
             self.assertIn("prior unresolved finding", user)
+            self.assertIn("PRIOR UNRESOLVED FINDINGS TO RECHECK", user)
+            self.assertIn('"detail": "Register mismatch."', user)
             self.assertIn("translation_anchor must quote the supplied current accepted translation", user)
             self.assertIn("do not copy a stale anchor from the previous record", user)
 
