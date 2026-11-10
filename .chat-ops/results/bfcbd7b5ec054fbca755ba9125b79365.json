@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "request_id": "bfcbd7b5ec054fbca755ba9125b79365",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "352bb1a5e016f7117723e141d4766ceac3738cde2c4f7464e201454690a20f68",
+    "record": {
+      "correction_round": 1,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "register",
+            "detail": "The self-mockery retains the rough register without a new sexual implication.",
+            "id": "recheck-register-weirdo",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "register-weirdo-1",
+              "record_id": "316e0a48b5ba42989fb353a609ed1b5b"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "quietly sniffed like a fucking weirdo."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "тихонько принюхался, как какой-то долбаный ненормальный."
+            }
+          },
+          {
+            "category": "style",
+            "detail": "The new sentence naturally expresses personal recognition and retains the hesitation.",
+            "id": "recheck-style-relatable",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "style-relatable-1",
+              "record_id": "316e0a48b5ba42989fb353a609ed1b5b"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "The video felt… relatable somehow."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Это видео почему-то казалось мне… близким."
+            }
+          },
+          {
+            "category": "style",
+            "detail": "The narrator's uncomfortable self-reproach is now idiomatic in Russian.",
+            "id": "recheck-style-creep",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "style-creep-1",
+              "record_id": "316e0a48b5ba42989fb353a609ed1b5b"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "pretending I hadn’t been staring at him like a creep."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "будто вовсе не пялился на него, как какой-то жуткий придурок."
+            }
+          },
+          {
+            "category": "style",
+            "detail": "The image now naturally preserves small arm size contrasted with wiry muscles.",
+            "id": "recheck-style-arms",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "style-arms-1",
+              "record_id": "316e0a48b5ba42989fb353a609ed1b5b"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "His arms under his tank top weren’t thick, but they had wiry muscles."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "В майке без рукавов было видно, что руки у него не особенно крупные, зато жилистые и мускулистые."
+            }
+          }
+        ]
+      },
+      "record_id": "0d805fb6d362458fbce6fcc233527ea0",
+      "review_commit": "376bc03d1fc69bf06a56f3c0ab9eb9dabcec4448",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewed_at": "2026-11-10T14:48:29Z",
+      "reviewer_session_id": "homein-you-rereviewer5-20261110-c1d66e",
+      "sequence": 32,
+      "source_sha256": "54c6d49be0f8004bea6663cd7dee8bf76315ba6ee65d6f14778d762404e9742b",
+      "state_revision": "ca7a46d064121f358febd75230e4ebd2263e52b711f6a09dc14cd6db0bbb8294",
+      "supersedes_record_id": "316e0a48b5ba42989fb353a609ed1b5b",
+      "translation_sha256": "ba901ab432cdad79b9ec15a16804434ae75707926ee75517d8fa77ae434a0428",
+      "unit_id": "chapter-000015",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58"
+    }
+  },
+  "error": null
+}
