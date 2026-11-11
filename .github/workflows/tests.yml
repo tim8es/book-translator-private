@@ -8,7 +8,11 @@ on:
     paths-ignore:
       - '.chat-ops/requests/**'
       - '.chat-ops/results/**'
-      # Notification receipts are metadata-only; avoid a full suite per event.
+      # Checkpoints, intake and receipts are high-frequency durable data.
+      # Validate books in the batched workflow; retain full checks on PRs.
+      - 'books/**'
+      - 'intake/auto/**'
+      - 'automation/status/**'
       - 'automation/notifications/sent/**'
   pull_request:
 
