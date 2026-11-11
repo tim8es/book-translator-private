@@ -175,6 +175,34 @@ class BookJobMonitorTests(unittest.TestCase):
         e = {"job_id": JOB, "type": "blocked", "phase": "correction-limit-reached"}
         self.assertEqual(monitor.event_id(e), monitor.event_id(dict(reversed(list(e.items())))))
 
+    def test_blocked_event_ignores_book_progress_but_not_new_block(self):
+        self.blocked()
+        first = monitor.inspect(self.root, JOB, NOW, False)
+        changed = dict(first, reviewed_units=7)
+        self.assertEqual(monitor.event_id(first), monitor.event_id(changed))
+        self.assertNotEqual(monitor.event_id(first), monitor.event_id(
+            dict(first, status_updated_at=(NOW + timedelta(minutes=1)).isoformat())))
+
+    def test_existing_legacy_receipt_survives_progress_change(self):
+        self.blocked()
+        old = monitor.inspect(self.root, JOB, NOW, False)
+        old["schema_version"] = 1
+        raw = json.dumps(old, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+        legacy_id = hashlib.sha256(raw.encode("utf-8")).hexdigest()
+        receipt = self.root / "automation" / "notifications" / "sent" / JOB / (legacy_id + ".json")
+        write_json(receipt, {"event_id": legacy_id, "job_id": JOB, "type": "blocked"})
+        new_block = dict(old, status_updated_at=(NOW + timedelta(minutes=1)).isoformat())
+        self.assertFalse(monitor.legacy_blocked_receipt(new_block, receipt.parent))
+        progress = monitor.read_json(self.book / "progress.json")
+        progress["chapters"][-1]["status"] = "reviewed"
+        write_json(self.book / "progress.json", progress)
+        with patch.object(sys, "argv", ["monitor", "--root", str(self.root)]), \
+             patch.dict("os.environ", {"BOOK_EVENTS_WEBHOOK_URL": "https://example.test",
+                                       "BOOK_EVENTS_SIGNING_SECRET": "secret"}), \
+             patch.object(monitor, "git_ack"), patch.object(monitor, "send") as send:
+            self.assertEqual(monitor.main(), 0)
+            send.assert_not_called()
+
     def test_webhook_rejects_insecure_url(self):
         with self.assertRaisesRegex(ValueError, "HTTPS"):
             monitor.send("http://example.org/webhook", "secret",
@@ -213,3 +241,4 @@ class BookJobMonitorTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
