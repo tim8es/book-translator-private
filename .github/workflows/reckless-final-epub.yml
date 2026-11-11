@@ -109,9 +109,18 @@ jobs:
                       for link in links:
                           label = "".join(link.itertext())
                           if not label or translated.count(label) != 1:
+                              raw_text = "".join(node.itertext()).strip()
+                              anchor_text = "".join(link.itertext()).strip()
                               issues.append({
                                   "kind": "hyperlink", "chapter": chapter["number"],
                                   "xhtml": doc.path, "block": index,
+                                  "links_in_block": len(links),
+                                  "whole_block": raw_text == anchor_text,
+                                  "raw_length": len(raw_text),
+                                  "anchor_length": len(anchor_text),
+                                  "starts_with_link": raw_text.startswith(anchor_text),
+                                  "ends_with_link": raw_text.endswith(anchor_text),
+                                  "markdown_has_anchor": "](" in translated,
                               })
           print("EPUB_LAYOUT_AUDIT", json.dumps({
               "chapters": len(textual), "issues": issues,
