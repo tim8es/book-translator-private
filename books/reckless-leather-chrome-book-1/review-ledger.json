@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "reckless-leather-chrome-book-1",
-  "next_sequence": 50,
+  "next_sequence": 51,
   "records": [
     {
       "record_id": "f77b051b1598493e90f406995c7404b7",
@@ -3649,6 +3649,111 @@
           "structure": true
         },
         "findings": []
+      }
+    },
+    {
+      "record_id": "ef9ea5d701dc4457a7ac82ba1ef2f0cb",
+      "sequence": 50,
+      "unit_id": "chapter-000045",
+      "outcome": "PASS",
+      "source_sha256": "fcfcb8d518eaf394784e703182778af21fb21fa7b16492bd2231f6927857e4c2",
+      "translation_sha256": "9b8d273cb899f53372d6a695c09835550a95682739cd3eb04a444b0083bada42",
+      "workflow_revision": "d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "review_contract_revision": "docs/TRANSLATION.md@d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "reviewer_session_id": "chat-reckless-045-recheck-20261111",
+      "reviewed_at": "2026-11-11T19:07:04.184Z",
+      "state_revision": "6a3a81706c27aa606b118924f3637b9f61b75884",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": "02f6d2821ef744d88f23483fb8e73cbe",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-distraction-calque-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The corrected wording expresses serious attraction in natural Russian rather than the awkward literal 'мимолётное отвлечение'.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "more than a simple distraction",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "куда больше, чем простое увлечение",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "02f6d2821ef744d88f23483fb8e73cbe",
+              "finding_id": "distraction-calque-1"
+            }
+          },
+          {
+            "id": "recheck-lose-focus-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The revised translation preserves Rick's refusal to be distracted rather than narrowing his concern to vigilance.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Rick won’t let himself lose focus",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Рик не позволит этим чувствам отвлечь его от главного",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "02f6d2821ef744d88f23483fb8e73cbe",
+              "finding_id": "lose-focus-1"
+            }
+          },
+          {
+            "id": "recheck-worst-fears-1",
+            "category": "intensity",
+            "severity": "minor",
+            "detail": "The unwarranted superlative has been removed while preserving their fears coming true.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "bringing their fears to fruition",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "их опасения сбываются",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "02f6d2821ef744d88f23483fb8e73cbe",
+              "finding_id": "worst-fears-1"
+            }
+          },
+          {
+            "id": "recheck-alpha-mate-register-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Natural masculine partner noun and disposition restore sweet and spirited rather than combative tone.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "a sweet and feisty alpha-mate",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "милый, но своенравный партнёр альфы",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "02f6d2821ef744d88f23483fb8e73cbe",
+              "finding_id": "alpha-mate-register-1"
+            }
+          }
+        ]
       }
     }
   ]
