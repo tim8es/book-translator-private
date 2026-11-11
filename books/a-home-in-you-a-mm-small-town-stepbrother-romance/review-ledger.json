@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 73,
+  "next_sequence": 74,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -4739,6 +4739,44 @@
             "severity": "major",
             "detail": "Paragraph 87: English narrator's 'Except my dad' interrupts two quoted remarks. Russian '«...?» — кроме моего отца. «...»' incorrectly treats the narrator aside as a dialogue attribution and breaks meaning. Separate it grammatically as narrator commentary, e.g. '«...?» Вот только моему отцу было не всё равно. «...»', without changing paragraph order.",
             "resolved": false
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "0ef638fa066416807aae0fa0345b9f02",
+      "sequence": 73,
+      "unit_id": "chapter-000045",
+      "outcome": "PASS",
+      "source_sha256": "872dd969bf6d41c953b5e632e92adcccc2b33d5f08313e1c9af20161dae50fea",
+      "translation_sha256": "5902f43c9f4d67e6de0e6e9e40491b69740cf0858ade26b6772924b63ececa48",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewer_session_id": "chatops-homeinyou-20261111-rereview-ch35-a7efe443",
+      "reviewed_at": "2026-11-11T17:07:47Z",
+      "state_revision": "b1e1f9a150457ede97c4752709a278d3f925766e51005476067980d40826d4a4",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": "4fac95f6bd51dfbefa0120d35d87fd02",
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Rechecked teasing ball-catching exchange: Russian now preserves naturally implied double meaning.",
+            "resolved": true
+          },
+          {
+            "severity": "major",
+            "detail": "Rechecked father interruption: narrator aside no longer masquerades as speech attribution.",
+            "resolved": true
           }
         ]
       }
