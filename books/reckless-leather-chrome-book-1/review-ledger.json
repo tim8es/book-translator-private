@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "reckless-leather-chrome-book-1",
-  "next_sequence": 21,
+  "next_sequence": 22,
   "records": [
     {
       "record_id": "f77b051b1598493e90f406995c7404b7",
@@ -1733,6 +1733,83 @@
               "record_id": "8dc87c67cfa1495697a2b8d7e6c1b902",
               "finding_id": "attack-inference-1"
             }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "a094c9a594d5438b81d0e21798baa0b4",
+      "sequence": 21,
+      "unit_id": "chapter-000012",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "e100b76dc3bc647637e99f59ffc049920de91827331f0d8c1a1e5097c15cba9c",
+      "translation_sha256": "fafc7951a43fa7efb65e69cee9ab35e9d00a75d170b5600d42774bb63f320b4f",
+      "workflow_revision": "d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "review_contract_revision": "docs/TRANSLATION.md@d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "reviewer_session_id": "chat-reckless-012-reviewer-20261111",
+      "reviewed_at": "2026-11-11T10:55:13Z",
+      "state_revision": "a623d10422cf09d0b72ee64d26e5154ef54a0e18",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "saw-identify-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The source says the victim saw and could identify Tank; the Russian adds that he 'clearly' saw him, which is not stated. Use 'вообще видел' or another precise rendering without adding how well he saw.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "I was the only one he actually saw and could identify",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Я оказался единственным, кого он хорошо видел и смог опознать",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "mind-sharing-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "'I don't mind telling you this' expresses willingness to share, not necessarily emotional calm. Replace 'Я спокойно рассказываю' with a closer 'Я не против рассказать'.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "I don’t mind telling you this",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Я спокойно рассказываю тебе об этом",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "bad-things-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "'Делаешь плохие вещи' is a stiff literal calque for 'doing bad things' in this context; use natural Russian about doing bad deeds/acting badly without changing the moral claim.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "doing bad things sometimes doesn’t necessarily make you a bad person",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "то, что ты иногда делаешь плохие вещи, ещё не обязательно делает тебя плохим человеком",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       }
