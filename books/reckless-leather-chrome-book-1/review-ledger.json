@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "reckless-leather-chrome-book-1",
-  "next_sequence": 61,
+  "next_sequence": 62,
   "records": [
     {
       "record_id": "f77b051b1598493e90f406995c7404b7",
@@ -4195,6 +4195,54 @@
           "structure": true
         },
         "findings": []
+      }
+    },
+    {
+      "record_id": "bd66768e8b2748ec9ac0cdd33ed873d1",
+      "sequence": 61,
+      "unit_id": "chapter-000051",
+      "outcome": "PASS",
+      "source_sha256": "00933f0a0c9185067bdf5f2d7ac738dc3b47471a09cf53838681ea38795c560c",
+      "translation_sha256": "faa160e1556ee2b4ba7bc1022adc04d7d8aafb29c03f3c182fc417b4a5599b67",
+      "workflow_revision": "d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "review_contract_revision": "docs/TRANSLATION.md@d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "reviewer_session_id": "chat-reckless-051-recheck-20261111",
+      "reviewed_at": "2026-11-11T19:24:30.747Z",
+      "state_revision": "7ba7e2692fbdf743eda56ecd0a097c2ee01c2356",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": "a81726bcc71643af9ea6d0682124f7ec",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-pipe-repair-completion-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The corrected Russian now states that John came and repaired the leaking pipe, preserving the completed action without inventing travel by vehicle.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "he comes and fixes a leaking pipe in my basement",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "он пришёл и починил протекающую трубу у меня в подвале",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "a81726bcc71643af9ea6d0682124f7ec",
+              "finding_id": "pipe-repair-completion-1"
+            }
+          }
+        ]
       }
     }
   ]
