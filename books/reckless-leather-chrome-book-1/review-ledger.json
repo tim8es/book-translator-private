@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "reckless-leather-chrome-book-1",
-  "next_sequence": 51,
+  "next_sequence": 52,
   "records": [
     {
       "record_id": "f77b051b1598493e90f406995c7404b7",
@@ -3752,6 +3752,67 @@
               "record_id": "02f6d2821ef744d88f23483fb8e73cbe",
               "finding_id": "alpha-mate-register-1"
             }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "631bcd21ccbb46bca6e6f1c02672d5b4",
+      "sequence": 51,
+      "unit_id": "chapter-000043",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "cae9e00bec2064a5f4d884c2dd92ae7c93e108674b1222bbc82491609f040bd5",
+      "translation_sha256": "eaae6745da87b2f7c0663a53fda2737240191fb889eb952bee32a328e11cd575",
+      "workflow_revision": "d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "review_contract_revision": "docs/TRANSLATION.md@d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "reviewer_session_id": "chat-reckless-043-reviewer-20261111-next",
+      "reviewed_at": "2026-11-11T19:07:47.210Z",
+      "state_revision": "d7d729e89a562d721b56ed7083c9550cf7ae1faf",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "escape-alive-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The original says Victor was lucky to escape the pack alive. The Russian only says he was lucky to stay alive and omits that he got away. Restore escaping alive.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Victor is lucky to escape alive",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Виктору повезло остаться в живых",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "bestselling-series-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "'Best-selling Kincaid Pack series' specifically claims commercial bestseller status; 'популярной серии' merely says the series is popular. Preserve bestseller wording.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "best-selling Kincaid Pack series",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "популярной серии «Kincaid Pack»",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       }
