@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "reckless-leather-chrome-book-1",
-  "next_sequence": 75,
+  "next_sequence": 76,
   "records": [
     {
       "record_id": "f77b051b1598493e90f406995c7404b7",
@@ -5004,6 +5004,49 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "4d7871b8ad8e02bf7be66039618fa72d",
+      "sequence": 75,
+      "unit_id": "chapter-000025",
+      "outcome": "PASS",
+      "source_sha256": "53e3fcee0ce8b89eb5d028e7e69916a818b5f3e8d69b71d10c3475ac5d836547",
+      "translation_sha256": "014f65d9688d1914bbc50ca6b5e2a2284fd9ae0a282ced6bce3288680c229769",
+      "workflow_revision": "d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "review_contract_revision": "docs/TRANSLATION.md@d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "reviewer_session_id": "chat-reckless-025-rereviewer-20261111-2232",
+      "reviewed_at": "2026-11-11T19:44:50Z",
+      "state_revision": "a31d590183280ea8133a5be052d8df0d7a155ee4",
+      "review_commit": "a62da2042db925c02047acf1d1227ab1e3a8b81c",
+      "correction_round": 1,
+      "supersedes_record_id": "39dc912249e89bcf6a79430a9a567583",
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "major",
+            "detail": "Block 27 rechecked: the corrected Russian no longer invents deliberate framing or additional years, and restores source-level coarse register.",
+            "resolved": true
+          },
+          {
+            "severity": "major",
+            "detail": "Block 90 rechecked: 'постоянный партнёр' preserves the partner exception without falsely excluding CJ by gender.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Block 92 rechecked: 'с тебя причитается' preserves the deliberately unspecified cost.",
+            "resolved": true
           }
         ]
       }
