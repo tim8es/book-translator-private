@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "reckless-leather-chrome-book-1",
-  "next_sequence": 77,
+  "next_sequence": 78,
   "records": [
     {
       "record_id": "f77b051b1598493e90f406995c7404b7",
@@ -5171,6 +5171,99 @@
               "record_id": "d017c06df5e54e4e8491d0880d070734",
               "finding_id": "holding-to-that-1"
             }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "5e81962804814deaa0b069a72bcab05e",
+      "sequence": 77,
+      "unit_id": "chapter-000029",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "c78b6926a87f142395d7c5fbaf325c47363fda35d66a9bbebc0361066a943151",
+      "translation_sha256": "1f07f1a9219cb8996b17c054394581c6eae540f79ee44c1544ccc9535204aa29",
+      "workflow_revision": "d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "review_contract_revision": "docs/TRANSLATION.md@d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "reviewer_session_id": "chat-reckless-029-reviewer-20261111",
+      "reviewed_at": "2026-11-11T19:48:20.443Z",
+      "state_revision": "ada42535986e0ed897d4f8c22dc004cc1d904bd0",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "sex-question-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Russian 'из секса' is an unnatural calque for asking whether the Daddy title is sexual; use an idiomatic colloquial question.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Is that a sex thing?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Это что, из секса?",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "hilarious-idiom-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The literal self-description sounds stilted in CJ's joking voice; preserve his playful self-satisfaction naturally.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "I think I’m hilarious",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Я думаю, я уморительный",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "vendor-followup-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Follow-up involves checking back with suppliers about arrangements/status, not merely initial contact; keep the workflow specificity.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "follow up with some vendors",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "свяжешься с несколькими поставщиками",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "choking-intensity-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Source describes actual choking/gagging, while the translation reduces it to almost choking; restore physical intensity without embellishment.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "enthusiastically choke himself on his dick",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "заглатывал член, едва не давясь им",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       }
