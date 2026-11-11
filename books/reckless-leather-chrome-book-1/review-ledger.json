@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "reckless-leather-chrome-book-1",
-  "next_sequence": 20,
+  "next_sequence": 21,
   "records": [
     {
       "record_id": "f77b051b1598493e90f406995c7404b7",
@@ -1590,6 +1590,149 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "cf3196ec271943bf94a784993a607224",
+      "sequence": 20,
+      "unit_id": "chapter-000011",
+      "outcome": "PASS",
+      "source_sha256": "a7b687af67fa4d2d41aaa60f9544ca9acf3afad2661cc363539cc92eaa9e4e97",
+      "translation_sha256": "89b1dd0821f761b7e078909d60f7712ec3a8486d79c4f0d4b2e3420b18ac09fd",
+      "workflow_revision": "d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "review_contract_revision": "docs/TRANSLATION.md@d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "reviewer_session_id": "chat-reckless-011-recheck-20261111",
+      "reviewed_at": "2026-11-11T10:48:56Z",
+      "state_revision": "7d7631aa3a9da722d9f00f55fda6753e4a02519b",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": "8dc87c67cfa1495697a2b8d7e6c1b902",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-age-range-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The description now allows the general 'in their thirties' age range without narrowing it to just over thirty.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "thirty-something women",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "компания женщин, которым было за тридцать",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "8dc87c67cfa1495697a2b8d7e6c1b902",
+              "finding_id": "age-range-1"
+            }
+          },
+          {
+            "id": "recheck-beer-order-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The Russian now naturally specifies that his only speech was to order a single beer.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "he never said anything other than to order a single beer",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "он говорил с Си-Джеем только тогда, когда заказывал свою единственную бутылку пива",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "8dc87c67cfa1495697a2b8d7e6c1b902",
+              "finding_id": "beer-order-1"
+            }
+          },
+          {
+            "id": "recheck-boots-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The unnatural literal 'boots took steps' was replaced by a natural phrase retaining heavy boots.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "he heard heavy boots take a few steps",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "как незнакомец сделал несколько шагов в тяжёлых ботинках",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "8dc87c67cfa1495697a2b8d7e6c1b902",
+              "finding_id": "boots-1"
+            }
+          },
+          {
+            "id": "recheck-size-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Overall size is preserved rather than narrowed to height; the unsupported assertion of an intimidating appearance is removed.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "his enormous size and general appearance",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "огромными габаритами и общим видом незнакомца",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "8dc87c67cfa1495697a2b8d7e6c1b902",
+              "finding_id": "size-1"
+            }
+          },
+          {
+            "id": "recheck-future-action-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The question now concerns CJ's potential action if the stranger returns.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "What would he do if the guy showed up next weekend?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Что он будет делать, если этот мужчина снова появится в следующие выходные?",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "8dc87c67cfa1495697a2b8d7e6c1b902",
+              "finding_id": "future-action-1"
+            }
+          },
+          {
+            "id": "recheck-attack-inference-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The unwarranted restriction to punching is removed; the general physical attack is preserved.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "if Deacon had physically attacked him",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "если бы Дикон напал на него",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "8dc87c67cfa1495697a2b8d7e6c1b902",
+              "finding_id": "attack-inference-1"
+            }
           }
         ]
       }
