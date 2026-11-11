@@ -161,7 +161,7 @@ jobs:
             --arg job_id "$JOB_ID" \
             --arg run_id "$RUN_ID" \
             --arg conclusion "$RUN_CONCLUSION" \
-            '{job_id: $job_id, run_id: $run_id, conclusion: $conclusion}')"
+            '{job_id: $job_id, run_id: $run_id, conclusion: $conclusion, recipient: (if $conclusion == "success" then "user" else "admin" end), admin_alert: ($conclusion != "success")}')"
           curl --fail --silent --show-error --max-time 10 \
             -X POST "$N8N_DELIVERY_CALLBACK_URL" \
             -H 'Content-Type: application/json' \
