@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 58,
+  "next_sequence": 59,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -4095,6 +4095,59 @@
             "severity": "minor",
             "detail": "Повторно сверено: 'Pretty hot' передано естественной разговорной оценкой 'Чертовски сексуально'.",
             "resolved": true
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "e14a81b873786e12ae3c4f3984fdd061",
+      "sequence": 58,
+      "unit_id": "chapter-000043",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "02b7e3247591e57487cd29f3de8d33067aa40b0e6228d1d662cd717a08b12277",
+      "translation_sha256": "67fcc29d33002efd18ee8e7ef4a8d0b48be7b2690c13eb02a737670617bac0ed",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewer_session_id": "chatops-homeinyou-20261111-review-ch33-d3e0",
+      "reviewed_at": "2026-11-11T15:04:13Z",
+      "state_revision": "8837e1e2c4e1874fdf2337ef23197ca434999d3d",
+      "review_commit": "0da951be0e0ded4dc19ff0f3b50b50250bb6177d",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Абзац 12: исходник использует множественное число 'our desks', тогда как перевод говорит 'под ней письменный стол'. Сохранить несколько письменных столов под высоко поднятой кроватью.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Абзац 15: 'being apart for so long' передано как 'после стольких месяцев разлуки', хотя разделение продолжалось больше полутора лет. Лучше нейтральное 'после такой долгой разлуки'.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Абзац 35: 'making me ache for him' передано как 'сердце заныло от нежности к нему', что добавляет не заданную в оригинале нежность. Передать щемящую тоску/боль, не меняя эмоциональную окраску.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Абзац 39: 'Everyone left me or put conditions on me for my love' в переводе 'ставили условия, чтобы заслужить их любовь' неоднозначно определяет агента. Уточнить, что персонажа любили только на условиях других людей.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Абзац 28: 'погладил гладкую спину' — случайная русская тавтология, которой нет в оригинале. Устранить без потери факта прикосновения.",
+            "resolved": false
           }
         ]
       }
