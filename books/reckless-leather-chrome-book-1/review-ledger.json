@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "reckless-leather-chrome-book-1",
-  "next_sequence": 33,
+  "next_sequence": 34,
   "records": [
     {
       "record_id": "f77b051b1598493e90f406995c7404b7",
@@ -2474,6 +2474,83 @@
               "record_id": "1e0a97a705bb4518bf93ed98da918821",
               "finding_id": "feelings-syntax-1"
             }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "99b6b695be5a4abbacac23fdf2540f69",
+      "sequence": 33,
+      "unit_id": "chapter-000020",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "407cab3127c8cdc964001d5629cddb6f97f67a286bd0ab4889f51b0faf179dc0",
+      "translation_sha256": "bed2295bbf452ba8a1192bc7ec90e1faba0471135c9514d56af8a3f9c527e090",
+      "workflow_revision": "d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "review_contract_revision": "docs/TRANSLATION.md@d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "reviewer_session_id": "chat-reckless-020-reviewer-20261111",
+      "reviewed_at": "2026-11-11T15:59:56Z",
+      "state_revision": "393c77f9a55bb36449819d902f70221586b508e2",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "photo-extent-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "'see more of you' does not mean seeing CJ entirely; the Russian 'увидеть тебя целиком' overstates the desired extent and its 'Части меня' phrasing is unnatural. Render the partial wish idiomatically.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "A part of me wishes I’d gotten to see more of you",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Части меня хотелось бы увидеть тебя целиком",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "creamy-skin-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "'creamy white skin' expresses a specific creamy-white color. 'нежная белая кожа' introduces softness and loses the creamy color; restore the visual description.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "all that creamy white skin",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "вся эта нежная белая кожа",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "photo-syntax-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "'на каждом ... получался каким-то странным' omits the explicit Russian subject and reads awkwardly. Restore a natural first-person construction preserving CJ's uncertainty about how the photos looked.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "they kept coming out weird I thought",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "на каждом, как мне казалось, получался каким-то странным",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       }
