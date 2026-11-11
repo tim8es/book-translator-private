@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "event_id": "97179de7a5f34b07b51be7c56a951936",
+  "action": "cleanup_requested",
+  "unit_id": "chapter-000037",
+  "claim_revision": "b666185a6c3db73cfd0449237230f4f4d852f909",
+  "claim": {
+    "schema_version": 1,
+    "claim_id": "fd7ed339a182405789c25b32dfffc343",
+    "unit_id": "chapter-000037",
+    "role": "reviewer",
+    "session_id": "homeinyou-rereviewer-ch27-20261110-c08e55",
+    "base_revision": "f9de7111abb9507bd53bf99a59a89c9e25bae98e59fef84438bee6c005a39311",
+    "base_commit": "0d51f298ef9012242d074ef8c5e29025180a2531",
+    "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
+    "claimed_at": "2026-11-10T17:48:46Z",
+    "expires_at": "2026-11-10T18:48:46Z"
+  },
+  "occurred_at": "2026-11-11T18:43:27Z",
+  "reason": "lease_expired",
+  "detail": "Expired claim from 2026-11-10 on already reviewed unit; manual ChatOps cleanup without touching current active claims."
+}
