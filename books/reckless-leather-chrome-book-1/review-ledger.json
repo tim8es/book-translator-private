@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "reckless-leather-chrome-book-1",
-  "next_sequence": 78,
+  "next_sequence": 79,
   "records": [
     {
       "record_id": "f77b051b1598493e90f406995c7404b7",
@@ -5264,6 +5264,59 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "b2905bc3b14f2666db22230e85f30f07",
+      "sequence": 78,
+      "unit_id": "chapter-000031",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "5e46b3d775386bcb7e8c19b969b3a17defc1ef76368f04158739ce9d47155448",
+      "translation_sha256": "6ea8d446fd18111ff2f365b247fe4f6f08a375cdc08730a2fda24d63c2cb6e4f",
+      "workflow_revision": "d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "review_contract_revision": "docs/TRANSLATION.md@d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "reviewer_session_id": "chat-reckless-031-reviewer-20261111-2232",
+      "reviewed_at": "2026-11-11T19:50:20Z",
+      "state_revision": "9901f1ed17c0e5a021d22f9c56365185c5c51f64",
+      "review_commit": "04562d6b1692ea2d3b79a15cc249e7e32791bf5d",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "major",
+            "detail": "Block 9: 'give that boy a shot of espresso' means a serving of coffee, not an injected dose; 'вколол ... дозу эспрессо' invents an injection.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Block 12: 'whispered harshly' conveys a harsh/strained whisper, while 'яростно прошептал' increases the force to fury.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Block 17: 'his cock throbbing' is rendered 'болезненно пульсировал', introducing pain absent in the source.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Block 45: 'ten feet away' (~3 m) becomes 'шагах в десяти', overstating the physical distance.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Block 84: 'nothing he did would make up for being gay—not in their eyes' has the unnatural calque 'загладить ... свою гомосексуальность'; retain the parents' judgment but render idiomatically.",
+            "resolved": false
           }
         ]
       }
