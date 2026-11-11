@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 71,
+  "next_sequence": 72,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -4662,6 +4662,44 @@
           {
             "severity": "minor",
             "detail": "Rechecked 'Let's get you home': 'Давай я провожу' correctly avoids an invented vehicle.",
+            "resolved": true
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "b3d1633ffa6a1c3ca646b361ca2f1581",
+      "sequence": 71,
+      "unit_id": "chapter-000046",
+      "outcome": "PASS",
+      "source_sha256": "0e1984d8f7464a9d3041dc75dd4ee6a1b55b7511c229535e80e6776e3e2c9e2b",
+      "translation_sha256": "6b6cefbdedf23f63d427918ef6d6bf4090bb2614442d4eb9bf611e3cd394288d",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewer_session_id": "chatops-homeinyou-20261111-rereview-7c5803f2",
+      "reviewed_at": "2026-11-11T16:58:01Z",
+      "state_revision": "f66ecefdbc517fd939215ff13bdfc1023ce0a564c5822f4f2447ba2b0bea397c",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": "1b858909838b6243eb99b94685d34ace",
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Повторно проверен блок 43: образ зубов лошади исправлен без искажения смысла.",
+            "resolved": true
+          },
+          {
+            "severity": "major",
+            "detail": "Повторно проверен блок 69: восстановлена грамматика и исходный смысл поцелуя.",
             "resolved": true
           }
         ]
