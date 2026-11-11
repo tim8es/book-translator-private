@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "reckless-leather-chrome-book-1",
-  "next_sequence": 69,
+  "next_sequence": 70,
   "records": [
     {
       "record_id": "f77b051b1598493e90f406995c7404b7",
@@ -4526,6 +4526,67 @@
               "record_id": "b8d3c00e57e34d70b5120e55dc9061bc",
               "finding_id": "coming-soon-exclamation-1"
             }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "b098bcc3d4e44b36ba18f98eb2048767",
+      "sequence": 69,
+      "unit_id": "chapter-000030",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "ba54719c34739fcdb866c9833eb1437ae7ede35f85a9544e4b47887450cdffef",
+      "translation_sha256": "4668311172ee7e1a1c0a09503b8a8c5f3942dfd8f0f29d528ec3191c66b84f9c",
+      "workflow_revision": "d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "review_contract_revision": "docs/TRANSLATION.md@d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "reviewer_session_id": "chat-reckless-030-reviewer-20261111",
+      "reviewed_at": "2026-11-11T19:31:08.349Z",
+      "state_revision": "113df369d3bc81083a2b9f43d1674bb82ebc3c7e",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "best-meal-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Source asks about the best meal (a meal or dining occasion), while Russian 'самое вкусное блюдо' narrows it to a single dish; restore the scope of a meal.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "What’s the best meal you’ve ever had?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Какое самое вкусное блюдо ты когда-либо ел?",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "comfort-food-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "'Favorite comfort food' refers to food eaten for reassurance or solace, not merely food that puts someone in a better mood; use a natural Russian question retaining the comfort function.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "What’s your favorite comfort food?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Какая еда лучше всего поднимает тебе настроение?",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       }
