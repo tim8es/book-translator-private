@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 92,
+  "next_sequence": 93,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -5508,6 +5508,49 @@
       "review_commit": null,
       "correction_round": 2,
       "supersedes_record_id": "a65e9138fd3a42dfb203fd87f8711ea8"
+    },
+    {
+      "record_id": "87d618cfa6b74740bedb7e8d33105ef9",
+      "sequence": 92,
+      "unit_id": "chapter-000025",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "5fc96b09af376cc196a201bccedb6d671fbbd32333f8daff9aa02cc0a7589493",
+      "translation_sha256": "eafcaf2a8dc6a7ef9138b155fde82334d3c30a9bcee86a14f08ae3ca8d430ea0",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewer_session_id": "chatops-homeinyou-review15-20261111-4d975b",
+      "reviewed_at": "2026-11-11T19:33:35Z",
+      "state_revision": "3d02a105204dfeaacdc98930a9a5388d0fc9bf76",
+      "review_commit": null,
+      "correction_round": 3,
+      "supersedes_record_id": "82fa34e0d80b4d1d8518669fd5b0e44a",
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": false,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Paragraph 6: corrected the person whose gaze is lifted by Dillon; now narrator Cade looks at Dillon as stated in source.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Paragraph 86: removed unsupported inference that Cade climbed over his friends' legs to get away.",
+            "resolved": true
+          },
+          {
+            "severity": "major",
+            "detail": "Paragraphs 2 and 4: previously recorded source-fidelity concern relating to explicit sexual material involving minors remains unresolved; full PASS is not supported.",
+            "resolved": false
+          }
+        ]
+      }
     }
   ]
 }
