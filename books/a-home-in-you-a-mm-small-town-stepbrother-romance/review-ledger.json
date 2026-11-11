@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 59,
+  "next_sequence": 60,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -4148,6 +4148,59 @@
             "severity": "minor",
             "detail": "Абзац 28: 'погладил гладкую спину' — случайная русская тавтология, которой нет в оригинале. Устранить без потери факта прикосновения.",
             "resolved": false
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "03f67dac7f0fe9a8a477f50509331e5a",
+      "sequence": 59,
+      "unit_id": "chapter-000043",
+      "outcome": "PASS",
+      "source_sha256": "02b7e3247591e57487cd29f3de8d33067aa40b0e6228d1d662cd717a08b12277",
+      "translation_sha256": "4eea1cff3118d9754efd2d2228f0ec71a6e201461ed1031688a242796cbde01f",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewer_session_id": "chatops-homeinyou-20261111-rereview-ch33-486b",
+      "reviewed_at": "2026-11-11T15:10:05Z",
+      "state_revision": "8f86b0fd5ea7a48e17578f42b2d62282cf938816",
+      "review_commit": "309cf5857314434dddb341976b5df5e7ebf285fc",
+      "correction_round": 1,
+      "supersedes_record_id": "e14a81b873786e12ae3c4f3984fdd061",
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Абзац 12 повторно сверен: множественное число 'desks' сохранено как 'письменные столы'.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Абзац 15 повторно сверен: 'long time apart' передано без сужения длительности до месяцев.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Абзац 35 повторно сверен: щемящая боль передана без добавленной нежности.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Абзац 39 повторно сверен: условность любви окружающих передана без неоднозначности субъекта.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Абзац 28 повторно сверен: неестественная тавтология устранена при сохранении действия.",
+            "resolved": true
           }
         ]
       }
