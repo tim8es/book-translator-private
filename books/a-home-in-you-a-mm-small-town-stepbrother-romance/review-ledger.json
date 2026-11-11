@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 81,
+  "next_sequence": 82,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -5102,6 +5102,49 @@
           {
             "severity": "minor",
             "detail": "Paragraph 85: the source specifies an intense, uninhibited kiss; Russian 'долгого поцелуя' drops that register. Preserve the intensity without gratuitous detail.",
+            "resolved": false
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "a6bb96f51f3fac90fef5be46a7a8af3c",
+      "sequence": 81,
+      "unit_id": "chapter-000033",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "67eb2bf6260c3d631014fc676240224e6cdb4dc41fefff4b6d809c61937990c0",
+      "translation_sha256": "9aaf91cd3f318afd352c1d80bbe2f4b3ac4e5a6e9fb2939eeeff49c01ddfec1d",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewer_session_id": "chatops-homeinyou-20261111-review-ch23-87f87a3a",
+      "reviewed_at": "2026-11-11T17:46:40Z",
+      "state_revision": "aae2f08c921d3a7318b493c8cd5e736f916d210b852db2afdff85084332f2bc8",
+      "review_commit": null,
+      "correction_round": 0,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": false,
+          "terminology": false,
+          "style": false,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "major",
+            "detail": "Paragraph 12: The intended tattoo inscription in the original is the literal English word 'Home', but translated 'Дом' changes what will be written on the character's skin. Preserve Latin 'Home' (with optional gloss outside the inscription).",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Paragraph 83: 'Spare me' is an idiomatic curt dismissal; Russian 'Избавь меня' is an incomplete literal calque. Use 'Не надо' or 'Избавь меня от этого'.",
+            "resolved": false
+          },
+          {
+            "severity": "major",
+            "detail": "Paragraphs 86-87: 'I thought you'd moved on'/'I have' is the father's claim and Cade's asserted emotional detachment, not forgetting Dillon. Russian 'Я думал, ты уже забыл его'/'Забыл' falsely suggests actual forgetting. Restore 'оставил это в прошлом' or a similarly non-literal equivalent.",
             "resolved": false
           }
         ]
