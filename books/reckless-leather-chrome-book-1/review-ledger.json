@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "reckless-leather-chrome-book-1",
-  "next_sequence": 86,
+  "next_sequence": 87,
   "records": [
     {
       "record_id": "f77b051b1598493e90f406995c7404b7",
@@ -5683,6 +5683,44 @@
             "severity": "minor",
             "detail": "Block 81: a participial sequence about Gayle staying for breakfast is recast as causality 'Она была так благодарна ... что осталась', which the source does not state.",
             "resolved": false
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "b495de49f1374fe88f0e084b0c0c59ba",
+      "sequence": 86,
+      "unit_id": "chapter-000038",
+      "outcome": "PASS",
+      "source_sha256": "111c967eec767b92cc3727b0856a02165ea868c7f337724600e268cbe1110d77",
+      "translation_sha256": "6e4f64c226c76dad99d49ae78ff60380a548fd061ff0dc0dcc96b5edba2d2fec",
+      "workflow_revision": "d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "review_contract_revision": "docs/TRANSLATION.md@d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "reviewer_session_id": "chat-reckless-038-rereviewer-20261111-finish",
+      "reviewed_at": "2026-11-11T20:10:41Z",
+      "state_revision": "fead06d316e39740cd53331fb115e54533c9937b",
+      "review_commit": "723255d2a84e0c433d22b2cbbce2b60d859258c5",
+      "correction_round": 1,
+      "supersedes_record_id": "96d64af7b1f64e598b6242d6a852dd77",
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Block 37 rechecked: unspecified force remains unspecified after correction.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Block 81 rechecked: no added causal link between thanks and breakfast remains.",
+            "resolved": true
           }
         ]
       }
