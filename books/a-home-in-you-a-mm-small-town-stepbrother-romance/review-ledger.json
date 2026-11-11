@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 84,
+  "next_sequence": 85,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -5232,6 +5232,49 @@
             "severity": "major",
             "detail": "Paragraph 68: narrator only presumes drawings were burned, but 'отец уничтожил и эти рисунки' asserts physical destruction as fact. Preserve narrator's uncertainty and actual loss without inventing certainty.",
             "resolved": false
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "88ef60d346643192e71e0588e73e7251",
+      "sequence": 84,
+      "unit_id": "chapter-000031",
+      "outcome": "PASS",
+      "source_sha256": "31b715dca85118ee1be8fdd4e3175db4986bf0b81fcbbfc1f1170800e0f5394d",
+      "translation_sha256": "46c3543a00776853ece4c297777aec70db975a7c14ad3462628fdc9297f5f5a5",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewer_session_id": "chatops-homeinyou-rereview-21-52c298f2",
+      "reviewed_at": "2026-11-11T18:00:09Z",
+      "state_revision": "15bcad1f7ac521a7abb5a4d0e1423c84a62145b756e64bdf6d851040e6b2b26f",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": "a69a246be941079bdc6d69b64695e171",
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Paragraph 35: rechecked emotional/intimacy wording, now idiomatic and grounded.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Paragraph 48: rechecked Raven's playful running-related pun in Russian.",
+            "resolved": true
+          },
+          {
+            "severity": "major",
+            "detail": "Paragraph 68: translated loss no longer asserts certain physical destruction of drawings.",
+            "resolved": true
           }
         ]
       }
