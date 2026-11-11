@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 80,
+  "next_sequence": 81,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -5055,6 +5055,54 @@
             "severity": "minor",
             "detail": "Paragraph 92: abrupt interruption in doctor's sentence has been restored with an em dash; the next speaker interrupts the original statement.",
             "resolved": true
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "9ef112510835c7e990b9682fdc754599",
+      "sequence": 80,
+      "unit_id": "chapter-000022",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "0597bc9de058f1acff07f60dd5e132d7ec2306b50edb043b5dbaab0190059cdf",
+      "translation_sha256": "32163241a0cd9223e2d3b26dfa96c115467a1fe06a3bce7879533206794879ff",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewer_session_id": "chatops-homeinyou-review-12-dee38df2",
+      "reviewed_at": "2026-11-11T17:45:18Z",
+      "state_revision": "aae2f08c921d3a7318b493c8cd5e736f916d210b852db2afdff85084332f2bc8",
+      "review_commit": null,
+      "correction_round": 0,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": false,
+          "terminology": true,
+          "style": false,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "major",
+            "detail": "Paragraph 19: narrator explicitly says that he did not trust Darren either. Current Russian attributes that disbelief to Cade, changing the subject. Restore narrator attribution: 'Я тоже не поверил Darren'.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Paragraph 29: 'give him the benefit of the doubt' is a conversational suggestion to trust Darren provisionally, not legal 'презумпцию невиновности'. Use natural Russian without the courtroom register.",
+            "resolved": false
+          },
+          {
+            "severity": "major",
+            "detail": "Paragraph 75: the translation replaces concrete mutual physical reactions with generalized emotional excitement, omitting meaningful source information. Requires source-faithful review and a policy-compliant correction.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Paragraph 85: the source specifies an intense, uninhibited kiss; Russian 'долгого поцелуя' drops that register. Preserve the intensity without gratuitous detail.",
+            "resolved": false
           }
         ]
       }
