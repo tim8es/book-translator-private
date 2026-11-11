@@ -52,7 +52,8 @@ class WorkflowEpicCloseoutContractTests(unittest.TestCase):
         allowed = {"tests.yml", "deploy-apify-private.yml", "smoke-apify-private.yml",
                    "chat-operations.yml", "policy-change-source-intake.yml",
                    "policy-change-final-delivery.yml", "wings-of-starlight-final-delivery.yml",
-                   "auto-translate.yml", "book-job-monitor.yml"}
+                   "auto-translate.yml", "book-job-monitor.yml",
+                   "book-batch-validation.yml", "reckless-final-epub.yml"}
         self.assertIn("tests.yml", workflows)
         self.assertEqual(set(workflows) - allowed, set())
         ci = (workflow_dir / "tests.yml").read_text(encoding="utf-8")
@@ -63,6 +64,13 @@ class WorkflowEpicCloseoutContractTests(unittest.TestCase):
             if filename == "tests.yml":
                 continue
             source = (workflow_dir / filename).read_text(encoding="utf-8")
+            # Existing one-time final-build workflow intentionally has only
+            # a narrow book-scoped push trigger, not a manual dispatch.
+            if filename == "reckless-final-epub.yml":
+                self.assertIn("  push:", source)
+                self.assertIn("books/reckless-leather-chrome-book-1/.workflow/final-build-request.json", source)
+                self.assertNotIn("  pull_request:", source)
+                continue
             self.assertIn("workflow_dispatch:", source)
             self.assertNotIn("  pull_request:", source)
             if filename == "chat-operations.yml":

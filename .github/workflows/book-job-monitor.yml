@@ -17,6 +17,7 @@ on:
 
 permissions:
   contents: write
+  actions: read
 
 concurrency:
   group: book-job-notifications-main
@@ -47,3 +48,11 @@ jobs:
           args=(--include-missing)
           if [[ -n "${JOB_ID:-}" ]]; then args+=(--job-id "$JOB_ID"); fi
           python automation/job_monitor.py "${args[@]}"
+      - name: Recover startup failures and notify the administrator
+        # A startup failure creates no translation job or terminal callback.
+        # Run independently even if a book integrity notification fails.
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          N8N_DELIVERY_CALLBACK_URL: ${{ secrets.N8N_DELIVERY_CALLBACK_URL }}
+        run: python automation/actions_failure_notifier.py
