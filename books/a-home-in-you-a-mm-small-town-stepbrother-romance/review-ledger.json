@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 60,
+  "next_sequence": 61,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -4201,6 +4201,67 @@
             "severity": "minor",
             "detail": "Абзац 28 повторно сверен: неестественная тавтология устранена при сохранении действия.",
             "resolved": true
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "70daed1ebb00df7638d3f6d2b0b46609",
+      "sequence": 60,
+      "unit_id": "chapter-000047",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "d923836318d391c1186732505a92010e71a58638e714dcadd88d3639bb0d3597",
+      "translation_sha256": "b83dc8b4b408885fa235da56e24e07b6cf4e855daf766d09b2608036471c4a3c",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewer_session_id": "chatops-homeinyou-20261111-review-ch37-d7f8",
+      "reviewed_at": "2026-11-11T15:39:26Z",
+      "state_revision": "64aef4bf9586b3614fd8431762f12ce5dc0decea",
+      "review_commit": "b49e9bf4fafe117afc761a1525eb138267f219fd",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "queer-community-register",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Абзац 25: 'queer community or group' переведено как 'сообщество извращенцев', добавляя более сильное прямое оскорбление, которого оригинал не произносит. Сохранить презрительный тон отца без подмены значения.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "join some queer community or group?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "вступить в какое-нибудь сообщество извращенцев?",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "marry-me-gendered-russian",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Абзац 52: 'You're going to marry me one day' передано 'ты выйдешь за меня замуж', неестественно и неверно для мужского персонажа в русском. Заменить на 'однажды мы поженимся' или 'ты на мне женишься'.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "You’re going to marry me one day.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Однажды ты выйдешь за меня замуж.",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       }
