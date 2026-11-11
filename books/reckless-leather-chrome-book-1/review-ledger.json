@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "reckless-leather-chrome-book-1",
-  "next_sequence": 39,
+  "next_sequence": 40,
   "records": [
     {
       "record_id": "f77b051b1598493e90f406995c7404b7",
@@ -2912,6 +2912,73 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "5d86980f1e2644e7900bb6081f0b744e",
+      "sequence": 39,
+      "unit_id": "chapter-000024",
+      "outcome": "PASS",
+      "source_sha256": "0d1b65a0b4c6b66fe27ee6fe0c1530a0af7bf78a7e025fed6317f9de9cf34273",
+      "translation_sha256": "25472f0f7cec41867380506b90b4e1b84729eee709f56ce2ee6fd6e01b26379e",
+      "workflow_revision": "d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "review_contract_revision": "docs/TRANSLATION.md@d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "reviewer_session_id": "chat-reckless-024-recheck-20261111",
+      "reviewed_at": "2026-11-11T17:35:50.785Z",
+      "state_revision": "6cf51501a8a12df868894dcd62ac7d0ea1332a42",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": "d1c296a06f9d43f9b261b92083fc648f",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-sociology-100-meaning",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The revised sentence identifies the Sociology 100 course without claiming CJ completed it; the original statement only confirms he took it.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "I took Sociology 100 before I had to drop out",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "я успел позаниматься на курсе «Социология — 100», прежде чем пришлось бросить учёбу",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "d1c296a06f9d43f9b261b92083fc648f",
+              "finding_id": "sociology-100-meaning"
+            }
+          },
+          {
+            "id": "recheck-tv-title-italic-scope",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "Mixed italic scopes around Sons of Anarchy are restored in both letter occurrences, retaining text hierarchy and phrasing.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "*So I’ve been doing some research on motorcycle clubs (and possibly binge-watching* Sons of Anarchy—*don’t judge)",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "*Я тут кое-что почитал о мотоклубах (и, возможно, запоем смотрел* «Сынов анархии» — *не осуждай)",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "d1c296a06f9d43f9b261b92083fc648f",
+              "finding_id": "tv-title-italic-scope"
+            }
           }
         ]
       }
