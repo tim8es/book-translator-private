@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 74,
+  "next_sequence": 75,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -4777,6 +4777,49 @@
             "severity": "major",
             "detail": "Rechecked father interruption: narrator aside no longer masquerades as speech attribution.",
             "resolved": true
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "32e3cc4ae8dfbb71db63c839ba4cfa20",
+      "sequence": 74,
+      "unit_id": "chapter-000030",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "2a36cd7f20413e7b38b1b90e2ac5e23a06a1f06c9daf88ceb99e060b1d8d3bad",
+      "translation_sha256": "dbde144dc36136bed4eaaca852894875a95c1e6ccf166a1b19cc2e8c005da583",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewer_session_id": "chatops-homeinyou-20261111-review-ch20-087681cf",
+      "reviewed_at": "2026-11-11T17:17:47Z",
+      "state_revision": "f901c7a8999034edb5ff960136f1c63487d0ee7725928ab894554b8c4bf13f58",
+      "review_commit": null,
+      "correction_round": 0,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": false,
+          "terminology": true,
+          "style": false,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "major",
+            "detail": "Paragraph 18: source says 'I looked at her and forgot she was sick', but translation says 'вспомнил, что она болеет', reversing the mental action. Translate 'на мгновение забыл, что она болеет'.",
+            "resolved": false
+          },
+          {
+            "severity": "major",
+            "detail": "Paragraph 7: 'Don't make this worse for Cade' becomes unnatural and misleading 'Не делай Cade ещё хуже'. Change to 'Не усугубляй положение Cade' or equivalent.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Paragraph 33: 'We've spent every waking moment together' is stronger than 'каждую свободную минуту'. Restore the narrator's hyperbole, e.g. 'почти всё время, пока не спали'.",
+            "resolved": false
           }
         ]
       }
