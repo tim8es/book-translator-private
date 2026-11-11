@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "reckless-leather-chrome-book-1",
-  "next_sequence": 83,
+  "next_sequence": 84,
   "records": [
     {
       "record_id": "f77b051b1598493e90f406995c7404b7",
@@ -5581,6 +5581,39 @@
           "structure": true
         },
         "findings": []
+      }
+    },
+    {
+      "record_id": "6de8d983dcba4eb09e7f84b7cd1a0657",
+      "sequence": 83,
+      "unit_id": "chapter-000037",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "0539f65b047915401c1105acf6cc59b4a05eae7c45be4b4e40d707b2298a5268",
+      "translation_sha256": "d075ead2c8c8ea86e0d036f1e50f4104a1a2965f8516d848de4013b086189f3f",
+      "workflow_revision": "d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "review_contract_revision": "docs/TRANSLATION.md@d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "reviewer_session_id": "chat-reckless-037-reviewer-20261111-finish",
+      "reviewed_at": "2026-11-11T20:05:19Z",
+      "state_revision": "f3c68222f42d01b2525d9d66bdf31bdd15548398",
+      "review_commit": "341ec2ea392770dde3bd32e7f753cd21ccac1885",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "major",
+            "detail": "Blocks 108 and 111: the original's gender-neutral 'marry me' and 'marry you' are rendered as 'выйти за меня/тебя замуж', implying an unestablished bride/feminine role for a male character. Render the mutually intended marriage naturally without inventing gender roles.",
+            "resolved": false
+          }
+        ]
       }
     }
   ]
