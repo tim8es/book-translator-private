@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "reckless-leather-chrome-book-1",
-  "next_sequence": 58,
+  "next_sequence": 59,
   "records": [
     {
       "record_id": "f77b051b1598493e90f406995c7404b7",
@@ -4050,6 +4050,51 @@
             },
             "translation_anchor": {
               "quote": "пожалуйста, оставьте отзыв",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "a81726bcc71643af9ea6d0682124f7ec",
+      "sequence": 58,
+      "unit_id": "chapter-000051",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "00933f0a0c9185067bdf5f2d7ac738dc3b47471a09cf53838681ea38795c560c",
+      "translation_sha256": "c42f536768054ad052337fe84662df9d881e94b40b5bed5e6bec0fce5d92b25e",
+      "workflow_revision": "d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "review_contract_revision": "docs/TRANSLATION.md@d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "reviewer_session_id": "chat-reckless-051-reviewer-20261111",
+      "reviewed_at": "2026-11-11T19:21:54.663Z",
+      "state_revision": "0269098f6b75d09b2d4867b442b7051628663c34",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "pipe-repair-completion-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The source states that John comes and fixes the leaking pipe. The translation 'приезжает починить' describes coming with an intention to fix and introduces travel by vehicle. Use 'приходит и чинит' to preserve the completed repair without unsupported transport.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "he comes and fixes a leaking pipe in my basement",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "он приезжает починить протекающую трубу у меня в подвале",
               "occurrence": 0
             },
             "resolves": null
