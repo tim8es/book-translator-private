@@ -5,7 +5,7 @@
 *Серия «Kincaid Pack»*
 
 <!-- bt-block:000003 -->
-Бесплатный приквел: A New Pack for New Year
+БЕСПЛАТНЫЙ приквел: A New Pack for New Year
 
 <!-- bt-block:000004 -->
 The Alpha and His King (Rick & Kai)
@@ -38,7 +38,7 @@ The Alpha and His King
 The Second and His Bonded
 
 <!-- bt-block:000014 -->
-The Deputy and His Enforcer (скоро выйдет)
+The Deputy and His Enforcer (скоро выйдет!)
 
 <!-- bt-block:000015 -->
 Laying Pipe
