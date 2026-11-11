@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "reckless-leather-chrome-book-1",
-  "next_sequence": 72,
+  "next_sequence": 73,
   "records": [
     {
       "record_id": "f77b051b1598493e90f406995c7404b7",
@@ -4747,6 +4747,111 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "f7a6bb4dc3da47728c56c44ecf3d8904",
+      "sequence": 72,
+      "unit_id": "chapter-000023",
+      "outcome": "PASS",
+      "source_sha256": "729ca7baadc47379b83dd2b88f857934cdf2442a9a81a64743a1712f3cdaac80",
+      "translation_sha256": "fdc80c372b862512bbaeddb4975880aa7b9bcf73de94d22d0a92557a610001db",
+      "workflow_revision": "d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "review_contract_revision": "docs/TRANSLATION.md@d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "reviewer_session_id": "chat-reckless-023-recheck-20261111",
+      "reviewed_at": "2026-11-11T19:38:33.271Z",
+      "state_revision": "849e62c43f48d3fd7099710bf1cd65214b061866",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": "27a0461a78394bf4927ce47c28697112",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-thrust-motion-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The corrected passage preserves full-depth movement repeatedly in and out.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "work his entire length in and out of CJ’s body",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "начал то входить в него до конца, то выходить",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "27a0461a78394bf4927ce47c28697112",
+              "finding_id": "thrust-motion-1"
+            }
+          },
+          {
+            "id": "recheck-grind-full-body-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Removed invented whole-body contact; retained the original grinding movement.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "grinding against CJ",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "он потёрся о Си-Джея бёдрами",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "27a0461a78394bf4927ce47c28697112",
+              "finding_id": "grind-full-body-1"
+            }
+          },
+          {
+            "id": "recheck-crappy-tv-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "TV programming is now correctly referred to rather than the television set.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "watch crappy TV",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "смотреть дерьмовые передачи",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "27a0461a78394bf4927ce47c28697112",
+              "finding_id": "crappy-tv-1"
+            }
+          },
+          {
+            "id": "recheck-stormed-1",
+            "category": "intensity",
+            "severity": "minor",
+            "detail": "The brisk angry movement is restored.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "stormed into the living room",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "влетел в гостиную",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "27a0461a78394bf4927ce47c28697112",
+              "finding_id": "stormed-1"
+            }
           }
         ]
       }
