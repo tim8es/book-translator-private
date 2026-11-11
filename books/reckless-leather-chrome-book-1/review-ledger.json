@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "reckless-leather-chrome-book-1",
-  "next_sequence": 85,
+  "next_sequence": 86,
   "records": [
     {
       "record_id": "f77b051b1598493e90f406995c7404b7",
@@ -5645,6 +5645,44 @@
             "severity": "major",
             "detail": "Rechecked the corrected marriage exchange in blocks 108 and 111; no unsupported feminine role is asserted, and proposal/acceptance remain faithful to the source.",
             "resolved": true
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "96d64af7b1f64e598b6242d6a852dd77",
+      "sequence": 85,
+      "unit_id": "chapter-000038",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "111c967eec767b92cc3727b0856a02165ea868c7f337724600e268cbe1110d77",
+      "translation_sha256": "f873e843705e995d265c5edd741d077dcca874f9c491c9bbdf627cb2526e07a7",
+      "workflow_revision": "d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "review_contract_revision": "docs/TRANSLATION.md@d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "reviewer_session_id": "chat-reckless-038-reviewer-20261111-finish",
+      "reviewed_at": "2026-11-11T20:08:56Z",
+      "state_revision": "a9ba5408ac66448d7052a598e23557d309a7afaa",
+      "review_commit": "4abdc15f785c79fdef79c5bec2b787efb997c0d1",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Block 37: 'like they'd been forced to bend by something pushing its way out of the cage' specifies an unspecified force, but Russian adds an explicit bird as agent ('словно их выгнула птица'), prematurely resolving the ambiguity.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Block 81: a participial sequence about Gayle staying for breakfast is recast as causality 'Она была так благодарна ... что осталась', which the source does not state.",
+            "resolved": false
           }
         ]
       }
