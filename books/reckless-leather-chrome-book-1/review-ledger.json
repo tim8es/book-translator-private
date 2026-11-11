@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "reckless-leather-chrome-book-1",
-  "next_sequence": 81,
+  "next_sequence": 82,
   "records": [
     {
       "record_id": "f77b051b1598493e90f406995c7404b7",
@@ -5475,6 +5475,83 @@
             "severity": "minor",
             "detail": "Block 84 rechecked: the parents' conditional judgment is rendered in natural Russian without changing the source perspective.",
             "resolved": true
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "a73497b9305b4f62b04caf04bd488351",
+      "sequence": 81,
+      "unit_id": "chapter-000033",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "2b7ba470fe26a2b6cf432b38b3b69d71eb13c5631dbc68663ce6beab2029e34d",
+      "translation_sha256": "75c4eee41d687967592f619051cf6eb7407a7e05fddb34ba4b33b85cb22aa035",
+      "workflow_revision": "d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "review_contract_revision": "docs/TRANSLATION.md@d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "reviewer_session_id": "chat-reckless-033-reviewer-20261111",
+      "reviewed_at": "2026-11-11T19:55:38.644Z",
+      "state_revision": "da4e3fc2ea4ed3f85bac2cd945a83a7edc77010a",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "viper-work-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "An awkward calque describing Viper's professional tattoo work; use idiomatic Russian while retaining enthusiastic praise.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Viper does killer work",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "у Вайпер просто убойная работа",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "dont-make-weird-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "This expression is an unnatural word-for-word calque; render the teasing instruction in idiomatic Russian.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Don’t make it weird!",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Не делай из этого что-то странное!",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "two-dollar-pistol-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The American colloquial hyperbole is rendered literally and sounds unintentionally nonsensical in Russian; preserve the vivid force as an idiom for extreme attractiveness.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "hotter than a two-dollar pistol",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "горячее двухдолларового пистолета",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       }
