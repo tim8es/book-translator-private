@@ -40,18 +40,16 @@ secret to this public repository.
    delivery failures. Respond HTTP 2xx only if the event has been durably
    accepted; return non-2xx on failure. A rare Git receipt push race can
    cause redelivery of the same event, so n8n deduplication is essential.
-4. Look up the user's original Telegram chat/message using job_id.
-5. Route events:
-   - completed: fetch artifact_path from GitHub, calculate SHA-256, compare
-     with artifact_sha256, then deliver EPUB to the corresponding chat.
-   - completed_preview: perform the same SHA check, but explicitly label
-     it as a user-approved UNREVIEWED preview.
-   - blocked: send phase, reason, blocked_unit_id, optional
-     deferred_review_units, reviewed_units and total_units; do not send a
-     partial book.
-   - stalled: alert about a POSSIBLE stall; inspect Actions and live claims
-     before deciding whether a job truly crashed.
-   - integrity_failed: raise an error and never deliver an unverified EPUB.
+4. Route **completed** / **completed_preview** to the original user's
+   Telegram chat, after the existing EPUB integrity verification.
+5. Route **blocked**, **stalled**, and **integrity_failed** to the
+   administrator's Telegram chat, NOT to the submitting user. Include the
+   job ID, phase, reason, and verified unit counts when present. Do not
+   deliver any partial or unverified EPUB.
+6. Route terminal checkpoint failures arriving via N8N_DELIVERY_CALLBACK_URL
+   and all payloads with admin_alert=true or recipient=admin to the
+   administrator's chat. This is an n8n receiver requirement; GitHub can
+   only verify HTTP acceptance, not Telegram delivery.
 
 Example event is metadata only (no source or translation prose):
 
@@ -103,3 +101,28 @@ Manual inspection without delivery:
 To backfill after configuring secrets, use Actions > Book job state monitor >
 Run workflow. The scheduled monitor also picks up undelivered events.
 Do not manually remove claims or change correction round counters.
+
+## GitHub pre-job failure recovery and batching
+
+A GitHub Actions startup_failure creates no job and cannot execute the
+process-level n8n callback or write a durable book status. The independent
+Book job state monitor now polls the 50 most recent Automatic book translation
+runs on each scheduled/completed monitor cycle, looking back 36 hours for
+startup_failure and action_required. It recovers the job ID from the run title,
+or (for legacy #511-style runs) the single intake request in the triggering
+commit. It posts the existing job_id/run_id/conclusion contract to
+N8N_DELIVERY_CALLBACK_URL, with recipient=admin, admin_alert=true and a stable
+event_id, and records a durable receipt under
+automation/notifications/sent/_actions/<run-id>.json.
+
+The n8n delivery callback must route these administrator alerts **only** to
+the configured admin Telegram chat, deduplicate by event_id/run_id, and return
+HTTP 2xx only after durable acceptance. A missing job ID is permitted for
+pre-job failures: include the GitHub run URL for investigation. Confirm the
+routing in n8n separately; GitHub-only tests cannot verify Telegram delivery.
+
+The tests workflow no longer runs for book-only checkpoints, intake requests,
+job status writes or notification receipts. Pull requests still run full
+checks. Batched book integrity validation runs twice an hour and can be
+started manually with a lookback window. This reduces runner pressure without
+weakening per-checkpoint canonical validation or final delivery gates.
