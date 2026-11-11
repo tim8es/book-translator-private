@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 87,
+  "next_sequence": 88,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -5366,6 +5366,49 @@
             "severity": "minor",
             "detail": "Paragraph 84: source 'threw her arms around him' does not specifically put the cheerleader's arms around his neck; Russian 'обняла его за шею' introduces an unsupported physical detail. Use simply 'обняла его'.",
             "resolved": false
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "0aebfefa8271167cf8e85e933486722e",
+      "sequence": 87,
+      "unit_id": "chapter-000025",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "5fc96b09af376cc196a201bccedb6d671fbbd32333f8daff9aa02cc0a7589493",
+      "translation_sha256": "dc49b5cb1e4e728ccc8a9380bc6b883ce4b87dc62e2d9c8d9939fbf637ca7292",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewer_session_id": "chatops-homeinyou-rereview15-2d7b1dab",
+      "reviewed_at": "2026-11-11T18:16:23Z",
+      "state_revision": "852169102f4091edfaad45310b9e7ab908dbabaa78fcdc71e034553619567b20",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": "9c903cc95833ae9e27663d86fe2259c1",
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": false,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "major",
+            "detail": "Paragraphs 2 and 4: prior review's fidelity issue remains unresolved; concrete source reference to physical intimacy is still generalized in translation. No PASS may be recorded until a compliant source-faithful resolution is reviewed.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Paragraph 55: rechecked the joking reference to concealed orientation; literal closet calque is removed and the dialogue remains faithful.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Paragraph 84: rechecked the cheerleader's embrace; unsupported neck placement removed.",
+            "resolved": true
           }
         ]
       }
