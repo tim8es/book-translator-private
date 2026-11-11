@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 62,
+  "next_sequence": 63,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -4329,6 +4329,44 @@
               "record_id": "70daed1ebb00df7638d3f6d2b0b46609",
               "finding_id": "marry-me-gendered-russian"
             }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "d337d3e2dd92484a975bb7117d181b92",
+      "sequence": 62,
+      "unit_id": "chapter-000048",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "d90b1b8bad21f2716ec995acdb074949b7beb03eefe45f2b54b025e1c98b8919",
+      "translation_sha256": "58a25d4e3a7f59666c1aa291e59d9ae51c50ecfed5351fb415d598aadd94d501",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewer_session_id": "chatops-homeinyou-20261111-review-ch38-d8ef",
+      "reviewed_at": "2026-11-11T15:55:50Z",
+      "state_revision": "89280457b12dda4c837f996c30ec06a70fbbbfa8",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Сцена прибытия: «by mid-afternoon» означает середину второй половины дня, но текущий перевод «К середине дня» ошибочно переносит прибытие на более раннее время. Передать «К середине второй половины дня» или «Часам к трём-четырём».",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Оценка интенсивности: «The pressure was strong» передано «Напряжение стало невыносимым», что усиливает оценку до степени, которой нет в оригинале. Исправить на «Напряжение было сильным» без добавочной экспрессии.",
+            "resolved": false
           }
         ]
       }
