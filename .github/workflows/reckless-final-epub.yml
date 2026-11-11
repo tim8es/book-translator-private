@@ -5,13 +5,14 @@ on:
     branches: [main]
     paths:
       - 'books/reckless-leather-chrome-book-1/.workflow/final-build-request.json'
+  workflow_dispatch:
 
 permissions:
   contents: write
 
 concurrency:
   group: reckless-final-epub-build
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   build:
