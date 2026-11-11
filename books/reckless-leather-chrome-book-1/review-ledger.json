@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "reckless-leather-chrome-book-1",
-  "next_sequence": 12,
+  "next_sequence": 13,
   "records": [
     {
       "record_id": "f77b051b1598493e90f406995c7404b7",
@@ -926,6 +926,178 @@
       "shared_state_revisions": {
         "glossary": "664907cf154903d7077e191eeca692d6b58af74c3d4de9301697620993f2f695",
         "style_guide": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4"
+      }
+    },
+    {
+      "record_id": "710a33b7c849420bbbf29963c55f086d",
+      "sequence": 12,
+      "unit_id": "chapter-000007",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "e0b6aa1bf22686032a158c32bb974e20245564c94096a24dae738bc81cd1c537",
+      "translation_sha256": "e187fa1d42c600e3bb1c344e5fdf52ba2919b069a30d7fe1b8c4b8bb4137bf19",
+      "workflow_revision": "d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "review_contract_revision": "docs/TRANSLATION.md@d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "reviewer_session_id": "chat-reckless-reviewer-20261111",
+      "reviewed_at": "2026-11-11T04:17:53Z",
+      "state_revision": "1dacf1aeea66eaa19de20ccafbe8b7bf12b36848",
+      "review_commit": null,
+      "correction_round": 4,
+      "supersedes_record_id": "821c49c24ba04ac7b414793bdabcc9eb",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-prospects-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Earlier loss of 'without any prospects' is corrected: the current rendering states he had no prospects.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "without any prospects",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "у которого не было никаких перспектив",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "821c49c24ba04ac7b414793bdabcc9eb",
+              "finding_id": "meaning-1"
+            }
+          },
+          {
+            "id": "recheck-idiom-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The idiom 'a sight for sore eyes' is now rendered naturally as a welcome sight.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "she was a sight for sore eyes",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "был настоящей усладой для глаз",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "821c49c24ba04ac7b414793bdabcc9eb",
+              "finding_id": "style-1"
+            }
+          },
+          {
+            "id": "recheck-syntax-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The sentence concerning possible public discovery is recast into readable Russian without losing the point.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "His boy deserved better than him getting caught sniffing his underwear out in the open.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Его мальчик заслуживал большего. Танк не мог допустить, чтобы его на виду у всех застали за обнюхиванием белья своего мальчика.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "821c49c24ba04ac7b414793bdabcc9eb",
+              "finding_id": "style-2"
+            }
+          },
+          {
+            "id": "recheck-twisted-back-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The current text clarifies that the back is twisted in the pose and not physically deformed.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "muscles of his twisted back and round thighs",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "мышцах его спины, скрученной в этой позе, и округлых бёдер",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "821c49c24ba04ac7b414793bdabcc9eb",
+              "finding_id": "style-3"
+            }
+          },
+          {
+            "id": "recheck-fully-clothed-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "More fully clothed now describes the quantity of clothing rather than passing a moral judgment.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "ones where his boy was more fully clothed",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "на них на его мальчике было куда больше одежды",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "821c49c24ba04ac7b414793bdabcc9eb",
+              "finding_id": "meaning-2"
+            }
+          },
+          {
+            "id": "meaning-flip-1",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "'Didn't flip' means refused to turn informant or betray the club; 'не струсил' says he did not lose nerve. Use 'не раскололся' or 'не сдал своих'.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "you didn’t flip even after that bastard judge nailed you with two more years",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "ты не струсил, даже когда этот ублюдок-судья накинул тебе ещё два года",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-possess-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The fragment is ungrammatical in Russian; recast to express that Tank will soon hold his boy against his body as tightly as the envelope.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Just like his boy would be soon.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Совсем как скоро прижмёт к себе своего мальчика.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "punctuation-dialogue-1",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "The spoken answer and subsequent narrative run together without a dialogue-closing dash, impairing readability. Restore punctuation within the same bt-block.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“Yeah, I’m good.” They shook, and then Callaway",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "— Нормально. Они пожали друг другу руки",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
       }
     }
   ]
