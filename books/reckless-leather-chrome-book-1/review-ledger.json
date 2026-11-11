@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "reckless-leather-chrome-book-1",
-  "next_sequence": 73,
+  "next_sequence": 74,
   "records": [
     {
       "record_id": "f77b051b1598493e90f406995c7404b7",
@@ -4852,6 +4852,49 @@
               "record_id": "27a0461a78394bf4927ce47c28697112",
               "finding_id": "stormed-1"
             }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "39dc912249e89bcf6a79430a9a567583",
+      "sequence": 73,
+      "unit_id": "chapter-000025",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "53e3fcee0ce8b89eb5d028e7e69916a818b5f3e8d69b71d10c3475ac5d836547",
+      "translation_sha256": "151fd854e8244c9a68633f35943de7e463a05a63589079e3e3ad7cfccc639f7f",
+      "workflow_revision": "d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "review_contract_revision": "docs/TRANSLATION.md@d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "reviewer_session_id": "chat-reckless-025-reviewer-20261111-2232",
+      "reviewed_at": "2026-11-11T19:41:14Z",
+      "state_revision": "81072a71eae934e5b1271c803f0134c92066756c",
+      "review_commit": "9c75bf1cc94086d998aacca0b368c4c73921f05e",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "major",
+            "detail": "Block 27: 'gotten fucked on a bullshit technicality ... sometimes with more time added' is translated as deliberate framing ('подставили') and as an unspecified extra period of several years ('ещё несколько лет'); remove the invented agency and numeric duration, retain rough register.",
+            "resolved": false
+          },
+          {
+            "severity": "major",
+            "detail": "Block 90: 'if they aren't your old lady' is translated as 'если гость не твоя постоянная женщина', misleadingly restricting the live-in partner exception to women; preserve the partner relationship without falsely excluding CJ.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Block 92: 'But it's gonna cost you' is rendered 'будет стоить денег', adding money where the teasing line leaves the nature of the cost unspecified; use a noncommittal idiom.",
+            "resolved": false
           }
         ]
       }
