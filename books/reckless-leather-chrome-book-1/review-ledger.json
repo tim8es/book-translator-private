@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "reckless-leather-chrome-book-1",
-  "next_sequence": 22,
+  "next_sequence": 23,
   "records": [
     {
       "record_id": "f77b051b1598493e90f406995c7404b7",
@@ -1810,6 +1810,92 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "4ceacbece1404ce7af8261c6fd131a2f",
+      "sequence": 22,
+      "unit_id": "chapter-000012",
+      "outcome": "PASS",
+      "source_sha256": "e100b76dc3bc647637e99f59ffc049920de91827331f0d8c1a1e5097c15cba9c",
+      "translation_sha256": "77277a78ec36d7c903641277983f29b9be0e5da61bb783f0db6d070d2265815c",
+      "workflow_revision": "d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "review_contract_revision": "docs/TRANSLATION.md@d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "reviewer_session_id": "chat-reckless-012-recheck-20261111",
+      "reviewed_at": "2026-11-11T10:58:19Z",
+      "state_revision": "28c1f66893a813ad60359000b408247af0ac9c34",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": "a094c9a594d5438b81d0e21798baa0b4",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-saw-identify-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The corrected text preserves that Tank was the only visible and identifiable perpetrator without adding visibility clarity.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "I was the only one he actually saw and could identify",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Я был единственным, кого он вообще видел и мог опознать",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "a094c9a594d5438b81d0e21798baa0b4",
+              "finding_id": "saw-identify-1"
+            }
+          },
+          {
+            "id": "recheck-mind-sharing-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The translation now expresses the speaker's willingness to share, not an invented emotional calm.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "I don’t mind telling you this",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Я не против рассказать тебе об этом",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "a094c9a594d5438b81d0e21798baa0b4",
+              "finding_id": "mind-sharing-1"
+            }
+          },
+          {
+            "id": "recheck-bad-things-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The Russian now uses idiomatic 'поступки' while preserving the source's significant repetition of 'bad'.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "doing bad things sometimes doesn’t necessarily make you a bad person",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "то, что ты иногда совершаешь плохие поступки, ещё не обязательно делает тебя плохим человеком",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "a094c9a594d5438b81d0e21798baa0b4",
+              "finding_id": "bad-things-1"
+            }
           }
         ]
       }
