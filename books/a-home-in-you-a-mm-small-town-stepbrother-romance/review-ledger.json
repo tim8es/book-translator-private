@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 79,
+  "next_sequence": 80,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -5017,6 +5017,44 @@
             "severity": "minor",
             "detail": "Paragraph 92: The source doctor's sentence is forcibly interrupted ('He hasn’t reached out to—'), but the Russian translation ends in an ellipsis, implying a pause. Preserve the abrupt interruption with a dash.",
             "resolved": false
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "abce393ac8a71aefee7d5f2faddec451",
+      "sequence": 79,
+      "unit_id": "chapter-000035",
+      "outcome": "PASS",
+      "source_sha256": "9790b4cdc10a344df49323c421a030aef6801b7de416fd94948987a438381c8d",
+      "translation_sha256": "34dba266961b5090bfb01632a142c850affbe8dd20dded7554345f5e1ab9581d",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewer_session_id": "chatops-homeinyou-20261111-rereview-ch25-7dbbacb8",
+      "reviewed_at": "2026-11-11T17:38:51Z",
+      "state_revision": "fc27cce03dd25d5cd77d826bad93fdf4e64ac8276ec2e67b45e350d844b1fff0",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": "5b80daa78f12402d87a0d21bef53e2c6",
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Paragraph 15: 'my boy here' rechecked as a friendly form of support; 'мой друг' avoids inventing a romantic relationship.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Paragraph 92: abrupt interruption in doctor's sentence has been restored with an em dash; the next speaker interrupts the original statement.",
+            "resolved": true
           }
         ]
       }
