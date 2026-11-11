@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "reckless-leather-chrome-book-1",
-  "next_sequence": 48,
+  "next_sequence": 49,
   "records": [
     {
       "record_id": "f77b051b1598493e90f406995c7404b7",
@@ -3526,6 +3526,99 @@
               "record_id": "93a78ea8b08641338b5d2da8fedd97a2",
               "finding_id": "emotional-satisfaction-1"
             }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "02f6d2821ef744d88f23483fb8e73cbe",
+      "sequence": 48,
+      "unit_id": "chapter-000045",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "fcfcb8d518eaf394784e703182778af21fb21fa7b16492bd2231f6927857e4c2",
+      "translation_sha256": "1818fe7a71ce9b7f2b3f39459347756b3b070924d70448c9a8a7cb7d05002de4",
+      "workflow_revision": "d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "review_contract_revision": "docs/TRANSLATION.md@d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "reviewer_session_id": "chat-reckless-045-reviewer-20261111",
+      "reviewed_at": "2026-11-11T19:03:53.384Z",
+      "state_revision": "8a1b659ba1ac42a066ff6845993f5993a3153a4f",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "distraction-calque-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "'не просто мимолётное отвлечение' is an awkward literal calque of 'more than a simple distraction'. Preserve the fact that his attraction is serious and more than a passing distraction.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "more than a simple distraction",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "не просто мимолётное отвлечение",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "lose-focus-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "'won’t let himself lose focus' means he refuses to be distracted, while 'не позволит себе потерять бдительность' narrows focus to vigilance; use the source's broader sense.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Rick won’t let himself lose focus",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Рик не позволит себе потерять бдительность",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "worst-fears-1",
+            "category": "intensity",
+            "severity": "minor",
+            "detail": "'their fears' does not explicitly say 'their worst fears'; remove the unnecessary superlative 'худшие'.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "bringing their fears to fruition",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "их худшие опасения сбываются",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "alpha-mate-register-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "'нежная, но боевая пара альфы' sounds awkward and makes 'feisty' sound combative rather than spirited. Use a natural Russian rendering of the partner's sweet, feisty disposition.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "a sweet and feisty alpha-mate",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "нежная, но боевая пара альфы",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       }
