@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 67,
+  "next_sequence": 68,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -4488,6 +4488,49 @@
           "structure": true
         },
         "findings": []
+      }
+    },
+    {
+      "record_id": "782f4eabe187b80a8f6d72d4a8226480",
+      "sequence": 67,
+      "unit_id": "chapter-000036",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "4085a3ed9f8544692f61265046b486798ccba308283ef46e78ccd703051b9104",
+      "translation_sha256": "f1e33f34baf230dccb7be29a9b79443cfd193e77bbd0591945d26ab37c69152a",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewer_session_id": "chatops-homeinyou-20261111-review-ch26-585b0a",
+      "reviewed_at": "2026-11-11T16:44:11Z",
+      "state_revision": "7d71f04011afcfd376c6e22f24986146645ea9d38b12f1784dab07b882a2ee35",
+      "review_commit": null,
+      "correction_round": 0,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": false,
+          "terminology": true,
+          "style": false,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "'He wasn’t much bigger than me' refers to overall build; Russian 'Ростом ... выше' narrows the comparison to height. Change to 'Он был лишь немного крупнее меня'.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "'loyalty. Until he wasn’t' refers to broken trust without necessarily alleging sexual infidelity. Russian 'не перестал быть верным' suggests infidelity; revise to 'преданностью. Пока он не перестал быть преданным мне'.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "'We shared every sexual experience two people possibly could' is deliberately absolute, while 'практически всё' weakens it. Restore this absoluteness without adding explicit detail.",
+            "resolved": false
+          }
+        ]
       }
     }
   ]
