@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 70,
+  "next_sequence": 71,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -4615,6 +4615,54 @@
             "severity": "major",
             "detail": "Блок 69: сломана русская грамматика после 'притянул к поцелую': '— с языком, влажному и жадному. Моим любимым поцелуям Dillon.' Требуется грамматически цельная формулировка без изменения смысла.",
             "resolved": false
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "f4618d7023cb93b677d821fd791d1c23",
+      "sequence": 70,
+      "unit_id": "chapter-000036",
+      "outcome": "PASS",
+      "source_sha256": "4085a3ed9f8544692f61265046b486798ccba308283ef46e78ccd703051b9104",
+      "translation_sha256": "f9b15583c7a07d013cab71a77b5214e14ccc322a1504f030768dd9008423f49b",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewer_session_id": "chatops-homeinyou-20261111-final-review-bee4cac9",
+      "reviewed_at": "2026-11-11T16:54:09Z",
+      "state_revision": "ff02b670d1f6eadf5b95c89901713f8df742e66eb4da48feeeff55aaff982c92",
+      "review_commit": null,
+      "correction_round": 2,
+      "supersedes_record_id": "78ab974d5aa7772f6976006766c95a8a",
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Rechecked physical-build comparison: correctly restored with 'чуть крупнее'.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Rechecked loyalty nuance: 'преданностью' preserves relationship-trust reading.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Rechecked categorical closeness statement: 'все возможные виды' now preserves source emphasis.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Rechecked 'Let's get you home': 'Давай я провожу' correctly avoids an invented vehicle.",
+            "resolved": true
           }
         ]
       }
