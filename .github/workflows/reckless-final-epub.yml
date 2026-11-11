@@ -48,6 +48,76 @@ jobs:
           path.write_text(json.dumps(value, indent=2) + "\n", encoding="utf-8")
           PY
 
+      - name: Audit all source-layout EPUB drop caps and hyperlinks (read only)
+        shell: bash
+        run: |
+          set -euo pipefail
+          PYTHONPATH=scripts python - <<'PY'
+          import json
+          import zipfile
+          import xml.etree.ElementTree as ET
+          from pathlib import Path
+          from workflow import epub_preserve as renderer
+          book = Path("books/reckless-leather-chrome-book-1")
+          progress = json.loads((book / "progress.json").read_text("utf-8"))
+          source = book / "source" / "source.epub"
+          docs, _ = renderer.analyze(source)
+          textual = [doc for doc in docs if doc.kind == "text"]
+          issues = []
+          with zipfile.ZipFile(source) as archive:
+              _, drop_classes = renderer._source_style_classes(archive)
+              for doc, chapter in zip(textual, progress["chapters"]):
+                  blocks = renderer.parse_blocks(
+                      (book / chapter["translation_path"]).read_text("utf-8"),
+                      expected=len(doc.blocks),
+                  )
+                  root = ET.fromstring(archive.read(doc.path))
+                  for index, ((node, _), translated) in enumerate(
+                      zip(renderer._blocks(root), blocks), 1
+                  ):
+                      children = list(node)
+                      initial = (
+                          "".join(children[0].itertext())
+                          if children and renderer._local(children[0].tag) == "span"
+                          else ""
+                      )
+                      cap = (
+                          children and initial and not list(children[0])
+                          and bool(set(children[0].get("class", "").split()) & drop_classes)
+                          and (
+                              len(initial) == 1 and initial.isalpha()
+                              or len(initial) == 2
+                              and initial[0] in '“"‘\''
+                              and initial[1].isalpha()
+                          )
+                      )
+                      links = [n for n in node.iter() if renderer._local(n.tag) == "a"]
+                      if cap and not links and translated:
+                          length = (
+                              2 if len(initial) == 2
+                              and translated.startswith(initial[0])
+                              and len(translated) > 1 and translated[1].isalpha()
+                              else 1
+                          )
+                          if not translated[length-1].isalpha():
+                              issues.append({
+                                  "kind": "drop_cap", "chapter": chapter["number"],
+                                  "xhtml": doc.path, "block": index,
+                                  "source_prefix_codes": [hex(ord(c)) for c in initial],
+                                  "translated_prefix_codes": [hex(ord(c)) for c in translated[:3]],
+                              })
+                      for link in links:
+                          label = "".join(link.itertext())
+                          if not label or translated.count(label) != 1:
+                              issues.append({
+                                  "kind": "hyperlink", "chapter": chapter["number"],
+                                  "xhtml": doc.path, "block": index,
+                              })
+          print("EPUB_LAYOUT_AUDIT", json.dumps({
+              "chapters": len(textual), "issues": issues,
+          }, ensure_ascii=False))
+          PY
+
       - name: Validate, finalize and package with pinned workflow
         shell: bash
         run: |
