@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "reckless-leather-chrome-book-1",
-  "next_sequence": 71,
+  "next_sequence": 72,
   "records": [
     {
       "record_id": "f77b051b1598493e90f406995c7404b7",
@@ -4654,6 +4654,99 @@
               "record_id": "b098bcc3d4e44b36ba18f98eb2048767",
               "finding_id": "comfort-food-1"
             }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "27a0461a78394bf4927ce47c28697112",
+      "sequence": 71,
+      "unit_id": "chapter-000023",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "729ca7baadc47379b83dd2b88f857934cdf2442a9a81a64743a1712f3cdaac80",
+      "translation_sha256": "10fb54673ebcdfbefa7fc433c52bd9f519d7c095d2608f10d73db24e3270b9e0",
+      "workflow_revision": "d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "review_contract_revision": "docs/TRANSLATION.md@d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "reviewer_session_id": "chat-reckless-023-reviewer-20261111",
+      "reviewed_at": "2026-11-11T19:36:20.545Z",
+      "state_revision": "ff34a90fccc18a75a6327c81cd3bed7e81abe5da",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "thrust-motion-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Full-length repetitive in-and-out movement is reduced to merely starting to enter; restore the repeated reciprocating motion.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "work his entire length in and out of CJ’s body",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "начал входить в него на всю длину",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "grind-full-body-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The translation adds 'with his entire body' though source only states he ground against CJ; preserve the action without inventing full-body contact.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "grinding against CJ",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "он потёрся о него всем телом",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "crappy-tv-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Crappy TV refers to television shows/programming, not a defective or bad television set; render the object as shows.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "watch crappy TV",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "смотреть дерьмовый телевизор",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "stormed-1",
+            "category": "intensity",
+            "severity": "minor",
+            "detail": "'Прошествовал' suggests a measured or pompous movement while 'stormed' is angry and abrupt; restore the sharp emotional motion.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "stormed into the living room",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "прошествовал в гостиную",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       }
