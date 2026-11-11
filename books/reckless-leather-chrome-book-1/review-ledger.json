@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "reckless-leather-chrome-book-1",
-  "next_sequence": 57,
+  "next_sequence": 58,
   "records": [
     {
       "record_id": "f77b051b1598493e90f406995c7404b7",
@@ -3994,6 +3994,67 @@
           "structure": true
         },
         "findings": []
+      }
+    },
+    {
+      "record_id": "3c62e72f25bc41f4a4510778bd87f957",
+      "sequence": 57,
+      "unit_id": "chapter-000039",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "d10c25e4b69f265faf6cda2591d8254b29ace37854a56a480af499fac6546236",
+      "translation_sha256": "ceb7413d7fa9f8da39ebf7584999a2bd0d90fb47e7c167e1e96b1f6c01123b02",
+      "workflow_revision": "d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "review_contract_revision": "docs/TRANSLATION.md@d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "reviewer_session_id": "chat-reckless-039-reviewer-20261111-next",
+      "reviewed_at": "2026-11-11T19:20:17.806Z",
+      "state_revision": "a41f3e15a2f50bbd59a627cfb8d1a4bcc0f12e0c",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "book-not-story-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "'Tank & CJ’s book' refers to their book; the translation substitutes 'история' and slightly changes the referent. Preserve book in the thank-you message.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Thank you for reading Tank & CJ’s book!",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Спасибо, что прочитали историю Танка и Си-Джея!",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "consider-review-1",
+            "category": "modality",
+            "severity": "minor",
+            "detail": "The source (despite the typo 'please considering') asks readers to consider leaving a review, not directly instructs them to leave one. Restore the soft suggestion while maintaining natural Russian.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "please considering leaving a review",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "пожалуйста, оставьте отзыв",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
       }
     }
   ]
