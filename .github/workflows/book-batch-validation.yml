@@ -1,0 +1,58 @@
+name: Batched book integrity validation
+
+on:
+  workflow_dispatch:
+    inputs:
+      lookback_hours:
+        description: "Validate books changed within this many hours (1-168)"
+        required: false
+        type: string
+        default: "3"
+  schedule:
+    # Book checkpoints do NOT spawn one CI run per commit.
+    - cron: "13,43 * * * *"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: batched-book-integrity-main
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: Collect unique book paths changed in the rolling window
+        env:
+          LOOKBACK_HOURS: ${{ inputs.lookback_hours || '3' }}
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          import subprocess
+          from pathlib import Path
+
+          value = os.environ["LOOKBACK_HOURS"]
+          if not value.isdecimal() or not 1 <= int(value) <= 168:
+              raise SystemExit("lookback_hours must be an integer between 1 and 168")
+          output = subprocess.check_output(
+              ["git", "log", f"--since={value} hours ago",
+               "--format=", "--name-only", "-z", "HEAD"])
+          paths = sorted({raw.decode("utf-8") for raw in output.split(b"\\0")
+                          if raw.startswith(b"books/") and b"/" in raw[6:]})
+          target = Path(os.environ["RUNNER_TEMP"]) / "changed-book-paths.json"
+          target.write_text(json.dumps(paths, ensure_ascii=False), encoding="utf-8")
+          print(f"Collected {len(paths)} unique book file paths in the last {value} hours")
+          PY
+      - name: Validate changed book content and canonical integrity
+        run: python .github/scripts/verify_changed_books.py "$RUNNER_TEMP/changed-book-paths.json"
