@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "reckless-leather-chrome-book-1",
-  "next_sequence": 31,
+  "next_sequence": 32,
   "records": [
     {
       "record_id": "f77b051b1598493e90f406995c7404b7",
@@ -2346,6 +2346,67 @@
               "record_id": "bc2620c31a5149a396d85ecdc32e1b6d",
               "finding_id": "unreal-expectations-1"
             }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "1e0a97a705bb4518bf93ed98da918821",
+      "sequence": 31,
+      "unit_id": "chapter-000019",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "93ae8236290ffd8a20c06a4f8fedf4bb71d0120f5af482997bd71b8f9e07ff34",
+      "translation_sha256": "e35c6356e68badbfe3421a11af99e6699333a411b607b1ed7e3aab642ac93f45",
+      "workflow_revision": "d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "review_contract_revision": "docs/TRANSLATION.md@d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "reviewer_session_id": "chat-reckless-019-reviewer-20261111",
+      "reviewed_at": "2026-11-11T15:53:15Z",
+      "state_revision": "cffc812270bbf1070704bce3e7fd50d0f8ef0356",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "worship-tone-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "'get serious about worshiping every inch of you' expresses adoring attention. 'заняться каждым дюймом' loses the specific worshipful force; restore it without adding action.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "get serious about worshiping every inch of you",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Пора мне всерьёз заняться каждым дюймом твоего тела",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "feelings-syntax-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The Russian clause 'кроме того, насколько сильные чувства Си-Джей к нему испытывал' is awkward and blurs the intended paradox: Tank is not frightening; the size of CJ's feelings is. Clarify naturally without adding meaning.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "except how big CJ’s feelings were for him",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "кроме того, насколько сильные чувства Си-Джей к нему испытывал",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       }
