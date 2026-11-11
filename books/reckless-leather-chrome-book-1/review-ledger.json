@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "reckless-leather-chrome-book-1",
-  "next_sequence": 29,
+  "next_sequence": 30,
   "records": [
     {
       "record_id": "f77b051b1598493e90f406995c7404b7",
@@ -2215,6 +2215,67 @@
             },
             "translation_anchor": {
               "quote": "где заканчиваются фантазии и начинается реальность и где они расходятся",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "bc2620c31a5149a396d85ecdc32e1b6d",
+      "sequence": 29,
+      "unit_id": "chapter-000018",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "d886c95fc412002bf0ec7c366a9ac7c851d2d9bc71c5f4b78a5df3125fd6d0f1",
+      "translation_sha256": "3b57691d1e73002467dcc1a736d854e87392c415aeeb46b4c2ac5c82dc41d106",
+      "workflow_revision": "d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "review_contract_revision": "docs/TRANSLATION.md@d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "reviewer_session_id": "chat-reckless-018-reviewer-20261111",
+      "reviewed_at": "2026-11-11T15:38:09Z",
+      "state_revision": "4fdccafdef8d5eae9ae38e87e9e809d708debc30",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "jealous-glance-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "'looking at you sideways' conveys possessive jealousy of another person's sideways glance, while 'посмотрит на тебя не так' may suggest looking at CJ improperly and blurs the idiom. Make the jealous reaction explicit through the literal glance, without adding a motive.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "someone else even looking at you sideways",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "что кто-то посмотрит на тебя не так",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "unreal-expectations-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "'не строил нереалистичных ожиданий' is a stiff, unnatural calque. Render that Tank wants CJ to have realistic expectations when they meet in natural Russian.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "so you don’t have an unreal expectation when we meet",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "чтобы при встрече ты не строил нереалистичных ожиданий",
               "occurrence": 0
             },
             "resolves": null
