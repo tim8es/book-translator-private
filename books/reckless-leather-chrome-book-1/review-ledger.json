@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "reckless-leather-chrome-book-1",
-  "next_sequence": 90,
+  "next_sequence": 91,
   "records": [
     {
       "record_id": "f77b051b1598493e90f406995c7404b7",
@@ -6008,6 +6008,67 @@
               "record_id": "36a70437de82435292bf2bc6709a9882",
               "finding_id": "door-foot-2"
             }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "54ea3e73a382428399ed1865553b13ac",
+      "sequence": 90,
+      "unit_id": "chapter-000021",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "5e599342866301eab2d3949f784e03c66a7a65e574261fafcf73e9259c69aef3",
+      "translation_sha256": "33fdaf3d7e650190f4cedeae773366c2ad72e11c7dc88793e62503de6a77e53c",
+      "workflow_revision": "d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "review_contract_revision": "docs/TRANSLATION.md@d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "reviewer_session_id": "chat-reckless-021-reviewer-20261111-recovery",
+      "reviewed_at": "2026-11-11T20:33:12.321Z",
+      "state_revision": "9aad8675c7782277092930833e19674bbffb9e52",
+      "review_commit": "162a5f9f7c81ef30272c6fc0c3dad7262264a506",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "plowing-force-1",
+            "category": "tone",
+            "severity": "minor",
+            "detail": "Block 10: the rough force of 'plowing into' has been softened into neutral 'глубоко входя'; preserve the marked erotic register.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "plowing into his body",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "глубоко входя в его тело",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "sore-modifier-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Block 72: 'немного болит' introduces 'a little' which is not present in quoted 'sore'; avoid injecting the modifier before Tank's emphatic mental reinterpretation.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Tank figured by “sore” CJ had meant “tender as hell,”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "под словами «немного болит»",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       }
