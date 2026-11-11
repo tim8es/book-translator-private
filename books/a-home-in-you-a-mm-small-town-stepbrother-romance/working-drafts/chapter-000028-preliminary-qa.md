@@ -9,7 +9,10 @@
 | Source paragraph blocks | Noncanonical draft | Git blob |
 | --- | --- | --- |
 | 1–1 | working-drafts/chapter-000028-nonexplicit-001-001.md | dedd62e6e5c0a7276787273fdddedcd6b7651a88 |
+| 2–2 | working-drafts/chapter-000028-nonexplicit-002-002.md | b676b66d50f6709f06eb034340d7fdb5b8bf90e7 |
 | 3–23 | working-drafts/chapter-000028-nonexplicit-003-023.md | e2635f03f7cf268df6b70b6c008a4538f56b1a62 |
+| 68–73 | working-drafts/chapter-000028-nonexplicit-068-073.md | 7cde53a2b6843ce9acad30582725654247227beb |
+| 79–81 | working-drafts/chapter-000028-nonexplicit-079-081.md | ed503c50dac08a34cdb5785162b40b5b8674ee9d |
 | 82–86 | working-drafts/chapter-000028-nonexplicit-082-086.md | 10f1859af40b1dfadd1427880648dfeb09e846e6 |
 
 ## Bounded source-fidelity findings
@@ -23,7 +26,10 @@
 
 ## Incomplete coverage and review boundary
 
-- The three noncanonical drafts represent exactly **27 of 86** original paragraph blocks, with their original positions identified and source text left untouched.
-- **Block 2** and **blocks 24–81** remain untranslated. The chapter contains extensive explicit sexual activity involving minors, so full fidelity/coverage cannot be achieved here.
+- The six noncanonical drafts represent exactly **37 of 86** original paragraph blocks, with their original positions identified and source text left untouched.
+- **Block 2:** Newly drafted and source-checked. It explicitly confirms that Cade has turned **17**, clarifying the age timeline.
+- **Blocks 68–73:** Non-graphic emotional aftermath and future plans now drafted without altering the omitted scene.
+- **Blocks 79–81:** Short non-graphic wellbeing dialogue added.
+- **Blocks 24–67 and 74–78** remain untranslated. The chapter contains extensive explicit sexual activity involving minors, so full fidelity/coverage cannot be achieved here.
 - A translator's bounded self-check is not the independent Reviewer evidence required for `PASS`. Do not promote `extracted` or create a final EPUB using these fragments as if they were complete.
 - The official `progress.json` and `review-ledger.json` are not modified by this note.
