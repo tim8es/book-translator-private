@@ -78,6 +78,10 @@ class AdminRecoveryTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)
             event = run_data(511)
+            # The integration-style main() uses the real clock, unlike the
+            # deterministic filtering test above.
+            event["created_at"] = (datetime.now(timezone.utc) -
+                                   timedelta(minutes=10)).isoformat()
             env = {"GH_TOKEN": "fake", "GITHUB_REPOSITORY": "example/repo",
                    "N8N_DELIVERY_CALLBACK_URL": "https://n8n.example.test/hook"}
             with patch.object(notifier, "ROOT", root), \
