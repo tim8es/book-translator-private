@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 63,
+  "next_sequence": 64,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -4367,6 +4367,44 @@
             "severity": "minor",
             "detail": "Оценка интенсивности: «The pressure was strong» передано «Напряжение стало невыносимым», что усиливает оценку до степени, которой нет в оригинале. Исправить на «Напряжение было сильным» без добавочной экспрессии.",
             "resolved": false
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "4b6d9d856879463ab82ba6473b3c8a99",
+      "sequence": 63,
+      "unit_id": "chapter-000048",
+      "outcome": "PASS",
+      "source_sha256": "d90b1b8bad21f2716ec995acdb074949b7beb03eefe45f2b54b025e1c98b8919",
+      "translation_sha256": "fad3d8a2e67ddbf22362f4581d21307df9945fc51aef9743585c3592632e1753",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewer_session_id": "chatops-homeinyou-20261111-rereview-ch38-0e54",
+      "reviewed_at": "2026-11-11T15:59:15Z",
+      "state_revision": "419d99205618c93f496788895119aafe8b5d8d4a",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": "d337d3e2dd92484a975bb7117d181b92",
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Повторно проверено «by mid-afternoon»: теперь «Часа в три пополудни» сохраняет вторую половину дня и приблизительность времени прибытия.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Повторно проверено «The pressure was strong»: теперь «Напряжение было сильным» без прежнего необоснованного усиления.",
+            "resolved": true
           }
         ]
       }
