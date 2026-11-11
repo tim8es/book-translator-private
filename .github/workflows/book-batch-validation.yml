@@ -48,7 +48,7 @@ jobs:
           output = subprocess.check_output(
               ["git", "log", f"--since={value} hours ago",
                "--format=", "--name-only", "-z", "HEAD"])
-          paths = sorted({raw.decode("utf-8") for raw in output.split(b"\\0")
+          paths = sorted({raw.decode("utf-8") for raw in output.split(b"\0")
                           if raw.startswith(b"books/") and b"/" in raw[6:]})
           target = Path(os.environ["RUNNER_TEMP"]) / "changed-book-paths.json"
           target.write_text(json.dumps(paths, ensure_ascii=False), encoding="utf-8")
