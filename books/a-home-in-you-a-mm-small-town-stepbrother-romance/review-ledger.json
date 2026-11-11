@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 68,
+  "next_sequence": 69,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -4528,6 +4528,54 @@
           {
             "severity": "minor",
             "detail": "'We shared every sexual experience two people possibly could' is deliberately absolute, while 'практически всё' weakens it. Restore this absoluteness without adding explicit detail.",
+            "resolved": false
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "78ab974d5aa7772f6976006766c95a8a",
+      "sequence": 68,
+      "unit_id": "chapter-000036",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "4085a3ed9f8544692f61265046b486798ccba308283ef46e78ccd703051b9104",
+      "translation_sha256": "71455355ce24a0a69c80226696d6a2971476c07dc4afa4107ce5974d775a5531",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewer_session_id": "chatops-homeinyou-20261111-rereview-ch26-fdf0c0fa",
+      "reviewed_at": "2026-11-11T16:49:29Z",
+      "state_revision": "318fcca00e947d99fde73df126c855a772125e5cf4f76d1e276de68e65d29dbc",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": "782f4eabe187b80a8f6d72d4a8226480",
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": false,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Overall build comparison from previous review: fixed with 'Он был чуть крупнее меня'.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Broken loyalty nuance from previous review: fixed using 'преданность' without implying infidelity.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Absolute description of intimacy from previous review: restored 'все возможные виды'.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Source 'Let’s get you home, Cutie Cade' does not specify a vehicle and they walk back to the dorm; translated 'Давай отвезём тебя домой' wrongly adds driving. Replace with 'Давай я провожу тебя домой'.",
             "resolved": false
           }
         ]
