@@ -1,4 +1,6 @@
 name: Automatic book translation
+# Make the requested ID visible even when the job fails before starting.
+run-name: Book translation ${{ inputs.job_id || 'next pending' }}
 
 on:
   workflow_dispatch:
