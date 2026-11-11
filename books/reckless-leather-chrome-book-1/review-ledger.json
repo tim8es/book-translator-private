@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "reckless-leather-chrome-book-1",
-  "next_sequence": 42,
+  "next_sequence": 43,
   "records": [
     {
       "record_id": "f77b051b1598493e90f406995c7404b7",
@@ -3107,6 +3107,83 @@
               "record_id": "dfec9b6d934f4b2aa99bfd9b4a8acb27",
               "finding_id": "bigger-part-grammar-1"
             }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "6f7a24ae5b9d4d20ad33a1b33ee38804",
+      "sequence": 42,
+      "unit_id": "chapter-000034",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "0729725ad2a506027694df660b10336860ce004d060553fea0b695d68f8d4f15",
+      "translation_sha256": "1277e0d70d546c5fac7c41d46ce1d7847e0336d57eab6cb4270112645f6acf1f",
+      "workflow_revision": "d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "review_contract_revision": "docs/TRANSLATION.md@d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "reviewer_session_id": "chat-reckless-034-reviewer-20261111-next",
+      "reviewed_at": "2026-11-11T18:05:32.466Z",
+      "state_revision": "ae96cfc50d0b2baf9dcb6bddaa7df5a94ea1400a",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "vibration-off-balance-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The phrase 'keeping you off balance and on edge' is figurative erotic tension from changing vibration; 'лишая тебя равновесия' incorrectly evokes literal physical loss of balance. Render anticipation and inability to adjust to the changes idiomatically.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "keeping you off balance and on edge until you can’t take it anymore",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "лишая тебя равновесия и не давая расслабиться, пока ты больше не сможешь терпеть",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "see-straight-perception-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "'You can barely see straight' is a bodily/visual image, while 'почти ничего не соображаешь' asserts impaired thinking. Restore the visual sensation and preserve the source's idiom.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "you can barely see straight anymore",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "ты уже почти ничего не соображаешь",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "dildo-shaft-word-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "For an artificial penis 'ствол' is a misleading weapon calque and unnatural in Russian. Preserve the instruction to lubricate the shaft in a natural form.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Put some lube on the shaft",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Нанеси немного смазки на ствол",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       }
