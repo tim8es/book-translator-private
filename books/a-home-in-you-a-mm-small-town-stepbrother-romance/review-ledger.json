@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 83,
+  "next_sequence": 84,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -5189,6 +5189,49 @@
             "severity": "major",
             "detail": "Paragraphs 86–87 corrected to convey the father's and narrator's claim of having moved on, without inventing that Cade forgot Dillon.",
             "resolved": true
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "a69a246be941079bdc6d69b64695e171",
+      "sequence": 83,
+      "unit_id": "chapter-000031",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "31b715dca85118ee1be8fdd4e3175db4986bf0b81fcbbfc1f1170800e0f5394d",
+      "translation_sha256": "c3780439270f1e404e2fc9920f1249ae902f51312831a3878294eaa8a6d98d39",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewer_session_id": "chatops-homeinyou-review-21-46733894",
+      "reviewed_at": "2026-11-11T17:56:38Z",
+      "state_revision": "d7702c4664988d54235db4103633614b9df8351289175e71c7b532f05c720b7f",
+      "review_commit": null,
+      "correction_round": 0,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": false,
+          "terminology": true,
+          "style": false,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Paragraph 35: the source's intimacy reference is flattened into an awkward abstract list ('переживал ... нашу близость'). Restore natural phrasing and the concrete emotional recollection without inventing detail.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Paragraph 48: 'three years running. Pun intended' becomes the awkward meta-comment 'тут уж без игры слов про бег никак', not a functioning conversational pun. Render Raven's joke naturally in Russian.",
+            "resolved": false
+          },
+          {
+            "severity": "major",
+            "detail": "Paragraph 68: narrator only presumes drawings were burned, but 'отец уничтожил и эти рисунки' asserts physical destruction as fact. Preserve narrator's uncertainty and actual loss without inventing certainty.",
+            "resolved": false
           }
         ]
       }
