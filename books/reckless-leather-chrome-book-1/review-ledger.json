@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "reckless-leather-chrome-book-1",
-  "next_sequence": 14,
+  "next_sequence": 15,
   "records": [
     {
       "record_id": "f77b051b1598493e90f406995c7404b7",
@@ -1184,6 +1184,33 @@
             }
           }
         ]
+      }
+    },
+    {
+      "record_id": "f828eaf00dd34fa1addbb7c0e6a1f131",
+      "sequence": 14,
+      "unit_id": "chapter-000008",
+      "outcome": "PASS",
+      "source_sha256": "dd7587fa49592e918ccc90cab65d08830f4ba4c87b43ec4f95a55f414a9cc723",
+      "translation_sha256": "f6ef3df5b1026edae1fe8cea708f2f5eb88988148475a864cde24f2b217a5ba6",
+      "workflow_revision": "d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "review_contract_revision": "docs/TRANSLATION.md@d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "reviewer_session_id": "chat-reckless-008-reviewer-20261111",
+      "reviewed_at": "2026-11-11T04:31:20Z",
+      "state_revision": "a4123b73515615b88ee73ad43dea2d3c44690ca1",
+      "review_commit": null,
+      "correction_round": 0,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": []
       }
     }
   ]
