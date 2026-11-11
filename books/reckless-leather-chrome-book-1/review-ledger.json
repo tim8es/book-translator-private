@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "reckless-leather-chrome-book-1",
-  "next_sequence": 79,
+  "next_sequence": 80,
   "records": [
     {
       "record_id": "f77b051b1598493e90f406995c7404b7",
@@ -5317,6 +5317,111 @@
             "severity": "minor",
             "detail": "Block 84: 'nothing he did would make up for being gay—not in their eyes' has the unnatural calque 'загладить ... свою гомосексуальность'; retain the parents' judgment but render idiomatically.",
             "resolved": false
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "a22b7319ddc8464ab133012c01b17891",
+      "sequence": 79,
+      "unit_id": "chapter-000029",
+      "outcome": "PASS",
+      "source_sha256": "c78b6926a87f142395d7c5fbaf325c47363fda35d66a9bbebc0361066a943151",
+      "translation_sha256": "93156a227515fe583345cd35c23663e7061905565a7e9fd6881c3d749cc7d088",
+      "workflow_revision": "d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "review_contract_revision": "docs/TRANSLATION.md@d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "reviewer_session_id": "chat-reckless-029-recheck-20261111",
+      "reviewed_at": "2026-11-11T19:50:45.377Z",
+      "state_revision": "9901f1ed17c0e5a021d22f9c56365185c5c51f64",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": "5e81962804814deaa0b069a72bcab05e",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-sex-question-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Question now uses natural colloquial Russian, retaining the meaning of a sexual aspect.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Is that a sex thing?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Это что, связано с сексом?",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "5e81962804814deaa0b069a72bcab05e",
+              "finding_id": "sex-question-1"
+            }
+          },
+          {
+            "id": "recheck-hilarious-idiom-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "CJ's jocular self-assessment is idiomatic and maintains the boast.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "I think I’m hilarious",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "По-моему, я просто умора",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "5e81962804814deaa0b069a72bcab05e",
+              "finding_id": "hilarious-idiom-1"
+            }
+          },
+          {
+            "id": "recheck-vendor-followup-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Follow-up now explicitly means checking existing arrangements with suppliers.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "follow up with some vendors",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "уточнишь договорённости с несколькими поставщиками",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "5e81962804814deaa0b069a72bcab05e",
+              "finding_id": "vendor-followup-1"
+            }
+          },
+          {
+            "id": "recheck-choking-intensity-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The revised sentence retains the actual gagging while avoiding additional elaboration.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "enthusiastically choke himself on his dick",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "заглатывал член, давясь им",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "5e81962804814deaa0b069a72bcab05e",
+              "finding_id": "choking-intensity-1"
+            }
           }
         ]
       }
