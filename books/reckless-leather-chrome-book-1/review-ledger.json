@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "reckless-leather-chrome-book-1",
-  "next_sequence": 45,
+  "next_sequence": 46,
   "records": [
     {
       "record_id": "f77b051b1598493e90f406995c7404b7",
@@ -3331,6 +3331,73 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "f07f811d3c754b278435734bb646504f",
+      "sequence": 45,
+      "unit_id": "chapter-000036",
+      "outcome": "PASS",
+      "source_sha256": "00d6c74f6cd02e42528a0fe025aa50901bc31876a7168a610caf4ba0ada4b18d",
+      "translation_sha256": "a6e3d8b962a41f1503c2cd4c14b6efa26564ceacf8e7146dfb6ef9ad251cba6c",
+      "workflow_revision": "d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "review_contract_revision": "docs/TRANSLATION.md@d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "reviewer_session_id": "chat-reckless-036-recheck-20261111-2120",
+      "reviewed_at": "2026-11-11T18:27:03.459Z",
+      "state_revision": "e31aa9a274e512605047ae1fe94e65ac89976e04",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": "985274dde63646ad9504cef1236dd4c8",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-life-plans-naturalness-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Revised Russian phrasing naturally presents Tank and CJ deciding their future together after release, without an awkward literal scheme for their whole remaining lives.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Once I’m out of here, we’ll figure out the rest of our lives",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Как только выйду отсюда, мы вместе решим, как нам жить дальше",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "985274dde63646ad9504cef1236dd4c8",
+              "finding_id": "life-plans-naturalness-1"
+            }
+          },
+          {
+            "id": "recheck-waiting-for-you-nuance-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Revised letter explicitly states CJ will wait for Tank on release rather than narrowing the reassurance to meeting him on arrival.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "You have someone waiting for you when you get out",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Когда ты выйдешь, я буду тебя ждать",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "985274dde63646ad9504cef1236dd4c8",
+              "finding_id": "waiting-for-you-nuance-1"
+            }
           }
         ]
       }
