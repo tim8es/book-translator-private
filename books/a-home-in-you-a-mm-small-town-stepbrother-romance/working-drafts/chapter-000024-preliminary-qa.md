@@ -11,6 +11,7 @@
 | 1–24 | working-drafts/chapter-000024-nonexplicit-001-024.md | b20bb2b6758355e9c8c60983203cbc47d258c514 |
 | 25–45 | working-drafts/chapter-000024-nonexplicit-025-045.md | fa90783aabcbb967a89025fab99421b563379c5a |
 | 46–56 | working-drafts/chapter-000024-nonexplicit-046-056.md | 99ebade7ac97a3b47a11b6874ed1de23e744fdde |
+| 68–72 | working-drafts/chapter-000024-nonexplicit-068-072.md | 9ff605995ad9794328d20b2e6560cec56631a840 |
 | 73 | working-drafts/chapter-000024-nonexplicit-073-073.md | f246fdeb1326d4887a885df937c857c6c168e6b6 |
 
 ## Source-fidelity corrections
@@ -22,6 +23,7 @@
 - **Block 44** — Clarified that Cade is the *first boy to achieve the district cross-country trophy*; removed the misleading comparative phrase «первым среди мальчишек».
 - **Block 45** — Corrected «солнце за спиной» to the source's sunlight *on their backs*.
 - **Block 73** — Source attribution preserved unchanged in a separate draft block.
-- **Coverage** — **57 of 73** source blocks are represented in noncanonical drafts (1–56, 73). Blocks **57–72** remain missing; they include explicit sexual content involving minors and immediate aftermath, and cannot be marked as faithfully translated or reviewed.
+- **Blocks 68–72** — Added non-graphic dialogue and reflection following the omitted explicit scene; original paragraph positions retained.
+- **Coverage** — **62 of 73** source blocks have noncanonical working drafts (1–56, 68–73). Blocks **57–67** remain missing because they contain explicit sexual material involving minors and related actions. No full chapter acceptance or review can be claimed.
 
-**Outcome:** Four bounded source-meaning corrections recorded (blocks 3, 27, 44, 45), new non-graphic translation blocks 46–56 added, and source attribution retained. Draft file identity and block count rechecked. Coverage remains incomplete, so the official review ledger and `progress.json` remain unchanged.
+**Outcome:** Four bounded source-meaning corrections recorded (blocks 3, 27, 44, 45), non-graphic source blocks 46–56 and 68–72 translated, and source attribution retained. Draft file identity and block count rechecked. Coverage remains incomplete, so the official review ledger and `progress.json` remain unchanged.
