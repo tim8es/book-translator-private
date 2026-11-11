@@ -32,12 +32,26 @@ jobs:
           path: .pinned-book-translator
           persist-credentials: false
 
+      # Book literary state and review contracts stay pinned to d87bf167.
+      # Only the EPUB output renderer is replaced with the tested deterministic
+      # typography/hyperlink compatibility fix. No translator/reviewer migration.
+      - name: Checkout tested EPUB-only renderer fix
+        uses: actions/checkout@v4
+        with:
+          repository: tim8es/book-translator
+          ref: 98b4415a26363f272f887629fc8809842078f2f3
+          path: .epub-renderer-fix
+          persist-credentials: false
+
       - name: Use the pinned scripts without modifying tracked implementation
         shell: bash
         run: |
           set -euo pipefail
           mv scripts /tmp/book-translator-repository-scripts
           cp -a .pinned-book-translator/scripts ./scripts
+          # Only replace the EPUB projection layer, not book/review runtime.
+          cp .epub-renderer-fix/scripts/workflow/epub_preserve.py ./scripts/workflow/epub_preserve.py
+          cp .epub-renderer-fix/scripts/workflow/epub_cli.py ./scripts/workflow/epub_cli.py
           python - <<'PY'
           import json
           from pathlib import Path
