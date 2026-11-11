@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 78,
+  "next_sequence": 79,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -4979,6 +4979,44 @@
             "severity": "minor",
             "detail": "Rechecked paragraph 75: natural wording now retains pain of colored tattoo and profanity.",
             "resolved": true
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "5b80daa78f12402d87a0d21bef53e2c6",
+      "sequence": 78,
+      "unit_id": "chapter-000035",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "9790b4cdc10a344df49323c421a030aef6801b7de416fd94948987a438381c8d",
+      "translation_sha256": "5a55a43af179ea3e83680812371fd3416ed64bd614c28f87b8c736a5f4a58913",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewer_session_id": "chatops-homeinyou-20261111-review-ch25-44c92f6e",
+      "reviewed_at": "2026-11-11T17:34:44Z",
+      "state_revision": "743d02d525f0f3f67938e6504b3940237bdd2b2b6f75422b093c8034e28c433d",
+      "review_commit": null,
+      "correction_round": 0,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": false,
+          "terminology": true,
+          "style": false,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Paragraph 15: 'my boy here' is a supportive teammate reference. 'мой парень' in Russian can imply a romantic partner, incorrectly altering character relations. Use 'мой друг' or 'наш парень'.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Paragraph 92: The source doctor's sentence is forcibly interrupted ('He hasn’t reached out to—'), but the Russian translation ends in an ellipsis, implying a pause. Preserve the abrupt interruption with a dash.",
+            "resolved": false
           }
         ]
       }
