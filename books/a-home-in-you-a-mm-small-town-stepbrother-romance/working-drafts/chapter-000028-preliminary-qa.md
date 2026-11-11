@@ -15,6 +15,10 @@
 | 79–81 | working-drafts/chapter-000028-nonexplicit-079-081.md | ed503c50dac08a34cdb5785162b40b5b8674ee9d |
 | 82–86 | working-drafts/chapter-000028-nonexplicit-082-086.md | 10f1859af40b1dfadd1427880648dfeb09e846e6 |
 
+| 29–31 | working-drafts/chapter-000028-nonexplicit-029-031.md | 1d5b9c2c5298428a7750f23308bdd18d3a57e5cf |
+| 42–45 | working-drafts/chapter-000028-nonexplicit-042-045.md | dea8258f831a7042f33c2c1394ff099edf90e8a3 |
+| 55–56 | working-drafts/chapter-000028-nonexplicit-055-056.md | d5e28222fc2cb1a1275cd5ab988ca9e3b4f79116 |
+
 ## Bounded source-fidelity findings
 
 - **Block 4:** Preserved the narrator's strong evaluation that life had been *perfect*, not merely reasonably good; this was corrected in an earlier draft pass.
@@ -26,10 +30,11 @@
 
 ## Incomplete coverage and review boundary
 
-- The six noncanonical drafts represent exactly **37 of 86** original paragraph blocks, with their original positions identified and source text left untouched.
+- The nine noncanonical drafts represent exactly **46 of 86** original paragraph blocks, with their original positions identified and source text left untouched.
 - **Block 2:** Newly drafted and source-checked. It explicitly confirms that Cade has turned **17**, clarifying the age timeline.
 - **Blocks 68–73:** Non-graphic emotional aftermath and future plans now drafted without altering the omitted scene.
 - **Blocks 79–81:** Short non-graphic wellbeing dialogue added.
-- **Blocks 24–67 and 74–78** remain untranslated. The chapter contains extensive explicit sexual activity involving minors, so full fidelity/coverage cannot be achieved here.
+- **Blocks 29–31, 42–45 and 55–56:** Nine new non-graphic lines of consent, affection and reassurance translated without depicting the intervening sexual scene; source positions and paragraph boundaries retained.
+- **Blocks 24–28, 32–41, 46–54, 57–67 and 74–78** remain untranslated. The chapter contains extensive explicit sexual activity involving minors, so full fidelity/coverage cannot be achieved here.
 - A translator's bounded self-check is not the independent Reviewer evidence required for `PASS`. Do not promote `extracted` or create a final EPUB using these fragments as if they were complete.
 - The official `progress.json` and `review-ledger.json` are not modified by this note.
