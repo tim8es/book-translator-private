@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 61,
+  "next_sequence": 62,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -4262,6 +4262,73 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "9e0a1fbd99cd43371d15b1db1ef376f1",
+      "sequence": 61,
+      "unit_id": "chapter-000047",
+      "outcome": "PASS",
+      "source_sha256": "d923836318d391c1186732505a92010e71a58638e714dcadd88d3639bb0d3597",
+      "translation_sha256": "fd5a7738c21f9e9fc0ea2ba6a36a578b05594a753faaece638e75fb7f0555a41",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewer_session_id": "chatops-homeinyou-20261111-rereview-ch37-491f",
+      "reviewed_at": "2026-11-11T15:43:11Z",
+      "state_revision": "ec42a8a997e13799059f2d74c55a2d0898675c42",
+      "review_commit": "7b951898152eb795b7b5d3faec55093d165ed1fa",
+      "correction_round": 1,
+      "supersedes_record_id": "70daed1ebb00df7638d3f6d2b0b46609",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-queer-community",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Повторно проверен абзац 25: выражение queer community or group передано как гей-сообщество или организация; оскорбительное «извращенцев», отсутствовавшее в оригинале, устранено.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "join some queer community or group?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "примкнуть к какому-нибудь гей-сообществу или организации?",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "70daed1ebb00df7638d3f6d2b0b46609",
+              "finding_id": "queer-community-register"
+            }
+          },
+          {
+            "id": "recheck-marriage-phrase",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Повторно проверен абзац 52: фраза о будущей свадьбе выражена естественно для двух мужских персонажей, смысл авторского обещания сохранён.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "You’re going to marry me one day.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Однажды ты на мне женишься.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "70daed1ebb00df7638d3f6d2b0b46609",
+              "finding_id": "marry-me-gendered-russian"
+            }
           }
         ]
       }
