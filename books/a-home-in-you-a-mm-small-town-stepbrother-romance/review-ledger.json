@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 72,
+  "next_sequence": 73,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -4701,6 +4701,44 @@
             "severity": "major",
             "detail": "Повторно проверен блок 69: восстановлена грамматика и исходный смысл поцелуя.",
             "resolved": true
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "4fac95f6bd51dfbefa0120d35d87fd02",
+      "sequence": 72,
+      "unit_id": "chapter-000045",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "872dd969bf6d41c953b5e632e92adcccc2b33d5f08313e1c9af20161dae50fea",
+      "translation_sha256": "f7bfd43f5295e8ff759b79d1d4a35054f251976c1eb14605634a30ff5c857cd8",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewer_session_id": "chatops-homeinyou-20261111-review-ch35-2bff901b",
+      "reviewed_at": "2026-11-11T17:04:31Z",
+      "state_revision": "0e30002fd79591541b9c55400c9c0ce761dfe7c21b3a586ed37d013b523158f2",
+      "review_commit": null,
+      "correction_round": 0,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": false,
+          "terminology": true,
+          "style": false,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Paragraph 84: 'Not from what Dillon tells me' is a teasing implication about 'catching balls', but Russian 'Не то чтобы Dillon рассказывал мне то же самое' is a stiff ambiguous calque. Change to natural 'А Dillon, насколько я слышал, другого мнения' to preserve the exchange and implied teasing.",
+            "resolved": false
+          },
+          {
+            "severity": "major",
+            "detail": "Paragraph 87: English narrator's 'Except my dad' interrupts two quoted remarks. Russian '«...?» — кроме моего отца. «...»' incorrectly treats the narrator aside as a dialogue attribution and breaks meaning. Separate it grammatically as narrator commentary, e.g. '«...?» Вот только моему отцу было не всё равно. «...»', without changing paragraph order.",
+            "resolved": false
           }
         ]
       }
