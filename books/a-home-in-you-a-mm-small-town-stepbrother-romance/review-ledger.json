@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 76,
+  "next_sequence": 77,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -4863,6 +4863,64 @@
             "severity": "minor",
             "detail": "Paragraph 33: narrator's continuous-togetherness emphasis has been restored.",
             "resolved": true
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "ef7ef3e49d4f0caa801bfc158d491a90",
+      "sequence": 76,
+      "unit_id": "chapter-000034",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "346f6cc02398b0ee93feb712bdf1ce417708996fc3d7405c9c9947017562adc7",
+      "translation_sha256": "d57f842b3e407d40fc6b8e811a9e25c547351093b5961eaa9173195456f56d21",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewer_session_id": "chatops-homeinyou-20261111-review-ch24-6de5488a",
+      "reviewed_at": "2026-11-11T17:29:51Z",
+      "state_revision": "4f5dade10172fc67bd45e99d1961bd233d4273f84a891738ad656af3f8550314",
+      "review_commit": null,
+      "correction_round": 0,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": false,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Paragraph 20: 'Мне словно чувствовалось' is an ungrammatical calque of 'It was like I could feel him there'. Rewrite naturally without adding certainty.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Paragraph 21: 'Мы выиграли матч — едва-едва, — но' has malformed Russian parenthetical punctuation. Correct while preserving the close win.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Paragraph 27: 'холоднее, чем у ведьмы на сиське' is an accidental literal calque of a coarse idiom. Preserve Darren's crude hyperbole in natural Russian.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Paragraph 40: source only says 'scholarships', but translation invents 'спортивные стипендии'. Remove unsupported scholarship category.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Paragraph 49: 'Я без него не целый' is awkward unidiomatic Russian where English simply says 'I'm not whole'. Use 'Без него я не чувствую себя целым' or equivalent.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Paragraph 75: 'цветная тату — такая сука' is an unintended crude calque. Preserve the pain, color-work emphasis, and profane register naturally.",
+            "resolved": false
           }
         ]
       }
