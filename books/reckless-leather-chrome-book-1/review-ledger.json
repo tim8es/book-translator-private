@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "reckless-leather-chrome-book-1",
-  "next_sequence": 23,
+  "next_sequence": 24,
   "records": [
     {
       "record_id": "f77b051b1598493e90f406995c7404b7",
@@ -1896,6 +1896,83 @@
               "record_id": "a094c9a594d5438b81d0e21798baa0b4",
               "finding_id": "bad-things-1"
             }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "e19b20ca86b44957a59d4c3504b3cfb0",
+      "sequence": 23,
+      "unit_id": "chapter-000013",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "f4b6b4599a12b3520084b89c9d6bdf9e89fe472210f51712100b912bfc55e069",
+      "translation_sha256": "d269e28423e2a8e52b5ee579e359ef61a524fda0620d64b500d9b0f1b9a4d6a6",
+      "workflow_revision": "d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "review_contract_revision": "docs/TRANSLATION.md@d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "reviewer_session_id": "chat-reckless-013-reviewer-20261111",
+      "reviewed_at": "2026-11-11T13:09:45Z",
+      "state_revision": "dc94c0592f23ca4fe831480558b10202083785cd",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "hair-color-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "English 'dirty-blond' describes dark/ash blond hair, not hair that looks physically dirty; 'грязновато-светлых' implies uncleanliness. Use 'тёмно-русых' or 'грязно-русых'.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Deacon’s dirty-blond hair",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "грязновато-светлых волос Дикона",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "first-round-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "'Your first round is on me' offers a first round of drinks to the whole group, not just 'первая порция выпивки'. Express the entire group's first round.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "your first round is on me",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "первая порция выпивки будет за мой счёт",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "thinking-v-dreaming-1",
+            "category": "intensity",
+            "severity": "minor",
+            "detail": "Source says Tank had been 'thinking about meeting' CJ for months; 'мечтал' intensifies the thought into dreaming. Restore the neutral but emotionally loaded thinking of the source.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "the man he’d been thinking about meeting for months",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "к мужчине, о встрече с которым мечтал столько месяцев",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       }
