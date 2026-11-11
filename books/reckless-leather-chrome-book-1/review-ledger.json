@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "reckless-leather-chrome-book-1",
-  "next_sequence": 15,
+  "next_sequence": 16,
   "records": [
     {
       "record_id": "f77b051b1598493e90f406995c7404b7",
@@ -1211,6 +1211,83 @@
           "structure": true
         },
         "findings": []
+      }
+    },
+    {
+      "record_id": "7c56fb6de3a84df1a2b21e99c87534f8",
+      "sequence": 15,
+      "unit_id": "chapter-000009",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "466e2b1e0a6c830ab158e1293497187722176e12a6727d1fd74862c868a89d0c",
+      "translation_sha256": "fa25f2445f23c3784bd102fb4f2b2de8296f34ba9770e6f888601b2d3acbe991",
+      "workflow_revision": "d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "review_contract_revision": "docs/TRANSLATION.md@d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "reviewer_session_id": "chat-reckless-009-reviewer-20261111",
+      "reviewed_at": "2026-11-11T04:40:00Z",
+      "state_revision": "7efd23ad60df81f5f2e2ba45ed33782570e84e53",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "addition-race-1",
+            "category": "addition",
+            "severity": "major",
+            "detail": "'Trailer trash ex-con' is derogatory about poverty and trailer-park background, but the translation explicitly adds 'белая' (white), a racial descriptor absent from the source. Remove that addition and adjust Russian syntax.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "a trailer trash ex-con with nothing but a meaningless vest to his name",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "бывший зэк, белая беднота из трейлерного парка",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-eating-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "'Gone back to eating' is an action; 'вернулся к чему-то похожему на бургер' obscures the action and sounds unnatural. State clearly he resumed eating.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "gone back to eating what looked like a burger",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "вернулся к чему-то похожему на бургер",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-dialogue-1",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "Inline narration-to-dialogue punctuation (colon plus em-dash on the same line, and period followed by standalone dash) is inconsistent with Russian prose formatting across multiple blocks. Use inline quotation marks or correctly separated dialogue lines without changing EPUB block identities.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "He pulled out his cell and growled, “What?”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Достав мобильник, он рявкнул: — Чего?",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
       }
     }
   ]
