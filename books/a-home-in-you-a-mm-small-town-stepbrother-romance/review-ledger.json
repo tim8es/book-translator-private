@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 86,
+  "next_sequence": 87,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -5322,6 +5322,49 @@
           {
             "severity": "minor",
             "detail": "Paragraphs 8 and 13: source dialogue is abruptly cut off by another speaker (dash), whereas Russian uses ellipses implying hesitation. Restore interruption punctuation.",
+            "resolved": false
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "9c903cc95833ae9e27663d86fe2259c1",
+      "sequence": 86,
+      "unit_id": "chapter-000025",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "5fc96b09af376cc196a201bccedb6d671fbbd32333f8daff9aa02cc0a7589493",
+      "translation_sha256": "a4e0f2baaf6e24f08e3dc4c99989893efcd33b9296a08d214824937bd506e85c",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewer_session_id": "chatops-homeinyou-review15-d739c412",
+      "reviewed_at": "2026-11-11T18:10:58Z",
+      "state_revision": "4c63a9c29b4f659cc0963c38ab9f9f9de75668e38fab2b803caca8948881893d",
+      "review_commit": null,
+      "correction_round": 0,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": false,
+          "terminology": true,
+          "style": false,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "major",
+            "detail": "Paragraphs 2 and 4: the original's concrete indication of prior physical intimacy is generalized into 'побыли наедине' and 'пережитого ранее удовольствия'. Fidelity should be reassessed without inventing new detail; this finding remains unresolved.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Paragraph 55: 'you were closeted' is rendered as literal 'ты скрываешься в шкафу', an unnatural calque in this dialogue. Render natural joking Russian about hiding one's orientation.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Paragraph 84: source 'threw her arms around him' does not specifically put the cheerleader's arms around his neck; Russian 'обняла его за шею' introduces an unsupported physical detail. Use simply 'обняла его'.",
             "resolved": false
           }
         ]
