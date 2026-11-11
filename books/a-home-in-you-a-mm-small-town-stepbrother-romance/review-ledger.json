@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 75,
+  "next_sequence": 76,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -4820,6 +4820,49 @@
             "severity": "minor",
             "detail": "Paragraph 33: 'We've spent every waking moment together' is stronger than 'каждую свободную минуту'. Restore the narrator's hyperbole, e.g. 'почти всё время, пока не спали'.",
             "resolved": false
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "824e47a8f2a9380c845f977e536e2e51",
+      "sequence": 75,
+      "unit_id": "chapter-000030",
+      "outcome": "PASS",
+      "source_sha256": "2a36cd7f20413e7b38b1b90e2ac5e23a06a1f06c9daf88ceb99e060b1d8d3bad",
+      "translation_sha256": "fcd446f64b57c80d1db5fe94458d5476f0eb19d3e216060008c48f0d7c4ab01e",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewer_session_id": "chatops-homeinyou-20261111-rereview-ch20-8e1addcc",
+      "reviewed_at": "2026-11-11T17:21:48Z",
+      "state_revision": "2f39743edbf3db15832c19e977a666b28bd02ca743a75cbd2b3cb7012b0f2290",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": "32e3cc4ae8dfbb71db63c839ba4cfa20",
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "major",
+            "detail": "Paragraph 7: mother's warning retains the correct patient and worsening-consequences meaning after correction.",
+            "resolved": true
+          },
+          {
+            "severity": "major",
+            "detail": "Paragraph 18: narrator now forgets, rather than remembers, his mother's illness; exact original action restored.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Paragraph 33: narrator's continuous-togetherness emphasis has been restored.",
+            "resolved": true
           }
         ]
       }
