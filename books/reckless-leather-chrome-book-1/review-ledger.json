@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "reckless-leather-chrome-book-1",
-  "next_sequence": 62,
+  "next_sequence": 63,
   "records": [
     {
       "record_id": "f77b051b1598493e90f406995c7404b7",
@@ -4241,6 +4241,67 @@
               "record_id": "a81726bcc71643af9ea6d0682124f7ec",
               "finding_id": "pipe-repair-completion-1"
             }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "b8d3c00e57e34d70b5120e55dc9061bc",
+      "sequence": 62,
+      "unit_id": "chapter-000041",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "337889c88311c4e1c8577af83e84130250ea31d31290c2b8a3d837c59064caaa",
+      "translation_sha256": "c8634fcc6e474c4e064179b22030aa9032079a3c8576a0b5ead4fd05a4ab1746",
+      "workflow_revision": "d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "review_contract_revision": "docs/TRANSLATION.md@d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "reviewer_session_id": "chat-reckless-041-reviewer-20261111-next",
+      "reviewed_at": "2026-11-11T19:25:06.154Z",
+      "state_revision": "7ebbbf23b0698505dcd4d6e7136276f80e126ca4",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "free-emphasis-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Source uses all-caps FREE for promotional emphasis. The translation 'Бесплатный' drops that emphasis; preserve the capitalized promotional word.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "FREE Prequel: A New Pack for New Year",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Бесплатный приквел: A New Pack for New Year",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "coming-soon-exclamation-1",
+            "category": "intensity",
+            "severity": "minor",
+            "detail": "The announcement '(Coming Soon!)' carries an exclamation point that is missing from '(скоро выйдет)'. Retain its promotional punctuation.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "The Deputy and His Enforcer (Coming Soon!)",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "The Deputy and His Enforcer (скоро выйдет)",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       }
