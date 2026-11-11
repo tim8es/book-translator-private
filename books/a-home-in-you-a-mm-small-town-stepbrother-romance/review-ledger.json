@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 56,
+  "next_sequence": 57,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -4011,6 +4011,49 @@
           "structure": true
         },
         "findings": []
+      }
+    },
+    {
+      "record_id": "f0bce27b202bf0a7f53e06142877751b",
+      "sequence": 56,
+      "unit_id": "chapter-000042",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "cd9d0d81528ddcaf540e769a8997c0a6ec305c388730570e5c9d0a2e2c710e66",
+      "translation_sha256": "4df2f7a322cbf10bbf1c324d166c68d672d8348300e8677ba97326b41d81ffcd",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewer_session_id": "chatops-homeinyou-review-ch32-20261111-38c7",
+      "reviewed_at": "2026-11-11T13:10:41Z",
+      "state_revision": "58498e27a8f0de5fd2d44f39a2822d07b9d1be46",
+      "review_commit": "a811411be8be4652d99a324362f08abeb7895caa",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Абзац 25: 'I'll plunge forward, then' означает переход к разговору или непосредственное изложение, а 'начну с самого начала' добавляет отсутствующее указание на начало истории; заменить на 'тогда перейду прямо к делу' или эквивалент.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Абзац 37: 'beat the shit out of him' означает жестоко избил, но не устанавливает угрозу смерти; 'избил его до полусмерти' без достаточного основания усиливает результат драки. Заменить без добавленного near-death.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Абзац 57: 'Pretty hot' в контексте серёг и пирсинга неестественно звучит как 'Очень горячо'; передать разговорную оценку привлекательности, например 'Чертовски сексуально'.",
+            "resolved": false
+          }
+        ]
       }
     }
   ]
