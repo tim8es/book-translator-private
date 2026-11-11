@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 88,
+  "next_sequence": 89,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -5408,6 +5408,54 @@
           {
             "severity": "minor",
             "detail": "Paragraph 84: rechecked the cheerleader's embrace; unsupported neck placement removed.",
+            "resolved": true
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "18a1758706b1427384ee9cf65d764e29",
+      "sequence": 88,
+      "unit_id": "chapter-000029",
+      "outcome": "PASS",
+      "source_sha256": "cb426ff1730d932444117ea2f007cb0e4c82a8a67c45ac3fe8c16aa22dd560b3",
+      "translation_sha256": "8c5a956565aae0ea54eefb37ab8c8cd77382f43bd49ef07a9c5594cf5e79c52e",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewer_session_id": "chatops-homeinyou-review19-manual-20261111-eb23a1",
+      "reviewed_at": "2026-11-11T18:40:21Z",
+      "state_revision": "27b68983f82b980959a1d355b21007b667568dd1",
+      "review_commit": null,
+      "correction_round": 0,
+      "supersedes_record_id": "e06ccecce419674e6508cac417bb2e86",
+      "quality_report": {
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Prior paragraph 15 'bigotry' meaning is now preserved as 'гомофобии' rather than mistranslated as fanaticism.",
+            "resolved": true
+          },
+          {
+            "severity": "major",
+            "detail": "Prior paragraph 28 emphatic self-attribution 'It’s me! All me!' is now 'Это я! Всё дело во мне!', without inventing duration.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Prior paragraph 52 ambiguous reaching/grasping gesture is now rendered without inventing successful contact.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Prior paragraphs 8 and 13 retain abrupt interruption dashes rather than hesitation ellipses.",
             "resolved": true
           }
         ]
