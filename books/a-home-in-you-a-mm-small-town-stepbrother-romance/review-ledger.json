@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 85,
+  "next_sequence": 86,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -5275,6 +5275,54 @@
             "severity": "major",
             "detail": "Paragraph 68: translated loss no longer asserts certain physical destruction of drawings.",
             "resolved": true
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "e06ccecce419674e6508cac417bb2e86",
+      "sequence": 85,
+      "unit_id": "chapter-000029",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "cb426ff1730d932444117ea2f007cb0e4c82a8a67c45ac3fe8c16aa22dd560b3",
+      "translation_sha256": "4fb62aa94075fe72a81662b6bf98b5bbd8a73d7009fb8e4fce9b4df6726c5ff7",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewer_session_id": "chatops-homeinyou-review-19-bd9b8258",
+      "reviewed_at": "2026-11-11T18:08:31Z",
+      "state_revision": "a37a46f6413b15460849e77a1cb322eb52d71dbc75e7dadf3498f16b05235fc3",
+      "review_commit": null,
+      "correction_round": 0,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": false,
+          "terminology": true,
+          "style": false,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Paragraph 15: 'bigotry' targets prejudice, particularly homophobia, but 'фанатизма' falsely suggests fanaticism. Correct to 'предрассудков' or contextually 'гомофобии'.",
+            "resolved": false
+          },
+          {
+            "severity": "major",
+            "detail": "Paragraph 28: 'It’s me! All me!' is emphatic self-attribution, not a statement 'Всегда таким был!' about duration. Remove the invented temporal claim and retain self-attribution.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Paragraph 52: source's awkward 'reached my hand out ... grasped my fingers' leaves the exact physical action unclear; 'цепляясь за него пальцами' invents successful contact. Use a noncommittal reaching/closing-fingers description.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Paragraphs 8 and 13: source dialogue is abruptly cut off by another speaker (dash), whereas Russian uses ellipses implying hesitation. Restore interruption punctuation.",
+            "resolved": false
           }
         ]
       }
