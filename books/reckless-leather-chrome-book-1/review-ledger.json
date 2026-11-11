@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "reckless-leather-chrome-book-1",
-  "next_sequence": 30,
+  "next_sequence": 31,
   "records": [
     {
       "record_id": "f77b051b1598493e90f406995c7404b7",
@@ -2279,6 +2279,73 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "6166a08ff79f43c29e64e9dc59307438",
+      "sequence": 30,
+      "unit_id": "chapter-000018",
+      "outcome": "PASS",
+      "source_sha256": "d886c95fc412002bf0ec7c366a9ac7c851d2d9bc71c5f4b78a5df3125fd6d0f1",
+      "translation_sha256": "20a22d346f7ec72637ca544a5120d7ceab5c378491bd71bbd1c23748dc997424",
+      "workflow_revision": "d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "review_contract_revision": "docs/TRANSLATION.md@d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "reviewer_session_id": "chat-reckless-018-recheck-20261111",
+      "reviewed_at": "2026-11-11T15:42:14Z",
+      "state_revision": "7e4145330ae3804dd437391aac6a8a2e2976420c",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": "bc2620c31a5149a396d85ecdc32e1b6d",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-jealous-glance-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The corrected Russian preserves Tank's resentment of even another person's sideways glance.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "someone else even looking at you sideways",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "что кто-то другой хоть косо на тебя посмотрит",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "bc2620c31a5149a396d85ecdc32e1b6d",
+              "finding_id": "jealous-glance-1"
+            }
+          },
+          {
+            "id": "recheck-unreal-expectations-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Natural Russian now preserves the speaker's desire to prevent unrealistic expectations at their meeting.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "so you don’t have an unreal expectation when we meet",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "чтобы, когда мы встретимся, у тебя не было ложных представлений обо мне",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "bc2620c31a5149a396d85ecdc32e1b6d",
+              "finding_id": "unreal-expectations-1"
+            }
           }
         ]
       }
