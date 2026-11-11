@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "reckless-leather-chrome-book-1",
-  "next_sequence": 43,
+  "next_sequence": 44,
   "records": [
     {
       "record_id": "f77b051b1598493e90f406995c7404b7",
@@ -3184,6 +3184,92 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "9bd769e359784d368eabc2fcfcd7397f",
+      "sequence": 43,
+      "unit_id": "chapter-000034",
+      "outcome": "PASS",
+      "source_sha256": "0729725ad2a506027694df660b10336860ce004d060553fea0b695d68f8d4f15",
+      "translation_sha256": "934fd3e5c03b8bc92e1f6d0eaf54643760dfdcc0237fd1a1648eeb4464bbd97f",
+      "workflow_revision": "d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "review_contract_revision": "docs/TRANSLATION.md@d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "reviewer_session_id": "chat-reckless-034-recheck-20261111-next",
+      "reviewed_at": "2026-11-11T18:08:28.900Z",
+      "state_revision": "1b8fbc818e92778c1a748d5c378f74426296770b",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": "6f7a24ae5b9d4d20ad33a1b33ee38804",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-vibration-off-balance-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Revised passage conveys shifting sensations and suspense rather than literal loss of balance.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "keeping you off balance and on edge until you can’t take it anymore",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "не давая тебе привыкнуть к ощущениям и держа в постоянном напряжении, пока ты больше не сможешь терпеть",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "6f7a24ae5b9d4d20ad33a1b33ee38804",
+              "finding_id": "vibration-off-balance-1"
+            }
+          },
+          {
+            "id": "recheck-see-straight-perception-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Restored visual effect of pleasure (vision swimming), not an unsupported claim of impaired thought.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "you can barely see straight anymore",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "у тебя аж перед глазами всё плывёт",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "6f7a24ae5b9d4d20ad33a1b33ee38804",
+              "finding_id": "see-straight-perception-1"
+            }
+          },
+          {
+            "id": "recheck-dildo-shaft-word-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Dildo shaft now referred to naturally as 'стержень дилдо', without the firearm-derived calque.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Put some lube on the shaft",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Нанеси немного смазки на стержень дилдо",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "6f7a24ae5b9d4d20ad33a1b33ee38804",
+              "finding_id": "dildo-shaft-word-1"
+            }
           }
         ]
       }
