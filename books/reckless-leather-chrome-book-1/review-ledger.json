@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "reckless-leather-chrome-book-1",
-  "next_sequence": 47,
+  "next_sequence": 48,
   "records": [
     {
       "record_id": "f77b051b1598493e90f406995c7404b7",
@@ -3459,6 +3459,73 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "ae377836f38c42e2ba4f96bd3609a4bc",
+      "sequence": 47,
+      "unit_id": "chapter-000040",
+      "outcome": "PASS",
+      "source_sha256": "7be537d63bee653632835361b09349019277687d040b549dea4ecd27a392dfbf",
+      "translation_sha256": "1b80a9856deb93e04e56d034e453bea1e241e5be74ad9d7561078d2f050d0bf4",
+      "workflow_revision": "d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "review_contract_revision": "docs/TRANSLATION.md@d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "reviewer_session_id": "chat-reckless-040-recheck-20261111",
+      "reviewed_at": "2026-11-11T18:55:42.831Z",
+      "state_revision": "41c33f9f0bb42774261fb1c2d253bbfe97900587",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": "93a78ea8b08641338b5d2da8fedd97a2",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-find-love-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Corrected Russian explicitly preserves the assertion that everyone deserves to find love.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "everyone deserves to find love",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "каждый заслуживает того, чтобы найти любовь",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "93a78ea8b08641338b5d2da8fedd97a2",
+              "finding_id": "find-love-1"
+            }
+          },
+          {
+            "id": "recheck-emotional-satisfaction-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The corrected book-blurb Russian replaces the technical literalism with a natural expression while retaining emotional satisfaction.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "emotionally satisfying books",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "их истории приносят читателям душевное удовлетворение",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "93a78ea8b08641338b5d2da8fedd97a2",
+              "finding_id": "emotional-satisfaction-1"
+            }
           }
         ]
       }
