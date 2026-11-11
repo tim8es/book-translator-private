@@ -16,15 +16,19 @@
 | 36–37 | working-drafts/chapter-000027-nonexplicit-036-037.md | 2aa292cb27d2af9b5eba8fe8bb317e6f804e0f6f |
 | 39–42 | working-drafts/chapter-000027-nonexplicit-039-042.md | 1ccf936c5d3c1816e71710ab7448914752694dfe |
 
+| 74–86 | working-drafts/chapter-000027-nonexplicit-074-086.md | 2dc562b0e962c8429991b296fb90c46f32c86820 |
+
 ## Source-fidelity checks and corrections
 
 - **Block 11:** Dillon is below Cade; the latter rests his *head* against Dillon's head. The previous chin-specific inference was removed in an earlier correction.
 - **Block 20:** The source expresses Dillon's firm intention to go to UVA even without an athletic recruitment offer, not a guaranteed admission decision. Corrected to «я всё равно собираюсь там учиться».
 - **Block 31:** Source describes preparing/loading horses and backpacks. Draft's unsupported specific saddling verb was replaced with «снарядили лошадей и собрали рюкзаки».
 - **Block 32:** The original says the tethering tree was surrounded by grass, without establishing an entire glade. Draft description corrected accordingly.
-- **Structure:** 58 distinct source paragraph blocks out of 109 are covered in four unaccepted working drafts; their exact original block numbers are preserved in their headers.
+- **Structure:** 71 distinct source paragraph blocks out of 109 are covered in seven unaccepted working drafts; their exact original block numbers are preserved in their headers.
 
 - **Blocks 36–37 and 39–42:** Newly drafted non-graphic dialogue retains the heat, reluctance, dry humor, Artemis/Athena references, and speaker attribution. The intervening block 38 was intentionally not included. These additions are translator-only drafts, not independent review.
+
+- **Blocks 74–86:** Added 13 consecutive non-graphic aftermath and dialogue blocks, retaining the source order, decisions, mutual reassurance and colloquial tone. This is a Translator draft only, not independent review. Block 87 and the earlier explicit scene remain outside the draft coverage.
 
 ## Blocking limitation
 
