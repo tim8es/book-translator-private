@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "reckless-leather-chrome-book-1",
-  "next_sequence": 28,
+  "next_sequence": 29,
   "records": [
     {
       "record_id": "f77b051b1598493e90f406995c7404b7",
@@ -2143,6 +2143,83 @@
           "structure": true
         },
         "findings": []
+      }
+    },
+    {
+      "record_id": "5707f4cd9b314235add6f1ccff11d346",
+      "sequence": 28,
+      "unit_id": "chapter-000017",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "1cc3b6c656af4535d2e1af132867efffc4cb066cc9197b1aa64d365d93b5fc76",
+      "translation_sha256": "d0419f14b0f6dc627bf703b76188628b209a7e48bed23ad3004039e0c955840a",
+      "workflow_revision": "d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "review_contract_revision": "docs/TRANSLATION.md@d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "reviewer_session_id": "chat-reckless-017-reviewer-20261111",
+      "reviewed_at": "2026-11-11T15:24:41Z",
+      "state_revision": "7546299f31c6589a296cfb48f7e784f002f8b9ff",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "ownership-meaning-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The possessive 'be his' is reduced to merely 'stay with him'; preserve Tank's deliberately possessive sense of CJ becoming his for life.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "convince CJ to be his for the rest of their lives",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "убедить Си-Джея остаться с ним до конца их жизней",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "hair-agent-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "'Hair tousled' describes the state of CJ's hair after removing the shirt; 'растрепав волосы' makes him deliberately ruffle it. Render the resultant state.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "He dropped the shirt at his feet, hair tousled",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Сбросив рубашку к ногам и растрепав волосы",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "fantasy-reality-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "'Где заканчиваются фантазии и начинается реальность и где они расходятся' is clumsy and obscures a simple juxtaposition. Translate the meeting and divergence naturally without changing ambiguity.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "where fantasy and reality met and where they diverged",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "где заканчиваются фантазии и начинается реальность и где они расходятся",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
       }
     }
   ]
