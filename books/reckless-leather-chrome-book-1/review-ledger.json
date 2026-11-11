@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "reckless-leather-chrome-book-1",
-  "next_sequence": 35,
+  "next_sequence": 36,
   "records": [
     {
       "record_id": "f77b051b1598493e90f406995c7404b7",
@@ -2637,6 +2637,67 @@
               "record_id": "99b6b695be5a4abbacac23fdf2540f69",
               "finding_id": "photo-syntax-1"
             }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "49c5583e5be1422b8ccac780e5bb9ff4",
+      "sequence": 35,
+      "unit_id": "chapter-000022",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "c04c49a198413a5abfd37346b2b302ff95e76ea36d94a845386a91000ae67620",
+      "translation_sha256": "3da7012cfa10a2b6507cb8523a99918a65afa098c5964a7909bc22cfa4362b21",
+      "workflow_revision": "d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "review_contract_revision": "docs/TRANSLATION.md@d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "reviewer_session_id": "chat-reckless-022-reviewer-20261111",
+      "reviewed_at": "2026-11-11T16:49:23.727Z",
+      "state_revision": "d078e52d498f4b919a794085fa9f7cd211af6f88",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "first-kiss-age-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "'I was twenty before I finally...' marks the age at which Tank admitted his sexuality; the Russian 'мне исполнилось двадцать, прежде чем...' is an awkward chronology calque. State naturally that only at twenty did he find the courage.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "I was twenty before I finally found the courage to admit even to myself that I was gay",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "мне исполнилось двадцать, прежде чем я наконец набрался смелости признаться даже самому себе, что я гей",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "oral-hyperbole-1",
+            "category": "intensity",
+            "severity": "minor",
+            "detail": "The original outright hyperbolically says he 'sucked my brain out'; 'чуть не' adds an unsupported 'almost' and weakens the rough comic exaggeration. Restore the direct crude hyperbole.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "he sucked my brain out through my dick",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "чуть не высосал мозги через член",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       }
