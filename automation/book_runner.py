@@ -826,6 +826,14 @@ def checkpoint(job_id: str, status: dict, slug: str | None) -> None:
             ["git", "push", "origin", f"{candidate}:refs/heads/main"],
             cwd=ROOT, capture_output=True, text=True)
         if result.returncode == 0:
+            if candidate != local_commit:
+                # The published replay commit has a different parent from our
+                # local commit. Synchronize HEAD AND index before the next
+                # checkpoint, but preserve all worktree files (including the
+                # installed pinned engine) untouched.
+                if git("diff", "--cached", "--name-only"):
+                    raise JobError("checkpoint replay has unexpected staged changes")
+                git("reset", "--mixed", candidate)
             return
         # Retrying is safe ONLY for a rejected fast-forward update. A different
         # Git transport/permission error must not replay an ambiguous mutation.
