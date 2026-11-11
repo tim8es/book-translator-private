@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "reckless-leather-chrome-book-1",
-  "next_sequence": 46,
+  "next_sequence": 47,
   "records": [
     {
       "record_id": "f77b051b1598493e90f406995c7404b7",
@@ -3398,6 +3398,67 @@
               "record_id": "985274dde63646ad9504cef1236dd4c8",
               "finding_id": "waiting-for-you-nuance-1"
             }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "93a78ea8b08641338b5d2da8fedd97a2",
+      "sequence": 46,
+      "unit_id": "chapter-000040",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "7be537d63bee653632835361b09349019277687d040b549dea4ecd27a392dfbf",
+      "translation_sha256": "6607f0762d68436005153260ee95208712826d90e0c4a1b9cb83ae53f3257d62",
+      "workflow_revision": "d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "review_contract_revision": "docs/TRANSLATION.md@d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "reviewer_session_id": "chat-reckless-040-reviewer-20261111",
+      "reviewed_at": "2026-11-11T18:52:26.060Z",
+      "state_revision": "ae1c0c14337058279a4d7c412ad3e37c04ea458a",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "find-love-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The Russian omits 'find' from 'everyone deserves to find love'; restore the idea of finding love rather than merely deserving love.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "everyone deserves to find love",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "каждый заслуживает любви",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "emotional-satisfaction-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The Russian 'истории дарят эмоциональное удовлетворение' is a stiff calque of 'emotionally satisfying books'; use natural target-language book-blurb prose without intensifying the tone.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "emotionally satisfying books",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "истории дарят эмоциональное удовлетворение",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       }
