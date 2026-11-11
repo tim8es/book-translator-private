@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "reckless-leather-chrome-book-1",
-  "next_sequence": 17,
+  "next_sequence": 18,
   "records": [
     {
       "record_id": "f77b051b1598493e90f406995c7404b7",
@@ -1372,6 +1372,51 @@
               "record_id": "7c56fb6de3a84df1a2b21e99c87534f8",
               "finding_id": "style-dialogue-1"
             }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "480b3cfcedb246d8b8c24a3c317112bf",
+      "sequence": 17,
+      "unit_id": "chapter-000010",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "9511607d8a506a4b6295eb79eb98d286b3b5939fdd40f20bc5dce4374dfd7bac",
+      "translation_sha256": "8db01e35a62aa1b44327e3c610574457484f9e813542e6b80190f4d335aa97b3",
+      "workflow_revision": "d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "review_contract_revision": "docs/TRANSLATION.md@d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "reviewer_session_id": "chat-reckless-010-reviewer-20261111",
+      "reviewed_at": "2026-11-11T10:30:30Z",
+      "state_revision": "60d33ffde97c2b50cc4cf05eb19810a3a5972b92",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "syntax-ellipsis-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The unfinished phrase 'как бы я не выглядел словно…' is ungrammatical Russian and loses the intended natural interruption before the narrator suppresses his father's derogatory wording. Recast naturally while retaining the interruption and the fact that his father worried about appearances.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Said he was worried about me looking like a—I probably shouldn’t use the words he did.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Говорил, что боится, как бы я не выглядел словно…",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       }
