@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "reckless-leather-chrome-book-1",
-  "next_sequence": 41,
+  "next_sequence": 42,
   "records": [
     {
       "record_id": "f77b051b1598493e90f406995c7404b7",
@@ -3040,6 +3040,73 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "a0f2f18f38164d4cacc528ec0cb42411",
+      "sequence": 41,
+      "unit_id": "chapter-000026",
+      "outcome": "PASS",
+      "source_sha256": "034c1c3405b06ded201518fdf3e8034a42399f9b40c1a4bd7e8c7f259ebb8bf9",
+      "translation_sha256": "67a294d4e648a149836515cd184da9c8c294a265151dc041d51e9b27c5f362d2",
+      "workflow_revision": "d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "review_contract_revision": "docs/TRANSLATION.md@d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "reviewer_session_id": "chat-reckless-026-recheck-20261111",
+      "reviewed_at": "2026-11-11T17:52:21.559Z",
+      "state_revision": "4f63fbff61d5afd06d0b2eb13627d47667880651",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": "dfec9b6d934f4b2aa99bfd9b4a8acb27",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-cruelty-force-1",
+            "category": "intensity",
+            "severity": "minor",
+            "detail": "Corrected sentence explicitly preserves the intentional cruelty acknowledged in the source instead of only generic hurt.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "I wasn’t trying to be deliberately cruel",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Я не хотел намеренно поступать с тобой жестоко",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "dfec9b6d934f4b2aa99bfd9b4a8acb27",
+              "finding_id": "cruelty-force-1"
+            }
+          },
+          {
+            "id": "recheck-bigger-part-grammar-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Revised phrase distinguishes the other, larger part of Tank's feelings with grammatical Russian contrast.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "But a bigger part kept reminding me",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Но другая, гораздо большая часть меня всё время напоминала",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "dfec9b6d934f4b2aa99bfd9b4a8acb27",
+              "finding_id": "bigger-part-grammar-1"
+            }
           }
         ]
       }
