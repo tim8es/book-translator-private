@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 69,
+  "next_sequence": 70,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -4576,6 +4576,44 @@
           {
             "severity": "minor",
             "detail": "Source 'Let’s get you home, Cutie Cade' does not specify a vehicle and they walk back to the dorm; translated 'Давай отвезём тебя домой' wrongly adds driving. Replace with 'Давай я провожу тебя домой'.",
+            "resolved": false
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "1b858909838b6243eb99b94685d34ace",
+      "sequence": 69,
+      "unit_id": "chapter-000046",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "0e1984d8f7464a9d3041dc75dd4ee6a1b55b7511c229535e80e6776e3e2c9e2b",
+      "translation_sha256": "e07c69454cdcbb448e06a7ea1e16cc470d4bf1a1b61e9281022911a592585734",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewer_session_id": "chatops-homeinyou-20261111-review-ch36-539d2d0b",
+      "reviewed_at": "2026-11-11T16:53:51Z",
+      "state_revision": "ff02b670d1f6eadf5b95c89901713f8df742e66eb4da48feeeff55aaff982c92",
+      "review_commit": null,
+      "correction_round": 0,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Блок 43: 'between blunt teeth' передано как 'мягкими передними краями зубов', неестественный образ и неверное прилагательное к зубам; заменить на 'тупыми зубами' или эквивалент.",
+            "resolved": false
+          },
+          {
+            "severity": "major",
+            "detail": "Блок 69: сломана русская грамматика после 'притянул к поцелую': '— с языком, влажному и жадному. Моим любимым поцелуям Dillon.' Требуется грамматически цельная формулировка без изменения смысла.",
             "resolved": false
           }
         ]
