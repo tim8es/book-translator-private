@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 57,
+  "next_sequence": 58,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -4052,6 +4052,49 @@
             "severity": "minor",
             "detail": "Абзац 57: 'Pretty hot' в контексте серёг и пирсинга неестественно звучит как 'Очень горячо'; передать разговорную оценку привлекательности, например 'Чертовски сексуально'.",
             "resolved": false
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "326cd2fe9d2d0da6e520fa8e366b5f53",
+      "sequence": 57,
+      "unit_id": "chapter-000042",
+      "outcome": "PASS",
+      "source_sha256": "cd9d0d81528ddcaf540e769a8997c0a6ec305c388730570e5c9d0a2e2c710e66",
+      "translation_sha256": "62fe0e319105a93197a9301969712c54bfe557d89d8f1513383ad96b00123dcd",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewer_session_id": "chatops-homeinyou-rereview-ch32-20261111-88b9",
+      "reviewed_at": "2026-11-11T13:14:36Z",
+      "state_revision": "62ae6ba401c78c5f00879c224cf35d5c7edbb432",
+      "review_commit": "a9f4f825e2ea05ad49767178f91385ee1d3e7131",
+      "correction_round": 1,
+      "supersedes_record_id": "f0bce27b202bf0a7f53e06142877751b",
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Повторно сверено: 'I'll plunge forward' теперь передано как 'перейду прямо к делу', без добавления 'с самого начала'.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Повторно сверено: 'beat the shit out of him' передано как 'жестоко его избил', без неподтверждённого 'до полусмерти'.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Повторно сверено: 'Pretty hot' передано естественной разговорной оценкой 'Чертовски сексуально'.",
+            "resolved": true
           }
         ]
       }
