@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "reckless-leather-chrome-book-1",
-  "next_sequence": 38,
+  "next_sequence": 39,
   "records": [
     {
       "record_id": "f77b051b1598493e90f406995c7404b7",
@@ -2851,6 +2851,67 @@
               "record_id": "5707f4cd9b314235add6f1ccff11d346",
               "finding_id": "fantasy-reality-1"
             }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "d1c296a06f9d43f9b261b92083fc648f",
+      "sequence": 38,
+      "unit_id": "chapter-000024",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "0d1b65a0b4c6b66fe27ee6fe0c1530a0af7bf78a7e025fed6317f9de9cf34273",
+      "translation_sha256": "122572bfe899a272e4f197408312dfc0e700beb9a457d2c9b3c4e02f7c2a528a",
+      "workflow_revision": "d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "review_contract_revision": "docs/TRANSLATION.md@d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "reviewer_session_id": "chat-reckless-024-review-20261111",
+      "reviewed_at": "2026-11-11T17:32:22.753Z",
+      "state_revision": "283346c29b18f556aa5d082f075337fc61fe76c8",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "sociology-100-meaning",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The original says CJ took Sociology 100 before dropping out, not explicitly that he completed it. The Russian 'успел пройти вводный курс' implies completion and omits the course designation. Preserve participation without claiming completion.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "I took Sociology 100 before I had to drop out",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "я успел пройти вводный курс социологии, прежде чем пришлось бросить учёбу",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "tv-title-italic-scope",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "In the original CJ's letter the series name Sons of Anarchy is outside the surrounding italic markup; the translation puts the title inside a single italic span. Restore the mixed emphasis in the letter.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "*So I’ve been doing some research on motorcycle clubs (and possibly binge-watching* Sons of Anarchy—*don’t judge)",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "*Я тут кое-что почитал о мотоклубах (и, возможно, запоем смотрел «Сынов анархии» — не осуждай)",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       }
