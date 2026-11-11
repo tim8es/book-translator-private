@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "reckless-leather-chrome-book-1",
-  "next_sequence": 44,
+  "next_sequence": 45,
   "records": [
     {
       "record_id": "f77b051b1598493e90f406995c7404b7",
@@ -3270,6 +3270,67 @@
               "record_id": "6f7a24ae5b9d4d20ad33a1b33ee38804",
               "finding_id": "dildo-shaft-word-1"
             }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "985274dde63646ad9504cef1236dd4c8",
+      "sequence": 44,
+      "unit_id": "chapter-000036",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "00d6c74f6cd02e42528a0fe025aa50901bc31876a7168a610caf4ba0ada4b18d",
+      "translation_sha256": "47716416977a9ff2fcf490cfe6d64cd20920ce3d6a4039a8326632025e47e341",
+      "workflow_revision": "d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "review_contract_revision": "docs/TRANSLATION.md@d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "reviewer_session_id": "chat-reckless-036-reviewer-20261111-2120",
+      "reviewed_at": "2026-11-11T18:23:48.610Z",
+      "state_revision": "61559688f28fadfe4810c18a2952e5f0a8f7b6e9",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "life-plans-naturalness-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The Russian 'разберёмся, как прожить всю оставшуюся жизнь' is needlessly stiff and suggests a literal plan for how to live one's entire lifetime rather than figuring out their future together. Preserve the casual hopeful tone.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Once I’m out of here, we’ll figure out the rest of our lives",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Как только выйду отсюда, мы разберёмся, как прожить всю оставшуюся жизнь",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "waiting-for-you-nuance-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The source emphasizes CJ waiting for Tank and being there for him when he is released; Russian 'тебя будет кому встретить' narrows the promise to being met on arrival. Restore 'ждать' to preserve the relational sense.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "You have someone waiting for you when you get out",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Когда ты выйдешь, тебя будет кому встретить",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       }
