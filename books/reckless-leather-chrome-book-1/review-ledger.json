@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "reckless-leather-chrome-book-1",
-  "next_sequence": 19,
+  "next_sequence": 20,
   "records": [
     {
       "record_id": "f77b051b1598493e90f406995c7404b7",
@@ -1465,6 +1465,131 @@
               "record_id": "480b3cfcedb246d8b8c24a3c317112bf",
               "finding_id": "syntax-ellipsis-1"
             }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "8dc87c67cfa1495697a2b8d7e6c1b902",
+      "sequence": 19,
+      "unit_id": "chapter-000011",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "a7b687af67fa4d2d41aaa60f9544ca9acf3afad2661cc363539cc92eaa9e4e97",
+      "translation_sha256": "8118b349ca2e2650ec1dc814d7b5737c44a4a7a12e4ef1ab3040a67a73428304",
+      "workflow_revision": "d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "review_contract_revision": "docs/TRANSLATION.md@d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "reviewer_session_id": "chat-reckless-011-reviewer-20261111",
+      "reviewed_at": "2026-11-11T10:45:29Z",
+      "state_revision": "b7c4b6504bcf5f97b35da00df67d546a30aa0332",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "age-range-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The source allows any age in the thirties; 'чуть старше тридцати' narrows the range. Render 'женщин лет тридцати' or 'за тридцать' without narrowing.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "thirty-something women",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "компания женщин чуть старше тридцати",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "beer-order-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The Russian 'говорил заказ' construction is awkward. Recast the man's speaking as only asking for one beer.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "he never said anything other than to order a single beer",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "ничего, кроме заказа одной-единственной бутылки пива, он не говорил",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "boots-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The Russian anthropomorphism of boots taking steps is an unintended literal calque; refer to heavy bootsteps or the man's footsteps.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "he heard heavy boots take a few steps",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "как тяжёлые ботинки сделали несколько шагов",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "size-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The source speaks of overall enormous size/build and general appearance, not specifically height and a frightening quality. Avoid narrowing size to height or adding an unequivocally intimidating appearance.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "his enormous size and general appearance",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "гигантским ростом незнакомца и его устрашающим видом",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "future-action-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The question asks what CJ would do if the man returned, not merely whether he might return. Preserve the prospective action question.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "What would he do if the guy showed up next weekend?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Что, если этот мужчина снова появится в следующие выходные?",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "attack-inference-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "'Physically attacked' does not specify fists or an exact attack method. Remove the added restriction to punching.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "if Deacon had physically attacked him",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "если бы Дикон набросился на него с кулаками",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       }
