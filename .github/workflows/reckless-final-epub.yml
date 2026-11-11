@@ -1,0 +1,122 @@
+name: Reckless one-time deterministic final EPUB
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'books/reckless-leather-chrome-book-1/.workflow/final-build-request.json'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: reckless-final-epub-build
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout authoritative book workspace
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Checkout pinned Book Translator implementation
+        uses: actions/checkout@v4
+        with:
+          repository: tim8es/book-translator
+          ref: d87bf1672a59b86e30ede996a99df28bdf47b36f
+          path: .pinned-book-translator
+          persist-credentials: false
+
+      - name: Use the pinned scripts without modifying tracked implementation
+        shell: bash
+        run: |
+          set -euo pipefail
+          mv scripts /tmp/book-translator-repository-scripts
+          cp -a .pinned-book-translator/scripts ./scripts
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          path = Path(".book-translator-install.json")
+          value = json.loads(path.read_text(encoding="utf-8"))
+          value["requested_ref"] = "d87bf1672a59b86e30ede996a99df28bdf47b36f"
+          value["resolved_revision"] = "d87bf1672a59b86e30ede996a99df28bdf47b36f"
+          path.write_text(json.dumps(value, indent=2) + "\n", encoding="utf-8")
+          PY
+
+      - name: Validate, finalize and package with pinned workflow
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/book.py validate reckless-leather-chrome-book-1
+          python scripts/corpus.py verify reckless-leather-chrome-book-1
+          PYTHONPATH=scripts python - <<'PY'
+          import argparse
+          from pathlib import Path
+          from workflow.finalize_cli import finalize_command
+          from workflow.epub_cli import epub_build_command, build_status_command
+          from workflow.status_cli import default_preflight
+          slug = "reckless-leather-chrome-book-1"
+          root = Path.cwd()
+          finalize_command(
+              argparse.Namespace(slug=slug, session_id="chatops-reckless-final-20261111", json=False),
+              root,
+              preflight=lambda name: default_preflight(root, name),
+          )
+          epub_build_command(argparse.Namespace(slug=slug, output=None, allow_unreviewed=False), root)
+          build_status_command(
+              argparse.Namespace(slug=slug, format="epub", allow_unreviewed=False, json=True),
+              root,
+          )
+          PY
+
+      - name: Verify EPUB bytes and manifest
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib
+          import json
+          import zipfile
+          from pathlib import Path
+          root = Path("books/reckless-leather-chrome-book-1")
+          manifest = json.loads((root / "output/manifest.json").read_text(encoding="utf-8"))
+          artifact = root / manifest["artifact_path"]
+          payload = artifact.read_bytes()
+          assert manifest["unit_count"] == 53, "wrong unit count"
+          assert manifest["preview"] is False, "unexpected preview"
+          assert hashlib.sha256(payload).hexdigest() == manifest["artifact_sha256"], "checksum mismatch"
+          with zipfile.ZipFile(artifact) as archive:
+              assert archive.testzip() is None, "corrupt zip member"
+              assert archive.read("mimetype") == b"application/epub+zip", "wrong EPUB mimetype"
+              assert "META-INF/container.xml" in archive.namelist(), "missing container"
+          print("VERIFIED_FINAL_EPUB", manifest["artifact_path"], len(payload), manifest["artifact_sha256"])
+          PY
+
+      - name: Upload verified EPUB for direct retrieval
+        uses: actions/upload-artifact@v4
+        with:
+          name: reckless-ru-reviewed-final-epub
+          path: books/reckless-leather-chrome-book-1/output/*.epub
+          retention-days: 30
+          if-no-files-found: error
+
+      - name: Persist book-scoped final state and EPUB
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "book-translator-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- \
+            books/reckless-leather-chrome-book-1/progress.json \
+            books/reckless-leather-chrome-book-1/STATE.md \
+            books/reckless-leather-chrome-book-1/FINAL_QUALITY_GATES.md \
+            books/reckless-leather-chrome-book-1/REVIEW_REPORT.md \
+            books/reckless-leather-chrome-book-1/output/
+          if ! git diff --cached --quiet; then
+            git commit -m "build(reckless): finalize 53 reviewed units and preserve source-layout EPUB"
+            git push origin HEAD:main
+          fi
