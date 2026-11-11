@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "reckless-leather-chrome-book-1",
-  "next_sequence": 65,
+  "next_sequence": 66,
   "records": [
     {
       "record_id": "f77b051b1598493e90f406995c7404b7",
@@ -4360,6 +4360,51 @@
           "structure": true
         },
         "findings": []
+      }
+    },
+    {
+      "record_id": "e0de0f58139b48b79443f902db368359",
+      "sequence": 65,
+      "unit_id": "chapter-000049",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "ba70133149c9e5b280ba004c6aa7c60a1f15c2cba23865ad3bc769f076a99c26",
+      "translation_sha256": "9b481e0877da82b3ccf4e243d1008325223453cb88bf8a5d340d1854ad58b894",
+      "workflow_revision": "d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "review_contract_revision": "docs/TRANSLATION.md@d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "reviewer_session_id": "chat-reckless-049-reviewer-20261111",
+      "reviewed_at": "2026-11-11T19:28:14.998Z",
+      "state_revision": "b72090b1d33fb2905300ed7bc54a5480eea04e22",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "investigation-word-order-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The Russian phrase 'пока не выяснит всё, что сможет, об этом притягательном мужчине' has unnatural word order and awkwardly separates the object from the verb. Rephrase as 'пока не узнает об этом притягательном мужчине всё, что сможет' while preserving Robson's determination to learn everything possible.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "he won’t stop looking until he finds out everything he can about the alluring man",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "не прекратит поисков, пока не выяснит всё, что сможет, об этом притягательном мужчине",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
       }
     }
   ]
