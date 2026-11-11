@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "reckless-leather-chrome-book-1",
-  "next_sequence": 70,
+  "next_sequence": 71,
   "records": [
     {
       "record_id": "f77b051b1598493e90f406995c7404b7",
@@ -4587,6 +4587,73 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "761888e9402f4a93aab7a06a73c9256e",
+      "sequence": 70,
+      "unit_id": "chapter-000030",
+      "outcome": "PASS",
+      "source_sha256": "ba54719c34739fcdb866c9833eb1437ae7ede35f85a9544e4b47887450cdffef",
+      "translation_sha256": "d7141be53d0b390a3c45447c299559ef5df733aaf3be618525a5b24d63e913c5",
+      "workflow_revision": "d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "review_contract_revision": "docs/TRANSLATION.md@d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "reviewer_session_id": "chat-reckless-030-recheck-20261111",
+      "reviewed_at": "2026-11-11T19:33:07.257Z",
+      "state_revision": "c1a9612b972bfe338076db85e75987f122d6e098",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": "b098bcc3d4e44b36ba18f98eb2048767",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-best-meal-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The revised question asks for a favorite lunch or dinner, representing a full meal instead of narrowing it to one dish.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "What’s the best meal you’ve ever had?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Какой обед или ужин тебе понравился больше всего?",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "b098bcc3d4e44b36ba18f98eb2048767",
+              "finding_id": "best-meal-1"
+            }
+          },
+          {
+            "id": "recheck-comfort-food-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The revised question now asks about food one eats for comfort, preserving the emotional consolation rather than merely lifting mood.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "What’s your favorite comfort food?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Какой едой ты любишь себя утешать?",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "b098bcc3d4e44b36ba18f98eb2048767",
+              "finding_id": "comfort-food-1"
+            }
           }
         ]
       }
