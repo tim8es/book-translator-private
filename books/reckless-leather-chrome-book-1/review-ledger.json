@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "reckless-leather-chrome-book-1",
-  "next_sequence": 40,
+  "next_sequence": 41,
   "records": [
     {
       "record_id": "f77b051b1598493e90f406995c7404b7",
@@ -2979,6 +2979,67 @@
               "record_id": "d1c296a06f9d43f9b261b92083fc648f",
               "finding_id": "tv-title-italic-scope"
             }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "dfec9b6d934f4b2aa99bfd9b4a8acb27",
+      "sequence": 40,
+      "unit_id": "chapter-000026",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "034c1c3405b06ded201518fdf3e8034a42399f9b40c1a4bd7e8c7f259ebb8bf9",
+      "translation_sha256": "b6924e948bde10e6fec664a37cd1c02343a017daef8b25b8261db5bf3050ffd0",
+      "workflow_revision": "d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "review_contract_revision": "docs/TRANSLATION.md@d87bf1672a59b86e30ede996a99df28bdf47b36f",
+      "reviewer_session_id": "chat-reckless-026-reviewer-20261111",
+      "reviewed_at": "2026-11-11T17:49:10.053Z",
+      "state_revision": "39d9f193ffaea2d516a476d5b6e1a676b6c37502",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "cruelty-force-1",
+            "category": "intensity",
+            "severity": "minor",
+            "detail": "Original 'I wasn't trying to be deliberately cruel' acknowledges the possibility of cruelty; rendering as 'не пытался нарочно причинить тебе боль' shifts to a softer generic intent not to hurt. Restore explicit cruelty without over-intensifying.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "I wasn’t trying to be deliberately cruel",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Я не пытался нарочно причинить тебе боль",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "bigger-part-grammar-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The Russian 'Но куда большая часть меня' is an unintended unnatural construction; preserve the contrast between jealous desire and stronger restraint as 'Но гораздо большая часть меня...' or comparable natural phrasing.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "But a bigger part kept reminding me",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Но куда большая часть меня всё время напоминала",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       }
