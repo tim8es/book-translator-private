@@ -368,4 +368,3 @@ if __name__ == "__main__":
     except (RuntimeError, ValueError, OSError) as exc:
         print("Book monitor failed: " + str(exc)[:300], file=sys.stderr)
         raise SystemExit(1)
-
