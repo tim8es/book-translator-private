@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "event_id": "c7256ab3e7804f759bd91c30b85fe8fa",
+  "action": "cleanup_requested",
+  "unit_id": "chapter-000015",
+  "claim_revision": "689fa2b186c3b7d4119d7ef36e66466588995d0b",
+  "claim": {
+    "schema_version": 1,
+    "claim_id": "d1c8975a7a2d4796a0684ae867809775",
+    "unit_id": "chapter-000015",
+    "role": "translator",
+    "session_id": "chat-reckless-015-translator-20261111",
+    "base_revision": "6f964f039c577df6d658da0225204af8c604a76b",
+    "base_commit": "54d75384a38c8c479e8627f2f0501f669459a6b8",
+    "workflow_revision": "d87bf1672a59b86e30ede996a99df28bdf47b36f",
+    "claimed_at": "2026-11-11T13:23:05Z",
+    "expires_at": "2026-11-11T14:23:05Z"
+  },
+  "occurred_at": "2026-11-11T14:57:27Z",
+  "reason": "lease_expired",
+  "detail": "Recovered expired Chapter 5 translator claim, preserving its existing draft"
+}
