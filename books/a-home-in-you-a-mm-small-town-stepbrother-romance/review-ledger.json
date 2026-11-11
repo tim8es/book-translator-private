@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 77,
+  "next_sequence": 78,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -4921,6 +4921,64 @@
             "severity": "minor",
             "detail": "Paragraph 75: 'цветная тату — такая сука' is an unintended crude calque. Preserve the pain, color-work emphasis, and profane register naturally.",
             "resolved": false
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "49b003ee7dceae4b3cb4fb36a0fc5e97",
+      "sequence": 77,
+      "unit_id": "chapter-000034",
+      "outcome": "PASS",
+      "source_sha256": "346f6cc02398b0ee93feb712bdf1ce417708996fc3d7405c9c9947017562adc7",
+      "translation_sha256": "91e04a09b576cff5f404c7adf49c2158cfa40756adbfcd125da1f9b37243a068",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewer_session_id": "chatops-homeinyou-20261111-rereview-ch24-f9574ead",
+      "reviewed_at": "2026-11-11T17:33:06Z",
+      "state_revision": "959b020cd1dc0ac10a9e91d97dde86d6b9d5d4867f67ef6f70fb02f5bce57a91",
+      "review_commit": null,
+      "correction_round": 1,
+      "supersedes_record_id": "ef7ef3e49d4f0caa801bfc158d491a90",
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Rechecked paragraph 20: fluent rendering preserves perceived presence and uncertainty.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Rechecked paragraph 21: punctuation and barely-won match corrected.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Rechecked paragraph 27: coarse cold-weather idiom naturally restored.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Rechecked paragraph 40: unsupported scholarship specificity removed.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Rechecked paragraph 49: fluent Russian retains the incompleteness metaphor.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Rechecked paragraph 75: natural wording now retains pain of colored tattoo and profanity.",
+            "resolved": true
           }
         ]
       }
