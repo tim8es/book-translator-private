@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "unit_id": "chapter-000026",
+  "review_record_id": "7b81b6df8549476a9954c31244f5d626",
+  "source_sha256": "7997fac43ecfec3a08390955882a68124927a53905d13595ac18580f3864f87f",
+  "translation_sha256": "97d0adcab8d5b833a769b7efca9e748459a04db22f2ef8c84f47a84509115379",
+  "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
+  "patches": [
+    {
+      "finding_id": "recheck-omission-10",
+      "operation": "replace",
+      "target_anchor": {
+        "quote": "[Интимная сцена опущена.]",
+        "occurrence": 0
+      },
+      "replacement": "Мы пока не заходили дальше ласк руками, но это всё равно было чертовски классно, и мне нравилось смотреть, как у Cade закатывались глаза, когда он кончал."
+    },
+    {
+      "finding_id": "omission-11",
+      "operation": "insert_before",
+      "target_anchor": {
+        "quote": "Надеюсь.",
+        "occurrence": 0
+      },
+      "replacement": "Мы давно не занимались этим: из-за праздников и спорта мы были очень заняты. Ему от этого стало бы лучше.\n\n"
+    },
+    {
+      "finding_id": "meaning-12",
+      "operation": "replace",
+      "target_anchor": {
+        "quote": "Не защищать Cade — я устал от его отца-мудака.",
+        "occurrence": 0
+      },
+      "replacement": "Я устал не от того, что защищал Cade, а от его отца-мудака."
+    }
+  ],
+  "glossary": [],
+  "style_guide": []
+}
