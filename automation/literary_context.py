@@ -262,6 +262,7 @@ def model_glossary_context(markdown: str, *, source_language: str,
     return json.dumps({
         "source_language": source_language, "target_language": target_language,
         "entries": entries,
+        "unparsed_glossary": markdown if not entries else "",
         "interpretation": (
             "These are contextual lexical decisions, NOT strings to paste "
             "verbatim in every sentence. Apply grammar, case and transliteration "
