@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 96,
+  "next_sequence": 97,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -6018,6 +6018,71 @@
       },
       "shared_state_revisions": {
         "glossary": "f4b50dd3fd727bc11f601923883e99e8c527d27bc0c6800c5a3f69c1c1b07eb3",
+        "style_guide": "3ec7c485cf41741084ffe49b72d2b18ed9bd650a00a2ba00554605abadea5e3a"
+      }
+    },
+    {
+      "record_id": "85d2574e4cc14da780df7c0cbc9d5975",
+      "sequence": 96,
+      "unit_id": "chapter-000025",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "5fc96b09af376cc196a201bccedb6d671fbbd32333f8daff9aa02cc0a7589493",
+      "translation_sha256": "36c89087f28badad98a87691395283204cbba41083e4c37fbd154c3a1529379e",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewer_session_id": "auto-886bde8dfe20-reviewer-4740512d",
+      "reviewed_at": "2026-11-12T15:11:02Z",
+      "state_revision": "500dc61797a3cfaab77fa89b92cd5bf222ac65bf2d5c4372cac445176a1cc0a7",
+      "review_commit": "6043dd77a0958fff280a4b957d05b4e31c4c7593",
+      "correction_round": 5,
+      "supersedes_record_id": "87d618cfa6b74740bedb7e8d33105ef9",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "meaning-1",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "The explicit reference to an orgasm is replaced with the vague phrase «всплеск ощущений», losing a concrete event and softening the source. Translate «epic orgasm» explicitly while preserving the conversational tone.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "especially after that epic orgasm earlier.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "особенно после такого сильного всплеска ощущений раньше вечером.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "register-1",
+            "category": "register",
+            "severity": "minor",
+            "detail": "Dillon's blunt, profane wording is softened: «did this shit to you» becomes «довели тебя до такого». Preserve the source's coarse emphasis in this line.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Your parents did this shit to you, didn’t they?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Это твои родители довели тебя до такого, да?",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "edfd46c556cb6ea47b4c5beebc118e39b71e6a49fb74662a5d0534910644bd52",
         "style_guide": "3ec7c485cf41741084ffe49b72d2b18ed9bd650a00a2ba00554605abadea5e3a"
       }
     }
