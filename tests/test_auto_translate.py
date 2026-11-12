@@ -1158,6 +1158,28 @@ with patch.object(book_runner, "chapter_data",
                 status["correction_rounds"]["chapter-000001"] = worker.MAX_CORRECTIONS
                 self.assertEqual(worker.next_operation(slug, status)[0], "blocked")
 
+    def test_exhausted_patch_mismatch_defers_only_unchanged_unit(self):
+        chapter = {"unit_id": "chapter-000024", "number": 24, "status": "translated",
+                   "translation_acceptance": {"translation_sha256": "a" * 64}}
+        record = {"unit_id": chapter["unit_id"], "record_id": "review-24",
+                  "sequence": 2, "outcome": "CORRECTIONS_REQUIRED",
+                  "translation_sha256": "a" * 64}
+        status = {"phase": "model-blocked", "failures": 3,
+                  "blocked_unit_id": chapter["unit_id"],
+                  "last_error": "patch must target the reviewer's exact translation anchor",
+                  "last_patch_anchor_mismatch": {
+                      "unit_id": chapter["unit_id"], "review_record_id": "review-24",
+                      "translation_sha256": "a" * 64}}
+        ledger = {"records": [record]}
+        self.assertTrue(worker.defer_exhausted_patch_mismatch(status, ledger, [chapter]))
+        self.assertEqual(status["deferred_review_units"], [chapter["unit_id"]])
+        self.assertEqual(status["patch_deferral_audit"][0]["review_record_id"], "review-24")
+        self.assertEqual(chapter["status"], "translated")
+        self.assertEqual(record["outcome"], "CORRECTIONS_REQUIRED")
+        status["last_patch_anchor_mismatch"]["translation_sha256"] = "b" * 64
+        with self.assertRaisesRegex(worker.JobError, "unchanged review"):
+            worker.defer_exhausted_patch_mismatch(status, ledger, [chapter])
+
     def test_patch_anchor_mismatch_is_structured_without_replacement_leak(self):
         from literary_context import PatchAnchorMismatch
         finding = {"id": "meaning-1", "resolved": False,

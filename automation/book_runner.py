@@ -1015,6 +1015,37 @@ def defer_review_unit(status: dict, unit_id: str) -> None:
     status["deferred_review_units"] = units
 
 
+def defer_exhausted_patch_mismatch(status: dict, ledger: dict, chapters: list[dict]) -> bool:
+    """Safely defer only the exact unchanged failed unit, never waive review."""
+    diagnostic = status.get("last_patch_anchor_mismatch")
+    if (status.get("phase") != "model-blocked"
+            or status.get("last_error") !=
+            "patch must target the reviewer's exact translation anchor"
+            or status.get("failures", 0) < MAX_FAILURES
+            or not isinstance(diagnostic, dict)):
+        return False
+    unit_id = status.get("blocked_unit_id")
+    chapter = next((ch for ch in chapters if ch.get("unit_id") == unit_id), None)
+    record = latest_record(ledger, chapter) if chapter else None
+    accepted = chapter.get("translation_acceptance") if chapter else None
+    if (not chapter or chapter.get("status") != "translated"
+            or not isinstance(accepted, dict) or not record
+            or record.get("outcome") != "CORRECTIONS_REQUIRED"
+            or diagnostic.get("unit_id") != unit_id
+            or diagnostic.get("review_record_id") != record.get("record_id")
+            or diagnostic.get("translation_sha256") != accepted.get("translation_sha256")
+            or record.get("translation_sha256") != accepted.get("translation_sha256")):
+        raise JobError("patch deferral requires unchanged review and translation evidence")
+    defer_review_unit(status, unit_id)
+    status.setdefault("patch_deferral_audit", []).append({
+        "unit_id": unit_id,
+        "review_record_id": record["record_id"],
+        "deferred_at": clock(),
+        "reason": "model anchor mismatch after bounded attempts; review still required",
+    })
+    return True
+
+
 def prepare_correction_limit_resume(status: dict, ledger: dict, chapter: dict) -> None:
     unit_id = chapter["unit_id"]
     if accepted_review_count(ledger, chapter) >= MAX_ACCEPTED_REVIEWS_PER_UNIT:
@@ -1922,6 +1953,9 @@ def run(job_id: str, *, resume_blocked: bool = False,
                     or not isinstance(canonical_state.get("errors"), list)
                     or canonical_state["errors"]):
                 raise JobError("cannot resume while canonical claims or errors remain")
+            if status.get("phase") == "model-blocked":
+                _, ledger, chapters = chapter_data(slug)
+                defer_exhausted_patch_mismatch(status, ledger, chapters)
             if status.get("phase") == "correction-limit-reached":
                 _, ledger, chapters = chapter_data(slug)
                 unit_id = status.get("blocked_unit_id")
