@@ -1,0 +1,22 @@
+name: Universal final EPUB delivery
+
+# Thin book-state entrypoint. All assembly logic belongs to the immutable
+# public workflow; private source material never enters the public repository.
+on:
+  workflow_dispatch:
+    inputs:
+      book_slug:
+        description: Existing canonical books/<book-slug>/ identifier
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  deliver:
+    # Caller remains book-scoped. The reusable workflow refuses public
+    # source repositories and never pushes changes back into book state.
+    uses: tim8es/book-translator/.github/workflows/final-epub.yml@3632331e95dc9392caabf762e8732ad5c80b7ad0
+    with:
+      book_slug: ${{ inputs.book_slug }}
