@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 103,
+  "next_sequence": 104,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -7231,6 +7231,77 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "6cce9e25a4a2a334c558c36793ba932af65d203fc28e5a2c7e3f8497977938cc",
+        "style_guide": "3ec7c485cf41741084ffe49b72d2b18ed9bd650a00a2ba00554605abadea5e3a"
+      }
+    },
+    {
+      "record_id": "59d995c3ae7747559562eb5421831b6f",
+      "sequence": 103,
+      "unit_id": "chapter-000026",
+      "outcome": "PASS",
+      "source_sha256": "7997fac43ecfec3a08390955882a68124927a53905d13595ac18580f3864f87f",
+      "translation_sha256": "a4c586a65181a4b72ec051cc42e232ac9c2c18bfea727626e3b5ec0b3a2e24f5",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewer_session_id": "auto-886bde8dfe20-reviewer-e07b21ad",
+      "reviewed_at": "2026-11-12T20:42:21Z",
+      "state_revision": "0e1ec94dcf540be2a67e400f8cab7753c838f0eb1782e7a79dba5b27a5e00423",
+      "review_commit": "42fa8c7780437209e71de0f4fa76dbd235116d39",
+      "correction_round": 3,
+      "supersedes_record_id": "e1f876d55ca54508b56f6ec719d17f9b",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-omission-10-final",
+            "category": "omission",
+            "severity": "major",
+            "detail": "Resolved. The current translation includes the previously omitted intimate narration, including the hand-job context, climax, and kiss.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "We hadn’t branched out farther than hand jobs, but it was still fun as hell, and I loved watching Cade’s eyes roll into the back of his head when he reached his climax.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Мы пока не заходили дальше ласк руками, но это всё равно было чертовски классно, и мне нравилось смотреть, как у Cade закатывались глаза, когда он кончал.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "e1f876d55ca54508b56f6ec719d17f9b",
+              "finding_id": "recheck-omission-10-current"
+            }
+          },
+          {
+            "id": "recheck-meaning-touch-1-final",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Resolved. Dillon’s line now explicitly says he wants to touch Cade, preserving the repeated touch wording in the exchange.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "I just miss you and want to touch you.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Я просто соскучился и хочу тебя потрогать.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "e1f876d55ca54508b56f6ec719d17f9b",
+              "finding_id": "meaning-touch-1"
+            }
           }
         ]
       },
