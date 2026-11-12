@@ -3,9 +3,9 @@
   "job_id": "886bde8dfe20711dad58fa166890a26e",
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
   "source_sha256": "3a3fce78317162b68bc1e82501456a74a783cfc96cb2640c463f381866007865",
-  "state": "blocked",
-  "phase": "model-blocked",
-  "failures": 3,
+  "state": "running",
+  "phase": "operator-resume-authorized",
+  "failures": 0,
   "correction_rounds": {
     "chapter-000002": 1,
     "chapter-000003": 1,
@@ -20,7 +20,7 @@
     "chapter-000026": 3
   },
   "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
-  "updated_at": "2026-11-12T21:44:05.111906+00:00",
+  "updated_at": "2026-11-12T22:26:43.865591+00:00",
   "active": null,
   "model_calls_started": 152,
   "memory_glossary_saved": 110,
@@ -149,6 +149,11 @@
       "action": "resume-model-blocked",
       "approved_at": "2026-11-12T21:14:30.490510+00:00",
       "previous_error": "protected link boundary sequence differs at token 1 (source=2, output=0)"
+    },
+    {
+      "action": "resume-model-blocked",
+      "approved_at": "2026-11-12T22:26:43.865573+00:00",
+      "previous_error": "corrector returned no actionable patches"
     }
   ],
   "recovery_note": "Staged chapter-27 corrections were invalidated after a glossary decision repair. Re-review the accepted translation against the newly reconciled glossary before applying correction patches. Prior terminology-1 evidence is no longer reliable. Existing reviewed chapters with Latin names require source-grounded literary rechecks.",
@@ -181,5 +186,5 @@
   ],
   "structural_helper_revision": "a9f85b68fcc062185c891202c5823a5838a717a0",
   "blocked_unit_id": "chapter-000027",
-  "last_error": "corrector returned no actionable patches"
+  "last_error": null
 }
