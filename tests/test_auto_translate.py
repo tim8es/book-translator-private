@@ -1204,12 +1204,12 @@ with patch.object(book_runner, "chapter_data",
             (book / "style-guide.md").write_text("style", encoding="utf-8")
             worker.store_json(book / ".workflow" / "claims" / (unit_id + ".json"),
                               {"session_id": session})
-            with patch.object(worker, "ROOT", root), \\
-                 patch.object(worker, "chapter_data", return_value=({}, ledger, [chapter])), \\
-                 patch.object(worker, "context", return_value=("system", "prompt", "source")), \\
-                 patch.object(worker, "role_contracts", return_value=("contract", ["AGENTS.md"])), \\
-                 patch.object(worker, "complete", return_value=response), \\
-                 patch.object(worker, "cli") as cli, \\
+            with patch.object(worker, "ROOT", root), \
+                 patch.object(worker, "chapter_data", return_value=({}, ledger, [chapter])), \
+                 patch.object(worker, "context", return_value=("system", "prompt", "source")), \
+                 patch.object(worker, "role_contracts", return_value=("contract", ["AGENTS.md"])), \
+                 patch.object(worker, "complete", return_value=response), \
+                 patch.object(worker, "cli") as cli, \
                  patch.object(worker, "checkpoint") as checkpoint:
                 worker.process_claim(job_id, slug, status, root)
                 self.assertEqual(status["phase"], "model-retry")
