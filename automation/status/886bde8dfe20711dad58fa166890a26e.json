@@ -4,7 +4,7 @@
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
   "source_sha256": "3a3fce78317162b68bc1e82501456a74a783cfc96cb2640c463f381866007865",
   "state": "running",
-  "phase": "claimed",
+  "phase": "model-call-reserved",
   "failures": 0,
   "correction_rounds": {
     "chapter-000002": 1,
@@ -20,13 +20,13 @@
     "chapter-000026": 3
   },
   "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
-  "updated_at": "2026-11-12T21:14:32.339990+00:00",
+  "updated_at": "2026-11-12T21:14:54.579132+00:00",
   "active": {
     "role": "translator",
     "chapter": 27,
     "session_id": "auto-886bde8dfe20-translator-0890e7bf"
   },
-  "model_calls_started": 141,
+  "model_calls_started": 142,
   "memory_glossary_saved": 110,
   "pending_style": [],
   "prompt_context": {
@@ -39,8 +39,11 @@
     ],
     "glossary_sha256": "6cce9e25a4a2a334c558c36793ba932af65d203fc28e5a2c7e3f8497977938cc",
     "style_guide_sha256": "3ec7c485cf41741084ffe49b72d2b18ed9bd650a00a2ba00554605abadea5e3a",
-    "system_chars": 15840,
-    "user_chars": 32961
+    "system_chars": 16086,
+    "user_chars": 32939,
+    "execution_mode": "shared-structural-segments",
+    "helper_revision": "a9f85b68fcc062185c891202c5823a5838a717a0",
+    "batch_segment_count": 1
   },
   "memory_style_saved": 6,
   "recoveries": [
@@ -181,5 +184,6 @@
       "reason": "single compatibility retry after model-generated anchor failure"
     }
   ],
-  "blocked_unit_id": "chapter-000027"
+  "blocked_unit_id": "chapter-000027",
+  "structural_helper_revision": "a9f85b68fcc062185c891202c5823a5838a717a0"
 }
