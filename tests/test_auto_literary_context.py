@@ -123,6 +123,21 @@ class LiteraryContextTests(unittest.TestCase):
             markdown, source_language="en", target_language="fr"))
         self.assertEqual(other["target_language"], "fr")
 
+    def test_auto_skips_ungrounded_glossary_without_rewriting_text(self):
+        proposals = [{"original": "Cade", "translation": "Cade",
+                      "type": "character", "notes": "unchanged"}]
+        kept, rejected = runner.filter_ungrounded_glossary_proposals(
+            proposals, "Cade visited.", "Кейд пришёл.")
+        self.assertEqual((kept, rejected), ([], 1))
+        kept, rejected = runner.filter_ungrounded_glossary_proposals(
+            [{**proposals[0], "translation": "Кейд"}],
+            "Cade visited.", "С Кейдом встретились.")
+        self.assertEqual(rejected, 0)
+        self.assertEqual(len(kept), 1)
+        kept, rejected = runner.filter_ungrounded_glossary_proposals(
+            proposals, "Cade visited.", "Cade arrived.")
+        self.assertEqual((kept, rejected), (proposals, 0))
+
     def test_glossary_append_is_idempotent_and_conflicts_fail(self):
         initial = "# Glossary\n\n| Original | Translation | Type | Notes |\n| --- | --- | --- | --- |\n"
         value = {"original": "Northbridge", "translation": "Нортбридж",
