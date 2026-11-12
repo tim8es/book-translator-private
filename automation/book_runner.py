@@ -664,9 +664,16 @@ def book_key(job_id: str) -> str:
     return "intake-" + hashlib.sha256(seed.encode("utf-8")).hexdigest()[:32]
 
 
-def ready_jobs(limit: int = 200) -> list[dict]:
-    """Discover independent book jobs without prioritizing one long-running book."""
-    work = []
+def ready_jobs(limit: int = 6) -> list[dict]:
+    """Admit at most six books per wake, fairly favoring least-recently served.
+
+    GitHub's per-book concurrency is the final serialization barrier. Avoid a
+    200-job matrix each time one book emits a checkpoint; the next 15-minute
+    schedule handles eligible books that were not chosen this time.
+    """
+    if type(limit) is not int or not 1 <= limit <= 6:
+        raise JobError("Auto selector limit must be between 1 and 6")
+    candidates = []
     keys = set()
     for path in sorted((ROOT / "intake" / "auto").glob("*/request.json")):
         job_id = path.parent.name
@@ -675,7 +682,6 @@ def ready_jobs(limit: int = 200) -> list[dict]:
         state_file = status_path(job_id)
         try:
             state = read_json(state_file) if state_file.exists() else None
-            # Completed requests should not block a subsequent edition/job.
             if state and state.get("state") == "done":
                 continue
             key = book_key(job_id)
@@ -684,22 +690,25 @@ def ready_jobs(limit: int = 200) -> list[dict]:
             continue
         if key in keys:
             continue
-        # Reserve the book lane even for paused/blocked requests. Without this,
-        # a later duplicate intake for the SAME book can start retrying after
-        # the first job is blocked, bypassing its per-book recovery policy.
+        # A blocked/paused older intake retains its book lane, so a later
+        # duplicate cannot bypass its existing review/recovery policy.
         keys.add(key)
         try:
             if state and state.get("state") in FINAL and not auto_resume_requested(state):
                 continue
             if state and state.get("state") == "paused" and auto_mode(state["book_slug"]) != "auto":
                 continue
+            updated = state.get("updated_at", "") if state else ""
+            if not isinstance(updated, str):
+                updated = ""
         except (OSError, ValueError, KeyError, JobError) as exc:
             print(f"Skipping invalid job {job_id}: {type(exc).__name__}", file=sys.stderr)
             continue
-        work.append({"job_id": job_id, "book_key": key})
-        if len(work) >= limit:
-            break
-    return work
+        candidates.append((updated, job_id, {"job_id": job_id, "book_key": key}))
+    # Older last-served book first; do not repeatedly starve a newer job due
+    # to lexically earlier job IDs. Each checkpoint refreshes updated_at.
+    candidates.sort(key=lambda item: (item[0], item[1]))
+    return [item for _, _, item in candidates[:limit]]
 
 
 def select(explicit: str | None) -> str:
