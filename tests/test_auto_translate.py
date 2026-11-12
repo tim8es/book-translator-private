@@ -1191,6 +1191,40 @@ with patch.object(book_runner, "chapter_data",
                 status["correction_rounds"]["chapter-000001"] = worker.MAX_CORRECTIONS
                 self.assertEqual(worker.next_operation(slug, status)[0], "blocked")
 
+    def test_review_bound_protocol_retry_is_one_shot_and_hash_checked(self):
+        unit = "chapter-000026"
+        review_id = "a" * 32
+        sha = "b" * 64
+        chapter = {"unit_id": unit, "number": 26, "status": "translated",
+                   "translation_acceptance": {"translation_sha256": sha}}
+        record = {"unit_id": unit, "sequence": 1, "record_id": review_id,
+                  "outcome": "CORRECTIONS_REQUIRED", "translation_sha256": sha}
+        ledger = {"records": [record]}
+        status = {"phase": "model-blocked", "failures": worker.MAX_FAILURES,
+                  "blocked_unit_id": unit,
+                  "last_error": "patch must target the reviewer's exact translation anchor",
+                  "last_patch_anchor_mismatch": {
+                      "unit_id": unit, "review_record_id": review_id,
+                      "translation_sha256": sha}}
+        self.assertTrue(worker.allow_review_bound_protocol_retry(status, ledger, [chapter]))
+        self.assertFalse(worker.allow_review_bound_protocol_retry(status, ledger, [chapter]))
+        self.assertEqual(len(status["correction_protocol_retry_audit"]), 1)
+        self.assertEqual(status["correction_protocol_retry_audit"][0]["protocol"],
+                         "review-bound-patches-v1")
+        self.assertNotIn("deferred_review_units", status)
+        self.assertEqual(status["failures"], worker.MAX_FAILURES)
+        self.assertEqual(chapter["status"], "translated")
+        self.assertEqual(record["outcome"], "CORRECTIONS_REQUIRED")
+        self.assertTrue(worker.defer_exhausted_patch_mismatch(status, ledger, [chapter]))
+        self.assertEqual(status["deferred_review_units"], [unit])
+
+        status["correction_protocol_retry_audit"] = []
+        chapter["translation_acceptance"]["translation_sha256"] = "c" * 64
+        with self.assertRaisesRegex(worker.JobError, "unchanged review"):
+            worker.allow_review_bound_protocol_retry(status, ledger, [chapter])
+        status["last_error"] = "unrelated model error"
+        self.assertFalse(worker.allow_review_bound_protocol_retry(status, ledger, [chapter]))
+
     def test_exhausted_patch_mismatch_defers_only_unchanged_unit(self):
         chapter = {"unit_id": "chapter-000024", "number": 24, "status": "translated",
                    "translation_acceptance": {"translation_sha256": "a" * 64}}
