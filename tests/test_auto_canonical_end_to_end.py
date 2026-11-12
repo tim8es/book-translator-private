@@ -59,7 +59,12 @@ class CanonicalAutoEndToEndTests(unittest.TestCase):
                 observed.append((chapter, role, user))
                 if role == "TRANSLATOR":
                     if chapter == 2:
-                        self.assertIn("Northbridge | ���������", user)
+                        glossary_json = user.split("GLOSSARY (structured lexical decisions):\\n", 1)[1].split("\\nSTYLE GUIDE", 1)[0]
+                        decisions = json.loads(glossary_json)
+                        self.assertEqual(decisions["target_language"], "ru")
+                        self.assertTrue(any(item["original"] == "Northbridge"
+                                            and item["type"] == "place"
+                                            for item in decisions["entries"]))
                         self.assertIn("PRIOR APPROVED CONTEXT", user)
                     return json.dumps({
                         "translation": translated[chapter],
