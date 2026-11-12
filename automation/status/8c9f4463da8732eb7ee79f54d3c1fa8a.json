@@ -2,13 +2,13 @@
   "schema_version": 1,
   "job_id": "8c9f4463da8732eb7ee79f54d3c1fa8a",
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "state": "blocked",
-  "phase": "model-blocked",
-  "failures": 3,
+  "state": "running",
+  "phase": "operator-resume-authorized",
+  "failures": 0,
   "correction_rounds": {},
   "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
   "source_sha256": "3a3fce78317162b68bc1e82501456a74a783cfc96cb2640c463f381866007865",
-  "updated_at": "2026-11-12T13:57:19.858905+00:00",
+  "updated_at": "2026-11-12T14:54:28.739231+00:00",
   "active": null,
   "model_calls_started": 6,
   "recoveries": [
@@ -16,6 +16,11 @@
       "action": "resume-model-blocked",
       "approved_at": "2026-11-12T13:48:29.415791+00:00",
       "previous_error": "translator must return a structured JSON response"
+    },
+    {
+      "action": "resume-model-blocked",
+      "approved_at": "2026-11-12T14:54:28.739208+00:00",
+      "previous_error": "patch must target the reviewer's exact translation anchor"
     }
   ],
   "deferred_review_units": [
@@ -37,5 +42,5 @@
     "correction_mode": "anchored-patches"
   },
   "blocked_unit_id": "chapter-000024",
-  "last_error": "patch must target the reviewer's exact translation anchor"
+  "last_error": null
 }
