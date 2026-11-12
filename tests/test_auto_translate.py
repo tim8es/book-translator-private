@@ -105,6 +105,8 @@ class AutomatedBookTests(unittest.TestCase):
                 self.assertFalse(worker.auto_resume_requested(status))
                 self.assertEqual(worker.select(None), "")
                 status["phase"] = "correction-limit-reached"
+                worker.store_json(control, {"schema_version": 1, "mode": "auto",
+                    "updated_at": "2026-11-10T10:01:00+00:00"})
                 self.assertTrue(worker.auto_resume_requested(status))
                 self.assertEqual(worker.select(None), job_id)
                 self.assertEqual(worker.ready_jobs(), [
