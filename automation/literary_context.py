@@ -23,7 +23,7 @@ _ALLOWED_ROLES = {"translator", "reviewer"}
 _NAME_KEYS = {"original", "translation", "type", "notes"}
 _STYLE_KEYS = {"source_pattern", "translation_approach", "evidence"}
 # Corrector supplies an edit intent; known target coordinates come ONLY from the
-# reviewer's hash-bound v2 evidence. Legacy target_anchor is accepted but ignored.
+# reviewer's hash-bound v2 evidence. Legacy targets must match it exactly.
 _PATCH_KEYS = {"finding_id", "operation", "replacement"}
 _OMISSION_PATCH_KEYS = _PATCH_KEYS | {"insertion_anchor"}
 _LEGACY_PATCH_KEYS = _PATCH_KEYS | {"target_anchor"}
@@ -135,9 +135,10 @@ def parse_correction_patches(
 ) -> tuple[list[dict], list[dict], list[dict]]:
     """Bind each edit to immutable reviewer evidence, never model-made coordinates.
 
-    Known reviewer anchors are authoritative even when a legacy model echoes a
-    longer/different target_anchor. For omissions (review anchor is null), the
-    model must give a validated, unique insertion_anchor in current translation.
+    Known reviewer anchors are authoritative. A legacy target_anchor is allowed
+    only when IDENTICAL to the reviewer quote: silently rebinding a larger model
+    patch to a smaller reviewer quote could duplicate a paragraph. Omissions
+    require a validated, unique insertion_anchor in the current translation.
     The caller checks SHA-bound review identity and applies all edits atomically.
     """
     try:
@@ -178,7 +179,15 @@ def parse_correction_patches(
             if "insertion_anchor" in patch:
                 raise ModelError("insertion_anchor is only allowed for omissions")
             # The review record, not the model, owns the exact target address.
-            # Discard untrusted legacy target_anchor even if it differs.
+            # A legacy response may intend to rewrite its larger chosen quote;
+            # silently applying that replacement to a shorter reviewed quote
+            # could duplicate adjacent text. Reject mismatch without mutation.
+            if ("target_anchor" in patch
+                    and patch["target_anchor"] != reviewer_anchor):
+                received = patch["target_anchor"]
+                if not isinstance(received, dict):
+                    raise ModelError("legacy corrector target_anchor is invalid")
+                raise PatchAnchorMismatch(finding_id, reviewer_anchor, received)
             anchor = dict(reviewer_anchor)
         replacement = patch["replacement"]
         if (not isinstance(replacement, str) or len(replacement) > MAX_PATCH_CHARS
