@@ -131,7 +131,7 @@ def _insertion_anchor(value: object) -> dict:
 
 
 def parse_correction_patches(
-    text: str, findings: list[dict],
+    text: str, findings: list[dict], *, allow_partial: bool = False,
 ) -> tuple[list[dict], list[dict], list[dict]]:
     """Bind each edit to immutable reviewer evidence, never model-made coordinates.
 
@@ -195,7 +195,9 @@ def parse_correction_patches(
             raise ModelError("corrector replacement is empty or too large")
         result.append({"finding_id": finding_id, "operation": operation,
                        "target_anchor": anchor, "replacement": replacement})
-    if seen != set(unresolved):
+    if not seen:
+        raise ModelError("corrector returned no actionable patches")
+    if not allow_partial and seen != set(unresolved):
         raise ModelError("corrector must address every unresolved review finding")
     return (result,
             _entries(data["glossary"], _NAME_KEYS, "glossary"),
