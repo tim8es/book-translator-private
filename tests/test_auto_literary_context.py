@@ -123,6 +123,24 @@ class LiteraryContextTests(unittest.TestCase):
             markdown, source_language="en", target_language="fr"))
         self.assertEqual(other["target_language"], "fr")
 
+    def test_glossary_recheck_feature_uses_only_book_pinned_validator(self):
+        old_snapshot = {"glossary": "a" * 64}
+        def legacy(report, *, previous, source_sha256, translation_sha256, outcome):
+            return None
+        def upgraded(report, *, previous, source_sha256, translation_sha256,
+                     outcome, current_shared_state_revisions=None):
+            return None
+        claim = {"shared_state_revisions": old_snapshot}
+        self.assertEqual(runner.reviewer_lineage_options(legacy, claim), {})
+        self.assertEqual(
+            runner.reviewer_lineage_options(upgraded, claim),
+            {"current_shared_state_revisions": old_snapshot},
+        )
+        with self.assertRaisesRegex(runner.JobError, "valid glossary revision"):
+            runner.reviewer_lineage_options(
+                upgraded, {"shared_state_revisions": {"glossary": "invalid"}})
+        self.assertEqual(runner.reviewer_lineage_options(legacy, {}), {})
+
     def test_auto_routes_old_glossary_review_back_to_reviewer(self):
         chapter = {"unit_id": "chapter-000027", "number": 27,
                    "status": "translated",
