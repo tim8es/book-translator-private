@@ -31,7 +31,7 @@ from uuid import uuid4
 from omniroute import ModelError, complete
 from literary_context import (fingerprint, full_shared_context, parse_literary_review,
                               parse_correction_patches, parse_translation, PatchAnchorMismatch, role_contracts,
-                              save_claim_bound_decisions, updated_glossary)
+                              save_claim_bound_decisions, updated_glossary, model_glossary_context)
 
 ROOT = Path(__file__).resolve().parents[1]
 ID = re.compile(r"^[0-9a-f]{32}$")
@@ -1870,7 +1870,9 @@ def context(engine: Path, slug: str, chapter: dict, role: str,
         "and the full EPUB are intentionally outside this request; do not ask for "
         "them or invent their contents. Preserve a unit consisting only of external "
         "links exactly as supplied. Existing glossary entries are canonical; do "
-        "not propose a conflicting rendering.")
+        "not casually propose conflicting renderings. If a recorded rendering "
+        "conflicts with the source or target-language grammar, report a glossary "
+        "decision issue with evidence rather than forcing a literal replacement.")
     if structural_segments is not None:
         system += ("\n\nSTRUCTURAL TRANSLATION EXECUTION MODE: The public canonical "
                    "helper has removed all links, image addresses, and EPUB "
@@ -1949,7 +1951,9 @@ def context(engine: Path, slug: str, chapter: dict, role: str,
         "invent missing material. Short front matter, contents, playlists, and "
         "link-only units are valid and may contain no narrative prose.\n"
         "BOOK METADATA (bibliographic fields only):\n" + json.dumps(book_context, ensure_ascii=False) +
-        "\nGLOSSARY (entire canonical file):\n" + glossary +
+        "\nGLOSSARY (structured lexical decisions):\n" + model_glossary_context(
+            glossary, source_language=book_context["source_language"],
+            target_language=book_context["target_language"]) +
         "\nSTYLE GUIDE (entire canonical file):\n" + style +
         "\nPRIOR APPROVED CONTEXT (for continuity only):\n" + previous +
         "\nSOURCE UNIT OR BOUNDED EVIDENCE FOR THIS REQUEST:\n" + source_display
