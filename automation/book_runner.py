@@ -241,6 +241,29 @@ def approve_interrupted_resume(status: dict, unit: dict, claim: dict,
                    "last_error": None})
 
 
+def filter_ungrounded_glossary_proposals(
+        proposals: list[dict], source: str, translation: str) -> tuple[list[dict], int]:
+    """Avoid canonizing lexical decisions unsupported by the accepted text.
+
+    Language-independent conservative filter: an unattested proposed rendering
+    must be revisited, not enforced as a reason to corrupt the translation.
+    Substring matches permit many inflected surface forms, but their absence is
+    only evidence to *skip a proposal*, never to reject or modify a chapter.
+    """
+    kept = []
+    rejected = 0
+    source_lower, target_lower = source.casefold(), translation.casefold()
+    for proposal in proposals:
+        original = proposal["original"].strip().casefold()
+        rendering = proposal["translation"].strip().casefold()
+        if (not original or not rendering or original not in source_lower
+                or rendering not in target_lower):
+            rejected += 1
+            continue
+        kept.append(proposal)
+    return kept, rejected
+
+
 def filter_conflicting_glossary_proposals(book: Path, proposals: list[dict]) -> tuple[list[dict], int]:
     if not proposals:
         return [], 0
@@ -2309,6 +2332,12 @@ def process_claim(job_id: str, slug: str, status: dict, engine: Path) -> None:
             if not preserve_links and not patch_mode and structural_plan is None:
                 translated = restore_markdown_links(source, translated)
             check_markers(source, translated)
+            if proposed_glossary:
+                proposed_glossary, ungrounded = filter_ungrounded_glossary_proposals(
+                    proposed_glossary, source, translated)
+                if ungrounded:
+                    status["glossary_evidence_rejected"] = (
+                        status.get("glossary_evidence_rejected", 0) + ungrounded)
             proposed_glossary, rejected = filter_conflicting_glossary_proposals(
                 ROOT / "books" / slug, proposed_glossary)
             if rejected:
