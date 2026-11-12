@@ -4,7 +4,7 @@
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
   "source_sha256": "3a3fce78317162b68bc1e82501456a74a783cfc96cb2640c463f381866007865",
   "state": "running",
-  "phase": "model-call-reserved",
+  "phase": "corrector-completed",
   "failures": 0,
   "correction_rounds": {
     "chapter-000002": 1,
@@ -15,18 +15,36 @@
     "chapter-000012": 2,
     "chapter-000013": 1,
     "chapter-000014": 3,
-    "chapter-000024": 1
+    "chapter-000024": 1,
+    "chapter-000025": 1
   },
   "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
-  "updated_at": "2026-11-12T15:04:46.015187+00:00",
-  "active": {
-    "role": "corrector",
-    "chapter": 25,
-    "session_id": "auto-886bde8dfe20-corrector-da38495f"
-  },
+  "updated_at": "2026-11-12T15:08:20.092434+00:00",
+  "active": null,
   "model_calls_started": 111,
-  "memory_glossary_saved": 93,
-  "pending_style": [],
+  "memory_glossary_saved": 102,
+  "pending_style": [
+    {
+      "evidence": "Cade описывает ревность и тревогу изнутри: «I was fucking crushed»; «I knew it. What would I do?».",
+      "source_pattern": "Повествование от первого лица в прошедшем времени с тесной привязкой к переживаниям Cade.",
+      "translation_approach": "Сохранять близкую повествовательную перспективу, непосредственные реакции и переходы от наблюдения к внутренней оценке персонажа."
+    },
+    {
+      "evidence": "В мыслях Cade встречаются «fucking stupid», «fucking crushed» и «my fucking insecurities».",
+      "source_pattern": "Внутренняя речь Cade сочетает разговорные формулировки, самоиронию и резкую ненормативную лексику.",
+      "translation_approach": "Сохранять разговорный регистр и силу брани, не сглаживая эмоциональные всплески."
+    },
+    {
+      "evidence": "Dillon говорит: «You’re the only one for me»; Cade прерывается: «I… I understand» и «And…».",
+      "source_pattern": "Диалог Dillon часто состоит из коротких прямых заверений, тогда как Cade сбивается и говорит с паузами, когда встревожен.",
+      "translation_approach": "Оставлять реплики Dillon лаконичными и уверенными; сохранять паузы, повторы и незавершённые фразы Cade."
+    },
+    {
+      "evidence": "«But sometimes…»; «Fear. Fear he’d leave me»; «It’s… god, I saw that girl hug you».",
+      "source_pattern": "В напряжённых эмоциональных репликах используются многоточия и короткие фрагменты предложений.",
+      "translation_approach": "Сохранять многоточия и фрагментарный ритм там, где они передают колебание или усиление чувства."
+    }
+  ],
   "prompt_context": {
     "role": "corrector",
     "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
@@ -139,7 +157,6 @@
     "chapter-000022",
     "chapter-000024"
   ],
-  "blocked_unit_id": "chapter-000024",
   "last_patch_anchor_mismatch": {
     "schema_version": 1,
     "recorded_at": "2026-11-12T14:54:03.523215+00:00",

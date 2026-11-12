@@ -46,3 +46,7 @@ Use this file for recurring names, places, organizations, terms, nicknames, titl
 | Darcy | Дарси | character | Имя персонажа; передача имени в русском тексте. |
 | Darren | Даррен | character | Имя персонажа; передача имени в русском тексте. |
 | David | Дэвид | character | Имя персонажа; передача имени в русском тексте. |
+| Christian | Кристиан | character | Имя нового персонажа в этом фрагменте. |
+| Athena | Афина | character | Имя лошади, упомянутой в этом фрагменте. |
+| Loudoun County Captains | «Капитаны округа Лаудон» | sports team | Название школьной команды. |
+| Broad Run Spartans | «Спартанцы Брод-Ран» | sports team | Название команды соперников. |
