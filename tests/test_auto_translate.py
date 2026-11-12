@@ -104,6 +104,11 @@ class AutomatedBookTests(unittest.TestCase):
                     "updated_at": "2026-11-10T09:59:00+00:00"})
                 self.assertFalse(worker.auto_resume_requested(status))
                 self.assertEqual(worker.select(None), "")
+                status["phase"] = "correction-limit-reached"
+                self.assertTrue(worker.auto_resume_requested(status))
+                self.assertEqual(worker.select(None), job_id)
+                self.assertEqual(worker.ready_jobs(), [
+                    {"job_id": job_id, "book_key": slug}])
                 status["phase"] = "operator-intervention-required"
                 worker.store_json(control, {"schema_version": 1, "mode": "auto",
                     "updated_at": "2026-11-10T10:02:00+00:00"})

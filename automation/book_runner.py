@@ -625,7 +625,8 @@ def auto_mode(slug: str) -> str:
 
 def auto_resume_requested(status: dict) -> bool:
     """A newer explicit ChatOps resume-auto can authorize model-blocked recovery."""
-    if (status.get("state") != "blocked" or status.get("phase") != "model-blocked"
+    if (status.get("state") != "blocked"
+            or status.get("phase") not in {"model-blocked", "correction-limit-reached"}
             or status.get("active") is not None):
         return False
     slug = status.get("book_slug")
