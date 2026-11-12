@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 102,
+  "next_sequence": 103,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -7049,6 +7049,185 @@
             },
             "translation_anchor": {
               "quote": "После Дня благодарения на улице было чертовски холодно, так что до старта команды наверняка замёрзли.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "6cce9e25a4a2a334c558c36793ba932af65d203fc28e5a2c7e3f8497977938cc",
+        "style_guide": "3ec7c485cf41741084ffe49b72d2b18ed9bd650a00a2ba00554605abadea5e3a"
+      }
+    },
+    {
+      "record_id": "e1f876d55ca54508b56f6ec719d17f9b",
+      "sequence": 102,
+      "unit_id": "chapter-000026",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "7997fac43ecfec3a08390955882a68124927a53905d13595ac18580f3864f87f",
+      "translation_sha256": "10d861dfaa34b279e3210a8e6fab970f77eb0f3f13e9c198f19bc1710cc5a991",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewer_session_id": "auto-886bde8dfe20-reviewer-6a4eb371",
+      "reviewed_at": "2026-11-12T20:37:11Z",
+      "state_revision": "9b8cc7e10f5a7c710b1dc729c4c34b725e496b4c27baff94ff05781701bb7552",
+      "review_commit": "71ad4402c6815535cb17219fa31332b582783e32",
+      "correction_round": 3,
+      "supersedes_record_id": "7b81b6df8549476a9954c31244f5d626",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-omission-10-current",
+            "category": "omission",
+            "severity": "major",
+            "detail": "Unresolved. The translation stops after Cade reacts and rolls onto his back. It omits the following intimate narration, including Dillon putting his hand inside Cade’s underwear, the hand-job context and climax, and their kiss. The closing line does not represent this material.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "We hadn’t branched out farther than hand jobs, but it was still fun as hell, and I loved watching Cade’s eyes roll into the back of his head when he reached his climax.",
+              "occurrence": 0
+            },
+            "translation_anchor": null,
+            "resolves": {
+              "record_id": "7b81b6df8549476a9954c31244f5d626",
+              "finding_id": "recheck-omission-10"
+            }
+          },
+          {
+            "id": "recheck-omission-11-current",
+            "category": "omission",
+            "severity": "minor",
+            "detail": "Resolved. The translation now includes that they had not been intimate for a while because of the holidays and their busy sports schedules, and that Dillon thinks it would make Cade feel better.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "It’d been a while because of the holidays and being so busy with our sports. That would make him feel better.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Мы давно не занимались этим: из-за праздников и спорта мы были очень заняты. Ему от этого стало бы лучше.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "7b81b6df8549476a9954c31244f5d626",
+              "finding_id": "omission-11"
+            }
+          },
+          {
+            "id": "recheck-meaning-12-current",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Resolved. The translation clearly says Dillon is not tired of protecting Cade; he is fed up with Cade’s father.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Not sick of protecting Cade, but with his dick of a father.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Я устал не от того, что защищал Cade, а от его отца-мудака.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "7b81b6df8549476a9954c31244f5d626",
+              "finding_id": "meaning-12"
+            }
+          },
+          {
+            "id": "recheck-meaning-13-current",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Resolved. The Russian now asks how Mom and Jared are getting along.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "How are you and… Jared getting along?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Как вы с… Джаредом ладите?",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "7b81b6df8549476a9954c31244f5d626",
+              "finding_id": "meaning-13"
+            }
+          },
+          {
+            "id": "recheck-style-14-current",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Resolved. The Russian now naturally conveys Cade taking a shorter line around the bend and using the momentum to accelerate.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "There was a big turn, and Cade narrowed closer and tighter around the bend, then he used the momentum to pick up his pace, pushing him into third place.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "На большом повороте Cade выбрал траекторию покороче, а затем воспользовался инерцией, чтобы ускориться и выйти на третье место.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "7b81b6df8549476a9954c31244f5d626",
+              "finding_id": "style-14"
+            }
+          },
+          {
+            "id": "recheck-style-15-current",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Resolved. The spoken line ends before the narration of Jared standing and handing Dillon the envelope.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "“Okay, I’ve got one more gift to give,” Jared stood and handed me an envelope from his back pocket.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Ладно, у меня есть ещё один подарок. Джаред встал и достал из заднего кармана конверт, протянув его мне.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "7b81b6df8549476a9954c31244f5d626",
+              "finding_id": "style-15"
+            }
+          },
+          {
+            "id": "recheck-meaning-16-current",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Resolved. The translation preserves that the teams would be cold while waiting for the race to start.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "It was after Thanksgiving and fucking cold outside, so the teams would be freezing until they started running.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "После Дня благодарения на улице было чертовски холодно, так что командам предстояло мёрзнуть, пока они не побегут.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "7b81b6df8549476a9954c31244f5d626",
+              "finding_id": "meaning-16"
+            }
+          },
+          {
+            "id": "meaning-touch-1",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Dillon’s explicit “want to touch you” is changed to wanting to be near Cade. This removes the repeated touch wording that sets up the following playful correction and shifts the meaning of the exchange.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "I just miss you and want to touch you.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Я просто соскучился и хотел побыть рядом.",
               "occurrence": 0
             },
             "resolves": null
