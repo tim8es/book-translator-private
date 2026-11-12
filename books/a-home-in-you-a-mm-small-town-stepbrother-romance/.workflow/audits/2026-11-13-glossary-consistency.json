@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "audit_type": "glossary-consistency",
+  "source_language": "en",
+  "target_language": "ru",
+  "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
+  "scope": {
+    "translated_markdown_files_scanned": 49,
+    "files_containing_literal_latin_names": 39,
+    "literal_occurrences": 1182,
+    "literal_terms": [
+      "Cade",
+      "Dillon"
+    ],
+    "notes": "Counts include table of contents, heading names and prose. A literal occurrence is a review candidate, not automatically a confirmed error."
+  },
+  "observed_defects": [
+    "The glossary initially recorded Cade -> Cade and Dillon -> Dillon although the book's prose uses Cyrillic case forms.",
+    "Multiple translated chapters retain source-language character-name spelling in Russian narrative prose.",
+    "The chapter-27 reviewer relied on the wrong glossary and generated an unsafe Latin substitution patch."
+  ],
+  "applied_changes": [
+    {
+      "kind": "glossary_correction",
+      "commit": "02523da01480d9ddfa9e429e288f94c83e159f7c"
+    },
+    {
+      "kind": "stale_correction_stage_deleted",
+      "commit": "f0b8e9c52418cb538368208c56c11e7f7a77afe7"
+    },
+    {
+      "kind": "obsolete_stage_pointer_cleared",
+      "commit": "841d097d8b1fdacd85acdc0d2e70aa2adf0d9f31"
+    }
+  ],
+  "unresolved": {
+    "affected_prose_requires_source_grounded_review": true,
+    "blind_global_replacement_prohibited": true,
+    "reviewed_chapters_must_be_rechecked_for_consistency": true,
+    "translation_files_edited_in_this_audit": false,
+    "job_is_blocked_pending_safe_resume": true
+  }
+}
