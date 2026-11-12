@@ -53,7 +53,8 @@ class WorkflowEpicCloseoutContractTests(unittest.TestCase):
                    "chat-operations.yml", "policy-change-source-intake.yml",
                    "policy-change-final-delivery.yml", "wings-of-starlight-final-delivery.yml",
                    "auto-translate.yml", "book-job-monitor.yml",
-                   "book-batch-validation.yml", "reckless-final-epub.yml"}
+                   "book-batch-validation.yml", "reckless-final-epub.yml",
+                   "final-epub.yml"}
         self.assertIn("tests.yml", workflows)
         self.assertEqual(set(workflows) - allowed, set())
         ci = (workflow_dir / "tests.yml").read_text(encoding="utf-8")
@@ -70,6 +71,19 @@ class WorkflowEpicCloseoutContractTests(unittest.TestCase):
                 self.assertIn("  push:", source)
                 self.assertIn("books/reckless-leather-chrome-book-1/.workflow/final-build-request.json", source)
                 self.assertNotIn("  pull_request:", source)
+                continue
+            if filename == "final-epub.yml":
+                self.assertIn("workflow_dispatch:", source)
+                self.assertIn(
+                    "uses: tim8es/book-translator/.github/workflows/final-epub.yml@"
+                    "3632331e95dc9392caabf762e8732ad5c80b7ad0",
+                    source,
+                )
+                self.assertIn("contents: read", source)
+                self.assertNotIn("contents: write", source)
+                self.assertNotIn("  push:", source)
+                self.assertNotIn("  schedule:", source)
+                self.assertNotIn("secrets:", source)
                 continue
             self.assertIn("workflow_dispatch:", source)
             self.assertNotIn("  pull_request:", source)
