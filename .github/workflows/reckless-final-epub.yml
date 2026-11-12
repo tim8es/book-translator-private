@@ -39,7 +39,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: tim8es/book-translator
-          ref: 7ba46243fd301d62ca69a73829dd319d0b932971
+          ref: 8bee02f0cc666a8144895d82e998eb052f19fb45
           path: .epub-renderer-fix
           persist-credentials: false
 
@@ -245,6 +245,7 @@ jobs:
                   matches=[n for n in new["cover_binary"] if n["path"]==row["path"]]
                   assert matches and matches[0]["sha256"]==row["sha256"], "cover binary altered"
               assert old["spine_first"]==new["spine_first"], "spine order changed"
+              assert old["first_xhtml_sha256"]==new["first_xhtml_sha256"], "unchanged cover titlepage XHTML was rewritten"
           PY
 
       - name: Upload verified EPUB for direct retrieval
