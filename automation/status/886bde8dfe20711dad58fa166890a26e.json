@@ -4,7 +4,7 @@
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
   "source_sha256": "3a3fce78317162b68bc1e82501456a74a783cfc96cb2640c463f381866007865",
   "state": "running",
-  "phase": "claimed",
+  "phase": "model-call-reserved",
   "failures": 0,
   "correction_rounds": {
     "chapter-000002": 1,
@@ -17,13 +17,13 @@
     "chapter-000014": 3
   },
   "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
-  "updated_at": "2026-11-12T13:19:50.799482+00:00",
+  "updated_at": "2026-11-12T13:20:14.248964+00:00",
   "active": {
     "role": "reviewer",
     "chapter": 24,
     "session_id": "auto-886bde8dfe20-reviewer-72d8f04e"
   },
-  "model_calls_started": 99,
+  "model_calls_started": 100,
   "memory_glossary_saved": 93,
   "pending_style": [
     {
@@ -38,17 +38,18 @@
     }
   ],
   "prompt_context": {
-    "role": "translator",
+    "role": "reviewer",
     "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
     "loaded_contracts": [
       "AGENTS.md",
       "docs/TRANSLATION.md",
-      "docs/TRANSLATOR.md"
+      "docs/REVIEWER.md"
     ],
-    "glossary_sha256": "13a5723dbb821b2670a8d9c534774432d6f107e1beb03987ee5eb980d2c485ac",
+    "glossary_sha256": "f4b50dd3fd727bc11f601923883e99e8c527d27bc0c6800c5a3f69c1c1b07eb3",
     "style_guide_sha256": "3ec7c485cf41741084ffe49b72d2b18ed9bd650a00a2ba00554605abadea5e3a",
-    "system_chars": 15840,
-    "user_chars": 29277
+    "system_chars": 22384,
+    "user_chars": 38993,
+    "review_context": "independent_session"
   },
   "memory_style_saved": 6,
   "recoveries": [
