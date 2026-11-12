@@ -235,6 +235,44 @@ def role_contracts(engine: Path, role: str) -> tuple[str, list[str]]:
     return "\n\n".join(sections), files
 
 
+def model_glossary_context(markdown: str, *, source_language: str,
+                           target_language: str) -> str:
+    """Explicit language-pair decisions for the model; no script assumptions.
+
+    A decision is a target-language lexical form and usage note, not a mandatory
+    literal substring. Parsing retains notes and handles escaped Markdown pipes.
+    """
+    entries = []
+    for line in markdown.splitlines():
+        if not line.lstrip().startswith("|"):
+            continue
+        cells = [cell.strip().replace(r"\|", "|")
+                 for cell in re.split(r"(?<!\\)\|", line.strip().strip("|"))]
+        if len(cells) < 4 or not all(cells[:3]):
+            continue
+        original, translation, kind, notes = cells[:4]
+        if original.casefold() in {"original", "source", "term", "оригинал"}:
+            continue
+        if re.fullmatch(r"[-:\s]+", original):
+            continue
+        entries.append({"original": original, "translation": translation,
+                        "type": kind, "notes": notes})
+    if not source_language or not target_language:
+        raise ValueError("model glossary requires an explicit language pair")
+    return json.dumps({
+        "source_language": source_language, "target_language": target_language,
+        "entries": entries,
+        "interpretation": (
+            "These are contextual lexical decisions, NOT strings to paste "
+            "verbatim in every sentence. Apply grammar, case and transliteration "
+            "as appropriate to the target language. Preserve intentionally "
+            "unchanged names when justified. If a glossary decision conflicts "
+            "with correct source-grounded target-language usage, report the "
+            "glossary defect; never degrade the translation to force a literal match."
+        )
+    }, ensure_ascii=False)
+
+
 def full_shared_context(book: Path) -> tuple[str, str]:
     glossary = (book / "glossary.md").read_text("utf-8")
     guide = (book / "style-guide.md").read_text("utf-8")
