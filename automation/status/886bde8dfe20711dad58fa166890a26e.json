@@ -4,8 +4,8 @@
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
   "source_sha256": "3a3fce78317162b68bc1e82501456a74a783cfc96cb2640c463f381866007865",
   "state": "running",
-  "phase": "correction-batch-staged",
-  "failures": 1,
+  "phase": "corrector-completed",
+  "failures": 0,
   "correction_rounds": {
     "chapter-000002": 1,
     "chapter-000003": 1,
@@ -16,34 +16,15 @@
     "chapter-000013": 1,
     "chapter-000014": 3,
     "chapter-000024": 1,
-    "chapter-000025": 4
+    "chapter-000025": 4,
+    "chapter-000026": 1
   },
   "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
-  "updated_at": "2026-11-12T20:25:43.750212+00:00",
-  "active": {
-    "role": "corrector",
-    "chapter": 26,
-    "session_id": "auto-886bde8dfe20-corrector-fe28db97"
-  },
+  "updated_at": "2026-11-12T20:25:46.574007+00:00",
+  "active": null,
   "model_calls_started": 131,
   "memory_glossary_saved": 110,
-  "pending_style": [
-    {
-      "evidence": "Рассказчик комментирует поведение Джареда и свои переживания за Cade, включая короткие внутренние реплики вроде «Зачем он купил всего два билета?».",
-      "source_pattern": "Повествование от первого лица в прошедшем времени с непосредственными эмоциональными реакциями и внутренними вопросами.",
-      "translation_approach": "Сохранять близкую перспективу Dillon, разговорную интонацию и переходы от описания к внутренней оценке."
-    },
-    {
-      "evidence": "В сценах забега и рождественской ссоры встречаются «fucking cold», «What the fuck» и «Goddamn fucking Jared».",
-      "source_pattern": "Во внутренней речи и диалогах Dillon употребляет грубую лексику и эмоциональные усилители.",
-      "translation_approach": "Передавать резкость и неформальный регистр без смягчения, подбирая русские эквиваленты по силе и контексту."
-    },
-    {
-      "evidence": "Фраза «I love you. You’re my home. Forever» повторяется между Dillon и Cade; в сцене забега Cade отвечает короткими репликами.",
-      "source_pattern": "Эмоциональные сцены строятся на прямых, повторяющихся признаниях и коротких репликах, контрастирующих с более подробным внутренним повествованием.",
-      "translation_approach": "Сохранять повторы признаний и лаконичность диалога, не усиливая и не разъясняя невысказанные чувства."
-    }
-  ],
+  "pending_style": [],
   "prompt_context": {
     "role": "corrector",
     "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
@@ -175,23 +156,6 @@
     "chapter-000024",
     "chapter-000025"
   ],
-  "last_patch_anchor_mismatch": {
-    "schema_version": 1,
-    "recorded_at": "2026-11-12T18:01:13.189336+00:00",
-    "unit_id": "chapter-000026",
-    "review_record_id": "10135326d9814c3cb9fcc0df49f99b66",
-    "translation_sha256": "9f193098698747aaed817b500644c5e4e555187f499c4a26fe38bb0c6a516775",
-    "finding_id": "terminology-5",
-    "expected_anchor": {
-      "quote": "— Господи, Dil. Это чертовски круто.",
-      "occurrence": 0
-    },
-    "received_anchor": {
-      "quote": "— Господи, Dil. Это чертовски круто. Ты так хорошо рисуешь — хотя и раньше рисовал прекрасно. Мне очень нравится. Спасибо. Жаль, что я не могу его оформить в рамку, но буду смотреть на него при любой возможности. Чёрт, мой подарок и рядом не стоял.",
-      "occurrence": 0
-    },
-    "model_call": 123
-  },
   "patch_deferral_audit": [
     {
       "unit_id": "chapter-000024",
@@ -200,7 +164,6 @@
       "reason": "model anchor mismatch after bounded attempts; review still required"
     }
   ],
-  "blocked_unit_id": "chapter-000026",
   "correction_protocol_retry_audit": [
     {
       "unit_id": "chapter-000026",
@@ -210,11 +173,5 @@
       "approved_at": "2026-11-12T19:29:45.332622+00:00",
       "reason": "single compatibility retry after model-generated anchor failure"
     }
-  ],
-  "correction_batch_progress": {
-    "unit_id": "chapter-000026",
-    "review_record_id": "10135326d9814c3cb9fcc0df49f99b66",
-    "completed": 10,
-    "total": 10
-  }
+  ]
 }
