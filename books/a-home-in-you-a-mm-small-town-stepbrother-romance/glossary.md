@@ -50,3 +50,5 @@ Use this file for recurring names, places, organizations, terms, nicknames, titl
 | Athena | Афина | character | Имя лошади, упомянутой в этом фрагменте. |
 | Loudoun County Captains | «Капитаны округа Лаудон» | sports team | Название школьной команды. |
 | Broad Run Spartans | «Спартанцы Брод-Ран» | sports team | Название команды соперников. |
+| Jared | Джаред | character | Имя персонажа; каноническая полная запись — Jared Beckman / Джаред Бекман. |
+| Baltimore Ravens | «Балтимор Рэйвенс» | sports team | Название команды; передано русской транслитерацией. |
