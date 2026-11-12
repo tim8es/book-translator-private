@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 94,
+  "next_sequence": 95,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -5710,6 +5710,135 @@
       },
       "shared_state_revisions": {
         "glossary": "13a5723dbb821b2670a8d9c534774432d6f107e1beb03987ee5eb980d2c485ac",
+        "style_guide": "3ec7c485cf41741084ffe49b72d2b18ed9bd650a00a2ba00554605abadea5e3a"
+      }
+    },
+    {
+      "record_id": "d874668594c04cbeaee25907d0380e1f",
+      "sequence": 94,
+      "unit_id": "chapter-000024",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "9747496e38507c1388903de0a5fd0fa2c46d97e60e4ce9585a2b2f557b223040",
+      "translation_sha256": "2fb9d3b873cda916c109d0e7976dbfcc1bb0603d09c935d0ea9f2ae79530e649",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewer_session_id": "auto-886bde8dfe20-reviewer-72d8f04e",
+      "reviewed_at": "2026-11-12T13:23:37Z",
+      "state_revision": "25d368f3013ab94594b5279381ec1bbde06b59d300077a4a8b41c8426c715345",
+      "review_commit": "953e79adc34131055dfbdce4ed40e859bffff577",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "terminology-1",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "The canonical glossary renders Cade as “Cade,” but the translation uses “Кейд.” Apply the canonical form consistently throughout.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "I could tell Cade was upset the moment I touched lips with Darcy.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Я понял, что Кейд расстроен, как только коснулся губами Дарси.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "“Brought it up from that day at the fair” means David may have mentioned the incident from the fair; “вспомнил тот день” instead says he remembered the day itself.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "That boy David might have only brought it up from that day at the fair and nothing more.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Может, тот парень, Дэвид, просто вспомнил тот день на ярмарке, и больше ничего.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-2",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "The source specifically says the quarterback never dated girls. “Ни с кем не встречается” changes this to not dating anyone, which also conflicts with the secret relationship established in the same sentence.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "We could keep this relationship between us a secret, but the kids would eventually figure out why the quarterback never dated girls.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Мы могли хранить наши отношения в тайне, но рано или поздно ребята догадаются, почему квотербек ни с кем не встречается.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "“Попрекнула меня поцелуем” is awkward and does not naturally convey “called me out on the kiss” in this context. Use a more idiomatic colloquial expression while preserving that she challenged him about the kiss.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "When she called me out on the kiss, I almost confessed I was gay to get everyone off our backs and to explain why I didn’t date girls, but I didn’t know what that would do to me on the team, and Darren would’ve been pissed.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Когда она попрекнула меня поцелуем, я чуть не признался всем, что я гей, — просто чтобы они от нас отстали и поняли, почему я не встречаюсь с девушками.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-2",
+            "category": "style",
+            "severity": "minor",
+            "detail": "“Беспокоиться ... о солнце за спиной” reads as an awkward literal rendering of the carefree image. Convey the pleasant summer sunshine more naturally in Russian.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Now it was summer break, and we had nothing to worry about other than the sun on our backs, exploring, camping, fishing, riding the horses, and lots of kissing. And hopefully, another type of exploring.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Теперь начались летние каникулы, и нам оставалось беспокоиться разве что о солнце за спиной, прогулках, походах, рыбалке, верховой езде и поцелуях. И, надеюсь, о новых открытиях.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "omission-1",
+            "category": "omission",
+            "severity": "major",
+            "detail": "The translation replaces a substantial source passage with an editorial note and a condensed summary, omitting its narrative sequence, dialogue, actions, and closing reflection. It also reduces the stated desire to “give in to our urges” to merely being alone. The supplied unit is therefore incomplete.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Cade and I sat facing each other in my bed in the late morning. Mom had already left for work, allowing us to give in to our urges finally.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Далее в оригинале подробно описана сексуальная близость героев, которым по пятнадцать лет; подробности опущены.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "f4b50dd3fd727bc11f601923883e99e8c527d27bc0c6800c5a3f69c1c1b07eb3",
         "style_guide": "3ec7c485cf41741084ffe49b72d2b18ed9bd650a00a2ba00554605abadea5e3a"
       }
     }
