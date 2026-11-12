@@ -1267,6 +1267,148 @@ def apply_correction_patches(translation: str, patches: list[dict]) -> str:
 
 
 
+
+def structural_stage_path(slug: str, unit_id: str) -> Path:
+    if (not re.fullmatch(r"[a-z0-9][a-z0-9-]{0,99}", slug)
+            or not re.fullmatch(r"chapter-[0-9]{6}", unit_id)):
+        raise JobError("unsafe structural translation staging identity")
+    return (ROOT / "books" / slug / ".workflow" / "auto-structural-translation"
+            / (unit_id + ".json"))
+
+
+def load_structural_stage(slug: str, chapter: dict, status: dict,
+                          helper, plan: dict) -> tuple[Path, dict]:
+    """Resume source-hash and helper-commit-bound text spans without model replay."""
+    path = structural_stage_path(slug, chapter["unit_id"])
+    expected = {
+        "schema_version": 1,
+        "unit_id": chapter["unit_id"],
+        "source_sha256": plan["source_sha256"],
+        "workflow_revision": status["workflow_revision"],
+        "helper_revision": PUBLIC_STRUCTURAL_HELPER_REVISION,
+        "segments": {}, "glossary": [], "style_guide": [],
+    }
+    if not path.exists():
+        return path, expected
+    stage = read_json(path)
+    if (not isinstance(stage, dict) or set(stage) != set(expected)
+            or any(stage.get(k) != v for k, v in expected.items()
+                   if k not in {"segments", "glossary", "style_guide"})
+            or not isinstance(stage.get("segments"), dict)
+            or not isinstance(stage.get("glossary"), list)
+            or not isinstance(stage.get("style_guide"), list)
+            or len(stage["glossary"]) > 40 or len(stage["style_guide"]) > 40):
+        raise JobError("staged structural translation is stale or invalid")
+    try:
+        helper.next_spans(plan, stage["segments"])
+        for segment_id, translation in stage["segments"].items():
+            helper.parse_batch(json.dumps({
+                "segments": [{"id": segment_id, "translation": translation}],
+                "glossary": [], "style_guide": [],
+            }, ensure_ascii=False), [segment_id])
+        parse_translation(json.dumps({
+            "translation": "validated placeholder",
+            "glossary": stage["glossary"],
+            "style_guide": stage["style_guide"],
+        }, ensure_ascii=False))
+    except (ValueError, ModelError) as exc:
+        raise JobError("staged structural translation failed validation") from exc
+    return path, stage
+
+
+def process_structural_translation(job_id: str, slug: str, status: dict,
+                                   engine: Path, chapter: dict, helper,
+                                   plan: dict) -> tuple[str, list, list] | None:
+    """Bounded public-helper execution, book-scoped durable staging, no lost work."""
+    book = ROOT / "books" / slug
+    source = (book / chapter["source_path"]).read_bytes().decode("utf-8")
+    if hashlib.sha256(source.encode("utf-8")).hexdigest() != plan["source_sha256"]:
+        raise JobError("source changed during structural translation")
+    stage_path, stage = load_structural_stage(slug, chapter, status, helper, plan)
+    status["structural_helper_revision"] = PUBLIC_STRUCTURAL_HELPER_REVISION
+    for _ in range(STRUCTURAL_MODEL_CALLS_PER_CHECKPOINT):
+        try:
+            selected = helper.next_spans(
+                plan, stage["segments"], limit=STRUCTURAL_MODEL_SEGMENTS_PER_CALL)
+        except ValueError as exc:
+            raise JobError("invalid source-bound structural translation progress") from exc
+        if not selected:
+            break
+        system, user, _ = context(
+            engine, slug, chapter, "translator", structural_segments=selected)
+        prompt_context = {
+            "role": "translator",
+            "workflow_revision": status["workflow_revision"],
+            "loaded_contracts": role_contracts(engine, "translator")[1],
+            "glossary_sha256": fingerprint(book / "glossary.md"),
+            "style_guide_sha256": fingerprint(book / "style-guide.md"),
+            "system_chars": len(system), "user_chars": len(user),
+            "execution_mode": "shared-structural-segments",
+            "helper_revision": PUBLIC_STRUCTURAL_HELPER_REVISION,
+            "batch_segment_count": len(selected),
+        }
+        count = status.get("model_calls_started", 0)
+        if type(count) is not int or count < 0:
+            raise JobError("invalid durable model call counter")
+        if count >= model_call_limit():
+            cli("release", slug, str(chapter["number"]),
+                "--session-id", status["active"]["session_id"])
+            status["active"] = None
+            status.update({"state": "blocked", "phase": "model-call-limit-reached",
+                           "last_error": "configured model invocation cap reached"})
+            checkpoint(job_id, status, slug)
+            return None
+        status.update({"model_calls_started": count + 1,
+                       "phase": "model-call-reserved",
+                       "prompt_context": prompt_context})
+        checkpoint(job_id, status, slug)
+        answer = complete("TRANSLATOR", system, user)
+        try:
+            translated, new_glossary, new_style = helper.parse_batch(
+                answer, [item["id"] for item in selected])
+        except ValueError as exc:
+            raise ModelError("structural translator rejected model output: "
+                             + str(exc)) from exc
+        _, new_glossary, new_style = parse_translation(json.dumps({
+            "translation": "validated placeholder",
+            "glossary": new_glossary, "style_guide": new_style,
+        }, ensure_ascii=False))
+        combined = {**stage["segments"], **translated}
+        try:
+            helper.next_spans(plan, combined)
+        except ValueError as exc:
+            raise ModelError("structural translation batch is not source-bound") from exc
+        merged_glossary = merge_unique_correction_decisions(stage["glossary"],
+                                                             new_glossary)
+        merged_style = merge_unique_correction_decisions(stage["style_guide"],
+                                                          new_style)
+        stage.update({"segments": combined, "glossary": merged_glossary,
+                      "style_guide": merged_style})
+        store_json(stage_path, stage)
+        status["structural_segment_progress"] = {
+            "unit_id": chapter["unit_id"],
+            "source_sha256": plan["source_sha256"],
+            "completed": len(combined),
+            "total": len(helper.spans(plan)),
+        }
+        status["phase"] = "structural-segments-staged"
+        checkpoint(job_id, status, slug)
+    try:
+        remaining = helper.next_spans(plan, stage["segments"])
+        if remaining:
+            return None
+        result = helper.render(plan, stage["segments"])
+    except ValueError as exc:
+        raise ModelError("structural translation assembly rejected: " + str(exc)) from exc
+    # The book's pinned engine still owns canonical acceptance and review.
+    check_markers(source, result)
+    status.setdefault("prompt_context", {
+        "role": "translator", "execution_mode": "shared-structural-segments",
+        "helper_revision": PUBLIC_STRUCTURAL_HELPER_REVISION,
+    })
+    return result, stage["glossary"], stage["style_guide"]
+
+
 def correction_stage_path(slug: str, unit_id: str) -> Path:
     if (not re.fullmatch(r"[a-z0-9][a-z0-9-]{0,99}", slug)
             or not re.fullmatch(r"chapter-[0-9]{6}", unit_id)):
