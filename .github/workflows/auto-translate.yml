@@ -79,6 +79,8 @@ jobs:
     if: needs.select.outputs.has_jobs == 'true'
     strategy:
       fail-fast: false
+      # Avoid starting a huge per-book matrix from a single idle wake.
+      max-parallel: 3
       matrix:
         include: ${{ fromJSON(needs.select.outputs.jobs) }}
     runs-on: ubuntu-latest
@@ -135,12 +137,6 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           JOB_ID: ${{ matrix.job_id }}
         run: gh workflow run auto-translate.yml --ref main -f job_id="$JOB_ID"
-
-      - name: Dispatch next pending job after terminal checkpoint
-        if: steps.run.outputs.continue_queue == 'true'
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh workflow run auto-translate.yml --ref main
 
       - name: Wake n8n delivery after a terminal job state
         if: always() && matrix.job_id != '' && (steps.run.outcome != 'success' || steps.run.outputs.done == 'true' || steps.run.outputs.continue_queue == 'true')

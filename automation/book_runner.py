@@ -43,6 +43,9 @@ MAX_CORRECTIONS = 3
 MAX_ACCEPTED_REVIEWS_PER_UNIT = 4
 MAX_CORRECTION_EXTENSIONS = 1
 MAX_FAILURES = 3
+# Bounded model calls per checkpoint keep a book from flooding Actions.
+CORRECTION_BATCH_SIZE = 3
+CORRECTION_BATCH_CALLS_PER_CHECKPOINT = 2
 DEFAULT_MODEL_CALL_LIMIT = 36
 # shortcut: focused review falls back to a full review above 30k chars; raise only if measured.
 MAX_FOCUSED_CONTEXT_CHARS = 30_000
@@ -661,9 +664,16 @@ def book_key(job_id: str) -> str:
     return "intake-" + hashlib.sha256(seed.encode("utf-8")).hexdigest()[:32]
 
 
-def ready_jobs(limit: int = 200) -> list[dict]:
-    """Discover independent book jobs without prioritizing one long-running book."""
-    work = []
+def ready_jobs(limit: int = 6) -> list[dict]:
+    """Admit at most six books per wake, fairly favoring least-recently served.
+
+    GitHub's per-book concurrency is the final serialization barrier. Avoid a
+    200-job matrix each time one book emits a checkpoint; the next 15-minute
+    schedule handles eligible books that were not chosen this time.
+    """
+    if type(limit) is not int or not 1 <= limit <= 6:
+        raise JobError("Auto selector limit must be between 1 and 6")
+    candidates = []
     keys = set()
     for path in sorted((ROOT / "intake" / "auto").glob("*/request.json")):
         job_id = path.parent.name
@@ -672,7 +682,6 @@ def ready_jobs(limit: int = 200) -> list[dict]:
         state_file = status_path(job_id)
         try:
             state = read_json(state_file) if state_file.exists() else None
-            # Completed requests should not block a subsequent edition/job.
             if state and state.get("state") == "done":
                 continue
             key = book_key(job_id)
@@ -681,22 +690,25 @@ def ready_jobs(limit: int = 200) -> list[dict]:
             continue
         if key in keys:
             continue
-        # Reserve the book lane even for paused/blocked requests. Without this,
-        # a later duplicate intake for the SAME book can start retrying after
-        # the first job is blocked, bypassing its per-book recovery policy.
+        # A blocked/paused older intake retains its book lane, so a later
+        # duplicate cannot bypass its existing review/recovery policy.
         keys.add(key)
         try:
             if state and state.get("state") in FINAL and not auto_resume_requested(state):
                 continue
             if state and state.get("state") == "paused" and auto_mode(state["book_slug"]) != "auto":
                 continue
+            updated = state.get("updated_at", "") if state else ""
+            if not isinstance(updated, str):
+                updated = ""
         except (OSError, ValueError, KeyError, JobError) as exc:
             print(f"Skipping invalid job {job_id}: {type(exc).__name__}", file=sys.stderr)
             continue
-        work.append({"job_id": job_id, "book_key": key})
-        if len(work) >= limit:
-            break
-    return work
+        candidates.append((updated, job_id, {"job_id": job_id, "book_key": key}))
+    # Older last-served book first; do not repeatedly starve a newer job due
+    # to lexically earlier job IDs. Each checkpoint refreshes updated_at.
+    candidates.sort(key=lambda item: (item[0], item[1]))
+    return [item for _, _, item in candidates[:limit]]
 
 
 def select(explicit: str | None) -> str:
@@ -1216,6 +1228,166 @@ def apply_correction_patches(translation: str, patches: list[dict]) -> str:
     return result
 
 
+
+def correction_stage_path(slug: str, unit_id: str) -> Path:
+    if (not re.fullmatch(r"[a-z0-9][a-z0-9-]{0,99}", slug)
+            or not re.fullmatch(r"chapter-[0-9]{6}", unit_id)):
+        raise JobError("unsafe correction staging identity")
+    return (ROOT / "books" / slug / ".workflow" / "auto-correction-batches"
+            / (unit_id + ".json"))
+
+
+def load_correction_stage(slug: str, chapter: dict, record: dict,
+                          status: dict, source: str, translation: str,
+                          unresolved: list[dict]) -> tuple[Path, dict]:
+    """Load only a stage bound to unchanged reviewer evidence and exact bytes."""
+    path = correction_stage_path(slug, chapter["unit_id"])
+    expected = {
+        "schema_version": 1,
+        "unit_id": chapter["unit_id"],
+        "review_record_id": record["record_id"],
+        "source_sha256": record["source_sha256"],
+        "translation_sha256": record["translation_sha256"],
+        "workflow_revision": status["workflow_revision"],
+        "patches": [], "glossary": [], "style_guide": [],
+    }
+    if not path.exists():
+        return path, expected
+    stage = read_json(path)
+    if (not isinstance(stage, dict) or set(stage) != set(expected)
+            or any(stage.get(k) != v for k, v in expected.items()
+                   if k not in {"patches", "glossary", "style_guide"})
+            or not isinstance(stage.get("patches"), list)
+            or not isinstance(stage.get("glossary"), list)
+            or not isinstance(stage.get("style_guide"), list)
+            or len(stage["patches"]) > len(unresolved)
+            or len(stage["glossary"]) > 40 or len(stage["style_guide"]) > 40):
+        raise JobError("staged corrections are stale or invalid")
+    by_id = {finding["id"]: finding for finding in unresolved}
+    verified = []
+    used = set()
+    for patch in stage["patches"]:
+        finding = by_id.get(patch.get("finding_id")) if isinstance(patch, dict) else None
+        if not finding or patch["finding_id"] in used:
+            raise JobError("staged correction finding identity is invalid")
+        used.add(patch["finding_id"])
+        try:
+            normalized, _, _ = parse_correction_patches(
+                json.dumps({"patches": [patch], "glossary": [], "style_guide": []},
+                           ensure_ascii=False),
+                [finding],
+            )
+        except ModelError as exc:
+            raise JobError("staged correction patch is invalid") from exc
+        if normalized != [patch]:
+            raise JobError("staged correction target is not reviewer-bound")
+        verified.extend(normalized)
+    # Fail closed on stage tampering, overlapping edits, or structure damage.
+    check_markers(source, apply_correction_patches(translation, verified))
+    return path, stage
+
+
+def merge_unique_correction_decisions(existing: list[dict], proposed: list[dict]) -> list[dict]:
+    updated = list(existing)
+    for item in proposed:
+        if item not in updated:
+            updated.append(item)
+    if len(updated) > 40:
+        raise ModelError("corrector proposed too many unique literary decisions")
+    return updated
+
+
+def process_correction_batches(job_id: str, slug: str, status: dict, engine: Path,
+                               chapter: dict, record: dict) -> tuple[str, list, list] | None:
+    """Stage at most two small LLM calls per Actions checkpoint.
+
+    No canonical translation mutation occurs until all original unresolved
+    findings are covered and the combined patch passes structural checks.
+    Partial patches survive across Actions jobs under an unchanged claim/evidence.
+    """
+    book = ROOT / "books" / slug
+    translation_bytes = (book / chapter["translation_path"]).read_bytes()
+    original_hash = hashlib.sha256(translation_bytes).hexdigest()
+    acceptance = chapter.get("translation_acceptance")
+    if (not isinstance(acceptance, dict)
+            or record.get("translation_sha256") != original_hash
+            or acceptance.get("translation_sha256") != original_hash
+            or acceptance.get("source_sha256") != record.get("source_sha256")):
+        raise JobError("correction review is stale; current translation hash changed")
+    source = (book / chapter["source_path"]).read_bytes().decode("utf-8")
+    if hashlib.sha256(source.encode("utf-8")).hexdigest() != record.get("source_sha256"):
+        raise JobError("correction review source hash changed")
+    translation = translation_bytes.decode("utf-8")
+    quality = record.get("quality_report")
+    if (not isinstance(quality, dict) or quality.get("evidence_version") != 2
+            or record.get("outcome") != "CORRECTIONS_REQUIRED"):
+        raise JobError("batch correction requires a current rejected v2 review")
+    unresolved = [finding for finding in quality["findings"] if not finding["resolved"]]
+    if not unresolved or len({f["id"] for f in unresolved}) != len(unresolved):
+        raise JobError("invalid correction batch finding set")
+    stage_path, stage = load_correction_stage(slug, chapter, record, status,
+                                              source, translation, unresolved)
+    for _ in range(CORRECTION_BATCH_CALLS_PER_CHECKPOINT):
+        completed = {patch["finding_id"] for patch in stage["patches"]}
+        pending = [finding for finding in unresolved if finding["id"] not in completed]
+        if not pending:
+            break
+        selected = pending[:CORRECTION_BATCH_SIZE]
+        system, user, _ = context(
+            engine, slug, chapter, "corrector", correction_findings=selected)
+        prompt_context = {
+            "role": "corrector",
+            "workflow_revision": status["workflow_revision"],
+            "loaded_contracts": role_contracts(engine, "translator")[1],
+            "glossary_sha256": fingerprint(book / "glossary.md"),
+            "style_guide_sha256": fingerprint(book / "style-guide.md"),
+            "system_chars": len(system), "user_chars": len(user),
+            "correction_mode": "bounded-review-patches",
+            "batch_finding_count": len(selected),
+        }
+        count = status.get("model_calls_started", 0)
+        if type(count) is not int or count < 0:
+            raise JobError("invalid durable model call counter")
+        if count >= model_call_limit():
+            cli("release", slug, str(chapter["number"]),
+                "--session-id", status["active"]["session_id"])
+            status["active"] = None
+            status.update({"state": "blocked", "phase": "model-call-limit-reached",
+                           "last_error": "configured model invocation cap reached"})
+            checkpoint(job_id, status, slug)
+            return None
+        # Reserve the call durably before contacting the provider.
+        status.update({"model_calls_started": count + 1,
+                       "phase": "model-call-reserved",
+                       "prompt_context": prompt_context})
+        checkpoint(job_id, status, slug)
+        answer = complete("CORRECTOR", system, user)
+        patches, glossary, style = parse_correction_patches(
+            answer, selected, allow_partial=True)
+        combined = stage["patches"] + patches
+        check_markers(source, apply_correction_patches(translation, combined))
+        updated_glossary = merge_unique_correction_decisions(stage["glossary"], glossary)
+        updated_style = merge_unique_correction_decisions(stage["style_guide"], style)
+        # A single checkpoint persists the complete stage and progress marker.
+        stage.update({"patches": combined, "glossary": updated_glossary,
+                      "style_guide": updated_style})
+        store_json(stage_path, stage)
+        status["correction_batch_progress"] = {
+            "unit_id": chapter["unit_id"],
+            "review_record_id": record["record_id"],
+            "completed": len(combined), "total": len(unresolved),
+        }
+        status["phase"] = "correction-batch-staged"
+        checkpoint(job_id, status, slug)
+    covered = {patch["finding_id"] for patch in stage["patches"]}
+    if covered != {finding["id"] for finding in unresolved}:
+        # Keep the live claim. Next bounded Action continues the same stage.
+        return None
+    translated = apply_correction_patches(translation, stage["patches"])
+    check_markers(source, translated)
+    return translated, stage["glossary"], stage["style_guide"]
+
+
 def focused_review_context(slug: str, chapter: dict, previous: dict,
                            source: str, translation: str) -> dict | None:
     report = previous.get("quality_report", {})
@@ -1491,7 +1663,8 @@ def canonical_dispatch(slug: str, status: dict) -> tuple[str, dict | None]:
 
 def context(engine: Path, slug: str, chapter: dict, role: str,
             pending_style: list[dict] | None = None, *,
-            force_full_review: bool = False) -> tuple[str, str, str]:
+            force_full_review: bool = False,
+            correction_findings: list[dict] | None = None) -> tuple[str, str, str]:
     book = ROOT / "books" / slug
     instructions, contract_paths = role_contracts(
         engine, "reviewer" if role == "reviewer" else "translator")
@@ -1524,6 +1697,12 @@ def context(engine: Path, slug: str, chapter: dict, role: str,
     translation_raw = (target_path.read_bytes().decode("utf-8")
                        if role in {"reviewer", "corrector"} else "")
     patch_mode = role == "corrector" and quality.get("evidence_version") == 2
+    if correction_findings is not None:
+        available = {item["id"]: item for item in findings if not item["resolved"]}
+        if (not patch_mode or not correction_findings
+                or len({item["id"] for item in correction_findings}) != len(correction_findings)
+                or any(available.get(item.get("id")) != item for item in correction_findings)):
+            raise JobError("correction batch selection is not current reviewer evidence")
     if patch_mode:
         # The selected historical revision has no independent corrector role.
         # Retain its pinned fidelity standard, but make the execution mode
@@ -1540,7 +1719,8 @@ def context(engine: Path, slug: str, chapter: dict, role: str,
             and not force_full_review):
         bounded_review = focused_review_context(slug, chapter, record, source, translation_raw)
     if patch_mode:
-        unresolved = [item for item in findings if not item.get("resolved")]
+        unresolved = (correction_findings if correction_findings is not None else
+                      [item for item in findings if not item.get("resolved")])
         if not unresolved:
             raise JobError("correction requested without unresolved reviewer findings")
         source_display = json.dumps([
@@ -1599,7 +1779,9 @@ def context(engine: Path, slug: str, chapter: dict, role: str,
                 "unique quote in CURRENT translated text. All non-omission findings must omit "
                 "insertion_anchor. Keep replacements local, include required spacing, and never "
                 "return or rewrite the whole unit. Do not touch EPUB markers, Markdown syntax, "
-                "URLs, or unrelated text. Every listed finding must appear exactly once. "
+                "URLs, or unrelated text. Return at least one patch and preferably "
+                "all listed findings; any missing findings will be sent in another "
+                "small batch and are NOT considered resolved. "
                 "glossary/style_guide use the normal translator schemas; [] is valid."
             )
         else:
@@ -1824,7 +2006,15 @@ def process_claim(job_id: str, slug: str, status: dict, engine: Path) -> None:
             prompt_context["correction_mode"] = "anchored-patches"
         preserve_links = (role in {"translator", "corrector"} and not patch_mode
                           and external_link_only(source))
-        if preserve_links:
+        if patch_mode:
+            batched = process_correction_batches(job_id, slug, status, engine,
+                                                 chapter, previous_record)
+            if batched is None:
+                return
+            translated, proposed_glossary, proposed_style = batched
+            # The most recent batch has the actual focused prompt provenance.
+            prompt_context = status["prompt_context"]
+        elif preserve_links:
             prompt_context["execution_mode"] = "deterministic_external_link_preservation"
             translated, proposed_glossary, proposed_style = source, [], []
         else:
@@ -1867,19 +2057,6 @@ def process_claim(job_id: str, slug: str, status: dict, engine: Path) -> None:
                         outcome=outcome)
                 except (ImportError, ValueError) as exc:
                     raise ModelError(f"reviewer evidence is invalid: {exc}") from exc
-            elif patch_mode:
-                patches, proposed_glossary, proposed_style = parse_correction_patches(
-                    answer, previous_quality["findings"])
-                translation_bytes = (ROOT / "books" / slug / chapter["translation_path"]
-                                     ).read_bytes()
-                acceptance = chapter.get("translation_acceptance", {})
-                expected_hash = previous_record.get("translation_sha256") if previous_record else None
-                if (not isinstance(acceptance, dict) or not isinstance(expected_hash, str)
-                        or hashlib.sha256(translation_bytes).hexdigest() != expected_hash
-                        or acceptance.get("translation_sha256") != expected_hash):
-                    raise JobError("correction review is stale; current translation hash changed")
-                current_translation = translation_bytes.decode("utf-8")
-                translated = apply_correction_patches(current_translation, patches)
             else:
                 translated, proposed_glossary, proposed_style = parse_translation(answer)
         if role != "reviewer":
@@ -1955,6 +2132,12 @@ def process_claim(job_id: str, slug: str, status: dict, engine: Path) -> None:
             "glossary", proposed_glossary)
         status["memory_glossary_saved"] = status.get("memory_glossary_saved", 0) + saved
         status["pending_style"] = proposed_style
+        if role == "corrector" and patch_mode:
+            # Remove staging ONLY after canonical translation acceptance and
+            # claim-bound glossary reconciliation have succeeded.
+            correction_stage_path(slug, unit_id).unlink(missing_ok=True)
+            status.pop("correction_batch_progress", None)
+            status.pop("last_patch_anchor_mismatch", None)
         if role == "corrector":
             rounds = status["correction_rounds"]
             rounds[unit_id] = rounds.get(unit_id, 0) + 1
