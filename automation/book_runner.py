@@ -1952,8 +1952,8 @@ def context(engine: Path, slug: str, chapter: dict, role: str,
         "link-only units are valid and may contain no narrative prose.\n"
         "BOOK METADATA (bibliographic fields only):\n" + json.dumps(book_context, ensure_ascii=False) +
         "\nGLOSSARY (structured lexical decisions):\n" + model_glossary_context(
-            glossary, source_language=book_context["source_language"],
-            target_language=book_context["target_language"]) +
+            glossary, source_language=book_context.get("source_language", "unspecified"),
+            target_language=book_context.get("target_language", "unspecified")) +
         "\nSTYLE GUIDE (entire canonical file):\n" + style +
         "\nPRIOR APPROVED CONTEXT (for continuity only):\n" + previous +
         "\nSOURCE UNIT OR BOUNDED EVIDENCE FOR THIS REQUEST:\n" + source_display
