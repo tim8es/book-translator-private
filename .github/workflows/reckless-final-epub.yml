@@ -190,6 +190,63 @@ jobs:
           print("VERIFIED_FINAL_EPUB", manifest["artifact_path"], len(payload), manifest["artifact_sha256"])
           PY
 
+      - name: Diagnose original and output cover and first spine page
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib
+          import json
+          import posixpath
+          import xml.etree.ElementTree as ET
+          import zipfile
+          from urllib.parse import unquote
+          from pathlib import Path
+
+          book = Path("books/reckless-leather-chrome-book-1")
+          src = book / "source/source.epub"
+          dst = book / "output/reckless-leather-chrome-book-1.epub"
+          def local(tag):
+              return tag.rsplit("}", 1)[-1]
+          def inspect(archive):
+              container = ET.fromstring(archive.read("META-INF/container.xml"))
+              opf = next(n.attrib["full-path"] for n in container.iter() if local(n.tag) == "rootfile")
+              pkg = ET.fromstring(archive.read(opf))
+              items = {n.get("id"): n for n in pkg.iter() if local(n.tag) == "item"}
+              spine = [n for n in pkg.iter() if local(n.tag) == "itemref"]
+              def path(href):
+                  return posixpath.normpath(posixpath.join(posixpath.dirname(opf), unquote(href.split("#")[0])))
+              spine_paths = [(path(items[x.get("idref")].get("href")), x.get("linear")) for x in spine]
+              first = spine_paths[0][0]
+              xml = ET.fromstring(archive.read(first))
+              attrs = [{"tag":local(n.tag),"src":n.get("src"),"href":n.get("href"),
+                        "xlink_href":n.get("{http://www.w3.org/1999/xlink}href"),
+                        "class":n.get("class")} for n in xml.iter() if local(n.tag) in ("img","image","svg")]
+              covers = [{"id":key,"href":n.get("href"),"properties":n.get("properties"),
+                         "media_type":n.get("media-type")} for key,n in items.items()
+                        if "cover" in (key or "").lower() or "cover" in n.get("href","").lower()
+                        or "cover-image" in n.get("properties","")]
+              info = [{"tag":local(n.tag),"attrs":n.attrib} for n in pkg.iter()
+                      if local(n.tag) in ("meta","reference") and
+                      ("cover" in str(n.attrib).lower() or local(n.tag) == "reference")]
+              cover_binary = [{"path":name, "size":len(archive.read(name)),
+                               "sha256":hashlib.sha256(archive.read(name)).hexdigest()}
+                              for name in archive.namelist() if "cover" in name.lower()
+                              and name.lower().endswith((".jpg",".jpeg",".png",".webp"))]
+              return {"opf":opf,"spine_first":spine_paths[:5],
+                      "first_xhtml_sha256":hashlib.sha256(archive.read(first)).hexdigest(),
+                      "first_xhtml_images":attrs, "cover_items":covers,
+                      "cover_meta":info[:15],"cover_binary":cover_binary}
+          with zipfile.ZipFile(src) as original, zipfile.ZipFile(dst) as translated:
+              old,new=inspect(original),inspect(translated)
+              print("EPUB_COVER_AUDIT", json.dumps({"original":old,"translated":new},
+                    ensure_ascii=False,sort_keys=True))
+              for row in old["cover_binary"]:
+                  matches=[n for n in new["cover_binary"] if n["path"]==row["path"]]
+                  assert matches and matches[0]["sha256"]==row["sha256"], "cover binary altered"
+              assert old["spine_first"]==new["spine_first"], "spine order changed"
+          PY
+
       - name: Upload verified EPUB for direct retrieval
         uses: actions/upload-artifact@v4
         with:
