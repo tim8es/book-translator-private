@@ -1477,6 +1477,17 @@ def context(engine: Path, slug: str, chapter: dict, role: str,
     translation_raw = (target_path.read_bytes().decode("utf-8")
                        if role in {"reviewer", "corrector"} else "")
     patch_mode = role == "corrector" and quality.get("evidence_version") == 2
+    if patch_mode:
+        # The selected historical revision has no independent corrector role.
+        # Retain its pinned fidelity standard, but make the execution mode
+        # explicit: correcting anchored findings is NOT a whole-unit rewrite.
+        system += ("\n\nCORRECTOR EXECUTION MODE (orchestrator-owned adapter): "
+                   "The pinned Translator contract governs fidelity and terminology; "
+                   "for this task return only small JSON patch intents, never a "
+                   "full chapter or any model-generated target coordinates. "
+                   "Reviewer evidence supplies exact targets; preserve all "
+                   "unrelated text, EPUB markers, links and formatting. "
+                   "An omission alone requires a unique insertion location.")
     bounded_review = None
     if (role == "reviewer" and quality.get("evidence_version") == 2
             and not force_full_review):
@@ -1533,14 +1544,16 @@ def context(engine: Path, slug: str, chapter: dict, role: str,
             user += (
                 "\nApply only the listed unresolved corrections. Return ONLY JSON with exactly "
                 "keys patches, glossary, style_guide. patches must contain one item per listed "
-                "finding, with exactly finding_id, operation, target_anchor, replacement. "
-                "Use operation replace with the reviewer's exact translation_anchor, or "
-                "insert_before/insert_after for an omission and quote a unique current-translation "
-                "anchor at the intended insertion point. For each existing translation anchor, "
-                "repeat the exact quote and occurrence. Keep replacements local, include needed "
-                "spacing, and do not return or rewrite the full unit. Do not touch EPUB markers, "
-                "Markdown syntax, URLs, or unrelated text. Every listed finding must appear exactly "
-                "once. glossary/style_guide use the normal translator schemas; [] is valid."
+                "finding, with exactly finding_id, operation, replacement. "
+                "For each finding with translation_anchor, do NOT output target_anchor: "
+                "the program binds it to the verified reviewer evidence using finding_id. "
+                "For a genuine omission where translation_anchor is null, use insert_before "
+                "or insert_after and add insertion_anchor:{quote,occurrence}, choosing an exact "
+                "unique quote in CURRENT translated text. All non-omission findings must omit "
+                "insertion_anchor. Keep replacements local, include required spacing, and never "
+                "return or rewrite the whole unit. Do not touch EPUB markers, Markdown syntax, "
+                "URLs, or unrelated text. Every listed finding must appear exactly once. "
+                "glossary/style_guide use the normal translator schemas; [] is valid."
             )
         else:
             user += "\nCURRENT ACCEPTED TRANSLATION:\n" + mask_translation_links(source, translation_raw)
@@ -1734,15 +1747,12 @@ def process_claim(job_id: str, slug: str, status: dict, engine: Path) -> None:
                     and isinstance(acceptance, dict)
                     and prior_mismatch.get("translation_sha256") == acceptance.get("translation_sha256")):
                 user += (
-                    "\nPREVIOUS CORRECTOR PATCH REJECTED. For the finding below, copy "
-                    "required_target_anchor exactly, including its occurrence. "
-                    "Do not shorten, normalize, paraphrase or choose a nearby quote. "
-                    "All other findings also require their exact reviewer translation_anchor. "
-                    "Rejected payload (especially replacement text) was NOT saved.\n"
-                    + json.dumps({
-                        "finding_id": prior_mismatch["finding_id"],
-                        "required_target_anchor": prior_mismatch["expected_anchor"],
-                    }, ensure_ascii=False))
+                    "\nPREVIOUS CORRECTOR PATCH REJECTED DUE TO A MODEL-GENERATED ADDRESS. "
+                    "Never repeat target_anchor for non-omission findings: the runner now "
+                    "binds immutable reviewer coordinates from finding_id. "
+                    "Rejected replacement text was NOT stored.\n"
+                    + json.dumps({"finding_id": prior_mismatch["finding_id"]},
+                                 ensure_ascii=False))
         review_context = "independent_session"
         if role == "reviewer" and previous_quality.get("evidence_version") == 2 and not force_full_review:
             current_translation = (ROOT / "books" / slug / chapter["translation_path"]
@@ -1813,8 +1823,15 @@ def process_claim(job_id: str, slug: str, status: dict, engine: Path) -> None:
             elif patch_mode:
                 patches, proposed_glossary, proposed_style = parse_correction_patches(
                     answer, previous_quality["findings"])
-                current_translation = (ROOT / "books" / slug / chapter["translation_path"]
-                                       ).read_bytes().decode("utf-8")
+                translation_bytes = (ROOT / "books" / slug / chapter["translation_path"]
+                                     ).read_bytes()
+                acceptance = chapter.get("translation_acceptance", {})
+                expected_hash = previous_record.get("translation_sha256") if previous_record else None
+                if (not isinstance(acceptance, dict) or not isinstance(expected_hash, str)
+                        or hashlib.sha256(translation_bytes).hexdigest() != expected_hash
+                        or acceptance.get("translation_sha256") != expected_hash):
+                    raise JobError("correction review is stale; current translation hash changed")
+                current_translation = translation_bytes.decode("utf-8")
                 translated = apply_correction_patches(current_translation, patches)
             else:
                 translated, proposed_glossary, proposed_style = parse_translation(answer)
