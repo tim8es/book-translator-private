@@ -22,7 +22,11 @@ MAX_PATCH_CHARS = 10_000
 _ALLOWED_ROLES = {"translator", "reviewer"}
 _NAME_KEYS = {"original", "translation", "type", "notes"}
 _STYLE_KEYS = {"source_pattern", "translation_approach", "evidence"}
-_PATCH_KEYS = {"finding_id", "operation", "target_anchor", "replacement"}
+# Corrector supplies an edit intent; known target coordinates come ONLY from the
+# reviewer's hash-bound v2 evidence. Legacy targets must match it exactly.
+_PATCH_KEYS = {"finding_id", "operation", "replacement"}
+_OMISSION_PATCH_KEYS = _PATCH_KEYS | {"insertion_anchor"}
+_LEGACY_PATCH_KEYS = _PATCH_KEYS | {"target_anchor"}
 _FINDING_ID = re.compile(r"^[a-z][a-z0-9-]{0,31}$")
 
 
@@ -114,10 +118,29 @@ def parse_literary_review(
     return outcome, report, style
 
 
+def _insertion_anchor(value: object) -> dict:
+    """Validate a model-selected insertion location for a true omission only."""
+    if (not isinstance(value, dict) or set(value) != {"quote", "occurrence"}
+            or not isinstance(value["quote"], str)
+            or not 1 <= len(value["quote"]) <= 300
+            or not value["quote"].strip()
+            or type(value["occurrence"]) is not int
+            or not 0 <= value["occurrence"] < 10000):
+        raise ModelError("corrector insertion anchor is invalid")
+    return dict(value)
+
+
 def parse_correction_patches(
     text: str, findings: list[dict],
 ) -> tuple[list[dict], list[dict], list[dict]]:
-    """Validate one small anchored edit for each unresolved v2 finding."""
+    """Bind each edit to immutable reviewer evidence, never model-made coordinates.
+
+    Known reviewer anchors are authoritative. A legacy target_anchor is allowed
+    only when IDENTICAL to the reviewer quote: silently rebinding a larger model
+    patch to a smaller reviewer quote could duplicate a paragraph. Omissions
+    require a validated, unique insertion_anchor in the current translation.
+    The caller checks SHA-bound review identity and applies all edits atomically.
+    """
     try:
         data = _json_payload(text)
     except ValueError as exc:
@@ -131,7 +154,9 @@ def parse_correction_patches(
     result = []
     seen = set()
     for patch in patches:
-        if not isinstance(patch, dict) or set(patch) != _PATCH_KEYS:
+        if not isinstance(patch, dict) or set(patch) not in (
+            _PATCH_KEYS, _OMISSION_PATCH_KEYS, _LEGACY_PATCH_KEYS
+        ):
             raise ModelError("corrector patch has invalid fields")
         finding_id = patch["finding_id"]
         if (not isinstance(finding_id, str) or _FINDING_ID.fullmatch(finding_id) is None
@@ -141,25 +166,35 @@ def parse_correction_patches(
         operation = patch["operation"]
         if not isinstance(operation, str) or operation not in {"replace", "insert_before", "insert_after"}:
             raise ModelError("corrector patch operation is unsupported")
-        anchor = patch["target_anchor"]
-        if (not isinstance(anchor, dict) or set(anchor) != {"quote", "occurrence"}
-                or not isinstance(anchor["quote"], str)
-                or not 1 <= len(anchor["quote"]) <= 300
-                or not anchor["quote"].strip()
-                or type(anchor["occurrence"]) is not int
-                or not 0 <= anchor["occurrence"] < 10000):
-            raise ModelError("corrector patch anchor is invalid")
-        previous_anchor = unresolved[finding_id]["translation_anchor"]
-        if previous_anchor is None and operation == "replace":
-            raise ModelError("an omission requires an insertion patch")
-        if previous_anchor is not None and anchor != previous_anchor:
-            raise PatchAnchorMismatch(finding_id, previous_anchor, anchor)
+        reviewer_anchor = unresolved[finding_id]["translation_anchor"]
+        if reviewer_anchor is None:
+            if operation == "replace":
+                raise ModelError("an omission requires an insertion patch")
+            # No reviewed translation quote exists for omitted source material.
+            # Require a model-proposed insertion location and validate its
+            # uniqueness against the current text at the application boundary.
+            choice = patch.get("insertion_anchor", patch.get("target_anchor"))
+            anchor = _insertion_anchor(choice)
+        else:
+            if "insertion_anchor" in patch:
+                raise ModelError("insertion_anchor is only allowed for omissions")
+            # The review record, not the model, owns the exact target address.
+            # A legacy response may intend to rewrite its larger chosen quote;
+            # silently applying that replacement to a shorter reviewed quote
+            # could duplicate adjacent text. Reject mismatch without mutation.
+            if ("target_anchor" in patch
+                    and patch["target_anchor"] != reviewer_anchor):
+                received = patch["target_anchor"]
+                if not isinstance(received, dict):
+                    raise ModelError("legacy corrector target_anchor is invalid")
+                raise PatchAnchorMismatch(finding_id, reviewer_anchor, received)
+            anchor = dict(reviewer_anchor)
         replacement = patch["replacement"]
         if (not isinstance(replacement, str) or len(replacement) > MAX_PATCH_CHARS
                 or (not replacement.strip() and operation != "replace")):
             raise ModelError("corrector replacement is empty or too large")
         result.append({"finding_id": finding_id, "operation": operation,
-                       "target_anchor": dict(anchor), "replacement": replacement})
+                       "target_anchor": anchor, "replacement": replacement})
     if seen != set(unresolved):
         raise ModelError("corrector must address every unresolved review finding")
     return (result,

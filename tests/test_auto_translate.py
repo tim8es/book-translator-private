@@ -1191,6 +1191,40 @@ with patch.object(book_runner, "chapter_data",
                 status["correction_rounds"]["chapter-000001"] = worker.MAX_CORRECTIONS
                 self.assertEqual(worker.next_operation(slug, status)[0], "blocked")
 
+    def test_review_bound_protocol_retry_is_one_shot_and_hash_checked(self):
+        unit = "chapter-000026"
+        review_id = "a" * 32
+        sha = "b" * 64
+        chapter = {"unit_id": unit, "number": 26, "status": "translated",
+                   "translation_acceptance": {"translation_sha256": sha}}
+        record = {"unit_id": unit, "sequence": 1, "record_id": review_id,
+                  "outcome": "CORRECTIONS_REQUIRED", "translation_sha256": sha}
+        ledger = {"records": [record]}
+        status = {"phase": "model-blocked", "failures": worker.MAX_FAILURES,
+                  "blocked_unit_id": unit,
+                  "last_error": "patch must target the reviewer's exact translation anchor",
+                  "last_patch_anchor_mismatch": {
+                      "unit_id": unit, "review_record_id": review_id,
+                      "translation_sha256": sha}}
+        self.assertTrue(worker.allow_review_bound_protocol_retry(status, ledger, [chapter]))
+        self.assertFalse(worker.allow_review_bound_protocol_retry(status, ledger, [chapter]))
+        self.assertEqual(len(status["correction_protocol_retry_audit"]), 1)
+        self.assertEqual(status["correction_protocol_retry_audit"][0]["protocol"],
+                         "review-bound-patches-v1")
+        self.assertNotIn("deferred_review_units", status)
+        self.assertEqual(status["failures"], worker.MAX_FAILURES)
+        self.assertEqual(chapter["status"], "translated")
+        self.assertEqual(record["outcome"], "CORRECTIONS_REQUIRED")
+        self.assertTrue(worker.defer_exhausted_patch_mismatch(status, ledger, [chapter]))
+        self.assertEqual(status["deferred_review_units"], [unit])
+
+        status["correction_protocol_retry_audit"] = []
+        chapter["translation_acceptance"]["translation_sha256"] = "c" * 64
+        with self.assertRaisesRegex(worker.JobError, "unchanged review"):
+            worker.allow_review_bound_protocol_retry(status, ledger, [chapter])
+        status["last_error"] = "unrelated model error"
+        self.assertFalse(worker.allow_review_bound_protocol_retry(status, ledger, [chapter]))
+
     def test_exhausted_patch_mismatch_defers_only_unchanged_unit(self):
         chapter = {"unit_id": "chapter-000024", "number": 24, "status": "translated",
                    "translation_acceptance": {"translation_sha256": "a" * 64}}
@@ -1213,38 +1247,47 @@ with patch.object(book_runner, "chapter_data",
         with self.assertRaisesRegex(worker.JobError, "unchanged review"):
             worker.defer_exhausted_patch_mismatch(status, ledger, [chapter])
 
-    def test_patch_anchor_mismatch_is_structured_without_replacement_leak(self):
+    def test_reviewer_anchor_is_bound_from_id_and_unsafe_legacy_target_rejected(self):
         from literary_context import PatchAnchorMismatch
         finding = {"id": "meaning-1", "resolved": False,
                    "translation_anchor": {"quote": "Неверная фраза.", "occurrence": 0}}
         response = json.dumps({
             "patches": [{"finding_id": "meaning-1", "operation": "replace",
-                         "target_anchor": {"quote": "фраза.", "occurrence": 0},
+                         "replacement": "Исправленный текст."}],
+            "glossary": [], "style_guide": [],
+        }, ensure_ascii=False)
+        patches, glossary, style = worker.parse_correction_patches(response, [finding])
+        self.assertEqual(patches[0]["target_anchor"], finding["translation_anchor"])
+        self.assertEqual((glossary, style), ([], []))
+        self.assertEqual(
+            worker.apply_correction_patches("Начало. Неверная фраза. Конец.", patches),
+            "Начало. Исправленный текст. Конец."
+        )
+        legacy = json.dumps({
+            "patches": [{"finding_id": "meaning-1", "operation": "replace",
+                         "target_anchor": {"quote": "Неверная фраза. Конец.", "occurrence": 0},
                          "replacement": "PRIVATE_REPLACEMENT_NOT_LOGGED"}],
             "glossary": [], "style_guide": [],
         }, ensure_ascii=False)
         with self.assertRaises(PatchAnchorMismatch) as captured:
-            worker.parse_correction_patches(response, [finding])
-        exc = captured.exception
-        self.assertEqual(exc.finding_id, "meaning-1")
-        self.assertEqual(exc.expected_anchor, finding["translation_anchor"])
-        self.assertEqual(exc.received_anchor, {"quote": "фраза.", "occurrence": 0})
-        self.assertNotIn("PRIVATE_REPLACEMENT_NOT_LOGGED", str(exc))
+            worker.parse_correction_patches(legacy, [finding])
+        self.assertEqual(captured.exception.expected_anchor, finding["translation_anchor"])
+        self.assertNotIn("PRIVATE_REPLACEMENT_NOT_LOGGED", str(captured.exception))
 
-    def test_patch_mismatch_diagnostic_is_persisted_in_private_status(self):
+    def test_invalid_omission_anchor_fails_closed_without_leaking_model_content(self):
         slug, job_id, session = "private-diagnostic-test", "a" * 32, "test-corrector"
         unit_id = "chapter-000001"
         chapter = {"unit_id": unit_id, "number": 1, "status": "translated",
                    "translation_acceptance": {"translation_sha256": "a" * 64}}
-        finding = {"id": "meaning-1", "resolved": False,
-                   "translation_anchor": {"quote": "Неверная фраза.", "occurrence": 0}}
+        finding = {"id": "omission-1", "resolved": False,
+                   "translation_anchor": None}
         ledger = {"records": [{
             "unit_id": unit_id, "sequence": 1, "record_id": "review-1",
             "outcome": "CORRECTIONS_REQUIRED", "quality_report": {
                 "evidence_version": 2, "findings": [finding]}}]}
         response = json.dumps({
-            "patches": [{"finding_id": "meaning-1", "operation": "replace",
-                         "target_anchor": {"quote": "фраза.", "occurrence": 0},
+            "patches": [{"finding_id": "omission-1", "operation": "insert_after",
+                         "insertion_anchor": {"quote": "", "occurrence": 0},
                          "replacement": "PRIVATE_REPLACEMENT_NOT_LOGGED"}],
             "glossary": [], "style_guide": [],
         }, ensure_ascii=False)
@@ -1269,20 +1312,13 @@ with patch.object(book_runner, "chapter_data",
                 worker.process_claim(job_id, slug, status, root)
                 self.assertEqual(status["phase"], "model-retry")
                 self.assertIsNone(status["active"])
-                evidence = status["last_patch_anchor_mismatch"]
-                self.assertEqual(evidence["finding_id"], "meaning-1")
-                self.assertEqual(evidence["review_record_id"], "review-1")
-                self.assertEqual(evidence["translation_sha256"], "a" * 64)
-                self.assertEqual(evidence["expected_anchor"], finding["translation_anchor"])
-                self.assertEqual(evidence["received_anchor"]["quote"], "фраза.")
-                self.assertEqual(evidence["model_call"], 2)
+                self.assertNotIn("last_patch_anchor_mismatch", status)
+                self.assertEqual(status["last_error"],
+                                 "corrector insertion anchor is invalid")
                 self.assertNotIn("PRIVATE_REPLACEMENT_NOT_LOGGED",
                                  json.dumps(status, ensure_ascii=False))
                 cli.assert_called_once_with("release", slug, "1", "--session-id", session)
                 checkpoint.assert_called()
-                user = worker.context
-                self.assertEqual(status["last_error"],
-                                 "patch must target the reviewer's exact translation anchor")
 
     def test_legacy_correction_budget_defers_unmodified_reviewed_unit(self):
         chapter = {"unit_id": "chapter-000025", "number": 25, "status": "translated",
@@ -1356,6 +1392,112 @@ with patch.object(book_runner, "chapter_data",
                 {"operation": "replace", "target_anchor": {"quote": "phrase", "occurrence": 0},
                  "replacement": "word"},
             ])
+
+    def test_compact_finding_id_patches_and_true_omission_insertion(self):
+        findings = [
+            {"id": "terminology-5", "resolved": False,
+             "translation_anchor": {"quote": "Dear D.", "occurrence": 0}},
+            {"id": "omission-10", "resolved": False, "translation_anchor": None},
+        ]
+        response = json.dumps({
+            "patches": [
+                {"finding_id": "terminology-5", "operation": "replace",
+                 "replacement": "Дорогой Д."},
+                {"finding_id": "omission-10", "operation": "insert_after",
+                 "insertion_anchor": {"quote": "Next paragraph.", "occurrence": 0},
+                 "replacement": " Inserted content."},
+            ],
+            "glossary": [], "style_guide": [],
+        })
+        patches, _, _ = worker.parse_correction_patches(response, findings)
+        self.assertEqual(patches[0]["target_anchor"], findings[0]["translation_anchor"])
+        self.assertEqual(patches[1]["target_anchor"],
+                         {"quote": "Next paragraph.", "occurrence": 0})
+        self.assertEqual(
+            worker.apply_correction_patches("Dear D. Next paragraph.", patches),
+            "Дорогой Д. Next paragraph. Inserted content."
+        )
+
+    def test_missing_or_ambiguous_omission_anchor_rejects_without_mutation(self):
+        finding = {"id": "omission-1", "resolved": False, "translation_anchor": None}
+        for patch_data in (
+            {"finding_id": "omission-1", "operation": "insert_before",
+             "replacement": "content"},
+            {"finding_id": "omission-1", "operation": "replace",
+             "replacement": "content"},
+        ):
+            response = json.dumps({"patches": [patch_data],
+                                   "glossary": [], "style_guide": []})
+            with self.assertRaises(ModelError):
+                worker.parse_correction_patches(response, [finding])
+        response = json.dumps({"patches": [
+            {"finding_id": "omission-1", "operation": "insert_after",
+             "insertion_anchor": {"quote": "same", "occurrence": 0},
+             "replacement": " content"}
+        ], "glossary": [], "style_guide": []})
+        patches, _, _ = worker.parse_correction_patches(response, [finding])
+        with self.assertRaisesRegex(worker.JobError, "ambiguous"):
+            worker.apply_correction_patches("same same", patches)
+
+    def test_ten_finding_batch_binds_existing_review_anchors(self):
+        findings = [{"id": f"meaning-{i}", "resolved": False,
+                     "translation_anchor": {"quote": f"piece-{i:02d}", "occurrence": 0}}
+                    for i in range(1, 11)]
+        response = json.dumps({"patches": [
+            {"finding_id": f"meaning-{i}", "operation": "replace",
+             "replacement": f"fixed-{i}"}
+            for i in range(1, 11)
+        ], "glossary": [], "style_guide": []})
+        patches, _, _ = worker.parse_correction_patches(response, findings)
+        before = " ".join(f"piece-{i:02d}" for i in range(1, 11))
+        after = worker.apply_correction_patches(before, patches)
+        self.assertEqual(after, " ".join(f"fixed-{i}" for i in range(1, 11)))
+        self.assertEqual(len(patches), 10)
+
+    def test_stale_review_hash_rejected_before_any_correction_write(self):
+        slug, job_id, session = "stale-review-book", "a" * 32, "session"
+        unit_id = "chapter-000001"
+        chapter = {"unit_id": unit_id, "number": 1, "status": "translated",
+                   "translation_path": "translated/unit.md",
+                   "translation_acceptance": {"translation_sha256": "a" * 64}}
+        ledger = {"records": [{
+            "unit_id": unit_id, "sequence": 1, "record_id": "review-1",
+            "outcome": "CORRECTIONS_REQUIRED",
+            "translation_sha256": "a" * 64,
+            "quality_report": {"evidence_version": 2, "findings": [{
+                "id": "meaning-1", "resolved": False,
+                "translation_anchor": {"quote": "wrong", "occurrence": 0}
+            }]},
+        }]}
+        response = json.dumps({"patches": [
+            {"finding_id": "meaning-1", "operation": "replace", "replacement": "right"}
+        ], "glossary": [], "style_guide": []})
+        status = {"state": "running", "phase": "claimed", "failures": 0,
+                  "model_calls_started": 1, "workflow_revision": "b" * 40,
+                  "active": {"role": "corrector", "chapter": 1, "session_id": session}}
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            book = root / "books" / slug
+            (book / ".workflow" / "claims").mkdir(parents=True)
+            (book / "translated").mkdir()
+            target = book / "translated" / "unit.md"
+            target.write_text("wrong", encoding="utf-8")
+            (book / "glossary.md").write_text("glossary", encoding="utf-8")
+            (book / "style-guide.md").write_text("style", encoding="utf-8")
+            worker.store_json(book / ".workflow" / "claims" / (unit_id + ".json"),
+                              {"session_id": session})
+            with patch.object(worker, "ROOT", root), \
+                 patch.object(worker, "chapter_data", return_value=({}, ledger, [chapter])), \
+                 patch.object(worker, "context", return_value=("system", "prompt", "source")), \
+                 patch.object(worker, "role_contracts", return_value=("contract", ["AGENTS.md"])), \
+                 patch.object(worker, "complete", return_value=response), \
+                 patch.object(worker, "cli") as cli, patch.object(worker, "checkpoint"):
+                worker.process_claim(job_id, slug, status, root)
+                self.assertEqual(target.read_text("utf-8"), "wrong")
+                self.assertEqual(status["phase"], "model-retry")
+                self.assertEqual(status["last_error"],
+                                 "correction review is stale; current translation hash changed")
+                cli.assert_called_once_with("release", slug, "1", "--session-id", session)
 
     def test_one_extra_correction_requires_measured_severity_progress(self):
         unit_id = "chapter-000011"
