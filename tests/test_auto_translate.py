@@ -1213,12 +1213,12 @@ with patch.object(book_runner, "chapter_data",
         with self.assertRaisesRegex(worker.JobError, "unchanged review"):
             worker.defer_exhausted_patch_mismatch(status, ledger, [chapter])
 
-    def test_reviewer_anchor_is_authoritative_even_if_legacy_model_expands_quote(self):
+    def test_reviewer_anchor_is_bound_from_id_and_unsafe_legacy_target_rejected(self):
+        from literary_context import PatchAnchorMismatch
         finding = {"id": "meaning-1", "resolved": False,
                    "translation_anchor": {"quote": "Неверная фраза.", "occurrence": 0}}
         response = json.dumps({
             "patches": [{"finding_id": "meaning-1", "operation": "replace",
-                         "target_anchor": {"quote": "фраза.", "occurrence": 0},
                          "replacement": "Исправленный текст."}],
             "glossary": [], "style_guide": [],
         }, ensure_ascii=False)
@@ -1229,6 +1229,16 @@ with patch.object(book_runner, "chapter_data",
             worker.apply_correction_patches("Начало. Неверная фраза. Конец.", patches),
             "Начало. Исправленный текст. Конец."
         )
+        legacy = json.dumps({
+            "patches": [{"finding_id": "meaning-1", "operation": "replace",
+                         "target_anchor": {"quote": "Неверная фраза. Конец.", "occurrence": 0},
+                         "replacement": "PRIVATE_REPLACEMENT_NOT_LOGGED"}],
+            "glossary": [], "style_guide": [],
+        }, ensure_ascii=False)
+        with self.assertRaises(PatchAnchorMismatch) as captured:
+            worker.parse_correction_patches(legacy, [finding])
+        self.assertEqual(captured.exception.expected_anchor, finding["translation_anchor"])
+        self.assertNotIn("PRIVATE_REPLACEMENT_NOT_LOGGED", str(captured.exception))
 
     def test_invalid_omission_anchor_fails_closed_without_leaking_model_content(self):
         slug, job_id, session = "private-diagnostic-test", "a" * 32, "test-corrector"
@@ -1397,7 +1407,7 @@ with patch.object(book_runner, "chapter_data",
 
     def test_ten_finding_batch_binds_existing_review_anchors(self):
         findings = [{"id": f"meaning-{i}", "resolved": False,
-                     "translation_anchor": {"quote": f"piece-{i}", "occurrence": 0}}
+                     "translation_anchor": {"quote": f"piece-{i:02d}", "occurrence": 0}}
                     for i in range(1, 11)]
         response = json.dumps({"patches": [
             {"finding_id": f"meaning-{i}", "operation": "replace",
@@ -1405,7 +1415,7 @@ with patch.object(book_runner, "chapter_data",
             for i in range(1, 11)
         ], "glossary": [], "style_guide": []})
         patches, _, _ = worker.parse_correction_patches(response, findings)
-        before = " ".join(f"piece-{i}" for i in range(1, 11))
+        before = " ".join(f"piece-{i:02d}" for i in range(1, 11))
         after = worker.apply_correction_patches(before, patches)
         self.assertEqual(after, " ".join(f"fixed-{i}" for i in range(1, 11)))
         self.assertEqual(len(patches), 10)
