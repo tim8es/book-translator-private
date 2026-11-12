@@ -3,17 +3,13 @@
   "job_id": "8c9f4463da8732eb7ee79f54d3c1fa8a",
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
   "state": "running",
-  "phase": "model-call-reserved",
-  "failures": 1,
+  "phase": "model-retry",
+  "failures": 2,
   "correction_rounds": {},
   "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
   "source_sha256": "3a3fce78317162b68bc1e82501456a74a783cfc96cb2640c463f381866007865",
-  "updated_at": "2026-11-12T14:57:42.044135+00:00",
-  "active": {
-    "role": "corrector",
-    "chapter": 24,
-    "session_id": "auto-8c9f4463da87-corrector-4694be0c"
-  },
+  "updated_at": "2026-11-12T15:00:29.424991+00:00",
+  "active": null,
   "model_calls_started": 8,
   "recoveries": [
     {
@@ -48,19 +44,20 @@
   "blocked_unit_id": "chapter-000024",
   "last_patch_anchor_mismatch": {
     "schema_version": 1,
-    "recorded_at": "2026-11-12T14:56:51.643187+00:00",
+    "recorded_at": "2026-11-12T15:00:29.424968+00:00",
     "unit_id": "chapter-000024",
     "review_record_id": "fe2abcfd76b34915adc67d3e12f66a17",
     "translation_sha256": "639ca2510a545611b161826dc9a7ed286239ebaf8941ce25f289f475ba9abbc1",
-    "finding_id": "omission-2",
+    "finding_id": "register-1",
     "expected_anchor": {
-      "quote": "Далее в оригинале подробно описана сексуальная близость героев, которым по пятнадцать лет; подробности опущены.",
+      "quote": "Нет, чёрт возьми. Я люблю только тебя. Никто и никогда этого не изменит. Выкинь эту чушь из головы прямо сейчас.",
       "occurrence": 0
     },
     "received_anchor": {
-      "quote": "Когда Cade вошёл в мою комнату и забрался ко мне в кровать, я схватил его за лицо и притянул к себе для глубокого поцелуя.",
+      "quote": "— Нет, чёрт возьми. Я люблю только тебя. Никто и никогда этого не изменит. Выкинь эту чушь из головы прямо сейчас.",
       "occurrence": 0
     },
-    "model_call": 7
-  }
+    "model_call": 8
+  },
+  "last_error": "patch must target the reviewer's exact translation anchor"
 }
