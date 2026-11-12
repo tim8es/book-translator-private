@@ -12,6 +12,7 @@ import posixpath
 import urllib.parse
 import hashlib
 import importlib.util
+import inspect
 import json
 import os
 import re
@@ -1591,6 +1592,18 @@ def process_correction_batches(job_id: str, slug: str, status: dict, engine: Pat
     return translated, stage["glossary"], stage["style_guide"]
 
 
+def reviewer_lineage_options(validator, claim: dict) -> dict:
+    """Negotiate reviewer evidence features with the book's pinned workflow."""
+    if "current_shared_state_revisions" not in inspect.signature(validator).parameters:
+        return {}
+    snapshot = claim.get("shared_state_revisions")
+    if (not isinstance(snapshot, dict)
+            or not isinstance(snapshot.get("glossary"), str)
+            or not HEX64.fullmatch(snapshot["glossary"])):
+        raise JobError("reviewer claim has no valid glossary revision")
+    return {"current_shared_state_revisions": snapshot}
+
+
 def focused_review_context(slug: str, chapter: dict, previous: dict,
                            source: str, translation: str) -> dict | None:
     report = previous.get("quality_report", {})
@@ -2067,6 +2080,40 @@ def context(engine: Path, slug: str, chapter: dict, role: str,
                      "only when fixed; otherwise set it to false. Only "
                      "entirely new findings use resolves:null. A response missing any prior "
                      "recheck is invalid.")
+            former = record.get("shared_state_revisions")
+            former_glossary = (former.get("glossary")
+                               if isinstance(former, dict) else None)
+            current_glossary = fingerprint(book / "glossary.md")
+            current_translation_sha = hashlib.sha256(
+                translation_raw.encode("utf-8")).hexdigest()
+            if (isinstance(former_glossary, str)
+                    and former_glossary != current_glossary
+                    and record.get("translation_sha256") == current_translation_sha):
+                from workflow.review_anchors import verify_correction_lineage
+                supports_reconciliation = bool(reviewer_lineage_options(
+                    verify_correction_lineage,
+                    {"shared_state_revisions": {"glossary": current_glossary}}))
+                if supports_reconciliation:
+                    user += (
+                        " GLOSSARY REVISION RECHECK: current glossary SHA-256 is "
+                        + current_glossary + ". The translation is unchanged. "
+                        "An obsolete prior terminology finding may be marked resolved "
+                        "only after an independent recheck of identical source and "
+                        "translation anchors. Include recheck_reason=glossary_reconciliation "
+                        "and glossary_revision=current glossary SHA-256 in resolves. "
+                        "This never applies to omissions, meaning, style, structure, "
+                        "or other non-terminology errors; keep those unresolved "
+                        "until the actual translation is corrected."
+                    )
+                else:
+                    user += (
+                        " PINNED REVIEW LINEAGE: the accepted translation is unchanged. "
+                        "This pinned revision does not allow any previously unresolved "
+                        "finding to be marked resolved without a changed translation, "
+                        "even when a glossary entry was corrected. Do not claim a fix "
+                        "based solely on changed glossary memory; preserve all "
+                        "unresolved source-grounded findings."
+                    )
         else:
             user += " First-pass findings use resolves=null."
         user += (
@@ -2323,7 +2370,8 @@ def process_claim(job_id: str, slug: str, status: dict, engine: Path) -> None:
                         report, previous=previous_record,
                         source_sha256=hashlib.sha256(source_bytes).hexdigest(),
                         translation_sha256=hashlib.sha256(translation_bytes).hexdigest(),
-                        outcome=outcome)
+                        outcome=outcome,
+                        **reviewer_lineage_options(verify_correction_lineage, owned))
                 except (ImportError, ValueError) as exc:
                     raise ModelError(f"reviewer evidence is invalid: {exc}") from exc
             else:
