@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 101,
+  "next_sequence": 102,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -6735,6 +6735,322 @@
               "occurrence": 0
             },
             "translation_anchor": null,
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "6cce9e25a4a2a334c558c36793ba932af65d203fc28e5a2c7e3f8497977938cc",
+        "style_guide": "3ec7c485cf41741084ffe49b72d2b18ed9bd650a00a2ba00554605abadea5e3a"
+      }
+    },
+    {
+      "record_id": "7b81b6df8549476a9954c31244f5d626",
+      "sequence": 101,
+      "unit_id": "chapter-000026",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "7997fac43ecfec3a08390955882a68124927a53905d13595ac18580f3864f87f",
+      "translation_sha256": "97d0adcab8d5b833a769b7efca9e748459a04db22f2ef8c84f47a84509115379",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewer_session_id": "auto-886bde8dfe20-reviewer-d6c95bd2",
+      "reviewed_at": "2026-11-12T20:30:28Z",
+      "state_revision": "d5a9f2cf009fecb3ac71e7386519d1205297b03dfa6befa804b97e769815fb44",
+      "review_commit": "7915f6c9eafb79ce391fba16bd99f4e3ef47edba",
+      "correction_round": 2,
+      "supersedes_record_id": "10135326d9814c3cb9fcc0df49f99b66",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-meaning-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Resolved. «Да это и так понятно» preserves the narrator’s sarcastic sense that Jared has stated the obvious.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "I wanted to tell him no shit, but that wouldn’t help anything and only upset Mom.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Мне хотелось ответить: «Да это и так понятно», но это ничего бы не изменило и только расстроило маму.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "10135326d9814c3cb9fcc0df49f99b66",
+              "finding_id": "meaning-1"
+            }
+          },
+          {
+            "id": "recheck-register-2",
+            "category": "register",
+            "severity": "minor",
+            "detail": "Resolved. The translation preserves the emphatic profanity, consistent with Dillon covering his mouth because he swore.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "“Fuck yeah!” I slapped my hand over my mouth.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Да, блядь!» Я прикрыл рот ладонью.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "10135326d9814c3cb9fcc0df49f99b66",
+              "finding_id": "register-2"
+            }
+          },
+          {
+            "id": "recheck-register-3",
+            "category": "register",
+            "severity": "minor",
+            "detail": "Resolved. «Блядь» retains the narrator’s angry emphasis.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Why would he only buy two fucking tickets?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Зачем он купил всего два, блядь, билета?",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "10135326d9814c3cb9fcc0df49f99b66",
+              "finding_id": "register-3"
+            }
+          },
+          {
+            "id": "recheck-style-4",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Resolved. The translation makes clear that they took turns opening presents.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "It didn’t take us longer than an hour to tear through our presents, making sure we all took turns.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Мы расправились с подарками меньше чем за час, следя за тем, чтобы каждый по очереди открывал подарки.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "10135326d9814c3cb9fcc0df49f99b66",
+              "finding_id": "style-4"
+            }
+          },
+          {
+            "id": "recheck-terminology-5",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "Resolved. The nickname follows the canonical glossary rendering «Дил».",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "God, Dil. That’s fucking amazing.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "— Господи, Дил. Это чертовски круто.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "10135326d9814c3cb9fcc0df49f99b66",
+              "finding_id": "terminology-5"
+            }
+          },
+          {
+            "id": "recheck-meaning-6",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Resolved. «Поразвлечься в постели» preserves the intimate implication of “fool around.” A separate omission in the following sentences is reported below.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Maybe we should fool around again soon.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Может, нам стоит снова немного поразвлечься в постели.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "10135326d9814c3cb9fcc0df49f99b66",
+              "finding_id": "meaning-6"
+            }
+          },
+          {
+            "id": "recheck-meaning-7",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Resolved. The translation preserves the suggestive request to touch Cade.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "“No, silly. I want to *touch* you.”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "— Нет, глупыш. Я хочу тебя *потрогать*.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "10135326d9814c3cb9fcc0df49f99b66",
+              "finding_id": "meaning-7"
+            }
+          },
+          {
+            "id": "recheck-meaning-8",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Resolved. The translation preserves Dillon needing Cade and wanting him, rather than changing desire to affection.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "I could’ve let him sleep, but I needed him, and he needed a reminder of how much I wanted him.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Я мог бы дать ему поспать, но он был мне нужен, и ему нужно было напомнить, как сильно я его хочу.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "10135326d9814c3cb9fcc0df49f99b66",
+              "finding_id": "meaning-8"
+            }
+          },
+          {
+            "id": "recheck-meaning-9",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Resolved. The translation restores the hand movement and Cade’s immediate response described in this sentence.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "“I love you forever,” I whispered, and slid my hand down his strong stomach and between his legs. He instantly reacted to my touch and moaned, rolling onto his back.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "— Я люблю тебя навсегда, — прошептал я и скользнул ладонью вниз по его крепкому животу, а потом между ног. Он тут же отреагировал на моё прикосновение и застонал, перекатившись на спину.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "10135326d9814c3cb9fcc0df49f99b66",
+              "finding_id": "meaning-9"
+            }
+          },
+          {
+            "id": "recheck-omission-10",
+            "category": "omission",
+            "severity": "major",
+            "detail": "Unresolved. The source continues with intimate narration, but the translation replaces that material with a placeholder. The omitted passage is not represented by the closing line.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "We hadn’t branched out farther than hand jobs, but it was still fun as hell, and I loved watching Cade’s eyes roll into the back of his head when he reached his climax.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "[Интимная сцена опущена.]",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "10135326d9814c3cb9fcc0df49f99b66",
+              "finding_id": "omission-10"
+            }
+          },
+          {
+            "id": "omission-11",
+            "category": "omission",
+            "severity": "minor",
+            "detail": "These sentences are omitted: the source says the boys have not been intimate for a while because of the holidays and sports, and that Dillon thinks it would make Cade feel better. The translation gives neither reason nor effect.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "It’d been a while because of the holidays and being so busy with our sports. That would make him feel better.",
+              "occurrence": 0
+            },
+            "translation_anchor": null,
+            "resolves": null
+          },
+          {
+            "id": "meaning-12",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The Russian phrasing can mean Dillon is tired of not protecting Cade. The source explicitly says he is not tired of protecting Cade, but of Cade’s father.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Not sick of protecting Cade, but with his dick of a father.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Не защищать Cade — я устал от его отца-мудака.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-13",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The source asks how the relationship between Mom and Jared is going. The Russian wording instead sounds like asking how each of them is doing, losing the question about how they are getting along.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“How are you and… Jared getting along?”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "— Как у тебя… у Джареда дела?",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-14",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Всё ближе и круче огибал изгиб трассы» is awkward and unclear in Russian. Render the idea of Cade taking a tighter line around the bend naturally.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "There was a big turn, and Cade narrowed closer and tighter around the bend, then he used the momentum to pick up his pace, pushing him into third place.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "На большом повороте Cade всё ближе и круче огибал изгиб трассы, а затем воспользовался инерцией, чтобы ускориться и выйти на третье место.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-15",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The dialogue dash incorrectly makes Jared’s action read like a speech tag. End the spoken line before narrating that he stood and handed over the envelope.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“Okay, I’ve got one more gift to give,” Jared stood and handed me an envelope from his back pocket.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "— Ладно, у меня есть ещё один подарок, — Джаред встал и достал из заднего кармана конверт, протянув его мне.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-16",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The source describes the teams being cold while they wait until the race starts. «Замёрзли» places the freezing in the past rather than preserving the prospective, ongoing cold.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "It was after Thanksgiving and fucking cold outside, so the teams would be freezing until they started running.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "После Дня благодарения на улице было чертовски холодно, так что до старта команды наверняка замёрзли.",
+              "occurrence": 0
+            },
             "resolves": null
           }
         ]
