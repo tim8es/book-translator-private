@@ -200,9 +200,11 @@ class LiteraryContextTests(unittest.TestCase):
 
     def test_memory_only_correction_triggers_fresh_reviewer(self):
         chapter = {"unit_id": "chapter-000001", "number": 1, "status": "translated",
-                   "translation_acceptance": {"translation_sha256": "a" * 64}}
+                   "translation_acceptance": {
+                       "source_sha256": "b" * 64, "translation_sha256": "a" * 64}}
         record = {"unit_id": "chapter-000001", "sequence": 1, "outcome": "CORRECTIONS_REQUIRED",
-                  "translation_sha256": "a" * 64}
+                  "source_sha256": "b" * 64, "translation_sha256": "a" * 64,
+                  "quality_report": {"findings": [{"id": "register-1", "resolved": False}]}}
         with patch.object(runner, "chapter_data",
                           return_value=({}, {"records": [record]}, [chapter])), patch.object(
                           runner, "approved_unit_ids", return_value=set()):
@@ -258,7 +260,8 @@ class LiteraryContextTests(unittest.TestCase):
              patch.object(runner, "cli") as cli:
             for operation, expected in (
                 ("translate", "translator"), ("review", "reviewer"),
-                ("correct_translation", "corrector"), ("accept_review", "promote")
+                # Missing findings in an Auto/ChatOps handoff require re-review.
+                ("correct_translation", "reviewer"), ("accept_review", "promote")
             ):
                 cli.return_value = json.dumps({
                     "operation": operation, "unit_id": "chapter-000001",
