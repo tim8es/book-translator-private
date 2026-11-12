@@ -69,6 +69,38 @@ jobs:
           print(f"Changed paths: {len(paths)}. Full engine tests: {full}. Book artifact check: {books}.")
           PY
 
+      # The legacy book-named Actions below are temporarily grandfathered.
+      # Any new Action must be explicitly reviewed as a reusable entrypoint.
+      - name: Prevent creation of ad-hoc book-specific workflows
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          existing = {
+              "auto-translate.yml",
+              "book-batch-validation.yml",
+              "book-job-monitor.yml",
+              "chat-operations.yml",
+              "policy-change-final-delivery.yml",  # legacy, pending migration
+              "policy-change-source-intake.yml",    # legacy, pending migration
+              "reckless-final-epub.yml",             # legacy, pending migration
+              "tests.yml",
+              "wings-of-starlight-final-delivery.yml",  # legacy, pending migration
+          }
+          directory = Path(".github/workflows")
+          actual = {entry.name for entry in directory.iterdir()
+                    if entry.is_file() and entry.suffix in (".yml", ".yaml")}
+          unknown = sorted(actual - existing)
+          if unknown:
+              raise SystemExit(
+                  "Unreviewed GitHub Actions workflows: " + ", ".join(unknown)
+                  + ". Use a shared parameterized workflow; if adding a new"
+                  + " reusable entrypoint, review and update this inventory."
+              )
+          print("Workflow topology check passed (legacy files grandfathered).")
+          PY
+
       - name: Set up Python 3.12
         if: steps.scope.outputs.full == 'true' || steps.scope.outputs.books == 'true'
         uses: actions/setup-python@v7
