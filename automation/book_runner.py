@@ -11,6 +11,7 @@ import difflib
 import posixpath
 import urllib.parse
 import hashlib
+import importlib.util
 import json
 import os
 import re
@@ -46,6 +47,11 @@ MAX_FAILURES = 3
 # Bounded model calls per checkpoint keep a book from flooding Actions.
 CORRECTION_BATCH_SIZE = 3
 CORRECTION_BATCH_CALLS_PER_CHECKPOINT = 2
+# Immutable public compatibility helper. The current book's literary workflow
+# revision remains pinned; this source-format adapter is versioned separately.
+PUBLIC_STRUCTURAL_HELPER_REVISION = "REPLACE_AFTER_PUBLIC_PR_MERGE"
+STRUCTURAL_MODEL_CALLS_PER_CHECKPOINT = 2
+STRUCTURAL_MODEL_SEGMENTS_PER_CALL = 3
 DEFAULT_MODEL_CALL_LIMIT = 36
 # shortcut: focused review falls back to a full review above 30k chars; raise only if measured.
 MAX_FOCUSED_CONTEXT_CHARS = 30_000
@@ -901,6 +907,38 @@ def install_engine(revision: str | None) -> tuple[Path, str]:
         "install_root": ".",
     })
     return temp, actual
+
+
+
+def load_public_structural_helper(engine: Path):
+    """Import an immutable public helper, NOT the book's pinned literary code.
+
+    The clone already contains the canonical public Git object store. Git show
+    resolves the exact audited helper commit despite a historical book checkout.
+    Never fetch mutable main or rewrite installed pinned scripts for this adapter.
+    """
+    ref = PUBLIC_STRUCTURAL_HELPER_REVISION
+    if not SHA.fullmatch(ref):
+        raise JobError("public structural helper has no immutable revision pin")
+    command = ["git", "-C", str(engine), "show",
+               ref + ":scripts/workflow/structural_translation.py"]
+    result = subprocess.run(command, capture_output=True, timeout=45)
+    if result.returncode or not result.stdout:
+        raise JobError("pinned public structural helper is unavailable")
+    support = engine / ".runtime-structural-compat"
+    support.mkdir(exist_ok=True)
+    target = support / "structural_translation.py"
+    target.write_bytes(result.stdout)
+    spec = importlib.util.spec_from_file_location(
+        "book_translator_runtime_structural_translation", target)
+    if spec is None or spec.loader is None:
+        raise JobError("cannot import pinned public structural helper")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    if not all(callable(getattr(module, name, None)) for name in
+               ("plan", "spans", "next_spans", "parse_batch", "render")):
+        raise JobError("public structural helper has an unsupported API")
+    return module
 
 
 def cli(*args: str) -> str:
