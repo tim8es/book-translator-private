@@ -123,6 +123,22 @@ class LiteraryContextTests(unittest.TestCase):
             markdown, source_language="en", target_language="fr"))
         self.assertEqual(other["target_language"], "fr")
 
+    def test_auto_routes_old_glossary_review_back_to_reviewer(self):
+        chapter = {"unit_id": "chapter-000027", "number": 27,
+                   "status": "translated",
+                   "translation_acceptance": {"translation_sha256": "accepted"}}
+        record = {"unit_id": "chapter-000027",
+                  "outcome": "CORRECTIONS_REQUIRED",
+                  "translation_sha256": "accepted",
+                  "shared_state_revisions": {"glossary": "old-glossary"}}
+        with patch.object(runner, "chapter_data", return_value=({}, {}, [chapter])), \
+             patch.object(runner, "approved_unit_ids", return_value=set()), \
+             patch.object(runner, "latest_record", return_value=record), \
+             patch.object(runner, "fingerprint", return_value="new-glossary"):
+            role, selected = runner.next_operation("book", {})
+        self.assertEqual(role, "reviewer")
+        self.assertEqual(selected["unit_id"], "chapter-000027")
+
     def test_auto_skips_ungrounded_glossary_without_rewriting_text(self):
         proposals = [{"original": "Cade", "translation": "Cade",
                       "type": "character", "notes": "unchanged"}]
