@@ -1654,7 +1654,8 @@ def canonical_dispatch(slug: str, status: dict) -> tuple[str, dict | None]:
 
 def context(engine: Path, slug: str, chapter: dict, role: str,
             pending_style: list[dict] | None = None, *,
-            force_full_review: bool = False) -> tuple[str, str, str]:
+            force_full_review: bool = False,
+            correction_findings: list[dict] | None = None) -> tuple[str, str, str]:
     book = ROOT / "books" / slug
     instructions, contract_paths = role_contracts(
         engine, "reviewer" if role == "reviewer" else "translator")
@@ -1687,6 +1688,12 @@ def context(engine: Path, slug: str, chapter: dict, role: str,
     translation_raw = (target_path.read_bytes().decode("utf-8")
                        if role in {"reviewer", "corrector"} else "")
     patch_mode = role == "corrector" and quality.get("evidence_version") == 2
+    if correction_findings is not None:
+        available = {item["id"]: item for item in findings if not item["resolved"]}
+        if (not patch_mode or not correction_findings
+                or len({item["id"] for item in correction_findings}) != len(correction_findings)
+                or any(available.get(item.get("id")) != item for item in correction_findings)):
+            raise JobError("correction batch selection is not current reviewer evidence")
     if patch_mode:
         # The selected historical revision has no independent corrector role.
         # Retain its pinned fidelity standard, but make the execution mode
@@ -1703,7 +1710,8 @@ def context(engine: Path, slug: str, chapter: dict, role: str,
             and not force_full_review):
         bounded_review = focused_review_context(slug, chapter, record, source, translation_raw)
     if patch_mode:
-        unresolved = [item for item in findings if not item.get("resolved")]
+        unresolved = (correction_findings if correction_findings is not None else
+                      [item for item in findings if not item.get("resolved")])
         if not unresolved:
             raise JobError("correction requested without unresolved reviewer findings")
         source_display = json.dumps([
@@ -1762,7 +1770,9 @@ def context(engine: Path, slug: str, chapter: dict, role: str,
                 "unique quote in CURRENT translated text. All non-omission findings must omit "
                 "insertion_anchor. Keep replacements local, include required spacing, and never "
                 "return or rewrite the whole unit. Do not touch EPUB markers, Markdown syntax, "
-                "URLs, or unrelated text. Every listed finding must appear exactly once. "
+                "URLs, or unrelated text. Return at least one patch and preferably "
+                "all listed findings; any missing findings will be sent in another "
+                "small batch and are NOT considered resolved. "
                 "glossary/style_guide use the normal translator schemas; [] is valid."
             )
         else:
