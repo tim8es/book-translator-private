@@ -3,8 +3,8 @@
   "job_id": "886bde8dfe20711dad58fa166890a26e",
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
   "source_sha256": "3a3fce78317162b68bc1e82501456a74a783cfc96cb2640c463f381866007865",
-  "state": "blocked",
-  "phase": "correction-limit-reached",
+  "state": "running",
+  "phase": "operator-resume-authorized",
   "failures": 0,
   "correction_rounds": {
     "chapter-000002": 1,
@@ -19,7 +19,7 @@
     "chapter-000025": 4
   },
   "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
-  "updated_at": "2026-11-12T15:27:42.868775+00:00",
+  "updated_at": "2026-11-12T17:43:16.474291+00:00",
   "active": null,
   "model_calls_started": 118,
   "memory_glossary_saved": 102,
@@ -127,6 +127,11 @@
       "action": "resume-model-blocked",
       "approved_at": "2026-11-12T15:04:18.358002+00:00",
       "previous_error": "patch must target the reviewer's exact translation anchor"
+    },
+    {
+      "action": "resume-correction-limit-reached",
+      "approved_at": "2026-11-12T17:43:16.474269+00:00",
+      "previous_error": null
     }
   ],
   "recovery_note": "A claim may still be active; inspect canonical state before recovery",
@@ -136,7 +141,8 @@
   },
   "deferred_review_units": [
     "chapter-000022",
-    "chapter-000024"
+    "chapter-000024",
+    "chapter-000025"
   ],
   "last_patch_anchor_mismatch": {
     "schema_version": 1,
@@ -163,5 +169,6 @@
       "reason": "model anchor mismatch after bounded attempts; review still required"
     }
   ],
-  "blocked_unit_id": "chapter-000025"
+  "blocked_unit_id": "chapter-000025",
+  "last_error": null
 }
