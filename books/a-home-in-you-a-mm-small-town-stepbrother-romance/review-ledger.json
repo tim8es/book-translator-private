@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 97,
+  "next_sequence": 98,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -6075,6 +6075,173 @@
             },
             "translation_anchor": {
               "quote": "Это твои родители довели тебя до такого, да?",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "edfd46c556cb6ea47b4c5beebc118e39b71e6a49fb74662a5d0534910644bd52",
+        "style_guide": "3ec7c485cf41741084ffe49b72d2b18ed9bd650a00a2ba00554605abadea5e3a"
+      }
+    },
+    {
+      "record_id": "7e4bb5c4471e4cb086b4d7fb9c1eb4d0",
+      "sequence": 97,
+      "unit_id": "chapter-000025",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "5fc96b09af376cc196a201bccedb6d671fbbd32333f8daff9aa02cc0a7589493",
+      "translation_sha256": "126457d97da77b4d085d3a349af1dc6eeeae7737869ce529bc45de4949fb8b8e",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewer_session_id": "auto-886bde8dfe20-reviewer-2247cf6a",
+      "reviewed_at": "2026-11-12T15:16:32Z",
+      "state_revision": "6a79c53d734ca97a114d6bea4f63aa8865b82acf94e335134488a5838fc026e2",
+      "review_commit": "cea25e8ce8a180bbf95b016ddd1aaa2b1b165db4",
+      "correction_round": 6,
+      "supersedes_record_id": "85d2574e4cc14da780df7c0cbc9d5975",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-meaning-1",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "The explicit reference to an orgasm is preserved in the current translation.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "especially after that epic orgasm earlier.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "особенно после того эпичного оргазма, который у меня был чуть раньше.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "85d2574e4cc14da780df7c0cbc9d5975",
+              "finding_id": "meaning-1"
+            }
+          },
+          {
+            "id": "recheck-register-1",
+            "category": "register",
+            "severity": "minor",
+            "detail": "The current translation restores the coarse emphasis with «херни», correcting the earlier softening.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Your parents did this shit to you, didn’t they?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Это твои родители натворили с тобой всей этой херни, да?",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "85d2574e4cc14da780df7c0cbc9d5975",
+              "finding_id": "register-1"
+            }
+          },
+          {
+            "id": "meaning-1",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "«Fool around» refers to physical intimacy in this context. The translation changes this to simply being alone together, losing the source's implication. Preserve the intimate, euphemistic meaning.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "it’s nice that no one’s ever here, so we can fool around more, but…",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "здорово, что дома почти никого не бывает и мы можем чаще оставаться вдвоём, но…",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "omission-1",
+            "category": "omission",
+            "severity": "minor",
+            "detail": "The translation conveys leaving in a hurry but omits the concrete action of climbing over his friends. Preserve this physical staging.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "I climbed over my friends to run out of there.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Я поспешно выбрался от друзей и бросился прочь.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "register-1",
+            "category": "register",
+            "severity": "minor",
+            "detail": "«Pissed» is blunter and more colloquial than «разозлился». Retain the informal force of the source.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "and Dad would get pissed.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "а отец бы разозлился.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "terminology-1",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "Here «meet» refers to a track competition, not an individual race. Translate it as «соревнования» rather than «забег».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "He showed up at one of your meets, right?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Он ведь пришёл на один из твоих забегов?",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The phrase «натворили с тобой всей этой херни» is grammatically awkward. Rephrase it naturally while retaining the coarse emphasis.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Your parents did this shit to you, didn’t they?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Это твои родители натворили с тобой всей этой херни, да?",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-2",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«A thing of beauty» describes how graceful or beautiful Dillon's play is, not merely that watching it is pleasurable. Preserve that image.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "watching Dillon play was a thing of beauty.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "смотреть на игру Dillon было сплошным удовольствием.",
               "occurrence": 0
             },
             "resolves": null
