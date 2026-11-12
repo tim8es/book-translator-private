@@ -670,19 +670,28 @@ def ready_jobs(limit: int = 200) -> list[dict]:
             continue
         state_file = status_path(job_id)
         try:
-            if state_file.exists():
-                state = read_json(state_file)
-                if state.get("state") in FINAL and not auto_resume_requested(state):
-                    continue
-                if state.get("state") == "paused" and auto_mode(state["book_slug"]) != "auto":
-                    continue
+            state = read_json(state_file) if state_file.exists() else None
+            # Completed requests should not block a subsequent edition/job.
+            if state and state.get("state") == "done":
+                continue
             key = book_key(job_id)
         except (OSError, ValueError, KeyError, JobError) as exc:
             print(f"Skipping invalid job {job_id}: {type(exc).__name__}", file=sys.stderr)
             continue
         if key in keys:
             continue
+        # Reserve the book lane even for paused/blocked requests. Without this,
+        # a later duplicate intake for the SAME book can start retrying after
+        # the first job is blocked, bypassing its per-book recovery policy.
         keys.add(key)
+        try:
+            if state and state.get("state") in FINAL and not auto_resume_requested(state):
+                continue
+            if state and state.get("state") == "paused" and auto_mode(state["book_slug"]) != "auto":
+                continue
+        except (OSError, ValueError, KeyError, JobError) as exc:
+            print(f"Skipping invalid job {job_id}: {type(exc).__name__}", file=sys.stderr)
+            continue
         work.append({"job_id": job_id, "book_key": key})
         if len(work) >= limit:
             break

@@ -52,6 +52,32 @@ class AutomatedBookTests(unittest.TestCase):
                     {"job_id": first, "book_key": "novel-a"},
                     {"job_id": second, "book_key": "novel-b"}])
 
+    def test_blocked_primary_job_reserves_book_lane_against_duplicate(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            slug = "one-book"
+            earlier, duplicate = "8" + "0" * 31, "8" + "c" * 31
+            for job in (earlier, duplicate):
+                request = root / "intake" / "auto" / job / "request.json"
+                request.parent.mkdir(parents=True)
+                worker.store_json(request, {"job_id": job, "source_sha256": "a" * 64,
+                                            "target_language": "ru"})
+            for job, time_value in ((earlier, "2026-11-12T12:30:00+00:00"),
+                                    (duplicate, "2026-11-12T12:00:00+00:00")):
+                worker.store_json(root / "automation" / "status" / (job + ".json"), {
+                    "job_id": job, "book_slug": slug, "state": "blocked",
+                    "phase": "model-blocked", "active": None, "updated_at": time_value})
+            control = root / "books" / slug / ".workflow" / "auto-control.json"
+            worker.store_json(control, {"schema_version": 1, "mode": "auto",
+                                        "updated_at": "2026-11-12T12:15:00+00:00"})
+            with patch.object(worker, "ROOT", root):
+                # The duplicate is resumable but primary is not: do not bypass primary.
+                self.assertEqual(worker.ready_jobs(), [])
+                worker.store_json(control, {"schema_version": 1, "mode": "auto",
+                                            "updated_at": "2026-11-12T12:31:00+00:00"})
+                self.assertEqual(worker.ready_jobs(), [
+                    {"job_id": earlier, "book_key": slug}])
+
     def test_newer_resume_auto_signal_unblocks_only_supported_model_failure(self):
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)
