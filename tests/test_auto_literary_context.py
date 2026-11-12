@@ -16,7 +16,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "automation"))
 import book_runner as runner
 from literary_context import (MAX_SHARED_CHARS, full_shared_context,
                               parse_literary_review, parse_translation, role_contracts,
-                              save_claim_bound_decisions, updated_glossary, updated_style)
+                              save_claim_bound_decisions, updated_glossary, updated_style,
+                              model_glossary_context)
 from omniroute import ModelError
 
 
@@ -103,6 +104,24 @@ class LiteraryContextTests(unittest.TestCase):
         review["findings"] = [{"severity": "major", "detail": "Incomplete finding.", "resolved": False}]
         with self.assertRaisesRegex(ModelError, "reviewer evidence is invalid"):
             parse_literary_review(json.dumps(review))
+
+    def test_structured_glossary_context_is_language_independent(self):
+        markdown = (
+            "# Glossary\n| Original | Translation | Type | Notes |\n"
+            "| --- | --- | --- | --- |\n"
+            "| Cade | Кейд | character | Inflected in running prose |\n"
+            "| Dillon | Dillon | character | Unchanged in this edition |\n"
+        )
+        model_input = json.loads(model_glossary_context(
+            markdown, source_language="en", target_language="ru"))
+        self.assertEqual(model_input["source_language"], "en")
+        self.assertEqual(model_input["target_language"], "ru")
+        self.assertEqual(model_input["entries"][0]["translation"], "Кейд")
+        self.assertEqual(model_input["entries"][1]["translation"], "Dillon")
+        self.assertIn("grammar", model_input["interpretation"])
+        other = json.loads(model_glossary_context(
+            markdown, source_language="en", target_language="fr"))
+        self.assertEqual(other["target_language"], "fr")
 
     def test_glossary_append_is_idempotent_and_conflicts_fail(self):
         initial = "# Glossary\n\n| Original | Translation | Type | Notes |\n| --- | --- | --- | --- |\n"
