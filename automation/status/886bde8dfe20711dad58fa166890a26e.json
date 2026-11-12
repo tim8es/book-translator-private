@@ -3,9 +3,9 @@
   "job_id": "886bde8dfe20711dad58fa166890a26e",
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
   "source_sha256": "3a3fce78317162b68bc1e82501456a74a783cfc96cb2640c463f381866007865",
-  "state": "blocked",
-  "phase": "model-blocked",
-  "failures": 3,
+  "state": "running",
+  "phase": "operator-resume-authorized",
+  "failures": 0,
   "correction_rounds": {
     "chapter-000002": 1,
     "chapter-000003": 1,
@@ -19,7 +19,7 @@
     "chapter-000025": 4
   },
   "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
-  "updated_at": "2026-11-12T18:01:13.189359+00:00",
+  "updated_at": "2026-11-12T19:29:45.332648+00:00",
   "active": null,
   "model_calls_started": 123,
   "memory_glossary_saved": 110,
@@ -148,6 +148,11 @@
       "action": "resume-correction-limit-reached",
       "approved_at": "2026-11-12T17:43:16.474269+00:00",
       "previous_error": null
+    },
+    {
+      "action": "resume-model-blocked",
+      "approved_at": "2026-11-12T19:29:45.332641+00:00",
+      "previous_error": "patch must target the reviewer's exact translation anchor"
     }
   ],
   "recovery_note": "A claim may still be active; inspect canonical state before recovery",
@@ -186,5 +191,15 @@
     }
   ],
   "blocked_unit_id": "chapter-000026",
-  "last_error": "patch must target the reviewer's exact translation anchor"
+  "last_error": null,
+  "correction_protocol_retry_audit": [
+    {
+      "unit_id": "chapter-000026",
+      "review_record_id": "10135326d9814c3cb9fcc0df49f99b66",
+      "translation_sha256": "9f193098698747aaed817b500644c5e4e555187f499c4a26fe38bb0c6a516775",
+      "protocol": "review-bound-patches-v1",
+      "approved_at": "2026-11-12T19:29:45.332622+00:00",
+      "reason": "single compatibility retry after model-generated anchor failure"
+    }
+  ]
 }
