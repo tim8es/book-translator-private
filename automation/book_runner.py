@@ -29,7 +29,7 @@ from uuid import uuid4
 
 from omniroute import ModelError, complete
 from literary_context import (fingerprint, full_shared_context, parse_literary_review,
-                              parse_correction_patches, parse_translation, role_contracts,
+                              parse_correction_patches, parse_translation, PatchAnchorMismatch, role_contracts,
                               save_claim_bound_decisions, updated_glossary)
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -1629,6 +1629,25 @@ def process_claim(job_id: str, slug: str, status: dict, engine: Path) -> None:
         system, user, source = context(engine, slug, chapter, role,
                                        pending_style=status.get("pending_style", []),
                                        force_full_review=force_full_review)
+        if patch_mode:
+            prior_mismatch = status.get("last_patch_anchor_mismatch")
+            acceptance = chapter.get("translation_acceptance", {})
+            if (isinstance(prior_mismatch, dict)
+                    and prior_mismatch.get("unit_id") == unit_id
+                    and previous_record is not None
+                    and prior_mismatch.get("review_record_id") == previous_record.get("record_id")
+                    and isinstance(acceptance, dict)
+                    and prior_mismatch.get("translation_sha256") == acceptance.get("translation_sha256")):
+                user += (
+                    "\nPREVIOUS CORRECTOR PATCH REJECTED. For the finding below, copy "
+                    "required_target_anchor exactly, including its occurrence. "
+                    "Do not shorten, normalize, paraphrase or choose a nearby quote. "
+                    "All other findings also require their exact reviewer translation_anchor. "
+                    "Rejected payload (especially replacement text) was NOT saved.\n"
+                    + json.dumps({
+                        "finding_id": prior_mismatch["finding_id"],
+                        "required_target_anchor": prior_mismatch["expected_anchor"],
+                    }, ensure_ascii=False))
         review_context = "independent_session"
         if role == "reviewer" and previous_quality.get("evidence_version") == 2 and not force_full_review:
             current_translation = (ROOT / "books" / slug / chapter["translation_path"]
@@ -1727,6 +1746,20 @@ def process_claim(job_id: str, slug: str, status: dict, engine: Path) -> None:
     except (ModelError, JobError) as exc:
         cli("release", slug, str(chapter["number"]), "--session-id", active["session_id"])
         status["active"] = None
+        if isinstance(exc, PatchAnchorMismatch):
+            acceptance = chapter.get("translation_acceptance")
+            status["last_patch_anchor_mismatch"] = {
+                "schema_version": 1,
+                "recorded_at": clock(),
+                "unit_id": unit_id,
+                "review_record_id": previous_record.get("record_id") if previous_record else None,
+                "translation_sha256": (acceptance.get("translation_sha256")
+                                       if isinstance(acceptance, dict) else None),
+                "finding_id": exc.finding_id,
+                "expected_anchor": exc.expected_anchor,
+                "received_anchor": exc.received_anchor,
+                "model_call": status.get("model_calls_started"),
+            }
         status["failures"] = status.get("failures", 0) + 1
         status["state"] = "blocked" if status["failures"] >= MAX_FAILURES else "running"
         status["phase"] = "model-blocked" if status["state"] == "blocked" else "model-retry"

@@ -26,6 +26,16 @@ _PATCH_KEYS = {"finding_id", "operation", "target_anchor", "replacement"}
 _FINDING_ID = re.compile(r"^[a-z][a-z0-9-]{0,31}$")
 
 
+class PatchAnchorMismatch(ModelError):
+    """An actionable, bounded mismatch; never contains model replacement text."""
+
+    def __init__(self, finding_id: str, expected: dict, received: dict):
+        super().__init__("patch must target the reviewer's exact translation anchor")
+        self.finding_id = finding_id
+        self.expected_anchor = dict(expected)
+        self.received_anchor = dict(received)
+
+
 def _one_line(value: object, field: str) -> str:
     if not isinstance(value, str) or not value.strip() or len(value) > 700:
         raise ModelError(f"invalid literary memory field: {field}")
@@ -143,7 +153,7 @@ def parse_correction_patches(
         if previous_anchor is None and operation == "replace":
             raise ModelError("an omission requires an insertion patch")
         if previous_anchor is not None and anchor != previous_anchor:
-            raise ModelError("patch must target the reviewer's exact translation anchor")
+            raise PatchAnchorMismatch(finding_id, previous_anchor, anchor)
         replacement = patch["replacement"]
         if (not isinstance(replacement, str) or len(replacement) > MAX_PATCH_CHARS
                 or (not replacement.strip() and operation != "replace")):

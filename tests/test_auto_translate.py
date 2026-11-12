@@ -1158,6 +1158,77 @@ with patch.object(book_runner, "chapter_data",
                 status["correction_rounds"]["chapter-000001"] = worker.MAX_CORRECTIONS
                 self.assertEqual(worker.next_operation(slug, status)[0], "blocked")
 
+    def test_patch_anchor_mismatch_is_structured_without_replacement_leak(self):
+        from literary_context import PatchAnchorMismatch
+        finding = {"id": "meaning-1", "resolved": False,
+                   "translation_anchor": {"quote": "Неверная фраза.", "occurrence": 0}}
+        response = json.dumps({
+            "patches": [{"finding_id": "meaning-1", "operation": "replace",
+                         "target_anchor": {"quote": "фраза.", "occurrence": 0},
+                         "replacement": "PRIVATE_REPLACEMENT_NOT_LOGGED"}],
+            "glossary": [], "style_guide": [],
+        }, ensure_ascii=False)
+        with self.assertRaises(PatchAnchorMismatch) as captured:
+            worker.parse_correction_patches(response, [finding])
+        exc = captured.exception
+        self.assertEqual(exc.finding_id, "meaning-1")
+        self.assertEqual(exc.expected_anchor, finding["translation_anchor"])
+        self.assertEqual(exc.received_anchor, {"quote": "фраза.", "occurrence": 0})
+        self.assertNotIn("PRIVATE_REPLACEMENT_NOT_LOGGED", str(exc))
+
+    def test_patch_mismatch_diagnostic_is_persisted_in_private_status(self):
+        slug, job_id, session = "private-diagnostic-test", "a" * 32, "test-corrector"
+        unit_id = "chapter-000001"
+        chapter = {"unit_id": unit_id, "number": 1, "status": "translated",
+                   "translation_acceptance": {"translation_sha256": "a" * 64}}
+        finding = {"id": "meaning-1", "resolved": False,
+                   "translation_anchor": {"quote": "Неверная фраза.", "occurrence": 0}}
+        ledger = {"records": [{
+            "unit_id": unit_id, "sequence": 1, "record_id": "review-1",
+            "outcome": "CORRECTIONS_REQUIRED", "quality_report": {
+                "evidence_version": 2, "findings": [finding]}}]}
+        response = json.dumps({
+            "patches": [{"finding_id": "meaning-1", "operation": "replace",
+                         "target_anchor": {"quote": "фраза.", "occurrence": 0},
+                         "replacement": "PRIVATE_REPLACEMENT_NOT_LOGGED"}],
+            "glossary": [], "style_guide": [],
+        }, ensure_ascii=False)
+        status = {"state": "running", "phase": "claimed", "failures": 0,
+                  "model_calls_started": 1, "workflow_revision": "b" * 40,
+                  "active": {"role": "corrector", "chapter": 1, "session_id": session}}
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            book = root / "books" / slug
+            (book / ".workflow" / "claims").mkdir(parents=True)
+            (book / "glossary.md").write_text("glossary", encoding="utf-8")
+            (book / "style-guide.md").write_text("style", encoding="utf-8")
+            worker.store_json(book / ".workflow" / "claims" / (unit_id + ".json"),
+                              {"session_id": session})
+            with patch.object(worker, "ROOT", root), \\
+                 patch.object(worker, "chapter_data", return_value=({}, ledger, [chapter])), \\
+                 patch.object(worker, "context", return_value=("system", "prompt", "source")), \\
+                 patch.object(worker, "role_contracts", return_value=("contract", ["AGENTS.md"])), \\
+                 patch.object(worker, "complete", return_value=response), \\
+                 patch.object(worker, "cli") as cli, \\
+                 patch.object(worker, "checkpoint") as checkpoint:
+                worker.process_claim(job_id, slug, status, root)
+                self.assertEqual(status["phase"], "model-retry")
+                self.assertIsNone(status["active"])
+                evidence = status["last_patch_anchor_mismatch"]
+                self.assertEqual(evidence["finding_id"], "meaning-1")
+                self.assertEqual(evidence["review_record_id"], "review-1")
+                self.assertEqual(evidence["translation_sha256"], "a" * 64)
+                self.assertEqual(evidence["expected_anchor"], finding["translation_anchor"])
+                self.assertEqual(evidence["received_anchor"]["quote"], "фраза.")
+                self.assertEqual(evidence["model_call"], 2)
+                self.assertNotIn("PRIVATE_REPLACEMENT_NOT_LOGGED",
+                                 json.dumps(status, ensure_ascii=False))
+                cli.assert_called_once_with("release", slug, "1", "--session-id", session)
+                checkpoint.assert_called()
+                user = worker.context
+                self.assertEqual(status["last_error"],
+                                 "patch must target the reviewer's exact translation anchor")
+
     def test_anchored_correction_patches_are_local_and_protect_links(self):
         finding = {"id": "meaning-1", "resolved": False,
                    "translation_anchor": {"quote": "wrong", "occurrence": 0}}
