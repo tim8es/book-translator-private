@@ -1056,6 +1056,53 @@ def defer_exhausted_patch_mismatch(status: dict, ledger: dict, chapters: list[di
     return True
 
 
+
+def allow_review_bound_protocol_retry(status: dict, ledger: dict, chapters: list[dict]) -> bool:
+    """Authorize at most one post-upgrade retry for a previously invalid anchor.
+
+    Do not waive review, change the accepted translation, or retry an unrelated
+    model error. Recovery must match the exact current review record and
+    translation SHA. A second failure uses the historical safe deferral path.
+    """
+    diagnostic = status.get("last_patch_anchor_mismatch")
+    if (status.get("phase") != "model-blocked"
+            or status.get("last_error") !=
+            "patch must target the reviewer's exact translation anchor"
+            or status.get("failures", 0) < MAX_FAILURES
+            or not isinstance(diagnostic, dict)):
+        return False
+    unit_id = status.get("blocked_unit_id")
+    chapter = next((ch for ch in chapters if ch.get("unit_id") == unit_id), None)
+    record = latest_record(ledger, chapter) if chapter else None
+    accepted = chapter.get("translation_acceptance") if chapter else None
+    if (not chapter or chapter.get("status") != "translated"
+            or not isinstance(accepted, dict) or not record
+            or record.get("outcome") != "CORRECTIONS_REQUIRED"
+            or diagnostic.get("unit_id") != unit_id
+            or diagnostic.get("review_record_id") != record.get("record_id")
+            or diagnostic.get("translation_sha256") != accepted.get("translation_sha256")
+            or record.get("translation_sha256") != accepted.get("translation_sha256")):
+        raise JobError("protocol retry requires unchanged review and translation evidence")
+    previous = status.get("correction_protocol_retry_audit", [])
+    if not isinstance(previous, list):
+        raise JobError("invalid correction protocol retry history")
+    if any(isinstance(item, dict) and item.get("unit_id") == unit_id
+           and item.get("review_record_id") == record["record_id"]
+           and item.get("protocol") == "review-bound-patches-v1"
+           for item in previous):
+        return False
+    previous.append({
+        "unit_id": unit_id,
+        "review_record_id": record["record_id"],
+        "translation_sha256": accepted["translation_sha256"],
+        "protocol": "review-bound-patches-v1",
+        "approved_at": clock(),
+        "reason": "single compatibility retry after model-generated anchor failure",
+    })
+    status["correction_protocol_retry_audit"] = previous
+    return True
+
+
 def prepare_correction_limit_resume(status: dict, ledger: dict, chapter: dict) -> None:
     unit_id = chapter["unit_id"]
     if accepted_review_count(ledger, chapter) >= MAX_ACCEPTED_REVIEWS_PER_UNIT:
@@ -2048,7 +2095,8 @@ def run(job_id: str, *, resume_blocked: bool = False,
                         cli("defer-review", slug, str(match["number"]),
                             "--reason", "model-anchor-retries")
                 else:
-                    defer_exhausted_patch_mismatch(status, ledger, chapters)
+                    if not allow_review_bound_protocol_retry(status, ledger, chapters):
+                        defer_exhausted_patch_mismatch(status, ledger, chapters)
             if status.get("phase") == "correction-limit-reached":
                 _, ledger, chapters = chapter_data(slug)
                 unit_id = status.get("blocked_unit_id")
