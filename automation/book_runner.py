@@ -2178,6 +2178,19 @@ def process_claim(job_id: str, slug: str, status: dict, engine: Path) -> None:
         system, user, source = context(engine, slug, chapter, role,
                                        pending_style=status.get("pending_style", []),
                                        force_full_review=force_full_review)
+        structural_helper = None
+        structural_plan = None
+        if (role == "translator" and not external_link_only(source)
+                and (MARKDOWN_LINK_RE.search(source) or EPUB_MARKER_RE.search(source))):
+            # Public reusable execution utility is an independent, pinned
+            # compatibility component. Do not upgrade the book's literary SHA.
+            structural_helper = load_public_structural_helper(engine)
+            try:
+                structural_plan = structural_helper.plan(source)
+            except ValueError as exc:
+                raise JobError("source structure cannot be translated safely") from exc
+            if structural_plan is None:
+                raise JobError("protected source has no structural translation plan")
         if patch_mode:
             prior_mismatch = status.get("last_patch_anchor_mismatch")
             acceptance = chapter.get("translation_acceptance", {})
@@ -2226,6 +2239,14 @@ def process_claim(job_id: str, slug: str, status: dict, engine: Path) -> None:
             translated, proposed_glossary, proposed_style = batched
             # The most recent batch has the actual focused prompt provenance.
             prompt_context = status["prompt_context"]
+        elif structural_plan is not None:
+            batched = process_structural_translation(
+                job_id, slug, status, engine, chapter,
+                structural_helper, structural_plan)
+            if batched is None:
+                return
+            translated, proposed_glossary, proposed_style = batched
+            prompt_context = status["prompt_context"]
         elif preserve_links:
             prompt_context["execution_mode"] = "deterministic_external_link_preservation"
             translated, proposed_glossary, proposed_style = source, [], []
@@ -2272,7 +2293,7 @@ def process_claim(job_id: str, slug: str, status: dict, engine: Path) -> None:
             else:
                 translated, proposed_glossary, proposed_style = parse_translation(answer)
         if role != "reviewer":
-            if not preserve_links and not patch_mode:
+            if not preserve_links and not patch_mode and structural_plan is None:
                 translated = restore_markdown_links(source, translated)
             check_markers(source, translated)
             proposed_glossary, rejected = filter_conflicting_glossary_proposals(
@@ -2344,6 +2365,9 @@ def process_claim(job_id: str, slug: str, status: dict, engine: Path) -> None:
             "glossary", proposed_glossary)
         status["memory_glossary_saved"] = status.get("memory_glossary_saved", 0) + saved
         status["pending_style"] = proposed_style
+        if role == "translator" and structural_plan is not None:
+            structural_stage_path(slug, unit_id).unlink(missing_ok=True)
+            status.pop("structural_segment_progress", None)
         if role == "corrector" and patch_mode:
             # Remove staging ONLY after canonical translation acceptance and
             # claim-bound glossary reconciliation have succeeded.
