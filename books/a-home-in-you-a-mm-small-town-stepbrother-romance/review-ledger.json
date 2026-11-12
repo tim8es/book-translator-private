@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 99,
+  "next_sequence": 100,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -6421,6 +6421,128 @@
             },
             "translation_anchor": {
               "quote": "Команда у них хорошая, но до нашей ей далеко.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "edfd46c556cb6ea47b4c5beebc118e39b71e6a49fb74662a5d0534910644bd52",
+        "style_guide": "3ec7c485cf41741084ffe49b72d2b18ed9bd650a00a2ba00554605abadea5e3a"
+      }
+    },
+    {
+      "record_id": "14b5334436d14efd9b0265d9043eb2b7",
+      "sequence": 99,
+      "unit_id": "chapter-000025",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "5fc96b09af376cc196a201bccedb6d671fbbd32333f8daff9aa02cc0a7589493",
+      "translation_sha256": "e175835765d9030e9e9f0b3705c66435b484869b7233e3997b8035431cc48375",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewer_session_id": "auto-886bde8dfe20-reviewer-10f6e593",
+      "reviewed_at": "2026-11-12T15:27:16Z",
+      "state_revision": "6f030f41f5eb1e9009a1175d8bf907699845dc0903b663497b2c368dec7315ce",
+      "review_commit": "e209b721fbbf5821afcbf5438a887d69dea7e920",
+      "correction_round": 8,
+      "supersedes_record_id": "8e1483cdda154abc85c7e76d77424f23",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-style-1-v2",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Исправлено: формулировка сохраняет грубый разговорный акцент и звучит естественнее.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Your parents did this shit to you, didn’t they?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Твои родители ведь вот такую херню с тобой творили, да?",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "8e1483cdda154abc85c7e76d77424f23",
+              "finding_id": "recheck-style-1"
+            }
+          },
+          {
+            "id": "meaning-2-v2",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Исправлено: перевод передаёт абсолютное «никого никогда», не ослабляя его до «почти никого».",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "no one’s ever here",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "дома никогда никого не бывает",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "8e1483cdda154abc85c7e76d77424f23",
+              "finding_id": "meaning-2"
+            }
+          },
+          {
+            "id": "meaning-3-v2",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Исправлено: перевод говорит, что наша команда сильнее, не усиливая сравнение до большого разрыва в уровне.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "They were a good team, but not as good as ours.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Команда у них хорошая, но наша команда сильнее.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "8e1483cdda154abc85c7e76d77424f23",
+              "finding_id": "meaning-3"
+            }
+          },
+          {
+            "id": "addition-1",
+            "category": "addition",
+            "severity": "minor",
+            "detail": "Действие описано дважды: сначала Cade перелезает через друзей, затем снова выбирается от них. Уберите повтор, например: «Я перелез через друзей и бросился прочь».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "I climbed over my friends to run out of there.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Пришлось перелезть через друзей. Я поспешно выбрался от друзей и бросился прочь.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "omission-1",
+            "category": "omission",
+            "severity": "minor",
+            "detail": "Финальная фраза ослабляет телесную близость оригинала: «крепко обнялись» не полностью передаёт, что герои тесно прижались друг к другу и продолжали держаться, словно скрепляя обещание. Сохраните это физическое действие и его интенсивность.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "We crushed our bodies together, holding on as if to seal our promise.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Мы крепко обнялись, словно скрепляя своё обещание.",
               "occurrence": 0
             },
             "resolves": null
