@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 100,
+  "next_sequence": 101,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -6551,6 +6551,196 @@
       },
       "shared_state_revisions": {
         "glossary": "edfd46c556cb6ea47b4c5beebc118e39b71e6a49fb74662a5d0534910644bd52",
+        "style_guide": "3ec7c485cf41741084ffe49b72d2b18ed9bd650a00a2ba00554605abadea5e3a"
+      }
+    },
+    {
+      "record_id": "10135326d9814c3cb9fcc0df49f99b66",
+      "sequence": 100,
+      "unit_id": "chapter-000026",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "7997fac43ecfec3a08390955882a68124927a53905d13595ac18580f3864f87f",
+      "translation_sha256": "9f193098698747aaed817b500644c5e4e555187f499c4a26fe38bb0c6a516775",
+      "workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "review_contract_revision": "docs/TRANSLATION.md@484bdbbd6485091a0a0b3c48a8476346d1949d58",
+      "reviewer_session_id": "auto-886bde8dfe20-reviewer-2095cf30",
+      "reviewed_at": "2026-11-12T17:54:32Z",
+      "state_revision": "2b9c983ade3d7afc9efd80376622e0edb3c83823381e62d38f946ba8a82443ea",
+      "review_commit": "feee023df6da834fc32a55985b9a9cbc37f0f8da",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "meaning-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Here, “no shit” is a sarcastic way of saying the obvious, not an expression of surprise. «Да уж, ни хрена себе» changes the reaction to astonishment; use a Russian equivalent that keeps the dry, obvious-to-the-narrator meaning.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "I wanted to tell him no shit, but that wouldn’t help anything and only upset Mom.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Мне хотелось ответить: «Да уж, ни хрена себе», — но это ничего бы не изменило и только расстроило маму.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "register-2",
+            "category": "register",
+            "severity": "minor",
+            "detail": "The source’s emphatic profanity is replaced with a non-profane «Вот это да!», despite the narrator immediately covering his mouth because he swore. Preserve the profanity and the reason for his reaction.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“Fuck yeah!” I slapped my hand over my mouth.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "— Вот это да! — Я прикрыл рот ладонью.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "register-3",
+            "category": "register",
+            "severity": "minor",
+            "detail": "The translation drops “fucking,” weakening Dillon’s angry internal emphasis. Preserve the marked intensity in this question.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Why would he only buy two fucking tickets?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Зачем он купил всего два билета?",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-4",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Все ходили по очереди» suggests that everyone took turns walking. The source means they took turns opening presents; make that action explicit in natural Russian.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "It didn’t take us longer than an hour to tear through our presents, making sure we all took turns.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Мы расправились с подарками меньше чем за час, следя за тем, чтобы все ходили по очереди.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "terminology-5",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "The canonical glossary rendering for the nickname “Dil” is «Дил». Replace the Latin-script nickname here.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "God, Dil. That’s fucking amazing.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "— Господи, Dil. Это чертовски круто.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-6",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "“Fool around” in this intimate context refers to sexual intimacy, but «побыть вдвоём, как раньше» recasts it as merely spending time together. Preserve the sexual implication rather than neutralizing it.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Maybe we should fool around again soon. It’d been a while because of the holidays and being so busy with our sports. That would make him feel better.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Может, нам стоит снова побыть вдвоём, как раньше. Из-за праздников и того, что мы оба были заняты спортом, мы давно не проводили время вместе. Это подняло бы ему настроение.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-7",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "The source’s deliberately suggestive “touch you” is changed into waking Cade and hugging him. This alters Dillon’s intention and Cade’s response; preserve the sexual meaning of the request.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“No, silly. I want to *touch* you.”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "— Нет, глупыш. Я хочу, чтобы ты проснулся и обнял меня.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-8",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "The source says Dillon needs Cade and wants him; the translation changes this to wanting to be near him and loving him. Preserve the distinction between desire and affection.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "I could’ve let him sleep, but I needed him, and he needed a reminder of how much I wanted him.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Я мог бы дать ему поспать, но мне хотелось побыть с ним рядом и напомнить, как сильно я его люблю.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-9",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "The source describes Dillon touching Cade between the legs and Cade moaning in response. The translation replaces this with pulling him close and kissing, changing the action and response rather than translating them.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“I love you forever,” I whispered, and slid my hand down his strong stomach and between his legs. He instantly reacted to my touch and moaned, rolling onto his back.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "— Я люблю тебя навсегда, — прошептал я, притянул его к себе и поцеловал. Он обнял меня и ответил на поцелуй.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "omission-10",
+            "category": "omission",
+            "severity": "major",
+            "detail": "The rest of the intimate sequence is missing: the source mentions hand jobs, Cade reaching climax, and Dillon swallowing his moans as Cade fills his hand. Restore the omitted content faithfully; the closing “My home” alone does not represent this passage.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "We hadn’t branched out farther than hand jobs, but it was still fun as hell, and I loved watching Cade’s eyes roll into the back of his head when he reached his climax.",
+              "occurrence": 0
+            },
+            "translation_anchor": null,
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "6cce9e25a4a2a334c558c36793ba932af65d203fc28e5a2c7e3f8497977938cc",
         "style_guide": "3ec7c485cf41741084ffe49b72d2b18ed9bd650a00a2ba00554605abadea5e3a"
       }
     }
