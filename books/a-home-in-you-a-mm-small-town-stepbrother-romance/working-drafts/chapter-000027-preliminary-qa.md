@@ -18,17 +18,23 @@
 
 | 74–86 | working-drafts/chapter-000027-nonexplicit-074-086.md | 2dc562b0e962c8429991b296fb90c46f32c86820 |
 
+| 33–35 | working-drafts/chapter-000027-nonexplicit-033-035.md | b72e34fffa3e9635aafe41cadc738b9dcede40eb |
+| 43 | working-drafts/chapter-000027-nonexplicit-043-043.md | cfff930011a4f3830d2fca52269d4800578797fc |
+| 50 | working-drafts/chapter-000027-nonexplicit-050-050.md | a1022513cc40875cb7743aeaa7b4861763190608 |
+
 ## Source-fidelity checks and corrections
 
 - **Block 11:** Dillon is below Cade; the latter rests his *head* against Dillon's head. The previous chin-specific inference was removed in an earlier correction.
 - **Block 20:** The source expresses Dillon's firm intention to go to UVA even without an athletic recruitment offer, not a guaranteed admission decision. Corrected to «я всё равно собираюсь там учиться».
 - **Block 31:** Source describes preparing/loading horses and backpacks. Draft's unsupported specific saddling verb was replaced with «снарядили лошадей и собрали рюкзаки».
 - **Block 32:** The original says the tethering tree was surrounded by grass, without establishing an entire glade. Draft description corrected accordingly.
-- **Structure:** 71 distinct source paragraph blocks out of 109 are covered in seven unaccepted working drafts; their exact original block numbers are preserved in their headers.
+- **Structure:** 76 distinct source paragraph blocks out of 109 are covered in ten unaccepted working drafts; their exact original block numbers are preserved in their headers.
 
 - **Blocks 36–37 and 39–42:** Newly drafted non-graphic dialogue retains the heat, reluctance, dry humor, Artemis/Athena references, and speaker attribution. The intervening block 38 was intentionally not included. These additions are translator-only drafts, not independent review.
 
 - **Blocks 74–86:** Added 13 consecutive non-graphic aftermath and dialogue blocks, retaining the source order, decisions, mutual reassurance and colloquial tone. This is a Translator draft only, not independent review. Block 87 and the earlier explicit scene remain outside the draft coverage.
+
+- **Blocks 33–35, 43 and 50:** Five additional non-graphic source paragraphs drafted; dialogue attribution, the movement of the shirt, outdoor sleeping bags and the source's limited innuendo are retained. This is a Translator draft only, not independent review.
 
 ## Blocking limitation
 
