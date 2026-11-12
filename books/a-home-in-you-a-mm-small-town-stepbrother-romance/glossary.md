@@ -5,8 +5,8 @@ Use this file for recurring names, places, organizations, terms, nicknames, titl
 | Original | Translation | Type | Notes |
 | --- | --- | --- | --- |
 | A Home in You | A Home in You | title | Book title; retain as proper noun. |
-| Dillon | Dillon | character | Recurring character; keep consistent. |
-| Cade | Cade | character | Recurring character; keep consistent. |
+| Dillon | Диллон | character | Russian nominative form; use grammatical case endings in running prose. |
+| Cade | Кейд | character | Russian nominative form; use grammatical case endings in running prose. |
 | OceanofPDF.com | OceanofPDF.com | source | External source attribution; retain unchanged. |
 | Courtney W. Dixon | Кортни В. Диксон | person | Author and publisher; keep consistent. |
 | Fae Quinn | Фей Квин | person | Character sketch artist; keep consistent. |
