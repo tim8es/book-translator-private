@@ -1,0 +1,120 @@
+name: Migrate The Claiming Moon (structural EPUB)
+on:
+  push:
+    branches: [feat/claiming-moon-structural-migration-20261022]
+    paths:
+      - .github/workflows/migrate-claiming-moon-structural.yml
+      - books/the-claiming-moon/formatting/structural_migration_scripts.tar.xz.b64
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install XHTML parser
+        run: python -m pip install --disable-pip-version-check lxml
+      - name: Extract reproducible migration scripts
+        run: |
+          set -euo pipefail
+          ROOT=books/the-claiming-moon/formatting
+          base64 -d "$ROOT/structural_migration_scripts.tar.xz.b64" | xz -dc | tar -xf - -C "$ROOT"
+          mkdir -p books/the-claiming-moon/output
+      - name: Migrate all 48 reviewed translations and verify lossless text coverage
+        run: |
+          set -euo pipefail
+          python books/the-claiming-moon/formatting/migrate.py
+      - name: Audit hyperlinks, original stylesheet bytes and EPUB integrity
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json, zipfile, posixpath, hashlib
+          from lxml import etree as ET
+          root=Path('books/the-claiming-moon')
+          report_path=root/'formatting/migration_report.json'
+          report=json.loads(report_path.read_text(encoding='utf-8'))
+          output=root/'output/The_Claiming_Moon_RU_Structural_Migrated.epub'
+          original=root/'source/The_Claiming_Moon.epub'
+          assert output.is_file() and report['unit_count']==48 and len(report['units'])==48
+          assert all(u['coverage']=='exact_nonwhitespace_match' for u in report['units'])
+          assert report['all_nontext_resources_byte_identical']
+          with zipfile.ZipFile(original) as source, zipfile.ZipFile(output) as final:
+            assert final.testzip() is None
+            assert source.testzip() is None
+            names=final.namelist()
+            assert len(names)==len(set(names))
+            assert names[0]=='mimetype' and final.infolist()[0].compress_type==zipfile.ZIP_STORED
+            assert final.read('mimetype')==b'application/epub+zip'
+            xhtml=[n for n in names if n.endswith('.xhtml')]
+            assert len(xhtml)==48
+            ids={}
+            original_links=[]
+            output_links=[]
+            original_counts={}
+            output_counts={}
+            for name in xhtml:
+              before=ET.fromstring(source.read(name))
+              after=ET.fromstring(final.read(name))
+              ids[name]={n.get('id') for n in after.iter() if n.get('id')}
+              for elem in before.iter():
+                if not isinstance(elem.tag,str):continue
+                k=ET.QName(elem).localname
+                original_counts[k]=original_counts.get(k,0)+1
+                if k=='a':original_links.append(elem.get('href'))
+              for elem in after.iter():
+                if not isinstance(elem.tag,str):continue
+                k=ET.QName(elem).localname
+                output_counts[k]=output_counts.get(k,0)+1
+                if k=='a':output_links.append((name,elem.get('href')))
+            assert [href for _,href in output_links]==original_links
+            assert len(output_links)==110
+            for k in ('span','em','strong','blockquote','br','div'):
+              assert original_counts.get(k,0)==output_counts.get(k,0),(k,original_counts.get(k,0),output_counts.get(k,0))
+            for name,href in output_links:
+              if not href or href.startswith(('https:','http:','mailto:')):continue
+              target,_,fragment=href.partition('#')
+              path=posixpath.normpath(posixpath.join(posixpath.dirname(name),target)) if target else name
+              assert path in names,(name,href,'missing member')
+              if fragment:assert fragment in ids.get(path,set()),(name,href,'missing anchor')
+            for name in names:
+              if name.endswith('.css'):assert source.read(name)==final.read(name)
+          assert report['stats']['relocated_note_links']==41
+          assert not report['stats']['unmapped_source_blocks']
+          assert report['rendered_sha256']==hashlib.sha256(output.read_bytes()).hexdigest()
+          report['migration_codec_revision']='939fd6102676cf1026019295c245ab30b4fd5be5'
+          report['original_workflow_revision']='5e0731da8b7ca81ada5316ed536a8a954008b789'
+          report['migration_approach']='derived EPUB only; canonical source and reviewed text unchanged'
+          report['validated_link_count']=110
+          report['validated_internal_links']=41
+          report['validation']='passed_structural_not_visual_review'
+          report_path.write_text(json.dumps(report,ensure_ascii=False,sort_keys=True,indent=2)+'\n',encoding='utf-8')
+          print('MIGRATION_VERIFIED='+str({'units':48,'links':110,'internal':41,'sha256':report['rendered_sha256']}))
+          PY
+      - name: Upload EPUB and provenance for downloading
+        uses: actions/upload-artifact@v4
+        with:
+          name: Claiming_Moon_RU_Structural_Migrated
+          retention-days: 30
+          path: |
+            books/the-claiming-moon/output/The_Claiming_Moon_RU_Structural_Migrated.epub
+            books/the-claiming-moon/formatting/migration_report.json
+      - name: Persist migration on isolated branch (do not alter reviewed state)
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f books/the-claiming-moon/formatting/analyze.py
+          git add -f books/the-claiming-moon/formatting/align.py
+          git add -f books/the-claiming-moon/formatting/migrate.py
+          git add -f books/the-claiming-moon/formatting/migration_report.json
+          git add -f books/the-claiming-moon/output/The_Claiming_Moon_RU_Structural_Migrated.epub
+          if ! git diff --cached --quiet; then
+            git commit -m "feat(book): persist verified structural Russian EPUB and migration audit"
+            git push origin HEAD:feat/claiming-moon-structural-migration-20261022
+          fi
