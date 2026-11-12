@@ -389,7 +389,8 @@ class AutomatedBookTests(unittest.TestCase):
                        "translation_acceptance": {"translation_sha256": "a" * 64}}
             worker.store_json(book / "progress.json", {"chapters": [chapter]})
             worker.store_json(book / "review-ledger.json", {"records": [{"unit_id": chapter["unit_id"],
-                "sequence": 1, "outcome": "CORRECTIONS_REQUIRED", "translation_sha256": "a" * 64}]})
+                "sequence": 1, "outcome": "CORRECTIONS_REQUIRED", "translation_sha256": "a" * 64,
+                "quality_report": {"findings": [{"id": "meaning-1", "resolved": False}]}}]})
             with patch.object(worker, "ROOT", root), patch.object(worker, "approved_unit_ids", return_value={chapter["unit_id"]}):
                 self.assertEqual(worker.next_operation("approved-book", {"correction_rounds": {}})[0], "corrector")
     def test_reconciled_history_guard_detects_changes_and_lost_progress(self):
@@ -1014,6 +1015,89 @@ class AutomatedBookTests(unittest.TestCase):
                 with self.assertRaisesRegex(worker.JobError, "invalid"):
                     worker.request_for(job_id)
 
+    def test_chatops_missing_findings_rechecks_without_blind_correction(self):
+        chapter = {
+            "unit_id": "chapter-000022", "number": 22, "status": "translated",
+            "translation_acceptance": {
+                "source_sha256": "b" * 64,
+                "translation_sha256": "a" * 64,
+            },
+        }
+        records = [
+            {
+                "unit_id": chapter["unit_id"], "sequence": index,
+                "outcome": "CORRECTIONS_REQUIRED",
+                "source_sha256": "b" * 64, "translation_sha256": "a" * 64,
+                **({"quality_report": {"findings": [
+                    {"id": "meaning-1", "resolved": False}]}} if index == 1 else {}),
+            }
+            for index in (1, 2, 3)
+        ]
+        ledger = {"records": records}
+        decision = json.dumps({
+            "operation": "correct_translation",
+            "unit_id": chapter["unit_id"],
+            "chapter_number": 22,
+        })
+        with patch.object(worker, "chapter_data", return_value=({}, ledger, [chapter])), \
+             patch.object(worker, "approved_unit_ids", return_value=set()), \
+             patch.object(worker, "cli", return_value=decision):
+            self.assertEqual(
+                worker.canonical_dispatch("a-home-in-you", {"correction_rounds": {}}),
+                ("reviewer", chapter),
+            )
+            records[-1]["quality_report"] = {"findings": [
+                {"id": "meaning-2", "resolved": False}]}
+            self.assertEqual(
+                worker.canonical_dispatch("a-home-in-you", {"correction_rounds": {}}),
+                ("corrector", chapter),
+            )
+
+            records.append({
+                "unit_id": chapter["unit_id"], "sequence": 4,
+                "outcome": "CORRECTIONS_REQUIRED",
+                "source_sha256": "b" * 64, "translation_sha256": "a" * 64,
+            })
+            with patch.object(worker, "next_operation", return_value=(
+                "review-deferred", None)) as following:
+                status = {"correction_rounds": {}}
+                self.assertEqual(
+                    worker.canonical_dispatch("a-home-in-you", status),
+                    ("review-deferred", None),
+                )
+                self.assertIn(chapter["unit_id"], status["deferred_review_units"])
+                following.assert_called_once()
+
+    def test_chatops_missing_findings_in_user_approved_path(self):
+        chapter = {
+            "unit_id": "chapter-000022", "number": 22, "status": "translated",
+            "translation_acceptance": {
+                "source_sha256": "b" * 64, "translation_sha256": "a" * 64,
+            },
+        }
+        ledger = {"records": [{
+            "unit_id": chapter["unit_id"], "sequence": 1,
+            "outcome": "CORRECTIONS_REQUIRED",
+            "source_sha256": "b" * 64, "translation_sha256": "a" * 64,
+        }]}
+        operations = ModuleType("workflow.operations")
+        operations.next_unit_operation = lambda state, review: (
+            "correct_translation" if review == "corrections_required" else "review"
+        )
+        workflow = ModuleType("workflow")
+        workflow.__path__ = []
+        with patch.dict(sys.modules, {
+            "workflow": workflow, "workflow.operations": operations,
+        }), patch.object(worker, "chapter_data", return_value=(
+            {}, ledger, [chapter],
+        )), patch.object(worker, "approved_unit_ids", return_value={
+            chapter["unit_id"],
+        }):
+            self.assertEqual(
+                worker.next_operation("a-home-in-you", {"correction_rounds": {}}),
+                ("reviewer", chapter),
+            )
+
     def test_next_step_requires_independent_review(self):
         with tempfile.TemporaryDirectory() as folder:
             workflow = ModuleType("workflow")
@@ -1040,7 +1124,8 @@ class AutomatedBookTests(unittest.TestCase):
                 self.assertEqual(worker.next_operation(slug, status)[0], "reviewer")
                 worker.store_json(book / "review-ledger.json", {"records": [{
                     "unit_id": chapter["unit_id"], "sequence": 1, "outcome": "CORRECTIONS_REQUIRED",
-                    "translation_sha256": "a" * 64}]})
+                    "translation_sha256": "a" * 64,
+                    "quality_report": {"findings": [{"id": "meaning-1", "resolved": False}]}}]})
                 self.assertEqual(worker.next_operation(slug, status)[0], "corrector")
                 status["correction_rounds"]["chapter-000001"] = worker.MAX_CORRECTIONS
                 self.assertEqual(worker.next_operation(slug, status)[0], "blocked")

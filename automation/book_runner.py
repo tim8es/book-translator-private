@@ -937,6 +937,19 @@ def latest_record(ledger: dict, chapter: dict) -> dict | None:
     return max(matches, key=lambda r: r["sequence"]) if matches else None
 
 
+def correction_findings_missing(record: dict | None) -> bool:
+    """ChatOps may record CORRECTIONS_REQUIRED without a findings payload.
+
+    Do not invent reviewer findings or ask a corrector to work blindly.
+    Instead, independently review the current accepted translation again.
+    """
+    report = record.get("quality_report") if isinstance(record, dict) else None
+    findings = report.get("findings") if isinstance(report, dict) else None
+    return not isinstance(findings, list) or not any(
+        isinstance(item, dict) and not item.get("resolved") for item in findings
+    )
+
+
 def correction_severity_score(record: dict | None) -> int:
     report = record.get("quality_report") if isinstance(record, dict) else None
     findings = report.get("findings") if isinstance(report, dict) else None
@@ -1261,6 +1274,12 @@ def next_operation(slug: str, status: dict) -> tuple[str, dict | None]:
             if (status.get("force_full_review_unit") == chapter["unit_id"]
                     and report.get("evidence_version") != 2):
                 return "reviewer", chapter
+            if correction_findings_missing(record):
+                if accepted_review_count(ledger, chapter) >= MAX_ACCEPTED_REVIEWS_PER_UNIT:
+                    defer_review_unit(status, chapter["unit_id"])
+                    deferred.add(chapter["unit_id"])
+                    continue
+                return "reviewer", chapter
             if not correction_allowed(status, ledger, chapter):
                 return "blocked", chapter
             return "corrector", chapter
@@ -1313,6 +1332,10 @@ def canonical_dispatch(slug: str, status: dict) -> tuple[str, dict | None]:
         if status.get("memory_recheck_unit") == unit_id:
             if record and report.get("evidence_version") == 2:
                 raise JobError("anchored v2 review requires a changed translation artifact")
+            return "reviewer", chapter
+        if correction_findings_missing(record):
+            # A ChatOps review can mark corrections required without recording
+            # actionable findings. Re-review rather than inventing corrections.
             return "reviewer", chapter
         if not correction_allowed(status, ledger, chapter):
             return "blocked", chapter
