@@ -1246,8 +1246,13 @@ def next_operation(slug: str, status: dict) -> tuple[str, dict | None]:
         ]
     else:
         status.pop("deferred_review_units", None)
-    # The pinned lifecycle classifier still selects each unit operation.
-    # The adapter skips only units explicitly deferred after the review cap.
+    # The pinned lifecycle classifier lives in scripts/workflow. The Auto
+    # entrypoint runs from automation/, so Python does not search scripts/
+    # unless we add the installed, book-pinned engine explicitly.
+    # install_engine() has already checked out the exact book revision here.
+    scripts_dir = str(ROOT / "scripts")
+    if scripts_dir not in sys.path:
+        sys.path.insert(0, scripts_dir)
     from workflow.operations import next_unit_operation
     for chapter in chapters:
         state = chapter["status"]

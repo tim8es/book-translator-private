@@ -1098,6 +1098,34 @@ class AutomatedBookTests(unittest.TestCase):
                 ("reviewer", chapter),
             )
 
+    def test_automatic_subprocess_loads_pinned_classifier_after_review_defer(self):
+        # A fresh GitHub Actions job starts from automation/, not scripts/.
+        # Exercise the same import boundary in a separate Python interpreter
+        # rather than relying on workflow modules injected by other tests.
+        repo = Path(__file__).resolve().parents[1]
+        script = """
+import sys
+from pathlib import Path
+from unittest.mock import patch
+repo = Path(sys.argv[1])
+sys.path.insert(0, str(repo / "automation"))
+import book_runner
+chapter = {"unit_id": "chapter-000002", "number": 2, "status": "extracted"}
+with patch.object(book_runner, "chapter_data",
+                  return_value=({}, {"records": []}, [chapter])), \\
+     patch.object(book_runner, "approved_unit_ids", return_value=set()):
+    operation, selected = book_runner.next_operation("synthetic", {"correction_rounds": {}})
+    assert operation == "translator" and selected == chapter, (operation, selected)
+"""
+        with tempfile.TemporaryDirectory() as temp:
+            env = os.environ.copy()
+            env.pop("PYTHONPATH", None)
+            result = subprocess.run(
+                [sys.executable, "-c", script, str(repo)], cwd=temp,
+                capture_output=True, text=True, env=env, timeout=30,
+            )
+        self.assertEqual(result.returncode, 0, result.stderr)
+
     def test_next_step_requires_independent_review(self):
         with tempfile.TemporaryDirectory() as folder:
             workflow = ModuleType("workflow")
