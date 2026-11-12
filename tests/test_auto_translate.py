@@ -1281,7 +1281,8 @@ with patch.object(book_runner, "chapter_data",
         chapter = {"unit_id": "chapter-000025", "number": 25, "status": "translated",
                    "translation_acceptance": {"source_sha256": "a" * 64,
                                               "translation_sha256": "b" * 64}}
-        record = {"unit_id": chapter["unit_id"], "record_id": "c" * 32,
+        record = {"unit_id": chapter["unit_id"], "sequence": 1,
+                  "record_id": "c" * 32,
                   "source_sha256": "a" * 64, "translation_sha256": "b" * 64,
                   "outcome": "CORRECTIONS_REQUIRED"}
         status = {"correction_rounds": {chapter["unit_id"]: worker.MAX_CORRECTIONS +
@@ -1299,7 +1300,8 @@ with patch.object(book_runner, "chapter_data",
                    "translation_acceptance": {"source_sha256": "a" * 64,
                                               "translation_sha256": "b" * 64}}
         following = {"unit_id": "chapter-000026", "number": 26, "status": "extracted"}
-        record = {"unit_id": chapter["unit_id"], "record_id": "c" * 32,
+        record = {"unit_id": chapter["unit_id"], "sequence": 1,
+                  "record_id": "c" * 32,
                   "outcome": "CORRECTIONS_REQUIRED", "source_sha256": "a" * 64,
                   "translation_sha256": "b" * 64}
         answers = [json.dumps({"operation": "correct_translation", "unit_id":
