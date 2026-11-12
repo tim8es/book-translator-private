@@ -43,3 +43,6 @@ Use this file for recurring names, places, organizations, terms, nicknames, titl
 | Virginia | Вирджиния | place | Штат США. |
 | California | Калифорния | place | Название штата. |
 | Florida | Флорида | place | Название штата. |
+| Darcy | Дарси | character | Имя персонажа; передача имени в русском тексте. |
+| Darren | Даррен | character | Имя персонажа; передача имени в русском тексте. |
+| David | Дэвид | character | Имя персонажа; передача имени в русском тексте. |
