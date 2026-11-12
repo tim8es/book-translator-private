@@ -1997,7 +1997,15 @@ def process_claim(job_id: str, slug: str, status: dict, engine: Path) -> None:
             prompt_context["correction_mode"] = "anchored-patches"
         preserve_links = (role in {"translator", "corrector"} and not patch_mode
                           and external_link_only(source))
-        if preserve_links:
+        if patch_mode:
+            batched = process_correction_batches(job_id, slug, status, engine,
+                                                 chapter, previous_record)
+            if batched is None:
+                return
+            translated, proposed_glossary, proposed_style = batched
+            # The most recent batch has the actual focused prompt provenance.
+            prompt_context = status["prompt_context"]
+        elif preserve_links:
             prompt_context["execution_mode"] = "deterministic_external_link_preservation"
             translated, proposed_glossary, proposed_style = source, [], []
         else:
@@ -2040,19 +2048,6 @@ def process_claim(job_id: str, slug: str, status: dict, engine: Path) -> None:
                         outcome=outcome)
                 except (ImportError, ValueError) as exc:
                     raise ModelError(f"reviewer evidence is invalid: {exc}") from exc
-            elif patch_mode:
-                patches, proposed_glossary, proposed_style = parse_correction_patches(
-                    answer, previous_quality["findings"])
-                translation_bytes = (ROOT / "books" / slug / chapter["translation_path"]
-                                     ).read_bytes()
-                acceptance = chapter.get("translation_acceptance", {})
-                expected_hash = previous_record.get("translation_sha256") if previous_record else None
-                if (not isinstance(acceptance, dict) or not isinstance(expected_hash, str)
-                        or hashlib.sha256(translation_bytes).hexdigest() != expected_hash
-                        or acceptance.get("translation_sha256") != expected_hash):
-                    raise JobError("correction review is stale; current translation hash changed")
-                current_translation = translation_bytes.decode("utf-8")
-                translated = apply_correction_patches(current_translation, patches)
             else:
                 translated, proposed_glossary, proposed_style = parse_translation(answer)
         if role != "reviewer":
@@ -2128,6 +2123,12 @@ def process_claim(job_id: str, slug: str, status: dict, engine: Path) -> None:
             "glossary", proposed_glossary)
         status["memory_glossary_saved"] = status.get("memory_glossary_saved", 0) + saved
         status["pending_style"] = proposed_style
+        if role == "corrector" and patch_mode:
+            # Remove staging ONLY after canonical translation acceptance and
+            # claim-bound glossary reconciliation have succeeded.
+            correction_stage_path(slug, unit_id).unlink(missing_ok=True)
+            status.pop("correction_batch_progress", None)
+            status.pop("last_patch_anchor_mismatch", None)
         if role == "corrector":
             rounds = status["correction_rounds"]
             rounds[unit_id] = rounds.get(unit_id, 0) + 1
