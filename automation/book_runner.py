@@ -1060,6 +1060,28 @@ def prepare_correction_limit_resume(status: dict, ledger: dict, chapter: dict) -
     if accepted_review_count(ledger, chapter) >= MAX_ACCEPTED_REVIEWS_PER_UNIT:
         defer_review_unit(status, unit_id)
         return
+    # Existing books on historical immutable workflow revisions cannot be
+    # upgraded by changing their metadata pin: that invalidates PASS evidence.
+    # Fail closed on review, but allow other extracted units to proceed.
+    # On newer revisions canonical book.py defer-review owns this queue.
+    if not (ROOT / "scripts" / "workflow" / "attention.py").exists():
+        rounds = status.get("correction_rounds", {}).get(unit_id, 0)
+        if (type(rounds) is int and rounds >= MAX_CORRECTIONS + MAX_CORRECTION_EXTENSIONS):
+            record = latest_record(ledger, chapter)
+            acceptance = chapter.get("translation_acceptance")
+            if (chapter.get("status") != "translated"
+                    or not isinstance(acceptance, dict) or not record
+                    or record.get("outcome") != "CORRECTIONS_REQUIRED"
+                    or record.get("source_sha256") != acceptance.get("source_sha256")
+                    or record.get("translation_sha256") != acceptance.get("translation_sha256")):
+                raise JobError("cannot defer correction-limited unit without current rejected review")
+            defer_review_unit(status, unit_id)
+            status.setdefault("patch_deferral_audit", []).append({
+                "unit_id": unit_id, "review_record_id": record["record_id"],
+                "deferred_at": clock(),
+                "reason": "historical pinned engine: correction limit exhausted; review still required",
+            })
+            return
     counters = status.get("correction_rounds", {})
     extensions = status.get("correction_extensions", {})
     if not isinstance(counters, dict) or not isinstance(extensions, dict):
@@ -1346,13 +1368,40 @@ def canonical_dispatch(slug: str, status: dict) -> tuple[str, dict | None]:
     _, ledger, chapters = chapter_data(slug)
     if approved_unit_ids(slug, chapters):
         return next_operation(slug, status)
-    decision = json.loads(cli("resume", slug, "--json"))
+    # Canonical vNext owns the durable attention queue and selection. Older
+    # immutable book pins retain their historical adapter until an audited upgrade.
+    if (ROOT / "scripts" / "workflow" / "attention.py").exists():
+        for _ in range(len(chapters) + 1):
+            decision = json.loads(cli("resume", slug, "--json"))
+            operation = decision.get("operation")
+            if operation == "needs_attention":
+                return "review-deferred", None
+            if operation != "correct_translation":
+                break
+            unit_id = decision.get("unit_id")
+            chapter = next((x for x in chapters if x["unit_id"] == unit_id), None)
+            if not chapter:
+                raise JobError("canonical attention selection returned unknown unit")
+            record = latest_record(ledger, chapter)
+            if (accepted_review_count(ledger, chapter) < MAX_ACCEPTED_REVIEWS_PER_UNIT
+                    and correction_allowed(status, ledger, chapter)):
+                break
+            reason = ("review-round-limit"
+                      if accepted_review_count(ledger, chapter) >= MAX_ACCEPTED_REVIEWS_PER_UNIT
+                      else "correction-limit")
+            cli("defer-review", slug, str(chapter["number"]), "--reason", reason)
+        else:
+            raise JobError("canonical attention scheduling did not converge")
+    else:
+        decision = json.loads(cli("resume", slug, "--json"))
     operation = decision.get("operation")
     if operation == "blocked":
         raise JobError("canonical resume blocked automation: "
                        + str(decision.get("reason", "unknown")))
     if operation in {"complete", "finalize"}:
         return "finalize", None
+    if operation == "needs_attention":
+        return "review-deferred", None
     mapping = {"translate": "translator", "correct_translation": "corrector",
                "review": "reviewer", "accept_review": "promote"}
     if operation not in mapping:
@@ -1362,7 +1411,8 @@ def canonical_dispatch(slug: str, status: dict) -> tuple[str, dict | None]:
     if len(matches) != 1 or matches[0].get("number") != decision.get("chapter_number"):
         raise JobError("canonical resume unit no longer matches durable progress")
     chapter = matches[0]
-    if (chapter["unit_id"] in deferred_review_unit_ids(status)
+    if (not (ROOT / "scripts" / "workflow" / "attention.py").exists()
+            and chapter["unit_id"] in deferred_review_unit_ids(status)
             and operation != "accept_review"):
         return next_operation(slug, status)
     record = latest_record(ledger, chapter)
@@ -1372,6 +1422,8 @@ def canonical_dispatch(slug: str, status: dict) -> tuple[str, dict | None]:
         return "reviewer", chapter
     if operation == "correct_translation":
         if accepted_review_count(ledger, chapter) >= MAX_ACCEPTED_REVIEWS_PER_UNIT:
+            if (ROOT / "scripts" / "workflow" / "attention.py").exists():
+                raise JobError("canonical attention selection left an over-budget unit")
             defer_review_unit(status, unit_id)
             return next_operation(slug, status)
         if status.get("memory_recheck_unit") == unit_id:
@@ -1383,6 +1435,8 @@ def canonical_dispatch(slug: str, status: dict) -> tuple[str, dict | None]:
             # actionable findings. Re-review rather than inventing corrections.
             return "reviewer", chapter
         if not correction_allowed(status, ledger, chapter):
+            if (ROOT / "scripts" / "workflow" / "attention.py").exists():
+                raise JobError("canonical attention selection left a correction-limited unit")
             return "blocked", chapter
     return mapping[operation], chapter
 
@@ -1964,14 +2018,30 @@ def run(job_id: str, *, resume_blocked: bool = False,
                 raise JobError("cannot resume while canonical claims or errors remain")
             if status.get("phase") == "model-blocked":
                 _, ledger, chapters = chapter_data(slug)
-                defer_exhausted_patch_mismatch(status, ledger, chapters)
+                if (ROOT / "scripts" / "workflow" / "attention.py").exists():
+                    diagnostic = status.get("last_patch_anchor_mismatch")
+                    if (status.get("failures", 0) >= MAX_FAILURES
+                            and isinstance(diagnostic, dict)
+                            and diagnostic.get("unit_id") == status.get("blocked_unit_id")):
+                        match = next((ch for ch in chapters
+                                      if ch["unit_id"] == diagnostic["unit_id"]), None)
+                        if not match:
+                            raise JobError("no matching unit for canonical anchor deferral")
+                        cli("defer-review", slug, str(match["number"]),
+                            "--reason", "model-anchor-retries")
+                else:
+                    defer_exhausted_patch_mismatch(status, ledger, chapters)
             if status.get("phase") == "correction-limit-reached":
                 _, ledger, chapters = chapter_data(slug)
                 unit_id = status.get("blocked_unit_id")
                 matches = [item for item in chapters if item.get("unit_id") == unit_id]
                 if len(matches) != 1:
                     raise JobError("correction-limited unit no longer maps to one source unit")
-                prepare_correction_limit_resume(status, ledger, matches[0])
+                if (ROOT / "scripts" / "workflow" / "attention.py").exists():
+                    cli("defer-review", slug, str(matches[0]["number"]),
+                        "--reason", "correction-limit")
+                else:
+                    prepare_correction_limit_resume(status, ledger, matches[0])
             elif status.get("phase") == "review-deferred-requires-operator":
                 _, ledger, chapters = chapter_data(slug)
                 by_id = {chapter.get("unit_id"): chapter for chapter in chapters}

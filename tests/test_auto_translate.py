@@ -1277,6 +1277,52 @@ with patch.object(book_runner, "chapter_data",
                 self.assertEqual(status["last_error"],
                                  "patch must target the reviewer's exact translation anchor")
 
+    def test_legacy_correction_budget_defers_unmodified_reviewed_unit(self):
+        chapter = {"unit_id": "chapter-000025", "number": 25, "status": "translated",
+                   "translation_acceptance": {"source_sha256": "a" * 64,
+                                              "translation_sha256": "b" * 64}}
+        record = {"unit_id": chapter["unit_id"], "record_id": "c" * 32,
+                  "source_sha256": "a" * 64, "translation_sha256": "b" * 64,
+                  "outcome": "CORRECTIONS_REQUIRED"}
+        status = {"correction_rounds": {chapter["unit_id"]: worker.MAX_CORRECTIONS +
+                                       worker.MAX_CORRECTION_EXTENSIONS},
+                  "deferred_review_units": []}
+        with tempfile.TemporaryDirectory() as temp, patch.object(worker, "ROOT", Path(temp)):
+            worker.prepare_correction_limit_resume(
+                status, {"records": [record]}, chapter)
+        self.assertEqual(status["deferred_review_units"], [chapter["unit_id"]])
+        self.assertEqual(status["patch_deferral_audit"][0]["review_record_id"], "c" * 32)
+        self.assertEqual(chapter["status"], "translated")
+
+    def test_canonical_attention_defer_is_used_for_next_scheduled_unit(self):
+        chapter = {"unit_id": "chapter-000025", "number": 25, "status": "translated",
+                   "translation_acceptance": {"source_sha256": "a" * 64,
+                                              "translation_sha256": "b" * 64}}
+        following = {"unit_id": "chapter-000026", "number": 26, "status": "extracted"}
+        record = {"unit_id": chapter["unit_id"], "record_id": "c" * 32,
+                  "outcome": "CORRECTIONS_REQUIRED", "source_sha256": "a" * 64,
+                  "translation_sha256": "b" * 64}
+        answers = [json.dumps({"operation": "correct_translation", "unit_id":
+                              chapter["unit_id"], "chapter_number": 25}),
+                   json.dumps({"operation": "translate", "unit_id":
+                              following["unit_id"], "chapter_number": 26})]
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            (root / "scripts" / "workflow").mkdir(parents=True)
+            (root / "scripts" / "workflow" / "attention.py").touch()
+            status = {"correction_rounds": {chapter["unit_id"]:
+                       worker.MAX_CORRECTIONS + worker.MAX_CORRECTION_EXTENSIONS}}
+            with patch.object(worker, "ROOT", root), \
+                 patch.object(worker, "chapter_data",
+                              return_value=({}, {"records": [record]}, [chapter, following])), \
+                 patch.object(worker, "approved_unit_ids", return_value=set()), \
+                 patch.object(worker, "cli", side_effect=lambda *cmd:
+                              answers.pop(0) if cmd[0] == "resume" else "ok") as cli:
+                role, selected = worker.canonical_dispatch("some-book", status)
+        self.assertEqual((role, selected["unit_id"]), ("translator", "chapter-000026"))
+        cli.assert_any_call("defer-review", "some-book", "25",
+                            "--reason", "correction-limit")
+
     def test_anchored_correction_patches_are_local_and_protect_links(self):
         finding = {"id": "meaning-1", "resolved": False,
                    "translation_anchor": {"quote": "wrong", "occurrence": 0}}
