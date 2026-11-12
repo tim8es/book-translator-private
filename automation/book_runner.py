@@ -1724,6 +1724,15 @@ def next_operation(slug: str, status: dict) -> tuple[str, dict | None]:
         current_hash = chapter.get("translation_acceptance", {}).get("translation_sha256")
         review = ("pass" if record["outcome"] == "PASS" else "corrections_required"
                   ) if record and record["translation_sha256"] == current_hash else "missing"
+        # An existing review is no longer authoritative for correction routing
+        # when the glossary it reviewed has changed. Re-review the same accepted
+        # translation before using any old findings or staged correction patches.
+        recorded_memory = record.get("shared_state_revisions") if record else None
+        if (review != "missing" and isinstance(recorded_memory, dict)
+                and recorded_memory.get("glossary")
+                and recorded_memory["glossary"] != fingerprint(
+                    ROOT / "books" / slug / "glossary.md")):
+            review = "missing"
         operation = next_unit_operation(state, review)
         if operation == "accept_review":
             return "promote", chapter
