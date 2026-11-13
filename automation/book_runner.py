@@ -1834,6 +1834,40 @@ def process_correction_batches(job_id: str, slug: str, status: dict, engine: Pat
     return translated, stage["glossary"], stage["style_guide"]
 
 
+def defer_protocol_failed_unit(slug: str, chapter: dict, record: dict | None,
+                               status: dict, code: str | None) -> bool:
+    """Only defer an unchanged independently rejected unit, never provider errors.
+
+    Canonical defer-review is the final hash/claim CAS gate. No translation,
+    source, finding, review result or reviewer PASS is edited here.
+    """
+    if (not code or status.get("failures", 0) < MAX_FAILURES
+            or not isinstance(record, dict)
+            or record.get("outcome") != "CORRECTIONS_REQUIRED"
+            or chapter.get("status") != "translated"):
+        return False
+    accepted = chapter.get("translation_acceptance")
+    if (not isinstance(accepted, dict)
+            or accepted.get("translation_sha256") != record.get("translation_sha256")
+            or accepted.get("source_sha256") != record.get("source_sha256")):
+        raise JobError("failed-correction deferral requires current reviewer evidence")
+    cli("defer-review", slug, str(chapter["number"]),
+        "--reason", "operator-attention")
+    audit = status.setdefault("model_unit_deferral_audit", [])
+    audit.append({
+        "unit_id": chapter["unit_id"],
+        "review_record_id": record["record_id"],
+        "translation_sha256": record["translation_sha256"],
+        "error_code": code,
+        "at": clock(),
+        "action": "canonical-defer-without-pass",
+    })
+    status["failures"] = 0
+    status["state"] = "running"
+    status["phase"] = "model-unit-deferred"
+    return True
+
+
 def reviewer_lineage_options(validator, claim: dict) -> dict:
     """Negotiate reviewer evidence features with the book's pinned workflow."""
     if "current_shared_state_revisions" not in inspect.signature(validator).parameters:
@@ -2950,26 +2984,10 @@ def process_claim(job_id: str, slug: str, status: dict, engine: Path) -> None:
             counters = status.setdefault("unit_protocol_failures", {})
             counters[unit_id] = counters.get(unit_id, 0) + 1
             status["last_error_code"] = recoverable_code
-        if (recoverable_code and status["failures"] >= MAX_FAILURES
-                and previous_record and previous_record.get("outcome") == "CORRECTIONS_REQUIRED"):
-            # A protocol failure is local to this already independently
-            # rejected unit. The canonical queue holds it hash-bound, while
-            # other translated units may still be reviewed/corrected.
-            # Never promote the rejected unit or pretend the failed edit ran.
-            cli("defer-review", slug, str(chapter["number"]),
-                "--reason", "operator-attention")
-            audit = status.setdefault("model_unit_deferral_audit", [])
-            audit.append({
-                "unit_id": unit_id,
-                "review_record_id": previous_record["record_id"],
-                "translation_sha256": previous_record["translation_sha256"],
-                "error_code": recoverable_code,
-                "at": clock(),
-                "action": "canonical-defer-without-pass",
-            })
-            status["failures"] = 0
-            status["state"] = "running"
-            status["phase"] = "model-unit-deferred"
+        if defer_protocol_failed_unit(
+                slug, chapter, previous_record, status, recoverable_code):
+            # Report the deferred issue and let canonical resume select the
+            # next independent unit. Never fabricate an acceptance/PASS.
             checkpoint(job_id, status, slug)
             return
         status["state"] = "blocked" if status["failures"] >= MAX_FAILURES else "running"
