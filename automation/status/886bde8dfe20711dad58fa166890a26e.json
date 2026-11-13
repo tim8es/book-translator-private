@@ -4,8 +4,8 @@
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
   "source_sha256": "3a3fce78317162b68bc1e82501456a74a783cfc96cb2640c463f381866007865",
   "state": "running",
-  "phase": "structural-span-repair-reserved",
-  "failures": 0,
+  "phase": "model-retry",
+  "failures": 1,
   "correction_rounds": {
     "chapter-000002": 1,
     "chapter-000003": 1,
@@ -23,13 +23,8 @@
     "chapter-000022": 6
   },
   "workflow_revision": "ea9963ca546b7cc7f6aba4dc5350fa19ea7da862",
-  "updated_at": "2026-11-13T23:51:35.018890+00:00",
-  "active": {
-    "role": "corrector",
-    "chapter": 27,
-    "session_id": "auto-886bde8dfe20-corrector-77987fc3",
-    "unit_id": "chapter-000027"
-  },
+  "updated_at": "2026-11-13T23:52:05.468790+00:00",
+  "active": null,
   "model_calls_started": 273,
   "memory_glossary_saved": 110,
   "pending_style": [],
@@ -292,7 +287,7 @@
   "structural_protocol_fallback_units": {
     "chapter-000027": "c3ed2639c7dda98c38893900fcc29f44bfa6c4b111be08106f756690984828d4"
   },
-  "last_error_code": "json_invalid",
+  "last_error_code": "translation_coverage",
   "structural_segment_progress": {
     "unit_id": "chapter-000027",
     "source_sha256": "c3ed2639c7dda98c38893900fcc29f44bfa6c4b111be08106f756690984828d4",
@@ -302,13 +297,17 @@
   "model_response_diagnostics": {
     "finish_reason": "stop",
     "response_format": "json_object",
-    "response_chars": 173,
+    "response_chars": 237,
     "provider_refusal": false,
-    "prompt_tokens": 7785,
-    "completion_tokens": 1169,
-    "total_tokens": 8954,
+    "prompt_tokens": 7823,
+    "completion_tokens": 1100,
+    "total_tokens": 8923,
     "route": "primary",
     "role": "translator",
     "unit_id": "chapter-000027"
+  },
+  "last_error": "focused structural translator repair still omitted source text",
+  "unit_protocol_failures": {
+    "chapter-000027": 1
   }
 }
