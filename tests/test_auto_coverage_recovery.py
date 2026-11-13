@@ -330,6 +330,19 @@ class CoverageRecoveryTests(unittest.TestCase):
                               return_value=("sys", ["AGENTS.md"])), \
                  patch.object(runner, "complete",
                               side_effect=[incorrect, repaired]) as model, \
+                 patch.object(runner, "load_public_correction_helper",
+                              return_value=type("TypedProtocolStub", (), {
+                                  "failure_code": staticmethod(lambda error: "wrong_anchor"),
+                                  "repair_guidance": staticmethod(
+                                      lambda selected, error: json.dumps({
+                                          "items": [{"finding_id": f["id"],
+                                                     "reviewer_bound": True}
+                                                    for f in selected],
+                                          "error": error})),
+                                  "validate_replacement": staticmethod(lambda p, f: None),
+                                  "validate_intent": staticmethod(lambda p, f: None),
+                                  "CorrectionProtocolError": ValueError,
+                              })) , \
                  patch.object(runner, "checkpoint") as checkpoint:
                 result = runner.process_correction_batches(
                     "e" * 32, "sample", status, root, chapter, review)
@@ -338,7 +351,7 @@ class CoverageRecoveryTests(unittest.TestCase):
             self.assertEqual(model.call_count, 2)
             self.assertEqual(checkpoint.call_count, 3)
             repair_prompt = model.call_args_list[1].args[2]
-            self.assertIn("reviewer_bound_finding_ids", repair_prompt)
+            self.assertIn("reviewer_bound", repair_prompt)
             self.assertIn("omission-1", repair_prompt)
             self.assertEqual(
                 (book / chapter["translation_path"]).read_text("utf-8"),
