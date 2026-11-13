@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "request_id": "f471a1628a66472aafdb82d6121a7c36",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "01600a30e45831703e3819dfddc954e96bd1d72adf5f3038b681bacd9a9b9348",
+    "record": {
+      "correction_round": 0,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "findings": [
+          {
+            "detail": "Checked and corrected highborn education, omega gender reference, ouroboros imagery, original rough interior register and scent-patch word order.",
+            "resolved": true,
+            "severity": "minor"
+          }
+        ]
+      },
+      "record_id": "9552f157c1de4a22bd67f7759dcde11e",
+      "review_commit": "197405bcea250c2dd556b74a08bbe6168bb4d064",
+      "review_contract_revision": "docs/TRANSLATION.md@effd537cb20d42e0077ebe8760cb794fdb84fd0f",
+      "reviewed_at": "2026-11-13T10:13:01Z",
+      "reviewer_session_id": "chat-manual-night-review-20261113-02b",
+      "sequence": 2,
+      "source_sha256": "3dfdb255297b421c15be0c2aebf874e2d4c09e482e3315512fca28c4201f0772",
+      "state_revision": "60e4550a7b2d99faad13e262547f25fc21049c89876858a4c3dab962de134bc0",
+      "supersedes_record_id": null,
+      "translation_sha256": "2596f94f8fb2bb3d46db9e857890d037372fe4d29cc48f111a9ae1e8eef630e7",
+      "unit_id": "chapter-000002",
+      "workflow_revision": "effd537cb20d42e0077ebe8760cb794fdb84fd0f"
+    }
+  },
+  "error": null
+}

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "nightingale-bad",
-  "next_sequence": 2,
+  "next_sequence": 3,
   "records": [
     {
       "record_id": "267f9c6d763542ed928f67c176f3083f",
@@ -28,6 +28,39 @@
           "structure": true
         },
         "findings": []
+      }
+    },
+    {
+      "record_id": "9552f157c1de4a22bd67f7759dcde11e",
+      "sequence": 2,
+      "unit_id": "chapter-000002",
+      "outcome": "PASS",
+      "source_sha256": "3dfdb255297b421c15be0c2aebf874e2d4c09e482e3315512fca28c4201f0772",
+      "translation_sha256": "2596f94f8fb2bb3d46db9e857890d037372fe4d29cc48f111a9ae1e8eef630e7",
+      "workflow_revision": "effd537cb20d42e0077ebe8760cb794fdb84fd0f",
+      "review_contract_revision": "docs/TRANSLATION.md@effd537cb20d42e0077ebe8760cb794fdb84fd0f",
+      "reviewer_session_id": "chat-manual-night-review-20261113-02b",
+      "reviewed_at": "2026-11-13T10:13:01Z",
+      "state_revision": "60e4550a7b2d99faad13e262547f25fc21049c89876858a4c3dab962de134bc0",
+      "review_commit": "197405bcea250c2dd556b74a08bbe6168bb4d064",
+      "correction_round": 0,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Checked and corrected highborn education, omega gender reference, ouroboros imagery, original rough interior register and scent-patch word order.",
+            "resolved": true
+          }
+        ]
       }
     }
   ]
