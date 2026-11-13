@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "operation": "explicit-workflow-upgrade",
+  "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
+  "job_id": "886bde8dfe20711dad58fa166890a26e",
+  "workflow_repository": "https://github.com/tim8es/book-translator",
+  "previous_workflow_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
+  "target_workflow_revision": "effd537cb20d42e0077ebe8760cb794fdb84fd0f",
+  "approval": "User explicitly requested workflow update for existing A Home in You",
+  "commit_before_upgrade": "3fdba7729d8505706d0d48f9d1d2c5f187321ed2",
+  "prior_blobs": {
+    "metadata": "eaecb19c44d21c135cb2dc66922be137fb73b99b",
+    "progress": "a012a553bdf9c862568adc51911ccb2fcd1f57e0",
+    "review_ledger": "91e2dd4554b09c2841110d76a2026b29a4669a02",
+    "job_status": "e48815905b03b5f89bf574581d9f88ef1d82254d"
+  },
+  "prior_status_counts": {
+    "reviewed": 45,
+    "translated": 4,
+    "extracted": 2
+  },
+  "post_status_counts": {
+    "extracted": 51
+  },
+  "artifacts": {
+    "translated_files_preserved": true,
+    "source_preserved": true,
+    "review_ledger_preserved": true,
+    "glossary_preserved": true,
+    "style_guide_preserved": true,
+    "legacy_acceptance_archive": "books/a-home-in-you-a-mm-small-town-stepbrother-romance/.workflow/audits/2026-11-13-workflow-upgrade-legacy-acceptances.json"
+  },
+  "migration": {
+    "historical_reviewed_units_reclassified_as_extracted": 45,
+    "preexisting_translations_reclassified_as_extracted": 49,
+    "original_translation_artifacts_preserved": 49,
+    "old_translation_acceptances_archived": 49,
+    "old_review_records_preserved": 104,
+    "current_version_translation_acceptances_attested": 0,
+    "current_version_review_passes_attested": 0,
+    "requires": "Revalidate and reaccept the existing 49 translation files under the new pinned workflow via valid fresh claims, followed by independent Reviewer records; do not run a blind retranslation or manufacture new acceptance evidence",
+    "autotranslation_dispatched": false
+  },
+  "cautions": [
+    "Prior PASS records are immutable historical evidence, not current version PASS.",
+    "Do not edit old acceptance workflow_revision fields to manufacture a current acceptance.",
+    "The book remains blocked until a separate evidence revalidation procedure."
+  ]
+}
