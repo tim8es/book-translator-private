@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "nightingale-bad",
-  "next_sequence": 8,
+  "next_sequence": 9,
   "records": [
     {
       "record_id": "267f9c6d763542ed928f67c176f3083f",
@@ -254,6 +254,44 @@
             "severity": "minor",
             "detail": "Corrected awkward phrase for Eliza's manicured nails; source detail retained.",
             "resolved": true
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "bc68cf52c05f426f866f43878b2ad0b0",
+      "sequence": 8,
+      "unit_id": "chapter-000006",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "83868794e9521ec4c650d879bfa69c53d596fca58489e415b7be288f8dad23a2",
+      "translation_sha256": "91ffafd47745a373a3f8e293dc233a62b6175542b3e475f481a540873e629f32",
+      "workflow_revision": "effd537cb20d42e0077ebe8760cb794fdb84fd0f",
+      "review_contract_revision": "docs/TRANSLATION.md@effd537cb20d42e0077ebe8760cb794fdb84fd0f",
+      "reviewer_session_id": "chat-manual-night-20261113-ch5-review",
+      "reviewed_at": "2026-11-13T11:10:20Z",
+      "state_revision": "7a451726d91be36ecfa6992fb64c8cf545e4c9f7f15bb1a9ee1e49ab6766a597",
+      "review_commit": "106570f0ac582bb14e563d23a3ba0d2d80c90f81",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Source 'He's an underpaid nobody' is translated 'Он низкооплачиваемый никто', an unnatural calque in Russian. Rephrase to convey Chrollo's condescension and the guard's low salary idiomatically, e.g. 'Он всего лишь охранник на грошовой зарплате'.",
+            "resolved": false
+          },
+          {
+            "severity": "major",
+            "detail": "Source keeps the small person at the print shop gender unspecified using singular they. Translation 'Он уже полностью отвернулся' assigns male sex by pronoun. Preserve ambiguity with 'Человек за столом уже полностью погрузился в изучение послания' or equivalent.",
+            "resolved": false
           }
         ]
       }

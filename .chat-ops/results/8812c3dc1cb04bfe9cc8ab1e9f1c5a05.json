@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "request_id": "8812c3dc1cb04bfe9cc8ab1e9f1c5a05",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "00435d452ed9b5e051f283e8c194183ecb724c865fdffaf1eed28371e8fe4634",
+    "record": {
+      "correction_round": 1,
+      "outcome": "CORRECTIONS_REQUIRED",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "findings": [
+          {
+            "detail": "Source 'He's an underpaid nobody' is translated 'Он низкооплачиваемый никто', an unnatural calque in Russian. Rephrase to convey Chrollo's condescension and the guard's low salary idiomatically, e.g. 'Он всего лишь охранник на грошовой зарплате'.",
+            "resolved": false,
+            "severity": "minor"
+          },
+          {
+            "detail": "Source keeps the small person at the print shop gender unspecified using singular they. Translation 'Он уже полностью отвернулся' assigns male sex by pronoun. Preserve ambiguity with 'Человек за столом уже полностью погрузился в изучение послания' or equivalent.",
+            "resolved": false,
+            "severity": "major"
+          }
+        ]
+      },
+      "record_id": "bc68cf52c05f426f866f43878b2ad0b0",
+      "review_commit": "106570f0ac582bb14e563d23a3ba0d2d80c90f81",
+      "review_contract_revision": "docs/TRANSLATION.md@effd537cb20d42e0077ebe8760cb794fdb84fd0f",
+      "reviewed_at": "2026-11-13T11:10:20Z",
+      "reviewer_session_id": "chat-manual-night-20261113-ch5-review",
+      "sequence": 8,
+      "source_sha256": "83868794e9521ec4c650d879bfa69c53d596fca58489e415b7be288f8dad23a2",
+      "state_revision": "7a451726d91be36ecfa6992fb64c8cf545e4c9f7f15bb1a9ee1e49ab6766a597",
+      "supersedes_record_id": null,
+      "translation_sha256": "91ffafd47745a373a3f8e293dc233a62b6175542b3e475f481a540873e629f32",
+      "unit_id": "chapter-000006",
+      "workflow_revision": "effd537cb20d42e0077ebe8760cb794fdb84fd0f"
+    }
+  },
+  "error": null
+}
