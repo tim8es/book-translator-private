@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 112,
+  "next_sequence": 113,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -8777,6 +8777,68 @@
               "record_id": "317f174716ed4319845c42167e3d6daf",
               "finding_id": "new-4"
             }
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "726e4f76699f03977c14ec08e038db936a065b810ed2c84e32c86cf9171808d9",
+        "style_guide": "3ec7c485cf41741084ffe49b72d2b18ed9bd650a00a2ba00554605abadea5e3a"
+      }
+    },
+    {
+      "record_id": "f3f7442ceeab4b02adb5f77c1ebdf7d9",
+      "sequence": 112,
+      "unit_id": "chapter-000028",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "f98da8475a3d0b14695a4eb643e6d55bdb612c3e1ec25833e7b2736eab964a39",
+      "translation_sha256": "a785a2e5e1df9b0586688f49263ae296d8c04b5e58793e6aa54bdaa4b90206de",
+      "workflow_revision": "ea9963ca546b7cc7f6aba4dc5350fa19ea7da862",
+      "review_contract_revision": "docs/TRANSLATION.md@ea9963ca546b7cc7f6aba4dc5350fa19ea7da862",
+      "reviewer_session_id": "auto-886bde8dfe20-reviewer-62f6a78a",
+      "reviewed_at": "2026-11-13T12:21:20Z",
+      "state_revision": "e249774880affeb26ac4b6c7aa2095a7c575629afd0e8c1a07917db51eace3c9",
+      "review_commit": "e3ddee191e47ed7441532f187daeb6d9d57c1e0b",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "omission-1",
+            "category": "omission",
+            "severity": "critical",
+            "detail": "The accepted translation omits the source unit’s narrative: no events, dialogue, thoughts, or closing lines are translated. Only the external link is preserved.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Dillon was mucking out stalls in the barn in the freezing cold while I cleaned the kitchen with Evelyn after lunch, and Dad went out grocery shopping.",
+              "occurrence": 0
+            },
+            "translation_anchor": null,
+            "resolves": null
+          },
+          {
+            "id": "addition-1",
+            "category": "addition",
+            "severity": "major",
+            "detail": "The refusal and offer to translate only selected portions are not in the source; they replace the source narrative rather than translating it.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Dillon was mucking out stalls in the barn in the freezing cold while I cleaned the kitchen with Evelyn after lunch, and Dad went out grocery shopping.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Не могу перевести этот фрагмент целиком: в нём подробно описан сексуальный контакт персонажей, которым 17 лет. Могу помочь с несексуальными частями или с версией, в которой интимная сцена опущена.",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       },
