@@ -1501,21 +1501,28 @@ def process_structural_translation(job_id: str, slug: str, status: dict,
             status["phase"] = "structural-span-repair-reserved"
             prompt_context["short_output_repair"] = len(incomplete)
             checkpoint(job_id, status, slug)
+            # The second invocation sees only the rejected source spans,
+            # not all three again. Keep individually acceptable initial
+            # translations so a failed sibling does not erase good work.
+            rejected = [item for item in selected if item["id"] in incomplete]
+            repair_system, repair_user, _ = context(
+                engine, slug, chapter, "translator", structural_segments=rejected)
             repaired = complete(
-                "TRANSLATOR", system,
-                user + "\nREJECTED TRANSLATION: Some returned short source-bound "
-                "spans omitted sentences or collapsed paragraphs. You must "
-                "translate every sentence and retain paragraph boundaries; "
-                "do not summarize. Return every source segment in its full "
-                "required JSON schema. Incomplete IDs: "
-                + json.dumps(incomplete))
+                "TRANSLATOR", repair_system,
+                repair_user + "\nREJECTED SHORT TRANSLATION: Translate EVERY "
+                "sentence and preserve paragraph boundaries for the supplied "
+                "source span(s). Do not summarize or omit passages; return "
+                "the normal source-identified JSON output.")
             try:
-                translated, new_glossary, new_style = helper.parse_batch(
-                    repaired, [item["id"] for item in selected])
+                corrected, extra_glossary, extra_style = helper.parse_batch(
+                    repaired, [item["id"] for item in rejected])
             except ValueError as exc:
                 raise ModelError("structural translator repair rejected: " + str(exc)) from exc
+            translated.update(corrected)
+            new_glossary = merge_unique_correction_decisions(new_glossary, extra_glossary)
+            new_style = merge_unique_correction_decisions(new_style, extra_style)
             if incomplete_structural_batch(selected, translated):
-                raise ModelError("structural translator repair still omitted source text")
+                raise ModelError("focused structural translator repair still omitted source text")
         _, new_glossary, new_style = parse_translation(json.dumps({
             "translation": "validated placeholder",
             "glossary": new_glossary, "style_guide": new_style,
