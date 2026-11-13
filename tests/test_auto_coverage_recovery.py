@@ -345,5 +345,53 @@ class CoverageRecoveryTests(unittest.TestCase):
                 translation, "only canonical acceptance may mutate the translation")
 
 
+    def test_minor_local_register_followup_uses_checked_source_delta(self):
+        source = "Original meaning.\n\nSecond paragraph.\n"
+        translation = "Исправленный перевод.\n\nВторой абзац.\n"
+        finding = {
+            "id": "register-1", "category": "register",
+            "severity": "minor", "resolved": False,
+            "source_anchor": {"quote": "Original meaning.", "occurrence": 0},
+            "translation_anchor": {"quote": "Старый перевод.", "occurrence": 0},
+        }
+        prior = {
+            "record_id": "f" * 32, "outcome": "CORRECTIONS_REQUIRED",
+            "source_sha256": hashlib.sha256(source.encode()).hexdigest(),
+            "translation_sha256": "e" * 64,
+            "quality_report": {
+                "evidence_version": 2,
+                "checks": {"coverage": True, "meaning": True,
+                           "terminology": True, "style": True, "structure": True},
+                "findings": [finding],
+            },
+        }
+        chapter = {"unit_id": "chapter-000001", "number": 1}
+        delta = {
+            "advisory_only": True, "mode": "focused_candidate",
+            "unit_id": chapter["unit_id"],
+            "source_sha256": hashlib.sha256(source.encode()).hexdigest(),
+            "translation_sha256": hashlib.sha256(translation.encode()).hexdigest(),
+            "previous_record_id": prior["record_id"],
+            "sections": [{
+                "new_paragraph_range": [1, 1], "preceding_context": "",
+                "following_context": "",
+            }],
+        }
+        with patch.object(runner, "cli", return_value=json.dumps(delta)):
+            context = runner.focused_review_context(
+                "sample", chapter, prior, source, translation)
+            self.assertIsNotNone(context)
+            self.assertEqual(context["previous_record_id"], "f" * 32)
+            self.assertEqual(len(context["changed_translation_sections"]), 1)
+            self.assertEqual(len(context["unresolved_findings"]), 1)
+            prior["quality_report"]["findings"][0]["severity"] = "major"
+            self.assertIsNone(runner.focused_review_context(
+                "sample", chapter, prior, source, translation))
+            prior["quality_report"]["findings"][0]["severity"] = "minor"
+            prior["quality_report"]["findings"][0]["category"] = "structure"
+            self.assertIsNone(runner.focused_review_context(
+                "sample", chapter, prior, source, translation))
+
+
 if __name__ == "__main__":
     unittest.main()
