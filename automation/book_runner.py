@@ -179,11 +179,21 @@ def complete_for_job(status: dict, role: str, system: str, user: str) -> str:
     route = role
     retry = status.get("provider_retry")
     active = status.get("active")
-    if (isinstance(retry, dict) and isinstance(active, dict)
-            and retry.get("chapter") == active.get("chapter")
-            and retry.get("role") == role.lower()
-            and type(retry.get("attempts")) is int
-            and retry["attempts"] >= FALLBACK_AFTER_TRANSIENTS
+    protocol_counts = status.get("unit_protocol_failures", {})
+    if not isinstance(protocol_counts, dict):
+        raise JobError("invalid model-output recovery counters")
+    same_unit_protocol_attempts = (
+        protocol_counts.get(active.get("unit_id"), 0)
+        if isinstance(active, dict) else 0)
+    if type(same_unit_protocol_attempts) is not int or same_unit_protocol_attempts < 0:
+        raise JobError("invalid unit protocol attempt count")
+    repeated_provider = (isinstance(retry, dict) and isinstance(active, dict)
+                         and retry.get("chapter") == active.get("chapter")
+                         and retry.get("role") == role.lower()
+                         and type(retry.get("attempts")) is int
+                         and retry["attempts"] >= FALLBACK_AFTER_TRANSIENTS)
+    if ((repeated_provider or
+         same_unit_protocol_attempts >= FALLBACK_AFTER_TRANSIENTS)
             and os.environ.get(f"OMNIROUTE_{role}_FALLBACK_MODEL", "").strip()):
         route = role + "_FALLBACK"
     # A route name, not model ID or credential, is safe in metadata.
@@ -2797,7 +2807,8 @@ def claim(job_id: str, slug: str, status: dict, role: str, chapter: dict) -> Non
         "--glossary-revision", fingerprint(book / "glossary.md"),
         "--style-guide-revision", fingerprint(book / "style-guide.md"))
     status.update({"phase": "claimed", "active": {
-        "role": role, "chapter": chapter["number"], "session_id": session}})
+        "role": role, "chapter": chapter["number"],
+        "unit_id": chapter["unit_id"], "session_id": session}})
     status.pop("last_error", None)
     checkpoint(job_id, status, slug)
 
