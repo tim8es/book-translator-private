@@ -1405,10 +1405,11 @@ def load_structural_stage(slug: str, chapter: dict, status: dict,
         "source_sha256": plan["source_sha256"],
         "workflow_revision": status["workflow_revision"],
         "helper_revision": PUBLIC_STRUCTURAL_HELPER_REVISION,
-        "segment_plan_sha256": hashlib.sha256(json.dumps(
-            plan["parts"], sort_keys=True, ensure_ascii=False).encode("utf-8")).hexdigest(),
         "segments": {}, "glossary": [], "style_guide": [],
     }
+    if "parts" in plan:
+        expected["segment_plan_sha256"] = hashlib.sha256(json.dumps(
+            plan["parts"], sort_keys=True, ensure_ascii=False).encode("utf-8")).hexdigest()
     if not path.exists():
         return path, expected
     stage = read_json(path)
@@ -2519,10 +2520,16 @@ def process_claim(job_id: str, slug: str, status: dict, engine: Path) -> None:
         if not isinstance(previous_quality, dict):
             previous_quality = {}
         patch_mode = (role == "corrector" and previous_quality.get("evidence_version") == 2)
-        book_root = ROOT / "books" / slug
-        source_for_coverage = (book_root / chapter["source_path"]).read_text("utf-8")
-        retranslate_incomplete = (role == "corrector" and suspicious_translation_coverage(
-            source_for_coverage, (book_root / chapter["translation_path"]).read_text("utf-8")))
+        retranslate_incomplete = False
+        if (role == "corrector"
+                and isinstance(chapter.get("source_path"), str)
+                and isinstance(chapter.get("translation_path"), str)):
+            book_root = ROOT / "books" / slug
+            source_path = book_root / chapter["source_path"]
+            translation_path = book_root / chapter["translation_path"]
+            if source_path.is_file() and translation_path.is_file():
+                retranslate_incomplete = suspicious_translation_coverage(
+                    source_path.read_text("utf-8"), translation_path.read_text("utf-8"))
         if retranslate_incomplete:
             patch_mode = False
         if role == "corrector":
