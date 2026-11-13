@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "nightingale-bad",
-  "next_sequence": 3,
+  "next_sequence": 4,
   "records": [
     {
       "record_id": "267f9c6d763542ed928f67c176f3083f",
@@ -58,6 +58,39 @@
           {
             "severity": "minor",
             "detail": "Checked and corrected highborn education, omega gender reference, ouroboros imagery, original rough interior register and scent-patch word order.",
+            "resolved": true
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "ce8c1888dd9d482eb4bf7293442381ef",
+      "sequence": 3,
+      "unit_id": "chapter-000003",
+      "outcome": "PASS",
+      "source_sha256": "166cbc93218e13f56787124576fda190a3074bea60e0ee23b0863196b5092b0d",
+      "translation_sha256": "b275cd13a45d9369a69b3b8a44928924d80b5ac6139c71201204c9e5fb943b18",
+      "workflow_revision": "effd537cb20d42e0077ebe8760cb794fdb84fd0f",
+      "review_contract_revision": "docs/TRANSLATION.md@effd537cb20d42e0077ebe8760cb794fdb84fd0f",
+      "reviewer_session_id": "chat-manual-night-review-20261113-03",
+      "reviewed_at": "2026-11-13T10:17:40Z",
+      "state_revision": "93faf290b865f3acf0f09358dbbc89743e8fc1073def575c8e4b8c44ad51a500",
+      "review_commit": "ce0ccd83d83a8b0ab419c48ab728f55233f7b654",
+      "correction_round": 0,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Corrections checked against source: participant's grammatical gender, idiomatic phrasing of eggs question, butter-yellow color, weeknight rhythm.",
             "resolved": true
           }
         ]

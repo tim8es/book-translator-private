@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "request_id": "f471a1628a66472aafdb82d6121a7c44",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "63d8e0d347f213a27fe8fc890b0cde80f552f30cb3b0f00f6a453c58ff086519",
+    "record": {
+      "correction_round": 0,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "findings": [
+          {
+            "detail": "Corrections checked against source: participant's grammatical gender, idiomatic phrasing of eggs question, butter-yellow color, weeknight rhythm.",
+            "resolved": true,
+            "severity": "minor"
+          }
+        ]
+      },
+      "record_id": "ce8c1888dd9d482eb4bf7293442381ef",
+      "review_commit": "ce0ccd83d83a8b0ab419c48ab728f55233f7b654",
+      "review_contract_revision": "docs/TRANSLATION.md@effd537cb20d42e0077ebe8760cb794fdb84fd0f",
+      "reviewed_at": "2026-11-13T10:17:40Z",
+      "reviewer_session_id": "chat-manual-night-review-20261113-03",
+      "sequence": 3,
+      "source_sha256": "166cbc93218e13f56787124576fda190a3074bea60e0ee23b0863196b5092b0d",
+      "state_revision": "93faf290b865f3acf0f09358dbbc89743e8fc1073def575c8e4b8c44ad51a500",
+      "supersedes_record_id": null,
+      "translation_sha256": "b275cd13a45d9369a69b3b8a44928924d80b5ac6139c71201204c9e5fb943b18",
+      "unit_id": "chapter-000003",
+      "workflow_revision": "effd537cb20d42e0077ebe8760cb794fdb84fd0f"
+    }
+  },
+  "error": null
+}
