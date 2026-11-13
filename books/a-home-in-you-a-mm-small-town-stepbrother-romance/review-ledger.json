@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 106,
+  "next_sequence": 107,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -7713,6 +7713,131 @@
             },
             "translation_anchor": {
               "quote": "Я доверял ему не больше, чем мог бы его швырнуть.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "726e4f76699f03977c14ec08e038db936a065b810ed2c84e32c86cf9171808d9",
+        "style_guide": "3ec7c485cf41741084ffe49b72d2b18ed9bd650a00a2ba00554605abadea5e3a"
+      }
+    },
+    {
+      "record_id": "d760d7d6341f4e07aa34605917451181",
+      "sequence": 106,
+      "unit_id": "chapter-000024",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "9747496e38507c1388903de0a5fd0fa2c46d97e60e4ce9585a2b2f557b223040",
+      "translation_sha256": "639ca2510a545611b161826dc9a7ed286239ebaf8941ce25f289f475ba9abbc1",
+      "workflow_revision": "ea9963ca546b7cc7f6aba4dc5350fa19ea7da862",
+      "review_contract_revision": "docs/TRANSLATION.md@ea9963ca546b7cc7f6aba4dc5350fa19ea7da862",
+      "reviewer_session_id": "auto-886bde8dfe20-reviewer-412766e3",
+      "reviewed_at": "2026-11-13T11:42:23Z",
+      "state_revision": "21ce8cd2d7657846f36608864eb7a8336aa6c8e7ec8491f2d6c1192fb26cd074",
+      "review_commit": "720bf37058bc31680fa6ce3cb488be718cdd3526",
+      "correction_round": 3,
+      "supersedes_record_id": "fe2abcfd76b34915adc67d3e12f66a17",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "terminology-3",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "The name remains in Latin script in the translation, although the canonical Russian rendering is «Кейд». The same inconsistency also occurs later in «Когда Cade вошёл в мою комнату…».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Fuck. I could tell Cade was upset the moment I touched lips with Darcy.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Чёрт. Я понял, что Cade расстроен, как только коснулся губами Дарси.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "fe2abcfd76b34915adc67d3e12f66a17",
+              "finding_id": "terminology-2"
+            }
+          },
+          {
+            "id": "omission-3",
+            "category": "omission",
+            "severity": "major",
+            "detail": "The latter portion of the source is replaced by an editorial note and a compressed summary. This omits the source’s intervening narrative sequence and closing reflection, so the unit is incomplete. Do not reproduce explicit sexual content involving minors; the editorial note still cannot stand in for the omitted non-explicit material.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "We were still so young, but we made a promise to each other that we’d always be together, and I never intended to ever break it.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Далее в оригинале подробно описана сексуальная близость героев, которым по пятнадцать лет; подробности опущены.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "fe2abcfd76b34915adc67d3e12f66a17",
+              "finding_id": "omission-2"
+            }
+          },
+          {
+            "id": "meaning-6",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "The source leaves Dillon’s identity uncertain and says he thinks he may need to come out. The translation makes this a definite declaration that he must come out as gay.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Cade is gay, and I don’t even know what the fuck I am, but there’s no way I’m dating a girl in high school to prove something. I’m… I think I’m going to have to come out.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Кейд гей, а я сам вообще не знаю, кто я, но встречаться со школьницей, чтобы что-то кому-то доказать, я не собираюсь. Кажется… мне придётся признаться, что я гей.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "fe2abcfd76b34915adc67d3e12f66a17",
+              "finding_id": "meaning-5"
+            }
+          },
+          {
+            "id": "register-2",
+            "category": "register",
+            "severity": "minor",
+            "detail": "The translation weakens the emphatic profanity in «that fucking ever» and «get that shit out of your head» to neutral «никогда» and «чушь». Restore the source’s coarse, emphatic force.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Hell, no. I love only you. No one’s going to change that fucking ever. So get that shit out of your head right now.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Никто и никогда этого не изменит. Выкинь эту чушь из головы прямо сейчас.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "fe2abcfd76b34915adc67d3e12f66a17",
+              "finding_id": "register-1"
+            }
+          },
+          {
+            "id": "meaning-7",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The source says that Mom leaving allowed them to give in to their urges; the translation reduces this to being able to spend time alone, omitting their stated motivation.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Mom had already left for work, allowing us to give in to our urges finally.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Мама уже ушла на работу, и теперь мы наконец могли побыть наедине.",
               "occurrence": 0
             },
             "resolves": null
