@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 119,
+  "next_sequence": 120,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -9768,6 +9768,131 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "726e4f76699f03977c14ec08e038db936a065b810ed2c84e32c86cf9171808d9",
+        "style_guide": "3ec7c485cf41741084ffe49b72d2b18ed9bd650a00a2ba00554605abadea5e3a"
+      }
+    },
+    {
+      "record_id": "4596ba1ae4cb459088edd09e0e57827e",
+      "sequence": 119,
+      "unit_id": "chapter-000022",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "0597bc9de058f1acff07f60dd5e132d7ec2306b50edb043b5dbaab0190059cdf",
+      "translation_sha256": "e17aa563e89d7e0823adf446694ec07d407ceb1020f99a0677d6d5b73275d2cc",
+      "workflow_revision": "ea9963ca546b7cc7f6aba4dc5350fa19ea7da862",
+      "review_contract_revision": "docs/TRANSLATION.md@ea9963ca546b7cc7f6aba4dc5350fa19ea7da862",
+      "reviewer_session_id": "auto-886bde8dfe20-reviewer-2023f80f",
+      "reviewed_at": "2026-11-13T15:32:12Z",
+      "state_revision": "7446c78bc7aee877904efb15dbe93215cd5f0550a95d18bc4b57cb97de4a9d86",
+      "review_commit": "97f0d75666c41f9c6d3febb467541a2f22999c31",
+      "correction_round": 9,
+      "supersedes_record_id": "26e0e543041940efac024489ee5fd2eb",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "names-recheck-2",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "Unresolved: the heading still says “Dillon,” and many prose references to Cade and Darren remain in Latin script despite the glossary’s Russian renderings. Use Диллон, Кейд, and Даррен consistently, with appropriate case endings.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Yeah, you got a problem with that, Darren?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Ага. Есть проблемы, Darren?»",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "26e0e543041940efac024489ee5fd2eb",
+              "finding_id": "names-recheck-1"
+            }
+          },
+          {
+            "id": "straddled-recheck-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Resolved: «уселся верхом у меня на коленях» preserves the specific position conveyed by “straddled.”",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Cade straddled my lap, holding my face as I gripped his hair.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Кейд уселся верхом у меня на коленях лицом ко мне, обхватив ладонями моё лицо, а я держал его за волосы.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "26e0e543041940efac024489ee5fd2eb",
+              "finding_id": "straddled-1"
+            }
+          },
+          {
+            "id": "sex-education-recheck-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Resolved: «Нам рассказывали только о сексе с девушками» correctly refers to what they were taught about sex.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "We’ve only been taught about sex with girls.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Нам рассказывали только о сексе с девушками.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "26e0e543041940efac024489ee5fd2eb",
+              "finding_id": "sex-education-1"
+            }
+          },
+          {
+            "id": "fragment-recheck-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Resolved: the translation now gives this thought a complete sentence: «Он стал человеком, которому мы с Кейдом могли доверять».",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "He became someone Cade and I could trust.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Он стал человеком, которому мы с Кейдом могли доверять.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "26e0e543041940efac024489ee5fd2eb",
+              "finding_id": "fragment-1"
+            }
+          },
+          {
+            "id": "bluff-recheck-1",
+            "category": "omission",
+            "severity": "minor",
+            "detail": "Unresolved: the translation omits the sentence indicating that Darren narrows his eyes while challenging Dillon’s bluff, as Cade watches.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Darren’s green eyes narrowed at me, calling his bluff, while Cade stood back and watched the show.",
+              "occurrence": 0
+            },
+            "translation_anchor": null,
+            "resolves": {
+              "record_id": "26e0e543041940efac024489ee5fd2eb",
+              "finding_id": "bluff-1"
+            }
           }
         ]
       },
