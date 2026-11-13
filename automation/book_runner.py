@@ -244,6 +244,18 @@ def translator_model_output_code(error: ModelError, helper=None) -> str | None:
     return None
 
 
+def corrector_structural_output_code(role: str, plan: dict | None,
+                                   error: ModelError, helper) -> str | None:
+    """Classify model output from a corrector's full-coverage retranslation.
+
+    Unlike patch corrections, this executes the Translator JSON and coverage
+    protocol. Never classify provider/transport errors as skippable output.
+    """
+    if role != "corrector" or plan is None or not isinstance(error, ModelError):
+        return None
+    return translator_model_output_code(error, helper)
+
+
 def defer_untranslated_unit(slug: str, chapter: dict,
                             status: dict, error_code: str | None) -> bool:
     """Delegate exact-source CAS to a compatible pinned canonical CLI only."""
@@ -3192,7 +3204,8 @@ def process_claim(job_id: str, slug: str, status: dict, engine: Path) -> None:
             # translator's structural/coverage protocol. A truncated span
             # must count towards safe failover and canonical review deferral,
             # not be mistaken for a non-recoverable corrector failure.
-            recoverable_code = translator_model_output_code(exc, structural_helper)
+            recoverable_code = corrector_structural_output_code(
+                role, structural_plan, exc, structural_helper)
         if role == "translator" and isinstance(exc, ModelError):
             recoverable_code = translator_model_output_code(exc, structural_helper)
         if recoverable_code:
