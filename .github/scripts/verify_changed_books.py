@@ -4,6 +4,8 @@ Literary correctness is NOT assessed here; canonical Translator/Reviewer
 acceptance and hash-bound PASS evidence remain separate quality gates.
 """
 import json
+import re
+import tempfile
 import subprocess
 import sys
 import zipfile
@@ -21,6 +23,54 @@ def _unique_keys(pairs):
             raise ValueError(f"Duplicate JSON key: {key}")
         result[key] = value
     return result
+
+
+def _canonical_check_target(root, book, slug):
+    """Validate an adopted book with its exact PUBLIC pinned runtime, not the private mirror.
+
+    This happens only in an ephemeral checkout; the original book tree and its
+    accepted evidence are not copied, rewritten, or pushed.
+    """
+    bridge_file = book / ".workflow/workflow-upgrade-evidence.json"
+    if not bridge_file.is_file():
+        return root, None
+    try:
+        metadata = json.loads((book / "metadata.json").read_text("utf-8"))
+        bridge = json.loads(bridge_file.read_text("utf-8"))
+        revision = metadata["workflow"]["resolved_revision"]
+        if (not isinstance(revision, str)
+                or re.fullmatch(r"[0-9a-f]{40}", revision) is None
+                or bridge["target_workflow_revision"] != revision):
+            raise ValueError("upgrade bridge target does not match pinned book revision")
+    except (OSError, KeyError, TypeError, ValueError) as exc:
+        raise RuntimeError(f"unverifiable pinned workflow upgrade: {exc}") from exc
+
+    folder = tempfile.TemporaryDirectory(prefix="book-pinned-validate-")
+    temp = Path(folder.name)
+    clone = subprocess.run(
+        ["git", "clone", "--quiet", "https://github.com/tim8es/book-translator.git",
+         str(temp / "engine")],
+        capture_output=True, text=True, timeout=180,
+    )
+    if clone.returncode:
+        folder.cleanup()
+        raise RuntimeError("cannot fetch public canonical workflow for pinned validation")
+    engine = temp / "engine"
+    checkout = subprocess.run(
+        ["git", "-C", str(engine), "checkout", "--quiet", "--detach", revision],
+        capture_output=True, text=True, timeout=45,
+    )
+    if checkout.returncode:
+        folder.cleanup()
+        raise RuntimeError("book's pinned public workflow revision is unavailable")
+    (engine / "books").mkdir(exist_ok=True)
+    (engine / "books" / slug).symlink_to(book.resolve(), target_is_directory=True)
+    (engine / ".book-translator-install.json").write_text(json.dumps({
+        "schema_version": 1,
+        "canonical_repository": "https://github.com/tim8es/book-translator",
+        "requested_ref": revision, "resolved_revision": revision, "install_root": ".",
+    }), encoding="utf-8")
+    return engine, folder
 
 
 def verify_changed_books(paths, root=ROOT, run_canonical=True):
@@ -71,18 +121,29 @@ def verify_changed_books(paths, root=ROOT, run_canonical=True):
                 print(f"NOTICE: books/{slug} is legacy or incomplete; file checks only. "
                       "Literary quality and machine PASS evidence were not verified.")
                 continue
-            for command in (
-                [sys.executable, "scripts/book.py", "validate", slug],
-                [sys.executable, "scripts/corpus.py", "verify", slug],
-            ):
-                result = subprocess.run(command, cwd=root, capture_output=True, text=True)
-                if result.returncode:
-                    errors.append(
-                        f"books/{slug}: {' '.join(command[1:])} failed: "
-                        f"{(result.stdout + result.stderr)[-2000:]}"
+            try:
+                engine, lease = _canonical_check_target(root, book, slug)
+            except (OSError, RuntimeError, subprocess.TimeoutExpired) as exc:
+                errors.append(f"books/{slug}: {exc}")
+                continue
+            try:
+                for command in (
+                    [sys.executable, "scripts/book.py", "validate", slug],
+                    [sys.executable, "scripts/corpus.py", "verify", slug],
+                ):
+                    result = subprocess.run(
+                        command, cwd=engine, capture_output=True, text=True, timeout=180,
                     )
-                else:
-                    print(f"PASS: books/{slug} {' '.join(command[1:])}")
+                    if result.returncode:
+                        errors.append(
+                            f"books/{slug}: {' '.join(command[1:])} failed: "
+                            f"{(result.stdout + result.stderr)[-2000:]}"
+                        )
+                    else:
+                        print(f"PASS: books/{slug} {' '.join(command[1:])}")
+            finally:
+                if lease is not None:
+                    lease.cleanup()
     return errors
 
 
