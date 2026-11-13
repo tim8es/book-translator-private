@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "request_id": "fe0d42c5fb8f4ecdbd29299fd1a6b305",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "8a8a2d21020b17a1283f56d29284c36dcd849fa1097eaa21f6915f4d1090f39d",
+    "record": {
+      "correction_round": 1,
+      "outcome": "CORRECTIONS_REQUIRED",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "findings": [
+          {
+            "detail": "Source Chrollo: 'I'd love to hear what you thought of the reveal.' The Russian sentence adds 'неожиданном' and 'в конце', imposing a plot twist and timing that are not stated. Remove the added characterization and location while preserving Chrollo's book-club tone.",
+            "resolved": false,
+            "severity": "minor"
+          },
+          {
+            "detail": "Juno is a personal name in the source. Russian 'Юнона' interprets the name as the classical Roman goddess rather than simply transliterating the English name; use 'Джуно' and record consistent terminology in the book glossary.",
+            "resolved": false,
+            "severity": "minor"
+          },
+          {
+            "detail": "Russian 'его сердце наполняет резкий прилив адреналина' is an accidental awkward calque of the line where the pounding heart and adrenaline displace relaxing warmth. Restore the original emotional sequence in natural Russian.",
+            "resolved": false,
+            "severity": "minor"
+          }
+        ]
+      },
+      "record_id": "e645449eb3664fcaa8a84ac868661d9f",
+      "review_commit": "ae9f109ae0298b69a35923b8de804397c8190a72",
+      "review_contract_revision": "docs/TRANSLATION.md@effd537cb20d42e0077ebe8760cb794fdb84fd0f",
+      "reviewed_at": "2026-11-13T11:24:16Z",
+      "reviewer_session_id": "chat-manual-night-20261113-ch6-review",
+      "sequence": 10,
+      "source_sha256": "a19231850204819cc7b9725962fe83f7f80c03d36db68d9b291880ad1bf4d6a0",
+      "state_revision": "dbd52a48088c814f34015bb3fdc3dedffa30ff677410f1e7f50b0ba85503d669",
+      "supersedes_record_id": null,
+      "translation_sha256": "291b0e454dbaab864c1b839dd715cfd7528ca5b9eefdf6a533f7614147611d15",
+      "unit_id": "chapter-000007",
+      "workflow_revision": "effd537cb20d42e0077ebe8760cb794fdb84fd0f"
+    }
+  },
+  "error": null
+}
