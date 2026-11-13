@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 125,
+  "next_sequence": 126,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -10392,6 +10392,74 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "726e4f76699f03977c14ec08e038db936a065b810ed2c84e32c86cf9171808d9",
+        "style_guide": "3ec7c485cf41741084ffe49b72d2b18ed9bd650a00a2ba00554605abadea5e3a"
+      }
+    },
+    {
+      "record_id": "cc6249f24ee7479cb858b017d8a10801",
+      "sequence": 125,
+      "unit_id": "chapter-000024",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "9747496e38507c1388903de0a5fd0fa2c46d97e60e4ce9585a2b2f557b223040",
+      "translation_sha256": "2960dccfeb04a3c0d2d669ed3e75627f1c2abadac8cfefba2f4e68241393cb25",
+      "workflow_revision": "ea9963ca546b7cc7f6aba4dc5350fa19ea7da862",
+      "review_contract_revision": "docs/TRANSLATION.md@ea9963ca546b7cc7f6aba4dc5350fa19ea7da862",
+      "reviewer_session_id": "auto-886bde8dfe20-reviewer-da4c67f5",
+      "reviewed_at": "2026-11-13T16:10:07Z",
+      "state_revision": "c43ce192abc024024d57196946db5d112c27174eb06d2da997dc43f63574d8eb",
+      "review_commit": "615a69e1a09cea67449ad22e55684b089b12ebd7",
+      "correction_round": 8,
+      "supersedes_record_id": "7ace87d626744555b59985fcc12ceee5",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "omission-recheck-1",
+            "category": "omission",
+            "severity": "major",
+            "detail": "The question and reaction are now present, but the supplied changed passage still moves from the kiss on his dimples directly to the later laugh and promise. The subsequent intimacy and conversation identified in the prior finding remain unrepresented in the supplied delta.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“Nervous?”",
+              "occurrence": 0
+            },
+            "translation_anchor": null,
+            "resolves": {
+              "record_id": "7ace87d626744555b59985fcc12ceee5",
+              "finding_id": "recheck-omission-2"
+            }
+          },
+          {
+            "id": "addition-recheck-1",
+            "category": "addition",
+            "severity": "minor",
+            "detail": "The coming-out sentence appears once in the current changed translation, so the prior duplicated sentence has been removed.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "I’m… I think I’m going to have to come out.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Я… думаю, мне придётся совершить каминг-аут.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "7ace87d626744555b59985fcc12ceee5",
+              "finding_id": "addition-1"
+            }
           }
         ]
       },
