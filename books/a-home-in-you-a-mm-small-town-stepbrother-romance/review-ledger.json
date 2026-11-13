@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 128,
+  "next_sequence": 129,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -10620,6 +10620,58 @@
             "resolves": {
               "record_id": "ff088dd186544b869a363413f8d62fdf",
               "finding_id": "style-1"
+            }
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "726e4f76699f03977c14ec08e038db936a065b810ed2c84e32c86cf9171808d9",
+        "style_guide": "3ec7c485cf41741084ffe49b72d2b18ed9bd650a00a2ba00554605abadea5e3a"
+      }
+    },
+    {
+      "record_id": "17d68653dfba4376b9dba9286ac5cfda",
+      "sequence": 128,
+      "unit_id": "chapter-000025",
+      "outcome": "PASS",
+      "source_sha256": "5fc96b09af376cc196a201bccedb6d671fbbd32333f8daff9aa02cc0a7589493",
+      "translation_sha256": "bde3c998b6ed71ddf24fb2bc0bd7f9fc60c94672ad448cc0874337451d850f0d",
+      "workflow_revision": "ea9963ca546b7cc7f6aba4dc5350fa19ea7da862",
+      "review_contract_revision": "docs/TRANSLATION.md@ea9963ca546b7cc7f6aba4dc5350fa19ea7da862",
+      "reviewer_session_id": "auto-886bde8dfe20-reviewer-d96f6342",
+      "reviewed_at": "2026-11-13T20:00:14Z",
+      "state_revision": "8ec6cbfc15e4f142235690133bd9db19a9b376482914c8331a168cf25ce78b10",
+      "review_commit": "b0f3fbd33546b2d7355d861100e786034d6a4337",
+      "correction_round": 10,
+      "supersedes_record_id": "ed6727e0679743c59c365efd9add01a3",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "terminology-recheck-3",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "Имя Dillon передано по-русски в правильной падежной форме («большинство засматривалось на Диллона»).",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "but most girls liked Dillon",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "большинство засматривалось на Диллона",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "ed6727e0679743c59c365efd9add01a3",
+              "finding_id": "terminology-recheck-2"
             }
           }
         ]
