@@ -4,7 +4,7 @@
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
   "source_sha256": "3a3fce78317162b68bc1e82501456a74a783cfc96cb2640c463f381866007865",
   "state": "running",
-  "phase": "claimed",
+  "phase": "model-call-reserved",
   "failures": 0,
   "correction_rounds": {
     "chapter-000002": 1,
@@ -21,17 +21,17 @@
     "chapter-000027": 2
   },
   "workflow_revision": "ea9963ca546b7cc7f6aba4dc5350fa19ea7da862",
-  "updated_at": "2026-11-13T13:32:28.555771+00:00",
+  "updated_at": "2026-11-13T13:32:54.794361+00:00",
   "active": {
     "role": "corrector",
     "chapter": 28,
     "session_id": "auto-886bde8dfe20-corrector-2a95c0ea"
   },
-  "model_calls_started": 183,
+  "model_calls_started": 184,
   "memory_glossary_saved": 110,
   "pending_style": [],
   "prompt_context": {
-    "role": "corrector",
+    "role": "translator",
     "workflow_revision": "ea9963ca546b7cc7f6aba4dc5350fa19ea7da862",
     "loaded_contracts": [
       "AGENTS.md",
@@ -40,10 +40,11 @@
     ],
     "glossary_sha256": "726e4f76699f03977c14ec08e038db936a065b810ed2c84e32c86cf9171808d9",
     "style_guide_sha256": "3ec7c485cf41741084ffe49b72d2b18ed9bd650a00a2ba00554605abadea5e3a",
-    "system_chars": 18890,
-    "user_chars": 15412,
-    "correction_mode": "bounded-review-patches",
-    "batch_finding_count": 2
+    "system_chars": 18735,
+    "user_chars": 16340,
+    "execution_mode": "shared-structural-segments",
+    "helper_revision": "a9f85b68fcc062185c891202c5823a5838a717a0",
+    "batch_segment_count": 3
   },
   "memory_style_saved": 6,
   "recoveries": [
