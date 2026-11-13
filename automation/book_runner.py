@@ -2592,7 +2592,11 @@ def context(engine: Path, slug: str, chapter: dict, role: str,
     previous = ""
     if index and chapters[index - 1]["status"] == "reviewed" and role in {"translator", "reviewer"}:
         prior = book / chapters[index - 1]["translation_path"]
-        previous = prior.read_text("utf-8")[-10000:]
+        # A source-bounded structural span does not need 10k characters of
+        # the preceding chapter on every call. Preserve enough local voice
+        # context while keeping the current source and full style rules intact.
+        prior_budget = 2400 if structural_segments is not None else 10000
+        previous = prior.read_text("utf-8")[-prior_budget:]
     metadata = read_json(book / "metadata.json")
     book_context = {key: metadata[key] for key in
                     ("title", "author", "source_language", "target_language")
