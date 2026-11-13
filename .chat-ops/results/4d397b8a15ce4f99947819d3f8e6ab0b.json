@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "request_id": "4d397b8a15ce4f99947819d3f8e6ab0b",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "571bc2c7de0987562146c8a5d96da351106cc1358c636cf506ad15b760da7954",
+    "record": {
+      "correction_round": 1,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "findings": [
+          {
+            "detail": "Rechecked age reference: source says forty-something woman and relative 'older woman'; corrected translation uses 'женщина постарше' not elderly, including both later mentions.",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "Rechecked 'doesn't feel competitive about me': corrected Melody dialogue to 'Он говорил, что ни с кем не соперничает из-за меня', preserving that Chrollo does not feel rivalry over Kurapika.",
+            "resolved": true,
+            "severity": "major"
+          }
+        ]
+      },
+      "record_id": "71c83d363e48473aa33dcb4ec2822df1",
+      "review_commit": "714a4ccffe37ca07045a7e15116da994b0bcbb86",
+      "review_contract_revision": "docs/TRANSLATION.md@effd537cb20d42e0077ebe8760cb794fdb84fd0f",
+      "reviewed_at": "2026-11-13T12:04:05Z",
+      "reviewer_session_id": "chat-manual-night-20261113-ch8-review2",
+      "sequence": 14,
+      "source_sha256": "462e016b201a6f00f73bd65a740805934d4e52e7f92885c1422801bcaefdd04b",
+      "state_revision": "a73e80f22ff1826ec4008c498c58b63446919ee9052f79ef33d932dc17d9c3aa",
+      "supersedes_record_id": "9d0f05ad9cb4454c83bae782d02acbfc",
+      "translation_sha256": "8271b0f510cc810ef01c6a4e1ec8e88ceed7ed8ea58c777a407af207c17b73ed",
+      "unit_id": "chapter-000009",
+      "workflow_revision": "effd537cb20d42e0077ebe8760cb794fdb84fd0f"
+    }
+  },
+  "error": null
+}

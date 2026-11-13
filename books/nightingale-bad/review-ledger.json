@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "nightingale-bad",
-  "next_sequence": 14,
+  "next_sequence": 15,
   "records": [
     {
       "record_id": "267f9c6d763542ed928f67c176f3083f",
@@ -481,6 +481,44 @@
             "severity": "major",
             "detail": "Original Melody conversation: 'He said he doesn't feel competitive about me' means Chrollo does not feel rivalry over Kurapika (e.g. with Babimyna). Russian 'он не воспринимает меня как предмет соперничества' changes the referent/meaning. Correct to 'Он говорил, что ни с кем не соперничает из-за меня' or equivalent.",
             "resolved": false
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "71c83d363e48473aa33dcb4ec2822df1",
+      "sequence": 14,
+      "unit_id": "chapter-000009",
+      "outcome": "PASS",
+      "source_sha256": "462e016b201a6f00f73bd65a740805934d4e52e7f92885c1422801bcaefdd04b",
+      "translation_sha256": "8271b0f510cc810ef01c6a4e1ec8e88ceed7ed8ea58c777a407af207c17b73ed",
+      "workflow_revision": "effd537cb20d42e0077ebe8760cb794fdb84fd0f",
+      "review_contract_revision": "docs/TRANSLATION.md@effd537cb20d42e0077ebe8760cb794fdb84fd0f",
+      "reviewer_session_id": "chat-manual-night-20261113-ch8-review2",
+      "reviewed_at": "2026-11-13T12:04:05Z",
+      "state_revision": "a73e80f22ff1826ec4008c498c58b63446919ee9052f79ef33d932dc17d9c3aa",
+      "review_commit": "714a4ccffe37ca07045a7e15116da994b0bcbb86",
+      "correction_round": 1,
+      "supersedes_record_id": "9d0f05ad9cb4454c83bae782d02acbfc",
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Rechecked age reference: source says forty-something woman and relative 'older woman'; corrected translation uses 'женщина постарше' not elderly, including both later mentions.",
+            "resolved": true
+          },
+          {
+            "severity": "major",
+            "detail": "Rechecked 'doesn't feel competitive about me': corrected Melody dialogue to 'Он говорил, что ни с кем не соперничает из-за меня', preserving that Chrollo does not feel rivalry over Kurapika.",
+            "resolved": true
           }
         ]
       }
