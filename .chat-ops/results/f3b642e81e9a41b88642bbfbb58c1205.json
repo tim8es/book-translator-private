@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "request_id": "f3b642e81e9a41b88642bbfbb58c1205",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "7c972b6ed2febfeaec56023469c02c54c2db2d054e1f6e462339eac5bfe7e0c5",
+    "record": {
+      "correction_round": 1,
+      "outcome": "CORRECTIONS_REQUIRED",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "findings": [
+          {
+            "detail": "Original 'Your dominance is obviously low-class' criticizes the low-class nature of Tserracnich's behavior. Current 'Ваше доминирование выдаёт в вас человека низкого происхождения' asserts actual low birth, contradicting uncertainty. Use 'Ваша манера доминировать — откровенно низкого пошиба' or equivalent.",
+            "resolved": false,
+            "severity": "minor"
+          },
+          {
+            "detail": "Original 'Let Tserracnich be the one spoken at rather than to for a change' describes Kurapika talking AT rather than WITH Tserracnich. Current 'говорят *о* Церриднихе и *на* Церридниха' is unidiomatic and adds 'about'. Prefer 'Пусть хоть раз Церридниху выговаривают всё, не пытаясь вести с ним разговор' or equivalent.",
+            "resolved": false,
+            "severity": "minor"
+          }
+        ]
+      },
+      "record_id": "2a0a5f67c73a45808cb986cc1ae54bec",
+      "review_commit": "a3a78263ebd65f6603d5a453cd678363de1b0ab6",
+      "review_contract_revision": "docs/TRANSLATION.md@effd537cb20d42e0077ebe8760cb794fdb84fd0f",
+      "reviewed_at": "2026-11-13T13:13:24Z",
+      "reviewer_session_id": "chat-manual-night-20261113-ch12-review",
+      "sequence": 20,
+      "source_sha256": "b370f44ffbf3a29238326fdfbde8b64e2c2097cac819290c7638df1eebde1982",
+      "state_revision": "b7371a5f78f3e364bc895ed8eb3494e7752d54e012406a441fe34cdc4d84afe7",
+      "supersedes_record_id": null,
+      "translation_sha256": "8599fc7f754e2030a72543cce249ec61cc1e9494b1df4a6293029885232241e7",
+      "unit_id": "chapter-000013",
+      "workflow_revision": "effd537cb20d42e0077ebe8760cb794fdb84fd0f"
+    }
+  },
+  "error": null
+}

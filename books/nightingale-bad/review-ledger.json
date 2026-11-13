@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "nightingale-bad",
-  "next_sequence": 20,
+  "next_sequence": 21,
   "records": [
     {
       "record_id": "267f9c6d763542ed928f67c176f3083f",
@@ -688,6 +688,44 @@
             "severity": "minor",
             "detail": "Rechecked 'Murmurs of understanding': now renders 'бормотанием в знак понимания', without implying approval.",
             "resolved": true
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "2a0a5f67c73a45808cb986cc1ae54bec",
+      "sequence": 20,
+      "unit_id": "chapter-000013",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "b370f44ffbf3a29238326fdfbde8b64e2c2097cac819290c7638df1eebde1982",
+      "translation_sha256": "8599fc7f754e2030a72543cce249ec61cc1e9494b1df4a6293029885232241e7",
+      "workflow_revision": "effd537cb20d42e0077ebe8760cb794fdb84fd0f",
+      "review_contract_revision": "docs/TRANSLATION.md@effd537cb20d42e0077ebe8760cb794fdb84fd0f",
+      "reviewer_session_id": "chat-manual-night-20261113-ch12-review",
+      "reviewed_at": "2026-11-13T13:13:24Z",
+      "state_revision": "b7371a5f78f3e364bc895ed8eb3494e7752d54e012406a441fe34cdc4d84afe7",
+      "review_commit": "a3a78263ebd65f6603d5a453cd678363de1b0ab6",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Original 'Your dominance is obviously low-class' criticizes the low-class nature of Tserracnich's behavior. Current 'Ваше доминирование выдаёт в вас человека низкого происхождения' asserts actual low birth, contradicting uncertainty. Use 'Ваша манера доминировать — откровенно низкого пошиба' or equivalent.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Original 'Let Tserracnich be the one spoken at rather than to for a change' describes Kurapika talking AT rather than WITH Tserracnich. Current 'говорят *о* Церриднихе и *на* Церридниха' is unidiomatic and adds 'about'. Prefer 'Пусть хоть раз Церридниху выговаривают всё, не пытаясь вести с ним разговор' or equivalent.",
+            "resolved": false
           }
         ]
       }
