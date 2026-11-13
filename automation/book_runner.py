@@ -2021,6 +2021,9 @@ def apply_operator_review_reopen(job_id: str, slug: str, status: dict) -> bool:
     canon = json.loads(cli("status", slug, "--json"))
     if canon.get("claims") != [] or canon.get("errors") != []:
         raise JobError("operator review reopen blocked by canonical claims or errors")
+    scripts_dir = str(ROOT / "scripts")
+    if scripts_dir not in sys.path:
+        sys.path.insert(0, scripts_dir)
     from workflow.attention import validate_attention
     queue_path = ROOT / "books" / slug / ".workflow" / "needs-attention.json"
     if not queue_path.is_file():
