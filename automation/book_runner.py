@@ -50,7 +50,7 @@ CORRECTION_BATCH_SIZE = 3
 CORRECTION_BATCH_CALLS_PER_CHECKPOINT = 2
 # Immutable public compatibility helper. The current book's literary workflow
 # revision remains pinned; this source-format adapter is versioned separately.
-PUBLIC_STRUCTURAL_HELPER_REVISION = "a9f85b68fcc062185c891202c5823a5838a717a0"
+PUBLIC_STRUCTURAL_HELPER_REVISION = "69091826dda22f2a45bd75bc979935c911ef243a"
 # Separate immutable public compatibility helper: does NOT change a book's
 # pinned literary revision or reviewer contract.
 PUBLIC_CORRECTION_HELPER_REVISION = "abe8cb030c2e792e2543fdbd2c0295cd9e629024"
@@ -963,7 +963,8 @@ def load_public_structural_helper(engine: Path):
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
     if not all(callable(getattr(module, name, None)) for name in
-               ("plan", "spans", "next_spans", "parse_batch", "render")):
+               ("plan", "spans", "next_spans", "parse_batch", "render",
+                "protocol_failure_code", "repair_guidance", "coverage_alert")):
         raise JobError("public structural helper has an unsupported API")
     return module
 
@@ -1485,9 +1486,14 @@ def process_structural_translation(job_id: str, slug: str, status: dict,
     stage_path, stage = load_structural_stage(slug, chapter, status, helper, plan)
     status["structural_helper_revision"] = PUBLIC_STRUCTURAL_HELPER_REVISION
     for _ in range(STRUCTURAL_MODEL_CALLS_PER_CHECKPOINT):
+        fallback = status.get("structural_protocol_fallback_units", {})
+        if not isinstance(fallback, dict):
+            raise JobError("invalid structural protocol fallback checkpoint")
+        batch_limit = (1 if fallback.get(chapter["unit_id"]) == plan["source_sha256"]
+                       else STRUCTURAL_MODEL_SEGMENTS_PER_CALL)
         try:
             selected = helper.next_spans(
-                plan, stage["segments"], limit=STRUCTURAL_MODEL_SEGMENTS_PER_CALL)
+                plan, stage["segments"], limit=batch_limit)
         except ValueError as exc:
             raise JobError("invalid source-bound structural translation progress") from exc
         if not selected:
@@ -1525,8 +1531,39 @@ def process_structural_translation(job_id: str, slug: str, status: dict,
             translated, new_glossary, new_style = helper.parse_batch(
                 answer, [item["id"] for item in selected])
         except ValueError as exc:
-            raise ModelError("structural translator rejected model output: "
-                             + str(exc)) from exc
+            code = helper.protocol_failure_code(str(exc))
+            if code is None:
+                raise ModelError("structural translator rejected model output: "
+                                 + str(exc)) from exc
+            # Bad generated output cannot authorize a write. Keep every
+            # previously staged span and use single-span batches from now on.
+            status.setdefault("structural_protocol_fallback_units", {})[
+                chapter["unit_id"]] = plan["source_sha256"]
+            status["last_error_code"] = code
+            count = status.get("model_calls_started", 0)
+            if type(count) is not int or count >= model_call_limit():
+                raise ModelError("structural protocol repair exhausted paid model budget") from exc
+            focused = selected[:1]
+            repair_system, repair_user, _ = context(
+                engine, slug, chapter, "translator", structural_segments=focused)
+            status["model_calls_started"] = count + 1
+            status["phase"] = "structural-json-repair-reserved"
+            status["prompt_context"] = {
+                **prompt_context, "repair_code": code,
+                "batch_segment_count": len(focused),
+                "execution_mode": "shared-structural-json-repair",
+            }
+            checkpoint(job_id, status, slug)
+            repaired = complete(
+                "TRANSLATOR", repair_system,
+                repair_user + "\nREJECTED STRUCTURAL OUTPUT:\n"
+                + helper.repair_guidance(focused, str(exc)))
+            try:
+                translated, new_glossary, new_style = helper.parse_batch(
+                    repaired, [item["id"] for item in focused])
+            except ValueError as repair_exc:
+                raise ModelError("structural translator repair rejected: "
+                                 + str(repair_exc)) from repair_exc
         incomplete = incomplete_structural_batch(selected, translated)
         if incomplete:
             reserved = status["model_calls_started"]
@@ -2929,6 +2966,12 @@ def process_claim(job_id: str, slug: str, status: dict, engine: Path) -> None:
             if not preserve_links and not patch_mode and structural_plan is None:
                 translated = restore_markdown_links(source, translated)
             check_markers(source, translated)
+            if (not preserve_links and not patch_mode and
+                    (structural_helper.coverage_alert(source, translated)
+                     if structural_helper is not None
+                     else suspicious_translation_coverage(source, translated))):
+                raise ModelError(
+                    "pre-acceptance coverage gate detected probable missing source text")
             if proposed_glossary:
                 proposed_glossary, ungrounded = filter_ungrounded_glossary_proposals(
                     proposed_glossary, source, translated)
@@ -2980,6 +3023,17 @@ def process_claim(job_id: str, slug: str, status: dict, engine: Path) -> None:
             if (recoverable_code is None
                     and str(exc).startswith("typed correction repair invalid: ")):
                 recoverable_code = "invalid_typed_repair"
+        elif (role == "corrector" and structural_plan is not None
+              and isinstance(exc, ModelError)):
+            # Only a rejected model output on a hash-current, independently
+            # rejected translation may enter the canonical needs-attention
+            # queue. Transport and source-integrity failures cannot.
+            for prefix in ("structural translator rejected model output: ",
+                           "structural translator repair rejected: "):
+                if str(exc).startswith(prefix):
+                    recoverable_code = structural_helper.protocol_failure_code(
+                        str(exc)[len(prefix):])
+                    break
         if recoverable_code:
             counters = status.setdefault("unit_protocol_failures", {})
             counters[unit_id] = counters.get(unit_id, 0) + 1
@@ -3026,6 +3080,7 @@ def process_claim(job_id: str, slug: str, status: dict, engine: Path) -> None:
         if structural_plan is not None:
             structural_stage_path(slug, unit_id).unlink(missing_ok=True)
             status.pop("structural_segment_progress", None)
+            status.get("structural_protocol_fallback_units", {}).pop(unit_id, None)
         if role == "corrector" and patch_mode:
             # Remove staging ONLY after canonical translation acceptance and
             # claim-bound glossary reconciliation have succeeded.
