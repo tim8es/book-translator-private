@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "nightingale-bad",
-  "next_sequence": 12,
+  "next_sequence": 13,
   "records": [
     {
       "record_id": "267f9c6d763542ed928f67c176f3083f",
@@ -418,6 +418,33 @@
             "resolved": true
           }
         ]
+      }
+    },
+    {
+      "record_id": "03b1ede5afaa45b8bf5c26f9ceb1602c",
+      "sequence": 12,
+      "unit_id": "chapter-000008",
+      "outcome": "PASS",
+      "source_sha256": "07ef172ce866a4f70a2153f9f731997ac4111e8ae74d9b2e5cf67ba0e4c03db7",
+      "translation_sha256": "dc993314ab18014c85fa8eeba690347eabebaf2f3f351f851cbe42fdb02caed1",
+      "workflow_revision": "effd537cb20d42e0077ebe8760cb794fdb84fd0f",
+      "review_contract_revision": "docs/TRANSLATION.md@effd537cb20d42e0077ebe8760cb794fdb84fd0f",
+      "reviewer_session_id": "chat-manual-night-20261113-ch7-review",
+      "reviewed_at": "2026-11-13T11:38:45Z",
+      "state_revision": "88180151d38b4fc27b4a79c18cd9531f640205d23d7ba1835d742d513a7ce378",
+      "review_commit": "1009a0d3fc25e6cfc43a8957c9f851f1556079a4",
+      "correction_round": 0,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": []
       }
     }
   ]
