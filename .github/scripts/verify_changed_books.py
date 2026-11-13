@@ -130,17 +130,18 @@ def verify_changed_books(paths, root=ROOT, run_canonical=True):
                 continue
             try:
                 for command in (
-                    [sys.executable, "scripts/book.py", "validate", slug],
-                    [sys.executable, "scripts/corpus.py", "verify", slug],
+                    [sys.executable, str(engine / "scripts/book.py"), "validate", slug],
+                    [sys.executable, str(engine / "scripts/corpus.py"), "verify", slug],
                 ):
                     result = subprocess.run(
                         command, cwd=engine, capture_output=True, text=True, timeout=180,
                     )
                     if result.returncode:
-                        if lease is not None and command[1:] == ["scripts/book.py", "validate", slug]:
+                        if lease is not None and command[2:] == ["validate", slug]:
                             diagnostic = (
                                 "import sys, traceback; sys.path.insert(0, 'scripts'); "
                                 "import book, workflow.review_cli as rc; "
+                                "print('BOOK_IMPL:', book.__file__, file=sys.stderr); "
                                 "old=rc._require_current_translation_acceptance; "
                                 "defprint=lambda *a, **k: print('reviewcheck-stack', "
                                 "''.join(traceback.format_stack(limit=8)), file=sys.stderr); "
