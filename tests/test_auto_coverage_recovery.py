@@ -113,6 +113,123 @@ class CoverageRecoveryTests(unittest.TestCase):
                              translation)
 
 
+    def test_operator_plan_reopens_exact_current_rejected_review_once(self):
+        import sys
+        from types import ModuleType
+        from unittest.mock import patch
+        workflow = ModuleType("workflow")
+        workflow.__path__ = []
+        attention = ModuleType("workflow.attention")
+        attention.validate_attention = lambda data, revision: data
+        unit = "chapter-000028"
+        source_hash, trans_hash = "a" * 64, "b" * 64
+        record_id = "c" * 32
+        review = {"unit_id": unit, "record_id": record_id,
+                  "source_sha256": source_hash,
+                  "translation_sha256": trans_hash,
+                  "outcome": "CORRECTIONS_REQUIRED", "sequence": 1}
+        chapter = {
+            "unit_id": unit, "number": 28, "status": "translated",
+            "translation_acceptance": {
+                "source_sha256": source_hash, "translation_sha256": trans_hash}}
+        queue_entry = {"unit_id": unit, "source_sha256": source_hash,
+                       "translation_sha256": trans_hash,
+                       "review_record_id": record_id,
+                       "reason": "review-round-limit",
+                       "created_at": "2026-11-13T12:30:00+00:00"}
+        plan = {"schema_version": 1, "book_slug": "sample",
+                "workflow_revision": "d" * 40,
+                "authorized_by": "user-request-finish-book",
+                "authorized_at": "2026-11-13T13:40:00+00:00",
+                "unit_ids": [unit], "review_limit": 16,
+                "correction_limit": 12}
+        status = {"state": "running", "phase": "reviewer-completed",
+                  "workflow_revision": "d" * 40, "active": None,
+                  "deferred_review_units": [unit]}
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            wf = root / "books" / "sample" / ".workflow"
+            wf.mkdir(parents=True)
+            (wf / "operator-review-reopen.json").write_text(
+                json.dumps(plan), encoding="utf-8")
+            qpath = wf / "needs-attention.json"
+            qpath.write_text(json.dumps({
+                "schema_version": 1, "workflow_revision": "d" * 40,
+                "entries": [queue_entry]}), encoding="utf-8")
+            with patch.dict(sys.modules, {
+                     "workflow": workflow, "workflow.attention": attention}), \
+                 patch.object(runner, "ROOT", root), \
+                 patch.object(runner, "cli",
+                              return_value=json.dumps({"claims": [], "errors": []})), \
+                 patch.object(runner, "chapter_data",
+                              return_value=({}, {"records": [review]}, [chapter])), \
+                 patch.object(runner, "checkpoint") as checkpoint:
+                self.assertTrue(runner.apply_operator_review_reopen(
+                    "e" * 32, "sample", status))
+                self.assertFalse(runner.apply_operator_review_reopen(
+                    "e" * 32, "sample", status))
+                checkpoint.assert_called_once()
+            self.assertEqual(json.loads(qpath.read_text())["entries"], [])
+            self.assertEqual(status["operator_review_limits"][unit], 16)
+            self.assertEqual(status["operator_correction_limits"][unit], 12)
+            self.assertEqual(status["deferred_review_units"], [])
+            self.assertEqual(status["phase"], "operator-reviewed-reopen-applied")
+            self.assertNotIn("outcome", status)
+            self.assertEqual(status["operator_recovery_audit"][0]
+                             ["evidence"][0]["record_id"], record_id)
+
+    def test_operator_plan_rejects_stale_review_without_mutating_queue(self):
+        import sys
+        from types import ModuleType
+        from unittest.mock import patch
+        workflow = ModuleType("workflow")
+        workflow.__path__ = []
+        attention = ModuleType("workflow.attention")
+        attention.validate_attention = lambda data, revision: data
+        unit = "chapter-000025"
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            wf = root / "books" / "sample" / ".workflow"
+            wf.mkdir(parents=True)
+            (wf / "operator-review-reopen.json").write_text(json.dumps({
+                "schema_version": 1, "book_slug": "sample",
+                "workflow_revision": "d" * 40,
+                "authorized_by": "user-request-finish-book",
+                "authorized_at": "2026-11-13T13:40:00+00:00",
+                "unit_ids": [unit], "review_limit": 16,
+                "correction_limit": 12}), encoding="utf-8")
+            queue = {"schema_version": 1, "workflow_revision": "d" * 40,
+                     "entries": [{
+                         "unit_id": unit, "source_sha256": "a" * 64,
+                         "translation_sha256": "b" * 64,
+                         "review_record_id": "c" * 32,
+                         "reason": "review-round-limit",
+                         "created_at": "2026-11-13T12:30:00+00:00"}]}
+            path = wf / "needs-attention.json"
+            path.write_text(json.dumps(queue), encoding="utf-8")
+            before = path.read_bytes()
+            status = {"workflow_revision": "d" * 40, "active": None}
+            chapter = {"unit_id": unit, "number": 25, "status": "translated",
+                       "translation_acceptance": {
+                           "source_sha256": "a" * 64,
+                           "translation_sha256": "b" * 64}}
+            record = {"unit_id": unit, "record_id": "f" * 32,
+                      "source_sha256": "a" * 64, "translation_sha256": "b" * 64,
+                      "outcome": "CORRECTIONS_REQUIRED", "sequence": 1}
+            with patch.dict(sys.modules, {
+                     "workflow": workflow, "workflow.attention": attention}), \
+                 patch.object(runner, "ROOT", root), \
+                 patch.object(runner, "cli",
+                              return_value=json.dumps({"claims": [], "errors": []})), \
+                 patch.object(runner, "chapter_data",
+                              return_value=({}, {"records": [record]}, [chapter])), \
+                 patch.object(runner, "checkpoint") as checkpoint:
+                with self.assertRaisesRegex(runner.JobError, "no longer"):
+                    runner.apply_operator_review_reopen("e" * 32, "sample", status)
+                checkpoint.assert_not_called()
+            self.assertEqual(path.read_bytes(), before)
+            self.assertNotIn("operator_reopen_manifest_sha256", status)
+
     def test_operator_retry_budget_is_book_scoped_bounded_and_does_not_waive_review(self):
         unit = "chapter-000025"
         chapter = {"unit_id": unit, "status": "translated"}

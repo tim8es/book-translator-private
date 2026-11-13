@@ -1976,6 +1976,104 @@ def next_operation(slug: str, status: dict) -> tuple[str, dict | None]:
     return ("review-deferred", None) if deferred else ("finalize", None)
 
 
+def apply_operator_review_reopen(job_id: str, slug: str, status: dict) -> bool:
+    """Reopen exactly reviewed/rejected units under an explicit book-local plan.
+
+    Only the orchestrator executes this transition. A stale queue, live claim,
+    changed book/workflow SHA or changed review must fail closed. No PASS,
+    resolved finding, accepted translation or book source is manufactured.
+    """
+    path = ROOT / "books" / slug / ".workflow" / "operator-review-reopen.json"
+    if not path.is_file():
+        return False
+    raw = path.read_bytes()
+    manifest_sha = hashlib.sha256(raw).hexdigest()
+    if status.get("operator_reopen_manifest_sha256") == manifest_sha:
+        return False
+    plan = read_json(path)
+    expected = {"schema_version", "book_slug", "workflow_revision",
+                "authorized_by", "authorized_at", "unit_ids",
+                "review_limit", "correction_limit"}
+    units = plan.get("unit_ids") if isinstance(plan, dict) else None
+    if (not isinstance(plan, dict) or set(plan) != expected
+            or plan.get("schema_version") != 1
+            or plan.get("book_slug") != slug
+            or plan.get("workflow_revision") != status.get("workflow_revision")
+            or plan.get("authorized_by") != "user-request-finish-book"
+            or not isinstance(plan.get("authorized_at"), str)
+            or not isinstance(units, list) or not 1 <= len(units) <= 20
+            or len(set(units)) != len(units)
+            or any(not isinstance(u, str) or not re.fullmatch(r"chapter-\d{6}", u)
+                   for u in units)
+            or type(plan.get("review_limit")) is not int
+            or not MAX_ACCEPTED_REVIEWS_PER_UNIT <= plan["review_limit"] <= 20
+            or type(plan.get("correction_limit")) is not int
+            or not MAX_CORRECTIONS <= plan["correction_limit"] <= 20):
+        raise JobError("operator review reopen manifest is invalid")
+    try:
+        when = datetime.fromisoformat(plan["authorized_at"].replace("Z", "+00:00"))
+    except ValueError as exc:
+        raise JobError("operator review reopen timestamp is invalid") from exc
+    if when.tzinfo is None:
+        raise JobError("operator review reopen timestamp is timezone-naive")
+    if status.get("active") is not None:
+        raise JobError("operator review reopen requires no active Auto claim")
+    canon = json.loads(cli("status", slug, "--json"))
+    if canon.get("claims") != [] or canon.get("errors") != []:
+        raise JobError("operator review reopen blocked by canonical claims or errors")
+    from workflow.attention import validate_attention
+    queue_path = ROOT / "books" / slug / ".workflow" / "needs-attention.json"
+    if not queue_path.is_file():
+        raise JobError("operator review reopen requires a canonical attention queue")
+    queue = validate_attention(read_json(queue_path), status["workflow_revision"])
+    by_id = {entry["unit_id"]: entry for entry in queue["entries"]}
+    _, ledger, chapters = chapter_data(slug)
+    by_chapter = {c["unit_id"]: c for c in chapters}
+    matched = []
+    for unit_id in units:
+        entry = by_id.get(unit_id)
+        chapter = by_chapter.get(unit_id)
+        record = latest_record(ledger, chapter) if chapter else None
+        acceptance = chapter.get("translation_acceptance") if chapter else None
+        if (not entry or not chapter or chapter.get("status") != "translated"
+                or not record or record.get("outcome") != "CORRECTIONS_REQUIRED"
+                or not isinstance(acceptance, dict)
+                or record.get("record_id") != entry["review_record_id"]
+                or record.get("source_sha256") != entry["source_sha256"]
+                or record.get("translation_sha256") != entry["translation_sha256"]
+                or acceptance.get("source_sha256") != entry["source_sha256"]
+                or acceptance.get("translation_sha256") != entry["translation_sha256"]):
+            raise JobError("operator reopen evidence is no longer the current rejected artifact")
+        matched.append(entry)
+    queue["entries"] = [e for e in queue["entries"] if e["unit_id"] not in set(units)]
+    new_status = dict(status)
+    new_status["operator_review_limits"] = {
+        **new_status.get("operator_review_limits", {}),
+        **{unit_id: plan["review_limit"] for unit_id in units}}
+    new_status["operator_correction_limits"] = {
+        **new_status.get("operator_correction_limits", {}),
+        **{unit_id: plan["correction_limit"] for unit_id in units}}
+    new_status["deferred_review_units"] = [
+        unit for unit in deferred_review_unit_ids(new_status) if unit not in set(units)]
+    new_status["operator_reopen_manifest_sha256"] = manifest_sha
+    new_status["operator_recovery_audit"] = [
+        *new_status.get("operator_recovery_audit", []),
+        {"at": clock(), "manifest_sha256": manifest_sha,
+         "action": "reopen-current-rejected-review",
+         "evidence": [
+             {"unit_id": e["unit_id"], "record_id": e["review_record_id"],
+              "translation_sha256": e["translation_sha256"]}
+             for e in matched],
+         "review_limit": plan["review_limit"],
+         "correction_limit": plan["correction_limit"]}]
+    new_status["phase"] = "operator-reviewed-reopen-applied"
+    store_json(queue_path, queue)
+    status.clear()
+    status.update(new_status)
+    checkpoint(job_id, status, slug)
+    return True
+
+
 def canonical_dispatch(slug: str, status: dict) -> tuple[str, dict | None]:
     """Use the pinned engine's authoritative resume decision for automatic work.
 
@@ -3053,6 +3151,8 @@ def run(job_id: str, *, resume_blocked: bool = False,
                 checkpoint(job_id, status, slug)
                 return status
             process_claim(job_id, slug, status, engine)
+            return status
+        if apply_operator_review_reopen(job_id, slug, status):
             return status
         role, chapter = canonical_dispatch(slug, status)
         if role == "review-deferred":
