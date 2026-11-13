@@ -4,7 +4,7 @@
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
   "source_sha256": "3a3fce78317162b68bc1e82501456a74a783cfc96cb2640c463f381866007865",
   "state": "running",
-  "phase": "correction-batch-staged",
+  "phase": "model-call-reserved",
   "failures": 0,
   "correction_rounds": {
     "chapter-000002": 1,
@@ -23,13 +23,13 @@
     "chapter-000022": 6
   },
   "workflow_revision": "ea9963ca546b7cc7f6aba4dc5350fa19ea7da862",
-  "updated_at": "2026-11-13T16:00:00.835839+00:00",
+  "updated_at": "2026-11-13T16:00:02.310048+00:00",
   "active": {
     "role": "corrector",
     "chapter": 24,
     "session_id": "auto-886bde8dfe20-corrector-043ac406"
   },
-  "model_calls_started": 232,
+  "model_calls_started": 233,
   "memory_glossary_saved": 110,
   "pending_style": [],
   "prompt_context": {
@@ -43,9 +43,9 @@
     "glossary_sha256": "726e4f76699f03977c14ec08e038db936a065b810ed2c84e32c86cf9171808d9",
     "style_guide_sha256": "3ec7c485cf41741084ffe49b72d2b18ed9bd650a00a2ba00554605abadea5e3a",
     "system_chars": 18890,
-    "user_chars": 23541,
+    "user_chars": 21567,
     "correction_mode": "bounded-review-patches",
-    "batch_finding_count": 2
+    "batch_finding_count": 1
   },
   "memory_style_saved": 6,
   "recoveries": [
