@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 127,
+  "next_sequence": 128,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -10511,6 +10511,115 @@
             "resolves": {
               "record_id": "cc6249f24ee7479cb858b017d8a10801",
               "finding_id": "omission-recheck-1"
+            }
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "726e4f76699f03977c14ec08e038db936a065b810ed2c84e32c86cf9171808d9",
+        "style_guide": "3ec7c485cf41741084ffe49b72d2b18ed9bd650a00a2ba00554605abadea5e3a"
+      }
+    },
+    {
+      "record_id": "ed6727e0679743c59c365efd9add01a3",
+      "sequence": 127,
+      "unit_id": "chapter-000025",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "5fc96b09af376cc196a201bccedb6d671fbbd32333f8daff9aa02cc0a7589493",
+      "translation_sha256": "f2bcc2c112903843b46a3472768b66be62ec3bf2985290abdc10ca5d6d7f9651",
+      "workflow_revision": "ea9963ca546b7cc7f6aba4dc5350fa19ea7da862",
+      "review_contract_revision": "docs/TRANSLATION.md@ea9963ca546b7cc7f6aba4dc5350fa19ea7da862",
+      "reviewer_session_id": "auto-886bde8dfe20-reviewer-9565f6f5",
+      "reviewed_at": "2026-11-13T19:54:59Z",
+      "state_revision": "a080c635dc90bd95c3b9a40eb6fdea33212ba765d5552951671b7cfa3c45913f",
+      "review_commit": "52d6a6a53fb18c4cfc17a753e7022b0d37cc2608",
+      "correction_round": 10,
+      "supersedes_record_id": "ff088dd186544b869a363413f8d62fdf",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "addition-recheck-2",
+            "category": "addition",
+            "severity": "minor",
+            "detail": "Повтор действия устранён: в текущем тексте осталось одно действие — перелезть через друзей и броситься прочь.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "I climbed over my friends to run out of there.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Я перелез через друзей и бросился прочь.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "ff088dd186544b869a363413f8d62fdf",
+              "finding_id": "addition-recheck-1"
+            }
+          },
+          {
+            "id": "omission-recheck-2",
+            "category": "omission",
+            "severity": "minor",
+            "detail": "Финал теперь передаёт тесное прижатие тел и удержание друг друга как скрепление обещания.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "We crushed our bodies together, holding on as if to seal our promise.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Мы тесно прижались друг к другу, крепко держась, словно скрепляя обещание.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "ff088dd186544b869a363413f8d62fdf",
+              "finding_id": "omission-recheck-1"
+            }
+          },
+          {
+            "id": "terminology-recheck-2",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "Имя Dillon по-прежнему оставлено в латинском написании в изменённых абзацах 31 и 86 («большинство засматривалось на Dillon», «подошли к Dillon», «как Dillon»); приведите к каноническому «Диллон» с нужным падежом.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "but most girls liked Dillon",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "большинство засматривалось на Dillon",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "ff088dd186544b869a363413f8d62fdf",
+              "finding_id": "terminology-1"
+            }
+          },
+          {
+            "id": "style-recheck-2",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Незавершённая конструкция исправлена: теперь указано, кому, вероятно, махали девушки, и имя приведено к «Диллону».",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Two of them waved as we passed, probably for Dillon.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Две помахали нам, когда мы пробегали мимо, скорее всего, Диллону.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "ff088dd186544b869a363413f8d62fdf",
+              "finding_id": "style-1"
             }
           }
         ]
