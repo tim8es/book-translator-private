@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "request_id": "c9c5b11c1fd74f24903ebc67b389901b",
+  "book_slug": "nightingale-bad",
+  "workflow_revision": "effd537cb20d42e0077ebe8760cb794fdb84fd0f",
+  "operation": "review-record",
+  "chapter": 10,
+  "session_id": "chat-manual-night-20261113-ch9-review2",
+  "outcome": "PASS",
+  "quality_report": {
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "severity": "minor",
+        "detail": "The original's unusual 'Kurapika laughs humorously' no longer becomes the contradictory 'невесело смеётся'; rechecked corrected neutral 'Курапика коротко смеётся' in scene context, preserving immediate tension and tears.",
+        "resolved": true
+      }
+    ]
+  },
+  "source_sha256": "f1c0ccbafdc66eb9ba2f6962822a95afbecac3a36327662186360d584868816b",
+  "translation_sha256": "30f1a8bafc9685ca2003a89e802662a3ff85d96d2664707ed8b122e591cc2b56",
+  "claim_sha256": "e29a55b942e5aa01f1acaddc2291e88ea1de7432a2717730e307c57640ea4959"
+}
