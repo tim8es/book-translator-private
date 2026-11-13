@@ -253,5 +253,97 @@ class CoverageRecoveryTests(unittest.TestCase):
                 status, "review", unit, runner.MAX_ACCEPTED_REVIEWS_PER_UNIT)
 
 
+    def test_non_null_omission_anchor_keeps_reviewer_coordinates(self):
+        finding = {
+            "id": "omission-1", "resolved": False, "category": "omission",
+            "translation_anchor": {"quote": "target phrase", "occurrence": 0},
+        }
+        # Some models redundantly include a reviewer-equivalent insertion
+        # address for a finding categorized as omission. It cannot redirect
+        # the edit because the reviewer-owned target is used.
+        harmless = json.dumps({
+            "patches": [{
+                "finding_id": "omission-1", "operation": "replace",
+                "insertion_anchor": finding["translation_anchor"],
+                "replacement": "correct phrase",
+            }], "glossary": [], "style_guide": [],
+        })
+        patches, _, _ = runner.parse_correction_patches(harmless, [finding])
+        self.assertEqual(patches[0]["target_anchor"], finding["translation_anchor"])
+        self.assertEqual(runner.apply_correction_patches(
+            "before target phrase after", patches), "before correct phrase after")
+        wrong = json.dumps({
+            "patches": [{
+                "finding_id": "omission-1", "operation": "replace",
+                "insertion_anchor": {"quote": "before", "occurrence": 0},
+                "replacement": "correct phrase",
+            }], "glossary": [], "style_guide": [],
+        })
+        with self.assertRaises(runner.PatchAnchorMismatch):
+            runner.parse_correction_patches(wrong, [finding])
+
+    def test_correction_schema_repair_uses_review_binding_without_unsafe_write(self):
+        source = "Short source sentence.\n"
+        translation = "Bad target sentence.\n"
+        source_hash = hashlib.sha256(source.encode()).hexdigest()
+        target_hash = hashlib.sha256(translation.encode()).hexdigest()
+        anchor = {"quote": "Bad target", "occurrence": 0}
+        review = {"record_id": "f" * 32, "source_sha256": source_hash,
+                  "translation_sha256": target_hash, "outcome": "CORRECTIONS_REQUIRED",
+                  "quality_report": {"evidence_version": 2, "findings": [{
+                      "id": "omission-1", "resolved": False,
+                      "translation_anchor": anchor, "category": "omission",
+                  }]}}
+        chapter = {
+            "unit_id": "chapter-000001", "number": 1, "status": "translated",
+            "source_path": "extracted/001.md",
+            "translation_path": "translated/001.md",
+            "translation_acceptance": {
+                "source_sha256": source_hash, "translation_sha256": target_hash},
+        }
+        incorrect = json.dumps({"patches": [{
+            "finding_id": "omission-1", "operation": "replace",
+            "insertion_anchor": {"quote": "sentence", "occurrence": 0},
+            "replacement": "Good target",
+        }], "glossary": [], "style_guide": []})
+        repaired = json.dumps({"patches": [{
+            "finding_id": "omission-1", "operation": "replace",
+            "replacement": "Good target",
+        }], "glossary": [], "style_guide": []})
+        status = {
+            "state": "running", "workflow_revision": "d" * 40,
+            "model_calls_started": 0,
+            "active": {"role": "corrector", "chapter": 1, "session_id": "owner"},
+        }
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            book = root / "books" / "sample"
+            (book / "translated").mkdir(parents=True)
+            (book / "extracted").mkdir(parents=True)
+            (book / chapter["source_path"]).write_text(source, encoding="utf-8")
+            (book / chapter["translation_path"]).write_text(translation, encoding="utf-8")
+            (book / "glossary.md").write_text("glossary", encoding="utf-8")
+            (book / "style-guide.md").write_text("style", encoding="utf-8")
+            with patch.object(runner, "ROOT", root), \
+                 patch.object(runner, "context", return_value=("sys", "user", source)), \
+                 patch.object(runner, "role_contracts",
+                              return_value=("sys", ["AGENTS.md"])), \
+                 patch.object(runner, "complete",
+                              side_effect=[incorrect, repaired]) as model, \
+                 patch.object(runner, "checkpoint") as checkpoint:
+                result = runner.process_correction_batches(
+                    "e" * 32, "sample", status, root, chapter, review)
+            self.assertEqual(result[0], "Good target sentence.\n")
+            self.assertEqual(status["model_calls_started"], 2)
+            self.assertEqual(model.call_count, 2)
+            self.assertEqual(checkpoint.call_count, 3)
+            repair_prompt = model.call_args_list[1].args[2]
+            self.assertIn("reviewer_bound_finding_ids", repair_prompt)
+            self.assertIn("omission-1", repair_prompt)
+            self.assertEqual(
+                (book / chapter["translation_path"]).read_text("utf-8"),
+                translation, "only canonical acceptance may mutate the translation")
+
+
 if __name__ == "__main__":
     unittest.main()
