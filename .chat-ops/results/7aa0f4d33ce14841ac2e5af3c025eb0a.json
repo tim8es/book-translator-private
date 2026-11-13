@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "request_id": "7aa0f4d33ce14841ac2e5af3c025eb0a",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "6fae29956c03881d0af2697a07ace5ad84be76c8de6ac5aec86778e4760a8a0d",
+    "record": {
+      "correction_round": 1,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "findings": [
+          {
+            "detail": "Corrected agency in mated-pairs visit policy: eligibility for visits granted by prison; current Russian rendering matches source and its qualification.",
+            "resolved": true,
+            "severity": "major"
+          },
+          {
+            "detail": "Corrected 'subjects for think pieces' to avoid inventing experiments; rechecked line against original.",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "Corrected awkward phrase for Eliza's manicured nails; source detail retained.",
+            "resolved": true,
+            "severity": "minor"
+          }
+        ]
+      },
+      "record_id": "83d847b7c04b423db9f1bffc45b71c82",
+      "review_commit": "6d557946048878e869d579694f6f241450552b3c",
+      "review_contract_revision": "docs/TRANSLATION.md@effd537cb20d42e0077ebe8760cb794fdb84fd0f",
+      "reviewed_at": "2026-11-13T10:52:42Z",
+      "reviewer_session_id": "chat-manual-night-20261113-ch4-review2",
+      "sequence": 7,
+      "source_sha256": "e6b20488d1aab0d3742ec0ae0004cfb234d67f9df73f76c952f5f8ed123a6c4c",
+      "state_revision": "67639978707968b1cc414b2b36309e1b672d025e353d4cac01bfff12c9b60bbf",
+      "supersedes_record_id": "052e2e70ce3942b29c5703838047cf5c",
+      "translation_sha256": "b5c4cf390b62f850aef4f4a04cf88e5724000c3a8d71ac914729e3c05d2c1a20",
+      "unit_id": "chapter-000005",
+      "workflow_revision": "effd537cb20d42e0077ebe8760cb794fdb84fd0f"
+    }
+  },
+  "error": null
+}
