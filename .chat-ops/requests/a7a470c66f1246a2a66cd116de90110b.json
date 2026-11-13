@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "request_id": "a7a470c66f1246a2a66cd116de90110b",
+  "book_slug": "nightingale-bad",
+  "workflow_revision": "effd537cb20d42e0077ebe8760cb794fdb84fd0f",
+  "operation": "review-record",
+  "chapter": 12,
+  "session_id": "chat-manual-night-20261113-ch11-review2",
+  "outcome": "PASS",
+  "quality_report": {
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "severity": "minor",
+        "detail": "Rechecked original 'a cold, grey afternoon': now renders 'после полудня холодно и пасмурно', without falsely specifying exact noon.",
+        "resolved": true
+      },
+      {
+        "severity": "minor",
+        "detail": "Rechecked 'Murmurs of understanding': now renders 'бормотанием в знак понимания', without implying approval.",
+        "resolved": true
+      }
+    ]
+  },
+  "source_sha256": "be84273579f59ada6028df348be1891105a68fd4dc2256bd846bc40e555e98bb",
+  "translation_sha256": "d48a769946c94e817497572e22a1d34c42a5b36a43f0ece5c58ad4b527aac2c6",
+  "claim_sha256": "35f12bdf74284025085256b5b58509f4e2af8f542185e34525a4a007ada829ee"
+}
