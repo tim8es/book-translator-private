@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 117,
+  "next_sequence": 118,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -9489,6 +9489,128 @@
             },
             "translation_anchor": {
               "quote": "Я только трусил сказать об этом.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "726e4f76699f03977c14ec08e038db936a065b810ed2c84e32c86cf9171808d9",
+        "style_guide": "3ec7c485cf41741084ffe49b72d2b18ed9bd650a00a2ba00554605abadea5e3a"
+      }
+    },
+    {
+      "record_id": "f1b081ec5e6a483f824dbe4514e12c18",
+      "sequence": 117,
+      "unit_id": "chapter-000022",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "0597bc9de058f1acff07f60dd5e132d7ec2306b50edb043b5dbaab0190059cdf",
+      "translation_sha256": "982d3a3d5e1dfad9758591b30f8c8e6959abb13d4289d96a25c09cd8dc0385d9",
+      "workflow_revision": "ea9963ca546b7cc7f6aba4dc5350fa19ea7da862",
+      "review_contract_revision": "docs/TRANSLATION.md@ea9963ca546b7cc7f6aba4dc5350fa19ea7da862",
+      "reviewer_session_id": "auto-886bde8dfe20-reviewer-c3e6bde1",
+      "reviewed_at": "2026-11-13T15:22:52Z",
+      "state_revision": "79d77273f4b6d50cc5343e2f2cd20c07a2f2aa8cd71b177410bde6037157a70b",
+      "review_commit": "a79de3e72501b2dcaf98d4a0b4b9bac0110c7d38",
+      "correction_round": 7,
+      "supersedes_record_id": "85df217d5c8c4af5a285caf0e0fae5bf",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "names-1",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "Unresolved: the translation retains Cade and Darren in Latin script in Russian prose, and the chapter heading retains Dillon rather than the canonical forms Кейд, Даррен, and Диллон. Use the canonical Russian forms with appropriate case endings consistently.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Cade and I left the area to give the other boy’s room to read the list, and Darren followed us close behind.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Мы с Cade отошли, чтобы дать другим ребятам посмотреть списки, а Darren последовал за нами по пятам.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "85df217d5c8c4af5a285caf0e0fae5bf",
+              "finding_id": "recheck-terminology-1-current"
+            }
+          },
+          {
+            "id": "bluff-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Resolved: the translation correctly shows Darren seeing through Dillon’s bluff.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Darren’s green eyes narrowed at me, calling his bluff, while Cade stood back and watched the show.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Зелёные глаза Даррена сузились, словно он раскусил мой блеф, а Кейд стоял в стороне и наблюдал за происходящим.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "85df217d5c8c4af5a285caf0e0fae5bf",
+              "finding_id": "meaning-bluff-1"
+            }
+          },
+          {
+            "id": "chicken-1",
+            "category": "register",
+            "severity": "minor",
+            "detail": "Resolved: «зассал» preserves the source’s crude, self-deprecating register.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "I’ve just been chicken shit to say anything.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Я просто зассал хоть что-нибудь сказать.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "85df217d5c8c4af5a285caf0e0fae5bf",
+              "finding_id": "register-chicken-shit-1"
+            }
+          },
+          {
+            "id": "orientation-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The source explicitly refers to them being gay for each other. «Влюблены друг в друга» conveys their love but omits that explicit reference to sexual orientation. Preserve both elements.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "But… I don’t hate you for being gay for each other.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Но… я не ненавижу вас за то, что вы влюблены друг в друга",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "profanity-1",
+            "category": "register",
+            "severity": "minor",
+            "detail": "The source repeats the profane intensifier in «as fucking possible»; the translation ends with the neutral «как можно дальше». Preserve the rough emphatic repetition in the Russian phrasing.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "I plan on football taking me away from this fucking place and as far away from my fucking dad as fucking possible.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Я собираюсь с помощью футбола выбраться из этой чёртовой дыры и уехать от своего сраного отца как можно дальше.",
               "occurrence": 0
             },
             "resolves": null
