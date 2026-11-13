@@ -1,0 +1,57 @@
+name: OmniRoute JSON compatibility smoke
+run-name: OmniRoute JSON response validation
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/omniroute-json-smoke.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  json-probe:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Probe configured OmniRoute translator JSON transport
+        env:
+          OMNIROUTE_BASE_URL: ${{ vars.OMNIROUTE_BASE_URL }}
+          OMNIROUTE_API_KEY: ${{ secrets.OMNIROUTE_API_KEY }}
+          OMNIROUTE_TRANSLATOR_MODEL: ${{ vars.OMNIROUTE_TRANSLATOR_MODEL }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          import sys
+          sys.path.insert(0, "automation")
+          from omniroute import complete
+
+          # One small live request, no source book or user data.
+          answer = complete(
+              "TRANSLATOR",
+              "You are an API compatibility probe. Return JSON only.",
+              'Return exactly this JSON object: {"probe":"ok"}.',
+          )
+          try:
+              value = json.loads(answer)
+          except ValueError:
+              print("::error::Configured OmniRoute route returned non-JSON output", file=sys.stderr)
+              raise SystemExit(1)
+          if value != {"probe": "ok"}:
+              print("::error::OmniRoute JSON object did not match the probe contract", file=sys.stderr)
+              raise SystemExit(1)
+          diagnostics = getattr(answer, "diagnostics", {})
+          print("OmniRoute JSON compatibility: PASS")
+          print("Requested response format: json_object")
+          print("Finish reason:", diagnostics.get("finish_reason", "unavailable"))
+          print("Output tokens:", diagnostics.get("completion_tokens", "unavailable"))
+          PY
