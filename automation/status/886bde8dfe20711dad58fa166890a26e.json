@@ -4,7 +4,7 @@
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
   "source_sha256": "3a3fce78317162b68bc1e82501456a74a783cfc96cb2640c463f381866007865",
   "state": "running",
-  "phase": "model-retry",
+  "phase": "claimed",
   "failures": 1,
   "correction_rounds": {
     "chapter-000002": 1,
@@ -22,8 +22,12 @@
     "chapter-000028": 1
   },
   "workflow_revision": "ea9963ca546b7cc7f6aba4dc5350fa19ea7da862",
-  "updated_at": "2026-11-13T13:41:43.652157+00:00",
-  "active": null,
+  "updated_at": "2026-11-13T13:42:07.287155+00:00",
+  "active": {
+    "role": "reviewer",
+    "chapter": 28,
+    "session_id": "auto-886bde8dfe20-reviewer-5e56249a"
+  },
   "model_calls_started": 192,
   "memory_glossary_saved": 110,
   "pending_style": [],
@@ -203,6 +207,5 @@
   ],
   "structural_helper_revision": "a9f85b68fcc062185c891202c5823a5838a717a0",
   "workflow_upgrade_audit": "books/a-home-in-you-a-mm-small-town-stepbrother-romance/.workflow/audits/2026-11-13-workflow-upgrade.json",
-  "last_error": "reviewer evidence is invalid: every literary check must have been performed",
   "blocked_unit_id": "chapter-000028"
 }
