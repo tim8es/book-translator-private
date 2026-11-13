@@ -516,7 +516,9 @@ class LiteraryContextTests(unittest.TestCase):
             self.assertEqual(status["phase"], "model-retry")
             self.assertEqual(status["state"], "running")
             self.assertEqual(status["failures"], 1)
-            anchors.verify_evidence_anchors.assert_called_once()
+            # One initial reviewer attempt plus one safely reserved repair.
+            self.assertEqual(anchors.verify_evidence_anchors.call_count, 2)
+            self.assertEqual(status["model_calls_started"], 77)
             self.assertFalse(any(call.args[0] == "review-record" for call in cli.call_args_list))
 
     def test_claim_includes_frozen_literary_revisions(self):
