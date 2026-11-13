@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "request_id": "8812c3dc1cb04bfe9cc8ab1e9f1c5a0b",
+  "book_slug": "nightingale-bad",
+  "workflow_revision": "effd537cb20d42e0077ebe8760cb794fdb84fd0f",
+  "operation": "review-record",
+  "chapter": 6,
+  "session_id": "chat-manual-night-20261113-ch5-review2",
+  "outcome": "PASS",
+  "quality_report": {
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "severity": "minor",
+        "detail": "Rechecked 'underpaid nobody' against idiomatic Russian: corrected to 'охранник на грошовой зарплате' while preserving Chrollo's condescension.",
+        "resolved": true
+      },
+      {
+        "severity": "major",
+        "detail": "Rechecked singular-they ambiguity for print shop desk person: revised phrase uses noun 'человек' without explicitly assigning male sex, preserving deliberate uncertainty.",
+        "resolved": true
+      }
+    ]
+  },
+  "source_sha256": "83868794e9521ec4c650d879bfa69c53d596fca58489e415b7be288f8dad23a2",
+  "translation_sha256": "61b726b41abb5092de61ba7ac2ff432db96b5044df3600cf5ca396d70264f4eb",
+  "claim_sha256": "d756115129bd45360591c1e7804a3a676d607e2182e4cd55efb0f35ccbcd4d62"
+}
