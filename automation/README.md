@@ -31,7 +31,7 @@ Configure the following GitHub Actions secret and repository variables:
 Optional Actions variables `OMNIROUTE_TRANSLATOR_FALLBACK_MODEL`,
 `OMNIROUTE_REVIEWER_FALLBACK_MODEL` and
 `OMNIROUTE_CORRECTOR_FALLBACK_MODEL` select backup models for the matching role
-after two successive transient provider failures **on the same unit**. They
+after two successive transient provider failures **or rejected model-output protocol attempts on the same unit**. They
 must support the role's JSON contract. If absent, the configured primary is
 used. Credentials and model identifiers are never written to the book status.
 
