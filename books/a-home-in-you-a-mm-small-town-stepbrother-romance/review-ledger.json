@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 110,
+  "next_sequence": 111,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -8336,6 +8336,281 @@
               "record_id": "ae1ced5b9b444f63a4695a88d37d8454",
               "finding_id": "structure-1"
             }
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "726e4f76699f03977c14ec08e038db936a065b810ed2c84e32c86cf9171808d9",
+        "style_guide": "3ec7c485cf41741084ffe49b72d2b18ed9bd650a00a2ba00554605abadea5e3a"
+      }
+    },
+    {
+      "record_id": "317f174716ed4319845c42167e3d6daf",
+      "sequence": 110,
+      "unit_id": "chapter-000027",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "c3ed2639c7dda98c38893900fcc29f44bfa6c4b111be08106f756690984828d4",
+      "translation_sha256": "71d11122a177e26100375fddea7d88e7238b81cc275b338759ef1b48c3b84d72",
+      "workflow_revision": "ea9963ca546b7cc7f6aba4dc5350fa19ea7da862",
+      "review_contract_revision": "docs/TRANSLATION.md@ea9963ca546b7cc7f6aba4dc5350fa19ea7da862",
+      "reviewer_session_id": "auto-886bde8dfe20-reviewer-d74f8b60",
+      "reviewed_at": "2026-11-13T12:04:07Z",
+      "state_revision": "2b2f316e5f3699503bdda87684f329ffe723dc181b5a16de7c44d485339370f5",
+      "review_commit": "47d4a0e2bf0dfd09ee52524d14d55001c7c40975",
+      "correction_round": 3,
+      "supersedes_record_id": "38f72ec4731d434aac602da8ab4d89fa",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "followup-1",
+            "category": "omission",
+            "severity": "major",
+            "detail": "Переведена лишь общая мысль о желании сблизиться с Кейдом. В исходнике также прямо сказано, что Диллон искал конкретную информацию и был готов попробовать; эти существенные детали и степень его желания в текущем переводе не переданы.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "This time, while on my phone in private",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "На этот раз, оставшись наедине с телефоном, я искал информацию о близости и о том, как доставить Кейду удовольствие.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "38f72ec4731d434aac602da8ab4d89fa",
+              "finding_id": "recheck-omission-1"
+            }
+          },
+          {
+            "id": "followup-2",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Исправлено: физическое положение Диллона теперь передано — он прижимается к Кейду между ног.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "He sat on top of it and I pressed my body between his legs",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Он сел на ограду, а я прижался к нему между ног и поднял на него взгляд.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "38f72ec4731d434aac602da8ab4d89fa",
+              "finding_id": "recheck-meaning-1"
+            }
+          },
+          {
+            "id": "followup-3",
+            "category": "omission",
+            "severity": "minor",
+            "detail": "Исправлено: описание прикосновений к волосам на груди Кейда и ощущения его щетины на лице присутствует.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "My fingers swirled in his smattering of chest hair, and I loved the feel of his stubble on my face whenever we kissed.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Мои пальцы скользили по редким волоскам на его груди, и мне нравилось чувствовать его щетину на своём лице, когда мы целовались.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "38f72ec4731d434aac602da8ab4d89fa",
+              "finding_id": "recheck-omission-2"
+            }
+          },
+          {
+            "id": "followup-4",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Исправлено: в переводе Кейд кладёт голову на голову рассказчика.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "He rested his head on top of mine.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Он положил голову мне на макушку.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "38f72ec4731d434aac602da8ab4d89fa",
+              "finding_id": "recheck-meaning-2"
+            }
+          },
+          {
+            "id": "followup-5",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Исправлено: varsity team передана как основная школьная команда, а не университетская.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "but maybe when I’m on the varsity team in the fall.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Пока меня никто не звал, когда осенью я войду в основной состав школьной команды.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "38f72ec4731d434aac602da8ab4d89fa",
+              "finding_id": "recheck-meaning-3"
+            }
+          },
+          {
+            "id": "followup-6",
+            "category": "omission",
+            "severity": "major",
+            "detail": "После подготовки лагеря пропущен большой фрагмент: купание и близость героев, их первый новый интимный опыт, реакции после него и разговор о дальнейшем развитии отношений. Перевод перескакивает непосредственно к разговору об идентичности.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "We splashed, dunked our heads underwater, rinsed off, then spent a good ten minutes just making out.",
+              "occurrence": 0
+            },
+            "translation_anchor": null,
+            "resolves": {
+              "record_id": "38f72ec4731d434aac602da8ab4d89fa",
+              "finding_id": "recheck-omission-3"
+            }
+          },
+          {
+            "id": "followup-7",
+            "category": "addition",
+            "severity": "minor",
+            "detail": "Исправлено: редакционной пометы о пропуске больше нет, соответствующая исходная фраза переведена.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "I wanted to explore more of my boyfriend.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "и мне хотелось узнать своего парня ещё лучше.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "38f72ec4731d434aac602da8ab4d89fa",
+              "finding_id": "recheck-addition-1"
+            }
+          },
+          {
+            "id": "followup-8",
+            "category": "omission",
+            "severity": "minor",
+            "detail": "Редакционная помета удалена, но соответствующая исходная фраза о сильном возбуждении рассказчика по-прежнему отсутствует в переводе.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "And I was fucking horny.",
+              "occurrence": 0
+            },
+            "translation_anchor": null,
+            "resolves": {
+              "record_id": "38f72ec4731d434aac602da8ab4d89fa",
+              "finding_id": "recheck-addition-2"
+            }
+          },
+          {
+            "id": "followup-9",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Исправлено: теперь ясно передана запретная связь между сводными братьями.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "That taboo stepbrother's thing could ruin us.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Эта запретная связь между сводными братьями могла нас погубить.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "38f72ec4731d434aac602da8ab4d89fa",
+              "finding_id": "recheck-style-1"
+            }
+          },
+          {
+            "id": "followup-10",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "Исправлено: заголовок блока восстановлен с принятой передачей имени.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "# 17. Dillon",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "# 17. Диллон",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "38f72ec4731d434aac602da8ab4d89fa",
+              "finding_id": "recheck-structure-1"
+            }
+          },
+          {
+            "id": "new-1",
+            "category": "omission",
+            "severity": "minor",
+            "detail": "Пропущено, как Диллон проводит руками по вспотевшему обнажённому торсу Кейда. Следующее предложение о волосах на груди не передаёт этого отдельного действия и детали обнажённого торса.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "My hands slid up his sweaty, shirtless torso.",
+              "occurrence": 0
+            },
+            "translation_anchor": null,
+            "resolves": null
+          },
+          {
+            "id": "new-2",
+            "category": "addition",
+            "severity": "minor",
+            "detail": "Один исходный абзац о поиске информации и желании сблизиться передан двумя подряд идущими, частично дублирующими друг друга абзацами. Удалите повтор и восстановите опущенные детали исходника.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "This time, while on my phone in private, I’d been looking up blowjobs, and exactly what I wanted to do to Cade. I was ready. So ready to taste him and please him in different ways.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "В этот раз, оставшись наедине со своим телефоном, я искал, как доставить Кейду удовольствие. Я был готов. Очень хотел порадовать его по-новому.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "new-3",
+            "category": "omission",
+            "severity": "major",
+            "detail": "Пропущены разговор о том, чтобы попробовать новое, согласие Кейда, предложение провести ночь в палатке и последующие объятия. Перевод перескакивает от поцелуя к следующему утру.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "C-can we try some new things when we fool around next?",
+              "occurrence": 0
+            },
+            "translation_anchor": null,
+            "resolves": null
+          },
+          {
+            "id": "new-4",
+            "category": "modality",
+            "severity": "minor",
+            "detail": "В исходнике Диллон лишь предполагает, что его могут пригласить в команду после попадания в основной состав осенью. Перевод формулирует это как уверенность, что он туда попадёт, и неестественно связывает эту мысль с тем, что его пока не звали.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "I haven’t had any recruits yet, but maybe when I’m on the varsity team in the fall.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Пока меня никто не звал, когда осенью я войду в основной состав школьной команды.",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       },
