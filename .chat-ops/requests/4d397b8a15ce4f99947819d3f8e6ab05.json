@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "request_id": "4d397b8a15ce4f99947819d3f8e6ab05",
+  "book_slug": "nightingale-bad",
+  "workflow_revision": "effd537cb20d42e0077ebe8760cb794fdb84fd0f",
+  "operation": "review-record",
+  "chapter": 9,
+  "session_id": "chat-manual-night-20261113-ch8-review",
+  "outcome": "CORRECTIONS_REQUIRED",
+  "quality_report": {
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "severity": "minor",
+        "detail": "Original calls regular classmate 'a woman in her forties' and later 'older woman' only relative to Kurapika. Russian 'пожилая женщина' wrongly implies elderly; replace with 'женщина постарше' or simply 'женщина' in corresponding two references.",
+        "resolved": false
+      },
+      {
+        "severity": "major",
+        "detail": "Original Melody conversation: 'He said he doesn't feel competitive about me' means Chrollo does not feel rivalry over Kurapika (e.g. with Babimyna). Russian 'он не воспринимает меня как предмет соперничества' changes the referent/meaning. Correct to 'Он говорил, что ни с кем не соперничает из-за меня' or equivalent.",
+        "resolved": false
+      }
+    ]
+  },
+  "source_sha256": "462e016b201a6f00f73bd65a740805934d4e52e7f92885c1422801bcaefdd04b",
+  "translation_sha256": "b28e9c6a6d802ab217f45d22f46b0bdfba578af9da8c37a5673a2abf2adeab08",
+  "claim_sha256": "cb1b2ff60ee5e364b2f274f75e81f8f40a74ed23196bf7f4e011cb566ca1a58e"
+}
