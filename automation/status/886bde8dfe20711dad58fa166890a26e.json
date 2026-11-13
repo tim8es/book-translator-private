@@ -4,7 +4,7 @@
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
   "source_sha256": "3a3fce78317162b68bc1e82501456a74a783cfc96cb2640c463f381866007865",
   "state": "running",
-  "phase": "correction-batch-staged",
+  "phase": "corrector-completed",
   "failures": 0,
   "correction_rounds": {
     "chapter-000002": 1,
@@ -20,15 +20,11 @@
     "chapter-000026": 3,
     "chapter-000027": 2,
     "chapter-000028": 3,
-    "chapter-000022": 3
+    "chapter-000022": 4
   },
   "workflow_revision": "ea9963ca546b7cc7f6aba4dc5350fa19ea7da862",
-  "updated_at": "2026-11-13T15:29:50.404408+00:00",
-  "active": {
-    "role": "corrector",
-    "chapter": 22,
-    "session_id": "auto-886bde8dfe20-corrector-7fe512a3"
-  },
+  "updated_at": "2026-11-13T15:29:52.262749+00:00",
+  "active": null,
   "model_calls_started": 216,
   "memory_glossary_saved": 110,
   "pending_style": [],
@@ -186,7 +182,8 @@
   "recovery_note": "Audit-preserving workflow upgrade to ea9963c; retained old reviewer sessions and 104 ledger records. 45 old PASS outcomes may be reused only if exact hashes match. Four translated and two extracted units remain. Glossary consistency findings remain unresolved.",
   "glossary_conflicts_rejected": 5,
   "correction_extensions": {
-    "chapter-000025": 1
+    "chapter-000025": 1,
+    "chapter-000022": 1
   },
   "deferred_review_units": [],
   "patch_deferral_audit": [
@@ -259,11 +256,5 @@
       "review_limit": 16,
       "correction_limit": 12
     }
-  ],
-  "correction_batch_progress": {
-    "unit_id": "chapter-000022",
-    "review_record_id": "26e0e543041940efac024489ee5fd2eb",
-    "completed": 5,
-    "total": 5
-  }
+  ]
 }
