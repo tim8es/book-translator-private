@@ -1600,5 +1600,43 @@ with patch.object(book_runner, "chapter_data",
         checkpoint.assert_not_called()
 
 
+    def test_reviewer_json_schema_repair_uses_one_bounded_verified_call(self):
+        sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+        source, translation = "He returned.\n", "Он вернулся.\n"
+        bad = '{"unrecognized_result": "not an anchored review"}'
+        claim = {"shared_state_revisions": {"glossary": "b" * 64}}
+        with self.assertRaisesRegex(ModelError, "invalid literary memory schema") as raised:
+            worker.checked_reviewer_response(
+                bad, review_context="independent_session", source=source,
+                translation=translation.encode(), previous_record=None, claim=claim)
+        valid = json.dumps({
+            "evidence_version": 2, "outcome": "PASS",
+            "checks": dict.fromkeys(("coverage", "meaning", "terminology",
+                                     "style", "structure"), True),
+            "findings": [], "style_guide": [],
+        }, ensure_ascii=False)
+        status = {"state": "running", "model_calls_started": 3, "phase": "model-call-reserved"}
+        context = {"role": "reviewer", "review_context": "independent_session"}
+        user = "CURRENT SOURCE:\n" + source + "\nCURRENT TRANSLATION:\n" + translation
+        with patch.object(worker, "complete", return_value=valid) as model, \
+             patch.object(worker, "checkpoint") as checkpoint, \
+             patch.object(worker, "model_call_limit", return_value=4):
+            repaired = worker.retry_reviewer_anchor_evidence(
+                "b" * 32, "unit-book", status, context, "system",
+                user, bad, raised.exception, source, translation.encode())
+        self.assertEqual(
+            worker.checked_reviewer_response(
+                repaired, review_context="independent_session", source=source,
+                translation=translation.encode(), previous_record=None, claim=claim)[0],
+            "PASS")
+        self.assertEqual(status["model_calls_started"], 4)
+        self.assertEqual(status["phase"], "review-schema-repair-reserved")
+        self.assertEqual(status["prompt_context"]["schema_repair"], "review-report-validation")
+        checkpoint.assert_called_once()
+        model.assert_called_once()
+        self.assertIn("JSON-SCHEMA", model.call_args.args[2])
+        self.assertNotIn("unrecognized_result", json.dumps(status, ensure_ascii=False))
+
+
 if __name__ == "__main__":
     unittest.main()
