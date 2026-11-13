@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "unit_id": "chapter-000025",
+  "review_record_id": "ff088dd186544b869a363413f8d62fdf",
+  "source_sha256": "5fc96b09af376cc196a201bccedb6d671fbbd32333f8daff9aa02cc0a7589493",
+  "translation_sha256": "e175835765d9030e9e9f0b3705c66435b484869b7233e3997b8035431cc48375",
+  "workflow_revision": "ea9963ca546b7cc7f6aba4dc5350fa19ea7da862",
+  "patches": [
+    {
+      "finding_id": "addition-recheck-1",
+      "operation": "replace",
+      "target_anchor": {
+        "quote": "Пришлось перелезть через друзей. Я поспешно выбрался от друзей и бросился прочь.",
+        "occurrence": 0
+      },
+      "replacement": "Я перелез через друзей и бросился прочь."
+    },
+    {
+      "finding_id": "omission-recheck-1",
+      "operation": "replace",
+      "target_anchor": {
+        "quote": "Мы крепко обнялись, словно скрепляя своё обещание.",
+        "occurrence": 0
+      },
+      "replacement": "Мы тесно прижались друг к другу, крепко держась, словно скрепляя обещание."
+    },
+    {
+      "finding_id": "terminology-1",
+      "operation": "replace",
+      "target_anchor": {
+        "quote": "Dillon мыл мне голову",
+        "occurrence": 0
+      },
+      "replacement": "Диллон мыл мне голову"
+    }
+  ],
+  "glossary": [],
+  "style_guide": []
+}
