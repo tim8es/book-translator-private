@@ -1523,5 +1523,82 @@ with patch.object(book_runner, "chapter_data",
         self.assertFalse(worker.correction_allowed(status, ledger, chapter))
 
 
+    def test_reviewer_anchor_repair_reserves_call_and_revalidates(self):
+        sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+        source = "He could leave tomorrow.\n"
+        translation = "Он мог уйти завтра.\n"
+        report = {
+            "evidence_version": 2, "outcome": "CORRECTIONS_REQUIRED",
+            "checks": dict.fromkeys(("coverage", "meaning", "terminology",
+                                     "style", "structure"), True),
+            "findings": [{
+                "id": "meaning-1", "category": "meaning", "severity": "major",
+                "detail": "Test discrepancy.", "resolved": False,
+                "source_anchor": {"quote": "He could leave tomorrow.", "occurrence": 0},
+                "translation_anchor": {"quote": "Он, вероятно, мог уйти завтра.", "occurrence": 0},
+                "resolves": None,
+            }], "style_guide": [],
+        }
+        bad = json.dumps(report, ensure_ascii=False)
+        claim = {"shared_state_revisions": {"glossary": "a" * 64}}
+        with self.assertRaises(worker.ReviewerAnchorMismatch) as raised:
+            worker.checked_reviewer_response(
+                bad, review_context="independent_session", source=source,
+                translation=translation.encode(), previous_record=None, claim=claim)
+        failure = raised.exception
+        self.assertIn("absent", str(failure))
+        hints = worker.reviewer_anchor_feedback(failure.report, source, translation)
+        self.assertEqual(hints[0]["finding_index"], 0)
+        self.assertEqual(hints[0]["field"], "translation_anchor")
+        for candidate in hints[0]["exact_current_text_candidates"]:
+            self.assertIn(candidate, translation)
+        report["findings"][0]["translation_anchor"]["quote"] = "Он мог уйти завтра."
+        repaired_answer = json.dumps(report, ensure_ascii=False)
+        status = {"state": "running", "model_calls_started": 1, "phase": "model-call-reserved"}
+        context = {"role": "reviewer", "review_context": "independent_session"}
+        with patch.object(worker, "complete", return_value=repaired_answer) as model, \
+             patch.object(worker, "checkpoint") as checkpoint, \
+             patch.object(worker, "model_call_limit", return_value=3):
+            repaired = worker.retry_reviewer_anchor_evidence(
+                "b" * 32, "unit-book", status, context, "system",
+                "CURRENT SOURCE:\n" + source + "\nCURRENT TRANSLATION:\n" + translation,
+                bad, failure, source, translation.encode("utf-8"))
+        outcome, checked, _ = worker.checked_reviewer_response(
+            repaired, review_context="independent_session", source=source,
+            translation=translation.encode(), previous_record=None, claim=claim)
+        self.assertEqual(outcome, "CORRECTIONS_REQUIRED")
+        self.assertEqual(checked["findings"][0]["translation_anchor"]["quote"], "Он мог уйти завтра.")
+        self.assertEqual(status["model_calls_started"], 2)
+        self.assertEqual(status["phase"], "review-anchor-repair-reserved")
+        self.assertEqual(status["prompt_context"]["anchor_repair"], "exact-quote-validation")
+        self.assertEqual(checkpoint.call_count, 1)
+        self.assertEqual(model.call_count, 1)
+        self.assertIn("REJECTED REVIEW", model.call_args.args[2])
+        self.assertNotIn("Он, вероятно, мог уйти завтра.", json.dumps(status, ensure_ascii=False))
+
+    def test_reviewer_anchor_repair_respects_model_budget_and_does_not_accept_fakes(self):
+        source = "Only verified passage.\n"
+        translation = "Только проверенный фрагмент.\n"
+        report = {"findings": [{
+            "id": "style-1", "source_anchor": {"quote": "Only verified passage.", "occurrence": 0},
+            "translation_anchor": {"quote": "Фантазия модели.", "occurrence": 0}
+        }]}
+        failure = worker.ReviewerAnchorMismatch(
+            "findings[0].translation_anchor: quoted passage occurrence 0 is absent",
+            report)
+        status = {"model_calls_started": 4, "phase": "model-call-reserved"}
+        with patch.object(worker, "complete") as model, \
+             patch.object(worker, "checkpoint") as checkpoint, \
+             patch.object(worker, "model_call_limit", return_value=4):
+            with self.assertRaises(worker.ReviewerAnchorMismatch):
+                worker.retry_reviewer_anchor_evidence(
+                    "c" * 32, "unit-book", status, {}, "system", "user",
+                    json.dumps(report), failure, source, translation.encode())
+        self.assertEqual(status["model_calls_started"], 4)
+        self.assertEqual(status["phase"], "model-call-reserved")
+        model.assert_not_called()
+        checkpoint.assert_not_called()
+
+
 if __name__ == "__main__":
     unittest.main()
