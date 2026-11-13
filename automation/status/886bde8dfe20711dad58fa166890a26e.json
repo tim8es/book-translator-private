@@ -4,7 +4,7 @@
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
   "source_sha256": "3a3fce78317162b68bc1e82501456a74a783cfc96cb2640c463f381866007865",
   "state": "blocked",
-  "phase": "workflow-upgrade-acceptance-revalidation-required",
+  "phase": "model-blocked",
   "failures": 3,
   "correction_rounds": {
     "chapter-000002": 1,
@@ -19,7 +19,7 @@
     "chapter-000025": 4,
     "chapter-000026": 3
   },
-  "workflow_revision": "effd537cb20d42e0077ebe8760cb794fdb84fd0f",
+  "workflow_revision": "39b1739e228f35a9d919d63fc683fea5ed142685",
   "updated_at": "2026-11-12T22:36:47.377426+00:00",
   "active": null,
   "model_calls_started": 155,
@@ -155,7 +155,7 @@
       "previous_error": "corrector returned no actionable patches"
     }
   ],
-  "recovery_note": "Book pin upgraded explicitly. 49 historical acceptance objects archived in .workflow/audits/; 104 historical review records preserved unchanged in review-ledger.json. All 51 lifecycle units are extracted under the new revision, but 49 prior translation files still exist and must be reaccepted under fresh claims, not automatically retranslated.",
+  "recovery_note": "Explicit bridge migrated 49 old-version translator acceptances (unaltered identities) and 45 original PASS records. All source/translation files and 104 review records unchanged. Four chapters remain translated and need review; two remain extracted. Earlier glossary-name audit identified 39 candidate files and is not silently cleared.",
   "glossary_conflicts_rejected": 5,
   "correction_extensions": {
     "chapter-000025": 1
@@ -185,6 +185,6 @@
   ],
   "structural_helper_revision": "a9f85b68fcc062185c891202c5823a5838a717a0",
   "blocked_unit_id": "chapter-000027",
-  "last_error": "Workflow upgraded, but old acceptance and PASS evidence cannot be used with the new contract. All 49 existing translation files are preserved; their old acceptance records were archived. Fresh evidence-based reacceptance and review are required before Auto resumes.",
+  "last_error": "Historical accepted translations and 45 PASS reviews were adopted with exact evidence; the remaining chapter-27 review/corrections are still unresolved. Migration did not resume translation.",
   "workflow_upgrade_audit": "books/a-home-in-you-a-mm-small-town-stepbrother-romance/.workflow/audits/2026-11-13-workflow-upgrade.json"
 }

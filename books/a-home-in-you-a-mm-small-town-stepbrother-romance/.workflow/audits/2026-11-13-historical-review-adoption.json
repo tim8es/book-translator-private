@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "audit_type": "explicit-historical-review-evidence-adoption",
+  "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
+  "previous_pin": "effd537cb20d42e0077ebe8760cb794fdb84fd0f",
+  "active_pin": "39b1739e228f35a9d919d63fc683fea5ed142685",
+  "original_literary_revision": "484bdbbd6485091a0a0b3c48a8476346d1949d58",
+  "bridge_path": "books/a-home-in-you-a-mm-small-town-stepbrother-romance/.workflow/workflow-upgrade-evidence.json",
+  "source_commit": "3fdba7729d8505706d0d48f9d1d2c5f187321ed2",
+  "old_ledger_blob_sha": "91e2dd4554b09c2841110d76a2026b29a4669a02",
+  "source_sha256": "3a3fce78317162b68bc1e82501456a74a783cfc96cb2640c463f381866007865",
+  "counts": {
+    "source_units": 51,
+    "preexisting_accepted_translations": 49,
+    "historical_pass_records_carried": 45,
+    "old_corrections_still_open": 4,
+    "untranslated_units": 2,
+    "original_review_records_preserved": 104
+  },
+  "migration_guards": [
+    "Original review records remain at their old workflow and Reviewer session revision; no new PASS is minted.",
+    "Translator acceptance records are restored exactly as archived, retaining old workflow provenance.",
+    "Exact hashes are independently checked by the new pinned canonical validator.",
+    "Unchanged source and translated book files are not overwritten.",
+    "Known glossary consistency findings remain quality work, not evidence that every previous chapter was freshly rechecked."
+  ],
+  "known_glossary_audit": {
+    "path": "books/a-home-in-you-a-mm-small-town-stepbrother-romance/.workflow/audits/2026-11-13-glossary-consistency.json",
+    "candidate_files": 39,
+    "possible_literal_occurrences": 1182,
+    "manual_literary_recheck_required": true
+  },
+  "autotranslation_dispatched": false
+}
