@@ -4,7 +4,7 @@
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
   "source_sha256": "3a3fce78317162b68bc1e82501456a74a783cfc96cb2640c463f381866007865",
   "state": "running",
-  "phase": "model-call-reserved",
+  "phase": "structural-span-repair-reserved",
   "failures": 1,
   "correction_rounds": {
     "chapter-000002": 1,
@@ -23,14 +23,14 @@
     "chapter-000022": 6
   },
   "workflow_revision": "ea9963ca546b7cc7f6aba4dc5350fa19ea7da862",
-  "updated_at": "2026-11-13T23:54:49.362553+00:00",
+  "updated_at": "2026-11-13T23:55:22.655057+00:00",
   "active": {
     "role": "corrector",
     "chapter": 27,
     "session_id": "auto-886bde8dfe20-corrector-95b67587",
     "unit_id": "chapter-000027"
   },
-  "model_calls_started": 276,
+  "model_calls_started": 277,
   "memory_glossary_saved": 110,
   "pending_style": [],
   "prompt_context": {
@@ -47,7 +47,8 @@
     "user_chars": 16042,
     "execution_mode": "shared-structural-segments",
     "helper_revision": "da992e0d2647a3f0a34e74faff624ec4cff01358",
-    "batch_segment_count": 1
+    "batch_segment_count": 1,
+    "short_output_repair": 1
   },
   "memory_style_saved": 6,
   "recoveries": [
@@ -304,11 +305,11 @@
   "model_response_diagnostics": {
     "finish_reason": "stop",
     "response_format": "json_object",
-    "response_chars": 1790,
+    "response_chars": 203,
     "provider_refusal": false,
-    "prompt_tokens": 7802,
-    "completion_tokens": 1937,
-    "total_tokens": 9739,
+    "prompt_tokens": 7828,
+    "completion_tokens": 1210,
+    "total_tokens": 9038,
     "route": "primary",
     "role": "translator",
     "unit_id": "chapter-000027"
