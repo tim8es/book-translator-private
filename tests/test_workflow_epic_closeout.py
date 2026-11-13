@@ -54,7 +54,7 @@ class WorkflowEpicCloseoutContractTests(unittest.TestCase):
                    "policy-change-final-delivery.yml", "wings-of-starlight-final-delivery.yml",
                    "auto-translate.yml", "book-job-monitor.yml",
                    "book-batch-validation.yml", "reckless-final-epub.yml",
-                   "final-epub.yml"}
+                   "final-epub.yml", "omniroute-json-smoke.yml"}
         self.assertIn("tests.yml", workflows)
         self.assertEqual(set(workflows) - allowed, set())
         ci = (workflow_dir / "tests.yml").read_text(encoding="utf-8")
@@ -107,6 +107,15 @@ class WorkflowEpicCloseoutContractTests(unittest.TestCase):
                 self.assertIn("'books/**/.workflow/auto-control.json'", source)
                 self.assertIn("      - 'books/**/.workflow/auto-control.json'", source)
                 self.assertNotIn("      - 'books/**'", source)
+            elif filename == "omniroute-json-smoke.yml":
+                # Reusable one-call API compatibility probe: book data and
+                # write permissions must never enter this Action.
+                self.assertIn("  push:", source)
+                self.assertIn("branches: [main]", source)
+                self.assertIn("'.github/workflows/omniroute-json-smoke.yml'", source)
+                self.assertIn("permissions:\\n  contents: read".replace("\\n", "\n"), source)
+                self.assertNotIn("contents: write", source)
+                self.assertNotIn("intake/auto/", source)
             elif filename in {"policy-change-source-intake.yml",
                               "policy-change-final-delivery.yml",
                               "wings-of-starlight-final-delivery.yml"}:
