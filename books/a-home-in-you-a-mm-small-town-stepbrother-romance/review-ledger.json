@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 109,
+  "next_sequence": 110,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -8104,6 +8104,238 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "726e4f76699f03977c14ec08e038db936a065b810ed2c84e32c86cf9171808d9",
+        "style_guide": "3ec7c485cf41741084ffe49b72d2b18ed9bd650a00a2ba00554605abadea5e3a"
+      }
+    },
+    {
+      "record_id": "38f72ec4731d434aac602da8ab4d89fa",
+      "sequence": 109,
+      "unit_id": "chapter-000027",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "c3ed2639c7dda98c38893900fcc29f44bfa6c4b111be08106f756690984828d4",
+      "translation_sha256": "a03965f2b93fc23f0737bc775ecf06c594fe9eeb51be0d7720be5d3c9242624a",
+      "workflow_revision": "ea9963ca546b7cc7f6aba4dc5350fa19ea7da862",
+      "review_contract_revision": "docs/TRANSLATION.md@ea9963ca546b7cc7f6aba4dc5350fa19ea7da862",
+      "reviewer_session_id": "auto-886bde8dfe20-reviewer-1cc3d225",
+      "reviewed_at": "2026-11-13T11:54:37Z",
+      "state_revision": "e132152b2fbff12a06ca5066e373b6278fc962af44238d0d2f7cba34ab64a52f",
+      "review_commit": "005061022ab6552985e341013b6d0f3df6b27d34",
+      "correction_round": 2,
+      "supersedes_record_id": "ae1ced5b9b444f63a4695a88d37d8454",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-omission-1",
+            "category": "omission",
+            "severity": "major",
+            "detail": "Абзац о том, как Диллон втайне искал информацию о минете, чего хотел для Кейда и насколько был готов к дальнейшему сближению, по-прежнему отсутствует. Помета о пропуске не заменяет его.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "This time, while on my phone in private",
+              "occurrence": 0
+            },
+            "translation_anchor": null,
+            "resolves": {
+              "record_id": "ae1ced5b9b444f63a4695a88d37d8454",
+              "finding_id": "omission-1"
+            }
+          },
+          {
+            "id": "recheck-meaning-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Диллон прижимается к Кейду между его ног, но перевод говорит лишь, что он устроился рядом. Физическое положение персонажей изменено.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "He sat on top of it and I pressed my body between his legs",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Он сел на ограду, а я устроился рядом.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "ae1ced5b9b444f63a4695a88d37d8454",
+              "finding_id": "meaning-1"
+            }
+          },
+          {
+            "id": "recheck-omission-2",
+            "category": "omission",
+            "severity": "minor",
+            "detail": "По-прежнему пропущено описание прикосновения к волосам на груди Кейда и ощущения его щетины на лице рассказчика во время поцелуев.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "My fingers swirled in his smattering of chest hair, and I loved the feel of his stubble on my face whenever we kissed.",
+              "occurrence": 0
+            },
+            "translation_anchor": null,
+            "resolves": {
+              "record_id": "ae1ced5b9b444f63a4695a88d37d8454",
+              "finding_id": "omission-2"
+            }
+          },
+          {
+            "id": "recheck-meaning-2",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "В оригинале Кейд кладёт голову на голову рассказчика; в переводе он кладёт ему на голову подбородок.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "He rested his head on top of mine.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Он положил подбородок мне на голову.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "ae1ced5b9b444f63a4695a88d37d8454",
+              "finding_id": "meaning-2"
+            }
+          },
+          {
+            "id": "recheck-meaning-3",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "В исходнике varsity team — основная школьная команда. «Университетская команда» меняет смысл: речь о возможном попадании Диллона в основную команду осенью.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "but maybe when I’m on the varsity team in the fall.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "но, может быть, это случится осенью, когда я попаду в университетскую команду.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "ae1ced5b9b444f63a4695a88d37d8454",
+              "finding_id": "meaning-3"
+            }
+          },
+          {
+            "id": "recheck-omission-3",
+            "category": "omission",
+            "severity": "major",
+            "detail": "По-прежнему отсутствует большой фрагмент о поездке к ручью, лагере и дальнейшем развитии отношений Диллона и Кейда, включая их разговор о сексе и последующую интимную сцену. Это существенное повествование, а не только необязательные подробности.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "The next morning, we loaded up the horses and our backpacks and rode through the woods to our creek.",
+              "occurrence": 0
+            },
+            "translation_anchor": null,
+            "resolves": {
+              "record_id": "ae1ced5b9b444f63a4695a88d37d8454",
+              "finding_id": "omission-3"
+            }
+          },
+          {
+            "id": "recheck-addition-1",
+            "category": "addition",
+            "severity": "minor",
+            "detail": "Редакционная помета о пропуске сексуальных подробностей добавлена в переводе, хотя в источнике её нет. Удалите помету и переведите соответствующий исходный текст.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "I wanted to explore more of my boyfriend.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "[Сексуальные подробности опущены.]",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "ae1ced5b9b444f63a4695a88d37d8454",
+              "finding_id": "addition-1"
+            }
+          },
+          {
+            "id": "recheck-addition-2",
+            "category": "addition",
+            "severity": "minor",
+            "detail": "Вторая редакционная помета о пропуске сцены отсутствует в оригинале. Удалите её и переведите пропущенный исходный фрагмент.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "And I was fucking horny.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "[Откровенная сексуальная сцена и связанные с ней подробности опущены.]",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "ae1ced5b9b444f63a4695a88d37d8454",
+              "finding_id": "addition-2"
+            }
+          },
+          {
+            "id": "recheck-terminology-1",
+            "category": "terminology",
+            "severity": "major",
+            "detail": "После повторной сверки прежнее замечание к написанию имени не подтверждается: текущий глоссарий задаёт для Cade русскую форму «Кейд», а «Кейдом» в переводе — её корректное склонение. Это терминологическое замечание устарело.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "It had been over two years since Cade and I became best friends.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Мы с Кейдом дружили уже больше двух лет.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "ae1ced5b9b444f63a4695a88d37d8454",
+              "finding_id": "terminology-1",
+              "recheck_reason": "glossary_reconciliation",
+              "glossary_revision": "726e4f76699f03977c14ec08e038db936a065b810ed2c84e32c86cf9171808d9"
+            }
+          },
+          {
+            "id": "recheck-style-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Фраза «история с отчимовым сыном» остаётся неестественной и неясной. Переформулируйте так, чтобы ясно передать запретную связь между сводными братьями.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "That taboo stepbrother's thing could ruin us.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Табуированная история с отчимовым сыном могла нас погубить.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "ae1ced5b9b444f63a4695a88d37d8454",
+              "finding_id": "style-1"
+            }
+          },
+          {
+            "id": "recheck-structure-1",
+            "category": "omission",
+            "severity": "minor",
+            "detail": "Заголовок блока «17. Dillon» отсутствует в переводе. Восстановите его с учётом принятой русской передачи имени.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "# 17. Dillon",
+              "occurrence": 0
+            },
+            "translation_anchor": null,
+            "resolves": {
+              "record_id": "ae1ced5b9b444f63a4695a88d37d8454",
+              "finding_id": "structure-1"
+            }
           }
         ]
       },
