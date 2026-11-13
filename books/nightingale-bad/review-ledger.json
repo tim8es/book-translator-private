@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "nightingale-bad",
-  "next_sequence": 11,
+  "next_sequence": 12,
   "records": [
     {
       "record_id": "267f9c6d763542ed928f67c176f3083f",
@@ -373,6 +373,49 @@
             "severity": "minor",
             "detail": "Russian 'его сердце наполняет резкий прилив адреналина' is an accidental awkward calque of the line where the pounding heart and adrenaline displace relaxing warmth. Restore the original emotional sequence in natural Russian.",
             "resolved": false
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "09794d0ff0a4434b8514bf9ee86ff56d",
+      "sequence": 11,
+      "unit_id": "chapter-000007",
+      "outcome": "PASS",
+      "source_sha256": "a19231850204819cc7b9725962fe83f7f80c03d36db68d9b291880ad1bf4d6a0",
+      "translation_sha256": "1c94ff78545ae87fbf8208ce8e90295c67bef600266f2d0d42767850e6e86cad",
+      "workflow_revision": "effd537cb20d42e0077ebe8760cb794fdb84fd0f",
+      "review_contract_revision": "docs/TRANSLATION.md@effd537cb20d42e0077ebe8760cb794fdb84fd0f",
+      "reviewer_session_id": "chat-manual-night-20261113-ch6-review2",
+      "reviewed_at": "2026-11-13T11:28:05Z",
+      "state_revision": "096584a9188fae2dcbac1ca8e56ada5502de1895cbe878d9d78cd63748eb8667",
+      "review_commit": "953790f41218a633164ed26ca10a21a267505088",
+      "correction_round": 1,
+      "supersedes_record_id": "e645449eb3664fcaa8a84ac868661d9f",
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Rechecked source's 'the reveal': removed unsupported claims that the reveal was unexpected or necessarily at the end.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "English character name 'Juno' rendered as Джуно without interpreting it as classical Юнона; proposed glossary update.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Corrected the unnatural Russian adrenaline/heartbeat phrase while maintaining source's emotional sequence.",
+            "resolved": true
           }
         ]
       }
