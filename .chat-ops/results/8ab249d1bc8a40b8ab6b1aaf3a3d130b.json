@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "request_id": "8ab249d1bc8a40b8ab6b1aaf3a3d130b",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "dd56c5c4253854aa182a57e40949914c744a4c23502f743970fe27e9240d0c2e",
+    "record": {
+      "correction_round": 1,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "findings": [
+          {
+            "detail": "Final paragraph original 'gorgeous, volatile omega' now renders 'прекрасного, вспыльчивого омегу' and correctly retains the volatile temperament, rather than merely unpredictability.",
+            "resolved": true,
+            "severity": "minor"
+          }
+        ]
+      },
+      "record_id": "62c588f4a5604b0bb0ccc70f43d83dad",
+      "review_commit": "d00a0661ae7a081c55f620bfb1caae55f52ec5db",
+      "review_contract_revision": "docs/TRANSLATION.md@effd537cb20d42e0077ebe8760cb794fdb84fd0f",
+      "reviewed_at": "2026-11-13T13:32:48Z",
+      "reviewer_session_id": "chat-manual-night-20261113-ch13-review2",
+      "sequence": 23,
+      "source_sha256": "0a4c693b3295a3c438cc41f173aa177a09c73c6f38ab36066db430fdec4da7bc",
+      "state_revision": "4189e53b3dd80de766a21d151a89f632d4c802a035c62df0446e2f1bd90a692f",
+      "supersedes_record_id": "5afa22098f2e4aba90a8b6e24d5cedbc",
+      "translation_sha256": "610a1bc62e65ebfefde8b642061ededbcea25b4120e494e3661a92af32c79983",
+      "unit_id": "chapter-000014",
+      "workflow_revision": "effd537cb20d42e0077ebe8760cb794fdb84fd0f"
+    }
+  },
+  "error": null
+}

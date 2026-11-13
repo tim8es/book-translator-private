@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "nightingale-bad",
-  "next_sequence": 23,
+  "next_sequence": 24,
   "records": [
     {
       "record_id": "267f9c6d763542ed928f67c176f3083f",
@@ -797,6 +797,39 @@
             "severity": "minor",
             "detail": "At final paragraph source describes Kurapika as 'gorgeous, volatile omega', emphasizing volatile or hot-tempered temperament. Russian 'прекрасного, непредсказуемого омегу' focuses on unpredictability, weakening the emphasis on temper. Replace 'непредсказуемого' with 'вспыльчивого' (or equivalent), preserving narrator's view.",
             "resolved": false
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "62c588f4a5604b0bb0ccc70f43d83dad",
+      "sequence": 23,
+      "unit_id": "chapter-000014",
+      "outcome": "PASS",
+      "source_sha256": "0a4c693b3295a3c438cc41f173aa177a09c73c6f38ab36066db430fdec4da7bc",
+      "translation_sha256": "610a1bc62e65ebfefde8b642061ededbcea25b4120e494e3661a92af32c79983",
+      "workflow_revision": "effd537cb20d42e0077ebe8760cb794fdb84fd0f",
+      "review_contract_revision": "docs/TRANSLATION.md@effd537cb20d42e0077ebe8760cb794fdb84fd0f",
+      "reviewer_session_id": "chat-manual-night-20261113-ch13-review2",
+      "reviewed_at": "2026-11-13T13:32:48Z",
+      "state_revision": "4189e53b3dd80de766a21d151a89f632d4c802a035c62df0446e2f1bd90a692f",
+      "review_commit": "d00a0661ae7a081c55f620bfb1caae55f52ec5db",
+      "correction_round": 1,
+      "supersedes_record_id": "5afa22098f2e4aba90a8b6e24d5cedbc",
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Final paragraph original 'gorgeous, volatile omega' now renders 'прекрасного, вспыльчивого омегу' and correctly retains the volatile temperament, rather than merely unpredictability.",
+            "resolved": true
           }
         ]
       }
