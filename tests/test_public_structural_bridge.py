@@ -145,6 +145,37 @@ class PublicHelperBridgeTests(unittest.TestCase):
         stage = self.book / ".workflow/auto-structural-translation/chapter-000001.json"
         self.assertEqual(len(json.loads(stage.read_text("utf-8"))["segments"]), 6)
 
+    def test_short_translation_repair_requests_only_rejected_source_segment(self):
+        source = "One full sentence, not a summary.\n\n" * 22
+        self.plan["segments"] = [
+            {"id": f"s{i:05d}", "source": source} for i in range(1, 8)
+        ]
+        calls = []
+
+        def complete(_role, _system, user):
+            payload = user.split("\nREJECTED SHORT TRANSLATION")[0]
+            selected = json.loads(payload)
+            calls.append([item["id"] for item in selected])
+            return json.dumps({
+                "segments": [{"id": item["id"],
+                              "translation": ("x" if len(calls) == 1
+                                              and item["id"] == "s00001"
+                                              else source)}
+                             for item in selected],
+                "glossary": [], "style_guide": [],
+            })
+        result, count, checkpoints = self.once(complete=complete)
+        self.assertIsNone(result)
+        self.assertEqual(count, 3)
+        self.assertEqual(checkpoints, 5)
+        self.assertEqual(calls[0], ["s00001", "s00002", "s00003"])
+        self.assertEqual(calls[1], ["s00001"])
+        self.assertEqual(calls[2], ["s00004", "s00005", "s00006"])
+        stage = self.book / ".workflow/auto-structural-translation/chapter-000001.json"
+        saved = json.loads(stage.read_text("utf-8"))["segments"]
+        self.assertEqual(len(saved), 6)
+        self.assertEqual(saved["s00001"], source)
+
     def test_runtime_public_ref_is_an_immutable_commit(self):
         self.assertRegex(worker.PUBLIC_STRUCTURAL_HELPER_REVISION,
                          r"^[0-9a-f]{40}$")
