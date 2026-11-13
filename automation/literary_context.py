@@ -196,9 +196,12 @@ def parse_correction_patches(
                 raise PatchAnchorMismatch(finding_id, reviewer_anchor, received)
             anchor = dict(reviewer_anchor)
         replacement = patch["replacement"]
-        if (not isinstance(replacement, str) or len(replacement) > MAX_PATCH_CHARS
-                or (not replacement.strip() and operation != "replace")):
-            raise ModelError("corrector replacement is empty or too large")
+        if not isinstance(replacement, str):
+            raise ModelError("corrector replacement must be a string")
+        if len(replacement) > MAX_PATCH_CHARS:
+            raise ModelError("corrector replacement exceeds maximum length")
+        if not replacement.strip() and operation != "replace":
+            raise ModelError("corrector insertion requires nonempty replacement")
         result.append({"finding_id": finding_id, "operation": operation,
                        "target_anchor": anchor, "replacement": replacement})
     if not seen:
