@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 122,
+  "next_sequence": 123,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -10016,6 +10016,147 @@
               "record_id": "55f9dceb99c4478eb0da1c04b8e343dc",
               "finding_id": "names-recheck-3"
             }
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "726e4f76699f03977c14ec08e038db936a065b810ed2c84e32c86cf9171808d9",
+        "style_guide": "3ec7c485cf41741084ffe49b72d2b18ed9bd650a00a2ba00554605abadea5e3a"
+      }
+    },
+    {
+      "record_id": "0ace7935eec1464194e8ccaffa3fb0d0",
+      "sequence": 122,
+      "unit_id": "chapter-000024",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "9747496e38507c1388903de0a5fd0fa2c46d97e60e4ce9585a2b2f557b223040",
+      "translation_sha256": "0ebd4187c491628f444e8179ebe3333f3bca95ba93d7d2c862af1b06df149b50",
+      "workflow_revision": "ea9963ca546b7cc7f6aba4dc5350fa19ea7da862",
+      "review_contract_revision": "docs/TRANSLATION.md@ea9963ca546b7cc7f6aba4dc5350fa19ea7da862",
+      "reviewer_session_id": "auto-886bde8dfe20-reviewer-0fa30afc",
+      "reviewed_at": "2026-11-13T15:47:45Z",
+      "state_revision": "46c94a26da3b4a055d447c5c3e372b1a84b1bea0e630d894c1a1a77775cc6735",
+      "review_commit": "309d214f637949ec4df8602c643ab43205149886",
+      "correction_round": 5,
+      "supersedes_record_id": "0f67467f0a254df78259450089d6315f",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "terminology-recheck-1",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "Resolved: Cade is now rendered using the canonical Russian form «Кейд».",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "After Cade had come into my room and climbed into my bed",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Когда Кейд вошёл в мою комнату и забрался ко мне в кровать",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "0f67467f0a254df78259450089d6315f",
+              "finding_id": "recheck-terminology-3"
+            }
+          },
+          {
+            "id": "omission-recheck-1",
+            "category": "omission",
+            "severity": "major",
+            "detail": "Resolved: the translation restores the supplied non-explicit continuation, including the promise and the exchange about being ready, rather than replacing it with a summary.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "We were still so young, but we made a promise to each other that we’d always be together, and I never intended to ever break it.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Мы были ещё так молоды, но пообещали друг другу всегда быть вместе, и я никогда не собирался нарушать это обещание.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "0f67467f0a254df78259450089d6315f",
+              "finding_id": "recheck-omission-3"
+            }
+          },
+          {
+            "id": "voice-recheck-1",
+            "category": "voice",
+            "severity": "minor",
+            "detail": "Resolved: the closing reflection remains in the narrator’s first-person voice and retains the supplied thoughts about his emotional connection, desire, and need for Cade.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Our emotional connection and sexual attraction were more proof that Cade was it for me.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Наша эмоциональная связь и сексуальное влечение стали ещё одним доказательством того, что Кейд — тот, кто мне нужен.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "0f67467f0a254df78259450089d6315f",
+              "finding_id": "voice-1"
+            }
+          },
+          {
+            "id": "register-recheck-1",
+            "category": "register",
+            "severity": "minor",
+            "detail": "Resolved: «мудак» preserves the coarse colloquial force of “dick” in this insult.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "You're a real dick, David.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "— Ты настоящий мудак, Дэвид.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "0f67467f0a254df78259450089d6315f",
+              "finding_id": "register-3"
+            }
+          },
+          {
+            "id": "meaning-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "«Сошлись как братья» can suggest that they entered a relationship as brothers, rather than preserving the source’s sequence that they first came together as brothers. Consider «Неважно, что сначала мы стали братьями».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "It didn’t matter if we came together as brothers first.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Неважно, что сначала мы сошлись как братья.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "structure-1",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "The source places “Are you ready for this?” I asked. in its own paragraph, but the translation joins the dialogue to the preceding narration in the same paragraph. Restore the paragraph break.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“Are you ready for this?” I asked.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Неважно, что сначала мы сошлись как братья. — Ты готов к этому? — спросил я.",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       },
