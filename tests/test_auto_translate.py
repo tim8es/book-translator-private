@@ -1309,6 +1309,10 @@ with patch.object(book_runner, "chapter_data",
                  patch.object(worker, "complete", return_value=response), \
                  patch.object(worker, "process_correction_batches",
                               side_effect=ModelError("corrector insertion anchor is invalid")), \
+                 patch.object(worker, "load_public_correction_helper",
+                              return_value=type("TypedProtocolStub", (), {
+                                  "failure_code": staticmethod(lambda error: "invalid_anchor"),
+                              })), \
                  patch.object(worker, "cli") as cli, \
                  patch.object(worker, "checkpoint") as checkpoint:
                 worker.process_claim(job_id, slug, status, root)
