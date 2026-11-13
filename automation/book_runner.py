@@ -3357,6 +3357,8 @@ def publish_outputs(job_id: str, status: dict) -> None:
             # Handed-off or blocked books must not spawn another Auto model call.
             # Selection skips paused books until ChatOps resumes their mode.
             print("continue_queue=true", file=stream)
+            if status["state"] == "blocked":
+                print("blocked=true", file=stream)
 
 
 def main() -> int:
