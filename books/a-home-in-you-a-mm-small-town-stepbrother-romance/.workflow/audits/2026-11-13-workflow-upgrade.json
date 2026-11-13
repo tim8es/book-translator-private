@@ -20,23 +20,25 @@
     "extracted": 2
   },
   "post_status_counts": {
-    "translated": 49,
-    "extracted": 2
+    "extracted": 51
   },
   "artifacts": {
     "translated_files_preserved": true,
     "source_preserved": true,
     "review_ledger_preserved": true,
     "glossary_preserved": true,
-    "style_guide_preserved": true
+    "style_guide_preserved": true,
+    "legacy_acceptance_archive": "books/a-home-in-you-a-mm-small-town-stepbrother-romance/.workflow/audits/2026-11-13-workflow-upgrade-legacy-acceptances.json"
   },
   "migration": {
-    "historical_reviewed_units_reclassified_as_translated": 45,
-    "old_translation_acceptances_preserved": 49,
+    "historical_reviewed_units_reclassified_as_extracted": 45,
+    "preexisting_translations_reclassified_as_extracted": 49,
+    "original_translation_artifacts_preserved": 49,
+    "old_translation_acceptances_archived": 49,
     "old_review_records_preserved": 104,
     "current_version_translation_acceptances_attested": 0,
     "current_version_review_passes_attested": 0,
-    "requires": "Revalidate each existing source/translation and reaccept under the new pinned workflow with independent review before promoting status to reviewed",
+    "requires": "Revalidate and reaccept the existing 49 translation files under the new pinned workflow via valid fresh claims, followed by independent Reviewer records; do not run a blind retranslation or manufacture new acceptance evidence",
     "autotranslation_dispatched": false
   },
   "cautions": [
