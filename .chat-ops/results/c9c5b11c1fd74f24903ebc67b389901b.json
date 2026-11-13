@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "request_id": "c9c5b11c1fd74f24903ebc67b389901b",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "1764c8a0e71c7a16d334675506c36bdf66ce197b5db6f6788b81fec2e8e3cb65",
+    "record": {
+      "correction_round": 1,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "findings": [
+          {
+            "detail": "The original's unusual 'Kurapika laughs humorously' no longer becomes the contradictory 'невесело смеётся'; rechecked corrected neutral 'Курапика коротко смеётся' in scene context, preserving immediate tension and tears.",
+            "resolved": true,
+            "severity": "minor"
+          }
+        ]
+      },
+      "record_id": "74d508a8185a44c1ad9da00351fbfa68",
+      "review_commit": "7c066d84f84c958276719ae7bd89f96af707026e",
+      "review_contract_revision": "docs/TRANSLATION.md@effd537cb20d42e0077ebe8760cb794fdb84fd0f",
+      "reviewed_at": "2026-11-13T12:23:07Z",
+      "reviewer_session_id": "chat-manual-night-20261113-ch9-review2",
+      "sequence": 16,
+      "source_sha256": "f1c0ccbafdc66eb9ba2f6962822a95afbecac3a36327662186360d584868816b",
+      "state_revision": "b72a0785a97db9d7edc902c31343459fefd9154bcb8221aa653f3461bf365e19",
+      "supersedes_record_id": "8b0a491657864f03954394ea16aebdc3",
+      "translation_sha256": "30f1a8bafc9685ca2003a89e802662a3ff85d96d2664707ed8b122e591cc2b56",
+      "unit_id": "chapter-000010",
+      "workflow_revision": "effd537cb20d42e0077ebe8760cb794fdb84fd0f"
+    }
+  },
+  "error": null
+}
