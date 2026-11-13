@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "request_id": "8ab249d1bc8a40b8ab6b1aaf3a3d1305",
+  "book_slug": "nightingale-bad",
+  "workflow_revision": "effd537cb20d42e0077ebe8760cb794fdb84fd0f",
+  "operation": "review-record",
+  "chapter": 14,
+  "session_id": "chat-manual-night-20261113-ch13-review",
+  "outcome": "CORRECTIONS_REQUIRED",
+  "quality_report": {
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "severity": "minor",
+        "detail": "At final paragraph source describes Kurapika as 'gorgeous, volatile omega', emphasizing volatile or hot-tempered temperament. Russian 'прекрасного, непредсказуемого омегу' focuses on unpredictability, weakening the emphasis on temper. Replace 'непредсказуемого' with 'вспыльчивого' (or equivalent), preserving narrator's view.",
+        "resolved": false
+      }
+    ]
+  },
+  "source_sha256": "0a4c693b3295a3c438cc41f173aa177a09c73c6f38ab36066db430fdec4da7bc",
+  "translation_sha256": "afb4301d5555de78aa733f1e49a6809dcaa251d0da5b0484f1efc953b76cf901",
+  "claim_sha256": "9324e303a0eab19427f7d8451330c2ccd450af8b193dc408cfe1843b01c8cbed"
+}
