@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "nightingale-bad",
-  "next_sequence": 18,
+  "next_sequence": 19,
   "records": [
     {
       "record_id": "267f9c6d763542ed928f67c176f3083f",
@@ -614,6 +614,44 @@
           "structure": true
         },
         "findings": []
+      }
+    },
+    {
+      "record_id": "3ab1fc4499564f399624c9167fdb8324",
+      "sequence": 18,
+      "unit_id": "chapter-000012",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "be84273579f59ada6028df348be1891105a68fd4dc2256bd846bc40e555e98bb",
+      "translation_sha256": "def0cf46ab16993ab278d8a3dd5439b10c6f39b3d0b2f1035940bf4c825fb195",
+      "workflow_revision": "effd537cb20d42e0077ebe8760cb794fdb84fd0f",
+      "review_contract_revision": "docs/TRANSLATION.md@effd537cb20d42e0077ebe8760cb794fdb84fd0f",
+      "reviewer_session_id": "chat-manual-night-20261113-ch11-review",
+      "reviewed_at": "2026-11-13T12:53:14Z",
+      "state_revision": "7aa8fbb2d8e15d44eb429cea2297b32ec30a477dd870879eadf841a6c6af8faa",
+      "review_commit": "75f901667b3e5b53cb1d096d50e80ca974fe01ae",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "The scene date/time source reads 'a cold, grey afternoon in Yorknew'; translation makes it 'холодный, серый полдень', narrowing the afternoon to noon. Render afternoon as 'холодный серый день' or 'холодный серый послеполуденный час', preserving non-specific time.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Source 'Murmurs of understanding ripple through the crowd' reports acknowledgment/understanding, not endorsement. Russian 'одобрительное бормотание' adds approval. Render 'по толпе проходит согласное бормотание' or 'в толпе раздаётся бормотание в знак понимания'.",
+            "resolved": false
+          }
+        ]
       }
     }
   ]

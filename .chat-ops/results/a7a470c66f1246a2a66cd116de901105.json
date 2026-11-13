@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "request_id": "a7a470c66f1246a2a66cd116de901105",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "b49e9f2357f6330818773ff38cb28019e461bee43146036427e83153c58ca587",
+    "record": {
+      "correction_round": 1,
+      "outcome": "CORRECTIONS_REQUIRED",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "findings": [
+          {
+            "detail": "The scene date/time source reads 'a cold, grey afternoon in Yorknew'; translation makes it 'холодный, серый полдень', narrowing the afternoon to noon. Render afternoon as 'холодный серый день' or 'холодный серый послеполуденный час', preserving non-specific time.",
+            "resolved": false,
+            "severity": "minor"
+          },
+          {
+            "detail": "Source 'Murmurs of understanding ripple through the crowd' reports acknowledgment/understanding, not endorsement. Russian 'одобрительное бормотание' adds approval. Render 'по толпе проходит согласное бормотание' or 'в толпе раздаётся бормотание в знак понимания'.",
+            "resolved": false,
+            "severity": "minor"
+          }
+        ]
+      },
+      "record_id": "3ab1fc4499564f399624c9167fdb8324",
+      "review_commit": "75f901667b3e5b53cb1d096d50e80ca974fe01ae",
+      "review_contract_revision": "docs/TRANSLATION.md@effd537cb20d42e0077ebe8760cb794fdb84fd0f",
+      "reviewed_at": "2026-11-13T12:53:14Z",
+      "reviewer_session_id": "chat-manual-night-20261113-ch11-review",
+      "sequence": 18,
+      "source_sha256": "be84273579f59ada6028df348be1891105a68fd4dc2256bd846bc40e555e98bb",
+      "state_revision": "7aa8fbb2d8e15d44eb429cea2297b32ec30a477dd870879eadf841a6c6af8faa",
+      "supersedes_record_id": null,
+      "translation_sha256": "def0cf46ab16993ab278d8a3dd5439b10c6f39b3d0b2f1035940bf4c825fb195",
+      "unit_id": "chapter-000012",
+      "workflow_revision": "effd537cb20d42e0077ebe8760cb794fdb84fd0f"
+    }
+  },
+  "error": null
+}
