@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 114,
+  "next_sequence": 115,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -9003,6 +9003,169 @@
             },
             "translation_anchor": {
               "quote": "которая была мне куда большим родителем, чем родной отец.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "726e4f76699f03977c14ec08e038db936a065b810ed2c84e32c86cf9171808d9",
+        "style_guide": "3ec7c485cf41741084ffe49b72d2b18ed9bd650a00a2ba00554605abadea5e3a"
+      }
+    },
+    {
+      "record_id": "6d3c164809ee4b9799681b6e35237091",
+      "sequence": 114,
+      "unit_id": "chapter-000028",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "f98da8475a3d0b14695a4eb643e6d55bdb612c3e1ec25833e7b2736eab964a39",
+      "translation_sha256": "523e27214109724def21efd0da24ad0db41673efd00fb0800f831ce6f21dc748",
+      "workflow_revision": "ea9963ca546b7cc7f6aba4dc5350fa19ea7da862",
+      "review_contract_revision": "docs/TRANSLATION.md@ea9963ca546b7cc7f6aba4dc5350fa19ea7da862",
+      "reviewer_session_id": "auto-886bde8dfe20-reviewer-5232a2ad",
+      "reviewed_at": "2026-11-13T13:51:14Z",
+      "state_revision": "545c527acce36f479d0e8cb8204d96c2d8c85879a1bda743adb5b934cee65f74",
+      "review_commit": "89ec7b4ee58c90f75422e7dfe87f8e4d20543575",
+      "correction_round": 3,
+      "supersedes_record_id": "342a4827ee8a411db1dd2a900c7a9e45",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-meaning-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Resolved: “Отстранился от меня” correctly conveys that he pulled his mouth away.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "He popped off me and turned around, giving me more kisses.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Он отстранился от меня и повернулся, снова целуя меня.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "342a4827ee8a411db1dd2a900c7a9e45",
+              "finding_id": "meaning-1"
+            }
+          },
+          {
+            "id": "recheck-meaning-2",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Resolved: The translation preserves the idea that this moment would set the tone for their future together.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "That this wasn’t only about getting off, but about setting the tone for the rest of our lives.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Дело было не только в том, чтобы кончить, но и в том, чтобы задать тон всей нашей дальнейшей жизни.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "342a4827ee8a411db1dd2a900c7a9e45",
+              "finding_id": "meaning-2"
+            }
+          },
+          {
+            "id": "recheck-meaning-3",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Resolved: The wording conveys that he used breathing to endure the stretching sensation.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "He wasn’t exactly small, and I had to breathe through most of it as I stretched.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Он был не то чтобы маленьким, и мне почти всё время приходилось глубоко дышать, чтобы выдержать растяжение.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "342a4827ee8a411db1dd2a900c7a9e45",
+              "finding_id": "meaning-3"
+            }
+          },
+          {
+            "id": "recheck-meaning-4",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Resolved: “Догадалась, что мы вместе” conveys that she may have discovered their relationship, without implying that she exposed them to others.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "If she did discover us, she seemed like she didn’t care.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Если она и правда догадалась, что мы вместе, похоже, её это не волновало.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "342a4827ee8a411db1dd2a900c7a9e45",
+              "finding_id": "meaning-4"
+            }
+          },
+          {
+            "id": "recheck-meaning-5",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Resolved: The current wording describes his feelings as unwavering, rather than saying he did not doubt them.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "He never wavered in his feelings for me and always kept his promises.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Он ни разу не поколебался в своих чувствах ко мне и всегда сдерживал обещания.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "342a4827ee8a411db1dd2a900c7a9e45",
+              "finding_id": "meaning-5"
+            }
+          },
+          {
+            "id": "recheck-style-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Resolved: The revised construction preserves the comparison and reads more naturally than “была мне куда большим родителем.”",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "who had been more of a parent to me than my own father.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "женщине, которая в куда большей степени была мне родителем, чем мой собственный отец.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "342a4827ee8a411db1dd2a900c7a9e45",
+              "finding_id": "style-1"
+            }
+          },
+          {
+            "id": "style-2",
+            "category": "style",
+            "severity": "minor",
+            "detail": "“Оставив меня отчаянно нуждаться в нём” is an unidiomatic construction. Recast naturally while preserving that Cade remains intensely needy or longing after Dillon leaves.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Then Dillon reluctantly climbed out of bed and left his room, leaving me way too needy, but he soon came back with a washcloth.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Потом Диллон неохотно вылез из постели и вышел из комнаты, оставив меня отчаянно нуждаться в нём, но вскоре вернулся с мокрой тряпкой.",
               "occurrence": 0
             },
             "resolves": null
