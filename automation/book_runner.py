@@ -51,6 +51,9 @@ CORRECTION_BATCH_CALLS_PER_CHECKPOINT = 2
 # Immutable public compatibility helper. The current book's literary workflow
 # revision remains pinned; this source-format adapter is versioned separately.
 PUBLIC_STRUCTURAL_HELPER_REVISION = "a9f85b68fcc062185c891202c5823a5838a717a0"
+# Separate immutable public compatibility helper: does NOT change a book's
+# pinned literary revision or reviewer contract.
+PUBLIC_CORRECTION_HELPER_REVISION = "abe8cb030c2e792e2543fdbd2c0295cd9e629024"
 STRUCTURAL_MODEL_CALLS_PER_CHECKPOINT = 2
 STRUCTURAL_MODEL_SEGMENTS_PER_CALL = 3
 DEFAULT_MODEL_CALL_LIMIT = 36
@@ -965,6 +968,38 @@ def load_public_structural_helper(engine: Path):
     return module
 
 
+def load_public_correction_helper(engine: Path):
+    """Read pure public correction protocol from an immutable audited commit.
+
+    The book's pinned literary workflow remains unchanged; only the Auto
+    protocol adapter opts into this independently versioned compatibility tool.
+    """
+    ref = PUBLIC_CORRECTION_HELPER_REVISION
+    if not SHA.fullmatch(ref):
+        raise JobError("public correction helper has no immutable revision pin")
+    result = subprocess.run(
+        ["git", "-C", str(engine), "show",
+         ref + ":scripts/workflow/correction_protocol.py"],
+        capture_output=True, timeout=45)
+    if result.returncode or not result.stdout:
+        raise JobError("pinned public correction protocol helper is unavailable")
+    support = engine / ".runtime-correction-compat"
+    support.mkdir(exist_ok=True)
+    target = support / "correction_protocol.py"
+    target.write_bytes(result.stdout)
+    spec = importlib.util.spec_from_file_location(
+        "book_translator_runtime_correction_protocol", target)
+    if spec is None or spec.loader is None:
+        raise JobError("cannot import pinned public correction protocol")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    if not all(callable(getattr(module, name, None)) for name in
+               ("failure_code", "repair_spec", "repair_guidance",
+                "validate_intent", "validate_replacement")):
+        raise JobError("public correction protocol helper has an unsupported API")
+    return module
+
+
 def cli(*args: str) -> str:
     command = [sys.executable, str(ROOT / "scripts" / "book.py"), *args]
     result = subprocess.run(command, cwd=ROOT, text=True, capture_output=True, timeout=200)
@@ -1700,53 +1735,56 @@ def process_correction_batches(job_id: str, slug: str, status: dict, engine: Pat
             patches, glossary, style = parse_correction_patches(
                 answer, selected, allow_partial=True)
         except ModelError as exc:
-            # Retry only rejected response syntax/coordinates, never a failed
-            # provider call. No incorrect patch is ever staged or applied.
-            # Give the model exact reviewer-bound protocol feedback instead of
-            # repeating the same three-finding request unchanged.
+            # Provider-output defects, not transport or repository failures,
+            # get one extra, durably counted, strictly typed repair.
+            helper = load_public_correction_helper(engine)
             correction_error = str(exc)
-            if (not isinstance(exc, PatchAnchorMismatch)
-                    and correction_error not in {
-                        "insertion_anchor is only allowed for omissions",
-                        "corrector patch has invalid fields",
-                        "corrector returned no actionable patches",
-                    }):
+            code = helper.failure_code(correction_error)
+            if not isinstance(exc, PatchAnchorMismatch) and code is None:
+                raise
+            if code is None:
                 raise
             count = status.get("model_calls_started", 0)
             if type(count) is not int or count < 0 or count >= model_call_limit():
                 raise
-            reviewer_bound = [
-                f["id"] for f in selected if f["translation_anchor"] is not None]
-            true_omissions = [
-                f["id"] for f in selected if f["translation_anchor"] is None]
+            # A malformed three-item response cannot safely identify which
+            # of its siblings is responsible. Retrying the first single item
+            # returns a useful partial edit; remaining items stay pending.
+            focused = (selected[:1] if code in {
+                "invalid_replacement", "empty_insertion", "invalid_fields",
+                "wrong_anchor", "invalid_anchor", "wrong_operation"}
+                       else selected)
+            repair_system, repair_user, _ = context(
+                engine, slug, chapter, "corrector", correction_findings=focused)
+            structured_guidance = helper.repair_guidance(
+                focused, correction_error)
             status["model_calls_started"] = count + 1
-            status["phase"] = "corrector-schema-repair-reserved"
+            status["phase"] = "corrector-protocol-repair-reserved"
             status["prompt_context"] = {
                 **prompt_context,
-                "repair": "review-bound-coordinate-schema",
-                "reviewer_bound_count": len(reviewer_bound),
-                "true_omission_count": len(true_omissions),
+                "repair_code": code, "repair_finding_count": len(focused),
+                "execution_mode": "typed-correction-repair",
+                "public_helper_revision": PUBLIC_CORRECTION_HELPER_REVISION,
             }
             checkpoint(job_id, status, slug)
             repaired = complete(
-                "CORRECTOR", system, user
-                + "\nYOUR PREVIOUS CORRECTION JSON WAS REJECTED. Reason: "
-                + correction_error
-                + "\nThe category 'omission' does NOT authorize an "
-                "insertion_anchor. ONLY findings whose translation_anchor is "
-                "JSON null require insertion_anchor. For ALL findings with a "
-                "non-null translation_anchor, provide exactly finding_id, "
-                "operation, replacement; OMIT insertion_anchor and "
-                "target_anchor entirely. For true omissions only, provide "
-                "finding_id, operation, replacement and insertion_anchor. "
-                "Do not change reviewer binding or rewrite unrelated text. "
-                "Return valid JSON patches for the requested findings.\n"
-                + json.dumps({
-                    "reviewer_bound_finding_ids": reviewer_bound,
-                    "true_omission_finding_ids": true_omissions,
-                }, ensure_ascii=False))
+                "CORRECTOR", repair_system,
+                repair_user + "\nREJECTED RESPONSE: Return ONLY one bounded "
+                "source-grounded correction intent for the exact finding(s) "
+                "below; never a whole chapter. The reviewer's source anchor "
+                "is the authoritative evidence.\n" + structured_guidance)
             patches, glossary, style = parse_correction_patches(
-                repaired, selected, allow_partial=True)
+                repaired, focused, allow_partial=True)
+            for patch in patches:
+                finding = next(item for item in focused
+                               if item["id"] == patch["finding_id"])
+                try:
+                    helper.validate_replacement(patch, finding)
+                    helper.validate_intent(patch, finding)
+                except helper.CorrectionProtocolError as validation_error:
+                    raise ModelError(
+                        "typed correction repair invalid: "
+                        + validation_error.code) from validation_error
         combined = list(stage["patches"])
         conflicting = []
         for patch in patches:
@@ -1794,6 +1832,40 @@ def process_correction_batches(job_id: str, slug: str, status: dict, engine: Pat
     translated = apply_correction_patches(translation, stage["patches"])
     check_markers(source, translated)
     return translated, stage["glossary"], stage["style_guide"]
+
+
+def defer_protocol_failed_unit(slug: str, chapter: dict, record: dict | None,
+                               status: dict, code: str | None) -> bool:
+    """Only defer an unchanged independently rejected unit, never provider errors.
+
+    Canonical defer-review is the final hash/claim CAS gate. No translation,
+    source, finding, review result or reviewer PASS is edited here.
+    """
+    if (not code or status.get("failures", 0) < MAX_FAILURES
+            or not isinstance(record, dict)
+            or record.get("outcome") != "CORRECTIONS_REQUIRED"
+            or chapter.get("status") != "translated"):
+        return False
+    accepted = chapter.get("translation_acceptance")
+    if (not isinstance(accepted, dict)
+            or accepted.get("translation_sha256") != record.get("translation_sha256")
+            or accepted.get("source_sha256") != record.get("source_sha256")):
+        raise JobError("failed-correction deferral requires current reviewer evidence")
+    cli("defer-review", slug, str(chapter["number"]),
+        "--reason", "operator-attention")
+    audit = status.setdefault("model_unit_deferral_audit", [])
+    audit.append({
+        "unit_id": chapter["unit_id"],
+        "review_record_id": record["record_id"],
+        "translation_sha256": record["translation_sha256"],
+        "error_code": code,
+        "at": clock(),
+        "action": "canonical-defer-without-pass",
+    })
+    status["failures"] = 0
+    status["state"] = "running"
+    status["phase"] = "model-unit-deferred"
+    return True
 
 
 def reviewer_lineage_options(validator, claim: dict) -> dict:
@@ -2897,10 +2969,29 @@ def process_claim(job_id: str, slug: str, status: dict, engine: Path) -> None:
                 "model_call": status.get("model_calls_started"),
             }
         status["failures"] = status.get("failures", 0) + 1
-        status["state"] = "blocked" if status["failures"] >= MAX_FAILURES else "running"
-        status["phase"] = "model-blocked" if status["state"] == "blocked" else "model-retry"
         status["last_error"] = str(exc)[:350]
         status["blocked_unit_id"] = unit_id
+        recoverable_code = None
+        if role == "corrector" and patch_mode and isinstance(exc, ModelError):
+            # Unknown provider, safety, or workflow failures must not be
+            # silently turned into benign model-format failures.
+            helper = load_public_correction_helper(engine)
+            recoverable_code = helper.failure_code(str(exc))
+            if (recoverable_code is None
+                    and str(exc).startswith("typed correction repair invalid: ")):
+                recoverable_code = "invalid_typed_repair"
+        if recoverable_code:
+            counters = status.setdefault("unit_protocol_failures", {})
+            counters[unit_id] = counters.get(unit_id, 0) + 1
+            status["last_error_code"] = recoverable_code
+        if defer_protocol_failed_unit(
+                slug, chapter, previous_record, status, recoverable_code):
+            # Report the deferred issue and let canonical resume select the
+            # next independent unit. Never fabricate an acceptance/PASS.
+            checkpoint(job_id, status, slug)
+            return
+        status["state"] = "blocked" if status["failures"] >= MAX_FAILURES else "running"
+        status["phase"] = "model-blocked" if status["state"] == "blocked" else "model-retry"
         checkpoint(job_id, status, slug)
         return
     if role == "reviewer":
@@ -3284,6 +3375,8 @@ def publish_outputs(job_id: str, status: dict) -> None:
             # Handed-off or blocked books must not spawn another Auto model call.
             # Selection skips paused books until ChatOps resumes their mode.
             print("continue_queue=true", file=stream)
+            if status["state"] == "blocked":
+                print("blocked=true", file=stream)
 
 
 def main() -> int:
