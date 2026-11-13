@@ -4,8 +4,8 @@
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
   "source_sha256": "3a3fce78317162b68bc1e82501456a74a783cfc96cb2640c463f381866007865",
   "state": "running",
-  "phase": "correction-batch-staged",
-  "failures": 2,
+  "phase": "corrector-completed",
+  "failures": 0,
   "correction_rounds": {
     "chapter-000002": 1,
     "chapter-000003": 1,
@@ -18,15 +18,11 @@
     "chapter-000024": 2,
     "chapter-000025": 4,
     "chapter-000026": 3,
-    "chapter-000027": 1
+    "chapter-000027": 2
   },
   "workflow_revision": "ea9963ca546b7cc7f6aba4dc5350fa19ea7da862",
-  "updated_at": "2026-11-13T12:15:29.372102+00:00",
-  "active": {
-    "role": "corrector",
-    "chapter": 27,
-    "session_id": "auto-886bde8dfe20-corrector-48c82dd1"
-  },
+  "updated_at": "2026-11-13T12:15:31.308467+00:00",
+  "active": null,
   "model_calls_started": 177,
   "memory_glossary_saved": 110,
   "pending_style": [],
@@ -200,12 +196,5 @@
     }
   ],
   "structural_helper_revision": "a9f85b68fcc062185c891202c5823a5838a717a0",
-  "workflow_upgrade_audit": "books/a-home-in-you-a-mm-small-town-stepbrother-romance/.workflow/audits/2026-11-13-workflow-upgrade.json",
-  "blocked_unit_id": "chapter-000027",
-  "correction_batch_progress": {
-    "unit_id": "chapter-000027",
-    "review_record_id": "317f174716ed4319845c42167e3d6daf",
-    "completed": 7,
-    "total": 7
-  }
+  "workflow_upgrade_audit": "books/a-home-in-you-a-mm-small-town-stepbrother-romance/.workflow/audits/2026-11-13-workflow-upgrade.json"
 }
