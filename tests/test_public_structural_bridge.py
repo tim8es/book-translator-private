@@ -222,7 +222,7 @@ class PublicHelperBridgeTests(unittest.TestCase):
 
         outcome, calls, checkpoints = self.once(complete=model)
         self.assertIsNone(outcome)
-        self.assertEqual((calls, checkpoints), (3, 6))
+        self.assertEqual((calls, checkpoints), (3, 5))
         self.assertEqual(requests, [
             ["s00001", "s00002", "s00003"], ["s00001"], ["s00002"],
         ])
