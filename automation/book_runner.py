@@ -50,7 +50,7 @@ CORRECTION_BATCH_SIZE = 3
 CORRECTION_BATCH_CALLS_PER_CHECKPOINT = 2
 # Immutable public compatibility helper. The current book's literary workflow
 # revision remains pinned; this source-format adapter is versioned separately.
-PUBLIC_STRUCTURAL_HELPER_REVISION = "69091826dda22f2a45bd75bc979935c911ef243a"
+PUBLIC_STRUCTURAL_HELPER_REVISION = "da992e0d2647a3f0a34e74faff624ec4cff01358"
 # Separate immutable public compatibility helper: does NOT change a book's
 # pinned literary revision or reviewer contract.
 PUBLIC_CORRECTION_HELPER_REVISION = "abe8cb030c2e792e2543fdbd2c0295cd9e629024"
