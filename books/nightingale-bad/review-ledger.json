@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "nightingale-bad",
-  "next_sequence": 9,
+  "next_sequence": 10,
   "records": [
     {
       "record_id": "267f9c6d763542ed928f67c176f3083f",
@@ -292,6 +292,44 @@
             "severity": "major",
             "detail": "Source keeps the small person at the print shop gender unspecified using singular they. Translation 'Он уже полностью отвернулся' assigns male sex by pronoun. Preserve ambiguity with 'Человек за столом уже полностью погрузился в изучение послания' or equivalent.",
             "resolved": false
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "0be4e6e668e847d9bae2c0eb0f0dc40f",
+      "sequence": 9,
+      "unit_id": "chapter-000006",
+      "outcome": "PASS",
+      "source_sha256": "83868794e9521ec4c650d879bfa69c53d596fca58489e415b7be288f8dad23a2",
+      "translation_sha256": "61b726b41abb5092de61ba7ac2ff432db96b5044df3600cf5ca396d70264f4eb",
+      "workflow_revision": "effd537cb20d42e0077ebe8760cb794fdb84fd0f",
+      "review_contract_revision": "docs/TRANSLATION.md@effd537cb20d42e0077ebe8760cb794fdb84fd0f",
+      "reviewer_session_id": "chat-manual-night-20261113-ch5-review2",
+      "reviewed_at": "2026-11-13T11:13:55Z",
+      "state_revision": "d5f336935006061a1ae23159b93ed4363ebf59cb4f15d6b272032cca73895a02",
+      "review_commit": "648714a14d40e69c1f0ebf6b2df30609ac2bed4a",
+      "correction_round": 1,
+      "supersedes_record_id": "bc68cf52c05f426f866f43878b2ad0b0",
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Rechecked 'underpaid nobody' against idiomatic Russian: corrected to 'охранник на грошовой зарплате' while preserving Chrollo's condescension.",
+            "resolved": true
+          },
+          {
+            "severity": "major",
+            "detail": "Rechecked singular-they ambiguity for print shop desk person: revised phrase uses noun 'человек' without explicitly assigning male sex, preserving deliberate uncertainty.",
+            "resolved": true
           }
         ]
       }

@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "request_id": "8812c3dc1cb04bfe9cc8ab1e9f1c5a0b",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "01c3fb61e7e98835c3d51871e638a36e21ae45735695e4b3f2855703d3b0ccee",
+    "record": {
+      "correction_round": 1,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "findings": [
+          {
+            "detail": "Rechecked 'underpaid nobody' against idiomatic Russian: corrected to 'охранник на грошовой зарплате' while preserving Chrollo's condescension.",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "Rechecked singular-they ambiguity for print shop desk person: revised phrase uses noun 'человек' without explicitly assigning male sex, preserving deliberate uncertainty.",
+            "resolved": true,
+            "severity": "major"
+          }
+        ]
+      },
+      "record_id": "0be4e6e668e847d9bae2c0eb0f0dc40f",
+      "review_commit": "648714a14d40e69c1f0ebf6b2df30609ac2bed4a",
+      "review_contract_revision": "docs/TRANSLATION.md@effd537cb20d42e0077ebe8760cb794fdb84fd0f",
+      "reviewed_at": "2026-11-13T11:13:55Z",
+      "reviewer_session_id": "chat-manual-night-20261113-ch5-review2",
+      "sequence": 9,
+      "source_sha256": "83868794e9521ec4c650d879bfa69c53d596fca58489e415b7be288f8dad23a2",
+      "state_revision": "d5f336935006061a1ae23159b93ed4363ebf59cb4f15d6b272032cca73895a02",
+      "supersedes_record_id": "bc68cf52c05f426f866f43878b2ad0b0",
+      "translation_sha256": "61b726b41abb5092de61ba7ac2ff432db96b5044df3600cf5ca396d70264f4eb",
+      "unit_id": "chapter-000006",
+      "workflow_revision": "effd537cb20d42e0077ebe8760cb794fdb84fd0f"
+    }
+  },
+  "error": null
+}
