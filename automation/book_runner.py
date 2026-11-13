@@ -2806,9 +2806,10 @@ def claim(job_id: str, slug: str, status: dict, role: str, chapter: dict) -> Non
         "--base-commit", git("rev-parse", "HEAD"),
         "--glossary-revision", fingerprint(book / "glossary.md"),
         "--style-guide-revision", fingerprint(book / "style-guide.md"))
-    status.update({"phase": "claimed", "active": {
-        "role": role, "chapter": chapter["number"],
-        "unit_id": chapter["unit_id"], "session_id": session}})
+    active = {"role": role, "chapter": chapter["number"], "session_id": session}
+    if isinstance(chapter.get("unit_id"), str):
+        active["unit_id"] = chapter["unit_id"]
+    status.update({"phase": "claimed", "active": active})
     status.pop("last_error", None)
     checkpoint(job_id, status, slug)
 
