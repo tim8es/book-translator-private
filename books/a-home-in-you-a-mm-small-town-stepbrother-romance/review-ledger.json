@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 115,
+  "next_sequence": 116,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -9166,6 +9166,74 @@
             },
             "translation_anchor": {
               "quote": "Потом Диллон неохотно вылез из постели и вышел из комнаты, оставив меня отчаянно нуждаться в нём, но вскоре вернулся с мокрой тряпкой.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "726e4f76699f03977c14ec08e038db936a065b810ed2c84e32c86cf9171808d9",
+        "style_guide": "3ec7c485cf41741084ffe49b72d2b18ed9bd650a00a2ba00554605abadea5e3a"
+      }
+    },
+    {
+      "record_id": "df5d1a7a7ae349e8bf5a0b83f3fece3d",
+      "sequence": 115,
+      "unit_id": "chapter-000028",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "f98da8475a3d0b14695a4eb643e6d55bdb612c3e1ec25833e7b2736eab964a39",
+      "translation_sha256": "41b862fbe3deb41e2fba5b4b0c8d10b7ffd8b851f71c49c3583aeffd2f21cc69",
+      "workflow_revision": "ea9963ca546b7cc7f6aba4dc5350fa19ea7da862",
+      "review_contract_revision": "docs/TRANSLATION.md@ea9963ca546b7cc7f6aba4dc5350fa19ea7da862",
+      "reviewer_session_id": "auto-886bde8dfe20-reviewer-baab02b2",
+      "reviewed_at": "2026-11-13T13:55:38Z",
+      "state_revision": "2ff3d5ba84684c907c89ff3e7a608c1ed5e860462d8c5bbe8365e96aa714f1ae",
+      "review_commit": "59ca4df4ca23705609be3ac6442e7ca8c6620004",
+      "correction_round": 4,
+      "supersedes_record_id": "6d3c164809ee4b9799681b6e35237091",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "style-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The current wording is natural Russian and conveys Cade’s intense longing after Dillon leaves, resolving the prior unidiomatic construction.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Then Dillon reluctantly climbed out of bed and left his room, leaving me way too needy, but he soon came back with a washcloth.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Потом Диллон неохотно вылез из постели и вышел из комнаты, оставив меня отчаянно скучать по нему, но вскоре вернулся с мокрой тряпкой.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "6d3c164809ee4b9799681b6e35237091",
+              "finding_id": "style-2"
+            }
+          },
+          {
+            "id": "register-1",
+            "category": "register",
+            "severity": "minor",
+            "detail": "The repeated emphatic profanity is softened from “Fuck” to “Чёрт,” weakening Cade’s marked, profane voice. Use a Russian expletive of comparable force.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Fuck, Cade… Fuck…",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Чёрт, Кейд… Чёрт…",
               "occurrence": 0
             },
             "resolves": null
