@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "request_id": "f3b642e81e9a41b88642bbfbb58c120b",
+  "book_slug": "nightingale-bad",
+  "workflow_revision": "effd537cb20d42e0077ebe8760cb794fdb84fd0f",
+  "operation": "review-record",
+  "chapter": 13,
+  "session_id": "chat-manual-night-20261113-ch12-review2",
+  "outcome": "PASS",
+  "quality_report": {
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "severity": "minor",
+        "detail": "Rechecked 'Your dominance is obviously low-class': corrected to criticism of his manner 'манера доминировать — откровенно низкого пошиба', avoiding an invented claim of low birth.",
+        "resolved": true
+      },
+      {
+        "severity": "minor",
+        "detail": "Rechecked 'Let Tserracnich be the one spoken at rather than to': corrected Russian to 'Пусть хоть раз не с Церриднихом разговаривают, а выговаривают всё ему в лицо', preserving a one-sided speech.",
+        "resolved": true
+      }
+    ]
+  },
+  "source_sha256": "b370f44ffbf3a29238326fdfbde8b64e2c2097cac819290c7638df1eebde1982",
+  "translation_sha256": "136c52541193e8b975bb63592d92bce798945b93ef81d195fa17dbf20c5e03a6",
+  "claim_sha256": "653895b9f82e3ca5f81c5451575cfb4c82aa2b67b6b52a53c4eeedab6737ae6f"
+}
