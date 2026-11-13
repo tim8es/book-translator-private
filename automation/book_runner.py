@@ -1696,8 +1696,57 @@ def process_correction_batches(job_id: str, slug: str, status: dict, engine: Pat
                        "prompt_context": prompt_context})
         checkpoint(job_id, status, slug)
         answer = complete("CORRECTOR", system, user)
-        patches, glossary, style = parse_correction_patches(
-            answer, selected, allow_partial=True)
+        try:
+            patches, glossary, style = parse_correction_patches(
+                answer, selected, allow_partial=True)
+        except ModelError as exc:
+            # Retry only rejected response syntax/coordinates, never a failed
+            # provider call. No incorrect patch is ever staged or applied.
+            # Give the model exact reviewer-bound protocol feedback instead of
+            # repeating the same three-finding request unchanged.
+            correction_error = str(exc)
+            if (not isinstance(exc, PatchAnchorMismatch)
+                    and correction_error not in {
+                        "insertion_anchor is only allowed for omissions",
+                        "corrector patch has invalid fields",
+                        "corrector returned no actionable patches",
+                    }):
+                raise
+            count = status.get("model_calls_started", 0)
+            if type(count) is not int or count < 0 or count >= model_call_limit():
+                raise
+            reviewer_bound = [
+                f["id"] for f in selected if f["translation_anchor"] is not None]
+            true_omissions = [
+                f["id"] for f in selected if f["translation_anchor"] is None]
+            status["model_calls_started"] = count + 1
+            status["phase"] = "corrector-schema-repair-reserved"
+            status["prompt_context"] = {
+                **prompt_context,
+                "repair": "review-bound-coordinate-schema",
+                "reviewer_bound_count": len(reviewer_bound),
+                "true_omission_count": len(true_omissions),
+            }
+            checkpoint(job_id, status, slug)
+            repaired = complete(
+                "CORRECTOR", system, user
+                + "\nYOUR PREVIOUS CORRECTION JSON WAS REJECTED. Reason: "
+                + correction_error
+                + "\nThe category 'omission' does NOT authorize an "
+                "insertion_anchor. ONLY findings whose translation_anchor is "
+                "JSON null require insertion_anchor. For ALL findings with a "
+                "non-null translation_anchor, provide exactly finding_id, "
+                "operation, replacement; OMIT insertion_anchor and "
+                "target_anchor entirely. For true omissions only, provide "
+                "finding_id, operation, replacement and insertion_anchor. "
+                "Do not change reviewer binding or rewrite unrelated text. "
+                "Return valid JSON patches for the requested findings.\n"
+                + json.dumps({
+                    "reviewer_bound_finding_ids": reviewer_bound,
+                    "true_omission_finding_ids": true_omissions,
+                }, ensure_ascii=False))
+            patches, glossary, style = parse_correction_patches(
+                repaired, selected, allow_partial=True)
         combined = list(stage["patches"])
         conflicting = []
         for patch in patches:
@@ -2292,8 +2341,11 @@ def context(engine: Path, slug: str, chapter: dict, role: str,
                 "\nApply only the listed unresolved corrections. Return ONLY JSON with exactly "
                 "keys patches, glossary, style_guide. patches must contain one item per listed "
                 "finding, with exactly finding_id, operation, replacement. "
-                "For each finding with translation_anchor, do NOT output target_anchor: "
-                "the program binds it to the verified reviewer evidence using finding_id. "
+                "For each finding with NON-NULL translation_anchor, output NO "
+                "insertion_anchor or target_anchor fields (EVEN IF category is "
+                "'omission'); the program binds targets to reviewer evidence by "
+                "finding_id. Only a finding with translation_anchor JSON null is "
+                "a true insertion requiring insertion_anchor. "
                 "For a genuine omission where translation_anchor is null, use insert_before "
                 "or insert_after and add insertion_anchor:{quote,occurrence}, choosing an exact "
                 "unique quote in CURRENT translated text. All non-omission findings must omit "

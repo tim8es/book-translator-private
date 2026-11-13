@@ -177,7 +177,13 @@ def parse_correction_patches(
             anchor = _insertion_anchor(choice)
         else:
             if "insertion_anchor" in patch:
-                raise ModelError("insertion_anchor is only allowed for omissions")
+                # Redundant legacy addresses are safe ONLY if they exactly
+                # repeat the immutable reviewer anchor. Ignore that redundant
+                # field, never use model-selected coordinates for this finding.
+                # A different location could change unrelated text: fail closed.
+                if patch["insertion_anchor"] != reviewer_anchor:
+                    raise PatchAnchorMismatch(
+                        finding_id, reviewer_anchor, patch["insertion_anchor"])
             # The review record, not the model, owns the exact target address.
             # A legacy response may intend to rewrite its larger chosen quote;
             # silently applying that replacement to a shorter reviewed quote
