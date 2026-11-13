@@ -2223,6 +2223,115 @@ def claim(job_id: str, slug: str, status: dict, role: str, chapter: dict) -> Non
     checkpoint(job_id, status, slug)
 
 
+class ReviewerAnchorMismatch(ModelError):
+    """Rejected reviewer citation, with an in-memory-only report for one repair."""
+
+    def __init__(self, reason: str, report: dict):
+        super().__init__("reviewer evidence is invalid: " + reason)
+        self.report = report
+
+
+def checked_reviewer_response(answer: str, *, review_context: str, source: str,
+                              translation: bytes, previous_record: dict | None,
+                              claim: dict) -> tuple[str, dict, list[dict]]:
+    """Validate a complete reviewer report before any canonical ledger write."""
+    outcome, report, style = parse_literary_review(answer, context=review_context)
+    if report.get("evidence_version") != 2:
+        raise ModelError("automatic reviewer must return anchored v2 evidence")
+    try:
+        from workflow.review_anchors import (
+            EvidenceAnchorError, verify_correction_lineage, verify_evidence_anchors)
+        verify_evidence_anchors(report, source.encode("utf-8"), translation)
+    except EvidenceAnchorError as exc:
+        # Preserve the actual invalid report only in this invocation. No model
+        # excerpt or unverified quote is written to status, Git, or Actions logs.
+        raise ReviewerAnchorMismatch(str(exc), report) from exc
+    except (ImportError, ValueError) as exc:
+        raise ModelError(f"reviewer evidence is invalid: {exc}") from exc
+    try:
+        verify_correction_lineage(
+            report, previous=previous_record,
+            source_sha256=hashlib.sha256(source.encode("utf-8")).hexdigest(),
+            translation_sha256=hashlib.sha256(translation).hexdigest(),
+            outcome=outcome, **reviewer_lineage_options(verify_correction_lineage, claim))
+    except (ImportError, ValueError) as exc:
+        raise ModelError(f"reviewer evidence is invalid: {exc}") from exc
+    return outcome, report, style
+
+
+def reviewer_anchor_feedback(report: dict, source: str, translation: str) -> list[dict]:
+    """Give the model checked *candidate text*, never silently repair evidence."""
+    hints = []
+    for index, finding in enumerate(report.get("findings", [])):
+        if not isinstance(finding, dict):
+            continue
+        for field, text in (("source_anchor", source), ("translation_anchor", translation)):
+            anchor = finding.get(field)
+            if not isinstance(anchor, dict):
+                continue
+            quote, occurrence = anchor.get("quote"), anchor.get("occurrence")
+            if not isinstance(quote, str) or type(occurrence) is not int or not quote:
+                continue
+            count = text.count(quote)
+            if count > occurrence and not (occurrence == 0 and count > 1):
+                continue
+            issue = "absent" if count <= occurrence else "ambiguous"
+            # Suggestions are exact substrings of the actual current artifact.
+            # They are NOT accepted substitutions: the reviewer must verify the
+            # allegation and quote, and the canonical validator runs again.
+            lines = list(dict.fromkeys(
+                line.strip()[:300] for line in text.splitlines() if len(line.strip()) >= 8
+            ))
+            suggestions = difflib.get_close_matches(quote, lines, n=3, cutoff=0.42)
+            hints.append({"finding_index": index, "finding_id": finding.get("id"),
+                          "field": field, "error": issue,
+                          "exact_current_text_candidates": suggestions})
+            if len(hints) == 12:
+                return hints
+    return hints
+
+
+def retry_reviewer_anchor_evidence(
+        job_id: str, slug: str, status: dict, prompt_context: dict,
+        system: str, user: str, answer: str, failure: ReviewerAnchorMismatch,
+        source: str, translation: bytes) -> str:
+    """One claimed, pre-reserved repair call; never loosen evidence admission."""
+    if len(answer) > 64000:
+        raise failure
+    calls = status.get("model_calls_started", 0)
+    if type(calls) is not int or calls < 0 or calls >= model_call_limit():
+        raise failure
+    hints = reviewer_anchor_feedback(failure.report, source, translation.decode("utf-8"))
+    repair_user = (
+        user +
+        "\n\nREJECTED REVIEW — EXACT-CITATION REPAIR (ONE ATTEMPT):\n"
+        "Your previous report was rejected and was NOT recorded. Inspect the "
+        "current source and accepted translation above again. Every finding "
+        "must be genuinely source-grounded; remove unsupported NEW findings. "
+        "Retain a separate explicit recheck for every PRIOR unresolved finding. "
+        "Do not mark a prior issue fixed without a genuinely corrected artifact "
+        "or a permitted audited glossary reconciliation. Output the ENTIRE "
+        "review JSON again with every source_anchor and translation_anchor "
+        "copied as an exact substring of its CURRENT artifact. Do not quote "
+        "the previous chapter, paraphrase, normalize punctuation, or guess. "
+        "Candidate lines below come verbatim from current artifacts; they are "
+        "hints only and must not be chosen without checking their meaning. "
+        "Do not mark PASS unless all checks and any prior issues are resolved.\n"
+        "REJECTION REASON:\n" + str(failure) +
+        "\nANCHOR DIAGNOSTICS (not approved evidence):\n" +
+        json.dumps(hints, ensure_ascii=False) +
+        "\nREJECTED REVIEW JSON (not approved evidence):\n" + answer
+    )
+    # Each additional paid invocation is durably reserved before the call.
+    status["model_calls_started"] = calls + 1
+    status["phase"] = "review-anchor-repair-reserved"
+    prompt_context["anchor_repair"] = "exact-quote-validation"
+    prompt_context["user_chars"] = len(repair_user)
+    status["prompt_context"] = prompt_context
+    checkpoint(job_id, status, slug)
+    return complete("REVIEWER", system, repair_user)
+
+
 def process_claim(job_id: str, slug: str, status: dict, engine: Path) -> None:
     active = status["active"]
     _, _, chapters = chapter_data(slug)
@@ -2355,25 +2464,21 @@ def process_claim(job_id: str, slug: str, status: dict, engine: Path) -> None:
                               "CORRECTOR" if role == "corrector" else "TRANSLATOR",
                               system, user)
             if role == "reviewer":
-                outcome, report, reviewed_style = parse_literary_review(
-                    answer, context=review_context)
-                if report.get("evidence_version") != 2:
-                    raise ModelError("automatic reviewer must return anchored v2 evidence")
+                translation_bytes = (ROOT / "books" / slug / chapter["translation_path"]
+                                     ).read_bytes()
                 try:
-                    from workflow.review_anchors import (
-                        verify_correction_lineage, verify_evidence_anchors)
-                    translation_bytes = (ROOT / "books" / slug / chapter["translation_path"]
-                                         ).read_bytes()
-                    source_bytes = source.encode("utf-8")
-                    verify_evidence_anchors(report, source_bytes, translation_bytes)
-                    verify_correction_lineage(
-                        report, previous=previous_record,
-                        source_sha256=hashlib.sha256(source_bytes).hexdigest(),
-                        translation_sha256=hashlib.sha256(translation_bytes).hexdigest(),
-                        outcome=outcome,
-                        **reviewer_lineage_options(verify_correction_lineage, owned))
-                except (ImportError, ValueError) as exc:
-                    raise ModelError(f"reviewer evidence is invalid: {exc}") from exc
+                    outcome, report, reviewed_style = checked_reviewer_response(
+                        answer, review_context=review_context, source=source,
+                        translation=translation_bytes, previous_record=previous_record,
+                        claim=owned)
+                except ReviewerAnchorMismatch as exc:
+                    repaired = retry_reviewer_anchor_evidence(
+                        job_id, slug, status, prompt_context, system, user, answer,
+                        exc, source, translation_bytes)
+                    outcome, report, reviewed_style = checked_reviewer_response(
+                        repaired, review_context=review_context, source=source,
+                        translation=translation_bytes, previous_record=previous_record,
+                        claim=owned)
             else:
                 translated, proposed_glossary, proposed_style = parse_translation(answer)
         if role != "reviewer":
