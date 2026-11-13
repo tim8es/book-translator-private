@@ -24,12 +24,12 @@ import time
 import unicodedata
 import xml.etree.ElementTree as ET
 import zipfile
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import PurePosixPath
 from pathlib import Path
 from uuid import uuid4
 
-from omniroute import ModelError, complete
+from omniroute import ModelError, TransientModelError, complete
 from literary_context import (fingerprint, full_shared_context, parse_literary_review,
                               parse_correction_patches, parse_translation, PatchAnchorMismatch, role_contracts,
                               save_claim_bound_decisions, updated_glossary, model_glossary_context)
@@ -45,6 +45,10 @@ MAX_CORRECTIONS = 3
 MAX_ACCEPTED_REVIEWS_PER_UNIT = 4
 MAX_CORRECTION_EXTENSIONS = 1
 MAX_FAILURES = 3
+# Durable scheduled recovery: no immediate dispatch loop after provider outage.
+MAX_BACKOFF_SECONDS = 3600
+MIN_BACKOFF_SECONDS = 60
+FALLBACK_AFTER_TRANSIENTS = 2
 # Bounded model calls per checkpoint keep a book from flooding Actions.
 CORRECTION_BATCH_SIZE = 3
 CORRECTION_BATCH_CALLS_PER_CHECKPOINT = 2
@@ -113,6 +117,135 @@ def model_call_limit() -> int:
     if not raw.isdecimal() or not 1 <= int(raw) <= 400:
         raise JobError("OMNIROUTE_MODEL_CALL_LIMIT must be an integer from 1 to 400")
     return int(raw)
+
+
+
+def provider_retry_due(status: dict) -> bool:
+    """Validate persisted backoff; only due jobs may recontact the provider."""
+    item = status.get("provider_retry")
+    if item is None:
+        return True
+    if (not isinstance(item, dict)
+            or set(item) != {"chapter", "unit_id", "role", "attempts",
+                                "code", "not_before"}
+            or type(item["chapter"]) is not int or item["chapter"] < 1
+            or not isinstance(item["unit_id"], str)
+            or not re.fullmatch(r"chapter-[0-9]{6}", item["unit_id"])
+            or item["role"] not in {"translator", "corrector", "reviewer"}
+            or type(item["attempts"]) is not int or item["attempts"] < 1
+            or not isinstance(item["code"], str)
+            or not re.fullmatch(r"(transport|http_(408|429|500|502|503|504))", item["code"])
+            or not isinstance(item["not_before"], str)):
+        raise JobError("invalid provider retry checkpoint")
+    try:
+        when = datetime.fromisoformat(item["not_before"].replace("Z", "+00:00"))
+    except ValueError as exc:
+        raise JobError("invalid provider backoff timestamp") from exc
+    if when.tzinfo is None:
+        raise JobError("provider backoff requires an absolute timestamp")
+    return datetime.now(timezone.utc) >= when
+
+
+def schedule_provider_retry(status: dict, chapter: dict, role: str,
+                            failure: TransientModelError) -> None:
+    """Persist future retry, retaining canonical claims and failed-unit identity."""
+    previous = status.get("provider_retry")
+    if previous is not None:
+        provider_retry_due(status)  # fail closed if checkpoint is invalid
+    same = (isinstance(previous, dict)
+            and previous["unit_id"] == chapter["unit_id"]
+            and previous["role"] == role)
+    attempts = (previous["attempts"] if same else 0) + 1
+    if attempts > 1000:
+        raise JobError("provider retry attempt counter overflow")
+    # Honour a provider-supplied numeric Retry-After, capped to one hour.
+    delay = min(MAX_BACKOFF_SECONDS, max(
+        MIN_BACKOFF_SECONDS, 60 * (2 ** min(attempts - 1, 6)),
+        failure.retry_after_seconds or 0))
+    status["provider_retry"] = {
+        "chapter": chapter["number"], "unit_id": chapter["unit_id"],
+        "role": role, "attempts": attempts, "code": failure.code,
+        "not_before": (datetime.now(timezone.utc)
+                       + timedelta(seconds=delay)).isoformat(),
+    }
+    status.update({"state": "running", "phase": "provider-backoff",
+                   "last_error": str(failure)[:350],
+                   "last_error_code": failure.code,
+                   "blocked_unit_id": chapter["unit_id"]})
+
+
+def complete_for_job(status: dict, role: str, system: str, user: str) -> str:
+    """Optional environment-only failover after repeated transient failures."""
+    route = role
+    retry = status.get("provider_retry")
+    active = status.get("active")
+    if (isinstance(retry, dict) and isinstance(active, dict)
+            and retry.get("chapter") == active.get("chapter")
+            and retry.get("role") == role.lower()
+            and type(retry.get("attempts")) is int
+            and retry["attempts"] >= FALLBACK_AFTER_TRANSIENTS
+            and os.environ.get(f"OMNIROUTE_{role}_FALLBACK_MODEL", "").strip()):
+        route = role + "_FALLBACK"
+    # A route name, not model ID or credential, is safe in metadata.
+    status["provider_model_route"] = "fallback" if route != role else "primary"
+    return complete(route, system, user)
+
+
+def canonical_translation_deferral_supported() -> bool:
+    """A book's pinned CLI owns admission; never emulate a missing operation."""
+    target = ROOT / "scripts" / "workflow" / "status_cli.py"
+    return target.is_file() and "def defer_translation_command(" in target.read_text("utf-8")
+
+
+def translator_model_output_code(error: ModelError, helper=None) -> str | None:
+    """Explicit allowlist; transport and unknown failures may never be skipped."""
+    if isinstance(error, TransientModelError):
+        return None
+    message = str(error)
+    if helper is not None:
+        for prefix in ("structural translator rejected model output: ",
+                       "structural translator repair rejected: "):
+            if message.startswith(prefix):
+                return helper.protocol_failure_code(message[len(prefix):])
+    if message in {
+        "translator must return a structured JSON response",
+        "translator response must contain translation, glossary, style_guide",
+        "empty chapter translation",
+    }:
+        return "invalid_translator_output"
+    if message in {
+        "pre-acceptance coverage gate detected probable missing source text",
+        "focused structural translator repair still omitted source text",
+        "structural translation omitted content and exhausted model budget",
+    }:
+        return "translation_coverage"
+    return None
+
+
+def defer_untranslated_unit(slug: str, chapter: dict,
+                            status: dict, error_code: str | None) -> bool:
+    """Delegate exact-source CAS to a compatible pinned canonical CLI only."""
+    if (not error_code or status.get("failures", 0) < MAX_FAILURES
+            or chapter.get("status") != "extracted"
+            or not canonical_translation_deferral_supported()):
+        return False
+    reason = ("model-coverage-exhausted" if error_code == "translation_coverage"
+              else "model-output-exhausted")
+    # The already released claim is checked again by the canonical CLI.
+    # Both source/translation evidence and current preflight are CAS-gated there.
+    cli("defer-translation", slug, str(chapter["number"]), "--reason", reason)
+    audit = status.setdefault("model_unit_deferral_audit", [])
+    audit.append({
+        "unit_id": chapter["unit_id"],
+        "reason": reason,
+        "error_code": error_code,
+        "at": clock(),
+        "action": "canonical-defer-untranslated-without-acceptance",
+    })
+    status["failures"] = 0
+    status["state"] = "running"
+    status["phase"] = "model-unit-deferred"
+    return True
 
 
 def external_link_only(source: str) -> bool:
@@ -728,6 +861,8 @@ def ready_jobs(limit: int = 6) -> list[dict]:
         keys.add(key)
         try:
             if state and state.get("state") in FINAL and not auto_resume_requested(state):
+                continue
+            if state and state.get("state") == "running" and not provider_retry_due(state):
                 continue
             if state and state.get("state") == "paused" and auto_mode(state["book_slug"]) != "auto":
                 continue
@@ -1526,7 +1661,7 @@ def process_structural_translation(job_id: str, slug: str, status: dict,
                        "phase": "model-call-reserved",
                        "prompt_context": prompt_context})
         checkpoint(job_id, status, slug)
-        answer = complete("TRANSLATOR", system, user)
+        answer = complete_for_job(status, "TRANSLATOR", system, user)
         try:
             translated, new_glossary, new_style = helper.parse_batch(
                 answer, [item["id"] for item in selected])
@@ -1554,8 +1689,8 @@ def process_structural_translation(job_id: str, slug: str, status: dict,
                 "execution_mode": "shared-structural-json-repair",
             }
             checkpoint(job_id, status, slug)
-            repaired = complete(
-                "TRANSLATOR", repair_system,
+            repaired = complete_for_job(
+                status, "TRANSLATOR", repair_system,
                 repair_user + "\nREJECTED STRUCTURAL OUTPUT:\n"
                 + helper.repair_guidance(focused, str(exc)))
             try:
@@ -1579,8 +1714,8 @@ def process_structural_translation(job_id: str, slug: str, status: dict,
             rejected = [item for item in selected if item["id"] in incomplete]
             repair_system, repair_user, _ = context(
                 engine, slug, chapter, "translator", structural_segments=rejected)
-            repaired = complete(
-                "TRANSLATOR", repair_system,
+            repaired = complete_for_job(
+                status, "TRANSLATOR", repair_system,
                 repair_user + "\nREJECTED SHORT TRANSLATION: Translate EVERY "
                 "sentence and preserve paragraph boundaries for the supplied "
                 "source span(s). Do not summarize or omit passages; return "
@@ -1767,7 +1902,7 @@ def process_correction_batches(job_id: str, slug: str, status: dict, engine: Pat
                        "phase": "model-call-reserved",
                        "prompt_context": prompt_context})
         checkpoint(job_id, status, slug)
-        answer = complete("CORRECTOR", system, user)
+        answer = complete_for_job(status, "CORRECTOR", system, user)
         try:
             patches, glossary, style = parse_correction_patches(
                 answer, selected, allow_partial=True)
@@ -1804,8 +1939,8 @@ def process_correction_batches(job_id: str, slug: str, status: dict, engine: Pat
                 "public_helper_revision": PUBLIC_CORRECTION_HELPER_REVISION,
             }
             checkpoint(job_id, status, slug)
-            repaired = complete(
-                "CORRECTOR", repair_system,
+            repaired = complete_for_job(
+                status, "CORRECTOR", repair_system,
                 repair_user + "\nREJECTED RESPONSE: Return ONLY one bounded "
                 "source-grounded correction intent for the exact finding(s) "
                 "below; never a whole chapter. The reviewer's source anchor "
@@ -2789,7 +2924,7 @@ def retry_reviewer_anchor_evidence(
     prompt_context["user_chars"] = len(repair_user)
     status["prompt_context"] = prompt_context
     checkpoint(job_id, status, slug)
-    return complete("REVIEWER", system, repair_user)
+    return complete_for_job(status, "REVIEWER", system, repair_user)
 
 
 def process_claim(job_id: str, slug: str, status: dict, engine: Path) -> None:
@@ -2932,7 +3067,7 @@ def process_claim(job_id: str, slug: str, status: dict, engine: Path) -> None:
             status["phase"] = "model-call-reserved"
             status["prompt_context"] = prompt_context
             checkpoint(job_id, status, slug)
-            answer = complete("REVIEWER" if role == "reviewer" else
+            answer = complete_for_job(status, "REVIEWER" if role == "reviewer" else
                               "CORRECTOR" if role == "corrector" else "TRANSLATOR",
                               system, user)
             if role == "reviewer":
@@ -2997,6 +3132,10 @@ def process_claim(job_id: str, slug: str, status: dict, engine: Path) -> None:
     except (ModelError, JobError) as exc:
         cli("release", slug, str(chapter["number"]), "--session-id", active["session_id"])
         status["active"] = None
+        if isinstance(exc, TransientModelError):
+            schedule_provider_retry(status, chapter, role, exc)
+            checkpoint(job_id, status, slug)
+            return
         if isinstance(exc, PatchAnchorMismatch):
             acceptance = chapter.get("translation_acceptance")
             status["last_patch_anchor_mismatch"] = {
@@ -3034,10 +3173,16 @@ def process_claim(job_id: str, slug: str, status: dict, engine: Path) -> None:
                     recoverable_code = structural_helper.protocol_failure_code(
                         str(exc)[len(prefix):])
                     break
+        if role == "translator" and isinstance(exc, ModelError):
+            recoverable_code = translator_model_output_code(exc, structural_helper)
         if recoverable_code:
             counters = status.setdefault("unit_protocol_failures", {})
             counters[unit_id] = counters.get(unit_id, 0) + 1
             status["last_error_code"] = recoverable_code
+        if role == "translator" and defer_untranslated_unit(
+                slug, chapter, status, recoverable_code):
+            checkpoint(job_id, status, slug)
+            return
         if defer_protocol_failed_unit(
                 slug, chapter, previous_record, status, recoverable_code):
             # Report the deferred issue and let canonical resume select the
@@ -3103,6 +3248,8 @@ def process_claim(job_id: str, slug: str, status: dict, engine: Path) -> None:
     status["prompt_context"] = prompt_context
     status.pop("blocked_unit_id", None)
     status.pop("last_error", None)
+    status.pop("provider_retry", None)
+    status.pop("provider_model_route", None)
     status["failures"] = 0
     checkpoint(job_id, status, slug)
 
@@ -3159,6 +3306,9 @@ def run(job_id: str, *, resume_blocked: bool = False,
     if resume_interrupted and (status is None or status.get("state") != "blocked"):
         raise JobError("interrupted recovery requires an existing blocked job")
     if status and status.get("state") in FINAL and not (resume_blocked or resume_interrupted):
+        return status
+    if (status and status.get("state") == "running" and
+            not provider_retry_due(status)):
         return status
     if (resume_blocked and (status.get("phase") not in
             {"model-blocked", "correction-limit-reached", "review-deferred-requires-operator"}
@@ -3425,7 +3575,11 @@ def publish_outputs(job_id: str, status: dict) -> None:
             print("artifact=" + status["artifact_path"], file=stream)
             print("continue_queue=true", file=stream)
         elif status["state"] == "running":
-            print("continue=true", file=stream)
+            if status.get("phase") == "provider-backoff":
+                # Scheduled scan will retry at/after the durable deadline.
+                print("continue_queue=true", file=stream)
+            else:
+                print("continue=true", file=stream)
         elif status["state"] in {"blocked", "paused"}:
             # Handed-off or blocked books must not spawn another Auto model call.
             # Selection skips paused books until ChatOps resumes their mode.
