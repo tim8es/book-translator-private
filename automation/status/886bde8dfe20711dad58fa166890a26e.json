@@ -3,9 +3,9 @@
   "job_id": "886bde8dfe20711dad58fa166890a26e",
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
   "source_sha256": "3a3fce78317162b68bc1e82501456a74a783cfc96cb2640c463f381866007865",
-  "state": "blocked",
-  "phase": "model-blocked",
-  "failures": 3,
+  "state": "running",
+  "phase": "operator-resume-authorized",
+  "failures": 0,
   "correction_rounds": {
     "chapter-000002": 1,
     "chapter-000003": 1,
@@ -20,7 +20,7 @@
     "chapter-000026": 3
   },
   "workflow_revision": "ea9963ca546b7cc7f6aba4dc5350fa19ea7da862",
-  "updated_at": "2026-11-13T10:51:44.251656+00:00",
+  "updated_at": "2026-11-13T11:32:11.368166+00:00",
   "active": null,
   "model_calls_started": 158,
   "memory_glossary_saved": 110,
@@ -158,6 +158,11 @@
       "action": "resume-model-blocked",
       "approved_at": "2026-11-13T10:38:10.675054+00:00",
       "previous_error": "Chapter 27 still has unresolved review findings; previous 45 PASS records and 49 accepted translation artifacts are carried forward under a hash-bound historical bridge. No auto-translation has been launched."
+    },
+    {
+      "action": "resume-model-blocked",
+      "approved_at": "2026-11-13T11:32:11.368144+00:00",
+      "previous_error": "reviewer evidence is invalid: findings[5].translation_anchor: quoted passage occurrence 0 is absent from the current artifact"
     }
   ],
   "recovery_note": "Audit-preserving workflow upgrade to ea9963c; retained old reviewer sessions and 104 ledger records. 45 old PASS outcomes may be reused only if exact hashes match. Four translated and two extracted units remain. Glossary consistency findings remain unresolved.",
@@ -191,5 +196,5 @@
   "structural_helper_revision": "a9f85b68fcc062185c891202c5823a5838a717a0",
   "blocked_unit_id": "chapter-000022",
   "workflow_upgrade_audit": "books/a-home-in-you-a-mm-small-town-stepbrother-romance/.workflow/audits/2026-11-13-workflow-upgrade.json",
-  "last_error": "reviewer evidence is invalid: findings[5].translation_anchor: quoted passage occurrence 0 is absent from the current artifact"
+  "last_error": null
 }
