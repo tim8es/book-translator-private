@@ -79,9 +79,14 @@ class WorkflowEpicCloseoutContractTests(unittest.TestCase):
                     "3632331e95dc9392caabf762e8732ad5c80b7ad0",
                     source,
                 )
-                self.assertIn("contents: read", source)
-                self.assertNotIn("contents: write", source)
-                self.assertNotIn("  push:", source)
+                self.assertIn("permissions:\\n  contents: read".replace("\\n", "\n"), source)
+                # A public book-state repository may write *only* in the
+                # explicitly gated final publication job. The private
+                # reusable workflow caller retains read-only top-level scope.
+                self.assertIn("    if: \${{ github.event.repository.private == false }}".replace("\\$", "$"), source)
+                self.assertIn("    permissions:\\n      contents: write".replace("\\n", "\n"), source)
+                self.assertIn("  push:", source)
+                self.assertIn("'books/*/.workflow/final-build-request.json'", source)
                 self.assertNotIn("  schedule:", source)
                 self.assertNotIn("secrets:", source)
                 continue
