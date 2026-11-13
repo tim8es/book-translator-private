@@ -4,7 +4,7 @@
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
   "source_sha256": "3a3fce78317162b68bc1e82501456a74a783cfc96cb2640c463f381866007865",
   "state": "running",
-  "phase": "translator-completed",
+  "phase": "operator-reviewed-reopen-applied",
   "failures": 0,
   "correction_rounds": {
     "chapter-000002": 1,
@@ -22,7 +22,7 @@
     "chapter-000028": 3
   },
   "workflow_revision": "ea9963ca546b7cc7f6aba4dc5350fa19ea7da862",
-  "updated_at": "2026-11-13T14:06:23.990070+00:00",
+  "updated_at": "2026-11-13T14:08:28.182685+00:00",
   "active": null,
   "model_calls_started": 201,
   "memory_glossary_saved": 110,
@@ -179,11 +179,7 @@
   "correction_extensions": {
     "chapter-000025": 1
   },
-  "deferred_review_units": [
-    "chapter-000022",
-    "chapter-000024",
-    "chapter-000025"
-  ],
+  "deferred_review_units": [],
   "patch_deferral_audit": [
     {
       "unit_id": "chapter-000024",
@@ -203,5 +199,56 @@
     }
   ],
   "structural_helper_revision": "a9f85b68fcc062185c891202c5823a5838a717a0",
-  "workflow_upgrade_audit": "books/a-home-in-you-a-mm-small-town-stepbrother-romance/.workflow/audits/2026-11-13-workflow-upgrade.json"
+  "workflow_upgrade_audit": "books/a-home-in-you-a-mm-small-town-stepbrother-romance/.workflow/audits/2026-11-13-workflow-upgrade.json",
+  "operator_review_limits": {
+    "chapter-000022": 16,
+    "chapter-000024": 16,
+    "chapter-000025": 16,
+    "chapter-000027": 16,
+    "chapter-000028": 16
+  },
+  "operator_correction_limits": {
+    "chapter-000022": 12,
+    "chapter-000024": 12,
+    "chapter-000025": 12,
+    "chapter-000027": 12,
+    "chapter-000028": 12
+  },
+  "operator_reopen_manifest_sha256": "259538b1a9b8c860634a1021a0cc0aedcc3468ecf3401d2c636d051781ee04a5",
+  "operator_recovery_audit": [
+    {
+      "at": "2026-11-13T14:08:28.182493+00:00",
+      "manifest_sha256": "259538b1a9b8c860634a1021a0cc0aedcc3468ecf3401d2c636d051781ee04a5",
+      "action": "reopen-current-rejected-review",
+      "evidence": [
+        {
+          "unit_id": "chapter-000022",
+          "record_id": "8e772e38feef46c9835e2db8ceb8807b",
+          "translation_sha256": "3e4ca0f9b598a483bdfe6385271a16adf611dd5d1b4607a8877886a1b6892597"
+        },
+        {
+          "unit_id": "chapter-000024",
+          "record_id": "0f67467f0a254df78259450089d6315f",
+          "translation_sha256": "9a47f795b2e1046255b0a52a1629eb505d6b77d8fd090f8a1cd19db85592178b"
+        },
+        {
+          "unit_id": "chapter-000025",
+          "record_id": "ff088dd186544b869a363413f8d62fdf",
+          "translation_sha256": "e175835765d9030e9e9f0b3705c66435b484869b7233e3997b8035431cc48375"
+        },
+        {
+          "unit_id": "chapter-000027",
+          "record_id": "ce6c33ba2f364ac38584b4efcedb9bda",
+          "translation_sha256": "0128e3d5d69df120154de0f377fa03e75e13b6ebe419ec69cae7306d3cd1df80"
+        },
+        {
+          "unit_id": "chapter-000028",
+          "record_id": "df5d1a7a7ae349e8bf5a0b83f3fece3d",
+          "translation_sha256": "41b862fbe3deb41e2fba5b4b0c8d10b7ffd8b851f71c49c3583aeffd2f21cc69"
+        }
+      ],
+      "review_limit": 16,
+      "correction_limit": 12
+    }
+  ]
 }
