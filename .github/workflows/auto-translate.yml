@@ -138,6 +138,12 @@ jobs:
           JOB_ID: ${{ matrix.job_id }}
         run: gh workflow run auto-translate.yml --ref main -f job_id="$JOB_ID"
 
+      - name: Surface blocked book status as an Action failure
+        if: steps.run.outputs.blocked == 'true'
+        run: |
+          echo "::error::Book automation checkpoint is blocked; inspect durable status."
+          exit 1
+
       - name: Wake n8n delivery after a terminal job state
         if: always() && matrix.job_id != '' && (steps.run.outcome != 'success' || steps.run.outputs.done == 'true' || steps.run.outputs.continue_queue == 'true')
         continue-on-error: true
