@@ -33,13 +33,34 @@ class FakePublicHelper:
                 if entry["id"] not in completed][:limit]
 
     def parse_batch(self, answer, expected):
-        data = json.loads(answer)
+        try:
+            data = json.loads(answer)
+        except ValueError as exc:
+            raise ValueError("structural translator must return JSON") from exc
         result = {}
         for entry in data["segments"]:
             if entry["id"] not in expected or entry["id"] in result:
-                raise ValueError("unexpected segment ID")
+                raise ValueError("unknown or duplicate translation segment")
             result[entry["id"]] = entry["translation"]
         return result, data["glossary"], data["style_guide"]
+
+    @staticmethod
+    def protocol_failure_code(error):
+        return {
+            "structural translator must return JSON": "json_invalid",
+            "unknown or duplicate translation segment": "invalid_segment_id",
+        }.get(error)
+
+    @staticmethod
+    def repair_guidance(selected, error):
+        return json.dumps({
+            "required_segment_id": selected[0]["id"],
+            "previous_response_rejected": error,
+        })
+
+    @staticmethod
+    def coverage_alert(source, translated):
+        return False
 
     def render(self, plan, completed):
         if len(completed) != len(self.spans(plan)):
@@ -181,6 +202,49 @@ class PublicHelperBridgeTests(unittest.TestCase):
                          r"^[0-9a-f]{40}$")
         self.assertEqual(worker.STRUCTURAL_MODEL_CALLS_PER_CHECKPOINT, 2)
         self.assertEqual(worker.STRUCTURAL_MODEL_SEGMENTS_PER_CALL, 3)
+
+
+
+    def test_invalid_json_gets_one_durable_focused_repair_and_single_span_mode(self):
+        requests = []
+
+        def model(_role, _system, user):
+            original = user.split("\nREJECTED STRUCTURAL OUTPUT:")[0]
+            selected = json.loads(original)
+            requests.append([item["id"] for item in selected])
+            if len(requests) == 1:
+                return "not JSON"
+            return json.dumps({
+                "segments": [{"id": item["id"], "translation": "Перевод " + item["id"]}
+                             for item in selected],
+                "glossary": [], "style_guide": [],
+            }, ensure_ascii=False)
+
+        outcome, calls, checkpoints = self.once(complete=model)
+        self.assertIsNone(outcome)
+        self.assertEqual((calls, checkpoints), (3, 6))
+        self.assertEqual(requests, [
+            ["s00001", "s00002", "s00003"], ["s00001"], ["s00002"],
+        ])
+        self.assertEqual(self.status["model_calls_started"], 3)
+        self.assertEqual(self.status["structural_protocol_fallback_units"][
+            self.chapter["unit_id"]], self.plan["source_sha256"])
+        staged = self.book / ".workflow/auto-structural-translation/chapter-000001.json"
+        self.assertEqual(set(json.loads(staged.read_text("utf-8"))["segments"]),
+                         {"s00001", "s00002"})
+        self.assertFalse((self.book / "translated/001.md").exists())
+
+    def test_transport_error_is_not_reinterpreted_as_json_repair(self):
+        with self.assertRaisesRegex(ModelError, "transport"):
+            self.once(complete=lambda *_: (_ for _ in ()).throw(
+                ModelError("model transport timeout or connection failure")))
+        self.assertEqual(self.status["model_calls_started"], 1)
+        self.assertNotIn("structural_protocol_fallback_units", self.status)
+
+    def test_large_truncated_candidate_is_detected_before_acceptance(self):
+        source = ("Long source paragraph with many important details. " * 4 + "\n\n") * 30
+        missing = ("Пропущенная часть.\n\n") * 8
+        self.assertTrue(worker.suspicious_translation_coverage(source, missing))
 
 
 if __name__ == "__main__":
