@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "book_slug": "nightingale-bad",
+  "workflow_revision": "effd537cb20d42e0077ebe8760cb794fdb84fd0f",
+  "chapter": 3,
+  "request_id": "f471a1628a66472aafdb82d6121a7c44",
+  "operation": "review-record",
+  "session_id": "chat-manual-night-review-20261113-03",
+  "outcome": "PASS",
+  "quality_report": {
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "severity": "minor",
+        "detail": "Corrections checked against source: participant's grammatical gender, idiomatic phrasing of eggs question, butter-yellow color, weeknight rhythm.",
+        "resolved": true
+      }
+    ]
+  },
+  "source_sha256": "166cbc93218e13f56787124576fda190a3074bea60e0ee23b0863196b5092b0d",
+  "translation_sha256": "b275cd13a45d9369a69b3b8a44928924d80b5ac6139c71201204c9e5fb943b18",
+  "claim_sha256": "f31c31a7565d1f357b3e223ce74bf81a3dca2f1ab16fcfb40670e1b10981eb00"
+}
