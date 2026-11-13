@@ -532,7 +532,8 @@ class LiteraryContextTests(unittest.TestCase):
             with patch.object(runner, "ROOT", root), patch.object(
                 runner, "git", return_value="a" * 40), patch.object(
                 runner, "cli") as cli, patch.object(runner, "checkpoint"):
-                runner.claim("f" * 32, "test", status, "translator",\n                             {"number": 1, "unit_id": "chapter-000001"})
+                runner.claim("f" * 32, "test", status, "translator",
+                             {"number": 1, "unit_id": "chapter-000001"})
             self.assertNotIn("last_error", status)
             args = cli.call_args.args
             self.assertIn("--base-commit", args)
