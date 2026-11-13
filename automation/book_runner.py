@@ -198,7 +198,19 @@ def complete_for_job(status: dict, role: str, system: str, user: str) -> str:
         route = role + "_FALLBACK"
     # A route name, not model ID or credential, is safe in metadata.
     status["provider_model_route"] = "fallback" if route != role else "primary"
-    return complete(route, system, user)
+    status.pop("model_response_diagnostics", None)
+    answer = complete(route, system, user)
+    # The transport returns string-compatible output and optional safe
+    # metadata. Diagnostics must never contain source text or credentials.
+    diagnostics = getattr(answer, "diagnostics", None)
+    if isinstance(diagnostics, dict):
+        status["model_response_diagnostics"] = {
+            **diagnostics,
+            "route": status["provider_model_route"],
+            "role": role.lower(),
+            "unit_id": active.get("unit_id") if isinstance(active, dict) else None,
+        }
+    return answer
 
 
 def canonical_translation_deferral_supported() -> bool:
@@ -230,6 +242,18 @@ def translator_model_output_code(error: ModelError, helper=None) -> str | None:
     }:
         return "translation_coverage"
     return None
+
+
+def corrector_structural_output_code(role: str, plan: dict | None,
+                                   error: ModelError, helper) -> str | None:
+    """Classify model output from a corrector's full-coverage retranslation.
+
+    Unlike patch corrections, this executes the Translator JSON and coverage
+    protocol. Never classify provider/transport errors as skippable output.
+    """
+    if role != "corrector" or plan is None or not isinstance(error, ModelError):
+        return None
+    return translator_model_output_code(error, helper)
 
 
 def defer_untranslated_unit(slug: str, chapter: dict,
@@ -2568,7 +2592,11 @@ def context(engine: Path, slug: str, chapter: dict, role: str,
     previous = ""
     if index and chapters[index - 1]["status"] == "reviewed" and role in {"translator", "reviewer"}:
         prior = book / chapters[index - 1]["translation_path"]
-        previous = prior.read_text("utf-8")[-10000:]
+        # A source-bounded structural span does not need 10k characters of
+        # the preceding chapter on every call. Preserve enough local voice
+        # context while keeping the current source and full style rules intact.
+        prior_budget = 2400 if structural_segments is not None else 10000
+        previous = prior.read_text("utf-8")[-prior_budget:]
     metadata = read_json(book / "metadata.json")
     book_context = {key: metadata[key] for key in
                     ("title", "author", "source_language", "target_language")
@@ -3176,21 +3204,22 @@ def process_claim(job_id: str, slug: str, status: dict, engine: Path) -> None:
                 recoverable_code = "invalid_typed_repair"
         elif (role == "corrector" and structural_plan is not None
               and isinstance(exc, ModelError)):
-            # Only a rejected model output on a hash-current, independently
-            # rejected translation may enter the canonical needs-attention
-            # queue. Transport and source-integrity failures cannot.
-            for prefix in ("structural translator rejected model output: ",
-                           "structural translator repair rejected: "):
-                if str(exc).startswith(prefix):
-                    recoverable_code = structural_helper.protocol_failure_code(
-                        str(exc)[len(prefix):])
-                    break
+            # Retranslating a rejected, incomplete artifact still uses the
+            # translator's structural/coverage protocol. A truncated span
+            # must count towards safe failover and canonical review deferral,
+            # not be mistaken for a non-recoverable corrector failure.
+            recoverable_code = corrector_structural_output_code(
+                role, structural_plan, exc, structural_helper)
         if role == "translator" and isinstance(exc, ModelError):
             recoverable_code = translator_model_output_code(exc, structural_helper)
         if recoverable_code:
             counters = status.setdefault("unit_protocol_failures", {})
             counters[unit_id] = counters.get(unit_id, 0) + 1
             status["last_error_code"] = recoverable_code
+        else:
+            # A stale code from a prior rejected JSON response is not
+            # evidence of the current failure's classification.
+            status.pop("last_error_code", None)
         if role == "translator" and defer_untranslated_unit(
                 slug, chapter, status, recoverable_code):
             checkpoint(job_id, status, slug)

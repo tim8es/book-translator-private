@@ -227,6 +227,40 @@ class LiteraryContextTests(unittest.TestCase):
             self.assertIn("short clauses", user)
             self.assertEqual(original, "Mara walked home.")
 
+    def test_structural_span_binds_short_prior_context_without_losing_source(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            engine = self.engine(root)
+            book = root / "books" / "test"
+            (book / "extracted").mkdir(parents=True)
+            (book / "translated").mkdir()
+            previous = {"unit_id": "chapter-000001", "status": "reviewed",
+                        "source_path": "extracted/one.md",
+                        "translation_path": "translated/one.md"}
+            current = {"unit_id": "chapter-000002", "status": "extracted",
+                       "source_path": "extracted/two.md",
+                       "translation_path": "translated/two.md"}
+            source = "Mara walked home."
+            (book / "extracted" / "two.md").write_text(source, encoding="utf-8")
+            prior = "OLDER_CONTEXT" + "X" * 6000 + "RECENT_CONTEXT" + "Y" * 1500
+            (book / "translated" / "one.md").write_text(prior, encoding="utf-8")
+            (book / "metadata.json").write_text(
+                '{"target_language":"ru", "source_language":"en"}', encoding="utf-8")
+            (book / "glossary.md").write_text("Mara = Мара", encoding="utf-8")
+            (book / "style-guide.md").write_text("restrained", encoding="utf-8")
+            with patch.object(runner, "ROOT", root), patch.object(
+                    runner, "chapter_data", return_value=({}, {}, [previous, current])):
+                _system, bounded, original = runner.context(
+                    engine, "test", current, "translator",
+                    structural_segments=[{"id": "s00001", "source": source}])
+                _system, full, _ = runner.context(engine, "test", current, "translator")
+            self.assertEqual(original, source)
+            self.assertIn(source, bounded)
+            self.assertIn("RECENT_CONTEXT", bounded)
+            self.assertNotIn("OLDER_CONTEXT", bounded)
+            self.assertIn("OLDER_CONTEXT", full)
+            self.assertLess(len(bounded), len(full) - 4000)
+
     def test_reviewer_recheck_prompt_has_explicit_json_resolves_example(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

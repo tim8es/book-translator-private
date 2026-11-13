@@ -15,6 +15,15 @@ class ModelError(RuntimeError):
     pass
 
 
+class CompletionText(str):
+    """String-compatible chat output with non-sensitive transport diagnostics."""
+
+    def __new__(cls, value: str, diagnostics: dict):
+        obj = super().__new__(cls, value)
+        obj.diagnostics = diagnostics
+        return obj
+
+
 class TransientModelError(ModelError):
     """Recoverable HTTP/transport outage; never an invalid model output."""
 
@@ -73,14 +82,30 @@ def complete(role: str, system: str, user: str) -> str:
         choice = payload["choices"][0]
         reason = choice.get("finish_reason")
         if reason in {"length", "content_filter"}:
-            raise ModelError("model output incomplete or filtered")
+            # Keep the finish reason without recording the rejected response.
+            raise ModelError("model output incomplete or filtered: " + reason)
         answer = choice["message"]["content"]
         if isinstance(answer, list):
             answer = "".join(part.get("text", "") for part in answer
                              if isinstance(part, dict))
         if not isinstance(answer, str) or not answer.strip():
             raise ModelError("model returned empty content")
-        return answer.strip() + "\n"
+        usage = payload.get("usage")
+        usage = usage if isinstance(usage, dict) else {}
+        diagnostics = {
+            "finish_reason": (reason if reason in {"stop", "length", "content_filter"}
+                              else "other"),
+            "response_format": "json_object",
+            "response_chars": len(answer),
+            "provider_refusal": bool(choice["message"].get("refusal")),
+        }
+        # A provider may omit usage. Persist only bounded counts, never the
+        # prompt, response body, provider model ID, URL or authorization data.
+        for field in ("prompt_tokens", "completion_tokens", "total_tokens"):
+            value = usage.get(field)
+            if type(value) is int and 0 <= value <= 1_000_000_000:
+                diagnostics[field] = value
+        return CompletionText(answer.strip() + "\n", diagnostics)
     except HTTPError as exc:
         if exc.code in {408, 429, 500, 502, 503, 504}:
             delay = exc.headers.get("Retry-After") if exc.headers else None

@@ -66,6 +66,34 @@ revision without canonical `defer-translation` cannot gain that transition via
 an Auto adapter: it continues to fail closed until an explicit, audited
 revision migration. No automatic migration or acceptance is performed.
 
+### OmniRoute JSON-mode compatibility and diagnostics
+
+The adapter requests `response_format: {"type":"json_object"}` from
+`/chat/completions`. A JSON-only API key or upstream route must actually
+honor this format; the key setting alone does not validate the translation
+protocol, semantic coverage or support for strict JSON Schema. The reusable
+`omniroute-json-smoke.yml` workflow checks the configured translator model
+using one synthetic JSON object. It runs once when the smoke workflow file is
+merged to `main`, and can later be launched manually; it never sends book
+content or prints the API key, provider URL, model identifier or response text.
+A successful smoke confirms only basic JSON API interoperability.
+
+A successful provider response can expose `model_response_diagnostics` in
+book status with `finish_reason`, `response_format`, output character count,
+provider refusal flag and token usage if available, alongside unit, role and
+primary/fallback route. The response body and credentials are never logged
+to the status file. Rejected truncated/filtered responses report only a
+sanitized finish reason. An absent usage field means the provider did not
+return it, not that it used zero tokens.
+
+When a translated unit is being fully retranslated after a completeness
+alarm, the corrector uses the Translator structural protocol. Its missing-
+coverage and invalid-JSON errors now contribute to the same per-unit
+recovery/fallback counter and, after bounded attempts, may be moved to the
+pinned canonical `defer-review` queue if the unchanged artifact has a current,
+independent rejected review. The existing translation remains unapproved.
+Unknown failures, invalid source, and provider outages cannot be deferred.
+
 Review actual provider compatibility before enabling a paid workload. This
 implementation uses POST /chat/completions and does not automate a ChatGPT web
 subscription. Ensure GitHub Actions can write to main; branch protections that

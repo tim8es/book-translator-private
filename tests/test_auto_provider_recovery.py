@@ -3,6 +3,8 @@ from __future__ import annotations
 
 import json
 import os
+from contextlib import nullcontext
+from io import BytesIO
 import sys
 import tempfile
 import unittest
@@ -31,6 +33,60 @@ class ProviderRecoveryTests(unittest.TestCase):
             "OMNIROUTE_TRANSLATOR_MODEL": "test-primary",
             "OMNIROUTE_TRANSLATOR_FALLBACK_MODEL": "test-backup",
         }
+
+    def test_json_object_transport_accepts_json_key_mode_and_records_only_counts(self):
+        payload = {
+            "choices": [{"finish_reason": "stop",
+                         "message": {"content": '{"probe":"ok"}'}}],
+            "usage": {"prompt_tokens": 60, "completion_tokens": 12,
+                      "total_tokens": 72},
+            "model": "private-model-identifier",
+        }
+        body = json.dumps(payload).encode("utf-8")
+        with patch.dict(os.environ, self.env), \
+             patch("omniroute.urlopen", return_value=nullcontext(BytesIO(body))) as post:
+            answer = complete("TRANSLATOR", "system", "probe")
+        self.assertEqual(json.loads(answer), {"probe": "ok"})
+        outgoing = json.loads(post.call_args.args[0].data)
+        self.assertEqual(outgoing["response_format"], {"type": "json_object"})
+        self.assertEqual(answer.diagnostics["finish_reason"], "stop")
+        self.assertEqual(answer.diagnostics["response_format"], "json_object")
+        self.assertEqual(answer.diagnostics["prompt_tokens"], 60)
+        self.assertEqual(answer.diagnostics["completion_tokens"], 12)
+        self.assertEqual(answer.diagnostics["total_tokens"], 72)
+        self.assertEqual(answer.diagnostics["response_chars"], len('{"probe":"ok"}'))
+        self.assertNotIn("model", answer.diagnostics)
+        self.assertNotIn("probe", json.dumps(answer.diagnostics))
+        self.assertNotIn("test-token", repr(answer.diagnostics))
+
+    def test_provider_length_rejection_is_explicit_but_no_text_leaks(self):
+        payload = {"choices": [{"finish_reason": "length",
+                                "message": {"content": "private text"}}]}
+        with patch.dict(os.environ, self.env), \
+             patch("omniroute.urlopen", return_value=nullcontext(
+                 BytesIO(json.dumps(payload).encode("utf-8")))):
+            with self.assertRaisesRegex(ModelError, "length") as error:
+                complete("TRANSLATOR", "system", "probe")
+        self.assertNotIn("private text", str(error.exception))
+
+    def test_safe_response_diagnostics_persist_with_current_unit_and_route(self):
+        self.status["active"]["unit_id"] = self.chapter["unit_id"]
+        class DiagnosticText(str):
+            diagnostics = {"finish_reason": "stop", "response_format": "json_object",
+                           "response_chars": 14, "completion_tokens": 12}
+        with patch.dict(os.environ, self.env), \
+             patch.object(worker, "complete", return_value=DiagnosticText('{"probe":"ok"}')):
+            worker.complete_for_job(self.status, "TRANSLATOR", "system", "probe")
+        recorded = self.status["model_response_diagnostics"]
+        self.assertEqual(recorded["role"], "translator")
+        self.assertEqual(recorded["unit_id"], self.chapter["unit_id"])
+        self.assertEqual(recorded["route"], "primary")
+        self.assertEqual(recorded["completion_tokens"], 12)
+        with patch.dict(os.environ, self.env), \
+             patch.object(worker, "complete", side_effect=ModelError("bad reply")):
+            with self.assertRaises(ModelError):
+                worker.complete_for_job(self.status, "TRANSLATOR", "system", "probe")
+        self.assertNotIn("model_response_diagnostics", self.status)
 
     def test_http_429_is_one_classified_request_with_retry_after(self):
         error = HTTPError("https://model.example/v1/chat/completions",
@@ -151,6 +207,49 @@ class ProviderRecoveryTests(unittest.TestCase):
         ):
             self.assertEqual(worker.translator_model_output_code(
                 ModelError(message)), expected)
+
+    def test_corrector_structural_coverage_failures_are_recoverable(self):
+        for message, expected in (
+            ("focused structural translator repair still omitted source text",
+             "translation_coverage"),
+            ("pre-acceptance coverage gate detected probable missing source text",
+             "translation_coverage"),
+            ("structural translation omitted content and exhausted model budget",
+             "translation_coverage"),
+            ("model HTTP status 404", None),
+            ("model response is not a valid chat completion", None),
+        ):
+            self.assertEqual(worker.corrector_structural_output_code(
+                "corrector", {}, ModelError(message), None), expected)
+        self.assertIsNone(worker.corrector_structural_output_code(
+            "reviewer", {}, ModelError("focused structural translator repair still omitted source text"), None))
+        self.assertIsNone(worker.corrector_structural_output_code(
+            "corrector", None, ModelError("focused structural translator repair still omitted source text"), None))
+        self.assertIsNone(worker.corrector_structural_output_code(
+            "corrector", {}, TransientModelError("timeout", code="transport"), None))
+
+    def test_corrector_coverage_can_defer_only_a_current_rejected_artifact(self):
+        chapter = {**self.chapter, "status": "translated",
+                   "translation_acceptance": {"source_sha256": "s" * 64,
+                                              "translation_sha256": "t" * 64}}
+        record = {"outcome": "CORRECTIONS_REQUIRED", "source_sha256": "s" * 64,
+                  "translation_sha256": "t" * 64, "record_id": "record-1"}
+        self.status["failures"] = worker.MAX_FAILURES
+        with patch.object(worker, "cli", return_value="ok") as cli:
+            self.assertTrue(worker.defer_protocol_failed_unit(
+                "synthetic-book", chapter, record,
+                self.status, "translation_coverage"))
+        cli.assert_called_once_with(
+            "defer-review", "synthetic-book", "1", "--reason",
+            "operator-attention")
+        self.assertEqual(self.status["state"], "running")
+        self.assertEqual(self.status["phase"], "model-unit-deferred")
+        self.assertNotIn("PASS", repr(self.status))
+        with patch.object(worker, "cli") as cli:
+            self.assertFalse(worker.defer_protocol_failed_unit(
+                "synthetic-book", chapter, record,
+                {**self.status, "failures": 3}, None))
+            cli.assert_not_called()
 
     def test_translation_deferral_requires_canonical_supported_contract(self):
         self.status["failures"] = worker.MAX_FAILURES
