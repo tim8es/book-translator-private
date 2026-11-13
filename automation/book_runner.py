@@ -2297,7 +2297,7 @@ def reviewer_anchor_feedback(report: dict, source: str, translation: str) -> lis
 
 def retry_reviewer_anchor_evidence(
         job_id: str, slug: str, status: dict, prompt_context: dict,
-        system: str, user: str, answer: str, failure: ReviewerAnchorMismatch,
+        system: str, user: str, answer: str, failure: ModelError,
         source: str, translation: bytes) -> str:
     """One claimed, pre-reserved repair call; never loosen evidence admission."""
     if len(answer) > 64000:
@@ -2305,10 +2305,18 @@ def retry_reviewer_anchor_evidence(
     calls = status.get("model_calls_started", 0)
     if type(calls) is not int or calls < 0 or calls >= model_call_limit():
         raise failure
-    hints = reviewer_anchor_feedback(failure.report, source, translation.decode("utf-8"))
+    is_anchor_error = isinstance(failure, ReviewerAnchorMismatch)
+    hints = (reviewer_anchor_feedback(failure.report, source, translation.decode("utf-8"))
+             if is_anchor_error else [])
+    heading = ("EXACT-CITATION" if is_anchor_error else "JSON-SCHEMA / REVIEW-EVIDENCE")
     repair_user = (
         user +
-        "\n\nREJECTED REVIEW — EXACT-CITATION REPAIR (ONE ATTEMPT):\n"
+        "\n\nREJECTED REVIEW — " + heading + " REPAIR (ONE ATTEMPT):\n"
+        "Return ONLY a valid JSON object with exactly evidence_version, outcome, "
+        "checks, findings, style_guide. evidence_version must equal 2; "
+        "outcome must be PASS or CORRECTIONS_REQUIRED. Each finding must carry "
+        "id, category, severity, detail, resolved, source_anchor, "
+        "translation_anchor, resolves; checks must contain all five categories.\n"
         "Your previous report was rejected and was NOT recorded. Inspect the "
         "current source and accepted translation above again. Every finding "
         "must be genuinely source-grounded; remove unsupported NEW findings. "
@@ -2328,8 +2336,12 @@ def retry_reviewer_anchor_evidence(
     )
     # Each additional paid invocation is durably reserved before the call.
     status["model_calls_started"] = calls + 1
-    status["phase"] = "review-anchor-repair-reserved"
-    prompt_context["anchor_repair"] = "exact-quote-validation"
+    status["phase"] = ("review-anchor-repair-reserved" if is_anchor_error
+                       else "review-schema-repair-reserved")
+    if is_anchor_error:
+        prompt_context["anchor_repair"] = "exact-quote-validation"
+    else:
+        prompt_context["schema_repair"] = "review-report-validation"
     prompt_context["user_chars"] = len(repair_user)
     status["prompt_context"] = prompt_context
     checkpoint(job_id, status, slug)
@@ -2475,7 +2487,16 @@ def process_claim(job_id: str, slug: str, status: dict, engine: Path) -> None:
                         answer, review_context=review_context, source=source,
                         translation=translation_bytes, previous_record=previous_record,
                         claim=owned)
-                except ReviewerAnchorMismatch as exc:
+                except ModelError as exc:
+                    # Provider/transport failures happen outside this parse/verify
+                    # block and never trigger an extra paid call. Repair only a
+                    # rejected report, not an infrastructure failure.
+                    if not isinstance(exc, ReviewerAnchorMismatch) and not str(exc).startswith((
+                            "reviewer must return JSON",
+                            "reviewer response has invalid literary memory schema",
+                            "automatic reviewer must return anchored v2 evidence",
+                            "reviewer evidence is invalid:")):
+                        raise
                     repaired = retry_reviewer_anchor_evidence(
                         job_id, slug, status, prompt_context, system, user, answer,
                         exc, source, translation_bytes)
