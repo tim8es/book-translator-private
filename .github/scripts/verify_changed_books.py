@@ -65,6 +65,8 @@ def _canonical_check_target(root, book, slug):
         raise RuntimeError("book's pinned public workflow revision is unavailable")
     (engine / "books").mkdir(exist_ok=True)
     (engine / "books" / slug).symlink_to(book.resolve(), target_is_directory=True)
+    print(f"Using pinned public workflow {revision[:12]} for books/{slug}; "
+          f"bridge support={(engine / 'scripts/workflow/upgrade_evidence.py').is_file()}")
     (engine / ".book-translator-install.json").write_text(json.dumps({
         "schema_version": 1,
         "canonical_repository": "https://github.com/tim8es/book-translator",
@@ -137,7 +139,7 @@ def verify_changed_books(paths, root=ROOT, run_canonical=True):
                     if result.returncode:
                         errors.append(
                             f"books/{slug}: {' '.join(command[1:])} failed: "
-                            f"{(result.stdout + result.stderr)[-2000:]}"
+                            f"{(result.stdout + result.stderr)[:9000]}"
                         )
                     else:
                         print(f"PASS: books/{slug} {' '.join(command[1:])}")
