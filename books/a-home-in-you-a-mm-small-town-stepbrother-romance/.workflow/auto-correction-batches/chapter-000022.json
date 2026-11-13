@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "unit_id": "chapter-000022",
+  "review_record_id": "85df217d5c8c4af5a285caf0e0fae5bf",
+  "source_sha256": "0597bc9de058f1acff07f60dd5e132d7ec2306b50edb043b5dbaab0190059cdf",
+  "translation_sha256": "b1cf5e3fd6b039cecb01577591abf72d9ffc700216ccb2a664704e8d66ef61d5",
+  "workflow_revision": "ea9963ca546b7cc7f6aba4dc5350fa19ea7da862",
+  "patches": [
+    {
+      "finding_id": "recheck-terminology-1-current",
+      "operation": "replace",
+      "target_anchor": {
+        "quote": "Cade стукнул меня кулаком по руке.",
+        "occurrence": 0
+      },
+      "replacement": "Кейд стукнул меня кулаком по руке."
+    },
+    {
+      "finding_id": "meaning-bluff-1",
+      "operation": "replace",
+      "target_anchor": {
+        "quote": "Зелёные глаза Darren сузились. Я проверял его искренность, а Cade стоял в стороне и наблюдал за происходящим.",
+        "occurrence": 0
+      },
+      "replacement": "Зелёные глаза Даррена сузились, словно он раскусил мой блеф, а Кейд стоял в стороне и наблюдал за происходящим."
+    },
+    {
+      "finding_id": "register-chicken-shit-1",
+      "operation": "replace",
+      "target_anchor": {
+        "quote": "Я только трусил сказать об этом.",
+        "occurrence": 0
+      },
+      "replacement": "Я просто зассал хоть что-нибудь сказать."
+    }
+  ],
+  "glossary": [],
+  "style_guide": []
+}
