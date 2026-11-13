@@ -4,7 +4,7 @@
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
   "source_sha256": "3a3fce78317162b68bc1e82501456a74a783cfc96cb2640c463f381866007865",
   "state": "running",
-  "phase": "correction-batch-staged",
+  "phase": "corrector-completed",
   "failures": 0,
   "correction_rounds": {
     "chapter-000002": 1,
@@ -20,15 +20,11 @@
     "chapter-000026": 3,
     "chapter-000027": 2,
     "chapter-000028": 3,
-    "chapter-000022": 5
+    "chapter-000022": 6
   },
   "workflow_revision": "ea9963ca546b7cc7f6aba4dc5350fa19ea7da862",
-  "updated_at": "2026-11-13T15:41:11.900833+00:00",
-  "active": {
-    "role": "corrector",
-    "chapter": 22,
-    "session_id": "auto-886bde8dfe20-corrector-322e11ff"
-  },
+  "updated_at": "2026-11-13T15:41:13.701437+00:00",
+  "active": null,
   "model_calls_started": 222,
   "memory_glossary_saved": 110,
   "pending_style": [],
@@ -187,7 +183,7 @@
   "glossary_conflicts_rejected": 5,
   "correction_extensions": {
     "chapter-000025": 1,
-    "chapter-000022": 2
+    "chapter-000022": 3
   },
   "deferred_review_units": [],
   "patch_deferral_audit": [
@@ -260,11 +256,5 @@
       "review_limit": 16,
       "correction_limit": 12
     }
-  ],
-  "correction_batch_progress": {
-    "unit_id": "chapter-000022",
-    "review_record_id": "55f9dceb99c4478eb0da1c04b8e343dc",
-    "completed": 1,
-    "total": 1
-  }
+  ]
 }
