@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "request_id": "f471a1628a66472aafdb82d6121a7c51",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "52b610011bf3e2125c68642155bb1e580a42ee2f218a65f94b4816749155ba5a",
+    "record": {
+      "correction_round": 1,
+      "outcome": "CORRECTIONS_REQUIRED",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "findings": [
+          {
+            "detail": "Прямая реплика Кролло «ты не единственная сумасшедшая омега» ошибочно приписывает Курапике женский род, хотя исходник gender-neutral, а герой мужчина; требуется «ты не единственный...» или эквивалент.",
+            "resolved": false,
+            "severity": "major"
+          },
+          {
+            "detail": "«Запах Бабимайны чистый и ничем не неприятный» — неестественная калька clean and inoffensive; сделать естественную русскую фразу без утраты обеих характеристик.",
+            "resolved": false,
+            "severity": "minor"
+          }
+        ]
+      },
+      "record_id": "59a7203cff8844879bff91dbc43495be",
+      "review_commit": "a7b11e080fdc7ee8b3c6172f8319978e397f24a5",
+      "review_contract_revision": "docs/TRANSLATION.md@effd537cb20d42e0077ebe8760cb794fdb84fd0f",
+      "reviewed_at": "2026-11-13T10:26:16Z",
+      "reviewer_session_id": "chat-manual-night-review-20261113-04",
+      "sequence": 4,
+      "source_sha256": "d59e37a8af402bc011e1d3b149ba0056377b4fbf9d9902b327cdb9658884b703",
+      "state_revision": "c3384e0d8473dc89afffea870a4fa028d763fa7c59d8a728cae1a31f648d9084",
+      "supersedes_record_id": null,
+      "translation_sha256": "7eec18e92a71b31109bcf78acc772bed3087630107bd19f7c78db54997175f85",
+      "unit_id": "chapter-000004",
+      "workflow_revision": "effd537cb20d42e0077ebe8760cb794fdb84fd0f"
+    }
+  },
+  "error": null
+}
