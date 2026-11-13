@@ -115,11 +115,12 @@ class CoverageRecoveryTests(unittest.TestCase):
 
     def test_operator_plan_reopens_exact_current_rejected_review_once(self):
         import sys
-        scripts = str(Path(__file__).resolve().parents[1] / "scripts")
-        if scripts not in sys.path:
-            sys.path.insert(0, scripts)
-        import workflow.attention
+        from types import ModuleType
         from unittest.mock import patch
+        workflow = ModuleType("workflow")
+        workflow.__path__ = []
+        attention = ModuleType("workflow.attention")
+        attention.validate_attention = lambda data, revision: data
         unit = "chapter-000028"
         source_hash, trans_hash = "a" * 64, "b" * 64
         record_id = "c" * 32
@@ -155,7 +156,9 @@ class CoverageRecoveryTests(unittest.TestCase):
             qpath.write_text(json.dumps({
                 "schema_version": 1, "workflow_revision": "d" * 40,
                 "entries": [queue_entry]}), encoding="utf-8")
-            with patch.object(runner, "ROOT", root), \
+            with patch.dict(sys.modules, {
+                     "workflow": workflow, "workflow.attention": attention}), \
+                 patch.object(runner, "ROOT", root), \
                  patch.object(runner, "cli",
                               return_value=json.dumps({"claims": [], "errors": []})), \
                  patch.object(runner, "chapter_data",
@@ -177,10 +180,12 @@ class CoverageRecoveryTests(unittest.TestCase):
 
     def test_operator_plan_rejects_stale_review_without_mutating_queue(self):
         import sys
-        scripts = str(Path(__file__).resolve().parents[1] / "scripts")
-        if scripts not in sys.path:
-            sys.path.insert(0, scripts)
+        from types import ModuleType
         from unittest.mock import patch
+        workflow = ModuleType("workflow")
+        workflow.__path__ = []
+        attention = ModuleType("workflow.attention")
+        attention.validate_attention = lambda data, revision: data
         unit = "chapter-000025"
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -211,7 +216,9 @@ class CoverageRecoveryTests(unittest.TestCase):
             record = {"unit_id": unit, "record_id": "f" * 32,
                       "source_sha256": "a" * 64, "translation_sha256": "b" * 64,
                       "outcome": "CORRECTIONS_REQUIRED", "sequence": 1}
-            with patch.object(runner, "ROOT", root), \
+            with patch.dict(sys.modules, {
+                     "workflow": workflow, "workflow.attention": attention}), \
+                 patch.object(runner, "ROOT", root), \
                  patch.object(runner, "cli",
                               return_value=json.dumps({"claims": [], "errors": []})), \
                  patch.object(runner, "chapter_data",
