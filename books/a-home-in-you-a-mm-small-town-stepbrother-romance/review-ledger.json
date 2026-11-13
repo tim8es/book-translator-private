@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 123,
+  "next_sequence": 124,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -10154,6 +10154,119 @@
             },
             "translation_anchor": {
               "quote": "Неважно, что сначала мы сошлись как братья. — Ты готов к этому? — спросил я.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "726e4f76699f03977c14ec08e038db936a065b810ed2c84e32c86cf9171808d9",
+        "style_guide": "3ec7c485cf41741084ffe49b72d2b18ed9bd650a00a2ba00554605abadea5e3a"
+      }
+    },
+    {
+      "record_id": "44ba03d7f3eb42d39fdae619f0fbc60c",
+      "sequence": 123,
+      "unit_id": "chapter-000024",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "9747496e38507c1388903de0a5fd0fa2c46d97e60e4ce9585a2b2f557b223040",
+      "translation_sha256": "76f5c8f4cc0baf80866dca66e3be5ab04dc7b55f66cb5e4c956518cfb43211f1",
+      "workflow_revision": "ea9963ca546b7cc7f6aba4dc5350fa19ea7da862",
+      "review_contract_revision": "docs/TRANSLATION.md@ea9963ca546b7cc7f6aba4dc5350fa19ea7da862",
+      "reviewer_session_id": "auto-886bde8dfe20-reviewer-441c751d",
+      "reviewed_at": "2026-11-13T15:52:41Z",
+      "state_revision": "537eb6ff292f79693bb57ccf7a7fdbdb3876699bdba90bb06ad5638185276281",
+      "review_commit": "47da5243ed8824badb2391b1e70e67578fa86fa4",
+      "correction_round": 6,
+      "supersedes_record_id": "0ace7935eec1464194e8ccaffa3fb0d0",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "meaning-recheck-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Исправлено: «Неважно, что сначала мы стали братьями» сохраняет последовательность, заданную оригиналом.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "It didn’t matter if we came together as brothers first.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Неважно, что сначала мы стали братьями.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "0ace7935eec1464194e8ccaffa3fb0d0",
+              "finding_id": "meaning-1"
+            }
+          },
+          {
+            "id": "structure-recheck-1",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "Проблема остаётся: реплика «Ты готов к этому?» присоединена к абзацу с предшествующим повествованием. В оригинале она начинается с нового абзаца.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“Are you ready for this?” I asked.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Неважно, что сначала мы стали братьями. — Ты готов к этому? — спросил я.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "0ace7935eec1464194e8ccaffa3fb0d0",
+              "finding_id": "structure-1"
+            }
+          },
+          {
+            "id": "omission-1",
+            "category": "omission",
+            "severity": "minor",
+            "detail": "Пропущены признание Диллона в любви и ответ Кейда. Восстановите эту реплику и ответ перед повествованием о данном друг другу обещании.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“I love you,” I said when we came up for air.",
+              "occurrence": 0
+            },
+            "translation_anchor": null,
+            "resolves": null
+          },
+          {
+            "id": "omission-2",
+            "category": "omission",
+            "severity": "major",
+            "detail": "После ответа Кейда о том, что он готов, пропущен значительный фрагмент: вопрос Диллона о волнении, реакция Кейда, дальнейшее развитие их близости и последующий разговор. Фраза «Я устало рассмеялся» и обещание повторить это сохранены, но поставлены сразу после ответа Кейда; в оригинале они относятся к более позднему разговору. Восстановите пропущенный фрагмент и проверьте последовательность.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“Nervous?”",
+              "occurrence": 0
+            },
+            "translation_anchor": null,
+            "resolves": null
+          },
+          {
+            "id": "structure-1",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "Перед репликой стоит двойное тире, и сама реплика присоединена к предыдущему повествованию. Уберите лишнее тире и оформите реплику отдельным абзацем, как в оригинале.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Cade is gay, and I don’t even know what the fuck I am, but there’s no way I’m dating a girl in high school to prove something.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "— — Кейд гей, а я сам вообще не знаю, кто я, но встречаться со школьницей, чтобы что-то кому-то доказать, я не собираюсь.",
               "occurrence": 0
             },
             "resolves": null
