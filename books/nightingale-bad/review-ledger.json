@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "nightingale-bad",
-  "next_sequence": 15,
+  "next_sequence": 16,
   "records": [
     {
       "record_id": "267f9c6d763542ed928f67c176f3083f",
@@ -519,6 +519,39 @@
             "severity": "major",
             "detail": "Rechecked 'doesn't feel competitive about me': corrected Melody dialogue to 'Он говорил, что ни с кем не соперничает из-за меня', preserving that Chrollo does not feel rivalry over Kurapika.",
             "resolved": true
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "8b0a491657864f03954394ea16aebdc3",
+      "sequence": 15,
+      "unit_id": "chapter-000010",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "f1c0ccbafdc66eb9ba2f6962822a95afbecac3a36327662186360d584868816b",
+      "translation_sha256": "6c58c8ee6e317b3f9b6de02d91972367fde9558f729a5970d35b66b7374a4677",
+      "workflow_revision": "effd537cb20d42e0077ebe8760cb794fdb84fd0f",
+      "review_contract_revision": "docs/TRANSLATION.md@effd537cb20d42e0077ebe8760cb794fdb84fd0f",
+      "reviewer_session_id": "chat-manual-night-20261113-ch9-review",
+      "reviewed_at": "2026-11-13T12:19:03Z",
+      "state_revision": "774d37e8d875a7b39bb9ffa169f3fab128ec0f17f2fdd833ade14bd55cd1a339",
+      "review_commit": "e0a6dc0bc0a2f7e28300df6abf47411274b9c09f",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Source says 'Kurapika laughs humorously' immediately after Chrollo says revenge is the best therapy. The translation says 'Курапика невесело смеётся', reversing the literal emotional coloring (humorously -> without mirth). In light of the unusual source phrasing and scene context, use neutral 'Курапика коротко смеётся' instead of deciding the author meant humorlessly; preserve subsequent tension and tears.",
+            "resolved": false
           }
         ]
       }
