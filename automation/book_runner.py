@@ -1735,53 +1735,56 @@ def process_correction_batches(job_id: str, slug: str, status: dict, engine: Pat
             patches, glossary, style = parse_correction_patches(
                 answer, selected, allow_partial=True)
         except ModelError as exc:
-            # Retry only rejected response syntax/coordinates, never a failed
-            # provider call. No incorrect patch is ever staged or applied.
-            # Give the model exact reviewer-bound protocol feedback instead of
-            # repeating the same three-finding request unchanged.
+            # Provider-output defects, not transport or repository failures,
+            # get one extra, durably counted, strictly typed repair.
+            helper = load_public_correction_helper(engine)
             correction_error = str(exc)
-            if (not isinstance(exc, PatchAnchorMismatch)
-                    and correction_error not in {
-                        "insertion_anchor is only allowed for omissions",
-                        "corrector patch has invalid fields",
-                        "corrector returned no actionable patches",
-                    }):
+            code = helper.failure_code(correction_error)
+            if not isinstance(exc, PatchAnchorMismatch) and code is None:
+                raise
+            if code is None:
                 raise
             count = status.get("model_calls_started", 0)
             if type(count) is not int or count < 0 or count >= model_call_limit():
                 raise
-            reviewer_bound = [
-                f["id"] for f in selected if f["translation_anchor"] is not None]
-            true_omissions = [
-                f["id"] for f in selected if f["translation_anchor"] is None]
+            # A malformed three-item response cannot safely identify which
+            # of its siblings is responsible. Retrying the first single item
+            # returns a useful partial edit; remaining items stay pending.
+            focused = (selected[:1] if code in {
+                "invalid_replacement", "empty_insertion", "invalid_fields",
+                "wrong_anchor", "invalid_anchor", "wrong_operation"}
+                       else selected)
+            repair_system, repair_user, _ = context(
+                engine, slug, chapter, "corrector", correction_findings=focused)
+            structured_guidance = helper.repair_guidance(
+                focused, correction_error)
             status["model_calls_started"] = count + 1
-            status["phase"] = "corrector-schema-repair-reserved"
+            status["phase"] = "corrector-protocol-repair-reserved"
             status["prompt_context"] = {
                 **prompt_context,
-                "repair": "review-bound-coordinate-schema",
-                "reviewer_bound_count": len(reviewer_bound),
-                "true_omission_count": len(true_omissions),
+                "repair_code": code, "repair_finding_count": len(focused),
+                "execution_mode": "typed-correction-repair",
+                "public_helper_revision": PUBLIC_CORRECTION_HELPER_REVISION,
             }
             checkpoint(job_id, status, slug)
             repaired = complete(
-                "CORRECTOR", system, user
-                + "\nYOUR PREVIOUS CORRECTION JSON WAS REJECTED. Reason: "
-                + correction_error
-                + "\nThe category 'omission' does NOT authorize an "
-                "insertion_anchor. ONLY findings whose translation_anchor is "
-                "JSON null require insertion_anchor. For ALL findings with a "
-                "non-null translation_anchor, provide exactly finding_id, "
-                "operation, replacement; OMIT insertion_anchor and "
-                "target_anchor entirely. For true omissions only, provide "
-                "finding_id, operation, replacement and insertion_anchor. "
-                "Do not change reviewer binding or rewrite unrelated text. "
-                "Return valid JSON patches for the requested findings.\n"
-                + json.dumps({
-                    "reviewer_bound_finding_ids": reviewer_bound,
-                    "true_omission_finding_ids": true_omissions,
-                }, ensure_ascii=False))
+                "CORRECTOR", repair_system,
+                repair_user + "\nREJECTED RESPONSE: Return ONLY one bounded "
+                "source-grounded correction intent for the exact finding(s) "
+                "below; never a whole chapter. The reviewer's source anchor "
+                "is the authoritative evidence.\n" + structured_guidance)
             patches, glossary, style = parse_correction_patches(
-                repaired, selected, allow_partial=True)
+                repaired, focused, allow_partial=True)
+            for patch in patches:
+                finding = next(item for item in focused
+                               if item["id"] == patch["finding_id"])
+                try:
+                    helper.validate_replacement(patch, finding)
+                    helper.validate_intent(patch, finding)
+                except helper.CorrectionProtocolError as validation_error:
+                    raise ModelError(
+                        "typed correction repair invalid: "
+                        + validation_error.code) from validation_error
         combined = list(stage["patches"])
         conflicting = []
         for patch in patches:
