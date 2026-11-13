@@ -1292,6 +1292,101 @@ def apply_correction_patches(translation: str, patches: list[dict]) -> str:
 
 
 
+
+SOURCE_SPAN_CHAR_LIMIT = 1600
+
+
+def suspicious_translation_coverage(source: str, translation: str) -> bool:
+    """A conservative alarm, not proof of fidelity or a substitute for review."""
+    source_lines = sum(bool(line.strip()) for line in source.splitlines())
+    translated_lines = sum(bool(line.strip()) for line in translation.splitlines())
+    return (len(source) >= 3500
+            and len(translation) * 100 < len(source) * 70
+            and translated_lines * 100 < source_lines * 70)
+
+
+def bounded_source_plan(source: str, helper, *, limit: int = SOURCE_SPAN_CHAR_LIMIT) -> dict:
+    """Split original text between protected markers into short source-bound spans."""
+    plan = helper.plan(source)
+    if plan is None:
+        prefix = re.match(r"\s*", source).group()
+        suffix = re.search(r"\s*$", source).group()
+        core = source[len(prefix):len(source) - len(suffix) if suffix else len(source)]
+        plan = {"schema_version": 1,
+                "source_sha256": hashlib.sha256(source.encode("utf-8")).hexdigest(),
+                "parts": [{"kind": "text", "id": "s00001", "original": core,
+                           "before": prefix, "after": suffix}]}
+    parts = []
+    ordinal = 0
+    for part in plan["parts"]:
+        if part["kind"] != "text":
+            parts.append(dict(part))
+            continue
+        core = part["original"]
+        if len(core) <= limit:
+            ordinal += 1
+            parts.append({**part, "id": f"s{ordinal:05d}"})
+            continue
+        tokens = re.split(r"(\n[ \t]*\n)", core)
+        grouped = []
+        current = ""
+        separator = ""
+        for offset in range(0, len(tokens), 2):
+            paragraph = tokens[offset]
+            following = tokens[offset + 1] if offset + 1 < len(tokens) else ""
+            if len(paragraph) > limit:
+                raise JobError("source paragraph exceeds bounded translator span limit")
+            if current and len(current) + len(separator) + len(paragraph) > limit:
+                grouped.append(("text", current))
+                grouped.append(("literal", separator))
+                current = paragraph
+            else:
+                current += separator + paragraph
+            separator = following
+        if current:
+            grouped.append(("text", current))
+        if separator:
+            grouped.append(("literal", separator))
+        text_items = [i for i, (kind, _) in enumerate(grouped) if kind == "text"]
+        if not text_items:
+            raise JobError("source subdivision produced no text spans")
+        for i, (kind, value) in enumerate(grouped):
+            if kind == "literal":
+                parts.append({"kind": "literal", "value": value})
+            else:
+                ordinal += 1
+                parts.append({"kind": "text", "id": f"s{ordinal:05d}", "original": value,
+                              "before": part["before"] if i == text_items[0] else "",
+                              "after": part["after"] if i == text_items[-1] else ""})
+    revised = {**plan, "parts": parts}
+    helper.spans(revised)
+    if hashlib.sha256(source.encode("utf-8")).hexdigest() != revised["source_sha256"]:
+        raise JobError("source subdivision lost its immutable source binding")
+    reconstructed = "".join(
+        (part["before"] + part["original"] + part["after"]
+         if part["kind"] == "text" else part["value"])
+        for part in parts)
+    if reconstructed != source:
+        raise JobError("source subdivision would change extracted source layout")
+    return revised
+
+
+def incomplete_structural_batch(selected: list[dict], translated: dict) -> list[str]:
+    """Conservative truncation check before an independent source review."""
+    failures = []
+    for item in selected:
+        result = translated.get(item["id"])
+        if result is None or len(item["source"]) < 400:
+            continue
+        original = item["source"]
+        src_paras = len(re.split(r"\n[ \t]*\n", original))
+        dst_paras = len(re.split(r"\n[ \t]*\n", result))
+        if (len(result) * 100 < len(original) * 55
+                or (src_paras >= 4 and dst_paras * 100 < src_paras * 60)):
+            failures.append(item["id"])
+    return failures
+
+
 def structural_stage_path(slug: str, unit_id: str) -> Path:
     if (not re.fullmatch(r"[a-z0-9][a-z0-9-]{0,99}", slug)
             or not re.fullmatch(r"chapter-[0-9]{6}", unit_id)):
@@ -1312,6 +1407,9 @@ def load_structural_stage(slug: str, chapter: dict, status: dict,
         "helper_revision": PUBLIC_STRUCTURAL_HELPER_REVISION,
         "segments": {}, "glossary": [], "style_guide": [],
     }
+    if "parts" in plan:
+        expected["segment_plan_sha256"] = hashlib.sha256(json.dumps(
+            plan["parts"], sort_keys=True, ensure_ascii=False).encode("utf-8")).hexdigest()
     if not path.exists():
         return path, expected
     stage = read_json(path)
@@ -1393,6 +1491,30 @@ def process_structural_translation(job_id: str, slug: str, status: dict,
         except ValueError as exc:
             raise ModelError("structural translator rejected model output: "
                              + str(exc)) from exc
+        incomplete = incomplete_structural_batch(selected, translated)
+        if incomplete:
+            reserved = status["model_calls_started"]
+            if reserved >= model_call_limit():
+                raise ModelError("structural translation omitted content and exhausted model budget")
+            status["model_calls_started"] = reserved + 1
+            status["phase"] = "structural-span-repair-reserved"
+            prompt_context["short_output_repair"] = len(incomplete)
+            checkpoint(job_id, status, slug)
+            repaired = complete(
+                "TRANSLATOR", system,
+                user + "\nREJECTED TRANSLATION: Some returned short source-bound "
+                "spans omitted sentences or collapsed paragraphs. You must "
+                "translate every sentence and retain paragraph boundaries; "
+                "do not summarize. Return every source segment in its full "
+                "required JSON schema. Incomplete IDs: "
+                + json.dumps(incomplete))
+            try:
+                translated, new_glossary, new_style = helper.parse_batch(
+                    repaired, [item["id"] for item in selected])
+            except ValueError as exc:
+                raise ModelError("structural translator repair rejected: " + str(exc)) from exc
+            if incomplete_structural_batch(selected, translated):
+                raise ModelError("structural translator repair still omitted source text")
         _, new_glossary, new_style = parse_translation(json.dumps({
             "translation": "validated placeholder",
             "glossary": new_glossary, "style_guide": new_style,
@@ -1568,11 +1690,23 @@ def process_correction_batches(job_id: str, slug: str, status: dict, engine: Pat
         answer = complete("CORRECTOR", system, user)
         patches, glossary, style = parse_correction_patches(
             answer, selected, allow_partial=True)
-        combined = stage["patches"] + patches
-        check_markers(source, apply_correction_patches(translation, combined))
+        combined = list(stage["patches"])
+        conflicting = []
+        for patch in patches:
+            try:
+                check_markers(source, apply_correction_patches(translation, combined + [patch]))
+            except JobError as exc:
+                if str(exc) != "correction patches overlap in the accepted translation":
+                    raise
+                conflicting.append(patch["finding_id"])
+            else:
+                combined.append(patch)
+        if not combined:
+            raise ModelError("corrector proposed no safely non-overlapping patches")
         updated_glossary = merge_unique_correction_decisions(stage["glossary"], glossary)
         updated_style = merge_unique_correction_decisions(stage["style_guide"], style)
-        # A single checkpoint persists the complete stage and progress marker.
+        # Stage only safe edits. Conflicted findings remain unresolved and are
+        # independently rechecked after a partial translation improvement.
         stage.update({"patches": combined, "glossary": updated_glossary,
                       "style_guide": updated_style})
         store_json(stage_path, stage)
@@ -1581,8 +1715,21 @@ def process_correction_batches(job_id: str, slug: str, status: dict, engine: Pat
             "review_record_id": record["record_id"],
             "completed": len(combined), "total": len(unresolved),
         }
+        if conflicting:
+            status["correction_overlap_deferred"] = {
+                "unit_id": chapter["unit_id"],
+                "review_record_id": record["record_id"],
+                "unapplied_finding_ids": conflicting,
+            }
         status["phase"] = "correction-batch-staged"
         checkpoint(job_id, status, slug)
+        if conflicting:
+            # Never merge competing replacements, mark conflicts fixed, or
+            # bypass canonical acceptance and independent source review.
+            partial = apply_correction_patches(translation, combined)
+            if partial == translation:
+                raise ModelError("overlapping corrections produced no change")
+            return partial, stage["glossary"], stage["style_guide"]
     covered = {patch["finding_id"] for patch in stage["patches"]}
     if covered != {finding["id"] for finding in unresolved}:
         # Keep the live claim. Next bounded Action continues the same stage.
@@ -2373,6 +2520,18 @@ def process_claim(job_id: str, slug: str, status: dict, engine: Path) -> None:
         if not isinstance(previous_quality, dict):
             previous_quality = {}
         patch_mode = (role == "corrector" and previous_quality.get("evidence_version") == 2)
+        retranslate_incomplete = False
+        if (role == "corrector"
+                and isinstance(chapter.get("source_path"), str)
+                and isinstance(chapter.get("translation_path"), str)):
+            book_root = ROOT / "books" / slug
+            source_path = book_root / chapter["source_path"]
+            translation_path = book_root / chapter["translation_path"]
+            if source_path.is_file() and translation_path.is_file():
+                retranslate_incomplete = suspicious_translation_coverage(
+                    source_path.read_text("utf-8"), translation_path.read_text("utf-8"))
+        if retranslate_incomplete:
+            patch_mode = False
         if role == "corrector":
             rounds = status.setdefault("correction_rounds", {})
             if not isinstance(rounds, dict):
@@ -2383,22 +2542,22 @@ def process_claim(job_id: str, slug: str, status: dict, engine: Path) -> None:
                 raise JobError("invalid durable correction extension counter")
         force_full_review = (role == "reviewer"
                              and status.get("force_full_review_unit") == unit_id)
-        system, user, source = context(engine, slug, chapter, role,
+        system, user, source = context(engine, slug, chapter,
+                                       "translator" if retranslate_incomplete else role,
                                        pending_style=status.get("pending_style", []),
                                        force_full_review=force_full_review)
         structural_helper = None
         structural_plan = None
-        if (role == "translator" and not external_link_only(source)
-                and (MARKDOWN_LINK_RE.search(source) or EPUB_MARKER_RE.search(source))):
-            # Public reusable execution utility is an independent, pinned
-            # compatibility component. Do not upgrade the book's literary SHA.
+        if ((role == "translator" and not external_link_only(source)
+             and (len(source) > SOURCE_SPAN_CHAR_LIMIT or MARKDOWN_LINK_RE.search(source)
+                  or EPUB_MARKER_RE.search(source))) or retranslate_incomplete):
+            # Immutable public validation + bounded source chunks, without
+            # changing this book's pinned literary workflow revision.
             structural_helper = load_public_structural_helper(engine)
             try:
-                structural_plan = structural_helper.plan(source)
+                structural_plan = bounded_source_plan(source, structural_helper)
             except ValueError as exc:
                 raise JobError("source structure cannot be translated safely") from exc
-            if structural_plan is None:
-                raise JobError("protected source has no structural translation plan")
         if patch_mode:
             prior_mismatch = status.get("last_patch_anchor_mismatch")
             acceptance = chapter.get("translation_acceptance", {})
@@ -2585,7 +2744,7 @@ def process_claim(job_id: str, slug: str, status: dict, engine: Path) -> None:
             "glossary", proposed_glossary)
         status["memory_glossary_saved"] = status.get("memory_glossary_saved", 0) + saved
         status["pending_style"] = proposed_style
-        if role == "translator" and structural_plan is not None:
+        if structural_plan is not None:
             structural_stage_path(slug, unit_id).unlink(missing_ok=True)
             status.pop("structural_segment_progress", None)
         if role == "corrector" and patch_mode:
