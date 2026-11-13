@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 120,
+  "next_sequence": 121,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -9892,6 +9892,77 @@
             "resolves": {
               "record_id": "26e0e543041940efac024489ee5fd2eb",
               "finding_id": "bluff-1"
+            }
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "726e4f76699f03977c14ec08e038db936a065b810ed2c84e32c86cf9171808d9",
+        "style_guide": "3ec7c485cf41741084ffe49b72d2b18ed9bd650a00a2ba00554605abadea5e3a"
+      }
+    },
+    {
+      "record_id": "55f9dceb99c4478eb0da1c04b8e343dc",
+      "sequence": 120,
+      "unit_id": "chapter-000022",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "0597bc9de058f1acff07f60dd5e132d7ec2306b50edb043b5dbaab0190059cdf",
+      "translation_sha256": "e578787f95029872a4c9721fd9632d90c0ddad1d2e098027f8378a843bdccd07",
+      "workflow_revision": "ea9963ca546b7cc7f6aba4dc5350fa19ea7da862",
+      "review_contract_revision": "docs/TRANSLATION.md@ea9963ca546b7cc7f6aba4dc5350fa19ea7da862",
+      "reviewer_session_id": "auto-886bde8dfe20-reviewer-b5b09dcb",
+      "reviewed_at": "2026-11-13T15:39:51Z",
+      "state_revision": "c25679dc9a97c776a4b5173856533213f9b3138e12bbf916a43f5e2064187a1a",
+      "review_commit": "f496c8607275c026aad1e36bc28d246f373cc62e",
+      "correction_round": 10,
+      "supersedes_record_id": "4596ba1ae4cb459088edd09e0e57827e",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "names-recheck-3",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "The changed greeting now uses «Даррен», but the adjacent changed passage still leaves Darren and Cade in Latin script, including the direct address and «перед Cade». Use the canonical Russian forms with appropriate case endings; the following reply also retains Darren and Cade in Latin script.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Okay, Darren. Let’s say you are. If so, then I want you to stop calling me vampire boy, and you need to apologize to Cade",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Хорошо, Darren. Допустим, так и есть. Тогда я хочу, чтобы ты перестал называть меня мальчиком-вампиром и извинился перед Cade",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "4596ba1ae4cb459088edd09e0e57827e",
+              "finding_id": "names-recheck-2"
+            }
+          },
+          {
+            "id": "bluff-recheck-2",
+            "category": "omission",
+            "severity": "minor",
+            "detail": "Resolved: the changed translation now includes Darren’s narrowed eyes and the sense that he is testing whether Dillon is bluffing, while Cade watches.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Darren’s green eyes narrowed at me, calling his bluff, while Cade stood back and watched the show.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Кейд стоял в стороне и наблюдал за происходящим, а зелёные глаза Даррена сузились, словно проверяя, не блефую ли я",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "4596ba1ae4cb459088edd09e0e57827e",
+              "finding_id": "bluff-recheck-1"
             }
           }
         ]
