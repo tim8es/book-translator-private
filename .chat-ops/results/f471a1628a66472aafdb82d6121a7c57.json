@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "request_id": "f471a1628a66472aafdb82d6121a7c57",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "9e286aeacd0f8449638bb198cb53e53c209d65b5fabe015c26743028651802b4",
+    "record": {
+      "correction_round": 1,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "findings": [
+          {
+            "detail": "Проверено исправление ошибочной женской формы в обращении к Курапике; используется соответствующая герою форма.",
+            "resolved": true,
+            "severity": "major"
+          },
+          {
+            "detail": "Проверено естественное описание запаха Бабимайны без неудачной двойной отрицательной конструкции.",
+            "resolved": true,
+            "severity": "minor"
+          }
+        ]
+      },
+      "record_id": "f48668316929450b857fc29105eeb099",
+      "review_commit": "3ee7b042c2f358b17721ecf26044ea1c07dab64d",
+      "review_contract_revision": "docs/TRANSLATION.md@effd537cb20d42e0077ebe8760cb794fdb84fd0f",
+      "reviewed_at": "2026-11-13T10:28:25Z",
+      "reviewer_session_id": "chat-manual-night-review-20261113-04b",
+      "sequence": 5,
+      "source_sha256": "d59e37a8af402bc011e1d3b149ba0056377b4fbf9d9902b327cdb9658884b703",
+      "state_revision": "b525fec3a97b7452c9858e745cadf2ade2178660257163607267622f0c0ec7d5",
+      "supersedes_record_id": "59a7203cff8844879bff91dbc43495be",
+      "translation_sha256": "3988fb59f4a10c1bec345a504d41d4c6fc56e483bb4fc747d72067efe3d47057",
+      "unit_id": "chapter-000004",
+      "workflow_revision": "effd537cb20d42e0077ebe8760cb794fdb84fd0f"
+    }
+  },
+  "error": null
+}

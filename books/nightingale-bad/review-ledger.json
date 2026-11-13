@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "nightingale-bad",
-  "next_sequence": 5,
+  "next_sequence": 6,
   "records": [
     {
       "record_id": "267f9c6d763542ed928f67c176f3083f",
@@ -130,6 +130,44 @@
             "severity": "minor",
             "detail": "«Запах Бабимайны чистый и ничем не неприятный» — неестественная калька clean and inoffensive; сделать естественную русскую фразу без утраты обеих характеристик.",
             "resolved": false
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "f48668316929450b857fc29105eeb099",
+      "sequence": 5,
+      "unit_id": "chapter-000004",
+      "outcome": "PASS",
+      "source_sha256": "d59e37a8af402bc011e1d3b149ba0056377b4fbf9d9902b327cdb9658884b703",
+      "translation_sha256": "3988fb59f4a10c1bec345a504d41d4c6fc56e483bb4fc747d72067efe3d47057",
+      "workflow_revision": "effd537cb20d42e0077ebe8760cb794fdb84fd0f",
+      "review_contract_revision": "docs/TRANSLATION.md@effd537cb20d42e0077ebe8760cb794fdb84fd0f",
+      "reviewer_session_id": "chat-manual-night-review-20261113-04b",
+      "reviewed_at": "2026-11-13T10:28:25Z",
+      "state_revision": "b525fec3a97b7452c9858e745cadf2ade2178660257163607267622f0c0ec7d5",
+      "review_commit": "3ee7b042c2f358b17721ecf26044ea1c07dab64d",
+      "correction_round": 1,
+      "supersedes_record_id": "59a7203cff8844879bff91dbc43495be",
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "major",
+            "detail": "Проверено исправление ошибочной женской формы в обращении к Курапике; используется соответствующая герою форма.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Проверено естественное описание запаха Бабимайны без неудачной двойной отрицательной конструкции.",
+            "resolved": true
           }
         ]
       }
