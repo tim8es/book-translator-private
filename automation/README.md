@@ -28,6 +28,44 @@ Configure the following GitHub Actions secret and repository variables:
 - Variable: OMNIROUTE_REVIEWER_MODEL
 - Variable: OMNIROUTE_CORRECTOR_MODEL
 
+Optional Actions variables `OMNIROUTE_TRANSLATOR_FALLBACK_MODEL`,
+`OMNIROUTE_REVIEWER_FALLBACK_MODEL` and
+`OMNIROUTE_CORRECTOR_FALLBACK_MODEL` select backup models for the matching role
+after two successive transient provider failures **or rejected model-output protocol attempts on the same unit**. They
+must support the role's JSON contract. If absent, the configured primary is
+used. Credentials and model identifiers are never written to the book status.
+
+### Recovering model and provider failures
+
+Each HTTP call has one durable budget reservation (rather than three hidden
+network retries within one reservation). Rate limits (429), temporary server
+errors (408/5xx) and network timeouts are classified separately from invalid
+generated JSON. On transient failures, Auto releases its owned claim and
+commits `provider_retry` with the precise unit, role, attempt count, failure
+class and next retry timestamp (bounded exponential delay, 1–60 minutes,
+honouring numeric Retry-After). It does **not** increment the model-format
+failure counter or issue an immediate recursive Actions dispatch. The existing
+scheduled Auto workflow will pick up the job when the deadline has passed.
+A restarted Actions run revalidates the saved checkpoint, original EPUB and
+canonical source/claims before requesting the model again.
+
+For a real **model-output** failure that remains after bounded schema/coverage
+repairs, Auto may defer one extracted untranslated unit through the **pinned
+canonical** `book.py defer-translation` only if that selected book revision
+supports it. It uses the shared hash-bound `.workflow/needs-attention.json`
+queue rather than an adapter-owned skip list; other chapters can proceed.
+Unchanged deferred units require explicit `book.py retry-attention` to return
+to work. Already translated, independently rejected units keep the existing
+`defer-review` path. Invalid source bytes, claim/CAS conflicts, unrecognized
+model failures and provider misconfiguration are never silently deferred.
+When all runnable units are exhausted, the book remains not done until
+attention entries have been repaired, translated and independently reviewed.
+
+**Compatibility:** existing books keep their exact workflow revision. A
+revision without canonical `defer-translation` cannot gain that transition via
+an Auto adapter: it continues to fail closed until an explicit, audited
+revision migration. No automatic migration or acceptance is performed.
+
 Review actual provider compatibility before enabling a paid workload. This
 implementation uses POST /chat/completions and does not automate a ChatGPT web
 subscription. Ensure GitHub Actions can write to main; branch protections that

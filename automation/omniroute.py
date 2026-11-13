@@ -6,7 +6,6 @@ from __future__ import annotations
 
 import json
 import os
-import time
 from urllib.error import HTTPError, URLError
 from urllib.parse import urlsplit
 from urllib.request import Request, urlopen
@@ -16,8 +15,21 @@ class ModelError(RuntimeError):
     pass
 
 
+class TransientModelError(ModelError):
+    """Recoverable HTTP/transport outage; never an invalid model output."""
+
+    def __init__(self, message: str, *, code: str,
+                 retry_after_seconds: int | None = None):
+        super().__init__(message)
+        self.code = code
+        self.retry_after_seconds = retry_after_seconds
+
+
+
 def config(role: str) -> tuple[str, str, str]:
-    if role not in {"TRANSLATOR", "REVIEWER", "CORRECTOR"}:
+    if role not in {"TRANSLATOR", "REVIEWER", "CORRECTOR",
+                    "TRANSLATOR_FALLBACK", "REVIEWER_FALLBACK",
+                    "CORRECTOR_FALLBACK"}:
         raise ModelError("unsupported model role")
     base = os.environ.get("OMNIROUTE_BASE_URL", "").rstrip("/")
     key = os.environ.get("OMNIROUTE_API_KEY", "")
@@ -40,7 +52,7 @@ def complete(role: str, system: str, user: str) -> str:
             {"role": "user", "content": user},
         ],
         "response_format": {"type": "json_object"},
-        "temperature": 0.2 if role != "TRANSLATOR" else 0.4,
+        "temperature": 0.4 if role.startswith("TRANSLATOR") else 0.2,
     }, ensure_ascii=False).encode("utf-8")
     request = Request(
         base + "/chat/completions",
@@ -52,31 +64,38 @@ def complete(role: str, system: str, user: str) -> str:
         },
         method="POST",
     )
-    for attempt in range(3):
-        try:
-            with urlopen(request, timeout=240) as response:
-                payload = json.loads(response.read(8_000_000).decode("utf-8"))
-            choice = payload["choices"][0]
-            reason = choice.get("finish_reason")
-            if reason in {"length", "content_filter"}:
-                raise ModelError("model output incomplete or filtered")
-            answer = choice["message"]["content"]
-            if isinstance(answer, list):
-                answer = "".join(part.get("text", "") for part in answer if isinstance(part, dict))
-            if not isinstance(answer, str) or not answer.strip():
-                raise ModelError("model returned empty content")
-            return answer.strip() + "\n"
-        except HTTPError as exc:
-            if exc.code not in {429, 500, 502, 503, 504} or attempt == 2:
-                raise ModelError(f"model HTTP status {exc.code}") from None
-        except (URLError, TimeoutError) as exc:
-            if attempt == 2:
-                raise ModelError("model transport timeout or connection failure") from exc
-        except (ValueError, KeyError, IndexError, TypeError) as exc:
-            raise ModelError("model response is not a valid chat completion") from exc
-        time.sleep(2 ** attempt)
-    raise ModelError("model retries exhausted")
-
+    # Each outgoing provider request is paid/budgeted individually by the
+    # calling durable worker. Transient failures are persisted and retried by
+    # the scheduled Actions wake, not by uncounted requests inside this client.
+    try:
+        with urlopen(request, timeout=240) as response:
+            payload = json.loads(response.read(8_000_000).decode("utf-8"))
+        choice = payload["choices"][0]
+        reason = choice.get("finish_reason")
+        if reason in {"length", "content_filter"}:
+            raise ModelError("model output incomplete or filtered")
+        answer = choice["message"]["content"]
+        if isinstance(answer, list):
+            answer = "".join(part.get("text", "") for part in answer
+                             if isinstance(part, dict))
+        if not isinstance(answer, str) or not answer.strip():
+            raise ModelError("model returned empty content")
+        return answer.strip() + "\n"
+    except HTTPError as exc:
+        if exc.code in {408, 429, 500, 502, 503, 504}:
+            delay = exc.headers.get("Retry-After") if exc.headers else None
+            seconds = (min(int(delay), 3600)
+                       if isinstance(delay, str) and delay.isdecimal() else None)
+            raise TransientModelError(
+                f"model HTTP status {exc.code}", code=f"http_{exc.code}",
+                retry_after_seconds=seconds) from None
+        raise ModelError(f"model HTTP status {exc.code}") from None
+    except (URLError, TimeoutError) as exc:
+        raise TransientModelError(
+            "model transport timeout or connection failure",
+            code="transport") from exc
+    except (ValueError, KeyError, IndexError, TypeError) as exc:
+        raise ModelError("model response is not a valid chat completion") from exc
 
 def parse_review(text: str) -> tuple[str, dict]:
     """Require strict, actionable source-comparison evidence before promotion."""
