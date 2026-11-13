@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 118,
+  "next_sequence": 119,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -9611,6 +9611,160 @@
             },
             "translation_anchor": {
               "quote": "Я собираюсь с помощью футбола выбраться из этой чёртовой дыры и уехать от своего сраного отца как можно дальше.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "726e4f76699f03977c14ec08e038db936a065b810ed2c84e32c86cf9171808d9",
+        "style_guide": "3ec7c485cf41741084ffe49b72d2b18ed9bd650a00a2ba00554605abadea5e3a"
+      }
+    },
+    {
+      "record_id": "26e0e543041940efac024489ee5fd2eb",
+      "sequence": 118,
+      "unit_id": "chapter-000022",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "0597bc9de058f1acff07f60dd5e132d7ec2306b50edb043b5dbaab0190059cdf",
+      "translation_sha256": "55e569d56a964add37eaf7d19df95da442c2ff323c24b945d653de04d7638f5c",
+      "workflow_revision": "ea9963ca546b7cc7f6aba4dc5350fa19ea7da862",
+      "review_contract_revision": "docs/TRANSLATION.md@ea9963ca546b7cc7f6aba4dc5350fa19ea7da862",
+      "reviewer_session_id": "auto-886bde8dfe20-reviewer-3b7a9f82",
+      "reviewed_at": "2026-11-13T15:27:54Z",
+      "state_revision": "915ece1b877d92de1d699b741b1805f359043a6c4e830d7ab0780d48de616c65",
+      "review_commit": "b65ad789c12e5cd39f4424e8e93ef1787359a0ad",
+      "correction_round": 8,
+      "supersedes_record_id": "f1b081ec5e6a483f824dbe4514e12c18",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "names-recheck-1",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "Unresolved: although many names are now rendered in Russian, the chapter heading still has “Dillon,” and names such as “Cade” and “Darren” remain in Latin script in multiple prose passages. Use Диллон, Кейд, and Даррен with appropriate Russian case endings consistently.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Fucking Darren.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Сраный Darren.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "f1b081ec5e6a483f824dbe4514e12c18",
+              "finding_id": "names-1"
+            }
+          },
+          {
+            "id": "orientation-recheck-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Resolved: the translation now explicitly preserves both that they are gay and that they love each other.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "But… I don’t hate you for being gay for each other.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Но… я не ненавижу вас за то, что вы оба геи и любите друг друга",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "f1b081ec5e6a483f824dbe4514e12c18",
+              "finding_id": "orientation-1"
+            }
+          },
+          {
+            "id": "profanity-recheck-1",
+            "category": "register",
+            "severity": "minor",
+            "detail": "Resolved: the translation now retains a profane intensifier for “as fucking possible.”",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "I plan on football taking me away from this fucking place and as far away from my fucking dad as fucking possible.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Я собираюсь с помощью футбола выбраться из этой чёртовой дыры и уехать от своего сраного отца как можно, блядь, дальше.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "f1b081ec5e6a483f824dbe4514e12c18",
+              "finding_id": "profanity-1"
+            }
+          },
+          {
+            "id": "straddled-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The translation says Cade sat on Dillon’s lap facing him, but loses the specific position conveyed by “straddled.” Render that he sat astride Dillon’s lap.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Cade straddled my lap, holding my face as I gripped his hair.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Cade сидел у меня на коленях лицом ко мне, обхватив ладонями моё лицо, а я держал его за волосы.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "sex-education-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "“Нас учили только сексу с девушками” sounds as though they were taught the act of sex, rather than taught about it. Use a natural phrasing that preserves the source’s reference to what they were taught about sex.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "We’ve only been taught about sex with girls.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Нас учили только сексу с девушками.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "fragment-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The source gives a complete sentence, but the translation turns it into a sentence fragment after the preceding sentence. Restore a complete clause, for example, “Он стал человеком, которому…”.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "He became someone Cade and I could trust.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Человеком, которому мы с Cade могли доверять.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "bluff-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "“Calling his bluff” means challenging or testing the bluff; “словно он раскусил мой блеф” instead says Darren saw through Dillon’s bluff. Preserve the challenge implied by the source.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Darren’s green eyes narrowed at me, calling his bluff, while Cade stood back and watched the show.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Зелёные глаза Даррена сузились, словно он раскусил мой блеф, а Кейд стоял в стороне и наблюдал за происходящим.",
               "occurrence": 0
             },
             "resolves": null
