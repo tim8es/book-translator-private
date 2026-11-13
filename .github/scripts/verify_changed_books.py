@@ -140,8 +140,15 @@ def verify_changed_books(paths, root=ROOT, run_canonical=True):
                         if lease is not None and command[2:] == ["validate", slug]:
                             diagnostic = (
                                 "import sys, traceback; sys.path.insert(0, 'scripts'); "
-                                "import book, workflow.review_cli as rc; "
+                                "import book, workflow.review_cli as rc, workflow.reviews as rv; "
                                 "print('BOOK_IMPL:', book.__file__, file=sys.stderr); "
+                                "print('REVIEW_IMPL:', rv.__file__, file=sys.stderr); "
+                                "print('RC_IMPL:', rc.__file__, file=sys.stderr); "
+                                "print('VALIDATE_CMD:', "
+                                "book.build_parser().parse_args(['validate', sys.argv[1]]).func, "
+                                "file=sys.stderr); "
+                                "print('VALIDATE_CODE:', "
+                                "book.validate_book.__code__.co_filename, file=sys.stderr); "
                                 "old=rc._require_current_translation_acceptance; "
                                 "defprint=lambda *a, **k: print('reviewcheck-stack', "
                                 "''.join(traceback.format_stack(limit=8)), file=sys.stderr); "
