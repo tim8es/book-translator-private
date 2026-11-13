@@ -137,6 +137,22 @@ def verify_changed_books(paths, root=ROOT, run_canonical=True):
                         command, cwd=engine, capture_output=True, text=True, timeout=180,
                     )
                     if result.returncode:
+                        if lease is not None and command[1:] == ["scripts/book.py", "validate", slug]:
+                            diagnostic = (
+                                "import sys, traceback; sys.path.insert(0, 'scripts'); "
+                                "import book, workflow.review_cli as rc; "
+                                "old=rc._require_current_translation_acceptance; "
+                                "defprint=lambda *a, **k: print('reviewcheck-stack', "
+                                "''.join(traceback.format_stack(limit=8)), file=sys.stderr); "
+                                "rc._require_current_translation_acceptance="
+                                "lambda *a, **kw: (defprint(), old(*a, **kw))[1]; "
+                                "book.main(['validate', sys.argv[1]])"
+                            )
+                            probe = subprocess.run(
+                                [sys.executable, "-c", diagnostic, slug],
+                                cwd=engine, capture_output=True, text=True, timeout=180,
+                            )
+                            print("PINNED VALIDATOR TRACE: " + (probe.stdout + probe.stderr)[:6000])
                         errors.append(
                             f"books/{slug}: {' '.join(command[1:])} failed: "
                             f"{(result.stdout + result.stderr)[:9000]}"
