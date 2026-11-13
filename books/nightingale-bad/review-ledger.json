@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "nightingale-bad",
-  "next_sequence": 6,
+  "next_sequence": 7,
   "records": [
     {
       "record_id": "267f9c6d763542ed928f67c176f3083f",
@@ -168,6 +168,49 @@
             "severity": "minor",
             "detail": "Проверено естественное описание запаха Бабимайны без неудачной двойной отрицательной конструкции.",
             "resolved": true
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "052e2e70ce3942b29c5703838047cf5c",
+      "sequence": 6,
+      "unit_id": "chapter-000005",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "e6b20488d1aab0d3742ec0ae0004cfb234d67f9df73f76c952f5f8ed123a6c4c",
+      "translation_sha256": "ccadee7db77fded8a48023a0eb6f95184730cffcd90e9f7fe06bc6eb39cfe175",
+      "workflow_revision": "effd537cb20d42e0077ebe8760cb794fdb84fd0f",
+      "review_contract_revision": "docs/TRANSLATION.md@effd537cb20d42e0077ebe8760cb794fdb84fd0f",
+      "reviewer_session_id": "chat-manual-night-20261113-ch4-review",
+      "reviewed_at": "2026-11-13T10:48:30Z",
+      "state_revision": "cfb480cfa7d0271051d457639c145475f9d1bdd5eab05e6d439598653c458cfd",
+      "review_commit": "3fa65591f32fbc3f2902d252f0976280c2ad93ee",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "major",
+            "detail": "Source 'Mated pairs have visitation completely unrelated to our program' vs 'Пары, заключившие союз, допускают на свидания': translation mistakenly makes mated pairs the party authorizing visits; change to 'Парам, заключившим союз, разрешают свидания вне нашей программы'.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "'subjects for think pieces' translated 'подопытные для своих рассуждений', which adds experiment connotation; use 'героев для своих статей-размышлений' or equivalent.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "'manicured nails' as 'Наманикюренные пальцы' sounds awkward; use 'Пальцы Элизы с ухоженными ногтями' or equivalent.",
+            "resolved": false
           }
         ]
       }
