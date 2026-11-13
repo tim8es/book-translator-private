@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "unit_id": "chapter-000022",
+  "review_record_id": "4596ba1ae4cb459088edd09e0e57827e",
+  "source_sha256": "0597bc9de058f1acff07f60dd5e132d7ec2306b50edb043b5dbaab0190059cdf",
+  "translation_sha256": "e17aa563e89d7e0823adf446694ec07d407ceb1020f99a0677d6d5b73275d2cc",
+  "workflow_revision": "ea9963ca546b7cc7f6aba4dc5350fa19ea7da862",
+  "patches": [
+    {
+      "finding_id": "names-recheck-2",
+      "operation": "replace",
+      "target_anchor": {
+        "quote": "«Ага. Есть проблемы, Darren?»",
+        "occurrence": 0
+      },
+      "replacement": "«Ага. Есть проблемы, Даррен?»"
+    },
+    {
+      "finding_id": "bluff-recheck-1",
+      "operation": "insert_before",
+      "target_anchor": {
+        "quote": "словно проверяя, не блефую ли я",
+        "occurrence": 0
+      },
+      "replacement": "Кейд стоял в стороне и наблюдал за происходящим, а зелёные глаза Даррена сузились, "
+    }
+  ],
+  "glossary": [],
+  "style_guide": []
+}
