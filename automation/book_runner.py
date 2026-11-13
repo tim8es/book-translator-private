@@ -51,6 +51,9 @@ CORRECTION_BATCH_CALLS_PER_CHECKPOINT = 2
 # Immutable public compatibility helper. The current book's literary workflow
 # revision remains pinned; this source-format adapter is versioned separately.
 PUBLIC_STRUCTURAL_HELPER_REVISION = "a9f85b68fcc062185c891202c5823a5838a717a0"
+# Separate immutable public compatibility helper: does NOT change a book's
+# pinned literary revision or reviewer contract.
+PUBLIC_CORRECTION_HELPER_REVISION = "1f95d09dc0ef1f1db388493cb4310bfdb06ded34"
 STRUCTURAL_MODEL_CALLS_PER_CHECKPOINT = 2
 STRUCTURAL_MODEL_SEGMENTS_PER_CALL = 3
 DEFAULT_MODEL_CALL_LIMIT = 36
@@ -962,6 +965,38 @@ def load_public_structural_helper(engine: Path):
     if not all(callable(getattr(module, name, None)) for name in
                ("plan", "spans", "next_spans", "parse_batch", "render")):
         raise JobError("public structural helper has an unsupported API")
+    return module
+
+
+def load_public_correction_helper(engine: Path):
+    """Read pure public correction protocol from an immutable audited commit.
+
+    The book's pinned literary workflow remains unchanged; only the Auto
+    protocol adapter opts into this independently versioned compatibility tool.
+    """
+    ref = PUBLIC_CORRECTION_HELPER_REVISION
+    if not SHA.fullmatch(ref):
+        raise JobError("public correction helper has no immutable revision pin")
+    result = subprocess.run(
+        ["git", "-C", str(engine), "show",
+         ref + ":scripts/workflow/correction_protocol.py"],
+        capture_output=True, timeout=45)
+    if result.returncode or not result.stdout:
+        raise JobError("pinned public correction protocol helper is unavailable")
+    support = engine / ".runtime-correction-compat"
+    support.mkdir(exist_ok=True)
+    target = support / "correction_protocol.py"
+    target.write_bytes(result.stdout)
+    spec = importlib.util.spec_from_file_location(
+        "book_translator_runtime_correction_protocol", target)
+    if spec is None or spec.loader is None:
+        raise JobError("cannot import pinned public correction protocol")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    if not all(callable(getattr(module, name, None)) for name in
+               ("failure_code", "repair_spec", "repair_guidance",
+                "validate_intent", "validate_replacement")):
+        raise JobError("public correction protocol helper has an unsupported API")
     return module
 
 
