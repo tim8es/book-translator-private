@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 111,
+  "next_sequence": 112,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -8611,6 +8611,172 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "726e4f76699f03977c14ec08e038db936a065b810ed2c84e32c86cf9171808d9",
+        "style_guide": "3ec7c485cf41741084ffe49b72d2b18ed9bd650a00a2ba00554605abadea5e3a"
+      }
+    },
+    {
+      "record_id": "ce6c33ba2f364ac38584b4efcedb9bda",
+      "sequence": 111,
+      "unit_id": "chapter-000027",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "c3ed2639c7dda98c38893900fcc29f44bfa6c4b111be08106f756690984828d4",
+      "translation_sha256": "0128e3d5d69df120154de0f377fa03e75e13b6ebe419ec69cae7306d3cd1df80",
+      "workflow_revision": "ea9963ca546b7cc7f6aba4dc5350fa19ea7da862",
+      "review_contract_revision": "docs/TRANSLATION.md@ea9963ca546b7cc7f6aba4dc5350fa19ea7da862",
+      "reviewer_session_id": "auto-886bde8dfe20-reviewer-253a6c6a",
+      "reviewed_at": "2026-11-13T12:18:30Z",
+      "state_revision": "23e092fcc304d79770379b39d8ff01d576f049d4027c4cf867f623d4037fe9cc",
+      "review_commit": "08f3b35ac8a24b9cf8d943a5e20d7409f2a4f619",
+      "correction_round": 4,
+      "supersedes_record_id": "317f174716ed4319845c42167e3d6daf",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-followup-1",
+            "category": "omission",
+            "severity": "major",
+            "detail": "В текущем тексте переданы поиск информации о минете, конкретное желание рассказчика, его готовность и желание доставить Кейду удовольствие разными способами. Эти детали присутствуют во втором из двух повторяющихся абзацев.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "This time, while on my phone in private, I’d been looking up blowjobs, and exactly what I wanted to do to Cade.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Так готов попробовать его на вкус и доставлять ему удовольствие разными способами.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "317f174716ed4319845c42167e3d6daf",
+              "finding_id": "followup-1"
+            }
+          },
+          {
+            "id": "recheck-followup-6",
+            "category": "omission",
+            "severity": "major",
+            "detail": "В предоставленном фрагменте купание, поцелуи, обсыхание на солнце и переход к палатке теперь переведены.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "We splashed, dunked our heads underwater, rinsed off, then spent a good ten minutes just making out.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Мы плескались, ныряли с головой, ополаскивались, а потом ещё добрых десять минут просто целовались.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "317f174716ed4319845c42167e3d6daf",
+              "finding_id": "followup-6"
+            }
+          },
+          {
+            "id": "recheck-followup-8",
+            "category": "omission",
+            "severity": "minor",
+            "detail": "Фраза о сильном сексуальном возбуждении рассказчика теперь присутствует в переводе.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "And I was fucking horny.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "И я был чертовски возбужден.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "317f174716ed4319845c42167e3d6daf",
+              "finding_id": "followup-8"
+            }
+          },
+          {
+            "id": "recheck-new-1",
+            "category": "omission",
+            "severity": "minor",
+            "detail": "Действие и детали о вспотевшем обнажённом торсе теперь переданы.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "My hands slid up his sweaty, shirtless torso.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Мои руки скользнули вверх по его вспотевшему обнажённому торсу.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "317f174716ed4319845c42167e3d6daf",
+              "finding_id": "new-1"
+            }
+          },
+          {
+            "id": "recheck-new-2",
+            "category": "addition",
+            "severity": "minor",
+            "detail": "Один исходный абзац передан дважды. Удалите повторяющийся первый вариант и оставьте один перевод, сохраняющий поиск конкретной информации и готовность рассказчика попробовать доставить Кейду удовольствие разными способами.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "This time, while on my phone in private, I’d been looking up blowjobs, and exactly what I wanted to do to Cade. I was ready. So ready to taste him and please him in different ways.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "На этот раз, оставшись наедине с телефоном, я искал информацию о минете и о том, что именно хотел сделать с Кейдом. Я был готов. Очень хотел стать ему ближе и радовать его по-разному.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "317f174716ed4319845c42167e3d6daf",
+              "finding_id": "new-2"
+            }
+          },
+          {
+            "id": "recheck-new-3",
+            "category": "omission",
+            "severity": "major",
+            "detail": "В предоставленном изменённом фрагменте просьба попробовать что-нибудь новое и согласие Кейда теперь присутствуют.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "C-can we try some new things when we fool around next?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "— М-можем в следующий раз попробовать что-нибудь новенькое, когда будем ласкать друг друга? Чёрт, с чего это я вдруг так занервничал?",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "317f174716ed4319845c42167e3d6daf",
+              "finding_id": "new-3"
+            }
+          },
+          {
+            "id": "recheck-new-4",
+            "category": "modality",
+            "severity": "minor",
+            "detail": "Неопределённость исходного maybe сохранена: приглашения пока не поступали, но рассказчик допускает, что они могут появиться после его включения в основной состав осенью.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "I haven’t had any recruits yet, but maybe when I’m on the varsity team in the fall.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Пока меня ещё никто не приглашал, но, может, начнут, когда осенью я буду играть в основном составе школьной команды.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "317f174716ed4319845c42167e3d6daf",
+              "finding_id": "new-4"
+            }
           }
         ]
       },
