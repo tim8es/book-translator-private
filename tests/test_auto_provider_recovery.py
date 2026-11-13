@@ -125,6 +125,21 @@ class ProviderRecoveryTests(unittest.TestCase):
         with patch.dict(os.environ, self.env):
             self.assertEqual(config("TRANSLATOR_FALLBACK")[2], "test-backup")
 
+
+    def test_repeated_same_unit_protocol_failures_select_backup(self):
+        self.status["active"]["unit_id"] = self.chapter["unit_id"]
+        self.status["unit_protocol_failures"] = {self.chapter["unit_id"]: 2}
+        with patch.dict(os.environ, self.env), \\
+             patch.object(worker, "complete", return_value="{}") as post:
+            worker.complete_for_job(self.status, "TRANSLATOR", "system", "text")
+        post.assert_called_once_with("TRANSLATOR_FALLBACK", "system", "text")
+        # Never use another unit's failed attempts to select its model.
+        self.status["active"]["unit_id"] = "chapter-000002"
+        with patch.dict(os.environ, self.env), \\
+             patch.object(worker, "complete", return_value="{}") as post:
+            worker.complete_for_job(self.status, "TRANSLATOR", "system", "text")
+        post.assert_called_once_with("TRANSLATOR", "system", "text")
+
     def test_translator_output_allowlist_excludes_transport_and_unknown(self):
         for message, expected in (
             ("translator must return a structured JSON response", "invalid_translator_output"),
