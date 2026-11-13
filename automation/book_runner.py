@@ -2239,14 +2239,18 @@ def checked_reviewer_response(answer: str, *, review_context: str, source: str,
     if report.get("evidence_version") != 2:
         raise ModelError("automatic reviewer must return anchored v2 evidence")
     try:
-        from workflow.review_anchors import (
-            EvidenceAnchorError, verify_correction_lineage, verify_evidence_anchors)
+        from workflow.review_anchors import verify_correction_lineage, verify_evidence_anchors
+    except ImportError as exc:
+        raise ModelError(f"reviewer evidence is invalid: {exc}") from exc
+    try:
         verify_evidence_anchors(report, source.encode("utf-8"), translation)
-    except EvidenceAnchorError as exc:
-        # Preserve the actual invalid report only in this invocation. No model
-        # excerpt or unverified quote is written to status, Git, or Actions logs.
-        raise ReviewerAnchorMismatch(str(exc), report) from exc
-    except (ImportError, ValueError) as exc:
+    except ValueError as exc:
+        # Only the exact-quote mismatch handled by the pinned anchor verifier
+        # is suitable for a bounded second attempt. Other evidence failures
+        # retain the existing fail-closed retry path.
+        if ("quoted passage occurrence" in str(exc) or "quote is repeated" in str(exc)):
+            # No model excerpt or unverified quote is committed or logged.
+            raise ReviewerAnchorMismatch(str(exc), report) from exc
         raise ModelError(f"reviewer evidence is invalid: {exc}") from exc
     try:
         verify_correction_lineage(
