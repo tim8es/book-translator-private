@@ -2935,10 +2935,45 @@ def process_claim(job_id: str, slug: str, status: dict, engine: Path) -> None:
                 "model_call": status.get("model_calls_started"),
             }
         status["failures"] = status.get("failures", 0) + 1
-        status["state"] = "blocked" if status["failures"] >= MAX_FAILURES else "running"
-        status["phase"] = "model-blocked" if status["state"] == "blocked" else "model-retry"
         status["last_error"] = str(exc)[:350]
         status["blocked_unit_id"] = unit_id
+        recoverable_code = None
+        if role == "corrector" and patch_mode and isinstance(exc, ModelError):
+            # Unknown provider, safety, or workflow failures must not be
+            # silently turned into benign model-format failures.
+            helper = load_public_correction_helper(engine)
+            recoverable_code = helper.failure_code(str(exc))
+            if (recoverable_code is None
+                    and str(exc).startswith("typed correction repair invalid: ")):
+                recoverable_code = "invalid_typed_repair"
+        if recoverable_code:
+            counters = status.setdefault("unit_protocol_failures", {})
+            counters[unit_id] = counters.get(unit_id, 0) + 1
+            status["last_error_code"] = recoverable_code
+        if (recoverable_code and status["failures"] >= MAX_FAILURES
+                and previous_record and previous_record.get("outcome") == "CORRECTIONS_REQUIRED"):
+            # A protocol failure is local to this already independently
+            # rejected unit. The canonical queue holds it hash-bound, while
+            # other translated units may still be reviewed/corrected.
+            # Never promote the rejected unit or pretend the failed edit ran.
+            cli("defer-review", slug, str(chapter["number"]),
+                "--reason", "operator-attention")
+            audit = status.setdefault("model_unit_deferral_audit", [])
+            audit.append({
+                "unit_id": unit_id,
+                "review_record_id": previous_record["record_id"],
+                "translation_sha256": previous_record["translation_sha256"],
+                "error_code": recoverable_code,
+                "at": clock(),
+                "action": "canonical-defer-without-pass",
+            })
+            status["failures"] = 0
+            status["state"] = "running"
+            status["phase"] = "model-unit-deferred"
+            checkpoint(job_id, status, slug)
+            return
+        status["state"] = "blocked" if status["failures"] >= MAX_FAILURES else "running"
+        status["phase"] = "model-blocked" if status["state"] == "blocked" else "model-retry"
         checkpoint(job_id, status, slug)
         return
     if role == "reviewer":
