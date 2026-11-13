@@ -113,5 +113,28 @@ class CoverageRecoveryTests(unittest.TestCase):
                              translation)
 
 
+    def test_operator_retry_budget_is_book_scoped_bounded_and_does_not_waive_review(self):
+        unit = "chapter-000025"
+        chapter = {"unit_id": unit, "status": "translated"}
+        ledger = {"records": []}
+        status = {"correction_rounds": {unit: 4},
+                  "correction_extensions": {unit: 1}}
+        self.assertFalse(runner.correction_allowed(status, ledger, chapter))
+        status["operator_correction_limits"] = {unit: 9}
+        status["operator_review_limits"] = {unit: 12}
+        self.assertTrue(runner.correction_allowed(status, ledger, chapter))
+        self.assertEqual(runner.operator_unit_limit(
+            status, "review", unit, runner.MAX_ACCEPTED_REVIEWS_PER_UNIT), 12)
+        self.assertEqual(runner.operator_unit_limit(
+            status, "review", "chapter-000022",
+            runner.MAX_ACCEPTED_REVIEWS_PER_UNIT), runner.MAX_ACCEPTED_REVIEWS_PER_UNIT)
+        status["correction_rounds"][unit] = 9
+        self.assertFalse(runner.correction_allowed(status, ledger, chapter))
+        status["operator_review_limits"][unit] = 0
+        with self.assertRaises(runner.JobError):
+            runner.operator_unit_limit(
+                status, "review", unit, runner.MAX_ACCEPTED_REVIEWS_PER_UNIT)
+
+
 if __name__ == "__main__":
     unittest.main()

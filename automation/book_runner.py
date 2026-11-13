@@ -1179,7 +1179,8 @@ def allow_review_bound_protocol_retry(status: dict, ledger: dict, chapters: list
 
 def prepare_correction_limit_resume(status: dict, ledger: dict, chapter: dict) -> None:
     unit_id = chapter["unit_id"]
-    if accepted_review_count(ledger, chapter) >= MAX_ACCEPTED_REVIEWS_PER_UNIT:
+    if accepted_review_count(ledger, chapter) >= operator_unit_limit(
+                    status, "review", chapter["unit_id"], MAX_ACCEPTED_REVIEWS_PER_UNIT):
         defer_review_unit(status, unit_id)
         return
     # Existing books on historical immutable workflow revisions cannot be
@@ -1812,6 +1813,18 @@ def focused_review_context(slug: str, chapter: dict, previous: dict,
     return payload
 
 
+def operator_unit_limit(status: dict, kind: str, unit_id: str, default: int) -> int:
+    """Book-scoped explicit operator retry budget, never a waiver of review."""
+    key = "operator_review_limits" if kind == "review" else "operator_correction_limits"
+    limits = status.get(key, {})
+    if (not isinstance(limits, dict)
+            or any(not isinstance(k, str) or not re.fullmatch(r"chapter-\d{6}", k)
+                   or type(v) is not int or not default <= v <= 20
+                   for k, v in limits.items())):
+        raise JobError("invalid operator-authorized literary retry budget")
+    return limits.get(unit_id, default)
+
+
 def correction_allowed(status: dict, ledger: dict, chapter: dict) -> bool:
     counters = status.get("correction_rounds", {})
     if not isinstance(counters, dict):
@@ -1819,6 +1832,10 @@ def correction_allowed(status: dict, ledger: dict, chapter: dict) -> bool:
     rounds = counters.get(chapter["unit_id"], 0)
     if type(rounds) is not int or rounds < 0:
         raise JobError("invalid durable correction counter")
+    extra_limit = operator_unit_limit(
+        status, "correction", chapter["unit_id"], MAX_CORRECTIONS)
+    if extra_limit > MAX_CORRECTIONS:
+        return rounds < extra_limit
     if rounds < MAX_CORRECTIONS:
         return True
     if rounds >= MAX_CORRECTIONS + MAX_CORRECTION_EXTENSIONS:
@@ -1934,7 +1951,8 @@ def next_operation(slug: str, status: dict) -> tuple[str, dict | None]:
                     and report.get("evidence_version") != 2):
                 return "reviewer", chapter
             if correction_findings_missing(record):
-                if accepted_review_count(ledger, chapter) >= MAX_ACCEPTED_REVIEWS_PER_UNIT:
+                if accepted_review_count(ledger, chapter) >= operator_unit_limit(
+                    status, "review", chapter["unit_id"], MAX_ACCEPTED_REVIEWS_PER_UNIT):
                     defer_review_unit(status, chapter["unit_id"])
                     deferred.add(chapter["unit_id"])
                     continue
@@ -1975,11 +1993,13 @@ def canonical_dispatch(slug: str, status: dict) -> tuple[str, dict | None]:
             if not chapter:
                 raise JobError("canonical attention selection returned unknown unit")
             record = latest_record(ledger, chapter)
-            if (accepted_review_count(ledger, chapter) < MAX_ACCEPTED_REVIEWS_PER_UNIT
+            if (accepted_review_count(ledger, chapter) < operator_unit_limit(
+                    status, "review", chapter["unit_id"], MAX_ACCEPTED_REVIEWS_PER_UNIT)
                     and correction_allowed(status, ledger, chapter)):
                 break
             reason = ("review-round-limit"
-                      if accepted_review_count(ledger, chapter) >= MAX_ACCEPTED_REVIEWS_PER_UNIT
+                      if accepted_review_count(ledger, chapter) >= operator_unit_limit(
+                    status, "review", chapter["unit_id"], MAX_ACCEPTED_REVIEWS_PER_UNIT)
                       else "correction-limit")
             cli("defer-review", slug, str(chapter["number"]), "--reason", reason)
         else:
@@ -2013,7 +2033,8 @@ def canonical_dispatch(slug: str, status: dict) -> tuple[str, dict | None]:
             and report.get("evidence_version") != 2):
         return "reviewer", chapter
     if operation == "correct_translation":
-        if accepted_review_count(ledger, chapter) >= MAX_ACCEPTED_REVIEWS_PER_UNIT:
+        if accepted_review_count(ledger, chapter) >= operator_unit_limit(
+                    status, "review", chapter["unit_id"], MAX_ACCEPTED_REVIEWS_PER_UNIT):
             if (ROOT / "scripts" / "workflow" / "attention.py").exists():
                 raise JobError("canonical attention selection left an over-budget unit")
             defer_review_unit(status, unit_id)
