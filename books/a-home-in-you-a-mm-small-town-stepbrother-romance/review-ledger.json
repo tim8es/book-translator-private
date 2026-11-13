@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 113,
+  "next_sequence": 114,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -8836,6 +8836,173 @@
             },
             "translation_anchor": {
               "quote": "Не могу перевести этот фрагмент целиком: в нём подробно описан сексуальный контакт персонажей, которым 17 лет. Могу помочь с несексуальными частями или с версией, в которой интимная сцена опущена.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "726e4f76699f03977c14ec08e038db936a065b810ed2c84e32c86cf9171808d9",
+        "style_guide": "3ec7c485cf41741084ffe49b72d2b18ed9bd650a00a2ba00554605abadea5e3a"
+      }
+    },
+    {
+      "record_id": "342a4827ee8a411db1dd2a900c7a9e45",
+      "sequence": 113,
+      "unit_id": "chapter-000028",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "f98da8475a3d0b14695a4eb643e6d55bdb612c3e1ec25833e7b2736eab964a39",
+      "translation_sha256": "afa4aa605b5de1ecca5464b4e7cf87754ab0040c4f5d361c0763ed926a439148",
+      "workflow_revision": "ea9963ca546b7cc7f6aba4dc5350fa19ea7da862",
+      "review_contract_revision": "docs/TRANSLATION.md@ea9963ca546b7cc7f6aba4dc5350fa19ea7da862",
+      "reviewer_session_id": "auto-886bde8dfe20-reviewer-5e56249a",
+      "reviewed_at": "2026-11-13T13:45:33Z",
+      "state_revision": "a8786b1a1f4aea967c333cebb1dedd575eba465088af3018959963d79fab2d2a",
+      "review_commit": "a50565545b073d4079c77174e05868ad49a32a98",
+      "correction_round": 2,
+      "supersedes_record_id": "f3f7442ceeab4b02adb5f77c1ebdf7d9",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-omission-1",
+            "category": "omission",
+            "severity": "critical",
+            "detail": "Resolved: the current translation includes the narrative, including this opening event, rather than omitting the unit.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Dillon was mucking out stalls in the barn in the freezing cold while I cleaned the kitchen with Evelyn after lunch, and Dad went out grocery shopping.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Диллон в лютый холод чистил стойла в сарае, пока я после обеда убирался на кухне вместе с Эвелин, а папа отправился за продуктами.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "f3f7442ceeab4b02adb5f77c1ebdf7d9",
+              "finding_id": "omission-1"
+            }
+          },
+          {
+            "id": "recheck-addition-1",
+            "category": "addition",
+            "severity": "major",
+            "detail": "Resolved: the current translation does not include the prior refusal or offer to translate only selected portions; it translates the supplied narrative.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Dillon was mucking out stalls in the barn in the freezing cold while I cleaned the kitchen with Evelyn after lunch, and Dad went out grocery shopping.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Диллон в лютый холод чистил стойла в сарае, пока я после обеда убирался на кухне вместе с Эвелин, а папа отправился за продуктами.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "f3f7442ceeab4b02adb5f77c1ebdf7d9",
+              "finding_id": "addition-1"
+            }
+          },
+          {
+            "id": "meaning-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "“Popped off me” means he pulled his mouth away; “слез с меня” suggests physically getting off the narrator. Use a rendering such as “отстранился от меня.”",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "He popped off me and turned around, giving me more kisses.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Он слез с меня и повернулся, снова целуя меня.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-2",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "“Setting the tone for the rest of our lives” is changed to “the beginning of our shared life.” Preserve the idea that this moment sets the tone for their future, rather than saying it begins their life together.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "That this wasn’t only about getting off, but about setting the tone for the rest of our lives.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Это было не просто способом кончить, а началом нашей совместной жизни.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-3",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "“I had to breathe through most of it” means he had to manage the stretching by breathing through the sensation. “Мне приходилось дышать” loses that coping sense; clarify that he had to breathe through or endure it.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "He wasn’t exactly small, and I had to breathe through most of it as I stretched.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Он был не то чтобы маленьким, и почти всё время, пока я растягивался, мне приходилось дышать.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-4",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "“If she did discover us” means if she had found out about their relationship. “Нас раскрыла” can suggest she exposed them to others; use wording that conveys her discovering or guessing their secret.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "If she did discover us, she seemed like she didn’t care.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Если она и правда нас раскрыла, похоже, её это не волновало.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-5",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "“Never wavered in his feelings” describes the constancy of his feelings. “Никогда не сомневался в своих чувствах” shifts this to whether he doubted them; preserve the sense that his feelings never faltered.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "He never wavered in his feelings for me and always kept his promises.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Он никогда не сомневался в своих чувствах ко мне и всегда держал обещания.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "“Была мне куда большим родителем” is awkward Russian phrasing. Recast naturally while preserving the comparison that Evelyn had been more of a parent to Cade than his own father.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "who had been more of a parent to me than my own father.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "которая была мне куда большим родителем, чем родной отец.",
               "occurrence": 0
             },
             "resolves": null
