@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "request_id": "4d397b8a15ce4f99947819d3f8e6ab05",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "1a3f58fa0b4220db89b07495fced6515741df6d734b95265ff4e3eae3397463e",
+    "record": {
+      "correction_round": 1,
+      "outcome": "CORRECTIONS_REQUIRED",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "findings": [
+          {
+            "detail": "Original calls regular classmate 'a woman in her forties' and later 'older woman' only relative to Kurapika. Russian 'пожилая женщина' wrongly implies elderly; replace with 'женщина постарше' or simply 'женщина' in corresponding two references.",
+            "resolved": false,
+            "severity": "minor"
+          },
+          {
+            "detail": "Original Melody conversation: 'He said he doesn't feel competitive about me' means Chrollo does not feel rivalry over Kurapika (e.g. with Babimyna). Russian 'он не воспринимает меня как предмет соперничества' changes the referent/meaning. Correct to 'Он говорил, что ни с кем не соперничает из-за меня' or equivalent.",
+            "resolved": false,
+            "severity": "major"
+          }
+        ]
+      },
+      "record_id": "9d0f05ad9cb4454c83bae782d02acbfc",
+      "review_commit": "9a8bb2548c1ef611aeb0345b2e94ce18130d97b5",
+      "review_contract_revision": "docs/TRANSLATION.md@effd537cb20d42e0077ebe8760cb794fdb84fd0f",
+      "reviewed_at": "2026-11-13T11:59:45Z",
+      "reviewer_session_id": "chat-manual-night-20261113-ch8-review",
+      "sequence": 13,
+      "source_sha256": "462e016b201a6f00f73bd65a740805934d4e52e7f92885c1422801bcaefdd04b",
+      "state_revision": "85e24715b6d3aa4d3c76e919955185c4d2da2986296d64f2b3f6f323a10d4c41",
+      "supersedes_record_id": null,
+      "translation_sha256": "b28e9c6a6d802ab217f45d22f46b0bdfba578af9da8c37a5673a2abf2adeab08",
+      "unit_id": "chapter-000009",
+      "workflow_revision": "effd537cb20d42e0077ebe8760cb794fdb84fd0f"
+    }
+  },
+  "error": null
+}

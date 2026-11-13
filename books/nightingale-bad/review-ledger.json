@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "nightingale-bad",
-  "next_sequence": 13,
+  "next_sequence": 14,
   "records": [
     {
       "record_id": "267f9c6d763542ed928f67c176f3083f",
@@ -445,6 +445,44 @@
           "structure": true
         },
         "findings": []
+      }
+    },
+    {
+      "record_id": "9d0f05ad9cb4454c83bae782d02acbfc",
+      "sequence": 13,
+      "unit_id": "chapter-000009",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "462e016b201a6f00f73bd65a740805934d4e52e7f92885c1422801bcaefdd04b",
+      "translation_sha256": "b28e9c6a6d802ab217f45d22f46b0bdfba578af9da8c37a5673a2abf2adeab08",
+      "workflow_revision": "effd537cb20d42e0077ebe8760cb794fdb84fd0f",
+      "review_contract_revision": "docs/TRANSLATION.md@effd537cb20d42e0077ebe8760cb794fdb84fd0f",
+      "reviewer_session_id": "chat-manual-night-20261113-ch8-review",
+      "reviewed_at": "2026-11-13T11:59:45Z",
+      "state_revision": "85e24715b6d3aa4d3c76e919955185c4d2da2986296d64f2b3f6f323a10d4c41",
+      "review_commit": "9a8bb2548c1ef611aeb0345b2e94ce18130d97b5",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Original calls regular classmate 'a woman in her forties' and later 'older woman' only relative to Kurapika. Russian 'пожилая женщина' wrongly implies elderly; replace with 'женщина постарше' or simply 'женщина' in corresponding two references.",
+            "resolved": false
+          },
+          {
+            "severity": "major",
+            "detail": "Original Melody conversation: 'He said he doesn't feel competitive about me' means Chrollo does not feel rivalry over Kurapika (e.g. with Babimyna). Russian 'он не воспринимает меня как предмет соперничества' changes the referent/meaning. Correct to 'Он говорил, что ни с кем не соперничает из-за меня' or equivalent.",
+            "resolved": false
+          }
+        ]
       }
     }
   ]
