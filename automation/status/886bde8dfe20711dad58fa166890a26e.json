@@ -4,7 +4,7 @@
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
   "source_sha256": "3a3fce78317162b68bc1e82501456a74a783cfc96cb2640c463f381866007865",
   "state": "running",
-  "phase": "claimed",
+  "phase": "model-call-reserved",
   "failures": 1,
   "correction_rounds": {
     "chapter-000002": 1,
@@ -23,14 +23,14 @@
     "chapter-000022": 6
   },
   "workflow_revision": "ea9963ca546b7cc7f6aba4dc5350fa19ea7da862",
-  "updated_at": "2026-11-13T23:52:29.690842+00:00",
+  "updated_at": "2026-11-13T23:52:53.952901+00:00",
   "active": {
     "role": "corrector",
     "chapter": 27,
     "session_id": "auto-886bde8dfe20-corrector-95b67587",
     "unit_id": "chapter-000027"
   },
-  "model_calls_started": 273,
+  "model_calls_started": 274,
   "memory_glossary_saved": 110,
   "pending_style": [],
   "prompt_context": {
@@ -47,8 +47,7 @@
     "user_chars": 15966,
     "execution_mode": "shared-structural-segments",
     "helper_revision": "da992e0d2647a3f0a34e74faff624ec4cff01358",
-    "batch_segment_count": 1,
-    "short_output_repair": 1
+    "batch_segment_count": 1
   },
   "memory_style_saved": 6,
   "recoveries": [
