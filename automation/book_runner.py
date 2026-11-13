@@ -337,7 +337,7 @@ def _mismatch_index(expected: list, actual: list) -> int:
 def approve_blocked_resume(status: dict) -> None:
     phase = status.get("phase")
     if (status.get("state") != "blocked" or phase not in
-            {"model-blocked", "correction-limit-reached", "review-deferred-requires-operator"}
+            {"model-blocked", "correction-limit-reached", "review-deferred-requires-operator", "attention-requires-operator"}
             or status.get("active") is not None):
         raise JobError("only an inactive blocked job with a supported recovery path can be resumed")
     history = status.get("recoveries", [])
@@ -795,7 +795,7 @@ def auto_mode(slug: str) -> str:
 def auto_resume_requested(status: dict) -> bool:
     """A newer explicit ChatOps resume-auto can authorize model-blocked recovery."""
     if (status.get("state") != "blocked"
-            or status.get("phase") not in {"model-blocked", "correction-limit-reached"}
+            or status.get("phase") not in {"model-blocked", "correction-limit-reached", "attention-requires-operator"}
             or status.get("active") is not None):
         return False
     slug = status.get("book_slug")
@@ -3311,7 +3311,7 @@ def run(job_id: str, *, resume_blocked: bool = False,
             not provider_retry_due(status)):
         return status
     if (resume_blocked and (status.get("phase") not in
-            {"model-blocked", "correction-limit-reached", "review-deferred-requires-operator"}
+            {"model-blocked", "correction-limit-reached", "review-deferred-requires-operator", "attention-requires-operator"}
             or status.get("active") is not None)):
         raise JobError("resume requires an inactive blocked job")
     if resume_interrupted and (status.get("phase") != "operator-intervention-required"
@@ -3390,6 +3390,10 @@ def run(job_id: str, *, resume_blocked: bool = False,
                         "--reason", "correction-limit")
                 else:
                     prepare_correction_limit_resume(status, ledger, matches[0])
+            elif status.get("phase") == "attention-requires-operator":
+                choice = json.loads(cli("resume", slug, "--json"))
+                if choice.get("operation") in {"needs_attention", "blocked"}:
+                    raise JobError("canonical attention units still require explicit re-admission")
             elif status.get("phase") == "review-deferred-requires-operator":
                 _, ledger, chapters = chapter_data(slug)
                 by_id = {chapter.get("unit_id"): chapter for chapter in chapters}
@@ -3514,11 +3518,26 @@ def run(job_id: str, *, resume_blocked: bool = False,
             return status
         role, chapter = canonical_dispatch(slug, status)
         if role == "review-deferred":
-            deferred = deferred_review_unit_ids(status)
-            status.update({"state": "blocked",
-                           "phase": "review-deferred-requires-operator",
-                           "blocked_unit_id": deferred[0] if deferred else None,
-                           "last_error": "All other units are processed; deferred units still require a current PASS review."})
+            if canonical_translation_deferral_supported():
+                choice = json.loads(cli("resume", slug, "--json"))
+                if choice.get("operation") != "needs_attention":
+                    raise JobError("canonical attention state changed during dispatch")
+                entries = choice.get("units")
+                if (not isinstance(entries, list) or not entries
+                        or any(not isinstance(item, str) for item in entries)):
+                    raise JobError("invalid canonical attention backlog")
+                status.update({
+                    "state": "blocked", "phase": "attention-requires-operator",
+                    "blocked_unit_id": entries[0],
+                    "attention_units": entries,
+                    "last_error": "Canonical needs-attention queue contains unresolved units; EPUB is not complete.",
+                })
+            else:
+                deferred = deferred_review_unit_ids(status)
+                status.update({"state": "blocked",
+                               "phase": "review-deferred-requires-operator",
+                               "blocked_unit_id": deferred[0] if deferred else None,
+                               "last_error": "All other units are processed; deferred units still require a current PASS review."})
             checkpoint(job_id, status, slug)
         elif role == "blocked":
             status.update({"state": "blocked", "phase": "correction-limit-reached",
