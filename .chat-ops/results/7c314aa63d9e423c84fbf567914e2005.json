@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "request_id": "7c314aa63d9e423c84fbf567914e2005",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "eec61c11b421db177f862d8323795b3f227acf6b1418bcb36be9f6d78f589d23",
+    "record": {
+      "correction_round": 0,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "findings": []
+      },
+      "record_id": "51ec517f51874d98afd8a75711a9623b",
+      "review_commit": "7fece6a6ce88c834c00637529358594e514220d0",
+      "review_contract_revision": "docs/TRANSLATION.md@effd537cb20d42e0077ebe8760cb794fdb84fd0f",
+      "reviewed_at": "2026-11-13T12:31:01Z",
+      "reviewer_session_id": "chat-manual-night-20261113-ch10-review",
+      "sequence": 17,
+      "source_sha256": "aa28bb28fdee82a1db8bfa2371d5f11877e02f5a0cac65b43f99b8f006d6786e",
+      "state_revision": "8216940c0a003f9f0b7d762fb0858adc7e2277adc6f25927b1082e9c22101bfc",
+      "supersedes_record_id": null,
+      "translation_sha256": "7c24397bbdf14d570e1f14123e0957b90fc5afc63cdd1b5ce15fe98d762ef59a",
+      "unit_id": "chapter-000011",
+      "workflow_revision": "effd537cb20d42e0077ebe8760cb794fdb84fd0f"
+    }
+  },
+  "error": null
+}
