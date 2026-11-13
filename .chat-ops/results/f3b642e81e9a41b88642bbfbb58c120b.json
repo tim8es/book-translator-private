@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "request_id": "f3b642e81e9a41b88642bbfbb58c120b",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "875a47cdca4374e69afc3ae0fbd179c77b77926e98d85dcf8f34388aef5cd51a",
+    "record": {
+      "correction_round": 1,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "findings": [
+          {
+            "detail": "Rechecked 'Your dominance is obviously low-class': corrected to criticism of his manner 'манера доминировать — откровенно низкого пошиба', avoiding an invented claim of low birth.",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "Rechecked 'Let Tserracnich be the one spoken at rather than to': corrected Russian to 'Пусть хоть раз не с Церриднихом разговаривают, а выговаривают всё ему в лицо', preserving a one-sided speech.",
+            "resolved": true,
+            "severity": "minor"
+          }
+        ]
+      },
+      "record_id": "46e27176da194a07acdd451b5533ea43",
+      "review_commit": "f6e85ba516e3f2f2ad59d005167e065ac0d10508",
+      "review_contract_revision": "docs/TRANSLATION.md@effd537cb20d42e0077ebe8760cb794fdb84fd0f",
+      "reviewed_at": "2026-11-13T13:17:12Z",
+      "reviewer_session_id": "chat-manual-night-20261113-ch12-review2",
+      "sequence": 21,
+      "source_sha256": "b370f44ffbf3a29238326fdfbde8b64e2c2097cac819290c7638df1eebde1982",
+      "state_revision": "4e0be119107f7afd7f32191b18e3671b7ed3fbe2531b6aa875fd746781e3345f",
+      "supersedes_record_id": "2a0a5f67c73a45808cb986cc1ae54bec",
+      "translation_sha256": "136c52541193e8b975bb63592d92bce798945b93ef81d195fa17dbf20c5e03a6",
+      "unit_id": "chapter-000013",
+      "workflow_revision": "effd537cb20d42e0077ebe8760cb794fdb84fd0f"
+    }
+  },
+  "error": null
+}

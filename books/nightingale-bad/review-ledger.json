@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "nightingale-bad",
-  "next_sequence": 21,
+  "next_sequence": 22,
   "records": [
     {
       "record_id": "267f9c6d763542ed928f67c176f3083f",
@@ -726,6 +726,44 @@
             "severity": "minor",
             "detail": "Original 'Let Tserracnich be the one spoken at rather than to for a change' describes Kurapika talking AT rather than WITH Tserracnich. Current 'говорят *о* Церриднихе и *на* Церридниха' is unidiomatic and adds 'about'. Prefer 'Пусть хоть раз Церридниху выговаривают всё, не пытаясь вести с ним разговор' or equivalent.",
             "resolved": false
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "46e27176da194a07acdd451b5533ea43",
+      "sequence": 21,
+      "unit_id": "chapter-000013",
+      "outcome": "PASS",
+      "source_sha256": "b370f44ffbf3a29238326fdfbde8b64e2c2097cac819290c7638df1eebde1982",
+      "translation_sha256": "136c52541193e8b975bb63592d92bce798945b93ef81d195fa17dbf20c5e03a6",
+      "workflow_revision": "effd537cb20d42e0077ebe8760cb794fdb84fd0f",
+      "review_contract_revision": "docs/TRANSLATION.md@effd537cb20d42e0077ebe8760cb794fdb84fd0f",
+      "reviewer_session_id": "chat-manual-night-20261113-ch12-review2",
+      "reviewed_at": "2026-11-13T13:17:12Z",
+      "state_revision": "4e0be119107f7afd7f32191b18e3671b7ed3fbe2531b6aa875fd746781e3345f",
+      "review_commit": "f6e85ba516e3f2f2ad59d005167e065ac0d10508",
+      "correction_round": 1,
+      "supersedes_record_id": "2a0a5f67c73a45808cb986cc1ae54bec",
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Rechecked 'Your dominance is obviously low-class': corrected to criticism of his manner 'манера доминировать — откровенно низкого пошиба', avoiding an invented claim of low birth.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Rechecked 'Let Tserracnich be the one spoken at rather than to': corrected Russian to 'Пусть хоть раз не с Церриднихом разговаривают, а выговаривают всё ему в лицо', preserving a one-sided speech.",
+            "resolved": true
           }
         ]
       }
