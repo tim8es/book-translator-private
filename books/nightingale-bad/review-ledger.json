@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "nightingale-bad",
-  "next_sequence": 19,
+  "next_sequence": 20,
   "records": [
     {
       "record_id": "267f9c6d763542ed928f67c176f3083f",
@@ -650,6 +650,44 @@
             "severity": "minor",
             "detail": "Source 'Murmurs of understanding ripple through the crowd' reports acknowledgment/understanding, not endorsement. Russian 'одобрительное бормотание' adds approval. Render 'по толпе проходит согласное бормотание' or 'в толпе раздаётся бормотание в знак понимания'.",
             "resolved": false
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "16c9951f19a242b58dcd5764986bfa3a",
+      "sequence": 19,
+      "unit_id": "chapter-000012",
+      "outcome": "PASS",
+      "source_sha256": "be84273579f59ada6028df348be1891105a68fd4dc2256bd846bc40e555e98bb",
+      "translation_sha256": "d48a769946c94e817497572e22a1d34c42a5b36a43f0ece5c58ad4b527aac2c6",
+      "workflow_revision": "effd537cb20d42e0077ebe8760cb794fdb84fd0f",
+      "review_contract_revision": "docs/TRANSLATION.md@effd537cb20d42e0077ebe8760cb794fdb84fd0f",
+      "reviewer_session_id": "chat-manual-night-20261113-ch11-review2",
+      "reviewed_at": "2026-11-13T12:56:53Z",
+      "state_revision": "4aeeec847547348a22e7b92d241834e969b1e59215fabdaba6a565720d2a92d1",
+      "review_commit": "5843d6b8650fd62dac580474ff8bc632c60efc77",
+      "correction_round": 1,
+      "supersedes_record_id": "3ab1fc4499564f399624c9167fdb8324",
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Rechecked original 'a cold, grey afternoon': now renders 'после полудня холодно и пасмурно', without falsely specifying exact noon.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Rechecked 'Murmurs of understanding': now renders 'бормотанием в знак понимания', without implying approval.",
+            "resolved": true
           }
         ]
       }

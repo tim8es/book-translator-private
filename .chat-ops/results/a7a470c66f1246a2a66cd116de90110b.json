@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "request_id": "a7a470c66f1246a2a66cd116de90110b",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "8300ecb7fe2ffa84371e9a0a8d6843030047dff6c7b6c296b8a7547292d50e32",
+    "record": {
+      "correction_round": 1,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "findings": [
+          {
+            "detail": "Rechecked original 'a cold, grey afternoon': now renders 'после полудня холодно и пасмурно', without falsely specifying exact noon.",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "Rechecked 'Murmurs of understanding': now renders 'бормотанием в знак понимания', without implying approval.",
+            "resolved": true,
+            "severity": "minor"
+          }
+        ]
+      },
+      "record_id": "16c9951f19a242b58dcd5764986bfa3a",
+      "review_commit": "5843d6b8650fd62dac580474ff8bc632c60efc77",
+      "review_contract_revision": "docs/TRANSLATION.md@effd537cb20d42e0077ebe8760cb794fdb84fd0f",
+      "reviewed_at": "2026-11-13T12:56:53Z",
+      "reviewer_session_id": "chat-manual-night-20261113-ch11-review2",
+      "sequence": 19,
+      "source_sha256": "be84273579f59ada6028df348be1891105a68fd4dc2256bd846bc40e555e98bb",
+      "state_revision": "4aeeec847547348a22e7b92d241834e969b1e59215fabdaba6a565720d2a92d1",
+      "supersedes_record_id": "3ab1fc4499564f399624c9167fdb8324",
+      "translation_sha256": "d48a769946c94e817497572e22a1d34c42a5b36a43f0ece5c58ad4b527aac2c6",
+      "unit_id": "chapter-000012",
+      "workflow_revision": "effd537cb20d42e0077ebe8760cb794fdb84fd0f"
+    }
+  },
+  "error": null
+}
