@@ -1490,6 +1490,30 @@ def process_structural_translation(job_id: str, slug: str, status: dict,
         except ValueError as exc:
             raise ModelError("structural translator rejected model output: "
                              + str(exc)) from exc
+        incomplete = incomplete_structural_batch(selected, translated)
+        if incomplete:
+            reserved = status["model_calls_started"]
+            if reserved >= model_call_limit():
+                raise ModelError("structural translation omitted content and exhausted model budget")
+            status["model_calls_started"] = reserved + 1
+            status["phase"] = "structural-span-repair-reserved"
+            prompt_context["short_output_repair"] = len(incomplete)
+            checkpoint(job_id, status, slug)
+            repaired = complete(
+                "TRANSLATOR", system,
+                user + "\nREJECTED TRANSLATION: Some returned short source-bound "
+                "spans omitted sentences or collapsed paragraphs. You must "
+                "translate every sentence and retain paragraph boundaries; "
+                "do not summarize. Return every source segment in its full "
+                "required JSON schema. Incomplete IDs: "
+                + json.dumps(incomplete))
+            try:
+                translated, new_glossary, new_style = helper.parse_batch(
+                    repaired, [item["id"] for item in selected])
+            except ValueError as exc:
+                raise ModelError("structural translator repair rejected: " + str(exc)) from exc
+            if incomplete_structural_batch(selected, translated):
+                raise ModelError("structural translator repair still omitted source text")
         _, new_glossary, new_style = parse_translation(json.dumps({
             "translation": "validated placeholder",
             "glossary": new_glossary, "style_guide": new_style,
@@ -1665,11 +1689,23 @@ def process_correction_batches(job_id: str, slug: str, status: dict, engine: Pat
         answer = complete("CORRECTOR", system, user)
         patches, glossary, style = parse_correction_patches(
             answer, selected, allow_partial=True)
-        combined = stage["patches"] + patches
-        check_markers(source, apply_correction_patches(translation, combined))
+        combined = list(stage["patches"])
+        conflicting = []
+        for patch in patches:
+            try:
+                check_markers(source, apply_correction_patches(translation, combined + [patch]))
+            except JobError as exc:
+                if str(exc) != "correction patches overlap in the accepted translation":
+                    raise
+                conflicting.append(patch["finding_id"])
+            else:
+                combined.append(patch)
+        if not combined:
+            raise ModelError("corrector proposed no safely non-overlapping patches")
         updated_glossary = merge_unique_correction_decisions(stage["glossary"], glossary)
         updated_style = merge_unique_correction_decisions(stage["style_guide"], style)
-        # A single checkpoint persists the complete stage and progress marker.
+        # Stage only safe edits. Conflicted findings remain unresolved and are
+        # independently rechecked after a partial translation improvement.
         stage.update({"patches": combined, "glossary": updated_glossary,
                       "style_guide": updated_style})
         store_json(stage_path, stage)
@@ -1678,8 +1714,21 @@ def process_correction_batches(job_id: str, slug: str, status: dict, engine: Pat
             "review_record_id": record["record_id"],
             "completed": len(combined), "total": len(unresolved),
         }
+        if conflicting:
+            status["correction_overlap_deferred"] = {
+                "unit_id": chapter["unit_id"],
+                "review_record_id": record["record_id"],
+                "unapplied_finding_ids": conflicting,
+            }
         status["phase"] = "correction-batch-staged"
         checkpoint(job_id, status, slug)
+        if conflicting:
+            # Never merge competing replacements, mark conflicts fixed, or
+            # bypass canonical acceptance and independent source review.
+            partial = apply_correction_patches(translation, combined)
+            if partial == translation:
+                raise ModelError("overlapping corrections produced no change")
+            return partial, stage["glossary"], stage["style_guide"]
     covered = {patch["finding_id"] for patch in stage["patches"]}
     if covered != {finding["id"] for finding in unresolved}:
         # Keep the live claim. Next bounded Action continues the same stage.
