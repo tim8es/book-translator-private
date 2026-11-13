@@ -4,7 +4,7 @@
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
   "source_sha256": "3a3fce78317162b68bc1e82501456a74a783cfc96cb2640c463f381866007865",
   "state": "running",
-  "phase": "model-call-reserved",
+  "phase": "structural-segments-staged",
   "failures": 0,
   "correction_rounds": {
     "chapter-000002": 1,
@@ -23,7 +23,7 @@
     "chapter-000022": 6
   },
   "workflow_revision": "ea9963ca546b7cc7f6aba4dc5350fa19ea7da862",
-  "updated_at": "2026-11-13T23:50:37.901432+00:00",
+  "updated_at": "2026-11-13T23:51:02.684986+00:00",
   "active": {
     "role": "corrector",
     "chapter": 27,
@@ -295,17 +295,17 @@
   "structural_segment_progress": {
     "unit_id": "chapter-000027",
     "source_sha256": "c3ed2639c7dda98c38893900fcc29f44bfa6c4b111be08106f756690984828d4",
-    "completed": 3,
+    "completed": 4,
     "total": 9
   },
   "model_response_diagnostics": {
     "finish_reason": "stop",
     "response_format": "json_object",
-    "response_chars": 1879,
+    "response_chars": 1784,
     "provider_refusal": false,
-    "prompt_tokens": 7832,
-    "completion_tokens": 1722,
-    "total_tokens": 9554,
+    "prompt_tokens": 7799,
+    "completion_tokens": 1169,
+    "total_tokens": 8968,
     "route": "primary",
     "role": "translator",
     "unit_id": "chapter-000027"
