@@ -4,7 +4,7 @@
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
   "source_sha256": "3a3fce78317162b68bc1e82501456a74a783cfc96cb2640c463f381866007865",
   "state": "running",
-  "phase": "model-retry",
+  "phase": "claimed",
   "failures": 2,
   "correction_rounds": {
     "chapter-000002": 1,
@@ -23,8 +23,12 @@
     "chapter-000022": 6
   },
   "workflow_revision": "ea9963ca546b7cc7f6aba4dc5350fa19ea7da862",
-  "updated_at": "2026-11-13T19:51:06.840453+00:00",
-  "active": null,
+  "updated_at": "2026-11-13T19:51:41.821725+00:00",
+  "active": {
+    "role": "reviewer",
+    "chapter": 25,
+    "session_id": "auto-886bde8dfe20-reviewer-9565f6f5"
+  },
   "model_calls_started": 252,
   "memory_glossary_saved": 110,
   "pending_style": [],
@@ -269,6 +273,5 @@
       "structure-1"
     ]
   },
-  "blocked_unit_id": "chapter-000025",
-  "last_error": "model HTTP status 503"
+  "blocked_unit_id": "chapter-000025"
 }
