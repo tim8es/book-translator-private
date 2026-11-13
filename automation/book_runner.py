@@ -1828,8 +1828,15 @@ def focused_review_context(slug: str, chapter: dict, previous: dict,
         return None
     if delta.get("previous_record_id") != previous.get("record_id"):
         raise JobError("review-delta baseline does not match the latest anchored review")
+    # Minor, explicitly anchored register/style/voice findings may be checked
+    # against the immutable preceding full review and its source-grounded
+    # changed paragraphs. Keep full-scope comparison for nonlocal or
+    # significant perspective, structure and voice risks.
     if any(item.get("category") in {"referent", "register", "style", "structure", "voice"}
+           and item.get("severity") != "minor"
            for item in findings):
+        return None
+    if any(item.get("category") == "structure" for item in findings):
         return None
     sections = delta.get("sections")
     if not isinstance(sections, list):
