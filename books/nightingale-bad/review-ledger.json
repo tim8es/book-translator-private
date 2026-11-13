@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "nightingale-bad",
-  "next_sequence": 22,
+  "next_sequence": 23,
   "records": [
     {
       "record_id": "267f9c6d763542ed928f67c176f3083f",
@@ -764,6 +764,39 @@
             "severity": "minor",
             "detail": "Rechecked 'Let Tserracnich be the one spoken at rather than to': corrected Russian to 'Пусть хоть раз не с Церриднихом разговаривают, а выговаривают всё ему в лицо', preserving a one-sided speech.",
             "resolved": true
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "5afa22098f2e4aba90a8b6e24d5cedbc",
+      "sequence": 22,
+      "unit_id": "chapter-000014",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "0a4c693b3295a3c438cc41f173aa177a09c73c6f38ab36066db430fdec4da7bc",
+      "translation_sha256": "afb4301d5555de78aa733f1e49a6809dcaa251d0da5b0484f1efc953b76cf901",
+      "workflow_revision": "effd537cb20d42e0077ebe8760cb794fdb84fd0f",
+      "review_contract_revision": "docs/TRANSLATION.md@effd537cb20d42e0077ebe8760cb794fdb84fd0f",
+      "reviewer_session_id": "chat-manual-night-20261113-ch13-review",
+      "reviewed_at": "2026-11-13T13:28:38Z",
+      "state_revision": "bcfdc29f31f9c1e24771e787414bb24dd101d488940b2ac73f64994376f9a1b9",
+      "review_commit": "cc726b561e9c4e56899a74efb22aa1f85873506f",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "At final paragraph source describes Kurapika as 'gorgeous, volatile omega', emphasizing volatile or hot-tempered temperament. Russian 'прекрасного, непредсказуемого омегу' focuses on unpredictability, weakening the emphasis on temper. Replace 'непредсказуемого' with 'вспыльчивого' (or equivalent), preserving narrator's view.",
+            "resolved": false
           }
         ]
       }

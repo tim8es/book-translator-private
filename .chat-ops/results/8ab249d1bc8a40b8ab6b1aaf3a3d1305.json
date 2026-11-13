@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "request_id": "8ab249d1bc8a40b8ab6b1aaf3a3d1305",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "1132ed5e78d07b35237107f78af0684476cf07fd1b3010fdcd31beb636802611",
+    "record": {
+      "correction_round": 1,
+      "outcome": "CORRECTIONS_REQUIRED",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "findings": [
+          {
+            "detail": "At final paragraph source describes Kurapika as 'gorgeous, volatile omega', emphasizing volatile or hot-tempered temperament. Russian 'прекрасного, непредсказуемого омегу' focuses on unpredictability, weakening the emphasis on temper. Replace 'непредсказуемого' with 'вспыльчивого' (or equivalent), preserving narrator's view.",
+            "resolved": false,
+            "severity": "minor"
+          }
+        ]
+      },
+      "record_id": "5afa22098f2e4aba90a8b6e24d5cedbc",
+      "review_commit": "cc726b561e9c4e56899a74efb22aa1f85873506f",
+      "review_contract_revision": "docs/TRANSLATION.md@effd537cb20d42e0077ebe8760cb794fdb84fd0f",
+      "reviewed_at": "2026-11-13T13:28:38Z",
+      "reviewer_session_id": "chat-manual-night-20261113-ch13-review",
+      "sequence": 22,
+      "source_sha256": "0a4c693b3295a3c438cc41f173aa177a09c73c6f38ab36066db430fdec4da7bc",
+      "state_revision": "bcfdc29f31f9c1e24771e787414bb24dd101d488940b2ac73f64994376f9a1b9",
+      "supersedes_record_id": null,
+      "translation_sha256": "afb4301d5555de78aa733f1e49a6809dcaa251d0da5b0484f1efc953b76cf901",
+      "unit_id": "chapter-000014",
+      "workflow_revision": "effd537cb20d42e0077ebe8760cb794fdb84fd0f"
+    }
+  },
+  "error": null
+}
