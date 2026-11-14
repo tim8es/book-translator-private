@@ -32,7 +32,7 @@ class PublicRuntimeLockTests(unittest.TestCase):
             lock.write_text(json.dumps({
                 "schema_version": 1, "repository": "tim8es/book-translator",
                 "revision": sha}), encoding="utf-8")
-            with patch.object(loader, "LOCK_PATH", lock), \\
+            with patch.object(loader, "LOCK_PATH", lock), \
                  patch.object(loader, "RUNTIME_ROOT", root):
                 with patch.object(loader.subprocess, "run", return_value=(
                         subprocess.CompletedProcess([], 0, "a" * 40 + "\n", ""))):
