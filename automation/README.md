@@ -1,9 +1,26 @@
 # Existing-repository GitHub Actions book translation (opt-in)
 
-This runner is an **optional automated execution adapter**. The canonical
-Book Translator state machine and all literary contracts remain in the pinned
-public workflow revision. The adapter **does not** change existing books,
-their workflow pins, the chat-operations queue, or manual translation support.
+Auto now executes the **shared public implementation** from
+`tim8es/book-translator/automation/`, not a private fork. The private
+`automation/book_runner.py`, `omniroute.py`, and `literary_context.py`
+are import-compatible launchers, each under 1 KB. The reviewed immutable
+runtime commit is tracked in `automation/runtime.lock.json` and checked
+out by Actions into ignored `.public-auto-runtime/`. Every import checks
+the checkout's exact Git commit; missing/mismatched revisions fail closed.
+
+The canonical Book Translator state machine and literary contracts remain in
+each book's separately pinned `metadata.json.workflow.resolved_revision`.
+Updating the **executor runtime** does not silently update that workflow pin,
+the chat-operations execution revision, durable book state, or manual support.
+State mutations and all Git commits still target this book-state repository.
+
+**Deployment procedure:** update the public runtime and run its tests; merge
+that PR; point `automation/runtime.lock.json` at the exact public merge SHA;
+run full private integration tests and the JSON smoke workflow; then merge the
+private config/shim PR. Roll back by reverting only the runtime lock and
+launcher PR; never copy the engine back into the book repository. Running the
+private scripts outside GitHub Actions first requires manually checking out
+the locked public commit under `.public-auto-runtime/`.
 
 ## Existing repository visibility
 
