@@ -430,6 +430,7 @@ def approve_blocked_resume(status: dict) -> None:
     status.update({"recoveries": history, "state": "running",
                    "phase": "operator-resume-authorized", "failures": 0,
                    "last_error": None})
+    status.pop("last_error_code", None)
 
 
 def approve_interrupted_resume(status: dict, unit: dict, claim: dict,
@@ -3493,6 +3494,7 @@ def process_claim(job_id: str, slug: str, status: dict, engine: Path) -> None:
     status["prompt_context"] = prompt_context
     status.pop("blocked_unit_id", None)
     status.pop("last_error", None)
+    status.pop("last_error_code", None)
     status.pop("provider_retry", None)
     status.pop("provider_model_route", None)
     status["failures"] = 0
