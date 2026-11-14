@@ -205,7 +205,7 @@ letter/number boundaries, and the affected source sentences were
 reopened before every correction. This is an audit correction, not a
 claim of full independent review.
 
-**22 more individual fixes across 11 translation-unit files** were
+**22 more individual fixes across 12 translation-unit files** were
 recorded after the 26 fixes in the preceding section:
 
 | Unit | Changes | Commit(s) |
