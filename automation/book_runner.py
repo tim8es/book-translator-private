@@ -3159,6 +3159,13 @@ def process_claim(job_id: str, slug: str, status: dict, engine: Path) -> None:
     if owned["session_id"] != active["session_id"]:
         raise JobError("active claim belongs to another session")
     role = active["role"]
+    # If pre-model context/preflight fails, the error path must remain safe.
+    # These are execution-local defaults, never evidence of completed work.
+    previous_record = None
+    patch_mode = False
+    structural_plan = None
+    structural_helper = None
+    review_context = "independent_session"
     # Fully validate the model response before changing canonical artifacts.
     # Model/format failures are safe to checkpoint as retries. CLI failures
     # after mutation remain fail-closed and must be examined separately.
