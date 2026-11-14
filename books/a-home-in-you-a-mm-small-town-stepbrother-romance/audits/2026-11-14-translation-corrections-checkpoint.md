@@ -238,3 +238,34 @@ as proof of complete Russian grammar or fidelity.
 book. No Auto translation invoked.** As above, these candidate files
 have not been canonically re-accepted or independently re-reviewed;
 PR #108 must stay draft.
+
+## Additional critical fidelity finding — unit 024, not resolved
+
+Source: `extracted/024-14-dillon.md` (immutable original);
+candidate: `translated/024-14-dillon.md` in draft PR #108.
+
+- Source dialogue opening `Nervous?` occurs once at **source line 109**.
+  The Russian candidate's `— Нервничаешь?` occurs twice,
+  **candidate lines 127 and 131**.
+- Sequential manual comparison showed that beyond this duplicate the
+  candidate diverges substantially from the source in the later
+  passage and includes material not supported by the English source.
+- The affected scene is about **characters explicitly aged fifteen
+  and a half in the source** and contains sexual content. The
+  assistant did not generate, reconstruct, or modify that content
+  in the candidate file. This is a **blocking unresolved fidelity
+  finding**; do not treat the current target as faithful, reviewed
+  or suitable for release.
+- Earlier **structural marker/link/heading comparisons** did not
+  catch this, reinforcing that such checks cannot replace a full
+  source-linked literary review.
+
+A prior non-explicit omission in the **same unit** was repaired
+directly against the original in
+`4ab58ec27a1eb00a98f1fc20c113fd759a6b1e57`:
+the narrator's missing remarks about uncertainty and not wanting
+to date someone purely to prove a point. No further sensitive scene
+text was produced.
+
+**Result: CORRECTIONS REQUIRED; final EPUB blocked for substantive
+fidelity and existing canonical hash/review reasons.**
