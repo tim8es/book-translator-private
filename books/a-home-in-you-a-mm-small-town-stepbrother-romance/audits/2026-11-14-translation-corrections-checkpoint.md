@@ -52,3 +52,56 @@ false negatives. Do not claim that it proves grammatical or semantic coverage.
 **Status: editorial corrections staged; new final EPUB NOT BUILT;
 PR #108 remains draft; canonical translation and review state on `main`
 left unchanged.**
+
+## 2026-11-14 continuation: source-faithful editorial correction pass
+
+This follow-up is limited to **candidate translations in the PR branch**.
+It did not change the original EPUB, extracted English, workflow pin, canonical
+`main` progress/review ledger, or shipped EPUB. The user's latest instruction
+is to preserve the meaning of the English original, not silently re-age the
+characters or invent altered events.
+
+**48 targeted text replacements were persisted in 13 units** (each commit read
+back from GitHub and content verified). They correct confirmed Russian case
+errors, chronology and tense in the prologue, dialogue-tag punctuation, speaker
+attribution and source-consistent literary wording. No blanket replacement
+can be considered literary review.
+
+| Unit | Changes | Verified commit(s) |
+| --- | ---: | --- |
+| 008 trigger warnings | 2 | `bc98b483614fa5e3c02b7c13eed6873dcc6a083a` |
+| 009 prologue | 5 | `ded29c23e5760a8176c0786140f068bacbb343f6` |
+| 011 opening narrative | 18 | `60022ff1c68387c44e521d9cbc4bae69c45bbb72` |
+| 012 Cade | 5 | `b9e98b35e7c3240751126ffd0dcee0eeb35b0237` |
+| 013 Cade | 1 | `427e80ade4ce4504d43a82ac296c3de1818c5d33` |
+| 016 Cade | 3 | `7a31ad5ff22beb5c5ef7b474f7975abdd36d370a` |
+| 019 Dillon | 5 | `b7dd8296d4335ac28999f07e2fa205b774961929`, `8f9a4fa5fa3e37e5d9bd60f699d843a693e37d25` |
+| 023 Cade | 2 | `9846beedd752f20a04674cf1b465b45237cff69b` |
+| 037 Dillon | 1 | `0242209f47dbe637462e9ad6a8946d29de765d1d` |
+| 040 Cade | 1 | `a31d0e8d3e746b1c40e7cf5ee4121b3810b3fbf7` |
+| 045 Cade | 1 | `f4e63f7deb9978ee3bb51851d59ddb72ebc82982` |
+| 047 Dillon | 3 | `952149fab2afd6622c593a9d128f63ad4fc91f33` |
+| 048 Dillon | 1 | `f51b589aadd81a6eabb32e621f899f1afa6fed1d` |
+
+### Integrity checks and limits
+
+- Source and candidate translations were compared for all **13 edited units**
+  with respect to ordered `bt-*` markers, Markdown link destinations and
+  heading counts; all compared structures matched.
+- A focused, Unicode-aware language-pattern scan found further nominative
+  names in indirect grammatical roles. Candidate-only corrections were made
+  when the English reference supported them; apparent matches involving
+  correctly inflected names or the indeclinable name `Марко` were not blindly
+  replaced.
+- Pattern scans are incomplete by design. They cannot find all fidelity,
+  grammar, dialogue, continuity, or inflection defects. The previous editorial
+  report already demonstrated that the former automated PASS was insufficient.
+- **Some units still have unresolved literary issues**, including material
+  outside this bounded pass. No fresh independent full-chapter PASS has been
+  recorded; no reviewed status has been reopened; no accepted replacement EPUB
+  has been built.
+
+**Gate: DO NOT MERGE PR #108 or deliver it as final quality-assured EPUB** until
+there is an authorized, canonical, provenance-preserving reopen path compatible
+with this book's pinned workflow, exact-artifact translation acceptance,
+independent full-source review of each affected unit, and a verified rebuild.
