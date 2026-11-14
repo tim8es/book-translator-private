@@ -195,14 +195,15 @@ jobs:
           # The CLI adapter lives in the locked public executor checkout.
           # Its pinned book checkout symlinks books/ into this state tree.
           # No scripts/docs/marker are created in the book-state checkout.
-          for step in validate finalize; do
-            python .public-auto-runtime/scripts/pinned_cli.py \
-              --engine .pinned-book-translator --state . --revision "$PIN" \
-              book "$step" "$BOOK_SLUG" --json
-          done
+          python .public-auto-runtime/scripts/pinned_cli.py \
+            --engine .pinned-book-translator --state . --revision "$PIN" \
+            book validate "$BOOK_SLUG"
           python .public-auto-runtime/scripts/pinned_cli.py \
             --engine .pinned-book-translator --state . --revision "$PIN" \
             corpus verify "$BOOK_SLUG"
+          python .public-auto-runtime/scripts/pinned_cli.py \
+            --engine .pinned-book-translator --state . --revision "$PIN" \
+            book finalize "$BOOK_SLUG" --json
           python .public-auto-runtime/scripts/pinned_cli.py \
             --engine .pinned-book-translator --state . --revision "$PIN" \
             book build "$BOOK_SLUG" --format epub
