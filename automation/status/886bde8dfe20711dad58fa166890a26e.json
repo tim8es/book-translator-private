@@ -3,9 +3,9 @@
   "job_id": "886bde8dfe20711dad58fa166890a26e",
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
   "source_sha256": "3a3fce78317162b68bc1e82501456a74a783cfc96cb2640c463f381866007865",
-  "state": "running",
-  "phase": "review-schema-repair-reserved",
-  "failures": 2,
+  "state": "blocked",
+  "phase": "model-blocked",
+  "failures": 3,
   "correction_rounds": {
     "chapter-000002": 1,
     "chapter-000003": 1,
@@ -23,13 +23,8 @@
     "chapter-000022": 6
   },
   "workflow_revision": "ea9963ca546b7cc7f6aba4dc5350fa19ea7da862",
-  "updated_at": "2026-11-14T00:07:24.528250+00:00",
-  "active": {
-    "role": "reviewer",
-    "chapter": 27,
-    "session_id": "auto-886bde8dfe20-reviewer-2328a281",
-    "unit_id": "chapter-000027"
-  },
+  "updated_at": "2026-11-14T00:08:14.544307+00:00",
+  "active": null,
   "model_calls_started": 285,
   "memory_glossary_saved": 110,
   "pending_style": [],
@@ -294,13 +289,14 @@
   "model_response_diagnostics": {
     "finish_reason": "stop",
     "response_format": "json_object",
-    "response_chars": 247,
+    "response_chars": 1564,
     "provider_refusal": false,
-    "prompt_tokens": 19501,
-    "completion_tokens": 2932,
-    "total_tokens": 22433,
+    "prompt_tokens": 19815,
+    "completion_tokens": 2597,
+    "total_tokens": 22412,
     "route": "primary",
     "role": "reviewer",
     "unit_id": "chapter-000027"
-  }
+  },
+  "last_error": "reviewer evidence is invalid: every literary check must have been performed"
 }
