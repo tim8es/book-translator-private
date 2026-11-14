@@ -100,7 +100,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 35
     concurrency:
-      group: automatic-book-${{ matrix.book_key }}
+      group: book-operation-${{ matrix.book_key }}
       cancel-in-progress: false
     steps:
       - uses: actions/checkout@v4
