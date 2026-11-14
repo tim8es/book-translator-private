@@ -74,6 +74,32 @@ class StateOnlyDeploymentTests(unittest.TestCase):
         self.assertNotIn("private-deliver:", epub)
         self.assertIn('git add -A -- "books/$BOOK_SLUG"', epub)
 
+    def test_reduced_idle_schedules_keep_event_driven_recovery(self):
+        root = STATE / ".github/workflows"
+        batch = (root / "book-batch-validation.yml").read_text("utf-8")
+        monitor = (root / "book-job-monitor.yml").read_text("utf-8")
+        chat = (root / "chat-operations.yml").read_text("utf-8")
+        auto = (root / "auto-translate.yml").read_text("utf-8")
+
+        self.assertIn('cron: "13 * * * *"', batch)
+        self.assertIn("id: scope", batch)
+        self.assertIn("has_changes={str(bool(paths)).lower()}", batch)
+        self.assertEqual(
+            batch.count("if: steps.scope.outputs.has_changes == 'true'"), 5
+        )
+        self.assertLess(
+            batch.index("Collect unique book paths"),
+            batch.index("Resolve reviewed public runtime commit"),
+        )
+        self.assertIn('cron: "7,37 * * * *"', monitor)
+        self.assertIn("workflow_run:", monitor)
+        self.assertIn("actions_failure_notifier.py", monitor)
+        self.assertIn("cron: '*/30 * * * *'", chat)
+        self.assertIn("push:", chat)
+        self.assertIn(".chat-ops/requests/*.json", chat)
+        self.assertIn('cron: "*/15 * * * *"', auto)
+        self.assertIn("workflow_dispatch:", auto)
+
     def test_changed_book_launcher_can_validate_empty_batch(self):
         with tempfile.TemporaryDirectory() as tmp:
             manifest = Path(tmp) / "changed.json"

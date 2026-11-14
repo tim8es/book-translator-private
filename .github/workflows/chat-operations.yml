@@ -6,7 +6,8 @@ on:
     paths:
       - '.chat-ops/requests/*.json'
   schedule:
-    - cron: '*/15 * * * *'
+    # Push events are primary; twice-hourly recovery covers missed queue events.
+    - cron: '*/30 * * * *'
   workflow_dispatch:
 
 permissions:

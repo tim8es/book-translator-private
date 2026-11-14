@@ -13,7 +13,8 @@ on:
         type: string
   # Recover missed events and monitor stale jobs.
   schedule:
-    - cron: "7,22,37,52 * * * *"
+    # Workflow completion events notify promptly; keep a twice-hourly recovery sweep.
+    - cron: "7,37 * * * *"
 
 permissions:
   contents: write
