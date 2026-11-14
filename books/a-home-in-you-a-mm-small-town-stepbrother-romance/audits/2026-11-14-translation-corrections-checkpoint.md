@@ -436,3 +436,74 @@ their independent source/review evidence.
 
 This section is an operator correction checkpoint, **not an approval or
 reacceptance**.
+
+
+## 2026-11-14 — renewed manual ChatOps QA, 50 further source-linked fixes
+
+**User request:** finish manually, without Auto translation.
+**Book workflow pin remains:** `ea9963ca546b7cc7f6aba4dc5350fa19ea7da862`.
+**Source content / canonical ledger / built EPUB remain unchanged.**
+
+Reopened candidate Russian Markdown and corresponding original English source,
+focusing on subtle corruption caused by replacing English character names
+with Russian nominative forms without restoring Russian case inflection.
+Narrowed down suspicious noun/verb/name combinations through Unicode-aware
+diagnostics, then checked the intended grammatical relation against the
+original context before each targeted edit. A suspected nominative after
+`по имени`, for example, was recognized as legitimate and not changed.
+The work was direct ChatOps / GitHub file editing, **not Auto**.
+
+| Unit | Corrected substrings | New commit |
+| --- | ---: | --- |
+| 016 | 1 | `c65a15e273c96f383ce354c483df900407fe20d8` |
+| 020 | 2 | `2313ea3405e8f6747bedcb5080ab3ce99f465c53` |
+| 022 | 1 | `495aed0991d75f64661ede9f28916f4193778d6b` |
+| 029 | 1 | `16382c45a7b1a39583d110f4536c0cc745097859` |
+| 031 | 6 | `9b0a9d999fbfd606a29f7da2629eb9e536942386` |
+| 033 | 5 | `45fe7830f56d3998b390467214d997f6036e1cc5` |
+| 034 | 2 | `567877df471b62c4b1af10178ed9dad2e685f84b` |
+| 035 | 1 | `f958b9232a97e66b6c9d660989c109b202648db7` |
+| 036 | 1 | `1107648fc2f9c4ae5cae48b5760134284f977b85` |
+| 037 | 6 | `7e4cc79060205e2dcb57773c212d0de9eaae8357` |
+| 039 | 3 | `a08bcde1cec3312c434c8023393ba5b88e9cc6a8` |
+| 040 | 3 | `866adb397c7f506f95327ba1f9d5b658059fcc1b` |
+| 041 | 4 | `f7c81ba34215444781e0878b980fd79b090ba731` |
+| 042 | 1 | `008a0a27e6621e7cf7876a76bfc2eacddf417f36` |
+| 043 | 1 | `4ed113df82a56230505991dbc0aaccecd9d0ede3` |
+| 045 | 3 | `36417d8ca506187d80e4d9b447fe5b0ab3248202` |
+| 046 | 3 | `f3079cc40ec092966f3c09676999b164e0ba6e1f` |
+| 047 | 5 | `0c308793672d29b3dff79f6514cdbf3c74f6b759` |
+| 048 | 1 | `df24a8d6051d03fb488e814e533de6e9b0c0a42a` |
+| **TOTAL** | **50** | **19 unique units** |
+
+One HTTP 409 concurrent HEAD mismatch occurred for unit 036; the unit was
+re-fetched and its specific still-present error was committed separately.
+There was **no force push, blind retry, loss of existing changes, or
+overwrite of original files**.
+
+**GitHub verification:** Each successful file write was re-fetched and
+the resulting candidate bytes matched the intended complete file.
+After all edits, all **19/19** affected source-vs-candidate pairs were
+re-read to check *only* the following structural invariants:
+ordered `<!-- bt-* -->` markers, ordered Markdown link destinations,
+and Markdown heading counts. **19/19 matched** for all three checks.
+
+The extended read also found cases for which there was no grammar error
+(especially nominatives as actual subjects) and some sexually charged
+passages involving underage characters. No explicit minor scene was
+generated or rewritten to fill missing content.
+
+### Important non-PASS conclusions
+
+- The **known untranslated explicit source passage in unit 024**
+  remains; the earlier unsupported addition was removed rather than
+  deceptively substituted. The candidate is incomplete.
+- These exact source-linked spot fixes and structural diagnostics are
+  **not** independent, comprehensive literary review. Material
+  omissions, phrasing mistakes or further case errors may remain.
+- The pinned workflow still binds historical `reviewed` states to
+  previous translation SHA-256 values, so changed bytes cannot pass
+  canonical validation/review without an authorized, proven reaccept
+  transition. Do not rewrite hashes or evidence ad hoc.
+- PR #108 must stay **DRAFT / DO NOT MERGE**. No new, verified final
+  EPUB is assembled or released.
