@@ -45,7 +45,7 @@ class StateOnlyDeploymentTests(unittest.TestCase):
             "omniroute-json-smoke.yml", "tests.yml",
         })
         auto = (root / "auto-translate.yml").read_text("utf-8")
-        self.assertIn("group: automatic-book-", auto)
+        self.assertIn("group: book-operation-", auto)
         self.assertIn("max-parallel: 3", auto)
         self.assertIn("Dispatch next bounded step", auto)
         self.assertNotIn("workflow_call:", auto)
@@ -55,10 +55,20 @@ class StateOnlyDeploymentTests(unittest.TestCase):
             self.assertIn("runtime_loader.py", source)
             self.assertIn("repository: tim8es/book-translator", source)
         chat = (root / "chat-operations.yml").read_text("utf-8")
-        self.assertIn("engine/scripts/chat_ops_bridge.py", chat)
+        self.assertIn("runtime_loader.py --print-revision", chat)
+        self.assertIn("engine_sha:", chat)
+        self.assertIn("scripts/chat_ops_discover.py", chat)
+        self.assertIn("scripts/chat_ops_bridge.py", chat)
+        self.assertIn("group: book-operation-", chat)
+        self.assertNotIn("ref: db27cc1a3369cd3e3da82e2dfe222af33a1f74e0", chat)
         epub = (root / "final-epub.yml").read_text("utf-8")
         self.assertIn(".pinned-book-translator", epub)
-        self.assertIn("cp -a .pinned-book-translator/docs ./docs", epub)
+        self.assertIn("mkdir -p docs", epub)
+        self.assertIn("cp -a .pinned-book-translator/docs/. ./docs/", epub)
+        self.assertIn("group: book-operation-", epub)
+        self.assertNotIn("git restore -- scripts", epub)
+        self.assertNotIn("rm -rf scripts docs", epub)
+        self.assertIn('git add -A -- "books/$BOOK_SLUG"', epub)
 
     def test_changed_book_launcher_can_validate_empty_batch(self):
         with tempfile.TemporaryDirectory() as tmp:
