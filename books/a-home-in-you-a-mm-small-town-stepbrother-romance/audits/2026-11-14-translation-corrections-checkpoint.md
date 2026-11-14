@@ -507,3 +507,20 @@ generated or rewritten to fill missing content.
   transition. Do not rewrite hashes or evidence ad hoc.
 - PR #108 must stay **DRAFT / DO NOT MERGE**. No new, verified final
   EPUB is assembled or released.
+
+
+### Manual QA addendum — repeated source refrain in unit 033
+
+Another source comparison found the repeated English refrain with
+parallel direct objects had been rendered with the uninflected
+nominative `Диллон` twice. Both appearances now use the
+grammatically required Russian direct-object form `Диллона`.
+No surrounding narrative or other names were changed.
+
+- Unit: `033-23-cade.md`
+- Two exact phrase replacements; GitHub readback verified
+- Commit: `7bc62fa93e7a4136ddd800132048dbda8480cf18`
+
+**Current-session manual total: 52 edits across 19 units.** These are
+source-grounded corrections, not complete independent PASS review.
+Unit-024 fidelity and pinned acceptance blockers remain unchanged.
