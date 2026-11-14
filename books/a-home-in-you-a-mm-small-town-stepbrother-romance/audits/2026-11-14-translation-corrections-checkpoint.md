@@ -193,3 +193,48 @@ SHA-256 checks. The pinned workflow provides no verified reopening transition.
 Do not rewrite old evidence, merge an invalid translation candidate into
 `main`, call the candidate independently reviewed, or claim a rebuilt EPUB.
 The original source, `main` progress/review ledger and output EPUB are unchanged.
+
+## Manual ChatOps correction addendum — Unicode-aware speaker QA
+
+A subsequent source-grounded read of units 014 and 016 discovered
+**additional misattributed dialogue** left by the earlier English-name
+replacement. A previous narrow JS diagnostic had used a non-Unicode
+word-boundary token and produced misleading false negatives for
+Cyrillic speaker names. The expression was repaired to use Unicode
+letter/number boundaries, and the affected source sentences were
+reopened before every correction. This is an audit correction, not a
+claim of full independent review.
+
+**22 more individual fixes across 11 translation-unit files** were
+recorded after the 26 fixes in the preceding section:
+
+| Unit | Changes | Commit(s) |
+| --- | ---: | --- |
+| 014 | 2 | `26526c84c0d4ba2fa90d2bcc8f221d1cc9386f43`, `716f0dc5819a52faa89635997510ad10231cd06e` |
+| 016 | 1 | `755794a0c023f77e0456dee998440b104fa58cf0` |
+| 017 | 1 | `4452c1a29fd7b524772a57da1725a4675af614ed` |
+| 019 | 3 | `94a7032c956c3b2d865102de7206e08ceca43f24` |
+| 021 | 1 | `b7546d542ee405b2b28d2cafe8e13fe0c1ae8562` |
+| 022 | 7 | `784a6e0a0d477f2caa8483dda77fc7fdbd9e6ae4` |
+| 023 | 1 | `92a2e3da6bce5803a8c1858a81657a2db81ee43e` |
+| 029 | 2 | `88cbd892cac25d68c5f19e64b7b5c88465f18da2` |
+| 034 | 1 | `73cf64af81a075809b416e114174e1023e33c4f4` |
+| 035 | 1 | `ee563727da017f863c2c389edb0c4a7af3f91a2d` |
+| 045 | 1 | `f068e74fb0e4d3515322efe7f7e1a02e1a9cf4c3` |
+| 047 | 1 | `97e628d0e4f054a0026d304442840d02931da852` |
+| **Total** | **22** | **12 distinct units** |
+
+A clear example was `сказал Диллону` used for source `Dillon
+said`, and `сказал Кейду` used for source `Cade said`. Another
+example, `отец ... сказал Диллону`, was verified as a correct
+addressee case and left unchanged. No blind dative-to-nominative
+replacement was applied.
+
+The narrower all-unit Latin-name and structure checks documented
+above are unchanged, but these new findings prove they cannot serve
+as proof of complete Russian grammar or fidelity.
+
+**Manual edits in this current ChatOps conversation: 48 across the
+book. No Auto translation invoked.** As above, these candidate files
+have not been canonically re-accepted or independently re-reviewed;
+PR #108 must stay draft.
