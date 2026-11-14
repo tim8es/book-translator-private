@@ -4,7 +4,7 @@
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
   "source_sha256": "3a3fce78317162b68bc1e82501456a74a783cfc96cb2640c463f381866007865",
   "state": "running",
-  "phase": "model-call-reserved",
+  "phase": "reviewer-completed",
   "failures": 0,
   "correction_rounds": {
     "chapter-000002": 1,
@@ -23,13 +23,8 @@
     "chapter-000022": 6
   },
   "workflow_revision": "ea9963ca546b7cc7f6aba4dc5350fa19ea7da862",
-  "updated_at": "2026-11-14T00:42:29.304352+00:00",
-  "active": {
-    "role": "reviewer",
-    "chapter": 27,
-    "session_id": "auto-886bde8dfe20-reviewer-6a4ed477",
-    "unit_id": "chapter-000027"
-  },
+  "updated_at": "2026-11-14T00:43:10.848806+00:00",
+  "active": null,
   "model_calls_started": 288,
   "memory_glossary_saved": 110,
   "pending_style": [],
@@ -298,13 +293,13 @@
   "model_response_diagnostics": {
     "finish_reason": "stop",
     "response_format": "json_object",
-    "response_chars": 789,
+    "response_chars": 2658,
     "provider_refusal": false,
-    "prompt_tokens": 8007,
-    "completion_tokens": 1162,
-    "total_tokens": 9169,
+    "prompt_tokens": 11950,
+    "completion_tokens": 2121,
+    "total_tokens": 14071,
     "route": "primary",
-    "role": "corrector",
+    "role": "reviewer",
     "unit_id": "chapter-000027"
   }
 }

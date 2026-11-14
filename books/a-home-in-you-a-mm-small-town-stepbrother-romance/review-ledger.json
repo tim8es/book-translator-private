@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 130,
+  "next_sequence": 131,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -10773,6 +10773,96 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "726e4f76699f03977c14ec08e038db936a065b810ed2c84e32c86cf9171808d9",
+        "style_guide": "3ec7c485cf41741084ffe49b72d2b18ed9bd650a00a2ba00554605abadea5e3a"
+      }
+    },
+    {
+      "record_id": "c0abe2b656b447cc915d5c8956d3236c",
+      "sequence": 130,
+      "unit_id": "chapter-000027",
+      "outcome": "PASS",
+      "source_sha256": "c3ed2639c7dda98c38893900fcc29f44bfa6c4b111be08106f756690984828d4",
+      "translation_sha256": "9035708aef76c3b1da1d00817404774092e47641455294f621f49d7cd63d74f2",
+      "workflow_revision": "ea9963ca546b7cc7f6aba4dc5350fa19ea7da862",
+      "review_contract_revision": "docs/TRANSLATION.md@ea9963ca546b7cc7f6aba4dc5350fa19ea7da862",
+      "reviewer_session_id": "auto-886bde8dfe20-reviewer-6a4ed477",
+      "reviewed_at": "2026-11-14T00:43:10Z",
+      "state_revision": "6db6b41d41296815a342820ecf440df1de03e151ce837788343b1511baa5e3af",
+      "review_commit": "cba29e05268534f2cde376859576d1100c60dac5",
+      "correction_round": 5,
+      "supersedes_record_id": "075c6553828b4200a32dac89eed365b9",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-oral-1",
+            "category": "omission",
+            "severity": "major",
+            "detail": "Исправлено: сохранены конкретное прикосновение тёплого влажного рта и образ тела, превратившегося в огонь, наполненный напряжением.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "I got lost in Cade kisses across my goose-bumped skin, but as soon as his warm, wet mouth hit me, my body turned into pressure-filled fire.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Я терялся в поцелуях Кейда, скользивших по моей покрытой мурашками коже, но стоило его тёплому влажному рту коснуться меня, как моё тело превратилось в огонь, наполненный напряжением.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "075c6553828b4200a32dac89eed365b9",
+              "finding_id": "omission-oral-1"
+            }
+          },
+          {
+            "id": "recheck-sensory-2",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Исправлено: переданы неопрятность и влажность происходящего, а также громкий внезапный наплыв ощущений, достигающий ушей и прокатывающийся вниз, между ног.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "It was a bit sloppy, a bit wet, and absolutely perfect. And with a loud, sudden rush to my ears and straight down between my legs, I was in pure bliss.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Всё было немного неопрятно, немного мокро и совершенно идеально. И от громкого, внезапного прилива ощущений, ударившего мне в уши и прокатившегося прямо вниз, между ног, я испытал чистейшее блаженство.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "075c6553828b4200a32dac89eed365b9",
+              "finding_id": "meaning-sensory-2"
+            }
+          },
+          {
+            "id": "recheck-possession-3",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Исправлено: «Я весь твой. Всегда.» естественно передаёт полную преданность рассказчика без оттенка обладания или владения.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "You have all of me. Always.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "— Я весь твой. Всегда.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "075c6553828b4200a32dac89eed365b9",
+              "finding_id": "meaning-possession-3"
+            }
           }
         ]
       },
