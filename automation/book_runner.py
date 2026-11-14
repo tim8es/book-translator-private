@@ -182,18 +182,24 @@ def complete_for_job(status: dict, role: str, system: str, user: str) -> str:
     protocol_counts = status.get("unit_protocol_failures", {})
     if not isinstance(protocol_counts, dict):
         raise JobError("invalid model-output recovery counters")
-    same_unit_protocol_attempts = (
-        protocol_counts.get(active.get("unit_id"), 0)
-        if isinstance(active, dict) else 0)
-    if type(same_unit_protocol_attempts) is not int or same_unit_protocol_attempts < 0:
-        raise JobError("invalid unit protocol attempt count")
+    # Failover is scoped to the canonical claimed role, not only the unit.
+    # A structural corrector deliberately calls the Translator model, but
+    # its failures must not contaminate the independent Reviewer route.
+    current_role = active.get("role") if isinstance(active, dict) else role.lower()
+    current_unit = active.get("unit_id") if isinstance(active, dict) else None
+    scoped = status.get("role_protocol_failures", {})
+    if not isinstance(scoped, dict):
+        raise JobError("invalid role-scoped model protocol counters")
+    key = f"{current_unit}:{current_role}" if current_unit else None
+    attempts = scoped.get(key, 0) if key else 0
+    if type(attempts) is not int or not 0 <= attempts <= 100_000:
+        raise JobError("invalid role-scoped protocol attempt count")
     repeated_provider = (isinstance(retry, dict) and isinstance(active, dict)
                          and retry.get("chapter") == active.get("chapter")
-                         and retry.get("role") == role.lower()
+                         and retry.get("role") == current_role
                          and type(retry.get("attempts")) is int
                          and retry["attempts"] >= FALLBACK_AFTER_TRANSIENTS)
-    if ((repeated_provider or
-         same_unit_protocol_attempts >= FALLBACK_AFTER_TRANSIENTS)
+    if ((repeated_provider or attempts >= FALLBACK_AFTER_TRANSIENTS)
             and os.environ.get(f"OMNIROUTE_{role}_FALLBACK_MODEL", "").strip()):
         route = role + "_FALLBACK"
     # A route name, not model ID or credential, is safe in metadata.
@@ -241,6 +247,48 @@ def translator_model_output_code(error: ModelError, helper=None) -> str | None:
         "structural translation omitted content and exhausted model budget",
     }:
         return "translation_coverage"
+    return None
+
+
+def reviewer_model_output_code(error: ModelError) -> str | None:
+    """Narrow allowlist for *generated* review protocol defects only.
+
+    A valid JSON object is not necessarily valid review evidence. A false
+    check means that work has not been confirmed; it is never auto-flipped
+    to true and can never be promoted as PASS. Provider errors, unknown
+    validator results, source integrity and claim failures remain blockers.
+    """
+    if not isinstance(error, ModelError) or isinstance(error, TransientModelError):
+        return None
+    message = str(error)
+    if message in {
+        "reviewer must return JSON",
+        "reviewer response has invalid literary memory schema",
+        "unsupported reviewer evidence version",
+        "automatic reviewer must return anchored v2 evidence",
+        "reviewer has not confirmed all five checks were performed",
+        "reviewer has not completed all five literary checks",
+    }:
+        return "review_json_invalid"
+    prefix = "reviewer evidence is invalid: "
+    if not message.startswith(prefix):
+        return None
+    detail = message[len(prefix):]
+    if detail == "every literary check must have been performed":
+        return "review_checks_incomplete"
+    if detail in {
+        "checks must cover coverage, meaning, terminology, style and structure",
+        "all checks must be boolean",
+        "CORRECTIONS_REQUIRED needs at least one unresolved finding",
+        "PASS is incompatible with unresolved major/critical findings",
+        "findings must be a list with at most 100 entries",
+        "quality report needs exactly context, checks, findings and optional evidence_version=2",
+    } or detail.startswith((
+        "finding ", "findings[", "duplicate anchored finding id:",
+        "prior unresolved findings lack explicit rechecks:",
+        "source-linked review evidence failed:",
+    )):
+        return "review_evidence_invalid"
     return None
 
 
@@ -3212,10 +3260,20 @@ def process_claim(job_id: str, slug: str, status: dict, engine: Path) -> None:
                 role, structural_plan, exc, structural_helper)
         if role == "translator" and isinstance(exc, ModelError):
             recoverable_code = translator_model_output_code(exc, structural_helper)
+        if role == "reviewer" and isinstance(exc, ModelError):
+            recoverable_code = reviewer_model_output_code(exc)
         if recoverable_code:
             counters = status.setdefault("unit_protocol_failures", {})
             counters[unit_id] = counters.get(unit_id, 0) + 1
+            scoped = status.setdefault("role_protocol_failures", {})
+            scoped_key = f"{unit_id}:{role}"
+            scoped[scoped_key] = scoped.get(scoped_key, 0) + 1
             status["last_error_code"] = recoverable_code
+            if (role == "reviewer" and status["failures"] == 1
+                    and review_context == "bounded_context"):
+                # Incomplete bounded evidence is not a reason to manufacture
+                # checks. Give the next attempt the full chapter.
+                status["force_full_review_unit"] = unit_id
         else:
             # A stale code from a prior rejected JSON response is not
             # evidence of the current failure's classification.
