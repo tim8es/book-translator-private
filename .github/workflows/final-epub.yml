@@ -91,7 +91,7 @@ jobs:
       matrix:
         book_slug: ${{ fromJSON(needs.discover-public-builds.outputs.books) }}
     concurrency:
-      group: book-final-epub-${{ matrix.book_slug }}
+      group: book-operation-${{ matrix.book_slug }}
       cancel-in-progress: false
     runs-on: ubuntu-latest
     timeout-minutes: 35
@@ -175,9 +175,12 @@ jobs:
         run: |
           set -euo pipefail
           test "$(git -C .pinned-book-translator rev-parse HEAD)" = "$PIN"
-          rm -rf scripts docs
+          # Only scripts are disposable. docs/migrations/ contains tracked
+          # historical book evidence and must never be deleted in Actions.
+          rm -rf scripts
           cp -a .pinned-book-translator/scripts ./scripts
-          cp -a .pinned-book-translator/docs ./docs
+          mkdir -p docs
+          cp -a .pinned-book-translator/docs/. ./docs/
           cp .pinned-book-translator/AGENTS.md ./
           cp .pinned-book-translator/agent-manifest.json ./
           cp .pinned-book-translator/SKILL.md ./
@@ -261,7 +264,13 @@ jobs:
           BOOK_SLUG: ${{ matrix.book_slug }}
         run: |
           set -euo pipefail
-          git restore -- scripts .book-translator-install.json
+          # Pinned scripts/contracts are ignored, not tracked in the state
+          # repository. git restore on absent paths fails with pathspec.
+          # Never stage canonical runtime files or unrelated book state.
+          if [[ -n "$(git ls-files -- scripts .book-translator-install.json)" ]]; then
+            echo "::error::Unexpected tracked canonical runtime in book-state repository."
+            exit 1
+          fi
           git add -A -- "books/$BOOK_SLUG"
           if git diff --cached --quiet; then
             echo "Output already committed"
