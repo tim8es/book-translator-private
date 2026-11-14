@@ -378,3 +378,13 @@ acceptance, independent PASS and CORRECTIONS_REQUIRED, restart recovery,
 stale Git commit rejection, final EPUB SHA, and delivered artifact parity.
 Run the repo's tests in the PR; do not enable production jobs by merging
 before the integration test has been verified.
+
+## Scheduled recovery and idle Actions cost
+
+GitHub push/dispatch/completion events remain the primary triggers. Auto keeps its
+15-minute recovery schedule because provider retries can mature without a new
+commit. ChatOps and the terminal-state monitor run a 30-minute fallback sweep;
+book-integrity batching runs hourly with a rolling 3-hour lookback. The expected
+schedule density decreases from 14 to 9 triggers per hour (before event-driven
+runs). Empty integrity windows skip public-runtime checkout and canonical validation.
+Missed GitHub schedule events can still increase latency; no schedule is an SLA.
