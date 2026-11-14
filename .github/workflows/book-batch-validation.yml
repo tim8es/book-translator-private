@@ -10,7 +10,8 @@ on:
         default: "3"
   schedule:
     # Book checkpoints do NOT spawn one CI run per commit.
-    - cron: "13,43 * * * *"
+    # Hourly safety sweep; recheck a 3-hour window to tolerate missed runs.
+    - cron: "13 * * * *"
 
 permissions:
   contents: read
@@ -29,22 +30,8 @@ jobs:
           ref: main
           fetch-depth: 0
           persist-credentials: false
-      - uses: actions/setup-python@v7
-        with:
-          python-version: "3.12"
-      - name: Resolve reviewed public runtime commit
-        id: engine_pin
-        run: echo "sha=$(python automation/runtime_loader.py --print-revision)" >> "$GITHUB_OUTPUT"
-      - name: Checkout public runtime (immutable)
-        uses: actions/checkout@v7
-        with:
-          repository: tim8es/book-translator
-          ref: ${{ steps.engine_pin.outputs.sha }}
-          path: .public-auto-runtime
-          persist-credentials: false
-      - name: Verify public runtime matches locked commit
-        run: python automation/runtime_loader.py --verify
       - name: Collect unique book paths changed in the rolling window
+        id: scope
         env:
           LOOKBACK_HOURS: ${{ inputs.lookback_hours || '3' }}
         run: |
@@ -64,7 +51,29 @@ jobs:
                           if raw.startswith(b"books/") and b"/" in raw[6:]})
           target = Path(os.environ["RUNNER_TEMP"]) / "changed-book-paths.json"
           target.write_text(json.dumps(paths, ensure_ascii=False), encoding="utf-8")
+          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as result:
+              print(f"has_changes={str(bool(paths)).lower()}", file=result)
           print(f"Collected {len(paths)} unique book file paths in the last {value} hours")
           PY
+      - uses: actions/setup-python@v7
+        if: steps.scope.outputs.has_changes == 'true'
+        with:
+          python-version: "3.12"
+      - name: Resolve reviewed public runtime commit
+        if: steps.scope.outputs.has_changes == 'true'
+        id: engine_pin
+        run: echo "sha=$(python automation/runtime_loader.py --print-revision)" >> "$GITHUB_OUTPUT"
+      - name: Checkout public runtime (immutable)
+        if: steps.scope.outputs.has_changes == 'true'
+        uses: actions/checkout@v7
+        with:
+          repository: tim8es/book-translator
+          ref: ${{ steps.engine_pin.outputs.sha }}
+          path: .public-auto-runtime
+          persist-credentials: false
+      - name: Verify public runtime matches locked commit
+        if: steps.scope.outputs.has_changes == 'true'
+        run: python automation/runtime_loader.py --verify
       - name: Validate changed book content and canonical integrity
+        if: steps.scope.outputs.has_changes == 'true'
         run: python .github/scripts/verify_changed_books.py "$RUNNER_TEMP/changed-book-paths.json"
