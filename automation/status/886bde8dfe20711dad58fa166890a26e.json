@@ -4,7 +4,7 @@
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
   "source_sha256": "3a3fce78317162b68bc1e82501456a74a783cfc96cb2640c463f381866007865",
   "state": "running",
-  "phase": "correction-batch-staged",
+  "phase": "corrector-completed",
   "failures": 0,
   "correction_rounds": {
     "chapter-000002": 1,
@@ -18,18 +18,13 @@
     "chapter-000024": 7,
     "chapter-000025": 6,
     "chapter-000026": 3,
-    "chapter-000027": 3,
+    "chapter-000027": 4,
     "chapter-000028": 3,
     "chapter-000022": 6
   },
   "workflow_revision": "ea9963ca546b7cc7f6aba4dc5350fa19ea7da862",
-  "updated_at": "2026-11-14T00:41:35.579117+00:00",
-  "active": {
-    "role": "corrector",
-    "chapter": 27,
-    "session_id": "auto-886bde8dfe20-corrector-a3be6542",
-    "unit_id": "chapter-000027"
-  },
+  "updated_at": "2026-11-14T00:41:37.991659+00:00",
+  "active": null,
   "model_calls_started": 287,
   "memory_glossary_saved": 110,
   "pending_style": [],
@@ -209,7 +204,8 @@
   "correction_extensions": {
     "chapter-000025": 3,
     "chapter-000022": 3,
-    "chapter-000024": 4
+    "chapter-000024": 4,
+    "chapter-000027": 1
   },
   "deferred_review_units": [],
   "patch_deferral_audit": [
@@ -295,7 +291,6 @@
     "chapter-000027": 1
   },
   "role_protocol_failures": {},
-  "provider_model_route": "primary",
   "model_response_diagnostics": {
     "finish_reason": "stop",
     "response_format": "json_object",
@@ -307,11 +302,5 @@
     "route": "primary",
     "role": "corrector",
     "unit_id": "chapter-000027"
-  },
-  "correction_batch_progress": {
-    "unit_id": "chapter-000027",
-    "review_record_id": "075c6553828b4200a32dac89eed365b9",
-    "completed": 3,
-    "total": 3
   }
 }
