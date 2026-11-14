@@ -52,3 +52,39 @@ Use this file for recurring names, places, organizations, terms, nicknames, titl
 | Broad Run Spartans | «Спартанцы Брод-Ран» | sports team | Название команды соперников. |
 | Jared | Джаред | character | Имя персонажа; каноническая полная запись — Jared Beckman / Джаред Бекман. |
 | Baltimore Ravens | «Балтимор Рэйвенс» | sports team | Название команды; передано русской транслитерацией. |
+| Aaron | Аарон | character | Имя персонажа, сосед Диллона по комнате; мужское имя склоняется: Аарона, Аарону, Аароном. |
+| Darius | Дариус | character | Друг Кейда; мужское имя склоняется: Дариуса, Дариусу, Дариусом. |
+| Raven | Рейвен | character | Подруга Дариуса, женское имя; в русском тексте не склоняется. Не путать с названием команды Baltimore Ravens. |
+| Marco | Марко | character | Имя студента, с которым общается Кейд; несклоняемое в русском языке. |
+| Heritage | школа «Херитидж» | place | Название школы, которую посещает Кейд; в контексте со словом «школа» — «школе „Херитидж“». |
+| Loudoun County High School | старшая школа округа Лаудон | place | Старшая школа в округе Лаудон; не путать со школьной командой Loudoun County Captains. |
+| UVA | UVA | acronym | Сокращённое название Виргинского университета; допускается латинская аббревиатура, полное название по глоссарию. |
+| Jumpin’ Java Bean | Jumpin’ Java Bean | organization | Название кофейни; намеренно сохранено латиницей. |
+| Panorama Farms | Панорама-Фармс | place | Название спортивной трассы/места соревнования в оригинале. |
+| Fenway Bowl | «Фенуэй Боул» | sports event | Название футбольного матча/турнира. |
+
+## Name morphology and editorial review gate
+
+In all **Russian prose, dialogue, headings and the contents page**, source Latin
+character names are rendered in Cyrillic, consistently with the table above.
+Do **not** apply a raw nominative substitution without checking Russian case,
+syntax and the surrounding source. Game titles, company brands, citations and
+explicitly retained Latin abbreviations remain in their documented forms.
+
+| Name | Именительный | Родительный / винительный (одуш.) | Дательный | Творительный | Предложный |
+| --- | --- | --- | --- | --- | --- |
+| Dillon | Диллон | Диллона | Диллону | Диллоном | Диллоне |
+| Cade | Кейд | Кейда | Кейду | Кейдом | Кейде |
+| Darren | Даррен | Даррена | Даррену | Дарреном | Даррене |
+| Christian | Кристиан | Кристиана | Кристиану | Кристианом | Кристиане |
+| Aaron | Аарон | Аарона | Аарону | Аароном | Аароне |
+| Darius | Дариус | Дариуса | Дариусу | Дариусом | Дариусе |
+
+Evelyn → Эвелин, Raven → Рейвен and Marco → Марко are **not inflected**
+in this translation. For example, `с Эвелин`, `для Рейвен`, `у Марко`.
+
+A Reviewer must check these decisions against the **actual accepted text**;
+checking `terminology: true` in JSON alone is not proof that names are
+correct. The read-only checker at `audits/terminology_preflight.py` detects
+remaining literal Latin names but **cannot** verify full grammar or meaning.
+The book requires new source-linked review evidence after any accepted edit.
