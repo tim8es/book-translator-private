@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 131,
+  "next_sequence": 132,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -10862,6 +10862,58 @@
             "resolves": {
               "record_id": "075c6553828b4200a32dac89eed365b9",
               "finding_id": "meaning-possession-3"
+            }
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "726e4f76699f03977c14ec08e038db936a065b810ed2c84e32c86cf9171808d9",
+        "style_guide": "3ec7c485cf41741084ffe49b72d2b18ed9bd650a00a2ba00554605abadea5e3a"
+      }
+    },
+    {
+      "record_id": "0a074175c164413a985b82990ac54611",
+      "sequence": 131,
+      "unit_id": "chapter-000028",
+      "outcome": "PASS",
+      "source_sha256": "f98da8475a3d0b14695a4eb643e6d55bdb612c3e1ec25833e7b2736eab964a39",
+      "translation_sha256": "8e7712a719ac681ebf7c81b2a078e4c0350382bed5946da9a8ff5a70bf3d1580",
+      "workflow_revision": "ea9963ca546b7cc7f6aba4dc5350fa19ea7da862",
+      "review_contract_revision": "docs/TRANSLATION.md@ea9963ca546b7cc7f6aba4dc5350fa19ea7da862",
+      "reviewer_session_id": "auto-886bde8dfe20-reviewer-3ce71a18",
+      "reviewed_at": "2026-11-14T00:45:32Z",
+      "state_revision": "4bf8771743221eccdce9fb874267ebbb19175f1a5bbb1f424c9aefd9bf209758",
+      "review_commit": "f5097315e2f3965c9c9e7650156a352bebcd2658",
+      "correction_round": 4,
+      "supersedes_record_id": "df5d1a7a7ae349e8bf5a0b83f3fece3d",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "register-2",
+            "category": "register",
+            "severity": "minor",
+            "detail": "The revised «Блядь» preserves the force of Cade’s repeated profane exclamation more closely than the previously softened «Чёрт». The change fits the surrounding passage and does not alter its meaning or structure.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Fuck, Cade… Fuck…",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Блядь, Кейд… Блядь…",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "df5d1a7a7ae349e8bf5a0b83f3fece3d",
+              "finding_id": "register-1"
             }
           }
         ]
