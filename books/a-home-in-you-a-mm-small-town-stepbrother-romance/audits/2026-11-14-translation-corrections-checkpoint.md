@@ -105,3 +105,52 @@ can be considered literary review.
 there is an authorized, canonical, provenance-preserving reopen path compatible
 with this book's pinned workflow, exact-artifact translation acceptance,
 independent full-source review of each affected unit, and a verified rebuild.
+
+
+## 2026-11-14 later continuation — source-verified candidate repairs and CI diagnosis
+
+**Scoped correction work, not a canonical lifecycle advancement.**
+
+After reconstructing metadata and PR #108, five more source-bound grammar corrections
+were committed to the candidate branch, with read-back of the exact target text:
+
+| Unit | Original source-grounded correction | Commit |
+| --- | --- | --- |
+| 016 (6 Cade) | `дедушка Диллон` → `дедушка Диллона` | `ee53e565df2c7d0cea2e7b85e85b457e40d09732` |
+| 018 (8 Cade) | `позади Диллон` → `позади Диллона` | `668ee2309d9d49a54fda4b08a3d0ad96d8c103ff` |
+| 021 (11 Dillon) | `увёл Кейд` → `увёл Кейда` | `afe45f1c46a4f9c1d0253d28280d305193effeb3` |
+| 023 (13 Cade) | `дом Диллон` → `дом Диллона` | `f12f4f2485ad9402ee2cd56203c7ec1a5206a00e` |
+| 034 (24 Dillon) | `Забрал Кейд` → `Забрал Кейда` | `eadf11aca9b1aae81afaf60d0d6cdaed903aa00b` |
+
+Read-only pattern scans of all applicable draft literary-unit texts were
+performed in bounded batches: prepositions, clear accusative/genitive
+contexts, missing dialogue-tag dashes and literal Unicode escapes.
+These are **heuristics**, not evidence of complete independent review;
+a negative finding is not a PASS, and proper-name `Марко` is indeclinable.
+
+### Reproducible CI blocker
+
+[GitHub Actions run #43605718766](https://github.com/tim8es/book-translator-private/actions/runs/43605718766)
+failed at the `Validate changed books with each book's pinned public workflow` step.
+The pinned `scripts/book.py validate` and `scripts/corpus.py verify`
+both rejected the candidate draft, beginning with **chapter 3**:
+`progress.json: chapter 3 translation_acceptance sha256 mismatch`.
+Accepted SHA-256 from historical evidence was
+`b86c7b68cff1e725e80fff35b3cf11e8cf1b438045d70e29a52da9262191a398`,
+but the draft text SHA-256 was
+`44ef95b5ac4e15e97e1cde4a740d3e58764dd7ae0c9c947ae282a14ffd8ddf12`.
+That sample refers to the earlier commit `f12f4f2`; later candidate edits
+may change individual text hashes, but **do not resolve** the underlying
+lifecycle mismatch.
+
+A book is not finalized merely because `progress.json` says 51/51
+`reviewed`: those accepted bytes belong to the previous edition.
+Do not rewrite their old SHA identities, reuse old PASS to validate new bytes,
+or merge the draft unchanged. A canonical correction/reopen transition
+compatible with the pinned workflow is still required, or an **explicitly
+authorized** workflow upgrade introducing one.
+
+No public workflow code, main-branch book state, original text or shipped EPUB
+was changed during this continuation.
+
+**Result: candidate edits persisted; quality-assured corrected EPUB NOT READY.**
