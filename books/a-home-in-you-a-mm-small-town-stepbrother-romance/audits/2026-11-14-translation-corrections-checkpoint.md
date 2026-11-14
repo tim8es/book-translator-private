@@ -269,3 +269,34 @@ text was produced.
 
 **Result: CORRECTIONS REQUIRED; final EPUB blocked for substantive
 fidelity and existing canonical hash/review reasons.**
+
+
+## 2026-11-14 — unit 024 duplication and non-source insertion removed
+
+The user explicitly requested fixing the duplicate line and material not
+supported by the original.
+
+- Candidate unit: `translated/024-14-dillon.md`.
+- Source: immutable `extracted/024-14-dillon.md` from source revision
+  `source-000001`.
+- Commit: `13177a27116600734b3b4ef60a2e57b957e6c9a3`.
+- Deleted the **second copy** of a repeated Russian question and its
+  repeated response, along with subsequent invented, unsupported dialogue
+  and prose in the same non-source block: **nine lines in total**.
+- Checked the written candidate from GitHub: exactly **one** occurrence
+  of that short Russian question remains. The invented block's checked
+  prose and dialogue anchors are absent.
+- **Critical open issue:** the English source contains a materially
+  longer scene not faithfully represented in the current candidate. The
+  affected original depicts sexual material involving explicitly
+  underage characters. The correction deliberately **did not generate,
+  reconstruct or rewrite** explicit content involving minors.
+  Consequently the target now has a **translation coverage gap** in
+  this chapter. This cannot be treated as an editorial PASS.
+- The previously restored, non-explicit discussion earlier in this unit
+  remains intact. Other units, original source, pinned workflow, review
+  ledger, canonical `progress.json`, and EPUB remain untouched.
+
+**Unit 024 verdict: CORRECTIONS_REQUIRED — duplicated/invented material
+removed; original-content coverage is incomplete. Do not merge PR #108,
+claim full review or build a corrected final EPUB from this draft.**
