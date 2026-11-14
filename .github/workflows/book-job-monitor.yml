@@ -37,6 +37,18 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Resolve reviewed public runtime commit
+        id: engine_pin
+        run: echo "sha=$(python automation/runtime_loader.py --print-revision)" >> "$GITHUB_OUTPUT"
+      - name: Checkout public runtime (immutable)
+        uses: actions/checkout@v7
+        with:
+          repository: tim8es/book-translator
+          ref: ${{ steps.engine_pin.outputs.sha }}
+          path: .public-auto-runtime
+          persist-credentials: false
+      - name: Verify public runtime matches locked commit
+        run: python automation/runtime_loader.py --verify
       - name: Validate statuses and deliver unacknowledged events
         env:
           BOOK_EVENTS_WEBHOOK_URL: ${{ secrets.BOOK_EVENTS_WEBHOOK_URL }}
