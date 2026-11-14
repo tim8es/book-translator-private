@@ -19,52 +19,33 @@ jobs:
     outputs:
       books: ${{ steps.scope.outputs.books }}
       has_pending: ${{ steps.scope.outputs.has_pending }}
+      engine_sha: ${{ steps.pin.outputs.sha }}
     steps:
-      - uses: actions/checkout@v7
+      - name: Check out book-state queue
+        uses: actions/checkout@v7
         with:
           ref: main
           persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Resolve single immutable public executor version
+        id: pin
+        shell: bash
+        run: echo "sha=$(python automation/runtime_loader.py --print-revision)" >> "$GITHUB_OUTPUT"
+      - name: Checkout public queue-discovery engine
+        uses: actions/checkout@v7
+        with:
+          repository: tim8es/book-translator
+          ref: ${{ steps.pin.outputs.sha }}
+          path: .public-auto-runtime
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Verify public executor matches shared lock
+        run: python automation/runtime_loader.py --verify
       - name: Find pending requests grouped by book
         id: scope
-        shell: bash
-        run: |
-          python - <<'PY'
-          import json
-          import os
-          import re
-          from pathlib import Path
-
-          requests = Path(".chat-ops/requests")
-          results = Path(".chat-ops/results")
-          names = set()
-          for path in sorted(requests.glob("*.json")):
-              if not re.fullmatch(r"[0-9a-f]{32}", path.stem):
-                  continue
-              if (results / path.name).exists():
-                  continue
-              try:
-                  def unique_pairs(pairs):
-                      value = {}
-                      for key, val in pairs:
-                          if key in value:
-                              raise ValueError("duplicate key")
-                          value[key] = val
-                      return value
-                  body = json.loads(path.read_text("utf-8"), object_pairs_hook=unique_pairs)
-                  slug = body.get("book_slug") if isinstance(body, dict) else None
-                  if not isinstance(slug, str) or not re.fullmatch(
-                      r"[a-z0-9][a-z0-9-]{0,99}", slug
-                  ):
-                      slug = "__invalid__"
-              except (OSError, ValueError, UnicodeError):
-                  slug = "__invalid__"
-              names.add(slug)
-          # Matrix max is 256; the scheduled scan collects any overflow later.
-          groups = sorted(names)[:200]
-          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as out:
-              print("books=" + json.dumps(groups or ["__none__"]), file=out)
-              print("has_pending=" + str(bool(groups)).lower(), file=out)
-          PY
+        run: python .public-auto-runtime/scripts/chat_ops_discover.py --root . --github-output "$GITHUB_OUTPUT"
 
   process:
     needs: discover
@@ -74,41 +55,40 @@ jobs:
       matrix:
         book_slug: ${{ fromJSON(needs.discover.outputs.books) }}
     concurrency:
-      group: chat-ops-book-${{ matrix.book_slug }}
+      # Shared per-book lane across Auto, ChatOps, and EPUB publishing.
+      group: book-operation-${{ matrix.book_slug }}
       cancel-in-progress: false
     runs-on: ubuntu-latest
     timeout-minutes: 25
     steps:
-      - name: Check out book state with permission to publish accepted transitions
+      - name: Check out authoritative book state with write permission
         uses: actions/checkout@v7
         with:
           path: books-repo
           ref: main
           fetch-depth: 0
           persist-credentials: true
-
-      - name: Check out public Chat executor
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Checkout reviewed, immutable public executor
         uses: actions/checkout@v7
         with:
           repository: tim8es/book-translator
-          # Executor pin is separate from each book's durable workflow revision.
-          ref: db27cc1a3369cd3e3da82e2dfe222af33a1f74e0
-          path: engine
+          ref: ${{ needs.discover.outputs.engine_sha }}
+          path: books-repo/.public-auto-runtime
           fetch-depth: 1
           persist-credentials: false
-
-      - name: Set up Python
-        uses: actions/setup-python@v7
-        with:
-          python-version: '3.12'
-
-      - name: Execute this book's canonical state transitions
+      - name: Check execution revision against latest book-state lock
+        run: python books-repo/automation/runtime_loader.py --verify
+      - name: Execute book-scoped canonical ChatOps operations
         shell: bash
         env:
           BOOK_SLUG: ${{ matrix.book_slug }}
         run: |
-          python engine/scripts/chat_ops_bridge.py \
+          set -euo pipefail
+          python books-repo/.public-auto-runtime/scripts/chat_ops_bridge.py \
             --root books-repo \
-            --engine engine \
+            --engine books-repo/.public-auto-runtime \
             --book-slug "$BOOK_SLUG" \
             --max-requests 100
