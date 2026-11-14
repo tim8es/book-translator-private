@@ -24,10 +24,23 @@ jobs:
     outputs:
       books: ${{ steps.scope.outputs.books }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0
           persist-credentials: false
+      - name: Read immutable public final-gate executor
+        id: executor
+        run: echo "sha=$(python automation/runtime_loader.py --print-revision)" >> "$GITHUB_OUTPUT"
+      - name: Checkout public read-only final-build gates
+        uses: actions/checkout@v7
+        with:
+          repository: tim8es/book-translator
+          ref: ${{ steps.executor.outputs.sha }}
+          path: .public-auto-runtime
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Verify checked-out public executor revision
+        run: python automation/runtime_loader.py --verify
       - name: Resolve only explicitly requested books
         id: scope
         shell: bash
@@ -38,41 +51,11 @@ jobs:
           AFTER: ${{ github.sha }}
         run: |
           set -euo pipefail
-          python - <<'PY'
-          import json
-          import os
-          import re
-          import subprocess
-          from pathlib import Path
-
-          valid_slug = re.compile(r"[a-z0-9][a-z0-9-]{0,99}\Z")
-          if os.environ["EVENT_NAME"] == "workflow_dispatch":
-              slugs = [os.environ["REQUESTED_SLUG"]]
-          else:
-              before = os.environ.get("BEFORE") or ""
-              after = os.environ["AFTER"]
-              if re.fullmatch(r"[0-9a-f]{40}", before) and before != "0" * 40:
-                  command = ["git", "diff", "--name-only", before, after]
-              else:
-                  command = ["git", "diff-tree", "--root", "--no-commit-id", "--name-only", "-r", after]
-              changes = subprocess.check_output(command, text=True).splitlines()
-              slugs = sorted({
-                  match.group(1)
-                  for name in changes
-                  if (match := re.fullmatch(
-                      r"books/([a-z0-9][a-z0-9-]{0,99})/\.workflow/final-build-request\.json",
-                      name,
-                  ))
-              })
-          if not slugs or len(slugs) > 25 or any(not valid_slug.fullmatch(s) for s in slugs):
-              raise SystemExit("No valid, explicitly requested book for final build")
-          for slug in slugs:
-              if not (Path("books") / slug / ".workflow" / "final-build-request.json").is_file():
-                  raise SystemExit(f"Build request does not exist: {slug}")
-          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as out:
-              print("books=" + json.dumps(slugs), file=out)
-          print("Approved book scopes:", slugs)
-          PY
+          python .public-auto-runtime/scripts/final_build_checks.py discover \
+            --root . --event-name "$EVENT_NAME" \
+            --book-slug "$REQUESTED_SLUG" \
+            --before "$BEFORE" --after "$AFTER" \
+            --github-output "$GITHUB_OUTPUT"
 
   build:
     needs: discover-builds
@@ -89,76 +72,11 @@ jobs:
     timeout-minutes: 35
     steps:
       - name: Check out authoritative book state
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           ref: main
           fetch-depth: 0
           persist-credentials: true
-
-      - name: Verify book, request, source and complete independent review ledger
-        id: pin
-        shell: bash
-        env:
-          BOOK_SLUG: ${{ matrix.book_slug }}
-        run: |
-          set -euo pipefail
-          python - <<'PY'
-          import hashlib
-          import json
-          import os
-          import re
-          from pathlib import Path
-
-          slug = os.environ["BOOK_SLUG"]
-          book = Path("books") / slug
-          request = json.loads((book / ".workflow/final-build-request.json").read_text("utf-8"))
-          metadata = json.loads((book / "metadata.json").read_text("utf-8"))
-          manifest = json.loads((book / "source-manifest.json").read_text("utf-8"))
-          progress = json.loads((book / "progress.json").read_text("utf-8"))
-          ledger = json.loads((book / "review-ledger.json").read_text("utf-8"))
-          pin = metadata["workflow"]["resolved_revision"]
-          assert re.fullmatch(r"[0-9a-f]{40}", pin), "invalid pinned workflow revision"
-          assert request.get("schema_version") == 1
-          assert request.get("operation") == "finalize-and-build-epub"
-          assert request.get("book_slug") == slug
-          assert request.get("workflow_revision") == pin, "workflow pin mismatch"
-          assert request.get("source_sha256") == metadata["source"]["sha256"]
-          assert manifest["source_sha256"] == metadata["source"]["sha256"]
-          assert request.get("unit_count") == len(progress["chapters"])
-          assert len(progress["chapters"]) == len(manifest["extracted"])
-          source = book / "source" / metadata["source"]["filename"]
-          assert hashlib.sha256(source.read_bytes()).hexdigest() == manifest["source_sha256"], "source bytes changed"
-          assert not list((book / ".workflow/claims").glob("chapter-*.json")), "active claims"
-          for blocker in ("coordination-lock.json", "source-promotion.json", "finalization.json"):
-              assert not (book / ".workflow" / blocker).exists(), "active transition: " + blocker
-          for chapter in progress["chapters"]:
-              unit = chapter["unit_id"]
-              entry = next((x for x in manifest["extracted"] if x["unit_id"] == unit), None)
-              assert entry is not None and entry["path"] == chapter["source_path"]
-              assert chapter["status"] == "reviewed", "incomplete chapter: " + unit
-              source_text = (book / chapter["source_path"]).read_bytes()
-              translated = (book / chapter["translation_path"]).read_bytes()
-              accepted = chapter["translation_acceptance"]
-              source_hash = hashlib.sha256(source_text).hexdigest()
-              translation_hash = hashlib.sha256(translated).hexdigest()
-              assert source_hash == entry["sha256"]
-              assert translation_hash == accepted["translation_sha256"]
-              latest = next((x for x in reversed(ledger["records"]) if x["unit_id"] == unit), None)
-              assert latest and latest["outcome"] == "PASS"
-              assert latest["source_sha256"] == source_hash
-              assert latest["translation_sha256"] == translation_hash
-          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as out:
-              print("ref=" + pin, file=out)
-          print("Verified all", len(progress["chapters"]), "units with matching current review evidence")
-          PY
-
-      - name: Check out exact book-pinned public engine
-        uses: actions/checkout@v4
-        with:
-          repository: tim8es/book-translator
-          ref: ${{ steps.pin.outputs.ref }}
-          path: .pinned-book-translator
-          persist-credentials: false
 
       - name: Read immutable public executor lock
         id: executor
@@ -172,6 +90,27 @@ jobs:
           ref: ${{ steps.executor.outputs.sha }}
           path: .public-auto-runtime
           fetch-depth: 1
+          persist-credentials: false
+
+      - name: Verify pinned public gate executor before loading
+        run: python automation/runtime_loader.py --verify
+
+      - name: Require original bytes and current independent PASS before building
+        id: pin
+        shell: bash
+        env:
+          BOOK_SLUG: ${{ matrix.book_slug }}
+        run: |
+          set -euo pipefail
+          python .public-auto-runtime/scripts/final_build_checks.py admit \
+            --root . --book-slug "$BOOK_SLUG" --github-output "$GITHUB_OUTPUT"
+
+      - name: Check out exact book-pinned public engine
+        uses: actions/checkout@v7
+        with:
+          repository: tim8es/book-translator
+          ref: ${{ steps.pin.outputs.ref }}
+          path: .pinned-book-translator
           persist-credentials: false
 
       - name: Verify immutable executor and book pin without installation
@@ -217,30 +156,8 @@ jobs:
           BOOK_SLUG: ${{ matrix.book_slug }}
         run: |
           set -euo pipefail
-          python - <<'PY'
-          import hashlib
-          import json
-          import os
-          import zipfile
-          from pathlib import Path
-          b = Path("books") / os.environ["BOOK_SLUG"]
-          m = json.loads((b / "output/manifest.json").read_text("utf-8"))
-          p = json.loads((b / "progress.json").read_text("utf-8"))
-          assert m["format"] == "epub" and not m["preview"], "final must not be unreviewed preview"
-          assert m["unit_count"] == len(p["chapters"]), "chapter count mismatch"
-          artifact = b / m["artifact_path"]
-          data = artifact.read_bytes()
-          assert hashlib.sha256(data).hexdigest() == m["artifact_sha256"], "output hash mismatch"
-          with zipfile.ZipFile(artifact) as book:
-              assert book.testzip() is None, "corrupt EPUB member"
-              assert book.namelist()[0] == "mimetype", "EPUB mimetype must be first"
-              assert book.read("mimetype") == b"application/epub+zip"
-              assert "META-INF/container.xml" in book.namelist()
-              assert len([n for n in book.namelist() if n.endswith(".xhtml")]) >= len(p["chapters"])
-          assert (b / "FINAL_QUALITY_GATES.md").is_file()
-          assert (b / "REVIEW_REPORT.md").is_file()
-          print("VERIFIED_EPUB", str(artifact), "bytes", len(data), "sha256", m["artifact_sha256"])
-          PY
+          python .public-auto-runtime/scripts/final_build_checks.py verify \
+            --root . --book-slug "$BOOK_SLUG"
 
       - name: Upload verified output and quality reports
         uses: actions/upload-artifact@v4
