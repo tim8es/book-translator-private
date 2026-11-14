@@ -16,13 +16,19 @@ validation, review, EPUB builders, and their tests are maintained in:
 - Auto and ChatOps both load the same immutable **executor** revision
   from `automation/runtime.lock.json`. Their job scheduling and model access
   remain independent; book-level concurrency serializes mutations.
-- The generic final EPUB Action checks out each book's own pinned **literary**
-  revision before running canonical validation/builds. It does not change
-  executor or book workflow pins. Public discovery and ChatOps state-only
-  bootstrapping are implemented in the public engine, not here.
-- `scripts/`, `docs/`, and root workflow contract files may be recreated in
-  Actions from the exact book-pinned canonical revision as **ignored, disposable
-  runtime cache**. They are not owned or maintained here.
+- The generic final EPUB Action checks out both the reviewed public
+  **executor** and each book's own pinned **literary** revision. Validation,
+  finalization and EPUB assembly run from those public checkouts against
+  state/books; no canonical code or install marker is installed in this repo.
+- Auto and ChatOps use the same out-of-tree pinned canonical CLI bridge:
+  public runtime code in a separate checkout, authoritative data only here.
+  Public discovery, book-specific pin verification and CLI compatibility
+  are implemented in the public engine, not in private Actions.
+- `scripts/`, root canonical `docs/` and `.book-translator-install.json`
+  are **not** recreated inside the book-state checkout. Public code stays
+  in an out-of-tree immutable checkout; the pinned engine may create a
+  temporary `books/` symlink pointing at this checkout. Historical
+  `docs/migrations/` here remains book-specific, durable audit evidence.
 
 ## Change policy
 

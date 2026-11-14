@@ -1,8 +1,8 @@
 name: Universal final EPUB delivery
 
-# Existing private-repository delivery remains unchanged. A book-state
-# repository that is intentionally public can build with the *book-pinned*
-# public engine directly, without sending the source to the engine repository.
+# A single book-scoped job builds against the exact book-pinned public
+# workflow, regardless of the state repository's visibility.
+# No canonical script, template or installation marker is copied to state.
 on:
   workflow_dispatch:
     inputs:
@@ -19,14 +19,7 @@ permissions:
   contents: read
 
 jobs:
-  private-deliver:
-    if: ${{ github.event_name == 'workflow_dispatch' && github.event.repository.private == true }}
-    uses: tim8es/book-translator/.github/workflows/final-epub.yml@3632331e95dc9392caabf762e8732ad5c80b7ad0
-    with:
-      book_slug: ${{ inputs.book_slug }}
-
-  discover-public-builds:
-    if: ${{ github.event.repository.private == false }}
+  discover-builds:
     runs-on: ubuntu-latest
     outputs:
       books: ${{ steps.scope.outputs.books }}
@@ -81,15 +74,14 @@ jobs:
           print("Approved book scopes:", slugs)
           PY
 
-  build-public:
-    if: ${{ github.event.repository.private == false }}
-    needs: discover-public-builds
+  build:
+    needs: discover-builds
     permissions:
       contents: write
     strategy:
       fail-fast: false
       matrix:
-        book_slug: ${{ fromJSON(needs.discover-public-builds.outputs.books) }}
+        book_slug: ${{ fromJSON(needs.discover-builds.outputs.books) }}
     concurrency:
       group: book-operation-${{ matrix.book_slug }}
       cancel-in-progress: false
@@ -168,51 +160,56 @@ jobs:
           path: .pinned-book-translator
           persist-credentials: false
 
-      - name: Prepare pinned engine without changing canonical revisions
+      - name: Read immutable public executor lock
+        id: executor
+        shell: bash
+        run: echo "sha=$(python automation/runtime_loader.py --print-revision)" >> "$GITHUB_OUTPUT"
+
+      - name: Checkout public canonical CLI adapter (reviewed commit)
+        uses: actions/checkout@v7
+        with:
+          repository: tim8es/book-translator
+          ref: ${{ steps.executor.outputs.sha }}
+          path: .public-auto-runtime
+          fetch-depth: 1
+          persist-credentials: false
+
+      - name: Verify immutable executor and book pin without installation
         shell: bash
         env:
           PIN: ${{ steps.pin.outputs.ref }}
         run: |
           set -euo pipefail
+          python automation/runtime_loader.py --verify
           test "$(git -C .pinned-book-translator rev-parse HEAD)" = "$PIN"
-          # Only scripts are disposable. docs/migrations/ contains tracked
-          # historical book evidence and must never be deleted in Actions.
-          rm -rf scripts
-          cp -a .pinned-book-translator/scripts ./scripts
-          mkdir -p docs
-          cp -a .pinned-book-translator/docs/. ./docs/
-          cp .pinned-book-translator/AGENTS.md ./
-          cp .pinned-book-translator/agent-manifest.json ./
-          cp .pinned-book-translator/SKILL.md ./
-          python - <<'PY'
-          import json
-          import os
-          from pathlib import Path
-          pin = os.environ["PIN"]
-          assert len(pin) == 40 and all(c in "0123456789abcdef" for c in pin)
-          document = {
-              "schema_version": 1,
-              "canonical_repository": "https://github.com/tim8es/book-translator",
-              "requested_ref": pin,
-              "resolved_revision": pin,
-              "install_root": ".",
-          }
-          Path(".book-translator-install.json").write_text(
-              json.dumps(document, ensure_ascii=False, indent=2) + "\n",
-              encoding="utf-8")
-          PY
+          test ! -e scripts
+          test ! -e .book-translator-install.json
 
       - name: Run pinned validation, finalization and canonical EPUB builder
         shell: bash
         env:
           BOOK_SLUG: ${{ matrix.book_slug }}
+          PIN: ${{ steps.pin.outputs.ref }}
         run: |
           set -euo pipefail
-          python scripts/book.py validate "$BOOK_SLUG"
-          python scripts/corpus.py verify "$BOOK_SLUG"
-          python scripts/book.py finalize "$BOOK_SLUG" --json
-          python scripts/book.py build "$BOOK_SLUG" --format epub
-          python scripts/book.py build-status "$BOOK_SLUG" --json
+          # The CLI adapter lives in the locked public executor checkout.
+          # Its pinned book checkout symlinks books/ into this state tree.
+          # No scripts/docs/marker are created in the book-state checkout.
+          python .public-auto-runtime/scripts/pinned_cli.py \
+            --engine .pinned-book-translator --state . --revision "$PIN" \
+            book validate "$BOOK_SLUG"
+          python .public-auto-runtime/scripts/pinned_cli.py \
+            --engine .pinned-book-translator --state . --revision "$PIN" \
+            corpus verify "$BOOK_SLUG"
+          python .public-auto-runtime/scripts/pinned_cli.py \
+            --engine .pinned-book-translator --state . --revision "$PIN" \
+            book finalize "$BOOK_SLUG" --json
+          python .public-auto-runtime/scripts/pinned_cli.py \
+            --engine .pinned-book-translator --state . --revision "$PIN" \
+            book build "$BOOK_SLUG" --format epub
+          python .public-auto-runtime/scripts/pinned_cli.py \
+            --engine .pinned-book-translator --state . --revision "$PIN" \
+            book build-status "$BOOK_SLUG" --json
 
       - name: Verify exact EPUB bytes, chapter count and manifest
         shell: bash
