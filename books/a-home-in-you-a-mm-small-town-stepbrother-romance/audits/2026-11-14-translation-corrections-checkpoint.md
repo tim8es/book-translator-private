@@ -392,3 +392,47 @@ Findings:
 **No lifecycle mutation, independent PASS, or final build occurred.**
 The outstanding unit-024 substantive gap, remaining literary review,
 and canonical SHA-bound reviewed-artifact reopening are still blockers.
+
+
+## Manual ChatOps continuation after full-51 triage
+
+No Auto translation workflow was started. Maintained pinned book workflow
+revision `ea9963ca546b7cc7f6aba4dc5350fa19ea7da862` and kept
+original English extraction, canonical main progress/review evidence and
+old EPUB unmodified.
+
+Source-paired, small-extent corrections made in **four files**:
+
+| Unit | Fixes | Commit | Evidence |
+| --- | ---: | --- | --- |
+| 025 — school lunch and football game | 5 | `3a13e2abe31d2694d19c958fe67996bc1f1c7a71` | English source shows Dillon as addressee, person missed, lifted, or subject of comment; Russian grammatical cases corrected in safe/non-explicit paragraphs |
+| 026 — running, gifts and family conversation | 7 | `aa87dfc5fbc451559ca27d7c73ad3d9c91876dbe` | English source establishes Cade as patient/addressee and Dillon as beneficiary or referent |
+| 029 — argument with father | 4 | `be39f695f17f7399bd9be17bec9da6c16e7ca512` | Source explicitly describes an attempted attack on Dillon, taking Cade away and references to Dillon's responsibility |
+| 048 — adult college epilogue | 3 | `24419a18934aa647e833c1ad19fd0e8d0028c890`, `a9b959facb92e5ff66092f8d5ea524d8ece161f2` | Two nominatives erroneously used as objects and an unnatural case/family-intent sentence restored |
+| **Total** | **19** | | **Four distinct units** |
+
+All five commit outcomes were checked by a fresh GitHub content read.
+A subsequent source-versus-current-candidate check found identical
+ordered Markdown link destinations, ordered bt markers and heading
+counts for all **four** modified files. This is not full literary review.
+
+**Concurrent editing observation:** after the unit 029 fix, the branch
+advanced through `9b0a9d999fbfd606a29f7da2629eb9e536942386`
+(unit 031) and `45fe7830f56d3998b390467214d997f6036e1cc5`
+(unit 033), generated outside this specific sequence of file edits.
+Upon seeing that unit 031's same grammar problems had already been
+corrected, no duplicate write or overwrite was attempted. Do not
+attribute those two commits to this audit pass without inspection of
+their independent source/review evidence.
+
+**Outstanding release barriers unchanged:**
+- Unit 024 still has an untranslated source gap involving explicit
+  content with minors; no repair of that passage has been generated.
+- Current text of many previously reviewed units differs from
+  translation_acceptance's historical SHA-256 in canonical
+  `progress.json`; validation rejects it.
+- There is no fresh, independent full source/target literary PASS and no
+  verified new EPUB. PR #108 must remain **draft**.
+
+This section is an operator correction checkpoint, **not an approval or
+reacceptance**.
