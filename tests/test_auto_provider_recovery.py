@@ -1,6 +1,7 @@
 """Durable provider outages, safe unit isolation and optional failover."""
 from __future__ import annotations
 
+import hashlib
 import json
 import os
 from contextlib import nullcontext
@@ -184,7 +185,9 @@ class ProviderRecoveryTests(unittest.TestCase):
 
     def test_repeated_same_unit_protocol_failures_select_backup(self):
         self.status["active"]["unit_id"] = self.chapter["unit_id"]
-        self.status["unit_protocol_failures"] = {self.chapter["unit_id"]: 2}
+        self.status["active"]["role"] = "translator"
+        self.status["role_protocol_failures"] = {
+            self.chapter["unit_id"] + ":translator": 2}
         with patch.dict(os.environ, self.env), \
              patch.object(worker, "complete", return_value="{}") as post:
             worker.complete_for_job(self.status, "TRANSLATOR", "system", "text")
@@ -195,6 +198,142 @@ class ProviderRecoveryTests(unittest.TestCase):
              patch.object(worker, "complete", return_value="{}") as post:
             worker.complete_for_job(self.status, "TRANSLATOR", "system", "text")
         post.assert_called_once_with("TRANSLATOR", "system", "text")
+
+    def test_role_scoped_fallback_never_inherits_other_role_failures(self):
+        unit = self.chapter["unit_id"]
+        self.status["active"].update({"role": "reviewer", "unit_id": unit})
+        self.status["unit_protocol_failures"] = {unit: 5}
+        self.status["role_protocol_failures"] = {unit + ":translator": 3}
+        env = {**self.env, "OMNIROUTE_REVIEWER_MODEL": "review-primary",
+               "OMNIROUTE_REVIEWER_FALLBACK_MODEL": "review-backup"}
+        with patch.dict(os.environ, env), \\
+             patch.object(worker, "complete", return_value="{}") as post:
+            worker.complete_for_job(self.status, "REVIEWER", "system", "source")
+        post.assert_called_once_with("REVIEWER", "system", "source")
+        self.status["role_protocol_failures"][unit + ":reviewer"] = 2
+        with patch.dict(os.environ, env), \\
+             patch.object(worker, "complete", return_value="{}") as post:
+            worker.complete_for_job(self.status, "REVIEWER", "system", "source")
+        post.assert_called_once_with("REVIEWER_FALLBACK", "system", "source")
+
+    def test_structural_corrector_uses_translator_route_but_corrector_error_scope(self):
+        unit = self.chapter["unit_id"]
+        self.status["active"].update({"role": "corrector", "unit_id": unit})
+        self.status["role_protocol_failures"] = {unit + ":corrector": 2}
+        with patch.dict(os.environ, self.env), \\
+             patch.object(worker, "complete", return_value="{}") as post:
+            worker.complete_for_job(self.status, "TRANSLATOR", "system", "source")
+        post.assert_called_once_with("TRANSLATOR_FALLBACK", "system", "source")
+
+    def test_reviewer_generated_protocol_allowlist_does_not_skip_unknowns(self):
+        good = {
+            "reviewer evidence is invalid: every literary check must have been performed":
+                "review_checks_incomplete",
+            "reviewer evidence is invalid: all checks must be boolean":
+                "review_evidence_invalid",
+            "reviewer evidence is invalid: findings[0].translation_anchor: quote is repeated":
+                "review_evidence_invalid",
+            "reviewer response has invalid literary memory schema": "review_json_invalid",
+            "reviewer must return JSON": "review_json_invalid",
+        }
+        for message, code in good.items():
+            self.assertEqual(worker.reviewer_model_output_code(ModelError(message)), code)
+        for failure in (
+            ModelError("reviewer evidence is invalid: source file hash changed"),
+            ModelError("model HTTP status 404"),
+            ModelError("model output incomplete or filtered: content_filter"),
+            TransientModelError("model HTTP status 429", code="http_429"),
+        ):
+            self.assertIsNone(worker.reviewer_model_output_code(failure))
+
+    def test_review_protocol_quarantine_is_hash_bound_and_never_marks_pass(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            book = root / "books" / "synthetic-book"
+            (book / "extracted").mkdir(parents=True)
+            (book / "translated").mkdir()
+            source = b"source paragraph"
+            target = "Перевод абзаца".encode("utf-8")
+            (book / "extracted" / "one.md").write_bytes(source)
+            (book / "translated" / "one.md").write_bytes(target)
+            s_hash = hashlib.sha256(source).hexdigest()
+            t_hash = hashlib.sha256(target).hexdigest()
+            chapter = {"number": 1, "unit_id": "chapter-000001",
+                       "status": "translated", "source_path": "extracted/one.md",
+                       "translation_path": "translated/one.md",
+                       "translation_acceptance": {
+                           "source_sha256": s_hash, "translation_sha256": t_hash}}
+            status = {"failures": worker.MAX_FAILURES, "state": "blocked"}
+            with patch.object(worker, "ROOT", root), \\
+                 patch.object(worker, "cli") as cli:
+                self.assertTrue(worker.defer_failed_reviewer_unit(
+                    "synthetic-book", chapter, None, status, "review_checks_incomplete"))
+                cli.assert_not_called()
+            self.assertEqual(status["state"], "running")
+            self.assertEqual(status["phase"], "model-unit-deferred")
+            self.assertEqual(status["deferred_review_units"], ["chapter-000001"])
+            self.assertEqual(status["model_review_deferral_audit"][0]["translation_sha256"],
+                             t_hash)
+            self.assertNotIn("PASS", repr(status))
+            with patch.object(worker, "ROOT", root), \\
+                 patch.object(worker, "cli") as cli:
+                self.assertFalse(worker.defer_failed_reviewer_unit(
+                    "synthetic-book", chapter, None,
+                    {"failures": 3}, None))
+                cli.assert_not_called()
+                bad_chapter = {**chapter, "translation_acceptance": {
+                    **chapter["translation_acceptance"],
+                    "translation_sha256": "0" * 64}}
+                with self.assertRaisesRegex(worker.JobError, "artifact changed"):
+                    worker.defer_failed_reviewer_unit(
+                        "synthetic-book", bad_chapter, None,
+                        {"failures": 3}, "review_checks_incomplete")
+                cli.assert_not_called()
+            # A new canonical accepted artifact invalidates prior model deferral.
+            new_chapter = {**chapter, "translation_acceptance": {
+                **chapter["translation_acceptance"],
+                "translation_sha256": "1" * 64}}
+            worker.reconcile_deferred_model_reviews(status, [new_chapter])
+            self.assertEqual(status["deferred_review_units"], [])
+            self.assertEqual(status["model_review_deferral_invalidations"][0]["unit_id"],
+                             "chapter-000001")
+
+    def test_review_protocol_quarantine_uses_canonical_only_on_current_rejection(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            book = root / "books" / "synthetic-book"
+            (book / "extracted").mkdir(parents=True)
+            (book / "translated").mkdir()
+            source = b"original"
+            target = b"translation"
+            (book / "extracted" / "one.md").write_bytes(source)
+            (book / "translated" / "one.md").write_bytes(target)
+            s_hash = hashlib.sha256(source).hexdigest()
+            t_hash = hashlib.sha256(target).hexdigest()
+            chapter = {"number": 1, "unit_id": "chapter-000001",
+                       "status": "translated", "source_path": "extracted/one.md",
+                       "translation_path": "translated/one.md",
+                       "translation_acceptance": {
+                           "source_sha256": s_hash, "translation_sha256": t_hash}}
+            record = {"record_id": "a" * 32, "outcome": "CORRECTIONS_REQUIRED",
+                      "source_sha256": s_hash, "translation_sha256": t_hash}
+            status = {"failures": 3, "state": "blocked"}
+            with patch.object(worker, "ROOT", root), \\
+                 patch.object(worker, "cli") as cli:
+                self.assertTrue(worker.defer_failed_reviewer_unit(
+                    "synthetic-book", chapter, record, status, "review_json_invalid"))
+            cli.assert_called_once_with(
+                "defer-review", "synthetic-book", "1",
+                "--reason", "model-review-output-exhausted")
+            self.assertNotIn("deferred_review_units", status)
+            self.assertEqual(status["model_review_deferral_audit"][0]["route"], "canonical")
+            with patch.object(worker, "ROOT", root), \\
+                 patch.object(worker, "cli") as cli:
+                self.assertFalse(worker.defer_failed_reviewer_unit(
+                    "synthetic-book", chapter,
+                    {**record, "outcome": "PASS"},
+                    {"failures": 3}, "review_json_invalid"))
+                cli.assert_not_called()
 
     def test_translator_output_allowlist_excludes_transport_and_unknown(self):
         for message, expected in (
