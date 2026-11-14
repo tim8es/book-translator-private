@@ -224,6 +224,9 @@ class LiteraryContextTests(unittest.TestCase):
             self.assertNotIn("pinned translator", system)
             self.assertIn("Mara = Мара", user)
             self.assertIn("CURRENT ACCEPTED TRANSLATION", user)
+            self.assertIn("A check boolean describes", user)
+            self.assertIn("not whether the translation passed", user)
+            self.assertIn("checks:false", user)
             self.assertIn("short clauses", user)
             self.assertEqual(original, "Mara walked home.")
 
@@ -554,6 +557,33 @@ class LiteraryContextTests(unittest.TestCase):
             self.assertEqual(anchors.verify_evidence_anchors.call_count, 2)
             self.assertEqual(status["model_calls_started"], 77)
             self.assertFalse(any(call.args[0] == "review-record" for call in cli.call_args_list))
+
+    def test_false_reviewer_checks_trigger_focused_recheck_not_boolean_rewrite(self):
+        response = json.dumps({
+            "evidence_version": 2, "outcome": "CORRECTIONS_REQUIRED",
+            "checks": {"coverage": False, "meaning": True,
+                       "terminology": True, "style": True, "structure": True},
+            "findings": [], "style_guide": []})
+        status = {"model_calls_started": 5,
+                  "active": {"role": "reviewer", "chapter": 1,
+                             "unit_id": "chapter-000001", "session_id": "claim"}}
+        error = ModelError(
+            "reviewer evidence is invalid: every literary check must have been performed")
+        with patch.object(runner, "model_call_limit", return_value=30), \\
+             patch.object(runner, "checkpoint"), \\
+             patch.object(runner, "complete_for_job", return_value="{}") as call:
+            result = runner.retry_reviewer_anchor_evidence(
+                "c" * 32, "test", status, {}, "pinned reviewer", "review source",
+                response, error, "source", b"translation")
+        self.assertEqual(result, "{}")
+        self.assertEqual(status["model_calls_started"], 6)
+        self.assertEqual(status["phase"], "review-schema-repair-reserved")
+        prompt = call.call_args.args[-1]
+        self.assertIn("INCOMPLETE LITERARY CHECKS", prompt)
+        self.assertIn('"coverage"', prompt)
+        self.assertIn("never return PASS merely to satisfy", prompt)
+        self.assertIn("must remain false and cannot be accepted", prompt)
+        self.assertNotIn("mark every check true", prompt)
 
     def test_claim_includes_frozen_literary_revisions(self):
         with tempfile.TemporaryDirectory() as tmp:
