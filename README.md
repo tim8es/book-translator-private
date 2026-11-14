@@ -13,9 +13,13 @@ validation, review, EPUB builders, and their tests are maintained in:
 - Auto and monitor Actions use `automation/runtime.lock.json`, checkout the
   exact public commit into ignored `.public-auto-runtime/`, and invoke
   small checked launchers in `automation/`.
-- ChatOps checks out its separately pinned public executor.
-- The generic final EPUB Action checks out each book's own pinned literary
-  revision before running canonical validation/builds.
+- Auto and ChatOps both load the same immutable **executor** revision
+  from `automation/runtime.lock.json`. Their job scheduling and model access
+  remain independent; book-level concurrency serializes mutations.
+- The generic final EPUB Action checks out each book's own pinned **literary**
+  revision before running canonical validation/builds. It does not change
+  executor or book workflow pins. Public discovery and ChatOps state-only
+  bootstrapping are implemented in the public engine, not here.
 - `scripts/`, `docs/`, and root workflow contract files may be recreated in
   Actions from the exact book-pinned canonical revision as **ignored, disposable
   runtime cache**. They are not owned or maintained here.
