@@ -2152,12 +2152,17 @@ def reconcile_deferred_model_reviews(status: dict, chapters: list[dict]) -> None
         raise JobError("invalid model review deferral history")
     deferred = deferred_review_unit_ids(status)
     by_id = {c["unit_id"]: c for c in chapters}
-    stale = set()
+    # Only the latest audited deferral for a unit controls its admission.
+    # Older snapshots must not invalidate a newer, hash-current deferral.
+    latest = {}
     for item in audit:
         if not isinstance(item, dict) or not isinstance(item.get("unit_id"), str):
             raise JobError("invalid model review deferral audit entry")
-        unit_id = item["unit_id"]
-        if unit_id not in deferred or item.get("route") != "hash-bound-adapter":
+        latest[item["unit_id"]] = item
+    stale = set()
+    for unit_id in deferred:
+        item = latest.get(unit_id)
+        if not item or item.get("route") != "hash-bound-adapter":
             continue
         chapter = by_id.get(unit_id)
         accepted = chapter.get("translation_acceptance") if chapter else None
@@ -2730,7 +2735,8 @@ def context(engine: Path, slug: str, chapter: dict, role: str,
         # A source-bounded structural span does not need 10k characters of
         # the preceding chapter on every call. Preserve enough local voice
         # context while keeping the current source and full style rules intact.
-        prior_budget = 2400 if structural_segments is not None else 10000
+        prior_budget = (2400 if structural_segments is not None or role == "reviewer"
+                        else 10000)
         previous = prior.read_text("utf-8")[-prior_budget:]
     metadata = read_json(book / "metadata.json")
     book_context = {key: metadata[key] for key in
@@ -2784,6 +2790,19 @@ def context(engine: Path, slug: str, chapter: dict, role: str,
             user += "\nCURRENT ACCEPTED TRANSLATION:\n" + mask_translation_links(source, translation_raw)
             user += "\nREVIEW FINDINGS TO CORRECT:\n" + json.dumps(findings, ensure_ascii=False)
     if role == "reviewer":
+        user += (
+            "\nREVIEW REPORT CONTRACT: Use evidence_version=2 with exactly "
+            "outcome, checks, findings, style_guide. A check boolean describes "
+            "whether the comparison was actually PERFORMED, not whether the "
+            "translation passed that category. Compare the supplied source and "
+            "translation for coverage, meaning, terminology, style, structure. "
+            "After each check is truly performed its value must be true, even "
+            "when discrepancies are found. Put discrepancies into anchored "
+            "findings with outcome CORRECTIONS_REQUIRED, not checks:false. "
+            "Never claim a check was performed when it was not. If you cannot "
+            "check all five dimensions, leave them false; the report will not "
+            "be accepted and must be reviewed again."
+        )
         user += ("\nPENDING TRANSLATOR STYLE PROPOSALS (verify against original, "
                  "and include only accepted decisions in style_guide):\n"
                  + json.dumps(pending_style or [], ensure_ascii=False))
@@ -3063,6 +3082,29 @@ def retry_reviewer_anchor_evidence(
     hints = (reviewer_anchor_feedback(failure.report, source, translation.decode("utf-8"))
              if is_anchor_error else [])
     heading = ("EXACT-CITATION" if is_anchor_error else "JSON-SCHEMA / REVIEW-EVIDENCE")
+    check_guidance = ""
+    if str(failure) == (
+            "reviewer evidence is invalid: every literary check must have been performed"):
+        try:
+            rejected_checks = json.loads(answer).get("checks")
+        except (ValueError, TypeError, AttributeError):
+            rejected_checks = None
+        false_checks = [
+            key for key in ("coverage", "meaning", "terminology", "style", "structure")
+            if isinstance(rejected_checks, dict) and rejected_checks.get(key) is False
+        ]
+        check_guidance = (
+            "INCOMPLETE LITERARY CHECKS: Your checks:false values mean a "
+            "comparison was NOT performed, not that the translation has "
+            "errors. Re-examine the corresponding source and translation "
+            "passages for each check. Only if actually completed may you "
+            "return checks:true for that category. If errors exist, give "
+            "CORRECTIONS_REQUIRED with specific source-bound findings; "
+            "never return PASS merely to satisfy the JSON format. "
+            "Unperformed checks must remain false and cannot be accepted. "
+            "Incomplete checks to re-examine: "
+            + json.dumps(false_checks) + ".\n"
+        )
     repair_user = (
         user +
         "\n\nREJECTED REVIEW — " + heading + " REPAIR (ONE ATTEMPT):\n"
@@ -3084,6 +3126,7 @@ def retry_reviewer_anchor_evidence(
         "hints only and must not be chosen without checking their meaning. "
         "Do not mark PASS unless all checks and any prior issues are resolved.\n"
         "REJECTION REASON:\n" + str(failure) +
+        "\n" + check_guidance +
         "\nANCHOR DIAGNOSTICS (not approved evidence):\n" +
         json.dumps(hints, ensure_ascii=False) +
         "\nREJECTED REVIEW JSON (not approved evidence):\n" + answer
@@ -3436,6 +3479,9 @@ def process_claim(job_id: str, slug: str, status: dict, engine: Path) -> None:
         status.pop("_memory_only_change", None)
     cli("release", slug, str(chapter["number"]), "--session-id", active["session_id"])
     status["active"] = None
+    # A valid persisted literary result is a fresh checkpoint for this role.
+    # Historical protocol errors from other roles never select its model.
+    status.setdefault("role_protocol_failures", {}).pop(f"{unit_id}:{role}", None)
     status["phase"] = role + "-completed"
     status["prompt_context"] = prompt_context
     status.pop("blocked_unit_id", None)
