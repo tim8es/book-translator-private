@@ -4,8 +4,8 @@
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
   "source_sha256": "3a3fce78317162b68bc1e82501456a74a783cfc96cb2640c463f381866007865",
   "state": "running",
-  "phase": "review-schema-repair-reserved",
-  "failures": 1,
+  "phase": "model-retry",
+  "failures": 2,
   "correction_rounds": {
     "chapter-000002": 1,
     "chapter-000003": 1,
@@ -23,13 +23,8 @@
     "chapter-000022": 6
   },
   "workflow_revision": "ea9963ca546b7cc7f6aba4dc5350fa19ea7da862",
-  "updated_at": "2026-11-14T00:04:21.946854+00:00",
-  "active": {
-    "role": "reviewer",
-    "chapter": 27,
-    "session_id": "auto-886bde8dfe20-reviewer-4e31d782",
-    "unit_id": "chapter-000027"
-  },
+  "updated_at": "2026-11-14T00:05:29.906899+00:00",
+  "active": null,
   "model_calls_started": 283,
   "memory_glossary_saved": 110,
   "pending_style": [],
@@ -294,13 +289,14 @@
   "model_response_diagnostics": {
     "finish_reason": "stop",
     "response_format": "json_object",
-    "response_chars": 3996,
+    "response_chars": 213,
     "provider_refusal": false,
-    "prompt_tokens": 19501,
-    "completion_tokens": 8618,
-    "total_tokens": 28119,
+    "prompt_tokens": 20880,
+    "completion_tokens": 3156,
+    "total_tokens": 24036,
     "route": "primary",
     "role": "reviewer",
     "unit_id": "chapter-000027"
-  }
+  },
+  "last_error": "reviewer response has invalid literary memory schema"
 }
