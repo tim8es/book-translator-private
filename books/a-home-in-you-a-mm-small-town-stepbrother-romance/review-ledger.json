@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 135,
+  "next_sequence": 136,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -11240,6 +11240,77 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "726e4f76699f03977c14ec08e038db936a065b810ed2c84e32c86cf9171808d9",
+        "style_guide": "3ec7c485cf41741084ffe49b72d2b18ed9bd650a00a2ba00554605abadea5e3a"
+      }
+    },
+    {
+      "record_id": "8f7e63cbfec14a12bddae50087806083",
+      "sequence": 135,
+      "unit_id": "chapter-000032",
+      "outcome": "PASS",
+      "source_sha256": "baef15b0a0c530d0e2fd0bc4adb3d6a65da3daf81f78b7abd7df5a0629daec80",
+      "translation_sha256": "c3fb69d6d9856f29a00e3666c13b7a7cb8b30a2503472a4c5f50a33fbb95654e",
+      "workflow_revision": "ea9963ca546b7cc7f6aba4dc5350fa19ea7da862",
+      "review_contract_revision": "docs/TRANSLATION.md@ea9963ca546b7cc7f6aba4dc5350fa19ea7da862",
+      "reviewer_session_id": "auto-886bde8dfe20-reviewer-3323255b",
+      "reviewed_at": "2026-11-14T01:00:55Z",
+      "state_revision": "cd4545caa7c2e3bc301c7a473ab4926b412be84642a3fab9c387fe1b52b9749c",
+      "review_commit": "9a92ef8fae8bcd47eedb5f7cae483e8575cb2706",
+      "correction_round": 3,
+      "supersedes_record_id": "6847c38ee10f44a6a688e744ec87a91b",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "meaning-recheck-2",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Resolved: «снова мог обладать им» preserves the renewed intimate implication of “having him again” without reducing it to mere physical proximity.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Once I had Cade free, I stroked and moaned at having him again.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Освободив Кейда, я ласкал его и стонал оттого, что снова мог обладать им.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "6847c38ee10f44a6a688e744ec87a91b",
+              "finding_id": "meaning-1"
+            }
+          },
+          {
+            "id": "style-recheck-2",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Resolved: the list begins with a capital letter after the preceding sentence-ending period.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Every moment, every breath, every word, every blink, every smile, every dimple.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Каждое мгновение, каждый вдох, каждое слово, каждое моргание, каждую улыбку, каждую ямочку.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "6847c38ee10f44a6a688e744ec87a91b",
+              "finding_id": "style-1"
+            }
           }
         ]
       },
