@@ -63,11 +63,15 @@ class StateOnlyDeploymentTests(unittest.TestCase):
         self.assertNotIn("ref: db27cc1a3369cd3e3da82e2dfe222af33a1f74e0", chat)
         epub = (root / "final-epub.yml").read_text("utf-8")
         self.assertIn(".pinned-book-translator", epub)
-        self.assertIn("mkdir -p docs", epub)
-        self.assertIn("cp -a .pinned-book-translator/docs/. ./docs/", epub)
+        self.assertIn("scripts/pinned_cli.py", epub)
+        self.assertIn("python automation/runtime_loader.py --verify", epub)
         self.assertIn("group: book-operation-", epub)
         self.assertNotIn("git restore -- scripts", epub)
-        self.assertNotIn("rm -rf scripts docs", epub)
+        self.assertNotIn("rm -rf scripts", epub)
+        self.assertNotIn("cp -a .pinned-book-translator/scripts", epub)
+        self.assertNotIn("cp -a .pinned-book-translator/docs", epub)
+        self.assertNotIn("Path(\".book-translator-install.json\").write_text", epub)
+        self.assertNotIn("private-deliver:", epub)
         self.assertIn('git add -A -- "books/$BOOK_SLUG"', epub)
 
     def test_changed_book_launcher_can_validate_empty_batch(self):
@@ -110,15 +114,18 @@ class StateOnlyDeploymentTests(unittest.TestCase):
             git("-C", str(work), "commit", "-m", "seed state and evidence")
             git("-C", str(work), "push", "-u", "origin", "main")
 
-            # Same disposable, ignored artifacts the workflow materializes.
-            (work / "scripts").mkdir()
-            (work / "scripts/book.py").write_text("pinned", encoding="utf-8")
-            (work / "docs/TRANSLATION.md").write_text(
+            # Canonical code is loaded separately; state has no installation.
+            engine = root / "public-engine"
+            (engine / "scripts").mkdir(parents=True)
+            (engine / "scripts/book.py").write_text("pinned", encoding="utf-8")
+            (engine / "docs").mkdir()
+            (engine / "docs/TRANSLATION.md").write_text(
                 "review contract", encoding="utf-8")
-            (work / ".book-translator-install.json").write_text(
-                '{"resolved_revision":"synthetic"}', encoding="utf-8")
             self.assertEqual(git("-C", str(work), "ls-files", "--", "scripts",
                                  ".book-translator-install.json"), "")
+            for relative in ("scripts", ".book-translator-install.json",
+                             "docs/TRANSLATION.md"):
+                self.assertFalse((work / relative).exists(), relative)
             (book / "output/manifest.json").write_text(
                 '{"format":"epub","preview":false}', encoding="utf-8")
 
