@@ -94,6 +94,45 @@ pinned canonical `defer-review` queue if the unchanged artifact has a current,
 independent rejected review. The existing translation remains unapproved.
 Unknown failures, invalid source, and provider outages cannot be deferred.
 
+### Independent Reviewer resilience and fail-closed unit isolation
+
+The model's five reviewer `checks` booleans record **whether all five
+comparisons were actually performed**, not whether each comparison found
+zero problems. A negative result belongs in source-anchored `findings`
+with `CORRECTIONS_REQUIRED`; a check must not be set to true merely to
+make the JSON valid. Every report (including a targeted repair response)
+passes the existing pinned canonical quality/anchor/lineage validators.
+No generated fields, missing checks, unreviewed source or failed repair
+ever produces an automatic PASS.
+
+Rejected reviewer JSON, unperformed checks, invalid v2 evidence and
+some independently verifiable model-generated anchor defects are
+classified separately from provider failures or source-integrity errors.
+The bounded repair asks the model to perform the missing comparisons,
+not to flip booleans. A bounded reviewer that cannot complete its checks
+is escalated to a full review. Repeated model-format errors count
+separately for each `unit_id:role`, so Translator or Corrector history
+cannot accidentally select the review fallback. Optional
+`OMNIROUTE_REVIEWER_FALLBACK_MODEL` applies after two same-role
+failures if configured.
+
+After three unsuccessful reviewer-format attempts on a translated,
+byte-verified artifact, the unit can be isolated without blocking
+other independent chapters: if it already has a current rejected
+review, the pinned `defer-review` operation owns the transition;
+if the current artifact has not yet been reviewed, the adapter
+records a **hash-bound pending review**, not a fabricated review
+record. A changed accepted translation invalidates the adapter's
+prior deferral and returns the unit to the reviewer. The job cannot
+finalize unreviewed units, and attention remains actionable after
+all other chapters have run.
+
+Malformed source, invalid hashes, provider configuration, transport,
+unknown validator errors, stale claims or absent review evidence are
+never silently promoted or skipped. Total API invocation limits still
+apply to prevent uncontrolled spending. Finishing a book still
+requires independently accepted PASS evidence for every section.
+
 Review actual provider compatibility before enabling a paid workload. This
 implementation uses POST /chat/completions and does not automate a ChatGPT web
 subscription. Ensure GitHub Actions can write to main; branch protections that
