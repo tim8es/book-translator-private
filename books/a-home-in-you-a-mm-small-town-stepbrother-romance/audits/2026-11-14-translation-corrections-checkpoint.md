@@ -585,3 +585,29 @@ future treatment, not a completed fix.
 acceptance hashes remain tied to the former exact artifacts. Unit 024's
 known missing explicit-underage source segment is still unresolved. PR #108
 must remain DRAFT, unmerged, and unsuitable as a fully translated EPUB.
+
+
+## 2026-11-14 — further safe source-paired spot fixes (units 019 and 020)
+
+Two additional narrow edits were saved through manual ChatOps on draft PR #108,
+without running Auto or changing source, age mentions, book lifecycle, or output:
+
+- Unit 019 `translated/019-9-dillon.md`, commit
+  `d731fcfe1890a5efbe5534c9ae9925d6c004de9c`: rewrote the unnatural
+  Russian rendering of the narrator's reflection that the knowledge that
+  Cade is gay should make confessing easier, but did not.
+- Unit 020 `translated/020-10-cade.md`, commit
+  `5cdc9f526a698da923e5ae67aaf4551ac48c7a89`: corrected the Russian
+  dative case `нравился Диллон` to `нравился Диллону` in a
+  non-explicit, source-matched reflection.
+
+Both GitHub writes were read back and matched their expected exact files.
+Ordered `bt-*` markers and Markdown links and heading structure matched
+the preserved source and the previous candidate.
+
+The manual continuation covered **14 individual edits across six distinct
+units (013, 014, 015, 017, 019, 020)** in this sequence. These are
+editorial candidates only: prior acceptance/review hashes cannot be reused.
+Unit 024 still contains the prohibited explicit-underage content omission,
+and the pinned workflow lacks a verified canonical reviewed-unit reopen path.
+Do not merge or declare a new EPUB ready.
