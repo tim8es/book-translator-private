@@ -154,3 +154,42 @@ No public workflow code, main-branch book state, original text or shipped EPUB
 was changed during this continuation.
 
 **Result: candidate edits persisted; quality-assured corrected EPUB NOT READY.**
+
+## Manual ChatOps continuation — source comparison without Auto
+
+This continuation was performed manually through GitHub; no Auto translation
+job was started. Source EPUB and English extracted units remain immutable.
+
+| Unit | Edits | Commit | What was source-checked |
+| --- | ---: | --- | --- |
+| 003 TOC | 2 | `0fa9d500e00c8b3902900531c966f5f2b398226c` | Russian TOC headings align with corresponding section headings |
+| 004 copyright/credits | 4 | `fb80d88998ae7810d7399974da46bc09aa2f357c` | Accurate Russian copyright, publisher and typesetting labels |
+| 007 author note | 7 | `4b62528f1cc995a6474be0a291a1bccc85c139f0` | Author's facts, voice and Russian grammar |
+| 008 warnings | 1 | `e5fe7c8a76eca865ed179e92e14ff373a38e705f` | Source-specific warning preserved precisely |
+| 011 opening | 2 | `0e6802823157651010160145a1a43c40bc701c7d` | Narrator's original register and narrative sequence |
+| 014 wedding | 4 | `fbba5c675f0aef293e7a4078eea7432fe9b66cfb` | Cade's speaking identity and inflected names |
+| 016 country store | 6 | `7ceec59f2398d85be4e86f43591ce2fa6b527ad0` | Dillon's speaking identity and inflected names |
+| **TOTAL** | **26** | | **7 files; each GitHub write read back and verified** |
+
+### Read-only integrity diagnostics
+
+- Independently fetched all 51 source-unit Markdown files and 51 candidate
+  target-unit Markdown files. In **all 51 pairs**, the ordered Markdown link
+  destinations, ordered `<!-- bt-* -->` markers, and Markdown heading counts
+  were identical. This does not establish complete textual coverage.
+- Searched all 51 candidate target files for literal Latin spellings of
+  Dillon, Cade, Darren, Christian, Evelyn, Jared, Aaron, Darius and Raven
+  in ordinary text, excluding lines with URLs/attribution. **Zero** matches.
+  This is a narrow transliteration check, not a grammar or meaning PASS.
+- Source-linked review exposed speaker errors and invalid inflections after
+  the Latin names had all disappeared, so the chapter-wide literary review
+  remains necessary.
+
+### Blocking gates unchanged
+
+The candidate branch has modified already-reviewed bytes without a current
+canonical reacceptance. Earlier GitHub Actions book validation correctly failed
+SHA-256 checks. The pinned workflow provides no verified reopening transition.
+Do not rewrite old evidence, merge an invalid translation candidate into
+`main`, call the candidate independently reviewed, or claim a rebuilt EPUB.
+The original source, `main` progress/review ledger and output EPUB are unchanged.
