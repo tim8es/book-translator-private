@@ -2088,6 +2088,92 @@ def process_correction_batches(job_id: str, slug: str, status: dict, engine: Pat
     return translated, stage["glossary"], stage["style_guide"]
 
 
+def defer_failed_reviewer_unit(slug: str, chapter: dict, record: dict | None,
+                               status: dict, code: str | None) -> bool:
+    """Safely isolate an invalid review, without accepting it.
+
+    Prefer the pinned canonical needs-attention transition where a current
+    rejected review exists. For a newly retranslated artifact with no
+    *current* review, use the existing adapter-owned deferred-review queue,
+    hash-bound to the exact accepted translation. It still requires a
+    future independent PASS; no workflow lifecycle is advanced.
+    """
+    if (not code or status.get("failures", 0) < MAX_FAILURES
+            or chapter.get("status") != "translated"):
+        return False
+    acceptance = chapter.get("translation_acceptance")
+    if (not isinstance(acceptance, dict)
+            or not all(isinstance(acceptance.get(field), str)
+                       and HEX64.fullmatch(acceptance[field])
+                       for field in ("source_sha256", "translation_sha256"))):
+        raise JobError("reviewer deferral requires accepted source/translation hashes")
+    book = ROOT / "books" / slug
+    try:
+        source_path = book / chapter["source_path"]
+        translation_path = book / chapter["translation_path"]
+        source_hash = fingerprint(source_path)
+        translation_hash = fingerprint(translation_path)
+    except (OSError, KeyError, TypeError, ValueError) as exc:
+        raise JobError("cannot verify reviewer deferral artifact identity") from exc
+    if (source_hash != acceptance["source_sha256"]
+            or translation_hash != acceptance["translation_sha256"]):
+        raise JobError("reviewer deferral artifact changed since acceptance")
+    matching = (isinstance(record, dict)
+                and record.get("source_sha256") == source_hash
+                and record.get("translation_sha256") == translation_hash)
+    if matching and record.get("outcome") == "PASS":
+        # Never bypass a promotable current PASS or overwrite its lineage.
+        return False
+    if matching and record.get("outcome") == "CORRECTIONS_REQUIRED":
+        cli("defer-review", slug, str(chapter["number"]),
+            "--reason", "model-review-output-exhausted")
+        route = "canonical"
+    else:
+        defer_review_unit(status, chapter["unit_id"])
+        route = "hash-bound-adapter"
+    status.setdefault("model_review_deferral_audit", []).append({
+        "unit_id": chapter["unit_id"],
+        "source_sha256": source_hash,
+        "translation_sha256": translation_hash,
+        "review_record_id": (record.get("record_id") if matching else None),
+        "code": code,
+        "route": route,
+        "at": clock(),
+    })
+    status.update({"state": "running", "phase": "model-unit-deferred",
+                   "failures": 0})
+    return True
+
+
+def reconcile_deferred_model_reviews(status: dict, chapters: list[dict]) -> None:
+    """Re-admit a hash-changed unit, never silently skip changed evidence."""
+    audit = status.get("model_review_deferral_audit", [])
+    if not isinstance(audit, list):
+        raise JobError("invalid model review deferral history")
+    deferred = deferred_review_unit_ids(status)
+    by_id = {c["unit_id"]: c for c in chapters}
+    stale = set()
+    for item in audit:
+        if not isinstance(item, dict) or not isinstance(item.get("unit_id"), str):
+            raise JobError("invalid model review deferral audit entry")
+        unit_id = item["unit_id"]
+        if unit_id not in deferred or item.get("route") != "hash-bound-adapter":
+            continue
+        chapter = by_id.get(unit_id)
+        accepted = chapter.get("translation_acceptance") if chapter else None
+        if (not chapter or chapter.get("status") != "translated"
+                or not isinstance(accepted, dict)
+                or item.get("source_sha256") != accepted.get("source_sha256")
+                or item.get("translation_sha256") != accepted.get("translation_sha256")):
+            stale.add(unit_id)
+    if stale:
+        status["deferred_review_units"] = [
+            unit for unit in deferred if unit not in stale
+        ]
+        status.setdefault("model_review_deferral_invalidations", []).extend(
+            {"unit_id": unit, "at": clock()} for unit in sorted(stale))
+
+
 def defer_protocol_failed_unit(slug: str, chapter: dict, record: dict | None,
                                status: dict, code: str | None) -> bool:
     """Only defer an unchanged independently rejected unit, never provider errors.
@@ -2286,6 +2372,7 @@ def approved_unit_ids(slug: str, chapters: list) -> set[str]:
 
 def next_operation(slug: str, status: dict) -> tuple[str, dict | None]:
     _, ledger, chapters = chapter_data(slug)
+    reconcile_deferred_model_reviews(status, chapters)
     approved = approved_unit_ids(slug, chapters)
     deferred = set(deferred_review_unit_ids(status))
     by_id = {chapter.get("unit_id"): chapter for chapter in chapters}
@@ -3286,6 +3373,12 @@ def process_claim(job_id: str, slug: str, status: dict, engine: Path) -> None:
                 slug, chapter, previous_record, status, recoverable_code):
             # Report the deferred issue and let canonical resume select the
             # next independent unit. Never fabricate an acceptance/PASS.
+            checkpoint(job_id, status, slug)
+            return
+        if (role == "reviewer" and defer_failed_reviewer_unit(
+                slug, chapter, previous_record, status, recoverable_code)):
+            # Missing current review evidence is tracked as a hash-bound
+            # pending unit, never a fabricated CORRECTIONS_REQUIRED/PASS.
             checkpoint(job_id, status, slug)
             return
         status["state"] = "blocked" if status["failures"] >= MAX_FAILURES else "running"
