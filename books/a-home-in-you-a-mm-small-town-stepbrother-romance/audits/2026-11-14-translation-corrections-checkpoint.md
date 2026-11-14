@@ -551,3 +551,37 @@ The unit-024 untranslated minor-explicit source gap remains blocking and has
 not been reconstructed. PR #108 must remain draft, and no corrected EPUB may
 be declared finished until the pinned-contract correction transition and
 independent review gates are fulfilled.
+
+
+## 2026-11-14 — further manual source-bound candidate polish (units 013, 014, 015, 017)
+
+The ChatOps editor re-read the matching original English and draft Russian
+Markdown files on PR #108 and applied only isolated, source-supported Russian
+grammatical/semantic corrections. No automated translation or workflow upgrade
+was initiated.
+
+| Unit | Targeted edits | Verified commit | Rationale |
+| --- | ---: | --- | --- |
+| 013 — Cade | 4 | `1ed566e4abbd3c7437e133ce89ce03c730c61c28` | Corrected repetitive age-relative phrasing without changing the stated age, rendered absence from Dillon naturally, restored storage/ownership referents for furniture, and clarified which birthday restaurant was the favorite |
+| 014 — Dillon | 3 | `11ec70a926128735656de7937671d181ba2adba6` | Clarified intended compassion rather than taking sadness, accurately linked the nervous feeling to looking at dimples, corrected the marital-status expression for aunt and uncle |
+| 015 — Dillon | 2 | `6d31a40f43a0bee93bcddbc018b721b3e7490b9d` | Clarified that the grandparents were supervising the boys during the honeymoon, and made the seated stretching posture natural |
+| 017 — Dillon | 3 | `0211f3854f709ffe67095d2eb833695ee1a00096` | Replaced a literal idiom with Russian `не разлей вода`, repaired a malformed emotional metaphor, and clarified taking horses and the dog to the ponds |
+| **TOTAL** | **12** | **4 distinct files** | **No changes to ages or explicit material** |
+
+Before writing, every targeted substring was present exactly once in the
+candidate. After each commit, the complete file was re-fetched and found
+identical to the intended new content. Each source/candidate pair retained
+matching ordered `bt-*` markers, Markdown link destinations, and heading
+counts; the candidate's own markers, links, and headings were unchanged.
+
+**Additional diagnostic, intentionally not edited:** unit 016 has an erroneous
+uninflected Russian name at the start of a paragraph (the phrase `узнавал
+Диллон поближе`). The paragraph also contains sexually explicit discussion
+of characters who are minors in the preserved source. The editor did not
+modify that paragraph; this remains a candidate finding for permissible
+future treatment, not a completed fix.
+
+**No review, lifecycle, or delivery promotion:** earlier `reviewed`
+acceptance hashes remain tied to the former exact artifacts. Unit 024's
+known missing explicit-underage source segment is still unresolved. PR #108
+must remain DRAFT, unmerged, and unsuitable as a fully translated EPUB.
