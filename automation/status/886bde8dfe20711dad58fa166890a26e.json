@@ -3,8 +3,8 @@
   "job_id": "886bde8dfe20711dad58fa166890a26e",
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
   "source_sha256": "3a3fce78317162b68bc1e82501456a74a783cfc96cb2640c463f381866007865",
-  "state": "running",
-  "phase": "reviewer-completed",
+  "state": "done",
+  "phase": "delivered",
   "failures": 0,
   "correction_rounds": {
     "chapter-000002": 1,
@@ -24,7 +24,7 @@
     "chapter-000032": 3
   },
   "workflow_revision": "ea9963ca546b7cc7f6aba4dc5350fa19ea7da862",
-  "updated_at": "2026-11-14T01:00:55.543635+00:00",
+  "updated_at": "2026-11-14T01:01:30.994254+00:00",
   "active": null,
   "model_calls_started": 298,
   "memory_glossary_saved": 110,
@@ -303,5 +303,7 @@
     "route": "primary",
     "role": "reviewer",
     "unit_id": "chapter-000032"
-  }
+  },
+  "artifact_path": "books/a-home-in-you-a-mm-small-town-stepbrother-romance/output/a-home-in-you-a-mm-small-town-stepbrother-romance.epub",
+  "artifact_sha256": "64180dfc59d27b55eed5325cbe57a0ed369af3e1c59dcd1d35b126e91228b65c"
 }
