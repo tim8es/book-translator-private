@@ -19,7 +19,9 @@ RUNTIME_ROOT = STATE_ROOT / ".public-auto-runtime"
 LOCK_PATH = STATE_ROOT / "automation" / "runtime.lock.json"
 PUBLIC_REPOSITORY = "tim8es/book-translator"
 SHA = re.compile(r"[0-9a-f]{40}\Z")
-MODULES = frozenset({"book_runner.py", "literary_context.py", "omniroute.py"})
+MODULES = frozenset({"book_runner.py", "literary_context.py", "omniroute.py",
+                     "job_monitor.py", "actions_failure_notifier.py",
+                     "verify_changed_books.py"})
 
 
 def pinned_revision() -> str:

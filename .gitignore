@@ -23,3 +23,16 @@ Thumbs.db
 
 # Immutable public Auto runtime checkout, never book state
 .public-auto-runtime/
+
+# Materialized, immutable book-pinned public workflow (runtime-only cache)
+scripts/
+docs/
+.book-translator-install.json
+AGENTS.md
+SKILL.md
+agent-manifest.json
+LICENSE
+
+# Source checkouts are always disposable; never commit to book state
+.pinned-book-translator/
+.epub-renderer-fix/

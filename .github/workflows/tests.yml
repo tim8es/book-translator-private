@@ -108,16 +108,12 @@ jobs:
         uses: actions/setup-python@v7
         with:
           python-version: "3.12"
-      - name: Validate changed book artifacts without translating or rewriting them
-        if: steps.scope.outputs.books == 'true'
-        shell: bash
-        run: python .github/scripts/verify_changed_books.py "$RUNNER_TEMP/changed-book-paths.json"
       - name: Resolve immutable public Auto engine
-        if: steps.scope.outputs.full == 'true'
+        if: steps.scope.outputs.full == 'true' || steps.scope.outputs.books == 'true'
         id: shared_auto
         run: echo "sha=$(python automation/runtime_loader.py --print-revision)" >> "$GITHUB_OUTPUT"
       - name: Checkout public shared engine for integration tests
-        if: steps.scope.outputs.full == 'true'
+        if: steps.scope.outputs.full == 'true' || steps.scope.outputs.books == 'true'
         uses: actions/checkout@v7
         with:
           repository: tim8es/book-translator
@@ -126,11 +122,17 @@ jobs:
           fetch-depth: 1
           persist-credentials: false
       - name: Verify pinned public Auto source and state isolation
-        if: steps.scope.outputs.full == 'true'
+        if: steps.scope.outputs.full == 'true' || steps.scope.outputs.books == 'true'
         run: python automation/runtime_loader.py --verify
-      - name: Compile Python source and tests before expensive engine suite
+      - name: Validate changed books with each book's pinned public workflow
+        if: steps.scope.outputs.books == 'true'
+        run: python .github/scripts/verify_changed_books.py "$RUNNER_TEMP/changed-book-paths.json"
+      - name: Compile private launchers and deployment contracts
         if: steps.scope.outputs.full == 'true'
-        run: python -m compileall -q automation tests
-      - name: Full engine test suite on Python 3.12
+        run: python -m compileall -q automation .github/scripts tests
+      - name: Validate private immutable launchers and Actions topology
         if: steps.scope.outputs.full == 'true'
         run: python -m unittest discover -s tests -v
+      - name: Run canonical public workflow and Auto regression suite
+        if: steps.scope.outputs.full == 'true'
+        run: cd .public-auto-runtime && python -m unittest discover -s tests -v
