@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "operation": "prune_receipted_chatops_requests_and_identical_intake_source",
+  "date": "2026-11-14",
+  "base_commit": "3a6523829b338096d1f9cdcc2f3ff6394ef511ff",
+  "claims": [
+    "ChatOps discovery only queues request IDs lacking a same-named receipt.",
+    "Every deleted request ID has a same-named retained results JSON at the exact base tree.",
+    "The canonical Wings of Starlight original has identical Git blob SHA and verified SHA-256."
+  ],
+  "chat_ops": {
+    "removed_request_count": 1101,
+    "removed_request_bytes": 7800748,
+    "source_request_tree_sha1": "b262dbcf762e394ed006b4ef0e02877c0323808c",
+    "retained_receipt_count": 1101,
+    "retained_receipt_tree_sha1": "e3497e47272b860e1a9241d59bc8566bb26d54ab",
+    "archived_in_git_history_only": true,
+    "restoration": "git show <base_commit>:.chat-ops/requests/<request_id>.json",
+    "note": "Receipts remain at .chat-ops/results for idempotency and external lookups; no text payloads are copied to the audit record."
+  },
+  "duplicate_intake": {
+    "removed_path": ".intake/wings-of-starlight-allison-saft/Wings_of_Starlight.epub",
+    "retained_path": "books/wings-of-starlight-allison-saft/source/Wings_of_Starlight.epub",
+    "identical_git_blob_sha1": "b659c7ac789c7871cba09c0cec4e2f8e094ee7ef",
+    "source_sha256": "3cd1ad7fd5cfc7ef3b51993f96357e563bb7ba4f2646dc07cc28e38612ff3092",
+    "byte_count": 1348872,
+    "retained_intake_metadata": ".intake/wings-of-starlight-allison-saft/intake.json"
+  },
+  "deliberately_retained": [
+    ".chat-ops/results/",
+    ".import/blood-honey-old-epub-export/",
+    ".import/lamore-e-cieco/",
+    "books/",
+    "intake/auto/",
+    "automation/status/",
+    "automation/notifications/sent/"
+  ]
+}
