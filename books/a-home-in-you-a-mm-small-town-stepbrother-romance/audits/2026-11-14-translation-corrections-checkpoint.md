@@ -358,3 +358,37 @@ underage characters, or claim a fresh independently reviewed PASS.
 
 **State: source-grounded candidate corrections committed; not an
 approved full revised edition.**
+
+
+## 2026-11-14 all-51 structural coverage triage (read-only)
+
+Retrieved exact extracted English and candidate Russian Markdown bytes
+from GitHub for **all 51 ordered units** and compared:
+- total UTF-8 character lengths as an **advisory** ratio (Russian
+  target character count divided by English source character count);
+- number of nonblank Markdown lines, which approximate paragraph
+  structure but may also differ because of dialogue formatting;
+- chapter presence (all 51 pairs were readable).
+
+Findings:
+- All 51 source/target unit pairs exist on the examined refs.
+- Ordinary substantial chapters other than unit 024 have **near-unity
+  character-length ratios**, approximately 0.97 to 1.09
+  (not a completeness proof and not an independent literary PASS).
+- **Unit 024** is the prominent outlier:
+  source `10,522` characters / 73 nonblank lines,
+  candidate `8,452` characters / 67 nonblank lines,
+  ratio approximately **0.80**. This corroborates the already-known
+  substantial missing passage involving underage explicit material.
+- Other nonblank-line differences appear in units 013, 014, 026,
+  027, 028, 032, 038, 039, 040, 041, 044, 048; their character ratios
+  are not comparably low. These are **advisory** and may reflect split
+  dialogue or formatting, but they have not been semantically adjudicated.
+- The check does not establish the absence of lost sentences,
+  invented sentences, wrong speakers, contradictions, or grammatical
+  errors. Numerous such case errors were found by manual reading despite
+  close source/target character-length ratios.
+
+**No lifecycle mutation, independent PASS, or final build occurred.**
+The outstanding unit-024 substantive gap, remaining literary review,
+and canonical SHA-bound reviewed-artifact reopening are still blockers.
