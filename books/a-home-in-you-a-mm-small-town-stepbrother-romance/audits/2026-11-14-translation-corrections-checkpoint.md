@@ -524,3 +524,30 @@ No surrounding narrative or other names were changed.
 **Current-session manual total: 52 edits across 19 units.** These are
 source-grounded corrections, not complete independent PASS review.
 Unit-024 fidelity and pinned acceptance blockers remain unchanged.
+
+
+## 2026-11-14 — manual source-paired editorial follow-up (units 011 and 012)
+
+**Method:** direct ChatOps examination of the preserved English `extracted/` units
+against the Russian `translated/` candidate on draft PR #108; no Auto run.
+No canonical reviewed artifact, review-ledger record, `progress.json`, source
+EPUB, extracted English, workflow pin, or output EPUB was changed.
+
+| Unit | Corrections | Candidate commit | Source comparison |
+| --- | ---: | --- | --- |
+| 011 — first meeting at the farm | 8 | `9c4c1707573cb4445cca05188e9c68d82b4db847` | Restored the missing positive obligation in the narrator's hypothetical future (`I'd have to ... again`, previously falsely negated in Russian); removed a falsely implied joint gaming activity; clarified intruding on a private conversation rather than spying; fixed awkward inflection/coordination and several sentence-level lexical slips |
+| 012 — following morning | 4 | `98662e820d960bfb14fbc975e44ed0eac3ebcc4f` | Repaired a dangling chronology clause about the parents' discussion, clarified the cereal reference, corrected snow-cover versus actively falling snow, and restored causal connection between snowbound roads and quiet surroundings |
+| **TOTAL** | **12** | **2 candidate files** | **No age statements changed** |
+
+For each unit, every specific original Russian substring appeared exactly once
+before mutation, and the intended full candidate file was re-fetched from GitHub
+after the commit and matched exactly. Ordered `<!-- bt-* -->` markers,
+Markdown link destinations and heading structure were checked against both
+previous candidate and unchanged English source; **2/2 passed**.
+
+**This is NOT canonical translation acceptance or independent full-chapter PASS.**
+Existing historical PASS records remain tied to the previous exact hashes.
+The unit-024 untranslated minor-explicit source gap remains blocking and has
+not been reconstructed. PR #108 must remain draft, and no corrected EPUB may
+be declared finished until the pinned-contract correction transition and
+independent review gates are fulfilled.
