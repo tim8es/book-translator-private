@@ -182,18 +182,24 @@ def complete_for_job(status: dict, role: str, system: str, user: str) -> str:
     protocol_counts = status.get("unit_protocol_failures", {})
     if not isinstance(protocol_counts, dict):
         raise JobError("invalid model-output recovery counters")
-    same_unit_protocol_attempts = (
-        protocol_counts.get(active.get("unit_id"), 0)
-        if isinstance(active, dict) else 0)
-    if type(same_unit_protocol_attempts) is not int or same_unit_protocol_attempts < 0:
-        raise JobError("invalid unit protocol attempt count")
+    # Failover is scoped to the canonical claimed role, not only the unit.
+    # A structural corrector deliberately calls the Translator model, but
+    # its failures must not contaminate the independent Reviewer route.
+    current_role = active.get("role") if isinstance(active, dict) else role.lower()
+    current_unit = active.get("unit_id") if isinstance(active, dict) else None
+    scoped = status.get("role_protocol_failures", {})
+    if not isinstance(scoped, dict):
+        raise JobError("invalid role-scoped model protocol counters")
+    key = f"{current_unit}:{current_role}" if current_unit else None
+    attempts = scoped.get(key, 0) if key else 0
+    if type(attempts) is not int or not 0 <= attempts <= 100_000:
+        raise JobError("invalid role-scoped protocol attempt count")
     repeated_provider = (isinstance(retry, dict) and isinstance(active, dict)
                          and retry.get("chapter") == active.get("chapter")
-                         and retry.get("role") == role.lower()
+                         and retry.get("role") == current_role
                          and type(retry.get("attempts")) is int
                          and retry["attempts"] >= FALLBACK_AFTER_TRANSIENTS)
-    if ((repeated_provider or
-         same_unit_protocol_attempts >= FALLBACK_AFTER_TRANSIENTS)
+    if ((repeated_provider or attempts >= FALLBACK_AFTER_TRANSIENTS)
             and os.environ.get(f"OMNIROUTE_{role}_FALLBACK_MODEL", "").strip()):
         route = role + "_FALLBACK"
     # A route name, not model ID or credential, is safe in metadata.
@@ -241,6 +247,48 @@ def translator_model_output_code(error: ModelError, helper=None) -> str | None:
         "structural translation omitted content and exhausted model budget",
     }:
         return "translation_coverage"
+    return None
+
+
+def reviewer_model_output_code(error: ModelError) -> str | None:
+    """Narrow allowlist for *generated* review protocol defects only.
+
+    A valid JSON object is not necessarily valid review evidence. A false
+    check means that work has not been confirmed; it is never auto-flipped
+    to true and can never be promoted as PASS. Provider errors, unknown
+    validator results, source integrity and claim failures remain blockers.
+    """
+    if not isinstance(error, ModelError) or isinstance(error, TransientModelError):
+        return None
+    message = str(error)
+    if message in {
+        "reviewer must return JSON",
+        "reviewer response has invalid literary memory schema",
+        "unsupported reviewer evidence version",
+        "automatic reviewer must return anchored v2 evidence",
+        "reviewer has not confirmed all five checks were performed",
+        "reviewer has not completed all five literary checks",
+    }:
+        return "review_json_invalid"
+    prefix = "reviewer evidence is invalid: "
+    if not message.startswith(prefix):
+        return None
+    detail = message[len(prefix):]
+    if detail == "every literary check must have been performed":
+        return "review_checks_incomplete"
+    if detail in {
+        "checks must cover coverage, meaning, terminology, style and structure",
+        "all checks must be boolean",
+        "CORRECTIONS_REQUIRED needs at least one unresolved finding",
+        "PASS is incompatible with unresolved major/critical findings",
+        "findings must be a list with at most 100 entries",
+        "quality report needs exactly context, checks, findings and optional evidence_version=2",
+    } or detail.startswith((
+        "finding ", "findings[", "duplicate anchored finding id:",
+        "prior unresolved findings lack explicit rechecks:",
+        "source-linked review evidence failed:",
+    )):
+        return "review_evidence_invalid"
     return None
 
 
@@ -382,6 +430,7 @@ def approve_blocked_resume(status: dict) -> None:
     status.update({"recoveries": history, "state": "running",
                    "phase": "operator-resume-authorized", "failures": 0,
                    "last_error": None})
+    status.pop("last_error_code", None)
 
 
 def approve_interrupted_resume(status: dict, unit: dict, claim: dict,
@@ -2040,6 +2089,97 @@ def process_correction_batches(job_id: str, slug: str, status: dict, engine: Pat
     return translated, stage["glossary"], stage["style_guide"]
 
 
+def defer_failed_reviewer_unit(slug: str, chapter: dict, record: dict | None,
+                               status: dict, code: str | None) -> bool:
+    """Safely isolate an invalid review, without accepting it.
+
+    Prefer the pinned canonical needs-attention transition where a current
+    rejected review exists. For a newly retranslated artifact with no
+    *current* review, use the existing adapter-owned deferred-review queue,
+    hash-bound to the exact accepted translation. It still requires a
+    future independent PASS; no workflow lifecycle is advanced.
+    """
+    if (not code or status.get("failures", 0) < MAX_FAILURES
+            or chapter.get("status") != "translated"):
+        return False
+    acceptance = chapter.get("translation_acceptance")
+    if (not isinstance(acceptance, dict)
+            or not all(isinstance(acceptance.get(field), str)
+                       and HEX64.fullmatch(acceptance[field])
+                       for field in ("source_sha256", "translation_sha256"))):
+        raise JobError("reviewer deferral requires accepted source/translation hashes")
+    book = ROOT / "books" / slug
+    try:
+        source_path = book / chapter["source_path"]
+        translation_path = book / chapter["translation_path"]
+        source_hash = fingerprint(source_path)
+        translation_hash = fingerprint(translation_path)
+    except (OSError, KeyError, TypeError, ValueError) as exc:
+        raise JobError("cannot verify reviewer deferral artifact identity") from exc
+    if (source_hash != acceptance["source_sha256"]
+            or translation_hash != acceptance["translation_sha256"]):
+        raise JobError("reviewer deferral artifact changed since acceptance")
+    matching = (isinstance(record, dict)
+                and record.get("source_sha256") == source_hash
+                and record.get("translation_sha256") == translation_hash)
+    if matching and record.get("outcome") == "PASS":
+        # Never bypass a promotable current PASS or overwrite its lineage.
+        return False
+    if matching and record.get("outcome") == "CORRECTIONS_REQUIRED":
+        cli("defer-review", slug, str(chapter["number"]),
+            "--reason", "model-review-output-exhausted")
+        route = "canonical"
+    else:
+        defer_review_unit(status, chapter["unit_id"])
+        route = "hash-bound-adapter"
+    status.setdefault("model_review_deferral_audit", []).append({
+        "unit_id": chapter["unit_id"],
+        "source_sha256": source_hash,
+        "translation_sha256": translation_hash,
+        "review_record_id": (record.get("record_id") if matching else None),
+        "code": code,
+        "route": route,
+        "at": clock(),
+    })
+    status.update({"state": "running", "phase": "model-unit-deferred",
+                   "failures": 0})
+    return True
+
+
+def reconcile_deferred_model_reviews(status: dict, chapters: list[dict]) -> None:
+    """Re-admit a hash-changed unit, never silently skip changed evidence."""
+    audit = status.get("model_review_deferral_audit", [])
+    if not isinstance(audit, list):
+        raise JobError("invalid model review deferral history")
+    deferred = deferred_review_unit_ids(status)
+    by_id = {c["unit_id"]: c for c in chapters}
+    # Only the latest audited deferral for a unit controls its admission.
+    # Older snapshots must not invalidate a newer, hash-current deferral.
+    latest = {}
+    for item in audit:
+        if not isinstance(item, dict) or not isinstance(item.get("unit_id"), str):
+            raise JobError("invalid model review deferral audit entry")
+        latest[item["unit_id"]] = item
+    stale = set()
+    for unit_id in deferred:
+        item = latest.get(unit_id)
+        if not item or item.get("route") != "hash-bound-adapter":
+            continue
+        chapter = by_id.get(unit_id)
+        accepted = chapter.get("translation_acceptance") if chapter else None
+        if (not chapter or chapter.get("status") != "translated"
+                or not isinstance(accepted, dict)
+                or item.get("source_sha256") != accepted.get("source_sha256")
+                or item.get("translation_sha256") != accepted.get("translation_sha256")):
+            stale.add(unit_id)
+    if stale:
+        status["deferred_review_units"] = [
+            unit for unit in deferred if unit not in stale
+        ]
+        status.setdefault("model_review_deferral_invalidations", []).extend(
+            {"unit_id": unit, "at": clock()} for unit in sorted(stale))
+
+
 def defer_protocol_failed_unit(slug: str, chapter: dict, record: dict | None,
                                status: dict, code: str | None) -> bool:
     """Only defer an unchanged independently rejected unit, never provider errors.
@@ -2238,6 +2378,7 @@ def approved_unit_ids(slug: str, chapters: list) -> set[str]:
 
 def next_operation(slug: str, status: dict) -> tuple[str, dict | None]:
     _, ledger, chapters = chapter_data(slug)
+    reconcile_deferred_model_reviews(status, chapters)
     approved = approved_unit_ids(slug, chapters)
     deferred = set(deferred_review_unit_ids(status))
     by_id = {chapter.get("unit_id"): chapter for chapter in chapters}
@@ -2595,7 +2736,8 @@ def context(engine: Path, slug: str, chapter: dict, role: str,
         # A source-bounded structural span does not need 10k characters of
         # the preceding chapter on every call. Preserve enough local voice
         # context while keeping the current source and full style rules intact.
-        prior_budget = 2400 if structural_segments is not None else 10000
+        prior_budget = (2400 if structural_segments is not None or role == "reviewer"
+                        else 10000)
         previous = prior.read_text("utf-8")[-prior_budget:]
     metadata = read_json(book / "metadata.json")
     book_context = {key: metadata[key] for key in
@@ -2649,6 +2791,19 @@ def context(engine: Path, slug: str, chapter: dict, role: str,
             user += "\nCURRENT ACCEPTED TRANSLATION:\n" + mask_translation_links(source, translation_raw)
             user += "\nREVIEW FINDINGS TO CORRECT:\n" + json.dumps(findings, ensure_ascii=False)
     if role == "reviewer":
+        user += (
+            "\nREVIEW REPORT CONTRACT: Use evidence_version=2 with exactly "
+            "outcome, checks, findings, style_guide. A check boolean describes "
+            "whether the comparison was actually PERFORMED, not whether the "
+            "translation passed that category. Compare the supplied source and "
+            "translation for coverage, meaning, terminology, style, structure. "
+            "After each check is truly performed its value must be true, even "
+            "when discrepancies are found. Put discrepancies into anchored "
+            "findings with outcome CORRECTIONS_REQUIRED, not checks:false. "
+            "Never claim a check was performed when it was not. If you cannot "
+            "check all five dimensions, leave them false; the report will not "
+            "be accepted and must be reviewed again."
+        )
         user += ("\nPENDING TRANSLATOR STYLE PROPOSALS (verify against original, "
                  "and include only accepted decisions in style_guide):\n"
                  + json.dumps(pending_style or [], ensure_ascii=False))
@@ -2928,6 +3083,29 @@ def retry_reviewer_anchor_evidence(
     hints = (reviewer_anchor_feedback(failure.report, source, translation.decode("utf-8"))
              if is_anchor_error else [])
     heading = ("EXACT-CITATION" if is_anchor_error else "JSON-SCHEMA / REVIEW-EVIDENCE")
+    check_guidance = ""
+    if str(failure) == (
+            "reviewer evidence is invalid: every literary check must have been performed"):
+        try:
+            rejected_checks = json.loads(answer).get("checks")
+        except (ValueError, TypeError, AttributeError):
+            rejected_checks = None
+        false_checks = [
+            key for key in ("coverage", "meaning", "terminology", "style", "structure")
+            if isinstance(rejected_checks, dict) and rejected_checks.get(key) is False
+        ]
+        check_guidance = (
+            "INCOMPLETE LITERARY CHECKS: Your checks:false values mean a "
+            "comparison was NOT performed, not that the translation has "
+            "errors. Re-examine the corresponding source and translation "
+            "passages for each check. Only if actually completed may you "
+            "return checks:true for that category. If errors exist, give "
+            "CORRECTIONS_REQUIRED with specific source-bound findings; "
+            "never return PASS merely to satisfy the JSON format. "
+            "Unperformed checks must remain false and cannot be accepted. "
+            "Incomplete checks to re-examine: "
+            + json.dumps(false_checks) + ".\n"
+        )
     repair_user = (
         user +
         "\n\nREJECTED REVIEW — " + heading + " REPAIR (ONE ATTEMPT):\n"
@@ -2949,6 +3127,7 @@ def retry_reviewer_anchor_evidence(
         "hints only and must not be chosen without checking their meaning. "
         "Do not mark PASS unless all checks and any prior issues are resolved.\n"
         "REJECTION REASON:\n" + str(failure) +
+        "\n" + check_guidance +
         "\nANCHOR DIAGNOSTICS (not approved evidence):\n" +
         json.dumps(hints, ensure_ascii=False) +
         "\nREJECTED REVIEW JSON (not approved evidence):\n" + answer
@@ -2981,6 +3160,13 @@ def process_claim(job_id: str, slug: str, status: dict, engine: Path) -> None:
     if owned["session_id"] != active["session_id"]:
         raise JobError("active claim belongs to another session")
     role = active["role"]
+    # If pre-model context/preflight fails, the error path must remain safe.
+    # These are execution-local defaults, never evidence of completed work.
+    previous_record = None
+    patch_mode = False
+    structural_plan = None
+    structural_helper = None
+    review_context = "independent_session"
     # Fully validate the model response before changing canonical artifacts.
     # Model/format failures are safe to checkpoint as retries. CLI failures
     # after mutation remain fail-closed and must be examined separately.
@@ -3212,10 +3398,20 @@ def process_claim(job_id: str, slug: str, status: dict, engine: Path) -> None:
                 role, structural_plan, exc, structural_helper)
         if role == "translator" and isinstance(exc, ModelError):
             recoverable_code = translator_model_output_code(exc, structural_helper)
+        if role == "reviewer" and isinstance(exc, ModelError):
+            recoverable_code = reviewer_model_output_code(exc)
         if recoverable_code:
             counters = status.setdefault("unit_protocol_failures", {})
             counters[unit_id] = counters.get(unit_id, 0) + 1
+            scoped = status.setdefault("role_protocol_failures", {})
+            scoped_key = f"{unit_id}:{role}"
+            scoped[scoped_key] = scoped.get(scoped_key, 0) + 1
             status["last_error_code"] = recoverable_code
+            if (role == "reviewer" and status["failures"] == 1
+                    and review_context == "bounded_context"):
+                # Incomplete bounded evidence is not a reason to manufacture
+                # checks. Give the next attempt the full chapter.
+                status["force_full_review_unit"] = unit_id
         else:
             # A stale code from a prior rejected JSON response is not
             # evidence of the current failure's classification.
@@ -3228,6 +3424,12 @@ def process_claim(job_id: str, slug: str, status: dict, engine: Path) -> None:
                 slug, chapter, previous_record, status, recoverable_code):
             # Report the deferred issue and let canonical resume select the
             # next independent unit. Never fabricate an acceptance/PASS.
+            checkpoint(job_id, status, slug)
+            return
+        if (role == "reviewer" and defer_failed_reviewer_unit(
+                slug, chapter, previous_record, status, recoverable_code)):
+            # Missing current review evidence is tracked as a hash-bound
+            # pending unit, never a fabricated CORRECTIONS_REQUIRED/PASS.
             checkpoint(job_id, status, slug)
             return
         status["state"] = "blocked" if status["failures"] >= MAX_FAILURES else "running"
@@ -3285,10 +3487,14 @@ def process_claim(job_id: str, slug: str, status: dict, engine: Path) -> None:
         status.pop("_memory_only_change", None)
     cli("release", slug, str(chapter["number"]), "--session-id", active["session_id"])
     status["active"] = None
+    # A valid persisted literary result is a fresh checkpoint for this role.
+    # Historical protocol errors from other roles never select its model.
+    status.setdefault("role_protocol_failures", {}).pop(f"{unit_id}:{role}", None)
     status["phase"] = role + "-completed"
     status["prompt_context"] = prompt_context
     status.pop("blocked_unit_id", None)
     status.pop("last_error", None)
+    status.pop("last_error_code", None)
     status.pop("provider_retry", None)
     status.pop("provider_model_route", None)
     status["failures"] = 0

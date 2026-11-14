@@ -224,6 +224,9 @@ class LiteraryContextTests(unittest.TestCase):
             self.assertNotIn("pinned translator", system)
             self.assertIn("Mara = Мара", user)
             self.assertIn("CURRENT ACCEPTED TRANSLATION", user)
+            self.assertIn("A check boolean describes", user)
+            self.assertIn("not whether the translation passed", user)
+            self.assertIn("checks:false", user)
             self.assertIn("short clauses", user)
             self.assertEqual(original, "Mara walked home.")
 
@@ -554,6 +557,80 @@ class LiteraryContextTests(unittest.TestCase):
             self.assertEqual(anchors.verify_evidence_anchors.call_count, 2)
             self.assertEqual(status["model_calls_started"], 77)
             self.assertFalse(any(call.args[0] == "review-record" for call in cli.call_args_list))
+
+    def test_third_invalid_reviewer_report_defers_only_unit_without_review_pass(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            book = root / "books" / "synthetic"
+            (book / ".workflow" / "claims").mkdir(parents=True)
+            (book / "extracted").mkdir()
+            (book / "translated").mkdir()
+            source, target = b"one source paragraph", b"one translated paragraph"
+            (book / "extracted" / "one.md").write_bytes(source)
+            (book / "translated" / "one.md").write_bytes(target)
+            (book / "glossary.md").write_text("glossary", encoding="utf-8")
+            (book / "style-guide.md").write_text("style", encoding="utf-8")
+            (book / ".workflow" / "claims" / "chapter-000001.json").write_text(
+                json.dumps({"session_id": "owner"}), encoding="utf-8")
+            chapter = {"unit_id": "chapter-000001", "number": 1,
+                       "source_path": "extracted/one.md",
+                       "translation_path": "translated/one.md", "status": "translated",
+                       "translation_acceptance": {
+                           "source_sha256": hashlib.sha256(source).hexdigest(),
+                           "translation_sha256": hashlib.sha256(target).hexdigest()}}
+            status = {"state": "running", "phase": "claimed",
+                      "active": {"role": "reviewer", "chapter": 1,
+                                 "unit_id": "chapter-000001", "session_id": "owner"},
+                      "workflow_revision": "f" * 40,
+                      "model_calls_started": 70, "failures": 2}
+            bad_review = ModelError(
+                "reviewer evidence is invalid: every literary check must have been performed")
+            with patch.object(runner, "ROOT", root), \
+                 patch.object(runner, "chapter_data", return_value=({}, {"records": []}, [chapter])), \
+                 patch.object(runner, "context", return_value=("system", "prompt", source.decode())), \
+                 patch.object(runner, "role_contracts", return_value=("system", ["AGENTS.md"])), \
+                 patch.object(runner, "parse_literary_review", side_effect=bad_review), \
+                 patch.object(runner, "model_call_limit", return_value=150), \
+                 patch.object(runner, "complete", return_value="{}"), \
+                 patch.object(runner, "checkpoint"), \
+                 patch.object(runner, "cli") as cli:
+                runner.process_claim("c" * 32, "synthetic", status, root)
+            self.assertEqual(status["state"], "running")
+            self.assertEqual(status["phase"], "model-unit-deferred")
+            self.assertEqual(status["failures"], 0)
+            self.assertEqual(status["last_error_code"], "review_checks_incomplete")
+            self.assertEqual(status["role_protocol_failures"]["chapter-000001:reviewer"], 1)
+            self.assertEqual(status["deferred_review_units"], ["chapter-000001"])
+            self.assertTrue(any(call.args[0] == "release" for call in cli.call_args_list))
+            self.assertFalse(any(call.args[0] in {"accept-review", "review-record"}
+                                 for call in cli.call_args_list))
+
+    def test_false_reviewer_checks_trigger_focused_recheck_not_boolean_rewrite(self):
+        response = json.dumps({
+            "evidence_version": 2, "outcome": "CORRECTIONS_REQUIRED",
+            "checks": {"coverage": False, "meaning": True,
+                       "terminology": True, "style": True, "structure": True},
+            "findings": [], "style_guide": []})
+        status = {"model_calls_started": 5,
+                  "active": {"role": "reviewer", "chapter": 1,
+                             "unit_id": "chapter-000001", "session_id": "claim"}}
+        error = ModelError(
+            "reviewer evidence is invalid: every literary check must have been performed")
+        with patch.object(runner, "model_call_limit", return_value=30), \
+             patch.object(runner, "checkpoint"), \
+             patch.object(runner, "complete_for_job", return_value="{}") as call:
+            result = runner.retry_reviewer_anchor_evidence(
+                "c" * 32, "test", status, {}, "pinned reviewer", "review source",
+                response, error, "source", b"translation")
+        self.assertEqual(result, "{}")
+        self.assertEqual(status["model_calls_started"], 6)
+        self.assertEqual(status["phase"], "review-schema-repair-reserved")
+        prompt = call.call_args.args[-1]
+        self.assertIn("INCOMPLETE LITERARY CHECKS", prompt)
+        self.assertIn('"coverage"', prompt)
+        self.assertIn("never return PASS merely to satisfy", prompt)
+        self.assertIn("must remain false and cannot be accepted", prompt)
+        self.assertNotIn("mark every check true", prompt)
 
     def test_claim_includes_frozen_literary_revisions(self):
         with tempfile.TemporaryDirectory() as tmp:
