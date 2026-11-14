@@ -300,3 +300,61 @@ supported by the original.
 **Unit 024 verdict: CORRECTIONS_REQUIRED — duplicated/invented material
 removed; original-content coverage is incomplete. Do not merge PR #108,
 claim full review or build a corrected final EPUB from this draft.**
+
+
+## 2026-11-14 additional manual source-paired chapter correction pass
+
+**Operator route:** ChatOps, manual source/target examination and narrowly
+targeted GitHub writes. **No Auto translation workflow was invoked.**
+This pass preserves the existing book workflow revision
+`ea9963ca546b7cc7f6aba4dc5350fa19ea7da862`, original source EPUB,
+original extracted English units and unchanged canonical `main` ledger.
+
+The earlier narrow Latin-name check had found no remaining romanized
+character names but missed many **Cyrillic nominatives used incorrectly in
+indirect cases**. Full-page source-paired examination of successive sections
+and an expanded Unicode-aware grammar-candidate scan exposed these errors.
+
+| Unit | New fixes | Verified GitHub commit(s) |
+| --- | ---: | --- |
+| 014 — wedding | 1 | `bbbb7c831dc78ce095da043fa245e30f170fc442` |
+| 015 — home/running | 6 | `3f1e8e17c41aa5efb76c78af5f973e38212c3c8c`, `55830c1d330f5ed98316e4c2fb9c290ae2bfdf9a` |
+| 016 — country store | 1 | `5bfde5e4f78bd526e769b7ba2a263ceff9d21aec` |
+| 017 — horses / family | 6 | `42f7860963ae655d499264e1ce0e8cf8ee8b14cb` |
+| 018 — pond / confidences | 4 | `de04afb92944893656fe919b851882a00711829b` |
+| 019 — fair | 10 | `c9ec464f09be3ce46a3a52aed181de980677342b` |
+| 021 — school | 1 | `7090d47e17df8d88560538062a4fa1d270f272d9` |
+| 022 — football / secrecy | 8 | `076940dd60731545e8bb92134629f5dd97023bdf` |
+| 023 — costume party | 7 | `a52a06064d244bf1d6161d5d08ac24c71ea8927d` |
+| 025 — school athletics | 1 | `99694dce226931c50204d7187db084d91dc6c130` |
+| 026 — family celebration | 1 | `dc76b46cbac825266dbfb182d684cd7fc75b4159` |
+| 030 — family separation | 13 | `2c6af5c6b22aecb3bf068df58f30dfaf87d7b395` |
+| 048 — college graduation | 1 | `79c5c547c48b057f6103246a56a4b8b4dab60260` |
+| **Total** | **60** | **13 distinct units** |
+
+Every modified file was fetched again from GitHub after writing and its
+exact intended candidate content was verified. A subsequent **13/13
+source-versus-candidate structural comparison** passed for ordered bt
+markers, Markdown link destinations, and counts of Markdown headings.
+
+The scope was editorial repair of specific non-explicit wording and name
+cases (e.g. `вслед за Кейда` → `вслед за Кейдом`) and one explicit
+source-supported speaking attribution. It did **not** alter original
+material, invent missing paragraphs, generate sexual content involving
+underage characters, or claim a fresh independently reviewed PASS.
+
+### Remaining quality/release gates
+
+1. The previous candidate still has an unresolved original-content gap
+   in unit 024, and other chapters may contain omissions or semantic
+   departures that these targeted case repairs cannot detect. Full
+   sequential independent source-linked literary review is incomplete.
+2. PR #108 contains modified text for records still marked `reviewed`
+   against the **old accepted SHA-256**. Normal pinned workflow
+   validation fails. There is no proven revision-compatible canonical
+   reopen/translation-accept/review transition currently active.
+3. Do not merge the draft, re-label historical PASS as current, or
+   build/deliver a replacement *final* EPUB before these gates pass.
+
+**State: source-grounded candidate corrections committed; not an
+approved full revised edition.**
