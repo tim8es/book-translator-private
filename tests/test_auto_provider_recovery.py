@@ -206,12 +206,12 @@ class ProviderRecoveryTests(unittest.TestCase):
         self.status["role_protocol_failures"] = {unit + ":translator": 3}
         env = {**self.env, "OMNIROUTE_REVIEWER_MODEL": "review-primary",
                "OMNIROUTE_REVIEWER_FALLBACK_MODEL": "review-backup"}
-        with patch.dict(os.environ, env), \\
+        with patch.dict(os.environ, env), \
              patch.object(worker, "complete", return_value="{}") as post:
             worker.complete_for_job(self.status, "REVIEWER", "system", "source")
         post.assert_called_once_with("REVIEWER", "system", "source")
         self.status["role_protocol_failures"][unit + ":reviewer"] = 2
-        with patch.dict(os.environ, env), \\
+        with patch.dict(os.environ, env), \
              patch.object(worker, "complete", return_value="{}") as post:
             worker.complete_for_job(self.status, "REVIEWER", "system", "source")
         post.assert_called_once_with("REVIEWER_FALLBACK", "system", "source")
@@ -220,7 +220,7 @@ class ProviderRecoveryTests(unittest.TestCase):
         unit = self.chapter["unit_id"]
         self.status["active"].update({"role": "corrector", "unit_id": unit})
         self.status["role_protocol_failures"] = {unit + ":corrector": 2}
-        with patch.dict(os.environ, self.env), \\
+        with patch.dict(os.environ, self.env), \
              patch.object(worker, "complete", return_value="{}") as post:
             worker.complete_for_job(self.status, "TRANSLATOR", "system", "source")
         post.assert_called_once_with("TRANSLATOR_FALLBACK", "system", "source")
@@ -264,7 +264,7 @@ class ProviderRecoveryTests(unittest.TestCase):
                        "translation_acceptance": {
                            "source_sha256": s_hash, "translation_sha256": t_hash}}
             status = {"failures": worker.MAX_FAILURES, "state": "blocked"}
-            with patch.object(worker, "ROOT", root), \\
+            with patch.object(worker, "ROOT", root), \
                  patch.object(worker, "cli") as cli:
                 self.assertTrue(worker.defer_failed_reviewer_unit(
                     "synthetic-book", chapter, None, status, "review_checks_incomplete"))
@@ -275,7 +275,7 @@ class ProviderRecoveryTests(unittest.TestCase):
             self.assertEqual(status["model_review_deferral_audit"][0]["translation_sha256"],
                              t_hash)
             self.assertNotIn("PASS", repr(status))
-            with patch.object(worker, "ROOT", root), \\
+            with patch.object(worker, "ROOT", root), \
                  patch.object(worker, "cli") as cli:
                 self.assertFalse(worker.defer_failed_reviewer_unit(
                     "synthetic-book", chapter, None,
@@ -318,7 +318,7 @@ class ProviderRecoveryTests(unittest.TestCase):
             record = {"record_id": "a" * 32, "outcome": "CORRECTIONS_REQUIRED",
                       "source_sha256": s_hash, "translation_sha256": t_hash}
             status = {"failures": 3, "state": "blocked"}
-            with patch.object(worker, "ROOT", root), \\
+            with patch.object(worker, "ROOT", root), \
                  patch.object(worker, "cli") as cli:
                 self.assertTrue(worker.defer_failed_reviewer_unit(
                     "synthetic-book", chapter, record, status, "review_json_invalid"))
@@ -327,7 +327,7 @@ class ProviderRecoveryTests(unittest.TestCase):
                 "--reason", "model-review-output-exhausted")
             self.assertNotIn("deferred_review_units", status)
             self.assertEqual(status["model_review_deferral_audit"][0]["route"], "canonical")
-            with patch.object(worker, "ROOT", root), \\
+            with patch.object(worker, "ROOT", root), \
                  patch.object(worker, "cli") as cli:
                 self.assertFalse(worker.defer_failed_reviewer_unit(
                     "synthetic-book", chapter,
