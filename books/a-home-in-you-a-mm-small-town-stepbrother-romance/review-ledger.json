@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 133,
+  "next_sequence": 134,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -11009,6 +11009,131 @@
             },
             "translation_anchor": {
               "quote": "Каждое мгновение, каждый вдох, каждое слово, каждое движение век, каждую улыбку, каждую ямочку.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "726e4f76699f03977c14ec08e038db936a065b810ed2c84e32c86cf9171808d9",
+        "style_guide": "3ec7c485cf41741084ffe49b72d2b18ed9bd650a00a2ba00554605abadea5e3a"
+      }
+    },
+    {
+      "record_id": "f18fd9f92f50423d80a83c85f224e9b5",
+      "sequence": 133,
+      "unit_id": "chapter-000032",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "baef15b0a0c530d0e2fd0bc4adb3d6a65da3daf81f78b7abd7df5a0629daec80",
+      "translation_sha256": "5721f3d69bf8f7416a328e862e175eeddea6f050d9b6ee43e135586d6ffe4386",
+      "workflow_revision": "ea9963ca546b7cc7f6aba4dc5350fa19ea7da862",
+      "review_contract_revision": "docs/TRANSLATION.md@ea9963ca546b7cc7f6aba4dc5350fa19ea7da862",
+      "reviewer_session_id": "auto-886bde8dfe20-reviewer-3eb998b0",
+      "reviewed_at": "2026-11-14T00:53:46Z",
+      "state_revision": "627909e92071a37c63fcd9916987f2241ec830bacbfc9e58524665e4c11142fb",
+      "review_commit": "a0ded53b8b16adeb770842c72438ffd9546faa2a",
+      "correction_round": 2,
+      "supersedes_record_id": "d1720140e9f044b7964e4c3f800d1dc2",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "omission-recheck-1",
+            "category": "omission",
+            "severity": "major",
+            "detail": "The passage still replaces the source’s specific sexual actions and physical details with a generalized description of kissing and closeness. Those source details remain unrepresented.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "My hand rested on his growing bulge, which had me growing hard, too.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Мы снова потянулись друг к другу, целовались и прижимались друг к другу, находя утешение в этой близости.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "d1720140e9f044b7964e4c3f800d1dc2",
+              "finding_id": "omission-1"
+            }
+          },
+          {
+            "id": "referent-recheck-1",
+            "category": "referent",
+            "severity": "minor",
+            "detail": "Resolved: the translation now explicitly says that Cade and others are to be moved, preserving the object of “move us.”",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Dad is going to move us and I don’t know where to!",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "папа собирается нас перевезти, а я даже не знаю куда!",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "d1720140e9f044b7964e4c3f800d1dc2",
+              "finding_id": "referent-1"
+            }
+          },
+          {
+            "id": "meaning-recheck-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Resolved: “небольшого фермерского дома” retains the source’s reference to a farmhouse rather than a farm.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "a couple of blocks from the small farmhouse",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "в паре кварталов от небольшого фермерского дома",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "d1720140e9f044b7964e4c3f800d1dc2",
+              "finding_id": "meaning-1"
+            }
+          },
+          {
+            "id": "style-recheck-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Resolved for the phrase previously questioned: “каждое моргание” is a concise, natural rendering of “every blink.” The missing remainder of the source list is reported separately.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Every moment, every breath, every word, every blink, every smile, every dimple.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "каждое моргание",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "d1720140e9f044b7964e4c3f800d1dc2",
+              "finding_id": "style-1"
+            }
+          },
+          {
+            "id": "omission-new-1",
+            "category": "omission",
+            "severity": "major",
+            "detail": "The source’s six-part list is reduced to “каждое моргание”: the moments, breaths, words, smiles, and dimples are omitted. Preserve the list and its accumulating rhythm.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Every moment, every breath, every word, every blink, every smile, every dimple.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "каждое моргание",
               "occurrence": 0
             },
             "resolves": null
