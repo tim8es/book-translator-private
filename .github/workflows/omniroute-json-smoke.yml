@@ -21,6 +21,19 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Resolve pinned public Auto engine
+        id: shared_auto
+        run: echo "sha=$(python automation/runtime_loader.py --print-revision)" >> "$GITHUB_OUTPUT"
+      - name: Checkout public transport code
+        uses: actions/checkout@v4
+        with:
+          repository: tim8es/book-translator
+          ref: ${{ steps.shared_auto.outputs.sha }}
+          path: .public-auto-runtime
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Verify public transport runtime
+        run: python automation/runtime_loader.py --verify
       - name: Probe configured OmniRoute translator JSON transport
         env:
           OMNIROUTE_BASE_URL: ${{ vars.OMNIROUTE_BASE_URL }}
