@@ -92,6 +92,9 @@ jobs:
           fetch-depth: 1
           persist-credentials: false
 
+      - name: Verify pinned public gate executor before loading
+        run: python automation/runtime_loader.py --verify
+
       - name: Require original bytes and current independent PASS before building
         id: pin
         shell: bash
