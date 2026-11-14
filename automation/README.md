@@ -388,3 +388,13 @@ book-integrity batching runs hourly with a rolling 3-hour lookback. The expected
 schedule density decreases from 14 to 9 triggers per hour (before event-driven
 runs). Empty integrity windows skip public-runtime checkout and canonical validation.
 Missed GitHub schedule events can still increase latency; no schedule is an SLA.
+
+## Final EPUB deployment gates
+
+The generic final EPUB Action invokes the public executor's
+`scripts/final_build_checks.py` for request discovery, current independent
+review admission and post-build EPUB verification. The book-pinned CLI remains
+responsible for literary finalization and rendering at the immutable per-book
+revision. The state repository contains no embedded Python EPUB validation
+engine. Update the public executor lock only after its tests pass; never
+rewrite a book's `metadata.json.workflow.resolved_revision` during deployment.
