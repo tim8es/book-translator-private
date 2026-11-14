@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "a-home-in-you-a-mm-small-town-stepbrother-romance",
-  "next_sequence": 134,
+  "next_sequence": 135,
   "records": [
     {
       "record_id": "d882273c1c9142a3950e7514c57a332e",
@@ -11134,6 +11134,109 @@
             },
             "translation_anchor": {
               "quote": "каждое моргание",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "726e4f76699f03977c14ec08e038db936a065b810ed2c84e32c86cf9171808d9",
+        "style_guide": "3ec7c485cf41741084ffe49b72d2b18ed9bd650a00a2ba00554605abadea5e3a"
+      }
+    },
+    {
+      "record_id": "6847c38ee10f44a6a688e744ec87a91b",
+      "sequence": 134,
+      "unit_id": "chapter-000032",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "baef15b0a0c530d0e2fd0bc4adb3d6a65da3daf81f78b7abd7df5a0629daec80",
+      "translation_sha256": "7079fe7c3b8917c797e6cd32d2c3e09a7620a7ffeab9d883c4b2dc4ce4ce13f8",
+      "workflow_revision": "ea9963ca546b7cc7f6aba4dc5350fa19ea7da862",
+      "review_contract_revision": "docs/TRANSLATION.md@ea9963ca546b7cc7f6aba4dc5350fa19ea7da862",
+      "reviewer_session_id": "auto-886bde8dfe20-reviewer-6d9896ee",
+      "reviewed_at": "2026-11-14T00:57:59Z",
+      "state_revision": "fed5718b99692b0249336fa58dbfa66655ce7b237ddb2df2027d2eccab4b7dc3",
+      "review_commit": "3814c82682ad86076d882dcd56e102dadcc6e640",
+      "correction_round": 3,
+      "supersedes_record_id": "f18fd9f92f50423d80a83c85f224e9b5",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "omission-recheck-2",
+            "category": "omission",
+            "severity": "major",
+            "detail": "Resolved: the current translation represents the specific sexual actions and physical details that were previously generalized or omitted.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "My hand rested on his growing bulge, which had me growing hard, too.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Моя ладонь легла на выпирающий у него бугорок, и я тоже начал твердеть.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "f18fd9f92f50423d80a83c85f224e9b5",
+              "finding_id": "omission-recheck-1"
+            }
+          },
+          {
+            "id": "omission-recheck-3",
+            "category": "omission",
+            "severity": "major",
+            "detail": "Resolved: the translation now preserves all six items in the source list and its accumulating rhythm.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Every moment, every breath, every word, every blink, every smile, every dimple.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "каждое мгновение, каждый вдох, каждое слово, каждое моргание, каждую улыбку, каждую ямочку.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "f18fd9f92f50423d80a83c85f224e9b5",
+              "finding_id": "omission-new-1"
+            }
+          },
+          {
+            "id": "meaning-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "“Having him again” conveys renewed intimacy in this sexual context, whereas “он снова был рядом” reduces it to physical proximity. Preserve the source’s intimate implication without explaining beyond it.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "I stroked and moaned at having him again.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "я ласкал его и стонал оттого, что он снова был рядом.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The list starts a new sentence after a period, so its first word should be capitalized: “Каждое”.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Every moment, every breath, every word, every blink, every smile, every dimple.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "каждое мгновение, каждый вдох, каждое слово, каждое моргание, каждую улыбку, каждую ямочку.",
               "occurrence": 0
             },
             "resolves": null
