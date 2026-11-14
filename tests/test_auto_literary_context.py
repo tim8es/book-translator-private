@@ -585,14 +585,14 @@ class LiteraryContextTests(unittest.TestCase):
                       "model_calls_started": 70, "failures": 2}
             bad_review = ModelError(
                 "reviewer evidence is invalid: every literary check must have been performed")
-            with patch.object(runner, "ROOT", root), \\
-                 patch.object(runner, "chapter_data", return_value=({}, {"records": []}, [chapter])), \\
-                 patch.object(runner, "context", return_value=("system", "prompt", source.decode())), \\
-                 patch.object(runner, "role_contracts", return_value=("system", ["AGENTS.md"])), \\
-                 patch.object(runner, "parse_literary_review", side_effect=bad_review), \\
-                 patch.object(runner, "model_call_limit", return_value=150), \\
-                 patch.object(runner, "complete", return_value="{}"), \\
-                 patch.object(runner, "checkpoint"), \\
+            with patch.object(runner, "ROOT", root), \
+                 patch.object(runner, "chapter_data", return_value=({}, {"records": []}, [chapter])), \
+                 patch.object(runner, "context", return_value=("system", "prompt", source.decode())), \
+                 patch.object(runner, "role_contracts", return_value=("system", ["AGENTS.md"])), \
+                 patch.object(runner, "parse_literary_review", side_effect=bad_review), \
+                 patch.object(runner, "model_call_limit", return_value=150), \
+                 patch.object(runner, "complete", return_value="{}"), \
+                 patch.object(runner, "checkpoint"), \
                  patch.object(runner, "cli") as cli:
                 runner.process_claim("c" * 32, "synthetic", status, root)
             self.assertEqual(status["state"], "running")
@@ -616,8 +616,8 @@ class LiteraryContextTests(unittest.TestCase):
                              "unit_id": "chapter-000001", "session_id": "claim"}}
         error = ModelError(
             "reviewer evidence is invalid: every literary check must have been performed")
-        with patch.object(runner, "model_call_limit", return_value=30), \\
-             patch.object(runner, "checkpoint"), \\
+        with patch.object(runner, "model_call_limit", return_value=30), \
+             patch.object(runner, "checkpoint"), \
              patch.object(runner, "complete_for_job", return_value="{}") as call:
             result = runner.retry_reviewer_anchor_evidence(
                 "c" * 32, "test", status, {}, "pinned reviewer", "review source",
