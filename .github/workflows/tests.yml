@@ -69,8 +69,8 @@ jobs:
           print(f"Changed paths: {len(paths)}. Full engine tests: {full}. Book artifact check: {books}.")
           PY
 
-      # The legacy book-named Actions below are temporarily grandfathered.
-      # Any new Action must be explicitly reviewed as a reusable entrypoint.
+      # Only reusable Actions entrypoints belong in the book-state repository.
+      # Shared business logic and tests are maintained in book-translator.
       - name: Prevent creation of ad-hoc book-specific workflows
         shell: bash
         run: |
@@ -84,23 +84,20 @@ jobs:
               "book-job-monitor.yml",
               "chat-operations.yml",
               "final-epub.yml",                    # generic, privacy-gated, pinned public caller
-              "policy-change-final-delivery.yml",  # legacy, pending migration
-              "policy-change-source-intake.yml",    # legacy, pending migration
-              "reckless-final-epub.yml",             # legacy, pending migration
               "tests.yml",
-              "wings-of-starlight-final-delivery.yml",  # legacy, pending migration
           }
           directory = Path(".github/workflows")
           actual = {entry.name for entry in directory.iterdir()
                     if entry.is_file() and entry.suffix in (".yml", ".yaml")}
           unknown = sorted(actual - existing)
-          if unknown:
+          missing = sorted(existing - actual)
+          if unknown or missing:
               raise SystemExit(
-                  "Unreviewed GitHub Actions workflows: " + ", ".join(unknown)
-                  + ". Use a shared parameterized workflow; if adding a new"
-                  + " reusable entrypoint, review and update this inventory."
+                  "GitHub Actions topology drift; unexpected: " + ", ".join(unknown)
+                  + "; missing: " + ", ".join(missing)
+                  + ". Only reviewed reusable entrypoints are allowed."
               )
-          print("Workflow topology check passed (legacy files grandfathered).")
+          print("Workflow topology check passed (seven reusable entrypoints).")
           PY
 
       - name: Set up Python 3.12

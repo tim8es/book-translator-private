@@ -45,7 +45,7 @@ class StateOnlyDeploymentTests(unittest.TestCase):
             "omniroute-json-smoke.yml", "tests.yml",
         })
         auto = (root / "auto-translate.yml").read_text("utf-8")
-        self.assertIn("group: automatic-book-", auto)
+        self.assertIn("group: book-operation-", auto)
         self.assertIn("max-parallel: 3", auto)
         self.assertIn("Dispatch next bounded step", auto)
         self.assertNotIn("workflow_call:", auto)
@@ -55,10 +55,20 @@ class StateOnlyDeploymentTests(unittest.TestCase):
             self.assertIn("runtime_loader.py", source)
             self.assertIn("repository: tim8es/book-translator", source)
         chat = (root / "chat-operations.yml").read_text("utf-8")
-        self.assertIn("engine/scripts/chat_ops_bridge.py", chat)
+        self.assertIn("runtime_loader.py --print-revision", chat)
+        self.assertIn("engine_sha:", chat)
+        self.assertIn("scripts/chat_ops_discover.py", chat)
+        self.assertIn("scripts/chat_ops_bridge.py", chat)
+        self.assertIn("group: book-operation-", chat)
+        self.assertNotIn("ref: db27cc1a3369cd3e3da82e2dfe222af33a1f74e0", chat)
         epub = (root / "final-epub.yml").read_text("utf-8")
         self.assertIn(".pinned-book-translator", epub)
-        self.assertIn("cp -a .pinned-book-translator/docs ./docs", epub)
+        self.assertIn("mkdir -p docs", epub)
+        self.assertIn("cp -a .pinned-book-translator/docs/. ./docs/", epub)
+        self.assertIn("group: book-operation-", epub)
+        self.assertNotIn("git restore -- scripts", epub)
+        self.assertNotIn("rm -rf scripts docs", epub)
+        self.assertIn('git add -A -- "books/$BOOK_SLUG"', epub)
 
     def test_changed_book_launcher_can_validate_empty_batch(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -70,6 +80,77 @@ class StateOnlyDeploymentTests(unittest.TestCase):
             ], cwd=STATE, capture_output=True, text=True, timeout=30)
             self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
             self.assertIn("Validated changed book files: 0", result.stdout)
+
+    def test_final_epub_can_publish_with_ignored_engine_and_tracked_migrations(self):
+        """No git restore pathspec and no deletion of durable migration evidence."""
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            remote, work = root / "remote.git", root / "book-state"
+
+            def git(*args):
+                result = subprocess.run(
+                    ["git", *args], capture_output=True, text=True, check=True)
+                return result.stdout.strip()
+
+            git("init", "--bare", str(remote))
+            git("clone", str(remote), str(work))
+            git("-C", str(work), "checkout", "-b", "main")
+            git("-C", str(work), "config", "user.name", "Test Operator")
+            git("-C", str(work), "config", "user.email", "test@example.invalid")
+            (work / ".gitignore").write_text(
+                (STATE / ".gitignore").read_text("utf-8"), encoding="utf-8")
+            archive = work / "docs/migrations/provenance.json"
+            archive.parent.mkdir(parents=True)
+            archive.write_text('{"book":"synthetic"}', encoding="utf-8")
+            book = work / "books/synthetic-book"
+            (book / "output").mkdir(parents=True)
+            (book / "progress.json").write_text("initial", encoding="utf-8")
+            git("-C", str(work), "add", "-A", "--", ".gitignore", "books")
+            git("-C", str(work), "add", "-f", "--", "docs/migrations/provenance.json")
+            git("-C", str(work), "commit", "-m", "seed state and evidence")
+            git("-C", str(work), "push", "-u", "origin", "main")
+
+            # Same disposable, ignored artifacts the workflow materializes.
+            (work / "scripts").mkdir()
+            (work / "scripts/book.py").write_text("pinned", encoding="utf-8")
+            (work / "docs/TRANSLATION.md").write_text(
+                "review contract", encoding="utf-8")
+            (work / ".book-translator-install.json").write_text(
+                '{"resolved_revision":"synthetic"}', encoding="utf-8")
+            self.assertEqual(git("-C", str(work), "ls-files", "--", "scripts",
+                                 ".book-translator-install.json"), "")
+            (book / "output/manifest.json").write_text(
+                '{"format":"epub","preview":false}', encoding="utf-8")
+
+            # Mirrors the deployment shell's staging and guarded push.
+            shell = """
+set -euo pipefail
+if [[ -n "$(git ls-files -- scripts .book-translator-install.json)" ]]; then
+  exit 17
+fi
+git add -A -- "books/$BOOK_SLUG"
+if git diff --cached --quiet; then exit 19; fi
+git fetch --quiet origin main
+if ! git diff --quiet HEAD origin/main -- "books/$BOOK_SLUG"; then exit 21; fi
+git commit -m "finalize($BOOK_SLUG): reviewed EPUB"
+git rebase origin/main
+git push origin HEAD:main
+"""
+            subprocess.run(["bash", "-c", shell], cwd=work, check=True,
+                           env={**__import__("os").environ,
+                                "BOOK_SLUG": "synthetic-book"})
+            self.assertEqual(
+                git("-C", str(work), "show",
+                    "origin/main:docs/migrations/provenance.json"),
+                '{"book":"synthetic"}')
+            self.assertIn('"preview":false', git(
+                "-C", str(work), "show",
+                "origin/main:books/synthetic-book/output/manifest.json"))
+            paths = git("-C", str(work), "ls-tree", "-r",
+                        "--name-only", "origin/main").splitlines()
+            self.assertNotIn("scripts/book.py", paths)
+            self.assertNotIn("docs/TRANSLATION.md", paths)
+            self.assertNotIn(".book-translator-install.json", paths)
 
     def test_all_changes_to_books_remain_outside_public_checkout(self):
         self.assertTrue((STATE / "books").is_dir())
