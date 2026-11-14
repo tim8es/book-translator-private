@@ -112,6 +112,22 @@ jobs:
         if: steps.scope.outputs.books == 'true'
         shell: bash
         run: python .github/scripts/verify_changed_books.py "$RUNNER_TEMP/changed-book-paths.json"
+      - name: Resolve immutable public Auto engine
+        if: steps.scope.outputs.full == 'true'
+        id: shared_auto
+        run: echo "sha=$(python automation/runtime_loader.py --print-revision)" >> "$GITHUB_OUTPUT"
+      - name: Checkout public shared engine for integration tests
+        if: steps.scope.outputs.full == 'true'
+        uses: actions/checkout@v7
+        with:
+          repository: tim8es/book-translator
+          ref: ${{ steps.shared_auto.outputs.sha }}
+          path: .public-auto-runtime
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Verify pinned public Auto source and state isolation
+        if: steps.scope.outputs.full == 'true'
+        run: python automation/runtime_loader.py --verify
       - name: Compile Python source and tests before expensive engine suite
         if: steps.scope.outputs.full == 'true'
         run: python -m compileall -q automation tests
