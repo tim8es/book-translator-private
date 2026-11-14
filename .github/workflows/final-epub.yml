@@ -175,19 +175,28 @@ jobs:
         run: |
           set -euo pipefail
           test "$(git -C .pinned-book-translator rev-parse HEAD)" = "$PIN"
-          rm -rf scripts
+          rm -rf scripts docs
           cp -a .pinned-book-translator/scripts ./scripts
+          cp -a .pinned-book-translator/docs ./docs
+          cp .pinned-book-translator/AGENTS.md ./
+          cp .pinned-book-translator/agent-manifest.json ./
+          cp .pinned-book-translator/SKILL.md ./
           python - <<'PY'
           import json
           import os
           from pathlib import Path
-          path = Path(".book-translator-install.json")
-          doc = json.loads(path.read_text("utf-8"))
-          assert doc["canonical_repository"] == "https://github.com/tim8es/book-translator"
-          assert doc["install_root"] == "."
-          doc["requested_ref"] = os.environ["PIN"]
-          doc["resolved_revision"] = os.environ["PIN"]
-          path.write_text(json.dumps(doc, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+          pin = os.environ["PIN"]
+          assert len(pin) == 40 and all(c in "0123456789abcdef" for c in pin)
+          document = {
+              "schema_version": 1,
+              "canonical_repository": "https://github.com/tim8es/book-translator",
+              "requested_ref": pin,
+              "resolved_revision": pin,
+              "install_root": ".",
+          }
+          Path(".book-translator-install.json").write_text(
+              json.dumps(document, ensure_ascii=False, indent=2) + "\n",
+              encoding="utf-8")
           PY
 
       - name: Run pinned validation, finalization and canonical EPUB builder
