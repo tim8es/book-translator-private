@@ -46,6 +46,20 @@ class AllEpubShapes(unittest.TestCase):
                         "ancestor_tags":[name(parent.get(p)) if p is not None and parent.get(p) is not None else None],
                     }
                     per_tag[t].append(x)
+                # Count linebreak ancestry and possible bold/italic boundary crossing.
+                for n in body.iter():
+                    if name(n) != "br": continue
+                    p = parent.get(n)
+                    lineage = []
+                    cur = p
+                    while cur is not None and name(cur) not in PROSE:
+                        lineage.append(name(cur))
+                        cur = parent.get(cur)
+                    anomalies["linebreak_shapes"].append({
+                        "parent_tag": name(p) if p is not None else None,
+                        "parents_before_prose": lineage,
+                        "parent_visible_text": bool("".join(p.itertext()).strip()) if p is not None else False,
+                    })
                 # Inspect every image's placement without printing its source or alt.
                 for n in body.iter():
                     if name(n) != "img": continue
@@ -84,7 +98,11 @@ class AllEpubShapes(unittest.TestCase):
                 "tags":dict(counts.most_common()), "unsupported_summary":{
                    k:{"count":len(v),"examples":v[:18]} for k,v in per_tag.items()
                 },
-                "anomalies":{k:{"count":len(v),"examples":v[:15]} for k,v in anomalies.items()}
+                "anomalies":{k:({"count":len(v),"by_parent":[{"shape":str(k),"count":n} for k,n in Counter(
+                  (x["parent_tag"], tuple(x["parents_before_prose"]), x["parent_visible_text"])
+                  for x in v).most_common()]} if k == "linebreak_shapes"
+                  else {"count":len(v),"examples":v[:15]})
+                  for k,v in anomalies.items()}
             }
             print("EPUB_INVENTORY_JSON="+json.dumps(result,ensure_ascii=False,separators=(",",":")))
             self.assertGreater(len(files),0)
