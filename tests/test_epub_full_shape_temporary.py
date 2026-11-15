@@ -46,6 +46,28 @@ class AllEpubShapes(unittest.TestCase):
                         "ancestor_tags":[name(parent.get(p)) if p is not None and parent.get(p) is not None else None],
                     }
                     per_tag[t].append(x)
+                # Inspect every image's placement without printing its source or alt.
+                for n in body.iter():
+                    if name(n) != "img": continue
+                    p = parent.get(n)
+                    ancestor = p
+                    enclosing = None
+                    while ancestor is not None:
+                        if name(ancestor) in PROSE:
+                            enclosing = ancestor
+                            break
+                        ancestor = parent.get(ancestor)
+                    anomalies["image_shapes"].append({
+                        "file": f.rsplit("/", 1)[-1],
+                        "parent_tag": name(p) if p is not None else None,
+                        "parent_direct_text_len": len((p.text or "").strip()) if p is not None else 0,
+                        "parent_child_tags": [name(x) for x in p][:12] if p is not None else [],
+                        "parent_tail_lengths": [len((x.tail or "").strip()) for x in p][:12] if p is not None else [],
+                        "enclosing_prose": name(enclosing) if enclosing is not None else None,
+                        "enclosing_prose_text_len": len("".join(enclosing.itertext()).strip()) if enclosing is not None else 0,
+                        "attributes": sorted(n.attrib),
+                        "has_caption": bool(n.get("alt", "").strip()),
+                    })
                 # other risks to map proactively: containers with direct text and descendant prose
                 for n in body.iter():
                     if name(n) not in {"div","blockquote","li","p"}: continue
