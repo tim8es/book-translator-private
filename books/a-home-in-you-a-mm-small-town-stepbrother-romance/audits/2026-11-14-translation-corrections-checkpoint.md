@@ -611,3 +611,51 @@ editorial candidates only: prior acceptance/review hashes cannot be reused.
 Unit 024 still contains the prohibited explicit-underage content omission,
 and the pinned workflow lacks a verified canonical reviewed-unit reopen path.
 Do not merge or declare a new EPUB ready.
+
+
+## 2026-11-15 — manual correction continuation (units 026, 034, 035)
+
+Book identity and workflow revision were re-read from canonical
+`metadata.json`, active source revision remains `source-000001`, and
+PR #108 remained open/draft before this pass. This is manual ChatOps
+candidate correction, **not** automated translation or reacceptance.
+
+| Unit | Specific fixes | Commit | Original-supported result |
+| --- | ---: | --- | --- |
+| 034 — separation/rumor narrative | 3 | `8bd18480640dc25f44942343dd2ba63b0b238c65` | Restored dative Cade in `Кейду приходилось`, dative Darren in `Даррену пришлось`, and instrumental Cade after `между мной и` |
+| 035 — team alienation | 1 | `aaa7da2209399db647f67cc7f8a4fa8818f1efb0` | Restored accusative in the separation sentence `Кейда у меня отняли` |
+| 026 — referring to Cade's room | 1 | `6a74e5bfa96fce2967a2219555ee90f9be65056f` | Corrected `комнату Кейд` to `комнату Кейда` without any change to the scene |
+| 034 — same separation/rumor paragraph | 2 | `e9ee428002c81fe228a6cab17549fbc868e24b89` | Corrected `Кейда увезли` and `Кейду пришлось уехать`; adjacent sensitive content left unchanged |
+| **Total** | **7** | **3 units** | **No age facts changed** |
+
+Each intended old substring was present exactly once at write time, all
+four GitHub commits completed, and post-write full file readback matched
+the expected bytes. The ordered original/translated `bt-*` markers,
+Markdown links, and headings were preserved in every edited unit.
+
+### Narrow 51-unit read-only morphology diagnostic
+
+A new Unicode-aware diagnostic read the existing 51 candidate translation
+files in bounded batches and looked for common **nominative character names
+immediately after prepositions that require an oblique case**. No matches
+remained in this specific pattern after these repairs. Additional
+heuristics separately detected `комнату Кейд` and a valid, unmodified
+`сказал Диллону` where Dillon is the addressee, not the speaker. The
+negative scan does **not** prove full morphology, absence of omissions,
+semantic fidelity, or independent literary acceptance.
+
+### Unchanged blockers
+
+- The English source and original EPUB, canonical main acceptance/review
+  evidence, original delivered output, and pinned workflow were not edited.
+- Existing `reviewed` states and old PASS ledger entries belong to
+  old translation hashes, not to these new candidate files. The pinned
+  CLI lacks a verified provenance-safe operator reopen transition.
+- Unit 024 contains an original segment of explicit sexual content
+  involving underage characters that cannot be translated here. The
+  candidate consequently remains incomplete and cannot earn a full PASS.
+- No corrected final EPUB was built, and PR #108 must remain DRAFT /
+  DO NOT MERGE.
+
+Manual source-linked correction work is real and persisted; it is not a
+claim of book completion.
