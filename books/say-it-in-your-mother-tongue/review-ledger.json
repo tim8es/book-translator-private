@@ -1,6 +1,120 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 1,
-  "records": []
+  "next_sequence": 2,
+  "records": [
+    {
+      "record_id": "175981a73412449d9d1b40a875c9e343",
+      "sequence": 1,
+      "unit_id": "chapter-000001",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "f0658fe2766db179f92270fadc997f1c9a0fae476a1ed39296cd960886cc16cf",
+      "translation_sha256": "aa40f80b5a32dea5e091d56bc992f27872ba8dc4d7956f69fd0bb4bd069b0910",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-f10d682f",
+      "reviewed_at": "2026-11-15T22:45:06Z",
+      "state_revision": "a53110e2230551b7b745da962d34648ceddbd6dc44b5688a5ec8bb2cf7cead8c",
+      "review_commit": "555c45248e396f23beaa07c6da4616388c470abd",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "terminology-1",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "The relationship names Sergio Pérez and Max Verstappen are left in Latin script, while their names are transliterated elsewhere in the unit. Render them consistently in Russian.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Sergio Pérez/Max Verstappen",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Sergio Pérez/Max Verstappen",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "terminology-2",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "This relationship entry leaves both names in Latin script, although they are transliterated elsewhere in the unit. Render the names consistently in Russian.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Fernando Alonso & Gabriel Bortoleto",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Fernando Alonso & Gabriel Bortoleto",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "terminology-3",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "In the Characters list, Nico Hülkenberg, Max Verstappen, and Sebastian Vettel remain in Latin script, unlike the transliterated names around them and their renderings elsewhere in the unit. Transliterate these names consistently.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "<!-- bt-inline:000004:start -->Nico Hülkenberg<!-- bt-inline:000004:end -->",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "<!-- bt-inline:000004:start -->Nico Hülkenberg<!-- bt-inline:000004:end -->",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "terminology-4",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "Gabriel Bortoleto’s name is rendered inconsistently: «Габриэль Бортолето» here, but «Габриэл Бортолето» elsewhere in the unit, with a corresponding inflected form «Габриэлю». Choose one Russian spelling and apply it consistently, including in inflected forms.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Gabriel Bortoleto/Nico Hülkenberg",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Габриэль Бортолето/Нико Хюлькенберг",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "referent-1",
+            "category": "referent",
+            "severity": "minor",
+            "detail": "The Russian tag «упомянул других водителей» introduces an unspecified masculine agent, whereas the English tag is an elliptical phrase with no expressed agent. «Упомянуты другие гонщики» would avoid adding one and use the natural motorsport term.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "mentioned other drivers",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "упомянул других водителей",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "f02e6becb2861881659733c55614d24b49ee0a6906fa607fb2db0ceb6b8d35ad",
+        "style_guide": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4"
+      }
+    }
+  ]
 }
