@@ -46,6 +46,17 @@ class ShapeDiagnostic(unittest.TestCase):
                         "child_attribute_keys": [sorted(ch.attrib) for ch in node][:20],
                         "tail_lengths": tails[:12],
                         "descendant_prose": descendant_prose,
+                        "direct_text_categories": [
+                            __import__("unicodedata").category(ch)
+                            for ch in (node.text or "").strip()][:12],
+                        "link_shapes": [
+                            {"rel": child.get("rel"),
+                             "href_type": ("fragment" if child.get("href", "").startswith("#")
+                                           else "external" if child.get("href", "").startswith(("https://", "http://", "mailto:"))
+                                           else "relative" if child.get("href") else "missing"),
+                             "text_length": len("".join(child.itertext()).strip()),
+                             "descendant_tags": [tag(n) for n in child.iter()][:12]}
+                            for child in node if tag(child) == "a"][:8],
                     })
                 print("EPUB_STRUCTURE_ONLY " + json.dumps(
                     {"source_member": path, "candidate_count": len(cases),
