@@ -3,13 +3,18 @@
   "job_id": "ed29a03c00540e66d6846fd802b04f55",
   "book_slug": "без-названия",
   "state": "running",
-  "phase": "operator-resume-authorized",
+  "phase": "claimed",
   "failures": 0,
   "correction_rounds": {},
   "workflow_revision": "871e937b5d7075613c4e55c1ecfc07af700af8bc",
   "source_sha256": "1e94a92096552a75265f8c5e73562e8ad4d28bb8a8a28f1db25b4a4107e374cf",
-  "updated_at": "2026-11-15T22:27:24.756959+00:00",
-  "active": null,
+  "updated_at": "2026-11-15T22:27:26.975107+00:00",
+  "active": {
+    "role": "translator",
+    "chapter": 2,
+    "session_id": "auto-ed29a03c0054-translator-dfdade88",
+    "unit_id": "chapter-000002"
+  },
   "model_calls_started": 3,
   "prompt_context": {
     "role": "reviewer",
@@ -43,7 +48,6 @@
   },
   "memory_style_saved": 0,
   "blocked_unit_id": "chapter-000002",
-  "last_error": null,
   "recoveries": [
     {
       "action": "resume-model-blocked",
