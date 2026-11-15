@@ -2,13 +2,13 @@
   "schema_version": 1,
   "job_id": "ed29a03c00540e66d6846fd802b04f55",
   "book_slug": "без-названия",
-  "state": "blocked",
-  "phase": "model-blocked",
-  "failures": 3,
+  "state": "running",
+  "phase": "operator-resume-authorized",
+  "failures": 0,
   "correction_rounds": {},
   "workflow_revision": "871e937b5d7075613c4e55c1ecfc07af700af8bc",
   "source_sha256": "1e94a92096552a75265f8c5e73562e8ad4d28bb8a8a28f1db25b4a4107e374cf",
-  "updated_at": "2026-11-15T20:37:41.060047+00:00",
+  "updated_at": "2026-11-15T22:27:24.756959+00:00",
   "active": null,
   "model_calls_started": 3,
   "prompt_context": {
@@ -43,5 +43,12 @@
   },
   "memory_style_saved": 0,
   "blocked_unit_id": "chapter-000002",
-  "last_error": "chapter exceeds safe single-context limit; bounded chunking required"
+  "last_error": null,
+  "recoveries": [
+    {
+      "action": "resume-model-blocked",
+      "approved_at": "2026-11-15T22:27:24.756937+00:00",
+      "previous_error": "chapter exceeds safe single-context limit; bounded chunking required"
+    }
+  ]
 }
