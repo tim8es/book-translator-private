@@ -3,12 +3,12 @@
   "job_id": "05eed6ea814d3b5eec014c6d05b39e3f",
   "book_slug": "say-it-in-your-mother-tongue",
   "state": "running",
-  "phase": "model-call-reserved",
+  "phase": "structural-segments-staged",
   "failures": 0,
   "correction_rounds": {},
   "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
   "source_sha256": "12e210ce5a95daf56a97ada583ec15c274780c4ddfa7fb92da6a88c67f7c403d",
-  "updated_at": "2026-11-15T22:26:08.223644+00:00",
+  "updated_at": "2026-11-15T22:26:18.269906+00:00",
   "active": {
     "role": "translator",
     "chapter": 1,
@@ -47,17 +47,17 @@
   "structural_segment_progress": {
     "unit_id": "chapter-000001",
     "source_sha256": "f0658fe2766db179f92270fadc997f1c9a0fae476a1ed39296cd960886cc16cf",
-    "completed": 13,
+    "completed": 15,
     "total": 167
   },
   "model_response_diagnostics": {
     "finish_reason": "stop",
     "response_format": "json_object",
-    "response_chars": 121,
+    "response_chars": 158,
     "provider_refusal": false,
-    "prompt_tokens": 4433,
-    "completion_tokens": 419,
-    "total_tokens": 4852,
+    "prompt_tokens": 4435,
+    "completion_tokens": 363,
+    "total_tokens": 4798,
     "route": "primary",
     "role": "translator",
     "unit_id": "chapter-000001"
