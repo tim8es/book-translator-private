@@ -659,3 +659,37 @@ semantic fidelity, or independent literary acceptance.
 
 Manual source-linked correction work is real and persisted; it is not a
 claim of book completion.
+
+
+## 2026-11-15 — post-school source-paired editorial corrections (units 036, 037, 038, 039, 043)
+
+**Context:** Pinned workflow `ea9963ca546b7cc7f6aba4dc5350fa19ea7da862` and
+source edition `source-000001` were verified again from the current book
+metadata. The original extracted English passages and draft Russian target
+passages were examined in pairs; edits were confined to the DRAFT PR #108
+candidate files. The main book progress still has 51 older `reviewed` unit
+records referring to pre-edit hashes.
+
+| Unit | Individual replacements | Candidate commit | Source-grounded focus |
+| --- | ---: | --- | --- |
+| 036 — Cade at university | 4 | `22d67acca768194930bdc366e03e53b9763dc8c0` | Remove unnatural dessert comparison and tiny-thought calque; accurately convey admission with an academic scholarship; restore naturally phrased vision blurred by alcohol, without altering events |
+| 037 — Dillon at university | 4 | `193cf193e6d713358fe62df2302ced76cc27ddcc` | Correct `Кейда` in accusative; correct inaccurate description of an artist's current portrait as an older photograph; restore Aaron's hypothetical reunion rather than an intention to reunite; clarify figurative reference to being on the receiving end of prejudice |
+| 038 — Cade at the game | 9 | `3e76d3f0513fe90c6ab34388d8d4e0c3c4f7e5b9` | Seven `Рэйвен` occurrences standardized to the glossary's `Рейвен`, one nickname to `Рейв`, and a clumsy comparison of the two universities' football strength corrected |
+| 039 — Dillon searching for Cade | 1 | `692dc0e60160b7533047825f82192e0301a47931` | Restore dative and intended possessive contrast `тот парень *не* принадлежал Кейду; ему принадлежал я` without adding content |
+| 043 — reunion dialogue | 2 | `795726892e569ab548ec39323b39a0d97cd6277d` | Two more `Рэйвен` spellings restored to `Рейвен` according to glossary |
+| **TOTAL** | **20** | **5 candidate files** | No age claims, source English, explicit scenes or canonical review evidence altered |
+
+**Verifications:** All five edited candidate files were read back after
+successful commits; each returned exactly the expected complete file text.
+Each original/candidate pair retained ordered `bt-*` marker sequences,
+Markdown link destinations and the same heading count. The current candidate
+headings were unchanged. `Рэйвенс` as part of the separate football-team
+name `Балтимор Рэйвенс` was intentionally **not** changed.
+
+**Not a PASS or finished artifact:** These are local source-backed edits, not
+full-book independent review or workflow acceptance. The preserved source's
+unit 024 contains explicit sexual material involving underage characters;
+that gap has not been reconstructed. The pinned acceptance flow cannot simply
+reopen 51 previously reviewed files with new SHA hashes, and no operator-safe
+reacceptance transition has been verified. Do not merge PR #108 or call the
+candidate EPUB complete; no EPUB was built in this pass.
