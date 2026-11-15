@@ -27,6 +27,8 @@ on:
     paths:
       # Only explicit operator mode changes wake Auto, never book checkpoints.
       - 'books/**/.workflow/auto-control.json'
+      # A reviewed runtime upgrade can unblock known preflight failures.
+      - 'automation/runtime.lock.json'
 
 permissions:
   contents: write
