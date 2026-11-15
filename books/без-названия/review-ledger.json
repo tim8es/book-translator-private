@@ -1,6 +1,39 @@
 {
   "schema_version": 1,
   "book_slug": "без-названия",
-  "next_sequence": 1,
-  "records": []
+  "next_sequence": 2,
+  "records": [
+    {
+      "record_id": "c8338ba00dc448d4a256e5436ce96896",
+      "sequence": 1,
+      "unit_id": "chapter-000001",
+      "outcome": "PASS",
+      "source_sha256": "a6eeb3768fdf0d187457552d66354eb89213ade0471fccae86d65730c025aecb",
+      "translation_sha256": "a6eeb3768fdf0d187457552d66354eb89213ade0471fccae86d65730c025aecb",
+      "workflow_revision": "871e937b5d7075613c4e55c1ecfc07af700af8bc",
+      "review_contract_revision": "docs/TRANSLATION.md@871e937b5d7075613c4e55c1ecfc07af700af8bc",
+      "reviewer_session_id": "auto-ed29a03c0054-reviewer-894090ef",
+      "reviewed_at": "2026-11-15T20:35:07Z",
+      "state_revision": "9440fc1fde1f56a6ee957fd29873c09e929f20c5826a7b8ec6c0f9f1c9763342",
+      "review_commit": "995be16f99388d101121fec3028be96a4e758eb4",
+      "correction_round": 0,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": []
+      },
+      "shared_state_revisions": {
+        "glossary": "f02e6becb2861881659733c55614d24b49ee0a6906fa607fb2db0ceb6b8d35ad",
+        "style_guide": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4"
+      }
+    }
+  ]
 }

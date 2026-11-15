@@ -3,18 +3,13 @@
   "job_id": "ed29a03c00540e66d6846fd802b04f55",
   "book_slug": "без-названия",
   "state": "running",
-  "phase": "review-schema-repair-reserved",
+  "phase": "reviewer-completed",
   "failures": 0,
   "correction_rounds": {},
   "workflow_revision": "871e937b5d7075613c4e55c1ecfc07af700af8bc",
   "source_sha256": "1e94a92096552a75265f8c5e73562e8ad4d28bb8a8a28f1db25b4a4107e374cf",
-  "updated_at": "2026-11-15T20:34:56.425346+00:00",
-  "active": {
-    "role": "reviewer",
-    "chapter": 1,
-    "session_id": "auto-ed29a03c0054-reviewer-894090ef",
-    "unit_id": "chapter-000001"
-  },
+  "updated_at": "2026-11-15T20:35:07.712725+00:00",
+  "active": null,
   "model_calls_started": 3,
   "prompt_context": {
     "role": "reviewer",
@@ -34,17 +29,17 @@
   "memory_glossary_saved": 0,
   "pending_style": [],
   "role_protocol_failures": {},
-  "provider_model_route": "primary",
   "model_response_diagnostics": {
     "finish_reason": "stop",
     "response_format": "json_object",
-    "response_chars": 251,
+    "response_chars": 215,
     "provider_refusal": false,
-    "prompt_tokens": 6459,
-    "completion_tokens": 896,
-    "total_tokens": 7355,
+    "prompt_tokens": 6807,
+    "completion_tokens": 240,
+    "total_tokens": 7047,
     "route": "primary",
     "role": "reviewer",
     "unit_id": "chapter-000001"
-  }
+  },
+  "memory_style_saved": 0
 }
