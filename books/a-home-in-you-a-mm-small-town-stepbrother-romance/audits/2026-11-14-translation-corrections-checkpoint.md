@@ -693,3 +693,35 @@ that gap has not been reconstructed. The pinned acceptance flow cannot simply
 reopen 51 previously reviewed files with new SHA hashes, and no operator-safe
 reacceptance transition has been verified. Do not merge PR #108 or call the
 candidate EPUB complete; no EPUB was built in this pass.
+
+
+### 2026-11-15 — further scene-language polish and late-book structural pass
+
+- Unit 046 `translated/046-36-cade.md`: **2** source-matched, non-explicit
+  changes clarify the mudroom as an entry where dirty boots are left,
+  and make a line about missing the loft and Cade while there more natural
+  in Russian without changing the place or speaker.
+- Commit: `7b0f0729a58976b1e7cb24f0a8979387753ee311`.
+- GitHub post-write readback exactly matched the expected full target file;
+  headings, Markdown link destinations and ordered existing `bt-*`
+  marker sequences were unchanged.
+
+**Session total: 22 individual safe candidate changes across 6 files**
+(units 036, 037, 038, 039, 043, 046). Each file was read back from GitHub
+after mutation.
+
+A further **read-only 13-unit structural comparison** covered preserved
+English `extracted/036` through `extracted/048` against the draft
+Russian `translated/036` through `translated/048` counterparts.
+All thirteen matched ordered `bt-*` markers, external Markdown
+link destinations and heading counts (13/13 for each check). These
+particular Markdown files contain no `bt-block` paragraph markers;
+that fact is not evidence of semantic completeness. No remaining
+incorrect literal `Рэйвен` spelling was found in the thirteen draft
+files; the unrelated football team name `Балтимор Рэйвенс` was preserved.
+
+**No comprehensive literary PASS** was carried out. Structural agreement,
+localized edits and spelling checks do not resolve earlier acceptance
+hashes, the reviewed-unit reopen blocker, or the unit-024 prohibited
+underage-explicit material gap. PR #108 remains DRAFT and must not be
+merged or represented as a complete, reaccepted EPUB.
