@@ -3,19 +3,19 @@
   "job_id": "ed29a03c00540e66d6846fd802b04f55",
   "book_slug": "без-названия",
   "state": "running",
-  "phase": "structural-segments-staged",
+  "phase": "model-call-reserved",
   "failures": 0,
   "correction_rounds": {},
   "workflow_revision": "871e937b5d7075613c4e55c1ecfc07af700af8bc",
   "source_sha256": "1e94a92096552a75265f8c5e73562e8ad4d28bb8a8a28f1db25b4a4107e374cf",
-  "updated_at": "2026-11-15T22:41:48.470576+00:00",
+  "updated_at": "2026-11-15T22:42:03.334250+00:00",
   "active": {
     "role": "translator",
     "chapter": 2,
     "session_id": "auto-ed29a03c0054-translator-dfdade88",
     "unit_id": "chapter-000002"
   },
-  "model_calls_started": 9,
+  "model_calls_started": 10,
   "prompt_context": {
     "role": "translator",
     "workflow_revision": "871e937b5d7075613c4e55c1ecfc07af700af8bc",
@@ -27,10 +27,10 @@
     "glossary_sha256": "f02e6becb2861881659733c55614d24b49ee0a6906fa607fb2db0ceb6b8d35ad",
     "style_guide_sha256": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4",
     "system_chars": 18735,
-    "user_chars": 8506,
+    "user_chars": 6901,
     "execution_mode": "shared-structural-segments",
-    "helper_revision": "d11a30b306a8bac236b73f25ae2f38e89745aab1",
-    "batch_segment_count": 3
+    "helper_revision": "4c584fe5534871cd05aa851d9b7bdbfa696d0edd",
+    "batch_segment_count": 2
   },
   "memory_glossary_saved": 0,
   "pending_style": [],
@@ -44,7 +44,7 @@
       "previous_error": "chapter exceeds safe single-context limit; bounded chunking required"
     }
   ],
-  "structural_helper_revision": "d11a30b306a8bac236b73f25ae2f38e89745aab1",
+  "structural_helper_revision": "4c584fe5534871cd05aa851d9b7bdbfa696d0edd",
   "provider_model_route": "primary",
   "structural_segment_progress": {
     "unit_id": "chapter-000002",
@@ -63,5 +63,14 @@
     "route": "primary",
     "role": "translator",
     "unit_id": "chapter-000002"
-  }
+  },
+  "structural_helper_migrations": [
+    {
+      "unit_id": "chapter-000002",
+      "from_revision": "d11a30b306a8bac236b73f25ae2f38e89745aab1",
+      "to_revision": "4c584fe5534871cd05aa851d9b7bdbfa696d0edd",
+      "source_sha256": "7edd5f7d76d4a7d2f971e83a7096c061b9e1a51db15178224d7975fe39d0eb39",
+      "persisted_segments": 18
+    }
+  ]
 }
