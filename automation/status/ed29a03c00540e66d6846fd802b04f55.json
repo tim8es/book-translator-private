@@ -3,18 +3,13 @@
   "job_id": "ed29a03c00540e66d6846fd802b04f55",
   "book_slug": "без-названия",
   "state": "running",
-  "phase": "model-call-reserved",
+  "phase": "translator-completed",
   "failures": 0,
   "correction_rounds": {},
   "workflow_revision": "871e937b5d7075613c4e55c1ecfc07af700af8bc",
   "source_sha256": "1e94a92096552a75265f8c5e73562e8ad4d28bb8a8a28f1db25b4a4107e374cf",
-  "updated_at": "2026-11-15T20:33:14.141172+00:00",
-  "active": {
-    "role": "translator",
-    "chapter": 1,
-    "session_id": "auto-ed29a03c0054-translator-1dadd8e9",
-    "unit_id": "chapter-000001"
-  },
+  "updated_at": "2026-11-15T20:33:23.591883+00:00",
+  "active": null,
   "model_calls_started": 1,
   "prompt_context": {
     "role": "translator",
@@ -28,5 +23,20 @@
     "style_guide_sha256": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4",
     "system_chars": 18490,
     "user_chars": 4136
-  }
+  },
+  "model_response_diagnostics": {
+    "finish_reason": "stop",
+    "response_format": "json_object",
+    "response_chars": 64,
+    "provider_refusal": false,
+    "prompt_tokens": 4363,
+    "completion_tokens": 142,
+    "total_tokens": 4505,
+    "route": "primary",
+    "role": "translator",
+    "unit_id": "chapter-000001"
+  },
+  "memory_glossary_saved": 0,
+  "pending_style": [],
+  "role_protocol_failures": {}
 }
