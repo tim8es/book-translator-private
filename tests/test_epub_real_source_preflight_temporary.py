@@ -26,6 +26,44 @@ class RealSourcePreflight(unittest.TestCase):
         docs, identity = epub_preserve.analyze(source)
         self.assertEqual(identity["source_sha256"], digest)
         chapters = epub_preserve.extract(source, lambda **kwargs: type("Unit", (), kwargs)())
+        # Compare source text independently, logging only counts/tag shapes.
+        from collections import Counter
+        from xml.etree import ElementTree as ET
+        with __import__("zipfile").ZipFile(source) as zf:
+            mismatches = []
+            for doc, chapter in zip((d for d in docs if d.kind == "text"), chapters):
+                parts = epub_preserve.parse_blocks(
+                    chapter.content, expected=len(doc.blocks), allow_source_escapes=True)
+                if any(epub_preserve._tokens(x) != epub_preserve._tokens(y)
+                       for x,y in zip(doc.blocks,parts)):
+                    root = ET.fromstring(zf.read(doc.path))
+                    nodes = epub_preserve._blocks(root)
+                    for idx,(original,extracted) in enumerate(zip(doc.blocks,parts),1):
+                        if epub_preserve._tokens(original) == epub_preserve._tokens(extracted):
+                            continue
+                        node=nodes[idx-1][0]
+                        tags=Counter(epub_preserve._local(n.tag) for n in node.iter())
+                        mismatches.append({
+                            "file":Path(doc.path).name,
+                            "block":idx,
+                            "source_chars":len(original),
+                            "extracted_chars":len(extracted),
+                            "source_tokens":len(epub_preserve._tokens(original)),
+                            "extracted_tokens":len(epub_preserve._tokens(extracted)),
+                            "tag_counts":dict(tags),
+                            "has_nested_emphasis":any(
+                                epub_preserve._local(x.tag) in {"strong","b"} and
+                                any(epub_preserve._local(z.tag) in {"em","i"}
+                                    for z in x.iter() if z is not x)
+                                for x in node.iter()),
+                            "has_nested_bold":any(
+                                epub_preserve._local(x.tag) in {"em","i"} and
+                                any(epub_preserve._local(z.tag) in {"strong","b"}
+                                    for z in x.iter() if z is not x)
+                                for x in node.iter()),
+                        })
+            print("EPUB_AUDIT_MISMATCH_SHAPES="+json.dumps({
+                "count":len(mismatches),"sample":mismatches[:25]}, ensure_ascii=False))
         audit = epub_preserve.audit(source, chapters)
         self.assertEqual(audit["state"], "verified")
         self.assertEqual(audit["source_sha256"], digest)
