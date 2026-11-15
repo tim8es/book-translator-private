@@ -69,6 +69,35 @@ class RealSourcePreflight(unittest.TestCase):
         self.assertEqual(audit["source_sha256"], digest)
         self.assertEqual(audit["chapter_count"], len(chapters))
         self.assertGreater(len(chapters), 1)
+        # Preflight renderer ambiguity without disclosing source words.
+        with __import__("zipfile").ZipFile(source) as archive:
+            _, drop_classes = epub_preserve._source_style_classes(archive)
+            collisions = []
+            for doc in docs:
+                if doc.kind != "text": continue
+                root = ET.fromstring(archive.read(doc.path))
+                for index, (node, _) in enumerate(epub_preserve._blocks(root), 1):
+                    children = list(node)
+                    initial = ("".join(children[0].itertext()) if children
+                               and epub_preserve._local(children[0].tag) == "span" else "")
+                    drop = bool(children and initial and not list(children[0])
+                                and set(children[0].get("class", "").split()) & drop_classes
+                                and (len(initial) == 1 and initial.isalpha()
+                                     or len(initial) == 2 and initial[1].isalpha()))
+                    links = [p for p in node.iter() if epub_preserve._local(p.tag) == "a"]
+                    styles, media, _ = epub_preserve._inline_structure(node)
+                    if (styles or media) and (links or drop):
+                        collisions.append({
+                            "file":Path(doc.path).name,
+                            "index":index,
+                            "link_count":len(links),
+                            "styled_count":len(styles),
+                            "media_count":len(media),
+                            "drop_cap":drop,
+                            "tags":[epub_preserve._local(p.tag) for p in node.iter()][:18],
+                        })
+            print("EPUB_BUILD_COLLISIONS="+json.dumps({
+                "count":len(collisions),"sample":collisions[:40]},ensure_ascii=False))
         assembled = epub_preserve.build(
             source,
             [{"markdown": chapter.content} for chapter in chapters],
