@@ -3,18 +3,13 @@
   "job_id": "ed29a03c00540e66d6846fd802b04f55",
   "book_slug": "без-названия",
   "state": "running",
-  "phase": "structural-segments-staged",
+  "phase": "translator-completed",
   "failures": 0,
   "correction_rounds": {},
   "workflow_revision": "871e937b5d7075613c4e55c1ecfc07af700af8bc",
   "source_sha256": "1e94a92096552a75265f8c5e73562e8ad4d28bb8a8a28f1db25b4a4107e374cf",
-  "updated_at": "2026-11-15T23:16:09.346011+00:00",
-  "active": {
-    "role": "translator",
-    "chapter": 2,
-    "session_id": "auto-ed29a03c0054-translator-dfdade88",
-    "unit_id": "chapter-000002"
-  },
+  "updated_at": "2026-11-15T23:16:11.284772+00:00",
+  "active": null,
   "model_calls_started": 26,
   "prompt_context": {
     "role": "translator",
@@ -36,7 +31,6 @@
   "pending_style": [],
   "role_protocol_failures": {},
   "memory_style_saved": 0,
-  "blocked_unit_id": "chapter-000002",
   "recoveries": [
     {
       "action": "resume-model-blocked",
@@ -45,13 +39,6 @@
     }
   ],
   "structural_helper_revision": "4c584fe5534871cd05aa851d9b7bdbfa696d0edd",
-  "provider_model_route": "primary",
-  "structural_segment_progress": {
-    "unit_id": "chapter-000002",
-    "source_sha256": "7edd5f7d76d4a7d2f971e83a7096c061b9e1a51db15178224d7975fe39d0eb39",
-    "completed": 51,
-    "total": 51
-  },
   "structural_helper_migrations": [
     {
       "unit_id": "chapter-000002",
