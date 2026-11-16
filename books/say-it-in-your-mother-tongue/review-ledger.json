@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 64,
+  "next_sequence": 65,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -6358,6 +6358,109 @@
             },
             "translation_anchor": {
               "quote": "глядя на Лэнса с шоколадом по всему рту.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "2844b82cd4039744f7d8de76b1edbf4ec3c12e691ea8a38ac00719fd261842e5",
+        "style_guide": "9aa29b7a57a8e19df8d8c06ea387e12df497cb4953714bfae17739cebb2b81c1"
+      }
+    },
+    {
+      "record_id": "7f13048b1e224c6eb562cfdb59e8037f",
+      "sequence": 64,
+      "unit_id": "chapter-000022",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "d9da3a32b0bbe334bb05882806ffeaec4856a2387f3d64f4112c339e903999b5",
+      "translation_sha256": "6493d65ff6223a57d30b1a8b4b4178a848d04d81d5585021557ff5d7a60461e9",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-51f8ac5c",
+      "reviewed_at": "2026-11-16T20:18:51Z",
+      "state_revision": "435d98f134bfc3a7e217aa6e5611e86c5a7376ae26020a2e247f6ee2398fe277",
+      "review_commit": "af8506d948e424861ed2b79febf291316c2de839",
+      "correction_round": 3,
+      "supersedes_record_id": "ed6b45b3afab463aabce09c81470b81e",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "structure-recheck-1",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "The prior emphasis issue is only partly fixed: *not* in block 6 is now emphasized, but several source italics are still missing, including *like this one!* and *babe* (block 10), *bullshit* and *no* (block 11), *fuck you* (block 20), *puppy eyes* (block 25), *towards heaven* (block 28), the first *can’t* (block 35), *baby* (blocks 43 and 47), and *I’m* (block 45). Also preserve the emphasis on *that* in block 5 rather than shifting it to *сделал*.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "like what type of reason is… like this one! *‘God is out to get me.’* That ain’t a reason, *babe*, that’s just BS!",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Ну, например, что это вообще за причина такая… вот эта! *„Бог хочет меня достать“.* Это не причина, *детка*, это просто фигня!",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "ed6b45b3afab463aabce09c81470b81e",
+              "finding_id": "structure-1"
+            }
+          },
+          {
+            "id": "meaning-recheck-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Resolved: the translation now clearly places the chocolate around the outside of Lance’s mouth, rather than suggesting it is inside.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "sees the chocolate all over his mouth.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "перемазанного шоколадом вокруг рта",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "ed6b45b3afab463aabce09c81470b81e",
+              "finding_id": "meaning-1"
+            }
+          },
+          {
+            "id": "addition-1",
+            "category": "addition",
+            "severity": "minor",
+            "detail": "«Полная» adds an intensifier not present in “bullshit.” Use an equivalent without this added degree of emphasis.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“Just say *bullshit*,” Fernando rolls his eyes as he flips the next pancake",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Так и говори: „полная херня“, — закатывает глаза Фернандо, переворачивая следующий блин",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "«Неловко» adds awkwardness that the source does not state. The source describes his movement as intended to be playful; remove the unsupported characterization.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“Oh, I get it,” he nods, shuffling away from him in what was meant to be a playful manner.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«А, понял», — кивает он и неловко отодвигается от него, стараясь сделать это игриво.",
               "occurrence": 0
             },
             "resolves": null
