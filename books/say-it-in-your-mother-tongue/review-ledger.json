@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 5,
+  "next_sequence": 6,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -407,6 +407,87 @@
               "record_id": "14ffc2dba7424e4bb62e6683108617f9",
               "finding_id": "meaning-3"
             }
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "f02e6becb2861881659733c55614d24b49ee0a6906fa607fb2db0ceb6b8d35ad",
+        "style_guide": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4"
+      }
+    },
+    {
+      "record_id": "d37a4662446f419abe94f46fefd5ff63",
+      "sequence": 5,
+      "unit_id": "chapter-000003",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "5dcc58cd47d278abb51a9f145923138455d94915ee7fada8e29237a0ff506e1a",
+      "translation_sha256": "d458211f0dbb0b0b3ef2abc8e9d9874ab22a142f0fe8cb2f4e7f2e76a68bd29a",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-49712bb4",
+      "reviewed_at": "2026-11-16T08:55:10Z",
+      "state_revision": "a65245c655f2b125fc55cc24a823add5e46e191bb4cbe38e348811566512cdbe",
+      "review_commit": "f461c31b1606ceb3a56e7238484762b2f61be73f",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "referent-1",
+            "category": "referent",
+            "severity": "major",
+            "detail": "The source has Lance turning away from the Aston Martin and stepping away; Fernando then opens his door. In Russian, the participial phrase «Отвернувшись ... и отступив» grammatically makes Fernando the one turning away and stepping away. Recast the sentence so Lance is clearly the subject of those actions.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "As he turns away from the Aston Martin, stepping away, Fernando opens his door, jumps out, reaches Lance on steady legs, and grabs his wrist, pulling him closer to himself.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Отвернувшись от «Астон Мартина» и отступив от него, Фернандо распахивает дверцу, выпрыгивает наружу, уверенно направляется к Лэнсу и хватает его за запястье, притягивая к себе.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«В утрированной версии того, что бы это между ними ни было» reads as an awkward calque in Russian. Preserve the playful, deliberately uncertain “whatever this is between them,” but phrase it more naturally.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "He pretends to scratch his head and think, before continuing in the played-up version of *whatever this is* between them*.*",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "в утрированной версии *того, что бы это между ними ни было*.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The source says the kiss is better than Lance has ever dreamed it could be. «Мог себе представить» shifts the image from dreaming to imagining; retain the source's dream image if possible.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "And when their lips finally touch — *oh god* — it’s electric and wonderful and better than Lance has ever dreamed it could be.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "И когда их губы наконец соприкасаются — *о боже* — между ними словно пробегает ток; это чудесно и лучше, чем Лэнс когда-либо мог себе представить.",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       },
