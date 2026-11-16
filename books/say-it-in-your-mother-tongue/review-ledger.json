@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 11,
+  "next_sequence": 12,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -1019,6 +1019,112 @@
             },
             "translation_anchor": {
               "quote": "*куда угодно, только не на Габриэля* Почёсывает голову и встречается взглядом с распечатанными данными.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "f02e6becb2861881659733c55614d24b49ee0a6906fa607fb2db0ceb6b8d35ad",
+        "style_guide": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4"
+      }
+    },
+    {
+      "record_id": "574880d3bc98408c8ff14460916b7ca3",
+      "sequence": 11,
+      "unit_id": "chapter-000004",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "8f1ed2ca1a8dc1f0a29b8cc33b9d784f7f39a4881ba1d775eb73db0642fc0ade",
+      "translation_sha256": "ad5d6282c87434cda956c59180d27e51dbb7dabedefe3d70a4a9a36c0043cf7f",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-4054b0b4",
+      "reviewed_at": "2026-11-16T09:23:24Z",
+      "state_revision": "df5973e5330de498b14a4fc91bad515f3387ac4f39c254e3d9010e6518c25b9d",
+      "review_commit": "4430eda428c006b28585f4837010379e54647730",
+      "correction_round": 3,
+      "supersedes_record_id": "28126a9a4f2a47b99f997ca8f15dbbff",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "structure-1-followup",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "The inline dialogue-format inconsistency remains: this utterance is set off with an em dash, while dialogue elsewhere in the passage uses quotation marks. In Russian, use quotation marks for inline dialogue here, or restructure the dialogue consistently as separate paragraphs.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "*Cariño*, you know we’re still friends, right? Even if no longer teammates.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "— *Cariño*, ты же знаешь, что мы всё ещё друзья, да? Даже если больше не напарники.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "28126a9a4f2a47b99f997ca8f15dbbff",
+              "finding_id": "structure-1-recheck"
+            }
+          },
+          {
+            "id": "structure-2-followup",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "Some of the source’s meaningful emphasis is still missing: “really” in “really laughs,” “potato,” and “huff and puff” are not italicized in the translation. Other cited emphasis is preserved, including “just because,” “really became friends with one of them,” and “anything.” Preserve the remaining emphasis.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Max laughs — really laughs — with his mouth wide open, tilting his head back.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Макс смеётся — по-настоящему смеётся — широко раскрыв рот и запрокинув голову.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "28126a9a4f2a47b99f997ca8f15dbbff",
+              "finding_id": "structure-2-recheck"
+            }
+          },
+          {
+            "id": "omission-1-followup",
+            "category": "omission",
+            "severity": "minor",
+            "detail": "The translation still omits the final action: Nico scratches his head and looks at the printed data. Add this sentence to complete the sequence.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "He swallows loudly, tightening his grip of the telemetry, as he forces himself to look *anywhere but Gabriel*. He scratches his head, making eye contact with the printed data.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Он громко сглатывает, крепче сжимая листы с телеметрией, и заставляет себя смотреть *куда угодно, только не на Габриэля*.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "28126a9a4f2a47b99f997ca8f15dbbff",
+              "finding_id": "omission-1"
+            }
+          },
+          {
+            "id": "style-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Становятся всё полнее» is an awkward calque for puddles accumulating water. Use a natural equivalent, such as «видит, как в лужах снаружи с каждой минутой прибывает вода».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "but he can still see how the puddles outside get fuller as more time passes.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "но он всё ещё видит, как с течением времени снаружи становятся всё полнее лужи.",
               "occurrence": 0
             },
             "resolves": null
