@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 22,
+  "next_sequence": 23,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -2196,6 +2196,103 @@
               "record_id": "cb1e6ad0747744d091161d7be801fe35",
               "finding_id": "style-new-2"
             }
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "f02e6becb2861881659733c55614d24b49ee0a6906fa607fb2db0ceb6b8d35ad",
+        "style_guide": "92a19a82bd31ba731763f6a726791ed8c5618e9c30c6fd72c6217b5c52d9770f"
+      }
+    },
+    {
+      "record_id": "debafc234b464c8aafd642332a5a1c6f",
+      "sequence": 22,
+      "unit_id": "chapter-000009",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "edbb26f250a2d3d7859204c1312eaf8e42072f148855a5fc283a60be46eb0cd1",
+      "translation_sha256": "9630e7fafe65e137bb1f406a9e698b2e229c462893117b2e469b8d08c78777d3",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-72c2b5bf",
+      "reviewed_at": "2026-11-16T10:44:05Z",
+      "state_revision": "8d9b29d880ffafb73edfe9276e9fcd1e864ae70fbdc6af828f10a01d1b79d10d",
+      "review_commit": "c9d2c84ab238832a523b06940e3ce19808a268f2",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "referent-1",
+            "category": "referent",
+            "severity": "minor",
+            "detail": "The source does not specify the receptionist’s gender, but «администраторшей» explicitly makes the person female. Use a rendering that does not add this information.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Yesterday, he spoke with the nice receptionist for forty minutes before Fernando came to “pick him up” and took him home.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Вчера он сорок минут болтал с милой администраторшей, пока Фернандо не пришёл «забрать его» и не отвёз домой.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "structure-1",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "The source italicizes “darling,” but the translation opens an italic span before «дорогой» and does not close it. Restore the intended emphasis with a closing marker.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "better notice me late than never, *darling*,” Esteban snakes his hand around Lance’s waist, pulling him closer.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "лучше поздно обратить на меня внимание, чем никогда, *дорогой», — Эстебан обвивает рукой талию Лэнса",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "structure-2",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "The source italicizes only “tune in.” The translation extends italics across the rest of the clause and leaves the italic span unclosed. Limit emphasis to the corresponding phrase and close the marker.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "hope you continue to *tune in* to our regular show called **formula one age gap yaoi**.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "надеюсь, вы и дальше будете *следить за нашим регулярным шоу под названием **yaoi про Формулу-1 и разницу в возрасте**.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Чем вы и так уже, блядь, есть» is an awkward calque in Russian. Recast the comparison naturally while preserving the teasing, emphatic tone, for example: «чем вы и так уже, блядь, невыносимы».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "and you better finally fuck the guy, or you’ll both be even more insufferable than you already fucking are.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "И тебе лучше наконец трахнуть этого парня, а то вы оба станете ещё невыносимее, чем вы и так уже, блядь, есть",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       },
