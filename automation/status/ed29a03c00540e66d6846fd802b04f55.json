@@ -3,14 +3,14 @@
   "job_id": "ed29a03c00540e66d6846fd802b04f55",
   "book_slug": "без-названия",
   "state": "running",
-  "phase": "model-call-reserved",
+  "phase": "review-chunk-staged",
   "failures": 0,
   "correction_rounds": {
     "chapter-000002": 1
   },
   "workflow_revision": "871e937b5d7075613c4e55c1ecfc07af700af8bc",
   "source_sha256": "1e94a92096552a75265f8c5e73562e8ad4d28bb8a8a28f1db25b4a4107e374cf",
-  "updated_at": "2026-11-16T09:55:12.946407+00:00",
+  "updated_at": "2026-11-16T09:57:29.446918+00:00",
   "active": {
     "role": "reviewer",
     "chapter": 2,
@@ -78,13 +78,20 @@
   "model_response_diagnostics": {
     "finish_reason": "stop",
     "response_format": "json_object",
-    "response_chars": 327,
+    "response_chars": 1471,
     "provider_refusal": false,
-    "prompt_tokens": 5434,
-    "completion_tokens": 1071,
-    "total_tokens": 6505,
+    "prompt_tokens": 13697,
+    "completion_tokens": 7395,
+    "total_tokens": 21092,
     "route": "primary",
-    "role": "corrector",
+    "role": "reviewer",
     "unit_id": "chapter-000002"
+  },
+  "review_chunk_progress": {
+    "unit_id": "chapter-000002",
+    "source_sha256": "7edd5f7d76d4a7d2f971e83a7096c061b9e1a51db15178224d7975fe39d0eb39",
+    "translation_sha256": "afa248a93d67b7022b3ff0d9c62457410d21f8f47a9cbad7499a05c3f94040bc",
+    "completed": 1,
+    "total": 7
   }
 }
