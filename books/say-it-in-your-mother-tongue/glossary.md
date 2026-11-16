@@ -13,3 +13,4 @@ Use this file for recurring names, places, organizations, terms, nicknames, titl
 | Esteban | Эстебан | person | Established personal name; apply Russian case as context requires. |
 | Alonso | Алонсо | surname | Attested in the source name Fernando Alonso; retain this spelling. |
 | cariño | cariño | term of address | Spanish endearment retained unchanged in the translation. |
+| Aston Martin | Астон Мартин | organization | The source names the factory; the translation uses this Russian rendering. |
