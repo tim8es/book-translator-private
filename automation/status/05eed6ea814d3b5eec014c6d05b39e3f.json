@@ -3,7 +3,7 @@
   "job_id": "05eed6ea814d3b5eec014c6d05b39e3f",
   "book_slug": "say-it-in-your-mother-tongue",
   "state": "running",
-  "phase": "model-call-reserved",
+  "phase": "structural-segments-staged",
   "failures": 0,
   "correction_rounds": {
     "chapter-000001": 1,
@@ -14,7 +14,7 @@
   },
   "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
   "source_sha256": "12e210ce5a95daf56a97ada583ec15c274780c4ddfa7fb92da6a88c67f7c403d",
-  "updated_at": "2026-11-16T09:43:58.352120+00:00",
+  "updated_at": "2026-11-16T09:44:49.639606+00:00",
   "active": {
     "role": "translator",
     "chapter": 6,
@@ -95,17 +95,17 @@
   "structural_segment_progress": {
     "unit_id": "chapter-000006",
     "source_sha256": "0cb62577b656d2c6519fb08c6ce7911594d3e738578d40339e341164c87d701e",
-    "completed": 72,
+    "completed": 94,
     "total": 104
   },
   "model_response_diagnostics": {
     "finish_reason": "stop",
     "response_format": "json_object",
-    "response_chars": 1133,
+    "response_chars": 4244,
     "provider_refusal": false,
-    "prompt_tokens": 5616,
-    "completion_tokens": 1380,
-    "total_tokens": 6996,
+    "prompt_tokens": 6356,
+    "completion_tokens": 2701,
+    "total_tokens": 9057,
     "route": "primary",
     "role": "translator",
     "unit_id": "chapter-000006"
