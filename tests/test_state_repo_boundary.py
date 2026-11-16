@@ -75,6 +75,7 @@ class StateOnlyDeploymentTests(unittest.TestCase):
         self.assertIn("scripts/chat_ops_discover.py", chat)
         self.assertIn("scripts/chat_ops_bridge.py", chat)
         self.assertIn("Wake Auto after a durable ChatOps handoff", chat)
+        self.assertIn("working-directory: books-repo", chat)
         self.assertIn("gh workflow run auto-translate.yml --ref main", chat)
         self.assertIn("actions: write", chat)
         self.assertIn("group: book-operation-", chat)
