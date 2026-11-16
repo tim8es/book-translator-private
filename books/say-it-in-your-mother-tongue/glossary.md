@@ -11,3 +11,5 @@ Use this file for recurring names, places, organizations, terms, nicknames, titl
 | Nico | Нико | person | Established personal name; apply Russian syntax in context. |
 | Gabriel | Габриэль | person | Established spelling; inflected forms include Габриэля and Габриэлю; do not confuse inflection with a spelling conflict. |
 | Esteban | Эстебан | person | Established personal name; apply Russian case as context requires. |
+| Alonso | Алонсо | surname | Attested in the source name Fernando Alonso; retain this spelling. |
+| cariño | cariño | term of address | Spanish endearment retained unchanged in the translation. |
