@@ -2,15 +2,15 @@
   "schema_version": 1,
   "job_id": "ed29a03c00540e66d6846fd802b04f55",
   "book_slug": "без-названия",
-  "state": "blocked",
-  "phase": "operator-intervention-required",
-  "failures": 3,
+  "state": "running",
+  "phase": "operator-resume-authorized",
+  "failures": 0,
   "correction_rounds": {
     "chapter-000002": 3
   },
   "workflow_revision": "871e937b5d7075613c4e55c1ecfc07af700af8bc",
   "source_sha256": "1e94a92096552a75265f8c5e73562e8ad4d28bb8a8a28f1db25b4a4107e374cf",
-  "updated_at": "2026-11-16T13:32:03.761133+00:00",
+  "updated_at": "2026-11-16T14:22:32.165965+00:00",
   "active": {
     "role": "reviewer",
     "chapter": 2,
@@ -47,6 +47,12 @@
       "action": "resume-model-blocked",
       "approved_at": "2026-11-15T22:27:24.756937+00:00",
       "previous_error": "chapter exceeds safe single-context limit; bounded chunking required"
+    },
+    {
+      "action": "resume-interrupted-claim",
+      "approved_at": "2026-11-16T14:22:32.165952+00:00",
+      "previous_error": "JobError: failed-correction deferral requires current reviewer evidence",
+      "session_id": "auto-ed29a03c0054-reviewer-22ac2b70"
     }
   ],
   "structural_helper_revision": "4c584fe5534871cd05aa851d9b7bdbfa696d0edd",
@@ -99,6 +105,6 @@
     "role": "reviewer",
     "unit_id": "chapter-000002"
   },
-  "last_error": "JobError: failed-correction deferral requires current reviewer evidence",
+  "last_error": null,
   "recovery_note": "A claim may still be active; inspect canonical state before recovery"
 }
