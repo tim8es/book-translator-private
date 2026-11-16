@@ -3,14 +3,14 @@
   "job_id": "ed29a03c00540e66d6846fd802b04f55",
   "book_slug": "без-названия",
   "state": "running",
-  "phase": "model-call-reserved",
+  "phase": "review-chunk-staged",
   "failures": 1,
   "correction_rounds": {
     "chapter-000002": 2
   },
   "workflow_revision": "871e937b5d7075613c4e55c1ecfc07af700af8bc",
   "source_sha256": "1e94a92096552a75265f8c5e73562e8ad4d28bb8a8a28f1db25b4a4107e374cf",
-  "updated_at": "2026-11-16T12:22:39.626876+00:00",
+  "updated_at": "2026-11-16T12:24:00.872927+00:00",
   "active": {
     "role": "reviewer",
     "chapter": 2,
@@ -79,17 +79,17 @@
     "unit_id": "chapter-000002",
     "source_sha256": "7edd5f7d76d4a7d2f971e83a7096c061b9e1a51db15178224d7975fe39d0eb39",
     "translation_sha256": "41aefbeb467f08fbecb5182fecc06d7abed147e525f06abd26ffa50a26b96b4b",
-    "completed": 2,
+    "completed": 3,
     "total": 7
   },
   "model_response_diagnostics": {
     "finish_reason": "stop",
     "response_format": "json_object",
-    "response_chars": 2394,
+    "response_chars": 991,
     "provider_refusal": false,
-    "prompt_tokens": 15222,
-    "completion_tokens": 8448,
-    "total_tokens": 23670,
+    "prompt_tokens": 14988,
+    "completion_tokens": 4270,
+    "total_tokens": 19258,
     "route": "primary",
     "role": "reviewer",
     "unit_id": "chapter-000002"

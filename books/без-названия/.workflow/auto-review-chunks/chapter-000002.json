@@ -284,6 +284,40 @@
       },
       "style": [],
       "glossary": []
+    },
+    "chunk-003": {
+      "outcome": "CORRECTIONS_REQUIRED",
+      "report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "exit-timing",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The source places Ilya halfway out of the room by the time Hollander finishes speaking. The translation instead has Ilya already leaving before Hollander has finished, and omits the specific halfway-out detail. Please restore the source's timing and position.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "He’s already halfway out of the room by the time Hollander finishes his sentence.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Холландер ещё не успевает закончить фразу, а Илья уже выходит из комнаты.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "style": [],
+      "glossary": []
     }
   }
 }
