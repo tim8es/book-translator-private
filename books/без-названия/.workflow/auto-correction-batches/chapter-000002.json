@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "unit_id": "chapter-000002",
+  "review_record_id": "fb0d8fa88189414983eb5026bab356f8",
+  "source_sha256": "7edd5f7d76d4a7d2f971e83a7096c061b9e1a51db15178224d7975fe39d0eb39",
+  "translation_sha256": "41aefbeb467f08fbecb5182fecc06d7abed147e525f06abd26ffa50a26b96b4b",
+  "workflow_revision": "871e937b5d7075613c4e55c1ecfc07af700af8bc",
+  "patches": [
+    {
+      "finding_id": "chunk-001-twin-brain",
+      "operation": "replace",
+      "target_anchor": {
+        "quote": "отца и его мозг-близнец, тоже сломанный.",
+        "occurrence": 0
+      },
+      "replacement": "отца и его близнеца со сломанным мозгом."
+    },
+    {
+      "finding_id": "chunk-001-shaky-english",
+      "operation": "replace",
+      "target_anchor": {
+        "quote": "не обращая внимания на то, как неуверенно звучит его английский.",
+        "occurrence": 0
+      },
+      "replacement": "несмотря на свой неуверенный английский."
+    },
+    {
+      "finding_id": "chunk-002-unsteady-step",
+      "operation": "replace",
+      "target_anchor": {
+        "quote": "Холландер прочищает горло и неловко отступает.",
+        "occurrence": 0
+      },
+      "replacement": "Холландер прочищает горло и, пошатываясь, отступает."
+    }
+  ],
+  "glossary": [],
+  "style_guide": []
+}
