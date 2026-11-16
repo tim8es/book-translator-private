@@ -195,6 +195,74 @@
         ]
       },
       "style": []
+    },
+    "chunk-002": {
+      "outcome": "CORRECTIONS_REQUIRED",
+      "report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "creepy-fix",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Resolved: the current translation uses the clearer construction «Может, это и жутковато — молча стоять и смотреть, как он бежит, но Илье как-то всё равно».",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Maybe it’s creepy to stand silently and watch him run, but Ilya can’t really bring himself to care.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Может, это и жутковато — молча стоять и смотреть, как он бежит, но Илье как-то всё равно.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "f310b004ae9949cd91ed65ccca254e2d",
+              "finding_id": "chunk-002-creepy-syntax"
+            }
+          },
+          {
+            "id": "photo-add",
+            "category": "addition",
+            "severity": "minor",
+            "detail": "The source says the picture is closest to the bed but does not say it hangs there. Remove «которая висит»; also, «сияющий Илье» is awkward—consider «Холландер в костюме, сияющий, глядя на Илью».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "He stares at the picture closest to the bed: Hollander in a suit and beaming at Ilya, who looks happier than he thought possible.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Он смотрит на фотографию, которая висит ближе всего к кровати: Холландер в костюме, сияющий Илье, а сам Илья выглядит счастливее, чем считал возможным.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "got-to-nuance",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The source’s «got to» conveys that this Ilya had the chance or privilege of these experiences; the translation states only that they happened. Consider «Этому Илье довелось трахать его, обнимать, быть рядом с ним».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "This Ilya got to fuck him, to hold him, to stay with him.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Этот Илья трахал его, обнимал, оставался с ним.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "style": []
     }
   }
 }
