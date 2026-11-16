@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 12,
+  "next_sequence": 13,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -1125,6 +1125,147 @@
             },
             "translation_anchor": {
               "quote": "но он всё ещё видит, как с течением времени снаружи становятся всё полнее лужи.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "f02e6becb2861881659733c55614d24b49ee0a6906fa607fb2db0ceb6b8d35ad",
+        "style_guide": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4"
+      }
+    },
+    {
+      "record_id": "069c204ae2424155a617491969fd606f",
+      "sequence": 12,
+      "unit_id": "chapter-000004",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "8f1ed2ca1a8dc1f0a29b8cc33b9d784f7f39a4881ba1d775eb73db0642fc0ade",
+      "translation_sha256": "731a6aba5707ef39fea8dd53cda23d2e2e15f3237008aaa2150c160923d67f0a",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-cb27fc43",
+      "reviewed_at": "2026-11-16T09:28:21Z",
+      "state_revision": "a95fa2044f735df8f715b2b893e703a9dc9ddf21b31fa61634fffa028bfd87b0",
+      "review_commit": "9c99ba0b678198d4cc5cf2d01643d3190dda1c8c",
+      "correction_round": 4,
+      "supersedes_record_id": "574880d3bc98408c8ff14460916b7ca3",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "structure-1-recheck",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "Resolved: this inline utterance now uses quotation marks, consistent with the surrounding quoted dialogue.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "*Cariño*, you know we’re still friends, right? Even if no longer teammates.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«*Cariño*, ты же знаешь, что мы всё ещё друзья, да? Даже если больше не напарники».",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "574880d3bc98408c8ff14460916b7ca3",
+              "finding_id": "structure-1-followup"
+            }
+          },
+          {
+            "id": "structure-2-recheck",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "The source's emphasis is still not fully preserved: «картошка» and the quoted phrase and phonetic rendering are not italicized here; «фыркать да пыхтеть» is also unitalicized in the later dialogue. Preserve the corresponding emphasis.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“Yeah, tomato, *potato*,” Max jokes, butchering the phrase ‘*tomato, tomato*’ (*to-may-to, to-mah-to*) on purpose.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Ну да, помидор, картошка», — шутит Макс, нарочно коверкая выражение «tomato, tomato» («то-мэй-тоу, то-ма-тоу»).",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "574880d3bc98408c8ff14460916b7ca3",
+              "finding_id": "structure-2-followup"
+            }
+          },
+          {
+            "id": "omission-1-recheck",
+            "category": "omission",
+            "severity": "minor",
+            "detail": "Resolved: the translation now includes Nico scratching his head and looking at the printed data.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "He scratches his head, making eye contact with the printed data.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Он чешет голову, встречаясь взглядом с распечатанными данными.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "574880d3bc98408c8ff14460916b7ca3",
+              "finding_id": "omission-1-followup"
+            }
+          },
+          {
+            "id": "style-1-recheck",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Resolved: «в лужах снаружи с каждой минутой прибывает вода» is a natural rendering of the accumulating water.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "but he can still see how the puddles outside get fuller as more time passes.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "но он всё ещё видит, как в лужах снаружи с каждой минутой прибывает вода.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "574880d3bc98408c8ff14460916b7ca3",
+              "finding_id": "style-1"
+            }
+          },
+          {
+            "id": "style-1-new",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Из глаз у него выкатывается несколько слезинок» is an awkward calque. Use a natural equivalent such as «у него выступает несколько слезинок».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Few tears escape his eyes as he does so.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "При этом из глаз у него выкатывается несколько слезинок.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "structure-3-new",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "Inline dialogue switches from quotation marks to em dashes here and in the following dialogue, despite using quotation marks elsewhere in the passage. Use a consistent format for inline speech.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“What?” he asks, not really expecting Max to repeat himself.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "— Что? — спрашивает он, особо не надеясь, что Макс повторит.",
               "occurrence": 0
             },
             "resolves": null
