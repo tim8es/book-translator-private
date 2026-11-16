@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 7,
+  "next_sequence": 8,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -623,6 +623,112 @@
             },
             "translation_anchor": {
               "quote": "этот взгляд одновременно похож и на занятия любовью, и на драку на кулаках.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "f02e6becb2861881659733c55614d24b49ee0a6906fa607fb2db0ceb6b8d35ad",
+        "style_guide": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4"
+      }
+    },
+    {
+      "record_id": "c8b05c171b634ea5a30eb814096afc13",
+      "sequence": 7,
+      "unit_id": "chapter-000003",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "5dcc58cd47d278abb51a9f145923138455d94915ee7fada8e29237a0ff506e1a",
+      "translation_sha256": "4dc9e843a1967b59448d8a02033ee8643747b4a0829d7ff672b3e7329b4422fd",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-ad8da94e",
+      "reviewed_at": "2026-11-16T09:02:29Z",
+      "state_revision": "5b8a97251a71931de302c800138252ed6a8daf82635e9053dbbedc40c4d7834f",
+      "review_commit": "50c4b4ca7d0c33f7c15cd216f0f577a0535a2cd4",
+      "correction_round": 3,
+      "supersedes_record_id": "bd37f3aa859a4172a6b5d507102019b6",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-mouthy-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Resolved: «так дерзил» preserves the cheeky or insolent implication of “mouthy.”",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "You were so mouthy before, and now? Quiet as a mouse.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "А раньше ты так дерзил, а теперь? Тихий, как мышка.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "bd37f3aa859a4172a6b5d507102019b6",
+              "finding_id": "meaning-mouthy-1"
+            }
+          },
+          {
+            "id": "recheck-fragment-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Resolved: «а Лэнс запинается» connects the interrupted speech naturally in Russian while retaining his hesitation.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "The space between them is filled with electricity and warmth, and Lance’s, “I, *uh*, I —”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Пространство между ними наполнено электричеством и теплом, а Лэнс запинается: — Я, *э-э*, я…",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "bd37f3aa859a4172a6b5d507102019b6",
+              "finding_id": "style-fragment-1"
+            }
+          },
+          {
+            "id": "recheck-calque-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Resolved: «кулачную драку» is a natural rendering here and preserves the contrast with «занятиями любовью».",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "holding eye contact that feels like love making and fist fighting at the same time.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "не отводя глаз; этот взгляд одновременно похож и на занятия любовью, и на кулачную драку.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "bd37f3aa859a4172a6b5d507102019b6",
+              "finding_id": "style-calque-1"
+            }
+          },
+          {
+            "id": "style-phone-call-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The phrase «прервавший его попытку признаться ... телефонный разговор» is awkwardly constructed. Recast for clarity, for example: «ждёт, пока отец закончит телефонный разговор, прервавший его попытку признаться в своей бисексуальности».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "waiting for him to hang up the call that interrupted his attempt as coming out as bisexual.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "ждёт, пока тот закончит прервавший его попытку признаться в своей бисексуальности телефонный разговор.",
               "occurrence": 0
             },
             "resolves": null
