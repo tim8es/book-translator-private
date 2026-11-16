@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 68,
+  "next_sequence": 69,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -6756,6 +6756,100 @@
       },
       "shared_state_revisions": {
         "glossary": "2844b82cd4039744f7d8de76b1edbf4ec3c12e691ea8a38ac00719fd261842e5",
+        "style_guide": "9aa29b7a57a8e19df8d8c06ea387e12df497cb4953714bfae17739cebb2b81c1"
+      }
+    },
+    {
+      "record_id": "d961ed4d11d346c19a512fcb9659267b",
+      "sequence": 68,
+      "unit_id": "chapter-000024",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "a43d17801a7275e6999807c989999f4abecdee321e861457d37994c1e3daa979",
+      "translation_sha256": "7ef96ae39ab56095f25c6b03ac4a475cf86758a002667163ca961dbcf17a0085",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-a907c055",
+      "reviewed_at": "2026-11-16T20:58:14Z",
+      "state_revision": "80900106ad0f7449803626c1df43e226affc0f1e6c2188b470602af5f532ba1c",
+      "review_commit": "b4e0072bd1182902009316e71568b684071e7382",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "omission-1",
+            "category": "omission",
+            "severity": "minor",
+            "detail": "The source includes Max's repeated insistence, “I sleep here.”, after he shakes his head. This sentence is missing from the translation; restore it.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“*Nee,*” Max shakes his head — as much as the pillow allows him to do so. “I sleep here.”",
+              "occurrence": 0
+            },
+            "translation_anchor": null,
+            "resolves": null
+          },
+          {
+            "id": "meaning-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "“Hard” makes the innuendo specifically about an erection. «Возбудиться» is less physically specific; preserve the explicit physical joke in Russian.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "*While sharing bed with me might only make* me *hard. No reason to fear that.*",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "*А вот если спать со мной в одной кровати, возбудиться могу разве что* я. *Бояться нечего.*",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-2",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The source says the towel is wrapped around his waist. «Оборачивает бёдра» changes the location; use «талию» or another equivalent for “waist.”",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "one to wrap around his waist, the other to rub around in his hair.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "одним оборачивает бёдра, другим растирает волосы",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "terminology-1",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "“Sebatian” appears to be a source typo for Sebastian, who is named elsewhere in this unit. The translation mirrors the typo as «Себатиан», creating an inconsistent spelling of the name; use the established «Себастьян».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Sebatian",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Себатиан",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "73e38022ddf12bd5178e538d958adb319027d1c6d6d04ad1f5416e91ffcbf18b",
         "style_guide": "9aa29b7a57a8e19df8d8c06ea387e12df497cb4953714bfae17739cebb2b81c1"
       }
     }
