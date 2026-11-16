@@ -3,7 +3,7 @@
   "job_id": "05eed6ea814d3b5eec014c6d05b39e3f",
   "book_slug": "say-it-in-your-mother-tongue",
   "state": "running",
-  "phase": "structural-segments-staged",
+  "phase": "translator-completed",
   "failures": 0,
   "correction_rounds": {
     "chapter-000001": 1,
@@ -12,13 +12,8 @@
   },
   "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
   "source_sha256": "12e210ce5a95daf56a97ada583ec15c274780c4ddfa7fb92da6a88c67f7c403d",
-  "updated_at": "2026-11-16T09:10:50.515378+00:00",
-  "active": {
-    "role": "translator",
-    "chapter": 4,
-    "session_id": "auto-05eed6ea814d-translator-8738f21c",
-    "unit_id": "chapter-000004"
-  },
+  "updated_at": "2026-11-16T09:10:53.115423+00:00",
+  "active": null,
   "recoveries": [
     {
       "action": "auto-retry-corrected-structural-preflight",
@@ -89,13 +84,6 @@
     }
   ],
   "memory_style_saved": 0,
-  "provider_model_route": "primary",
-  "structural_segment_progress": {
-    "unit_id": "chapter-000004",
-    "source_sha256": "8f1ed2ca1a8dc1f0a29b8cc33b9d784f7f39a4881ba1d775eb73db0642fc0ade",
-    "completed": 49,
-    "total": 49
-  },
   "model_response_diagnostics": {
     "finish_reason": "stop",
     "response_format": "json_object",
