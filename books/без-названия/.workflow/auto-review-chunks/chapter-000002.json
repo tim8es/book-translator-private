@@ -539,6 +539,129 @@
       },
       "style": [],
       "glossary": []
+    },
+    "chunk-007": {
+      "outcome": "CORRECTIONS_REQUIRED",
+      "report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "orgasm-recheck",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The wording has been repaired: «бурно» conveys the source’s intensity naturally, and «тело его выгибается от наслаждения» preserves the pleasure without suggesting pain.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "And he does, spectacularly, clenching tight around Ilya as his body contorts with pleasure.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "И кончает бурно, судорожно сжимаясь вокруг Ильи; тело его выгибается от наслаждения.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "f310b004ae9949cd91ed65ccca254e2d",
+              "finding_id": "chunk-007-orgasm-wording"
+            }
+          },
+          {
+            "id": "mess-recheck",
+            "category": "register",
+            "severity": "minor",
+            "detail": "The current lexical fragment «липкой жидкости» avoids the disgust-laden register of «грязь», resolving that specific register concern. The surrounding sentence is still corrupted and incomplete; that is reported separately.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Ilya’s honestly surprised Shane hasn’t made a fuss about the mess gluing them together, but he’s not about to voice it.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "липкой жидкости",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "f310b004ae9949cd91ed65ccca254e2d",
+              "finding_id": "chunk-007-mess-register"
+            }
+          },
+          {
+            "id": "tears-recheck",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«У него наворачиваются слёзы» is a natural rendering of the source’s teary eyes, resolving the earlier wording concern. The surrounding sentence is malformed and omits «Hush»; that is reported separately.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "“Hush,” Ilya tells him, eyes getting teary.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "у него наворачиваются слёзы",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "f310b004ae9949cd91ed65ccca254e2d",
+              "finding_id": "chunk-007-teary-eyes"
+            }
+          },
+          {
+            "id": "mess-omission",
+            "category": "omission",
+            "severity": "major",
+            "detail": "The source sentence that Ilya is surprised Shane has not complained about the mess, and will not say so aloud, is not meaningfully translated. The target has the fragment «липкой жидкости» between otherwise separate sentences, leaving the passage corrupted. Restore the complete source meaning in a grammatical sentence.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Ilya’s honestly surprised Shane hasn’t made a fuss about the mess gluing them together, but he’s not about to voice it.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Потом они лежали друг на друге, потная кожа липла. липкой жидкости Он хочет как можно дольше держать Шейна в объятиях.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "hands-referent",
+            "category": "referent",
+            "severity": "minor",
+            "detail": "The Russian participle «удерживая» attaches most naturally to Shane, making it sound as though Shane is holding his own hips in place. In the source, Ilya’s hands keep Shane’s hips in place. Make the actor clear.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "his hands keeping his hips in place.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Он упивается тем, как Шейн ахает, удерживая его бёдра руками на месте.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "hush-omission",
+            "category": "omission",
+            "severity": "minor",
+            "detail": "Ilya’s spoken «Hush» has no Russian equivalent. The remaining tears phrase is also run directly into the next sentence without punctuation or attribution. Restore the dialogue and integrate the tears phrase grammatically.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“Hush,” Ilya tells him, eyes getting teary.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "у него наворачиваются слёзы До сих пор не верится, что Шейн так сильно его любит.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "style": [],
+      "glossary": []
     }
   }
 }
