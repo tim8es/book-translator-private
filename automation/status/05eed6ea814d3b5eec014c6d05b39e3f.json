@@ -3,13 +3,18 @@
   "job_id": "05eed6ea814d3b5eec014c6d05b39e3f",
   "book_slug": "say-it-in-your-mother-tongue",
   "state": "running",
-  "phase": "operator-resume-authorized",
+  "phase": "claimed",
   "failures": 0,
   "correction_rounds": {},
   "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
   "source_sha256": "12e210ce5a95daf56a97ada583ec15c274780c4ddfa7fb92da6a88c67f7c403d",
-  "updated_at": "2026-11-16T08:27:33.093175+00:00",
-  "active": null,
+  "updated_at": "2026-11-16T08:27:35.304142+00:00",
+  "active": {
+    "role": "corrector",
+    "chapter": 1,
+    "session_id": "auto-05eed6ea814d-corrector-d63a6b0c",
+    "unit_id": "chapter-000001"
+  },
   "recoveries": [
     {
       "action": "auto-retry-corrected-structural-preflight",
@@ -68,7 +73,6 @@
     "role": "corrector",
     "unit_id": "chapter-000001"
   },
-  "last_error": null,
   "protected_correction_retries": 1,
   "protected_correction_review_record": "175981a73412449d9d1b40a875c9e343"
 }
