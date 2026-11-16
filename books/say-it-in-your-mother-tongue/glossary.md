@@ -17,3 +17,5 @@ Use this file for recurring names, places, organizations, terms, nicknames, titl
 | Seb Vettel | Себ Феттель | person | Name attested in the supplied source excerpt; retain this Russian spelling. |
 | Lawrence | Лоуренс | person | Use Лоуренс; inflect according to Russian grammar. |
 | Gary | Гэри | person | Use Гэри; inflect according to Russian grammar. |
+| Mark | Марк | person | Name appears in the supplied excerpts; inflect according to Russian grammar. |
+| Lewis | Льюис | person | Name appears in the supplied block 83 context. |
