@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 54,
+  "next_sequence": 55,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -5243,6 +5243,103 @@
       },
       "shared_state_revisions": {
         "glossary": "9f2bbcee79618db24af6a70e901a69e893644031068a9f80c696fa9378056639",
+        "style_guide": "9aa29b7a57a8e19df8d8c06ea387e12df497cb4953714bfae17739cebb2b81c1"
+      }
+    },
+    {
+      "record_id": "00267041a98c46a083b1e17a2b684385",
+      "sequence": 54,
+      "unit_id": "chapter-000019",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "f4cb1f90490d850a545d158519b3af5c25101e70c3c0b1b2d86ca9d3ac60fc42",
+      "translation_sha256": "42520bc3beb801660b621080df676a748bc480e181d4c2438f1f0dc9f96bfcce",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-30593368",
+      "reviewed_at": "2026-11-16T18:22:03Z",
+      "state_revision": "12a53220a449354a71c39b9d2086b81e7ea1fe7da5a6f3443c69831c174f4fc5",
+      "review_commit": "27bbb7759667034d858010c3c54037ecb9e22343",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "meaning-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "“Mentally” refers to psychological or mental well-being; «морально» can instead suggest morale or moral character. Consider «в психологическом плане» or another rendering that preserves the mental-health sense.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Like mentally, I mean…",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "В смысле, морально…",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The source switches into German here, but the translation renders the word in Russian, unlike the nearby retained German «Ja» and other German phrases. Retaining «Nein» would preserve the code-switch and make the treatment more consistent.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Nein.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Нет.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-2",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Говорит он в общее пространство» reads as a literal calque in Russian. A more natural rendering could convey that he speaks to the room or addresses Gabriel.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "he says into the shared space",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "говорит он в общее пространство",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-3",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Товарищ по команде» sounds stiffer than the conversational «напарник» already used for the same source term earlier in the unit. Consider «Ты мой напарник» to keep the dialogue natural and consistent.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "You are my teammate",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Ты мой товарищ по команде",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "b414ef45af3b5d537fdc3e282c909cf7d84690b99e1a12b05929ac57f0462bc0",
         "style_guide": "9aa29b7a57a8e19df8d8c06ea387e12df497cb4953714bfae17739cebb2b81c1"
       }
     }
