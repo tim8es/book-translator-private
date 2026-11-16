@@ -3,7 +3,7 @@
   "job_id": "05eed6ea814d3b5eec014c6d05b39e3f",
   "book_slug": "say-it-in-your-mother-tongue",
   "state": "running",
-  "phase": "model-call-reserved",
+  "phase": "reviewer-completed",
   "failures": 0,
   "correction_rounds": {
     "chapter-000001": 1,
@@ -25,13 +25,8 @@
   },
   "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
   "source_sha256": "12e210ce5a95daf56a97ada583ec15c274780c4ddfa7fb92da6a88c67f7c403d",
-  "updated_at": "2026-11-16T15:16:16.608184+00:00",
-  "active": {
-    "role": "reviewer",
-    "chapter": 16,
-    "session_id": "auto-05eed6ea814d-reviewer-b1610652",
-    "unit_id": "chapter-000016"
-  },
+  "updated_at": "2026-11-16T15:17:35.704663+00:00",
+  "active": null,
   "recoveries": [
     {
       "action": "auto-retry-corrected-structural-preflight",
@@ -114,13 +109,13 @@
   "model_response_diagnostics": {
     "finish_reason": "stop",
     "response_format": "json_object",
-    "response_chars": 120,
+    "response_chars": 3772,
     "provider_refusal": false,
-    "prompt_tokens": 5327,
-    "completion_tokens": 250,
-    "total_tokens": 5577,
+    "prompt_tokens": 10925,
+    "completion_tokens": 4188,
+    "total_tokens": 15113,
     "route": "primary",
-    "role": "corrector",
+    "role": "reviewer",
     "unit_id": "chapter-000016"
   }
 }
