@@ -12,6 +12,7 @@ on:
 
 permissions:
   contents: write
+  actions: write
 
 jobs:
   discover:
@@ -93,3 +94,13 @@ jobs:
             --engine books-repo/.public-auto-runtime \
             --book-slug "$BOOK_SLUG" \
             --max-requests 100
+
+      - name: Wake Auto after a durable ChatOps handoff
+        # Pushes authenticated with GITHUB_TOKEN do not trigger push workflows.
+        # workflow_dispatch is explicitly permitted and book selection performs
+        # a fresh durable read before any model call.
+        if: success()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: gh workflow run auto-translate.yml --ref main
