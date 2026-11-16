@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 9,
+  "next_sequence": 10,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -797,6 +797,103 @@
             },
             "translation_anchor": {
               "quote": "широко распахнув блестящие глаза.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "f02e6becb2861881659733c55614d24b49ee0a6906fa607fb2db0ceb6b8d35ad",
+        "style_guide": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4"
+      }
+    },
+    {
+      "record_id": "9edc4716275c4088b0bf9f6d7e6ea8d6",
+      "sequence": 9,
+      "unit_id": "chapter-000004",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "8f1ed2ca1a8dc1f0a29b8cc33b9d784f7f39a4881ba1d775eb73db0642fc0ade",
+      "translation_sha256": "2e469f43bfcd2ca52248de99d78a6aded2c7b248ba15f0782f3e1c74bdfe8507",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-d55646f6",
+      "reviewed_at": "2026-11-16T09:13:56Z",
+      "state_revision": "60457de27952a111d62814cf78f620585580848bafb6ec8ad5c5939937863ea2",
+      "review_commit": "238d6ad37f4d17bc3bfd517846fb3d1dadb7bc0f",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "style-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The chapter title’s «контрактом обязан» is awkward Russian and differs from the natural «по контракту я обязан» used in the chapter. Revise the title to preserve the source’s contractual phrasing naturally.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Chapter 2: contractually obligated to be fine",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Глава 2: контрактом обязан быть в порядке",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "structure-1",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "The source presents this inline utterance in quotation marks, but the translation switches to an em dash within the same paragraph. The same switch occurs in dialogue in blocks 42 and 44–49. Preserve the source’s dialogue formatting consistently.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Sighing, Checo lowers his gaze before making eye contact again. “And if you weren’t?”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Вздохнув, Чеко опускает взгляд, а потом снова встречается с ним глазами. — А если бы ты был не в порядке?",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-2",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Однократно кивает» is stiff and bureaucratic for the simple source action. Use a natural equivalent such as «кивает» or «кивает один раз».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“Of course,” Max nods once, putting on another picture perfect smile.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Конечно», — Макс однократно кивает, вновь натягивая идеальную улыбку.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "structure-2",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "The source emphasizes «anywhere but Gabriel» in italics, but the corresponding Russian phrase is unitalicized. Italic emphasis is also lost in several other passages, including «just because» (blocks 9–10), «really» (33), «huff and puff» (46), and «anything» (48). Preserve meaningful emphasis.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "He swallows loudly, tightening his grip of the telemetry, as he forces himself to look *anywhere but Gabriel*.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Он громко сглатывает, крепче сжимая распечатки телеметрии, и заставляет себя смотреть куда угодно, только не на Габриэля.",
               "occurrence": 0
             },
             "resolves": null
