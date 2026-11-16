@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 63,
+  "next_sequence": 64,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -6236,6 +6236,128 @@
             },
             "translation_anchor": {
               "quote": "«*Подожди», — выдыхает он дрожащим голосом.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "2844b82cd4039744f7d8de76b1edbf4ec3c12e691ea8a38ac00719fd261842e5",
+        "style_guide": "9aa29b7a57a8e19df8d8c06ea387e12df497cb4953714bfae17739cebb2b81c1"
+      }
+    },
+    {
+      "record_id": "ed6b45b3afab463aabce09c81470b81e",
+      "sequence": 63,
+      "unit_id": "chapter-000022",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "d9da3a32b0bbe334bb05882806ffeaec4856a2387f3d64f4112c339e903999b5",
+      "translation_sha256": "ec4493a8e48fad9ef609c748a0ecb7388da88d6246789c78fbe41df02b12e7ed",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-29e04ce5",
+      "reviewed_at": "2026-11-16T20:13:33Z",
+      "state_revision": "09843c8f4717607bc62d18abede81a9151028b7c9f67ff88ae0b34d3df20c293",
+      "review_commit": "84cbfae01541630929ed9631b53be35a0d0233ab",
+      "correction_round": 2,
+      "supersedes_record_id": "48d583fd46b1448a9d28705046ab2d34",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-omission-1",
+            "category": "omission",
+            "severity": "major",
+            "detail": "Resolved: the sentence about Fernando shaking his head and turning back to the stove is present in the current translation.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Fernando shakes his head, turning back to the stove.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Фернандо качает головой и снова поворачивается к плите.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "48d583fd46b1448a9d28705046ab2d34",
+              "finding_id": "omission-1"
+            }
+          },
+          {
+            "id": "recheck-structure-1",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "Resolved: the translation now preserves the italics on “Is good.” The Russian wording is natural, and the prior suggestion to retain some marked voice was optional.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "“*Is good*,” he says with full mouth.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«*Вкусно*», — говорит он с набитым ртом.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "48d583fd46b1448a9d28705046ab2d34",
+              "finding_id": "structure-1"
+            }
+          },
+          {
+            "id": "recheck-structure-2",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "Resolved: the emphasis markup around «Подожди,» is now properly closed.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "“*Wait,*” he breathes out, his voice shaky.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«*Подожди,*» — выдыхает он дрожащим голосом.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "48d583fd46b1448a9d28705046ab2d34",
+              "finding_id": "structure-2"
+            }
+          },
+          {
+            "id": "structure-1",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "The source's emphasis italics are omitted here and in several other places. Restore emphasis where present in the source, including *not* (block 6), *like this one!* (block 10), *no* (block 11), *fuck you* (block 20), *puppy eyes* (block 25), *towards heaven* (block 28), the first *can’t* (block 35), *baby* (blocks 43 and 47), and *I’m* (block 45).",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“You got a *little something* here,” he points out as he points to his own mouth",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«У тебя тут кое-что есть», — говорит он, указывая на собственный рот",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "In context, chocolate is smeared on the outside of Lance’s mouth. «По всему рту» can suggest that it is inside his mouth; use wording that clearly conveys the visible mess around/on his mouth.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "sees the chocolate all over his mouth.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "глядя на Лэнса с шоколадом по всему рту.",
               "occurrence": 0
             },
             "resolves": null
