@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 39,
+  "next_sequence": 40,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -3632,6 +3632,135 @@
               "record_id": "c4ed00d557674811b6b2dfae234dc5e1",
               "finding_id": "meaning-1"
             }
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "aa31cad1d18cdd785da1ac4d9199333ef6ef3f8b6d1a8213a62565f942ae4fff",
+        "style_guide": "92a19a82bd31ba731763f6a726791ed8c5618e9c30c6fd72c6217b5c52d9770f"
+      }
+    },
+    {
+      "record_id": "58fd1a7777af46bcbdec9816650b1769",
+      "sequence": 39,
+      "unit_id": "chapter-000014",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "4a0fcf754072626130f19f2f950fef4fe75364da3244b50f72d5670a04911462",
+      "translation_sha256": "7df525a1bf88cc07437378b5e2df5df0ecef4967e1df402add0ecdc0371b54ac",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-9388bbe8",
+      "reviewed_at": "2026-11-16T13:34:32Z",
+      "state_revision": "9b264d0c342887dd7421cc78d708820bbf0ed50f9cf5db935bf394005887e9bf",
+      "review_commit": "05830ecfb4574a1abf356846bf4d826aa3f00249",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "voice-1",
+            "category": "voice",
+            "severity": "minor",
+            "detail": "Checo’s deliberately non-native syntax in “No bad happened” is rendered as fully natural Russian. Preserve his marked speech pattern without making all his dialogue sound standard.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "No bad happened, okay?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Ничего плохого не случилось, ладно?",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-1",
+            "category": "addition",
+            "severity": "minor",
+            "detail": "The source says “romantic movie”; “романтическая комедия” narrows the genre and adds that it is a comedy. Use a rendering that does not specify comedy.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "elegance of quirky love interest from an early 00s romantic movie",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "элегантностью чудаковатого возлюбленного из романтической комедии начала нулевых",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "register-1",
+            "category": "register",
+            "severity": "minor",
+            "detail": "“Kid” carries an affectionate, age-marked nuance that is flattened to the more neutral “парень.” Preserve that nuance in Nico’s internal list.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "*This kid that I have feelings for.*",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "*Этот парень, к которому я что-то чувствую.*",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "“Дрожащим выдохом выпускает воздух” is redundant and unnatural in Russian. Rephrase to preserve the source’s shaky breath naturally.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Max lets out a shaky breath.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Макс дрожащим выдохом выпускает воздух.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-2",
+            "category": "style",
+            "severity": "minor",
+            "detail": "“Есть что-то безошибочно его” is a calque that sounds unnatural in Russian. Recast it while retaining the idea that the whole appearance is unmistakably characteristic of Gabriel.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "there is something undeniably *him* about all of it.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "но во всём этом есть что-то безошибочно его.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-3",
+            "category": "style",
+            "severity": "minor",
+            "detail": "“С яростью разъярённой” redundantly repeats the anger already conveyed by “разъярённой.” Rephrase without losing the intensity of Nico’s look.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "with the intensity of a pissed off *bayerische* grandma.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "с яростью разъярённой *баварской* бабушки.",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       },
