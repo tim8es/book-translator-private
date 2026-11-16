@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 59,
+  "next_sequence": 60,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -5741,6 +5741,169 @@
             },
             "translation_anchor": {
               "quote": "такое тёплое и готовое, и совершенно *не принадлежащее ему, чтобы прикасаться*",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "2844b82cd4039744f7d8de76b1edbf4ec3c12e691ea8a38ac00719fd261842e5",
+        "style_guide": "9aa29b7a57a8e19df8d8c06ea387e12df497cb4953714bfae17739cebb2b81c1"
+      }
+    },
+    {
+      "record_id": "8d831467344e4b579eecc8ea66ab69eb",
+      "sequence": 59,
+      "unit_id": "chapter-000021",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "c67fd840e78920d46f58e6abf12082998ff608f7aee82bbf19611eb0288a65be",
+      "translation_sha256": "3a9606803101185fe40069090b3a527c44448cfcf69229ab05e0d2a1af25e6ce",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-2dc7845a",
+      "reviewed_at": "2026-11-16T19:30:49Z",
+      "state_revision": "1f0e73cc93b22ac81faf79a529345e0acd236de90891895dd0cd2dffe85f19e3",
+      "review_commit": "9d4e05516bb5acab206d2e8095f320a0039052c6",
+      "correction_round": 2,
+      "supersedes_record_id": "f62c76206e924d989bde3e7fad439de9",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-meaning-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Resolved. «Не раньше, чем будешь готов» naturally conveys that Fernando will wait until Lance is ready.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Not now. Not until ready, okay?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Не сейчас. Не раньше, чем будешь готов, ладно?»",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "f62c76206e924d989bde3e7fad439de9",
+              "finding_id": "meaning-1"
+            }
+          },
+          {
+            "id": "recheck-style-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Resolved. «Тебе больно?» is natural and preserves the simple, gentle tone of the question.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Fernando doesn’t protest. He nods with a soft smile still on his lips, even if he doesn’t feel like smiling. “Yeah, let’s get you home,” he says gently. He holds out his hand, offering it to Lance. “Are you in pain?”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Фернандо не возражает. Он кивает, и на губах у него всё ещё играет мягкая улыбка, хотя улыбаться ему совсем не хочется. «Да, давай отвезу тебя домой», — мягко говорит он. Он протягивает Лэнсу руку. «Тебе больно?»",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "f62c76206e924d989bde3e7fad439de9",
+              "finding_id": "style-1"
+            }
+          },
+          {
+            "id": "recheck-style-2",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Resolved. «В их нынешней ситуации» is a natural recasting that retains the sense of familiarity in the situation they find themselves in.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "There is something familiar about the state they find themselves in.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "В их нынешней ситуации есть что-то знакомое.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "f62c76206e924d989bde3e7fad439de9",
+              "finding_id": "style-2"
+            }
+          },
+          {
+            "id": "recheck-meaning-2",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Resolved. «Непринуждённый» avoids the “carefree” implication of «беззаботный» and the sentence now clearly identifies the laugh as the healing sound.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "His laugh is soft, unguarded, a delicious sound healing something deep behind Checo’s ribs.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Его тихий, непринуждённый смех — восхитительный звук, исцеляющий что-то глубоко у Чеко за рёбрами.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "f62c76206e924d989bde3e7fad439de9",
+              "finding_id": "meaning-2"
+            }
+          },
+          {
+            "id": "recheck-style-3",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Resolved. The repeated «только» preserves the emphasis without the redundant «всего лишь *только*», and the interrupted final fragment remains.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "All it’d take is *just* moving his head, *just* surging up, *just* one decision to move to crash their lips together. All it’d take—",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Достаточно *только* двинуть головой, *только* податься вверх, *только* решиться двинуться — и их губы столкнулись бы. Достаточно—",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "f62c76206e924d989bde3e7fad439de9",
+              "finding_id": "style-3"
+            }
+          },
+          {
+            "id": "recheck-meaning-3",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Resolved as to the prior boundary issue: «не вправе прикасаться» clearly conveys that he is not entitled to touch the body. The current paragraph has a separate duplication and syntax problem, reported below.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "His breathing is fast, unsteady and shaky, when he sits back on his heels, letting go of Max — of the body *under* him, so warm and willing and entirely *not his to touch*.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "к которому он совершенно *не вправе прикасаться*",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "f62c76206e924d989bde3e7fad439de9",
+              "finding_id": "meaning-3"
+            }
+          },
+          {
+            "id": "structure-1",
+            "category": "structure",
+            "severity": "major",
+            "detail": "The current paragraph contains overlapping versions of the sentence: the opening action is duplicated, fragments are left dangling, and the closing phrase is duplicated. Rewrite the paragraph as one grammatical sentence while preserving the corrected meaning that he is not entitled to touch Max.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "His breathing is fast, unsteady and shaky, when he sits back on his heels, letting go of Max — of the body *under* him, so warm and willing and entirely *not his to touch*.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Когда он откидывается назад и садится на пятки, отпустив Макса — тело *под* ним, Когда он откидывается назад и садится на пятки",
               "occurrence": 0
             },
             "resolves": null
