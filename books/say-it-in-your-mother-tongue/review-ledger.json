@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 23,
+  "next_sequence": 24,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -2290,6 +2290,131 @@
             },
             "translation_anchor": {
               "quote": "И тебе лучше наконец трахнуть этого парня, а то вы оба станете ещё невыносимее, чем вы и так уже, блядь, есть",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "f02e6becb2861881659733c55614d24b49ee0a6906fa607fb2db0ceb6b8d35ad",
+        "style_guide": "92a19a82bd31ba731763f6a726791ed8c5618e9c30c6fd72c6217b5c52d9770f"
+      }
+    },
+    {
+      "record_id": "875a03df3eda4ed29f74c3fb424166b7",
+      "sequence": 23,
+      "unit_id": "chapter-000009",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "edbb26f250a2d3d7859204c1312eaf8e42072f148855a5fc283a60be46eb0cd1",
+      "translation_sha256": "eadbb90732a2d3538b4e313d858feca8073ddf1e9cd9fcbd0607bf26441186f9",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-c3672bab",
+      "reviewed_at": "2026-11-16T10:48:35Z",
+      "state_revision": "16747c9ad972a4fe35a8ee519c367088586278101553f504803dfa88df3903e5",
+      "review_commit": "3d589225f6b0a75966929423dbd4df635b8cc27a",
+      "correction_round": 2,
+      "supersedes_record_id": "debafc234b464c8aafd642332a5a1c6f",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "referent-recheck-1",
+            "category": "referent",
+            "severity": "minor",
+            "detail": "Resolved: «приятным человеком на стойке регистрации» avoids specifying the receptionist’s gender while retaining the setting.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Yesterday, he spoke with the nice receptionist for forty minutes before Fernando came to “pick him up” and took him home.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Вчера он сорок минут болтал с приятным человеком на стойке регистрации, пока Фернандо не пришёл «забрать его» и не отвёз домой.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "debafc234b464c8aafd642332a5a1c6f",
+              "finding_id": "referent-1"
+            }
+          },
+          {
+            "id": "structure-recheck-1",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "Resolved: the emphasis on «дорогой» is closed and does not extend into the following text.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "better notice me late than never, *darling*,” Esteban snakes his hand around Lance’s waist, pulling him closer.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "лучше поздно обратить на меня внимание, чем никогда, *дорогой*», — Эстебан обвивает рукой талию Лэнса и притягивает его к себе.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "debafc234b464c8aafd642332a5a1c6f",
+              "finding_id": "structure-1"
+            }
+          },
+          {
+            "id": "structure-recheck-2",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "Resolved: emphasis is limited to «следить», the Russian rendering of the italicized phrase, and is properly closed.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "hope you continue to *tune in* to our regular show called **formula one age gap yaoi**.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "надеюсь, вы и дальше будете *следить* за нашим регулярным шоу под названием **yaoi про Формулу-1 и разницу в возрасте**.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "debafc234b464c8aafd642332a5a1c6f",
+              "finding_id": "structure-2"
+            }
+          },
+          {
+            "id": "style-recheck-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Resolved: the comparison is now natural Russian and retains the teasing, emphatic tone.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "and you better finally fuck the guy, or you’ll both be even more insufferable than you already fucking are.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "И тебе лучше наконец трахнуть этого парня, а то вы оба станете ещё невыносимее, чем вы и так уже, блядь, невыносимы",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "debafc234b464c8aafd642332a5a1c6f",
+              "finding_id": "style-1"
+            }
+          },
+          {
+            "id": "structure-1",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "In the second phrase, the source emphasizes the temporal “yet,” but the translation italicizes «нет» instead of «пока». Move the emphasis to «пока» to preserve the source emphasis.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“*Yet*,” Esteban clarifies, “you mean you haven’t *yet*.”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«*Пока*, — уточняет Эстебан, — ты имеешь в виду, что пока ещё *нет*.»",
               "occurrence": 0
             },
             "resolves": null
