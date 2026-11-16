@@ -33,7 +33,7 @@
 Отношения:
 
 <!-- bt-block:000012 -->
-<!-- bt-inline:000001:start -->Фернандо Алонсо/Лэнс Стролл<!-- bt-inline:000001:end -->, <!-- bt-inline:000002:start -->Габриэль Бортолето/Нико Хюлькенберг<!-- bt-inline:000002:end -->, <!-- bt-inline:000003:start -->Sergio Pérez/Max Verstappen<!-- bt-inline:000003:end -->, <!-- bt-inline:000004:start -->Эстебан Окон и Лэнс Стролл<!-- bt-inline:000004:end -->, <!-- bt-inline:000005:start -->Нико Хюлькенберг и Себастьян Феттель<!-- bt-inline:000005:end -->, <!-- bt-inline:000006:start -->Fernando Alonso & Gabriel Bortoleto<!-- bt-inline:000006:end -->
+<!-- bt-inline:000001:start -->Фернандо Алонсо/Лэнс Стролл<!-- bt-inline:000001:end -->, <!-- bt-inline:000002:start -->Габриэль Бортолето/Нико Хюлькенберг<!-- bt-inline:000002:end -->, <!-- bt-inline:000003:start -->Серхио Перес/Макс Ферстаппен<!-- bt-inline:000003:end -->, <!-- bt-inline:000004:start -->Эстебан Окон и Лэнс Стролл<!-- bt-inline:000004:end -->, <!-- bt-inline:000005:start -->Нико Хюлькенберг и Себастьян Феттель<!-- bt-inline:000005:end -->, <!-- bt-inline:000006:start -->Фернандо Алонсо и Габриэль Бортолето<!-- bt-inline:000006:end -->
 
 <!-- bt-block:000013 -->
 Персонажи:
