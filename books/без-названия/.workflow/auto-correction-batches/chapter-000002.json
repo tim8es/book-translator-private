@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "unit_id": "chapter-000002",
+  "review_record_id": "1579089e40fb4fdc8c22155887b59908",
+  "source_sha256": "7edd5f7d76d4a7d2f971e83a7096c061b9e1a51db15178224d7975fe39d0eb39",
+  "translation_sha256": "afa248a93d67b7022b3ff0d9c62457410d21f8f47a9cbad7499a05c3f94040bc",
+  "workflow_revision": "871e937b5d7075613c4e55c1ecfc07af700af8bc",
+  "patches": [
+    {
+      "finding_id": "chunk-001-response-shift",
+      "operation": "replace",
+      "target_anchor": {
+        "quote": "он почти ничего не воспринимает.",
+        "occurrence": 0
+      },
+      "replacement": "он почти ни на что из этого не реагирует."
+    },
+    {
+      "finding_id": "chunk-002-photo-add",
+      "operation": "replace",
+      "target_anchor": {
+        "quote": "Он смотрит на фотографию, которая висит ближе всего к кровати: Холландер в костюме, сияющий Илье, а сам Илья выглядит счастливее, чем считал возможным.",
+        "occurrence": 0
+      },
+      "replacement": "Он смотрит на фотографию ближе всего к кровати: Холландер в костюме, сияющий, глядя на Илью, а сам Илья выглядит счастливее, чем считал возможным."
+    },
+    {
+      "finding_id": "chunk-002-got-to-nuance",
+      "operation": "replace",
+      "target_anchor": {
+        "quote": "Этот Илья трахал его, обнимал, оставался с ним.",
+        "occurrence": 0
+      },
+      "replacement": "Этому Илье довелось трахать его, обнимать, быть рядом с ним."
+    }
+  ],
+  "glossary": [],
+  "style_guide": []
+}
