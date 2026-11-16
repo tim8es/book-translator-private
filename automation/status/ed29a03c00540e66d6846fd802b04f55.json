@@ -3,21 +3,21 @@
   "job_id": "ed29a03c00540e66d6846fd802b04f55",
   "book_slug": "без-названия",
   "state": "running",
-  "phase": "review-chunk-staged",
+  "phase": "model-call-reserved",
   "failures": 1,
   "correction_rounds": {
     "chapter-000002": 1
   },
   "workflow_revision": "871e937b5d7075613c4e55c1ecfc07af700af8bc",
   "source_sha256": "1e94a92096552a75265f8c5e73562e8ad4d28bb8a8a28f1db25b4a4107e374cf",
-  "updated_at": "2026-11-16T11:50:16.248819+00:00",
+  "updated_at": "2026-11-16T11:50:47.627824+00:00",
   "active": {
     "role": "reviewer",
     "chapter": 2,
     "session_id": "auto-ed29a03c0054-reviewer-0fe559da",
     "unit_id": "chapter-000002"
   },
-  "model_calls_started": 49,
+  "model_calls_started": 50,
   "prompt_context": {
     "role": "reviewer",
     "workflow_revision": "871e937b5d7075613c4e55c1ecfc07af700af8bc",
@@ -29,11 +29,11 @@
     "glossary_sha256": "f02e6becb2861881659733c55614d24b49ee0a6906fa607fb2db0ceb6b8d35ad",
     "style_guide_sha256": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4",
     "system_chars": 26689,
-    "user_chars": 35326,
+    "user_chars": 35967,
     "review_context": "independent_session",
     "execution_mode": "bounded-review-chunks",
     "review_helper_revision": "review-chunks-v1",
-    "chunk_id": "chunk-003",
+    "chunk_id": "chunk-004",
     "chunk_count": 7
   },
   "memory_glossary_saved": 0,
