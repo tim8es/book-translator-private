@@ -141,6 +141,12 @@ jobs:
           OMNIROUTE_REVIEWER_FALLBACK_MODEL: ${{ vars.OMNIROUTE_REVIEWER_FALLBACK_MODEL }}
           OMNIROUTE_CORRECTOR_FALLBACK_MODEL: ${{ vars.OMNIROUTE_CORRECTOR_FALLBACK_MODEL }}
           OMNIROUTE_MODEL_CALL_LIMIT: ${{ vars.OMNIROUTE_MODEL_CALL_LIMIT }}
+          # Explicitly opt-in to experimental shared runtime paths.
+          # Existing and new books use the safe legacy behavior until enabled.
+          BOOK_TRANSLATOR_SEMANTIC_PREFLIGHT: ${{ vars.BOOK_TRANSLATOR_SEMANTIC_PREFLIGHT || 'off' }}
+          BOOK_TRANSLATOR_MARKER_ALIGNMENT: ${{ vars.BOOK_TRANSLATOR_MARKER_ALIGNMENT || 'off' }}
+          BOOK_TRANSLATOR_INCREMENTAL_REVIEW: ${{ vars.BOOK_TRANSLATOR_INCREMENTAL_REVIEW || 'off' }}
+          BOOK_TRANSLATOR_ADAPTIVE_BUDGET: ${{ vars.BOOK_TRANSLATOR_ADAPTIVE_BUDGET || 'off' }}
           JOB_ID: ${{ matrix.job_id }}
           RESUME_BLOCKED: ${{ inputs.resume_blocked }}
           RESUME_INTERRUPTED: ${{ inputs.resume_interrupted }}
