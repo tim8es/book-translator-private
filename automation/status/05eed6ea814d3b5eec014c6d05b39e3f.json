@@ -3,8 +3,8 @@
   "job_id": "05eed6ea814d3b5eec014c6d05b39e3f",
   "book_slug": "say-it-in-your-mother-tongue",
   "state": "running",
-  "phase": "model-call-reserved",
-  "failures": 2,
+  "phase": "model-unit-deferred",
+  "failures": 0,
   "correction_rounds": {
     "chapter-000001": 1,
     "chapter-000002": 1,
@@ -25,13 +25,8 @@
   },
   "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
   "source_sha256": "12e210ce5a95daf56a97ada583ec15c274780c4ddfa7fb92da6a88c67f7c403d",
-  "updated_at": "2026-11-16T17:27:19.462492+00:00",
-  "active": {
-    "role": "corrector",
-    "chapter": 17,
-    "session_id": "auto-05eed6ea814d-corrector-7c963476",
-    "unit_id": "chapter-000017"
-  },
+  "updated_at": "2026-11-16T17:27:30.779382+00:00",
+  "active": null,
   "recoveries": [
     {
       "action": "auto-retry-corrected-structural-preflight",
@@ -76,7 +71,7 @@
   "pending_style": [],
   "role_protocol_failures": {
     "chapter-000001:corrector": 3,
-    "chapter-000017:corrector": 2
+    "chapter-000017:corrector": 3
   },
   "correction_extensions": {},
   "protected_correction_retries": 1,
@@ -92,7 +87,7 @@
     "chapter-000001": 3,
     "chapter-000010": 2,
     "chapter-000012": 2,
-    "chapter-000017": 2
+    "chapter-000017": 3
   },
   "model_unit_deferral_audit": [
     {
@@ -101,6 +96,14 @@
       "translation_sha256": "d32b1b5fc31b9bc28f5125650e68d9e59be97394b9da596b7ce350d27e4a7e1b",
       "error_code": "protected_review_anchor",
       "at": "2026-11-16T08:38:30.695519+00:00",
+      "action": "canonical-defer-without-pass"
+    },
+    {
+      "unit_id": "chapter-000017",
+      "review_record_id": "bc5896b19d7d4a92acfdd64728c95769",
+      "translation_sha256": "450257c97e3f502c0a0a17bc80a48ec223ab034db15918c8b5feb8c4996afafe",
+      "error_code": "protected_review_anchor",
+      "at": "2026-11-16T17:27:30.779363+00:00",
       "action": "canonical-defer-without-pass"
     }
   ],
@@ -117,10 +120,11 @@
     "response_chars": 208,
     "provider_refusal": false,
     "prompt_tokens": 6082,
-    "completion_tokens": 260,
-    "total_tokens": 6342,
+    "completion_tokens": 190,
+    "total_tokens": 6272,
     "route": "primary",
     "role": "corrector",
     "unit_id": "chapter-000017"
-  }
+  },
+  "last_error": "reviewer-anchored corrections intersect protected EPUB markers"
 }
