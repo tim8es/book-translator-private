@@ -3,20 +3,15 @@
   "job_id": "ed29a03c00540e66d6846fd802b04f55",
   "book_slug": "без-названия",
   "state": "running",
-  "phase": "review-chunk-staged",
-  "failures": 2,
+  "phase": "reviewer-completed",
+  "failures": 0,
   "correction_rounds": {
     "chapter-000002": 1
   },
   "workflow_revision": "871e937b5d7075613c4e55c1ecfc07af700af8bc",
   "source_sha256": "1e94a92096552a75265f8c5e73562e8ad4d28bb8a8a28f1db25b4a4107e374cf",
-  "updated_at": "2026-11-16T12:06:47.664533+00:00",
-  "active": {
-    "role": "reviewer",
-    "chapter": 2,
-    "session_id": "auto-ed29a03c0054-reviewer-28a9d854",
-    "unit_id": "chapter-000002"
-  },
+  "updated_at": "2026-11-16T12:07:11.691501+00:00",
+  "active": null,
   "model_calls_started": 54,
   "prompt_context": {
     "role": "reviewer",
@@ -75,13 +70,6 @@
     }
   ],
   "correction_extensions": {},
-  "review_chunk_progress": {
-    "unit_id": "chapter-000002",
-    "source_sha256": "7edd5f7d76d4a7d2f971e83a7096c061b9e1a51db15178224d7975fe39d0eb39",
-    "translation_sha256": "afa248a93d67b7022b3ff0d9c62457410d21f8f47a9cbad7499a05c3f94040bc",
-    "completed": 7,
-    "total": 7
-  },
   "model_response_diagnostics": {
     "finish_reason": "stop",
     "response_format": "json_object",
