@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 15,
+  "next_sequence": 16,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -1516,6 +1516,71 @@
       "shared_state_revisions": {
         "glossary": "f02e6becb2861881659733c55614d24b49ee0a6906fa607fb2db0ceb6b8d35ad",
         "style_guide": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4"
+      }
+    },
+    {
+      "record_id": "00c39ad651af49cc8128a8e858a65b45",
+      "sequence": 15,
+      "unit_id": "chapter-000006",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "0cb62577b656d2c6519fb08c6ce7911594d3e738578d40339e341164c87d701e",
+      "translation_sha256": "28519548bdf15c4bc597f83f500ba512785759317d7e2f5912b974569f179625",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-500def3e",
+      "reviewed_at": "2026-11-16T09:49:06Z",
+      "state_revision": "910e3fca25a0862b3655a2abf5a29f635a32ceb129f4a7a182d1d14a523f1968",
+      "review_commit": "d24a27ea2db3a78b6c7d4520dd22726b2398602f",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "meaning-1",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "The source expresses Max's feeling that he is personally inadequate. «Меня никогда не хватает» suggests that there is never enough of him, shifting the sense of the pivotal question. Rephrase idiomatically in Russian to preserve the sense of never being good or enough.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“Why,” he breathes out, shakily, “am I *never* enough?”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Почему, — дрожащим голосом выдыхает он, — меня *никогда* не хватает?»",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Глаза Макса позволяют слезам пролиться» is an unnatural literal construction in Russian. Recast the clause naturally while preserving the image of comfort being enough—or perhaps too much—and the tears spilling onto his cheeks.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "It’s comforting — enough, or maybe *too much* — allowing Max’s eyes to let the tears spill onto his cheeks.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Это успокаивает — достаточно, а может, и *слишком сильно*, — и глаза Макса позволяют слезам пролиться на щёки.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "f02e6becb2861881659733c55614d24b49ee0a6906fa607fb2db0ceb6b8d35ad",
+        "style_guide": "92a19a82bd31ba731763f6a726791ed8c5618e9c30c6fd72c6217b5c52d9770f"
       }
     }
   ]
