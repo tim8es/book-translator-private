@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 49,
+  "next_sequence": 50,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -4812,6 +4812,90 @@
               "record_id": "8ce9f793b2434fe1aa70d5274f047503",
               "finding_id": "register-1"
             }
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "9f2bbcee79618db24af6a70e901a69e893644031068a9f80c696fa9378056639",
+        "style_guide": "92a19a82bd31ba731763f6a726791ed8c5618e9c30c6fd72c6217b5c52d9770f"
+      }
+    },
+    {
+      "record_id": "fe3e0570cce24684bdb5df3faf538265",
+      "sequence": 49,
+      "unit_id": "chapter-000016",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "2cdff11765ed4bb22a857a476affc19ad0a46422598f63261ae48160b3d0390a",
+      "translation_sha256": "3bcb127c73b818805f64d47d0473db8e44b563e776d04cc1a469e25674de1d2b",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-e0cd5ff9",
+      "reviewed_at": "2026-11-16T15:21:20Z",
+      "state_revision": "ad275be5e3e0cdd1ca1b44989e81f6cf2628a3d910848f87de513c68d3b68a5e",
+      "review_commit": "53b96a628d9b812d794aa12c9886d888e1cc42ff",
+      "correction_round": 3,
+      "supersedes_record_id": "edee021b38b94fb68769e84d25bc98df",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-omission-2",
+            "category": "omission",
+            "severity": "minor",
+            "detail": "Resolved: the current translation italicizes «пожалуйста», restoring the emphasis on *please*.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Not yet, *please*, just five more minutes.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Ну *пожалуйста*, ещё пять минуточек",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "edee021b38b94fb68769e84d25bc98df",
+              "finding_id": "recheck-omission-1"
+            }
+          },
+          {
+            "id": "meaning-cutest-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The source's superlative “cutest” is reduced to “милый.” Preserve the superlative, for example with «самый милый».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "with the *cutest* groan of",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "и издаёт *милый* стон",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-call-emphasis-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The source italicizes *call* in its euphemistic phrase, but the corresponding Russian phrase is unitalicized. Preserve the emphasis on a suitable Russian equivalent, such as «по зову природы».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "with an urgent *call* from mother nature to run to the restroom.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "срочно бежать в туалет по зову природы",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       },
