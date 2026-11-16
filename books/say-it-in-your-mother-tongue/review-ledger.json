@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 45,
+  "next_sequence": 46,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -4432,6 +4432,109 @@
             },
             "translation_anchor": {
               "quote": "когда он спрашивает: Ты многих сюда приводишь?",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "aa31cad1d18cdd785da1ac4d9199333ef6ef3f8b6d1a8213a62565f942ae4fff",
+        "style_guide": "92a19a82bd31ba731763f6a726791ed8c5618e9c30c6fd72c6217b5c52d9770f"
+      }
+    },
+    {
+      "record_id": "3cf7fe5799344fc8b7030f4af1d7b39e",
+      "sequence": 45,
+      "unit_id": "chapter-000015",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "8c462958d13f6ca19ed2ea9b97c8a476b3270c12c4dc4a73f1831aac7e95b2cb",
+      "translation_sha256": "6d3b5d5cad76e0064c9906fe6dccba2c97b29ec6d3b514758294fa7557e04434",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-56512336",
+      "reviewed_at": "2026-11-16T14:23:04Z",
+      "state_revision": "0e4197898f6180f999f787b5449071033d9dbfffcad1ddd8fb8bb8cab1bcf42e",
+      "review_commit": "f3194b24c4c6952a9f955451961e8326fe43e9e4",
+      "correction_round": 3,
+      "supersedes_record_id": "a92c85591b084d26a2a01643657587e1",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "omission-recheck-1",
+            "category": "omission",
+            "severity": "major",
+            "detail": "Resolved: the current translation restores Fernando’s satisfied sound and the information that he continues stroking Lance.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Fernando makes a satisfied sound, one that makes his chest rumble, as he continues stroking Lance’s cock.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Продолжая ласкать член Лэнса, Фернандо издаёт довольный звук, от которого у него гулко вибрирует грудь",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "a92c85591b084d26a2a01643657587e1",
+              "finding_id": "omission-2"
+            }
+          },
+          {
+            "id": "structure-recheck-1",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "Resolved: the question is now enclosed in Russian quotation marks.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "There is something like disappointment in Lance’s voice when he asks, “You bring a lot of people here?”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "когда он спрашивает: «Ты многих сюда приводишь?»",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "a92c85591b084d26a2a01643657587e1",
+              "finding_id": "structure-1"
+            }
+          },
+          {
+            "id": "structure-1",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "There is no sentence-ending punctuation between the narration about Fernando’s chest and his direct speech, making the passage run together. Add a period before «Такой нетерпеливый…».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Fernando makes a satisfied sound, one that makes his chest rumble, as he continues stroking Lance’s cock. “So impatient, *cariño*,” he purrs",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "гулко вибрирует грудь «Такой нетерпеливый, *cariño*», — мурлычет он",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "referent-1",
+            "category": "referent",
+            "severity": "major",
+            "detail": "The source says Fernando is unsure whether he heard Lance. The translation instead makes Fernando unsure whether Lance heard himself. Recast to make Fernando the person who may not have heard, for example: «что Фернандо не уверен, расслышал ли он, что сказал Лэнс».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Lance responds so fast Fernando isn’t sure he even heard what he said.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "так быстро отвечает Лэнс, что Фернандо не уверен, услышал ли тот вообще, что сам сказал.",
               "occurrence": 0
             },
             "resolves": null
