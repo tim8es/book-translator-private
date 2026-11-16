@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 27,
+  "next_sequence": 28,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -2619,6 +2619,96 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "f02e6becb2861881659733c55614d24b49ee0a6906fa607fb2db0ceb6b8d35ad",
+        "style_guide": "92a19a82bd31ba731763f6a726791ed8c5618e9c30c6fd72c6217b5c52d9770f"
+      }
+    },
+    {
+      "record_id": "e296e32a695f44e9abbb4da63da0cd30",
+      "sequence": 27,
+      "unit_id": "chapter-000010",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "9a277557932fff6ba2d167f2bd79f14e5bc69d22ceb4e92892520e6e7fd714f7",
+      "translation_sha256": "43fa2ca61ddab0ff127e142e9aa0063d5e2fc72ec247a9eeb500a94c5f338a1d",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-44e51d9c",
+      "reviewed_at": "2026-11-16T11:18:39Z",
+      "state_revision": "3c2011d8c950f752b929bfea00dab0b6e05cc6c51f21aa0bf8b48ecc3ab0ae82",
+      "review_commit": "c906e9bfdbb6e1d30b9837acf0f07ce33b7a5593",
+      "correction_round": 2,
+      "supersedes_record_id": "e4fb094a33294027be0426d23932fc18",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "followup-terminology-1",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "The name is still inconsistent: this sentence uses «Лэнс», while the immediately following block uses «Ланс». Standardize the transliteration.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "And Lance cannot help but moan into the kiss, grabbing the front of Fernando’s shirt to anchor himself.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Лэнс не может не застонать в поцелуй, вцепившись в рубашку Фернандо спереди, чтобы удержаться.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "e4fb094a33294027be0426d23932fc18",
+              "finding_id": "terminology-1"
+            }
+          },
+          {
+            "id": "followup-terminology-2",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "This occurrence now retains *princesa*, consistent with the Spanish form noted in later dialogue.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "You are a bad liar, *princesa*. I can smell his Frenchness on you.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Ты ужасно врёшь, *princesa*. Я чую на тебе его французский дух».",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "e4fb094a33294027be0426d23932fc18",
+              "finding_id": "terminology-2"
+            }
+          },
+          {
+            "id": "followup-omission-1",
+            "category": "omission",
+            "severity": "minor",
+            "detail": "The translation now preserves the crunching detail with «хрустя».",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Gabriel hums around his fork, crunching on fresh lettuce.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Габриэль довольно мычит, хрустя свежими листьями салата.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "e4fb094a33294027be0426d23932fc18",
+              "finding_id": "omission-1"
+            }
           }
         ]
       },
