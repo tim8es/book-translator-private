@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 34,
+  "next_sequence": 35,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -3130,6 +3130,151 @@
             },
             "translation_anchor": {
               "quote": "раскидывая руки, предлагая обнять",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "aa31cad1d18cdd785da1ac4d9199333ef6ef3f8b6d1a8213a62565f942ae4fff",
+        "style_guide": "92a19a82bd31ba731763f6a726791ed8c5618e9c30c6fd72c6217b5c52d9770f"
+      }
+    },
+    {
+      "record_id": "da3b90ddaa7742df8f06482258b49462",
+      "sequence": 34,
+      "unit_id": "chapter-000012",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "0678489e9315a29711aa170db58190c54f5f0ff3759ea449b592814f55800efc",
+      "translation_sha256": "f10bd1ccd3d965cab55b092ffcf6dae20f76ae74ca457efb21529aeeab9f469d",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-e9c54652",
+      "reviewed_at": "2026-11-16T13:00:24Z",
+      "state_revision": "cd45fd66706b3ed99d8c5fe87438db815a6e2f0743292d4f95f0289d82468486",
+      "review_commit": "99e54a64a24ad2e5b198b5bb549d7381c19788ca",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "terminology-1",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "In the title, “viewing” refers to viewing a body before burial, not a medical examination. “Труп готов к осмотру” changes that image. Revise it to convey the funeral-viewing sense, consistently with the corpse-ready-for-viewing image later in the unit.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Chapter 10: corpse ready for viewing",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Глава 10: труп готов к осмотру",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-1",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "“Jumping my teammate” is sexually suggestive in context, as Nico soon says he wants to have sex with him. “Спрыгнуть на” is an unnatural calque that suggests jumping down onto someone. Use a natural Russian equivalent that preserves the suggestive sense.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "*Ja*, but it was either this *Kippe* or jumping *meinen* *Teamkollegen*.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Повернув голову, Нико выдыхает дым и произносит: «*Ja*, но выбор был между этой *Kippe* и тем, чтобы спрыгнуть на *meinen* *Teamkollegen*».",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "referent-1",
+            "category": "referent",
+            "severity": "minor",
+            "detail": "The cigarette catches fire after Nico clicks the lighter. In Russian, “та” most naturally refers to the feminine noun “зажигалка,” making it sound as if the lighter catches fire. Name the cigarette as the subject.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "He clicks the lighter once, twice, *thrice* before it catches fire and allows him to inhale gray smoke into his lungs.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Щёлкает зажигалкой раз, другой, *третий*, пока та наконец не загорается, позволяя ему втянуть в лёгкие серый дым.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-2",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "The source explicitly spells the Morse-code letters as S-A-F-E. Rendering them as Cyrillic Б-Е-З-О-П-А-С-Н-О changes the specified sequence and conflicts with the English SAFE in the end note. Preserve S-A-F-E here.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "it’d surely spell out S-A-F-E in morse code.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "оно наверняка выстучало бы азбукой Морзе: Б-Е-З-О-П-А-С-Н-О.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-3",
+            "category": "modality",
+            "severity": "minor",
+            "detail": "“It’s about me hurting him” frames the concern as Nico hurting him. “Дело во мне: я могу причинить ему боль” shifts this toward Nico's ability to hurt him. Preserve the source's focus on the feared action rather than capability.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "*It’s about me hurting him.*",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "*Дело во мне: я могу причинить ему боль.*",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The word order “Он снова зевая заходит” is ungrammatical in Russian. Reorder or punctuate the phrase so the participle reads naturally while retaining that he is yawning as he enters.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "He walks into the lounge, yawning once again, and drinks from a glass one of them left on the table.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Он снова зевая заходит в гостиную и отпивает из стакана, который кто-то из них оставил на столе.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-2",
+            "category": "style",
+            "severity": "minor",
+            "detail": "“За перед футболки” is an awkward literal construction in Russian. Rephrase naturally while preserving that Fernando pulls Lance into the kiss by the front of his T-shirt.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "stands up quickly and pulls Lance into a kiss by the front of his T-shirt.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "И тут Фернандо отпускает и левую ногу Лэнса, быстро встаёт и притягивает его к себе за перед футболки, целуя.",
               "occurrence": 0
             },
             "resolves": null
