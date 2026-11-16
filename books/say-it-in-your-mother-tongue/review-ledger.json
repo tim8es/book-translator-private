@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 57,
+  "next_sequence": 58,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -5525,6 +5525,96 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "97ea9004483c3b27fd01ea8190cef837762a3bfab02f442f4ff9ca31882d50b0",
+        "style_guide": "9aa29b7a57a8e19df8d8c06ea387e12df497cb4953714bfae17739cebb2b81c1"
+      }
+    },
+    {
+      "record_id": "3915c83a36e94678b7c09af231afc3b2",
+      "sequence": 57,
+      "unit_id": "chapter-000020",
+      "outcome": "PASS",
+      "source_sha256": "48a9e16bf156e425b291872bf8679d7be236e26d412cbaebf9427e42b89e30b5",
+      "translation_sha256": "f32c3cdf0ae54e33ac2670ebad90f16127919516881783289f2629c732db6f03",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-79ab481c",
+      "reviewed_at": "2026-11-16T19:14:24Z",
+      "state_revision": "741e01ab8c85379edaa14c33a457a6d63504603abbdb58995f1726c894e61ff8",
+      "review_commit": "cebd86e9da9b68d938469ed442001f2956b4cdbf",
+      "correction_round": 1,
+      "supersedes_record_id": "e6d442ee17084d788dce4b54cec94a85",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "style-recheck-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Resolved: «веки едва держатся открытыми» naturally conveys that his eyes are barely staying open.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "his eyes are barely hanging open",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "веки едва держатся открытыми.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "e6d442ee17084d788dce4b54cec94a85",
+              "finding_id": "style-1"
+            }
+          },
+          {
+            "id": "meaning-recheck-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Resolved: the translation now describes Lawrence’s smile as brighter, not wider.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "with even brighter smile",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "с ещё более яркой улыбкой",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "e6d442ee17084d788dce4b54cec94a85",
+              "finding_id": "meaning-1"
+            }
+          },
+          {
+            "id": "omission-recheck-1",
+            "category": "omission",
+            "severity": "minor",
+            "detail": "Resolved: «новые слёзы» preserves the source’s sense of more tears streaming down his face.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "There are more tears streaming down his face, but Lance isn’t making a single sound.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "По его лицу катятся новые слёзы, но Лэнс не издаёт ни звука.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "e6d442ee17084d788dce4b54cec94a85",
+              "finding_id": "omission-1"
+            }
           }
         ]
       },

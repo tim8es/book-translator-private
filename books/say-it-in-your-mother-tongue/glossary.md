@@ -15,3 +15,5 @@ Use this file for recurring names, places, organizations, terms, nicknames, titl
 | cariño | cariño | term of address | Spanish endearment retained unchanged in the translation. |
 | Aston Martin | Астон Мартин | organization | The source names the factory; the translation uses this Russian rendering. |
 | Seb Vettel | Себ Феттель | person | Name attested in the supplied source excerpt; retain this Russian spelling. |
+| Lawrence | Лоуренс | person | Use Лоуренс; inflect according to Russian grammar. |
+| Gary | Гэри | person | Use Гэри; inflect according to Russian grammar. |
