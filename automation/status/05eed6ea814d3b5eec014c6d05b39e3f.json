@@ -3,7 +3,7 @@
   "job_id": "05eed6ea814d3b5eec014c6d05b39e3f",
   "book_slug": "say-it-in-your-mother-tongue",
   "state": "running",
-  "phase": "model-call-reserved",
+  "phase": "provider-backoff",
   "failures": 0,
   "correction_rounds": {
     "chapter-000001": 1,
@@ -29,13 +29,8 @@
   },
   "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
   "source_sha256": "12e210ce5a95daf56a97ada583ec15c274780c4ddfa7fb92da6a88c67f7c403d",
-  "updated_at": "2026-11-16T19:45:54.163182+00:00",
-  "active": {
-    "role": "reviewer",
-    "chapter": 22,
-    "session_id": "auto-05eed6ea814d-reviewer-3706e3e0",
-    "unit_id": "chapter-000022"
-  },
+  "updated_at": "2026-11-16T19:49:56.454793+00:00",
+  "active": null,
   "recoveries": [
     {
       "action": "auto-retry-corrected-structural-preflight",
@@ -130,16 +125,16 @@
   "glossary_evidence_rejected": 0,
   "glossary_conflicts_rejected": 0,
   "glossary_proposals_deferred": 0,
-  "model_response_diagnostics": {
-    "finish_reason": "stop",
-    "response_format": "json_object",
-    "response_chars": 2230,
-    "provider_refusal": false,
-    "prompt_tokens": 5628,
-    "completion_tokens": 2109,
-    "total_tokens": 7737,
-    "route": "primary",
-    "role": "translator",
-    "unit_id": "chapter-000022"
-  }
+  "provider_model_route": "primary",
+  "provider_retry": {
+    "chapter": 22,
+    "unit_id": "chapter-000022",
+    "role": "reviewer",
+    "attempts": 1,
+    "code": "transport",
+    "not_before": "2026-11-16T19:50:56.454766+00:00"
+  },
+  "last_error": "model transport timeout or connection failure",
+  "last_error_code": "transport",
+  "blocked_unit_id": "chapter-000022"
 }
