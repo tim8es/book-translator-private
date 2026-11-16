@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "unit_id": "chapter-000008",
+  "review_record_id": "c86e245c3b5c49fd9eb29709237171ff",
+  "source_sha256": "5f460ef6e2d85f9e2e9288c5046ef80cdc299068e2df30a714cc363eaaf14818",
+  "translation_sha256": "08b8402d0a3f5dbf6725516dbead20add12f4eabe664071c915475f3438dc6b4",
+  "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+  "patches": [
+    {
+      "finding_id": "meaning-1",
+      "operation": "replace",
+      "target_anchor": {
+        "quote": "они всё ещё красные, но уже не такие *блестящие*.",
+        "occurrence": 0
+      },
+      "replacement": "они всё ещё красные, но уже не *слишком* блестящие."
+    },
+    {
+      "finding_id": "meaning-2",
+      "operation": "replace",
+      "target_anchor": {
+        "quote": "«Не прощаемся — к несчастью», — бормочет Чеко, открывая дверь.",
+        "occurrence": 0
+      },
+      "replacement": "«Не прощаемся — плохая примета», — бормочет Чеко, открывая дверь."
+    },
+    {
+      "finding_id": "meaning-3",
+      "operation": "replace",
+      "target_anchor": {
+        "quote": "второй он сжимает в руке, а грязную толстовку прижимает к груди.",
+        "occurrence": 0
+      },
+      "replacement": "второй он прижимает к груди вместе с грязной толстовкой."
+    }
+  ],
+  "glossary": [],
+  "style_guide": []
+}
