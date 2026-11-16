@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "без-названия",
-  "next_sequence": 2,
+  "next_sequence": 3,
   "records": [
     {
       "record_id": "c8338ba00dc448d4a256e5436ce96896",
@@ -29,6 +29,215 @@
           "structure": true
         },
         "findings": []
+      },
+      "shared_state_revisions": {
+        "glossary": "f02e6becb2861881659733c55614d24b49ee0a6906fa607fb2db0ceb6b8d35ad",
+        "style_guide": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4"
+      }
+    },
+    {
+      "record_id": "f310b004ae9949cd91ed65ccca254e2d",
+      "sequence": 2,
+      "unit_id": "chapter-000002",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "7edd5f7d76d4a7d2f971e83a7096c061b9e1a51db15178224d7975fe39d0eb39",
+      "translation_sha256": "f0865c06970e508a1b8e2add986c551d7d97370799262e6506ffe1906ab0c524",
+      "workflow_revision": "871e937b5d7075613c4e55c1ecfc07af700af8bc",
+      "review_contract_revision": "docs/TRANSLATION.md@871e937b5d7075613c4e55c1ecfc07af700af8bc",
+      "reviewer_session_id": "auto-ed29a03c0054-reviewer-922e96a3",
+      "reviewed_at": "2026-11-16T09:50:55Z",
+      "state_revision": "f10938098cb47e25d65f7d8e6785921d2c8ad9a523d23b14b86ebabd8747fba3",
+      "review_commit": "bfc2aa875ad5b55ce9f886f2a78b527335afe6db",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "chunk-001-arm-to-shoulder",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The source says Hollander removes his hand from Ilya’s arm, but the translation says shoulder. Correct the body part to match the source.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "slowly removing his hand from Ilya’s arm.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "медленно убирает руку с его плеча.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "chunk-002-creepy-syntax",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The construction «Может, молча стоять и смотреть, как он бежит, и жутковато» is awkward and difficult to parse. Consider «Может, это и жутковато — молча стоять и смотреть, как он бежит, но Илье как-то всё равно».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Maybe it’s creepy to stand silently and watch him run, but Ilya can’t really bring himself to care.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Может, молча стоять и смотреть, как он бежит, и жутковато, но Илье как-то всё равно.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "chunk-003-perspective-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The translation omits “for you,” which frames their not being best friends as Hollander’s understanding of Ilya’s present perspective after losing his memories, rather than as an unqualified statement about their relationship. Preserve that qualification, for example: «А с твоей точки зрения, мы не то чтобы лучшие друзья».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "And, for you, we’re not exactly best friends.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Да и мы с тобой не то чтобы лучшие друзья.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "chunk-004-always-omitted",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The translation omits the habitual force of “always” and recasts the recurring complaint as a one-time conspiracy. Consider «Вы сговорились против меня» → «Вы всегда сговариваетесь против меня» or an equivalent that preserves the recurring action.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "You two always gang up on me.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Вы сговорились против меня.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "chunk-004-tile-added",
+            "category": "addition",
+            "severity": "minor",
+            "detail": "The source says he grinds his heel into the patio but does not specify its surface. «Плитку» adds an unsupported concrete detail; remove it unless the source establishes that the patio is tiled.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Once he finishes, he stamps out the butt, grinding his heel into the patio pettily.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Когда сигарета заканчивается, он тушит окурок, с мелочной злостью вдавливая каблук в плитку патио.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "chunk-005-ball-toss",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "«Перебрасываются» says they are tossing the ball back and forth to each other, a specific activity the source does not establish. Use a neutral rendering such as «кидают мяч Ани», which leaves the recipient unspecified.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "They’re out in the backyard, throwing Anya’s slobbery tennis ball.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Они во дворе, перебрасываются покрытым слюной теннисным мячом Ани.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "chunk-005-beam-calque",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Сияет Илье» is an awkward calque in Russian. Rephrase naturally, for example «сияет, глядя на Илью», while retaining the affectionate expression.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Hollander goes very still when he passes it to him, then beams at Ilya with far more affection than a candy bar warrants.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Холландер замирает, а потом сияет Илье с такой нежностью, какой шоколадный батончик никак не заслуживает.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "chunk-006-erotic-cry",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "“Crying out for him” describes an erotic cry or call, not necessarily weeping. «Плачет и зовёт его» adds the implication that the person is crying in sadness. Rephrase to preserve the source’s erotic cry without resolving more than the source does.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "crying out for him in slightly accented Russian",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "плачет и зовёт его на русском с лёгким акцентом",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "chunk-007-orgasm-wording",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Кончает — ослепительно» звучит неестественно по-русски, а «корчится от наслаждения» привносит оттенок боли. Подберите естественную формулировку, сохраняющую яркость и удовольствие исходного описания, например: «И кончает бурно, судорожно сжимаясь вокруг Ильи; тело его выгибается от наслаждения».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "And he does, spectacularly, clenching tight around Ilya as his body contorts with pleasure.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "И кончает — ослепительно, судорожно сжимаясь вокруг Ильи, пока его тело корчится от наслаждения.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "chunk-007-mess-register",
+            "category": "register",
+            "severity": "minor",
+            "detail": "«Грязь» добавляет отсутствующий в нейтральном mess оттенок отвращения. Замените на нейтральное обозначение липкой смеси или жидкости.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Ilya’s honestly surprised Shane hasn’t made a fuss about the mess gluing them together, but he’s not about to voice it.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Илья, честно говоря, удивлён, что Шейн не стал возмущаться из-за липкой грязи, склеившей их, но вслух он этого не скажет.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "chunk-007-teary-eyes",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Глаза у него увлажняются» звучит клинически и неестественно в этой нежной сцене. Естественнее передать, что у Ильи наворачиваются слёзы.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“Hush,” Ilya tells him, eyes getting teary.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Тише», — говорит ему Илья, и глаза у него увлажняются.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
       },
       "shared_state_revisions": {
         "glossary": "f02e6becb2861881659733c55614d24b49ee0a6906fa607fb2db0ceb6b8d35ad",
