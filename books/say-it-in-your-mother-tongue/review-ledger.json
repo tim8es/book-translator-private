@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 37,
+  "next_sequence": 38,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -3531,6 +3531,55 @@
               "record_id": "e7cc10c98192487e9d9cd61b4df3c6bb",
               "finding_id": "new-omission-1"
             }
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "aa31cad1d18cdd785da1ac4d9199333ef6ef3f8b6d1a8213a62565f942ae4fff",
+        "style_guide": "92a19a82bd31ba731763f6a726791ed8c5618e9c30c6fd72c6217b5c52d9770f"
+      }
+    },
+    {
+      "record_id": "c4ed00d557674811b6b2dfae234dc5e1",
+      "sequence": 37,
+      "unit_id": "chapter-000013",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "6e39261abafb2daa74546a97ced98d1c521674057985dc0ee1c6769a2c7bb7bd",
+      "translation_sha256": "9321c20282054380c22324fa58635c7fddd06912e66486c54d749c37f24f1341",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-f58808ee",
+      "reviewed_at": "2026-11-16T13:16:09Z",
+      "state_revision": "9163e7d439f401977cb566baaa4b38c6367da8c5e0671d249d194a67095b6747",
+      "review_commit": "dfef7ce96a2ce725cc10db0088ce20ceb4b889b5",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "meaning-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The idiomatic “Pardon my French” is flattened to a generic apology, losing its French reference. Since the exchange shortly afterward jokes about French, preserve that element with a natural Russian equivalent such as «извини за мой французский».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Pardon my French, but what type of fucking question is that?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Извини за выражение, но что это за ебаный вопрос?",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       },
