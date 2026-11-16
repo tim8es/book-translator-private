@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "unit_id": "chapter-000024",
+  "review_record_id": "d961ed4d11d346c19a512fcb9659267b",
+  "source_sha256": "a43d17801a7275e6999807c989999f4abecdee321e861457d37994c1e3daa979",
+  "translation_sha256": "7ef96ae39ab56095f25c6b03ac4a475cf86758a002667163ca961dbcf17a0085",
+  "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+  "patches": [
+    {
+      "finding_id": "omission-1",
+      "operation": "insert_after",
+      "target_anchor": {
+        "quote": "«*Nee,*» Макс качает головой — насколько позволяет подушка.",
+        "occurrence": 0
+      },
+      "replacement": " «Я сплю здесь»."
+    },
+    {
+      "finding_id": "meaning-1",
+      "operation": "replace",
+      "target_anchor": {
+        "quote": "*А вот если спать со мной в одной кровати, возбудиться могу разве что* я. *Бояться нечего.*",
+        "occurrence": 0
+      },
+      "replacement": "*А вот если спать со мной в одной кровати, встать могу разве что* я. *Бояться нечего.*"
+    },
+    {
+      "finding_id": "meaning-2",
+      "operation": "replace",
+      "target_anchor": {
+        "quote": "одним оборачивает бёдра, другим растирает волосы",
+        "occurrence": 0
+      },
+      "replacement": "одним оборачивает талию, другим растирает волосы"
+    }
+  ],
+  "glossary": [],
+  "style_guide": []
+}
