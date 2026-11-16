@@ -3,7 +3,7 @@
   "job_id": "05eed6ea814d3b5eec014c6d05b39e3f",
   "book_slug": "say-it-in-your-mother-tongue",
   "state": "running",
-  "phase": "model-call-reserved",
+  "phase": "correction-batch-staged",
   "failures": 0,
   "correction_rounds": {
     "chapter-000001": 1,
@@ -24,7 +24,7 @@
   },
   "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
   "source_sha256": "12e210ce5a95daf56a97ada583ec15c274780c4ddfa7fb92da6a88c67f7c403d",
-  "updated_at": "2026-11-16T15:00:38.550134+00:00",
+  "updated_at": "2026-11-16T15:00:53.298769+00:00",
   "active": {
     "role": "corrector",
     "chapter": 16,
@@ -112,22 +112,22 @@
   "glossary_conflicts_rejected": 0,
   "glossary_proposals_deferred": 0,
   "provider_model_route": "primary",
-  "model_response_diagnostics": {
-    "finish_reason": "stop",
-    "response_format": "json_object",
-    "response_chars": 465,
-    "provider_refusal": false,
-    "prompt_tokens": 10941,
-    "completion_tokens": 2562,
-    "total_tokens": 13503,
-    "route": "primary",
-    "role": "corrector",
-    "unit_id": "chapter-000016"
-  },
   "correction_batch_progress": {
     "unit_id": "chapter-000016",
     "review_record_id": "8ce9f793b2434fe1aa70d5274f047503",
-    "completed": 3,
+    "completed": 4,
     "total": 4
+  },
+  "model_response_diagnostics": {
+    "finish_reason": "stop",
+    "response_format": "json_object",
+    "response_chars": 120,
+    "provider_refusal": false,
+    "prompt_tokens": 5327,
+    "completion_tokens": 250,
+    "total_tokens": 5577,
+    "route": "primary",
+    "role": "corrector",
+    "unit_id": "chapter-000016"
   }
 }
