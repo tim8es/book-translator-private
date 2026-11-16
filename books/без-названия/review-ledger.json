@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "без-названия",
-  "next_sequence": 4,
+  "next_sequence": 5,
   "records": [
     {
       "record_id": "c8338ba00dc448d4a256e5436ce96896",
@@ -664,6 +664,472 @@
             },
             "translation_anchor": {
               "quote": "у него наворачиваются слёзы До сих пор не верится, что Шейн так сильно его любит.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "f02e6becb2861881659733c55614d24b49ee0a6906fa607fb2db0ceb6b8d35ad",
+        "style_guide": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4"
+      }
+    },
+    {
+      "record_id": "fb0d8fa88189414983eb5026bab356f8",
+      "sequence": 4,
+      "unit_id": "chapter-000002",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "7edd5f7d76d4a7d2f971e83a7096c061b9e1a51db15178224d7975fe39d0eb39",
+      "translation_sha256": "41aefbeb467f08fbecb5182fecc06d7abed147e525f06abd26ffa50a26b96b4b",
+      "workflow_revision": "871e937b5d7075613c4e55c1ecfc07af700af8bc",
+      "review_contract_revision": "docs/TRANSLATION.md@871e937b5d7075613c4e55c1ecfc07af700af8bc",
+      "reviewer_session_id": "auto-ed29a03c0054-reviewer-1301db9f",
+      "reviewed_at": "2026-11-16T12:46:38Z",
+      "state_revision": "da855a5193a416ffe51981884dc428e841b7ecb8565082c8fbb92eee01e2e616",
+      "review_commit": "4c07051c8f03744b80bf1f3ebedba4768898a808",
+      "correction_round": 3,
+      "supersedes_record_id": "1579089e40fb4fdc8c22155887b59908",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "chunk-001-response-shift",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Resolved: the current translation says he hardly reacts to what he has heard, preserving the source’s distinction between not responding and not understanding.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "he doesn’t respond to much of it.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "он почти ни на что из этого не реагирует.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "1579089e40fb4fdc8c22155887b59908",
+              "finding_id": "chunk-001-response-shift"
+            }
+          },
+          {
+            "id": "chunk-001-twin-brain",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "The source phrase is ambiguous, but «мозг-близнец, тоже сломанный» reads as a literal twin-brain concept and adds «тоже». Avoid fixing an interpretation the source does not clearly establish; preserve the ambiguity or clarify the intended relation from the source context.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "his father and his twin broken brain.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "отца и его мозг-близнец, тоже сломанный.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "chunk-001-shaky-english",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "“Shaky English be damned” indicates that he asks despite his uncertain command of English. The translation instead describes how unconfidently his English sounds, shifting the emphasis to his manner of speaking.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“What the fuck are you doing here?” he asks, shaky English be damned.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "не обращая внимания на то, как неуверенно звучит его английский.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "chunk-002-photo-recheck",
+            "category": "addition",
+            "severity": "minor",
+            "detail": "Rechecked: the current translation no longer says the photograph hangs near the bed, and the description of Hollander looking at Ilya has been corrected.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "He stares at the picture closest to the bed: Hollander in a suit and beaming at Ilya, who looks happier than he thought possible.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Он смотрит на фотографию ближе всего к кровати: Холландер в костюме, сияющий, глядя на Илью, а сам Илья выглядит счастливее, чем считал возможным.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "1579089e40fb4fdc8c22155887b59908",
+              "finding_id": "chunk-002-photo-add"
+            }
+          },
+          {
+            "id": "chunk-002-gotto-recheck",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Rechecked: «довелось» preserves the sense that this Ilya had the opportunity or privilege of these experiences.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "This Ilya got to fuck him, to hold him, to stay with him.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Этому Илье довелось трахать его, обнимать, быть рядом с ним.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "1579089e40fb4fdc8c22155887b59908",
+              "finding_id": "chunk-002-got-to-nuance"
+            }
+          },
+          {
+            "id": "chunk-002-unsteady-step",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "«Неловко отступает» suggests awkwardness, while the source says he steps back unsteadily. In context, preserve the possible physical unsteadiness, for example «пошатываясь, отступает».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Hollander clears his throat, and steps back unsteadily.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Холландер прочищает горло и неловко отступает.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "chunk-003-exit-timing",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The source places Ilya halfway out of the room by the time Hollander finishes speaking. The translation instead has Ilya already leaving before Hollander has finished, and omits the specific halfway-out detail. Please restore the source's timing and position.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "He’s already halfway out of the room by the time Hollander finishes his sentence.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Холландер ещё не успевает закончить фразу, а Илья уже выходит из комнаты.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "chunk-004-hitq-recheck",
+            "category": "omission",
+            "severity": "minor",
+            "detail": "Rechecked the prior omission: the translation now includes «Тебя ударили?» as a separate question after «Погоди, что?». The omission is repaired.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "“You got hit?” Ilya interjects.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "— Тебя ударили? Насколько ему известно, Холландера ещё ни разу не оглушали.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "1579089e40fb4fdc8c22155887b59908",
+              "finding_id": "chunk-004-omit-hit"
+            }
+          },
+          {
+            "id": "chunk-004-dialogue-boundary",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "The dash-led Russian dialogue appears to continue through «Он не упоминает…», attaching a narrator sentence to Ilya’s spoken answer. Separate or clearly close the dialogue after «Ты бы видел другого парня» and keep the following sentence as narration.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“I am fine. You should see the other guy.” He doesn’t mention that he’s only physically fine, and that he doesn’t know their names at all.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "— Я в порядке. Ты бы видел другого парня. Он не упоминает, что в порядке только физически и что даже не знает, как их зовут.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "chunk-004-shaky-exhale",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Дрожащим выдохом выпускает воздух» is redundant and awkward. Rephrase naturally while preserving the unsteady exhalation, for example: «Илья дрожа выдыхает».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Ilya exhales shakily.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Илья дрожащим выдохом выпускает воздух.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "chunk-005-pose-strenuous",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Resolved: «позу, требующую куда больших усилий» conveys the source's greater physical exertion, correcting the earlier shift to complexity.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "transitioning seamlessly into a much more strenuous pose.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "плавно переходит в позу, требующую куда больших усилий",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "1579089e40fb4fdc8c22155887b59908",
+              "finding_id": "chunk-005-strenuous-pose"
+            }
+          },
+          {
+            "id": "chunk-005-meal-invite",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Resolved: «Угощайся курицей с пармезаном» is a natural invitation to enjoy the dish.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Enjoy the chicken parmesan.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Угощайся курицей с пармезаном.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "1579089e40fb4fdc8c22155887b59908",
+              "finding_id": "chunk-005-meal-line"
+            }
+          },
+          {
+            "id": "chunk-005-hit-agent",
+            "category": "referent",
+            "severity": "major",
+            "detail": "«Силового приёма Шейна» makes Shane the person delivering the hit. In context, this refers to the hit Shane suffered; preserve that distinction.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "he’d also watched the first minute of Shane’s hit, but he couldn’t stomach it and clicked away, nauseous",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "первую минуту записи силового приёма Шейна",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "chunk-005-room-idiom",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Смотри, какая обстановка» does not clearly convey the idiom's admonition to notice the social cues. Use a natural equivalent that preserves the quick, teasing rebuke.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Read the room.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Смотри, какая обстановка.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "chunk-005-room-callback",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Обстановка прочитана» is an awkward calque in the joke echoing “read the room.” Rephrase naturally while retaining the callback and humor.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "The room has been read, and they all agree with me.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Обстановка прочитана — и все со мной согласны.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "chunk-005-worse-comparison",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The source's «worse» is a comparative jab that Hollander's moves are worse than Ilya's; «худшим» instead makes it a superlative (“worst”). Preserve the comparison.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Your worse moves,",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Твоим худшим финтам",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "chunk-006-dream-dup",
+            "category": "structure",
+            "severity": "major",
+            "detail": "The prior duplication remains: the sentence repeats its opening mid-clause and repeats the final description, leaving it malformed. Remove the duplicated text and restore one complete sentence.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "The next morning has him waking up hard again, this time to the dream of someone (Hollander, he knows) crying out for him in slightly accented Russian, hot and slick around his cock.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "На следующее утро он снова просыпается с эрекцией — на этот раз ему снится, На следующее утро он снова просыпается с эрекцией — на этот раз ему снится, как кто-то",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "1579089e40fb4fdc8c22155887b59908",
+              "finding_id": "chunk-006-dream-dup"
+            }
+          },
+          {
+            "id": "chunk-006-beam-repaired",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The earlier calque is repaired: «Они сияют, глядя друг на друга» is natural and preserves their mutual delight. The separate omission of Anya barking is reported in another finding.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "They beam at each other. Anya barks in excitement, sensing the energy.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Они сияют, глядя друг на друга.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "1579089e40fb4fdc8c22155887b59908",
+              "finding_id": "chunk-006-beam-calque"
+            }
+          },
+          {
+            "id": "chunk-006-home-hedge-fixed",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The stacked hedges from the prior version are gone; the current rendering uses one «наверное». The omitted opening clause of the source sentence is reported separately.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "He’s never had a home before, but he thinks it probably feels like this.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "наверное, дом ощущается именно так.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "1579089e40fb4fdc8c22155887b59908",
+              "finding_id": "chunk-006-home-hedge"
+            }
+          },
+          {
+            "id": "chunk-006-anya-bark-omit",
+            "category": "omission",
+            "severity": "minor",
+            "detail": "The translation omits the sentence that Anya barks excitedly in response to the others’ energy.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Anya barks in excitement, sensing the energy.",
+              "occurrence": 0
+            },
+            "translation_anchor": null,
+            "resolves": null
+          },
+          {
+            "id": "chunk-006-home-clause-omit",
+            "category": "omission",
+            "severity": "major",
+            "detail": "The translation renders only the thought that home probably feels this way, omitting that Ilya has never had a home before. Restore that meaningful clause; the current sentence also begins with lowercase «наверное» after a period.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "He’s never had a home before, but he thinks it probably feels like this.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "пальцах. наверное, дом ощущается именно так.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "chunk-007-mess-repaired",
+            "category": "omission",
+            "severity": "major",
+            "detail": "The sentence is now present and grammatical: it conveys Ilya's surprise that Shane has not complained, that they are stuck together in the mess, and that Ilya will not say so aloud. The prior omission is repaired.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Ilya’s honestly surprised Shane hasn’t made a fuss about the mess gluing them together, but he’s not about to voice it.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Илья, честно говоря, удивлён, что Шейн не возмущается из-за того, что они слиплись от всей этой липкой смеси, но вслух он этого не скажет.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "1579089e40fb4fdc8c22155887b59908",
+              "finding_id": "chunk-007-mess-omission"
+            }
+          },
+          {
+            "id": "chunk-007-hands-actor",
+            "category": "referent",
+            "severity": "minor",
+            "detail": "The participle «удерживая» still most naturally attaches to Shane, suggesting he is holding his own hips. The source says Ilya's hands keep Shane's hips in place. Rephrase to make Ilya the actor explicit.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "his hands keeping his hips in place.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Илья упивается тем, как Шейн ахает, удерживая его бёдра руками на месте.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "1579089e40fb4fdc8c22155887b59908",
+              "finding_id": "chunk-007-hands-referent"
+            }
+          },
+          {
+            "id": "chunk-007-hush-restored",
+            "category": "omission",
+            "severity": "minor",
+            "detail": "The spoken «Hush» is now translated as «Тише», and the tears clause is integrated grammatically. The prior omission is repaired.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "“Hush,” Ilya tells him, eyes getting teary.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "— Тише, — говорит ему Илья, и у него наворачиваются слёзы.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "1579089e40fb4fdc8c22155887b59908",
+              "finding_id": "chunk-007-hush-omission"
+            }
+          },
+          {
+            "id": "chunk-007-give-it-calque",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Дай мне это» reads like a literal calque and is awkward in this intimate dialogue. Use a more natural Russian imperative that preserves the source's directness.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“Always so good, Ilya. Give it to me. I want to feel it for days.”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "— Ты всегда такой хороший, Илья. Дай мне это. Хочу чувствовать тебя ещё несколько дней.",
               "occurrence": 0
             },
             "resolves": null
