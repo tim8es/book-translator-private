@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 74,
+  "next_sequence": 75,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -7207,6 +7207,58 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "73e38022ddf12bd5178e538d958adb319027d1c6d6d04ad1f5416e91ffcbf18b",
+        "style_guide": "321dfc6b8cbf1d495963ec1bf3529961ae8344c84eab8616d4d7fe45ad2ec4cf"
+      }
+    },
+    {
+      "record_id": "a6d68ca13ab844bca7de63e7fb7a20fc",
+      "sequence": 74,
+      "unit_id": "chapter-000026",
+      "outcome": "PASS",
+      "source_sha256": "2bb9d1d7b950cd579c8e1fd49c63b6922dcf08bb0f7e61a5a42b829112aeb0e2",
+      "translation_sha256": "709390c2107a78a8aac16e4619b8ec5bfe3bb5a0aea90c02142102fa19f6e9ca",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-0a3083b9",
+      "reviewed_at": "2026-11-16T21:50:50Z",
+      "state_revision": "94281063960ef436cb1a29295359219d1868a71bb2f4c0435f84335f329604a2",
+      "review_commit": "267143ffdb1a3255f6307f4ca1ee7a54c67f148f",
+      "correction_round": 1,
+      "supersedes_record_id": "d0b3cd9aa50f404180a032393d0bed6c",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "meaning-1-recheck",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Resolved: the current translation preserves the reciprocal meaning—the speaker hates the person addressed, just as that person is asked to hate the speaker.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "*Why can’t you just hate my guts the same way I do?*",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "*Почему ты не можешь ненавидеть меня так же, как я ненавижу тебя?*",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "d0b3cd9aa50f404180a032393d0bed6c",
+              "finding_id": "meaning-1"
+            }
           }
         ]
       },

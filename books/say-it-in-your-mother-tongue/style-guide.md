@@ -73,3 +73,4 @@ Add recurring characters as needed.
 | Italics mark emphasis in dialogue and narration. | Preserve meaningful italic emphasis and its placement in the Russian text. | “I *could* cook for you” → «Я *мог бы* приготовить для тебя»; “*anything*” → «*чём-то ещё*». The supplied examples also retain emphasis in *Non*, *dreamy*, and *proper*. |
 | Italicized emphasis in dialogue, as in “*don’t*”. | Preserve the emphasis with italics on the Russian equivalent. | The source emphasizes “*don’t*”; the translation renders it as “*не*”. |
 | Colloquial profanity intensifies “Everyone here is fucking disgusting.” | Retain the blunt, colloquial force rather than neutralizing it. | The translation uses «Тут все, блядь, отвратительные.» |
+| An italicized internal thought or question. | Retain the italics in the Russian translation. | The source’s *Why can’t you just hate my guts the same way I do?* remains italicized in the translation. |
