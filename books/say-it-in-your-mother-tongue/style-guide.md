@@ -65,3 +65,4 @@ Add recurring characters as needed.
 | Source pattern / context | Target-language approach | Reason / evidence |
 | --- | --- | --- |
 | A thought begins in German and switches into English: “Ich wünsche mir, dass he doesn’t regret meeting me.” | Retain the German opening and render the switched clause in Russian, preserving the multilingual shift. | The current translation retains “Ich wünsche mir, dass” and continues in Russian: “он не жалеет о том, что встретил меня.” |
+| Spanish words and phrases embedded in English narration or dialogue, such as “Sí,” “cariño,” and “Eres tan bonito.” | Retain the Spanish unchanged within the Russian text. | The source uses these Spanish expressions in the scene, and the translation retains them in Spanish. |
