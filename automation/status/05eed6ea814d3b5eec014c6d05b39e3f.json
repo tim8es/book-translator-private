@@ -3,7 +3,7 @@
   "job_id": "05eed6ea814d3b5eec014c6d05b39e3f",
   "book_slug": "say-it-in-your-mother-tongue",
   "state": "running",
-  "phase": "model-call-reserved",
+  "phase": "review-schema-repair-reserved",
   "failures": 0,
   "correction_rounds": {
     "chapter-000001": 1,
@@ -31,7 +31,7 @@
   },
   "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
   "source_sha256": "12e210ce5a95daf56a97ada583ec15c274780c4ddfa7fb92da6a88c67f7c403d",
-  "updated_at": "2026-11-16T20:51:43.165421+00:00",
+  "updated_at": "2026-11-16T20:55:13.373948+00:00",
   "active": {
     "role": "reviewer",
     "chapter": 24,
@@ -53,7 +53,7 @@
   ],
   "structural_span_retries": 1,
   "structural_helper_revision": "4c584fe5534871cd05aa851d9b7bdbfa696d0edd",
-  "model_calls_started": 328,
+  "model_calls_started": 329,
   "prompt_context": {
     "role": "reviewer",
     "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
@@ -65,8 +65,9 @@
     "glossary_sha256": "73e38022ddf12bd5178e538d958adb319027d1c6d6d04ad1f5416e91ffcbf18b",
     "style_guide_sha256": "9aa29b7a57a8e19df8d8c06ea387e12df497cb4953714bfae17739cebb2b81c1",
     "system_chars": 26767,
-    "user_chars": 58878,
-    "review_context": "independent_session"
+    "user_chars": 66137,
+    "review_context": "independent_session",
+    "schema_repair": "review-report-validation"
   },
   "structural_helper_migrations": [
     {
@@ -137,16 +138,17 @@
   "glossary_evidence_rejected": 0,
   "glossary_conflicts_rejected": 0,
   "glossary_proposals_deferred": 0,
+  "provider_model_route": "primary",
   "model_response_diagnostics": {
     "finish_reason": "stop",
     "response_format": "json_object",
-    "response_chars": 238,
+    "response_chars": 5863,
     "provider_refusal": false,
-    "prompt_tokens": 5898,
-    "completion_tokens": 285,
-    "total_tokens": 6183,
+    "prompt_tokens": 21482,
+    "completion_tokens": 11492,
+    "total_tokens": 32974,
     "route": "primary",
-    "role": "translator",
+    "role": "reviewer",
     "unit_id": "chapter-000024"
   }
 }
