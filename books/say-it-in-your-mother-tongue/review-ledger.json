@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 76,
+  "next_sequence": 77,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -7340,6 +7340,96 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "73e38022ddf12bd5178e538d958adb319027d1c6d6d04ad1f5416e91ffcbf18b",
+        "style_guide": "542b979599ebe40dfbb11794d47d2fffcc7bde125f2d09c1549f33f618157eff"
+      }
+    },
+    {
+      "record_id": "1db4effa63a64229a1ed208cc2be9cf0",
+      "sequence": 76,
+      "unit_id": "chapter-000027",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "fae0b5d9b21be14461abbce11e210357cc94cde8c23e31a816d1567cd9db8d2f",
+      "translation_sha256": "fc8012a406ec6a457ef17743104f11af292a455f67fd4b784a8089fc68c72ff6",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-71bc34d3",
+      "reviewed_at": "2026-11-16T22:30:56Z",
+      "state_revision": "427a355bbf728de102e2f0e6facef7b81e0e929bce6153ded1ed28a85f143086",
+      "review_commit": "5f023dfc41e180a169cab41fb23373c29ad5b691",
+      "correction_round": 2,
+      "supersedes_record_id": "5c450092f75b410a8d0d74c894d2a0bb",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-meaning-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The future denial still does not clearly retain the first-person subject. Change «никогда не будет» to «никогда не западу» or an equivalent first-person future.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "never been into him<!-- bt-media:000005 -->never will be",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Никогда на него не западал<!-- bt-media:000005 -->никогда не будет",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "5c450092f75b410a8d0d74c894d2a0bb",
+              "finding_id": "meaning-1"
+            }
+          },
+          {
+            "id": "recheck-meaning-2",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The revised «В твоём случае» correctly conveys that Checo is guessing Max’s answer in Max’s case; this resolves the prior ambiguity.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "I’d say it’s Daniel, in your case.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "В твоём случае я бы сказал, что это Даниэль.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "5c450092f75b410a8d0d74c894d2a0bb",
+              "finding_id": "meaning-2"
+            }
+          },
+          {
+            "id": "recheck-style-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The source’s casual message fragments are lowercase, while the translation capitalizes each one. Preserve the source’s informal casing pattern, except where the source itself uses capitals for emphasis.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "for sure man<!-- bt-media:000002 -->like i promise<!-- bt-media:000003 -->scouts honor and all",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Точно, чувак<!-- bt-media:000002 -->Типа, обещаю<!-- bt-media:000003 -->Честное скаутское и всё такое",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "5c450092f75b410a8d0d74c894d2a0bb",
+              "finding_id": "style-1"
+            }
           }
         ]
       },
