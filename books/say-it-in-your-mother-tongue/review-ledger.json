@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 47,
+  "next_sequence": 48,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -4614,6 +4614,100 @@
       },
       "shared_state_revisions": {
         "glossary": "aa31cad1d18cdd785da1ac4d9199333ef6ef3f8b6d1a8213a62565f942ae4fff",
+        "style_guide": "92a19a82bd31ba731763f6a726791ed8c5618e9c30c6fd72c6217b5c52d9770f"
+      }
+    },
+    {
+      "record_id": "8ce9f793b2434fe1aa70d5274f047503",
+      "sequence": 47,
+      "unit_id": "chapter-000016",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "2cdff11765ed4bb22a857a476affc19ad0a46422598f63261ae48160b3d0390a",
+      "translation_sha256": "fac54ccd6e9b4d62c2a4bb5a0a3e5fb7c8eaada0bcdf246b34e7c5611888f251",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-dd9f6b6b",
+      "reviewed_at": "2026-11-16T14:58:36Z",
+      "state_revision": "a607ddae1d7937be0f3ac38f4865329aabfbff55aefbebf875e0a37eaab66bd7",
+      "review_commit": "def0dd6aa0ea3af1b9daba2166d52cd66d7797df",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "omission-1",
+            "category": "omission",
+            "severity": "minor",
+            "detail": "Max’s plea explicitly begins “Not yet”; that request is not represented in the translation. The emphasis on “please” is also lost. Consider restoring both while preserving the pleading tone.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Not yet, *please*, just five more minutes.",
+              "occurrence": 0
+            },
+            "translation_anchor": null,
+            "resolves": null
+          },
+          {
+            "id": "referent-1",
+            "category": "referent",
+            "severity": "minor",
+            "detail": "The source locates the heightened awareness in Nico’s body. The translation’s plural “чувствуют” instead makes the people in the car seem to feel the other person’s presence. Keep the bodily reaction centered on Nico.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "his body is way too aware of the person sitting next to him.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "и слишком остро чувствуют присутствие человека рядом.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-1",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "The source says Nico reaches out to turn on the radio; the translation says he actually turns it on. This conflicts with the next passage, where Gabriel stops his wrist before he can press the power button.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Humming, Nico reaches his hand out to turn on the car radio.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Напевая, Нико тянется к автомобильному радио и включает его.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "register-1",
+            "category": "register",
+            "severity": "minor",
+            "detail": "“Bullshit” is marked, mildly vulgar language; “чушь” softens that force to neutral language. Use a Russian equivalent that retains the source’s dismissive, profane register.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "That’s bullshit,",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Это чушь",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "9f2bbcee79618db24af6a70e901a69e893644031068a9f80c696fa9378056639",
         "style_guide": "92a19a82bd31ba731763f6a726791ed8c5618e9c30c6fd72c6217b5c52d9770f"
       }
     }
