@@ -40,7 +40,8 @@ class StateOnlyDeploymentTests(unittest.TestCase):
         root = STATE / ".github/workflows"
         names = {p.name for p in root.glob("*.yml")}
         self.assertEqual(names, {
-            "auto-translate.yml", "book-batch-validation.yml",
+            "auto-translate.yml", "auto-provider-retry.yml",
+            "book-batch-validation.yml",
             "book-job-monitor.yml", "chat-operations.yml", "final-epub.yml",
             "omniroute-json-smoke.yml", "tests.yml",
         })
@@ -48,9 +49,23 @@ class StateOnlyDeploymentTests(unittest.TestCase):
         self.assertIn("group: book-operation-", auto)
         self.assertIn("max-parallel: 3", auto)
         self.assertIn("Dispatch next bounded step", auto)
+        self.assertIn("Dispatch bounded provider retry waiter", auto)
+        self.assertIn("steps.run.outputs.retry_at", auto)
+        self.assertIn("gh workflow run auto-provider-retry.yml", auto)
+        waiter = (root / "auto-provider-retry.yml").read_text("utf-8")
+        self.assertIn("workflow_dispatch:", waiter)
+        self.assertIn("group: book-provider-waiter-", waiter)
+        self.assertIn("timeout-minutes: 70", waiter)
+        self.assertIn("Wait until the provider deadline outside book process lock", waiter)
+        self.assertIn("git fetch --quiet origin main", waiter)
+        self.assertIn("Recheck live retry generation and Auto ownership", waiter)
+        self.assertIn("--retry-status", waiter)
+        self.assertIn("steps.latest.outputs.eligible == 'true'", waiter)
+        self.assertNotIn("group: book-operation-", waiter)
         self.assertNotIn("workflow_call:", auto)
-        for filename in ("auto-translate.yml", "book-batch-validation.yml",
-                         "book-job-monitor.yml", "omniroute-json-smoke.yml"):
+        for filename in ("auto-translate.yml", "auto-provider-retry.yml",
+                         "book-batch-validation.yml", "book-job-monitor.yml",
+                         "omniroute-json-smoke.yml"):
             source = (root / filename).read_text("utf-8")
             self.assertIn("runtime_loader.py", source)
             self.assertIn("repository: tim8es/book-translator", source)
