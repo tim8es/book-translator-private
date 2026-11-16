@@ -79,6 +79,7 @@ jobs:
 
           existing = {
               "auto-translate.yml",
+              "auto-provider-retry.yml",             # shared delayed provider recovery
               "omniroute-json-smoke.yml",  # reusable safe JSON compatibility probe
               "book-batch-validation.yml",
               "book-job-monitor.yml",
@@ -97,7 +98,7 @@ jobs:
                   + "; missing: " + ", ".join(missing)
                   + ". Only reviewed reusable entrypoints are allowed."
               )
-          print("Workflow topology check passed (seven reusable entrypoints).")
+          print("Workflow topology check passed (eight reusable entrypoints).")
           PY
 
       - name: Set up Python 3.12
