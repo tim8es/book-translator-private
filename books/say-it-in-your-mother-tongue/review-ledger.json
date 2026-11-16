@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 20,
+  "next_sequence": 21,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -1911,6 +1911,179 @@
             },
             "translation_anchor": {
               "quote": "он держит маму за руку и умоляет взять его с собой — её и Викторию.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "f02e6becb2861881659733c55614d24b49ee0a6906fa607fb2db0ceb6b8d35ad",
+        "style_guide": "92a19a82bd31ba731763f6a726791ed8c5618e9c30c6fd72c6217b5c52d9770f"
+      }
+    },
+    {
+      "record_id": "cb1e6ad0747744d091161d7be801fe35",
+      "sequence": 20,
+      "unit_id": "chapter-000008",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "5f460ef6e2d85f9e2e9288c5046ef80cdc299068e2df30a714cc363eaaf14818",
+      "translation_sha256": "2829c7d20338c6750066161a5039b55ca87f3a1ed6c539d523f9d18a017f5f1e",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-b6de1141",
+      "reviewed_at": "2026-11-16T10:17:52Z",
+      "state_revision": "1094c802703e3d676acaf230bbc0105e62b157fa4c8deb9340f3b8e1fb0bcbaa",
+      "review_commit": "8cef63c8358f50d6dcd0677be481e4ddbd9bc46a",
+      "correction_round": 2,
+      "supersedes_record_id": "c86e245c3b5c49fd9eb29709237171ff",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-meaning-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Resolved: “*слишком*” now preserves the source’s degree of glossiness.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "his eyes still red but no longer *too* glossy.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "они всё ещё красные, но уже не *слишком* блестящие.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "c86e245c3b5c49fd9eb29709237171ff",
+              "finding_id": "meaning-1"
+            }
+          },
+          {
+            "id": "recheck-meaning-2",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Resolved: “плохая примета” preserves the superstition and the source’s compressed phrasing.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "No goodbye, brings bad luck,",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Не прощаемся — плохая примета», — бормочет Чеко, открывая дверь.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "c86e245c3b5c49fd9eb29709237171ff",
+              "finding_id": "meaning-2"
+            }
+          },
+          {
+            "id": "recheck-meaning-3",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Resolved: the translation now places both the shoe and the hoodie against his chest.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "clutching the other shoe and the dirty hoodie to his chest.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "второй он прижимает к груди вместе с грязной толстовкой.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "c86e245c3b5c49fd9eb29709237171ff",
+              "finding_id": "meaning-3"
+            }
+          },
+          {
+            "id": "recheck-structure-1",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "Resolved: the emphasis on “маму” is now preserved with italics.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "holding his *mama*’s hand, begging to go with her and Victoria.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "он держит *маму* за руку и умоляет взять его с собой — её и Викторию.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "c86e245c3b5c49fd9eb29709237171ff",
+              "finding_id": "structure-1"
+            }
+          },
+          {
+            "id": "meaning-new-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The source says only “shoes”; “туфли” specifies a type of footwear not established by the source. Use a more neutral rendering such as “обувь.”",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "The shoes Max was wearing when they last spoke in person are kicked around the room,",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Туфли, в которых Макс был, когда они в последний раз виделись лично, валяются по всей комнате:",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-new-2",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The source’s superlative “softest” is reduced to “мягко улыбается.” Preserve the heightened tenderness, for example by rendering it as a very gentle or tender smile.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Shaking his head, Checo gives him the softest smile.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Покачав головой, Чеко мягко улыбается.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-new-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "“Слова звучат дрожаще” is awkward Russian. Recast the phrasing naturally while retaining the source’s shaky, unsteady, uncertain quality.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "his words shaky, entirely unsteady and unsure.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "слова звучат дрожаще, совсем неуверенно и сбивчиво.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-new-2",
+            "category": "style",
+            "severity": "minor",
+            "detail": "“На половину пути с пятого этажа” is awkwardly phrased. Recast it naturally, such as “примерно до середины лестницы с пятого этажа.”",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "He only reaches about halfway down from the fifth floor",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Он успевает спуститься лишь примерно на половину пути с пятого этажа",
               "occurrence": 0
             },
             "resolves": null
