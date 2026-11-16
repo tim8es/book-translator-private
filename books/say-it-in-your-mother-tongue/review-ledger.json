@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 29,
+  "next_sequence": 30,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -2782,6 +2782,77 @@
       },
       "shared_state_revisions": {
         "glossary": "f02e6becb2861881659733c55614d24b49ee0a6906fa607fb2db0ceb6b8d35ad",
+        "style_guide": "92a19a82bd31ba731763f6a726791ed8c5618e9c30c6fd72c6217b5c52d9770f"
+      }
+    },
+    {
+      "record_id": "db1917e286ae4c4287935f8e586d8ebd",
+      "sequence": 29,
+      "unit_id": "chapter-000010",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "9a277557932fff6ba2d167f2bd79f14e5bc69d22ceb4e92892520e6e7fd714f7",
+      "translation_sha256": "6786232994ec8e96d3d31ec2f0ad0c9b01320a1cbbe774d46cdcdeb9db243efd",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-122fcf4f",
+      "reviewed_at": "2026-11-16T12:07:22Z",
+      "state_revision": "dd9af5e22a22e47507e09bcd76010e277595d14b7525d71670257020e62e5e4b",
+      "review_commit": "c8eaf7cd07137cf876c34bd40ab9b21f3baf5767",
+      "correction_round": 4,
+      "supersedes_record_id": "638ecd6e545d41e1a0edcacf38badf5d",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "followup-terminology-2",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "The changed paragraph now uses the canonical spelling «Лэнс», but the adjacent supplied block still has «Ланс бормочет». Standardize that name to «Лэнс» here as well.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "When they part, Lance mumbles, “maybe we shouldn’t, like, not *here*.”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Когда они отстраняются друг от друга, Ланс бормочет: «Может, нам не стоит… ну, не *здесь*».",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "638ecd6e545d41e1a0edcacf38badf5d",
+              "finding_id": "recheck-terminology-1"
+            }
+          },
+          {
+            "id": "followup-style-2",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Resolved: «во время поцелуя» is a natural Russian construction and preserves that he moans during the kiss.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "And Lance cannot help but moan into the kiss, grabbing the front of Fernando’s shirt to anchor himself.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Лэнс не может не застонать во время поцелуя, вцепившись в рубашку Фернандо на груди, чтобы удержаться.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "638ecd6e545d41e1a0edcacf38badf5d",
+              "finding_id": "style-1"
+            }
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "aa31cad1d18cdd785da1ac4d9199333ef6ef3f8b6d1a8213a62565f942ae4fff",
         "style_guide": "92a19a82bd31ba731763f6a726791ed8c5618e9c30c6fd72c6217b5c52d9770f"
       }
     }
