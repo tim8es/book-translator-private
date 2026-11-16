@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 78,
+  "next_sequence": 79,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -7588,6 +7588,223 @@
             },
             "translation_anchor": {
               "quote": "*«С тобой я чувствую себя как дома»* — не говорит он.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "73e38022ddf12bd5178e538d958adb319027d1c6d6d04ad1f5416e91ffcbf18b",
+        "style_guide": "542b979599ebe40dfbb11794d47d2fffcc7bde125f2d09c1549f33f618157eff"
+      }
+    },
+    {
+      "record_id": "062088cbce124ebda69dda26c48fb973",
+      "sequence": 78,
+      "unit_id": "chapter-000028",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "2aa4bfa1297c63de89c47e14f31725328fc87be069ca04433c81028827d089f7",
+      "translation_sha256": "9c385c1f55cf08987d8ce2785cbceb19297b92a8118c80468b63b78d8c895c1a",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-eb9c7627",
+      "reviewed_at": "2026-11-16T23:40:41Z",
+      "state_revision": "0a20ff3bf07f23a1c64272706b59865a23c1d858e29baa774e4400075079690d",
+      "review_commit": "841c2b76e27e7dbf9447724cea642ea3b33cfb71",
+      "correction_round": 2,
+      "supersedes_record_id": "ea22f9428f834ef5833a9ffc3b0880ff",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-terminology-1",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "The current attribution still spells Verstappen as «Верстаппен», while later attributions use «Ферстаппен». Standardize this attribution to «Ферстаппен».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "**Verstappen, Max**<!-- bt-media:000001 -->are you seeing Checo<!-- bt-media:000002 -->outside of work i mean",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "**Верстаппен, Макс**<!-- bt-media:000001 -->ты встречаешься с Чеко<!-- bt-media:000002 -->я имею в виду вне работы",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "ea22f9428f834ef5833a9ffc3b0880ff",
+              "finding_id": "terminology-1"
+            }
+          },
+          {
+            "id": "recheck-terminology-2",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "This attribution also still spells Verstappen as «Верстаппен», inconsistent with later «Ферстаппен». Standardize it to «Ферстаппен».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "<!-- bt-inline:000001:start -->Verstappen, Max<!-- bt-media:000001 --><!-- bt-inline:000001:end -->are you seeing Checo in your private life",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "<!-- bt-inline:000001:start -->Верстаппен, Макс<!-- bt-media:000001 --><!-- bt-inline:000001:end -->ты встречаешься с Чеко в личной жизни",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "ea22f9428f834ef5833a9ffc3b0880ff",
+              "finding_id": "terminology-2"
+            }
+          },
+          {
+            "id": "recheck-meaning-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The current «Меня к нему никогда не тянуло» preserves the attraction-specific meaning of “never been into him.” This prior issue is corrected.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "never been into him",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Меня к нему никогда не тянуло",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "ea22f9428f834ef5833a9ffc3b0880ff",
+              "finding_id": "meaning-1"
+            }
+          },
+          {
+            "id": "recheck-meaning-2",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "«И никогда не понравится» shifts the attraction-specific denial to general liking. Preserve the elliptical sense that he will never be attracted to Checo, for example «и никогда меня к нему не потянет».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "never will be",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "И никогда не понравится",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "ea22f9428f834ef5833a9ffc3b0880ff",
+              "finding_id": "meaning-2"
+            }
+          },
+          {
+            "id": "recheck-meaning-3",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The translation still adds «Здесь», narrowing the source's broader question about whether it feels like home. Remove the location-specific addition.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Does it feel like home?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Здесь чувствуешь себя как дома?",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "ea22f9428f834ef5833a9ffc3b0880ff",
+              "finding_id": "meaning-3"
+            }
+          },
+          {
+            "id": "recheck-structure-1",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "The French confession remains unitalicized in the translation, although the source emphasizes it. Restore the italics.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“It was, *uh*, it was,” his voice shakes *just* a little when he finally repeats, “*Je crois que je suis amoureux de toi*.”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Это было, *э-э*, это было», — его голос дрожит *чуть-чуть*, когда он наконец повторяет: «Je crois que je suis amoureux de toi».",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "ea22f9428f834ef5833a9ffc3b0880ff",
+              "finding_id": "structure-1"
+            }
+          },
+          {
+            "id": "recheck-structure-2",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "Fernando’s Spanish reply remains unitalicized in the translation, although the source emphasizes it. Restore the italics.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "before telling Lance, with a heavy Spanish accent, “*Creo que he estado enamorado por ti por años*.”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "говорит Лэнсу с сильным испанским акцентом: «Creo que he estado enamorado por ti por años».",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "ea22f9428f834ef5833a9ffc3b0880ff",
+              "finding_id": "structure-2"
+            }
+          },
+          {
+            "id": "recheck-meaning-4",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "The translation still changes the direct metaphor—Max himself feels like home—to feeling at home with him. Preserve the source image, for example «Ты для меня как дом».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "*“You feel like home,”* he doesn’t say.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "*«С тобой я чувствую себя как дома»* — не говорит он.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "ea22f9428f834ef5833a9ffc3b0880ff",
+              "finding_id": "meaning-4"
+            }
+          },
+          {
+            "id": "terminology-3",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "This additional occurrence also renders Verstappen as «Верстаппен», while other occurrences in the unit use «Ферстаппен». Standardize it to «Ферстаппен».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“Yeah,” Lance groans as he unlocks the phone, “*Verstappen*. What could he want?”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Ага», — стонет Лэнс, разблокируя телефон. «*Верстаппен*. Чего ему надо?»",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-5",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The source’s unfinished «are you fucking» includes the sexual verb that sets up Lance’s misunderstanding in the next message. «ты, блядь...» drops that content; preserve the interrupted wording and its ambiguity.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "**Verstappen, Max**<!-- bt-media:000001 -->are you fucking",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "**Ферстаппен, Макс**<!-- bt-media:000001 -->ты, блядь...",
               "occurrence": 0
             },
             "resolves": null
