@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 79,
+  "next_sequence": 80,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -7808,6 +7808,210 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "73e38022ddf12bd5178e538d958adb319027d1c6d6d04ad1f5416e91ffcbf18b",
+        "style_guide": "542b979599ebe40dfbb11794d47d2fffcc7bde125f2d09c1549f33f618157eff"
+      }
+    },
+    {
+      "record_id": "d46cd9980104487b96d01291ff00a157",
+      "sequence": 79,
+      "unit_id": "chapter-000028",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "2aa4bfa1297c63de89c47e14f31725328fc87be069ca04433c81028827d089f7",
+      "translation_sha256": "d4e0cf91b90f69d567476bd0fc24a35ac67e200b24d8f20ae635324eaad75838",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-412f7004",
+      "reviewed_at": "2026-11-16T23:46:14Z",
+      "state_revision": "5a433267da6f66911c67eea57ee7be2ab14ee393f4a6c46ba38dbf9e580e565b",
+      "review_commit": "dc4caeccfadc4800b406abe0c1a1603d59f37c78",
+      "correction_round": 3,
+      "supersedes_record_id": "062088cbce124ebda69dda26c48fb973",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "followup-terminology-1",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "This attribution still spells Verstappen as «Верстаппен», while later attributions use «Ферстаппен». Standardize it to «Ферстаппен».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "**Verstappen, Max**<!-- bt-media:000001 -->are you seeing Checo<!-- bt-media:000002 -->outside of work i mean",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "**Верстаппен, Макс**<!-- bt-media:000001 -->ты встречаешься с Чеко<!-- bt-media:000002 -->я имею в виду вне работы",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "062088cbce124ebda69dda26c48fb973",
+              "finding_id": "recheck-terminology-1"
+            }
+          },
+          {
+            "id": "followup-terminology-2",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "This attribution still spells Verstappen as «Верстаппен», inconsistent with later «Ферстаппен». Standardize it to «Ферстаппен».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "<!-- bt-inline:000001:start -->Verstappen, Max<!-- bt-media:000001 --><!-- bt-inline:000001:end -->are you seeing Checo in your private life",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "<!-- bt-inline:000001:start -->Верстаппен, Макс<!-- bt-media:000001 --><!-- bt-inline:000001:end -->ты встречаешься с Чеко в личной жизни",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "062088cbce124ebda69dda26c48fb973",
+              "finding_id": "recheck-terminology-2"
+            }
+          },
+          {
+            "id": "followup-meaning-2",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The attraction-specific denial is now preserved: «never will be» is rendered as never being attracted to Checo.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "never will be",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "И никогда меня к нему не потянет",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "062088cbce124ebda69dda26c48fb973",
+              "finding_id": "recheck-meaning-2"
+            }
+          },
+          {
+            "id": "followup-meaning-3",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The translation still adds «Здесь», narrowing the source’s broader question about whether it feels like home. Remove the location-specific addition.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Does it feel like home?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Здесь чувствуешь себя как дома?",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "062088cbce124ebda69dda26c48fb973",
+              "finding_id": "recheck-meaning-3"
+            }
+          },
+          {
+            "id": "followup-structure-1",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "The French confession remains unitalicized in the translation, although it is italicized in the source. Restore the emphasis.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“It was, *uh*, it was,” his voice shakes *just* a little when he finally repeats, “*Je crois que je suis amoureux de toi*.”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Это было, *э-э*, это было», — его голос дрожит *чуть-чуть*, когда он наконец повторяет: «Je crois que je suis amoureux de toi».",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "062088cbce124ebda69dda26c48fb973",
+              "finding_id": "recheck-structure-1"
+            }
+          },
+          {
+            "id": "followup-structure-2",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "Fernando’s Spanish reply remains unitalicized in the translation, although it is italicized in the source. Restore the emphasis.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“*Creo que he estado enamorado por ti por años*.”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Creo que he estado enamorado por ti por años».",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "062088cbce124ebda69dda26c48fb973",
+              "finding_id": "recheck-structure-2"
+            }
+          },
+          {
+            "id": "followup-meaning-4",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "The translation still changes the direct metaphor—Max himself feels like home—into feeling at home with Checo. Preserve the source image, for example «Ты для меня как дом».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "*“You feel like home,”* he doesn’t say.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "*«С тобой я чувствую себя как дома»* — не говорит он.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "062088cbce124ebda69dda26c48fb973",
+              "finding_id": "recheck-meaning-4"
+            }
+          },
+          {
+            "id": "followup-terminology-3",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "This occurrence still spells Verstappen as «Верстаппен», while other attributions in the unit use «Ферстаппен». Standardize it to «Ферстаппен».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“Yeah,” Lance groans as he unlocks the phone, “*Verstappen*. What could he want?”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Ага», — стонет Лэнс, разблокируя телефон. «*Верстаппен*. Чего ему надо?»",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "062088cbce124ebda69dda26c48fb973",
+              "finding_id": "terminology-3"
+            }
+          },
+          {
+            "id": "followup-meaning-5",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The unfinished «are you fucking» includes the sexual verb that sets up Lance’s misunderstanding in the next message. The translation drops that content; preserve the interrupted wording and its ambiguity.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "**Verstappen, Max**<!-- bt-media:000001 -->are you fucking",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "**Ферстаппен, Макс**<!-- bt-media:000001 -->ты, блядь...",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "062088cbce124ebda69dda26c48fb973",
+              "finding_id": "meaning-5"
+            }
           }
         ]
       },
