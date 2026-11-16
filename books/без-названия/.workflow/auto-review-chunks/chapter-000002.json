@@ -291,6 +291,55 @@
         ]
       },
       "style": []
+    },
+    "chunk-005": {
+      "outcome": "CORRECTIONS_REQUIRED",
+      "report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "ball-toss",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "«Перебрасываются» says they are tossing the ball back and forth to each other, a specific activity the source does not establish. Use a neutral rendering such as «кидают мяч Ани», which leaves the recipient unspecified.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "They’re out in the backyard, throwing Anya’s slobbery tennis ball.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Они во дворе, перебрасываются покрытым слюной теннисным мячом Ани.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "beam-calque",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Сияет Илье» is an awkward calque in Russian. Rephrase naturally, for example «сияет, глядя на Илью», while retaining the affectionate expression.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Hollander goes very still when he passes it to him, then beams at Ilya with far more affection than a candy bar warrants.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Холландер замирает, а потом сияет Илье с такой нежностью, какой шоколадный батончик никак не заслуживает.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "style": []
     }
   }
 }
