@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 17,
+  "next_sequence": 18,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -1646,6 +1646,87 @@
               "record_id": "00c39ad651af49cc8128a8e858a65b45",
               "finding_id": "style-1"
             }
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "f02e6becb2861881659733c55614d24b49ee0a6906fa607fb2db0ceb6b8d35ad",
+        "style_guide": "92a19a82bd31ba731763f6a726791ed8c5618e9c30c6fd72c6217b5c52d9770f"
+      }
+    },
+    {
+      "record_id": "5c2e2d0243184fd48caff5952bc5b7ea",
+      "sequence": 17,
+      "unit_id": "chapter-000007",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "9537306d78d08838cf7115c069ebefe85b5610f6b5d25d6ec24cdd1971797acd",
+      "translation_sha256": "9e85951dc96d5039f7f6f4491fa4aea547e9d1baadfef141fcd81f9fb968ccac",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-f53c38f7",
+      "reviewed_at": "2026-11-16T10:02:19Z",
+      "state_revision": "0a6430ebf55007d88f0f9479f21118842dc4b7d9b403ceedc7117f0fa3c24453",
+      "review_commit": "a0e2b41ecdd6f90a76308c6597f7a39b0ab8a029",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "style-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The second clause has a person-agreement error: it addresses Fernando as «ты», so «не кусает» should also use second person. Suggested correction: «Только лаешь, а не кусаешься».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Though right now, you are more like a cute lap dog. All bark and no bite.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Хотя сейчас ты скорее милая ручная собачка. Только лаешь, а не кусает.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-2",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Я хочу быть с тобой добрым» is understandable but awkwardly phrased here. A more natural rendering such as «Я хочу быть к тебе добрым» would better convey the source without changing its meaning.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "There is something in his eyes that screams, ‘*I want to be good to you.*’",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "В его глазах есть что-то, что кричит: «*Я хочу быть с тобой добрым.*»",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "In this intimate, flirtatious context, «good for me» praises Lance's behavior; «хороший для меня» can instead sound like he is beneficial to Fernando. Rephrase to preserve the praise directed at Lance.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“So good for me,” he whispers against Lance’s mouth.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "— Ты такой хороший для меня, — шепчет он у самых губ Лэнса.",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       },
