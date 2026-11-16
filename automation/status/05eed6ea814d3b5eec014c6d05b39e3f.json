@@ -3,7 +3,7 @@
   "job_id": "05eed6ea814d3b5eec014c6d05b39e3f",
   "book_slug": "say-it-in-your-mother-tongue",
   "state": "running",
-  "phase": "structural-segments-staged",
+  "phase": "translator-completed",
   "failures": 0,
   "correction_rounds": {
     "chapter-000001": 1,
@@ -23,13 +23,8 @@
   },
   "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
   "source_sha256": "12e210ce5a95daf56a97ada583ec15c274780c4ddfa7fb92da6a88c67f7c403d",
-  "updated_at": "2026-11-16T14:07:35.457133+00:00",
-  "active": {
-    "role": "translator",
-    "chapter": 15,
-    "session_id": "auto-05eed6ea814d-translator-ee773815",
-    "unit_id": "chapter-000015"
-  },
+  "updated_at": "2026-11-16T14:07:37.131392+00:00",
+  "active": null,
   "recoveries": [
     {
       "action": "auto-retry-corrected-structural-preflight",
@@ -105,13 +100,6 @@
   "glossary_evidence_rejected": 0,
   "glossary_conflicts_rejected": 0,
   "glossary_proposals_deferred": 0,
-  "provider_model_route": "primary",
-  "structural_segment_progress": {
-    "unit_id": "chapter-000015",
-    "source_sha256": "8c462958d13f6ca19ed2ea9b97c8a476b3270c12c4dc4a73f1831aac7e95b2cb",
-    "completed": 42,
-    "total": 42
-  },
   "model_response_diagnostics": {
     "finish_reason": "stop",
     "response_format": "json_object",
