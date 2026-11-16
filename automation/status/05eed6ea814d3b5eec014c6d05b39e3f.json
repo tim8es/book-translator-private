@@ -3,7 +3,7 @@
   "job_id": "05eed6ea814d3b5eec014c6d05b39e3f",
   "book_slug": "say-it-in-your-mother-tongue",
   "state": "running",
-  "phase": "model-call-reserved",
+  "phase": "reviewer-completed",
   "failures": 0,
   "correction_rounds": {
     "chapter-000001": 1,
@@ -32,13 +32,8 @@
   },
   "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
   "source_sha256": "12e210ce5a95daf56a97ada583ec15c274780c4ddfa7fb92da6a88c67f7c403d",
-  "updated_at": "2026-11-16T21:00:22.967173+00:00",
-  "active": {
-    "role": "reviewer",
-    "chapter": 24,
-    "session_id": "auto-05eed6ea814d-reviewer-7b4f8a86",
-    "unit_id": "chapter-000024"
-  },
+  "updated_at": "2026-11-16T21:01:45.575449+00:00",
+  "active": null,
   "recoveries": [
     {
       "action": "auto-retry-corrected-structural-preflight",
@@ -79,23 +74,7 @@
     }
   ],
   "memory_glossary_saved": 19,
-  "pending_style": [
-    {
-      "evidence": "“I can’t be in one fucking room with you for god-knows how long!” → «Я не могу находиться с тобой в одной грёбаной комнате хрен знает сколько времени!»",
-      "source_pattern": "Colloquial profanity intensifies frustration and conveys an indefinite duration: “one fucking room” and “god-knows how long.”",
-      "translation_approach": "Preserve the blunt, colloquial force and uncertainty with natural Russian profanity rather than neutralizing the phrasing."
-    },
-    {
-      "evidence": "“I *could* cook for you” → «Я *мог бы* приготовить для тебя»; “*anything*” → «*чём-то ещё*».",
-      "source_pattern": "Italics mark emphasis in dialogue and internal thought.",
-      "translation_approach": "Preserve meaningful italics and their placement in the Russian text."
-    },
-    {
-      "evidence": "The supplied source and translation excerpts retain these italicized words and their emphasis.",
-      "source_pattern": "Italics emphasize words or phrases in dialogue and narration, as in *Non*, *dreamy*, and *proper*.",
-      "translation_approach": "Preserve meaningful italic emphasis in Russian, as in *Non*, *мечтательного*, and *чопорный*."
-    }
-  ],
+  "pending_style": [],
   "role_protocol_failures": {
     "chapter-000001:corrector": 3,
     "chapter-000017:corrector": 3
@@ -134,20 +113,20 @@
       "action": "canonical-defer-without-pass"
     }
   ],
-  "memory_style_saved": 2,
+  "memory_style_saved": 7,
   "glossary_evidence_rejected": 0,
   "glossary_conflicts_rejected": 0,
   "glossary_proposals_deferred": 0,
   "model_response_diagnostics": {
     "finish_reason": "stop",
     "response_format": "json_object",
-    "response_chars": 123,
+    "response_chars": 4520,
     "provider_refusal": false,
-    "prompt_tokens": 5682,
-    "completion_tokens": 126,
-    "total_tokens": 5808,
+    "prompt_tokens": 11649,
+    "completion_tokens": 4364,
+    "total_tokens": 16013,
     "route": "primary",
-    "role": "corrector",
+    "role": "reviewer",
     "unit_id": "chapter-000024"
   }
 }
