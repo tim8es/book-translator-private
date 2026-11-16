@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 10,
+  "next_sequence": 11,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -894,6 +894,131 @@
             },
             "translation_anchor": {
               "quote": "Он громко сглатывает, крепче сжимая распечатки телеметрии, и заставляет себя смотреть куда угодно, только не на Габриэля.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "f02e6becb2861881659733c55614d24b49ee0a6906fa607fb2db0ceb6b8d35ad",
+        "style_guide": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4"
+      }
+    },
+    {
+      "record_id": "28126a9a4f2a47b99f997ca8f15dbbff",
+      "sequence": 10,
+      "unit_id": "chapter-000004",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "8f1ed2ca1a8dc1f0a29b8cc33b9d784f7f39a4881ba1d775eb73db0642fc0ade",
+      "translation_sha256": "3e18f73b0734d26950833c10200f8fbcfce6499520f191245f46475b22939ec0",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-9181ea19",
+      "reviewed_at": "2026-11-16T09:18:47Z",
+      "state_revision": "68b45650b1756533f0d0a5012b1da0e333abfe658fd5e89a4d91af3ea66fbfd2",
+      "review_commit": "7b30359ae14ed4f78ccbbd41a9d2b31e3b6a571a",
+      "correction_round": 2,
+      "supersedes_record_id": "9edc4716275c4088b0bf9f6d7e6ea8d6",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "style-1-recheck",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Resolved: «по контракту я обязан быть в порядке» is a natural rendering of the title’s contractual phrasing.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Chapter 2: contractually obligated to be fine",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Глава 2: по контракту я обязан быть в порядке",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "9edc4716275c4088b0bf9f6d7e6ea8d6",
+              "finding_id": "style-1"
+            }
+          },
+          {
+            "id": "structure-1-recheck",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "The source utterance in this passage is in quotation marks, while the translation sets inline dialogue off with em dashes. The same inconsistency remains in blocks 44–49; use the dialogue formatting consistently.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“I’m fine,” he states again, knowing that Checo isn’t buying it.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "— Я в порядке, — снова заявляет он, зная, что Чеко ему не верит.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "9edc4716275c4088b0bf9f6d7e6ea8d6",
+              "finding_id": "structure-1"
+            }
+          },
+          {
+            "id": "style-2-recheck",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Resolved: the translation now uses the simple, natural «кивает» for “nods once.”",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "“Of course,” Max nods once, putting on another picture perfect smile.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Конечно», — Макс кивает, вновь натягивая идеальную улыбку.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "9edc4716275c4088b0bf9f6d7e6ea8d6",
+              "finding_id": "style-2"
+            }
+          },
+          {
+            "id": "structure-2-recheck",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "The emphasis on “anywhere but Gabriel” is now italicized, but other meaningful emphasis remains absent: “just because,” “really” in “really laughs,” “potato,” “really became friends with one of them,” “huff and puff,” and “anything.” Preserve the source’s emphasis in these passages.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“It is never *just because* with you,”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«С тобой никогда не бывает просто так», — ровно произносит Нико",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "9edc4716275c4088b0bf9f6d7e6ea8d6",
+              "finding_id": "structure-2"
+            }
+          },
+          {
+            "id": "omission-1",
+            "category": "omission",
+            "severity": "minor",
+            "detail": "The translation omits Nico swallowing, tightening his grip on the papers, and forcing himself to look away from Gabriel. The rendered italic fragment is left without a verb or clear grammatical connection. Translate the full sequence.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "He swallows loudly, tightening his grip of the telemetry, as he forces himself to look *anywhere but Gabriel*. He scratches his head, making eye contact with the printed data.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "*куда угодно, только не на Габриэля* Почёсывает голову и встречается взглядом с распечатанными данными.",
               "occurrence": 0
             },
             "resolves": null
