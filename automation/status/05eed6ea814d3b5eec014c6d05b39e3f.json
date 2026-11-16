@@ -2,13 +2,13 @@
   "schema_version": 1,
   "job_id": "05eed6ea814d3b5eec014c6d05b39e3f",
   "book_slug": "say-it-in-your-mother-tongue",
-  "state": "blocked",
-  "phase": "model-blocked",
-  "failures": 3,
+  "state": "running",
+  "phase": "operator-resume-authorized",
+  "failures": 0,
   "correction_rounds": {},
   "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
   "source_sha256": "12e210ce5a95daf56a97ada583ec15c274780c4ddfa7fb92da6a88c67f7c403d",
-  "updated_at": "2026-11-15T22:48:25.620966+00:00",
+  "updated_at": "2026-11-16T08:27:33.093175+00:00",
   "active": null,
   "recoveries": [
     {
@@ -16,6 +16,11 @@
       "started_at": "2026-11-15T22:22:31.890820+00:00",
       "previous_error": "source paragraph exceeds bounded translator span limit",
       "helper_revision": "d11a30b306a8bac236b73f25ae2f38e89745aab1"
+    },
+    {
+      "action": "resume-model-blocked",
+      "approved_at": "2026-11-16T08:27:33.093153+00:00",
+      "previous_error": "correction patch touches a protected EPUB marker or Markdown link boundary"
     }
   ],
   "structural_span_retries": 1,
@@ -63,5 +68,7 @@
     "role": "corrector",
     "unit_id": "chapter-000001"
   },
-  "last_error": "correction patch touches a protected EPUB marker or Markdown link boundary"
+  "last_error": null,
+  "protected_correction_retries": 1,
+  "protected_correction_review_record": "175981a73412449d9d1b40a875c9e343"
 }
