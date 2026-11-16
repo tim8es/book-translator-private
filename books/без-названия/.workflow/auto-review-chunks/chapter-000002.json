@@ -1,0 +1,181 @@
+{
+  "schema_version": 1,
+  "plan": {
+    "schema_version": 1,
+    "helper_revision": "review-chunks-v1",
+    "source_sha256": "7edd5f7d76d4a7d2f971e83a7096c061b9e1a51db15178224d7975fe39d0eb39",
+    "translation_sha256": "f0865c06970e508a1b8e2add986c551d7d97370799262e6506ffe1906ab0c524",
+    "chunks": [
+      {
+        "id": "chunk-001",
+        "source_core": [
+          0,
+          10724
+        ],
+        "translation_core": [
+          0,
+          11125
+        ],
+        "source_window": [
+          0,
+          12578
+        ],
+        "translation_window": [
+          0,
+          12982
+        ]
+      },
+      {
+        "id": "chunk-002",
+        "source_core": [
+          10724,
+          21461
+        ],
+        "translation_core": [
+          11125,
+          22096
+        ],
+        "source_window": [
+          8773,
+          23469
+        ],
+        "translation_window": [
+          9255,
+          24080
+        ]
+      },
+      {
+        "id": "chunk-003",
+        "source_core": [
+          21461,
+          32129
+        ],
+        "translation_core": [
+          22096,
+          33116
+        ],
+        "source_window": [
+          19402,
+          33980
+        ],
+        "translation_window": [
+          20057,
+          34990
+        ]
+      },
+      {
+        "id": "chunk-004",
+        "source_core": [
+          32129,
+          42844
+        ],
+        "translation_core": [
+          33116,
+          44265
+        ],
+        "source_window": [
+          30299,
+          44803
+        ],
+        "translation_window": [
+          31160,
+          46259
+        ]
+      },
+      {
+        "id": "chunk-005",
+        "source_core": [
+          42844,
+          53431
+        ],
+        "translation_core": [
+          44265,
+          55594
+        ],
+        "source_window": [
+          41037,
+          55637
+        ],
+        "translation_window": [
+          42446,
+          57532
+        ]
+      },
+      {
+        "id": "chunk-006",
+        "source_core": [
+          53431,
+          64303
+        ],
+        "translation_core": [
+          55594,
+          66463
+        ],
+        "source_window": [
+          51622,
+          66182
+        ],
+        "translation_window": [
+          53735,
+          68331
+        ]
+      },
+      {
+        "id": "chunk-007",
+        "source_core": [
+          64303,
+          74923
+        ],
+        "translation_core": [
+          66463,
+          77498
+        ],
+        "source_window": [
+          62236,
+          74923
+        ],
+        "translation_window": [
+          64583,
+          77498
+        ]
+      }
+    ]
+  },
+  "unit_id": "chapter-000002",
+  "workflow_revision": "871e937b5d7075613c4e55c1ecfc07af700af8bc",
+  "completed": {
+    "chunk-001": {
+      "outcome": "CORRECTIONS_REQUIRED",
+      "report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "arm-to-shoulder",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The source says Hollander removes his hand from Ilya’s arm, but the translation says shoulder. Correct the body part to match the source.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "slowly removing his hand from Ilya’s arm.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "медленно убирает руку с его плеча.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "style": []
+    }
+  }
+}
