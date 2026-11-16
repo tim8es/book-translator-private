@@ -3,38 +3,35 @@
   "job_id": "ed29a03c00540e66d6846fd802b04f55",
   "book_slug": "без-названия",
   "state": "running",
-  "phase": "claimed",
+  "phase": "model-call-reserved",
   "failures": 0,
   "correction_rounds": {
     "chapter-000002": 2
   },
   "workflow_revision": "871e937b5d7075613c4e55c1ecfc07af700af8bc",
   "source_sha256": "1e94a92096552a75265f8c5e73562e8ad4d28bb8a8a28f1db25b4a4107e374cf",
-  "updated_at": "2026-11-16T12:47:06.122413+00:00",
+  "updated_at": "2026-11-16T12:47:35.887616+00:00",
   "active": {
     "role": "corrector",
     "chapter": 2,
     "session_id": "auto-ed29a03c0054-corrector-3d86fdc7",
     "unit_id": "chapter-000002"
   },
-  "model_calls_started": 66,
+  "model_calls_started": 67,
   "prompt_context": {
-    "role": "reviewer",
+    "role": "corrector",
     "workflow_revision": "871e937b5d7075613c4e55c1ecfc07af700af8bc",
     "loaded_contracts": [
       "AGENTS.md",
       "docs/TRANSLATION.md",
-      "docs/REVIEWER.md"
+      "docs/TRANSLATOR.md"
     ],
     "glossary_sha256": "f02e6becb2861881659733c55614d24b49ee0a6906fa607fb2db0ceb6b8d35ad",
     "style_guide_sha256": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4",
-    "system_chars": 26689,
-    "user_chars": 33005,
-    "review_context": "independent_session",
-    "execution_mode": "bounded-review-chunks",
-    "review_helper_revision": "review-chunks-v1",
-    "chunk_id": "chunk-007",
-    "chunk_count": 7
+    "system_chars": 18890,
+    "user_chars": 10488,
+    "correction_mode": "bounded-review-patches",
+    "batch_finding_count": 3
   },
   "memory_glossary_saved": 0,
   "pending_style": [],
