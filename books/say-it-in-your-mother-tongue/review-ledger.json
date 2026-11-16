@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 55,
+  "next_sequence": 56,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -5335,6 +5335,115 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "b414ef45af3b5d537fdc3e282c909cf7d84690b99e1a12b05929ac57f0462bc0",
+        "style_guide": "9aa29b7a57a8e19df8d8c06ea387e12df497cb4953714bfae17739cebb2b81c1"
+      }
+    },
+    {
+      "record_id": "c2375b4033814e908480221286904f21",
+      "sequence": 55,
+      "unit_id": "chapter-000019",
+      "outcome": "PASS",
+      "source_sha256": "f4cb1f90490d850a545d158519b3af5c25101e70c3c0b1b2d86ca9d3ac60fc42",
+      "translation_sha256": "cb4ba4d1808f7f8cfa88a83c03cc67b82390179791cac1e0db590368aa6bbfb2",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-0a16eb8c",
+      "reviewed_at": "2026-11-16T18:27:00Z",
+      "state_revision": "81d2507b6f673659fa323d99d9aa97182c8967e5b9a0a1fc79ec506af90c2889",
+      "review_commit": "651ba947765ab2892e2617ce27386a48899d8fad",
+      "correction_round": 1,
+      "supersedes_record_id": "00267041a98c46a083b1e17a2b684385",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "followup-meaning-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Resolved: «психологически» preserves the mental-well-being sense of “mentally” without suggesting morale or moral character.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Like mentally, I mean…",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "В смысле, психологически…",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "00267041a98c46a083b1e17a2b684385",
+              "finding_id": "meaning-1"
+            }
+          },
+          {
+            "id": "followup-style-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Resolved: the German code-switch «Nein.» is retained in the translation.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Nein.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Nein.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "00267041a98c46a083b1e17a2b684385",
+              "finding_id": "style-1"
+            }
+          },
+          {
+            "id": "followup-style-2",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Resolved: «говорит он в сторону комнаты» avoids the earlier literal calque and reads naturally in the scene while preserving that he speaks toward the shared room.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "“I’m done,” he says into the shared space, “if you need to.”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Я закончил, — говорит он в сторону комнаты, — если тебе нужно».",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "00267041a98c46a083b1e17a2b684385",
+              "finding_id": "style-2"
+            }
+          },
+          {
+            "id": "followup-style-3",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Resolved: «напарник» is conversational and consistent with the established rendering.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "You are my teammate,” Nico says instead, his voice low and even.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Ты мой напарник», — говорит вместо этого Нико тихим, ровным голосом.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "00267041a98c46a083b1e17a2b684385",
+              "finding_id": "style-3"
+            }
           }
         ]
       },
