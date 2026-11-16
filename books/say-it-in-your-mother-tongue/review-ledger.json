@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 30,
+  "next_sequence": 31,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -2848,6 +2848,71 @@
               "record_id": "638ecd6e545d41e1a0edcacf38badf5d",
               "finding_id": "style-1"
             }
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "aa31cad1d18cdd785da1ac4d9199333ef6ef3f8b6d1a8213a62565f942ae4fff",
+        "style_guide": "92a19a82bd31ba731763f6a726791ed8c5618e9c30c6fd72c6217b5c52d9770f"
+      }
+    },
+    {
+      "record_id": "f7a88f386f5643d3ae21b0ce264e0ad6",
+      "sequence": 30,
+      "unit_id": "chapter-000011",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "8dae5038c78522c5dcb8197ead52d654e098c8c539a63071d30d17bb287520ee",
+      "translation_sha256": "efc3d4f49c886e4eb373f26cf08b80e7d32f786f27247cac96462bfea2e775d2",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-01d66332",
+      "reviewed_at": "2026-11-16T12:18:20Z",
+      "state_revision": "cfdf84cdf28a8d74fb78a67f080f8a4376c06153c2bd97960b69d543461db61b",
+      "review_commit": "1fa830dbb66b72869d2831f9aad6e24d0df6a58a",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "style-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Rechecking the previously identified repetition: the source repeats “You said you’d be right back,” while this instance uses «сейчас вернёшься» after the earlier «скоро вернёшься». This shifts the timing toward “now” and weakens the deliberate repetition. Keep the rendering consistent with the earlier occurrences.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“*You said you’d be right back*,” Max repeats, his voice becoming shakier with each word. He turns to face Checo with tears slowly running down his cheeks. “I —”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«*Ты сказал, что сейчас вернёшься*», — повторяет Макс; с каждым словом его голос дрожит всё сильнее. Он поворачивается к Чеко, и по его щекам медленно катятся слёзы. «Я…»",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "omission-1",
+            "category": "omission",
+            "severity": "minor",
+            "detail": "The source includes the visible link label “[link]” in the notification, but the translation omits it. Preserve a visible link label or marker.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Track it here: \\[link\\].",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Отследить его можно здесь.",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       },
