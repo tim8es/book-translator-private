@@ -59,3 +59,9 @@ Add recurring characters as needed.
 ## Review notes
 
 - 
+
+## Automated reviewed stylistic decisions
+
+| Source pattern / context | Target-language approach | Reason / evidence |
+| --- | --- | --- |
+| A thought begins in German and switches into English: “Ich wünsche mir, dass he doesn’t regret meeting me.” | Retain the German opening and render the switched clause in Russian, preserving the multilingual shift. | The current translation retains “Ich wünsche mir, dass” and continues in Russian: “он не жалеет о том, что встретил меня.” |
