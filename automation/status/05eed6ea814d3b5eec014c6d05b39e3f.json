@@ -3,7 +3,7 @@
   "job_id": "05eed6ea814d3b5eec014c6d05b39e3f",
   "book_slug": "say-it-in-your-mother-tongue",
   "state": "running",
-  "phase": "correction-batch-staged",
+  "phase": "corrector-completed",
   "failures": 0,
   "correction_rounds": {
     "chapter-000001": 1,
@@ -26,17 +26,13 @@
     "chapter-000019": 1,
     "chapter-000020": 1,
     "chapter-000021": 3,
-    "chapter-000022": 3
+    "chapter-000022": 3,
+    "chapter-000023": 1
   },
   "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
   "source_sha256": "12e210ce5a95daf56a97ada583ec15c274780c4ddfa7fb92da6a88c67f7c403d",
-  "updated_at": "2026-11-16T20:38:35.512445+00:00",
-  "active": {
-    "role": "corrector",
-    "chapter": 23,
-    "session_id": "auto-05eed6ea814d-corrector-ca608ffd",
-    "unit_id": "chapter-000023"
-  },
+  "updated_at": "2026-11-16T20:38:37.329981+00:00",
+  "active": null,
   "recoveries": [
     {
       "action": "auto-retry-corrected-structural-preflight",
@@ -132,7 +128,6 @@
   "glossary_evidence_rejected": 0,
   "glossary_conflicts_rejected": 0,
   "glossary_proposals_deferred": 0,
-  "provider_model_route": "primary",
   "model_response_diagnostics": {
     "finish_reason": "stop",
     "response_format": "json_object",
@@ -144,11 +139,5 @@
     "route": "primary",
     "role": "corrector",
     "unit_id": "chapter-000023"
-  },
-  "correction_batch_progress": {
-    "unit_id": "chapter-000023",
-    "review_record_id": "3803a34b8aba4f62b1ff46f5a485cc11",
-    "completed": 2,
-    "total": 2
   }
 }
