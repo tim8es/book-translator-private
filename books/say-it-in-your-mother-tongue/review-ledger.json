@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 40,
+  "next_sequence": 41,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -3758,6 +3758,169 @@
             },
             "translation_anchor": {
               "quote": "с яростью разъярённой *баварской* бабушки.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "aa31cad1d18cdd785da1ac4d9199333ef6ef3f8b6d1a8213a62565f942ae4fff",
+        "style_guide": "92a19a82bd31ba731763f6a726791ed8c5618e9c30c6fd72c6217b5c52d9770f"
+      }
+    },
+    {
+      "record_id": "bd5ec2a22d2b4b5fb6f1605493f8e6ce",
+      "sequence": 40,
+      "unit_id": "chapter-000014",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "4a0fcf754072626130f19f2f950fef4fe75364da3244b50f72d5670a04911462",
+      "translation_sha256": "78df4b8e2307f810fa8f58ed51706b34a682733c25ca845cab76441578db0775",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-c891153c",
+      "reviewed_at": "2026-11-16T13:39:47Z",
+      "state_revision": "6b800735616fb90e8d040b9003fcace35b6d1f1c8f3e81f2aa1f23201478a6b2",
+      "review_commit": "cad94050f4a8bf5c0303be338990cd263731c4fb",
+      "correction_round": 2,
+      "supersedes_record_id": "58fd1a7777af46bcbdec9816650b1769",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-voice-1",
+            "category": "voice",
+            "severity": "minor",
+            "detail": "Resolved: «Ничего плохое не случилось» preserves Checo’s deliberately non-native syntax rather than standardizing his speech.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "No bad happened, okay?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Ничего плохое не случилось, ладно?",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "58fd1a7777af46bcbdec9816650b1769",
+              "finding_id": "voice-1"
+            }
+          },
+          {
+            "id": "recheck-meaning-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Resolved: the current wording no longer narrows “romantic movie” to a comedy. A separate finding addresses the current sentence’s mistranslation of the image.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "elegance of quirky love interest from an early 00s romantic movie",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "с романтического фильма начала нулевых",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "58fd1a7777af46bcbdec9816650b1769",
+              "finding_id": "meaning-1"
+            }
+          },
+          {
+            "id": "recheck-register-1",
+            "category": "register",
+            "severity": "minor",
+            "detail": "Resolved: «мальчишка» retains the affectionate, age-marked nuance of “kid” in this internal list.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "This kid that I have feelings for.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Этот мальчишка, к которому я что-то чувствую.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "58fd1a7777af46bcbdec9816650b1769",
+              "finding_id": "register-1"
+            }
+          },
+          {
+            "id": "recheck-style-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Resolved: «Макс выдыхает, и дыхание у него дрожит» removes the redundant construction and conveys the shaky breath naturally.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Max lets out a shaky breath.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Макс выдыхает, и дыхание у него дрожит.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "58fd1a7777af46bcbdec9816650b1769",
+              "finding_id": "style-1"
+            }
+          },
+          {
+            "id": "recheck-style-2",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Resolved: «во всём этом безошибочно чувствовался он сам» is a natural recasting that preserves the idea that the appearance is unmistakably characteristic of Gabriel.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "there is something undeniably *him* about all of it.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "во всём этом безошибочно чувствовался *он сам*.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "58fd1a7777af46bcbdec9816650b1769",
+              "finding_id": "style-2"
+            }
+          },
+          {
+            "id": "recheck-style-3",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Resolved: the revised wording avoids repeating the anger while preserving the comparison to a furious Bavarian grandmother.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "with the intensity of a pissed off *bayerische* grandma.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "с таким взглядом, какой бывает у взбешённой *баварской* бабушки.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "58fd1a7777af46bcbdec9816650b1769",
+              "finding_id": "style-3"
+            }
+          },
+          {
+            "id": "meaning-image-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The translation omits the image of Gabriel rolling the suitcase with the elegance of a quirky love interest, and instead makes it sound as if the suitcase is from a romantic movie. Restore the comparison without specifying a genre beyond “romantic movie.”",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "rolling a suitcase with the elegance of quirky love interest from an early 00s romantic movie",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "он катит чемодан с романтического фильма начала нулевых",
               "occurrence": 0
             },
             "resolves": null
