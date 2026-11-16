@@ -2,15 +2,15 @@
   "schema_version": 1,
   "job_id": "ed29a03c00540e66d6846fd802b04f55",
   "book_slug": "без-названия",
-  "state": "running",
-  "phase": "model-call-reserved",
-  "failures": 2,
+  "state": "blocked",
+  "phase": "operator-intervention-required",
+  "failures": 3,
   "correction_rounds": {
     "chapter-000002": 3
   },
   "workflow_revision": "871e937b5d7075613c4e55c1ecfc07af700af8bc",
   "source_sha256": "1e94a92096552a75265f8c5e73562e8ad4d28bb8a8a28f1db25b4a4107e374cf",
-  "updated_at": "2026-11-16T13:29:53.172422+00:00",
+  "updated_at": "2026-11-16T13:32:03.761133+00:00",
   "active": {
     "role": "reviewer",
     "chapter": 2,
@@ -98,5 +98,7 @@
     "route": "primary",
     "role": "reviewer",
     "unit_id": "chapter-000002"
-  }
+  },
+  "last_error": "JobError: failed-correction deferral requires current reviewer evidence",
+  "recovery_note": "A claim may still be active; inspect canonical state before recovery"
 }
