@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 13,
+  "next_sequence": 14,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -1266,6 +1266,119 @@
             },
             "translation_anchor": {
               "quote": "— Что? — спрашивает он, особо не надеясь, что Макс повторит.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "f02e6becb2861881659733c55614d24b49ee0a6906fa607fb2db0ceb6b8d35ad",
+        "style_guide": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4"
+      }
+    },
+    {
+      "record_id": "aebc0bb0ce0f4de5b1bc73a7e15624cd",
+      "sequence": 13,
+      "unit_id": "chapter-000005",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "b0cf9792049c026763e7b6459c6483e67aa95b94b44d8d1e57392b0d0c2596c4",
+      "translation_sha256": "0b36fedb61d8c986b101aaf5ba5917d9efc5c6cae090e7a67bb888d49959811b",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-5b8786da",
+      "reviewed_at": "2026-11-16T09:37:40Z",
+      "state_revision": "5d25e155eeb2cd3e9f2894f281cf09f1df71b0c55288aa9b628e09254f1a586c",
+      "review_commit": "325252b975de76a071790746c4d481399f5e8e04",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "style-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Оттолкнутый задней частью его ног стул» is a stiff, awkward construction in Russian. Rephrase naturally while preserving that Nico pushes the chair with his legs as he stands.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "His chair, pushed with the backs of his legs, almost falls over",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Оттолкнутый задней частью его ног стул чуть не опрокидывается",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "“Shaky” describes the unsteady quality of Lance’s breath, not its volume. «Шумно» changes that physical cue to a noisy exhalation.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Lance lets out a shaky breath, fogging up the window",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Лэнс шумно выдыхает, и стекло запотевает",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-2",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The source thought switches from German to English, but the translation renders the entire thought in Russian, losing this multilingual voice feature. Preserve the switch in the Russian translation, for example by retaining the German opening and translating the English clause into Russian.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Ich wünsche mir, dass he doesn’t regret meeting me.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Я хочу, чтобы он не пожалел о том, что встретил меня.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-2",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "“Steady” describes Lance’s steps despite his trembling hands; «уверенно» adds confidence that the source does not state.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "his steps steady even when his hands don’t want to stop shaking.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "шагает он уверенно, хотя руки никак не перестают дрожать.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-3",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "“That’s what does it” leaves the effect open; «становится последней каплей» adds an implication of exasperation or reaching a breaking point. Preserve the source’s ambiguity rather than specifying that reaction.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "And that’s what *does it*.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "И вот это-то и становится последней каплей.",
               "occurrence": 0
             },
             "resolves": null
