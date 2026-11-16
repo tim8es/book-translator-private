@@ -3,7 +3,7 @@
   "job_id": "05eed6ea814d3b5eec014c6d05b39e3f",
   "book_slug": "say-it-in-your-mother-tongue",
   "state": "running",
-  "phase": "correction-batch-staged",
+  "phase": "corrector-completed",
   "failures": 0,
   "correction_rounds": {
     "chapter-000001": 1,
@@ -25,17 +25,12 @@
     "chapter-000018": 1,
     "chapter-000019": 1,
     "chapter-000020": 1,
-    "chapter-000021": 2
+    "chapter-000021": 3
   },
   "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
   "source_sha256": "12e210ce5a95daf56a97ada583ec15c274780c4ddfa7fb92da6a88c67f7c403d",
-  "updated_at": "2026-11-16T19:36:58.769885+00:00",
-  "active": {
-    "role": "corrector",
-    "chapter": 21,
-    "session_id": "auto-05eed6ea814d-corrector-bb799fe1",
-    "unit_id": "chapter-000021"
-  },
+  "updated_at": "2026-11-16T19:37:00.693058+00:00",
+  "active": null,
   "recoveries": [
     {
       "action": "auto-retry-corrected-structural-preflight",
@@ -131,7 +126,6 @@
   "glossary_evidence_rejected": 0,
   "glossary_conflicts_rejected": 0,
   "glossary_proposals_deferred": 0,
-  "provider_model_route": "primary",
   "model_response_diagnostics": {
     "finish_reason": "stop",
     "response_format": "json_object",
@@ -143,11 +137,5 @@
     "route": "primary",
     "role": "corrector",
     "unit_id": "chapter-000021"
-  },
-  "correction_batch_progress": {
-    "unit_id": "chapter-000021",
-    "review_record_id": "c76ef014e7194d4f9476ac831ae046fd",
-    "completed": 3,
-    "total": 3
   }
 }
