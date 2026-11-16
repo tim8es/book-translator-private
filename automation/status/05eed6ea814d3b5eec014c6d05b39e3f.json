@@ -3,8 +3,8 @@
   "job_id": "05eed6ea814d3b5eec014c6d05b39e3f",
   "book_slug": "say-it-in-your-mother-tongue",
   "state": "running",
-  "phase": "review-anchor-repair-reserved",
-  "failures": 0,
+  "phase": "model-retry",
+  "failures": 1,
   "correction_rounds": {
     "chapter-000001": 1,
     "chapter-000002": 1,
@@ -20,13 +20,8 @@
   },
   "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
   "source_sha256": "12e210ce5a95daf56a97ada583ec15c274780c4ddfa7fb92da6a88c67f7c403d",
-  "updated_at": "2026-11-16T12:45:06.942466+00:00",
-  "active": {
-    "role": "reviewer",
-    "chapter": 12,
-    "session_id": "auto-05eed6ea814d-reviewer-ba74e149",
-    "unit_id": "chapter-000012"
-  },
+  "updated_at": "2026-11-16T12:47:16.521798+00:00",
+  "active": null,
   "recoveries": [
     {
       "action": "auto-retry-corrected-structural-preflight",
@@ -70,7 +65,8 @@
   "memory_glossary_saved": 0,
   "pending_style": [],
   "role_protocol_failures": {
-    "chapter-000001:corrector": 3
+    "chapter-000001:corrector": 3,
+    "chapter-000012:reviewer": 1
   },
   "correction_extensions": {},
   "protected_correction_retries": 1,
@@ -84,7 +80,8 @@
   },
   "unit_protocol_failures": {
     "chapter-000001": 3,
-    "chapter-000010": 2
+    "chapter-000010": 2,
+    "chapter-000012": 1
   },
   "model_unit_deferral_audit": [
     {
@@ -106,18 +103,19 @@
     "code": "transport",
     "not_before": "2026-11-16T12:40:31.550002+00:00"
   },
-  "last_error_code": "transport",
+  "last_error_code": "review_evidence_invalid",
   "blocked_unit_id": "chapter-000012",
   "model_response_diagnostics": {
     "finish_reason": "stop",
     "response_format": "json_object",
-    "response_chars": 9065,
+    "response_chars": 6917,
     "provider_refusal": false,
-    "prompt_tokens": 18208,
-    "completion_tokens": 11571,
-    "total_tokens": 29779,
+    "prompt_tokens": 20994,
+    "completion_tokens": 6977,
+    "total_tokens": 27971,
     "route": "primary",
     "role": "reviewer",
     "unit_id": "chapter-000012"
-  }
+  },
+  "last_error": "reviewer evidence is invalid: findings[8].source_anchor: quoted passage occurrence 0 is absent from the current artifact"
 }
