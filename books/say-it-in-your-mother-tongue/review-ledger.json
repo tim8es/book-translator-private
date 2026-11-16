@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 4,
+  "next_sequence": 5,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -317,6 +317,96 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "f02e6becb2861881659733c55614d24b49ee0a6906fa607fb2db0ceb6b8d35ad",
+        "style_guide": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4"
+      }
+    },
+    {
+      "record_id": "1490b39c648548eab0d99685b41e5c47",
+      "sequence": 4,
+      "unit_id": "chapter-000002",
+      "outcome": "PASS",
+      "source_sha256": "7ac860bbcfe35a5d67a933b63549fad2ade31b8d280d638f97c73f95406e1b71",
+      "translation_sha256": "d19baa1c95e6ff1aec921458e3d5fa1705ceb381b873c8b05c87e0e78fbe0cef",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-36df9666",
+      "reviewed_at": "2026-11-16T08:44:17Z",
+      "state_revision": "e0eb078b8998d95c5ef330c5681a718cac1330b2d35cc82de73461e8e114ecb4",
+      "review_commit": "b6cefe4a31569c63736c34c7b2ccd2acd98ed79e",
+      "correction_round": 1,
+      "supersedes_record_id": "14ffc2dba7424e4bb62e6683108617f9",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "meaning-recheck-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The current translation preserves the distinction between admitting truths and daring to say them in English.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "you can admit truths you'd never dare to say in English",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "можно признать правду, которую никогда не осмелился бы сказать по-английски.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "14ffc2dba7424e4bb62e6683108617f9",
+              "finding_id": "meaning-1"
+            }
+          },
+          {
+            "id": "meaning-recheck-2",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "«Стараюсь изо всех сил» retains the emphasis of “I do my best.”",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "I do my best",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "хотя я стараюсь изо всех сил",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "14ffc2dba7424e4bb62e6683108617f9",
+              "finding_id": "meaning-2"
+            }
+          },
+          {
+            "id": "meaning-recheck-3",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The current translation accurately says that Fernando understands French.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Lance realizes Fernando understands French a bit too well",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Лэнс понимает, что Фернандо слишком уж хорошо понимает французский",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "14ffc2dba7424e4bb62e6683108617f9",
+              "finding_id": "meaning-3"
+            }
           }
         ]
       },
