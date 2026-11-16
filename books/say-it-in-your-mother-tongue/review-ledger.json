@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 19,
+  "next_sequence": 20,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -1817,6 +1817,103 @@
               "record_id": "5c2e2d0243184fd48caff5952bc5b7ea",
               "finding_id": "meaning-1"
             }
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "f02e6becb2861881659733c55614d24b49ee0a6906fa607fb2db0ceb6b8d35ad",
+        "style_guide": "92a19a82bd31ba731763f6a726791ed8c5618e9c30c6fd72c6217b5c52d9770f"
+      }
+    },
+    {
+      "record_id": "c86e245c3b5c49fd9eb29709237171ff",
+      "sequence": 19,
+      "unit_id": "chapter-000008",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "5f460ef6e2d85f9e2e9288c5046ef80cdc299068e2df30a714cc363eaaf14818",
+      "translation_sha256": "08b8402d0a3f5dbf6725516dbead20add12f4eabe664071c915475f3438dc6b4",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-39268d9b",
+      "reviewed_at": "2026-11-16T10:12:32Z",
+      "state_revision": "97dc6e4c8ab486434529119aa0dd56dbcf4cb7b3154b463f62302c0a73f719fc",
+      "review_commit": "a597172d8da0b5ee3c69cc9be9be846941d35d7b",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "meaning-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The source says the eyes are no longer *too* glossy; the translation says only that they are not as glossy, losing the sense of excessive glossiness. Preserve that degree.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "his eyes still red but no longer *too* glossy.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "они всё ещё красные, но уже не такие *блестящие*.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-2",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "The translation recasts the line as “we aren't saying goodbye—unfortunately,” which does not preserve the source's explicit “brings bad luck” superstition and makes the lack of a goodbye sound regrettable. Preserve the source's compressed, elliptical phrasing without changing its logic.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "No goodbye, brings bad luck,",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Не прощаемся — к несчастью», — бормочет Чеко, открывая дверь.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-3",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The source says Max clutches both the other shoe and the dirty hoodie to his chest. The translation places only the hoodie against his chest and says the shoe is in his hand; preserve the shoe's position too.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "clutching the other shoe and the dirty hoodie to his chest.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "второй он сжимает в руке, а грязную толстовку прижимает к груди.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "structure-1",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "The source italicizes “mama,” but the translation renders “маму” without emphasis. Preserve the marked formatting.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "holding his *mama*’s hand, begging to go with her and Victoria.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "он держит маму за руку и умоляет взять его с собой — её и Викторию.",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       },
