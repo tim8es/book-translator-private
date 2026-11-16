@@ -242,6 +242,55 @@
         ]
       },
       "style": []
+    },
+    "chunk-004": {
+      "outcome": "CORRECTIONS_REQUIRED",
+      "report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "always-omitted",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The translation omits the habitual force of “always” and recasts the recurring complaint as a one-time conspiracy. Consider «Вы сговорились против меня» → «Вы всегда сговариваетесь против меня» or an equivalent that preserves the recurring action.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "You two always gang up on me.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Вы сговорились против меня.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "tile-added",
+            "category": "addition",
+            "severity": "minor",
+            "detail": "The source says he grinds his heel into the patio but does not specify its surface. «Плитку» adds an unsupported concrete detail; remove it unless the source establishes that the patio is tiled.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Once he finishes, he stamps out the butt, grinding his heel into the patio pettily.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Когда сигарета заканчивается, он тушит окурок, с мелочной злостью вдавливая каблук в плитку патио.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "style": []
     }
   }
 }
