@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 75,
+  "next_sequence": 76,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -7265,6 +7265,87 @@
       "shared_state_revisions": {
         "glossary": "73e38022ddf12bd5178e538d958adb319027d1c6d6d04ad1f5416e91ffcbf18b",
         "style_guide": "321dfc6b8cbf1d495963ec1bf3529961ae8344c84eab8616d4d7fe45ad2ec4cf"
+      }
+    },
+    {
+      "record_id": "5c450092f75b410a8d0d74c894d2a0bb",
+      "sequence": 75,
+      "unit_id": "chapter-000027",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "fae0b5d9b21be14461abbce11e210357cc94cde8c23e31a816d1567cd9db8d2f",
+      "translation_sha256": "e17ca0773cef03669eff0b126109957f3605bf570b362e2ec6c0e9fbc5d47a31",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-dc6ffeb6",
+      "reviewed_at": "2026-11-16T22:25:39Z",
+      "state_revision": "0a56fd150c24561640bbd433964913584637e870f0943e7e9a4a7f0a84493ae1",
+      "review_commit": "608aaa5789011daef2493596fffe3a797547eca1",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "meaning-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The source continues the speaker's first-person denial into the future. «Никогда не будет» does not clearly preserve that first-person meaning. Use «никогда не западу» or an equivalent first-person future.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "never been into him<!-- bt-media:000005 -->never will be",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Никогда на него не западал<!-- bt-media:000005 -->никогда не будет",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-2",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "«In your case» identifies Checo's guess about Max; «На твоём месте» can instead sound like advice about what Max should say. Use «В твоём случае» or an equivalent.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "I’d say it’s Daniel, in your case.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "На твоём месте я бы сказал, что это Даниэль.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The source's casual message bubbles are lowercase here, but the corresponding translation capitalizes each fragment. Preserve the source's informal casing pattern, except where the source itself uses capitals for emphasis.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "for sure man<!-- bt-media:000002 -->like i promise<!-- bt-media:000003 -->scouts honor and all",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Точно, чувак<!-- bt-media:000002 -->Типа, обещаю<!-- bt-media:000003 -->Честное скаутское и всё такое",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "73e38022ddf12bd5178e538d958adb319027d1c6d6d04ad1f5416e91ffcbf18b",
+        "style_guide": "542b979599ebe40dfbb11794d47d2fffcc7bde125f2d09c1549f33f618157eff"
       }
     }
   ]
