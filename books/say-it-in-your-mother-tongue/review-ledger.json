@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 62,
+  "next_sequence": 63,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -6158,6 +6158,84 @@
             },
             "translation_anchor": {
               "quote": "Макса. от прикосновения по спине Макса всё равно пробегают мурашки.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "2844b82cd4039744f7d8de76b1edbf4ec3c12e691ea8a38ac00719fd261842e5",
+        "style_guide": "9aa29b7a57a8e19df8d8c06ea387e12df497cb4953714bfae17739cebb2b81c1"
+      }
+    },
+    {
+      "record_id": "48d583fd46b1448a9d28705046ab2d34",
+      "sequence": 62,
+      "unit_id": "chapter-000022",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "d9da3a32b0bbe334bb05882806ffeaec4856a2387f3d64f4112c339e903999b5",
+      "translation_sha256": "106135d070c1ed6f4de241e79f0747dce492419a7dd0b3a1354e83a127a87f93",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-aec1ceff",
+      "reviewed_at": "2026-11-16T19:54:28Z",
+      "state_revision": "336fb36a2e3c693b946f3a0623fd9c001bba9e7cc7f5463b0004e113960c8921",
+      "review_commit": "449096a9e5db43833a8c62e4d0a5e5d63a6a2332",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "omission-1",
+            "category": "omission",
+            "severity": "major",
+            "detail": "The sentence in which Fernando shakes his head and turns back to the stove is omitted. Restore it before the sentence about making four pancakes.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Fernando shakes his head, turning back to the stove.",
+              "occurrence": 0
+            },
+            "translation_anchor": null,
+            "resolves": null
+          },
+          {
+            "id": "structure-1",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "The source italicizes “Is good,” but the translation has no emphasis markup and renders the marked, nonstandard phrasing as the unmarked “Вкусно.” Preserve the emphasis and consider retaining some of the source's marked voice.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“*Is good*,” he says with full mouth.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Вкусно», — говорит он с набитым ртом.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "structure-2",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "The opening emphasis marker before «Подожди» is not closed. Restore the closing asterisk so the emphasis is properly marked.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“*Wait,*”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«*Подожди», — выдыхает он дрожащим голосом.",
               "occurrence": 0
             },
             "resolves": null
