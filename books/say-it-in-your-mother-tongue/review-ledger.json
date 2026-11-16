@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 77,
+  "next_sequence": 78,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -7430,6 +7430,167 @@
               "record_id": "5c450092f75b410a8d0d74c894d2a0bb",
               "finding_id": "style-1"
             }
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "73e38022ddf12bd5178e538d958adb319027d1c6d6d04ad1f5416e91ffcbf18b",
+        "style_guide": "542b979599ebe40dfbb11794d47d2fffcc7bde125f2d09c1549f33f618157eff"
+      }
+    },
+    {
+      "record_id": "ea22f9428f834ef5833a9ffc3b0880ff",
+      "sequence": 77,
+      "unit_id": "chapter-000028",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "2aa4bfa1297c63de89c47e14f31725328fc87be069ca04433c81028827d089f7",
+      "translation_sha256": "03dd8e44f33e98b21bff840131084a0897eaec93a6c6156e737d6ec24fb0ccc4",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-be3020b4",
+      "reviewed_at": "2026-11-16T23:35:31Z",
+      "state_revision": "77104db589e2076c8c90ddeab58e435e526ddf3202f27b0dfa0f45c9dc5413ff",
+      "review_commit": "41a6f40bc4975ef66cc077512226e4d84a22863e",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "terminology-1",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "This attribution renders Verstappen as «Верстаппен», while later attributions use «Ферстаппен». Use the standard Russian spelling «Ферстаппен» consistently.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "**Verstappen, Max**<!-- bt-media:000001 -->are you seeing Checo<!-- bt-media:000002 -->outside of work i mean",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "**Верстаппен, Макс**<!-- bt-media:000001 -->ты встречаешься с Чеко<!-- bt-media:000002 -->я имею в виду вне работы",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "terminology-2",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "This second attribution also renders Verstappen as «Верстаппен», inconsistent with the later «Ферстаппен». Use «Ферстаппен» consistently.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "<!-- bt-inline:000001:start -->Verstappen, Max<!-- bt-media:000001 --><!-- bt-inline:000001:end -->are you seeing Checo in your private life",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "<!-- bt-inline:000001:start -->Верстаппен, Макс<!-- bt-media:000001 --><!-- bt-inline:000001:end -->ты встречаешься с Чеко в личной жизни",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "“Never been into him” specifies romantic or sexual attraction. «Он мне никогда не нравился» broadens this to general liking; preserve the attraction-specific meaning.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "never been into him",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Он мне никогда не нравился",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-2",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "“Never will be” continues the attraction-specific denial, but «И никогда не понравится» shifts it to general liking. Preserve the sense of never being attracted to him.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "never will be",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "И никогда не понравится",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-3",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The source asks whether it feels like home without specifying “here.” «Здесь» narrows the question to the present location; preserve the source’s broader phrasing.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Does it feel like home?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Здесь чувствуешь себя как дома?",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "structure-1",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "The source italicizes the French confession, but the translation does not. Restore the meaningful italics.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“It was, *uh*, it was,” his voice shakes *just* a little when he finally repeats, “*Je crois que je suis amoureux de toi*.”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Это было, *э-э*, это было», — его голос дрожит *чуть-чуть*, когда он наконец повторяет: «Je crois que je suis amoureux de toi».",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "structure-2",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "The source italicizes Fernando’s Spanish reply, but the translation does not. Preserve the meaningful italics.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "before telling Lance, with a heavy Spanish accent, “*Creo que he estado enamorado por ti por años*.”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "говорит Лэнсу с сильным испанским акцентом: «Creo que he estado enamorado por ti por años».",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-4",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "The source’s direct metaphor makes the person himself feel like home. The translation changes this to feeling at home with that person, explaining and shifting the image. Preserve the direct metaphor.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "*“You feel like home,”* he doesn’t say.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "*«С тобой я чувствую себя как дома»* — не говорит он.",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       },
