@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 73,
+  "next_sequence": 74,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -7164,6 +7164,55 @@
       "shared_state_revisions": {
         "glossary": "73e38022ddf12bd5178e538d958adb319027d1c6d6d04ad1f5416e91ffcbf18b",
         "style_guide": "ccbd56789ac66ef4fbc6b339179ee51e47af78cce96c023ba1e30d5fec7b2e27"
+      }
+    },
+    {
+      "record_id": "d0b3cd9aa50f404180a032393d0bed6c",
+      "sequence": 73,
+      "unit_id": "chapter-000026",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "2bb9d1d7b950cd579c8e1fd49c63b6922dcf08bb0f7e61a5a42b829112aeb0e2",
+      "translation_sha256": "a91bb41be4175acb9eee4398c9baa08213ed971376c99f9ce35b58cd839c70e0",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-081b8566",
+      "reviewed_at": "2026-11-16T21:48:30Z",
+      "state_revision": "ce1d525c10b6bccfde671f82cdd7c0045b14dbfd560261e47e56a1f7d9c6082f",
+      "review_commit": "1f9dbb3368572c3ef04542b0db90abd90a5aef95",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "meaning-1",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "The source’s “hate my guts the same way I do” is reciprocal: Nico asks why Gabriel cannot hate him as much as Nico hates Gabriel. “Как я сам себя” changes the object of Nico’s hatred to himself. Revise to preserve the reciprocal meaning, for example: «Почему ты не можешь ненавидеть меня так же, как я ненавижу тебя?»",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "*Why can’t you just hate my guts the same way I do?*",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "*Почему ты не можешь ненавидеть меня так же, как я сам себя?*",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "73e38022ddf12bd5178e538d958adb319027d1c6d6d04ad1f5416e91ffcbf18b",
+        "style_guide": "321dfc6b8cbf1d495963ec1bf3529961ae8344c84eab8616d4d7fe45ad2ec4cf"
       }
     }
   ]
