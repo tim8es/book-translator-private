@@ -340,6 +340,39 @@
         ]
       },
       "style": []
+    },
+    "chunk-006": {
+      "outcome": "CORRECTIONS_REQUIRED",
+      "report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "erotic-cry",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "“Crying out for him” describes an erotic cry or call, not necessarily weeping. «Плачет и зовёт его» adds the implication that the person is crying in sadness. Rephrase to preserve the source’s erotic cry without resolving more than the source does.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "crying out for him in slightly accented Russian",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "плачет и зовёт его на русском с лёгким акцентом",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "style": []
     }
   }
 }
