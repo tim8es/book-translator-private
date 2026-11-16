@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 51,
+  "next_sequence": 52,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -4973,6 +4973,71 @@
       "shared_state_revisions": {
         "glossary": "9f2bbcee79618db24af6a70e901a69e893644031068a9f80c696fa9378056639",
         "style_guide": "92a19a82bd31ba731763f6a726791ed8c5618e9c30c6fd72c6217b5c52d9770f"
+      }
+    },
+    {
+      "record_id": "bc5896b19d7d4a92acfdd64728c95769",
+      "sequence": 51,
+      "unit_id": "chapter-000017",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "c690aa78d21860ad65414ad40050e53344ce6ffa17018d43da3d3e709f5898e0",
+      "translation_sha256": "450257c97e3f502c0a0a17bc80a48ec223ab034db15918c8b5feb8c4996afafe",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-c7b33d35",
+      "reviewed_at": "2026-11-16T16:17:14Z",
+      "state_revision": "7b765c6238c54e3993650a94e7f096490da054d6bb4c7a80e1e366cdda0e3f6f",
+      "review_commit": "21f1e6e191f3f7db7d07ee5e1f3f71fa67c4d8d2",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "terminology-1",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "The chat handle “sir lancelot” is rendered «сэр Лэнсэлот» here, while most occurrences use «сэр Ланселот». Standardize the spelling throughout; «сэр Ланселот» is the established conventional rendering.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "<!-- bt-inline:000001:start -->sir lancelot<!-- bt-media:000001 --><!-- bt-inline:000001:end -->why are all my friends so weird",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "<!-- bt-inline:000001:start -->сэр Лэнсэлот<!-- bt-media:000001 --><!-- bt-inline:000001:end -->почему все мои друзья такие странные",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "terminology-2",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "This occurrence renders the same chat handle as «сэр Лэнселот», another spelling variant. Standardize it to «сэр Ланселот» to match the predominant rendering.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "<!-- bt-inline:000001:start -->sir lancelot<!-- bt-media:000001 --><!-- bt-inline:000001:end -->fuck off🖕<!-- bt-media:000002 -->how did u know tho",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "<!-- bt-inline:000001:start -->сэр Лэнселот<!-- bt-media:000001 --><!-- bt-inline:000001:end -->пошёл нахуй🖕<!-- bt-media:000002 -->но откуда ты вообще знаешь?",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "9f2bbcee79618db24af6a70e901a69e893644031068a9f80c696fa9378056639",
+        "style_guide": "9aa29b7a57a8e19df8d8c06ea387e12df497cb4953714bfae17739cebb2b81c1"
       }
     }
   ]
