@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 43,
+  "next_sequence": 44,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -4057,6 +4057,167 @@
             },
             "translation_anchor": {
               "quote": "Габриэль зевает, прикрывая рот рукой, и наконец поднимает глаза.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "aa31cad1d18cdd785da1ac4d9199333ef6ef3f8b6d1a8213a62565f942ae4fff",
+        "style_guide": "92a19a82bd31ba731763f6a726791ed8c5618e9c30c6fd72c6217b5c52d9770f"
+      }
+    },
+    {
+      "record_id": "694ad1eeec704a94b2fd605f0398ad3b",
+      "sequence": 43,
+      "unit_id": "chapter-000015",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "8c462958d13f6ca19ed2ea9b97c8a476b3270c12c4dc4a73f1831aac7e95b2cb",
+      "translation_sha256": "a42babbca6731bfeeea8e74641ade8d57bae4d2e246377c2af6d00429041337d",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-6cfae236",
+      "reviewed_at": "2026-11-16T14:11:08Z",
+      "state_revision": "4b012121a18bf3b03e9cb01309e782be059178c57a0415a959cb544475d1062b",
+      "review_commit": "af3e30a9411f58c7bdce670b2f1ebef9a09aefbf",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "omission-1",
+            "category": "omission",
+            "severity": "minor",
+            "detail": "The source says Lance is pushed back onto his back after Fernando undresses him; the translation only says he ends up on his back, losing the push/action. Preserve that movement without specifying an agent the source does not name.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "allows Fernando to undress him, before getting pushed back onto his back.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "позволяет Фернандо раздеть себя, а потом снова оказывается на спине.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Снова становится обычным» is awkward and reads like a calque. Use a more natural Russian rendering of being back to normal while retaining the contrast with his tighter jaw.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "but he’s back to *normal* again, even if with much tighter jaw now.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "но он снова становится *обычным*, хотя челюсть у него теперь сжата куда сильнее.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "“I find you attractive” is more specifically about attraction than «Ты мне нравишься», which can mean general liking. Preserve Fernando’s explicit reassurance about finding Lance attractive.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "I find you attractive. *Extremely* attractive, actually.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Ты мне нравишься. *Очень* нравишься, если уж на то пошло.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-2",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The interjection «а» in «Ну ты шутник, а, красавчик?» sounds awkward in this position. Rephrase the teasing “huh” naturally in Russian without losing Fernando’s playful tone.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“You’ve got jokes, *huh*, pretty boy?” Fernando laughs, a wide grin on his face as he crawls onto the bed.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "— Ну ты шутник, *а*, красавчик? — смеётся Фернандо с широкой улыбкой, забираясь на кровать.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-2",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "“Grinding against Fernando” describes rubbing against him, whereas «прижаться к Фернандо» only describes pressing close. Preserve the source’s more active movement.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "barely able to stop himself from grinding against Fernando.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "едва сдерживаясь, чтобы не прижаться к Фернандо.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-3",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The source specifically says Fernando strokes Lance; «ласкает его» generalizes the action. Retain the specific stroking motion.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "With steady hand, Fernando strokes him maddeningly slowly.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Уверенной рукой Фернандо ласкает его, сводя с ума своей медлительностью.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-3",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«У него в груди вибрирует гул» is awkward Russian phrasing. Recast it naturally while preserving the image of the satisfied sound rumbling through Fernando’s chest.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Fernando makes a satisfied sound, one that makes his chest rumble, as he continues stroking Lance’s cock.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Фернандо издаёт довольный звук, от которого у него в груди вибрирует гул, и продолжает ласкать член Лэнса.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-4",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "“A lot of people” asks about the number of people Fernando brings there; «часто сюда кого-нибудь приводишь?» instead asks how often he brings someone. Preserve the source’s quantity-focused question.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“You bring a lot of people here?”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Ты часто сюда кого-нибудь приводишь?»",
               "occurrence": 0
             },
             "resolves": null
