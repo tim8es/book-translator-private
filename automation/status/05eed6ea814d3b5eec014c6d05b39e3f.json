@@ -3,7 +3,7 @@
   "job_id": "05eed6ea814d3b5eec014c6d05b39e3f",
   "book_slug": "say-it-in-your-mother-tongue",
   "state": "running",
-  "phase": "model-call-reserved",
+  "phase": "correction-batch-staged",
   "failures": 0,
   "correction_rounds": {
     "chapter-000001": 1,
@@ -19,7 +19,7 @@
   },
   "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
   "source_sha256": "12e210ce5a95daf56a97ada583ec15c274780c4ddfa7fb92da6a88c67f7c403d",
-  "updated_at": "2026-11-16T11:58:23.780085+00:00",
+  "updated_at": "2026-11-16T11:59:26.408912+00:00",
   "active": {
     "role": "corrector",
     "chapter": 10,
@@ -75,10 +75,10 @@
   "protected_correction_retries": 1,
   "protected_correction_review_record": "175981a73412449d9d1b40a875c9e343",
   "correction_overlap_deferred": {
-    "unit_id": "chapter-000001",
-    "review_record_id": "175981a73412449d9d1b40a875c9e343",
+    "unit_id": "chapter-000010",
+    "review_record_id": "638ecd6e545d41e1a0edcacf38badf5d",
     "unapplied_finding_ids": [
-      "terminology-3"
+      "style-1"
     ]
   },
   "unit_protocol_failures": {
@@ -96,16 +96,23 @@
     }
   ],
   "memory_style_saved": 1,
+  "provider_model_route": "primary",
   "model_response_diagnostics": {
     "finish_reason": "stop",
     "response_format": "json_object",
-    "response_chars": 1929,
+    "response_chars": 474,
     "provider_refusal": false,
-    "prompt_tokens": 8672,
-    "completion_tokens": 4242,
-    "total_tokens": 12914,
+    "prompt_tokens": 5461,
+    "completion_tokens": 3247,
+    "total_tokens": 8708,
     "route": "primary",
-    "role": "reviewer",
+    "role": "corrector",
     "unit_id": "chapter-000010"
+  },
+  "correction_batch_progress": {
+    "unit_id": "chapter-000010",
+    "review_record_id": "638ecd6e545d41e1a0edcacf38badf5d",
+    "completed": 1,
+    "total": 2
   }
 }
