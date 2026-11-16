@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 66,
+  "next_sequence": 67,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -6612,6 +6612,71 @@
             },
             "translation_anchor": {
               "quote": "«*Oui*», — один раз кивает Лэнс, уже не доверяя своим словам.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "2844b82cd4039744f7d8de76b1edbf4ec3c12e691ea8a38ac00719fd261842e5",
+        "style_guide": "9aa29b7a57a8e19df8d8c06ea387e12df497cb4953714bfae17739cebb2b81c1"
+      }
+    },
+    {
+      "record_id": "3803a34b8aba4f62b1ff46f5a485cc11",
+      "sequence": 66,
+      "unit_id": "chapter-000023",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "27b6053401561fca0e470757e08b76e86bc6bdf6e892fa0af87db5e66746cdcf",
+      "translation_sha256": "5ecb7b356edede27ee8bad80a9eb8326dadac78c0065385c70073f58dc403eac",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-bcca742d",
+      "reviewed_at": "2026-11-16T20:37:38Z",
+      "state_revision": "0ef1633fb6b93aca69bfdd92d4f77c74bc80207166aad32a96e387da5849612f",
+      "review_commit": "75237213bea574d335d860a5171fb3f6b80b7861",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "meaning-1",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "The source says Lance is speaking with an accent he has not used since age seven. The translation instead says he has not had that accent since age seven, reversing the time reference. Rephrase to show that he is now speaking with an accent he has not used since he was seven.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "with heavy French accent he hasn’t talked in since he was seven.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "с сильным французским акцентом, которого у него не было с семи лет.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«За больше чем час» is awkward Russian. Consider «впервые за час с лишним» or another natural equivalent.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "for the first time in over an hour, the tears stop coming",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "и впервые за больше чем час слёзы перестают литься.",
               "occurrence": 0
             },
             "resolves": null
