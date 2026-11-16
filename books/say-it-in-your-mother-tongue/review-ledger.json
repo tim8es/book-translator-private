@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 21,
+  "next_sequence": 22,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -2087,6 +2087,115 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "f02e6becb2861881659733c55614d24b49ee0a6906fa607fb2db0ceb6b8d35ad",
+        "style_guide": "92a19a82bd31ba731763f6a726791ed8c5618e9c30c6fd72c6217b5c52d9770f"
+      }
+    },
+    {
+      "record_id": "18ab09dc7d4b43eeae9beacfc9775713",
+      "sequence": 21,
+      "unit_id": "chapter-000008",
+      "outcome": "PASS",
+      "source_sha256": "5f460ef6e2d85f9e2e9288c5046ef80cdc299068e2df30a714cc363eaaf14818",
+      "translation_sha256": "9f0b6434cb7ddfbaed8c34e976d37705cf48f7d9dc9bf5e20433c04e987e4f1b",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-e33aa6ca",
+      "reviewed_at": "2026-11-16T10:21:19Z",
+      "state_revision": "89f912a2161b67a47d31007e5115a92ae146165798e4e91744eaa650b5aaac2e",
+      "review_commit": "7a4b01e03581c8394139ec9b3888fcbe27c60a95",
+      "correction_round": 2,
+      "supersedes_record_id": "cb1e6ad0747744d091161d7be801fe35",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-meaning-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Resolved: “Обувь” avoids specifying a type of footwear not stated in the source.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "The shoes Max was wearing when they last spoke in person are kicked around the room,",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Обувь, которую Макс носил, когда они в последний раз виделись лично, валяется по всей комнате:",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "cb1e6ad0747744d091161d7be801fe35",
+              "finding_id": "meaning-new-1"
+            }
+          },
+          {
+            "id": "recheck-meaning-2",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Resolved: “самой нежной улыбкой” preserves the source’s superlative tenderness.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Shaking his head, Checo gives him the softest smile.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Покачав головой, Чеко одаривает его самой нежной улыбкой.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "cb1e6ad0747744d091161d7be801fe35",
+              "finding_id": "meaning-new-2"
+            }
+          },
+          {
+            "id": "recheck-style-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Resolved: the phrasing is natural Russian and retains the unsteady, uncertain quality of the source.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "“I don’t know,” he admits, his words shaky, entirely unsteady and unsure.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Не знаю», — признаётся он; голос у него дрожит, слова звучат совсем неуверенно и сбивчиво.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "cb1e6ad0747744d091161d7be801fe35",
+              "finding_id": "style-new-1"
+            }
+          },
+          {
+            "id": "recheck-style-2",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Resolved: “до середины лестницы с пятого этажа” is a natural rendering of reaching about halfway down from the fifth floor.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "He only reaches about halfway down from the fifth floor when a loud, “Checo, wait!” stops him in his tracks.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Он успевает спуститься лишь примерно до середины лестницы с пятого этажа, когда громкое «Чеко, подожди!» заставляет его замереть.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "cb1e6ad0747744d091161d7be801fe35",
+              "finding_id": "style-new-2"
+            }
           }
         ]
       },
