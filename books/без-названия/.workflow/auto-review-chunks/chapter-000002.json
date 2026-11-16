@@ -1,0 +1,217 @@
+{
+  "schema_version": 1,
+  "plan": {
+    "schema_version": 1,
+    "helper_revision": "review-chunks-v1",
+    "source_sha256": "7edd5f7d76d4a7d2f971e83a7096c061b9e1a51db15178224d7975fe39d0eb39",
+    "translation_sha256": "41aefbeb467f08fbecb5182fecc06d7abed147e525f06abd26ffa50a26b96b4b",
+    "chunks": [
+      {
+        "id": "chunk-001",
+        "source_core": [
+          0,
+          10724
+        ],
+        "translation_core": [
+          0,
+          11134
+        ],
+        "source_window": [
+          0,
+          12578
+        ],
+        "translation_window": [
+          0,
+          12991
+        ]
+      },
+      {
+        "id": "chunk-002",
+        "source_core": [
+          10724,
+          21461
+        ],
+        "translation_core": [
+          11134,
+          22118
+        ],
+        "source_window": [
+          8773,
+          23469
+        ],
+        "translation_window": [
+          9255,
+          24102
+        ]
+      },
+      {
+        "id": "chunk-003",
+        "source_core": [
+          21461,
+          32129
+        ],
+        "translation_core": [
+          22118,
+          33347
+        ],
+        "source_window": [
+          19402,
+          33980
+        ],
+        "translation_window": [
+          20074,
+          35163
+        ]
+      },
+      {
+        "id": "chunk-004",
+        "source_core": [
+          32129,
+          42844
+        ],
+        "translation_core": [
+          33347,
+          44306
+        ],
+        "source_window": [
+          30299,
+          44803
+        ],
+        "translation_window": [
+          31484,
+          46294
+        ]
+      },
+      {
+        "id": "chunk-005",
+        "source_core": [
+          42844,
+          53431
+        ],
+        "translation_core": [
+          44306,
+          55631
+        ],
+        "source_window": [
+          41037,
+          55637
+        ],
+        "translation_window": [
+          42459,
+          57569
+        ]
+      },
+      {
+        "id": "chunk-006",
+        "source_core": [
+          53431,
+          64303
+        ],
+        "translation_core": [
+          55631,
+          66674
+        ],
+        "source_window": [
+          51622,
+          66182
+        ],
+        "translation_window": [
+          53772,
+          68542
+        ]
+      },
+      {
+        "id": "chunk-007",
+        "source_core": [
+          64303,
+          74923
+        ],
+        "translation_core": [
+          66674,
+          77726
+        ],
+        "source_window": [
+          62236,
+          74923
+        ],
+        "translation_window": [
+          64794,
+          77726
+        ]
+      }
+    ]
+  },
+  "unit_id": "chapter-000002",
+  "workflow_revision": "871e937b5d7075613c4e55c1ecfc07af700af8bc",
+  "completed": {
+    "chunk-001": {
+      "outcome": "CORRECTIONS_REQUIRED",
+      "report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "response-shift",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Resolved: the current translation says he hardly reacts to what he has heard, preserving the source’s distinction between not responding and not understanding.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "he doesn’t respond to much of it.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "он почти ни на что из этого не реагирует.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "1579089e40fb4fdc8c22155887b59908",
+              "finding_id": "chunk-001-response-shift"
+            }
+          },
+          {
+            "id": "twin-brain",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "The source phrase is ambiguous, but «мозг-близнец, тоже сломанный» reads as a literal twin-brain concept and adds «тоже». Avoid fixing an interpretation the source does not clearly establish; preserve the ambiguity or clarify the intended relation from the source context.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "his father and his twin broken brain.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "отца и его мозг-близнец, тоже сломанный.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "shaky-english",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "“Shaky English be damned” indicates that he asks despite his uncertain command of English. The translation instead describes how unconfidently his English sounds, shifting the emphasis to his manner of speaking.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“What the fuck are you doing here?” he asks, shaky English be damned.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "не обращая внимания на то, как неуверенно звучит его английский.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "style": [],
+      "glossary": []
+    }
+  }
+}
