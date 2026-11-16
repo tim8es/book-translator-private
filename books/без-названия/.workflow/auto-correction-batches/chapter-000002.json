@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "unit_id": "chapter-000002",
+  "review_record_id": "f310b004ae9949cd91ed65ccca254e2d",
+  "source_sha256": "7edd5f7d76d4a7d2f971e83a7096c061b9e1a51db15178224d7975fe39d0eb39",
+  "translation_sha256": "f0865c06970e508a1b8e2add986c551d7d97370799262e6506ffe1906ab0c524",
+  "workflow_revision": "871e937b5d7075613c4e55c1ecfc07af700af8bc",
+  "patches": [
+    {
+      "finding_id": "chunk-001-arm-to-shoulder",
+      "operation": "replace",
+      "target_anchor": {
+        "quote": "медленно убирает руку с его плеча.",
+        "occurrence": 0
+      },
+      "replacement": "медленно убирает руку с руки Ильи."
+    },
+    {
+      "finding_id": "chunk-002-creepy-syntax",
+      "operation": "replace",
+      "target_anchor": {
+        "quote": "Может, молча стоять и смотреть, как он бежит, и жутковато, но Илье как-то всё равно.",
+        "occurrence": 0
+      },
+      "replacement": "Может, это и жутковато — молча стоять и смотреть, как он бежит, но Илье как-то всё равно."
+    },
+    {
+      "finding_id": "chunk-003-perspective-1",
+      "operation": "replace",
+      "target_anchor": {
+        "quote": "Да и мы с тобой не то чтобы лучшие друзья.",
+        "occurrence": 0
+      },
+      "replacement": "А для тебя мы не то чтобы лучшие друзья."
+    }
+  ],
+  "glossary": [],
+  "style_guide": []
+}
