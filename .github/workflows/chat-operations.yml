@@ -103,4 +103,5 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         shell: bash
+        working-directory: books-repo
         run: gh workflow run auto-translate.yml --ref main
