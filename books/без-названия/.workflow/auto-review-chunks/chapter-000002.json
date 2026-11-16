@@ -353,6 +353,94 @@
       },
       "style": [],
       "glossary": []
+    },
+    "chunk-004": {
+      "outcome": "CORRECTIONS_REQUIRED",
+      "report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "dialogue-recheck",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "Resolved: the spoken answer is now clearly closed before the narrator sentence, which is correctly presented as narration.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "“I am fine. You should see the other guy.” He doesn’t mention that he’s only physically fine, and that he doesn’t know their names at all.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Я в порядке. Ты бы видел другого парня»",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "fb0d8fa88189414983eb5026bab356f8",
+              "finding_id": "chunk-004-dialogue-boundary"
+            }
+          },
+          {
+            "id": "exhale-recheck",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Resolved: «Илья выдыхает, дрожа» is a natural rendering of the unsteady exhalation and avoids the previous redundancy.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Ilya exhales shakily.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Илья выдыхает, дрожа.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "fb0d8fa88189414983eb5026bab356f8",
+              "finding_id": "chunk-004-shaky-exhale"
+            }
+          },
+          {
+            "id": "dialogue-thought",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "The narrator’s sentence «As far as he knows...» is not spoken dialogue, but the Russian dash-led dialogue continues directly into «Насколько ему известно...», making the thought read as part of Ilya’s speech. Separate or clearly mark the narration before «Когда?»",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“You got hit?” Ilya interjects. As far as he knows, Hollander’s yet to get his bell rung. “When?”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "— Тебя ударили? Насколько ему известно, Холландера ещё ни разу не оглушали. — Когда?",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "dish-rendering",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "«Курица пармезан» is an awkward calque for the dish name. Use a natural Russian form such as «курица с пармезаном».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "She comes with pans labeled lasagna and chicken parmesan, which means Ilya likes her already.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Она приносит формы с надписями «лазанья» и «курица пармезан», и Илья уже проникается к ней симпатией.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "style": [],
+      "glossary": []
     }
   }
 }
