@@ -97,6 +97,18 @@ class StateOnlyDeploymentTests(unittest.TestCase):
         self.assertNotIn("private-deliver:", epub)
         self.assertIn('git add -A -- "books/$BOOK_SLUG"', epub)
 
+    def test_auto_quality_gates_are_explicitly_opt_in(self):
+        workflow = (STATE / ".github/workflows/auto-translate.yml").read_text("utf-8")
+        for key in (
+                "BOOK_TRANSLATOR_SEMANTIC_PREFLIGHT",
+                "BOOK_TRANSLATOR_MARKER_ALIGNMENT",
+                "BOOK_TRANSLATOR_INCREMENTAL_REVIEW",
+                "BOOK_TRANSLATOR_ADAPTIVE_BUDGET"):
+            self.assertIn(
+                key + ": ${{ vars." + key + " || 'off' }}", workflow)
+        self.assertEqual(
+            workflow.count("BOOK_TRANSLATOR_INCREMENTAL_REVIEW:"), 1)
+
     def test_reduced_idle_schedules_keep_event_driven_recovery(self):
         root = STATE / ".github/workflows"
         batch = (root / "book-batch-validation.yml").read_text("utf-8")
