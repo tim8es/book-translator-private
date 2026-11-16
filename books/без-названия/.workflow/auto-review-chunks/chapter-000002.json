@@ -373,6 +373,71 @@
         ]
       },
       "style": []
+    },
+    "chunk-007": {
+      "outcome": "CORRECTIONS_REQUIRED",
+      "report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "orgasm-wording",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Кончает — ослепительно» звучит неестественно по-русски, а «корчится от наслаждения» привносит оттенок боли. Подберите естественную формулировку, сохраняющую яркость и удовольствие исходного описания, например: «И кончает бурно, судорожно сжимаясь вокруг Ильи; тело его выгибается от наслаждения».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "And he does, spectacularly, clenching tight around Ilya as his body contorts with pleasure.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "И кончает — ослепительно, судорожно сжимаясь вокруг Ильи, пока его тело корчится от наслаждения.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "mess-register",
+            "category": "register",
+            "severity": "minor",
+            "detail": "«Грязь» добавляет отсутствующий в нейтральном mess оттенок отвращения. Замените на нейтральное обозначение липкой смеси или жидкости.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Ilya’s honestly surprised Shane hasn’t made a fuss about the mess gluing them together, but he’s not about to voice it.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Илья, честно говоря, удивлён, что Шейн не стал возмущаться из-за липкой грязи, склеившей их, но вслух он этого не скажет.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "teary-eyes",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Глаза у него увлажняются» звучит клинически и неестественно в этой нежной сцене. Естественнее передать, что у Ильи наворачиваются слёзы.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“Hush,” Ilya tells him, eyes getting teary.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Тише», — говорит ему Илья, и глаза у него увлажняются.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "style": []
     }
   }
 }

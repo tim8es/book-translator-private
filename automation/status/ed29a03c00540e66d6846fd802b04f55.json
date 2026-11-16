@@ -3,12 +3,12 @@
   "job_id": "ed29a03c00540e66d6846fd802b04f55",
   "book_slug": "без-названия",
   "state": "running",
-  "phase": "model-call-reserved",
+  "phase": "review-chunk-staged",
   "failures": 0,
   "correction_rounds": {},
   "workflow_revision": "871e937b5d7075613c4e55c1ecfc07af700af8bc",
   "source_sha256": "1e94a92096552a75265f8c5e73562e8ad4d28bb8a8a28f1db25b4a4107e374cf",
-  "updated_at": "2026-11-16T09:47:48.333896+00:00",
+  "updated_at": "2026-11-16T09:50:21.132169+00:00",
   "active": {
     "role": "reviewer",
     "chapter": 2,
@@ -36,9 +36,7 @@
   },
   "memory_glossary_saved": 0,
   "pending_style": [],
-  "role_protocol_failures": {
-    "chapter-000002:reviewer": 2
-  },
+  "role_protocol_failures": {},
   "memory_style_saved": 0,
   "recoveries": [
     {
@@ -61,26 +59,11 @@
     "unit_id": "chapter-000002",
     "source_sha256": "7edd5f7d76d4a7d2f971e83a7096c061b9e1a51db15178224d7975fe39d0eb39",
     "translation_sha256": "f0865c06970e508a1b8e2add986c551d7d97370799262e6506ffe1906ab0c524",
-    "completed": 6,
+    "completed": 7,
     "total": 7
   },
   "unit_protocol_failures": {
     "chapter-000002": 3
-  },
-  "provider_model_route": "primary",
-  "blocked_unit_id": "chapter-000002",
-  "last_error_code": "review_checks_incomplete",
-  "model_response_diagnostics": {
-    "finish_reason": "stop",
-    "response_format": "json_object",
-    "response_chars": 1911,
-    "provider_refusal": false,
-    "prompt_tokens": 14034,
-    "completion_tokens": 8785,
-    "total_tokens": 22819,
-    "route": "primary",
-    "role": "reviewer",
-    "unit_id": "chapter-000002"
   },
   "deferred_review_units": [
     "chapter-000002"
@@ -95,5 +78,17 @@
       "route": "hash-bound-adapter",
       "at": "2026-11-16T09:46:35.390674+00:00"
     }
-  ]
+  ],
+  "model_response_diagnostics": {
+    "finish_reason": "stop",
+    "response_format": "json_object",
+    "response_chars": 2307,
+    "provider_refusal": false,
+    "prompt_tokens": 14034,
+    "completion_tokens": 8303,
+    "total_tokens": 22337,
+    "route": "primary",
+    "role": "reviewer",
+    "unit_id": "chapter-000002"
+  }
 }
