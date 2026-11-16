@@ -209,6 +209,39 @@
         ]
       },
       "style": []
+    },
+    "chunk-003": {
+      "outcome": "CORRECTIONS_REQUIRED",
+      "report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "perspective-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The translation omits “for you,” which frames their not being best friends as Hollander’s understanding of Ilya’s present perspective after losing his memories, rather than as an unqualified statement about their relationship. Preserve that qualification, for example: «А с твоей точки зрения, мы не то чтобы лучшие друзья».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "And, for you, we’re not exactly best friends.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Да и мы с тобой не то чтобы лучшие друзья.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "style": []
     }
   }
 }
