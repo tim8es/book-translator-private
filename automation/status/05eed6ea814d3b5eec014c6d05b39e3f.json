@@ -3,7 +3,7 @@
   "job_id": "05eed6ea814d3b5eec014c6d05b39e3f",
   "book_slug": "say-it-in-your-mother-tongue",
   "state": "running",
-  "phase": "model-call-reserved",
+  "phase": "provider-backoff",
   "failures": 0,
   "correction_rounds": {
     "chapter-000001": 1,
@@ -24,13 +24,8 @@
   },
   "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
   "source_sha256": "12e210ce5a95daf56a97ada583ec15c274780c4ddfa7fb92da6a88c67f7c403d",
-  "updated_at": "2026-11-16T14:39:05.330777+00:00",
-  "active": {
-    "role": "reviewer",
-    "chapter": 16,
-    "session_id": "auto-05eed6ea814d-reviewer-0ee90cbb",
-    "unit_id": "chapter-000016"
-  },
+  "updated_at": "2026-11-16T14:43:07.260270+00:00",
+  "active": null,
   "recoveries": [
     {
       "action": "auto-retry-corrected-structural-preflight",
@@ -115,10 +110,11 @@
     "chapter": 16,
     "unit_id": "chapter-000016",
     "role": "reviewer",
-    "attempts": 1,
+    "attempts": 2,
     "code": "transport",
-    "not_before": "2026-11-16T14:37:57.113783+00:00"
+    "not_before": "2026-11-16T14:45:07.260252+00:00"
   },
   "last_error_code": "transport",
-  "blocked_unit_id": "chapter-000016"
+  "blocked_unit_id": "chapter-000016",
+  "last_error": "model transport timeout or connection failure"
 }
