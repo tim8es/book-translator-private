@@ -3,8 +3,8 @@
   "job_id": "05eed6ea814d3b5eec014c6d05b39e3f",
   "book_slug": "say-it-in-your-mother-tongue",
   "state": "running",
-  "phase": "review-anchor-repair-reserved",
-  "failures": 1,
+  "phase": "model-retry",
+  "failures": 2,
   "correction_rounds": {
     "chapter-000001": 1,
     "chapter-000002": 1,
@@ -18,13 +18,8 @@
   },
   "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
   "source_sha256": "12e210ce5a95daf56a97ada583ec15c274780c4ddfa7fb92da6a88c67f7c403d",
-  "updated_at": "2026-11-16T11:11:52.348761+00:00",
-  "active": {
-    "role": "reviewer",
-    "chapter": 10,
-    "session_id": "auto-05eed6ea814d-reviewer-8482cc97",
-    "unit_id": "chapter-000010"
-  },
+  "updated_at": "2026-11-16T11:13:03.205380+00:00",
+  "active": null,
   "recoveries": [
     {
       "action": "auto-retry-corrected-structural-preflight",
@@ -69,7 +64,7 @@
   "pending_style": [],
   "role_protocol_failures": {
     "chapter-000001:corrector": 3,
-    "chapter-000010:reviewer": 1
+    "chapter-000010:reviewer": 2
   },
   "correction_extensions": {},
   "protected_correction_retries": 1,
@@ -83,7 +78,7 @@
   },
   "unit_protocol_failures": {
     "chapter-000001": 3,
-    "chapter-000010": 1
+    "chapter-000010": 2
   },
   "model_unit_deferral_audit": [
     {
@@ -102,13 +97,14 @@
   "model_response_diagnostics": {
     "finish_reason": "stop",
     "response_format": "json_object",
-    "response_chars": 4172,
+    "response_chars": 4193,
     "provider_refusal": false,
-    "prompt_tokens": 14789,
-    "completion_tokens": 7847,
-    "total_tokens": 22636,
+    "prompt_tokens": 16213,
+    "completion_tokens": 3750,
+    "total_tokens": 19963,
     "route": "primary",
     "role": "reviewer",
     "unit_id": "chapter-000010"
-  }
+  },
+  "last_error": "reviewer evidence is invalid: findings[3].translation_anchor: quoted passage occurrence 0 is absent from the current artifact"
 }
