@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 26,
+  "next_sequence": 27,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -2538,6 +2538,87 @@
               "record_id": "e0b47e62637343409e7be2ce0f71d781",
               "finding_id": "omission-1"
             }
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "f02e6becb2861881659733c55614d24b49ee0a6906fa607fb2db0ceb6b8d35ad",
+        "style_guide": "92a19a82bd31ba731763f6a726791ed8c5618e9c30c6fd72c6217b5c52d9770f"
+      }
+    },
+    {
+      "record_id": "e4fb094a33294027be0426d23932fc18",
+      "sequence": 26,
+      "unit_id": "chapter-000010",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "9a277557932fff6ba2d167f2bd79f14e5bc69d22ceb4e92892520e6e7fd714f7",
+      "translation_sha256": "eedbbf9d5a055384fe8e6c3e585dd6d2a0eff595c35fd02db061d55d08d475ab",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-7b85d974",
+      "reviewed_at": "2026-11-16T11:15:48Z",
+      "state_revision": "d72669e0bb7db9bfb24363d1545cb93fde9771752373a445cba18d2abff92afe",
+      "review_commit": "a92d77f3072889100a177afec264bc21e3a2a59e",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "terminology-1",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "The name changes from «Лэнс» earlier in the unit to «Ланс» here and in the following passages. Use one transliteration consistently.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "And Lance cannot help but moan into the kiss, grabbing the front of Fernando’s shirt to anchor himself.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Ланс не может не застонать в поцелуй, вцепившись в рубашку Фернандо спереди, чтобы удержаться.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "terminology-2",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "The recurring vocative *princesa* is translated as *принцесса* here, but left in Spanish in later dialogue (for example, in blocks 080 and 082). Choose a consistent treatment for this nickname.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "You are a bad liar, *princesa*. I can smell his Frenchness on you.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Ты ужасно врёшь, *принцесса*. Я чую на тебе его французский дух».",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "omission-1",
+            "category": "omission",
+            "severity": "minor",
+            "detail": "The source specifies that Gabriel crunches on fresh lettuce. The translation conveys chewing but omits the crunching detail; preserve that sensory detail.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Gabriel hums around his fork, crunching on fresh lettuce.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Габриэль довольно мычит, пережёвывая свежий салат.",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       },
