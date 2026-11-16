@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "unit_id": "chapter-000010",
+  "review_record_id": "e4fb094a33294027be0426d23932fc18",
+  "source_sha256": "9a277557932fff6ba2d167f2bd79f14e5bc69d22ceb4e92892520e6e7fd714f7",
+  "translation_sha256": "eedbbf9d5a055384fe8e6c3e585dd6d2a0eff595c35fd02db061d55d08d475ab",
+  "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+  "patches": [
+    {
+      "finding_id": "terminology-1",
+      "operation": "replace",
+      "target_anchor": {
+        "quote": "Ланс не может не застонать в поцелуй, вцепившись в рубашку Фернандо спереди, чтобы удержаться.",
+        "occurrence": 0
+      },
+      "replacement": "Лэнс не может не застонать в поцелуй, вцепившись в рубашку Фернандо спереди, чтобы удержаться."
+    },
+    {
+      "finding_id": "terminology-2",
+      "operation": "replace",
+      "target_anchor": {
+        "quote": "«Ты ужасно врёшь, *принцесса*. Я чую на тебе его французский дух».",
+        "occurrence": 0
+      },
+      "replacement": "«Ты ужасно врёшь, *princesa*. Я чую на тебе его французский дух»."
+    },
+    {
+      "finding_id": "omission-1",
+      "operation": "replace",
+      "target_anchor": {
+        "quote": "Габриэль довольно мычит, пережёвывая свежий салат.",
+        "occurrence": 0
+      },
+      "replacement": "Габриэль довольно мычит, хрустя свежими листьями салата."
+    }
+  ],
+  "glossary": [],
+  "style_guide": []
+}
