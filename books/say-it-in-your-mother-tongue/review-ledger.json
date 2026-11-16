@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 31,
+  "next_sequence": 32,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -2912,6 +2912,90 @@
               "quote": "Отследить его можно здесь.",
               "occurrence": 0
             },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "aa31cad1d18cdd785da1ac4d9199333ef6ef3f8b6d1a8213a62565f942ae4fff",
+        "style_guide": "92a19a82bd31ba731763f6a726791ed8c5618e9c30c6fd72c6217b5c52d9770f"
+      }
+    },
+    {
+      "record_id": "d7dee0d8ea56459c8682a5d4c6820910",
+      "sequence": 31,
+      "unit_id": "chapter-000011",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "8dae5038c78522c5dcb8197ead52d654e098c8c539a63071d30d17bb287520ee",
+      "translation_sha256": "6670cb2716ad389c97b61ba59b0601522e094d01e2780b945dce9c9094845226",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-64edd139",
+      "reviewed_at": "2026-11-16T12:21:55Z",
+      "state_revision": "f18c50ed540220beeac058c2f3b1b8797f7b51a2c14a58420db254188ad5eb40",
+      "review_commit": "5d8924cacfe3a8a7c1a32c734568856c07f18411",
+      "correction_round": 2,
+      "supersedes_record_id": "f7a88f386f5643d3ae21b0ce264e0ad6",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "style-recheck-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The wording now uses «скоро вернёшься», matching the earlier rendering and preserving the repeated phrasing without shifting it toward “now.”",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "“*You said you’d be right back*,” Max repeats",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«*Ты сказал, что скоро вернёшься*»",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "f7a88f386f5643d3ae21b0ce264e0ad6",
+              "finding_id": "style-1"
+            }
+          },
+          {
+            "id": "omission-recheck-1",
+            "category": "omission",
+            "severity": "minor",
+            "detail": "The current notification retains the visible [link] label, resolving the omission.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Track it here: \\[link\\]. Your tracking number is 5642521.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Отследить его можно здесь: \\[link\\]. Номер отслеживания: 5642521.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "f7a88f386f5643d3ae21b0ce264e0ad6",
+              "finding_id": "omission-1"
+            }
+          },
+          {
+            "id": "omission-new-1",
+            "category": "omission",
+            "severity": "major",
+            "detail": "The accepted block contains only the quoted sentence and omits the narration that Max repeats it, his increasingly shaky voice, his turning to face Checo, his tears, and the cut-off “I —”. Restore those source details.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Max repeats, his voice becoming shakier with each word. He turns to face Checo with tears slowly running down his cheeks. “I —”",
+              "occurrence": 0
+            },
+            "translation_anchor": null,
             "resolves": null
           }
         ]
