@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 56,
+  "next_sequence": 57,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -5449,6 +5449,87 @@
       },
       "shared_state_revisions": {
         "glossary": "b414ef45af3b5d537fdc3e282c909cf7d84690b99e1a12b05929ac57f0462bc0",
+        "style_guide": "9aa29b7a57a8e19df8d8c06ea387e12df497cb4953714bfae17739cebb2b81c1"
+      }
+    },
+    {
+      "record_id": "e6d442ee17084d788dce4b54cec94a85",
+      "sequence": 56,
+      "unit_id": "chapter-000020",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "48a9e16bf156e425b291872bf8679d7be236e26d412cbaebf9427e42b89e30b5",
+      "translation_sha256": "a5d5e5a5f694d535772e17be0572884e5b6388f7d090f2899b459f58a5500652",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-daaaaf92",
+      "reviewed_at": "2026-11-16T19:12:01Z",
+      "state_revision": "0446f535f8eb1273927286d4dd210932462dfd11038a56f24c9b44f621821376",
+      "review_commit": "1b9746a37c208d78e8de913ea6c2d16aab9c262c",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "style-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Веки у него едва подняты» sounds unnatural and does not clearly convey that his eyes are struggling to stay open. Consider «веки едва держатся открытыми».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "his eyes are barely hanging open",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "веки у него едва подняты",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The source describes Lawrence’s smile as brighter, while the translation changes this to wider. Preserve the source’s description of its brightness.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "with even brighter smile",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "с ещё более широкой улыбкой",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "omission-1",
+            "category": "omission",
+            "severity": "minor",
+            "detail": "The source says more tears are streaming down his face; «всё так же текут слёзы» conveys continued crying but loses the sense of additional tears.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "There are more tears streaming down his face, but Lance isn’t making a single sound.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "По его лицу всё так же текут слёзы, но Лэнс не издаёт ни звука.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "97ea9004483c3b27fd01ea8190cef837762a3bfab02f442f4ff9ca31882d50b0",
         "style_guide": "9aa29b7a57a8e19df8d8c06ea387e12df497cb4953714bfae17739cebb2b81c1"
       }
     }
