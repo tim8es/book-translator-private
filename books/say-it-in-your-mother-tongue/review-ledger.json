@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 44,
+  "next_sequence": 45,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -4218,6 +4218,220 @@
             },
             "translation_anchor": {
               "quote": "«Ты часто сюда кого-нибудь приводишь?»",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "aa31cad1d18cdd785da1ac4d9199333ef6ef3f8b6d1a8213a62565f942ae4fff",
+        "style_guide": "92a19a82bd31ba731763f6a726791ed8c5618e9c30c6fd72c6217b5c52d9770f"
+      }
+    },
+    {
+      "record_id": "a92c85591b084d26a2a01643657587e1",
+      "sequence": 44,
+      "unit_id": "chapter-000015",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "8c462958d13f6ca19ed2ea9b97c8a476b3270c12c4dc4a73f1831aac7e95b2cb",
+      "translation_sha256": "762dee4b85d8773e35e6ffa38e665369cc672618b4e00928e435699d81a04573",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-9e48c114",
+      "reviewed_at": "2026-11-16T14:17:35Z",
+      "state_revision": "147a3cbbed6677bf58c147c8778772f26d152f05da1e7f2953bd9fc21c7506a3",
+      "review_commit": "628226aac958b43d1ae68094a03a853a886adfdf",
+      "correction_round": 2,
+      "supersedes_record_id": "694ad1eeec704a94b2fd605f0398ad3b",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "omission-1-recheck",
+            "category": "omission",
+            "severity": "minor",
+            "detail": "The translation now preserves the action of Lance being pushed back onto his back without naming an agent.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "allows Fernando to undress him, before getting pushed back onto his back.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "позволяет Фернандо раздеть себя, а потом его снова толкают на спину.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "694ad1eeec704a94b2fd605f0398ad3b",
+              "finding_id": "omission-1"
+            }
+          },
+          {
+            "id": "style-1-recheck",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Снова ведёт себя как обычно» is a natural rendering of being back to normal and retains the contrast with his more tightly clenched jaw.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "but he’s back to *normal* again, even if with much tighter jaw now.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "но он снова ведёт себя *как обычно*, хотя челюсть у него теперь сжата куда сильнее.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "694ad1eeec704a94b2fd605f0398ad3b",
+              "finding_id": "style-1"
+            }
+          },
+          {
+            "id": "meaning-1-recheck",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The translation now explicitly conveys that Fernando finds Lance attractive, including the emphasis on how extremely attractive he finds him.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "I find you attractive. *Extremely* attractive, actually.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Я считаю тебя привлекательным. *Чрезвычайно* привлекательным, если уж на то пошло.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "694ad1eeec704a94b2fd605f0398ad3b",
+              "finding_id": "meaning-1"
+            }
+          },
+          {
+            "id": "style-2-recheck",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The revised teasing question is natural in Russian and retains Fernando’s playful tone.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "You’ve got jokes, *huh*, pretty boy?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Ну ты и шутник, красавчик?",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "694ad1eeec704a94b2fd605f0398ad3b",
+              "finding_id": "style-2"
+            }
+          },
+          {
+            "id": "meaning-2-recheck",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "«Тереться о Фернандо» preserves the active rubbing movement in “grinding against,” rather than reducing it to moving closer.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "barely able to stop himself from grinding against Fernando.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "едва сдерживаясь, чтобы не тереться о Фернандо.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "694ad1eeec704a94b2fd605f0398ad3b",
+              "finding_id": "meaning-2"
+            }
+          },
+          {
+            "id": "meaning-3-recheck",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "«Поглаживает» now retains the specific stroking action.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "With steady hand, Fernando strokes him maddeningly slowly.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Уверенной рукой Фернандо поглаживает его, сводя с ума своей медлительностью.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "694ad1eeec704a94b2fd605f0398ad3b",
+              "finding_id": "meaning-3"
+            }
+          },
+          {
+            "id": "style-3-recheck",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The revised wording «гулко вибрирует грудь» conveys the chest-rumbling image more naturally. The missing main clause and continued stroking are reported separately as an omission.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Fernando makes a satisfied sound, one that makes his chest rumble, as he continues stroking Lance’s cock.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "от которого у него гулко вибрирует грудь",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "694ad1eeec704a94b2fd605f0398ad3b",
+              "finding_id": "style-3"
+            }
+          },
+          {
+            "id": "meaning-4-recheck",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "«Ты многих сюда приводишь?» asks about the number of people Fernando brings there, preserving the source’s quantity-focused question.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "You bring a lot of people here?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Ты многих сюда приводишь?",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "694ad1eeec704a94b2fd605f0398ad3b",
+              "finding_id": "meaning-4"
+            }
+          },
+          {
+            "id": "omission-2",
+            "category": "omission",
+            "severity": "major",
+            "detail": "The current text omits the sentence’s main clause that Fernando makes a satisfied sound and the information that he continues stroking Lance’s cock. It begins with the dangling «от которого», so the passage is also left incomplete.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Fernando makes a satisfied sound, one that makes his chest rumble, as he continues stroking Lance’s cock.",
+              "occurrence": 0
+            },
+            "translation_anchor": null,
+            "resolves": null
+          },
+          {
+            "id": "structure-1",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "The direct speech after the colon lacks quotation marks. Add Russian dialogue punctuation, for example: «когда он спрашивает: „Ты многих сюда приводишь?“»",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "There is something like disappointment in Lance’s voice when he asks, “You bring a lot of people here?”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "когда он спрашивает: Ты многих сюда приводишь?",
               "occurrence": 0
             },
             "resolves": null
