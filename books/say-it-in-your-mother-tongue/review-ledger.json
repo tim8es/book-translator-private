@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 6,
+  "next_sequence": 7,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -485,6 +485,144 @@
             },
             "translation_anchor": {
               "quote": "И когда их губы наконец соприкасаются — *о боже* — между ними словно пробегает ток; это чудесно и лучше, чем Лэнс когда-либо мог себе представить.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "f02e6becb2861881659733c55614d24b49ee0a6906fa607fb2db0ceb6b8d35ad",
+        "style_guide": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4"
+      }
+    },
+    {
+      "record_id": "bd37f3aa859a4172a6b5d507102019b6",
+      "sequence": 6,
+      "unit_id": "chapter-000003",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "5dcc58cd47d278abb51a9f145923138455d94915ee7fada8e29237a0ff506e1a",
+      "translation_sha256": "b3698b60a73da6c6a885c084641ff8cff7a5222a1c216ed2114ed3f66b25e576",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-f80bd0e5",
+      "reviewed_at": "2026-11-16T08:59:38Z",
+      "state_revision": "3cef74b10d5197c50880f3d8e85d7aebd93f100dba029e5d82af23f79585bb8d",
+      "review_commit": "47aec5a1abd870300ba956e98d16a7e605136708",
+      "correction_round": 2,
+      "supersedes_record_id": "d37a4662446f419abe94f46fefd5ff63",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-referent-1",
+            "category": "referent",
+            "severity": "major",
+            "detail": "Rechecked: the current translation clearly makes Lance the one turning away from the Aston Martin and stepping away; Fernando then opens the door. The prior referent issue is fixed.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "As he turns away from the Aston Martin, stepping away, Fernando opens his door, jumps out, reaches Lance on steady legs, and grabs his wrist, pulling him closer to himself.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Лэнс отворачивается от «Астон Мартина» и отступает от него, а Фернандо распахивает дверцу, выпрыгивает наружу, уверенно направляется к Лэнсу и хватает его за запястье, притягивая к себе.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "d37a4662446f419abe94f46fefd5ff63",
+              "finding_id": "referent-1"
+            }
+          },
+          {
+            "id": "recheck-style-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Rechecked: the current phrasing naturally conveys the playful, deliberately uncertain idea of what is going on between them. The prior awkward-calque issue is fixed.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "He pretends to scratch his head and think, before continuing in the played-up version of *whatever this is* between them*.*",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "а затем продолжает утрированно обыгрывать *то, что у них там между собой*.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "d37a4662446f419abe94f46fefd5ff63",
+              "finding_id": "style-1"
+            }
+          },
+          {
+            "id": "recheck-meaning-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Rechecked: the current translation retains the source's image of dreaming. The prior shift from dreaming to imagining is fixed.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "And when their lips finally touch — *oh god* — it’s electric and wonderful and better than Lance has ever dreamed it could be.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "это чудесно и лучше, чем Лэнс когда-либо мог мечтать.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "d37a4662446f419abe94f46fefd5ff63",
+              "finding_id": "meaning-1"
+            }
+          },
+          {
+            "id": "meaning-mouthy-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "“Mouthy” implies cheeky or insolent talk, not simply talking a lot. «Так много болтал» loses that attitude; consider «так дерзил» or a similarly fitting phrase.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "You were so mouthy before, and now? Quiet as a mouse.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "А раньше ты так много болтал, а теперь? Тихий, как мышка.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-fragment-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The construction «а Лэнс: — Я…» is syntactically awkward in Russian. Recast it to connect the interrupted speech naturally while preserving Lance's hesitation.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "The space between them is filled with electricity and warmth, and Lance’s,",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "а Лэнс: — Я, *э-э*, я…",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-calque-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Драка на кулаках» reads as a calque. Use a more natural Russian expression, such as «кулачная драка», while keeping the contrast with «занятиями любовью».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "holding eye contact that feels like love making and fist fighting at the same time.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "этот взгляд одновременно похож и на занятия любовью, и на драку на кулаках.",
               "occurrence": 0
             },
             "resolves": null
