@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 36,
+  "next_sequence": 37,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -3460,6 +3460,77 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "aa31cad1d18cdd785da1ac4d9199333ef6ef3f8b6d1a8213a62565f942ae4fff",
+        "style_guide": "92a19a82bd31ba731763f6a726791ed8c5618e9c30c6fd72c6217b5c52d9770f"
+      }
+    },
+    {
+      "record_id": "6d2425167ac24f9d8069d3a6d6522c6d",
+      "sequence": 36,
+      "unit_id": "chapter-000012",
+      "outcome": "PASS",
+      "source_sha256": "0678489e9315a29711aa170db58190c54f5f0ff3759ea449b592814f55800efc",
+      "translation_sha256": "10838264267ef6c1194495e6068663f1a04037f464714135c7e0eb01b6e16076",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-0bbb1b4f",
+      "reviewed_at": "2026-11-16T13:10:13Z",
+      "state_revision": "bce0b9def2a4047c8db50eeb3d15e1cd856614060be0c0e207896891e839c963",
+      "review_commit": "3407ad72ef2437fa2090445cd3285b4cbacd2b7f",
+      "correction_round": 2,
+      "supersedes_record_id": "e7cc10c98192487e9d9cd61b4df3c6bb",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-modality-1",
+            "category": "modality",
+            "severity": "minor",
+            "detail": "Resolved: «возможно, причиню ему боль» preserves the concern about Nico hurting him without presenting it as certain or shifting the focus to mere capability.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "*It’s about me hurting him.*",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "*Дело в том, что я, возможно, причиню ему боль.*",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "e7cc10c98192487e9d9cd61b4df3c6bb",
+              "finding_id": "recheck-meaning-3"
+            }
+          },
+          {
+            "id": "recheck-omission-1",
+            "category": "omission",
+            "severity": "major",
+            "detail": "Resolved: the translation restores the lounge destination, Max drinking from the glass, and the detail that someone left it on the table. The following explanation that Checo left it is rendered as a separate, clear sentence.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "He walks into the lounge, yawning once again, and drinks from a glass one of them left on the table.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Он снова зевает, заходит в гостиную и пьёт из стакана, который кто-то из них оставил на столе.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "e7cc10c98192487e9d9cd61b4df3c6bb",
+              "finding_id": "new-omission-1"
+            }
           }
         ]
       },
