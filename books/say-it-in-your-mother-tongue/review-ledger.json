@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 52,
+  "next_sequence": 53,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -5029,6 +5029,103 @@
             },
             "translation_anchor": {
               "quote": "<!-- bt-inline:000001:start -->сэр Лэнселот<!-- bt-media:000001 --><!-- bt-inline:000001:end -->пошёл нахуй🖕<!-- bt-media:000002 -->но откуда ты вообще знаешь?",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "9f2bbcee79618db24af6a70e901a69e893644031068a9f80c696fa9378056639",
+        "style_guide": "9aa29b7a57a8e19df8d8c06ea387e12df497cb4953714bfae17739cebb2b81c1"
+      }
+    },
+    {
+      "record_id": "c12366d26a864e1f954da4b03e9a27b6",
+      "sequence": 52,
+      "unit_id": "chapter-000018",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "367c1c1a06fb3f7862e2dbcac943d10d414a12d06165b1aa78f03ad5fce37fed",
+      "translation_sha256": "f91714c79e03f968f0fe14a4719be43ed34d14e1faf63ee8098cfb638e0b44e3",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-fcf800ce",
+      "reviewed_at": "2026-11-16T17:59:02Z",
+      "state_revision": "b71d0db692e29fd0957124af9f6a1df2a32b061938c60ae21e465719e312ff5c",
+      "review_commit": "ab0aaf43df9faa9f7532dde465af851c12f9ad4e",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "style-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Столько хрен знает сколько находиться» — очень неестественная русская конструкция, из-за которой теряется смысловой акцент на неопределённо долгом сроке. Переформулируйте естественно, сохранив раздражение и неопределённость, например: «Я не могу столько времени находиться с тобой в одной комнате — хрен знает сколько!»",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "*But I care! I can’t be in one fucking room with you for god-knows how long!*",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "*Но меня волнует! Я не могу столько хрен знает сколько находиться с тобой в одной комнате!*",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "«His voice a little high» указывает на высоту голоса, а не обязательно на громкость. «Чуть повысившимся голосом» обычно означает, что Лэнс заговорил громче; лучше передать именно более высокий голос.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“Even when I don’t give you rides or cook for you?” Lance asks, his voice a little high.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Даже если я не буду возить тебя или готовить для тебя?» — спрашивает Лэнс чуть повысившимся голосом.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-2",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "«И не в… чём угодно» звучит неестественно и передаёт смысл «не в чём бы то ни было», тогда как Фернандо говорит, что дело не в поездках, готовке или других подобных вещах. Нужна естественная формулировка вроде «и не в чём-то ещё».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“It’s not about the car rides or the cooking or… *anything*,” Fernando shrugs, but there is nothing casual about the way he says all that.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Дело не в поездках на машине, не в готовке и не в… *чём угодно*», — пожимает плечами Фернандо, но в его голосе нет ни капли непринуждённости.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-3",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Здесь «I don’t mind» означает, что Фернандо не возражает, а не то, что ему всё безразлично. «Мне всё равно» может звучать как безразличие; точнее было бы, например, «Я не против, знаешь?»",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“I don’t mind, you know?”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Мне, знаешь, всё равно».",
               "occurrence": 0
             },
             "resolves": null
