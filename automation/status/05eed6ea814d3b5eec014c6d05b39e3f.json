@@ -3,7 +3,7 @@
   "job_id": "05eed6ea814d3b5eec014c6d05b39e3f",
   "book_slug": "say-it-in-your-mother-tongue",
   "state": "running",
-  "phase": "review-anchor-repair-reserved",
+  "phase": "provider-backoff",
   "failures": 1,
   "correction_rounds": {
     "chapter-000001": 1,
@@ -35,13 +35,8 @@
   },
   "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
   "source_sha256": "12e210ce5a95daf56a97ada583ec15c274780c4ddfa7fb92da6a88c67f7c403d",
-  "updated_at": "2026-11-16T22:57:58.208725+00:00",
-  "active": {
-    "role": "reviewer",
-    "chapter": 28,
-    "session_id": "auto-05eed6ea814d-reviewer-44953567",
-    "unit_id": "chapter-000028"
-  },
+  "updated_at": "2026-11-16T22:57:59.843681+00:00",
+  "active": null,
   "recoveries": [
     {
       "action": "auto-retry-corrected-structural-preflight",
@@ -157,20 +152,9 @@
     "chapter": 28,
     "unit_id": "chapter-000028",
     "role": "reviewer",
-    "attempts": 2,
+    "attempts": 3,
     "code": "transport",
-    "not_before": "2026-11-16T22:54:19.573225+00:00"
+    "not_before": "2026-11-16T23:01:59.843656+00:00"
   },
-  "model_response_diagnostics": {
-    "finish_reason": "stop",
-    "response_format": "json_object",
-    "response_chars": 6212,
-    "provider_refusal": false,
-    "prompt_tokens": 16681,
-    "completion_tokens": 9320,
-    "total_tokens": 26001,
-    "route": "primary",
-    "role": "reviewer",
-    "unit_id": "chapter-000028"
-  }
+  "last_error": "model transport timeout or connection failure"
 }
