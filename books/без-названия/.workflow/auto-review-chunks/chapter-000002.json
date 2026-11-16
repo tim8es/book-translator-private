@@ -176,6 +176,39 @@
         ]
       },
       "style": []
+    },
+    "chunk-002": {
+      "outcome": "CORRECTIONS_REQUIRED",
+      "report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "creepy-syntax",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The construction «Может, молча стоять и смотреть, как он бежит, и жутковато» is awkward and difficult to parse. Consider «Может, это и жутковато — молча стоять и смотреть, как он бежит, но Илье как-то всё равно».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Maybe it’s creepy to stand silently and watch him run, but Ilya can’t really bring himself to care.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Может, молча стоять и смотреть, как он бежит, и жутковато, но Илье как-то всё равно.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "style": []
     }
   }
 }
