@@ -1,0 +1,186 @@
+{
+  "schema_version": 1,
+  "request_id": "ac8c66d6847e4ae59f497f9c0f5a77c3",
+  "book_slug": "say-it-in-your-mother-tongue",
+  "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+  "operation": "review-record",
+  "chapter": 31,
+  "session_id": "chatops-say-it-r31-687fb135",
+  "outcome": "CORRECTIONS_REQUIRED",
+  "quality_report": {
+    "evidence_version": 2,
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "id": "style-16",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Канцелярское «перемещается» в конкретной бытовой сцене. Передать движение выпечки естественно: «как выпечка на пассажирском сиденье сдвигается с места».",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "the pastries moving on the passenger seat",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "как на пассажирском сиденье перемещается выпечка",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "register-24",
+        "category": "register",
+        "severity": "minor",
+        "detail": "Exasperated здесь выражает раздражение и досаду от поведения друга, а не изнеможение. «в сердцах выдыхает Себастьян».",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "exasperated, Sebastian exhales",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "вконец измученный, выдыхает Себастьян",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "meaning-24",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "At 160 передаёт конкретную скорость; «под 160» обозначает чуть меньше. «*гнать* всю дорогу на скорости 160».",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "*gunning it* at 160 the whole time",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "*гнать* под 160 всю дорогу",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "style-33",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Тяжёлая калька в краткой ироничной ремарке. «будто глупо уже то, что Нико вообще понадобилось спрашивать».",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "like it’s stupid that Nico even feels the need to ask",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "будто сама необходимость задавать такой вопрос со стороны Нико — глупость",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "meaning-47",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Исходное «for Nico’s liking» определяет степень сходства с болью, а не отдельную оценку. «чего-то, что куда больше похоже на боль, чем Нико хотелось бы».",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "something that is entirely too close to pain for Nico’s liking",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "чего-то, что слишком уж похоже на боль и совсем не нравится Нико",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "style-65",
+        "category": "style",
+        "severity": "minor",
+        "detail": "В русском «напрямую предлагая» звучит как калька. Передать прямоту жеста естественно: «*явно* предлагая пакет Габриэлю» или «*недвусмысленно* предлагая пакет Габриэлю».",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "*straight-up* offering the bag to Gabriel",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "*напрямую* предлагая пакет Габриэлю",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "emphasis-70",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Смысловое выделение перенесено с говорящего на адресата. В русском дательный субъект поддерживает исходный контраст: «*Мне* ты *действительно нравишься, Габриэль. Правда.*».",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "*I* do *like you, Gabriel. I really do.*",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "*Ты* мне *действительно нравишься, Габриэль. Правда.*",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "style-81",
+        "category": "style",
+        "severity": "minor",
+        "detail": "В оригинале мысль резко обрывается перед вопросом; многоточие смягчает обрыв. Сохранить конечное тире.",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "Say something. Say something. Say something. Say—",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Скажи что-нибудь. Скажи что-нибудь. Скажи что-нибудь. Скажи…",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "style-85",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Неестественное управление и усиление like до любви. «плейлист, который ему нравится, хотя вслух он ни за что в этом не признался бы».",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "a playlist he’d never admit to like out loud",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "плейлист, о любви к которому ни за что не признался бы вслух",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "meaning-85",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Исходник выделяет момент начала плача, а не уже продолжающийся поток. «у него словно по инстинкту *наворачиваются* слёзы».",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "his tears *kick in* as if on instinct",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "у него словно инстинктивно *льются* слёзы",
+          "occurrence": 0
+        },
+        "resolves": null
+      }
+    ]
+  },
+  "source_sha256": "fc53449ab646bb6ed98e0e29230473cc600f3978f3dcacc80f16de60c6a88e0f",
+  "translation_sha256": "714885f83a23cbf1b2089ad85c00c95359fa2bea2c371cffc7ba825a617eadc6",
+  "claim_sha256": "e3ea0076b47352d51a1be591201e9967bb6cf38fbacbdec95ac3166aea00233a"
+}
