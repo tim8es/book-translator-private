@@ -3,22 +3,18 @@
   "job_id": "6232711b4aec0c3664ad3721f1b87061",
   "book_slug": "cardinal-kin",
   "state": "running",
-  "phase": "correction-batch-staged",
+  "phase": "corrector-completed",
   "failures": 0,
   "correction_rounds": {
     "chapter-000001": 2,
     "chapter-000003": 1,
-    "chapter-000004": 3
+    "chapter-000004": 3,
+    "chapter-000005": 1
   },
   "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
   "source_sha256": "f06b996448766fcf6faa703ced3ca03b63221f4f81bdb4c395619c69ffa353cd",
-  "updated_at": "2026-11-17T13:46:24.249779+00:00",
-  "active": {
-    "role": "corrector",
-    "chapter": 5,
-    "session_id": "auto-6232711b4aec-corrector-e9c17780",
-    "unit_id": "chapter-000005"
-  },
+  "updated_at": "2026-11-17T13:46:26.317623+00:00",
+  "active": null,
   "structural_helper_revision": "4c584fe5534871cd05aa851d9b7bdbfa696d0edd",
   "model_calls_started": 54,
   "prompt_context": {
@@ -73,13 +69,6 @@
     "unapplied_finding_ids": [
       "omission-attribution-1"
     ]
-  },
-  "provider_model_route": "primary",
-  "correction_batch_progress": {
-    "unit_id": "chapter-000005",
-    "review_record_id": "d7d70e1559784b82aae645e68392d385",
-    "completed": 6,
-    "total": 6
   },
   "model_response_diagnostics": {
     "finish_reason": "stop",
