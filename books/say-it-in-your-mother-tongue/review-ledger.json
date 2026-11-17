@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 94,
+  "next_sequence": 95,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -10979,6 +10979,73 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "99039f21624f453ca5bcf43ce60e2835",
+      "sequence": 94,
+      "unit_id": "chapter-000035",
+      "outcome": "PASS",
+      "source_sha256": "48bafc32635bd6a9289e000b116cc29ac3155145824fdff19c2d0e89fee94fc7",
+      "translation_sha256": "34a2e5115bbe4592e536522eda682136444e9ca6aec87af08aa06434900d127b",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "chatops-say-it-r35-e6f37b2a",
+      "reviewed_at": "2026-11-17T17:00:18Z",
+      "state_revision": "b1d74142aea27e77f576d36581c5703df7e0ee22427c756454e25c45cc181f12",
+      "review_commit": "02c21701345a5217d1bcbbef7af7949980c3185b",
+      "correction_round": 2,
+      "supersedes_record_id": "b8d77d30d4f344c3afa543e6cdb2666f",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-register-17",
+            "category": "register",
+            "severity": "minor",
+            "detail": "Короткое холодное приветствие передано естественным эллиптическим ответом; бесстрастная интонация и курсив сохранены.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "with a deadpan, *“Morning.”*",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "и бесстрастно бросая: — *Доброе.*",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "b8d77d30d4f344c3afa543e6cdb2666f",
+              "finding_id": "register-17"
+            }
+          },
+          {
+            "id": "recheck-style-42",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Риторический комплимент передан утверждением с вопросительной интонацией; смысл, курсив и игривый регистр сохранены.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Aren’t you *too cute* to be sitting here all alone?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Ты ведь *слишком милый*, чтобы сидеть здесь совсем один, правда?",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "b8d77d30d4f344c3afa543e6cdb2666f",
+              "finding_id": "style-42"
+            }
           }
         ]
       }

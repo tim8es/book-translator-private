@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "request_id": "7c3abfc080274ef990db4a724d1101c9",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "deb25550842a4799b29ef26461dfa8655ba65deaa83fbadfed1de85da6bdda95",
+    "record": {
+      "correction_round": 2,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "register",
+            "detail": "Короткое холодное приветствие передано естественным эллиптическим ответом; бесстрастная интонация и курсив сохранены.",
+            "id": "recheck-register-17",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "register-17",
+              "record_id": "b8d77d30d4f344c3afa543e6cdb2666f"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "with a deadpan, *“Morning.”*"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "и бесстрастно бросая: — *Доброе.*"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Риторический комплимент передан утверждением с вопросительной интонацией; смысл, курсив и игривый регистр сохранены.",
+            "id": "recheck-style-42",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "style-42",
+              "record_id": "b8d77d30d4f344c3afa543e6cdb2666f"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Aren’t you *too cute* to be sitting here all alone?"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Ты ведь *слишком милый*, чтобы сидеть здесь совсем один, правда?"
+            }
+          }
+        ]
+      },
+      "record_id": "99039f21624f453ca5bcf43ce60e2835",
+      "review_commit": "02c21701345a5217d1bcbbef7af7949980c3185b",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewed_at": "2026-11-17T17:00:18Z",
+      "reviewer_session_id": "chatops-say-it-r35-e6f37b2a",
+      "sequence": 94,
+      "source_sha256": "48bafc32635bd6a9289e000b116cc29ac3155145824fdff19c2d0e89fee94fc7",
+      "state_revision": "b1d74142aea27e77f576d36581c5703df7e0ee22427c756454e25c45cc181f12",
+      "supersedes_record_id": "b8d77d30d4f344c3afa543e6cdb2666f",
+      "translation_sha256": "34a2e5115bbe4592e536522eda682136444e9ca6aec87af08aa06434900d127b",
+      "unit_id": "chapter-000035",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741"
+    }
+  },
+  "error": null
+}
