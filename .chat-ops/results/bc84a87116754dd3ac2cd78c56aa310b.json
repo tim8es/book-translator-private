@@ -1,0 +1,251 @@
+{
+  "schema_version": 1,
+  "request_id": "bc84a87116754dd3ac2cd78c56aa310b",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "da9ee34b5a5e1164f13eb1cbbcc0d5b53edc9f7b5b31db113dff05031394c1e3",
+    "record": {
+      "correction_round": 1,
+      "outcome": "CORRECTIONS_REQUIRED",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "style",
+            "detail": "Лишний повтор и тяжеловесное «от этого движения». Сохранить тактильное ощущение и едва слышный звук, избегая повторного существительного.",
+            "id": "style-7",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Lance slides his palms over the fabric, savoring the feel and the quietest *whoosh* of the motion."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Лэнс проводит ладонями по ткани, наслаждаясь ощущением ткани и тишайшим *шорохом* от этого движения."
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "В оригинале единичный звук, а не продолжающееся действие. Передать однократность.",
+            "id": "meaning-17",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "lets out a soft whimper"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "тихонько поскуливает"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Реплика прерывается собеседником; многоточие ослабляет резкость обрыва. Сохранить тире.",
+            "id": "style-29",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "I should have some—"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "У меня должны быть какие-то…"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "В контексте речь о страхе, а не о внешности. Лучше «Я тебя пугаю?» — поддержать смысл предыдущей и следующей реплик.",
+            "id": "meaning-35",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Am I scary?"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Я страшный?"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Неидиоматичный наречный оборот. «Он делает дрожащий выдох» или естественный эквивалент без изменения действия.",
+            "id": "style-42",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "He exhales a shaky breath"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Он дрожаще выдыхает"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Right? — согласие с собеседником и приглашение подтвердить общую оценку, а не удивлённый вопрос. Передать «Вот именно! Надо бы завести растения.»",
+            "id": "meaning-76",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "“Right? We should get plants.”"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "— Да? Надо бы завести растения."
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Калька. Передать взаимный взгляд естественно: «с привычным теплом во взгляде, не отводя глаз друг от друга».",
+            "id": "style-80",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "holding each other’s gaze with familiar warmth"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "удерживая взгляды с привычным теплом"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Нарушено синтаксическое управление. Например: «конфет, которые они взяли по настоянию Кристиана»; оставить последующую прямую речь.",
+            "id": "grammar-86",
+            "resolved": false,
+            "resolves": null,
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "candy that Christian insisted they take"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "конфет, которые Кристиан настоял, чтобы они взяли"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Непривычная сочетаемость «печально расширяются». Сохранить расширившиеся глаза, печаль и исчезновение блеска: «глаза Чеко расширяются от этого признания, и в них вместо блеска проступает печаль».",
+            "id": "style-98",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Checo’s eyes widen sadly at the admission, their shine gone"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "глаза Чеко печально расширяются и теряют блеск"
+            }
+          },
+          {
+            "category": "referent",
+            "detail": "Местоимение his относится наиболее естественно к Чеко; в блоке 131 он возвращает телефон Максу. Не добавлять указание, что телефон уже у Макса: «кладёт телефон Макса себе на колени».",
+            "id": "referent-108",
+            "resolved": false,
+            "resolves": null,
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Checo drops Max’s phone into his lap before unlocking his own phone"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Чеко кладёт телефон Макса ему на колени, затем разблокирует свой собственный"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Вежливое предложение обратиться при возникновении иных потребностей; «придумаете» звучит неуместно. «Если вам ещё что-нибудь понадобится, не стесняйтесь обращаться ко мне.»",
+            "id": "meaning-127",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "If you think of anything, don’t hesitate to contact me."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Если что-нибудь придумаете, не стесняйтесь обращаться ко мне."
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Неестественное выражение, смещающее смысл на свойства голоса. Сохранить перекличку с предыдущей репликой Чеко о впечатлении от разговора, например «А ты мило говорил» (и согласовать предыдущую реплику).",
+            "id": "style-132",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "“You sounded nice,” Max admits"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "— Ты по голосу приятный, — признаётся Макс"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "«Запыхавшись» предполагает физическую нагрузку; исходник описывает характер речи в эмоциональный момент. «мягко, чуть сбившимся голосом» или равнозначное выражение.",
+            "id": "meaning-140",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "soft and little breathless"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "тихо, чуть запыхавшись"
+            }
+          }
+        ]
+      },
+      "record_id": "83cd8376dd18402591f860b6abd290b8",
+      "review_commit": "0debbe32ba6b65a35b0573b1089931b7e2555fb1",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewed_at": "2026-11-17T11:21:49Z",
+      "reviewer_session_id": "chatops-say-it-r32-8b44cf7e",
+      "sequence": 86,
+      "shared_state_revisions": {
+        "glossary": "73e38022ddf12bd5178e538d958adb319027d1c6d6d04ad1f5416e91ffcbf18b",
+        "style_guide": "542b979599ebe40dfbb11794d47d2fffcc7bde125f2d09c1549f33f618157eff"
+      },
+      "source_sha256": "881dc5a7660c9110a8b65dcfed4c1c51c12ad2cd3dd2f2ff354d6a96e7142414",
+      "state_revision": "41f65eeae46955251be643f6d5759c56ff7f1be0fffc317f9ad44a2cca6a49b0",
+      "supersedes_record_id": null,
+      "translation_sha256": "f21e977a866cfceaf7e77ef512df31c38933a2203c97d8683627573afb4d22a5",
+      "unit_id": "chapter-000032",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741"
+    }
+  },
+  "error": null
+}
