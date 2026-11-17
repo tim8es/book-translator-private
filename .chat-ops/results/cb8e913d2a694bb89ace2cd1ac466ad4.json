@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "request_id": "cb8e913d2a694bb89ace2cd1ac466ad4",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "3617b7d3268054dd1aae83798af7e15d2d88e25b15b35e42c352e1513751134d",
+    "record": {
+      "correction_round": 1,
+      "outcome": "CORRECTIONS_REQUIRED",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "style",
+            "detail": "Буквальная калька «проходят одним из двух способов» нарушает естественный ритм вступления. Например: «Кажется, дни на заводе всегда проходят по одному из двух сценариев»; сохранить противопоставление и ненормативную лексику.",
+            "id": "style-4",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Days in the factory always seem to go one of two ways"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Дни на заводе, кажется, всегда проходят одним из двух способов"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Неестественный порядок слов и сочетаемость. Передать повтор: «выплёвывает строчку за строчкой с данными»; не потерять образ принтера.",
+            "id": "style-5",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "spit out rows and rows of data"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "выплёвывает ряд за рядом данные"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Калька с английского усилителя. Например: «изо всех сил старается не обращать на это внимания»; сохранить подчёркнутую степень усилия.",
+            "id": "style-8",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "tries to ignore as hard as humanly possible"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "изо всех человеческих сил старается не обращать на это внимания"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "В русском варианте пропущено действие, а звук шагов подвешен к существительному. Например: «Его ботинки тяжело стучат — *топ-топ-топ*»; сохранить звукоподражание и курсив.",
+            "id": "style-15",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "His shoes *thud-thud-thud*"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Его ботинки — *топ-топ-топ*"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Генитив создаёт чтение «половина гаража, принадлежащего Габриэлю», тогда как речь об отведённой ему стороне общего гаража. Например: «пока не доходит до отведённой Габриэлю половины гаража».",
+            "id": "meaning-15",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "until he reaches Gabriel’s side of the garage"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "пока не доходит до половины гаража Габриэля"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "В исходнике реплика прерывается собеседником после целого слова, а не затухает на середине слова. Передать резкое перебивание и естественный порядок слов: «Могу я чем-нибудь помочь—».",
+            "id": "style-17",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Can I help—"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Я могу чем-то помо…"
+            }
+          }
+        ]
+      },
+      "record_id": "850986f0bf894b53ae2034e1462ad46a",
+      "review_commit": "7302f87af824fb66af16ee3f25e3a71dea9ddc5e",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewed_at": "2026-11-17T17:12:49Z",
+      "reviewer_session_id": "chatops-say-it-r36-874c1b0e",
+      "sequence": 95,
+      "source_sha256": "bbe3ff2358aa2334f61088f52f633f0df6415623fc0f87d32468aafa9522fdca",
+      "state_revision": "2f714be3ec608032016ecc137ee55d5fcacc5784117e8a513f336976d9846f10",
+      "supersedes_record_id": null,
+      "translation_sha256": "c46fed1d6202d487471f1d5904e521a5c9c808af1d16bf13ac6fdf2de645e679",
+      "unit_id": "chapter-000036",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741"
+    }
+  },
+  "error": null
+}
