@@ -1,0 +1,203 @@
+{
+  "schema_version": 1,
+  "request_id": "ac8c66d6847e4ae59f497f9c0f5a77c3",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "b6636bce4ae17c975162ef7acfe7caabf2c68b810d0be015bc80aa775809812c",
+    "record": {
+      "correction_round": 1,
+      "outcome": "CORRECTIONS_REQUIRED",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "style",
+            "detail": "Канцелярское «перемещается» в конкретной бытовой сцене. Передать движение выпечки естественно: «как выпечка на пассажирском сиденье сдвигается с места».",
+            "id": "style-16",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "the pastries moving on the passenger seat"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "как на пассажирском сиденье перемещается выпечка"
+            }
+          },
+          {
+            "category": "register",
+            "detail": "Exasperated здесь выражает раздражение и досаду от поведения друга, а не изнеможение. «в сердцах выдыхает Себастьян».",
+            "id": "register-24",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "exasperated, Sebastian exhales"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "вконец измученный, выдыхает Себастьян"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "At 160 передаёт конкретную скорость; «под 160» обозначает чуть меньше. «*гнать* всю дорогу на скорости 160».",
+            "id": "meaning-24",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "*gunning it* at 160 the whole time"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "*гнать* под 160 всю дорогу"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Тяжёлая калька в краткой ироничной ремарке. «будто глупо уже то, что Нико вообще понадобилось спрашивать».",
+            "id": "style-33",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "like it’s stupid that Nico even feels the need to ask"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "будто сама необходимость задавать такой вопрос со стороны Нико — глупость"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Исходное «for Nico’s liking» определяет степень сходства с болью, а не отдельную оценку. «чего-то, что куда больше похоже на боль, чем Нико хотелось бы».",
+            "id": "meaning-47",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "something that is entirely too close to pain for Nico’s liking"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "чего-то, что слишком уж похоже на боль и совсем не нравится Нико"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "В русском «напрямую предлагая» звучит как калька. Передать прямоту жеста естественно: «*явно* предлагая пакет Габриэлю» или «*недвусмысленно* предлагая пакет Габриэлю».",
+            "id": "style-65",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "*straight-up* offering the bag to Gabriel"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "*напрямую* предлагая пакет Габриэлю"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Смысловое выделение перенесено с говорящего на адресата. В русском дательный субъект поддерживает исходный контраст: «*Мне* ты *действительно нравишься, Габриэль. Правда.*».",
+            "id": "emphasis-70",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "*I* do *like you, Gabriel. I really do.*"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "*Ты* мне *действительно нравишься, Габриэль. Правда.*"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "В оригинале мысль резко обрывается перед вопросом; многоточие смягчает обрыв. Сохранить конечное тире.",
+            "id": "style-81",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Say something. Say something. Say something. Say—"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Скажи что-нибудь. Скажи что-нибудь. Скажи что-нибудь. Скажи…"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Неестественное управление и усиление like до любви. «плейлист, который ему нравится, хотя вслух он ни за что в этом не признался бы».",
+            "id": "style-85",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "a playlist he’d never admit to like out loud"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "плейлист, о любви к которому ни за что не признался бы вслух"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Исходник выделяет момент начала плача, а не уже продолжающийся поток. «у него словно по инстинкту *наворачиваются* слёзы».",
+            "id": "meaning-85",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "his tears *kick in* as if on instinct"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "у него словно инстинктивно *льются* слёзы"
+            }
+          }
+        ]
+      },
+      "record_id": "394fbac0c203448fb5e971d97bbfb8f1",
+      "review_commit": "dae2bd42e0a8904926b310c7f16a592af5c51c00",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewed_at": "2026-11-17T10:21:03Z",
+      "reviewer_session_id": "chatops-say-it-r31-687fb135",
+      "sequence": 84,
+      "shared_state_revisions": {
+        "glossary": "73e38022ddf12bd5178e538d958adb319027d1c6d6d04ad1f5416e91ffcbf18b",
+        "style_guide": "542b979599ebe40dfbb11794d47d2fffcc7bde125f2d09c1549f33f618157eff"
+      },
+      "source_sha256": "fc53449ab646bb6ed98e0e29230473cc600f3978f3dcacc80f16de60c6a88e0f",
+      "state_revision": "b6bd72abf582ef9ad64c7ac389ecccd9b2b8b4d46cb160058371e3e17a79da4e",
+      "supersedes_record_id": null,
+      "translation_sha256": "714885f83a23cbf1b2089ad85c00c95359fa2bea2c371cffc7ba825a617eadc6",
+      "unit_id": "chapter-000031",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741"
+    }
+  },
+  "error": null
+}
