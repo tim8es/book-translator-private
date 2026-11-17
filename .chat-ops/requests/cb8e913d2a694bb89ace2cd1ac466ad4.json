@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "request_id": "cb8e913d2a694bb89ace2cd1ac466ad4",
+  "book_slug": "say-it-in-your-mother-tongue",
+  "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+  "operation": "review-record",
+  "chapter": 36,
+  "session_id": "chatops-say-it-r36-874c1b0e",
+  "outcome": "CORRECTIONS_REQUIRED",
+  "quality_report": {
+    "evidence_version": 2,
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "id": "style-4",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Буквальная калька «проходят одним из двух способов» нарушает естественный ритм вступления. Например: «Кажется, дни на заводе всегда проходят по одному из двух сценариев»; сохранить противопоставление и ненормативную лексику.",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "Days in the factory always seem to go one of two ways",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Дни на заводе, кажется, всегда проходят одним из двух способов",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "style-5",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Неестественный порядок слов и сочетаемость. Передать повтор: «выплёвывает строчку за строчкой с данными»; не потерять образ принтера.",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "spit out rows and rows of data",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "выплёвывает ряд за рядом данные",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "style-8",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Калька с английского усилителя. Например: «изо всех сил старается не обращать на это внимания»; сохранить подчёркнутую степень усилия.",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "tries to ignore as hard as humanly possible",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "изо всех человеческих сил старается не обращать на это внимания",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "style-15",
+        "category": "style",
+        "severity": "minor",
+        "detail": "В русском варианте пропущено действие, а звук шагов подвешен к существительному. Например: «Его ботинки тяжело стучат — *топ-топ-топ*»; сохранить звукоподражание и курсив.",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "His shoes *thud-thud-thud*",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Его ботинки — *топ-топ-топ*",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "meaning-15",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Генитив создаёт чтение «половина гаража, принадлежащего Габриэлю», тогда как речь об отведённой ему стороне общего гаража. Например: «пока не доходит до отведённой Габриэлю половины гаража».",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "until he reaches Gabriel’s side of the garage",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "пока не доходит до половины гаража Габриэля",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "style-17",
+        "category": "style",
+        "severity": "minor",
+        "detail": "В исходнике реплика прерывается собеседником после целого слова, а не затухает на середине слова. Передать резкое перебивание и естественный порядок слов: «Могу я чем-нибудь помочь—».",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "Can I help—",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Я могу чем-то помо…",
+          "occurrence": 0
+        },
+        "resolves": null
+      }
+    ]
+  },
+  "source_sha256": "bbe3ff2358aa2334f61088f52f633f0df6415623fc0f87d32468aafa9522fdca",
+  "translation_sha256": "c46fed1d6202d487471f1d5904e521a5c9c808af1d16bf13ac6fdf2de645e679",
+  "claim_sha256": "b814ed300b07355e14150b56fab72c2b3344da15a5bb818463c370aa0511ea73"
+}
