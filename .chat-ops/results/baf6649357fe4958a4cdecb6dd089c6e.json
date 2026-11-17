@@ -1,0 +1,214 @@
+{
+  "schema_version": 1,
+  "request_id": "baf6649357fe4958a4cdecb6dd089c6e",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "edeb4b9d1c7811486755c585900004d20f300670755f25bd7794dc84c5e899c7",
+    "record": {
+      "correction_round": 1,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "style",
+            "detail": "Сопоставление внутренней и внешней дрожи сохранено, калька устранена.",
+            "id": "recheck-style-6",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "style-6",
+              "record_id": "068a2d3d51984d7094ffbccd1b59e354"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "hoping it comes out *less* shaky than he feels"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "надеясь, что в его выдохе будет *меньше* дрожи, чем в нём самом"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Восстановлена самокоррекция времени глагола.",
+            "id": "recheck-meaning-10",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "meaning-10",
+              "record_id": "068a2d3d51984d7094ffbccd1b59e354"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "What did… what does it mean?"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Что это значило… что это значит?"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Восстановлено временное отношение и исходное смысловое выделение; реплика о принятом ранее решении.",
+            "id": "recheck-meaning-35",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "meaning-35",
+              "record_id": "068a2d3d51984d7094ffbccd1b59e354"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Not tell me how you feel about me until *after* we hook up?"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Признаться мне в своих чувствах *только после* того, как мы переспим?"
+            }
+          },
+          {
+            "category": "register",
+            "detail": "Восстановлена грубая разговорная интенсивность обеих фраз.",
+            "id": "recheck-register-39",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "register-39",
+              "record_id": "068a2d3d51984d7094ffbccd1b59e354"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "I’m still fucking scared. All the fucking time."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Мне до сих пор, блядь, страшно. Всё грёбаное время."
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Фраза идиоматична и сохраняет отрицание и намерение говорящего.",
+            "id": "recheck-style-44",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "style-44",
+              "record_id": "068a2d3d51984d7094ffbccd1b59e354"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "I just thought you didn’t mean it like that."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Просто думал, что ты не имел в виду ничего такого."
+            }
+          },
+          {
+            "category": "referent",
+            "detail": "Восстановлена отсылка к самому говорящему и сохранена неопределённость.",
+            "id": "recheck-referent-46",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "referent-46",
+              "record_id": "068a2d3d51984d7094ffbccd1b59e354"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "one day, you’d outgrow me. Or that you *possibly* already did."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "однажды ты меня перерастёшь. Или, *возможно*, уже перерос."
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Сохранены субъект и его повтор при запинке, а также смысловое выделение.",
+            "id": "recheck-style-48",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "style-48",
+              "record_id": "068a2d3d51984d7094ffbccd1b59e354"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "you… you were *into me*."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "что ты… ты ко мне *неравнодушен*."
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Восстановлено прямое отрицание предыдущего утверждения о том, что так было лучше.",
+            "id": "recheck-meaning-58",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "meaning-58",
+              "record_id": "068a2d3d51984d7094ffbccd1b59e354"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "It wasn’t"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "— Так было не лучше, — Лэнс отвечает на собственный вопрос."
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Устранено дублирование, сохранено испанское слово и курсив.",
+            "id": "recheck-style-67",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "style-67",
+              "record_id": "068a2d3d51984d7094ffbccd1b59e354"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "I was going *loco.*"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Я уже совсем *loco* становился."
+            }
+          }
+        ]
+      },
+      "record_id": "034b65641bdd4b25b397e8de7ac4058f",
+      "review_commit": "b3c4672840226d1cc3243cece4e0c25d8ad26bb6",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewed_at": "2026-11-17T09:59:00Z",
+      "reviewer_session_id": "chatops-say-it-review-30-b622827c",
+      "sequence": 83,
+      "shared_state_revisions": {
+        "glossary": "73e38022ddf12bd5178e538d958adb319027d1c6d6d04ad1f5416e91ffcbf18b",
+        "style_guide": "542b979599ebe40dfbb11794d47d2fffcc7bde125f2d09c1549f33f618157eff"
+      },
+      "source_sha256": "4f40608dbd02b08681cb4a2aef6ea6f0aef4f3472edc39a4b4f6a517b0f8b13b",
+      "state_revision": "772fb9c79712bcc912b7a8bb327ef4540f4d3fc85a2b4e6d58f9eaab9c21753b",
+      "supersedes_record_id": "068a2d3d51984d7094ffbccd1b59e354",
+      "translation_sha256": "6c9a84c778e58e0060d11e57a171484b1e2e45a1e365bf8dae211b707d520a86",
+      "unit_id": "chapter-000030",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741"
+    }
+  },
+  "error": null
+}
