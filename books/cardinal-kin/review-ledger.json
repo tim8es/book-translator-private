@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "cardinal-kin",
-  "next_sequence": 6,
+  "next_sequence": 7,
   "records": [
     {
       "record_id": "75dfa72e2b6148208fd5343b6e384999",
@@ -313,6 +313,77 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "27b0178e6a06218666571e4b5f1e15396ee78be505853cc2a067af7879f4c2fd",
+        "style_guide": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4"
+      }
+    },
+    {
+      "record_id": "f2172ea72a954e7fb3ca1c8b62631cb0",
+      "sequence": 6,
+      "unit_id": "chapter-000003",
+      "outcome": "PASS",
+      "source_sha256": "d1b33f9f3dd50bfccd88b07886c3b90eb13b6d4526b629257fbe58c06a40fdd4",
+      "translation_sha256": "6fd92eed908addbf4c0dfc91e1547302b6f06067a479e0eafc074fedcb1d8674",
+      "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "review_contract_revision": "docs/TRANSLATION.md@a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "reviewer_session_id": "auto-6232711b4aec-reviewer-c5c89d50",
+      "reviewed_at": "2026-11-17T12:56:32Z",
+      "state_revision": "36544b6721e6c31656535faa41159adc40c90cb8f3aa1d3ed11c21eb9537b500",
+      "review_commit": "1ed029a939f3e34a1ae90d05b4bb4b5a75952b31",
+      "correction_round": 1,
+      "supersedes_record_id": "79ccd89c242b43d59f9aafd16131cf34",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-meaning-1",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Resolved. The translation now correctly refers to the few people who know of his existence: they would never connect him with his alter ego.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "the few who know of his existence would never connect him with his alter ego.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "те немногие, кто знает о его существовании, никогда бы не связали его с его альтер эго.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "79ccd89c242b43d59f9aafd16131cf34",
+              "finding_id": "meaning-1"
+            }
+          },
+          {
+            "id": "recheck-meaning-2",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Resolved. «Ближайших планах» preserves the source's indication that the plans concern the near future.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "warning her of Ra’s future plans for Damian in the near future.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "предупреждает о ближайших планах Ра’са насчёт Дэмиана.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "79ccd89c242b43d59f9aafd16131cf34",
+              "finding_id": "meaning-2"
+            }
           }
         ]
       },

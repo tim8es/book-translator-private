@@ -22,3 +22,6 @@ Use this file for recurring names, places, organizations, terms, nicknames, titl
 | Batfamily Shenanigans | Проделки Бэт-семьи | linked proper name | Paired source and target EPUB name link; inflect in context. |
 | Mature Damian Wayne | Зрелый Дэмиан Уэйн | linked proper name | Paired source and target EPUB name link; inflect in context. |
 | BAMF Tim Drake | Крутой Тим Дрейк | linked proper name | Paired source and target EPUB name link; inflect in context. |
+| Tim | Тим | имя персонажа | В supplied excerpts consistently rendered as «Тим». |
+| Damian | Дэмиан | имя персонажа | Inflect in context; the supplied translation uses «Дэмиан» and «Дэмиана». |
+| Ra’s | Ра’с | имя персонажа | Inflect in context; the supplied translation uses «Ра’са». |
