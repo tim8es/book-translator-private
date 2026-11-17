@@ -19,3 +19,5 @@ Use this file for recurring names, places, organizations, terms, nicknames, titl
 | Gary | Гэри | person | Use Гэри; inflect according to Russian grammar. |
 | Mark | Марк | person | Name appears in the supplied excerpts; inflect according to Russian grammar. |
 | Lewis | Льюис | person | Name appears in the supplied block 83 context. |
+| Sebastian | Себастьян | имя | Владелец худи, упомянутый в подписи к фото. |
+| Bortoleto | Бортолето | фамилия | Фамилия Габриэля. |

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 96,
+  "next_sequence": 97,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -11173,6 +11173,153 @@
             "resolves": null
           }
         ]
+      }
+    },
+    {
+      "record_id": "64fcd42058fd44d1a412d6612bea0001",
+      "sequence": 96,
+      "unit_id": "chapter-000036",
+      "outcome": "PASS",
+      "source_sha256": "bbe3ff2358aa2334f61088f52f633f0df6415623fc0f87d32468aafa9522fdca",
+      "translation_sha256": "9416d43ebc8255eac7826b548fa13876ff91c6833448bcf343c1f64c27996309",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-7871dc80",
+      "reviewed_at": "2026-11-17T23:09:29Z",
+      "state_revision": "b4b7fa774e44506cfcf3b26bce8435af6440e1e338723c8b41c48a9893239e4b",
+      "review_commit": "6ae7956c07697f81ff505bcda6a15df48e577b8a",
+      "correction_round": 1,
+      "supersedes_record_id": "850986f0bf894b53ae2034e1462ad46a",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "style-4-recheck",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Исправлено: естественный ритм сохранён, противопоставление и ненормативная лексика переданы.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Days in the factory always seem to go one of two ways",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Кажется, дни на заводе всегда проходят по одному из двух сценариев",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "850986f0bf894b53ae2034e1462ad46a",
+              "finding_id": "style-4"
+            }
+          },
+          {
+            "id": "style-5-recheck",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Исправлено: сохранены образ принтера и повтор строчек; формулировка звучит естественно.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "spit out rows and rows of data",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "выплёвывает строчку за строчкой с данными",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "850986f0bf894b53ae2034e1462ad46a",
+              "finding_id": "style-5"
+            }
+          },
+          {
+            "id": "style-8-recheck",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Исправлено: подчёркнутая степень усилия передана естественным русским выражением.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "tries to ignore as hard as humanly possible",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "изо всех сил старается не обращать на это внимания",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "850986f0bf894b53ae2034e1462ad46a",
+              "finding_id": "style-8"
+            }
+          },
+          {
+            "id": "style-15-recheck",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Исправлено: действие шагов выражено, звукоподражание и курсив сохранены.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "His shoes *thud-thud-thud*",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Его ботинки тяжело стучат — *топ-топ-топ*",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "850986f0bf894b53ae2034e1462ad46a",
+              "finding_id": "style-15"
+            }
+          },
+          {
+            "id": "meaning-15-recheck",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Исправлено: ясно, что это отведённая Габриэлю сторона общего гаража.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "until he reaches Gabriel’s side of the garage",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "пока не доходит до отведённой Габриэлю половины гаража",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "850986f0bf894b53ae2034e1462ad46a",
+              "finding_id": "meaning-15"
+            }
+          },
+          {
+            "id": "style-17-recheck",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Исправлено: реплика обрывается после целого слова, резкое перебивание обозначено тире.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Can I help—",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Могу я чем-нибудь помочь—",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "850986f0bf894b53ae2034e1462ad46a",
+              "finding_id": "style-17"
+            }
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "73e38022ddf12bd5178e538d958adb319027d1c6d6d04ad1f5416e91ffcbf18b",
+        "style_guide": "542b979599ebe40dfbb11794d47d2fffcc7bde125f2d09c1549f33f618157eff"
       }
     }
   ]
