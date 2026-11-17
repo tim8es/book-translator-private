@@ -1,0 +1,353 @@
+{
+  "schema_version": 1,
+  "request_id": "4e273ca55ca743448bfc01a8ef9ad130",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "80245c26bc8208a03afe7b9b95ca2950716744c58a6c7645324edf64726aca2c",
+    "record": {
+      "correction_round": 5,
+      "outcome": "CORRECTIONS_REQUIRED",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "meaning",
+            "detail": "Source metaphor remains ambiguous; revised Russian introduces «другой» and «словно» and does not reliably preserve who possesses the broken brain.",
+            "id": "r2-01",
+            "resolved": false,
+            "resolves": {
+              "finding_id": "chunk-001-twin-recheck",
+              "record_id": "d516f8100cf34dcda4df299c32e12cae"
+            },
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "his father and his twin broken brain."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Невозможно не вспомнить отца — и другой сломанный мозг, словно его двойник."
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "The note is now written on a paper clipboard, not an electronic tablet.",
+            "id": "r2-02",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "chunk-001-clipboard",
+              "record_id": "d516f8100cf34dcda4df299c32e12cae"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "She writes something down on her clipboard, then offers him a bottle of water."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Она что-то записывает на листе, закреплённом на планшете, потом протягивает ему бутылку воды."
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "The ongoing migraine condition is now preserved.",
+            "id": "r2-03",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "chunk-001-migraine-followup",
+              "record_id": "d516f8100cf34dcda4df299c32e12cae"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Go in for a check up after a week if you’re still having trouble remembering things or severe migraines."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Через неделю приходите на осмотр, если проблемы с памятью или сильные мигрени всё ещё будут вас беспокоить."
+            }
+          },
+          {
+            "category": "register",
+            "detail": "Restores the speaker's colloquial pay-grade joke.",
+            "id": "r2-04",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "chunk-001-paygrade",
+              "record_id": "d516f8100cf34dcda4df299c32e12cae"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "This is above my pay grade."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Мне за такое слишком мало платят."
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Avoids tautology and preserves the shaky breath.",
+            "id": "r2-05",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "chunk-001-breath-style",
+              "record_id": "d516f8100cf34dcda4df299c32e12cae"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Hollander lets out a shaky breath, and then squares his shoulders, determined."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Холландер с дрожью выдыхает, а потом расправляет плечи, собираясь с духом."
+            }
+          },
+          {
+            "category": "register",
+            "detail": "Restores strong profane self-reproach.",
+            "id": "r2-06",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "chunk-003-lost-profanity",
+              "record_id": "d516f8100cf34dcda4df299c32e12cae"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "He’s been around for less than three days and already he’s fucking this up somehow."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Он здесь меньше трёх дней, а уже умудряется всё, блядь, испортить."
+            }
+          },
+          {
+            "category": "structure",
+            "detail": "Narrator thought is now a separate paragraph outside spoken dialogue.",
+            "id": "r2-07",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "chunk-004-dialogue-thought",
+              "record_id": "d516f8100cf34dcda4df299c32e12cae"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "“You got hit?” Ilya interjects. As far as he knows, Hollander’s yet to get his bell rung. “When?”"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Насколько ему известно, Холландера ещё ни разу не оглушали."
+            }
+          },
+          {
+            "category": "terminology",
+            "detail": "Natural Russian dish name.",
+            "id": "r2-08",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "chunk-004-dish-rendering",
+              "record_id": "d516f8100cf34dcda4df299c32e12cae"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "She comes with pans labeled lasagna and chicken parmesan, which means Ilya likes her already."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Она приносит формы с надписями «лазанья» и «курица с пармезаном», и Илья уже проникается к ней симпатией."
+            }
+          },
+          {
+            "category": "addition",
+            "detail": "Removes the unsupported second address.",
+            "id": "r2-09",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "chunk-005-extra-vocative",
+              "record_id": "d516f8100cf34dcda4df299c32e12cae"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "“Read the room.”"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "— Уайатт, чувак, — вздыхает Будрам. — Ты бы хоть обстановку оценил."
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Preserves idiomatic annoyance without exaggeration.",
+            "id": "r2-10",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "chunk-005-wall-idiom",
+              "record_id": "d516f8100cf34dcda4df299c32e12cae"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "I’m sure my son has been driving you up the wall."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Уверена, мой сын действовал тебе на нервы."
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Restores shared amusement.",
+            "id": "r2-11",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "chunk-005-amused-look",
+              "record_id": "d516f8100cf34dcda4df299c32e12cae"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "They share an amused look, and Ilya marvels again at how he ended up here."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Они весело переглядываются, и Илья снова поражается, как вообще здесь оказался."
+            }
+          },
+          {
+            "category": "structure",
+            "detail": "The malformed repeated dream description is now reduced to one rendering.",
+            "id": "r2-12",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "chunk-006-dream-repeat",
+              "record_id": "d516f8100cf34dcda4df299c32e12cae"
+            },
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "The next morning has him waking up hard again"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "На следующее утро он снова просыпается"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Preserves lack of usefulness rather than comfort.",
+            "id": "r2-13",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "chunk-006-memory-help",
+              "record_id": "d516f8100cf34dcda4df299c32e12cae"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "He knows it’s a fragment of a memory, but it’s not a very helpful one."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Он знает, что это обрывок воспоминания, но пользы от него почти никакой."
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Preserves irritability rather than stronger anger.",
+            "id": "r2-14",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "chunk-006-mood-bitchy",
+              "record_id": "d516f8100cf34dcda4df299c32e12cae"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "because he was feeling bitchy after getting into it that morning with Shane."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "потому что утром Илья был раздражён после ссоры с Шейном."
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "The impersonal title is recast as an addressed second-person statement; a Russian impersonal phrase may preserve the source more accurately.",
+            "id": "r2-15",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "## there's no pretending"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "## Не притворишься"
+            }
+          },
+          {
+            "category": "terminology",
+            "detail": "Hayes appears elsewhere as «Хейз», but this occurrence says «Хейсом»; normalize the surname.",
+            "id": "r2-16",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "him drinking out of the Cup with Hayes"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "он пьёт из Кубка вместе с Хейсом"
+            }
+          },
+          {
+            "category": "structure",
+            "detail": "The target splits italic emphasis on «очках» across standalone Markdown markers; restore inline meaningful emphasis and prose.",
+            "id": "r2-17",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Hollander’s wearing \n *\n glasses.\n *"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Холландер в\n *\n очках.\n *"
+            }
+          }
+        ]
+      },
+      "record_id": "c713257e0a834e40a5b75d5630040b25",
+      "review_commit": "d9937c8835fd94cdbe228ecc8bcea796abaff4cc",
+      "review_contract_revision": "docs/TRANSLATION.md@871e937b5d7075613c4e55c1ecfc07af700af8bc",
+      "reviewed_at": "2026-11-17T00:23:06Z",
+      "reviewer_session_id": "chatops-review-theres-no-pretending-20261117-r2",
+      "sequence": 6,
+      "source_sha256": "7edd5f7d76d4a7d2f971e83a7096c061b9e1a51db15178224d7975fe39d0eb39",
+      "state_revision": "f38a92f989f2c43d3037528713c6ee9bae5b2344b0c9f17ed787b945fc8eacd5",
+      "supersedes_record_id": "d516f8100cf34dcda4df299c32e12cae",
+      "translation_sha256": "11febc3e9f9193a03de781d56791cc72ae0557ce8a27cfb41de8f90adff37310",
+      "unit_id": "chapter-000002",
+      "workflow_revision": "871e937b5d7075613c4e55c1ecfc07af700af8bc"
+    }
+  },
+  "error": null
+}
