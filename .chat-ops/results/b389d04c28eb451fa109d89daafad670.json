@@ -1,0 +1,187 @@
+{
+  "schema_version": 1,
+  "request_id": "b389d04c28eb451fa109d89daafad670",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "6b9c1ee7e4354c22eab63cac8af002e0c7a50d9433598ddcf7609389bad42fd5",
+    "record": {
+      "correction_round": 1,
+      "outcome": "CORRECTIONS_REQUIRED",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "meaning",
+            "detail": "Исходник описывает сохраняющуюся позу и близость, а не продолжающийся наклон. Передать неподвижное положение: «Чеко всё ещё сидит, наклонившись к нему, — ближе, чем могло бы казаться *настолько* привычным»; обеспечить естественный синтаксис без потери акцента.",
+            "id": "meaning-5",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Checo is still leaning in close, much closer than should feel *this* familiar."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Чеко всё ещё наклоняется к нему, так близко, что это не должно было бы казаться *настолько* привычным."
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Не добавлять обобщённый объект «окружающих», которого нет в исходнике; восстановить высоту вновь возведённых защитных стен. Например «стены, которыми он защищался и которые Чеко за эти месяцы разрушил, снова вырастают высоко».",
+            "id": "meaning-11a",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "his defense walls — that Checo tore down over the months — built up high again"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "стены, которыми он отгораживался от окружающих и которые Чеко за эти месяцы разрушил, снова вырастают"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Исходник описывает состояние едва открытых глаз, а не новое действие по их открыванию; передать «выдаёт он, почти не открывая глаз».",
+            "id": "meaning-11b",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "he offers with barely open eyes"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "выдаёт он, едва приоткрыв глаза"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "В оригинале резкий обрыв реплики при поиске слова; сохранить конечное тире вместо многоточия.",
+            "id": "style-15",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "the keys didn’t—"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "а ключи не…"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Реплика оборвана, а не затихает; восстановить тире.",
+            "id": "style-16",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "“I didn’t—”"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "— Я не…"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Реплика обрывается, затем продолжается внутренним вопросом. Восстановить тире.",
+            "id": "style-19",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "“Why did you even—”"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "— А зачем ты вообще…"
+            }
+          },
+          {
+            "category": "modality",
+            "detail": "В исходнике невозможность сказать что-либо с определённым эффектом, а не уверенность, что собеседник воздержится от реплики. Например «Нет ничего, что ты мог бы сказать и что…»; оставить фразу незаконченной.",
+            "id": "modality-23",
+            "resolved": false,
+            "resolves": null,
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "There’s nothing you can say that’d…"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Ты ведь ничего такого не скажешь, что…"
+            }
+          },
+          {
+            "category": "register",
+            "detail": "В контексте это осознание пояснения собеседника, а не вздох или огорчение. Передать «*А.*» или «*А-а.*».",
+            "id": "register-27",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "*Oh.*"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "*Ох.*"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "«Выжидает» предполагает намеренное ожидание подходящего момента; в исходнике он просто слушает ответ. Передать естественно, например «Он с минуту слушает собеседника» без добавления точной длительности; лучше «Он некоторое время слушает собеседника».",
+            "id": "meaning-32",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "He waits a moment, hearing what the other person has to say"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Выжидает мгновение, слушая собеседника"
+            }
+          }
+        ]
+      },
+      "record_id": "32584e1096c54bc8a91ab0b8d2df1068",
+      "review_commit": "95b251b8a591fb0a0434b6687f6bd17b998aa96a",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewed_at": "2026-11-17T13:01:27Z",
+      "reviewer_session_id": "chatops-say-it-r34-5df1a5c1",
+      "sequence": 90,
+      "shared_state_revisions": {
+        "glossary": "73e38022ddf12bd5178e538d958adb319027d1c6d6d04ad1f5416e91ffcbf18b",
+        "style_guide": "542b979599ebe40dfbb11794d47d2fffcc7bde125f2d09c1549f33f618157eff"
+      },
+      "source_sha256": "88e537f8dd9f16306b357a28ae4aef7005f2b830f5154cdf08a6f2e8b1ef377e",
+      "state_revision": "1bbe8f257335c6fe9e96c504337dd5a8a98cd0b0d6bc1bfa2abe51e24b135960",
+      "supersedes_record_id": null,
+      "translation_sha256": "32125c939b191b56887ddda5e9ed08357970f7c1bce1dd1a862e029e1a5a5634",
+      "unit_id": "chapter-000034",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741"
+    }
+  },
+  "error": null
+}
