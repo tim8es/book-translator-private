@@ -3,7 +3,7 @@
   "job_id": "05eed6ea814d3b5eec014c6d05b39e3f",
   "book_slug": "say-it-in-your-mother-tongue",
   "state": "running",
-  "phase": "structural-json-repair-reserved",
+  "phase": "structural-segments-staged",
   "failures": 0,
   "correction_rounds": {
     "chapter-000001": 1,
@@ -38,7 +38,7 @@
   },
   "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
   "source_sha256": "12e210ce5a95daf56a97ada583ec15c274780c4ddfa7fb92da6a88c67f7c403d",
-  "updated_at": "2026-11-17T23:55:24.789419+00:00",
+  "updated_at": "2026-11-17T23:55:36.354038+00:00",
   "active": {
     "role": "translator",
     "chapter": 38,
@@ -174,23 +174,23 @@
   "structural_segment_progress": {
     "unit_id": "chapter-000038",
     "source_sha256": "433cbe26cee5137ed0d25867032c35db0a89b88ecb5057440bbc8e2698cafac7",
-    "completed": 96,
+    "completed": 97,
     "total": 183
-  },
-  "model_response_diagnostics": {
-    "finish_reason": "stop",
-    "response_format": "json_object",
-    "response_chars": 352,
-    "provider_refusal": false,
-    "prompt_tokens": 6712,
-    "completion_tokens": 1156,
-    "total_tokens": 7868,
-    "route": "primary",
-    "role": "translator",
-    "unit_id": "chapter-000038"
   },
   "structural_protocol_fallback_units": {
     "chapter-000038": "433cbe26cee5137ed0d25867032c35db0a89b88ecb5057440bbc8e2698cafac7"
   },
-  "last_error_code": "invalid_segment_id"
+  "last_error_code": "invalid_segment_id",
+  "model_response_diagnostics": {
+    "finish_reason": "stop",
+    "response_format": "json_object",
+    "response_chars": 86,
+    "provider_refusal": false,
+    "prompt_tokens": 6419,
+    "completion_tokens": 85,
+    "total_tokens": 6504,
+    "route": "primary",
+    "role": "translator",
+    "unit_id": "chapter-000038"
+  }
 }
