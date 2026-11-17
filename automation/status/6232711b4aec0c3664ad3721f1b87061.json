@@ -3,14 +3,14 @@
   "job_id": "6232711b4aec0c3664ad3721f1b87061",
   "book_slug": "cardinal-kin",
   "state": "running",
-  "phase": "model-call-reserved",
+  "phase": "structural-segments-staged",
   "failures": 0,
   "correction_rounds": {
     "chapter-000001": 2
   },
   "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
   "source_sha256": "f06b996448766fcf6faa703ced3ca03b63221f4f81bdb4c395619c69ffa353cd",
-  "updated_at": "2026-11-17T11:30:17.047489+00:00",
+  "updated_at": "2026-11-17T11:30:36.508021+00:00",
   "active": {
     "role": "translator",
     "chapter": 2,
@@ -48,19 +48,26 @@
       "review_required": 0
     }
   },
+  "glossary_evidence_rejected": 0,
+  "glossary_conflicts_rejected": 0,
+  "glossary_proposals_deferred": 0,
+  "provider_model_route": "primary",
   "model_response_diagnostics": {
     "finish_reason": "stop",
     "response_format": "json_object",
-    "response_chars": 1243,
+    "response_chars": 1368,
     "provider_refusal": false,
-    "prompt_tokens": 7926,
-    "completion_tokens": 3758,
-    "total_tokens": 11684,
+    "prompt_tokens": 6487,
+    "completion_tokens": 923,
+    "total_tokens": 7410,
     "route": "primary",
-    "role": "reviewer",
-    "unit_id": "chapter-000001"
+    "role": "translator",
+    "unit_id": "chapter-000002"
   },
-  "glossary_evidence_rejected": 0,
-  "glossary_conflicts_rejected": 0,
-  "glossary_proposals_deferred": 0
+  "structural_segment_progress": {
+    "unit_id": "chapter-000002",
+    "source_sha256": "a5939058bc010e5b6072b62dc1b76cf7876db3d781763182b3338f3ef11d7f7a",
+    "completed": 18,
+    "total": 18
+  }
 }
