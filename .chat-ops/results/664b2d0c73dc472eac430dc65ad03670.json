@@ -1,0 +1,290 @@
+{
+  "schema_version": 1,
+  "request_id": "664b2d0c73dc472eac430dc65ad03670",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "3f41ecf622991fdda7d13eca6ecbceb9e3f6a8ff0cee3fc5fc7e0254efb475ea",
+    "record": {
+      "correction_round": 1,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "meaning",
+            "detail": "Восстановлена субъективная оценка скорости, связь с последующим действием сохранена.",
+            "id": "recheck-meaning-5",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "meaning-5",
+              "record_id": "c4578897805b4abcb079853a0e6136c3"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "too fast for his liking"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Она исчезает в его лёгких быстрее, чем ему хотелось бы"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Намеренность действия больше не подменяется нежеланием.",
+            "id": "recheck-meaning-6",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "meaning-6",
+              "record_id": "c4578897805b4abcb079853a0e6136c3"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Without actually meaning to do so"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Сам не отдавая себе в этом отчёта"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Устранён неестественный порядок слов, сохранено противопоставление невозможности ответить и множества невысказанных мыслей.",
+            "id": "recheck-style-9",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "style-9",
+              "record_id": "c4578897805b4abcb079853a0e6136c3"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "he has *too much* to say"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "ему хочется сказать *слишком много*"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Исправлена сочетаемость, предмет и действие сохранены.",
+            "id": "recheck-style-14",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "style-14",
+              "record_id": "c4578897805b4abcb079853a0e6136c3"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "taking a sip of the disgusting brown-ish liquid"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "делая глоток отвратительной буроватой жидкости"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Удалено неоправданное абсолютное усиление.",
+            "id": "recheck-meaning-15",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "meaning-15",
+              "record_id": "c4578897805b4abcb079853a0e6136c3"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "His gray suit is tidy and well-fitting"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Его серый костюм опрятен и хорошо на нём сидит"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Сохранена демонстративная невозможность без оттенка волевого отказа.",
+            "id": "recheck-meaning-18",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "meaning-18",
+              "record_id": "c4578897805b4abcb079853a0e6136c3"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "a happy employee who could not possibly be in love with his boss’ son"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "довольного сотрудника, который никак не может быть влюблён в сына своего начальника"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Сохранено двойное значение взвешивания фамилии и вариантов дальнейшего поведения.",
+            "id": "recheck-style-35",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "style-35",
+              "record_id": "c4578897805b4abcb079853a0e6136c3"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "like he’s weighing it — or his options"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "словно взвешивает её — или то, как ему теперь поступить"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Идиома передаёт эмоциональную холодность и насмешку без дополнительного обвинения в бесчувственности.",
+            "id": "recheck-meaning-54",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "meaning-54",
+              "record_id": "c4578897805b4abcb079853a0e6136c3"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "*cold fish* Chris Cronin"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "этого *сухаря*"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Использована естественная идиома, сохраняющая мотив чтения для последующего ответа.",
+            "id": "recheck-style-59",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "style-59",
+              "record_id": "c4578897805b4abcb079853a0e6136c3"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "I think you’re reading too into it"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Думаю, вы слишком многое читаете между строк"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Сохранены зеркальность реплик в блоках 59 и 63, запинка и игра слов в блоке 64.",
+            "id": "recheck-style-63",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "style-63",
+              "record_id": "c4578897805b4abcb079853a0e6136c3"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "I think you’re… not reading into it enough"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "А я думаю, ты… слишком мало читаешь между строк"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Устранена тяжеловесная инверсия без потери условности и смысловых выделений.",
+            "id": "recheck-style-65",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "style-65",
+              "record_id": "c4578897805b4abcb079853a0e6136c3"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "that *could* be considered gentle if it did not belong to *him*"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "который *можно было бы* счесть мягким, если бы он не принадлежал *ему*"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Сохранена оценка возможного намерения говорящего вместо оценки степени комплимента.",
+            "id": "recheck-meaning-67",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "meaning-67",
+              "record_id": "c4578897805b4abcb079853a0e6136c3"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "almost like it’s meant to be a compliment"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "словно и впрямь хочет сделать ему комплимент"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Исправлена сочетаемость, повтор последующих форм корня «луч-» сохраняет смысловую связь с репликами 71–74.",
+            "id": "recheck-style-72",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "style-72",
+              "record_id": "c4578897805b4abcb079853a0e6136c3"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "I don’t think I’m doing *the best,"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Не думаю, что поступаю *лучше всего*,"
+            }
+          }
+        ]
+      },
+      "record_id": "842b7bec0423410c8118350404d97ea3",
+      "review_commit": "4b24663bb1bbe0fb4fd8ba9f0c242cbfa62958db",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewed_at": "2026-11-17T12:35:08Z",
+      "reviewer_session_id": "chatops-say-it-rr33-23af534c",
+      "sequence": 89,
+      "shared_state_revisions": {
+        "glossary": "73e38022ddf12bd5178e538d958adb319027d1c6d6d04ad1f5416e91ffcbf18b",
+        "style_guide": "542b979599ebe40dfbb11794d47d2fffcc7bde125f2d09c1549f33f618157eff"
+      },
+      "source_sha256": "429dacd41fcb35dd6d9063b3077a8be830ad707ea6134ddf1f8c6f7694eab515",
+      "state_revision": "2ee9b1eb5339c84533014b91b82651c2531dc1cbc6f0f6e79c379b03f4508dbe",
+      "supersedes_record_id": "c4578897805b4abcb079853a0e6136c3",
+      "translation_sha256": "605bfe5c4ebbd37c9895dac9e49e519b8f113de9bf95e2a9acbcd0feb22e7664",
+      "unit_id": "chapter-000033",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741"
+    }
+  },
+  "error": null
+}
