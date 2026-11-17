@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "cardinal-kin",
-  "next_sequence": 11,
+  "next_sequence": 12,
   "records": [
     {
       "record_id": "75dfa72e2b6148208fd5343b6e384999",
@@ -892,6 +892,135 @@
               "record_id": "3b67cf481f144c72a7cd4ecd132f1d08",
               "finding_id": "structure-fragment-1"
             }
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "1c5d9486f4d2fa5ea0b42ba90ebd6d52e26e1784a4fe6715448ff50cae516f91",
+        "style_guide": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4"
+      }
+    },
+    {
+      "record_id": "d7d70e1559784b82aae645e68392d385",
+      "sequence": 11,
+      "unit_id": "chapter-000005",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "b13d3a92f1556dea465905b35f22abe2281204254f681894bbdb15140d1a1ec2",
+      "translation_sha256": "552c0885e27a0c7d64459f2828fb813ff2606357e8200d90ff3bdf5ba30e7979",
+      "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "review_contract_revision": "docs/TRANSLATION.md@a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "reviewer_session_id": "auto-6232711b4aec-reviewer-771cb19c",
+      "reviewed_at": "2026-11-17T13:44:04Z",
+      "state_revision": "5aa9863369b2174d0c0d24beb02a9bad8756330ed9748e192fc08ae6ceb0ef46",
+      "review_commit": "349da0591197a83b27dec4a0d57fc8158b45c8ae",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "style-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "“Grin and bear it” means enduring something unpleasant while maintaining a public appearance; the translation retains the smile but loses the idea of putting up with it. Preserve both parts of the idiom.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Damian has never been particularly good at the whole grin and bear it for public perception thing.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Дэмиану никогда особенно не удавалось сохранять улыбку ради общественного мнения.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "omission-1",
+            "category": "omission",
+            "severity": "minor",
+            "detail": "“Executive” is omitted from Tam’s job title, reducing “executive assistant” to a general assistant. Preserve the more specific role.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Ever since Tim hired Tam Fox as his executive assistant, Lucius doesn’t believe what the media has to say about him.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "С тех пор как Тим нанял Тэм Фокс своим ассистентом, Люциус не верит тому, что о нём пишет пресса.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "referent-1",
+            "category": "referent",
+            "severity": "major",
+            "detail": "Here, “the bats” refers to the Bat-family, not animals; the following sentence repeats the same referent. The translation turns Tim’s connection to the Bats into a connection to actual bats.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "He doesn’t go out much anymore to take photos of the bats, it’s too risky, but occasionally he needs the distraction.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Теперь он нечасто выходит фотографировать летучих мышей — это слишком рискованно, — но иногда ему всё же нужно отвлечься.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "terminology-1",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "Pru’s nickname for Tim is rendered as “Красный” here, but elsewhere in this unit it is transliterated as “Ред” (including “Ред” and “Реде”). Keep the nickname consistent rather than translating it literally in this occurrence.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“Got to make sure you’re keeping your skills sharp, Red.”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "— Надо же убедиться, что ты не растерял сноровку, Красный.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-2",
+            "category": "style",
+            "severity": "minor",
+            "detail": "“Ближе всех к тому, чтобы быть его наперсницей” is an awkward literal construction for “the closest thing he has to a confidant.” Recast it naturally while preserving that she is effectively his confidante.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "She’s the closest thing he has to a confidant, and more than that, she’s probably his closest friend.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Она ближе всех к тому, чтобы быть его наперсницей, и, более того, вероятно, она его самый близкий друг.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The source says Pru cannot be contacted generally; “дозвониться” narrows this to a phone call, a method the source does not specify. Keep the broader meaning of being unable to contact her.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "If something does happen, I’ll be out of reach. You won’t be able to contact me.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Если что-нибудь случится, со мной нельзя будет связаться. Ты не сможешь до меня дозвониться",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       },
