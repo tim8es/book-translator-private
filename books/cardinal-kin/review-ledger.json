@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "cardinal-kin",
-  "next_sequence": 7,
+  "next_sequence": 8,
   "records": [
     {
       "record_id": "75dfa72e2b6148208fd5343b6e384999",
@@ -389,6 +389,135 @@
       },
       "shared_state_revisions": {
         "glossary": "27b0178e6a06218666571e4b5f1e15396ee78be505853cc2a067af7879f4c2fd",
+        "style_guide": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4"
+      }
+    },
+    {
+      "record_id": "c88ba4599d16435fbb769ea25123e87b",
+      "sequence": 7,
+      "unit_id": "chapter-000004",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "4d370415b6d8e2ff84f0bb4a5633e2dfff9069a3139d5383919c57cdfe737871",
+      "translation_sha256": "a6e3155401effe8e7f03e460e93be328113416f0abe775db8a013b245b253d33",
+      "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "review_contract_revision": "docs/TRANSLATION.md@a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "reviewer_session_id": "auto-6232711b4aec-reviewer-70469287",
+      "reviewed_at": "2026-11-17T13:12:44Z",
+      "state_revision": "2804f0a56575b1fcaab7edebc43ab1da4c7083ecc58e3d3d7b40fec3e00d61d5",
+      "review_commit": "5587c234e3a888025c4dcd3f58043c7c58ac0f31",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "style-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Оставляет спор» is an awkward calque for dropping an argument; it can mean leaving a dispute behind rather than ending the argument. Use a natural equivalent such as «пока прекращает спор» while retaining the action of slumping back into his seat.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "He drops the argument for now, slumping back into his seat.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Пока что он оставляет спор и, обмякнув, откидывается на спинку кресла.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "«Entitled» describes their sense that they deserve privilege or that others owe them something; «избалованные» instead describes being spoiled. Preserve the entitled attitude as well as their greed, for example by conveying that they think everyone owes them.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "His future business colleagues are overall just entitled and greedy.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Его будущие деловые партнёры в основном избалованные и жадные.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-2",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«В этой налоговой категории» reads as a literal, bureaucratic classification in Russian. Here “tax bracket” colloquially marks a wealth or income stratum; render that sense naturally without losing the dismissive tone.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "just another pretentious rich boy like so many in this tax bracket.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "ещё один напыщенный богач — такой же, как многие в этой налоговой категории.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-2",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "«Means to work for it» means Damian intends to work for the position, not merely to deserve it. Also, saying his career’s beginning will be «связано с семьёй» weakens the source’s explicit point that his start will have been due to his family. Preserve both his intention to work for the role and the family-based advantage.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Even if Damian means to work for it and be a leader deserving of respect, he’ll have always gotten his start due to his family.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Даже если Дэмиан намерен заслужить эту должность и стать достойным уважения лидером, начало его карьеры всё равно будет связано с семьёй.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-3",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "«Не властное» suggests the handshake is not dominant or authoritative, rather than not forceful. The source describes a firm handshake without excessive force; use wording that preserves that physical distinction.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "grip is firm but not forceful",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Рукопожатие Тимоти Дрейка крепкое, но не властное",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-3",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The source describes Damian as being deep in thought while he stares out the window. «Глубоко задумался» shifts to a past-tense event and clashes with the present-tense «смотрит»; preserve the ongoing state, for example with «глубоко задумавшись».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Damian stares out the window as Gotham blurs past him, deep in thought.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Дэмиан смотрит в окно, пока Готэм проносится мимо размытым пятном, и глубоко задумался.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "1c5d9486f4d2fa5ea0b42ba90ebd6d52e26e1784a4fe6715448ff50cae516f91",
         "style_guide": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4"
       }
     }
