@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 85,
+  "next_sequence": 86,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -8815,6 +8815,229 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "73e38022ddf12bd5178e538d958adb319027d1c6d6d04ad1f5416e91ffcbf18b",
+        "style_guide": "542b979599ebe40dfbb11794d47d2fffcc7bde125f2d09c1549f33f618157eff"
+      }
+    },
+    {
+      "record_id": "8b774e0587744fffb6e3b50f50e0febb",
+      "sequence": 85,
+      "unit_id": "chapter-000031",
+      "outcome": "PASS",
+      "source_sha256": "fc53449ab646bb6ed98e0e29230473cc600f3978f3dcacc80f16de60c6a88e0f",
+      "translation_sha256": "11432f159413e8a2d66a360b574515812967eafa992f65419a0164a15d32534b",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "chatops-say-it-rr31-276ddbbc",
+      "reviewed_at": "2026-11-17T10:34:07Z",
+      "state_revision": "6ba56b8e7e57f87bbb7c32d9611d78a8471ee0b6ef1e7eff5ad9d95df6962279",
+      "review_commit": "883bf9dfa67242d9719e0ef9528163023efde1dd",
+      "correction_round": 1,
+      "supersedes_record_id": "394fbac0c203448fb5e971d97bbfb8f1",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-style-16",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Движение выпечки передано естественно, без канцелярского оборота.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "the pastries moving on the passenger seat",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "как выпечка на пассажирском сиденье сдвигается с места",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "394fbac0c203448fb5e971d97bbfb8f1",
+              "finding_id": "style-16"
+            }
+          },
+          {
+            "id": "recheck-register-24",
+            "category": "register",
+            "severity": "minor",
+            "detail": "Сохранены досада и раздражение, без добавления физического изнеможения.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "exasperated, Sebastian exhales",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "в сердцах выдыхает Себастьян",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "394fbac0c203448fb5e971d97bbfb8f1",
+              "finding_id": "register-24"
+            }
+          },
+          {
+            "id": "recheck-meaning-24",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Восстановлена указанная в оригинале скорость и акцент на быстром движении.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "*gunning it* at 160 the whole time",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "*гнать* всю дорогу на скорости 160",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "394fbac0c203448fb5e971d97bbfb8f1",
+              "finding_id": "meaning-24"
+            }
+          },
+          {
+            "id": "recheck-style-33",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Сохранена насмешливая оценка самого вопроса, без тяжёлого отвлечённого оборота.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "like it’s stupid that Nico even feels the need to ask",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "будто глупо уже то, что Нико вообще понадобилось спрашивать",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "394fbac0c203448fb5e971d97bbfb8f1",
+              "finding_id": "style-33"
+            }
+          },
+          {
+            "id": "recheck-meaning-47",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Оценка Нико вновь характеризует степень сходства с болью.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "something that is entirely too close to pain for Nico’s liking",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "чего-то, что куда больше похоже на боль, чем Нико хотелось бы",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "394fbac0c203448fb5e971d97bbfb8f1",
+              "finding_id": "meaning-47"
+            }
+          },
+          {
+            "id": "recheck-style-65",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Передана непосредственность и однозначность жеста; курсив сохранён.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "*straight-up* offering the bag to Gabriel",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "*недвусмысленно* предлагая пакет Габриэлю",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "394fbac0c203448fb5e971d97bbfb8f1",
+              "finding_id": "style-65"
+            }
+          },
+          {
+            "id": "recheck-emphasis-70",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Восстановлен акцент на говорящем при сохранении признания и повторного подтверждения.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "*I* do *like you, Gabriel. I really do.*",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "*Мне* ты *действительно нравишься, Габриэль. Правда.*",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "394fbac0c203448fb5e971d97bbfb8f1",
+              "finding_id": "emphasis-70"
+            }
+          },
+          {
+            "id": "recheck-style-81",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Восстановлен резкий обрыв внутренней речи перед вопросом.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Say something. Say something. Say something. Say—",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Скажи что-нибудь. Скажи что-нибудь. Скажи что-нибудь. Скажи—",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "394fbac0c203448fb5e971d97bbfb8f1",
+              "finding_id": "style-81"
+            }
+          },
+          {
+            "id": "recheck-style-85",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Сохранена степень симпатии и нежелание признаться в ней вслух.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "a playlist he’d never admit to like out loud",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "плейлист, который ему нравится, хотя вслух он ни за что в этом не признался бы",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "394fbac0c203448fb5e971d97bbfb8f1",
+              "finding_id": "style-85"
+            }
+          },
+          {
+            "id": "recheck-meaning-85",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Восстановлено начало потока слёз при вступлении песни, согласовано с предшествующей первой слезой.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "his tears *kick in* as if on instinct",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "у него словно инстинктивно *начинают литься* слёзы",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "394fbac0c203448fb5e971d97bbfb8f1",
+              "finding_id": "meaning-85"
+            }
           }
         ]
       },
