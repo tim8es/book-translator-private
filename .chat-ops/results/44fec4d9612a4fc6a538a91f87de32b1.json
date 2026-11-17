@@ -1,0 +1,214 @@
+{
+  "schema_version": 1,
+  "request_id": "44fec4d9612a4fc6a538a91f87de32b1",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "bceba15f33bdcb340c197d7c7bb7fb7abc571710a59f570b8159cc92cf5e76b4",
+    "record": {
+      "correction_round": 1,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "meaning",
+            "detail": "Положение тела передано как сохраняющаяся поза, степень близости и акцент сохранены.",
+            "id": "recheck-meaning-5",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "meaning-5",
+              "record_id": "32584e1096c54bc8a91ab0b8d2df1068"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Checo is still leaning in close, much closer than should feel *this* familiar."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Чеко всё ещё сидит, наклонившись к нему, — так близко, что эта близость не должна была бы казаться *настолько* привычной."
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Убрано добавленное обобщение об окружающих, восстановлен образ высоты стен.",
+            "id": "recheck-meaning-11a",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "meaning-11a",
+              "record_id": "32584e1096c54bc8a91ab0b8d2df1068"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "his defense walls — that Checo tore down over the months — built up high again"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "защитные стены, которые Чеко за эти месяцы разрушил, снова вырастают во всю высоту"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Восстановлено состояние почти закрытых глаз, а не действие их открывания.",
+            "id": "recheck-meaning-11b",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "meaning-11b",
+              "record_id": "32584e1096c54bc8a91ab0b8d2df1068"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "he offers with barely open eyes"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "выдаёт он, почти не открывая глаз"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Сохранён резкий обрыв слова перед поиском подходящего выражения и продолжающейся репликой.",
+            "id": "recheck-style-15",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "style-15",
+              "record_id": "32584e1096c54bc8a91ab0b8d2df1068"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "the keys didn’t—"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "а ключи не—"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Восстановлен обрыв незавершённой реплики.",
+            "id": "recheck-style-16",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "style-16",
+              "record_id": "32584e1096c54bc8a91ab0b8d2df1068"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "“I didn’t—”"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "— Я не—"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Восстановлен резкий обрыв, последующий внутренний вопрос сохранён.",
+            "id": "recheck-style-19",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "style-19",
+              "record_id": "32584e1096c54bc8a91ab0b8d2df1068"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "“Why did you even—”"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "— А зачем ты вообще—"
+            }
+          },
+          {
+            "category": "modality",
+            "detail": "В контексте успокоения восстановлена невозможность причинить подразумеваемый эффект; фраза остаётся незавершённой.",
+            "id": "recheck-modality-23",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "modality-23",
+              "record_id": "32584e1096c54bc8a91ab0b8d2df1068"
+            },
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "There’s nothing you can say that’d…"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Ты не можешь сказать ничего такого, от чего…"
+            }
+          },
+          {
+            "category": "register",
+            "detail": "Передан момент понимания, курсив сохранён.",
+            "id": "recheck-register-27",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "register-27",
+              "record_id": "32584e1096c54bc8a91ab0b8d2df1068"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "*Oh.*"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "*А-а.*"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Ожидание ответа передано без добавленного подтекста выжидания.",
+            "id": "recheck-meaning-32",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "meaning-32",
+              "record_id": "32584e1096c54bc8a91ab0b8d2df1068"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "He waits a moment, hearing what the other person has to say"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Он несколько мгновений слушает собеседника"
+            }
+          }
+        ]
+      },
+      "record_id": "12fda15d55684c77a4f8dbaff2d2844c",
+      "review_commit": "31140b7e252ddd0ed7f69458851bb769f2877063",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewed_at": "2026-11-17T13:23:20Z",
+      "reviewer_session_id": "chatops-say-it-rr34-986ae363",
+      "sequence": 91,
+      "shared_state_revisions": {
+        "glossary": "73e38022ddf12bd5178e538d958adb319027d1c6d6d04ad1f5416e91ffcbf18b",
+        "style_guide": "542b979599ebe40dfbb11794d47d2fffcc7bde125f2d09c1549f33f618157eff"
+      },
+      "source_sha256": "88e537f8dd9f16306b357a28ae4aef7005f2b830f5154cdf08a6f2e8b1ef377e",
+      "state_revision": "87e83c3bd8cb5793d28601eae1526dd0631a18808eb9d4632eaafa1e106c5698",
+      "supersedes_record_id": "32584e1096c54bc8a91ab0b8d2df1068",
+      "translation_sha256": "163b6deb447cba4ee9b20b3585f07db195cb2528b08cf55dd5ff54dc97227ec6",
+      "unit_id": "chapter-000034",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741"
+    }
+  },
+  "error": null
+}
