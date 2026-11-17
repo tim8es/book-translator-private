@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "cardinal-kin",
-  "next_sequence": 4,
+  "next_sequence": 5,
   "records": [
     {
       "record_id": "75dfa72e2b6148208fd5343b6e384999",
@@ -204,6 +204,55 @@
       },
       "shared_state_revisions": {
         "glossary": "f02e6becb2861881659733c55614d24b49ee0a6906fa607fb2db0ceb6b8d35ad",
+        "style_guide": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4"
+      }
+    },
+    {
+      "record_id": "2f01a016dd684f35a1082ed4baf7d450",
+      "sequence": 4,
+      "unit_id": "chapter-000002",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "a5939058bc010e5b6072b62dc1b76cf7876db3d781763182b3338f3ef11d7f7a",
+      "translation_sha256": "761ee4cf049a13dd465eeb2c794b9762a8a3be7a6ba8605c2cf47b227c50fbe2",
+      "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "review_contract_revision": "docs/TRANSLATION.md@a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "reviewer_session_id": "auto-6232711b4aec-reviewer-3e80fc6a",
+      "reviewed_at": "2026-11-17T11:32:55Z",
+      "state_revision": "f7f2b867278ce3944abf3196dbb5d32f4073081519985c516d3dff9d01077552",
+      "review_commit": "0f9aa464fc49a2878400e31053133aa082ccde5d",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "style-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The source credits the work as being by Yellow_sprouts. In the translation, «автор» is left in the nominative and is grammatically unattached after «произведением». Use «автора Yellow_sprouts» or recast the attribution grammatically.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Inspired by <!-- bt-inline:000001:start -->The Drakes Spoiled Brat. (im sorry dad)<!-- bt-inline:000001:end --> by <!-- bt-inline:000002:start -->Yellow_sprouts<!-- bt-inline:000002:end -->",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Вдохновлено произведением <!-- bt-inline:000001:start -->«Избалованный отпрыск Дрейков. (Прости, папа)»<!-- bt-inline:000001:end --> автор <!-- bt-inline:000002:start -->Yellow_sprouts<!-- bt-inline:000002:end -->",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "27b0178e6a06218666571e4b5f1e15396ee78be505853cc2a067af7879f4c2fd",
         "style_guide": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4"
       }
     }
