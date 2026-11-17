@@ -34,6 +34,10 @@ permissions:
   contents: write
   actions: write
 
+# Selection and execution must observe the same cumulative model-call cap.
+env:
+  OMNIROUTE_MODEL_CALL_LIMIT: "1500"
+
 # Each book is isolated at the process job; a short selector has no global lock.
 
 jobs:
@@ -140,7 +144,6 @@ jobs:
           OMNIROUTE_TRANSLATOR_FALLBACK_MODEL: ${{ vars.OMNIROUTE_TRANSLATOR_FALLBACK_MODEL }}
           OMNIROUTE_REVIEWER_FALLBACK_MODEL: ${{ vars.OMNIROUTE_REVIEWER_FALLBACK_MODEL }}
           OMNIROUTE_CORRECTOR_FALLBACK_MODEL: ${{ vars.OMNIROUTE_CORRECTOR_FALLBACK_MODEL }}
-          OMNIROUTE_MODEL_CALL_LIMIT: "1500"
           JOB_ID: ${{ matrix.job_id }}
           RESUME_BLOCKED: ${{ inputs.resume_blocked }}
           RESUME_INTERRUPTED: ${{ inputs.resume_interrupted }}
