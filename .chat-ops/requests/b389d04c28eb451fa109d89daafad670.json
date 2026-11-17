@@ -1,0 +1,170 @@
+{
+  "schema_version": 1,
+  "request_id": "b389d04c28eb451fa109d89daafad670",
+  "book_slug": "say-it-in-your-mother-tongue",
+  "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+  "operation": "review-record",
+  "chapter": 34,
+  "session_id": "chatops-say-it-r34-5df1a5c1",
+  "outcome": "CORRECTIONS_REQUIRED",
+  "quality_report": {
+    "evidence_version": 2,
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "id": "meaning-5",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Исходник описывает сохраняющуюся позу и близость, а не продолжающийся наклон. Передать неподвижное положение: «Чеко всё ещё сидит, наклонившись к нему, — ближе, чем могло бы казаться *настолько* привычным»; обеспечить естественный синтаксис без потери акцента.",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "Checo is still leaning in close, much closer than should feel *this* familiar.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Чеко всё ещё наклоняется к нему, так близко, что это не должно было бы казаться *настолько* привычным.",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "meaning-11a",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Не добавлять обобщённый объект «окружающих», которого нет в исходнике; восстановить высоту вновь возведённых защитных стен. Например «стены, которыми он защищался и которые Чеко за эти месяцы разрушил, снова вырастают высоко».",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "his defense walls — that Checo tore down over the months — built up high again",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "стены, которыми он отгораживался от окружающих и которые Чеко за эти месяцы разрушил, снова вырастают",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "meaning-11b",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Исходник описывает состояние едва открытых глаз, а не новое действие по их открыванию; передать «выдаёт он, почти не открывая глаз».",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "he offers with barely open eyes",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "выдаёт он, едва приоткрыв глаза",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "style-15",
+        "category": "style",
+        "severity": "minor",
+        "detail": "В оригинале резкий обрыв реплики при поиске слова; сохранить конечное тире вместо многоточия.",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "the keys didn’t—",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "а ключи не…",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "style-16",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Реплика оборвана, а не затихает; восстановить тире.",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "“I didn’t—”",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "— Я не…",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "style-19",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Реплика обрывается, затем продолжается внутренним вопросом. Восстановить тире.",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "“Why did you even—”",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "— А зачем ты вообще…",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "modality-23",
+        "category": "modality",
+        "severity": "major",
+        "detail": "В исходнике невозможность сказать что-либо с определённым эффектом, а не уверенность, что собеседник воздержится от реплики. Например «Нет ничего, что ты мог бы сказать и что…»; оставить фразу незаконченной.",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "There’s nothing you can say that’d…",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Ты ведь ничего такого не скажешь, что…",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "register-27",
+        "category": "register",
+        "severity": "minor",
+        "detail": "В контексте это осознание пояснения собеседника, а не вздох или огорчение. Передать «*А.*» или «*А-а.*».",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "*Oh.*",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "*Ох.*",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "meaning-32",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "«Выжидает» предполагает намеренное ожидание подходящего момента; в исходнике он просто слушает ответ. Передать естественно, например «Он с минуту слушает собеседника» без добавления точной длительности; лучше «Он некоторое время слушает собеседника».",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "He waits a moment, hearing what the other person has to say",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Выжидает мгновение, слушая собеседника",
+          "occurrence": 0
+        },
+        "resolves": null
+      }
+    ]
+  },
+  "source_sha256": "88e537f8dd9f16306b357a28ae4aef7005f2b830f5154cdf08a6f2e8b1ef377e",
+  "translation_sha256": "32125c939b191b56887ddda5e9ed08357970f7c1bce1dd1a862e029e1a5a5634",
+  "claim_sha256": "2c53af605430f06c801c660a3ccba4e8207284fd4b7e6f25d17b5cd43fa93b95"
+}
