@@ -1,0 +1,218 @@
+{
+  "schema_version": 1,
+  "request_id": "c12ce83fe2084a8bb9f973fd0145d624",
+  "book_slug": "say-it-in-your-mother-tongue",
+  "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+  "operation": "review-record",
+  "chapter": 35,
+  "session_id": "chatops-say-it-r35-471bfa8e",
+  "outcome": "CORRECTIONS_REQUIRED",
+  "quality_report": {
+    "evidence_version": 2,
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "id": "meaning-5",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "В оригинале скорость становится ниже предельной, а не просто перестаёт превышать её. Передать «сбавляя скорость до значения ниже разрешённого предела» естественным русским оборотом.",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "slowing the car enough to be driving under the speed limit",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "сбавляя скорость так, чтобы не превышать разрешённую",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "style-7",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Нарушена сочетаемость «от которого предчувствует разговор». Например: «особенно с Себастьяном: Нико уже чувствует, что этого разговора не избежать».",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "especially not the one he can feel coming his way from Sebastian",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "особенно с Себастьяном, от которого он уже предчувствует неприятный разговор",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "style-11",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Калька; «занявшись проверкой машины» или «пытаясь занять себя проверкой машины» в зависимости от синтаксиса.",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "busying himself with checking the car",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "занимая себя проверкой машины",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "meaning-16",
+        "category": "meaning",
+        "severity": "major",
+        "detail": "В исходнике сравнивается прикосновение взглядом и возможное прикосновение пальцами к лицу, а не успокоение души и пальцев. Восстановить образ касания: «его взгляд касается лица Габриэля — так, как коснулись бы его холодные дрожащие пальцы, останься в нём хоть чуточку смелости».",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "his eyes make contact with Gabriel’s face the same way his cold, trembling fingers would if he had just a little bit of courage left in his body",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "его взгляд падает на лицо Габриэля, — так же, как успокоились бы его холодные дрожащие пальцы, останься в нём хоть чуточку смелости",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "style-31",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Неестественная конструкция. Сохранить напряжённость направленного взгляда: «вместо этого вперив взгляд в грудь немца».",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "stabbing his gaze into the German’s chest instead",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "впиваясь глазами немцу в грудь",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "meaning-35",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Stops обозначает прекращение шума, а не постепенное затихание; obscenely — усиление громкости, не непристойность звука. Например «Невыносимо громкая какофония лязга металла о металл вперемешку с визгом электроинструментов в гараже обрывается».",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "The garage’s obscenely loud cacophony of metal-on-metal noises mixed with the screeching of power tools stops",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Непристойно громкая какофония лязга металла о металл вперемешку с визгом электроинструментов в гараже стихает",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "style-39",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Неестественный самостоятельный ответ на «так ведь?». «— Да, — обречённо повторяет он» либо «— Верно, — ...»; сохранить согласие и подавленность.",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "“Right,” he repeats, defeated.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "— Так, — обречённо повторяет он.",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "emphasis-58",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Ключевое слово, на которое приходится жест, выделено курсивом при повторе. Согласовать саму реплику и указание на слово естественным оборотом «если бы всё зависело от меня» / «слово *меня*»; не терять синхронность.",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "if it was up to me,” with his right index finger, he taps the middle of his chest as the word *me* leaves his lips.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "будь это моей волей. — Он постукивает указательным пальцем правой руки по центру груди, когда с его губ слетает слово *моей*.",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "meaning-62",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Это предполагаемая реплика парня в ответ на вопрос, а не безличный инфинитив. Передать пожелание «— Повеселись? — со смешком предлагает Фернандо.»",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "“Have fun?” Fernando offers with a snigger.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "— Хорошо провести время? — со смешком предлагает Фернандо.",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "register-72",
+        "category": "register",
+        "severity": "minor",
+        "detail": "Утрачена характеристика rude: шутливое возмущение грубостью собеседника. Например «грубая ты сука🖕»; сохранить неформальный стиль сообщения.",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "rude ass bitch🖕",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "ну ты и сука🖕",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "meaning-83",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "В контексте поездки речь о временном совместном проживании, а не постоянном быте. «вы же вместе остановились да?»",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "u two staying together no?",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "вы же вместе живёте да?",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "meaning-86",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Вопрос о том, не узнает ли/не будет ли знать отец, а не о том, что он уже знает. Например «твой папа разве не узнает что я не в европе???»",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "wont ur papa know im not in europe???",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "твой папа разве не знает что я не в европе???",
+          "occurrence": 0
+        },
+        "resolves": null
+      }
+    ]
+  },
+  "source_sha256": "48bafc32635bd6a9289e000b116cc29ac3155145824fdff19c2d0e89fee94fc7",
+  "translation_sha256": "5f4fe2d39eaa510f8ebe0c6c7e81e7a208d4e10cbf0fb93f59d341c350000b55",
+  "claim_sha256": "25922e39be73ff3e42b6ab306499a1dc3ebe8ad52c74b8fa0082654e5240ff45"
+}
