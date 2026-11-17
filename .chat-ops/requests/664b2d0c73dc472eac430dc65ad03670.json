@@ -1,0 +1,273 @@
+{
+  "schema_version": 1,
+  "request_id": "664b2d0c73dc472eac430dc65ad03670",
+  "book_slug": "say-it-in-your-mother-tongue",
+  "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+  "operation": "review-record",
+  "chapter": 33,
+  "session_id": "chatops-say-it-rr33-23af534c",
+  "outcome": "PASS",
+  "quality_report": {
+    "evidence_version": 2,
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "id": "recheck-meaning-5",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Восстановлена субъективная оценка скорости, связь с последующим действием сохранена.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "too fast for his liking",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Она исчезает в его лёгких быстрее, чем ему хотелось бы",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "c4578897805b4abcb079853a0e6136c3",
+          "finding_id": "meaning-5"
+        }
+      },
+      {
+        "id": "recheck-meaning-6",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Намеренность действия больше не подменяется нежеланием.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "Without actually meaning to do so",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Сам не отдавая себе в этом отчёта",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "c4578897805b4abcb079853a0e6136c3",
+          "finding_id": "meaning-6"
+        }
+      },
+      {
+        "id": "recheck-style-9",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Устранён неестественный порядок слов, сохранено противопоставление невозможности ответить и множества невысказанных мыслей.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "he has *too much* to say",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "ему хочется сказать *слишком много*",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "c4578897805b4abcb079853a0e6136c3",
+          "finding_id": "style-9"
+        }
+      },
+      {
+        "id": "recheck-style-14",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Исправлена сочетаемость, предмет и действие сохранены.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "taking a sip of the disgusting brown-ish liquid",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "делая глоток отвратительной буроватой жидкости",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "c4578897805b4abcb079853a0e6136c3",
+          "finding_id": "style-14"
+        }
+      },
+      {
+        "id": "recheck-meaning-15",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Удалено неоправданное абсолютное усиление.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "His gray suit is tidy and well-fitting",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Его серый костюм опрятен и хорошо на нём сидит",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "c4578897805b4abcb079853a0e6136c3",
+          "finding_id": "meaning-15"
+        }
+      },
+      {
+        "id": "recheck-meaning-18",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Сохранена демонстративная невозможность без оттенка волевого отказа.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "a happy employee who could not possibly be in love with his boss’ son",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "довольного сотрудника, который никак не может быть влюблён в сына своего начальника",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "c4578897805b4abcb079853a0e6136c3",
+          "finding_id": "meaning-18"
+        }
+      },
+      {
+        "id": "recheck-style-35",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Сохранено двойное значение взвешивания фамилии и вариантов дальнейшего поведения.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "like he’s weighing it — or his options",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "словно взвешивает её — или то, как ему теперь поступить",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "c4578897805b4abcb079853a0e6136c3",
+          "finding_id": "style-35"
+        }
+      },
+      {
+        "id": "recheck-meaning-54",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Идиома передаёт эмоциональную холодность и насмешку без дополнительного обвинения в бесчувственности.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "*cold fish* Chris Cronin",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "этого *сухаря*",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "c4578897805b4abcb079853a0e6136c3",
+          "finding_id": "meaning-54"
+        }
+      },
+      {
+        "id": "recheck-style-59",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Использована естественная идиома, сохраняющая мотив чтения для последующего ответа.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "I think you’re reading too into it",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Думаю, вы слишком многое читаете между строк",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "c4578897805b4abcb079853a0e6136c3",
+          "finding_id": "style-59"
+        }
+      },
+      {
+        "id": "recheck-style-63",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Сохранены зеркальность реплик в блоках 59 и 63, запинка и игра слов в блоке 64.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "I think you’re… not reading into it enough",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "А я думаю, ты… слишком мало читаешь между строк",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "c4578897805b4abcb079853a0e6136c3",
+          "finding_id": "style-63"
+        }
+      },
+      {
+        "id": "recheck-style-65",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Устранена тяжеловесная инверсия без потери условности и смысловых выделений.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "that *could* be considered gentle if it did not belong to *him*",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "который *можно было бы* счесть мягким, если бы он не принадлежал *ему*",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "c4578897805b4abcb079853a0e6136c3",
+          "finding_id": "style-65"
+        }
+      },
+      {
+        "id": "recheck-meaning-67",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Сохранена оценка возможного намерения говорящего вместо оценки степени комплимента.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "almost like it’s meant to be a compliment",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "словно и впрямь хочет сделать ему комплимент",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "c4578897805b4abcb079853a0e6136c3",
+          "finding_id": "meaning-67"
+        }
+      },
+      {
+        "id": "recheck-style-72",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Исправлена сочетаемость, повтор последующих форм корня «луч-» сохраняет смысловую связь с репликами 71–74.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "I don’t think I’m doing *the best,",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Не думаю, что поступаю *лучше всего*,",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "c4578897805b4abcb079853a0e6136c3",
+          "finding_id": "style-72"
+        }
+      }
+    ]
+  },
+  "source_sha256": "429dacd41fcb35dd6d9063b3077a8be830ad707ea6134ddf1f8c6f7694eab515",
+  "translation_sha256": "605bfe5c4ebbd37c9895dac9e49e519b8f113de9bf95e2a9acbcd0feb22e7664",
+  "claim_sha256": "468f42e9a0320402dffdb80ca4c19cdaf2764752eeb9a928693cd95d333f7758"
+}
