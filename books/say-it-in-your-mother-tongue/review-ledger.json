@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 88,
+  "next_sequence": 89,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -9559,6 +9559,247 @@
               "record_id": "83cd8376dd18402591f860b6abd290b8",
               "finding_id": "meaning-140"
             }
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "73e38022ddf12bd5178e538d958adb319027d1c6d6d04ad1f5416e91ffcbf18b",
+        "style_guide": "542b979599ebe40dfbb11794d47d2fffcc7bde125f2d09c1549f33f618157eff"
+      }
+    },
+    {
+      "record_id": "c4578897805b4abcb079853a0e6136c3",
+      "sequence": 88,
+      "unit_id": "chapter-000033",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "429dacd41fcb35dd6d9063b3077a8be830ad707ea6134ddf1f8c6f7694eab515",
+      "translation_sha256": "1b8dc4a47ce4ec6fe410a0c81640670019d8aa1dde51e2538916dd854ad13540",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "chatops-say-it-r33-da369108",
+      "reviewed_at": "2026-11-17T12:26:05Z",
+      "state_revision": "4d1aef729a12638108cddbad5bd527da046a6d6a8832468e3f64e881ffd2ffb1",
+      "review_commit": "f8f94ab49636100f72c539ca50e02c14c04b6cfc",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "meaning-5",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Утрачена субъективная оценка скорости; сохранить «быстрее, чем ему хотелось бы».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "too fast for his liking",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Она исчезает в его лёгких слишком быстро",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-6",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Исходник описывает непреднамеренное действие, а не нежелание. Передать «Сам не отдавая себе в этом отчёта» или «Не собираясь этого делать».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Without actually meaning to do so",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Сам того не желая",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-9",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Неестественный порядок слов. Например: «ему хочется сказать *слишком много*» с сохранением противопоставления и курсива.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "he has *too much* to say",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "ему есть *слишком много* чего сказать",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-14",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Неестественная сочетаемость «отпивая глоток»; «делая глоток» сохраняет исходное действие.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "taking a sip of the disgusting brown-ish liquid",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "отпивая глоток отвратительной буроватой жидкости",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-15",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Добавлено абсолютное усиление «безупречно», которого нет в tidy. Сохранить простую констатацию опрятности.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "His gray suit is tidy and well-fitting",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Его серый костюм безупречно опрятен и хорошо на нём сидит",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-18",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "«Ни за что на свете» привносит оттенок волевого отказа; исходник выражает демонстративную невозможность. Например «довольного сотрудника, который никак не может быть влюблён в сына своего начальника».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "a happy employee who could not possibly be in love with his boss’ son",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "довольного жизнью сотрудника, который ни за что на свете не мог бы быть влюблён в сына своего начальника",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-35",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Сохранить двойной смысл взвешивания фамилии и доступных ходов без кальки: «словно взвешивает её — или что ему теперь делать».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "like he’s weighing it — or his options",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "словно взвешивает её — или свои варианты",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-54",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Идиома означает холодного, эмоционально сдержанного человека, а не обязательно лишённого чувств. «этого *сухаря*» сохраняет насмешку без лишнего усиления.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "*cold fish* Chris Cronin",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "этого *бесчувственного сухаря*",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-59",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Неидиоматичная калька. Восстановить игру с reading, например «Думаю, вы слишком многое читаете между строк»; согласовать с ответом в блоке 63 и шуткой в блоке 64.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "I think you’re reading too into it",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Думаю, вы слишком уж много в этом вычитываете",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-63",
+            "category": "style",
+            "severity": "minor",
+            "detail": "В ответе повторяется тот же оборот reading into it из блока 59. Согласовать перевод («А я думаю, ты… слишком мало читаешь между строк»), сохраняя запинку и подводку к блоку 64.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "I think you’re… not reading into it enough",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "А я думаю, ты… недостаточно внимательно вчитываешься",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-65",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Тяжеловесная инверсия. Например «который *можно было бы* счесть мягким, если бы он не принадлежал *ему*».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "that *could* be considered gentle if it did not belong to *him*",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "который *можно было бы* счесть мягким, не принадлежал бы он *ему*",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-67",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Исходник описывает неуверенность в намерении говорящего, а не неполноту комплимента. «будто он и впрямь намерен сделать комплимент».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "almost like it’s meant to be a compliment",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "словно это почти комплимент",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-72",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Калька и неестественный оборот. Сохранить повтор ключевого слова best, например «Не думаю, что поступаю *лучше всего*» либо «Не думаю, что делаю *самое лучшее*» с согласованием дальнейших реплик.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "I don’t think I’m doing *the best,",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Я не думаю, что поступаю *как лучше*,",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       },

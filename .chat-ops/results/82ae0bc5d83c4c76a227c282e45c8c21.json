@@ -1,0 +1,251 @@
+{
+  "schema_version": 1,
+  "request_id": "82ae0bc5d83c4c76a227c282e45c8c21",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "da2649c47c73a21b33f865198981ad22db54ac7b2f86f05e41e4cbb453c726c5",
+    "record": {
+      "correction_round": 1,
+      "outcome": "CORRECTIONS_REQUIRED",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "meaning",
+            "detail": "Утрачена субъективная оценка скорости; сохранить «быстрее, чем ему хотелось бы».",
+            "id": "meaning-5",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "too fast for his liking"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Она исчезает в его лёгких слишком быстро"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Исходник описывает непреднамеренное действие, а не нежелание. Передать «Сам не отдавая себе в этом отчёта» или «Не собираясь этого делать».",
+            "id": "meaning-6",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Without actually meaning to do so"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Сам того не желая"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Неестественный порядок слов. Например: «ему хочется сказать *слишком много*» с сохранением противопоставления и курсива.",
+            "id": "style-9",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "he has *too much* to say"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "ему есть *слишком много* чего сказать"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Неестественная сочетаемость «отпивая глоток»; «делая глоток» сохраняет исходное действие.",
+            "id": "style-14",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "taking a sip of the disgusting brown-ish liquid"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "отпивая глоток отвратительной буроватой жидкости"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Добавлено абсолютное усиление «безупречно», которого нет в tidy. Сохранить простую констатацию опрятности.",
+            "id": "meaning-15",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "His gray suit is tidy and well-fitting"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Его серый костюм безупречно опрятен и хорошо на нём сидит"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "«Ни за что на свете» привносит оттенок волевого отказа; исходник выражает демонстративную невозможность. Например «довольного сотрудника, который никак не может быть влюблён в сына своего начальника».",
+            "id": "meaning-18",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "a happy employee who could not possibly be in love with his boss’ son"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "довольного жизнью сотрудника, который ни за что на свете не мог бы быть влюблён в сына своего начальника"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Сохранить двойной смысл взвешивания фамилии и доступных ходов без кальки: «словно взвешивает её — или что ему теперь делать».",
+            "id": "style-35",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "like he’s weighing it — or his options"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "словно взвешивает её — или свои варианты"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Идиома означает холодного, эмоционально сдержанного человека, а не обязательно лишённого чувств. «этого *сухаря*» сохраняет насмешку без лишнего усиления.",
+            "id": "meaning-54",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "*cold fish* Chris Cronin"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "этого *бесчувственного сухаря*"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Неидиоматичная калька. Восстановить игру с reading, например «Думаю, вы слишком многое читаете между строк»; согласовать с ответом в блоке 63 и шуткой в блоке 64.",
+            "id": "style-59",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "I think you’re reading too into it"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Думаю, вы слишком уж много в этом вычитываете"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "В ответе повторяется тот же оборот reading into it из блока 59. Согласовать перевод («А я думаю, ты… слишком мало читаешь между строк»), сохраняя запинку и подводку к блоку 64.",
+            "id": "style-63",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "I think you’re… not reading into it enough"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "А я думаю, ты… недостаточно внимательно вчитываешься"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Тяжеловесная инверсия. Например «который *можно было бы* счесть мягким, если бы он не принадлежал *ему*».",
+            "id": "style-65",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "that *could* be considered gentle if it did not belong to *him*"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "который *можно было бы* счесть мягким, не принадлежал бы он *ему*"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Исходник описывает неуверенность в намерении говорящего, а не неполноту комплимента. «будто он и впрямь намерен сделать комплимент».",
+            "id": "meaning-67",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "almost like it’s meant to be a compliment"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "словно это почти комплимент"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Калька и неестественный оборот. Сохранить повтор ключевого слова best, например «Не думаю, что поступаю *лучше всего*» либо «Не думаю, что делаю *самое лучшее*» с согласованием дальнейших реплик.",
+            "id": "style-72",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "I don’t think I’m doing *the best,"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Я не думаю, что поступаю *как лучше*,"
+            }
+          }
+        ]
+      },
+      "record_id": "c4578897805b4abcb079853a0e6136c3",
+      "review_commit": "f8f94ab49636100f72c539ca50e02c14c04b6cfc",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewed_at": "2026-11-17T12:26:05Z",
+      "reviewer_session_id": "chatops-say-it-r33-da369108",
+      "sequence": 88,
+      "shared_state_revisions": {
+        "glossary": "73e38022ddf12bd5178e538d958adb319027d1c6d6d04ad1f5416e91ffcbf18b",
+        "style_guide": "542b979599ebe40dfbb11794d47d2fffcc7bde125f2d09c1549f33f618157eff"
+      },
+      "source_sha256": "429dacd41fcb35dd6d9063b3077a8be830ad707ea6134ddf1f8c6f7694eab515",
+      "state_revision": "4d1aef729a12638108cddbad5bd527da046a6d6a8832468e3f64e881ffd2ffb1",
+      "supersedes_record_id": null,
+      "translation_sha256": "1b8dc4a47ce4ec6fe410a0c81640670019d8aa1dde51e2538916dd854ad13540",
+      "unit_id": "chapter-000033",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741"
+    }
+  },
+  "error": null
+}
