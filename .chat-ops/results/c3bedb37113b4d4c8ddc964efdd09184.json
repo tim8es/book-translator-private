@@ -1,0 +1,290 @@
+{
+  "schema_version": 1,
+  "request_id": "c3bedb37113b4d4c8ddc964efdd09184",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "74e71ae6bee137feff0c0e8f3e8968e0f69932642d3851cafbb1788f00fc9002",
+    "record": {
+      "correction_round": 1,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "style",
+            "detail": "Устранён повтор существительного, сохранены тактильное восприятие и тихий звук, подчеркнутый курсивом.",
+            "id": "recheck-style-7",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "style-7",
+              "record_id": "83cd8376dd18402591f860b6abd290b8"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Lance slides his palms over the fabric, savoring the feel and the quietest *whoosh* of the motion."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Лэнс проводит ладонями по ткани, наслаждаясь ощущением под пальцами и едва слышным *шорохом* этого движения."
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Передан один короткий звук, а не продолжающееся действие; последующий вопрос согласуется с реакцией.",
+            "id": "recheck-meaning-17",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "meaning-17",
+              "record_id": "83cd8376dd18402591f860b6abd290b8"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "lets out a soft whimper"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "издаёт тихий жалобный звук"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Восстановлен обрыв реплики, подтверждённый перебиванием в следующем блоке.",
+            "id": "recheck-style-29",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "style-29",
+              "record_id": "83cd8376dd18402591f860b6abd290b8"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "I should have some—"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "У меня должны быть какие-то—"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Вопрос вновь прямо относится к страху, о котором говорит собеседник, а не к внешности.",
+            "id": "recheck-meaning-35",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "meaning-35",
+              "record_id": "83cd8376dd18402591f860b6abd290b8"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Am I scary?"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Я тебя пугаю?"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Устранена наречная калька, сохранены действие и дрожь.",
+            "id": "recheck-style-42",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "style-42",
+              "record_id": "83cd8376dd18402591f860b6abd290b8"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "He exhales a shaky breath"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Он выдыхает с дрожью"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Восстановлено согласие с предыдущей репликой и переход к предложению.",
+            "id": "recheck-meaning-76",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "meaning-76",
+              "record_id": "83cd8376dd18402591f860b6abd290b8"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "“Right? We should get plants.”"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "— Вот именно! Надо бы завести растения."
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Сохранены взаимный взгляд и привычное тепло; следующий отвод взгляда логически согласован.",
+            "id": "recheck-style-80",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "style-80",
+              "record_id": "83cd8376dd18402591f860b6abd290b8"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "holding each other’s gaze with familiar warmth"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "не отводя глаз; во взглядах — привычное тепло"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Восстановлено грамматическое управление, инициатива Кристиана и факт получения конфет; цитата сохранена.",
+            "id": "recheck-grammar-86",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "grammar-86",
+              "record_id": "83cd8376dd18402591f860b6abd290b8"
+            },
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "candy that Christian insisted they take"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "конфет, которые они взяли по настоянию Кристиана"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Переданы реакция на признание, печаль и исчезновение блеска без неестественной сочетаемости.",
+            "id": "recheck-style-98",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "style-98",
+              "record_id": "83cd8376dd18402591f860b6abd290b8"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Checo’s eyes widen sadly at the admission, their shine gone"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "глаза Чеко расширяются, и в них вместо блеска проступает печаль"
+            }
+          },
+          {
+            "category": "referent",
+            "detail": "Исправлен референт; последующий возврат телефона Максу подтверждает последовательность действий.",
+            "id": "recheck-referent-108",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "referent-108",
+              "record_id": "83cd8376dd18402591f860b6abd290b8"
+            },
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Checo drops Max’s phone into his lap before unlocking his own phone"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Чеко кладёт телефон Макса себе на колени, затем разблокирует свой собственный"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Восстановлена вежливая готовность помочь при возникновении новой потребности.",
+            "id": "recheck-meaning-127",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "meaning-127",
+              "record_id": "83cd8376dd18402591f860b6abd290b8"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "If you think of anything, don’t hesitate to contact me."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Если вам ещё что-нибудь понадобится, не стесняйтесь обращаться ко мне."
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Передано впечатление от манеры разговора и контраст с предшествующей репликой Чеко.",
+            "id": "recheck-style-132",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "style-132",
+              "record_id": "83cd8376dd18402591f860b6abd290b8"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "“You sounded nice,” Max admits"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "— А тебя было приятно слушать, — признаётся Макс"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Характер речи и дыхания восстановлен без предположения о физической нагрузке.",
+            "id": "recheck-meaning-140",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "meaning-140",
+              "record_id": "83cd8376dd18402591f860b6abd290b8"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "soft and little breathless"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "мягко, с чуть сбившимся дыханием"
+            }
+          }
+        ]
+      },
+      "record_id": "742cbe28ad3044539e7484dc5ce5297d",
+      "review_commit": "7aa759025fcd4a32e5adef0fcc1b786a32c26898",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewed_at": "2026-11-17T11:30:22Z",
+      "reviewer_session_id": "chatops-say-it-rr32-ecc42439",
+      "sequence": 87,
+      "shared_state_revisions": {
+        "glossary": "73e38022ddf12bd5178e538d958adb319027d1c6d6d04ad1f5416e91ffcbf18b",
+        "style_guide": "542b979599ebe40dfbb11794d47d2fffcc7bde125f2d09c1549f33f618157eff"
+      },
+      "source_sha256": "881dc5a7660c9110a8b65dcfed4c1c51c12ad2cd3dd2f2ff354d6a96e7142414",
+      "state_revision": "647f0786d05b0b6dcafabcd2c4df19a3e4884515f5e60c450e4c337fdfbb1666",
+      "supersedes_record_id": "83cd8376dd18402591f860b6abd290b8",
+      "translation_sha256": "a96e06f29feea5eb7b23223affe8057f8e1a1bc781457c7e63e2eac15e6069ea",
+      "unit_id": "chapter-000032",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741"
+    }
+  },
+  "error": null
+}
