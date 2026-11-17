@@ -3,20 +3,15 @@
   "job_id": "6232711b4aec0c3664ad3721f1b87061",
   "book_slug": "cardinal-kin",
   "state": "running",
-  "phase": "structural-segments-staged",
+  "phase": "translator-completed",
   "failures": 0,
   "correction_rounds": {
     "chapter-000001": 2
   },
   "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
   "source_sha256": "f06b996448766fcf6faa703ced3ca03b63221f4f81bdb4c395619c69ffa353cd",
-  "updated_at": "2026-11-17T11:43:36.437705+00:00",
-  "active": {
-    "role": "translator",
-    "chapter": 3,
-    "session_id": "auto-6232711b4aec-translator-8eaffc5c",
-    "unit_id": "chapter-000003"
-  },
+  "updated_at": "2026-11-17T11:43:38.039181+00:00",
+  "active": null,
   "structural_helper_revision": "4c584fe5534871cd05aa851d9b7bdbfa696d0edd",
   "model_calls_started": 23,
   "prompt_context": {
@@ -53,12 +48,9 @@
   "glossary_evidence_rejected": 0,
   "glossary_conflicts_rejected": 0,
   "glossary_proposals_deferred": 0,
-  "provider_model_route": "primary",
-  "blocked_unit_id": "chapter-000002",
   "unit_protocol_failures": {
     "chapter-000002": 3
   },
-  "last_error_code": "protected_review_anchor",
   "model_unit_deferral_audit": [
     {
       "unit_id": "chapter-000002",
@@ -69,12 +61,6 @@
       "action": "canonical-defer-without-pass"
     }
   ],
-  "structural_segment_progress": {
-    "unit_id": "chapter-000003",
-    "source_sha256": "d1b33f9f3dd50bfccd88b07886c3b90eb13b6d4526b629257fbe58c06a40fdd4",
-    "completed": 73,
-    "total": 73
-  },
   "model_response_diagnostics": {
     "finish_reason": "stop",
     "response_format": "json_object",
