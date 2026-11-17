@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 97,
+  "next_sequence": 98,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -11319,6 +11319,87 @@
       },
       "shared_state_revisions": {
         "glossary": "73e38022ddf12bd5178e538d958adb319027d1c6d6d04ad1f5416e91ffcbf18b",
+        "style_guide": "542b979599ebe40dfbb11794d47d2fffcc7bde125f2d09c1549f33f618157eff"
+      }
+    },
+    {
+      "record_id": "24cf8fcf3ca84a85b52beedf3fbd4381",
+      "sequence": 97,
+      "unit_id": "chapter-000037",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "3c4748f66a27267765a11322203469f4422ca1efa7cc1f959d8d2567957dd4b3",
+      "translation_sha256": "ba75e02c2520a96b6d4ad36334d773b8a5f1680b5a247bd1c0ae7d7c70af74fc",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-de83cbbd",
+      "reviewed_at": "2026-11-17T23:30:19Z",
+      "state_revision": "9317bf76ea3fcff73b5f9024a6b9ec559e62e3ea2b5c6354efbe883588a0aae7",
+      "review_commit": "c1247ed89661d7a58a1e91ccdecf268bf9fee0ae",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "meaning-1",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "The source leaves “he isn’t” elliptical after Checo says “He’s wrong.” The translation supplies “не гордится,” making Max’s thought specifically about his father not being proud before that idea is stated explicitly in the following dialogue. Preserve the source’s implicit predicate and ambiguity here.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "*The thing is… he isn’t. Not really.*",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Дело в том… он не гордится. Не по-настоящему.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The source uses the Dutch interjection “kut,” consistent with the Dutch phrases elsewhere in the unit. Replacing it with “блядь” removes the code-switch. Retain the Dutch word while conveying its force.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "*Oh kut.*",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "*О, блядь.*",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-2",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "“I’m gay. For you” means that Max is gay for, or attracted to, Checo. “Из-за тебя” instead means Checo caused Max to be gay. Use a natural Russian phrasing that conveys attraction to Checo, not causation.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "I… I think… *I’m gay*. For you.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Я… я думаю… *я гей*. Из-за тебя.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "969f6b894914b6a7a03ba2c012994e107e310134ac73867b1659f6ebb4d17290",
         "style_guide": "542b979599ebe40dfbb11794d47d2fffcc7bde125f2d09c1549f33f618157eff"
       }
     }
