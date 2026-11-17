@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 98,
+  "next_sequence": 99,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -11392,6 +11392,112 @@
             },
             "translation_anchor": {
               "quote": "Я… я думаю… *я гей*. Из-за тебя.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "969f6b894914b6a7a03ba2c012994e107e310134ac73867b1659f6ebb4d17290",
+        "style_guide": "542b979599ebe40dfbb11794d47d2fffcc7bde125f2d09c1549f33f618157eff"
+      }
+    },
+    {
+      "record_id": "8087cef2dfbb491aa7c62df3215c3757",
+      "sequence": 98,
+      "unit_id": "chapter-000037",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "3c4748f66a27267765a11322203469f4422ca1efa7cc1f959d8d2567957dd4b3",
+      "translation_sha256": "7e090b7094c1c9910125b76621b7fd87a92f35791a95eb05eb4773765b8001f9",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-6776f465",
+      "reviewed_at": "2026-11-17T23:34:27Z",
+      "state_revision": "88186102d4be30ffa5619bba31609617395c43ba8af059ed0ff562e9a9787a63",
+      "review_commit": "ae85472ff78e74380735d282a37c0d3989368260",
+      "correction_round": 2,
+      "supersedes_record_id": "24cf8fcf3ca84a85b52beedf3fbd4381",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-meaning-1",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "The translation no longer supplies a specific predicate; «нет. Не совсем.» preserves the source’s elliptical, ambiguous thought.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "*The thing is… he isn’t. Not really.*",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Дело в том… нет. Не совсем.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "24cf8fcf3ca84a85b52beedf3fbd4381",
+              "finding_id": "meaning-1"
+            }
+          },
+          {
+            "id": "recheck-style-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The translation retains the Dutch interjection “kut,” preserving the source’s language switch and its force.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "*Oh kut.*",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "*О, kut.*",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "24cf8fcf3ca84a85b52beedf3fbd4381",
+              "finding_id": "style-1"
+            }
+          },
+          {
+            "id": "recheck-meaning-2",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "«Меня к тебе тянет» conveys attraction to Checo rather than suggesting that Checo caused Max to be gay.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "I… I think… *I’m gay*. For you.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Я… я думаю… *я гей*. Меня к тебе тянет.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "24cf8fcf3ca84a85b52beedf3fbd4381",
+              "finding_id": "meaning-2"
+            }
+          },
+          {
+            "id": "formatting-1",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "The source marks this internal thought in italics, but the current translation is plain. Preserve the emphasis by italicizing the corresponding Russian thought.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "*The thing is… he isn’t. Not really.*",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Дело в том… нет. Не совсем.",
               "occurrence": 0
             },
             "resolves": null
