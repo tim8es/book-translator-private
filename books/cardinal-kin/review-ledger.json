@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "cardinal-kin",
-  "next_sequence": 2,
+  "next_sequence": 3,
   "records": [
     {
       "record_id": "75dfa72e2b6148208fd5343b6e384999",
@@ -57,6 +57,93 @@
             },
             "translation_anchor": {
               "quote": "Тим Дрейк заботится о других (DCU)",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "f02e6becb2861881659733c55614d24b49ee0a6906fa607fb2db0ceb6b8d35ad",
+        "style_guide": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4"
+      }
+    },
+    {
+      "record_id": "c54227b575f04e4aa3980ae2ed56f10f",
+      "sequence": 2,
+      "unit_id": "chapter-000001",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "7cfced2d5bbe7ec530e97c73744dca79b4105154da35a7457f62152d94c94217",
+      "translation_sha256": "2f6cf59c1e6c7148bdc0d2a2dfa4ab3ff7b5bd746902f17477032221f4660a1b",
+      "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "review_contract_revision": "docs/TRANSLATION.md@a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "reviewer_session_id": "auto-6232711b4aec-reviewer-fa25f556",
+      "reviewed_at": "2026-11-17T11:27:17Z",
+      "state_revision": "609a7fed834bddbfe6b906b46c9d98bbf2abd6ac8ca5b2729817522edcae758c",
+      "review_commit": "b678fce5ee9722971cfa44b0526b42205d5f9d6a",
+      "correction_round": 2,
+      "supersedes_record_id": "75dfa72e2b6148208fd5343b6e384999",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-terminology-1",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "Предыдущее расхождение исправлено: в текущем переводе имя передано как «Дэмиана Уэйна», что согласуется с принятой формой «Дэмиан Уэйн».",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Tim Drake & Damian Wayne Bonding",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Сближение Тима Дрейка и Дэмиана Уэйна",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "75dfa72e2b6148208fd5343b6e384999",
+              "finding_id": "terminology-1"
+            }
+          },
+          {
+            "id": "recheck-meaning-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Предыдущее расхождение исправлено: формулировка «защищает других» передаёт значение Protective.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Protective Tim Drake (DCU)",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Тим Дрейк защищает других (DCU)",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "75dfa72e2b6148208fd5343b6e384999",
+              "finding_id": "meaning-1"
+            }
+          },
+          {
+            "id": "terminology-1",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "В заголовке Cardinal связан с кодовым именем, указанным также в теге «Tim Drake is Cardinal». В переводе заголовка это имя дано со строчной — «кардинала», тогда как в теге оно написано с прописной — «Кардинал». Сохраните прописную букву в заголовке: «Родня Кардинала».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Cardinal Kin",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "**Родня кардинала**",
               "occurrence": 0
             },
             "resolves": null
