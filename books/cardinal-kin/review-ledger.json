@@ -1,6 +1,72 @@
 {
   "schema_version": 1,
   "book_slug": "cardinal-kin",
-  "next_sequence": 1,
-  "records": []
+  "next_sequence": 2,
+  "records": [
+    {
+      "record_id": "75dfa72e2b6148208fd5343b6e384999",
+      "sequence": 1,
+      "unit_id": "chapter-000001",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "7cfced2d5bbe7ec530e97c73744dca79b4105154da35a7457f62152d94c94217",
+      "translation_sha256": "7c5d04c0ed77731de3d2cc9fd66721277638f84d4257ae0534fe9bb6c8875fb9",
+      "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "review_contract_revision": "docs/TRANSLATION.md@a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "reviewer_session_id": "auto-6232711b4aec-reviewer-b9617be1",
+      "reviewed_at": "2026-11-17T11:21:19Z",
+      "state_revision": "30b0e4c0542915306763488000d2afb5e85d1a3a1935b81fca566a6a19f4f3eb",
+      "review_commit": "b6664ee245cd6bbcffde2a474477c95aa46725ff",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "terminology-1",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "В других упоминаниях Damian Wayne передан как «Дэмиан Уэйн», но здесь имя стало «Дэмиена». Это несогласованная транслитерация и неверный родительный падеж от принятой формы «Дэмиан»; исправьте на «Дэмиана Уэйна».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Tim Drake & Damian Wayne Bonding",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Сближение Тима Дрейка и Дэмиена Уэйна",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Protective означает, что Тим защищает других; «заботится о других» передаёт более общее значение заботы и теряет этот конкретный смысл. Используйте формулировку, сохраняющую защитную роль, например «Тим Дрейк защищает других».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Protective Tim Drake (DCU)",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Тим Дрейк заботится о других (DCU)",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "f02e6becb2861881659733c55614d24b49ee0a6906fa607fb2db0ceb6b8d35ad",
+        "style_guide": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4"
+      }
+    }
+  ]
 }
