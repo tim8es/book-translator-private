@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 99,
+  "next_sequence": 100,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -11498,6 +11498,106 @@
             },
             "translation_anchor": {
               "quote": "Дело в том… нет. Не совсем.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "969f6b894914b6a7a03ba2c012994e107e310134ac73867b1659f6ebb4d17290",
+        "style_guide": "542b979599ebe40dfbb11794d47d2fffcc7bde125f2d09c1549f33f618157eff"
+      }
+    },
+    {
+      "record_id": "fc0d47bf4606488bb0d197ebff733d3f",
+      "sequence": 99,
+      "unit_id": "chapter-000037",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "3c4748f66a27267765a11322203469f4422ca1efa7cc1f959d8d2567957dd4b3",
+      "translation_sha256": "733f8ee8ef69e06f04c2fe92acb76bf56c1ddd4965b6e82daff5f4ddf8cfc262",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-744bd6fe",
+      "reviewed_at": "2026-11-17T23:40:32Z",
+      "state_revision": "c4b7b5e4d30258f770a0514b76f3d0d7289f8eeb5e74806c1ea7c4704a67c89e",
+      "review_commit": "0be334b838b0f0aac2a3dc6c5ba7efa5c23f9c91",
+      "correction_round": 3,
+      "supersedes_record_id": "8087cef2dfbb491aa7c62df3215c3757",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "formatting-recheck-1",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "Resolved: the current translation preserves the source’s italics for this internal thought.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "*The thing is… he isn’t. Not really.*",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "*Дело в том… нет. Не совсем.*",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "8087cef2dfbb491aa7c62df3215c3757",
+              "finding_id": "formatting-1"
+            }
+          },
+          {
+            "id": "referent-1",
+            "category": "referent",
+            "severity": "major",
+            "detail": "“Kelly broke things off” means Kelly ended her relationship with Max. «Келли со мной порвала» instead says she broke up with Jos, the speaker. Change the referent to Max, for example, «Келли с тобой порвала» or «Келли с тобой рассталась».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "No wonder Kelly broke things off,",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Келли со мной порвала",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-1",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "In context, “he… isn’t. Not… not about this” means Jos is not right about this; Checo’s “He is” means he insists Jos is wrong, and Max’s “He isn’t” concedes that point. The translation changes all three turns into a disagreement about whether Jos is proud. Correct the exchange to preserve the wrong/right meaning.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "he… isn’t. Not… not about this.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "он… не гордится. Не… не по этому поводу.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "structure-1",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "The second spoken passage closes with » but has no opening « after the dash. Reopen the quotation there or restructure the punctuation so the Russian direct speech is properly delimited.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“Seems like the gossip is true, huh?” Jos continues once he realizes that Max isn’t going to respond fast enough. “Oh, how wonderful! My son is a fucking queer!”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Похоже, сплетни не врут, а?» — продолжает Йос, поняв, что Макс не спешит отвечать. — О, как чудесно! Мой сын — грёбаный пидор!»",
               "occurrence": 0
             },
             "resolves": null
