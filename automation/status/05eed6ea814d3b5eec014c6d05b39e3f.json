@@ -3,8 +3,8 @@
   "job_id": "05eed6ea814d3b5eec014c6d05b39e3f",
   "book_slug": "say-it-in-your-mother-tongue",
   "state": "running",
-  "phase": "structural-segments-staged",
-  "failures": 1,
+  "phase": "translator-completed",
+  "failures": 0,
   "correction_rounds": {
     "chapter-000001": 1,
     "chapter-000002": 1,
@@ -37,13 +37,8 @@
   },
   "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
   "source_sha256": "12e210ce5a95daf56a97ada583ec15c274780c4ddfa7fb92da6a88c67f7c403d",
-  "updated_at": "2026-11-17T23:25:01.921920+00:00",
-  "active": {
-    "role": "translator",
-    "chapter": 37,
-    "session_id": "auto-05eed6ea814d-translator-5b273bcc",
-    "unit_id": "chapter-000037"
-  },
+  "updated_at": "2026-11-17T23:25:03.867304+00:00",
+  "active": null,
   "recoveries": [
     {
       "action": "auto-retry-corrected-structural-preflight",
@@ -92,7 +87,7 @@
       "persisted_segments": 131
     }
   ],
-  "memory_glossary_saved": 21,
+  "memory_glossary_saved": 27,
   "pending_style": [],
   "role_protocol_failures": {
     "chapter-000001:corrector": 3,
@@ -159,12 +154,6 @@
   "review_failure_counts": {
     "chapter-000028:anchor_absent": 1
   },
-  "structural_segment_progress": {
-    "unit_id": "chapter-000037",
-    "source_sha256": "3c4748f66a27267765a11322203469f4422ca1efa7cc1f959d8d2567957dd4b3",
-    "completed": 99,
-    "total": 99
-  },
   "correction_finding_triage": {
     "unit_id": "chapter-000036",
     "review_record_id": "850986f0bf894b53ae2034e1462ad46a",
@@ -174,8 +163,6 @@
       "review_required": 0
     }
   },
-  "provider_model_route": "primary",
-  "blocked_unit_id": "chapter-000037",
   "model_response_diagnostics": {
     "finish_reason": "stop",
     "response_format": "json_object",

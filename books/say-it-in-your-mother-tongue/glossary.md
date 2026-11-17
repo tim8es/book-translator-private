@@ -21,3 +21,9 @@ Use this file for recurring names, places, organizations, terms, nicknames, titl
 | Lewis | Льюис | person | Name appears in the supplied block 83 context. |
 | Sebastian | Себастьян | имя | Владелец худи, упомянутый в подписи к фото. |
 | Bortoleto | Бортолето | фамилия | Фамилия Габриэля. |
+| Irene | Айрин | имя |  |
+| Jos | Йос | имя | Отец Макса. |
+| Verstappen | Верстаппен | фамилия | Фамилия Макса. |
+| Kelly | Келли | имя | Макс с ней расстался. |
+| Ralf | Ральф | имя | Упомянут как пример гея, выступающего в Формуле-1. |
+| leoncito | leoncito | ласкательное обращение | Испанское ласковое обращение к Максу; сохранено без перевода. |
