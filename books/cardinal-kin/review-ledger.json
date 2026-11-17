@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "cardinal-kin",
-  "next_sequence": 10,
+  "next_sequence": 11,
   "records": [
     {
       "record_id": "75dfa72e2b6148208fd5343b6e384999",
@@ -783,6 +783,115 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "1c5d9486f4d2fa5ea0b42ba90ebd6d52e26e1784a4fe6715448ff50cae516f91",
+        "style_guide": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4"
+      }
+    },
+    {
+      "record_id": "6b1303ae5c2f46a2adae92607e7e7037",
+      "sequence": 10,
+      "unit_id": "chapter-000004",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "4d370415b6d8e2ff84f0bb4a5633e2dfff9069a3139d5383919c57cdfe737871",
+      "translation_sha256": "1a6a50f7b9cf9a1e9a20a423a64973b6edb843dd24c85c4d65d6e141ab3c3067",
+      "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "review_contract_revision": "docs/TRANSLATION.md@a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "reviewer_session_id": "auto-6232711b4aec-reviewer-7ba9c3c9",
+      "reviewed_at": "2026-11-17T13:29:05Z",
+      "state_revision": "6b68df825d069a8770f698c74a575c0c7290d000275b93663d729872d9a89542",
+      "review_commit": "26fcb54bc9fa24d2a588add0819b9055d9f7d807",
+      "correction_round": 4,
+      "supersedes_record_id": "3b67cf481f144c72a7cd4ecd132f1d08",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-ceo-1",
+            "category": "omission",
+            "severity": "minor",
+            "detail": "Resolved: the current translation restores Drake's role as CEO and names Drake Industries.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "He is CEO of Drake Industries",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Он — генеральный директор «Дрейк Индастриз»",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "3b67cf481f144c72a7cd4ecd132f1d08",
+              "finding_id": "omission-ceo-1"
+            }
+          },
+          {
+            "id": "recheck-nepo-1",
+            "category": "omission",
+            "severity": "minor",
+            "detail": "Resolved: «очевидный продукт непотизма» conveys the source's characterization of Drake as an obvious ‘nepo’ baby.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "an obvious ‘nepo’ baby",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "очевидный продукт непотизма",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "3b67cf481f144c72a7cd4ecd132f1d08",
+              "finding_id": "omission-nepo-1"
+            }
+          },
+          {
+            "id": "recheck-attribution-1",
+            "category": "omission",
+            "severity": "minor",
+            "detail": "Unresolved: the translation does not preserve that Damian's characterization of Drake as another pretentious rich boy comes from what Damian's brothers told him. Restore that attribution rather than presenting the characterization without its source.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "from what his brothers have told him",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Их ближайший сосед на восточной стороне поместья.Он — генеральный директор «Дрейк Индастриз», очевидный продукт непотизма и, ещё один напыщенный богатенький мальчишка, каких в его кругу полно.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "3b67cf481f144c72a7cd4ecd132f1d08",
+              "finding_id": "omission-attribution-1"
+            }
+          },
+          {
+            "id": "recheck-structure-1",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "Unresolved: the passage remains syntactically broken. After the sentence about the neighbor, the coordination «очевидный продукт непотизма и, ещё один напыщенный богатенький мальчишка» is ungrammatical. Recast the passage as a grammatical sentence while preserving its meaning.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "He is CEO of Drake Industries, an obvious ‘nepo’ baby and, from what his brothers have told him, just another pretentious rich boy like so many in this tax bracket.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Их ближайший сосед на восточной стороне поместья.Он — генеральный директор «Дрейк Индастриз», очевидный продукт непотизма и, ещё один напыщенный богатенький мальчишка, каких в его кругу полно.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "3b67cf481f144c72a7cd4ecd132f1d08",
+              "finding_id": "structure-fragment-1"
+            }
           }
         ]
       },
