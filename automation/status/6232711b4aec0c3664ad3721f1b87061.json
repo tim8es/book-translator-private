@@ -3,16 +3,34 @@
   "job_id": "6232711b4aec0c3664ad3721f1b87061",
   "book_slug": "cardinal-kin",
   "state": "running",
-  "phase": "claimed",
+  "phase": "model-call-reserved",
   "failures": 0,
   "correction_rounds": {},
   "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
   "source_sha256": "f06b996448766fcf6faa703ced3ca03b63221f4f81bdb4c395619c69ffa353cd",
-  "updated_at": "2026-11-17T11:11:13.307479+00:00",
+  "updated_at": "2026-11-17T11:11:40.179776+00:00",
   "active": {
     "role": "translator",
     "chapter": 1,
     "session_id": "auto-6232711b4aec-translator-7b608c85",
     "unit_id": "chapter-000001"
+  },
+  "structural_helper_revision": "4c584fe5534871cd05aa851d9b7bdbfa696d0edd",
+  "model_calls_started": 1,
+  "prompt_context": {
+    "role": "translator",
+    "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
+    "loaded_contracts": [
+      "AGENTS.md",
+      "docs/TRANSLATION.md",
+      "docs/TRANSLATOR.md"
+    ],
+    "glossary_sha256": "f02e6becb2861881659733c55614d24b49ee0a6906fa607fb2db0ceb6b8d35ad",
+    "style_guide_sha256": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4",
+    "system_chars": 19599,
+    "user_chars": 5030,
+    "execution_mode": "shared-structural-segments",
+    "helper_revision": "4c584fe5534871cd05aa851d9b7bdbfa696d0edd",
+    "batch_segment_count": 24
   }
 }
