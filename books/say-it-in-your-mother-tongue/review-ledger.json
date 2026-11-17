@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 82,
+  "next_sequence": 83,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -8247,6 +8247,183 @@
           "structure": true
         },
         "findings": []
+      }
+    },
+    {
+      "record_id": "068a2d3d51984d7094ffbccd1b59e354",
+      "sequence": 82,
+      "unit_id": "chapter-000030",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "4f40608dbd02b08681cb4a2aef6ea6f0aef4f3472edc39a4b4f6a517b0f8b13b",
+      "translation_sha256": "c06046581e6011a1864974360c76f2898ee0da0bd12a05ad734aa83367b6ce6e",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "chatops-say-it-20261117-1230-r30",
+      "reviewed_at": "2026-11-17T09:38:55Z",
+      "state_revision": "f06612b6fb8d91d8523bce065cf83a7c4e66f3559c53102748a8e0c45a85072b",
+      "review_commit": "9d279bc5a773ab2cf142d10d4437ef345c1ff7e4",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "style-6",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Неестественная калька. Передать сопоставление дрожи выдоха и внутреннего состояния: «надеясь, что в выдохе будет *меньше* дрожи, чем в нём самом».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "hoping it comes out *less* shaky than he feels",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "надеясь, что выдох получится *менее* дрожащим, чем он сам себя чувствует",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-10",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Утерян переход от прошедшего к настоящему времени, важный для запинки. «Что это значило… что это значит?»",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "What did… what does it mean?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Что это… что это значит?",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-35",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Смысл и акцент исходника — признание только после уже случившейся близости. Сохранить временную последовательность и выделить «только после», а не сам акт.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Not tell me how you feel about me until *after* we hook up?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Не говорить мне о своих чувствах, пока мы не *переспим*?",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "register-39",
+            "category": "register",
+            "severity": "minor",
+            "detail": "Первое ругательство смягчено, потерян резкий параллелизм двух высказываний. Сохранить силу и повтор, например «Мне до сих пор, блядь, страшно. Всё грёбаное время.»",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "I’m still fucking scared. All the fucking time.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Мне до сих пор чертовски страшно. Всё грёбаное время.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-44",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Неидиоматичная незавершённая конструкция. «Просто думал, что ты не имел в виду ничего такого».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "I just thought you didn’t mean it like that.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Просто думал, что ты не в этом смысле.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "referent-46",
+            "category": "referent",
+            "severity": "minor",
+            "detail": "Объект изменён: в исходнике персонаж говорит именно о себе, в переводе — об увлечении. Передать «однажды ты меня перерастёшь. Или, *возможно*, уже перерос».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "one day, you’d outgrow me. Or that you *possibly* already did.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "однажды ты его перерастёшь. Или, *возможно*, уже перерос.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-48",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Перестройка смещает значимую запинку и фокус с собеседника на говорящего. «что ты… ты ко мне *неравнодушен*»; согласовать предшествующую конструкцию.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "you… you were *into me*.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "будто я… будто я тебе *нравлюсь*.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-58",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Ответ оторван от предыдущего «лучше» и неясен по смыслу. Передать «— Нет, так не было лучше, — …» или «— Так было не лучше, — …».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "It wasn’t",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "— Не было, — Лэнс отвечает на собственный вопрос.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-67",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Добавлено повторное объяснение испанского слова, которого нет в исходнике. Сохранить короткую смешанную фразу без дублирования: «Я уже совсем *loco* становился.»",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "I was going *loco.*",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Я сходил с ума, становился *loco*.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "73e38022ddf12bd5178e538d958adb319027d1c6d6d04ad1f5416e91ffcbf18b",
+        "style_guide": "542b979599ebe40dfbb11794d47d2fffcc7bde125f2d09c1549f33f618157eff"
       }
     }
   ]
