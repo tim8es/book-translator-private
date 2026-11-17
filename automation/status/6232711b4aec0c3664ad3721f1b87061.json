@@ -3,20 +3,15 @@
   "job_id": "6232711b4aec0c3664ad3721f1b87061",
   "book_slug": "cardinal-kin",
   "state": "running",
-  "phase": "model-call-reserved",
-  "failures": 0,
+  "phase": "model-retry",
+  "failures": 1,
   "correction_rounds": {
     "chapter-000001": 2
   },
   "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
   "source_sha256": "f06b996448766fcf6faa703ced3ca03b63221f4f81bdb4c395619c69ffa353cd",
-  "updated_at": "2026-11-17T11:33:31.695531+00:00",
-  "active": {
-    "role": "corrector",
-    "chapter": 2,
-    "session_id": "auto-6232711b4aec-corrector-6b731610",
-    "unit_id": "chapter-000002"
-  },
+  "updated_at": "2026-11-17T11:33:38.947793+00:00",
+  "active": null,
   "structural_helper_revision": "4c584fe5534871cd05aa851d9b7bdbfa696d0edd",
   "model_calls_started": 16,
   "prompt_context": {
@@ -36,7 +31,9 @@
   },
   "memory_glossary_saved": 18,
   "pending_style": [],
-  "role_protocol_failures": {},
+  "role_protocol_failures": {
+    "chapter-000002:corrector": 1
+  },
   "correction_extensions": {},
   "correction_finding_triage": {
     "unit_id": "chapter-000002",
@@ -50,16 +47,23 @@
   "glossary_evidence_rejected": 0,
   "glossary_conflicts_rejected": 0,
   "glossary_proposals_deferred": 0,
+  "provider_model_route": "primary",
   "model_response_diagnostics": {
     "finish_reason": "stop",
     "response_format": "json_object",
-    "response_chars": 2239,
+    "response_chars": 116,
     "provider_refusal": false,
-    "prompt_tokens": 8930,
-    "completion_tokens": 5551,
-    "total_tokens": 14481,
+    "prompt_tokens": 5667,
+    "completion_tokens": 106,
+    "total_tokens": 5773,
     "route": "primary",
-    "role": "reviewer",
+    "role": "corrector",
     "unit_id": "chapter-000002"
-  }
+  },
+  "last_error": "reviewer-anchored corrections intersect protected EPUB markers",
+  "blocked_unit_id": "chapter-000002",
+  "unit_protocol_failures": {
+    "chapter-000002": 1
+  },
+  "last_error_code": "protected_review_anchor"
 }
