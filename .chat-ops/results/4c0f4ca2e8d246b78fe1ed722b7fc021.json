@@ -1,0 +1,299 @@
+{
+  "schema_version": 1,
+  "request_id": "4c0f4ca2e8d246b78fe1ed722b7fc021",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "1cad59d0342ec1fadbe5318b7363d3cdc9b4a4dd3188f2b5c7893e5749e8d2a8",
+    "record": {
+      "correction_round": 2,
+      "outcome": "CORRECTIONS_REQUIRED",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "meaning",
+            "detail": "Исправленный фрагмент повторно сопоставлен с оригиналом в контексте абзаца; прежнее замечание устранено.",
+            "id": "recheck-meaning-5",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "meaning-5",
+              "record_id": "3fcb263f503244629b3f02e33520d2de"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "slowing the car enough to be driving under the speed limit"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "сбавляя скорость до отметки чуть ниже разрешённого предела"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Исправленный фрагмент повторно сопоставлен с оригиналом в контексте абзаца; прежнее замечание устранено.",
+            "id": "recheck-style-7",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "style-7",
+              "record_id": "3fcb263f503244629b3f02e33520d2de"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "especially not the one he can feel coming his way from Sebastian"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "особенно с Себастьяном: Нико уже чувствует, что этого разговора не избежать"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Исправленный фрагмент повторно сопоставлен с оригиналом в контексте абзаца; прежнее замечание устранено.",
+            "id": "recheck-style-11",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "style-11",
+              "record_id": "3fcb263f503244629b3f02e33520d2de"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "busying himself with checking the car"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "занявшись проверкой машины"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Исправленный фрагмент повторно сопоставлен с оригиналом в контексте абзаца; прежнее замечание устранено.",
+            "id": "recheck-meaning-16",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "meaning-16",
+              "record_id": "3fcb263f503244629b3f02e33520d2de"
+            },
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "his eyes make contact with Gabriel’s face the same way his cold, trembling fingers would if he had just a little bit of courage left in his body"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "его взгляд касается лица Габриэля — так, как коснулись бы его холодные дрожащие пальцы, останься в нём хоть чуточку смелости"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Исправленный фрагмент повторно сопоставлен с оригиналом в контексте абзаца; прежнее замечание устранено.",
+            "id": "recheck-style-31",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "style-31",
+              "record_id": "3fcb263f503244629b3f02e33520d2de"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "stabbing his gaze into the German’s chest instead"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "уставившись на грудь немца"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Исправленный фрагмент повторно сопоставлен с оригиналом в контексте абзаца; прежнее замечание устранено.",
+            "id": "recheck-meaning-35",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "meaning-35",
+              "record_id": "3fcb263f503244629b3f02e33520d2de"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "The garage’s obscenely loud cacophony of metal-on-metal noises mixed with the screeching of power tools stops"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Оглушительная какофония лязга металла о металл вперемешку с визгом электроинструментов в гараже обрывается"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Исправленный фрагмент повторно сопоставлен с оригиналом в контексте абзаца; прежнее замечание устранено.",
+            "id": "recheck-style-39",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "style-39",
+              "record_id": "3fcb263f503244629b3f02e33520d2de"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "“Right,” he repeats, defeated."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "— Да, — обречённо повторяет он."
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Исправленный фрагмент повторно сопоставлен с оригиналом в контексте абзаца; прежнее замечание устранено.",
+            "id": "recheck-emphasis-58",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "emphasis-58",
+              "record_id": "3fcb263f503244629b3f02e33520d2de"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "if it was up to me,” with his right index finger, he taps the middle of his chest as the word *me* leaves his lips."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "если бы всё зависело от меня. — Он постукивает указательным пальцем правой руки по центру груди, когда с его губ слетает слово *меня*."
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Исправленный фрагмент повторно сопоставлен с оригиналом в контексте абзаца; прежнее замечание устранено.",
+            "id": "recheck-meaning-62",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "meaning-62",
+              "record_id": "3fcb263f503244629b3f02e33520d2de"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "“Have fun?” Fernando offers with a snigger."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "— Повеселись? — со смешком предлагает Фернандо."
+            }
+          },
+          {
+            "category": "register",
+            "detail": "Исправленный фрагмент повторно сопоставлен с оригиналом в контексте абзаца; прежнее замечание устранено.",
+            "id": "recheck-register-72",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "register-72",
+              "record_id": "3fcb263f503244629b3f02e33520d2de"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "rude ass bitch🖕"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "грубая ты сука🖕"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Исправленный фрагмент повторно сопоставлен с оригиналом в контексте абзаца; прежнее замечание устранено.",
+            "id": "recheck-meaning-83",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "meaning-83",
+              "record_id": "3fcb263f503244629b3f02e33520d2de"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "u two staying together no?"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "вы же вместе остановились да?"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Исправленный фрагмент повторно сопоставлен с оригиналом в контексте абзаца; прежнее замечание устранено.",
+            "id": "recheck-meaning-86",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "meaning-86",
+              "record_id": "3fcb263f503244629b3f02e33520d2de"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "wont ur papa know im not in europe???"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "твой папа разве не узнает что я не в европе???"
+            }
+          },
+          {
+            "category": "register",
+            "detail": "Короткое холодное приветствие в русском тексте превратилось в существительное, которое вне английской кальки не выполняет естественной функции приветствия. Сохранить краткость, отстранённость и курсив, например «Доброе.»",
+            "id": "register-17",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "with a deadpan, *“Morning.”*"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "с бесстрастным: — *Утро.*"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Русская конструкция с «не слишком милый» затрудняет прочтение игривого риторического комплимента. Передать, что собеседник слишком мил, чтобы сидеть в одиночестве, сохранив курсив и вопросительную интонацию.",
+            "id": "style-42",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Aren’t you *too cute* to be sitting here all alone?"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Ты не *слишком милый*, чтобы сидеть здесь совсем один?"
+            }
+          }
+        ]
+      },
+      "record_id": "b8d77d30d4f344c3afa543e6cdb2666f",
+      "review_commit": "3cfca99f0f023c2cff5b259425f057ced2a0881b",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewed_at": "2026-11-17T14:52:47Z",
+      "reviewer_session_id": "chatops-say-it-r35-b94e54f1",
+      "sequence": 93,
+      "source_sha256": "48bafc32635bd6a9289e000b116cc29ac3155145824fdff19c2d0e89fee94fc7",
+      "state_revision": "58e10f62833b8fdf5b8492312d80cbd3a2e5bf9e06e7d905ff181d18d7764029",
+      "supersedes_record_id": "3fcb263f503244629b3f02e33520d2de",
+      "translation_sha256": "c33db1a30e7313490128dc3bd3ac479dda1a3306b65a1b7cbaecaf64b7fb493b",
+      "unit_id": "chapter-000035",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741"
+    }
+  },
+  "error": null
+}
