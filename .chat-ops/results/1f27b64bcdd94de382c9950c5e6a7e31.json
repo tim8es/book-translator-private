@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "request_id": "1f27b64bcdd94de382c9950c5e6a7e31",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "b3f3b4093e77b8ceed75df16510aeafecd36785840249aeef1567273089d36d4",
+    "record": {
+      "correction_round": 5,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "meaning",
+            "detail": "The Russian removes unsupported words and keeps the source's ambiguous comparison of the father's and a similarly damaged brain without assigning the second brain explicitly.",
+            "id": "r3-01",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "r2-01",
+              "record_id": "c713257e0a834e40a5b75d5630040b25"
+            },
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "his father and his twin broken brain."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Ему невольно вспоминается отец — и такой же сломанный мозг."
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "The impersonal title now preserves the source's impersonal inability to pretend.",
+            "id": "r3-02",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "r2-15",
+              "record_id": "c713257e0a834e40a5b75d5630040b25"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "## there's no pretending"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "## Притворяться больше не выйдет"
+            }
+          },
+          {
+            "category": "terminology",
+            "detail": "Hayes is now rendered consistently as Хейз.",
+            "id": "r3-03",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "r2-16",
+              "record_id": "c713257e0a834e40a5b75d5630040b25"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "him drinking out of the Cup with Hayes"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "он пьёт из Кубка вместе с Хейзом"
+            }
+          },
+          {
+            "category": "structure",
+            "detail": "The emphasized word now uses valid inline Markdown without breaking the prose.",
+            "id": "r3-04",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "r2-17",
+              "record_id": "c713257e0a834e40a5b75d5630040b25"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Hollander’s wearing \n *\n glasses.\n *"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Холландер в *очках*. Это… мило."
+            }
+          }
+        ]
+      },
+      "record_id": "b1251a9fdedb4895a5e75d38e0361aa1",
+      "review_commit": "c9f03690176243d22bf7c2a4a9a2721da9343151",
+      "review_contract_revision": "docs/TRANSLATION.md@871e937b5d7075613c4e55c1ecfc07af700af8bc",
+      "reviewed_at": "2026-11-17T00:28:42Z",
+      "reviewer_session_id": "chatops-review-theres-no-pretending-20261117-r3",
+      "sequence": 7,
+      "source_sha256": "7edd5f7d76d4a7d2f971e83a7096c061b9e1a51db15178224d7975fe39d0eb39",
+      "state_revision": "5408213b57f36083389ce34fd24373a9d6187a0ddbab1ba000911bc51b09b5d0",
+      "supersedes_record_id": "c713257e0a834e40a5b75d5630040b25",
+      "translation_sha256": "39fe0dacc3fd5a5a6b8ac2f79b4eb057489d8ff05fdc7431b501f17c010ddcfc",
+      "unit_id": "chapter-000002",
+      "workflow_revision": "871e937b5d7075613c4e55c1ecfc07af700af8bc"
+    }
+  },
+  "error": null
+}
