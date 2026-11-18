@@ -3,7 +3,7 @@
   "job_id": "05eed6ea814d3b5eec014c6d05b39e3f",
   "book_slug": "say-it-in-your-mother-tongue",
   "state": "running",
-  "phase": "claimed",
+  "phase": "model-call-reserved",
   "failures": 0,
   "correction_rounds": {
     "chapter-000001": 1,
@@ -52,7 +52,7 @@
   },
   "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
   "source_sha256": "12e210ce5a95daf56a97ada583ec15c274780c4ddfa7fb92da6a88c67f7c403d",
-  "updated_at": "2026-11-18T07:53:51.328689+00:00",
+  "updated_at": "2026-11-18T07:54:19.603300+00:00",
   "active": {
     "role": "translator",
     "chapter": 52,
@@ -81,20 +81,22 @@
   ],
   "structural_span_retries": 1,
   "structural_helper_revision": "4c584fe5534871cd05aa851d9b7bdbfa696d0edd",
-  "model_calls_started": 681,
+  "model_calls_started": 682,
   "prompt_context": {
-    "role": "reviewer",
+    "role": "translator",
     "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
     "loaded_contracts": [
       "AGENTS.md",
       "docs/TRANSLATION.md",
-      "docs/REVIEWER.md"
+      "docs/TRANSLATOR.md"
     ],
     "glossary_sha256": "5a07096e2fee56a5cfb2ab292570b201fb8b2acbec4d1def386ed295ff537628",
     "style_guide_sha256": "eaa08d42f1f5ea55a06553ec9c1d9e5c6f66b62f9bb6f55b653a52f78659dd74",
-    "system_chars": 28761,
-    "user_chars": 32998,
-    "review_context": "bounded_context"
+    "system_chars": 20835,
+    "user_chars": 30898,
+    "execution_mode": "shared-structural-segments",
+    "helper_revision": "4c584fe5534871cd05aa851d9b7bdbfa696d0edd",
+    "batch_segment_count": 24
   },
   "structural_helper_migrations": [
     {
