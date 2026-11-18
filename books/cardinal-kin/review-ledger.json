@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "cardinal-kin",
-  "next_sequence": 18,
+  "next_sequence": 19,
   "records": [
     {
       "record_id": "75dfa72e2b6148208fd5343b6e384999",
@@ -2325,6 +2325,407 @@
       },
       "shared_state_revisions": {
         "glossary": "d3497d2e842c2c55ff36cac9f6f4a4af7b9b4a171cacc14d730d5e1702dad2fe",
+        "style_guide": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4"
+      }
+    },
+    {
+      "record_id": "082466d609594d68824cb1c151402a35",
+      "sequence": 18,
+      "unit_id": "chapter-000007",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "fcc6f238fbc3a881a68755e9796c0a618c579ec0d33c92b4d56c6f4f0df5ee97",
+      "translation_sha256": "311509da05adca961e0e7ec1171f217f6735aecb2854dca164dbc4cf9a4f4faa",
+      "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "review_contract_revision": "docs/TRANSLATION.md@a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "reviewer_session_id": "auto-6232711b4aec-reviewer-0be3f731",
+      "reviewed_at": "2026-11-18T14:21:31Z",
+      "state_revision": "e117c2aebc004bc38e01d6bf25d766d1c9edd170a2d429f990434f355ae14c2c",
+      "review_commit": "2aae0eb83fffdc755f559539236b81adca0d68f6",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "chunk-001-robin-duties",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The source says Damian is increasing both his training and his duties as Robin. The translation conveys increased training load but only says that he performs Robin's duties. Preserve that his Robin duties are also increasing.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "while also increasing his training and duties as Robin.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "а также увеличивал нагрузку на тренировках и выполнял обязанности Робина.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "chunk-001-vigilantism",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "«Борьба с преступностью» conveys crimefighting generally but loses the source's specific implication of teenage vigilante activity. Preserve that distinction in the target wording.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "the strain of balancing school and teenage vigilantism.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "как тяжело совмещать школу и подростковую борьбу с преступностью.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "chunk-001-curt-tone",
+            "category": "voice",
+            "severity": "minor",
+            "detail": "The source says Damian responds «curtly», conveying brusqueness as well as brevity. «Короче» preserves shortness but not the curt tone; retain that edge in his response.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Damian responds as swiftly and curtly as possible, trying to get the pleasantries over with as soon as possible.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Дэмиан отвечает как можно быстрее и короче, стараясь поскорее покончить с обменом любезностями.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "chunk-001-link-punct",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "The target places the sentence-ending period inside the inline-linked text, while the source link contains only the word «notes». Keep the period after the inline end marker so it is not part of the link.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "See the end of the chapter for <!-- bt-inline:000001:start -->notes<!-- bt-inline:000001:end -->",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "В конце главы см. <!-- bt-inline:000001:start -->примечания.<!-- bt-inline:000001:end -->",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "chunk-002-ethical-phrase",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Этичного воплощения» sounds like a calque in this business context. Consider a more natural equivalent such as «этичной реализации» while preserving the source’s emphasis on ethical execution.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "A rare combination of innovation and ethical execution.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Редкое сочетание инноваций и этичного воплощения.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "chunk-002-summer-off",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Берёт лето свободным» is unnatural Russian phrasing. Render the assistant taking the summer off idiomatically, for example as taking leave for the summer.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "His current assistant is taking the summer off",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Нынешний помощник берёт лето свободным",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "chunk-002-father-reference",
+            "category": "referent",
+            "severity": "major",
+            "detail": "The translation says «его отцов» (his fathers), changing the number of the referent. In the surrounding context the source refers to Damian’s father in the singular; the source phrase appears to have a missing possessive apostrophe. Render the intended singular reference, such as «наставления отца».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "But his Fathers teachings have truly cemented.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Но наставления его отцов и впрямь глубоко укоренились в нём.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "chunk-002-bad-at-it",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "«В принципе ни на что не годен» broadens the worry from being fundamentally bad at this job to being good for nothing in general. Keep the concern scoped to the role or task.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "What if he is fundamentally bad at it?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "А вдруг он в принципе ни на что не годен?",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "chunk-003-limb-idiom",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Отъезд Тэм будет словно лишиться руки» is grammatically mismatched: it compares a departure to an infinitive. Recast it naturally, for example, as «для него это будет всё равно что лишиться руки».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Even so, having Tam gone will be like losing a limb.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "И все же отъезд Тэм будет словно лишиться руки.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "chunk-003-stretch-calque",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Растянуть напряжение» is an unnatural collocation in Russian. Preserve the physical effort of stretching while using a natural phrase, such as «попытаться размять мышцы между лопатками» or «снять напряжение».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Tim leans his head heavily to his shoulder, trying in vain to stretch out the tension building between his shoulder blades.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Тим тяжело склоняет голову к плечу, тщетно пытаясь растянуть напряжение, накапливающееся между лопатками.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "chunk-003-deadline-collocation",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Уладить дедлайны» is an unnatural collocation and obscures the sense of getting the quarter’s deadlines and work out of the way. Rephrase so the deadlines are met or the work due by them is completed.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "With Tam getting ready to go on her vacation, the two of them have been putting in the work to get most of the major decisions and deadlines for the quarter out of the way.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Пока Тэм готовится к отпуску, они вдвоем стараются заранее уладить большинство важных вопросов и дедлайнов на этот квартал.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "chunk-003-ellipsis-response",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "In context, Tim says he may have something else he wants to work on, and Tam’s elliptical “You don’t” means he does not have anything else to work on. «Не хочется» changes this to a statement about his desire, and the following «даже если бы хотелось» repeats that shift. Preserve the implied meaning that he has no other work to do.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“You don’t,” she says matter of factly. “And even if you did, it’s been like 15 hours. That’s where I draw the line.”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Не хочется», — говорит она как ни в чем не бывало. «И даже если бы хотелось, прошло уже часов пятнадцать. Вот тут я и провожу черту».",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "chunk-003-apply-purpose",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The source says the program is meant to encourage promising young people to apply. «Рассчитана на перспективную молодёжь» instead describes whom the program is intended for, omitting the stated aim of encouraging applications.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "The program will be designed to specifically encourage promising young people to apply, both teenagers and college students.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Программа будет специально рассчитана на перспективную молодёжь: и подростков, и студентов.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "chunk-003-know-better",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "“Thinks they know better than him” refers to believing oneself more knowledgeable or better informed; «считает себя умнее него» shifts this to intelligence. A closer rendering would preserve the idea that the person thinks they know more or know better than Tim.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "than someone who thinks they know better than him just because they happen to be older",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "чем с тем, кто считает себя умнее него лишь потому, что старше",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "chunk-004-signature-ref",
+            "category": "referent",
+            "severity": "minor",
+            "detail": "The source says Bruce Wayne’s signature is next to his son’s signature (with “signature” understood). The translation says it is next to his son’s name. Change «рядом с именем его сына» to «рядом с подписью его сына» or equivalent.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "there, unmistakably, inexplicably, is Bruce Wayne’s signature next to his son’s.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "подпись Брюса Уэйна рядом с именем его сына.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "chunk-004-restraint-calque",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Мобилизует самообладание» is an awkward calque for activating self-restraint. Use a natural equivalent such as «старается сдержаться» while retaining the sense that Tim recognizes her effort to control herself.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Tam gets a look on her face Tim knows means she’s activating her self-restraint.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "На лице Тэм появляется выражение, по которому Тим понимает: она мобилизует самообладание.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "chunk-004-compartmentalize",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "«Мысленно отделять случайные мысли» suggests distinguishing those thoughts from others, rather than compartmentalizing or deliberately putting them aside to avoid distraction. Rephrase to preserve Tim’s practiced mental distancing from thoughts about his former family.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Tim has worked hard to train his mind to compartmentalize stray thoughts about his former family to avoid distraction.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Тим усердно приучал себя мысленно отделять случайные мысли о своей прежней семье, чтобы не отвлекаться.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "chunk-004-broken-apology",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The source’s abandoned fragment “that wasn’t-” is replaced by «я не...», changing what Tim starts to say before correcting himself to “I didn't mean-”. Preserve the source’s interrupted, self-correcting sequence more closely.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "I’m sorry that wasn’t- I didn't mean-",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Прости, я не... Я не хотел...",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "chunk-004-piss-off-register",
+            "category": "register",
+            "severity": "minor",
+            "detail": "“Piss the Waynes off” is colloquial and more forceful than the neutral «злить Уэйнов». Choose a target-language phrase that better preserves the source’s marked conversational intensity.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "And at the very least, I really don’t think you want to piss the Waynes off like that.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "И уж точно, мне кажется, ты не хочешь вот так злить Уэйнов.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "chunk-005-riddle-home",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "«I leave no home» suggests having no home of one’s own, fitting the cuckoo’s use of other birds’ nests. «Я не покидаю дом» instead says that the speaker does not leave home, changing the riddle’s clue. Rework the line to preserve the lack-of-home meaning.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "I leave no home, yet I claim a rest",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Я не покидаю дом, но всё же нахожу покой",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "chunk-005-riddler-pronoun",
+            "category": "referent",
+            "severity": "major",
+            "detail": "In context, the source says no one else can match the Riddler’s intellect, explaining his frustration when Cardinal is rarely active. The translation’s «с ним умом» most naturally refers to the nearer Cardinal, shifting the referent. Clarify that the comparison is with the Riddler.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Edward Nygma genuinely just enjoys his puzzles and mind games, and he longs for someone who can keep up with him. But with Cardinal so rarely on the streets—and no one else able to match his intellect—Riddler is growing increasingly frustrated.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Эдвард Нигма и правда просто любит свои загадки и интеллектуальные игры и мечтает о ком-нибудь, кто сможет за ним поспевать. Но Кардинал так редко появляется на улицах, а больше никто не может сравниться с ним умом, и Загадочник всё сильнее раздражается.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "chunk-005-bluejay-name",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "Bluejay is rendered as «Синяя Сойка» in blocks 152 and 156, but as «Блюджей» here. These may each be possible renderings, but the name is inconsistent within the assigned core; reconcile the choice without assuming which spelling is canonical.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Bluejay and Robin over comms almost instantly.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Блюджею и Робину по связи.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "chunk-005-breathing-phrase",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Берёт дыхание под контроль» is an awkward calque in Russian. Rephrase naturally, for example, as «Когда дыхание Тима снова приходит в норму» or «Когда Тим снова начинает дышать ровно», preserving the sense that he has regained control of his breathing.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Once Tim has his breathing under control again, he heads home, carefully not even looking towards Wayne Manor as he drives past.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Когда Тим снова берёт дыхание под контроль, он едет домой, старательно даже не глядя в сторону поместья Уэйнов, мимо которого проезжает.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "46f051bca3e092dfcbc4ff89ec10624c4b8ae493ef6df867d04ebb6b6e4921c7",
         "style_guide": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4"
       }
     }
