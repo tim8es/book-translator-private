@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "unit_id": "chapter-000041",
+  "review_record_id": "6332737428c34a2397c431f782b462e6",
+  "source_sha256": "3dd265fb0cdcb0c05be4eea9e975c8efe9fa7737e1dd87d0d412daee3f1a87bc",
+  "translation_sha256": "e521adcef7ec2d774fec0df40425a71190c0146ac756cf6da309ce9c531da445",
+  "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+  "patches": [
+    {
+      "finding_id": "structure-1",
+      "operation": "replace",
+      "target_anchor": {
+        "quote": "Это история с несколькими точками зрения: главы могут быть посвящены одной паре или переключаться между несколькими.",
+        "occurrence": 0
+      },
+      "replacement": "**Это история с несколькими точками зрения: главы могут быть посвящены одной паре или переключаться между несколькими.**"
+    },
+    {
+      "finding_id": "referent-1",
+      "operation": "replace",
+      "target_anchor": {
+        "quote": "Он кладёт голову Фернандо на плечо",
+        "occurrence": 0
+      },
+      "replacement": "Он кладёт голову ему на плечо"
+    },
+    {
+      "finding_id": "structure-2",
+      "operation": "replace",
+      "target_anchor": {
+        "quote": "позволяет Фернандо потянуть себя вверх, пока не встаёт на ноги",
+        "occurrence": 0
+      },
+      "replacement": "позволяет Фернандо *потянуть себя вверх*, пока не встаёт на ноги"
+    }
+  ],
+  "glossary": [],
+  "style_guide": []
+}
