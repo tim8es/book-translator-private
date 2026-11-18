@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 146,
+  "next_sequence": 147,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -16142,6 +16142,96 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "0d15110e6da4548f83415d376a45691a426a10208eb6ab7bf134af69fc2f0f9e",
+        "style_guide": "eaa08d42f1f5ea55a06553ec9c1d9e5c6f66b62f9bb6f55b653a52f78659dd74"
+      }
+    },
+    {
+      "record_id": "803843bc30884d0bbba6a83647ac2c77",
+      "sequence": 146,
+      "unit_id": "chapter-000052",
+      "outcome": "PASS",
+      "source_sha256": "a12c6f2e5c156de816bdc7cb1a790dc3e3d0c63048959e2a82521f05c23ec05a",
+      "translation_sha256": "6617287aee72fce6a9d7783fd62901b730e106a3009d6fc32d3fb19c5edf9d6c",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-ba35b7ce",
+      "reviewed_at": "2026-11-18T08:19:56Z",
+      "state_revision": "4468e73df3f73a3563f06ac6cc12ea3c8f0205a014b57df08e8285049f340c4a",
+      "review_commit": "9a31f63b32d7e34f7944b77f5f7ff09670c6454f",
+      "correction_round": 1,
+      "supersedes_record_id": "3ed721ba03ab472989dfac27468485dc",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-terminology-1",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "Исправлено: «помолвочное кольцо» точно передаёт engagement ring.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "So, you weren’t in there buying an engagement ring now?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "То есть ты сейчас не покупал там помолвочное кольцо?",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "3ed721ba03ab472989dfac27468485dc",
+              "finding_id": "terminology-1"
+            }
+          },
+          {
+            "id": "recheck-meaning-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Исправлено: перевод помещает футболки поверх сиденья табурета, как в источнике.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "hanging over the seat of a barstool.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "перекинутых через сиденье барного стула.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "3ed721ba03ab472989dfac27468485dc",
+              "finding_id": "meaning-1"
+            }
+          },
+          {
+            "id": "recheck-meaning-2",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Исправлено: «Как будто» сохраняет сравнение, выраженное в источнике словами it’s like.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "it’s like we’re just teammates who go on dates now.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Как будто мы просто товарищи по команде, которые теперь ходят на свидания",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "3ed721ba03ab472989dfac27468485dc",
+              "finding_id": "meaning-2"
+            }
           }
         ]
       },
