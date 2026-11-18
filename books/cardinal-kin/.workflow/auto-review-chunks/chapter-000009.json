@@ -760,6 +760,100 @@
           "type": "демоним"
         }
       ]
+    },
+    "chunk-005": {
+      "outcome": "CORRECTIONS_REQUIRED",
+      "report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "bluejay-129",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "The current glossary gives Bluejay as «Синяя Сойка», while this passage uses «Голубая Сойка». The translation is natural, but the glossary discrepancy remains unresolved; reconcile the glossary rather than changing the text solely to match it.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Sure enough, not 5 minutes later, the Bats arrive— Batman, Bluejay, Spoiler, and Robin.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "И точно: не проходит и пяти минут, как появляются Бэтмен, Голубая Сойка, Спойлер и Робин.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "60cdceecef8241e4911888e94f72c58d",
+              "finding_id": "chunk-005-bluejay-129"
+            }
+          },
+          {
+            "id": "bluejay-132",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "The current glossary gives Bluejay as «Синяя Сойка», while this passage uses «Голубая Сойка». The translation is natural, but the glossary discrepancy remains unresolved; reconcile the glossary rather than changing the text solely to match it.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "He passes the time listening to their conversation, holding himself back from laughing as Bluejay and Spoiler argue over which Star Wars trilogy is best.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Он коротает время, прислушиваясь к их разговору и сдерживая смех, пока Голубая Сойка и Спойлер спорят, какая трилогия «Звёздных войн» лучше.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "60cdceecef8241e4911888e94f72c58d",
+              "finding_id": "chunk-005-bluejay-132"
+            }
+          },
+          {
+            "id": "bluejay-135",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "The current glossary gives Bluejay as «Синяя Сойка», while this passage uses «Голубая Сойка». The translation is natural, but the glossary discrepancy remains unresolved; reconcile the glossary rather than changing the text solely to match it.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Bluejay, Spoiler. Outflank them. Clear?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Голубая Сойка, Спойлер, обойдите их с флангов. Понятно?",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "60cdceecef8241e4911888e94f72c58d",
+              "finding_id": "chunk-005-bluejay-135"
+            }
+          },
+          {
+            "id": "demon-brat",
+            "category": "register",
+            "severity": "minor",
+            "detail": "The current «демоническим мальчишкой» is a suitable, less contemptuous rendering of the colloquial, teasing “demon brat”; the earlier harsher wording has been corrected.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "The beacon he had Pru give to Damian on his behalf acts as both a tracker and a distress signal, allowing Tim to keep track of the demon brat whenever he needs to.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Маячок, который он попросил Пру передать Дэмиану от его имени, служит и трекером, и сигналом бедствия, позволяя Тиму следить за этим демоническим мальчишкой, когда понадобится.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "60cdceecef8241e4911888e94f72c58d",
+              "finding_id": "chunk-005-demon-brat"
+            }
+          }
+        ]
+      },
+      "style": [],
+      "glossary": []
     }
   },
   "windows": {
@@ -778,6 +872,10 @@
     "chunk-004": {
       "source_sha256": "fc4a550163bdb3796e350cc869731cae7f693dbdcb632c307294f2abbcad0b31",
       "translation_sha256": "35c2ea9cf505b3952f05100cd2d20d9aa8e76ce3af063ebac3f2ebd02c4037dc"
+    },
+    "chunk-005": {
+      "source_sha256": "68fd3be978424ebc219a9bf1f328ffa4a2834cc8a255dbb06ee311e2c34b67d3",
+      "translation_sha256": "1c8bd824ec68a5ce5ee8e113da466b8a7a5223db7506f19bd6b177172ac4f7c1"
     }
   },
   "accepted_review_record_id": null,
