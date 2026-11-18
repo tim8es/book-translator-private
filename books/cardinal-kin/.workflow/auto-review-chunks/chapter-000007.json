@@ -4,7 +4,7 @@
     "schema_version": 1,
     "helper_revision": "review-chunks-source-stable-v1",
     "source_sha256": "fcc6f238fbc3a881a68755e9796c0a618c579ec0d33c92b4d56c6f4f0df5ee97",
-    "translation_sha256": "2ce2bcb6ed9c2a6a9b1a0cfc809dee18048746f2e8f838fdae5135196a661d24",
+    "translation_sha256": "ef8675a3c9f3e5880f4466a4a4b6d6d662b273d70b609494deac5fc1d55ffd6b",
     "chunks": [
       {
         "id": "chunk-001",
@@ -14,7 +14,7 @@
         ],
         "translation_core": [
           0,
-          5674
+          5685
         ],
         "source_window": [
           0,
@@ -22,7 +22,7 @@
         ],
         "translation_window": [
           0,
-          7712
+          7709
         ]
       },
       {
@@ -32,16 +32,16 @@
           11221
         ],
         "translation_core": [
-          5674,
-          11678
+          5685,
+          11675
         ],
         "source_window": [
           3619,
           13157
         ],
         "translation_window": [
-          3720,
-          13725
+          3731,
+          13739
         ]
       },
       {
@@ -51,16 +51,16 @@
           17001
         ],
         "translation_core": [
-          11678,
-          17739
+          11675,
+          17763
         ],
         "source_window": [
           9288,
           18852
         ],
         "translation_window": [
-          9858,
-          19591
+          9855,
+          19615
         ]
       },
       {
@@ -70,16 +70,16 @@
           22694
         ],
         "translation_core": [
-          17739,
-          23492
+          17763,
+          23511
         ],
         "source_window": [
           15199,
           24504
         ],
         "translation_window": [
-          15849,
-          25318
+          15963,
+          25337
         ]
       },
       {
@@ -89,16 +89,16 @@
           28261
         ],
         "translation_core": [
-          23492,
-          28993
+          23511,
+          29289
         ],
         "source_window": [
           20441,
           28261
         ],
         "translation_window": [
-          21311,
-          28993
+          21330,
+          29289
         ]
       }
     ]
@@ -106,7 +106,7 @@
   "unit_id": "chapter-000007",
   "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
   "binding": {
-    "previous_record_id": "082466d609594d68824cb1c151402a35",
+    "previous_record_id": "6b5637f6145246b9a3f41ad59da1ec1c",
     "glossary_sha256": "46f051bca3e092dfcbc4ff89ec10624c4b8ae493ef6df867d04ebb6b6e4921c7",
     "style_guide_sha256": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4",
     "reviewer_contract_sha256": "e21e068170b373ed0593c7fa47b2039293af849e93fe53de5bd30b97f3092ff2"
@@ -126,67 +126,10 @@
         },
         "findings": [
           {
-            "id": "robin-duty-r1",
-            "category": "meaning",
-            "severity": "minor",
-            "detail": "Rechecked: «расширял круг обязанностей Робина» conveys that Damian's Robin duties are increasing, alongside the increased training load. This issue is resolved.",
-            "resolved": true,
-            "source_anchor": {
-              "quote": "while also increasing his training and duties as Robin.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "а также увеличивал нагрузку на тренировках и расширял круг обязанностей Робина.",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "082466d609594d68824cb1c151402a35",
-              "finding_id": "chunk-001-robin-duties"
-            }
-          },
-          {
-            "id": "vigilantism-r1",
-            "category": "meaning",
-            "severity": "minor",
-            "detail": "Rechecked: the current wording is grammatically broken («ровесник, знающий, подростковую…») and does not clearly convey teenage vigilantism. Recast the phrase grammatically while preserving that specific idea; for example, «понимает, как тяжело совмещать школу с подростковым вигилантством».",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "the strain of balancing school and teenage vigilantism.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "ровесник, знающий, подростковую самовольную борьбу с преступностью",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "082466d609594d68824cb1c151402a35",
-              "finding_id": "chunk-001-vigilantism"
-            }
-          },
-          {
-            "id": "curt-tone-r1",
-            "category": "voice",
-            "severity": "minor",
-            "detail": "Rechecked: «как можно резче» preserves the brusque edge of «curtly» as well as the speed of the response. This issue is resolved.",
-            "resolved": true,
-            "source_anchor": {
-              "quote": "Damian responds as swiftly and curtly as possible, trying to get the pleasantries over with as soon as possible.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "Дэмиан отвечает как можно быстрее и как можно резче, стараясь поскорее покончить с обменом любезностями.",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "082466d609594d68824cb1c151402a35",
-              "finding_id": "chunk-001-curt-tone"
-            }
-          },
-          {
             "id": "link-punct-r1",
             "category": "structure",
             "severity": "minor",
-            "detail": "The period remains inside the inline-linked text. Move it after the end marker so that only «примечания» is linked.",
+            "detail": "The period is still inside the inline-linked text. Move it after the end marker so only «примечания» is linked.",
             "resolved": false,
             "source_anchor": {
               "quote": "See the end of the chapter for <!-- bt-inline:000001:start -->notes<!-- bt-inline:000001:end -->",
@@ -197,447 +140,105 @@
               "occurrence": 0
             },
             "resolves": {
-              "record_id": "082466d609594d68824cb1c151402a35",
-              "finding_id": "chunk-001-link-punct"
-            }
-          }
-        ]
-      },
-      "style": [],
-      "glossary": []
-    },
-    "chunk-002": {
-      "outcome": "CORRECTIONS_REQUIRED",
-      "report": {
-        "evidence_version": 2,
-        "context": "independent_session",
-        "checks": {
-          "coverage": true,
-          "meaning": true,
-          "terminology": true,
-          "style": true,
-          "structure": true
-        },
-        "findings": [
-          {
-            "id": "ethical-recheck",
-            "category": "style",
-            "severity": "minor",
-            "detail": "Resolved: «этичной реализации» is a natural rendering of “ethical execution” in this context and fixes the earlier calque.",
-            "resolved": true,
-            "source_anchor": {
-              "quote": "A rare combination of innovation and ethical execution.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "Редкое сочетание инноваций и этичной реализации.",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "082466d609594d68824cb1c151402a35",
-              "finding_id": "chunk-002-ethical-phrase"
+              "record_id": "6b5637f6145246b9a3f41ad59da1ec1c",
+              "finding_id": "chunk-001-link-punct-r1"
             }
           },
           {
-            "id": "summer-recheck",
-            "category": "style",
-            "severity": "minor",
-            "detail": "Resolved: «берёт отпуск на всё лето» idiomatically conveys taking the summer off.",
-            "resolved": true,
-            "source_anchor": {
-              "quote": "His current assistant is taking the summer off",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "Нынешний помощник берёт отпуск на всё лето",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "082466d609594d68824cb1c151402a35",
-              "finding_id": "chunk-002-summer-off"
-            }
-          },
-          {
-            "id": "father-recheck",
-            "category": "referent",
-            "severity": "major",
-            "detail": "Resolved: «наставления отца» correctly preserves the singular reference to Damian’s father.",
-            "resolved": true,
-            "source_anchor": {
-              "quote": "But his Fathers teachings have truly cemented.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "Но наставления отца и впрямь глубоко укоренились в нём.",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "082466d609594d68824cb1c151402a35",
-              "finding_id": "chunk-002-father-reference"
-            }
-          },
-          {
-            "id": "bad-job-recheck",
-            "category": "meaning",
-            "severity": "major",
-            "detail": "Resolved: «не годится для этой работы» keeps Damian’s concern scoped to the job rather than implying he is generally good for nothing.",
-            "resolved": true,
-            "source_anchor": {
-              "quote": "What if he is fundamentally bad at it?",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "А вдруг он в корне не годится для этой работы?",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "082466d609594d68824cb1c151402a35",
-              "finding_id": "chunk-002-bad-at-it"
-            }
-          },
-          {
-            "id": "assistant-term",
-            "category": "terminology",
-            "severity": "minor",
-            "detail": "The same position is called «личный помощник» here but «помощник руководителя» later in the core. «Личный помощник» can suggest a personal rather than executive assistant; use a consistent term such as «помощник руководителя», which also appears later.",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "You’d be filling in for Timothy Drake’s executive assistant.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "Вы будете замещать личного помощника Тимоти Дрейка",
-              "occurrence": 0
-            },
-            "resolves": null
-          }
-        ]
-      },
-      "style": [],
-      "glossary": []
-    },
-    "chunk-003": {
-      "outcome": "CORRECTIONS_REQUIRED",
-      "report": {
-        "evidence_version": 2,
-        "context": "independent_session",
-        "checks": {
-          "coverage": true,
-          "meaning": true,
-          "terminology": true,
-          "style": true,
-          "structure": true
-        },
-        "findings": [
-          {
-            "id": "limb-recheck",
-            "category": "style",
-            "severity": "minor",
-            "detail": "Resolved: the comparison is now grammatically natural in Russian: «для него это будет всё равно что лишиться руки».",
-            "resolved": true,
-            "source_anchor": {
-              "quote": "Even so, having Tam gone will be like losing a limb.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "когда Тэм уедет, для него это будет всё равно что лишиться руки",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "082466d609594d68824cb1c151402a35",
-              "finding_id": "chunk-003-limb-idiom"
-            }
-          },
-          {
-            "id": "stretch-recheck",
-            "category": "style",
-            "severity": "minor",
-            "detail": "Resolved: the unnatural collocation «растянуть напряжение» is gone; «размять напряженные мышцы между лопатками» is a natural rendering of the attempted physical relief.",
-            "resolved": true,
-            "source_anchor": {
-              "quote": "Tim leans his head heavily to his shoulder, trying in vain to stretch out the tension building between his shoulder blades.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "тщетно пытаясь размять напряженные мышцы между лопатками",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "082466d609594d68824cb1c151402a35",
-              "finding_id": "chunk-003-stretch-calque"
-            }
-          },
-          {
-            "id": "deadline-recheck",
-            "category": "style",
-            "severity": "minor",
-            "detail": "Resolved: the translation no longer uses the unnatural collocation «уладить дедлайны» and expresses completing the quarter’s work.",
-            "resolved": true,
-            "source_anchor": {
-              "quote": "With Tam getting ready to go on her vacation, the two of them have been putting in the work to get most of the major decisions and deadlines for the quarter out of the way.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "заранее принять большинство важных решений и выполнить основную часть работы, которую нужно завершить в этом квартале",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "082466d609594d68824cb1c151402a35",
-              "finding_id": "chunk-003-deadline-collocation"
-            }
-          },
-          {
-            "id": "ellipsis-recheck",
-            "category": "meaning",
-            "severity": "major",
-            "detail": "Resolved: «Ничего другого у тебя нет» preserves Tam’s meaning that Tim has no other work to do.",
-            "resolved": true,
-            "source_anchor": {
-              "quote": "“You don’t,” she says matter of factly. “And even if you did, it’s been like 15 hours. That’s where I draw the line.”",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "«Ничего другого у тебя нет», — говорит она как ни в чем не бывало. «И даже если бы было, прошло уже часов пятнадцать.",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "082466d609594d68824cb1c151402a35",
-              "finding_id": "chunk-003-ellipsis-response"
-            }
-          },
-          {
-            "id": "apply-recheck",
+            "id": "vigilantism-r1",
             "category": "meaning",
             "severity": "minor",
-            "detail": "Resolved: the translation now states that the program is designed to encourage promising young people to apply.",
+            "detail": "The revised wording now grammatically conveys the strain of balancing school with teenage vigilantism. This resolves the prior wording issue.",
             "resolved": true,
             "source_anchor": {
-              "quote": "The program will be designed to specifically encourage promising young people to apply, both teenagers and college students.",
+              "quote": "someone about his age who understands the strain of balancing school and teenage vigilantism.",
               "occurrence": 0
             },
             "translation_anchor": {
-              "quote": "чтобы побуждать перспективных молодых людей подавать заявки — как подростков, так и студентов колледжей",
+              "quote": "ровесник, понимающий, как тяжело совмещать школу с подростковым вигилантством",
               "occurrence": 0
             },
             "resolves": {
-              "record_id": "082466d609594d68824cb1c151402a35",
-              "finding_id": "chunk-003-apply-purpose"
+              "record_id": "6b5637f6145246b9a3f41ad59da1ec1c",
+              "finding_id": "chunk-001-vigilantism-r1"
             }
           },
           {
-            "id": "better-recheck",
-            "category": "meaning",
-            "severity": "minor",
-            "detail": "Resolved: «считает, что знает больше него» conveys believing oneself more knowledgeable, rather than more intelligent. The sentence still has a separate structural problem noted below.",
-            "resolved": true,
-            "source_anchor": {
-              "quote": "than someone who thinks they know better than him just because they happen to be older",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "считает, что знает больше него, лишь потому, что старше",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "082466d609594d68824cb1c151402a35",
-              "finding_id": "chunk-003-know-better"
-            }
-          },
-          {
-            "id": "matter-factly",
-            "category": "meaning",
-            "severity": "minor",
-            "detail": "«Как ни в чем не бывало» can imply that something happened and the speaker is acting as though it did not. The source only describes Tam’s matter-of-fact manner; use a closer equivalent such as «невозмутимо» or «буднично».",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "“You don’t,” she says matter of factly.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "говорит она как ни в чем не бывало",
-              "occurrence": 0
-            },
-            "resolves": null
-          },
-          {
-            "id": "gender-assumption",
-            "category": "referent",
-            "severity": "major",
-            "detail": "«Преемница» and «первой» make Tam’s replacement explicitly female. The surrounding source identifies the intern as Damian, a male character. Avoid adding a gendered referent here; for example, use a neutral construction such as «стажёр, заменяющий Тэм, станет первым из многих».",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "If it goes well, Tam’s substitute will be the first of many such interns",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "преемница Тэм станет первой из многих таких стажёров",
-              "occurrence": 0
-            },
-            "resolves": null
-          },
-          {
-            "id": "missing-contrast",
+            "id": "sentence-stop-1",
             "category": "structure",
-            "severity": "major",
-            "detail": "The translation omits the comparison «than someone» and leaves «считает» without a clear grammatical subject. As written, it can attach to Tim or the young person ready to learn, rather than identifying the contrasting older person. Restore the contrast and make that person’s belief explicit.",
+            "severity": "minor",
+            "detail": "A sentence-ending period is missing after «вигилантством»; «Разумеется» begins the next sentence.",
             "resolved": false,
             "source_anchor": {
-              "quote": "Tim much rather work with a young person ready and eager to learn than someone who thinks they know better than him just because they happen to be older (another reason why Tam is the perfect executive assistant).",
+              "quote": "It’s nice to have someone who gets it, someone about his age who understands the strain of balancing school and teenage vigilantism.",
               "occurrence": 0
             },
             "translation_anchor": {
-              "quote": "Тим куда охотнее работал бы с молодым человеком, готовым учиться и жаждущим новых знаний, считает, что знает больше него, лишь потому, что старше",
+              "quote": "подростковым вигилантством Разумеется",
               "occurrence": 0
             },
             "resolves": null
           },
           {
-            "id": "rhetorical-calque",
-            "category": "style",
+            "id": "well-meaning-1",
+            "category": "meaning",
             "severity": "minor",
-            "detail": "The construction «Как лучше разобраться во всём, чем с головой бросить его…» is an awkward calque in Russian: the comparison lacks a natural governing construction. Recast the rhetorical question while preserving the idea that immersing him in the company is an excellent way to learn.",
+            "detail": "«Хочу добиться успеха» shifts “want to do well” toward achieving success. A closer rendering would preserve the sense of wanting to perform well, such as «хочу хорошо справиться».",
             "resolved": false,
             "source_anchor": {
-              "quote": "What better way to figure things out than by throwing him into a company so similar to Wayne Enterprises in purpose, run by a CEO of a similar situation to Damian?",
+              "quote": "I simply… want to do well.",
               "occurrence": 0
             },
             "translation_anchor": {
-              "quote": "Как лучше разобраться во всём, чем с головой бросить его в компанию",
+              "quote": "Я просто… хочу добиться успеха",
               "occurrence": 0
             },
             "resolves": null
-          }
-        ]
-      },
-      "style": [
-        {
-          "evidence": "This is good, he finally decides. This is great.",
-          "source_pattern": "Brief, emphatic sentences and repetition heighten Damian’s reaction: “This is good, he finally decides. This is great.”",
-          "translation_approach": "Preserve the short, repeated emphasis rather than smoothing it into a single explanatory sentence."
-        }
-      ],
-      "glossary": []
-    },
-    "chunk-004": {
-      "outcome": "CORRECTIONS_REQUIRED",
-      "report": {
-        "evidence_version": 2,
-        "context": "independent_session",
-        "checks": {
-          "coverage": true,
-          "meaning": true,
-          "terminology": true,
-          "style": true,
-          "structure": true
-        },
-        "findings": [
-          {
-            "id": "sig-recheck",
-            "category": "referent",
-            "severity": "minor",
-            "detail": "Resolved: the translation now correctly places Bruce Wayne’s signature next to his son’s signature.",
-            "resolved": true,
-            "source_anchor": {
-              "quote": "there, unmistakably, inexplicably, is Bruce Wayne’s signature next to his son’s.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "подпись Брюса Уэйна рядом с подписью его сына.",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "082466d609594d68824cb1c151402a35",
-              "finding_id": "chunk-004-signature-ref"
-            }
           },
           {
-            "id": "restraint-recheck",
-            "category": "style",
-            "severity": "minor",
-            "detail": "Resolved: «старается сдержаться» is a natural rendering that preserves Tam’s effort to control herself.",
-            "resolved": true,
-            "source_anchor": {
-              "quote": "Tam gets a look on her face Tim knows means she’s activating her self-restraint.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "На лице Тэм появляется выражение, по которому Тим понимает: она старается сдержаться.",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "082466d609594d68824cb1c151402a35",
-              "finding_id": "chunk-004-restraint-calque"
-            }
-          },
-          {
-            "id": "compartment-recheck",
+            "id": "path-meaning-1",
             "category": "meaning",
             "severity": "minor",
-            "detail": "Resolved: the translation now conveys deliberately putting stray thoughts about his former family aside to avoid distraction.",
-            "resolved": true,
+            "detail": "«Всё будет иначе» broadens “that will not be true in my case” into a claim that everything will be different. Preserve the narrower reference to what Alfred said about Bruce.",
+            "resolved": false,
             "source_anchor": {
-              "quote": "Tim has worked hard to train his mind to compartmentalize stray thoughts about his former family to avoid distraction.",
+              "quote": "But that will not be true in my case.",
               "occurrence": 0
             },
             "translation_anchor": {
-              "quote": "Хотя Хотя Тим усердно приучал себя отодвигать на задний план случайные мысли о своей прежней семье, чтобы они не отвлекали.",
+              "quote": "Но в моём случае всё будет иначе.",
               "occurrence": 0
             },
-            "resolves": {
-              "record_id": "082466d609594d68824cb1c151402a35",
-              "finding_id": "chunk-004-compartmentalize"
-            }
+            "resolves": null
           },
           {
-            "id": "apology-recheck",
-            "category": "meaning",
-            "severity": "minor",
-            "detail": "Resolved: «это было не— Я не хотел—» preserves Tim’s interrupted, self-correcting sequence.",
-            "resolved": true,
-            "source_anchor": {
-              "quote": "I’m sorry that wasn’t- I didn't mean-",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "Прости, это было не— Я не хотел—",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "082466d609594d68824cb1c151402a35",
-              "finding_id": "chunk-004-broken-apology"
-            }
-          },
-          {
-            "id": "register-recheck",
+            "id": "curt-register-1",
             "category": "register",
             "severity": "minor",
-            "detail": "Resolved: «бесить Уэйнов» preserves the colloquial force of “piss the Waynes off.”",
-            "resolved": true,
-            "source_anchor": {
-              "quote": "And at the very least, I really don’t think you want to piss the Waynes off like that.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "И уж точно, мне кажется, ты не хочешь вот так бесить Уэйнов.",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "082466d609594d68824cb1c151402a35",
-              "finding_id": "chunk-004-piss-off-register"
-            }
-          },
-          {
-            "id": "dup-although",
-            "category": "style",
-            "severity": "minor",
-            "detail": "The translation accidentally repeats «Хотя». Remove one occurrence.",
+            "detail": "«Резко» can make Damian sound sharper or more hostile than “curtly” requires. Consider «кратко» or «сухо» to preserve his terse manner without adding sharpness.",
             "resolved": false,
             "source_anchor": {
-              "quote": "Although, Tim has worked hard to train his mind to compartmentalize stray thoughts about his former family to avoid distraction.",
+              "quote": "Damian responds as swiftly and curtly as possible, trying to get the pleasantries over with as soon as possible.",
               "occurrence": 0
             },
             "translation_anchor": {
-              "quote": "Хотя Хотя Тим усердно приучал себя отодвигать на задний план случайные мысли о своей прежней семье, чтобы они не отвлекали.",
+              "quote": "Дэмиан отвечает как можно быстрее и как можно резче",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "nod-style-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Один раз кивает» is awkwardly literal in this context. «Наконец кивает» naturally conveys the single nod without the clumsy extra wording.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "but eventually nods once.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "но наконец один раз кивает.",
               "occurrence": 0
             },
             "resolves": null
@@ -646,169 +247,20 @@
       },
       "style": [
         {
-          "evidence": "Blocks 096–099; block 121 also uses emphasis within Tim’s internal thoughts.",
-          "source_pattern": "Tim’s internal reaction uses short fragments and marked emphasis, including the standalone “Wait.” and italicized “Damian.”",
-          "translation_approach": "Preserve the abrupt fragments and meaningful emphasis rather than smoothing them into continuous exposition."
+          "evidence": "Дэмиан говорит: «Я знаю точно, каковы мои цели»; Дюк обращается к нему «little D» и говорит «You still got a few more years of school».",
+          "source_pattern": "Близкое третье лицо следует за мыслями Дэмиана; его реплики точны и формальны, тогда как Дюк говорит разговорнее и фамильярнее.",
+          "translation_approach": "Сохранять сдержанный, точный регистр Дэмиана и более непринуждённую речь Дюка, не выравнивая голоса персонажей."
         }
       ],
       "glossary": []
-    },
-    "chunk-005": {
-      "outcome": "CORRECTIONS_REQUIRED",
-      "report": {
-        "evidence_version": 2,
-        "context": "independent_session",
-        "checks": {
-          "coverage": true,
-          "meaning": true,
-          "terminology": true,
-          "style": true,
-          "structure": true
-        },
-        "findings": [
-          {
-            "id": "riddle-home",
-            "category": "meaning",
-            "severity": "major",
-            "detail": "Resolved: «У меня нет своего дома» preserves the clue that the speaker has no home of its own, rather than suggesting that it does not leave home.",
-            "resolved": true,
-            "source_anchor": {
-              "quote": "I leave no home, yet I claim a rest",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "У меня нет своего дома, но я всё же нахожу покой",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "082466d609594d68824cb1c151402a35",
-              "finding_id": "chunk-005-riddle-home"
-            }
-          },
-          {
-            "id": "riddler-gap",
-            "category": "omission",
-            "severity": "major",
-            "detail": "The prior referent concern is not resolved: the translation omits the explanatory passage about Nygma seeking someone who can keep up with him and growing frustrated because nobody else can match his intellect. The remaining «с Загадочником умом» is malformed and does not preserve the comparison. Restore the passage and make clear that the intellect being matched is the Riddler’s.",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "But with Cardinal so rarely on the streets—and no one else able to match his intellect—Riddler is growing increasingly frustrated.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "с Загадочником умом",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "082466d609594d68824cb1c151402a35",
-              "finding_id": "chunk-005-riddler-pronoun"
-            }
-          },
-          {
-            "id": "bluejay-name",
-            "category": "terminology",
-            "severity": "minor",
-            "detail": "Resolved: Bluejay is rendered consistently as «Синяя Сойка» throughout the assigned core, including the final address. The prior variation «Блюджей» is no longer present.",
-            "resolved": true,
-            "source_anchor": {
-              "quote": "Bluejay and Robin have the unfortunate pleasure of facing off against the Riddler.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "Синей Сойке и Робину выпадает сомнительное удовольствие столкнуться с Загадочником.",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "082466d609594d68824cb1c151402a35",
-              "finding_id": "chunk-005-bluejay-name"
-            }
-          },
-          {
-            "id": "breathing-phrase",
-            "category": "style",
-            "severity": "minor",
-            "detail": "Resolved: «Когда Тим снова начинает дышать ровно» is natural Russian and preserves his regaining control of his breathing.",
-            "resolved": true,
-            "source_anchor": {
-              "quote": "Once Tim has his breathing under control again, he heads home, carefully not even looking towards Wayne Manor as he drives past.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "Когда Тим снова начинает дышать ровно",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "082466d609594d68824cb1c151402a35",
-              "finding_id": "chunk-005-breathing-phrase"
-            }
-          },
-          {
-            "id": "robin-omitted",
-            "category": "omission",
-            "severity": "minor",
-            "detail": "The source says Oracle tells both Bluejay and Robin; the translation addresses only Bluejay. Restore Robin as a recipient and retain that the message is delivered over comms.",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "“Cuckoo,” she tells Bluejay and Robin over comms almost instantly. “The answer is a Cuckoo bird.”",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "«Кукушка», — почти сразу говорит она Синей Сойке — Ответ — птица кукушка.",
-              "occurrence": 0
-            },
-            "resolves": null
-          },
-          {
-            "id": "answer-punct",
-            "category": "structure",
-            "severity": "minor",
-            "detail": "The second spoken sentence, «Ответ — птица кукушка», is left outside quotation marks, while the first utterance is quoted. Punctuate the two utterances consistently as dialogue.",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "“The answer is a Cuckoo bird.”",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "Ответ — птица кукушка.",
-              "occurrence": 0
-            },
-            "resolves": null
-          }
-        ]
-      },
-      "style": [],
-      "glossary": [
-        {
-          "notes": "",
-          "original": "Bluejay",
-          "translation": "Синяя Сойка",
-          "type": "кодовое имя"
-        }
-      ]
     }
   },
   "windows": {
     "chunk-001": {
       "source_sha256": "9ffe2d708030af115c80a883b711f1c60789195898033dd20d303d98ae039117",
-      "translation_sha256": "2d094bc3722c0fb20fe52496928857a2831f161ca81a834dcdc84fa4e67c4db8"
-    },
-    "chunk-002": {
-      "source_sha256": "ca1e20b2a7cbe7b5b1e27ffc96357fb08dd3e23c5a9e0d8114d36115180a3527",
-      "translation_sha256": "c41f98e3191ad3602187c2f4b5fc068a179edb8748151afd9e90ed4907678779"
-    },
-    "chunk-003": {
-      "source_sha256": "3f4a9285535fc7c8822e8f00f8e2163dc5e117645965764cbff7497c1600bf35",
-      "translation_sha256": "60ab0db400423f36043f44ef924e742974b9e02a59dec6d32a796c1b7591411f"
-    },
-    "chunk-004": {
-      "source_sha256": "2a0e0d961b9be2f096406ee45101fc9a758fc50161d157da704674be1749bb4d",
-      "translation_sha256": "3b56ab776478cfbab97b7cbde05319347b44dfa00d588be5a1f4c6ab0b65c869"
-    },
-    "chunk-005": {
-      "source_sha256": "2bec1497d9c6321762b09e4cbaf87d19df028fba61e36a716602772fadbba312",
-      "translation_sha256": "02166280c7ab6eeeb3b49f3d85af38bdc627f56c48884b25adb2e2b027e4ac7c"
+      "translation_sha256": "6518f3e1ee21644decab877538a5e1c10896b37eede4434db542888627074889"
     }
   },
-  "accepted_review_record_id": "6b5637f6145246b9a3f41ad59da1ec1c",
+  "accepted_review_record_id": null,
   "reused": {}
 }
