@@ -3,7 +3,7 @@
   "job_id": "05eed6ea814d3b5eec014c6d05b39e3f",
   "book_slug": "say-it-in-your-mother-tongue",
   "state": "running",
-  "phase": "model-call-reserved",
+  "phase": "review-anchor-repair-reserved",
   "failures": 0,
   "correction_rounds": {
     "chapter-000001": 1,
@@ -49,7 +49,7 @@
   },
   "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
   "source_sha256": "12e210ce5a95daf56a97ada583ec15c274780c4ddfa7fb92da6a88c67f7c403d",
-  "updated_at": "2026-11-18T06:00:12.353183+00:00",
+  "updated_at": "2026-11-18T06:03:48.774006+00:00",
   "active": {
     "role": "reviewer",
     "chapter": 48,
@@ -78,7 +78,7 @@
   ],
   "structural_span_retries": 1,
   "structural_helper_revision": "4c584fe5534871cd05aa851d9b7bdbfa696d0edd",
-  "model_calls_started": 631,
+  "model_calls_started": 632,
   "prompt_context": {
     "role": "reviewer",
     "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
@@ -90,8 +90,9 @@
     "glossary_sha256": "cd1324f1a7ed83efb0901fbc65253618eb8ca1268caca89edebb511e7e9c4e4a",
     "style_guide_sha256": "eaa08d42f1f5ea55a06553ec9c1d9e5c6f66b62f9bb6f55b653a52f78659dd74",
     "system_chars": 28761,
-    "user_chars": 53058,
-    "review_context": "independent_session"
+    "user_chars": 59344,
+    "review_context": "independent_session",
+    "anchor_repair": "exact-quote-validation"
   },
   "structural_helper_migrations": [
     {
@@ -306,16 +307,17 @@
     ],
     "action": "operator-attention-no-pass"
   },
+  "provider_model_route": "primary",
   "model_response_diagnostics": {
     "finish_reason": "stop",
     "response_format": "json_object",
-    "response_chars": 494,
+    "response_chars": 4388,
     "provider_refusal": false,
-    "prompt_tokens": 11285,
-    "completion_tokens": 612,
-    "total_tokens": 11897,
+    "prompt_tokens": 20314,
+    "completion_tokens": 11743,
+    "total_tokens": 32057,
     "route": "primary",
-    "role": "corrector",
+    "role": "reviewer",
     "unit_id": "chapter-000048"
   }
 }
