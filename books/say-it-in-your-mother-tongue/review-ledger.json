@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 105,
+  "next_sequence": 106,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -12604,6 +12604,71 @@
       },
       "shared_state_revisions": {
         "glossary": "e8892a5816eda16f154722426995c10bfcaaa7b77ee131a7a0d8bb71b1d1ca57",
+        "style_guide": "542b979599ebe40dfbb11794d47d2fffcc7bde125f2d09c1549f33f618157eff"
+      }
+    },
+    {
+      "record_id": "9a4b723c300743fd825460c98629acee",
+      "sequence": 105,
+      "unit_id": "chapter-000039",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "a514d44fe4ae5621f4260b93c5edc21a70ce6a71b85412d28f03974cf1a5ae5f",
+      "translation_sha256": "07498589fbaeb0b06156c1d1dd6fd94cbcbbd92dd27b6d36b9b169297c7fa860",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-b40b2506",
+      "reviewed_at": "2026-11-18T02:28:56Z",
+      "state_revision": "a073c068730a06446196c0af8d47a888635acdcc7901124cce3f9fe15ccb7abf",
+      "review_commit": "53d2e145d4468d272e7356fd7bff47f5a002d6db",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "omission-1",
+            "category": "omission",
+            "severity": "minor",
+            "detail": "The translation includes Checo’s “Oh” but omits the preceding action: he exhales through his nose, sharply and quickly. Restore that brief physical detail.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Checo exhales through his nose, sharp and fast. *“Oh.”*",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "*«Ох».*",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "structure-1",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "The cheek-rubbing description is moved ahead of Max’s second question, whereas it follows that question in the source; a similar description then appears again in the next translated passage. Remove the misplaced duplicate and keep the action in source order.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“What do you mean?” Max asks again, softer this time, as if his brain realized",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Чеко поглаживает Макса большим пальцем по щеке, медленно очерчивая круги на мягкой коже и глядя ему в глаза.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "a263c09393383bd823432fb1021aa6214fe6b08f6964e15ffad31647324ee32b",
         "style_guide": "542b979599ebe40dfbb11794d47d2fffcc7bde125f2d09c1549f33f618157eff"
       }
     }
