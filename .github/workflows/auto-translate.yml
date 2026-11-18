@@ -104,7 +104,7 @@ jobs:
       matrix:
         include: ${{ fromJSON(needs.select.outputs.jobs) }}
     runs-on: ubuntu-latest
-    timeout-minutes: 35
+    timeout-minutes: 60
     concurrency:
       group: book-operation-${{ matrix.book_key }}
       cancel-in-progress: false
@@ -132,7 +132,7 @@ jobs:
       - name: Verify pinned public engine checkout
         run: python automation/runtime_loader.py --verify
 
-      - name: Execute one pinned workflow checkpoint
+      - name: Execute bounded pinned workflow checkpoints
         if: matrix.job_id != ''
         id: run
         env:
@@ -141,6 +141,12 @@ jobs:
           OMNIROUTE_TRANSLATOR_MODEL: ${{ vars.OMNIROUTE_TRANSLATOR_MODEL }}
           OMNIROUTE_REVIEWER_MODEL: ${{ vars.OMNIROUTE_REVIEWER_MODEL }}
           OMNIROUTE_CORRECTOR_MODEL: ${{ vars.OMNIROUTE_CORRECTOR_MODEL }}
+          OMNIROUTE_ORCHESTRATOR_MODEL: ${{ vars.OMNIROUTE_ORCHESTRATOR_MODEL || vars.OMNIROUTE_REVIEWER_MODEL }}
+          BOOK_TRANSLATOR_CONTINUE_CORRECTIONS: ${{ vars.BOOK_TRANSLATOR_CONTINUE_CORRECTIONS || 'on' }}
+          BOOK_TRANSLATOR_MARKER_ALIGNMENT: ${{ vars.BOOK_TRANSLATOR_MARKER_ALIGNMENT || 'on' }}
+          BOOK_TRANSLATOR_INCREMENTAL_REVIEW: ${{ vars.BOOK_TRANSLATOR_INCREMENTAL_REVIEW || 'on' }}
+          BOOK_TRANSLATOR_ADAPTIVE_BUDGET: ${{ vars.BOOK_TRANSLATOR_ADAPTIVE_BUDGET || 'on' }}
+          BOOK_TRANSLATOR_QUEUE_BUDGET: ${{ vars.BOOK_TRANSLATOR_QUEUE_BUDGET || 'on' }}
           OMNIROUTE_TRANSLATOR_FALLBACK_MODEL: ${{ vars.OMNIROUTE_TRANSLATOR_FALLBACK_MODEL }}
           OMNIROUTE_REVIEWER_FALLBACK_MODEL: ${{ vars.OMNIROUTE_REVIEWER_FALLBACK_MODEL }}
           OMNIROUTE_CORRECTOR_FALLBACK_MODEL: ${{ vars.OMNIROUTE_CORRECTOR_FALLBACK_MODEL }}
@@ -151,11 +157,11 @@ jobs:
         run: |
           set -euo pipefail
           if [[ "$RESUME_BLOCKED" == "true" ]]; then
-            python automation/book_runner.py --job-id "$JOB_ID" --resume-blocked
+            python automation/book_runner.py --batch --job-id "$JOB_ID" --resume-blocked
           elif [[ "$RESUME_INTERRUPTED" == "true" ]]; then
-            python automation/book_runner.py --job-id "$JOB_ID" --resume-interrupted
+            python automation/book_runner.py --batch --job-id "$JOB_ID" --resume-interrupted
           else
-            python automation/book_runner.py --job-id "$JOB_ID"
+            python automation/book_runner.py --batch --job-id "$JOB_ID"
           fi
 
       - name: Publish completed EPUB as a downloadable Actions artifact
