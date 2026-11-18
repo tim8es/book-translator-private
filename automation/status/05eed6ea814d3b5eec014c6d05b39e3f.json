@@ -3,7 +3,7 @@
   "job_id": "05eed6ea814d3b5eec014c6d05b39e3f",
   "book_slug": "say-it-in-your-mother-tongue",
   "state": "running",
-  "phase": "model-call-reserved",
+  "phase": "structural-segments-staged",
   "failures": 0,
   "correction_rounds": {
     "chapter-000001": 1,
@@ -50,7 +50,7 @@
   },
   "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
   "source_sha256": "12e210ce5a95daf56a97ada583ec15c274780c4ddfa7fb92da6a88c67f7c403d",
-  "updated_at": "2026-11-18T06:52:02.841325+00:00",
+  "updated_at": "2026-11-18T06:53:35.232380+00:00",
   "active": {
     "role": "translator",
     "chapter": 50,
@@ -310,22 +310,22 @@
     "action": "operator-attention-no-pass"
   },
   "provider_model_route": "primary",
-  "model_response_diagnostics": {
-    "finish_reason": "stop",
-    "response_format": "json_object",
-    "response_chars": 4686,
-    "provider_refusal": false,
-    "prompt_tokens": 11673,
-    "completion_tokens": 7059,
-    "total_tokens": 18732,
-    "route": "primary",
-    "role": "translator",
-    "unit_id": "chapter-000050"
-  },
   "structural_segment_progress": {
     "unit_id": "chapter-000050",
     "source_sha256": "18010d26b222c8e7ce74dc96e6cb040575edf476f9db5887131ac0d0d059266c",
-    "completed": 21,
+    "completed": 45,
     "total": 77
+  },
+  "model_response_diagnostics": {
+    "finish_reason": "stop",
+    "response_format": "json_object",
+    "response_chars": 4168,
+    "provider_refusal": false,
+    "prompt_tokens": 11566,
+    "completion_tokens": 4621,
+    "total_tokens": 16187,
+    "route": "primary",
+    "role": "translator",
+    "unit_id": "chapter-000050"
   }
 }
