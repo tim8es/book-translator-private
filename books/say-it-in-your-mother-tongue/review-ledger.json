@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 123,
+  "next_sequence": 124,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -14137,6 +14137,100 @@
       },
       "shared_state_revisions": {
         "glossary": "3d46b41547ba4bb1534b23d2294018a434dbe09393f495d2dbd48c3fc0f42c76",
+        "style_guide": "eaa08d42f1f5ea55a06553ec9c1d9e5c6f66b62f9bb6f55b653a52f78659dd74"
+      }
+    },
+    {
+      "record_id": "5081dff2bbb44e0aa582cf006cc631e9",
+      "sequence": 123,
+      "unit_id": "chapter-000046",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "5eb40c7657a04768072006c3d09e3e412722114d863dd1168e287a3923a7b5b0",
+      "translation_sha256": "e6e6410e676109f54bf88584612d0b57e0fa9e788cbf5b01785e51a7ceface0c",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-5ddfca10",
+      "reviewed_at": "2026-11-18T05:12:02Z",
+      "state_revision": "224a4975580467dd18e37ad80561dec21120089cd98b99d511788ed22ee353b9",
+      "review_commit": "d5be6054eb72a72ec499d4df092174f10b2ba446",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "omission-1",
+            "category": "omission",
+            "severity": "major",
+            "detail": "The sentence “You wouldn’t do that” is omitted. Restore Gabriel’s reassurance before “Press can wait.”",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“You wouldn’t do that,” Gabriel chuckles.",
+              "occurrence": 0
+            },
+            "translation_anchor": null,
+            "resolves": null
+          },
+          {
+            "id": "meaning-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The source describes Esteban’s raised hands as a defensive gesture, but «примирительном жесте» makes it conciliatory. Preserve the defensive quality.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "lifting his hands up in defensive gesture",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "поднимает руки в примирительном жесте",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Протянуть её на самолёте» is an awkward calque here and can suggest extending the banner on the aircraft. The source means a banner towed or flown behind a plane; render that naturally in Russian.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "plane-drawn banner he prepared",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "растяжку, которую он приготовил, чтобы протянуть её на самолёте",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "terminology-1",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "The translation uses the established Russian spelling «Ферстаппен», which is appropriate for Verstappen; the existing glossary instead specifies «Верстаппен». Reconcile the glossary entry rather than changing the correct spelling in the translation.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "What’s up, Verstappen?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Как дела, Ферстаппен?»",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "d156cbff985bbb6a7bbbaf073c3be6a9d5eb977222560823198cc0ca9108d93e",
         "style_guide": "eaa08d42f1f5ea55a06553ec9c1d9e5c6f66b62f9bb6f55b653a52f78659dd74"
       }
     }
