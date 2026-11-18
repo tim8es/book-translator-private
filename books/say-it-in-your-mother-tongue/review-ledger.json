@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 134,
+  "next_sequence": 135,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -14974,6 +14974,119 @@
       },
       "shared_state_revisions": {
         "glossary": "cd1324f1a7ed83efb0901fbc65253618eb8ca1268caca89edebb511e7e9c4e4a",
+        "style_guide": "eaa08d42f1f5ea55a06553ec9c1d9e5c6f66b62f9bb6f55b653a52f78659dd74"
+      }
+    },
+    {
+      "record_id": "d8210a9f17b141eba130e1e24c6718a1",
+      "sequence": 134,
+      "unit_id": "chapter-000049",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "3eb2f502e4d9bc3c2ccdadf501ff631dfd96a7dd13316c5656ac3aca30b21929",
+      "translation_sha256": "a4fb8eb998cdd7b1f81fff6a62c9de07ebaff3ac8bef187b066335e9e85c692b",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-fcfb88cf",
+      "reviewed_at": "2026-11-18T06:30:40Z",
+      "state_revision": "052b488ab56295a1a1097bd18bdca6dc70ddf9bab4d4d9db4dc9ec0e021d9ad6",
+      "review_commit": "f9c2747cb098228cb595ffd7dfee06b85b0fc8c4",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "meaning-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Recheck: the source says Nico does not remember getting the coffee; the translation narrows this to not remembering where he got it. Preserve the broader lapse in memory without adding uncertainty about location.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Nico watches the clouds move past his window, yawns and takes a sip of a coffee he doesn’t remember getting.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Нико смотрит, как облака проплывают за его окном, зевает и отпивает кофе, который не помнит, где взял.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-2",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Recheck: the source specifies a bowl of fruit salad. The translation calls it «фруктовая нарезка» and omits the bowl; render the food as фруктовый салат and retain that it is in a bowl.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Max looks up from his bowl of fruit salad, his eyes a bit wide.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Макс отрывается от своей фруктовой нарезки и смотрит на него, широко раскрыв глаза.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Recheck: «смотрел на тебя таким» is unidiomatic here. Use a natural construction meaning that Checo does not want anyone else to see Max in this state, such as «смотрел на тебя в таком виде».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Don’t want anyone else looking at you like this.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "— Не хочу, чтобы кто-нибудь ещё смотрел на тебя таким.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-2",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Recheck: «псевдовинтажная волна, блядская» is awkward and turns the source’s dismissive noun «bullshit» into an unnatural postposed adjective. Recast the phrase in idiomatic Russian while retaining the profane, dismissive tone and italics.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“Is it some *new French pseudo-vintage wave bullshit?”* Max asks with panic in his voice. “Those are so boring, though.”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "— Это какая-нибудь *новая французская псевдовинтажная волна, блядская?* — с тревогой спрашивает Макс. — Это же так скучно.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "structure-1",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "Recheck: the source bolds Nico’s sender label, but the translation omits that bold formatting here and in blocks 000029 and 000031. Preserve the sender-label formatting consistently.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "**Nico****❤****️**<!-- bt-inline:000001:start --><!-- bt-media:000001 --><!-- bt-inline:000001:end -->I wanted to ask you in some better, more special way…",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Нико❤️<!-- bt-inline:000001:start --><!-- bt-media:000001 --><!-- bt-inline:000001:end -->Я хотел спросить тебя как-нибудь получше, как-то по-особенному…",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "e0652b14c0497ab8a4ec917cd4283d12c32dd2a86364009368336e1099cbe88c",
         "style_guide": "eaa08d42f1f5ea55a06553ec9c1d9e5c6f66b62f9bb6f55b653a52f78659dd74"
       }
     }
