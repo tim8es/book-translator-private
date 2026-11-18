@@ -192,12 +192,234 @@
         }
       ],
       "glossary": []
+    },
+    "chunk-002": {
+      "outcome": "CORRECTIONS_REQUIRED",
+      "report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "age-range",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Resolved: the current translation gives the mid-to-late-twenties range (25–29) and says Cardinal is more likely in their thirties, addressing the earlier age-range mismatch.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Given their advanced skill sets as a hacker and a detective, they estimate Cardinal to be in their mid to late twenties at the youngest, more likely in their 30s.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "они считают, что Кардиналу даже по самой низкой оценке от двадцати пяти до двадцати девяти лет, а вероятнее всего, уже за тридцать.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "2218850f28354836bf4a0d28e9d99952",
+              "finding_id": "chunk-002-age-range"
+            }
+          },
+          {
+            "id": "wrong-it",
+            "category": "omission",
+            "severity": "major",
+            "detail": "Resolved: Bluejay’s reassurance is present in the current translation.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "There’s nothing wrong with it!",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«В этом нет ничего плохого!»",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "2218850f28354836bf4a0d28e9d99952",
+              "finding_id": "chunk-002-omit-it-wrong"
+            }
+          },
+          {
+            "id": "speech-tag",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "Resolved: the current translation includes the speech tag «настаивает Синяя Сойка» and identifies the speaker.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Bluejay insists. “But I get the feeling they’re trying to distinguish themselves from us, ya know?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«В этом нет ничего плохого!» — настаивает Синяя Сойка.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "2218850f28354836bf4a0d28e9d99952",
+              "finding_id": "chunk-002-dialogue-tag"
+            }
+          },
+          {
+            "id": "gender-save",
+            "category": "referent",
+            "severity": "minor",
+            "detail": "Resolved: «Кардиналу удалось спасти» avoids assigning Cardinal a gender.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "when they saved Jason’s life from the Joker all those years ago",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "много лет назад Кардиналу удалось спасти Джейсону жизнь от Джокера",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "2218850f28354836bf4a0d28e9d99952",
+              "finding_id": "chunk-002-gender-save"
+            }
+          },
+          {
+            "id": "gender-seen",
+            "category": "referent",
+            "severity": "minor",
+            "detail": "Resolved: the current wording describes sightings impersonally and does not assign Cardinal a gender.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "While Cardinal rarely takes to the field, there have been a few confirmed sightings over the years and even more rumors, but no real clear picture.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "за эти годы было несколько подтверждённых случаев, когда Кардинала видели, и слухов ходило ещё больше",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "2218850f28354836bf4a0d28e9d99952",
+              "finding_id": "chunk-002-gender-sightings"
+            }
+          },
+          {
+            "id": "gender-combat",
+            "category": "referent",
+            "severity": "minor",
+            "detail": "Resolved: the revised sentence describes Cardinal’s training and combat level without gendered pronouns or agreement referring to the character.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Although Cardinal has shown they have some combat training (as seen by the various criminals they’ve personally dealt with), the Bats unanimously agree it’s unlikely anywhere near their own level.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Хотя некоторая боевая подготовка у Кардинала есть (судя по преступникам, с которыми Кардиналу доводилось разбираться лично), Бэт-семья единодушно считает, что боевой уровень Кардинала вряд ли хоть сколько-нибудь близок к их собственному.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "2218850f28354836bf4a0d28e9d99952",
+              "finding_id": "chunk-002-gender-level"
+            }
+          },
+          {
+            "id": "hood-weight",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Resolved: «тяжёлый капюшон» preserves the source’s description of weight or substantiality rather than changing it to depth.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "a dark cape, a heavy hood, and shadows thick enough to obscure any defining features of their face or uniform.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "тёмный плащ, тяжёлый капюшон и такие густые тени",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "2218850f28354836bf4a0d28e9d99952",
+              "finding_id": "chunk-002-hood-weight"
+            }
+          },
+          {
+            "id": "civilian-job",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The current «работы в обычной жизни» remains awkward as a rendering of “civilian job” in this list. Use a more idiomatic expression for Cardinal’s ordinary-life occupation, such as «профессии в обычной жизни» or «занятия в обычной жизни».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "gender, ethnicity, motivations, civilian job/hobbies",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "работы в обычной жизни",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "2218850f28354836bf4a0d28e9d99952",
+              "finding_id": "chunk-002-civilian-job"
+            }
+          },
+          {
+            "id": "missing-details",
+            "category": "omission",
+            "severity": "major",
+            "detail": "The translation omits the listed unknowns: Cardinal’s gender, ethnicity, motivations, and hobbies. Restore these alongside the civilian occupation.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "That’s it. That’s all they know. As for everything else—gender, ethnicity, motivations, civilian job/hobbies—they’re completely in the dark.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Вот и всё. Больше они ничего не знают. А что до всего остального — работы в обычной жизни — тут они совершенно ничего не знают.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "vocal-defender",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "«Самых ярых защитников» emphasizes fervor, while “most vocal defenders” describes how outspoken Jason is in defending Cardinal. Preserve the emphasis on his publicly voiced defense.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Jason has been one of their most vocal defenders ever since",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "с тех пор Джейсон — один из самых ярых защитников Кардинала",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "rave-diction",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Разглагольствовать» is dismissive and suggests pompous or empty talk. In context, “continues to rave” conveys Jason’s animated enthusiasm; avoid adding that negative judgment.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“Because male cardinals are more cool!” Jason continues to rave.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Потому что самцы кардиналов круче!» — продолжает разглагольствовать Джейсон.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "style": [],
+      "glossary": []
     }
   },
   "windows": {
     "chunk-001": {
       "source_sha256": "0508675e5160b0770faaf40c849c8c09f5889772c3eccb4f431b7073ba4fea86",
       "translation_sha256": "881fe5b80529bbedb687eebf0ba4d8a10805452d0d0594c720fc3a6ab1073123"
+    },
+    "chunk-002": {
+      "source_sha256": "fe58cd0de898c4051cbe51cc1affd23f88d9a89b8483c2f2cc120335d9bee972",
+      "translation_sha256": "0cb58007c8c13998b868ede0612437a737ec95b3345bd8eba204da4f9fc7bcf3"
     }
   },
   "accepted_review_record_id": null,
