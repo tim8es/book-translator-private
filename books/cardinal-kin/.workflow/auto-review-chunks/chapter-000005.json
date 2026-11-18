@@ -503,6 +503,216 @@
           "type": "имя персонажа"
         }
       ]
+    },
+    "chunk-004": {
+      "outcome": "CORRECTIONS_REQUIRED",
+      "report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "pit-doc",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "“Recorded” means documented or entered on record; «известную» broadens this to every known Pit. Use a rendering such as «учтённую» or «зафиксированную», preserving the source’s documented scope.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "to every recorded Lazarus Pit",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "каждую известную Яму Лазаря",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "ae9c5da036a44ffe80ab9ba0b4de21e0",
+              "finding_id": "chunk-007-recorded-pits"
+            }
+          },
+          {
+            "id": "whisper-calque",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«В подполье ходят шёпоты» is an awkward calque. A natural Russian phrasing such as «в подполье шепчутся о Кардинале» or «в подполье ходят слухи о Кардинале» would preserve the hushed-rumor sense.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "There are whispers in the underground about Cardinal.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "В подполье ходят шёпоты о Кардинале.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "ae9c5da036a44ffe80ab9ba0b4de21e0",
+              "finding_id": "chunk-007-whispers-calque"
+            }
+          },
+          {
+            "id": "uncertain-pru",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "«Не знаю» states a lack of knowledge more definitively than Pru’s explicit uncertainty, “I’m not sure.” Prefer «Я не уверена» or an equivalent that preserves her tentativeness.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Pru shakes her head, her gaze low. “I’m not sure.”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Пру качает головой, опустив взгляд. «Не знаю».",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "ae9c5da036a44ffe80ab9ba0b4de21e0",
+              "finding_id": "chunk-008-uncertainty-1"
+            }
+          },
+          {
+            "id": "dangling-plan",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The opening participle in «Повторяя тот же план...» attaches awkwardly to the compound subject «Кардинал и Пру», while «выполнял» is singular masculine and leaves the agent unclear. Recast to make clear that Cardinal had carried out the plan before and that Cardinal and Pru reenact it here.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Reenacting the same plan he executed before, Cardinal and Pru went around the world to every recorded Lazarus Pit and set explosives at each.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Повторяя тот же план, что уже выполнял прежде, Кардинал и Пру объехали весь мир, разыскивая каждую известную Яму Лазаря и устанавливая у каждой взрывчатку.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "talia-calque",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«В любой день предпочёл бы» is an awkward calque of “any day,” and «столь же жаждущая власти и хитрая» is a clumsy parallel construction. Use natural Russian phrasing that preserves Tim’s clear preference and the comparison of Talia with Ra’s.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Tim favors Talia over Ra's anyday, but he knows Talia’s character.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Тим в любой день предпочёл бы Талию Ра’су, но он знает, что она за человек. Она столь же жаждущая власти и хитрая, как Ра’с, а такую решимость нельзя недооценивать.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "identity-secret",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "In this context, “his identity is secure” means Tim’s identity remains undiscovered or protected as a secret. «Его личность в безопасности» can instead sound as though the person himself is physically safe. Prefer a rendering such as «он уверен, что его личность не раскрыта».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Tim isn’t naive enough to think he’s gone completely unnoticed, but he’s confident his identity is secure.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Тим не настолько наивен, чтобы думать, будто его совсем не заметили, но он уверен, что его личность в безопасности.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "coarse-register",
+            "category": "register",
+            "severity": "minor",
+            "detail": "The colloquial profanity in “shit hits the fan” is softened to «всё полетит к чертям». Preserve the source’s rough, vulgar register with a comparably coarse Russian idiom.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "So Tim is on his own if shit hits the fan. Wonderful.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Значит, если всё полетит к чертям, Тим останется один. Замечательно.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "scoffs-calque",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Откровенно фыркает» is an awkward collocation and does not naturally convey “outright scoffs.” A phrasing such as «Тим лишь фыркает в ответ» would preserve the dismissive reaction.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Tim outright scoffs at that, “Yah, right.”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Тим откровенно фыркает: «Ага, конечно».",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "style": [
+        {
+          "evidence": "“So Tim is on his own if shit hits the fan. Wonderful.”; “When are we ever lucky?”",
+          "source_pattern": "Close third-person narration follows Tim’s thoughts and assessments, with informal language and dry, understated humor.",
+          "translation_approach": "Preserve Tim’s close narrative perspective, conversational register, and dry humor; retain the source’s marked colloquialism rather than smoothing it away."
+        }
+      ],
+      "glossary": [
+        {
+          "notes": "",
+          "original": "Talia",
+          "translation": "Талия",
+          "type": "имя персонажа"
+        },
+        {
+          "notes": "",
+          "original": "Pru",
+          "translation": "Пру",
+          "type": "имя персонажа"
+        },
+        {
+          "notes": "Обращение Пру к Тиму.",
+          "original": "Red",
+          "translation": "Ред",
+          "type": "прозвище"
+        },
+        {
+          "notes": "Обращение Пру к Тиму.",
+          "original": "Little Red",
+          "translation": "Маленький Ред",
+          "type": "ласкательное прозвище"
+        },
+        {
+          "notes": "В этом фрагменте говорится также о нескольких таких ямах.",
+          "original": "Lazarus Pit",
+          "translation": "Яма Лазаря",
+          "type": "вымышленное место"
+        },
+        {
+          "notes": "Организация, чью преданность постепенно завоёвывает Талия.",
+          "original": "League",
+          "translation": "Лига",
+          "type": "организация"
+        },
+        {
+          "notes": "Обозначение Ра’са в этом фрагменте.",
+          "original": "Demon",
+          "translation": "Демон",
+          "type": "титул или эпитет"
+        },
+        {
+          "notes": "Обращение к Дэмиану в этом фрагменте.",
+          "original": "Prince",
+          "translation": "Принц",
+          "type": "титул"
+        }
+      ]
     }
   }
 }
