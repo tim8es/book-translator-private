@@ -866,6 +866,58 @@
           "type": "кодовое имя"
         }
       ]
+    },
+    "chunk-007": {
+      "outcome": "CORRECTIONS_REQUIRED",
+      "report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "time-compare",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The source explicitly compares the extra time Damian has spent in Gotham with the time he spent there before. «На этот раз» instead means «this time» and does not preserve that comparison. Consider «То, что он провёл в Готэме больше времени, чем прежде, пошло ему на пользу».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "The extra time he’s had in Gotham as compared to before has been good for him; Damian is a better and more well rounded individual.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "То, что на этот раз он провёл в Готэме больше времени, пошло ему на пользу; Дэмиан стал лучше и разностороннее.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "style": [
+        {
+          "evidence": "The translation retains the fragments as «А Тим всё ещё здесь, прячется на крышах» and «Значит, Ра’с усиливает наблюдение».",
+          "source_pattern": "Close third-person narration uses brief fragments for emphasis, including «And here Tim is, still hiding on rooftops» and «Meaning Ra’s is upping his observations.»",
+          "translation_approach": "Preserve the abrupt fragments and their reflective or ominous effect rather than smoothing them into fuller sentences."
+        },
+        {
+          "evidence": "The source italicizes the dream blocks and repeats «laughs and laughs and laughs»; the translation retains the italics and «смеётся, смеётся и смеётся».",
+          "source_pattern": "Barbara’s dream sequence is set apart with italics and vivid, repeated language.",
+          "translation_approach": "Keep the italic formatting and significant repetition in the dream passage."
+        }
+      ],
+      "glossary": [
+        {
+          "notes": "",
+          "original": "League of Assassins",
+          "translation": "Лига убийц",
+          "type": "организация"
+        }
+      ]
     }
   },
   "windows": {
@@ -892,6 +944,10 @@
     "chunk-006": {
       "source_sha256": "6781ab057cc57f867855f1fd867530d4c470345c94043e2194ec8c973b9db5db",
       "translation_sha256": "a7510231633b13e3c4c9262b4c63b4337c1bbae065fbba02db069d32560e3309"
+    },
+    "chunk-007": {
+      "source_sha256": "d4e1697c970caeb37b8b4da330874cf8a7b87670c389af3b03f55845cd64f823",
+      "translation_sha256": "b551bd5af42823a2fc31e9e94416b384b52ae72e219c556345f520b123b5e974"
     }
   },
   "accepted_review_record_id": null,
