@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "unit_id": "chapter-000006",
+  "review_record_id": "70ef7cfad81d4295b4817c541fd01818",
+  "source_sha256": "c1e68c26ededb32a64501b82e30122d41b6c06ebe832dff5c13b8a67ad143d36",
+  "translation_sha256": "f6458ecb24a30f44a3584449eb6b38ffe81ddcf0102aa437166924944b76d734",
+  "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
+  "patches": [
+    {
+      "finding_id": "tense-1",
+      "operation": "replace",
+      "target_anchor": {
+        "quote": "Дик поперхнулся соком, а Дюк запрокинул голову и громко рассмеялся.",
+        "occurrence": 0
+      },
+      "replacement": "Дик поперхивается соком, а Дюк запрокидывает голову и громко смеётся."
+    },
+    {
+      "finding_id": "classist-1",
+      "operation": "replace",
+      "target_anchor": {
+        "quote": "«О, он точно был мелким классовым говнюком. Ага, он игнорировал всех, кто не входил в его кружок богатеньких деток».",
+        "occurrence": 0
+      },
+      "replacement": "«О, он точно был мелким говнюком-снобом. Ага, он игнорировал всех, кто не входил в его кружок богатеньких деток»."
+    },
+    {
+      "finding_id": "name-1",
+      "operation": "replace",
+      "target_anchor": {
+        "quote": "«…ты хочешь, чтобы Дэмиан на лето стажировался личным помощником Тима Дрейка?» — монотонно спрашивает Брюс.",
+        "occurrence": 0
+      },
+      "replacement": "«…ты хочешь, чтобы Дэмиан на лето стажировался личным помощником Тимоти Дрейка?» — монотонно спрашивает Брюс."
+    }
+  ],
+  "glossary": [],
+  "style_guide": []
+}
