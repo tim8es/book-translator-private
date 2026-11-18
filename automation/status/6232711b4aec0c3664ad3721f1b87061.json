@@ -3,7 +3,7 @@
   "job_id": "6232711b4aec0c3664ad3721f1b87061",
   "book_slug": "cardinal-kin",
   "state": "running",
-  "phase": "claimed",
+  "phase": "model-call-reserved",
   "failures": 0,
   "correction_rounds": {
     "chapter-000001": 2,
@@ -15,7 +15,7 @@
   },
   "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
   "source_sha256": "f06b996448766fcf6faa703ced3ca03b63221f4f81bdb4c395619c69ffa353cd",
-  "updated_at": "2026-11-18T15:34:32.472962+00:00",
+  "updated_at": "2026-11-18T15:34:34.999736+00:00",
   "active": {
     "role": "reviewer",
     "chapter": 8,
@@ -23,22 +23,26 @@
     "unit_id": "chapter-000008"
   },
   "structural_helper_revision": "4c584fe5534871cd05aa851d9b7bdbfa696d0edd",
-  "model_calls_started": 183,
+  "model_calls_started": 184,
   "prompt_context": {
-    "role": "translator",
+    "role": "reviewer",
     "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
     "loaded_contracts": [
       "AGENTS.md",
       "docs/TRANSLATION.md",
-      "docs/TRANSLATOR.md"
+      "docs/REVIEWER.md"
     ],
-    "glossary_sha256": "46f051bca3e092dfcbc4ff89ec10624c4b8ae493ef6df867d04ebb6b6e4921c7",
+    "glossary_sha256": "ba3e390941710d55f789871f95f40110ef56af4a1348dd907202dcb9ccf4f671",
     "style_guide_sha256": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4",
-    "system_chars": 20835,
-    "user_chars": 12681,
-    "execution_mode": "shared-structural-segments",
-    "helper_revision": "4c584fe5534871cd05aa851d9b7bdbfa696d0edd",
-    "batch_segment_count": 20
+    "system_chars": 27925,
+    "user_chars": 25851,
+    "review_context": "independent_session",
+    "execution_mode": "bounded-review-chunks",
+    "review_helper_revision": "review-chunks-source-stable-v1",
+    "incremental_stage_version": 2,
+    "reused_clean_chunks": 0,
+    "chunk_id": "chunk-001",
+    "chunk_count": 7
   },
   "memory_glossary_saved": 40,
   "pending_style": [],
@@ -699,6 +703,10 @@
     "chapter-000007": {
       "source_sha256": "fcc6f238fbc3a881a68755e9796c0a618c579ec0d33c92b4d56c6f4f0df5ee97",
       "target_chars": 6000
+    },
+    "chapter-000008": {
+      "source_sha256": "046f155efc220f63ca6cc74edb78872a8d69460adf63b448b32a75ff6a5acf1d",
+      "target_chars": 6000
     }
   },
   "review_incremental_archive": {
@@ -763,5 +771,6 @@
     "route": "primary",
     "role": "translator",
     "unit_id": "chapter-000008"
-  }
+  },
+  "review_chunk_fallback_unit": "chapter-000008"
 }
