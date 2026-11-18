@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 115,
+  "next_sequence": 116,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -13419,6 +13419,58 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "6fd4a578988e13c444924ec2d61ef20b9b61a98e1d25fc1f48af337c06fdb8bb",
+        "style_guide": "eaa08d42f1f5ea55a06553ec9c1d9e5c6f66b62f9bb6f55b653a52f78659dd74"
+      }
+    },
+    {
+      "record_id": "cec4d2cd9bdf4c608e4f89b5c989bd81",
+      "sequence": 115,
+      "unit_id": "chapter-000043",
+      "outcome": "PASS",
+      "source_sha256": "bd128b3f90922c1352ddb8a29f2deda449be13d9f0cd53c584478ec3c82c6e62",
+      "translation_sha256": "d17157c228611f0c0e3f616b8b256cabe92bd3ec20a2f3ffacf44e1fa12528a8",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-a9e5465a",
+      "reviewed_at": "2026-11-18T03:50:42Z",
+      "state_revision": "b9434108d5334b1b1f5d58e656093bf6bdfed880bb4dca327831d36796719e34",
+      "review_commit": "0cdeb9fef3040698aed8c012ba29fd81e76fae94",
+      "correction_round": 1,
+      "supersedes_record_id": "f5b6b9f2e39c4fdea1fa4cb0aa5f2d8d",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "meaning-2",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Устранено: «робко» передаёт оттенок уязвимости и робости в small, сохраняя испуганность.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "He sounds small and scared and so very un-Max-like.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Голос у него звучит тихо, робко и испуганно — совсем не как у Макса.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "f5b6b9f2e39c4fdea1fa4cb0aa5f2d8d",
+              "finding_id": "meaning-1"
+            }
           }
         ]
       },
