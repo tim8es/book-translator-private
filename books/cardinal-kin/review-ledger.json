@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "cardinal-kin",
-  "next_sequence": 14,
+  "next_sequence": 15,
   "records": [
     {
       "record_id": "75dfa72e2b6148208fd5343b6e384999",
@@ -1754,6 +1754,151 @@
       },
       "shared_state_revisions": {
         "glossary": "1c5d9486f4d2fa5ea0b42ba90ebd6d52e26e1784a4fe6715448ff50cae516f91",
+        "style_guide": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4"
+      }
+    },
+    {
+      "record_id": "70ef7cfad81d4295b4817c541fd01818",
+      "sequence": 14,
+      "unit_id": "chapter-000006",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "c1e68c26ededb32a64501b82e30122d41b6c06ebe832dff5c13b8a67ad143d36",
+      "translation_sha256": "f6458ecb24a30f44a3584449eb6b38ffe81ddcf0102aa437166924944b76d734",
+      "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "review_contract_revision": "docs/TRANSLATION.md@a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "reviewer_session_id": "auto-6232711b4aec-reviewer-e6b2b289",
+      "reviewed_at": "2026-11-18T13:26:15Z",
+      "state_revision": "755bf761c4aec3fc14eef779f330520fce5a687dc11acbc3a503132114e3d60b",
+      "review_commit": "fba85b09c37630812b56ca465d59126102dd2ec7",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "tense-1",
+            "category": "style",
+            "severity": "major",
+            "detail": "The source narration remains in the present tense here and through the following exchange, but the translation shifts to past tense in blocks 50–71, then returns to present tense in block 72. Restore present-tense narration throughout this continuous scene.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Dick chokes on his juice while Duke throws his head back and laughs boisterously.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Дик поперхнулся соком, а Дюк запрокинул голову и громко рассмеялся.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "classist-1",
+            "category": "register",
+            "severity": "minor",
+            "detail": "«Классовым говнюком» is an awkward calque and does not clearly convey the source's class-based prejudice. Use a natural Russian expression that preserves the insult and the meaning of classist.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Oh, he was definitely a classist little shit.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«О, он точно был мелким классовым говнюком. Ага, он игнорировал всех, кто не входил в его кружок богатеньких деток».",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "name-1",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "The source gives Timothy Drake's full name, but the translation shortens it to Tim Drake. Render the full name as «Тимоти Дрейка», consistent with the established glossary entry.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“...you want Damian to intern as Timothy Drake’s executive assistant for the summer?”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«…ты хочешь, чтобы Дэмиан на лето стажировался личным помощником Тима Дрейка?» — монотонно спрашивает Брюс.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "wayne-1",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "The established rendering is «Уэйн Энтерпрайзес»; here the second part of the company name is incorrectly lowercased. Preserve the proper-name capitalization.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "The location varies, but today Bruce came into Wayne Enterprises himself.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Место каждый раз меняется, но сегодня Брюс сам приехал в «Уэйн энтерпрайзес».",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "wayne-2",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "Wayne Enterprises is left in English here, unlike its established Russian rendering elsewhere in the translation and glossary. Use the consistent Russian company name.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "We could easily set him up with an internship at Wayne Enterprises.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Мы могли бы без труда устроить его на стажировку в Wayne Enterprises.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "drake-1",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "Drake Industries is left in English here, despite the established Russian rendering «Дрейк Индастриз» elsewhere in the translation and in the glossary. Use the consistent Russian company name.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "And, you know as well as I do, Drake Industries has done more for supporting WE’s causes than anybody else these last few years.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "И ты не хуже меня знаешь, что за последние несколько лет Drake Industries сделала для поддержки начинаний WE больше, чем кто-либо другой.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "intrigued-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The source says Damian was intrigued by Timothy. The translation makes the conversation itself the thing that intrigued him. Keep Timothy as the object of Damian's interest.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Damian seemed… intrigued by Timothy from their conversation at the gala.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Похоже, разговор с Тимоти на приёме… заинтриговал Дэмиана.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "d3497d2e842c2c55ff36cac9f6f4a4af7b9b4a171cacc14d730d5e1702dad2fe",
         "style_guide": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4"
       }
     }
