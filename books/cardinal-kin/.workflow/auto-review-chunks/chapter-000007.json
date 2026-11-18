@@ -419,6 +419,104 @@
           "type": "имя персонажа"
         }
       ]
+    },
+    "chunk-004": {
+      "outcome": "CORRECTIONS_REQUIRED",
+      "report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "signature-ref",
+            "category": "referent",
+            "severity": "minor",
+            "detail": "The source says Bruce Wayne’s signature is next to his son’s signature (with “signature” understood). The translation says it is next to his son’s name. Change «рядом с именем его сына» to «рядом с подписью его сына» or equivalent.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "there, unmistakably, inexplicably, is Bruce Wayne’s signature next to his son’s.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "подпись Брюса Уэйна рядом с именем его сына.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "restraint-calque",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Мобилизует самообладание» is an awkward calque for activating self-restraint. Use a natural equivalent such as «старается сдержаться» while retaining the sense that Tim recognizes her effort to control herself.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Tam gets a look on her face Tim knows means she’s activating her self-restraint.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "На лице Тэм появляется выражение, по которому Тим понимает: она мобилизует самообладание.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "compartmentalize",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "«Мысленно отделять случайные мысли» suggests distinguishing those thoughts from others, rather than compartmentalizing or deliberately putting them aside to avoid distraction. Rephrase to preserve Tim’s practiced mental distancing from thoughts about his former family.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Tim has worked hard to train his mind to compartmentalize stray thoughts about his former family to avoid distraction.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Тим усердно приучал себя мысленно отделять случайные мысли о своей прежней семье, чтобы не отвлекаться.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "broken-apology",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The source’s abandoned fragment “that wasn’t-” is replaced by «я не...», changing what Tim starts to say before correcting himself to “I didn't mean-”. Preserve the source’s interrupted, self-correcting sequence more closely.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "I’m sorry that wasn’t- I didn't mean-",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Прости, я не... Я не хотел...",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "piss-off-register",
+            "category": "register",
+            "severity": "minor",
+            "detail": "“Piss the Waynes off” is colloquial and more forceful than the neutral «злить Уэйнов». Choose a target-language phrase that better preserves the source’s marked conversational intensity.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "And at the very least, I really don’t think you want to piss the Waynes off like that.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "И уж точно, мне кажется, ты не хочешь вот так злить Уэйнов.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "style": [],
+      "glossary": []
     }
   },
   "windows": {
@@ -433,6 +531,10 @@
     "chunk-003": {
       "source_sha256": "3f4a9285535fc7c8822e8f00f8e2163dc5e117645965764cbff7497c1600bf35",
       "translation_sha256": "009cf2e021211a57f82057b9deaf97f1129d83f1e4a952274f2f2534ab8090f3"
+    },
+    "chunk-004": {
+      "source_sha256": "2a0e0d961b9be2f096406ee45101fc9a758fc50161d157da704674be1749bb4d",
+      "translation_sha256": "5483bfd1e137867303a533e62afc9eddcd2c3e5a31333f8f7517a2412747eacb"
     }
   },
   "accepted_review_record_id": null,
