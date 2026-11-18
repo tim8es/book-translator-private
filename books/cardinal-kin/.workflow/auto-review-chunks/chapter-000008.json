@@ -503,6 +503,101 @@
           "type": "обозначение сообщества"
         }
       ]
+    },
+    "chunk-007": {
+      "outcome": "CORRECTIONS_REQUIRED",
+      "report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "timeframe-only",
+            "category": "omission",
+            "severity": "minor",
+            "detail": "The source emphasizes that only about three years have passed. The translation asks how much time has passed but does not preserve that emphasis. Consider «Прошло всего, сколько, года три…».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "It’s only been, what, 3 years since his parents died?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Сколько прошло, ну, года три с тех пор, как умерли его родители?",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "ambush-detail",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The source specifies that the Drakes were ambushed; «на них напали» conveys an attack but omits the ambush. Consider «когда налётчики устроили на них засаду».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "They were at a dig site in Egypt when they were ambushed by raiders.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Они находились на месте раскопок в Египте, когда на них напали налётчики.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "survival-logic",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The source says Damian did not survive by simply being content with what he was given; «не для того, чтобы довольствоваться» changes this into a purpose construction. Consider «Дэмиан выжил так долго не потому, что просто довольствовался тем, что ему преподносят».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "but Damian has not survived this long by simply being content with what is given to him.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "но Дэмиан выжил так долго не для того, чтобы довольствоваться тем, что ему преподносят.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "author-note-gender",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The parenthetical «выложил(а)» reads as an unresolved gender placeholder rather than finished Russian prose. Consider a natural gender-neutral phrasing, such as «Мне гораздо лучше, чем во время публикации предыдущей главы».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "I'm feeling a lot better than I did when I posted the last chapter.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Я чувствую себя гораздо лучше, чем когда выложил(а) предыдущую главу.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "style": [
+        {
+          "evidence": "“He seemed almost…sad.”",
+          "source_pattern": "Close third-person narration follows Damian’s uncertain observations and private reasoning.",
+          "translation_approach": "Сохранять ограниченность точки зрения Дэмиана и степень его сомнения; не превращать его догадки в установленные факты."
+        }
+      ],
+      "glossary": [
+        {
+          "notes": "Отец Тимоти Дрейка.",
+          "original": "Jack Drake",
+          "translation": "Джек Дрейк",
+          "type": "имя персонажа"
+        }
+      ]
     }
   },
   "windows": {
@@ -529,6 +624,10 @@
     "chunk-006": {
       "source_sha256": "2cd81df036448bc838cd6fd1682b8f654c74916751306f17f16be204283be51a",
       "translation_sha256": "ea0e44226e4fc56fbd6339dfa1939313d209c072a0b25522e34b1b56ade393bc"
+    },
+    "chunk-007": {
+      "source_sha256": "ded4af8129b78487d946f847603687a991aaa49072003979d235d0e8efedadd5",
+      "translation_sha256": "096d84bebff9a6237b20c151c9f5c5506091d4b769d578c62b2ac0baffbd5ca6"
     }
   },
   "accepted_review_record_id": null,
