@@ -372,6 +372,100 @@
           "type": "собирательное прозвище"
         }
       ]
+    },
+    "chunk-004": {
+      "outcome": "CORRECTIONS_REQUIRED",
+      "report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "red-nickname",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "Rechecked the prior inconsistency: the current translation renders Pru’s nickname “Red” as «Ред», restoring consistency with the other supplied occurrences.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "“Got to make sure you’re keeping your skills sharp, Red.”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "— Надо же убедиться, что ты не растерял сноровку, Ред.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "d7d70e1559784b82aae645e68392d385",
+              "finding_id": "terminology-1"
+            }
+          },
+          {
+            "id": "breath-calque",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Он шипяще выдыхает» is awkward Russian phrasing. Consider «Он с шипением выдыхает сквозь стиснутые зубы…» to preserve the image naturally.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "His breath hisses between clenched teeth as he raises his head in slight shock.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Он шипяще выдыхает сквозь стиснутые зубы и слегка ошеломлённо поднимает голову.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "surprise-format",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "The source ends Pru’s dialogue after “Surprise.” and then returns to narration. In the translation, the unmarked sentence following the opening dialogue dash can read as further dialogue. Separate the narration from her spoken line with clear Russian dialogue punctuation or formatting.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“Surprise.” He doesn’t even need to see her face to know Pru is smirking smugly.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "— Сюрприз. Ему даже не нужно видеть её лица, чтобы понять: Пру самодовольно ухмыляется.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "style": [],
+      "glossary": [
+        {
+          "notes": "Так Пру обращается к Тиму.",
+          "original": "Red",
+          "translation": "Ред",
+          "type": "прозвище"
+        },
+        {
+          "notes": "Краткая форма имени Пруденс.",
+          "original": "Pru",
+          "translation": "Пру",
+          "type": "краткое имя"
+        },
+        {
+          "notes": "",
+          "original": "Council of Spiders",
+          "translation": "Совет Пауков",
+          "type": "организация"
+        },
+        {
+          "notes": "",
+          "original": "League of Assassins",
+          "translation": "Лига убийц",
+          "type": "организация"
+        }
+      ]
     }
   }
 }
