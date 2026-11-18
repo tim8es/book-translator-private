@@ -3,7 +3,7 @@
   "job_id": "05eed6ea814d3b5eec014c6d05b39e3f",
   "book_slug": "say-it-in-your-mother-tongue",
   "state": "running",
-  "phase": "structural-segments-staged",
+  "phase": "translator-completed",
   "failures": 0,
   "correction_rounds": {
     "chapter-000001": 1,
@@ -42,13 +42,8 @@
   },
   "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
   "source_sha256": "12e210ce5a95daf56a97ada583ec15c274780c4ddfa7fb92da6a88c67f7c403d",
-  "updated_at": "2026-11-18T03:29:58.490785+00:00",
-  "active": {
-    "role": "translator",
-    "chapter": 42,
-    "session_id": "auto-05eed6ea814d-translator-92daa23d",
-    "unit_id": "chapter-000042"
-  },
+  "updated_at": "2026-11-18T03:30:00.015378+00:00",
+  "active": null,
   "recoveries": [
     {
       "action": "auto-retry-corrected-structural-preflight",
@@ -97,7 +92,7 @@
       "persisted_segments": 131
     }
   ],
-  "memory_glossary_saved": 60,
+  "memory_glossary_saved": 70,
   "pending_style": [],
   "role_protocol_failures": {
     "chapter-000001:corrector": 3,
@@ -151,7 +146,7 @@
     }
   ],
   "memory_style_saved": 11,
-  "glossary_evidence_rejected": 8,
+  "glossary_evidence_rejected": 10,
   "glossary_conflicts_rejected": 1,
   "glossary_proposals_deferred": 0,
   "last_review_failure": {
@@ -226,13 +221,6 @@
     "unapplied_finding_ids": [
       "style-3"
     ]
-  },
-  "provider_model_route": "primary",
-  "structural_segment_progress": {
-    "unit_id": "chapter-000042",
-    "source_sha256": "faeae882275d9415110a38f5bde000e3d176675579c6e83923c4d76dea47294d",
-    "completed": 99,
-    "total": 99
   },
   "model_response_diagnostics": {
     "finish_reason": "stop",
