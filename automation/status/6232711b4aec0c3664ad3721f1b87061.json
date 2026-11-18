@@ -3,7 +3,7 @@
   "job_id": "6232711b4aec0c3664ad3721f1b87061",
   "book_slug": "cardinal-kin",
   "state": "running",
-  "phase": "correction-batch-staged",
+  "phase": "model-call-reserved",
   "failures": 0,
   "correction_rounds": {
     "chapter-000001": 2,
@@ -15,7 +15,7 @@
   },
   "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
   "source_sha256": "f06b996448766fcf6faa703ced3ca03b63221f4f81bdb4c395619c69ffa353cd",
-  "updated_at": "2026-11-18T15:52:06.779002+00:00",
+  "updated_at": "2026-11-18T15:52:08.289771+00:00",
   "active": {
     "role": "corrector",
     "chapter": 8,
@@ -23,7 +23,7 @@
     "unit_id": "chapter-000008"
   },
   "structural_helper_revision": "4c584fe5534871cd05aa851d9b7bdbfa696d0edd",
-  "model_calls_started": 197,
+  "model_calls_started": 198,
   "prompt_context": {
     "role": "corrector",
     "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
@@ -35,7 +35,7 @@
     "glossary_sha256": "ba3e390941710d55f789871f95f40110ef56af4a1348dd907202dcb9ccf4f671",
     "style_guide_sha256": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4",
     "system_chars": 20126,
-    "user_chars": 13569,
+    "user_chars": 12770,
     "correction_mode": "bounded-review-patches",
     "batch_finding_count": 2
   },
@@ -714,7 +714,7 @@
     "schema_version": 1,
     "group_size": 2,
     "max_calls_per_checkpoint": 2,
-    "pending_count": 6,
+    "pending_count": 4,
     "risk_class": "mixed",
     "lower_bound_remaining_calls": 2,
     "current_selection_size": 2,
