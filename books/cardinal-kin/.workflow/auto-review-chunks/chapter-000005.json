@@ -357,6 +357,152 @@
           "type": "имя персонажа"
         }
       ]
+    },
+    "chunk-003": {
+      "outcome": "CORRECTIONS_REQUIRED",
+      "report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "move-idiom",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Он пришёл в движение» is a mechanical calque for “He’s on the move.” Use a natural equivalent, such as «Он снова в пути», that fits the context.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "He’s on the move.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Он пришёл в движение.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "ae9c5da036a44ffe80ab9ba0b4de21e0",
+              "finding_id": "chunk-006-move-idiom"
+            }
+          },
+          {
+            "id": "water-gaze",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Вглядываясь в его глубину» sounds awkward in Russian and suggests looking into the glass itself. A natural phrasing such as «пристально глядя на воду в стакане» preserves her intent gaze.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Pru accepts a glass of water from Tim and sips it slowly, staring into its depths intently.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Пру принимает у Тима стакан воды и медленно отпивает, пристально вглядываясь в его глубину.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "ae9c5da036a44ffe80ab9ba0b4de21e0",
+              "finding_id": "chunk-006-water-gaze"
+            }
+          },
+          {
+            "id": "problematic-force",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "«Потенциально опасно» makes “potentially problematic” more specifically threatening. Use a less intensified equivalent, such as «может создать проблемы».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "That means Ra’s is either hiding something, or going off the books, both potentially problematic.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Значит, Ра’с либо что-то скрывает, либо действует вне официальных каналов, и то и другое потенциально опасно.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "ae9c5da036a44ffe80ab9ba0b4de21e0",
+              "finding_id": "chunk-006-problematic-force"
+            }
+          },
+          {
+            "id": "beacon-referent",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "«Подозревает Пру или кого-то из солдат» can mean that Damian is suspicious of them, rather than that he suspects they are the beacon’s recipients. Clarify the intended referent, for example: «хотя, вероятно, предполагает, что сигнал адресован Пру или кому-то из солдат его матери».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "He doesn’t know who the beacon calls to, though he probably suspects Pru or one of his mother’s soldiers.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Он не знает, кому подаёт сигнал маяк, хотя, вероятно, подозревает Пру или кого-то из солдат своей матери.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "style": [],
+      "glossary": [
+        {
+          "notes": "",
+          "original": "Pru",
+          "translation": "Пру",
+          "type": "имя персонажа"
+        },
+        {
+          "notes": "",
+          "original": "Talia",
+          "translation": "Талия",
+          "type": "имя персонажа"
+        },
+        {
+          "notes": "Краткое обозначение Совета Пауков.",
+          "original": "Council",
+          "translation": "Совет",
+          "type": "организация"
+        },
+        {
+          "notes": "В этом контексте — Лига убийц.",
+          "original": "League",
+          "translation": "Лига",
+          "type": "организация"
+        },
+        {
+          "notes": "",
+          "original": "Nanda Parbat",
+          "translation": "Нанда-Парбат",
+          "type": "место"
+        },
+        {
+          "notes": "",
+          "original": "Lazarus Pit",
+          "translation": "Яма Лазаря",
+          "type": "вымышленное место"
+        },
+        {
+          "notes": "",
+          "original": "Gotham",
+          "translation": "Готэм",
+          "type": "место"
+        },
+        {
+          "notes": "",
+          "original": "Batman",
+          "translation": "Бэтмен",
+          "type": "псевдоним персонажа"
+        },
+        {
+          "notes": "",
+          "original": "Ra’s al Ghul",
+          "translation": "Ра’с аль-Гул",
+          "type": "имя персонажа"
+        }
+      ]
     }
   }
 }
