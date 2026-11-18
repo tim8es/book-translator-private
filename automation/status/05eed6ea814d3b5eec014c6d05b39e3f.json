@@ -3,7 +3,7 @@
   "job_id": "05eed6ea814d3b5eec014c6d05b39e3f",
   "book_slug": "say-it-in-your-mother-tongue",
   "state": "running",
-  "phase": "model-call-reserved",
+  "phase": "corrector-protocol-repair-reserved",
   "failures": 0,
   "correction_rounds": {
     "chapter-000001": 1,
@@ -47,7 +47,7 @@
   },
   "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
   "source_sha256": "12e210ce5a95daf56a97ada583ec15c274780c4ddfa7fb92da6a88c67f7c403d",
-  "updated_at": "2026-11-18T05:19:14.241136+00:00",
+  "updated_at": "2026-11-18T05:19:50.395534+00:00",
   "active": {
     "role": "corrector",
     "chapter": 46,
@@ -76,7 +76,7 @@
   ],
   "structural_span_retries": 1,
   "structural_helper_revision": "4c584fe5534871cd05aa851d9b7bdbfa696d0edd",
-  "model_calls_started": 608,
+  "model_calls_started": 609,
   "prompt_context": {
     "role": "corrector",
     "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
@@ -90,7 +90,11 @@
     "system_chars": 20126,
     "user_chars": 23398,
     "correction_mode": "bounded-review-patches",
-    "batch_finding_count": 2
+    "batch_finding_count": 2,
+    "repair_code": "wrong_operation",
+    "repair_finding_count": 1,
+    "execution_mode": "typed-correction-repair",
+    "public_helper_revision": "abe8cb030c2e792e2543fdbd2c0295cd9e629024"
   },
   "structural_helper_migrations": [
     {
@@ -306,16 +310,17 @@
     ],
     "action": "operator-attention-no-pass"
   },
+  "provider_model_route": "primary",
   "model_response_diagnostics": {
     "finish_reason": "stop",
     "response_format": "json_object",
-    "response_chars": 2842,
+    "response_chars": 491,
     "provider_refusal": false,
-    "prompt_tokens": 14552,
-    "completion_tokens": 8277,
-    "total_tokens": 22829,
+    "prompt_tokens": 10382,
+    "completion_tokens": 1479,
+    "total_tokens": 11861,
     "route": "primary",
-    "role": "reviewer",
+    "role": "corrector",
     "unit_id": "chapter-000046"
   }
 }
