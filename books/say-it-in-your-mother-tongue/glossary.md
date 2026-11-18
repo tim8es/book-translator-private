@@ -97,3 +97,12 @@ Use this file for recurring names, places, organizations, terms, nicknames, titl
 | Running Up That Hill | Running Up That Hill | название песни | Песня Кейт Буш. |
 | Kate Bush | Кейт Буш | музыкант | Исполнительница песни Running Up That Hill. |
 | Stranger Things | Очень странные дела | название сериала | Сериал, в котором звучит Running Up That Hill. |
+| Oscar | Оскар | имя |  |
+| Lando | Ландо | имя |  |
+| Alpine | Альпин | организация | Команда, предоставившая Эстебану машину. |
+| FIA | ФИА | организация |  |
+| Hulk | Халк | прозвище | Прозвище Нико Хюлькенберга. |
+| Rosberg | Росберг | фамилия |  |
+| Kimi | Кими | имя |  |
+| Antonelli | Антонелли | фамилия |  |
+| Räikkönen | Райкконен | фамилия |  |
