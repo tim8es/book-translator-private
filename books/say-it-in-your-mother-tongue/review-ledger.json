@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 116,
+  "next_sequence": 117,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -13476,6 +13476,119 @@
       },
       "shared_state_revisions": {
         "glossary": "6fd4a578988e13c444924ec2d61ef20b9b61a98e1d25fc1f48af337c06fdb8bb",
+        "style_guide": "eaa08d42f1f5ea55a06553ec9c1d9e5c6f66b62f9bb6f55b653a52f78659dd74"
+      }
+    },
+    {
+      "record_id": "b50a34afdd804a908c0412d4f05a8421",
+      "sequence": 116,
+      "unit_id": "chapter-000044",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "14414f83d5597f583744af54567f80df0eafa7e54b9163387b0dc6a7e5be4494",
+      "translation_sha256": "cac8539bf1b96c1c1d626d9b96506c227dca47b653316d430a4f4f528e6c68ed",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-7f20223c",
+      "reviewed_at": "2026-11-18T04:21:14Z",
+      "state_revision": "8d33794702afffa9c72f205581d0379e2f8bbff5bfb274e1cca233a6321ce4d2",
+      "review_commit": "87563c2e587e31a07508051383d517bb1742652e",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "meaning-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The source evaluates “it” as nice, in context referring to the poster or image. «Мне правда приятно» instead describes Nico’s feelings. Preserve the positive evaluation of the image rather than changing the referent.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "It’s nice, really.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Мне правда приятно.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-2",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "An entry ramp is the highway entrance, whereas «съезд» ordinarily means an exit from the highway. Render this as an entrance or on-ramp.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Unsurprisingly, he arrives at the entry ramp with three minutes of advance",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Неудивительно, что к съезду на шоссе он подъезжает на три минуты раньше.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "terminology-1",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "In this Formula 1 context, Charles, associated here with the dog Leo, refers to Charles Leclerc, whose established Russian name is Шарль Леклер. Use «Шарль» rather than «Чарльз».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Like Charles.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Как Чарльз.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "voice-1",
+            "category": "voice",
+            "severity": "minor",
+            "detail": "“Kid” is a teasing, age-marked form of address that plays off Gabriel calling Nico “old man.” «Парень» loses that contrast; preserve the teasing address.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Keep telling yourself that, kid.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Продолжай себе это повторять, парень.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The bare name “Joost” is wedged between the song title and the sentence’s subject, making the Russian construction unclear. Recast it to show that *Europapa* is performed by Joost, for example: «После *Europapa* в исполнении Joost Spotify переключается…»",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "From Joost’s *Europapa,* Spotify jumps into *Running Up That Hill* by Kate Bush",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "После *Europapa* Joost Spotify переключается на *Running Up That Hill* Кейт Буш",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "3d46b41547ba4bb1534b23d2294018a434dbe09393f495d2dbd48c3fc0f42c76",
         "style_guide": "eaa08d42f1f5ea55a06553ec9c1d9e5c6f66b62f9bb6f55b653a52f78659dd74"
       }
     }
