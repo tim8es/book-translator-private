@@ -384,6 +384,81 @@
         }
       ],
       "glossary": []
+    },
+    "chunk-003": {
+      "outcome": "PASS",
+      "report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "deadlines-recheck",
+            "category": "omission",
+            "severity": "minor",
+            "detail": "Resolved: the current translation explicitly includes the quarter's deadlines as «основными дедлайнами на квартал».",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "get most of the major decisions and deadlines for the quarter out of the way",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "принять большинство важных решений и разобраться с основными дедлайнами на квартал",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "34f1dcb405e94377b5d3896e990384e6",
+              "finding_id": "chunk-003-deadlines"
+            }
+          },
+          {
+            "id": "adverb-recheck",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Resolved: «говорит она невозмутимо» supplies a complete dialogue tag.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "“You don’t,” she says matter of factly.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Ничего другого у тебя нет», — говорит она невозмутимо.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "34f1dcb405e94377b5d3896e990384e6",
+              "finding_id": "chunk-003-bare-adverb"
+            }
+          },
+          {
+            "id": "knows-better-recheck",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Resolved: «разбирается лучше Тима» conveys believing one understands or knows better, rather than simply possessing more knowledge.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "someone who thinks they know better than him just because they happen to be older",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "кто считает, будто разбирается лучше Тима лишь потому, что старше его",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "34f1dcb405e94377b5d3896e990384e6",
+              "finding_id": "chunk-003-knows-better"
+            }
+          }
+        ]
+      },
+      "style": [],
+      "glossary": []
     }
   },
   "windows": {
@@ -394,6 +469,10 @@
     "chunk-002": {
       "source_sha256": "ca1e20b2a7cbe7b5b1e27ffc96357fb08dd3e23c5a9e0d8114d36115180a3527",
       "translation_sha256": "95638c7915475974ab7236d04eceef1955c3277d1814f6581d51e38532276929"
+    },
+    "chunk-003": {
+      "source_sha256": "3f4a9285535fc7c8822e8f00f8e2163dc5e117645965764cbff7497c1600bf35",
+      "translation_sha256": "cb391ccb9ce11989a5d76d978354cc734dbfa8dc13eeab0209d58ce71607ad7e"
     }
   },
   "accepted_review_record_id": null,
