@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 107,
+  "next_sequence": 108,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -12740,6 +12740,71 @@
       },
       "shared_state_revisions": {
         "glossary": "a263c09393383bd823432fb1021aa6214fe6b08f6964e15ffad31647324ee32b",
+        "style_guide": "542b979599ebe40dfbb11794d47d2fffcc7bde125f2d09c1549f33f618157eff"
+      }
+    },
+    {
+      "record_id": "a0e82039b8f0490799a750a195527acc",
+      "sequence": 107,
+      "unit_id": "chapter-000040",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "64eea0078c138655847b9f3efbd6ef34946dc367489a4dfc1e4f3eeb71bad40c",
+      "translation_sha256": "fd60dc0a263680287a5eab5917c215d350787b673dab4294f338a6693f6ff614",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-b05cc454",
+      "reviewed_at": "2026-11-18T02:43:21Z",
+      "state_revision": "d567314a1f4888dcf1df3ba69e924c7dede9cd836c1fc4a2e6596f32cf51e543",
+      "review_commit": "e154c4b24f02f7aab7d0c1e36b8bcde6b2f1793c",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "omission-1",
+            "category": "omission",
+            "severity": "minor",
+            "detail": "The source describes Checo’s eyes as both “full and shiny”; the translation retains the shine but drops the fullness, which contributes to the tearful emotional image. Preserve both qualities without over-interpreting them.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "his eyes painfully full and shiny as he holds Max’s gaze",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "глаза у него болезненно блестят, пока он смотрит Максу в глаза.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The source specifies a coffee brand, while «сорт кофе» refers to a variety or kind. Use wording that preserves the reference to a particular brand, such as «марка кофе».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "they taste like a brand of coffee Max doesn’t really like",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "на вкус они напоминают сорт кофе, который Максу не очень нравится",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "af9787d5ddd542fdb639ba9289fd961626fbc254341557706d5eb0a06780767c",
         "style_guide": "542b979599ebe40dfbb11794d47d2fffcc7bde125f2d09c1549f33f618157eff"
       }
     }
