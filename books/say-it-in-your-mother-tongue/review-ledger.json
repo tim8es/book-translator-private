@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 147,
+  "next_sequence": 148,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -16237,6 +16237,87 @@
       },
       "shared_state_revisions": {
         "glossary": "0d15110e6da4548f83415d376a45691a426a10208eb6ab7bf134af69fc2f0f9e",
+        "style_guide": "eaa08d42f1f5ea55a06553ec9c1d9e5c6f66b62f9bb6f55b653a52f78659dd74"
+      }
+    },
+    {
+      "record_id": "bc6d3911f81e4cc38642b8df17e2553f",
+      "sequence": 147,
+      "unit_id": "chapter-000053",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "7ee14f3461238bdd7e7e066553e63d5bdeba5019caeabdea4cbc6fcc60960253",
+      "translation_sha256": "cabf5f96b1c2518801d77a8b7b47d96541fc345e8d856cc5170b5bd04d254523",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-6fc926a3",
+      "reviewed_at": "2026-11-18T08:38:30Z",
+      "state_revision": "5497cad213afc319e4be42a4996239eff1333f76677df7a3fab12ddc0563d2b8",
+      "review_commit": "29739a74fd195a0d6796c64779fbe09349579da8",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "gendered-proposal-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "«Выйдешь за меня?» — женски маркированная формулировка предложения брака, хотя адресат Макс — мужчина; в этом же фрагменте в аналогичном обращении использовано «Ты женишься на мне?». Замените на мужскую форму, например «Так ты женишься на мне?».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Checo holds out the box a little closer to Max, grinning as he asks again, “So, will you marry me?” He opens the velvet box, showing Max a thick ring made of titanium.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Чеко протягивает коробочку чуть ближе к Максу и, широко улыбаясь, снова спрашивает: «Так ты выйдешь за меня?» Он открывает бархатную коробочку, показывая Максу массивное кольцо из титана.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "comic-intensifier-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Источник использует нарочито комическое, ненормативное усиление “deeply-er”; перевод нормализует его до обычного «ещё глубже» и теряет эту шутливую интонацию. Сохраните комический эффект подходящим русским эквивалентом.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Exhaling deeply, and inhaling even deeply-er, Fernando puts on a soft smile — one reserved for Lance only.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Глубоко выдохнув, а затем вдохнув ещё глубже, Фернандо улыбается мягкой улыбкой — такой, какую он дарит только Лэнсу.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "dialogue-punctuation-1",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "В обычной прозе авторская речь соединена с прямой речью двоеточием и тире, как если бы реплика начиналась с новой строки, хотя она остаётся в том же абзаце. Например, в переводе «Макс один раз кивает и говорит ему: — Ладно.» Используйте кавычки для встроенной реплики либо оформляйте её отдельным абзацем с тире; тот же приём проверьте в блоках 092, 096, 101–103, 107 и 109.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Max nods, once, telling him, “Alright.”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Макс один раз кивает и говорит ему: — Ладно.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "1120f576fed22714b46c7276e899bd01c484dd218ca94c8d6fd37306a9c8d8a4",
         "style_guide": "eaa08d42f1f5ea55a06553ec9c1d9e5c6f66b62f9bb6f55b653a52f78659dd74"
       }
     }
