@@ -517,6 +517,94 @@
       },
       "style": [],
       "glossary": []
+    },
+    "chunk-005": {
+      "outcome": "CORRECTIONS_REQUIRED",
+      "report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "riddle-home",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "«I leave no home» suggests having no home of one’s own, fitting the cuckoo’s use of other birds’ nests. «Я не покидаю дом» instead says that the speaker does not leave home, changing the riddle’s clue. Rework the line to preserve the lack-of-home meaning.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "I leave no home, yet I claim a rest",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Я не покидаю дом, но всё же нахожу покой",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "riddler-pronoun",
+            "category": "referent",
+            "severity": "major",
+            "detail": "In context, the source says no one else can match the Riddler’s intellect, explaining his frustration when Cardinal is rarely active. The translation’s «с ним умом» most naturally refers to the nearer Cardinal, shifting the referent. Clarify that the comparison is with the Riddler.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Edward Nygma genuinely just enjoys his puzzles and mind games, and he longs for someone who can keep up with him. But with Cardinal so rarely on the streets—and no one else able to match his intellect—Riddler is growing increasingly frustrated.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Эдвард Нигма и правда просто любит свои загадки и интеллектуальные игры и мечтает о ком-нибудь, кто сможет за ним поспевать. Но Кардинал так редко появляется на улицах, а больше никто не может сравниться с ним умом, и Загадочник всё сильнее раздражается.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "bluejay-name",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "Bluejay is rendered as «Синяя Сойка» in blocks 152 and 156, but as «Блюджей» here. These may each be possible renderings, but the name is inconsistent within the assigned core; reconcile the choice without assuming which spelling is canonical.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Bluejay and Robin over comms almost instantly.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Блюджею и Робину по связи.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "breathing-phrase",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Берёт дыхание под контроль» is an awkward calque in Russian. Rephrase naturally, for example, as «Когда дыхание Тима снова приходит в норму» or «Когда Тим снова начинает дышать ровно», preserving the sense that he has regained control of his breathing.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Once Tim has his breathing under control again, he heads home, carefully not even looking towards Wayne Manor as he drives past.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Когда Тим снова берёт дыхание под контроль, он едет домой, старательно даже не глядя в сторону поместья Уэйнов, мимо которого проезжает.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "style": [
+        {
+          "evidence": "No. It’ll be fine. It’ll all be fine. ... He’ll get over it. He always does.",
+          "source_pattern": "Tim’s anxious internal narration uses short, repeated reassurances and isolated sentences.",
+          "translation_approach": "Preserve the clipped pacing and meaningful repetition rather than smoothing the thoughts into a single explanatory sentence."
+        }
+      ],
+      "glossary": []
     }
   },
   "windows": {
@@ -535,6 +623,10 @@
     "chunk-004": {
       "source_sha256": "2a0e0d961b9be2f096406ee45101fc9a758fc50161d157da704674be1749bb4d",
       "translation_sha256": "5483bfd1e137867303a533e62afc9eddcd2c3e5a31333f8f7517a2412747eacb"
+    },
+    "chunk-005": {
+      "source_sha256": "2bec1497d9c6321762b09e4cbaf87d19df028fba61e36a716602772fadbba312",
+      "translation_sha256": "846c77cba3d1893914d687d52e729b5c5532bb1fff7833e916e585ab89543bd0"
     }
   },
   "accepted_review_record_id": null,
