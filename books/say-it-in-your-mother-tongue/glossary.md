@@ -70,3 +70,6 @@ Use this file for recurring names, places, organizations, terms, nicknames, titl
 | Like That | Like That | название песни | Песня Future, Metro Boomin и Кендрика Ламара. |
 | Future | Future | музыкант | Исполнитель песни Like That. |
 | Metro Boomin | Metro Boomin | музыкант | Исполнитель песни Like That. |
+| Red Bull | Ред Булл | организация | Логотип на спортивной сумке Макса. |
+| Lancito | Лэнсито | ласкательное прозвище | Уменьшительная форма имени Лэнс, отображаемая в переписке. |
+| frenado alfonso | френадо альфонсо | имя пользователя | Отображаемое имя собеседника в переписке. |
