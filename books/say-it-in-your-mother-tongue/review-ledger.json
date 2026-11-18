@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 143,
+  "next_sequence": 144,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -15881,6 +15881,131 @@
             },
             "translation_anchor": {
               "quote": "А бабушке *только* хочется, чтобы у меня наконец появился ребёнок, и тогда она станет overgrootmoeder.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "5a07096e2fee56a5cfb2ab292570b201fb8b2acbec4d1def386ed295ff537628",
+        "style_guide": "eaa08d42f1f5ea55a06553ec9c1d9e5c6f66b62f9bb6f55b653a52f78659dd74"
+      }
+    },
+    {
+      "record_id": "9210e0b0d96c48a08e782a741b6dd1a7",
+      "sequence": 143,
+      "unit_id": "chapter-000051",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "a11a7469cef998f9f05f10aee379ab75d999ab9d53112c16e08360cd36de7818",
+      "translation_sha256": "7767453a1238a04128d39448326597e4e7b0e723a832e09adcbba5a592f0f705",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-21e8a7b7",
+      "reviewed_at": "2026-11-18T07:50:07Z",
+      "state_revision": "464a71ffb13f1494dc095ab40db1172bf4b97ee4a1332c615a05ff4c43d3cf51",
+      "review_commit": "22ea3d7ff5d3082ed074158e6c10259813642b4f",
+      "correction_round": 2,
+      "supersedes_record_id": "ceba82e4245b4f588aae20e084b801c6",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-meaning-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Resolved: «снизу вверх» preserves both the physical upward gaze and the figurative sense of looking up to his father.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "no longer looking up to his father — both physically and metaphorically",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "и больше не глядя на отца снизу вверх — ни буквально, ни в переносном смысле.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "ceba82e4245b4f588aae20e084b801c6",
+              "finding_id": "meaning-1"
+            }
+          },
+          {
+            "id": "recheck-structure-1",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "Resolved: the second spoken phrase now has its opening quotation mark.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "*“Ja,”* Max nods once, “you are. Sometimes.”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "*«Ja»,* — Макс один раз кивает. — «Ты добрый. Иногда».",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "ceba82e4245b4f588aae20e084b801c6",
+              "finding_id": "structure-1"
+            }
+          },
+          {
+            "id": "recheck-style-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Resolved: the amused huff is now attached to the speech tag rather than left as a predicate-less fragment.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "“So,” Checo purses his lips in faux thought, huffing in amusement as he asks, “my family now, your family next? Like between Jeddah and Miami?”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Ну что, сначала моя семья, потом твоя? Где-то между Джиддой и Майами?» — спрашивает Чеко, поджав губы и притворно задумавшись, весело фыркая.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "ceba82e4245b4f588aae20e084b801c6",
+              "finding_id": "style-1"
+            }
+          },
+          {
+            "id": "recheck-modality-1",
+            "category": "modality",
+            "severity": "minor",
+            "detail": "Resolved: «чтобы она могла стать» preserves the source's hypothetical possibility.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "And grandma *just* wants me to have a baby finally so she could be *overgrootmoeder*.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "А бабушке *только* хочется, чтобы у меня наконец появился ребёнок, чтобы она могла стать overgrootmoeder.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "ceba82e4245b4f588aae20e084b801c6",
+              "finding_id": "modality-1"
+            }
+          },
+          {
+            "id": "omission-1",
+            "category": "omission",
+            "severity": "minor",
+            "detail": "The translation omits the beat that Max blinks wordlessly before asking the question. Restore this action to preserve the source's pacing and characterization.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Max blinks wordlessly for a second before he asks, “This is going to be some big family gathering, right?”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Это будет большой семейный сбор, да?»",
               "occurrence": 0
             },
             "resolves": null
