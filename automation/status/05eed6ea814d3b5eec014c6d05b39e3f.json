@@ -3,7 +3,7 @@
   "job_id": "05eed6ea814d3b5eec014c6d05b39e3f",
   "book_slug": "say-it-in-your-mother-tongue",
   "state": "running",
-  "phase": "correction-batch-staged",
+  "phase": "corrector-completed",
   "failures": 0,
   "correction_rounds": {
     "chapter-000001": 1,
@@ -35,17 +35,12 @@
     "chapter-000028": 3,
     "chapter-000036": 1,
     "chapter-000037": 3,
-    "chapter-000038": 2
+    "chapter-000038": 3
   },
   "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
   "source_sha256": "12e210ce5a95daf56a97ada583ec15c274780c4ddfa7fb92da6a88c67f7c403d",
-  "updated_at": "2026-11-18T02:08:02.123619+00:00",
-  "active": {
-    "role": "corrector",
-    "chapter": 38,
-    "session_id": "auto-05eed6ea814d-corrector-0a9b761b",
-    "unit_id": "chapter-000038"
-  },
+  "updated_at": "2026-11-18T02:08:03.780472+00:00",
+  "active": null,
   "recoveries": [
     {
       "action": "auto-retry-corrected-structural-preflight",
@@ -220,13 +215,6 @@
     "unapplied_finding_ids": [
       "style-3"
     ]
-  },
-  "provider_model_route": "primary",
-  "correction_batch_progress": {
-    "unit_id": "chapter-000038",
-    "review_record_id": "fc0dcf84a1014d24b6012fb64ccfe501",
-    "completed": 4,
-    "total": 4
   },
   "model_response_diagnostics": {
     "finish_reason": "stop",
