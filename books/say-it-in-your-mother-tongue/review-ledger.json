@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 111,
+  "next_sequence": 112,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -13179,6 +13179,96 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "0ae07202278012f087bc1209a1bf021683d6192b03137396f40ea854e55f4226",
+        "style_guide": "eaa08d42f1f5ea55a06553ec9c1d9e5c6f66b62f9bb6f55b653a52f78659dd74"
+      }
+    },
+    {
+      "record_id": "24e76790149141b2a05970f174be9095",
+      "sequence": 111,
+      "unit_id": "chapter-000041",
+      "outcome": "PASS",
+      "source_sha256": "3dd265fb0cdcb0c05be4eea9e975c8efe9fa7737e1dd87d0d412daee3f1a87bc",
+      "translation_sha256": "da60277a065f7d77426185ae67eec1da1615b65e92f69c88c5202ed57f4b10ac",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-b6d81121",
+      "reviewed_at": "2026-11-18T03:19:58Z",
+      "state_revision": "0e023a4ad370b529ce0e7b8ed88287b0687c354a083c2b67116421d59e1c5191",
+      "review_commit": "910767661927e6731bcdfeb144f901092e3d3769",
+      "correction_round": 2,
+      "supersedes_record_id": "9736d572bd7f40cf903491b186ce5b94",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-bold-note-1",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "Rechecked: the translation now preserves the source note's bold formatting.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "**This is a Multi-POV ensemble story — chapters may focus on one pairing or move between multiple.**",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "**Это история с несколькими точками зрения: главы могут быть посвящены одной паре или переключаться между несколькими.**",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "9736d572bd7f40cf903491b186ce5b94",
+              "finding_id": "recheck-structure-1"
+            }
+          },
+          {
+            "id": "recheck-eyes-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Rechecked: the translation now describes Lance searching Fernando's eyes without adding an interpretation.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "searching Fernando’s eyes",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "вглядываясь в глаза Фернандо",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "9736d572bd7f40cf903491b186ce5b94",
+              "finding_id": "meaning-eyes-1"
+            }
+          },
+          {
+            "id": "recheck-cutoff-1",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "Rechecked: the translation now preserves the abrupt interruption with an em dash.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "I—",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Я—",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "9736d572bd7f40cf903491b186ce5b94",
+              "finding_id": "structure-cutoff-1"
+            }
           }
         ]
       },
