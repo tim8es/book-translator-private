@@ -3,7 +3,7 @@
   "job_id": "6232711b4aec0c3664ad3721f1b87061",
   "book_slug": "cardinal-kin",
   "state": "running",
-  "phase": "model-call-reserved",
+  "phase": "correction-batch-staged",
   "failures": 0,
   "correction_rounds": {
     "chapter-000001": 2,
@@ -15,7 +15,7 @@
   },
   "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
   "source_sha256": "f06b996448766fcf6faa703ced3ca03b63221f4f81bdb4c395619c69ffa353cd",
-  "updated_at": "2026-11-18T15:50:36.549034+00:00",
+  "updated_at": "2026-11-18T15:50:46.454556+00:00",
   "active": {
     "role": "corrector",
     "chapter": 8,
@@ -92,25 +92,14 @@
     "unit_id": "chapter-000008",
     "role": "corrector",
     "route": "primary",
-    "request_chars": 34908,
+    "request_chars": 35092,
     "outcome": "response",
-    "duration_ms": 12089,
-    "prompt_tokens": 7679,
-    "completion_tokens": 453,
-    "total_tokens": 8132
+    "duration_ms": 8468,
+    "prompt_tokens": 7756,
+    "completion_tokens": 283,
+    "total_tokens": 8039
   },
   "provider_call_metrics": [
-    {
-      "unit_id": "chapter-000007",
-      "role": "corrector",
-      "route": "primary",
-      "request_chars": 32801,
-      "outcome": "response",
-      "duration_ms": 7005,
-      "prompt_tokens": 7135,
-      "completion_tokens": 211,
-      "total_tokens": 7346
-    },
     {
       "unit_id": "chapter-000007",
       "role": "corrector",
@@ -539,6 +528,17 @@
       "prompt_tokens": 7679,
       "completion_tokens": 453,
       "total_tokens": 8132
+    },
+    {
+      "unit_id": "chapter-000008",
+      "role": "corrector",
+      "route": "primary",
+      "request_chars": 35092,
+      "outcome": "response",
+      "duration_ms": 8468,
+      "prompt_tokens": 7756,
+      "completion_tokens": 283,
+      "total_tokens": 8039
     }
   ],
   "last_review_failure": {
@@ -666,13 +666,13 @@
         "total_tokens": 211889
       },
       "corrector": {
-        "completed_calls": 49,
-        "responses": 49,
-        "duration_ms": 723804,
-        "request_chars": 1545716,
-        "prompt_tokens": 331369,
-        "completion_tokens": 25443,
-        "total_tokens": 356812
+        "completed_calls": 50,
+        "responses": 50,
+        "duration_ms": 732272,
+        "request_chars": 1580808,
+        "prompt_tokens": 339125,
+        "completion_tokens": 25726,
+        "total_tokens": 364851
       },
       "orchestrator": {
         "completed_calls": 3,
@@ -759,17 +759,17 @@
   "correction_batch_progress": {
     "unit_id": "chapter-000008",
     "review_record_id": "37256be23edf44498b5ebe0686e0eca3",
-    "completed": 8,
+    "completed": 10,
     "total": 17
   },
   "model_response_diagnostics": {
     "finish_reason": "stop",
     "response_format": "json_object",
-    "response_chars": 411,
+    "response_chars": 337,
     "provider_refusal": false,
-    "prompt_tokens": 7679,
-    "completion_tokens": 453,
-    "total_tokens": 8132,
+    "prompt_tokens": 7756,
+    "completion_tokens": 283,
+    "total_tokens": 8039,
     "route": "primary",
     "role": "corrector",
     "unit_id": "chapter-000008"
