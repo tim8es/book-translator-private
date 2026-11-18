@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "unit_id": "chapter-000009",
+  "review_record_id": "60cdceecef8241e4911888e94f72c58d",
+  "source_sha256": "667284ef59c10f7475f1bd9f4d7eebcc2f6611d1b523ecf00aec4450a16b8e8d",
+  "translation_sha256": "d08dd79c56e0035d653e2f95d431dfd2e89b25f595849d16d5d658e0e66a12bc",
+  "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
+  "patches": [
+    {
+      "finding_id": "chunk-001-gender-skills",
+      "operation": "replace",
+      "target_anchor": {
+        "quote": "Кем бы ни оказался Кардинал, его детективные способности не уступают способностям самого Бэтмена.",
+        "occurrence": 0
+      },
+      "replacement": "Какова бы ни была личность Кардинала, детективные способности не уступают способностям самого Бэтмена."
+    },
+    {
+      "finding_id": "chunk-001-gender-mystery",
+      "operation": "replace",
+      "target_anchor": {
+        "quote": "Ещё не было ни одной загадки, которую ему не удалось бы разгадать.",
+        "occurrence": 0
+      },
+      "replacement": "Ещё не было ни одной загадки, не поддавшейся Кардиналу."
+    },
+    {
+      "finding_id": "chunk-001-gender-identity",
+      "operation": "replace",
+      "target_anchor": {
+        "quote": "Когда-то она была почти одержима желанием раскрыть его личность, но со временем, по мере того как продолжалось их негласное сотрудничество, поняла: знать это ей не обязательно.",
+        "occurrence": 0
+      },
+      "replacement": "Когда-то она была почти одержима желанием раскрыть личность Кардинала, но по мере того как их негласное сотрудничество продолжалось, поняла: ей не обязательно знать, кто это."
+    },
+    {
+      "finding_id": "chunk-001-gender-trust",
+      "operation": "replace",
+      "target_anchor": {
+        "quote": "Она доверяет Кардиналу в том, что он поступит наилучшим для Готэма образом, и он ни разу не дал повода усомниться в доверии, которое она научилась ему оказывать.",
+        "occurrence": 0
+      },
+      "replacement": "Она доверяет Кардиналу поступать так, как лучше для Готэма, и это доверие ни разу не было предано."
+    },
+    {
+      "finding_id": "chunk-001-reason-calque",
+      "operation": "replace",
+      "target_anchor": {
+        "quote": "Нет смысла в том, чтобы такой красивый, богатый и умный парень жил в такой изоляции.",
+        "occurrence": 0
+      },
+      "replacement": "Странно, что такой красивый, богатый и умный парень живёт в такой изоляции."
+    },
+    {
+      "finding_id": "chunk-001-fact-calque",
+      "operation": "replace",
+      "target_anchor": {
+        "quote": "Этот факт беспокоит её сильнее, чем у неё есть на то основания.",
+        "occurrence": 0
+      },
+      "replacement": "Этот факт беспокоит её сильнее, чем следовало бы."
+    },
+    {
+      "finding_id": "chunk-001-cardinal-base",
+      "operation": "replace",
+      "target_anchor": {
+        "quote": "С тех пор как Барбара стала Оракулом, её работа постоянно связана с Кардиналом.",
+        "occurrence": 0
+      },
+      "replacement": "С тех пор как Барбара стала Оракулом, Кардинал постоянно присутствует в её работе."
+    },
+    {
+      "finding_id": "chunk-002-gender-net",
+      "operation": "replace",
+      "target_anchor": {
+        "quote": "снабжающая его информацией",
+        "occurrence": 0
+      },
+      "replacement": "снабжающая Кардинала информацией"
+    }
+  ],
+  "glossary": [
+    {
+      "notes": "В заголовке Cardinal Kin передано как «Родня Кардинала»; сохранять прописную букву и склонять по контексту.",
+      "original": "Cardinal",
+      "translation": "Кардинал",
+      "type": "кодовое имя"
+    }
+  ],
+  "style_guide": []
+}
