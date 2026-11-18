@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 118,
+  "next_sequence": 119,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -13725,6 +13725,109 @@
               "record_id": "b50a34afdd804a908c0412d4f05a8421",
               "finding_id": "style-1"
             }
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "3d46b41547ba4bb1534b23d2294018a434dbe09393f495d2dbd48c3fc0f42c76",
+        "style_guide": "eaa08d42f1f5ea55a06553ec9c1d9e5c6f66b62f9bb6f55b653a52f78659dd74"
+      }
+    },
+    {
+      "record_id": "1b8533c27932434ab8022acb2c5cfb6a",
+      "sequence": 118,
+      "unit_id": "chapter-000044",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "14414f83d5597f583744af54567f80df0eafa7e54b9163387b0dc6a7e5be4494",
+      "translation_sha256": "9f30a75ced0066bdbb9c67f5d8a0d7b29f57fe692bc745e9732008f255797b30",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-a80861af",
+      "reviewed_at": "2026-11-18T04:32:48Z",
+      "state_revision": "f03356de7b426752066d99a454298d06a31cf8ffce8a72e9ff0521a4325fb2d1",
+      "review_commit": "df4ee7d8e997c56aeb0ed3085010c03f3ce894d4",
+      "correction_round": 3,
+      "supersedes_record_id": "6d6b8f1ca2604a74bc23a98c1169846b",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-omission-1",
+            "category": "omission",
+            "severity": "major",
+            "detail": "The arrival and three-minute timing are now represented, so the prior omission is fixed. The sentence still needs syntactic correction; that separate issue is reported below.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "with three minutes of advance",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "на три минуты раньшек въезду на шоссе",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "6d6b8f1ca2604a74bc23a98c1169846b",
+              "finding_id": "new-omission-1"
+            }
+          },
+          {
+            "id": "recheck-style-1",
+            "category": "style",
+            "severity": "major",
+            "detail": "The sentence remains ungrammatical and does not clearly show that Europapa is by Joost before Spotify moves to Kate Bush’s song. Recast it to make the artist attribution and the change of song clear.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "From Joost’s *Europapa,* Spotify jumps into *Running Up That Hill* by Kate Bush",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "После *Europapa* Joost Spotify переключается на *Running Up That Hill* Кейт Буш",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "6d6b8f1ca2604a74bc23a98c1169846b",
+              "finding_id": "recheck-style-1"
+            }
+          },
+          {
+            "id": "meaning-surprise-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "«Как ни удивительно» means that the arrival is surprising, reversing “Unsurprisingly.” Use a rendering such as «Неудивительно» or «Как и следовало ожидать».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Unsurprisingly, he arrives at the entry ramp",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Как ни удивительно",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "structure-arrival-1",
+            "category": "structure",
+            "severity": "major",
+            "detail": "«раньшек» fuses «раньше» with «к», leaving the arrival clause ungrammatical. Recast the sentence so it clearly says he reaches the entry ramp three minutes early, for example: «он прибывает к въезду на шоссе на три минуты раньше».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "he arrives at the entry ramp with three minutes of advance",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "раньшек въезду на шоссе",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       },
