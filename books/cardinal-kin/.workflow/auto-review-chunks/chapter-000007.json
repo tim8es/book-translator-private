@@ -253,12 +253,75 @@
         }
       ],
       "glossary": []
+    },
+    "chunk-002": {
+      "outcome": "CORRECTIONS_REQUIRED",
+      "report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "term-recheck",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "The prior terminology issue is repaired: the current text uses «помощника руководителя», consistently with the later occurrence in this core, rather than «личного помощника».",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "You’d be filling in for Timothy Drake’s executive assistant.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "помощника руководителя Тимоти Дрейка",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "6b5637f6145246b9a3f41ad59da1ec1c",
+              "finding_id": "chunk-002-assistant-term"
+            }
+          },
+          {
+            "id": "missing-role",
+            "category": "omission",
+            "severity": "major",
+            "detail": "The translation omits «You’d be filling in for», leaving only a bare noun phrase. It does not state that Damian would temporarily fill in for Timothy Drake’s executive assistant, and the resulting line is incomplete. Restore the missing predicate and recheck the passage.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "You’d be filling in for Timothy Drake’s executive assistant.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "помощника руководителя Тимоти Дрейка",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "style": [
+        {
+          "evidence": "В блоках 056–060 тревожные предположения Дэмиана сменяются его собственным выводом о поддержке Люциуса Фокса.",
+          "source_pattern": "Близкое к Дэмиану повествование переходит от делового объяснения к внутренним сомнениям и риторическим вопросам (блоки 047–061).",
+          "translation_approach": "Сохранять этот переход, фрагменты внутренней речи и цепочки вопросов; не превращать сомнения персонажа в пояснения рассказчика."
+        }
+      ],
+      "glossary": []
     }
   },
   "windows": {
     "chunk-001": {
       "source_sha256": "9ffe2d708030af115c80a883b711f1c60789195898033dd20d303d98ae039117",
       "translation_sha256": "6518f3e1ee21644decab877538a5e1c10896b37eede4434db542888627074889"
+    },
+    "chunk-002": {
+      "source_sha256": "ca1e20b2a7cbe7b5b1e27ffc96357fb08dd3e23c5a9e0d8114d36115180a3527",
+      "translation_sha256": "1bc0e22d058815d75e2721583986a23b9544892bd5fa4f2ebc4f075fbe906f0a"
     }
   },
   "accepted_review_record_id": null,
