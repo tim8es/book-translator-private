@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 131,
+  "next_sequence": 132,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -14770,6 +14770,71 @@
       },
       "shared_state_revisions": {
         "glossary": "6952f00ca7ff873229da9363faa3a9d93914074b20e3056791feb3f89e180f83",
+        "style_guide": "eaa08d42f1f5ea55a06553ec9c1d9e5c6f66b62f9bb6f55b653a52f78659dd74"
+      }
+    },
+    {
+      "record_id": "c87ed4f955c045d8bb44bb7a7ad72202",
+      "sequence": 131,
+      "unit_id": "chapter-000048",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "a4f3490324d4a14a39491d92a47ea5e1325aad05926faddf42ea02cf2fdd09d3",
+      "translation_sha256": "d67398b295d6a58fd830d7cdfa0af8f5d3a2a4a15bcff354c820436b4aa4ce14",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-0e2b1bfc",
+      "reviewed_at": "2026-11-18T05:58:04Z",
+      "state_revision": "7b4ab028aae6d4f49a92c5865e40ddb3584c09f14ad5b1516eb78a421ad03bd4",
+      "review_commit": "f295ef0cfbc8f51728ea656c5ea2cec4961587d2",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "referent-1",
+            "category": "referent",
+            "severity": "major",
+            "detail": "Объятие получает Лэнс: Фернандо отходит от своего напарника, чтобы Хэмилтон мог обнять его. В переводе «его» может быть понято как Фернандо; уточните, что Хэмилтон обнимает Лэнса.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Only barely suppressing a growl, Fernando steps away from his *teammate,* allowing *Hamilton* to give him a celebratory two-armed hug that is entirely *too much* in his opinion.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Едва сдерживая рычание, Фернандо отходит от своего *напарника*, позволяя *Хэмилтону* обнять его обеими руками — по мнению Фернандо, это уже совершенно *чересчур*.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "В конструкции «Одну руку он скользит...» использован непереходный глагол с прямым дополнением. Переформулируйте, например: «Он скользит рукой за шею Макса» или «Он просовывает одну руку за шею Макса».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "He slides one of his hands behind Max’s neck, pulling their faces together into a kiss so hot it could melt all the icecaps of Antarctica.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Одну руку он скользит Максу за шею и притягивает их лица друг к другу для поцелуя, такого жаркого, что он мог бы растопить все ледяные шапки Антарктиды.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "cd1324f1a7ed83efb0901fbc65253618eb8ca1268caca89edebb511e7e9c4e4a",
         "style_guide": "eaa08d42f1f5ea55a06553ec9c1d9e5c6f66b62f9bb6f55b653a52f78659dd74"
       }
     }
