@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 126,
+  "next_sequence": 127,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -14406,6 +14406,74 @@
               "record_id": "e681be450c1245c6a64548b520ff33c3",
               "finding_id": "terminology-1-recheck"
             }
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "d156cbff985bbb6a7bbbaf073c3be6a9d5eb977222560823198cc0ca9108d93e",
+        "style_guide": "eaa08d42f1f5ea55a06553ec9c1d9e5c6f66b62f9bb6f55b653a52f78659dd74"
+      }
+    },
+    {
+      "record_id": "168dd6ff885f49fe9e8e3885370e1f21",
+      "sequence": 126,
+      "unit_id": "chapter-000046",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "5eb40c7657a04768072006c3d09e3e412722114d863dd1168e287a3923a7b5b0",
+      "translation_sha256": "0c82ade9d90b2d2855d1cf792bed7915a5ed77e553ec7bb10aede22168c6fb1e",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-17185bd6",
+      "reviewed_at": "2026-11-18T05:27:04Z",
+      "state_revision": "3c34aa9e21d8a8357c82bee12b61732633dcaa79cda8c0abe07a5ff0ccda8ee7",
+      "review_commit": "d0dab8a6adc05c8311995fb119933f4ac4139773",
+      "correction_round": 4,
+      "supersedes_record_id": "c4ce47269ff5485fa5dfe5b324506275",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "terminology-1-recheck-3",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "Не разрешено: в глоссарии по-прежнему указано «Верстаппен», тогда как в текущем переводе стоит «Ферстаппен». Сохраните в переводе принятое написание «Ферстаппен» и исправьте запись глоссария после согласования.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“What’s up, Verstappen?” Esteban greets Max with a wide grin.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Как Ферстаппен — широко улыбаясь, приветствует Макса Эстебан.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "c4ce47269ff5485fa5dfe5b324506275",
+              "finding_id": "terminology-1-recheck-2"
+            }
+          },
+          {
+            "id": "meaning-1",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Реплика и повествовательная часть слились в грамматически нарушенную фразу, а вопросительное приветствие «What’s up?» передано неполным «Как». Переведите реплику как самостоятельный вопрос, например «Как дела, Ферстаппен?», и сохраните отдельно сообщение о том, что Эстебан широко улыбается и приветствует Макса.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“What’s up, Verstappen?” Esteban greets Max with a wide grin.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Как Ферстаппен — широко улыбаясь, приветствует Макса Эстебан.",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       },
