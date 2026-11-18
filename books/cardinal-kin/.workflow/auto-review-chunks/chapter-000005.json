@@ -250,6 +250,72 @@
           "type": "фамилия; название семьи"
         }
       ]
+    },
+    "chunk-002": {
+      "outcome": "CORRECTIONS_REQUIRED",
+      "report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "prior-exec",
+            "category": "omission",
+            "severity": "minor",
+            "detail": "Resolved: «ассистентки руководителя» preserves the more specific role of an executive assistant.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Ever since Tim hired Tam Fox as his executive assistant, Lucius doesn’t believe what the media has to say about him.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "С тех пор как Тим нанял Тэм Фокс на должность ассистентки руководителя, Люциус не верит тому, что о нём пишет пресса.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "d7d70e1559784b82aae645e68392d385",
+              "finding_id": "omission-1"
+            }
+          },
+          {
+            "id": "tutor-ref",
+            "category": "referent",
+            "severity": "major",
+            "detail": "The translation’s «тот» refers to Fox, making Fox the tutor. In context, the source most strongly indicates that Tim is tutoring Damian: the sentence is in Tim’s viewpoint, and the following sentence explains that Tim is an easy connection for Damian because they are of similar age and situation. Clarify the referent as Tim, e.g. «Тим знает, что сам занимается с Дэмианом…».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Tim knows he’s tutoring Damian on the side but not as often as either would like.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Тим знает, что тот дополнительно занимается с Дэмианом, но не так часто, как хотелось бы им обоим.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "style": [
+        {
+          "evidence": "“Life is a bitch like that.”; “Lucius doesn’t buy into Tim’s bullshit anymore.”",
+          "source_pattern": "Close third-person narration around Tim combines reflective emotional phrasing with blunt colloquial idioms and profanity.",
+          "translation_approach": "Preserve the conversational bluntness and emotional shifts rather than neutralizing the language."
+        }
+      ],
+      "glossary": [
+        {
+          "notes": "",
+          "original": "Gotham",
+          "translation": "Готэм",
+          "type": "город"
+        }
+      ]
     }
   }
 }
