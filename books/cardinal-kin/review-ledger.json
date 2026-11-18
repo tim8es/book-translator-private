@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "cardinal-kin",
-  "next_sequence": 13,
+  "next_sequence": 14,
   "records": [
     {
       "record_id": "75dfa72e2b6148208fd5343b6e384999",
@@ -1341,6 +1341,411 @@
             },
             "translation_anchor": {
               "quote": "Пру качает головой, опустив взгляд. «Не знаю».",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "1c5d9486f4d2fa5ea0b42ba90ebd6d52e26e1784a4fe6715448ff50cae516f91",
+        "style_guide": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4"
+      }
+    },
+    {
+      "record_id": "eb2f16d1b4094626af65ae8d929fc077",
+      "sequence": 13,
+      "unit_id": "chapter-000005",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "b13d3a92f1556dea465905b35f22abe2281204254f681894bbdb15140d1a1ec2",
+      "translation_sha256": "3b3f873edd053024323e2b0fc16de052294c1333640b6f94a38a977532dd68b2",
+      "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "review_contract_revision": "docs/TRANSLATION.md@a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "reviewer_session_id": "auto-6232711b4aec-reviewer-34586488",
+      "reviewed_at": "2026-11-18T13:07:24Z",
+      "state_revision": "0c4ac08fd5241d5a6087485bc520071a91818c2476060a2ce073bd6efc46d1ca",
+      "review_commit": "00cb7e8ea7f93c1f0cb0a36e9694627e0ff71b82",
+      "correction_round": 3,
+      "supersedes_record_id": "ae9c5da036a44ffe80ab9ba0b4de21e0",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "chunk-001-pronoun-recheck",
+            "category": "referent",
+            "severity": "major",
+            "detail": "Unresolved: in «тот знал, что сделал это нарочно», «сделал» appears to refer to Damian. The source says Tim deliberately called Damian by the wrong name, and Damian knew Tim had done so. Clarify that Tim was the one who used the wrong name intentionally.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Damian held himself back, corrected Tim calmly and moved on, even though Tim is sure he knew he did it on purpose.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Дэмиан сдержался, спокойно поправил Тима и пошёл дальше, хотя Тим уверен: тот знал, что сделал это нарочно.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "ae9c5da036a44ffe80ab9ba0b4de21e0",
+              "finding_id": "chunk-001-pronoun-agency"
+            }
+          },
+          {
+            "id": "chunk-001-lashings-recheck",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Resolved: the current translation presents the verbal lashing as an expected reaction, with the corrected case.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Tim was fully prepared to be on the bad side of one of Damians famous verbal lashings when he called him by the wrong name.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Тим был готов попасть под один из знаменитых словесных разносов Дэмиана, когда назвал его не тем именем.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "ae9c5da036a44ffe80ab9ba0b4de21e0",
+              "finding_id": "chunk-001-lashings-tense"
+            }
+          },
+          {
+            "id": "chunk-001-tutor-recheck",
+            "category": "referent",
+            "severity": "major",
+            "detail": "Resolved: «сам занимается с Дэмианом» correctly makes Tim the tutor.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Tim knows he’s tutoring Damian on the side but not as often as either would like.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Тим знает, что сам занимается с Дэмианом дополнительно, но не так часто, как хотелось бы им обоим.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "ae9c5da036a44ffe80ab9ba0b4de21e0",
+              "finding_id": "chunk-002-tutor-ref"
+            }
+          },
+          {
+            "id": "chunk-001-prominent-child",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The translation changes «prominent child» into a child «из влиятельной семьи». The source describes the child as prominent; it does not specify that the prominence comes from the child’s family. Use a rendering that preserves the source’s description without adding that explanation.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Tim did everything he could to treat Damian as he would if Fox had introduced any other prominent child—with patience and a touch of provocation.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Он сделал всё, что мог, чтобы обращаться с Дэмианом так же, как с любым другим ребёнком из влиятельной семьи, которого представил бы ему Фокс: терпеливо и с лёгкой провокацией.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "chunk-002-recheck-bats",
+            "category": "referent",
+            "severity": "major",
+            "detail": "The photos connect Tim to the Bat-family, not to actual bats. The translation still says «с летучими мышами», preserving the referent error.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "The photos are one of his few direct connections to the bats.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Эти фотографии — одна из немногих его прямых связей с летучими мышами.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "ae9c5da036a44ffe80ab9ba0b4de21e0",
+              "finding_id": "chunk-003-referent-2"
+            }
+          },
+          {
+            "id": "chunk-002-recheck-breath",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Он шипяще выдыхает» is awkward Russian. Use a natural construction such as «с шипением выдыхает сквозь стиснутые зубы», preserving the source image.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "His breath hisses between clenched teeth as he raises his head in slight shock.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Он шипяще выдыхает сквозь стиснутые зубы и слегка ошеломлённо поднимает голову.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "ae9c5da036a44ffe80ab9ba0b4de21e0",
+              "finding_id": "chunk-004-breath-calque"
+            }
+          },
+          {
+            "id": "chunk-002-recheck-surprise",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "After «— Сюрприз.» the following narration remains in the same paragraph without a clear boundary, so it can be read as further dialogue. Separate or otherwise clearly mark the narration.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“Surprise.” He doesn’t even need to see her face to know Pru is smirking smugly.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "— Сюрприз. Ему даже не нужно видеть её лица, чтобы понять: Пру самодовольно ухмыляется.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "ae9c5da036a44ffe80ab9ba0b4de21e0",
+              "finding_id": "chunk-004-surprise-format"
+            }
+          },
+          {
+            "id": "chunk-002-bats-meaning",
+            "category": "referent",
+            "severity": "major",
+            "detail": "Here “the Bats” refers to the Bat-family. «Бэты» is an unclear, unnatural rendering and does not reliably preserve that referent; use an established equivalent such as «Бэт-семья».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "he knows the Bats would track him down if they could.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "он знает, что Бэты выследили бы его, если бы смогли.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "chunk-002-explosion-idiom",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Команда попала под взрыв» is awkward Russian. Rephrase naturally without adding unsupported specifics, for example, «но тут команду застал взрыв».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Tim planned to avoid them completely, but then the team got caught up in an explosion.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Тим собирался полностью их избегать, но тут команда попала под взрыв.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "chunk-003-move-idiom",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Он пришёл в движение» is a mechanical calque for “He’s on the move.” Use a natural equivalent, such as «Он снова в пути», that fits the context.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "He’s on the move.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Он пришёл в движение.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "ae9c5da036a44ffe80ab9ba0b4de21e0",
+              "finding_id": "chunk-006-move-idiom"
+            }
+          },
+          {
+            "id": "chunk-003-water-gaze",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Вглядываясь в его глубину» sounds awkward in Russian and suggests looking into the glass itself. A natural phrasing such as «пристально глядя на воду в стакане» preserves her intent gaze.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Pru accepts a glass of water from Tim and sips it slowly, staring into its depths intently.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Пру принимает у Тима стакан воды и медленно отпивает, пристально вглядываясь в его глубину.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "ae9c5da036a44ffe80ab9ba0b4de21e0",
+              "finding_id": "chunk-006-water-gaze"
+            }
+          },
+          {
+            "id": "chunk-003-problematic-force",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "«Потенциально опасно» makes “potentially problematic” more specifically threatening. Use a less intensified equivalent, such as «может создать проблемы».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "That means Ra’s is either hiding something, or going off the books, both potentially problematic.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Значит, Ра’с либо что-то скрывает, либо действует вне официальных каналов, и то и другое потенциально опасно.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "ae9c5da036a44ffe80ab9ba0b4de21e0",
+              "finding_id": "chunk-006-problematic-force"
+            }
+          },
+          {
+            "id": "chunk-003-beacon-referent",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "«Подозревает Пру или кого-то из солдат» can mean that Damian is suspicious of them, rather than that he suspects they are the beacon’s recipients. Clarify the intended referent, for example: «хотя, вероятно, предполагает, что сигнал адресован Пру или кому-то из солдат его матери».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "He doesn’t know who the beacon calls to, though he probably suspects Pru or one of his mother’s soldiers.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Он не знает, кому подаёт сигнал маяк, хотя, вероятно, подозревает Пру или кого-то из солдат своей матери.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "chunk-004-pit-doc",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "“Recorded” means documented or entered on record; «известную» broadens this to every known Pit. Use a rendering such as «учтённую» or «зафиксированную», preserving the source’s documented scope.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "to every recorded Lazarus Pit",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "каждую известную Яму Лазаря",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "ae9c5da036a44ffe80ab9ba0b4de21e0",
+              "finding_id": "chunk-007-recorded-pits"
+            }
+          },
+          {
+            "id": "chunk-004-whisper-calque",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«В подполье ходят шёпоты» is an awkward calque. A natural Russian phrasing such as «в подполье шепчутся о Кардинале» or «в подполье ходят слухи о Кардинале» would preserve the hushed-rumor sense.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "There are whispers in the underground about Cardinal.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "В подполье ходят шёпоты о Кардинале.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "ae9c5da036a44ffe80ab9ba0b4de21e0",
+              "finding_id": "chunk-007-whispers-calque"
+            }
+          },
+          {
+            "id": "chunk-004-uncertain-pru",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "«Не знаю» states a lack of knowledge more definitively than Pru’s explicit uncertainty, “I’m not sure.” Prefer «Я не уверена» or an equivalent that preserves her tentativeness.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Pru shakes her head, her gaze low. “I’m not sure.”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Пру качает головой, опустив взгляд. «Не знаю».",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "ae9c5da036a44ffe80ab9ba0b4de21e0",
+              "finding_id": "chunk-008-uncertainty-1"
+            }
+          },
+          {
+            "id": "chunk-004-dangling-plan",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The opening participle in «Повторяя тот же план...» attaches awkwardly to the compound subject «Кардинал и Пру», while «выполнял» is singular masculine and leaves the agent unclear. Recast to make clear that Cardinal had carried out the plan before and that Cardinal and Pru reenact it here.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Reenacting the same plan he executed before, Cardinal and Pru went around the world to every recorded Lazarus Pit and set explosives at each.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Повторяя тот же план, что уже выполнял прежде, Кардинал и Пру объехали весь мир, разыскивая каждую известную Яму Лазаря и устанавливая у каждой взрывчатку.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "chunk-004-talia-calque",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«В любой день предпочёл бы» is an awkward calque of “any day,” and «столь же жаждущая власти и хитрая» is a clumsy parallel construction. Use natural Russian phrasing that preserves Tim’s clear preference and the comparison of Talia with Ra’s.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Tim favors Talia over Ra's anyday, but he knows Talia’s character.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Тим в любой день предпочёл бы Талию Ра’су, но он знает, что она за человек. Она столь же жаждущая власти и хитрая, как Ра’с, а такую решимость нельзя недооценивать.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "chunk-004-identity-secret",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "In this context, “his identity is secure” means Tim’s identity remains undiscovered or protected as a secret. «Его личность в безопасности» can instead sound as though the person himself is physically safe. Prefer a rendering such as «он уверен, что его личность не раскрыта».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Tim isn’t naive enough to think he’s gone completely unnoticed, but he’s confident his identity is secure.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Тим не настолько наивен, чтобы думать, будто его совсем не заметили, но он уверен, что его личность в безопасности.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "chunk-004-coarse-register",
+            "category": "register",
+            "severity": "minor",
+            "detail": "The colloquial profanity in “shit hits the fan” is softened to «всё полетит к чертям». Preserve the source’s rough, vulgar register with a comparably coarse Russian idiom.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "So Tim is on his own if shit hits the fan. Wonderful.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Значит, если всё полетит к чертям, Тим останется один. Замечательно.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "chunk-004-scoffs-calque",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Откровенно фыркает» is an awkward collocation and does not naturally convey “outright scoffs.” A phrasing such as «Тим лишь фыркает в ответ» would preserve the dismissive reaction.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Tim outright scoffs at that, “Yah, right.”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Тим откровенно фыркает: «Ага, конечно».",
               "occurrence": 0
             },
             "resolves": null
