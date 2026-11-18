@@ -16,7 +16,7 @@
   },
   "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
   "source_sha256": "f06b996448766fcf6faa703ced3ca03b63221f4f81bdb4c395619c69ffa353cd",
-  "updated_at": "2026-11-18T16:59:16.228408+00:00",
+  "updated_at": "2026-11-18T17:00:27.352659+00:00",
   "active": {
     "role": "corrector",
     "chapter": 9,
@@ -94,25 +94,14 @@
     "unit_id": "chapter-000009",
     "role": "corrector",
     "route": "primary",
-    "request_chars": 32509,
+    "request_chars": 47837,
     "outcome": "response",
-    "duration_ms": 13275,
-    "prompt_tokens": 7196,
-    "completion_tokens": 348,
-    "total_tokens": 7544
+    "duration_ms": 69022,
+    "prompt_tokens": 11298,
+    "completion_tokens": 3715,
+    "total_tokens": 15013
   },
   "provider_call_metrics": [
-    {
-      "unit_id": "chapter-000008",
-      "role": "reviewer",
-      "route": "primary",
-      "request_chars": 53671,
-      "outcome": "response",
-      "duration_ms": 142025,
-      "prompt_tokens": 12433,
-      "completion_tokens": 7824,
-      "total_tokens": 20257
-    },
     {
       "unit_id": "chapter-000008",
       "role": "corrector",
@@ -541,6 +530,17 @@
       "prompt_tokens": 7196,
       "completion_tokens": 348,
       "total_tokens": 7544
+    },
+    {
+      "unit_id": "chapter-000009",
+      "role": "corrector",
+      "route": "primary",
+      "request_chars": 47837,
+      "outcome": "response",
+      "duration_ms": 69022,
+      "prompt_tokens": 11298,
+      "completion_tokens": 3715,
+      "total_tokens": 15013
     }
   ],
   "last_review_failure": {
@@ -564,17 +564,37 @@
       "patch_sha256": "0406bd2dd65897e18616e72d9206fb6ada1035136ee5bc792cb48b9f481e6c7b",
       "reason": "new-duplicated-phrase",
       "at": "2026-11-18T12:10:54.836238+00:00"
+    },
+    {
+      "unit_id": "chapter-000009",
+      "review_record_id": "60cdceecef8241e4911888e94f72c58d",
+      "finding_id": "chunk-005-bluejay-135",
+      "patch_sha256": "d2c2e2d0e132d33b9d77f4f5c789dab7f9519e9de530a228f02e92a28f5f43af",
+      "reason": "new-duplicated-phrase",
+      "at": "2026-11-18T17:00:27.352633+00:00"
     }
   ],
   "last_correction_regression": {
-    "unit_id": "chapter-000005",
-    "finding_id": "chunk-001-pronoun-agency",
+    "unit_id": "chapter-000009",
+    "finding_id": "chunk-005-bluejay-135",
     "reason": "new-duplicated-phrase",
     "evidence": {
-      "count": 1,
+      "count": 3,
       "examples": [
         {
-          "tokens": 5,
+          "tokens": 12,
+          "previous": 1,
+          "candidate": 2,
+          "adjacent": false
+        },
+        {
+          "tokens": 12,
+          "previous": 1,
+          "candidate": 2,
+          "adjacent": false
+        },
+        {
+          "tokens": 12,
           "previous": 1,
           "candidate": 2,
           "adjacent": false
@@ -693,13 +713,13 @@
         "total_tokens": 344833
       },
       "corrector": {
-        "completed_calls": 58,
-        "responses": 58,
-        "duration_ms": 1042810,
-        "request_chars": 1907814,
-        "prompt_tokens": 414381,
-        "completion_tokens": 41115,
-        "total_tokens": 455496
+        "completed_calls": 59,
+        "responses": 59,
+        "duration_ms": 1111832,
+        "request_chars": 1955651,
+        "prompt_tokens": 425679,
+        "completion_tokens": 44830,
+        "total_tokens": 470509
       },
       "orchestrator": {
         "completed_calls": 4,
@@ -812,11 +832,11 @@
   "model_response_diagnostics": {
     "finish_reason": "stop",
     "response_format": "json_object",
-    "response_chars": 193,
+    "response_chars": 2457,
     "provider_refusal": false,
-    "prompt_tokens": 7196,
-    "completion_tokens": 348,
-    "total_tokens": 7544,
+    "prompt_tokens": 11298,
+    "completion_tokens": 3715,
+    "total_tokens": 15013,
     "route": "primary",
     "role": "corrector",
     "unit_id": "chapter-000009"
