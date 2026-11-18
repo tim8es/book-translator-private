@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 101,
+  "next_sequence": 102,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -11696,6 +11696,199 @@
       },
       "shared_state_revisions": {
         "glossary": "969f6b894914b6a7a03ba2c012994e107e310134ac73867b1659f6ebb4d17290",
+        "style_guide": "542b979599ebe40dfbb11794d47d2fffcc7bde125f2d09c1549f33f618157eff"
+      }
+    },
+    {
+      "record_id": "475167827a954b8eac60100980883ea8",
+      "sequence": 101,
+      "unit_id": "chapter-000038",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "433cbe26cee5137ed0d25867032c35db0a89b88ecb5057440bbc8e2698cafac7",
+      "translation_sha256": "2bcaec4995a4ca9cb394c82ffd6c9ff60a4410efd40bbfb46c9a4cb9d6aa11f9",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-5367cb58",
+      "reviewed_at": "2026-11-18T00:41:16Z",
+      "state_revision": "02cca4c8b544cd2a5680221618cdebfc86f6b66e70574cf9715e5ac1e5af6df1",
+      "review_commit": "aa0134aab4df91404de0bca3306754e652668a98",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "meaning-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The source places Fernando’s hand on Lance’s arm; the translation specifies his shoulder. Restore the source’s location without narrowing it.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "only keeping one hand on his arm.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "но оставляя руку у него на плече.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "addition-1",
+            "category": "addition",
+            "severity": "minor",
+            "detail": "The source identifies the hoodie’s aglets but does not say they are plastic. Remove the unsupported material specification.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "a white hoodie with black drawstring — the aglets of which Lance has been chewing on",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "и белое худи с чёрным шнурком, пластиковые наконечники которого Лэнс грыз",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-2",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "“Yours more” means Seb will kick Nico’s ass more than Gabriel’s. The translation instead says that Seb belongs to Nico more; correct the referent and meaning.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Yours more",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Я ещё больше принадлежу тебе",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The surrounding narration uses present tense, but this sentence shifts to past. Keep the narration in present tense.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Fernando barks out in laughter. “Didn’t expect *that* one.”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Фернандо громко расхохотался. — Не ожидал *именно этой*.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-2",
+            "category": "style",
+            "severity": "minor",
+            "detail": "This is another shift from the chapter’s present-tense narration to past tense. Keep the narration in present tense.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Fernando barks out in laughter. “You’re funny, *cariño,”* he says, looking at Lance briefly.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Фернандо громко расхохотался. «Ты смешной, *cariño*, — говорит он, на миг взглянув на Лэнса.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "structure-1",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "The source italicizes “checking” for emphasis, but that emphasis is absent in the translation. Preserve the marked emphasis on its Russian equivalent.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Lance nods, pressing *next* without thinking, without *checking* if it’s safe.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Лэнс кивает и, не задумываясь, нажимает *«дальше»*, не проверив, безопасно ли это.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "structure-2",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "The source italicizes “fuck” for emphasis; the translated profanity is not italicized. Preserve the emphasis.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "No, no promise. Just… *fuck,* please don’t hate me.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Нет, никаких обещаний. Просто… блядь, пожалуйста, не ненавидь меня",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-3",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The source keeps this narration in present tense (“speaks”), while the translation switches to past tense. Keep the established present-tense narration.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "When he finally speaks, it’s soft and breathy, “I want… *how to say it?* I’d like… Would you like to fuck me?”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Когда он наконец заговорил, его голос прозвучал тихо, с придыханием: «Я хочу… *как это сказать?* Мне бы хотелось… Ты бы хотел трахнуть меня?»",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-3",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Gabriel apologizes for making the situation weird; “всё стало странно” makes the awkwardness sound like something that simply happened. Preserve his responsibility for causing it.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "I’m sorry for making weird.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Прости, что всё стало странно.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "structure-3",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "The source marks this entire internal thought in italics, but the translation does not. Restore the italic formatting.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "*Please, don’t say anything else. It’s already bad. Don’t make it worse.*",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Пожалуйста, больше ничего не говори. И так всё плохо. Не делай ещё хуже.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "e8892a5816eda16f154722426995c10bfcaaa7b77ee131a7a0d8bb71b1d1ca57",
         "style_guide": "542b979599ebe40dfbb11794d47d2fffcc7bde125f2d09c1549f33f618157eff"
       }
     }
