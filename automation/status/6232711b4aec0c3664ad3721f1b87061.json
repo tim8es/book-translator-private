@@ -16,7 +16,7 @@
   },
   "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
   "source_sha256": "f06b996448766fcf6faa703ced3ca03b63221f4f81bdb4c395619c69ffa353cd",
-  "updated_at": "2026-11-18T17:00:27.352659+00:00",
+  "updated_at": "2026-11-18T17:00:28.959316+00:00",
   "active": {
     "role": "corrector",
     "chapter": 9,
@@ -572,15 +572,29 @@
       "patch_sha256": "d2c2e2d0e132d33b9d77f4f5c789dab7f9519e9de530a228f02e92a28f5f43af",
       "reason": "new-duplicated-phrase",
       "at": "2026-11-18T17:00:27.352633+00:00"
+    },
+    {
+      "unit_id": "chapter-000009",
+      "review_record_id": "60cdceecef8241e4911888e94f72c58d",
+      "finding_id": "chunk-006-mask-role",
+      "patch_sha256": "662a85b4fc6d648af81a60fb4560ec2676103efab6835137a3f5f8d9d7f69010",
+      "reason": "new-duplicated-phrase",
+      "at": "2026-11-18T17:00:28.959285+00:00"
     }
   ],
   "last_correction_regression": {
     "unit_id": "chapter-000009",
-    "finding_id": "chunk-005-bluejay-135",
+    "finding_id": "chunk-006-mask-role",
     "reason": "new-duplicated-phrase",
     "evidence": {
-      "count": 3,
+      "count": 6,
       "examples": [
+        {
+          "tokens": 12,
+          "previous": 1,
+          "candidate": 2,
+          "adjacent": false
+        },
         {
           "tokens": 12,
           "previous": 1,
