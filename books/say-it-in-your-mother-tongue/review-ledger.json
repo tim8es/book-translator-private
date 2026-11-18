@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 127,
+  "next_sequence": 128,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -14479,6 +14479,71 @@
       },
       "shared_state_revisions": {
         "glossary": "d156cbff985bbb6a7bbbaf073c3be6a9d5eb977222560823198cc0ca9108d93e",
+        "style_guide": "eaa08d42f1f5ea55a06553ec9c1d9e5c6f66b62f9bb6f55b653a52f78659dd74"
+      }
+    },
+    {
+      "record_id": "4097973357724105bda1a5810b4a289b",
+      "sequence": 127,
+      "unit_id": "chapter-000047",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "d4f24782cb4a00e135a1de9e403e639e749beb532e629bb1e4b4ff6af715fcc0",
+      "translation_sha256": "8894c784a26ca5be52e4233f8c97a4109e6cc1132c75df8388856c5e1edd5c28",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-b1aa670d",
+      "reviewed_at": "2026-11-18T05:36:46Z",
+      "state_revision": "fa0937e1c0624b70d970478652f48018b433b3a9083f206a62e098d762d479ed",
+      "review_commit": "2ac83e2703cfe7063a848f971ac570594c9c4140",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "terminology-1",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "The established glossary renderings are «Заубер» for Sauber and «Ауди» for Audi, but both names remain in Latin script here. Use the established Russian forms for consistency.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Sauber-branded Audi car",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "автомобиля Audi с логотипом Sauber",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Постукивает себя по подбородку» звучит неестественно и воспринимается как постукивание по самому себе. Переформулируйте естественно, например: «постукивает по подбородку».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "He taps his chin, miming a thinking gesture",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Он постукивает себя по подбородку, изображая задумчивость",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "6952f00ca7ff873229da9363faa3a9d93914074b20e3056791feb3f89e180f83",
         "style_guide": "eaa08d42f1f5ea55a06553ec9c1d9e5c6f66b62f9bb6f55b653a52f78659dd74"
       }
     }
