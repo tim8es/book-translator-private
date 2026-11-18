@@ -3,7 +3,7 @@
   "job_id": "6232711b4aec0c3664ad3721f1b87061",
   "book_slug": "cardinal-kin",
   "state": "running",
-  "phase": "structural-segments-staged",
+  "phase": "translator-completed",
   "failures": 0,
   "correction_rounds": {
     "chapter-000001": 2,
@@ -17,13 +17,8 @@
   },
   "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
   "source_sha256": "f06b996448766fcf6faa703ced3ca03b63221f4f81bdb4c395619c69ffa353cd",
-  "updated_at": "2026-11-18T18:08:49.721506+00:00",
-  "active": {
-    "role": "translator",
-    "chapter": 10,
-    "session_id": "auto-6232711b4aec-translator-ea97c52a",
-    "unit_id": "chapter-000010"
-  },
+  "updated_at": "2026-11-18T18:08:51.380131+00:00",
+  "active": null,
   "structural_helper_revision": "4c584fe5534871cd05aa851d9b7bdbfa696d0edd",
   "model_calls_started": 277,
   "prompt_context": {
@@ -42,7 +37,7 @@
     "helper_revision": "4c584fe5534871cd05aa851d9b7bdbfa696d0edd",
     "batch_segment_count": 13
   },
-  "memory_glossary_saved": 51,
+  "memory_glossary_saved": 54,
   "pending_style": [],
   "role_protocol_failures": {
     "chapter-000002:corrector": 3
@@ -57,7 +52,7 @@
       "review_required": 0
     }
   },
-  "glossary_evidence_rejected": 13,
+  "glossary_evidence_rejected": 15,
   "glossary_conflicts_rejected": 10,
   "glossary_proposals_deferred": 0,
   "unit_protocol_failures": {
@@ -761,7 +756,7 @@
     },
     "accepted_operations": {
       "review_rejected": 10,
-      "translated": 3,
+      "translated": 4,
       "corrected": 6
     }
   },
@@ -874,13 +869,6 @@
       "outcome": "accepted",
       "duration_ms": 12139
     }
-  },
-  "provider_model_route": "primary",
-  "structural_segment_progress": {
-    "unit_id": "chapter-000010",
-    "source_sha256": "7091127b3f5142510f75a8d060b29a8baebdad5faf9c203c6de10c4091a109df",
-    "completed": 245,
-    "total": 245
   },
   "model_response_diagnostics": {
     "finish_reason": "stop",
