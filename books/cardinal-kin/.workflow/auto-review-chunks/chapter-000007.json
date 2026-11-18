@@ -517,6 +517,141 @@
         }
       ],
       "glossary": []
+    },
+    "chunk-004": {
+      "outcome": "CORRECTIONS_REQUIRED",
+      "report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "sig-recheck",
+            "category": "referent",
+            "severity": "minor",
+            "detail": "Resolved: the translation now correctly places Bruce Wayne’s signature next to his son’s signature.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "there, unmistakably, inexplicably, is Bruce Wayne’s signature next to his son’s.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "подпись Брюса Уэйна рядом с подписью его сына.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "082466d609594d68824cb1c151402a35",
+              "finding_id": "chunk-004-signature-ref"
+            }
+          },
+          {
+            "id": "restraint-recheck",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Resolved: «старается сдержаться» is a natural rendering that preserves Tam’s effort to control herself.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Tam gets a look on her face Tim knows means she’s activating her self-restraint.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "На лице Тэм появляется выражение, по которому Тим понимает: она старается сдержаться.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "082466d609594d68824cb1c151402a35",
+              "finding_id": "chunk-004-restraint-calque"
+            }
+          },
+          {
+            "id": "compartment-recheck",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Resolved: the translation now conveys deliberately putting stray thoughts about his former family aside to avoid distraction.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Tim has worked hard to train his mind to compartmentalize stray thoughts about his former family to avoid distraction.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Хотя Хотя Тим усердно приучал себя отодвигать на задний план случайные мысли о своей прежней семье, чтобы они не отвлекали.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "082466d609594d68824cb1c151402a35",
+              "finding_id": "chunk-004-compartmentalize"
+            }
+          },
+          {
+            "id": "apology-recheck",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Resolved: «это было не— Я не хотел—» preserves Tim’s interrupted, self-correcting sequence.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "I’m sorry that wasn’t- I didn't mean-",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Прости, это было не— Я не хотел—",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "082466d609594d68824cb1c151402a35",
+              "finding_id": "chunk-004-broken-apology"
+            }
+          },
+          {
+            "id": "register-recheck",
+            "category": "register",
+            "severity": "minor",
+            "detail": "Resolved: «бесить Уэйнов» preserves the colloquial force of “piss the Waynes off.”",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "And at the very least, I really don’t think you want to piss the Waynes off like that.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "И уж точно, мне кажется, ты не хочешь вот так бесить Уэйнов.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "082466d609594d68824cb1c151402a35",
+              "finding_id": "chunk-004-piss-off-register"
+            }
+          },
+          {
+            "id": "dup-although",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The translation accidentally repeats «Хотя». Remove one occurrence.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Although, Tim has worked hard to train his mind to compartmentalize stray thoughts about his former family to avoid distraction.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Хотя Хотя Тим усердно приучал себя отодвигать на задний план случайные мысли о своей прежней семье, чтобы они не отвлекали.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "style": [
+        {
+          "evidence": "Blocks 096–099; block 121 also uses emphasis within Tim’s internal thoughts.",
+          "source_pattern": "Tim’s internal reaction uses short fragments and marked emphasis, including the standalone “Wait.” and italicized “Damian.”",
+          "translation_approach": "Preserve the abrupt fragments and meaningful emphasis rather than smoothing them into continuous exposition."
+        }
+      ],
+      "glossary": []
     }
   },
   "windows": {
@@ -531,6 +666,10 @@
     "chunk-003": {
       "source_sha256": "3f4a9285535fc7c8822e8f00f8e2163dc5e117645965764cbff7497c1600bf35",
       "translation_sha256": "60ab0db400423f36043f44ef924e742974b9e02a59dec6d32a796c1b7591411f"
+    },
+    "chunk-004": {
+      "source_sha256": "2a0e0d961b9be2f096406ee45101fc9a758fc50161d157da704674be1749bb4d",
+      "translation_sha256": "3b56ab776478cfbab97b7cbde05319347b44dfa00d588be5a1f4c6ab0b65c869"
     }
   },
   "accepted_review_record_id": null,
