@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 120,
+  "next_sequence": 121,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -13931,6 +13931,55 @@
             },
             "translation_anchor": {
               "quote": "и начинает играть *Everywhere I Go* группы Hollywood Undead.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "3d46b41547ba4bb1534b23d2294018a434dbe09393f495d2dbd48c3fc0f42c76",
+        "style_guide": "eaa08d42f1f5ea55a06553ec9c1d9e5c6f66b62f9bb6f55b653a52f78659dd74"
+      }
+    },
+    {
+      "record_id": "1bf316d7f033402fb9171e9eb0beb3db",
+      "sequence": 120,
+      "unit_id": "chapter-000045",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "26c06cdfd4291e79a4d32bc4aa6c05c11b5c5badf62f6d5415faf153a128100a",
+      "translation_sha256": "87677de26ad0fd7e4591d3efc3daf11c547921e0ed8df4642bccbfd4f4af99a0",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-77383ecf",
+      "reviewed_at": "2026-11-18T04:46:25Z",
+      "state_revision": "d7e9b215481417f287f641b85cffc46e9577e6510a3fed3ec1d27f4b51ada396",
+      "review_commit": "9810c6a4ad33a8744acb42920a034633c9048fc3",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "meaning-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The source specifies a floor-length (full-height) window, but «окно во всю стену» describes a window spanning the wall. Render the height dimension, for example as «окно от пола до потолка».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "stepping towards the floor-length window in front of him.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Он выпускает дрожащий выдох и направляется к окну во всю стену перед ним.",
               "occurrence": 0
             },
             "resolves": null
