@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "unit_id": "chapter-000008",
+  "review_record_id": "37256be23edf44498b5ebe0686e0eca3",
+  "source_sha256": "046f155efc220f63ca6cc74edb78872a8d69460adf63b448b32a75ff6a5acf1d",
+  "translation_sha256": "d31ef28c2f05c4d7083af0bbf9d896165f6c59213c3419a6b014ede80cdd275c",
+  "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
+  "patches": [
+    {
+      "finding_id": "chunk-001-intelligence-1",
+      "operation": "replace",
+      "target_anchor": {
+        "quote": "даже когда *тонко* задевает их умственные способности.",
+        "occurrence": 0
+      },
+      "replacement": "даже когда *тонко* отпускает шпильки в адрес их интеллекта."
+    },
+    {
+      "finding_id": "chunk-001-bullshit-register",
+      "operation": "replace",
+      "target_anchor": {
+        "quote": "Тамара явно не стесняется говорить кому угодно, что тот несёт чушь, — в том числе и своему начальнику.",
+        "occurrence": 0
+      },
+      "replacement": "говорить кому угодно, что тот несёт хуйню"
+    }
+  ],
+  "glossary": [],
+  "style_guide": []
+}
