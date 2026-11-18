@@ -1,0 +1,311 @@
+{
+  "schema_version": 2,
+  "plan": {
+    "schema_version": 1,
+    "helper_revision": "review-chunks-source-stable-v1",
+    "source_sha256": "667284ef59c10f7475f1bd9f4d7eebcc2f6611d1b523ecf00aec4450a16b8e8d",
+    "translation_sha256": "d08dd79c56e0035d653e2f95d431dfd2e89b25f595849d16d5d658e0e66a12bc",
+    "chunks": [
+      {
+        "id": "chunk-001",
+        "source_core": [
+          0,
+          5308
+        ],
+        "translation_core": [
+          0,
+          5530
+        ],
+        "source_window": [
+          0,
+          7265
+        ],
+        "translation_window": [
+          0,
+          7449
+        ]
+      },
+      {
+        "id": "chunk-002",
+        "source_core": [
+          5308,
+          10460
+        ],
+        "translation_core": [
+          5530,
+          10810
+        ],
+        "source_window": [
+          3430,
+          12317
+        ],
+        "translation_window": [
+          3590,
+          12764
+        ]
+      },
+      {
+        "id": "chunk-003",
+        "source_core": [
+          10460,
+          15605
+        ],
+        "translation_core": [
+          10810,
+          16354
+        ],
+        "source_window": [
+          8636,
+          17508
+        ],
+        "translation_window": [
+          8967,
+          18347
+        ]
+      },
+      {
+        "id": "chunk-004",
+        "source_core": [
+          15605,
+          21010
+        ],
+        "translation_core": [
+          16354,
+          21843
+        ],
+        "source_window": [
+          13586,
+          22891
+        ],
+        "translation_window": [
+          14542,
+          23792
+        ]
+      },
+      {
+        "id": "chunk-005",
+        "source_core": [
+          21010,
+          26238
+        ],
+        "translation_core": [
+          21843,
+          27343
+        ],
+        "source_window": [
+          18851,
+          28051
+        ],
+        "translation_window": [
+          19675,
+          29153
+        ]
+      },
+      {
+        "id": "chunk-006",
+        "source_core": [
+          26238,
+          31431
+        ],
+        "translation_core": [
+          27343,
+          32585
+        ],
+        "source_window": [
+          24421,
+          33350
+        ],
+        "translation_window": [
+          25430,
+          34557
+        ]
+      },
+      {
+        "id": "chunk-007",
+        "source_core": [
+          31431,
+          36744
+        ],
+        "translation_core": [
+          32585,
+          38063
+        ],
+        "source_window": [
+          29375,
+          36744
+        ],
+        "translation_window": [
+          30501,
+          38063
+        ]
+      }
+    ]
+  },
+  "unit_id": "chapter-000009",
+  "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
+  "binding": {
+    "previous_record_id": null,
+    "glossary_sha256": "a3504667819897478c9f8db2b2cb830e4c5886f496f4af3b68223301b5c70c71",
+    "style_guide_sha256": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4",
+    "reviewer_contract_sha256": "e21e068170b373ed0593c7fa47b2039293af849e93fe53de5bd30b97f3092ff2"
+  },
+  "completed": {
+    "chunk-001": {
+      "outcome": "CORRECTIONS_REQUIRED",
+      "report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "gender-skills",
+            "category": "referent",
+            "severity": "minor",
+            "detail": "The source uses singular they and leaves Cardinal’s gender unspecified. «оказался» and «его» make the Russian explicitly masculine. Rephrase to avoid assigning gender, for example by making Cardinal’s detective skills the subject.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Whoever Cardinal is, they’ve got detective skills that rival Batman himself.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Кем бы ни оказался Кардинал, его детективные способности не уступают способностям самого Бэтмена.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "gender-mystery",
+            "category": "referent",
+            "severity": "minor",
+            "detail": "The gender-neutral «they» becomes «ему», again specifying Cardinal as male. Rephrase without a gendered pronoun, such as «Ещё не было загадки, не поддавшейся Кардиналу».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "There’s yet to be a single mystery they couldn’t solve.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Ещё не было ни одной загадки, которую ему не удалось бы разгадать.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "gender-identity",
+            "category": "referent",
+            "severity": "minor",
+            "detail": "«Their identity» is rendered as «его личность», assigning Cardinal a male gender where the source leaves it unspecified. Use a formulation such as «раскрыть личность Кардинала».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "She used to be near obsessive about uncovering their identity, but as they continued with subtle partnership, she realized she doesn’t need to know.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Когда-то она была почти одержима желанием раскрыть его личность, но со временем, по мере того как продолжалось их негласное сотрудничество, поняла: знать это ей не обязательно.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "gender-trust",
+            "category": "referent",
+            "severity": "minor",
+            "detail": "The source’s «they» and «them» become «он» and «ему», again specifying Cardinal’s gender. Rephrase to preserve the source’s uncertainty without gendered pronouns.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "She trusts Cardinal to do what's best for Gotham and they’ve never done anything to betray the faith she’s learned to put in them.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Она доверяет Кардиналу в том, что он поступит наилучшим для Готэма образом, и он ни разу не дал повода усомниться в доверии, которое она научилась ему оказывать.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "reason-calque",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "«Нет смысла в том, чтобы… жил» can suggest that living in isolation is pointless, whereas the source expresses Barbara’s puzzlement at why he lives that way. Rephrase to preserve that sense, for example «Странно, что такой… парень живёт в такой изоляции».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "It doesn’t make sense for such a handsome, wealthy, intelligent guy to live in such an isolated environment.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Нет смысла в том, чтобы такой красивый, богатый и умный парень жил в такой изоляции.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "fact-calque",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Сильнее, чем у неё есть на то основания» is awkward in Russian. A natural equivalent that preserves the source’s self-questioning is «Этот факт беспокоит её сильнее, чем следовало бы».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "The fact bothers her more than it has any reason to.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Этот факт беспокоит её сильнее, чем у неё есть на то основания.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "cardinal-base",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "The glossary gives «Кардинала», an inflected form, as the lexical rendering of Cardinal. Reconcile the entry to the dictionary form «Кардинал» while retaining the note about the translated title and contextual declension; the current «Кардиналом» in this sentence is an appropriate contextual form.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Ever since she first became Oracle, Cardinal has been a constant in her work.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "С тех пор как Барбара стала Оракулом, её работа постоянно связана с Кардиналом.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "style": [
+        {
+          "evidence": "«Privacy is basically just a suggestion.»; «That’s it.»; «So why doesn't he?»",
+          "source_pattern": "Близкая третьеличная фокализация через Барбару сочетается с сухой иронией и короткими, отдельными фразами для акцента.",
+          "translation_approach": "Сохранять близкую перспективу и сдержанную иронию; не объяснять подразумеваемое и оставлять короткие фразы короткими."
+        }
+      ],
+      "glossary": [
+        {
+          "notes": "В заголовке Cardinal Kin передано как «Родня Кардинала»; сохранять прописную букву и склонять по контексту.",
+          "original": "Cardinal",
+          "translation": "Кардинал",
+          "type": "кодовое имя"
+        },
+        {
+          "notes": "Резиденция семьи Уэйнов.",
+          "original": "Wayne Manor",
+          "translation": "поместье Уэйнов",
+          "type": "резиденция"
+        }
+      ]
+    }
+  },
+  "windows": {
+    "chunk-001": {
+      "source_sha256": "0508675e5160b0770faaf40c849c8c09f5889772c3eccb4f431b7073ba4fea86",
+      "translation_sha256": "27133b18c2e0ffaee3c56e031323dbe07c28bb5f84eac3ca3bfaa38c7e3d5103"
+    }
+  },
+  "accepted_review_record_id": null,
+  "reused": {}
+}
