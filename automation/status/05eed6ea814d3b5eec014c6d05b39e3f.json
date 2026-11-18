@@ -3,7 +3,7 @@
   "job_id": "05eed6ea814d3b5eec014c6d05b39e3f",
   "book_slug": "say-it-in-your-mother-tongue",
   "state": "running",
-  "phase": "provider-backoff",
+  "phase": "claimed",
   "failures": 0,
   "correction_rounds": {
     "chapter-000001": 1,
@@ -39,8 +39,13 @@
   },
   "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
   "source_sha256": "12e210ce5a95daf56a97ada583ec15c274780c4ddfa7fb92da6a88c67f7c403d",
-  "updated_at": "2026-11-18T01:22:19.961056+00:00",
-  "active": null,
+  "updated_at": "2026-11-18T01:52:45.775869+00:00",
+  "active": {
+    "role": "reviewer",
+    "chapter": 38,
+    "session_id": "auto-05eed6ea814d-reviewer-3a5536b6",
+    "unit_id": "chapter-000038"
+  },
   "recoveries": [
     {
       "action": "auto-retry-corrected-structural-preflight",
@@ -225,6 +230,5 @@
     "not_before": "2026-11-18T01:52:19.961035+00:00"
   },
   "last_error_code": "http_503",
-  "blocked_unit_id": "chapter-000038",
-  "last_error": "model HTTP status 503"
+  "blocked_unit_id": "chapter-000038"
 }
