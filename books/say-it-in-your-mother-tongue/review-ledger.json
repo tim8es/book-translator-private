@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 138,
+  "next_sequence": 139,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -15440,6 +15440,97 @@
       },
       "shared_state_revisions": {
         "glossary": "e0652b14c0497ab8a4ec917cd4283d12c32dd2a86364009368336e1099cbe88c",
+        "style_guide": "eaa08d42f1f5ea55a06553ec9c1d9e5c6f66b62f9bb6f55b653a52f78659dd74"
+      }
+    },
+    {
+      "record_id": "64ac4f2a08a84cefa6897aa136810b03",
+      "sequence": 138,
+      "unit_id": "chapter-000050",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "18010d26b222c8e7ce74dc96e6cb040575edf476f9db5887131ac0d0d059266c",
+      "translation_sha256": "e264dbc097a64d6300699c431e1e93253a94cd6d3b63b864dc2df2c11b8b5762",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-48d3c63e",
+      "reviewed_at": "2026-11-18T07:00:42Z",
+      "state_revision": "cb71b418ada5bfe0d5511fef9413c5e5bf8d67813d4f41e56833bd1db649280e",
+      "review_commit": "1d62abe236e84f30a6be369c25e170d91e1eb162",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "omission-1",
+            "category": "omission",
+            "severity": "major",
+            "detail": "The translation omits Gabi asking whether Nico wants to watch a movie and explaining that he downloaded about fifty options, including the film about Lauda and Hunt. Translate this passage before Nico responds that he would rather not watch Rush.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“So, *uh,* wanna watch a movie?” He bites his lower lip as he meets Nico’s eyes again, blushing lightly when he admits, “I downloaded like fifty we could watch. Even the one about Lauda and Hunt.”",
+              "occurrence": 0
+            },
+            "translation_anchor": null,
+            "resolves": null
+          },
+          {
+            "id": "omission-2",
+            "category": "omission",
+            "severity": "major",
+            "detail": "Gabi’s response that he has already said yes, addressing Nico as “old man,” is missing after Nico asks him to date. Restore the response; the next translated line currently jumps to Nico’s “Okay, good.”",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Gabi nods, telling Nico, “I already said yes, *old man.”*",
+              "occurrence": 0
+            },
+            "translation_anchor": null,
+            "resolves": null
+          },
+          {
+            "id": "addition-1",
+            "category": "addition",
+            "severity": "major",
+            "detail": "This repeats Nico’s preceding paragraph about asking Gabi to date him. The source has Gabi’s reply at this point, not a second copy of Nico’s proposal; remove the duplicate and restore Gabi’s response.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Nico chuckles, shaking his head. “You won’t let it go, will you?” He watches as Gabi shakes his head. “Alright,” he says, closing his eyes as he asks, “Gabriel, do you want to—”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "<!-- bt-block:000066 -->\n«Ты же не знаешь, что я хотел сказать», — смеётся Нико.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "addition-2",
+            "category": "addition",
+            "severity": "major",
+            "detail": "This block repeats the movie-list passage translated immediately before it. Remove the duplicate; the source proceeds to Nico asking whether the Bob’s Burgers film is a cartoon.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“Lord of the Rings, the first three Saw movies, I think there’s Final Destination too. Oh, and I also have *The Bob’s Burgers Movie*, if you wanted to see that.”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "<!-- bt-block:000069 -->\nПодтягивая Нико к кровати, Габи начинает перечислять фильмы, которые у него есть на ноутбуке и которые можно посмотреть.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "2113fa5fcb665e47ec424b8b8d877901f9065aaf7917c85c3b19865e725d14a2",
         "style_guide": "eaa08d42f1f5ea55a06553ec9c1d9e5c6f66b62f9bb6f55b653a52f78659dd74"
       }
     }
