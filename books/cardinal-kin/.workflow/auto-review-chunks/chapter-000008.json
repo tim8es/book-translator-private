@@ -456,6 +456,53 @@
         }
       ],
       "glossary": []
+    },
+    "chunk-006": {
+      "outcome": "CORRECTIONS_REQUIRED",
+      "report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "double-negative",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The Russian phrase contains an accidental repeated «не» and is ungrammatical. Correct to «Нет, никого не недостаёт, все здесь» or another natural equivalent.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "No, they aren’t missing anybody, everyone is here.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Нет, никого не не хватает, все здесь.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "style": [
+        {
+          "evidence": "Damian «grumbles with little heat»; Jason jokes about «character growth»; Damian describes Drake as «not entirely terrible».",
+          "source_pattern": "Family banter uses dry, restrained humor, often with Damian answering tersely or without much heat.",
+          "translation_approach": "Preserve the understated delivery and dry irony without making the exchanges more forceful or polished."
+        }
+      ],
+      "glossary": [
+        {
+          "notes": "Общее обозначение семьи и близкого круга Бэтмена.",
+          "original": "Batclan",
+          "translation": "Бэт-семья",
+          "type": "обозначение сообщества"
+        }
+      ]
     }
   },
   "windows": {
@@ -478,6 +525,10 @@
     "chunk-005": {
       "source_sha256": "60a2bf60d5f24ed89546cb84ba2b1a310d5ea3772ee0f4810e86089a7c93cffe",
       "translation_sha256": "0c46ee9fdf473a730a8dd54b6afbbad1a1eb6e97060857d2d79a72583b7f48fe"
+    },
+    "chunk-006": {
+      "source_sha256": "2cd81df036448bc838cd6fd1682b8f654c74916751306f17f16be204283be51a",
+      "translation_sha256": "ea0e44226e4fc56fbd6339dfa1939313d209c072a0b25522e34b1b56ade393bc"
     }
   },
   "accepted_review_record_id": null,
