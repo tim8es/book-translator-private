@@ -313,12 +313,282 @@
           "type": "резиденция"
         }
       ]
+    },
+    "chunk-002": {
+      "outcome": "CORRECTIONS_REQUIRED",
+      "report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "gender-net",
+            "category": "referent",
+            "severity": "minor",
+            "detail": "Resolved: the current wording makes the network the subject and names Cardinal as the recipient, avoiding a gendered pronoun.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Cardinal has some sort of underground network feeding them information",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "у Кардинала есть какая-то подпольная сеть, снабжающая Кардинала информацией",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "60cdceecef8241e4911888e94f72c58d",
+              "finding_id": "chunk-002-gender-net"
+            }
+          },
+          {
+            "id": "missing-q",
+            "category": "omission",
+            "severity": "major",
+            "detail": "Resolved: Bluejay’s question is present in the current translation.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "“Where did the lead come from?”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Откуда взялась наводка?»",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "60cdceecef8241e4911888e94f72c58d",
+              "finding_id": "chunk-002-missing-q"
+            }
+          },
+          {
+            "id": "age-range",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Unresolved. “Как минимум лет двадцать пять, возможно, ближе к тридцати” does not preserve the source’s estimate of mid-to-late twenties as the youngest plausible range; it narrows this to a lower bound and adds a different intermediate estimate before saying Cardinal is more likely in their thirties.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "in their mid to late twenties at the youngest, more likely in their 30s",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Кардиналу как минимум лет двадцать пять, возможно, ближе к тридцати, а скорее всего, уже за тридцать",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "60cdceecef8241e4911888e94f72c58d",
+              "finding_id": "chunk-002-age-range"
+            }
+          },
+          {
+            "id": "gender-age",
+            "category": "referent",
+            "severity": "minor",
+            "detail": "Resolved: the current wording no longer uses the masculine pronoun “он” for Cardinal.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "more likely in their 30s",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "а скорее всего, уже за тридцать",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "60cdceecef8241e4911888e94f72c58d",
+              "finding_id": "chunk-002-gender-age"
+            }
+          },
+          {
+            "id": "gender-sight",
+            "category": "referent",
+            "severity": "minor",
+            "detail": "Resolved: the current wording says there is no clear picture without assigning Cardinal a gender.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "but no real clear picture.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "но чёткого изображения так и нет",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "60cdceecef8241e4911888e94f72c58d",
+              "finding_id": "chunk-002-gender-sight"
+            }
+          },
+          {
+            "id": "gender-combat",
+            "category": "referent",
+            "severity": "minor",
+            "detail": "Resolved: the current parenthetical uses the gender-neutral construction «Кардиналу доводилось разбираться».",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "criminals they’ve personally dealt with",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "с которыми Кардиналу доводилось разбираться лично",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "60cdceecef8241e4911888e94f72c58d",
+              "finding_id": "chunk-002-gender-combat"
+            }
+          },
+          {
+            "id": "bluejay-name",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "Resolved: the current occurrence uses the established name «Синяя Сойка».",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "“There’s nothing wrong with it!” Bluejay insists.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Синяя Сойка «Но мне кажется, они пытаются отличаться от нас",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "60cdceecef8241e4911888e94f72c58d",
+              "finding_id": "chunk-002-bluejay-name"
+            }
+          },
+          {
+            "id": "omit-it-wrong",
+            "category": "omission",
+            "severity": "major",
+            "detail": "The sentence “There’s nothing wrong with it!” is absent from the translation. Restore Bluejay’s reassurance before the following thought.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "There’s nothing wrong with it!",
+              "occurrence": 0
+            },
+            "translation_anchor": null,
+            "resolves": null
+          },
+          {
+            "id": "dialogue-tag",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "The source’s reporting clause “Bluejay insists” is not rendered. The current line instead puts the bare name immediately before an opening quote, leaving the Russian dialogue introduction malformed. Restore a grammatical speech tag and punctuation.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Bluejay insists. “But I get the feeling they’re trying to distinguish themselves from us, ya know?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Синяя Сойка «Но мне кажется, они пытаются отличаться от нас, понимаешь?",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "gender-save",
+            "category": "referent",
+            "severity": "minor",
+            "detail": "The source leaves Cardinal’s gender unknown, but «Кардинал спас» uses masculine agreement. Consider restructuring the clause to avoid assigning gender, for example by making the rescue or its result the subject.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "when they saved Jason’s life from the Joker all those years ago",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "много лет назад Кардинал спас Джейсону жизнь от Джокера",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "gender-sightings",
+            "category": "referent",
+            "severity": "minor",
+            "detail": "The source does not identify Cardinal’s gender. «Его несколько раз видели» adds a masculine pronoun; rephrase without it, for example as «за эти годы было несколько достоверных случаев, когда Кардинала видели».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "there have been a few confirmed sightings over the years and even more rumors",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "за эти годы его несколько раз видели наверняка, а слухов ходило ещё больше",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "gender-level",
+            "category": "referent",
+            "severity": "minor",
+            "detail": "The source uses gender-neutral “they” for Cardinal, while «продемонстрировал» and «его уровень» assign masculine gender. Recast the sentence to describe Cardinal’s combat training and level without gendered agreement or pronouns.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Although Cardinal has shown they have some combat training (as seen by the various criminals they’ve personally dealt with), the Bats unanimously agree it’s unlikely anywhere near their own level.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Хотя Кардинал продемонстрировал некоторую боевую подготовку (судя по преступникам, с которыми Кардиналу доводилось разбираться лично), Бэт-семья единодушно считает, что его уровень вряд ли хоть сколько-нибудь приближается к их собственному.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "hood-weight",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The source describes a “heavy hood”; «глубокий капюшон» changes that physical quality to depth. Preserve the weight or substantiality rather than introducing a different feature.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "a dark cape, a heavy hood, and shadows thick enough to obscure any defining features of their face or uniform.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "тёмный плащ, глубокий капюшон и такие густые тени",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "civilian-job",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Гражданская работа» is an awkward calque for “civilian job” in this list. Use a more natural phrase for Cardinal’s civilian occupation, such as «занятие в обычной жизни» or «гражданская профессия».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "gender, ethnicity, motivations, civilian job/hobbies",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "пола, этнической принадлежности, мотивов, гражданской работы и увлечений",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "style": [
+        {
+          "evidence": "“One of these days we're gonna find that guy ... ya know?”; “Yah, and what about Cardinal screams flashy to you?”; “Copy.”",
+          "source_pattern": "Casual team banter uses contractions and colloquial markers, alongside concise operational exchanges.",
+          "translation_approach": "Retain conversational, character-specific Russian phrasing and terse radio replies; avoid flattening every speaker into the same register."
+        }
+      ],
+      "glossary": []
     }
   },
   "windows": {
     "chunk-001": {
       "source_sha256": "0508675e5160b0770faaf40c849c8c09f5889772c3eccb4f431b7073ba4fea86",
       "translation_sha256": "881fe5b80529bbedb687eebf0ba4d8a10805452d0d0594c720fc3a6ab1073123"
+    },
+    "chunk-002": {
+      "source_sha256": "fe58cd0de898c4051cbe51cc1affd23f88d9a89b8483c2f2cc120335d9bee972",
+      "translation_sha256": "67a517c5a06f0dfe902111ddad3141e04ce0db4328571600b5805fc7f1098844"
     }
   },
   "accepted_review_record_id": null,
