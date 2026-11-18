@@ -3,7 +3,7 @@
   "job_id": "6232711b4aec0c3664ad3721f1b87061",
   "book_slug": "cardinal-kin",
   "state": "running",
-  "phase": "reviewer-completed",
+  "phase": "claimed",
   "failures": 0,
   "correction_rounds": {
     "chapter-000001": 2,
@@ -13,8 +13,13 @@
   },
   "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
   "source_sha256": "f06b996448766fcf6faa703ced3ca03b63221f4f81bdb4c395619c69ffa353cd",
-  "updated_at": "2026-11-18T13:07:24.382719+00:00",
-  "active": null,
+  "updated_at": "2026-11-18T13:08:07.355476+00:00",
+  "active": {
+    "role": "translator",
+    "chapter": 6,
+    "session_id": "auto-6232711b4aec-translator-ff3e899b",
+    "unit_id": "chapter-000006"
+  },
   "structural_helper_revision": "4c584fe5534871cd05aa851d9b7bdbfa696d0edd",
   "model_calls_started": 77,
   "prompt_context": {
@@ -345,5 +350,62 @@
     "route": "primary",
     "role": "reviewer",
     "unit_id": "chapter-000005"
+  },
+  "review_stagnation_audit": [
+    {
+      "unit_id": "chapter-000005",
+      "at": "2026-11-18T13:08:07.146531+00:00",
+      "reason": "consecutive-reviews-without-net-severity-improvement",
+      "review_record_ids": [
+        "d7d70e1559784b82aae645e68392d385",
+        "ae9c5da036a44ffe80ab9ba0b4de21e0",
+        "eb2f16d1b4094626af65ae8d929fc077"
+      ],
+      "translation_sha256": "3b3f873edd053024323e2b0fc16de052294c1333640b6f94a38a977532dd68b2",
+      "source_sha256": "b13d3a92f1556dea465905b35f22abe2281204254f681894bbdb15140d1a1ec2",
+      "severity_scores": [
+        8,
+        18,
+        25
+      ],
+      "unresolved_counts": [
+        6,
+        12,
+        19
+      ],
+      "major_or_critical_counts": [
+        1,
+        3,
+        3
+      ],
+      "action": "operator-attention-no-pass"
+    }
+  ],
+  "last_review_stagnation": {
+    "unit_id": "chapter-000005",
+    "reason": "consecutive-reviews-without-net-severity-improvement",
+    "review_record_ids": [
+      "d7d70e1559784b82aae645e68392d385",
+      "ae9c5da036a44ffe80ab9ba0b4de21e0",
+      "eb2f16d1b4094626af65ae8d929fc077"
+    ],
+    "translation_sha256": "3b3f873edd053024323e2b0fc16de052294c1333640b6f94a38a977532dd68b2",
+    "source_sha256": "b13d3a92f1556dea465905b35f22abe2281204254f681894bbdb15140d1a1ec2",
+    "severity_scores": [
+      8,
+      18,
+      25
+    ],
+    "unresolved_counts": [
+      6,
+      12,
+      19
+    ],
+    "major_or_critical_counts": [
+      1,
+      3,
+      3
+    ],
+    "action": "operator-attention-no-pass"
   }
 }
