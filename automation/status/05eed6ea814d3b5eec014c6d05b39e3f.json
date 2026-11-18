@@ -3,7 +3,7 @@
   "job_id": "05eed6ea814d3b5eec014c6d05b39e3f",
   "book_slug": "say-it-in-your-mother-tongue",
   "state": "running",
-  "phase": "model-retry",
+  "phase": "claimed",
   "failures": 1,
   "correction_rounds": {
     "chapter-000001": 1,
@@ -41,8 +41,13 @@
   },
   "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
   "source_sha256": "12e210ce5a95daf56a97ada583ec15c274780c4ddfa7fb92da6a88c67f7c403d",
-  "updated_at": "2026-11-18T02:54:10.443197+00:00",
-  "active": null,
+  "updated_at": "2026-11-18T02:54:37.999057+00:00",
+  "active": {
+    "role": "translator",
+    "chapter": 41,
+    "session_id": "auto-05eed6ea814d-translator-be645592",
+    "unit_id": "chapter-000041"
+  },
   "recoveries": [
     {
       "action": "auto-retry-corrected-structural-preflight",
@@ -238,6 +243,5 @@
     "role": "translator",
     "unit_id": "chapter-000041"
   },
-  "last_error": "style_guide entry has invalid keys",
   "blocked_unit_id": "chapter-000041"
 }
