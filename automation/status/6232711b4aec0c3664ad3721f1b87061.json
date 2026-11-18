@@ -3,7 +3,7 @@
   "job_id": "6232711b4aec0c3664ad3721f1b87061",
   "book_slug": "cardinal-kin",
   "state": "running",
-  "phase": "correction-batch-staged",
+  "phase": "corrector-completed",
   "failures": 0,
   "correction_rounds": {
     "chapter-000001": 2,
@@ -11,17 +11,12 @@
     "chapter-000004": 3,
     "chapter-000005": 2,
     "chapter-000006": 3,
-    "chapter-000007": 2
+    "chapter-000007": 3
   },
   "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
   "source_sha256": "f06b996448766fcf6faa703ced3ca03b63221f4f81bdb4c395619c69ffa353cd",
-  "updated_at": "2026-11-18T15:08:30.285171+00:00",
-  "active": {
-    "role": "corrector",
-    "chapter": 7,
-    "session_id": "auto-6232711b4aec-corrector-5cf5d78e",
-    "unit_id": "chapter-000007"
-  },
+  "updated_at": "2026-11-18T15:08:31.865115+00:00",
+  "active": null,
   "structural_helper_revision": "4c584fe5534871cd05aa851d9b7bdbfa696d0edd",
   "model_calls_started": 168,
   "prompt_context": {
@@ -684,7 +679,7 @@
     "accepted_operations": {
       "review_rejected": 4,
       "translated": 1,
-      "corrected": 2
+      "corrected": 3
     }
   },
   "queue_snapshot": {
@@ -743,29 +738,6 @@
       "at": "2026-11-18T14:49:40.017842+00:00"
     }
   ],
-  "provider_model_route": "primary",
-  "correction_batch_progress": {
-    "unit_id": "chapter-000007",
-    "review_record_id": "34f1dcb405e94377b5d3896e990384e6",
-    "completed": 14,
-    "total": 15
-  },
-  "correction_isolation": {
-    "unit_id": "chapter-000007",
-    "review_record_id": "34f1dcb405e94377b5d3896e990384e6",
-    "translation_sha256": "ef8675a3c9f3e5880f4466a4a4b6d6d662b273d70b609494deac5fc1d55ffd6b",
-    "finding_ids": [
-      "chunk-001-link-punct-r1"
-    ]
-  },
-  "correction_orchestrator_decision": {
-    "unit_id": "chapter-000007",
-    "review_record_id": "34f1dcb405e94377b5d3896e990384e6",
-    "translation_sha256": "ef8675a3c9f3e5880f4466a4a4b6d6d662b273d70b609494deac5fc1d55ffd6b",
-    "strategy": "isolate_remaining",
-    "outcome": "accepted",
-    "duration_ms": 5591
-  },
   "model_response_diagnostics": {
     "finish_reason": "stop",
     "response_format": "json_object",
