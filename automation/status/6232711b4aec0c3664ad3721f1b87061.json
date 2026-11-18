@@ -3,7 +3,7 @@
   "job_id": "6232711b4aec0c3664ad3721f1b87061",
   "book_slug": "cardinal-kin",
   "state": "running",
-  "phase": "claimed",
+  "phase": "model-call-reserved",
   "failures": 0,
   "correction_rounds": {
     "chapter-000001": 2,
@@ -17,7 +17,7 @@
   },
   "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
   "source_sha256": "f06b996448766fcf6faa703ced3ca03b63221f4f81bdb4c395619c69ffa353cd",
-  "updated_at": "2026-11-18T17:01:50.708335+00:00",
+  "updated_at": "2026-11-18T17:01:53.988399+00:00",
   "active": {
     "role": "reviewer",
     "chapter": 9,
@@ -25,21 +25,26 @@
     "unit_id": "chapter-000009"
   },
   "structural_helper_revision": "4c584fe5534871cd05aa851d9b7bdbfa696d0edd",
-  "model_calls_started": 235,
+  "model_calls_started": 236,
   "prompt_context": {
-    "role": "corrector",
+    "role": "reviewer",
     "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
     "loaded_contracts": [
       "AGENTS.md",
       "docs/TRANSLATION.md",
-      "docs/TRANSLATOR.md"
+      "docs/REVIEWER.md"
     ],
     "glossary_sha256": "a3504667819897478c9f8db2b2cb830e4c5886f496f4af3b68223301b5c70c71",
     "style_guide_sha256": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4",
-    "system_chars": 20126,
-    "user_chars": 12867,
-    "correction_mode": "bounded-review-patches",
-    "batch_finding_count": 1
+    "system_chars": 27925,
+    "user_chars": 31890,
+    "review_context": "independent_session",
+    "execution_mode": "bounded-review-chunks",
+    "review_helper_revision": "review-chunks-source-stable-v1",
+    "incremental_stage_version": 2,
+    "reused_clean_chunks": 0,
+    "chunk_id": "chunk-001",
+    "chunk_count": 7
   },
   "memory_glossary_saved": 51,
   "pending_style": [],
@@ -828,6 +833,14 @@
       "reused_clean_chunks": 0,
       "total_chunks": 7,
       "at": "2026-11-18T15:52:43.346297+00:00"
+    },
+    {
+      "unit_id": "chapter-000009",
+      "old_translation_sha256": "d08dd79c56e0035d653e2f95d431dfd2e89b25f595849d16d5d658e0e66a12bc",
+      "translation_sha256": "923e4fa84b507e80d3895eacedcc4823ae5284310a957dd781f4945c9171aa48",
+      "reused_clean_chunks": 0,
+      "total_chunks": 7,
+      "at": "2026-11-18T17:01:53.986669+00:00"
     }
   ],
   "queue_orchestrator_decisions": {
@@ -849,5 +862,6 @@
     "route": "primary",
     "role": "corrector",
     "unit_id": "chapter-000009"
-  }
+  },
+  "review_chunk_fallback_unit": "chapter-000009"
 }
