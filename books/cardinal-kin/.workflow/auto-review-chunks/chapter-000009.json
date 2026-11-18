@@ -4,7 +4,7 @@
     "schema_version": 1,
     "helper_revision": "review-chunks-source-stable-v1",
     "source_sha256": "667284ef59c10f7475f1bd9f4d7eebcc2f6611d1b523ecf00aec4450a16b8e8d",
-    "translation_sha256": "923e4fa84b507e80d3895eacedcc4823ae5284310a957dd781f4945c9171aa48",
+    "translation_sha256": "e4f53ab1643b10862a217ba305dd79ef5b76cc02f9ac210fa12a76cb7c0ef8eb",
     "chunks": [
       {
         "id": "chunk-001",
@@ -33,7 +33,7 @@
         ],
         "translation_core": [
           5439,
-          10731
+          10773
         ],
         "source_window": [
           3430,
@@ -41,7 +41,7 @@
         ],
         "translation_window": [
           3567,
-          12695
+          12681
         ]
       },
       {
@@ -51,16 +51,16 @@
           15605
         ],
         "translation_core": [
-          10731,
-          16285
+          10773,
+          16271
         ],
         "source_window": [
           8636,
           17508
         ],
         "translation_window": [
-          8919,
-          18264
+          8893,
+          18250
         ]
       },
       {
@@ -70,16 +70,16 @@
           21010
         ],
         "translation_core": [
-          16285,
-          21761
+          16271,
+          21752
         ],
         "source_window": [
           13586,
           22891
         ],
         "translation_window": [
-          14473,
-          23712
+          14459,
+          23703
         ]
       },
       {
@@ -89,16 +89,16 @@
           26238
         ],
         "translation_core": [
-          21761,
-          27263
+          21752,
+          27009
         ],
         "source_window": [
           18851,
           28051
         ],
         "translation_window": [
-          19593,
-          29067
+          19587,
+          28883
         ]
       },
       {
@@ -108,16 +108,16 @@
           31431
         ],
         "translation_core": [
-          27263,
-          32387
+          27009,
+          32150
         ],
         "source_window": [
           24421,
           33350
         ],
         "translation_window": [
-          25350,
-          34359
+          25173,
+          34122
         ]
       },
       {
@@ -127,16 +127,16 @@
           36744
         ],
         "translation_core": [
-          32387,
-          37865
+          32150,
+          37628
         ],
         "source_window": [
           29375,
           36744
         ],
         "translation_window": [
-          30303,
-          37865
+          30066,
+          37628
         ]
       }
     ]
@@ -144,7 +144,7 @@
   "unit_id": "chapter-000009",
   "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
   "binding": {
-    "previous_record_id": "60cdceecef8241e4911888e94f72c58d",
+    "previous_record_id": "2218850f28354836bf4a0d28e9d99952",
     "glossary_sha256": "a3504667819897478c9f8db2b2cb830e4c5886f496f4af3b68223301b5c70c71",
     "style_guide_sha256": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4",
     "reviewer_contract_sha256": "e21e068170b373ed0593c7fa47b2039293af849e93fe53de5bd30b97f3092ff2"
@@ -164,124 +164,10 @@
         },
         "findings": [
           {
-            "id": "gender-skills",
-            "category": "referent",
-            "severity": "minor",
-            "detail": "Rechecked: the current sentence makes Cardinal’s detective skills the subject and does not assign Cardinal a gender.",
-            "resolved": true,
-            "source_anchor": {
-              "quote": "Whoever Cardinal is, they’ve got detective skills that rival Batman himself.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "Какова бы ни была личность Кардинала, детективные способности не уступают способностям самого Бэтмена.",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "60cdceecef8241e4911888e94f72c58d",
-              "finding_id": "chunk-001-gender-skills"
-            }
-          },
-          {
-            "id": "gender-mystery",
-            "category": "referent",
-            "severity": "minor",
-            "detail": "Rechecked: the current wording refers to Cardinal without a gendered pronoun.",
-            "resolved": true,
-            "source_anchor": {
-              "quote": "There’s yet to be a single mystery they couldn’t solve.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "Ещё не было ни одной загадки, не поддавшейся Кардиналу.",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "60cdceecef8241e4911888e94f72c58d",
-              "finding_id": "chunk-001-gender-mystery"
-            }
-          },
-          {
-            "id": "gender-identity",
-            "category": "referent",
-            "severity": "minor",
-            "detail": "Rechecked: «личность Кардинала» and «кто это» preserve the source’s unspecified gender.",
-            "resolved": true,
-            "source_anchor": {
-              "quote": "She used to be near obsessive about uncovering their identity, but as they continued with subtle partnership, she realized she doesn’t need to know.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "Когда-то она была почти одержима желанием раскрыть личность Кардинала, но по мере того как их негласное сотрудничество продолжалось, поняла: ей не обязательно знать, кто это.",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "60cdceecef8241e4911888e94f72c58d",
-              "finding_id": "chunk-001-gender-identity"
-            }
-          },
-          {
-            "id": "gender-trust",
-            "category": "referent",
-            "severity": "minor",
-            "detail": "Rechecked: the current wording does not assign Cardinal a gender; the trust is described without a gendered pronoun.",
-            "resolved": true,
-            "source_anchor": {
-              "quote": "She trusts Cardinal to do what's best for Gotham and they’ve never done anything to betray the faith she’s learned to put in them.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "Она доверяет Кардиналу поступать так, как лучше для Готэма, и это доверие ни разу не было предано.",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "60cdceecef8241e4911888e94f72c58d",
-              "finding_id": "chunk-001-gender-trust"
-            }
-          },
-          {
-            "id": "reason-calque",
-            "category": "meaning",
-            "severity": "minor",
-            "detail": "Rechecked: «Странно, что…» preserves Barbara’s puzzlement about his isolation rather than suggesting that living that way is pointless.",
-            "resolved": true,
-            "source_anchor": {
-              "quote": "It doesn’t make sense for such a handsome, wealthy, intelligent guy to live in such an isolated environment.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "Странно, что такой красивый, богатый и умный парень живёт в такой изоляции.",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "60cdceecef8241e4911888e94f72c58d",
-              "finding_id": "chunk-001-reason-calque"
-            }
-          },
-          {
-            "id": "fact-calque",
-            "category": "style",
-            "severity": "minor",
-            "detail": "Rechecked: «сильнее, чем следовало бы» is a natural rendering of the source’s self-questioning.",
-            "resolved": true,
-            "source_anchor": {
-              "quote": "The fact bothers her more than it has any reason to.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "Этот факт беспокоит её сильнее, чем следовало бы.",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "60cdceecef8241e4911888e94f72c58d",
-              "finding_id": "chunk-001-fact-calque"
-            }
-          },
-          {
-            "id": "cardinal-base",
+            "id": "glossary-cardinal",
             "category": "terminology",
             "severity": "minor",
-            "detail": "The glossary still gives the inflected form «Кардинала» as the lexical rendering. Reconcile it to the dictionary form «Кардинал», retaining the note about the translated title and contextual declension. The current in-text form «Кардинал» is appropriate here.",
+            "detail": "The glossary still lists «Кардинала» as the lexical translation of “Cardinal.” That is an inflected form, not the dictionary form requested by the prior finding. The current in-text «Кардинал» is appropriate; update the glossary entry to «Кардинал» and retain its contextual-declension note.",
             "resolved": false,
             "source_anchor": {
               "quote": "Ever since she first became Oracle, Cardinal has been a constant in her work.",
@@ -292,7 +178,7 @@
               "occurrence": 0
             },
             "resolves": {
-              "record_id": "60cdceecef8241e4911888e94f72c58d",
+              "record_id": "2218850f28354836bf4a0d28e9d99952",
               "finding_id": "chunk-001-cardinal-base"
             }
           }
@@ -300,772 +186,20 @@
       },
       "style": [
         {
-          "evidence": "Privacy is basically just a suggestion. … So why doesn't he?",
-          "source_pattern": "Barbara’s close third-person narration uses conversational, dry asides and rhetorical questions.",
-          "translation_approach": "Preserve the casual irony and rhetorical force without adding explanation."
-        }
-      ],
-      "glossary": [
-        {
-          "notes": "Резиденция, с которой сравнивают поместье Дрейков.",
-          "original": "Wayne Manor",
-          "translation": "поместье Уэйнов",
-          "type": "резиденция"
-        }
-      ]
-    },
-    "chunk-002": {
-      "outcome": "CORRECTIONS_REQUIRED",
-      "report": {
-        "evidence_version": 2,
-        "context": "independent_session",
-        "checks": {
-          "coverage": true,
-          "meaning": true,
-          "terminology": true,
-          "style": true,
-          "structure": true
-        },
-        "findings": [
-          {
-            "id": "gender-net",
-            "category": "referent",
-            "severity": "minor",
-            "detail": "Resolved: the current wording makes the network the subject and names Cardinal as the recipient, avoiding a gendered pronoun.",
-            "resolved": true,
-            "source_anchor": {
-              "quote": "Cardinal has some sort of underground network feeding them information",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "у Кардинала есть какая-то подпольная сеть, снабжающая Кардинала информацией",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "60cdceecef8241e4911888e94f72c58d",
-              "finding_id": "chunk-002-gender-net"
-            }
-          },
-          {
-            "id": "missing-q",
-            "category": "omission",
-            "severity": "major",
-            "detail": "Resolved: Bluejay’s question is present in the current translation.",
-            "resolved": true,
-            "source_anchor": {
-              "quote": "“Where did the lead come from?”",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "«Откуда взялась наводка?»",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "60cdceecef8241e4911888e94f72c58d",
-              "finding_id": "chunk-002-missing-q"
-            }
-          },
-          {
-            "id": "age-range",
-            "category": "meaning",
-            "severity": "minor",
-            "detail": "Unresolved. “Как минимум лет двадцать пять, возможно, ближе к тридцати” does not preserve the source’s estimate of mid-to-late twenties as the youngest plausible range; it narrows this to a lower bound and adds a different intermediate estimate before saying Cardinal is more likely in their thirties.",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "in their mid to late twenties at the youngest, more likely in their 30s",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "Кардиналу как минимум лет двадцать пять, возможно, ближе к тридцати, а скорее всего, уже за тридцать",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "60cdceecef8241e4911888e94f72c58d",
-              "finding_id": "chunk-002-age-range"
-            }
-          },
-          {
-            "id": "gender-age",
-            "category": "referent",
-            "severity": "minor",
-            "detail": "Resolved: the current wording no longer uses the masculine pronoun “он” for Cardinal.",
-            "resolved": true,
-            "source_anchor": {
-              "quote": "more likely in their 30s",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "а скорее всего, уже за тридцать",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "60cdceecef8241e4911888e94f72c58d",
-              "finding_id": "chunk-002-gender-age"
-            }
-          },
-          {
-            "id": "gender-sight",
-            "category": "referent",
-            "severity": "minor",
-            "detail": "Resolved: the current wording says there is no clear picture without assigning Cardinal a gender.",
-            "resolved": true,
-            "source_anchor": {
-              "quote": "but no real clear picture.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "но чёткого изображения так и нет",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "60cdceecef8241e4911888e94f72c58d",
-              "finding_id": "chunk-002-gender-sight"
-            }
-          },
-          {
-            "id": "gender-combat",
-            "category": "referent",
-            "severity": "minor",
-            "detail": "Resolved: the current parenthetical uses the gender-neutral construction «Кардиналу доводилось разбираться».",
-            "resolved": true,
-            "source_anchor": {
-              "quote": "criminals they’ve personally dealt with",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "с которыми Кардиналу доводилось разбираться лично",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "60cdceecef8241e4911888e94f72c58d",
-              "finding_id": "chunk-002-gender-combat"
-            }
-          },
-          {
-            "id": "bluejay-name",
-            "category": "terminology",
-            "severity": "minor",
-            "detail": "Resolved: the current occurrence uses the established name «Синяя Сойка».",
-            "resolved": true,
-            "source_anchor": {
-              "quote": "“There’s nothing wrong with it!” Bluejay insists.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "Синяя Сойка «Но мне кажется, они пытаются отличаться от нас",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "60cdceecef8241e4911888e94f72c58d",
-              "finding_id": "chunk-002-bluejay-name"
-            }
-          },
-          {
-            "id": "omit-it-wrong",
-            "category": "omission",
-            "severity": "major",
-            "detail": "The sentence “There’s nothing wrong with it!” is absent from the translation. Restore Bluejay’s reassurance before the following thought.",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "There’s nothing wrong with it!",
-              "occurrence": 0
-            },
-            "translation_anchor": null,
-            "resolves": null
-          },
-          {
-            "id": "dialogue-tag",
-            "category": "structure",
-            "severity": "minor",
-            "detail": "The source’s reporting clause “Bluejay insists” is not rendered. The current line instead puts the bare name immediately before an opening quote, leaving the Russian dialogue introduction malformed. Restore a grammatical speech tag and punctuation.",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "Bluejay insists. “But I get the feeling they’re trying to distinguish themselves from us, ya know?",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "Синяя Сойка «Но мне кажется, они пытаются отличаться от нас, понимаешь?",
-              "occurrence": 0
-            },
-            "resolves": null
-          },
-          {
-            "id": "gender-save",
-            "category": "referent",
-            "severity": "minor",
-            "detail": "The source leaves Cardinal’s gender unknown, but «Кардинал спас» uses masculine agreement. Consider restructuring the clause to avoid assigning gender, for example by making the rescue or its result the subject.",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "when they saved Jason’s life from the Joker all those years ago",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "много лет назад Кардинал спас Джейсону жизнь от Джокера",
-              "occurrence": 0
-            },
-            "resolves": null
-          },
-          {
-            "id": "gender-sightings",
-            "category": "referent",
-            "severity": "minor",
-            "detail": "The source does not identify Cardinal’s gender. «Его несколько раз видели» adds a masculine pronoun; rephrase without it, for example as «за эти годы было несколько достоверных случаев, когда Кардинала видели».",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "there have been a few confirmed sightings over the years and even more rumors",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "за эти годы его несколько раз видели наверняка, а слухов ходило ещё больше",
-              "occurrence": 0
-            },
-            "resolves": null
-          },
-          {
-            "id": "gender-level",
-            "category": "referent",
-            "severity": "minor",
-            "detail": "The source uses gender-neutral “they” for Cardinal, while «продемонстрировал» and «его уровень» assign masculine gender. Recast the sentence to describe Cardinal’s combat training and level without gendered agreement or pronouns.",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "Although Cardinal has shown they have some combat training (as seen by the various criminals they’ve personally dealt with), the Bats unanimously agree it’s unlikely anywhere near their own level.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "Хотя Кардинал продемонстрировал некоторую боевую подготовку (судя по преступникам, с которыми Кардиналу доводилось разбираться лично), Бэт-семья единодушно считает, что его уровень вряд ли хоть сколько-нибудь приближается к их собственному.",
-              "occurrence": 0
-            },
-            "resolves": null
-          },
-          {
-            "id": "hood-weight",
-            "category": "meaning",
-            "severity": "minor",
-            "detail": "The source describes a “heavy hood”; «глубокий капюшон» changes that physical quality to depth. Preserve the weight or substantiality rather than introducing a different feature.",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "a dark cape, a heavy hood, and shadows thick enough to obscure any defining features of their face or uniform.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "тёмный плащ, глубокий капюшон и такие густые тени",
-              "occurrence": 0
-            },
-            "resolves": null
-          },
-          {
-            "id": "civilian-job",
-            "category": "style",
-            "severity": "minor",
-            "detail": "«Гражданская работа» is an awkward calque for “civilian job” in this list. Use a more natural phrase for Cardinal’s civilian occupation, such as «занятие в обычной жизни» or «гражданская профессия».",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "gender, ethnicity, motivations, civilian job/hobbies",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "пола, этнической принадлежности, мотивов, гражданской работы и увлечений",
-              "occurrence": 0
-            },
-            "resolves": null
-          }
-        ]
-      },
-      "style": [
-        {
-          "evidence": "“One of these days we're gonna find that guy ... ya know?”; “Yah, and what about Cardinal screams flashy to you?”; “Copy.”",
-          "source_pattern": "Casual team banter uses contractions and colloquial markers, alongside concise operational exchanges.",
-          "translation_approach": "Retain conversational, character-specific Russian phrasing and terse radio replies; avoid flattening every speaker into the same register."
+          "evidence": "“Privacy is basically just a suggestion.”",
+          "source_pattern": "Understated, dry humor in the narration, including casual phrasing that punctures a serious observation.",
+          "translation_approach": "Preserve the low-key, conversational wit rather than amplifying it."
         }
       ],
       "glossary": []
-    },
-    "chunk-003": {
-      "outcome": "CORRECTIONS_REQUIRED",
-      "report": {
-        "evidence_version": 2,
-        "context": "independent_session",
-        "checks": {
-          "coverage": true,
-          "meaning": true,
-          "terminology": true,
-          "style": true,
-          "structure": true
-        },
-        "findings": [
-          {
-            "id": "riddle-recheck",
-            "category": "referent",
-            "severity": "major",
-            "detail": "Проверка прежнего замечания: исправлено. В текущем переводе прямо сказано, что сама загадка пришла от Кардинала.",
-            "resolved": true,
-            "source_anchor": {
-              "quote": "The one I gave you the answer to, it came from Cardinal.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "Той, ответ на которую я тебе дала: сама загадка пришла от Кардинала",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "60cdceecef8241e4911888e94f72c58d",
-              "finding_id": "chunk-003-riddle-referent"
-            }
-          },
-          {
-            "id": "bluejay-render",
-            "category": "terminology",
-            "severity": "minor",
-            "detail": "В этом вхождении кодовое имя передано как «Голубая Сойка», тогда как глоссарий и другое вхождение в этом CORE используют «Синяя Сойка». Согласуйте написание с установленным решением или пересмотрите само решение в глоссарии; не оставляйте расхождение.",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "“Don’t blame me! I didn’t even know,” Bluejay immediately defends himself.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "«Не вини меня! Я и сам не знал», — тут же защищается Голубая Сойка.",
-              "occurrence": 0
-            },
-            "resolves": null
-          },
-          {
-            "id": "vigilante-word",
-            "category": "meaning",
-            "severity": "minor",
-            "detail": "В оригинале стоит «vigilante» — обозначение роли, тогда как «Не теряйте бдительности» передаёт «stay vigilant» и меняет смысл на призыв быть настороже. Сохраните значение «оставаться вигилантами» или подходящую игру слов, если необычная формулировка оригинала намеренная.",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "“Stay vigilante,” he orders them all.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "«Не теряйте бдительности», — приказывает он всем.",
-              "occurrence": 0
-            },
-            "resolves": null
-          }
-        ]
-      },
-      "style": [
-        {
-          "evidence": "“Is distrust the right word? Paranoia, perhaps?”; “…Barbara honestly doesn’t know what she’d do.”",
-          "source_pattern": "Повествование в третьем лице следует за разными персонажами; близкая фокализация включает внутренние риторические вопросы и незавершённые сомнения.",
-          "translation_approach": "Сохранять смены фокализации, самоопросы и паузы, не превращая их в объективные пояснения повествователя."
-        }
-      ],
-      "glossary": []
-    },
-    "chunk-004": {
-      "outcome": "CORRECTIONS_REQUIRED",
-      "report": {
-        "evidence_version": 2,
-        "context": "independent_session",
-        "checks": {
-          "coverage": true,
-          "meaning": true,
-          "terminology": true,
-          "style": true,
-          "structure": true
-        },
-        "findings": [
-          {
-            "id": "room-recheck",
-            "category": "meaning",
-            "severity": "major",
-            "detail": "Resolved: the current translation correctly places Tim inside his safe room, where nobody can see him.",
-            "resolved": true,
-            "source_anchor": {
-              "quote": "Tim sighs, slumping back into his chair, unseen by anyone within the walls of his safe room.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "Тим вздыхает, откидываясь на спинку стула: в его защищённой комнате его никто не видит.",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "60cdceecef8241e4911888e94f72c58d",
-              "finding_id": "chunk-004-room-boundary"
-            }
-          },
-          {
-            "id": "weapon-recheck",
-            "category": "meaning",
-            "severity": "minor",
-            "detail": "Resolved: «несколько единиц оружия» conveys several weapons without adding that they are different types.",
-            "resolved": true,
-            "source_anchor": {
-              "quote": "Once he’s dressed, he tucks a few weapons onto his person—nothing too extreme, just enough to defend himself in case he runs into the odd mugger.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "Одевшись, он прячет при себе несколько единиц оружия — ничего особенного, лишь бы защититься, если попадётся какой-нибудь грабитель.",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "60cdceecef8241e4911888e94f72c58d",
-              "finding_id": "chunk-004-weapon-count"
-            }
-          },
-          {
-            "id": "back-roads",
-            "category": "style",
-            "severity": "minor",
-            "detail": "«Задним дорогам» is an awkward calque here. A more natural rendering such as «по второстепенным дорогам Бристоля» would preserve the sense of taking less prominent routes.",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "He takes off into the night, weaving through Bristol’s back roads to avoid being seen.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "Тим выезжает в ночь, петляя по задним дорогам Бристоля, чтобы его не заметили.",
-              "occurrence": 0
-            },
-            "resolves": null
-          },
-          {
-            "id": "acquaintance-case",
-            "category": "style",
-            "severity": "minor",
-            "detail": "The construction «считает кем-то большим, чем просто знакомые» has a case mismatch and sounds ungrammatical. Consider «Это люди, для него больше чем просто знакомые, но всё же не друзья» or another natural construction preserving the distinction.",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "They’re people he considers more than acquaintances but less than friends.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "Это люди, которых он считает кем-то большим, чем просто знакомые, но всё же не друзьями.",
-              "occurrence": 0
-            },
-            "resolves": null
-          }
-        ]
-      },
-      "style": [
-        {
-          "evidence": "Source blocks 089–090.",
-          "source_pattern": "The narration follows Tim closely and uses short standalone sentences and fragments for pacing, as in the brief question «During a quiet night in?» followed by concise descriptions.",
-          "translation_approach": "Сохранять близкую к Тиму повествовательную перспективу и короткие фразы-паузы; не связывать фрагменты без необходимости."
-        },
-        {
-          "evidence": "Tim’s «But I brought snacks» and the kid’s «Get outta here or I’ll break your kneecaps» in source blocks 106–107.",
-          "source_pattern": "The narration is conversational, with understated humor, while the street kid’s dialogue is blunt and colloquial.",
-          "translation_approach": "Сохранять сдержанную сухость Тима и прямой разговорный регистр мальчишки, не сглаживая различия между их голосами."
-        }
-      ],
-      "glossary": [
-        {
-          "notes": "Обозначение жителя Готэма; во множественном числе — «жители Готэма».",
-          "original": "Gothamite",
-          "translation": "житель Готэма",
-          "type": "демоним"
-        }
-      ]
-    },
-    "chunk-005": {
-      "outcome": "CORRECTIONS_REQUIRED",
-      "report": {
-        "evidence_version": 2,
-        "context": "independent_session",
-        "checks": {
-          "coverage": true,
-          "meaning": true,
-          "terminology": true,
-          "style": true,
-          "structure": true
-        },
-        "findings": [
-          {
-            "id": "bluejay-129",
-            "category": "terminology",
-            "severity": "minor",
-            "detail": "The current glossary gives Bluejay as «Синяя Сойка», while this passage uses «Голубая Сойка». The translation is natural, but the glossary discrepancy remains unresolved; reconcile the glossary rather than changing the text solely to match it.",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "Sure enough, not 5 minutes later, the Bats arrive— Batman, Bluejay, Spoiler, and Robin.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "И точно: не проходит и пяти минут, как появляются Бэтмен, Голубая Сойка, Спойлер и Робин.",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "60cdceecef8241e4911888e94f72c58d",
-              "finding_id": "chunk-005-bluejay-129"
-            }
-          },
-          {
-            "id": "bluejay-132",
-            "category": "terminology",
-            "severity": "minor",
-            "detail": "The current glossary gives Bluejay as «Синяя Сойка», while this passage uses «Голубая Сойка». The translation is natural, but the glossary discrepancy remains unresolved; reconcile the glossary rather than changing the text solely to match it.",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "He passes the time listening to their conversation, holding himself back from laughing as Bluejay and Spoiler argue over which Star Wars trilogy is best.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "Он коротает время, прислушиваясь к их разговору и сдерживая смех, пока Голубая Сойка и Спойлер спорят, какая трилогия «Звёздных войн» лучше.",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "60cdceecef8241e4911888e94f72c58d",
-              "finding_id": "chunk-005-bluejay-132"
-            }
-          },
-          {
-            "id": "bluejay-135",
-            "category": "terminology",
-            "severity": "minor",
-            "detail": "The current glossary gives Bluejay as «Синяя Сойка», while this passage uses «Голубая Сойка». The translation is natural, but the glossary discrepancy remains unresolved; reconcile the glossary rather than changing the text solely to match it.",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "Bluejay, Spoiler. Outflank them. Clear?",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "Голубая Сойка, Спойлер, обойдите их с флангов. Понятно?",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "60cdceecef8241e4911888e94f72c58d",
-              "finding_id": "chunk-005-bluejay-135"
-            }
-          },
-          {
-            "id": "demon-brat",
-            "category": "register",
-            "severity": "minor",
-            "detail": "The current «демоническим мальчишкой» is a suitable, less contemptuous rendering of the colloquial, teasing “demon brat”; the earlier harsher wording has been corrected.",
-            "resolved": true,
-            "source_anchor": {
-              "quote": "The beacon he had Pru give to Damian on his behalf acts as both a tracker and a distress signal, allowing Tim to keep track of the demon brat whenever he needs to.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "Маячок, который он попросил Пру передать Дэмиану от его имени, служит и трекером, и сигналом бедствия, позволяя Тиму следить за этим демоническим мальчишкой, когда понадобится.",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "60cdceecef8241e4911888e94f72c58d",
-              "finding_id": "chunk-005-demon-brat"
-            }
-          }
-        ]
-      },
-      "style": [],
-      "glossary": []
-    },
-    "chunk-006": {
-      "outcome": "CORRECTIONS_REQUIRED",
-      "report": {
-        "evidence_version": 2,
-        "context": "independent_session",
-        "checks": {
-          "coverage": true,
-          "meaning": true,
-          "terminology": true,
-          "style": true,
-          "structure": true
-        },
-        "findings": [
-          {
-            "id": "mask-role",
-            "category": "meaning",
-            "severity": "minor",
-            "detail": "Still unresolved: «надевал под капюшон» says Jason wore the mask beneath a hood, whereas the source refers to his Red Hood identity. Recast, for example, as «которую он иногда носил в образе Красного Колпака».",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "It’s similar to the half-mask he’d sometimes use as the hood, covering from his eyes down over the lower half of his face and chin, leaving his forehead the only part of his face uncovered.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "Она напоминает полумаску, которую он иногда надевал под капюшон: та закрывала лицо от глаз до нижней части лица и подбородка, оставляя открытым только лоб.",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "60cdceecef8241e4911888e94f72c58d",
-              "finding_id": "chunk-006-mask-role"
-            }
-          },
-          {
-            "id": "tense-148",
-            "category": "meaning",
-            "severity": "minor",
-            "detail": "Resolved: the current translation uses present-tense «не испытывает» and «орудует», matching the source’s present-tense description.",
-            "resolved": true,
-            "source_anchor": {
-              "quote": "Tim has never been particularly fond of them himself, but he can’t deny the easy grace and strength Jason uses them with.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "Сам Тим никогда не испытывает к ним особой любви, но не может отрицать непринуждённую грацию и силу, с которыми Джейсон ими орудует.",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "60cdceecef8241e4911888e94f72c58d",
-              "finding_id": "chunk-006-tense-148"
-            }
-          },
-          {
-            "id": "compare-149",
-            "category": "style",
-            "severity": "minor",
-            "detail": "Resolved: «одновременно увлекает Тима и сбивает его с толку» is a natural Russian construction that preserves both the enjoyment and the disorienting effect.",
-            "resolved": true,
-            "source_anchor": {
-              "quote": "It’s as fun for Tim to watch as it is disorienting, even now.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "Даже сейчас это одновременно увлекает Тима и сбивает его с толку.",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "60cdceecef8241e4911888e94f72c58d",
-              "finding_id": "chunk-006-comparison"
-            }
-          },
-          {
-            "id": "grapple-term",
-            "category": "terminology",
-            "severity": "minor",
-            "detail": "Resolved as a terminology discrepancy: the current rendering «гарпунный пистолет» matches the nearby rendering of “grappling gun.” The source sentence itself is missing from the translation; that omission is reported separately.",
-            "resolved": true,
-            "source_anchor": {
-              "quote": "Batman stows away his grappling gun on his belt and faces Robin, standing still, patiently waiting for Damian to find his words.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "<!-- bt-block:000154 -->\nгарпунный пистолет",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "60cdceecef8241e4911888e94f72c58d",
-              "finding_id": "chunk-006-grappling-term"
-            }
-          },
-          {
-            "id": "missing-154",
-            "category": "omission",
-            "severity": "major",
-            "detail": "The source sentence is not translated: the current block contains only «гарпунный пистолет». It omits Batman putting the weapon away, turning to face Robin, and waiting patiently for Damian to find his words.",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "Batman stows away his grappling gun on his belt and faces Robin, standing still, patiently waiting for Damian to find his words.",
-              "occurrence": 0
-            },
-            "translation_anchor": null,
-            "resolves": null
-          },
-          {
-            "id": "nunchak-form",
-            "category": "style",
-            "severity": "minor",
-            "detail": "The Russian genitive plural is «нунчаков», not «нунчак»: correct «с парой нунчак» to «с парой нунчаков».",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "In his last year as Robin, B started training him with a pair of nunchucks that quickly became his primary weapon.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "В последний год его службы Робином Б. начал обучать его обращаться с парой нунчак, которые быстро стали его основным оружием.",
-              "occurrence": 0
-            },
-            "resolves": null
-          }
-        ]
-      },
-      "style": [],
-      "glossary": [
-        {
-          "notes": "Другая личность Джейсона Тодда.",
-          "original": "Red Hood",
-          "translation": "Красный Колпак",
-          "type": "кодовое имя"
-        },
-        {
-          "notes": "",
-          "original": "Justice League",
-          "translation": "Лига справедливости",
-          "type": "организация"
-        }
-      ]
-    },
-    "chunk-007": {
-      "outcome": "PASS",
-      "report": {
-        "evidence_version": 2,
-        "context": "independent_session",
-        "checks": {
-          "coverage": true,
-          "meaning": true,
-          "terminology": true,
-          "style": true,
-          "structure": true
-        },
-        "findings": [
-          {
-            "id": "growth-fixed",
-            "category": "style",
-            "severity": "minor",
-            "detail": "Предыдущее замечание исправлено: «вырос и в мастерстве, и как личность» передаёт личностный рост естественно по-русски.",
-            "resolved": true,
-            "source_anchor": {
-              "quote": "Damian has come a long way both in skill and in character since coming to Gotham.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "С тех пор как Дэмиан приехал в Готэм, он значительно вырос и в мастерстве, и как личность.",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "60cdceecef8241e4911888e94f72c58d",
-              "finding_id": "chunk-007-character-growth"
-            }
-          }
-        ]
-      },
-      "style": [],
-      "glossary": [
-        {
-          "notes": "Организация, к которой принадлежит ниндзя, наблюдающий за Бэтменом и Робином.",
-          "original": "League of Assassins",
-          "translation": "Лига убийц",
-          "type": "организация"
-        }
-      ]
     }
   },
   "windows": {
     "chunk-001": {
       "source_sha256": "0508675e5160b0770faaf40c849c8c09f5889772c3eccb4f431b7073ba4fea86",
       "translation_sha256": "881fe5b80529bbedb687eebf0ba4d8a10805452d0d0594c720fc3a6ab1073123"
-    },
-    "chunk-002": {
-      "source_sha256": "fe58cd0de898c4051cbe51cc1affd23f88d9a89b8483c2f2cc120335d9bee972",
-      "translation_sha256": "67a517c5a06f0dfe902111ddad3141e04ce0db4328571600b5805fc7f1098844"
-    },
-    "chunk-003": {
-      "source_sha256": "69be5e598358758f4bdb8fb6b4bf3f7ded476127ee2f5cbf8a4bf5e13ca37c77",
-      "translation_sha256": "9ffebf53a288fcbd00a7212a3bc37f22c39f40e2f7ef129c6f49fe5881224384"
-    },
-    "chunk-004": {
-      "source_sha256": "fc4a550163bdb3796e350cc869731cae7f693dbdcb632c307294f2abbcad0b31",
-      "translation_sha256": "35c2ea9cf505b3952f05100cd2d20d9aa8e76ce3af063ebac3f2ebd02c4037dc"
-    },
-    "chunk-005": {
-      "source_sha256": "68fd3be978424ebc219a9bf1f328ffa4a2834cc8a255dbb06ee311e2c34b67d3",
-      "translation_sha256": "1c8bd824ec68a5ce5ee8e113da466b8a7a5223db7506f19bd6b177172ac4f7c1"
-    },
-    "chunk-006": {
-      "source_sha256": "6781ab057cc57f867855f1fd867530d4c470345c94043e2194ec8c973b9db5db",
-      "translation_sha256": "9013ecb9bf80dbe13b2ce4082201baad99cf97175253009cfdfb97e05b5ccb65"
-    },
-    "chunk-007": {
-      "source_sha256": "d4e1697c970caeb37b8b4da330874cf8a7b87670c389af3b03f55845cd64f823",
-      "translation_sha256": "b551bd5af42823a2fc31e9e94416b384b52ae72e219c556345f520b123b5e974"
     }
   },
-  "accepted_review_record_id": "2218850f28354836bf4a0d28e9d99952",
+  "accepted_review_record_id": null,
   "reused": {}
 }
