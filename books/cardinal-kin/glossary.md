@@ -25,3 +25,10 @@ Use this file for recurring names, places, organizations, terms, nicknames, titl
 | Tim | Тим | имя персонажа | В supplied excerpts consistently rendered as «Тим». |
 | Damian | Дэмиан | имя персонажа | Inflect in context; the supplied translation uses «Дэмиан» and «Дэмиана». |
 | Ra’s | Ра’с | имя персонажа | Inflect in context; the supplied translation uses «Ра’са». |
+| Gotham | Готэм | город |  |
+| Timothy Drake | Тимоти Дрейк | имя персонажа | Полная форма имени Тима Дрейка. |
+| Drake Industries | Дрейк Индастриз | компания | Компания, которой владеет и управляет Тимоти Дрейк. |
+| Alfred | Альфред | имя персонажа | Напоминает Дюку о правилах речи за столом и наливает кофе Брюсу. |
+| Tamara | Тамара | имя персонажа | Полное имя Тэм Фокс. |
+| Wayne Enterprises | Уэйн Энтерпрайзес | компания | Компания, о которой Люциус начал рассказывать Дэмиану. |
+| Brucie Wayne | Брюси Уэйн | публичный образ | Образ Брюса Уэйна, известный Тэм. |
