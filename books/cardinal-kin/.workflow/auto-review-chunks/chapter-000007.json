@@ -1,0 +1,217 @@
+{
+  "schema_version": 2,
+  "plan": {
+    "schema_version": 1,
+    "helper_revision": "review-chunks-source-stable-v1",
+    "source_sha256": "fcc6f238fbc3a881a68755e9796c0a618c579ec0d33c92b4d56c6f4f0df5ee97",
+    "translation_sha256": "311509da05adca961e0e7ec1171f217f6735aecb2854dca164dbc4cf9a4f4faa",
+    "chunks": [
+      {
+        "id": "chunk-001",
+        "source_core": [
+          0,
+          5577
+        ],
+        "translation_core": [
+          0,
+          5677
+        ],
+        "source_window": [
+          0,
+          7480
+        ],
+        "translation_window": [
+          0,
+          7479
+        ]
+      },
+      {
+        "id": "chunk-002",
+        "source_core": [
+          5577,
+          11221
+        ],
+        "translation_core": [
+          5677,
+          11678
+        ],
+        "source_window": [
+          3619,
+          13157
+        ],
+        "translation_window": [
+          3732,
+          13691
+        ]
+      },
+      {
+        "id": "chunk-003",
+        "source_core": [
+          11221,
+          17001
+        ],
+        "translation_core": [
+          11678,
+          17621
+        ],
+        "source_window": [
+          9288,
+          18852
+        ],
+        "translation_window": [
+          9863,
+          19471
+        ]
+      },
+      {
+        "id": "chunk-004",
+        "source_core": [
+          17001,
+          22694
+        ],
+        "translation_core": [
+          17621,
+          23357
+        ],
+        "source_window": [
+          15199,
+          24504
+        ],
+        "translation_window": [
+          15788,
+          25183
+        ]
+      },
+      {
+        "id": "chunk-005",
+        "source_core": [
+          22694,
+          28261
+        ],
+        "translation_core": [
+          23357,
+          29105
+        ],
+        "source_window": [
+          20441,
+          28261
+        ],
+        "translation_window": [
+          21180,
+          29105
+        ]
+      }
+    ]
+  },
+  "unit_id": "chapter-000007",
+  "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
+  "binding": {
+    "previous_record_id": null,
+    "glossary_sha256": "46f051bca3e092dfcbc4ff89ec10624c4b8ae493ef6df867d04ebb6b6e4921c7",
+    "style_guide_sha256": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4",
+    "reviewer_contract_sha256": "e21e068170b373ed0593c7fa47b2039293af849e93fe53de5bd30b97f3092ff2"
+  },
+  "completed": {
+    "chunk-001": {
+      "outcome": "CORRECTIONS_REQUIRED",
+      "report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "robin-duties",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The source says Damian is increasing both his training and his duties as Robin. The translation conveys increased training load but only says that he performs Robin's duties. Preserve that his Robin duties are also increasing.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "while also increasing his training and duties as Robin.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "а также увеличивал нагрузку на тренировках и выполнял обязанности Робина.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "vigilantism",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "«Борьба с преступностью» conveys crimefighting generally but loses the source's specific implication of teenage vigilante activity. Preserve that distinction in the target wording.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "the strain of balancing school and teenage vigilantism.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "как тяжело совмещать школу и подростковую борьбу с преступностью.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "curt-tone",
+            "category": "voice",
+            "severity": "minor",
+            "detail": "The source says Damian responds «curtly», conveying brusqueness as well as brevity. «Короче» preserves shortness but not the curt tone; retain that edge in his response.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Damian responds as swiftly and curtly as possible, trying to get the pleasantries over with as soon as possible.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Дэмиан отвечает как можно быстрее и короче, стараясь поскорее покончить с обменом любезностями.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "link-punct",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "The target places the sentence-ending period inside the inline-linked text, while the source link contains only the word «notes». Keep the period after the inline end marker so it is not part of the link.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "See the end of the chapter for <!-- bt-inline:000001:start -->notes<!-- bt-inline:000001:end -->",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "В конце главы см. <!-- bt-inline:000001:start -->примечания.<!-- bt-inline:000001:end -->",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "style": [
+        {
+          "evidence": "Damian thinks he might actually miss his friend in the interim of the summer, but he’s eager to be productive",
+          "source_pattern": "The narration stays in third person but closely follows Damian's thoughts and judgments.",
+          "translation_approach": "Maintain close narrative perspective and preserve Damian's qualifications, uncertainty, and private evaluations rather than turning them into neutral exposition."
+        },
+        {
+          "evidence": "On the contrary, Damian corrects. / Take it easy on yourself, little D. You still got a few more years of school.",
+          "source_pattern": "Damian's controlled, formal speech contrasts with Duke's relaxed, supportive, colloquial manner.",
+          "translation_approach": "Keep Damian's precise, restrained phrasing distinct from Duke's casual reassurance and familiar address."
+        }
+      ],
+      "glossary": []
+    }
+  },
+  "windows": {
+    "chunk-001": {
+      "source_sha256": "9ffe2d708030af115c80a883b711f1c60789195898033dd20d303d98ae039117",
+      "translation_sha256": "ef123d868c92ccdf4d3f15fd5c2b25965eaf4df34a425fa873ed62e8d80e7f2a"
+    }
+  },
+  "accepted_review_record_id": null,
+  "reused": {}
+}
