@@ -3,7 +3,7 @@
   "job_id": "05eed6ea814d3b5eec014c6d05b39e3f",
   "book_slug": "say-it-in-your-mother-tongue",
   "state": "running",
-  "phase": "review-schema-repair-reserved",
+  "phase": "reviewer-completed",
   "failures": 0,
   "correction_rounds": {
     "chapter-000001": 1,
@@ -51,13 +51,8 @@
   },
   "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
   "source_sha256": "12e210ce5a95daf56a97ada583ec15c274780c4ddfa7fb92da6a88c67f7c403d",
-  "updated_at": "2026-11-18T07:40:07.609340+00:00",
-  "active": {
-    "role": "reviewer",
-    "chapter": 51,
-    "session_id": "auto-05eed6ea814d-reviewer-d887508b",
-    "unit_id": "chapter-000051"
-  },
+  "updated_at": "2026-11-18T07:43:03.757787+00:00",
+  "active": null,
   "recoveries": [
     {
       "action": "auto-retry-corrected-structural-preflight",
@@ -300,15 +295,14 @@
     ],
     "action": "operator-attention-no-pass"
   },
-  "provider_model_route": "primary",
   "model_response_diagnostics": {
     "finish_reason": "stop",
     "response_format": "json_object",
-    "response_chars": 3966,
+    "response_chars": 4554,
     "provider_refusal": false,
-    "prompt_tokens": 21794,
-    "completion_tokens": 15114,
-    "total_tokens": 36908,
+    "prompt_tokens": 23186,
+    "completion_tokens": 9489,
+    "total_tokens": 32675,
     "route": "primary",
     "role": "reviewer",
     "unit_id": "chapter-000051"

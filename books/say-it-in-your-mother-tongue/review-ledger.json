@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 142,
+  "next_sequence": 143,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -15792,6 +15792,103 @@
       },
       "shared_state_revisions": {
         "glossary": "2113fa5fcb665e47ec424b8b8d877901f9065aaf7917c85c3b19865e725d14a2",
+        "style_guide": "eaa08d42f1f5ea55a06553ec9c1d9e5c6f66b62f9bb6f55b653a52f78659dd74"
+      }
+    },
+    {
+      "record_id": "ceba82e4245b4f588aae20e084b801c6",
+      "sequence": 142,
+      "unit_id": "chapter-000051",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "a11a7469cef998f9f05f10aee379ab75d999ab9d53112c16e08360cd36de7818",
+      "translation_sha256": "2360569bf421a08f5c45070e35d28e460bf90c14a4194a72da971a2c8214c01f",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-d887508b",
+      "reviewed_at": "2026-11-18T07:43:03Z",
+      "state_revision": "85d72b78b900d270f08df078c7c7d6cee8a7ed789139ad2e2151421f8791f2a2",
+      "review_commit": "b4e4a99259f9ec3d2b52a3603faf49611ebe2e8e",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "meaning-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The source's double meaning of “looking up to” conveys both looking upward and respecting his father. «Не глядя на отца» loses that upward direction and can mean simply not looking at him. Preserve both the physical and figurative sense.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "no longer looking up to his father — both physically and metaphorically",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "больше не глядя на отца — ни буквально, ни в переносном смысле",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "structure-1",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "The second spoken phrase lacks an opening quotation mark. Mark it as a separate utterance, for example: *«Ja»,* — Макс один раз кивает. — «Ты добрый. Иногда».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "*“Ja,”* Max nods once, “you are. Sometimes.”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "*«Ja»,* — Макс один раз кивает. — Ты добрый. Иногда».",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The final clause is an awkward predicate-less fragment: «он с весёлым фырканьем». Attach the amused huff to the speech tag or give it a verb so the sentence reads naturally in Russian.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“So,” Checo purses his lips in faux thought, huffing in amusement as he asks, “my family now, your family next? Like between Jeddah and Miami?”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Ну что, сначала моя семья, потом твоя? Где-то между Джиддой и Майами?» — спрашивает Чеко, поджимая губы и делая вид, будто задумался; он с весёлым фырканьем.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "modality-1",
+            "category": "modality",
+            "severity": "minor",
+            "detail": "The source says the grandmother could become a great-grandmother, leaving the outcome hypothetical. «Тогда она станет» makes it certain; preserve the possibility, for example with «тогда она могла бы стать» or «чтобы она могла стать».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "And grandma *just* wants me to have a baby finally so she could be *overgrootmoeder*.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "А бабушке *только* хочется, чтобы у меня наконец появился ребёнок, и тогда она станет overgrootmoeder.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "5a07096e2fee56a5cfb2ab292570b201fb8b2acbec4d1def386ed295ff537628",
         "style_guide": "eaa08d42f1f5ea55a06553ec9c1d9e5c6f66b62f9bb6f55b653a52f78659dd74"
       }
     }
