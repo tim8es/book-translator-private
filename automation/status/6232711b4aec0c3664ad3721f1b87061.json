@@ -3,7 +3,7 @@
   "job_id": "6232711b4aec0c3664ad3721f1b87061",
   "book_slug": "cardinal-kin",
   "state": "running",
-  "phase": "model-call-reserved",
+  "phase": "reviewer-completed",
   "failures": 0,
   "correction_rounds": {
     "chapter-000001": 2,
@@ -14,13 +14,8 @@
   },
   "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
   "source_sha256": "f06b996448766fcf6faa703ced3ca03b63221f4f81bdb4c395619c69ffa353cd",
-  "updated_at": "2026-11-18T13:45:06.293846+00:00",
-  "active": {
-    "role": "reviewer",
-    "chapter": 6,
-    "session_id": "auto-6232711b4aec-reviewer-d949f33f",
-    "unit_id": "chapter-000006"
-  },
+  "updated_at": "2026-11-18T13:47:59.352863+00:00",
+  "active": null,
   "structural_helper_revision": "4c584fe5534871cd05aa851d9b7bdbfa696d0edd",
   "model_calls_started": 94,
   "prompt_context": {
@@ -87,14 +82,14 @@
   ],
   "provider_call_metric": {
     "unit_id": "chapter-000006",
-    "role": "corrector",
+    "role": "reviewer",
     "route": "primary",
-    "request_chars": 32280,
+    "request_chars": 92341,
     "outcome": "response",
-    "duration_ms": 22268,
-    "prompt_tokens": 7010,
-    "completion_tokens": 749,
-    "total_tokens": 7759
+    "duration_ms": 171032,
+    "prompt_tokens": 22385,
+    "completion_tokens": 9376,
+    "total_tokens": 31761
   },
   "provider_call_metrics": [
     {
@@ -464,6 +459,17 @@
       "prompt_tokens": 7010,
       "completion_tokens": 749,
       "total_tokens": 7759
+    },
+    {
+      "unit_id": "chapter-000006",
+      "role": "reviewer",
+      "route": "primary",
+      "request_chars": 92341,
+      "outcome": "response",
+      "duration_ms": 171032,
+      "prompt_tokens": 22385,
+      "completion_tokens": 9376,
+      "total_tokens": 31761
     }
   ],
   "last_review_failure": {
@@ -570,13 +576,31 @@
   "model_response_diagnostics": {
     "finish_reason": "stop",
     "response_format": "json_object",
-    "response_chars": 554,
+    "response_chars": 4113,
     "provider_refusal": false,
-    "prompt_tokens": 7010,
-    "completion_tokens": 749,
-    "total_tokens": 7759,
+    "prompt_tokens": 22385,
+    "completion_tokens": 9376,
+    "total_tokens": 31761,
     "route": "primary",
-    "role": "corrector",
+    "role": "reviewer",
     "unit_id": "chapter-000006"
+  },
+  "execution_metrics": {
+    "schema_version": 1,
+    "since": "2026-11-18T13:47:59.025877+00:00",
+    "api": {
+      "reviewer": {
+        "completed_calls": 1,
+        "responses": 1,
+        "duration_ms": 171032,
+        "request_chars": 92341,
+        "prompt_tokens": 22385,
+        "completion_tokens": 9376,
+        "total_tokens": 31761
+      }
+    },
+    "accepted_operations": {
+      "review_rejected": 1
+    }
   }
 }
