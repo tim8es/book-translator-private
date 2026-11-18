@@ -3,7 +3,7 @@
   "job_id": "6232711b4aec0c3664ad3721f1b87061",
   "book_slug": "cardinal-kin",
   "state": "running",
-  "phase": "model-call-reserved",
+  "phase": "review-chunk-staged",
   "failures": 0,
   "correction_rounds": {
     "chapter-000001": 2,
@@ -15,7 +15,7 @@
   },
   "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
   "source_sha256": "f06b996448766fcf6faa703ced3ca03b63221f4f81bdb4c395619c69ffa353cd",
-  "updated_at": "2026-11-18T15:36:32.280443+00:00",
+  "updated_at": "2026-11-18T15:38:06.578227+00:00",
   "active": {
     "role": "reviewer",
     "chapter": 8,
@@ -97,25 +97,14 @@
     "unit_id": "chapter-000008",
     "role": "reviewer",
     "route": "primary",
-    "request_chars": 53776,
+    "request_chars": 57413,
     "outcome": "response",
-    "duration_ms": 113432,
-    "prompt_tokens": 12180,
-    "completion_tokens": 6112,
-    "total_tokens": 18292
+    "duration_ms": 92908,
+    "prompt_tokens": 13253,
+    "completion_tokens": 5094,
+    "total_tokens": 18347
   },
   "provider_call_metrics": [
-    {
-      "unit_id": "chapter-000007",
-      "role": "corrector",
-      "route": "primary",
-      "request_chars": 31012,
-      "outcome": "response",
-      "duration_ms": 20521,
-      "prompt_tokens": 6600,
-      "completion_tokens": 890,
-      "total_tokens": 7490
-    },
     {
       "unit_id": "chapter-000007",
       "role": "corrector",
@@ -544,6 +533,17 @@
       "prompt_tokens": 12180,
       "completion_tokens": 6112,
       "total_tokens": 18292
+    },
+    {
+      "unit_id": "chapter-000008",
+      "role": "reviewer",
+      "route": "primary",
+      "request_chars": 57413,
+      "outcome": "response",
+      "duration_ms": 92908,
+      "prompt_tokens": 13253,
+      "completion_tokens": 5094,
+      "total_tokens": 18347
     }
   ],
   "last_review_failure": {
@@ -653,13 +653,13 @@
     "since": "2026-11-18T13:47:59.025877+00:00",
     "api": {
       "reviewer": {
-        "completed_calls": 25,
-        "responses": 25,
-        "duration_ms": 3677234,
-        "request_chars": 1467421,
-        "prompt_tokens": 340981,
-        "completion_tokens": 199843,
-        "total_tokens": 540824
+        "completed_calls": 26,
+        "responses": 26,
+        "duration_ms": 3770142,
+        "request_chars": 1524834,
+        "prompt_tokens": 354234,
+        "completion_tokens": 204937,
+        "total_tokens": 559171
       },
       "translator": {
         "completed_calls": 18,
@@ -761,23 +761,23 @@
     }
   ],
   "review_chunk_fallback_unit": "chapter-000008",
-  "model_response_diagnostics": {
-    "finish_reason": "stop",
-    "response_format": "json_object",
-    "response_chars": 2949,
-    "provider_refusal": false,
-    "prompt_tokens": 12180,
-    "completion_tokens": 6112,
-    "total_tokens": 18292,
-    "route": "primary",
-    "role": "reviewer",
-    "unit_id": "chapter-000008"
-  },
   "review_chunk_progress": {
     "unit_id": "chapter-000008",
     "source_sha256": "046f155efc220f63ca6cc74edb78872a8d69460adf63b448b32a75ff6a5acf1d",
     "translation_sha256": "d31ef28c2f05c4d7083af0bbf9d896165f6c59213c3419a6b014ede80cdd275c",
-    "completed": 1,
+    "completed": 2,
     "total": 7
+  },
+  "model_response_diagnostics": {
+    "finish_reason": "stop",
+    "response_format": "json_object",
+    "response_chars": 2489,
+    "provider_refusal": false,
+    "prompt_tokens": 13253,
+    "completion_tokens": 5094,
+    "total_tokens": 18347,
+    "route": "primary",
+    "role": "reviewer",
+    "unit_id": "chapter-000008"
   }
 }
