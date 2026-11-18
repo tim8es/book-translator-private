@@ -328,12 +328,117 @@
           "type": "фамилия персонажа"
         }
       ]
+    },
+    "chunk-002": {
+      "outcome": "CORRECTIONS_REQUIRED",
+      "report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "align-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The current «чтобы вы оба были на одной волне» conveys being aligned in understanding, resolving the prior concern that the translation reduced this to being informed.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "but it’s important that they happen and that the two of you are on the same page.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "чтобы вы оба были на одной волне",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "37256be23edf44498b5ebe0686e0eca3",
+              "finding_id": "chunk-002-alignment-1"
+            }
+          },
+          {
+            "id": "insist-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "«Отец настаивает» now preserves the source’s insistence rather than recasting it as mere assurances.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Despite his father’s insistence that he can leave the job at any time",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Несмотря на то, что отец настаивает: Дэмиан может бросить эту работу в любой момент",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "37256be23edf44498b5ebe0686e0eca3",
+              "finding_id": "chunk-002-insistence-1"
+            }
+          },
+          {
+            "id": "players-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Ключевых фигур» is a natural rendering of “major players” in this context, correcting the prior awkward calque.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "most of the major players and companies they work with often",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "большинством ключевых фигур и компаний, с которыми они часто работают",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "37256be23edf44498b5ebe0686e0eca3",
+              "finding_id": "chunk-002-players-1"
+            }
+          },
+          {
+            "id": "checkins-1",
+            "category": "omission",
+            "severity": "minor",
+            "detail": "The translation omits that it is important for the check-ins to take place. It also recasts the following alignment as the purpose of the changing time and place («чтобы вы оба были на одной волне»), a relation absent from the source.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "but it’s important that they happen",
+              "occurrence": 0
+            },
+            "translation_anchor": null,
+            "resolves": null
+          },
+          {
+            "id": "resolve-1",
+            "category": "omission",
+            "severity": "minor",
+            "detail": "The translation stops after «Дэмиан может бросить эту работу в любой момент» and omits his determination to see the job through to the end, whatever happens. Restore the omitted clause.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Damian is set on seeing this through to the end no matter what.",
+              "occurrence": 0
+            },
+            "translation_anchor": null,
+            "resolves": null
+          }
+        ]
+      },
+      "style": [],
+      "glossary": []
     }
   },
   "windows": {
     "chunk-001": {
       "source_sha256": "51b8ed4442b6d878634a35741d3a19490b223469d3e4591db3f719c3fb265ed9",
       "translation_sha256": "d5b9a34f7af913cf7882b64fdb3dbe59503cba437ebd2fe370711e1844a6519f"
+    },
+    "chunk-002": {
+      "source_sha256": "a6b3bc2d49f00ad77b2099752c07dc0cbf5a314f70275b4d2d76bf6dde6eb2c6",
+      "translation_sha256": "5b68a5f3f4d55b8fe461fc6f1b59e87507522dc1960cedce9a9c856d2c20d4e8"
     }
   },
   "accepted_review_record_id": null,
