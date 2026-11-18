@@ -3,7 +3,7 @@
   "job_id": "6232711b4aec0c3664ad3721f1b87061",
   "book_slug": "cardinal-kin",
   "state": "running",
-  "phase": "review-chunk-staged",
+  "phase": "reviewer-completed",
   "failures": 0,
   "correction_rounds": {
     "chapter-000001": 2,
@@ -16,13 +16,8 @@
   },
   "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
   "source_sha256": "f06b996448766fcf6faa703ced3ca03b63221f4f81bdb4c395619c69ffa353cd",
-  "updated_at": "2026-11-18T16:08:41.608927+00:00",
-  "active": {
-    "role": "reviewer",
-    "chapter": 8,
-    "session_id": "auto-6232711b4aec-reviewer-81544ac5",
-    "unit_id": "chapter-000008"
-  },
+  "updated_at": "2026-11-18T16:09:01.300299+00:00",
+  "active": null,
   "structural_helper_revision": "4c584fe5534871cd05aa851d9b7bdbfa696d0edd",
   "model_calls_started": 206,
   "prompt_context": {
@@ -688,7 +683,7 @@
       }
     },
     "accepted_operations": {
-      "review_rejected": 6,
+      "review_rejected": 7,
       "translated": 2,
       "corrected": 4
     }
@@ -712,8 +707,8 @@
   },
   "review_incremental_archive": {
     "unit_id": "chapter-000008",
-    "review_record_id": "37256be23edf44498b5ebe0686e0eca3",
-    "translation_sha256": "d31ef28c2f05c4d7083af0bbf9d896165f6c59213c3419a6b014ede80cdd275c",
+    "review_record_id": "6e04ab7ec7104d66b8f96d8a79b415eb",
+    "translation_sha256": "85bfbcefe839d9c8c6f98ff388cd02ef926a30b8fb4bf9876c9751cd2ac2ac45",
     "clean_chunks": 0
   },
   "adaptive_correction_budget": {
@@ -769,14 +764,6 @@
       "at": "2026-11-18T15:52:43.346297+00:00"
     }
   ],
-  "review_chunk_fallback_unit": "chapter-000008",
-  "review_chunk_progress": {
-    "unit_id": "chapter-000008",
-    "source_sha256": "046f155efc220f63ca6cc74edb78872a8d69460adf63b448b32a75ff6a5acf1d",
-    "translation_sha256": "85bfbcefe839d9c8c6f98ff388cd02ef926a30b8fb4bf9876c9751cd2ac2ac45",
-    "completed": 7,
-    "total": 7
-  },
   "model_response_diagnostics": {
     "finish_reason": "stop",
     "response_format": "json_object",
