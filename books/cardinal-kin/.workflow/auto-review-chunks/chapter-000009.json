@@ -522,6 +522,99 @@
       },
       "style": [],
       "glossary": []
+    },
+    "chunk-005": {
+      "outcome": "CORRECTIONS_REQUIRED",
+      "report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "bluejay-129",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "The existing glossary gives Bluejay as «Синяя Сойка», while the translation uses «Голубая Сойка». The latter is a natural Russian rendering; reconcile the glossary rather than changing the translation solely to match it.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Sure enough, not 5 minutes later, the Bats arrive— Batman, Bluejay, Spoiler, and Robin.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "И точно: не проходит и пяти минут, как появляются Бэтмен, Голубая Сойка, Спойлер и Робин.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "bluejay-132",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "The existing glossary gives Bluejay as «Синяя Сойка», while the translation uses «Голубая Сойка». This is the same glossary conflict as above at another occurrence; reconcile the glossary, not the text.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "He passes the time listening to their conversation, holding himself back from laughing as Bluejay and Spoiler argue over which Star Wars trilogy is best.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Он коротает время, прислушиваясь к их разговору и сдерживая смех, пока Голубая Сойка и Спойлер спорят, какая трилогия «Звёздных войн» лучше.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "bluejay-135",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "The existing glossary gives Bluejay as «Синяя Сойка», while the translation uses «Голубая Сойка». This is the same glossary conflict as above at another occurrence; reconcile the glossary, not the text.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Bluejay, Spoiler. Outflank them. Clear?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Голубая Сойка, Спойлер, обойдите их с флангов. Понятно?",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "demon-brat",
+            "category": "register",
+            "severity": "minor",
+            "detail": "«Демоническое отродье» is harsher and more contemptuous than the colloquial, teasing insult “demon brat.” Consider a less severe equivalent such as «демонический мальчишка».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "The beacon he had Pru give to Damian on his behalf acts as both a tracker and a distress signal, allowing Tim to keep track of the demon brat whenever he needs to.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Маячок, который он попросил Пру передать Дэмиану от его имени, служит и трекером, и сигналом бедствия, позволяя Тиму следить за этим демоническим отродьем, когда понадобится.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "style": [
+        {
+          "evidence": "“Least 40, probably more. Armed.”",
+          "source_pattern": "Dialogue uses colloquial phrasing and clipped fragments, as in “Least 40, probably more. Armed.”",
+          "translation_approach": "Сохранять разговорную краткость и обрывистые реплики, не превращая их в полные, сглаженные фразы."
+        },
+        {
+          "evidence": "“Tim taps on the piece in his ear, instantly tuning into their comms.”; “Watching so many Bats move in tandem never gets old—even if it makes his chest ache a little more than usual.”",
+          "source_pattern": "Close third-person narration follows Tim's immediate actions and observations in brisk present-tense sequences, with occasional casual, emotionally revealing asides.",
+          "translation_approach": "Сохранять близкую к Тиму фокализацию, динамику действий и непринуждённую внутреннюю интонацию."
+        }
+      ],
+      "glossary": []
     }
   },
   "windows": {
@@ -540,6 +633,10 @@
     "chunk-004": {
       "source_sha256": "fc4a550163bdb3796e350cc869731cae7f693dbdcb632c307294f2abbcad0b31",
       "translation_sha256": "82d1d07972f2884bc26e47af9d24401e1f78fc46408b9dee370ea42ab9ad5f98"
+    },
+    "chunk-005": {
+      "source_sha256": "68fd3be978424ebc219a9bf1f328ffa4a2834cc8a255dbb06ee311e2c34b67d3",
+      "translation_sha256": "09b77184b7adf9f220f8d9bffe90a2734fb97c544cfac89572c8f71edb592700"
     }
   },
   "accepted_review_record_id": null,
