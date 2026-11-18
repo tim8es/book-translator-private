@@ -4,7 +4,7 @@
     "schema_version": 1,
     "helper_revision": "review-chunks-source-stable-v1",
     "source_sha256": "046f155efc220f63ca6cc74edb78872a8d69460adf63b448b32a75ff6a5acf1d",
-    "translation_sha256": "d31ef28c2f05c4d7083af0bbf9d896165f6c59213c3419a6b014ede80cdd275c",
+    "translation_sha256": "85bfbcefe839d9c8c6f98ff388cd02ef926a30b8fb4bf9876c9751cd2ac2ac45",
     "chunks": [
       {
         "id": "chunk-001",
@@ -14,7 +14,7 @@
         ],
         "translation_core": [
           0,
-          5481
+          5333
         ],
         "source_window": [
           0,
@@ -22,7 +22,7 @@
         ],
         "translation_window": [
           0,
-          7566
+          7377
         ]
       },
       {
@@ -32,16 +32,16 @@
           10665
         ],
         "translation_core": [
-          5481,
-          10842
+          5333,
+          10594
         ],
         "source_window": [
           3476,
           12550
         ],
         "translation_window": [
-          3624,
-          12874
+          3522,
+          12626
         ]
       },
       {
@@ -51,16 +51,16 @@
           16004
         ],
         "translation_core": [
-          10842,
-          16444
+          10594,
+          16176
         ],
         "source_window": [
           8627,
           18133
         ],
         "translation_window": [
-          9019,
-          18580
+          8514,
+          18312
         ]
       },
       {
@@ -70,16 +70,16 @@
           21372
         ],
         "translation_core": [
-          16444,
-          21777
+          16176,
+          21522
         ],
         "source_window": [
           13871,
           23180
         ],
         "translation_window": [
-          14609,
-          23582
+          14022,
+          23327
         ]
       },
       {
@@ -89,16 +89,16 @@
           26617
         ],
         "translation_core": [
-          21777,
-          27037
+          21522,
+          26772
         ],
         "source_window": [
           19411,
           28464
         ],
         "translation_window": [
-          19898,
-          28845
+          19630,
+          28579
         ]
       },
       {
@@ -108,16 +108,16 @@
           32026
         ],
         "translation_core": [
-          27037,
-          32628
+          26772,
+          32362
         ],
         "source_window": [
           24702,
           33915
         ],
         "translation_window": [
-          25149,
-          34461
+          24896,
+          34207
         ]
       },
       {
@@ -127,16 +127,16 @@
           37383
         ],
         "translation_core": [
-          32628,
-          38164
+          32362,
+          37903
         ],
         "source_window": [
           30186,
           37383
         ],
         "translation_window": [
-          30801,
-          38164
+          30535,
+          37903
         ]
       }
     ]
@@ -144,7 +144,7 @@
   "unit_id": "chapter-000008",
   "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
   "binding": {
-    "previous_record_id": null,
+    "previous_record_id": "37256be23edf44498b5ebe0686e0eca3",
     "glossary_sha256": "ba3e390941710d55f789871f95f40110ef56af4a1348dd907202dcb9ccf4f671",
     "style_guide_sha256": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4",
     "reviewer_contract_sha256": "e21e068170b373ed0593c7fa47b2039293af849e93fe53de5bd30b97f3092ff2"
@@ -164,49 +164,138 @@
         },
         "findings": [
           {
-            "id": "intelligence-1",
+            "id": "intel-recheck",
             "category": "meaning",
             "severity": "minor",
-            "detail": "«Задевает их умственные способности» is awkward and suggests affecting their abilities, rather than subtly mocking or questioning their intelligence. Rephrase to preserve the source’s pointed insult.",
-            "resolved": false,
+            "detail": "Rechecked: «тонко отпускает шпильки в адрес их интеллекта» conveys the pointed, subtle mockery and repairs the earlier awkward wording about affecting their abilities.",
+            "resolved": true,
             "source_anchor": {
               "quote": "even if she’s  *subtly*  poking at their intelligence.",
               "occurrence": 0
             },
             "translation_anchor": {
-              "quote": "даже когда *тонко* задевает их умственные способности.",
+              "quote": "*тонко* отпускает шпильки в адрес их интеллекта.",
               "occurrence": 0
             },
-            "resolves": null
+            "resolves": {
+              "record_id": "37256be23edf44498b5ebe0686e0eca3",
+              "finding_id": "chunk-001-intelligence-1"
+            }
           },
           {
-            "id": "bullshit-register",
+            "id": "bullshit-recheck",
             "category": "register",
             "severity": "minor",
-            "detail": "The source’s coarse colloquial «bullshit» is softened to the comparatively neutral «чушь». Use wording that retains the source’s marked, blunt register.",
-            "resolved": false,
+            "detail": "Rechecked: «несёт хуйню» retains the source’s coarse, blunt register. The sentence is nevertheless incomplete; that separate coverage problem is reported below.",
+            "resolved": true,
             "source_anchor": {
               "quote": "Tamara is clearly not above calling out  *anybody’s*  bullshit, including her boss.",
               "occurrence": 0
             },
             "translation_anchor": {
-              "quote": "Тамара явно не стесняется говорить кому угодно, что тот несёт чушь, — в том числе и своему начальнику.",
+              "quote": "что тот несёт хуйню",
               "occurrence": 0
             },
-            "resolves": null
+            "resolves": {
+              "record_id": "37256be23edf44498b5ebe0686e0eca3",
+              "finding_id": "chunk-001-bullshit-register"
+            }
           },
           {
-            "id": "neutrality-1",
+            "id": "neutral-recheck",
             "category": "meaning",
             "severity": "minor",
-            "detail": "«Безразличие» interprets Drake’s deliberate neutrality as indifference, adding a more dismissive attitude than the source establishes. Preserve the distinction between emotional neutrality and indifference.",
+            "detail": "Rechecked: «безучастный» still suggests indifference rather than deliberate neutrality. The following stranded phrase about neutrality does not repair the meaning in a complete, grammatical sentence.",
             "resolved": false,
             "source_anchor": {
               "quote": "It’s rare for Damian to see such deliberate neutrality anymore, not a hint of feeling to be found…it reminds him a bit too much of his grandfather.",
               "occurrence": 0
             },
             "translation_anchor": {
-              "quote": "Дэмиану редко доводится видеть столь намеренно сохраняемое безразличие; ни намёка на чувства… Это слишком сильно напоминает ему деда.",
+              "quote": "пустой, безучастный. столь намеренно сохраняемую нейтральность",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "37256be23edf44498b5ebe0686e0eca3",
+              "finding_id": "chunk-001-neutrality-1"
+            }
+          },
+          {
+            "id": "tam-7",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "The source uses the nickname “Tam,” whose established Russian rendering is «Тэм»; the translation writes «Там». Use the established nickname spelling.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Honestly, watching Tam deal with idiots is probably the most entertaining thing yet.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "как Там расправляется с идиотами",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "tam-8",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "The source uses “Tam,” but the translation substitutes the full name «Тамара», losing the established nickname distinction. Render the nickname as «Тэм» in the appropriate case.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "when he needs something from Tam",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "когда ему что-то нужно от Тамары",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "tam-20",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "The source uses “Tam,” but the translation gives the full name «Тамара». Preserve the established nickname «Тэм».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "A few minutes later, the arguing dies down and Tam peaks her head out of the office.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Тамара высовывает голову из кабинета",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "argument-omit",
+            "category": "omission",
+            "severity": "major",
+            "detail": "This source sentence is rendered as the ungoverned fragment «говорить кому угодно, что тот несёт хуйню». It omits the assertion that Tamara is willing to call people out, including her boss, and leaves the passage syntactically incomplete. Translate the full sentence.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Tamara is clearly not above calling out  *anybody’s*  bullshit, including her boss.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "говорить кому угодно, что тот несёт хуйню",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "grandfather-omit",
+            "category": "omission",
+            "severity": "major",
+            "detail": "The translation leaves «столь намеренно сохраняемую нейтральность» as a stranded fragment and does not render the source’s rarity of seeing this neutrality or the comparison to Damian’s grandfather. Translate the complete sentence.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "It’s rare for Damian to see such deliberate neutrality anymore, not a hint of feeling to be found…it reminds him a bit too much of his grandfather.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "столь намеренно сохраняемую нейтральность",
               "occurrence": 0
             },
             "resolves": null
@@ -215,387 +304,28 @@
       },
       "style": [
         {
-          "evidence": "“Honestly, watching Tam deal with idiots is probably the most entertaining thing yet.”",
-          "source_pattern": "Повествование следует близко за восприятием Дэмиана; его оценки могут быть разговорными и резкими.",
-          "translation_approach": "Сохранять близкую фокализацию и разговорную, иногда грубую окраску оценок; не смягчать и не усиливать их без опоры на оригинал."
+          "evidence": "Honestly, watching Tam deal with idiots is probably the most entertaining thing yet.",
+          "source_pattern": "Close third-person narration filtered through Damian, including his direct, evaluative internal commentary and colloquial judgments.",
+          "translation_approach": "Сохранять близкую к Дэмиану фокализацию и разговорные, прямые оценки; не смягчать и не усиливать их без опоры на оригинал."
+        },
+        {
+          "evidence": "…Maybe his brothers were right about this—about Drake.",
+          "source_pattern": "Ellipses and dashes mark pauses and shifts in Damian’s thought.",
+          "translation_approach": "Сохранять значимые паузы и самопоправки, не превращая фрагментарную мысль в более определённое утверждение."
         }
       ],
       "glossary": [
         {
-          "notes": "В этом фрагменте так упоминается отец Тамары.",
+          "notes": "В этом фрагменте так называют Тимоти Дрейка.",
+          "original": "Drake",
+          "translation": "Дрейк",
+          "type": "фамилия персонажа"
+        },
+        {
+          "notes": "В этом фрагменте так называют отца Тамары.",
           "original": "Fox",
           "translation": "Фокс",
           "type": "фамилия персонажа"
-        }
-      ]
-    },
-    "chunk-002": {
-      "outcome": "CORRECTIONS_REQUIRED",
-      "report": {
-        "evidence_version": 2,
-        "context": "independent_session",
-        "checks": {
-          "coverage": true,
-          "meaning": true,
-          "terminology": true,
-          "style": true,
-          "structure": true
-        },
-        "findings": [
-          {
-            "id": "alignment-1",
-            "category": "meaning",
-            "severity": "minor",
-            "detail": "“On the same page” means that Damian and Drake are aligned in their understanding, not merely that they are informed about what is happening. «Были в курсе происходящего» narrows this to being informed; consider «понимали друг друга» or «были на одной волне».",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "but it’s important that they happen and that the two of you are on the same page.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "но важно, чтобы они состоялись и чтобы вы оба были в курсе происходящего.",
-              "occurrence": 0
-            },
-            "resolves": null
-          },
-          {
-            "id": "insistence-1",
-            "category": "meaning",
-            "severity": "minor",
-            "detail": "The source says Damian’s father insists that he can leave the job at any time. «Уверения отца» instead presents this as assurances, shifting the father’s stance. Consider «Несмотря на то, что отец настаивает: он может бросить эту работу в любой момент…».",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "Despite his father’s insistence that he can leave the job at any time, Damian is set on seeing this through to the end no matter what.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "Несмотря на уверения отца, что он может бросить эту работу в любой момент, Дэмиан твёрдо намерен довести дело до конца, чего бы это ни стоило.",
-              "occurrence": 0
-            },
-            "resolves": null
-          },
-          {
-            "id": "players-1",
-            "category": "style",
-            "severity": "minor",
-            "detail": "«Основные люди» is an awkward calque for “major players,” meaning important people or key figures in this context. Consider «ключевыми фигурами и компаниями» or another natural equivalent.",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "most of the major players and companies they work with often",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "большинством основных людей и компаний, с которыми они часто работают",
-              "occurrence": 0
-            },
-            "resolves": null
-          }
-        ]
-      },
-      "style": [],
-      "glossary": []
-    },
-    "chunk-003": {
-      "outcome": "CORRECTIONS_REQUIRED",
-      "report": {
-        "evidence_version": 2,
-        "context": "independent_session",
-        "checks": {
-          "coverage": true,
-          "meaning": true,
-          "terminology": true,
-          "style": true,
-          "structure": true
-        },
-        "findings": [
-          {
-            "id": "discouraging-1",
-            "category": "style",
-            "severity": "minor",
-            "detail": "The Russian construction «насколько неуместно и обескураживающе он обращался» is awkward: the adverb «обескураживающе» modifies how he treated Damian, rather than describing the discouraging effect of his behavior. Consider «насколько неуместным и обескураживающим было его поведение по отношению к Дэмиану».",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "laying out exactly how inappropriate and discouraging his behavior towards Damian has been.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "перечисляя, насколько неуместно и обескураживающе он обращался с Дэмианом.",
-              "occurrence": 0
-            },
-            "resolves": null
-          },
-          {
-            "id": "checkins-1",
-            "category": "style",
-            "severity": "minor",
-            "detail": "«Ежедневные сверки» is an unnatural rendering here and suggests reconciliation or verification rather than routine check-ins. Consider «ежедневные встречи» or another natural phrase for their regular check-ins.",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "They go through their daily check-ins but it’s purely business",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "Они проходят свои ежедневные сверки, но всё это — чисто деловое общение",
-              "occurrence": 0
-            },
-            "resolves": null
-          }
-        ]
-      },
-      "style": [],
-      "glossary": []
-    },
-    "chunk-004": {
-      "outcome": "CORRECTIONS_REQUIRED",
-      "report": {
-        "evidence_version": 2,
-        "context": "independent_session",
-        "checks": {
-          "coverage": true,
-          "meaning": true,
-          "terminology": true,
-          "style": true,
-          "structure": true
-        },
-        "findings": [
-          {
-            "id": "arrival-timing",
-            "category": "meaning",
-            "severity": "minor",
-            "detail": "The source says Tim keeps himself busy during the 15 minutes it takes for the food to arrive. «Пока готовили еду» changes this to the time the food was being prepared. Please preserve the delivery-waiting interval, for example: «Тим старался занять себя чем мог за те пятнадцать минут, пока доставляли еду».",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "Tim busies himself as best he can in the 15 minutes it takes for the food to arrive.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "Все пятнадцать минут, пока готовили еду, Тим старался занять себя чем мог.",
-              "occurrence": 0
-            },
-            "resolves": null
-          },
-          {
-            "id": "awkward-phrase",
-            "category": "style",
-            "severity": "minor",
-            "detail": "«Неловко не сказать» is an unnatural construction here and does not clearly convey “isn’t exactly awkward.” Consider «Не то чтобы было неловко, но и комфортно тоже не было» to preserve the contrast naturally.",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "It isn’t exactly awkward but it’s not comfortable either.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "Неловко не сказать, но и уютно тоже не было.",
-              "occurrence": 0
-            },
-            "resolves": null
-          }
-        ]
-      },
-      "style": [
-        {
-          "evidence": "“And that’s something he will never do.” and “Tim sighs.”",
-          "source_pattern": "Close third-person narration often follows Tim’s immediate thoughts, including colloquial phrasing, short standalone sentences, and fragments.",
-          "translation_approach": "Preserve the conversational closeness and abrupt sentence movement rather than smoothing fragments into more formal narration."
-        }
-      ],
-      "glossary": []
-    },
-    "chunk-005": {
-      "outcome": "CORRECTIONS_REQUIRED",
-      "report": {
-        "evidence_version": 2,
-        "context": "independent_session",
-        "checks": {
-          "coverage": true,
-          "meaning": true,
-          "terminology": true,
-          "style": true,
-          "structure": true
-        },
-        "findings": [
-          {
-            "id": "tense-shift",
-            "category": "style",
-            "severity": "minor",
-            "detail": "The Russian narration is in the past tense through the preceding exchange, then switches to the present tense here and remains there. The source narration consistently uses the present tense; choose a consistent Russian narrative tense for the scene.",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "Damian frowns, real confusion smattering his expression.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "Дэмиан хмурится, и на его лице проступает настоящее недоумение.",
-              "occurrence": 0
-            },
-            "resolves": null
-          },
-          {
-            "id": "hope-once",
-            "category": "meaning",
-            "severity": "minor",
-            "detail": "«Впервые за долгое время» asserts that Tim has not felt hopeful for a long time. The source's “for once” marks this as an exception without specifying that duration. Use a closer equivalent such as «на этот раз».",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "By the end of the day, Tim leaves the office feeling hopeful for once.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "К концу дня Тим впервые за долгое время выходит из кабинета с надеждой.",
-              "occurrence": 0
-            },
-            "resolves": null
-          }
-        ]
-      },
-      "style": [
-        {
-          "evidence": "“They continue to eat in silence for a while” and “Tim honestly can’t tell what Damian is reading off his expression and body language.”",
-          "source_pattern": "Present-tense narration stays close to Tim’s thoughts, including brief internal judgments and uncertainty.",
-          "translation_approach": "Keep the Russian narrative tense consistent while preserving the close viewpoint and its uncertainty."
-        }
-      ],
-      "glossary": []
-    },
-    "chunk-006": {
-      "outcome": "CORRECTIONS_REQUIRED",
-      "report": {
-        "evidence_version": 2,
-        "context": "independent_session",
-        "checks": {
-          "coverage": true,
-          "meaning": true,
-          "terminology": true,
-          "style": true,
-          "structure": true
-        },
-        "findings": [
-          {
-            "id": "double-negative",
-            "category": "style",
-            "severity": "minor",
-            "detail": "The Russian phrase contains an accidental repeated «не» and is ungrammatical. Correct to «Нет, никого не недостаёт, все здесь» or another natural equivalent.",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "No, they aren’t missing anybody, everyone is here.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "Нет, никого не не хватает, все здесь.",
-              "occurrence": 0
-            },
-            "resolves": null
-          }
-        ]
-      },
-      "style": [
-        {
-          "evidence": "Damian «grumbles with little heat»; Jason jokes about «character growth»; Damian describes Drake as «not entirely terrible».",
-          "source_pattern": "Family banter uses dry, restrained humor, often with Damian answering tersely or without much heat.",
-          "translation_approach": "Preserve the understated delivery and dry irony without making the exchanges more forceful or polished."
-        }
-      ],
-      "glossary": [
-        {
-          "notes": "Общее обозначение семьи и близкого круга Бэтмена.",
-          "original": "Batclan",
-          "translation": "Бэт-семья",
-          "type": "обозначение сообщества"
-        }
-      ]
-    },
-    "chunk-007": {
-      "outcome": "CORRECTIONS_REQUIRED",
-      "report": {
-        "evidence_version": 2,
-        "context": "independent_session",
-        "checks": {
-          "coverage": true,
-          "meaning": true,
-          "terminology": true,
-          "style": true,
-          "structure": true
-        },
-        "findings": [
-          {
-            "id": "timeframe-only",
-            "category": "omission",
-            "severity": "minor",
-            "detail": "The source emphasizes that only about three years have passed. The translation asks how much time has passed but does not preserve that emphasis. Consider «Прошло всего, сколько, года три…».",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "It’s only been, what, 3 years since his parents died?",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "Сколько прошло, ну, года три с тех пор, как умерли его родители?",
-              "occurrence": 0
-            },
-            "resolves": null
-          },
-          {
-            "id": "ambush-detail",
-            "category": "meaning",
-            "severity": "minor",
-            "detail": "The source specifies that the Drakes were ambushed; «на них напали» conveys an attack but omits the ambush. Consider «когда налётчики устроили на них засаду».",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "They were at a dig site in Egypt when they were ambushed by raiders.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "Они находились на месте раскопок в Египте, когда на них напали налётчики.",
-              "occurrence": 0
-            },
-            "resolves": null
-          },
-          {
-            "id": "survival-logic",
-            "category": "meaning",
-            "severity": "minor",
-            "detail": "The source says Damian did not survive by simply being content with what he was given; «не для того, чтобы довольствоваться» changes this into a purpose construction. Consider «Дэмиан выжил так долго не потому, что просто довольствовался тем, что ему преподносят».",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "but Damian has not survived this long by simply being content with what is given to him.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "но Дэмиан выжил так долго не для того, чтобы довольствоваться тем, что ему преподносят.",
-              "occurrence": 0
-            },
-            "resolves": null
-          },
-          {
-            "id": "author-note-gender",
-            "category": "style",
-            "severity": "minor",
-            "detail": "The parenthetical «выложил(а)» reads as an unresolved gender placeholder rather than finished Russian prose. Consider a natural gender-neutral phrasing, such as «Мне гораздо лучше, чем во время публикации предыдущей главы».",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "I'm feeling a lot better than I did when I posted the last chapter.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "Я чувствую себя гораздо лучше, чем когда выложил(а) предыдущую главу.",
-              "occurrence": 0
-            },
-            "resolves": null
-          }
-        ]
-      },
-      "style": [
-        {
-          "evidence": "“He seemed almost…sad.”",
-          "source_pattern": "Close third-person narration follows Damian’s uncertain observations and private reasoning.",
-          "translation_approach": "Сохранять ограниченность точки зрения Дэмиана и степень его сомнения; не превращать его догадки в установленные факты."
-        }
-      ],
-      "glossary": [
-        {
-          "notes": "Отец Тимоти Дрейка.",
-          "original": "Jack Drake",
-          "translation": "Джек Дрейк",
-          "type": "имя персонажа"
         }
       ]
     }
@@ -603,33 +333,9 @@
   "windows": {
     "chunk-001": {
       "source_sha256": "51b8ed4442b6d878634a35741d3a19490b223469d3e4591db3f719c3fb265ed9",
-      "translation_sha256": "eae3a911a2861139279076b49d632a4e0f547677e53174c8c76830ae341b59d2"
-    },
-    "chunk-002": {
-      "source_sha256": "a6b3bc2d49f00ad77b2099752c07dc0cbf5a314f70275b4d2d76bf6dde6eb2c6",
-      "translation_sha256": "cd187254abb3845f9a81f753ea597d60816e17f07d126556275ef697b97782c3"
-    },
-    "chunk-003": {
-      "source_sha256": "011e10eff534bb281781857e24e4227f87efbd85b9cd528d0786394d8e3c152d",
-      "translation_sha256": "874f9113071b7efc2c4829b475098623e5c259252da2de8d3c0d25cf3de983de"
-    },
-    "chunk-004": {
-      "source_sha256": "e8aa15518c29da168a36e2ffd711272938f59d9c27c5bdfb01f02e120e5c1403",
-      "translation_sha256": "89299fc59bf5ac4e98f8f66d9dd1fda0600b5939b21b0377532179c195a924e1"
-    },
-    "chunk-005": {
-      "source_sha256": "60a2bf60d5f24ed89546cb84ba2b1a310d5ea3772ee0f4810e86089a7c93cffe",
-      "translation_sha256": "0c46ee9fdf473a730a8dd54b6afbbad1a1eb6e97060857d2d79a72583b7f48fe"
-    },
-    "chunk-006": {
-      "source_sha256": "2cd81df036448bc838cd6fd1682b8f654c74916751306f17f16be204283be51a",
-      "translation_sha256": "ea0e44226e4fc56fbd6339dfa1939313d209c072a0b25522e34b1b56ade393bc"
-    },
-    "chunk-007": {
-      "source_sha256": "ded4af8129b78487d946f847603687a991aaa49072003979d235d0e8efedadd5",
-      "translation_sha256": "096d84bebff9a6237b20c151c9f5c5506091d4b769d578c62b2ac0baffbd5ca6"
+      "translation_sha256": "d5b9a34f7af913cf7882b64fdb3dbe59503cba437ebd2fe370711e1844a6519f"
     }
   },
-  "accepted_review_record_id": "37256be23edf44498b5ebe0686e0eca3",
+  "accepted_review_record_id": null,
   "reused": {}
 }
