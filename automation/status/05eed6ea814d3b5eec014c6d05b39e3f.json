@@ -3,7 +3,7 @@
   "job_id": "05eed6ea814d3b5eec014c6d05b39e3f",
   "book_slug": "say-it-in-your-mother-tongue",
   "state": "running",
-  "phase": "model-call-reserved",
+  "phase": "correction-batch-staged",
   "failures": 0,
   "correction_rounds": {
     "chapter-000001": 1,
@@ -52,7 +52,7 @@
   },
   "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
   "source_sha256": "12e210ce5a95daf56a97ada583ec15c274780c4ddfa7fb92da6a88c67f7c403d",
-  "updated_at": "2026-11-18T08:17:31.937862+00:00",
+  "updated_at": "2026-11-18T08:17:48.440329+00:00",
   "active": {
     "role": "corrector",
     "chapter": 52,
@@ -301,16 +301,23 @@
     ],
     "action": "operator-attention-no-pass"
   },
+  "provider_model_route": "primary",
   "model_response_diagnostics": {
     "finish_reason": "stop",
     "response_format": "json_object",
-    "response_chars": 3778,
+    "response_chars": 413,
     "provider_refusal": false,
-    "prompt_tokens": 30216,
-    "completion_tokens": 13997,
-    "total_tokens": 44213,
+    "prompt_tokens": 12923,
+    "completion_tokens": 573,
+    "total_tokens": 13496,
     "route": "primary",
-    "role": "reviewer",
+    "role": "corrector",
     "unit_id": "chapter-000052"
+  },
+  "correction_batch_progress": {
+    "unit_id": "chapter-000052",
+    "review_record_id": "3ed721ba03ab472989dfac27468485dc",
+    "completed": 3,
+    "total": 3
   }
 }
