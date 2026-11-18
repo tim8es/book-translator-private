@@ -716,6 +716,53 @@
           "type": "организация"
         }
       ]
+    },
+    "chunk-007": {
+      "outcome": "CORRECTIONS_REQUIRED",
+      "report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "character-growth",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Продвинулся ... в характере» звучит как неестественная калька. Передайте рост Дэмиана в личностном плане естественно по-русски, например: «вырос и в мастерстве, и как личность».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Damian has come a long way both in skill and in character since coming to Gotham.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "С тех пор как Дэмиан приехал в Готэм, он далеко продвинулся и в мастерстве, и в характере.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "style": [
+        {
+          "evidence": "“Meaning Ra’s is upping his observations.”; “Which to Ra’s…is not a good thing.”; “All is well.”",
+          "source_pattern": "Короткие самостоятельные фразы и фрагменты подчёркивают смену внимания и эмоциональные сдвиги.",
+          "translation_approach": "Сохранять лаконичность и резкие переходы, не сглаживая фрагменты без необходимости."
+        }
+      ],
+      "glossary": [
+        {
+          "notes": "Организация, к которой относится упомянутый ниндзя-убийца.",
+          "original": "League of Assassins",
+          "translation": "Лига убийц",
+          "type": "организация"
+        }
+      ]
     }
   },
   "windows": {
@@ -742,6 +789,10 @@
     "chunk-006": {
       "source_sha256": "6781ab057cc57f867855f1fd867530d4c470345c94043e2194ec8c973b9db5db",
       "translation_sha256": "7b73407e87e922b9efa5fe33642382df92750644e13216b1184fc5c723932859"
+    },
+    "chunk-007": {
+      "source_sha256": "d4e1697c970caeb37b8b4da330874cf8a7b87670c389af3b03f55845cd64f823",
+      "translation_sha256": "b0a5c9a1fdb825ac24e1b3f1c93da3e93a670160a250c0f096ccf0558ad734f1"
     }
   },
   "accepted_review_record_id": null,
