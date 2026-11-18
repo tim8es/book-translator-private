@@ -3,8 +3,8 @@
   "job_id": "6232711b4aec0c3664ad3721f1b87061",
   "book_slug": "cardinal-kin",
   "state": "running",
-  "phase": "model-call-reserved",
-  "failures": 0,
+  "phase": "model-retry",
+  "failures": 1,
   "correction_rounds": {
     "chapter-000001": 2,
     "chapter-000003": 1,
@@ -17,13 +17,8 @@
   },
   "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
   "source_sha256": "f06b996448766fcf6faa703ced3ca03b63221f4f81bdb4c395619c69ffa353cd",
-  "updated_at": "2026-11-18T17:04:21.205276+00:00",
-  "active": {
-    "role": "reviewer",
-    "chapter": 9,
-    "session_id": "auto-6232711b4aec-reviewer-16b3842b",
-    "unit_id": "chapter-000009"
-  },
+  "updated_at": "2026-11-18T17:08:56.336699+00:00",
+  "active": null,
   "structural_helper_revision": "4c584fe5534871cd05aa851d9b7bdbfa696d0edd",
   "model_calls_started": 237,
   "prompt_context": {
@@ -49,7 +44,8 @@
   "memory_glossary_saved": 51,
   "pending_style": [],
   "role_protocol_failures": {
-    "chapter-000002:corrector": 3
+    "chapter-000002:corrector": 3,
+    "chapter-000009:reviewer": 1
   },
   "correction_extensions": {},
   "correction_finding_triage": {
@@ -68,7 +64,7 @@
     "chapter-000002": 3,
     "chapter-000005": 3,
     "chapter-000007": 3,
-    "chapter-000009": 2
+    "chapter-000009": 3
   },
   "model_unit_deferral_audit": [
     {
@@ -100,25 +96,14 @@
     "unit_id": "chapter-000009",
     "role": "reviewer",
     "route": "primary",
-    "request_chars": 59815,
+    "request_chars": 62150,
     "outcome": "response",
-    "duration_ms": 142414,
-    "prompt_tokens": 13932,
-    "completion_tokens": 7832,
-    "total_tokens": 21764
+    "duration_ms": 273410,
+    "prompt_tokens": 14728,
+    "completion_tokens": 15102,
+    "total_tokens": 29830
   },
   "provider_call_metrics": [
-    {
-      "unit_id": "chapter-000008",
-      "role": "corrector",
-      "route": "primary",
-      "request_chars": 35092,
-      "outcome": "response",
-      "duration_ms": 8468,
-      "prompt_tokens": 7756,
-      "completion_tokens": 283,
-      "total_tokens": 8039
-    },
     {
       "unit_id": "chapter-000008",
       "role": "corrector",
@@ -547,20 +532,31 @@
       "prompt_tokens": 13932,
       "completion_tokens": 7832,
       "total_tokens": 21764
+    },
+    {
+      "unit_id": "chapter-000009",
+      "role": "reviewer",
+      "route": "primary",
+      "request_chars": 62150,
+      "outcome": "response",
+      "duration_ms": 273410,
+      "prompt_tokens": 14728,
+      "completion_tokens": 15102,
+      "total_tokens": 29830
     }
   ],
   "last_review_failure": {
     "unit_id": "chapter-000009",
-    "at": "2026-11-18T16:44:47.222925+00:00",
-    "model_call": 222,
+    "at": "2026-11-18T17:08:56.336674+00:00",
+    "model_call": 237,
     "kind": "anchor_absent",
-    "finding_index": 0,
+    "finding_index": 15,
     "field": "translation_anchor"
   },
   "review_failure_counts": {
     "chapter-000005:anchor_absent": 3,
     "chapter-000007:anchor_absent": 3,
-    "chapter-000009:anchor_absent": 2
+    "chapter-000009:anchor_absent": 3
   },
   "correction_regression_rejections": [
     {
@@ -716,13 +712,13 @@
     "since": "2026-11-18T13:47:59.025877+00:00",
     "api": {
       "reviewer": {
-        "completed_calls": 48,
-        "responses": 48,
-        "duration_ms": 6857919,
-        "request_chars": 2797665,
-        "prompt_tokens": 650946,
-        "completion_tokens": 374138,
-        "total_tokens": 1025084
+        "completed_calls": 49,
+        "responses": 49,
+        "duration_ms": 7131329,
+        "request_chars": 2859815,
+        "prompt_tokens": 665674,
+        "completion_tokens": 389240,
+        "total_tokens": 1054914
       },
       "translator": {
         "completed_calls": 28,
@@ -852,23 +848,27 @@
     }
   },
   "review_chunk_fallback_unit": "chapter-000009",
-  "model_response_diagnostics": {
-    "finish_reason": "stop",
-    "response_format": "json_object",
-    "response_chars": 6002,
-    "provider_refusal": false,
-    "prompt_tokens": 13932,
-    "completion_tokens": 7832,
-    "total_tokens": 21764,
-    "route": "primary",
-    "role": "reviewer",
-    "unit_id": "chapter-000009"
-  },
   "review_chunk_progress": {
     "unit_id": "chapter-000009",
     "source_sha256": "667284ef59c10f7475f1bd9f4d7eebcc2f6611d1b523ecf00aec4450a16b8e8d",
     "translation_sha256": "923e4fa84b507e80d3895eacedcc4823ae5284310a957dd781f4945c9171aa48",
     "completed": 1,
     "total": 7
-  }
+  },
+  "provider_model_route": "primary",
+  "model_response_diagnostics": {
+    "finish_reason": "stop",
+    "response_format": "json_object",
+    "response_chars": 10838,
+    "provider_refusal": false,
+    "prompt_tokens": 14728,
+    "completion_tokens": 15102,
+    "total_tokens": 29830,
+    "route": "primary",
+    "role": "reviewer",
+    "unit_id": "chapter-000009"
+  },
+  "last_error": "reviewer evidence is invalid: findings[15].translation_anchor: quoted passage occurrence 0 is absent from the current artifact",
+  "blocked_unit_id": "chapter-000009",
+  "last_error_code": "review_evidence_invalid"
 }
