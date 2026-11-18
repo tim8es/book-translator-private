@@ -205,12 +205,126 @@
       },
       "style": [],
       "glossary": []
+    },
+    "chunk-002": {
+      "outcome": "CORRECTIONS_REQUIRED",
+      "report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "ethical-recheck",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Resolved: «этичной реализации» is a natural rendering of “ethical execution” in this context and fixes the earlier calque.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "A rare combination of innovation and ethical execution.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Редкое сочетание инноваций и этичной реализации.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "082466d609594d68824cb1c151402a35",
+              "finding_id": "chunk-002-ethical-phrase"
+            }
+          },
+          {
+            "id": "summer-recheck",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Resolved: «берёт отпуск на всё лето» idiomatically conveys taking the summer off.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "His current assistant is taking the summer off",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Нынешний помощник берёт отпуск на всё лето",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "082466d609594d68824cb1c151402a35",
+              "finding_id": "chunk-002-summer-off"
+            }
+          },
+          {
+            "id": "father-recheck",
+            "category": "referent",
+            "severity": "major",
+            "detail": "Resolved: «наставления отца» correctly preserves the singular reference to Damian’s father.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "But his Fathers teachings have truly cemented.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Но наставления отца и впрямь глубоко укоренились в нём.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "082466d609594d68824cb1c151402a35",
+              "finding_id": "chunk-002-father-reference"
+            }
+          },
+          {
+            "id": "bad-job-recheck",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Resolved: «не годится для этой работы» keeps Damian’s concern scoped to the job rather than implying he is generally good for nothing.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "What if he is fundamentally bad at it?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "А вдруг он в корне не годится для этой работы?",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "082466d609594d68824cb1c151402a35",
+              "finding_id": "chunk-002-bad-at-it"
+            }
+          },
+          {
+            "id": "assistant-term",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "The same position is called «личный помощник» here but «помощник руководителя» later in the core. «Личный помощник» can suggest a personal rather than executive assistant; use a consistent term such as «помощник руководителя», which also appears later.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "You’d be filling in for Timothy Drake’s executive assistant.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Вы будете замещать личного помощника Тимоти Дрейка",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "style": [],
+      "glossary": []
     }
   },
   "windows": {
     "chunk-001": {
       "source_sha256": "9ffe2d708030af115c80a883b711f1c60789195898033dd20d303d98ae039117",
       "translation_sha256": "2d094bc3722c0fb20fe52496928857a2831f161ca81a834dcdc84fa4e67c4db8"
+    },
+    "chunk-002": {
+      "source_sha256": "ca1e20b2a7cbe7b5b1e27ffc96357fb08dd3e23c5a9e0d8114d36115180a3527",
+      "translation_sha256": "c41f98e3191ad3602187c2f4b5fc068a179edb8748151afd9e90ed4907678779"
     }
   },
   "accepted_review_record_id": null,
