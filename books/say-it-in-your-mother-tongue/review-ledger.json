@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 110,
+  "next_sequence": 111,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -12997,6 +12997,185 @@
             },
             "translation_anchor": {
               "quote": "эта песня? Она такая же его песня",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "0ae07202278012f087bc1209a1bf021683d6192b03137396f40ea854e55f4226",
+        "style_guide": "eaa08d42f1f5ea55a06553ec9c1d9e5c6f66b62f9bb6f55b653a52f78659dd74"
+      }
+    },
+    {
+      "record_id": "9736d572bd7f40cf903491b186ce5b94",
+      "sequence": 110,
+      "unit_id": "chapter-000041",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "3dd265fb0cdcb0c05be4eea9e975c8efe9fa7737e1dd87d0d412daee3f1a87bc",
+      "translation_sha256": "be24e2f0e881ef268b6c946abe18bfa26ae23f0f119f4ad342c84a0eac5e6ba0",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-32dd7dd3",
+      "reviewed_at": "2026-11-18T03:10:20Z",
+      "state_revision": "9968bc478605e0e8147ad4913ecc89417747e1748b34f01d1b1ecf015cf9bdce",
+      "review_commit": "8ff51c0a6e7e10f176c1a0bef82eaf5fa1f3938a",
+      "correction_round": 2,
+      "supersedes_record_id": "6332737428c34a2397c431f782b462e6",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-structure-1",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "Unresolved: the source note is bold, but its translation is plain. Preserve the bold formatting.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "**This is a Multi-POV ensemble story — chapters may focus on one pairing or move between multiple.**",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Это история с несколькими точками зрения: главы могут быть посвящены одной паре или переключаться между несколькими.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "6332737428c34a2397c431f782b462e6",
+              "finding_id": "structure-1"
+            }
+          },
+          {
+            "id": "recheck-referent-1",
+            "category": "referent",
+            "severity": "minor",
+            "detail": "Resolved: the current wording makes clear that Lance rests his own head on Fernando’s shoulder.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "He lies his head onto Fernando’s shoulder",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Он кладёт голову ему на плечо",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "6332737428c34a2397c431f782b462e6",
+              "finding_id": "referent-1"
+            }
+          },
+          {
+            "id": "recheck-structure-2",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "Resolved: the equivalent of “pulled up” is now italicized in the translation.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "he lets himself be *pulled up* onto his feet",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "позволяет Фернандо *потянуть себя вверх*, пока не встаёт на ноги",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "6332737428c34a2397c431f782b462e6",
+              "finding_id": "structure-2"
+            }
+          },
+          {
+            "id": "recheck-structure-3",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "Resolved: the equivalent of “romantic-est” is now italicized in the translation.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "the rhythm of the cheesiest and *romantic-est* song ever produced.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "в такт самой слащавой и *романтичнейшей* песне из всех, что когда-либо сочинили.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "6332737428c34a2397c431f782b462e6",
+              "finding_id": "structure-3"
+            }
+          },
+          {
+            "id": "recheck-meaning-1",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Resolved: the translation now says the song finally quiets completely, preserving that it fades out.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "before it finally fades out completely, followed immediately by another song.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "а потом наконец совсем затихает; сразу за ней начинается другая.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "6332737428c34a2397c431f782b462e6",
+              "finding_id": "meaning-1"
+            }
+          },
+          {
+            "id": "recheck-structure-4",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "Resolved: the translation preserves italics on the equivalents of both “this” and “his song.”",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "*this* song? That’s like as much *his song*",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "*эта* песня? Она такая же *его песня*",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "6332737428c34a2397c431f782b462e6",
+              "finding_id": "structure-4"
+            }
+          },
+          {
+            "id": "meaning-eyes-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The source says Lance searches Fernando’s eyes; the translation instead says he tries to understand Fernando’s gaze. Preserve the action of searching his eyes without adding that interpretation.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "searching Fernando’s eyes",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "пытаясь понять его взгляд.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "structure-cutoff-1",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "The source em dash marks Lance being cut off mid-sentence. The translation’s ellipsis suggests trailing off instead; preserve the abrupt interruption.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "I—",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "— Я…",
               "occurrence": 0
             },
             "resolves": null
