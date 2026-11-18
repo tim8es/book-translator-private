@@ -739,6 +739,133 @@
       },
       "style": [],
       "glossary": []
+    },
+    "chunk-006": {
+      "outcome": "CORRECTIONS_REQUIRED",
+      "report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "mask-role-r1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Resolved: the translation now identifies the mask with Jason’s Red Hood identity («в образе Красного Колпака») rather than saying he wore it beneath a hood.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "It’s similar to the half-mask he’d sometimes use as the hood, covering from his eyes down over the lower half of his face and chin, leaving his forehead the only part of his face uncovered.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Она напоминает полумаску, которую он иногда носил в образе Красного Колпака: та закрывала лицо от глаз до подбородка, оставляя открытым только лоб.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "2218850f28354836bf4a0d28e9d99952",
+              "finding_id": "chunk-006-mask-role"
+            }
+          },
+          {
+            "id": "missing-154-r1",
+            "category": "omission",
+            "severity": "major",
+            "detail": "Resolved: the translation now includes Batman putting away his grappling gun, facing Robin, and waiting for Damian to find his words.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Batman stows away his grappling gun on his belt and faces Robin, standing still, patiently waiting for Damian to find his words.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Бэтмен убирает гарпунный пистолет на пояс и поворачивается к Робину, замирая на месте и терпеливо ожидая, пока Дэмиан подберёт слова.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "2218850f28354836bf4a0d28e9d99952",
+              "finding_id": "chunk-006-missing-154"
+            }
+          },
+          {
+            "id": "nunchak-form-r1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Resolved: the current translation uses the correct genitive plural «нунчаков».",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "In his last year as Robin, B started training him with a pair of nunchucks that quickly became his primary weapon.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "с парой нунчаков",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "2218850f28354836bf4a0d28e9d99952",
+              "finding_id": "chunk-006-nunchak-form"
+            }
+          },
+          {
+            "id": "omit-nunchucks",
+            "category": "omission",
+            "severity": "major",
+            "detail": "The sentence explaining that B began training Jason with nunchucks in his last year as Robin, and that they quickly became his primary weapon, is missing. The translation contains only a stray «с парой нунчаков» fragment where this sentence should be.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "In his last year as Robin, B started training him with a pair of nunchucks that quickly became his primary weapon.",
+              "occurrence": 0
+            },
+            "translation_anchor": null,
+            "resolves": null
+          },
+          {
+            "id": "broken-nunchucks",
+            "category": "structure",
+            "severity": "major",
+            "detail": "The remaining fragment «с парой нунчаков» is left after a period in lowercase and runs directly into «Сам Тим», producing a broken sentence. Restore the omitted training sentence and reconnect the following sentence grammatically.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Tim has never been particularly fond of them himself, but he can’t deny the easy grace and strength Jason uses them with.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "с парой нунчаков Сам Тим никогда не испытывает к ним особой любви, но не может отрицать непринуждённую грацию и силу, с которыми Джейсон ими орудует.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "extra-grapple",
+            "category": "addition",
+            "severity": "minor",
+            "detail": "An extra, unattached «гарпунный пистолет» follows the translated sentence. Remove the stray duplicate term.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Batman stows away his grappling gun on his belt and faces Robin, standing still, patiently waiting for Damian to find his words.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "пока Дэмиан подберёт слова. гарпунный пистолет",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "style": [],
+      "glossary": [
+        {
+          "notes": "Прежняя личность Джейсона; в этом фрагменте упоминается его костюм.",
+          "original": "Red Hood",
+          "translation": "Красный Колпак",
+          "type": "кодовое имя"
+        }
+      ]
     }
   },
   "windows": {
@@ -761,6 +888,10 @@
     "chunk-005": {
       "source_sha256": "68fd3be978424ebc219a9bf1f328ffa4a2834cc8a255dbb06ee311e2c34b67d3",
       "translation_sha256": "7cf3b7de8f1b5fe165ca3b0403ad454eb7c5c0f2b0facc27395dd555dcceeaa2"
+    },
+    "chunk-006": {
+      "source_sha256": "6781ab057cc57f867855f1fd867530d4c470345c94043e2194ec8c973b9db5db",
+      "translation_sha256": "a7510231633b13e3c4c9262b4c63b4337c1bbae065fbba02db069d32560e3309"
     }
   },
   "accepted_review_record_id": null,
