@@ -17,7 +17,7 @@
   },
   "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
   "source_sha256": "f06b996448766fcf6faa703ced3ca03b63221f4f81bdb4c395619c69ffa353cd",
-  "updated_at": "2026-11-18T17:28:26.645543+00:00",
+  "updated_at": "2026-11-18T17:29:41.231259+00:00",
   "active": {
     "role": "corrector",
     "chapter": 9,
@@ -95,25 +95,14 @@
     "unit_id": "chapter-000009",
     "role": "corrector",
     "route": "primary",
-    "request_chars": 33527,
+    "request_chars": 70076,
     "outcome": "response",
-    "duration_ms": 49736,
-    "prompt_tokens": 7406,
-    "completion_tokens": 2353,
-    "total_tokens": 9759
+    "duration_ms": 73264,
+    "prompt_tokens": 17857,
+    "completion_tokens": 3959,
+    "total_tokens": 21816
   },
   "provider_call_metrics": [
-    {
-      "unit_id": "chapter-000008",
-      "role": "reviewer",
-      "route": "primary",
-      "request_chars": 58247,
-      "outcome": "response",
-      "duration_ms": 92962,
-      "prompt_tokens": 13843,
-      "completion_tokens": 5099,
-      "total_tokens": 18942
-    },
     {
       "unit_id": "chapter-000008",
       "role": "reviewer",
@@ -542,6 +531,17 @@
       "prompt_tokens": 7406,
       "completion_tokens": 2353,
       "total_tokens": 9759
+    },
+    {
+      "unit_id": "chapter-000009",
+      "role": "corrector",
+      "route": "primary",
+      "request_chars": 70076,
+      "outcome": "response",
+      "duration_ms": 73264,
+      "prompt_tokens": 17857,
+      "completion_tokens": 3959,
+      "total_tokens": 21816
     }
   ],
   "last_review_failure": {
@@ -581,38 +581,28 @@
       "patch_sha256": "662a85b4fc6d648af81a60fb4560ec2676103efab6835137a3f5f8d9d7f69010",
       "reason": "new-duplicated-phrase",
       "at": "2026-11-18T17:00:28.959285+00:00"
+    },
+    {
+      "unit_id": "chapter-000009",
+      "review_record_id": "2218850f28354836bf4a0d28e9d99952",
+      "finding_id": "chunk-002-omit-it-wrong",
+      "patch_sha256": "0d3b1ce39376ea06bc8e8495251b3a8b2a7768899ba9b36653655830ef76df8c",
+      "reason": "new-duplicated-phrase",
+      "at": "2026-11-18T17:29:41.231246+00:00"
     }
   ],
   "last_correction_regression": {
     "unit_id": "chapter-000009",
-    "finding_id": "chunk-006-mask-role",
+    "finding_id": "chunk-002-omit-it-wrong",
     "reason": "new-duplicated-phrase",
     "evidence": {
-      "count": 6,
+      "count": 1,
       "examples": [
         {
-          "tokens": 12,
-          "previous": 1,
-          "candidate": 2,
-          "adjacent": false
-        },
-        {
-          "tokens": 12,
-          "previous": 1,
-          "candidate": 2,
-          "adjacent": false
-        },
-        {
-          "tokens": 12,
-          "previous": 1,
-          "candidate": 2,
-          "adjacent": false
-        },
-        {
-          "tokens": 12,
-          "previous": 1,
-          "candidate": 2,
-          "adjacent": false
+          "tokens": 2,
+          "previous": 0,
+          "candidate": 1,
+          "adjacent": true
         }
       ]
     }
@@ -729,13 +719,13 @@
         "total_tokens": 344833
       },
       "corrector": {
-        "completed_calls": 65,
-        "responses": 65,
-        "duration_ms": 1284148,
-        "request_chars": 2159953,
-        "prompt_tokens": 470890,
-        "completion_tokens": 52306,
-        "total_tokens": 523196
+        "completed_calls": 66,
+        "responses": 66,
+        "duration_ms": 1357412,
+        "request_chars": 2230029,
+        "prompt_tokens": 488747,
+        "completion_tokens": 56265,
+        "total_tokens": 545012
       },
       "orchestrator": {
         "completed_calls": 5,
@@ -856,11 +846,11 @@
   "model_response_diagnostics": {
     "finish_reason": "stop",
     "response_format": "json_object",
-    "response_chars": 283,
+    "response_chars": 410,
     "provider_refusal": false,
-    "prompt_tokens": 7406,
-    "completion_tokens": 2353,
-    "total_tokens": 9759,
+    "prompt_tokens": 17857,
+    "completion_tokens": 3959,
+    "total_tokens": 21816,
     "route": "primary",
     "role": "corrector",
     "unit_id": "chapter-000009"
