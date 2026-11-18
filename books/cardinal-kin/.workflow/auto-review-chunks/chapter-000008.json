@@ -400,6 +400,62 @@
         }
       ],
       "glossary": []
+    },
+    "chunk-005": {
+      "outcome": "CORRECTIONS_REQUIRED",
+      "report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "tense-shift",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The Russian narration is in the past tense through the preceding exchange, then switches to the present tense here and remains there. The source narration consistently uses the present tense; choose a consistent Russian narrative tense for the scene.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Damian frowns, real confusion smattering his expression.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Дэмиан хмурится, и на его лице проступает настоящее недоумение.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "hope-once",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "«Впервые за долгое время» asserts that Tim has not felt hopeful for a long time. The source's “for once” marks this as an exception without specifying that duration. Use a closer equivalent such as «на этот раз».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "By the end of the day, Tim leaves the office feeling hopeful for once.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "К концу дня Тим впервые за долгое время выходит из кабинета с надеждой.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "style": [
+        {
+          "evidence": "“They continue to eat in silence for a while” and “Tim honestly can’t tell what Damian is reading off his expression and body language.”",
+          "source_pattern": "Present-tense narration stays close to Tim’s thoughts, including brief internal judgments and uncertainty.",
+          "translation_approach": "Keep the Russian narrative tense consistent while preserving the close viewpoint and its uncertainty."
+        }
+      ],
+      "glossary": []
     }
   },
   "windows": {
@@ -418,6 +474,10 @@
     "chunk-004": {
       "source_sha256": "e8aa15518c29da168a36e2ffd711272938f59d9c27c5bdfb01f02e120e5c1403",
       "translation_sha256": "89299fc59bf5ac4e98f8f66d9dd1fda0600b5939b21b0377532179c195a924e1"
+    },
+    "chunk-005": {
+      "source_sha256": "60a2bf60d5f24ed89546cb84ba2b1a310d5ea3772ee0f4810e86089a7c93cffe",
+      "translation_sha256": "0c46ee9fdf473a730a8dd54b6afbbad1a1eb6e97060857d2d79a72583b7f48fe"
     }
   },
   "accepted_review_record_id": null,
