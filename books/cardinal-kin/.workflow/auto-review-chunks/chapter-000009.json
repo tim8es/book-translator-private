@@ -654,6 +654,112 @@
         }
       ],
       "glossary": []
+    },
+    "chunk-004": {
+      "outcome": "CORRECTIONS_REQUIRED",
+      "report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "room-recheck",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Resolved: the current translation correctly places Tim inside his safe room, where nobody can see him.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Tim sighs, slumping back into his chair, unseen by anyone within the walls of his safe room.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Тим вздыхает, откидываясь на спинку стула: в его защищённой комнате его никто не видит.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "60cdceecef8241e4911888e94f72c58d",
+              "finding_id": "chunk-004-room-boundary"
+            }
+          },
+          {
+            "id": "weapon-recheck",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Resolved: «несколько единиц оружия» conveys several weapons without adding that they are different types.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Once he’s dressed, he tucks a few weapons onto his person—nothing too extreme, just enough to defend himself in case he runs into the odd mugger.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Одевшись, он прячет при себе несколько единиц оружия — ничего особенного, лишь бы защититься, если попадётся какой-нибудь грабитель.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "60cdceecef8241e4911888e94f72c58d",
+              "finding_id": "chunk-004-weapon-count"
+            }
+          },
+          {
+            "id": "back-roads",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Задним дорогам» is an awkward calque here. A more natural rendering such as «по второстепенным дорогам Бристоля» would preserve the sense of taking less prominent routes.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "He takes off into the night, weaving through Bristol’s back roads to avoid being seen.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Тим выезжает в ночь, петляя по задним дорогам Бристоля, чтобы его не заметили.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "acquaintance-case",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The construction «считает кем-то большим, чем просто знакомые» has a case mismatch and sounds ungrammatical. Consider «Это люди, для него больше чем просто знакомые, но всё же не друзья» or another natural construction preserving the distinction.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "They’re people he considers more than acquaintances but less than friends.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Это люди, которых он считает кем-то большим, чем просто знакомые, но всё же не друзьями.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "style": [
+        {
+          "evidence": "Source blocks 089–090.",
+          "source_pattern": "The narration follows Tim closely and uses short standalone sentences and fragments for pacing, as in the brief question «During a quiet night in?» followed by concise descriptions.",
+          "translation_approach": "Сохранять близкую к Тиму повествовательную перспективу и короткие фразы-паузы; не связывать фрагменты без необходимости."
+        },
+        {
+          "evidence": "Tim’s «But I brought snacks» and the kid’s «Get outta here or I’ll break your kneecaps» in source blocks 106–107.",
+          "source_pattern": "The narration is conversational, with understated humor, while the street kid’s dialogue is blunt and colloquial.",
+          "translation_approach": "Сохранять сдержанную сухость Тима и прямой разговорный регистр мальчишки, не сглаживая различия между их голосами."
+        }
+      ],
+      "glossary": [
+        {
+          "notes": "Обозначение жителя Готэма; во множественном числе — «жители Готэма».",
+          "original": "Gothamite",
+          "translation": "житель Готэма",
+          "type": "демоним"
+        }
+      ]
     }
   },
   "windows": {
@@ -668,6 +774,10 @@
     "chunk-003": {
       "source_sha256": "69be5e598358758f4bdb8fb6b4bf3f7ded476127ee2f5cbf8a4bf5e13ca37c77",
       "translation_sha256": "9ffebf53a288fcbd00a7212a3bc37f22c39f40e2f7ef129c6f49fe5881224384"
+    },
+    "chunk-004": {
+      "source_sha256": "fc4a550163bdb3796e350cc869731cae7f693dbdcb632c307294f2abbcad0b31",
+      "translation_sha256": "35c2ea9cf505b3952f05100cd2d20d9aa8e76ce3af063ebac3f2ebd02c4037dc"
     }
   },
   "accepted_review_record_id": null,
