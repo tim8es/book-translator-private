@@ -195,6 +195,168 @@
           "type": "фамилия"
         }
       ]
+    },
+    "chunk-002": {
+      "outcome": "CORRECTIONS_REQUIRED",
+      "report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-bats",
+            "category": "referent",
+            "severity": "major",
+            "detail": "The photos connect Tim to the Bat-family, not to actual bats. The translation still says «с летучими мышами», preserving the referent error.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "The photos are one of his few direct connections to the bats.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Эти фотографии — одна из немногих его прямых связей с летучими мышами.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "ae9c5da036a44ffe80ab9ba0b4de21e0",
+              "finding_id": "chunk-003-referent-2"
+            }
+          },
+          {
+            "id": "recheck-breath",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Он шипяще выдыхает» is awkward Russian. Use a natural construction such as «с шипением выдыхает сквозь стиснутые зубы», preserving the source image.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "His breath hisses between clenched teeth as he raises his head in slight shock.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Он шипяще выдыхает сквозь стиснутые зубы и слегка ошеломлённо поднимает голову.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "ae9c5da036a44ffe80ab9ba0b4de21e0",
+              "finding_id": "chunk-004-breath-calque"
+            }
+          },
+          {
+            "id": "recheck-surprise",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "After «— Сюрприз.» the following narration remains in the same paragraph without a clear boundary, so it can be read as further dialogue. Separate or otherwise clearly mark the narration.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“Surprise.” He doesn’t even need to see her face to know Pru is smirking smugly.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "— Сюрприз. Ему даже не нужно видеть её лица, чтобы понять: Пру самодовольно ухмыляется.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "ae9c5da036a44ffe80ab9ba0b4de21e0",
+              "finding_id": "chunk-004-surprise-format"
+            }
+          },
+          {
+            "id": "bats-meaning",
+            "category": "referent",
+            "severity": "major",
+            "detail": "Here “the Bats” refers to the Bat-family. «Бэты» is an unclear, unnatural rendering and does not reliably preserve that referent; use an established equivalent such as «Бэт-семья».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "he knows the Bats would track him down if they could.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "он знает, что Бэты выследили бы его, если бы смогли.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "explosion-idiom",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Команда попала под взрыв» is awkward Russian. Rephrase naturally without adding unsupported specifics, for example, «но тут команду застал взрыв».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Tim planned to avoid them completely, but then the team got caught up in an explosion.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Тим собирался полностью их избегать, но тут команда попала под взрыв.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "style": [
+        {
+          "evidence": "After solving the case (the mistress did it. really? so unoriginal)",
+          "source_pattern": "Близкое к Тиму повествование допускает короткие, сухие внутренние замечания и разговорные скобочные отступления.",
+          "translation_approach": "Сохранять непринуждённость и сухую иронию таких замечаний; не превращать их в пояснения или более гладкий авторский комментарий."
+        }
+      ],
+      "glossary": [
+        {
+          "notes": "Краткая форма имени Пруденс; в этом фрагменте используется как имя и обращение.",
+          "original": "Pru",
+          "translation": "Пру",
+          "type": "прозвище персонажа"
+        },
+        {
+          "notes": "",
+          "original": "Gotham",
+          "translation": "Готэм",
+          "type": "город"
+        },
+        {
+          "notes": "",
+          "original": "Oracle",
+          "translation": "Оракул",
+          "type": "кодовое имя"
+        },
+        {
+          "notes": "",
+          "original": "Gordon",
+          "translation": "Гордон",
+          "type": "фамилия персонажа"
+        },
+        {
+          "notes": "",
+          "original": "League of Assassins",
+          "translation": "Лига убийц",
+          "type": "организация"
+        },
+        {
+          "notes": "",
+          "original": "Council of Spiders",
+          "translation": "Совет Пауков",
+          "type": "организация"
+        },
+        {
+          "notes": "",
+          "original": "Owen",
+          "translation": "Оуэн",
+          "type": "имя персонажа"
+        },
+        {
+          "notes": "",
+          "original": "Z",
+          "translation": "Зи",
+          "type": "имя персонажа"
+        }
+      ]
     }
   }
 }
