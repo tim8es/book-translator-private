@@ -1,0 +1,241 @@
+{
+  "schema_version": 2,
+  "plan": {
+    "schema_version": 1,
+    "helper_revision": "review-chunks-source-stable-v1",
+    "source_sha256": "046f155efc220f63ca6cc74edb78872a8d69460adf63b448b32a75ff6a5acf1d",
+    "translation_sha256": "d31ef28c2f05c4d7083af0bbf9d896165f6c59213c3419a6b014ede80cdd275c",
+    "chunks": [
+      {
+        "id": "chunk-001",
+        "source_core": [
+          0,
+          5292
+        ],
+        "translation_core": [
+          0,
+          5481
+        ],
+        "source_window": [
+          0,
+          7166
+        ],
+        "translation_window": [
+          0,
+          7566
+        ]
+      },
+      {
+        "id": "chunk-002",
+        "source_core": [
+          5292,
+          10665
+        ],
+        "translation_core": [
+          5481,
+          10842
+        ],
+        "source_window": [
+          3476,
+          12550
+        ],
+        "translation_window": [
+          3624,
+          12874
+        ]
+      },
+      {
+        "id": "chunk-003",
+        "source_core": [
+          10665,
+          16004
+        ],
+        "translation_core": [
+          10842,
+          16444
+        ],
+        "source_window": [
+          8627,
+          18133
+        ],
+        "translation_window": [
+          9019,
+          18580
+        ]
+      },
+      {
+        "id": "chunk-004",
+        "source_core": [
+          16004,
+          21372
+        ],
+        "translation_core": [
+          16444,
+          21777
+        ],
+        "source_window": [
+          13871,
+          23180
+        ],
+        "translation_window": [
+          14609,
+          23582
+        ]
+      },
+      {
+        "id": "chunk-005",
+        "source_core": [
+          21372,
+          26617
+        ],
+        "translation_core": [
+          21777,
+          27037
+        ],
+        "source_window": [
+          19411,
+          28464
+        ],
+        "translation_window": [
+          19898,
+          28845
+        ]
+      },
+      {
+        "id": "chunk-006",
+        "source_core": [
+          26617,
+          32026
+        ],
+        "translation_core": [
+          27037,
+          32628
+        ],
+        "source_window": [
+          24702,
+          33915
+        ],
+        "translation_window": [
+          25149,
+          34461
+        ]
+      },
+      {
+        "id": "chunk-007",
+        "source_core": [
+          32026,
+          37383
+        ],
+        "translation_core": [
+          32628,
+          38164
+        ],
+        "source_window": [
+          30186,
+          37383
+        ],
+        "translation_window": [
+          30801,
+          38164
+        ]
+      }
+    ]
+  },
+  "unit_id": "chapter-000008",
+  "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
+  "binding": {
+    "previous_record_id": null,
+    "glossary_sha256": "ba3e390941710d55f789871f95f40110ef56af4a1348dd907202dcb9ccf4f671",
+    "style_guide_sha256": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4",
+    "reviewer_contract_sha256": "e21e068170b373ed0593c7fa47b2039293af849e93fe53de5bd30b97f3092ff2"
+  },
+  "completed": {
+    "chunk-001": {
+      "outcome": "CORRECTIONS_REQUIRED",
+      "report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "intelligence-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "«Задевает их умственные способности» is awkward and suggests affecting their abilities, rather than subtly mocking or questioning their intelligence. Rephrase to preserve the source’s pointed insult.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "even if she’s  *subtly*  poking at their intelligence.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "даже когда *тонко* задевает их умственные способности.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "bullshit-register",
+            "category": "register",
+            "severity": "minor",
+            "detail": "The source’s coarse colloquial «bullshit» is softened to the comparatively neutral «чушь». Use wording that retains the source’s marked, blunt register.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Tamara is clearly not above calling out  *anybody’s*  bullshit, including her boss.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Тамара явно не стесняется говорить кому угодно, что тот несёт чушь, — в том числе и своему начальнику.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "neutrality-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "«Безразличие» interprets Drake’s deliberate neutrality as indifference, adding a more dismissive attitude than the source establishes. Preserve the distinction between emotional neutrality and indifference.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "It’s rare for Damian to see such deliberate neutrality anymore, not a hint of feeling to be found…it reminds him a bit too much of his grandfather.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Дэмиану редко доводится видеть столь намеренно сохраняемое безразличие; ни намёка на чувства… Это слишком сильно напоминает ему деда.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "style": [
+        {
+          "evidence": "“Honestly, watching Tam deal with idiots is probably the most entertaining thing yet.”",
+          "source_pattern": "Повествование следует близко за восприятием Дэмиана; его оценки могут быть разговорными и резкими.",
+          "translation_approach": "Сохранять близкую фокализацию и разговорную, иногда грубую окраску оценок; не смягчать и не усиливать их без опоры на оригинал."
+        }
+      ],
+      "glossary": [
+        {
+          "notes": "В этом фрагменте так упоминается отец Тамары.",
+          "original": "Fox",
+          "translation": "Фокс",
+          "type": "фамилия персонажа"
+        }
+      ]
+    }
+  },
+  "windows": {
+    "chunk-001": {
+      "source_sha256": "51b8ed4442b6d878634a35741d3a19490b223469d3e4591db3f719c3fb265ed9",
+      "translation_sha256": "eae3a911a2861139279076b49d632a4e0f547677e53174c8c76830ae341b59d2"
+    }
+  },
+  "accepted_review_record_id": null,
+  "reused": {}
+}
