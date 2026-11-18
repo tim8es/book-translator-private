@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 124,
+  "next_sequence": 125,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -14226,6 +14226,115 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "d156cbff985bbb6a7bbbaf073c3be6a9d5eb977222560823198cc0ca9108d93e",
+        "style_guide": "eaa08d42f1f5ea55a06553ec9c1d9e5c6f66b62f9bb6f55b653a52f78659dd74"
+      }
+    },
+    {
+      "record_id": "e681be450c1245c6a64548b520ff33c3",
+      "sequence": 124,
+      "unit_id": "chapter-000046",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "5eb40c7657a04768072006c3d09e3e412722114d863dd1168e287a3923a7b5b0",
+      "translation_sha256": "41af453eefdddb907e5733cff80f77f6735ddda61438ebeeaae8eb1636a82885",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-434a87fc",
+      "reviewed_at": "2026-11-18T05:18:15Z",
+      "state_revision": "0cb9b05917428799f3b730645b87387fa7f5d1ab1359399e7ef52fe42f87a641",
+      "review_commit": "2a8a2efd36d1c1ae21d0154a888c0feb079f2414",
+      "correction_round": 2,
+      "supersedes_record_id": "5081dff2bbb44e0aa582cf006cc631e9",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "omission-1-recheck",
+            "category": "omission",
+            "severity": "major",
+            "detail": "Resolved: the translation now includes Gabriel’s reassurance before “Press can wait.”",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "“You wouldn’t do that,” Gabriel chuckles.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Ты бы так не поступил.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "5081dff2bbb44e0aa582cf006cc631e9",
+              "finding_id": "omission-1"
+            }
+          },
+          {
+            "id": "meaning-1-recheck",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Resolved: «в защитном жесте» preserves the defensive quality of Esteban’s gesture.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "lifting his hands up in defensive gesture",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "поднимает руки в защитном жесте",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "5081dff2bbb44e0aa582cf006cc631e9",
+              "finding_id": "meaning-1"
+            }
+          },
+          {
+            "id": "style-1-recheck",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The revised wording still sounds like a calque: «самолёт протянул её за собой» is awkward for a banner towed behind a plane. Use a natural expression such as «растяжку, которую он подготовил для буксировки самолётом».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "plane-drawn banner he prepared",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "растяжку, которую он приготовил, чтобы самолёт протянул её за собой",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "5081dff2bbb44e0aa582cf006cc631e9",
+              "finding_id": "style-1"
+            }
+          },
+          {
+            "id": "terminology-1-recheck",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "The translation’s «Ферстаппен» is the established Russian spelling, but the glossary still specifies «Верстаппен». Reconcile the glossary entry; do not change the translation to match the conflicting entry.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "What’s up, Verstappen?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Как дела, Ферстаппен?»",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "5081dff2bbb44e0aa582cf006cc631e9",
+              "finding_id": "terminology-1"
+            }
           }
         ]
       },
