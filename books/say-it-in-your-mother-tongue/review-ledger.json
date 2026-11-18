@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 104,
+  "next_sequence": 105,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -12490,6 +12490,115 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "e8892a5816eda16f154722426995c10bfcaaa7b77ee131a7a0d8bb71b1d1ca57",
+        "style_guide": "542b979599ebe40dfbb11794d47d2fffcc7bde125f2d09c1549f33f618157eff"
+      }
+    },
+    {
+      "record_id": "32e100cae0a9423189168a0f6b0897fe",
+      "sequence": 104,
+      "unit_id": "chapter-000038",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "433cbe26cee5137ed0d25867032c35db0a89b88ecb5057440bbc8e2698cafac7",
+      "translation_sha256": "33186bb33e42ee25e37341f234d33d108031e3126d09c09f8c0fef00d8aa2487",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-675288d8",
+      "reviewed_at": "2026-11-18T02:11:35Z",
+      "state_revision": "17aca3a3d7af18550b4557bf73814f37386de390b982c880f4dc31cda097bcc9",
+      "review_commit": "2969309a0d8b023e9226ddb97b522781399eb8d2",
+      "correction_round": 4,
+      "supersedes_record_id": "fc0dcf84a1014d24b6012fb64ccfe501",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-thought-format-135",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "Не исправлено: внутренняя мысль выделена в источнике курсивом, а в переводе — полужирным. Замените полужирное выделение курсивом.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "*Please, don’t say anything else. It’s already bad. Don’t make it worse.*",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "**Пожалуйста, больше ничего не говори. И так всё плохо. Не делай ещё хуже.**",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "fc0dcf84a1014d24b6012fb64ccfe501",
+              "finding_id": "recheck-structure-thought-135"
+            }
+          },
+          {
+            "id": "recheck-spanish-phrase-24",
+            "category": "addition",
+            "severity": "minor",
+            "detail": "Исправлено: сохранён переход с английского на испанский без повторного русского пересказа испанской фразы.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Being confident *te sienta bien*. You should be like that more often.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Быть уверенным — *te sienta bien*. Тебе стоит чаще быть таким.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "fc0dcf84a1014d24b6012fb64ccfe501",
+              "finding_id": "addition-spanish-phrase"
+            }
+          },
+          {
+            "id": "recheck-dialogue-punctuation-25",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "Исправлено: реплика оформлена кавычками, как в соответствующем фрагменте перевода.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Lance shakes his head, looking out of the car. “Where are we going?”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Лэнс качает головой, глядя в окно машины. «Куда мы едем?»",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "fc0dcf84a1014d24b6012fb64ccfe501",
+              "finding_id": "style-dialogue-punctuation"
+            }
+          },
+          {
+            "id": "recheck-fragment-127",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Исправлено: «Не может быть» передаёт недоверие как самостоятельную мысль, не создавая впечатления незавершённой конструкции.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "*He can’t be.*",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "*Не может быть.*",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "fc0dcf84a1014d24b6012fb64ccfe501",
+              "finding_id": "style-incomplete-fragment"
+            }
           }
         ]
       },
