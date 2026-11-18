@@ -472,6 +472,56 @@
           "type": "термин"
         }
       ]
+    },
+    "chunk-004": {
+      "outcome": "CORRECTIONS_REQUIRED",
+      "report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "room-boundary",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "The spatial relation is reversed: “within the walls of his safe room” means within the room, whereas «за стенами» means outside its walls. Please correct the location of the people who cannot see Tim.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Tim sighs, slumping back into his chair, unseen by anyone within the walls of his safe room.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Тим вздыхает и откидывается на спинку стула — никто за стенами его защищённой комнаты этого не видит.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "weapon-count",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "“A few weapons” refers to several weapons, not necessarily several kinds. «Несколько видов оружия» adds that distinction; please render the quantity without implying different weapon types.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Once he’s dressed, he tucks a few weapons onto his person—nothing too extreme, just enough to defend himself in case he runs into the odd mugger.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Одевшись, он прячет при себе несколько видов оружия — ничего особенного, лишь бы защититься, если попадётся какой-нибудь грабитель.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "style": [],
+      "glossary": []
     }
   },
   "windows": {
@@ -486,6 +536,10 @@
     "chunk-003": {
       "source_sha256": "69be5e598358758f4bdb8fb6b4bf3f7ded476127ee2f5cbf8a4bf5e13ca37c77",
       "translation_sha256": "f731dad35066e576d493ee0bb8c728fe55f99bf1cce9b3ee844840f2ded72c29"
+    },
+    "chunk-004": {
+      "source_sha256": "fc4a550163bdb3796e350cc869731cae7f693dbdcb632c307294f2abbcad0b31",
+      "translation_sha256": "82d1d07972f2884bc26e47af9d24401e1f78fc46408b9dee370ea42ab9ad5f98"
     }
   },
   "accepted_review_record_id": null,
