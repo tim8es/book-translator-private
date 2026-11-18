@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "unit_id": "chapter-000049",
+  "review_record_id": "a9dff06e7ca14fcd94ad1e8053c2bd62",
+  "source_sha256": "3eb2f502e4d9bc3c2ccdadf501ff631dfd96a7dd13316c5656ac3aca30b21929",
+  "translation_sha256": "1707edba83d93242e6106baa6aca14987112c8a0674fcaeed2ed464eee9bbe27",
+  "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+  "patches": [
+    {
+      "finding_id": "meaning-1-followup",
+      "operation": "replace",
+      "target_anchor": {
+        "quote": "не помня, что вообще брал его",
+        "occurrence": 0
+      },
+      "replacement": "не помня, как он его достал."
+    },
+    {
+      "finding_id": "omission-1",
+      "operation": "insert_after",
+      "target_anchor": {
+        "quote": "Они смотрят весь фильм вот так. А потом — сиквел, *«Ганнибал»*.",
+        "occurrence": 0
+      },
+      "replacement": " Нико смотрит, как за окном проплывают облака, зевает и делает глоток кофе,"
+    }
+  ],
+  "glossary": [],
+  "style_guide": []
+}
