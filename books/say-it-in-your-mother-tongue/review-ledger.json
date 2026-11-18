@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 114,
+  "next_sequence": 115,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -13375,6 +13375,55 @@
       },
       "shared_state_revisions": {
         "glossary": "3a1afe10010bbd929ba39a89ae200c8001fb10312dd34931d118a846c2e52a55",
+        "style_guide": "eaa08d42f1f5ea55a06553ec9c1d9e5c6f66b62f9bb6f55b653a52f78659dd74"
+      }
+    },
+    {
+      "record_id": "f5b6b9f2e39c4fdea1fa4cb0aa5f2d8d",
+      "sequence": 114,
+      "unit_id": "chapter-000043",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "bd128b3f90922c1352ddb8a29f2deda449be13d9f0cd53c584478ec3c82c6e62",
+      "translation_sha256": "b00e657fc35748c12886171210b5a9013b9aee5bb8444d41fe69cc04696069d8",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-85c5b4d6",
+      "reviewed_at": "2026-11-18T03:47:41Z",
+      "state_revision": "35d103f77376eb9579d9aa9036a4d8b2b5bb0bf190b897118ad0a888c7a03f04",
+      "review_commit": "9b3b5ed6d16c541fd785d42d775e49eff6e474e4",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "meaning-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The source describes Max’s voice as “small,” which conveys a meek or vulnerable quality as well as fear. “Тихий” conveys quietness but does not fully preserve that characterization. Retain the small, vulnerable quality alongside the fear.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "He sounds small and scared and so very un-Max-like.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Голос у него тихий и испуганный — совсем не как у Макса.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "6fd4a578988e13c444924ec2d61ef20b9b61a98e1d25fc1f48af337c06fdb8bb",
         "style_guide": "eaa08d42f1f5ea55a06553ec9c1d9e5c6f66b62f9bb6f55b653a52f78659dd74"
       }
     }
