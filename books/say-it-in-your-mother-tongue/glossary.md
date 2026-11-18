@@ -106,3 +106,11 @@ Use this file for recurring names, places, organizations, terms, nicknames, titl
 | Kimi | Кими | имя |  |
 | Antonelli | Антонелли | фамилия |  |
 | Räikkönen | Райкконен | фамилия |  |
+| OCT | OCT | музыкальная группа | Группа, исполняющая песню Half Horse Half Man. |
+| Half Horse Half Man | Half Horse Half Man | название песни | Комедийная песня группы OCT. |
+| The Weeknd | The Weeknd | музыкант | Исполнитель песни São Paulo. |
+| São Paulo | São Paulo | название песни | Песня The Weeknd, звучащая в машине. |
+| Liebling | Liebling | ласковое обращение | Немецкое ласковое обращение; сохранено без перевода. |
+| Baby Shark | Baby Shark | название песни | Песня, которую Габриэль грозится включить. |
+| Video Games | Video Games | название песни | Песня Ланы Дель Рей; в этом фрагменте звучит кавер Трикси Мэттел. |
+| Trixie Mattel | Трикси Мэттел | музыкант | Исполнительница кавера на Video Games. |
