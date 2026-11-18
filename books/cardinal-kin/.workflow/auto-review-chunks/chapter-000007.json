@@ -204,12 +204,104 @@
         }
       ],
       "glossary": []
+    },
+    "chunk-002": {
+      "outcome": "CORRECTIONS_REQUIRED",
+      "report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "ethical-phrase",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Этичного воплощения» sounds like a calque in this business context. Consider a more natural equivalent such as «этичной реализации» while preserving the source’s emphasis on ethical execution.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "A rare combination of innovation and ethical execution.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Редкое сочетание инноваций и этичного воплощения.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "summer-off",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Берёт лето свободным» is unnatural Russian phrasing. Render the assistant taking the summer off idiomatically, for example as taking leave for the summer.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "His current assistant is taking the summer off",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Нынешний помощник берёт лето свободным",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "father-reference",
+            "category": "referent",
+            "severity": "major",
+            "detail": "The translation says «его отцов» (his fathers), changing the number of the referent. In the surrounding context the source refers to Damian’s father in the singular; the source phrase appears to have a missing possessive apostrophe. Render the intended singular reference, such as «наставления отца».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "But his Fathers teachings have truly cemented.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Но наставления его отцов и впрямь глубоко укоренились в нём.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "bad-at-it",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "«В принципе ни на что не годен» broadens the worry from being fundamentally bad at this job to being good for nothing in general. Keep the concern scoped to the role or task.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "What if he is fundamentally bad at it?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "А вдруг он в принципе ни на что не годен?",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "style": [
+        {
+          "evidence": "The sequence beginning “What if he is fundamentally bad at it?” and ending “But still.”",
+          "source_pattern": "Damian’s close-third-person interiority includes a cascade of anxious rhetorical questions, followed by a brief self-correcting aside and a clipped closing thought.",
+          "translation_approach": "Preserve the escalation and rhetorical-question sequence, then retain the abrupt self-correction and short concluding beat rather than smoothing them into explanatory prose."
+        }
+      ],
+      "glossary": []
     }
   },
   "windows": {
     "chunk-001": {
       "source_sha256": "9ffe2d708030af115c80a883b711f1c60789195898033dd20d303d98ae039117",
       "translation_sha256": "ef123d868c92ccdf4d3f15fd5c2b25965eaf4df34a425fa873ed62e8d80e7f2a"
+    },
+    "chunk-002": {
+      "source_sha256": "ca1e20b2a7cbe7b5b1e27ffc96357fb08dd3e23c5a9e0d8114d36115180a3527",
+      "translation_sha256": "0c292da898bda6bd8c9b17e7e3704d268f9e09dbcd7dbeec618846cfa12710a5"
     }
   },
   "accepted_review_record_id": null,
