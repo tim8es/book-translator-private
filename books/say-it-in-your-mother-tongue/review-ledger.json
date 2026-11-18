@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 109,
+  "next_sequence": 110,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -12877,6 +12877,135 @@
       "shared_state_revisions": {
         "glossary": "af9787d5ddd542fdb639ba9289fd961626fbc254341557706d5eb0a06780767c",
         "style_guide": "542b979599ebe40dfbb11794d47d2fffcc7bde125f2d09c1549f33f618157eff"
+      }
+    },
+    {
+      "record_id": "6332737428c34a2397c431f782b462e6",
+      "sequence": 109,
+      "unit_id": "chapter-000041",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "3dd265fb0cdcb0c05be4eea9e975c8efe9fa7737e1dd87d0d412daee3f1a87bc",
+      "translation_sha256": "e521adcef7ec2d774fec0df40425a71190c0146ac756cf6da309ce9c531da445",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-33746e6f",
+      "reviewed_at": "2026-11-18T03:02:13Z",
+      "state_revision": "4812cf7241746347ba15488fb4dac410d83efa02194f87c06facf37e1642d1ff",
+      "review_commit": "eb44257c938b8b28ae904806339e7859c39bac59",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "structure-1",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "The source note is bold, but its translation is plain. Preserve the source formatting.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "**This is a Multi-POV ensemble story — chapters may focus on one pairing or move between multiple.**",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Это история с несколькими точками зрения: главы могут быть посвящены одной паре или переключаться между несколькими.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "referent-1",
+            "category": "referent",
+            "severity": "minor",
+            "detail": "The Russian wording can be read as Lance placing Fernando’s head on a shoulder. The source says Lance rests his own head on Fernando’s shoulder; make the referent explicit, for example «кладёт голову ему на плечо».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "He lies his head onto Fernando’s shoulder",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Он кладёт голову Фернандо на плечо",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "structure-2",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "The source italicizes “pulled up,” but the equivalent in the translation is not italicized. Preserve the emphasis.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "he lets himself be *pulled up* onto his feet",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "позволяет Фернандо потянуть себя вверх, пока не встаёт на ноги",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "structure-3",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "The source italicizes “romantic-est,” but the corresponding superlative in the translation is not italicized. Preserve the emphasis.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "the rhythm of the cheesiest and *romantic-est* song ever produced.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "в такт самой слащавой и романтичнейшей песне из всех, что когда-либо сочинили.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-1",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "The source says the song fades out completely. «Совсем не затихает» says it does not quiet down at all, reversing the meaning; remove the negation.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "before it finally fades out completely, followed immediately by another song.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "а потом наконец совсем не затихает; сразу за ней начинается другая.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "structure-4",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "The source emphasizes both “this” and “his song,” but the corresponding words in the translation are not italicized. Preserve those emphasis markers.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "*this* song? That’s like as much *his song*",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "эта песня? Она такая же его песня",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "0ae07202278012f087bc1209a1bf021683d6192b03137396f40ea854e55f4226",
+        "style_guide": "eaa08d42f1f5ea55a06553ec9c1d9e5c6f66b62f9bb6f55b653a52f78659dd74"
       }
     }
   ]
