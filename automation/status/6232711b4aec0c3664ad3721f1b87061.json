@@ -3,24 +3,20 @@
   "job_id": "6232711b4aec0c3664ad3721f1b87061",
   "book_slug": "cardinal-kin",
   "state": "running",
-  "phase": "correction-batch-staged",
+  "phase": "corrector-completed",
   "failures": 0,
   "correction_rounds": {
     "chapter-000001": 2,
     "chapter-000003": 1,
     "chapter-000004": 3,
     "chapter-000005": 2,
-    "chapter-000006": 3
+    "chapter-000006": 3,
+    "chapter-000007": 1
   },
   "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
   "source_sha256": "f06b996448766fcf6faa703ced3ca03b63221f4f81bdb4c395619c69ffa353cd",
-  "updated_at": "2026-11-18T14:29:34.046922+00:00",
-  "active": {
-    "role": "corrector",
-    "chapter": 7,
-    "session_id": "auto-6232711b4aec-corrector-5d4b51b8",
-    "unit_id": "chapter-000007"
-  },
+  "updated_at": "2026-11-18T14:29:36.884913+00:00",
+  "active": null,
   "structural_helper_revision": "4c584fe5534871cd05aa851d9b7bdbfa696d0edd",
   "model_calls_started": 131,
   "prompt_context": {
@@ -682,7 +678,8 @@
     },
     "accepted_operations": {
       "review_rejected": 2,
-      "translated": 1
+      "translated": 1,
+      "corrected": 1
     }
   },
   "queue_snapshot": {
@@ -714,29 +711,6 @@
     "current_selection_size": 1,
     "unit_id": "chapter-000007",
     "review_record_id": "082466d609594d68824cb1c151402a35"
-  },
-  "provider_model_route": "primary",
-  "correction_batch_progress": {
-    "unit_id": "chapter-000007",
-    "review_record_id": "082466d609594d68824cb1c151402a35",
-    "completed": 22,
-    "total": 23
-  },
-  "correction_isolation": {
-    "unit_id": "chapter-000007",
-    "review_record_id": "082466d609594d68824cb1c151402a35",
-    "translation_sha256": "311509da05adca961e0e7ec1171f217f6735aecb2854dca164dbc4cf9a4f4faa",
-    "finding_ids": [
-      "chunk-001-link-punct"
-    ]
-  },
-  "correction_orchestrator_decision": {
-    "unit_id": "chapter-000007",
-    "review_record_id": "082466d609594d68824cb1c151402a35",
-    "translation_sha256": "311509da05adca961e0e7ec1171f217f6735aecb2854dca164dbc4cf9a4f4faa",
-    "strategy": "isolate_remaining",
-    "outcome": "accepted",
-    "duration_ms": 6689
   },
   "model_response_diagnostics": {
     "finish_reason": "stop",
