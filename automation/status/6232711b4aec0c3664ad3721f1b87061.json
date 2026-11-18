@@ -3,7 +3,7 @@
   "job_id": "6232711b4aec0c3664ad3721f1b87061",
   "book_slug": "cardinal-kin",
   "state": "running",
-  "phase": "review-chunk-staged",
+  "phase": "reviewer-completed",
   "failures": 0,
   "correction_rounds": {
     "chapter-000001": 2,
@@ -13,13 +13,8 @@
   },
   "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
   "source_sha256": "f06b996448766fcf6faa703ced3ca03b63221f4f81bdb4c395619c69ffa353cd",
-  "updated_at": "2026-11-18T12:08:43.158206+00:00",
-  "active": {
-    "role": "reviewer",
-    "chapter": 5,
-    "session_id": "auto-6232711b4aec-reviewer-33c140a7",
-    "unit_id": "chapter-000005"
-  },
+  "updated_at": "2026-11-18T12:09:24.729332+00:00",
+  "active": null,
   "structural_helper_revision": "4c584fe5534871cd05aa851d9b7bdbfa696d0edd",
   "model_calls_started": 68,
   "prompt_context": {
@@ -90,7 +85,6 @@
       "runtime_revision": "508e7aea7bcc291d3423770d457d1c94c22649fb"
     }
   ],
-  "review_chunk_fallback_unit": "chapter-000005",
   "provider_call_metric": {
     "unit_id": "chapter-000005",
     "role": "reviewer",
@@ -203,13 +197,6 @@
       "total_tokens": 16957
     }
   ],
-  "review_chunk_progress": {
-    "unit_id": "chapter-000005",
-    "source_sha256": "b13d3a92f1556dea465905b35f22abe2281204254f681894bbdb15140d1a1ec2",
-    "translation_sha256": "84e6cd0e67941b66c19402a25796aa70e66c2e9a33ce5382629bc32f6eab64b5",
-    "completed": 8,
-    "total": 8
-  },
   "last_review_failure": {
     "unit_id": "chapter-000005",
     "at": "2026-11-18T11:54:34.487408+00:00",
