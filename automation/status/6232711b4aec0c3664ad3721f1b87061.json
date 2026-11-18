@@ -3,7 +3,7 @@
   "job_id": "6232711b4aec0c3664ad3721f1b87061",
   "book_slug": "cardinal-kin",
   "state": "running",
-  "phase": "queue-advice-recorded",
+  "phase": "claimed",
   "failures": 0,
   "correction_rounds": {
     "chapter-000001": 2,
@@ -16,8 +16,13 @@
   },
   "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
   "source_sha256": "f06b996448766fcf6faa703ced3ca03b63221f4f81bdb4c395619c69ffa353cd",
-  "updated_at": "2026-11-18T16:09:15.237540+00:00",
-  "active": null,
+  "updated_at": "2026-11-18T16:09:17.532324+00:00",
+  "active": {
+    "role": "translator",
+    "chapter": 9,
+    "session_id": "auto-6232711b4aec-translator-2b30a7d2",
+    "unit_id": "chapter-000009"
+  },
   "structural_helper_revision": "4c584fe5534871cd05aa851d9b7bdbfa696d0edd",
   "model_calls_started": 207,
   "prompt_context": {
@@ -615,33 +620,57 @@
         3
       ],
       "action": "operator-attention-no-pass"
+    },
+    {
+      "unit_id": "chapter-000008",
+      "at": "2026-11-18T16:09:17.187588+00:00",
+      "reason": "costly-rejected-reviews-without-net-improvement",
+      "review_record_ids": [
+        "37256be23edf44498b5ebe0686e0eca3",
+        "6e04ab7ec7104d66b8f96d8a79b415eb"
+      ],
+      "translation_sha256": "85bfbcefe839d9c8c6f98ff388cd02ef926a30b8fb4bf9876c9751cd2ac2ac45",
+      "source_sha256": "046f155efc220f63ca6cc74edb78872a8d69460adf63b448b32a75ff6a5acf1d",
+      "severity_scores": [
+        17,
+        19
+      ],
+      "unresolved_counts": [
+        17,
+        15
+      ],
+      "major_or_critical_counts": [
+        0,
+        2
+      ],
+      "observed_responses": 23,
+      "observed_duration_ms": 1835916,
+      "action": "operator-attention-no-pass"
     }
   ],
   "last_review_stagnation": {
-    "unit_id": "chapter-000005",
-    "reason": "consecutive-reviews-without-net-severity-improvement",
+    "unit_id": "chapter-000008",
+    "reason": "costly-rejected-reviews-without-net-improvement",
     "review_record_ids": [
-      "d7d70e1559784b82aae645e68392d385",
-      "ae9c5da036a44ffe80ab9ba0b4de21e0",
-      "eb2f16d1b4094626af65ae8d929fc077"
+      "37256be23edf44498b5ebe0686e0eca3",
+      "6e04ab7ec7104d66b8f96d8a79b415eb"
     ],
-    "translation_sha256": "3b3f873edd053024323e2b0fc16de052294c1333640b6f94a38a977532dd68b2",
-    "source_sha256": "b13d3a92f1556dea465905b35f22abe2281204254f681894bbdb15140d1a1ec2",
+    "translation_sha256": "85bfbcefe839d9c8c6f98ff388cd02ef926a30b8fb4bf9876c9751cd2ac2ac45",
+    "source_sha256": "046f155efc220f63ca6cc74edb78872a8d69460adf63b448b32a75ff6a5acf1d",
     "severity_scores": [
-      8,
-      18,
-      25
-    ],
-    "unresolved_counts": [
-      6,
-      12,
+      17,
       19
     ],
-    "major_or_critical_counts": [
-      1,
-      3,
-      3
+    "unresolved_counts": [
+      17,
+      15
     ],
+    "major_or_critical_counts": [
+      0,
+      2
+    ],
+    "observed_responses": 23,
+    "observed_duration_ms": 1835916,
     "action": "operator-attention-no-pass"
   },
   "execution_metrics": {
