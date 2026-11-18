@@ -3,7 +3,7 @@
   "job_id": "6232711b4aec0c3664ad3721f1b87061",
   "book_slug": "cardinal-kin",
   "state": "running",
-  "phase": "model-call-reserved",
+  "phase": "structural-segments-staged",
   "failures": 0,
   "correction_rounds": {
     "chapter-000001": 2,
@@ -13,7 +13,7 @@
   },
   "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
   "source_sha256": "f06b996448766fcf6faa703ced3ca03b63221f4f81bdb4c395619c69ffa353cd",
-  "updated_at": "2026-11-18T13:14:00.547007+00:00",
+  "updated_at": "2026-11-18T13:15:14.794771+00:00",
   "active": {
     "role": "translator",
     "chapter": 6,
@@ -90,12 +90,12 @@
     "unit_id": "chapter-000006",
     "role": "translator",
     "route": "primary",
-    "request_chars": 31491,
+    "request_chars": 31835,
     "outcome": "response",
-    "duration_ms": 106258,
-    "prompt_tokens": 6685,
-    "completion_tokens": 5810,
-    "total_tokens": 12495
+    "duration_ms": 72883,
+    "prompt_tokens": 6696,
+    "completion_tokens": 3956,
+    "total_tokens": 10652
   },
   "provider_call_metrics": [
     {
@@ -322,6 +322,17 @@
       "prompt_tokens": 6685,
       "completion_tokens": 5810,
       "total_tokens": 12495
+    },
+    {
+      "unit_id": "chapter-000006",
+      "role": "translator",
+      "route": "primary",
+      "request_chars": 31835,
+      "outcome": "response",
+      "duration_ms": 72883,
+      "prompt_tokens": 6696,
+      "completion_tokens": 3956,
+      "total_tokens": 10652
     }
   ],
   "last_review_failure": {
@@ -429,17 +440,17 @@
   "structural_segment_progress": {
     "unit_id": "chapter-000006",
     "source_sha256": "c1e68c26ededb32a64501b82e30122d41b6c06ebe832dff5c13b8a67ad143d36",
-    "completed": 71,
+    "completed": 95,
     "total": 162
   },
   "model_response_diagnostics": {
     "finish_reason": "stop",
     "response_format": "json_object",
-    "response_chars": 4625,
+    "response_chars": 4012,
     "provider_refusal": false,
-    "prompt_tokens": 6685,
-    "completion_tokens": 5810,
-    "total_tokens": 12495,
+    "prompt_tokens": 6696,
+    "completion_tokens": 3956,
+    "total_tokens": 10652,
     "route": "primary",
     "role": "translator",
     "unit_id": "chapter-000006"
