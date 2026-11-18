@@ -753,6 +753,107 @@
           "type": "название семьи супергероев"
         }
       ]
+    },
+    "chunk-007": {
+      "outcome": "PASS",
+      "report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "timeframe-check",
+            "category": "omission",
+            "severity": "minor",
+            "detail": "Resolved: «всего» now preserves the source's emphasis that only about three years had passed.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "It’s only been, what, 3 years since his parents died?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Прошло всего, сколько, года три с тех пор, как умерли его родители?",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "37256be23edf44498b5ebe0686e0eca3",
+              "finding_id": "chunk-007-timeframe-only"
+            }
+          },
+          {
+            "id": "ambush-check",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Resolved: «устроили на них засаду» preserves that the raiders ambushed the Drakes.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "They were at a dig site in Egypt when they were ambushed by raiders.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Они находились на месте раскопок в Египте, когда налётчики устроили на них засаду.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "37256be23edf44498b5ebe0686e0eca3",
+              "finding_id": "chunk-007-ambush-detail"
+            }
+          },
+          {
+            "id": "survival-check",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Resolved: «не потому, что просто довольствовался» preserves the source's explanation of how Damian survived.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "but Damian has not survived this long by simply being content with what is given to him.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "но Дэмиан выжил так долго не потому, что просто довольствовался тем, что ему преподносят.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "37256be23edf44498b5ebe0686e0eca3",
+              "finding_id": "chunk-007-survival-logic"
+            }
+          },
+          {
+            "id": "note-gender",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Resolved: the author note now uses a natural gender-neutral phrasing rather than an unfinished gender placeholder.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "I'm feeling a lot better than I did when I posted the last chapter.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Мне гораздо лучше, чем во время публикации предыдущей главы.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "37256be23edf44498b5ebe0686e0eca3",
+              "finding_id": "chunk-007-author-note-gender"
+            }
+          }
+        ]
+      },
+      "style": [],
+      "glossary": [
+        {
+          "notes": "Отец Тимоти; вместе с Джанет был владельцем компании.",
+          "original": "Jack Drake",
+          "translation": "Джек Дрейк",
+          "type": "имя персонажа"
+        }
+      ]
     }
   },
   "windows": {
@@ -779,6 +880,10 @@
     "chunk-006": {
       "source_sha256": "2cd81df036448bc838cd6fd1682b8f654c74916751306f17f16be204283be51a",
       "translation_sha256": "9d72f8cd028148533c050e1469dde1e1fc1bec8fc3dbf6a53a3e1b71d9e969cb"
+    },
+    "chunk-007": {
+      "source_sha256": "ded4af8129b78487d946f847603687a991aaa49072003979d235d0e8efedadd5",
+      "translation_sha256": "fc76eae06610391e8dc93c1b4b5aab80baa2ff04190b56c27510196f26e3a2ed"
     }
   },
   "accepted_review_record_id": null,
