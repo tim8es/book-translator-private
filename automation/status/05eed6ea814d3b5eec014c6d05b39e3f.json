@@ -44,7 +44,7 @@
   },
   "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
   "source_sha256": "12e210ce5a95daf56a97ada583ec15c274780c4ddfa7fb92da6a88c67f7c403d",
-  "updated_at": "2026-11-18T04:22:20.417291+00:00",
+  "updated_at": "2026-11-18T04:22:49.216783+00:00",
   "active": {
     "role": "corrector",
     "chapter": 44,
@@ -185,35 +185,25 @@
       "patch_sha256": "3e5cc28dfbb50ac16950dcea9dead7479091f47c0fff522946571363a8dd3f29",
       "reason": "new-duplicated-phrase",
       "at": "2026-11-18T00:43:56.724899+00:00"
+    },
+    {
+      "unit_id": "chapter-000044",
+      "review_record_id": "b50a34afdd804a908c0412d4f05a8421",
+      "finding_id": "style-1",
+      "patch_sha256": "176ecb0094abb1b1be0b70f43d6e7111d3621f9d503734cf9af76edd77e0610b",
+      "reason": "new-duplicated-phrase",
+      "at": "2026-11-18T04:22:49.216759+00:00"
     }
   ],
   "last_correction_regression": {
-    "unit_id": "chapter-000038",
-    "finding_id": "style-3",
+    "unit_id": "chapter-000044",
+    "finding_id": "style-1",
     "reason": "new-duplicated-phrase",
     "evidence": {
-      "count": 8,
+      "count": 1,
       "examples": [
         {
-          "tokens": 12,
-          "previous": 1,
-          "candidate": 2,
-          "adjacent": false
-        },
-        {
-          "tokens": 12,
-          "previous": 1,
-          "candidate": 2,
-          "adjacent": false
-        },
-        {
-          "tokens": 12,
-          "previous": 1,
-          "candidate": 2,
-          "adjacent": false
-        },
-        {
-          "tokens": 12,
+          "tokens": 9,
           "previous": 1,
           "candidate": 2,
           "adjacent": false
@@ -229,22 +219,22 @@
     ]
   },
   "provider_model_route": "primary",
-  "model_response_diagnostics": {
-    "finish_reason": "stop",
-    "response_format": "json_object",
-    "response_chars": 411,
-    "provider_refusal": false,
-    "prompt_tokens": 10766,
-    "completion_tokens": 400,
-    "total_tokens": 11166,
-    "route": "primary",
-    "role": "corrector",
-    "unit_id": "chapter-000044"
-  },
   "correction_batch_progress": {
     "unit_id": "chapter-000044",
     "review_record_id": "b50a34afdd804a908c0412d4f05a8421",
     "completed": 3,
     "total": 5
+  },
+  "model_response_diagnostics": {
+    "finish_reason": "stop",
+    "response_format": "json_object",
+    "response_chars": 443,
+    "provider_refusal": false,
+    "prompt_tokens": 10178,
+    "completion_tokens": 1023,
+    "total_tokens": 11201,
+    "route": "primary",
+    "role": "corrector",
+    "unit_id": "chapter-000044"
   }
 }
