@@ -616,6 +616,129 @@
           "type": "город"
         }
       ]
+    },
+    "chunk-005": {
+      "outcome": "CORRECTIONS_REQUIRED",
+      "report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "term-bluejay-129",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "This instance is rendered «Голубая Сойка», while the supplied glossary specifies «Синяя Сойка». The target wording may be natural, but the recurring glossary discrepancy remains unresolved; reconcile the glossary rather than changing the text mechanically.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Sure enough, not 5 minutes later, the Bats arrive— Batman, Bluejay, Spoiler, and Robin.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "<!-- bt-block:000129 -->\nГолубая Сойка",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "2218850f28354836bf4a0d28e9d99952",
+              "finding_id": "chunk-005-bluejay-129"
+            }
+          },
+          {
+            "id": "omit-arrival-129",
+            "category": "omission",
+            "severity": "major",
+            "detail": "This block contains only «Голубая Сойка». The arrival sentence and the names Batman, Spoiler, and Robin are missing.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Sure enough, not 5 minutes later, the Bats arrive— Batman, Bluejay, Spoiler, and Robin.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "<!-- bt-block:000129 -->\nГолубая Сойка",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "term-bluejay-132",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "This instance is rendered «Голубая Сойка», while the supplied glossary specifies «Синяя Сойка». The target wording may be natural, but the recurring glossary discrepancy remains unresolved; reconcile the glossary rather than changing the text mechanically.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "He passes the time listening to their conversation, holding himself back from laughing as Bluejay and Spoiler argue over which Star Wars trilogy is best.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "<!-- bt-block:000132 -->\nГолубая Сойка",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "2218850f28354836bf4a0d28e9d99952",
+              "finding_id": "chunk-005-bluejay-132"
+            }
+          },
+          {
+            "id": "omit-banter-132",
+            "category": "omission",
+            "severity": "major",
+            "detail": "The block contains only «Голубая Сойка». The narration about listening and holding back laughter, and the argument between Bluejay and Spoiler about the Star Wars trilogies, are missing.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "He passes the time listening to their conversation, holding himself back from laughing as Bluejay and Spoiler argue over which Star Wars trilogy is best.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "<!-- bt-block:000132 -->\nГолубая Сойка",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "term-bluejay-135",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "This instance is rendered «Голубая Сойка», while the supplied glossary specifies «Синяя Сойка». The target wording may be natural, but the recurring glossary discrepancy remains unresolved; reconcile the glossary rather than changing the text mechanically.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Bluejay, Spoiler. Outflank them. Clear?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "<!-- bt-block:000135 -->\n— По моей команде мы с Робином пойдём в лобовую атаку, — рычит Бэтмен по связи. — Голубая Сойка",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "2218850f28354836bf4a0d28e9d99952",
+              "finding_id": "chunk-005-bluejay-135"
+            }
+          },
+          {
+            "id": "omit-orders-135",
+            "category": "omission",
+            "severity": "major",
+            "detail": "After «Голубая Сойка», the translation omits «Spoiler», the order to outflank the opponents, and Batman’s question asking if the instruction is clear.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Bluejay, Spoiler. Outflank them. Clear?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "<!-- bt-block:000135 -->\n— По моей команде мы с Робином пойдём в лобовую атаку, — рычит Бэтмен по связи. — Голубая Сойка",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "style": [],
+      "glossary": []
     }
   },
   "windows": {
@@ -634,6 +757,10 @@
     "chunk-004": {
       "source_sha256": "fc4a550163bdb3796e350cc869731cae7f693dbdcb632c307294f2abbcad0b31",
       "translation_sha256": "e98582553719a1ea61210cfdf41a67543770f8e81a1c379269509d952ca306ff"
+    },
+    "chunk-005": {
+      "source_sha256": "68fd3be978424ebc219a9bf1f328ffa4a2834cc8a255dbb06ee311e2c34b67d3",
+      "translation_sha256": "7cf3b7de8f1b5fe165ca3b0403ad454eb7c5c0f2b0facc27395dd555dcceeaa2"
     }
   },
   "accepted_review_record_id": null,
