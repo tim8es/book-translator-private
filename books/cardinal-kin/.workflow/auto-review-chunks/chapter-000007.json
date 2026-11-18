@@ -292,6 +292,133 @@
         }
       ],
       "glossary": []
+    },
+    "chunk-003": {
+      "outcome": "CORRECTIONS_REQUIRED",
+      "report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "limb-idiom",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Отъезд Тэм будет словно лишиться руки» is grammatically mismatched: it compares a departure to an infinitive. Recast it naturally, for example, as «для него это будет всё равно что лишиться руки».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Even so, having Tam gone will be like losing a limb.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "И все же отъезд Тэм будет словно лишиться руки.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "stretch-calque",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Растянуть напряжение» is an unnatural collocation in Russian. Preserve the physical effort of stretching while using a natural phrase, such as «попытаться размять мышцы между лопатками» or «снять напряжение».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Tim leans his head heavily to his shoulder, trying in vain to stretch out the tension building between his shoulder blades.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Тим тяжело склоняет голову к плечу, тщетно пытаясь растянуть напряжение, накапливающееся между лопатками.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "deadline-collocation",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Уладить дедлайны» is an unnatural collocation and obscures the sense of getting the quarter’s deadlines and work out of the way. Rephrase so the deadlines are met or the work due by them is completed.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "With Tam getting ready to go on her vacation, the two of them have been putting in the work to get most of the major decisions and deadlines for the quarter out of the way.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Пока Тэм готовится к отпуску, они вдвоем стараются заранее уладить большинство важных вопросов и дедлайнов на этот квартал.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "ellipsis-response",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "In context, Tim says he may have something else he wants to work on, and Tam’s elliptical “You don’t” means he does not have anything else to work on. «Не хочется» changes this to a statement about his desire, and the following «даже если бы хотелось» repeats that shift. Preserve the implied meaning that he has no other work to do.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“You don’t,” she says matter of factly. “And even if you did, it’s been like 15 hours. That’s where I draw the line.”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Не хочется», — говорит она как ни в чем не бывало. «И даже если бы хотелось, прошло уже часов пятнадцать. Вот тут я и провожу черту».",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "apply-purpose",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The source says the program is meant to encourage promising young people to apply. «Рассчитана на перспективную молодёжь» instead describes whom the program is intended for, omitting the stated aim of encouraging applications.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "The program will be designed to specifically encourage promising young people to apply, both teenagers and college students.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Программа будет специально рассчитана на перспективную молодёжь: и подростков, и студентов.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "know-better",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "“Thinks they know better than him” refers to believing oneself more knowledgeable or better informed; «считает себя умнее него» shifts this to intelligence. A closer rendering would preserve the idea that the person thinks they know more or know better than Tim.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "than someone who thinks they know better than him just because they happen to be older",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "чем с тем, кто считает себя умнее него лишь потому, что старше",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "style": [
+        {
+          "evidence": "Damian’s internal questions in block 062 and the short fragment “It’s a perfect situation.” in block 063; the narration shifts to Tim in block 071.",
+          "source_pattern": "Close third-person narration follows Damian’s thoughts, then shifts to Tim; internal rhetorical questions and short emphatic fragments appear in the narration.",
+          "translation_approach": "Preserve the shifts in focal character and retain interior questions and emphatic fragments rather than smoothing them into explanatory prose."
+        }
+      ],
+      "glossary": [
+        {
+          "notes": "Краткая форма имени Дюк Томас.",
+          "original": "Duke",
+          "translation": "Дюк",
+          "type": "имя персонажа"
+        }
+      ]
     }
   },
   "windows": {
@@ -302,6 +429,10 @@
     "chunk-002": {
       "source_sha256": "ca1e20b2a7cbe7b5b1e27ffc96357fb08dd3e23c5a9e0d8114d36115180a3527",
       "translation_sha256": "0c292da898bda6bd8c9b17e7e3704d268f9e09dbcd7dbeec618846cfa12710a5"
+    },
+    "chunk-003": {
+      "source_sha256": "3f4a9285535fc7c8822e8f00f8e2163dc5e117645965764cbff7497c1600bf35",
+      "translation_sha256": "009cf2e021211a57f82057b9deaf97f1129d83f1e4a952274f2f2534ab8090f3"
     }
   },
   "accepted_review_record_id": null,
