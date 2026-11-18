@@ -660,6 +660,99 @@
           "type": "имя персонажа"
         }
       ]
+    },
+    "chunk-007": {
+      "outcome": "CORRECTIONS_REQUIRED",
+      "report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recorded-pits",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "“Recorded” means documented or entered on record; «известную» broadens this to every known pit. Use a rendering such as «зафиксированную» or «учтённую», preserving the source’s documented scope.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "to every recorded Lazarus Pit",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "каждую известную Яму Лазаря",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "whispers-calque",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«В подполье ходят шёпоты» is an awkward calque. A natural Russian phrasing such as «в подполье шепчутся о Кардинале» or «в подполье ходят слухи о Кардинале» would preserve the hushed-rumor sense.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "There are whispers in the underground about Cardinal.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "В подполье ходят шёпоты о Кардинале.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "style": [],
+      "glossary": [
+        {
+          "notes": "",
+          "original": "Talia",
+          "translation": "Талия",
+          "type": "имя персонажа"
+        },
+        {
+          "notes": "",
+          "original": "Pru",
+          "translation": "Пру",
+          "type": "имя персонажа"
+        },
+        {
+          "notes": "",
+          "original": "Lazarus Pit",
+          "translation": "Яма Лазаря",
+          "type": "вымышленный объект"
+        },
+        {
+          "notes": "",
+          "original": "League",
+          "translation": "Лига",
+          "type": "организация"
+        },
+        {
+          "notes": "",
+          "original": "Gotham",
+          "translation": "Готэм",
+          "type": "вымышленный город"
+        },
+        {
+          "notes": "Неформальное обозначение команды или семьи Бэтмена в этом контексте.",
+          "original": "Bats",
+          "translation": "Бэты",
+          "type": "коллективное прозвище"
+        },
+        {
+          "notes": "В этом контексте обозначает Ра’са.",
+          "original": "the Demon",
+          "translation": "Демон",
+          "type": "эпитет"
+        }
+      ]
     }
   }
 }
