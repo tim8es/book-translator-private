@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "unit_id": "chapter-000047",
+  "review_record_id": "4097973357724105bda1a5810b4a289b",
+  "source_sha256": "d4f24782cb4a00e135a1de9e403e639e749beb532e629bb1e4b4ff6af715fcc0",
+  "translation_sha256": "8894c784a26ca5be52e4233f8c97a4109e6cc1132c75df8388856c5e1edd5c28",
+  "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+  "patches": [
+    {
+      "finding_id": "terminology-1",
+      "operation": "replace",
+      "target_anchor": {
+        "quote": "автомобиля Audi с логотипом Sauber",
+        "occurrence": 0
+      },
+      "replacement": "автомобиля «Ауди» с логотипом «Заубер»"
+    },
+    {
+      "finding_id": "style-1",
+      "operation": "replace",
+      "target_anchor": {
+        "quote": "Он постукивает себя по подбородку, изображая задумчивость",
+        "occurrence": 0
+      },
+      "replacement": "постукивает по подбородку"
+    }
+  ],
+  "glossary": [],
+  "style_guide": []
+}
