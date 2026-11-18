@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 119,
+  "next_sequence": 120,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -13825,6 +13825,112 @@
             },
             "translation_anchor": {
               "quote": "раньшек въезду на шоссе",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "3d46b41547ba4bb1534b23d2294018a434dbe09393f495d2dbd48c3fc0f42c76",
+        "style_guide": "eaa08d42f1f5ea55a06553ec9c1d9e5c6f66b62f9bb6f55b653a52f78659dd74"
+      }
+    },
+    {
+      "record_id": "33b59dd331c04542b635addc78777605",
+      "sequence": 119,
+      "unit_id": "chapter-000044",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "14414f83d5597f583744af54567f80df0eafa7e54b9163387b0dc6a7e5be4494",
+      "translation_sha256": "b404a8b803b0ea0d945c7526e00bfb9b14ff23d539779095a98c1460f4cd012e",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-cf9d9c87",
+      "reviewed_at": "2026-11-18T04:38:21Z",
+      "state_revision": "cb7b495b7bb921c1f5cd8cec471c8b3b80c9d09be3d30167cf56e7bc13212596",
+      "review_commit": "28200d003994bb396bd29f3478b1a9d33def3a74",
+      "correction_round": 4,
+      "supersedes_record_id": "1b8533c27932434ab8022acb2c5cfb6a",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-style-1-v2",
+            "category": "style",
+            "severity": "major",
+            "detail": "Resolved: the translation now identifies Йост as the performer and makes clear that Spotify switches to Kate Bush’s song.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "From Joost’s *Europapa,* Spotify jumps into *Running Up That Hill* by Kate Bush",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "После *Europapa* в исполнении Йоста Spotify переключается на *Running Up That Hill* Кейт Буш",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "1b8533c27932434ab8022acb2c5cfb6a",
+              "finding_id": "recheck-style-1"
+            }
+          },
+          {
+            "id": "meaning-surprise-1-v2",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Resolved: «Неудивительно» preserves the source’s “Unsurprisingly”; the translation no longer suggests the arrival is surprising.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Unsurprisingly, he arrives at the entry ramp",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Неудивительно, он прибывает на три минуты раньше, уже у въезда на шоссе.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "1b8533c27932434ab8022acb2c5cfb6a",
+              "finding_id": "meaning-surprise-1"
+            }
+          },
+          {
+            "id": "structure-arrival-1-v2",
+            "category": "structure",
+            "severity": "major",
+            "detail": "Resolved: the sentence now says he arrives three minutes early at the highway entrance, and the arrival clause is grammatical.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "he arrives at the entry ramp with three minutes of advance",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Неудивительно, он прибывает на три минуты раньше, уже у въезда на шоссе.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "1b8533c27932434ab8022acb2c5cfb6a",
+              "finding_id": "structure-arrival-1"
+            }
+          },
+          {
+            "id": "meaning-playlist-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The coordinated verb «начинает играть» shares «он» as its grammatical subject, which can mean Nico starts playing the song himself. Recast so the song is what starts playing, as in «и начинает звучать».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "as *Everywhere I Go* by Hollywood Undead starts playing.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "и начинает играть *Everywhere I Go* группы Hollywood Undead.",
               "occurrence": 0
             },
             "resolves": null
