@@ -13,7 +13,7 @@
   },
   "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
   "source_sha256": "f06b996448766fcf6faa703ced3ca03b63221f4f81bdb4c395619c69ffa353cd",
-  "updated_at": "2026-11-18T12:10:31.699368+00:00",
+  "updated_at": "2026-11-18T12:10:54.836259+00:00",
   "active": {
     "role": "corrector",
     "chapter": 5,
@@ -87,14 +87,14 @@
   ],
   "provider_call_metric": {
     "unit_id": "chapter-000005",
-    "role": "reviewer",
+    "role": "corrector",
     "route": "primary",
-    "request_chars": 46532,
+    "request_chars": 33639,
     "outcome": "response",
-    "duration_ms": 120208,
-    "prompt_tokens": 10390,
-    "completion_tokens": 6567,
-    "total_tokens": 16957
+    "duration_ms": 21023,
+    "prompt_tokens": 7222,
+    "completion_tokens": 1085,
+    "total_tokens": 8307
   },
   "provider_call_metrics": [
     {
@@ -195,6 +195,17 @@
       "prompt_tokens": 10390,
       "completion_tokens": 6567,
       "total_tokens": 16957
+    },
+    {
+      "unit_id": "chapter-000005",
+      "role": "corrector",
+      "route": "primary",
+      "request_chars": 33639,
+      "outcome": "response",
+      "duration_ms": 21023,
+      "prompt_tokens": 7222,
+      "completion_tokens": 1085,
+      "total_tokens": 8307
     }
   ],
   "last_review_failure": {
@@ -208,16 +219,43 @@
   "review_failure_counts": {
     "chapter-000005:anchor_absent": 1
   },
+  "provider_model_route": "primary",
   "model_response_diagnostics": {
     "finish_reason": "stop",
     "response_format": "json_object",
-    "response_chars": 3207,
+    "response_chars": 731,
     "provider_refusal": false,
-    "prompt_tokens": 10390,
-    "completion_tokens": 6567,
-    "total_tokens": 16957,
+    "prompt_tokens": 7222,
+    "completion_tokens": 1085,
+    "total_tokens": 8307,
     "route": "primary",
-    "role": "reviewer",
+    "role": "corrector",
     "unit_id": "chapter-000005"
+  },
+  "correction_regression_rejections": [
+    {
+      "unit_id": "chapter-000005",
+      "review_record_id": "ae9c5da036a44ffe80ab9ba0b4de21e0",
+      "finding_id": "chunk-001-pronoun-agency",
+      "patch_sha256": "0406bd2dd65897e18616e72d9206fb6ada1035136ee5bc792cb48b9f481e6c7b",
+      "reason": "new-duplicated-phrase",
+      "at": "2026-11-18T12:10:54.836238+00:00"
+    }
+  ],
+  "last_correction_regression": {
+    "unit_id": "chapter-000005",
+    "finding_id": "chunk-001-pronoun-agency",
+    "reason": "new-duplicated-phrase",
+    "evidence": {
+      "count": 1,
+      "examples": [
+        {
+          "tokens": 5,
+          "previous": 1,
+          "candidate": 2,
+          "adjacent": false
+        }
+      ]
+    }
   }
 }
