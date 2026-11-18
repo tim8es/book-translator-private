@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 106,
+  "next_sequence": 107,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -12664,6 +12664,77 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "a263c09393383bd823432fb1021aa6214fe6b08f6964e15ffad31647324ee32b",
+        "style_guide": "542b979599ebe40dfbb11794d47d2fffcc7bde125f2d09c1549f33f618157eff"
+      }
+    },
+    {
+      "record_id": "a1c5e81c18464965af41787bd06e4320",
+      "sequence": 106,
+      "unit_id": "chapter-000039",
+      "outcome": "PASS",
+      "source_sha256": "a514d44fe4ae5621f4260b93c5edc21a70ce6a71b85412d28f03974cf1a5ae5f",
+      "translation_sha256": "f4fc6afbbe9d3e000c23df179136fa9e5ca8fc8973f5ca0e4e070ed4905780e0",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-27d063f3",
+      "reviewed_at": "2026-11-18T02:34:25Z",
+      "state_revision": "e6f1b2ad2b96fd43dca02920192fca8177b653dd7d303af7791c72430a7b2961",
+      "review_commit": "3f78ed20d077858e53fb5896835644e7f8f9aeb9",
+      "correction_round": 1,
+      "supersedes_record_id": "9a4b723c300743fd825460c98629acee",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-omission-1",
+            "category": "omission",
+            "severity": "minor",
+            "detail": "Resolved: the translation now includes Checo's sharp, quick exhale through his nose.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Checo exhales through his nose, sharp and fast.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Чеко резко и быстро выдыхает через нос.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "9a4b723c300743fd825460c98629acee",
+              "finding_id": "omission-1"
+            }
+          },
+          {
+            "id": "recheck-structure-1",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "Resolved: Max's second question now precedes the cheek-rubbing action, preserving the source order without the misplaced duplicate.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "“What do you mean?” Max asks again, softer this time",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Что ты имеешь в виду?» — снова спрашивает Макс, на этот раз тише",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "9a4b723c300743fd825460c98629acee",
+              "finding_id": "structure-1"
+            }
           }
         ]
       },
