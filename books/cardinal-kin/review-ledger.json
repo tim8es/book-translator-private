@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "cardinal-kin",
-  "next_sequence": 21,
+  "next_sequence": 22,
   "records": [
     {
       "record_id": "75dfa72e2b6148208fd5343b6e384999",
@@ -3753,6 +3753,417 @@
               "record_id": "6b5637f6145246b9a3f41ad59da1ec1c",
               "finding_id": "chunk-005-answer-punct"
             }
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "46f051bca3e092dfcbc4ff89ec10624c4b8ae493ef6df867d04ebb6b6e4921c7",
+        "style_guide": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4"
+      }
+    },
+    {
+      "record_id": "c2ed4a4ebb6340ab9c239f25026349ac",
+      "sequence": 21,
+      "unit_id": "chapter-000007",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "fcc6f238fbc3a881a68755e9796c0a618c579ec0d33c92b4d56c6f4f0df5ee97",
+      "translation_sha256": "a256ba574e543cf1f26e1151e42a1fb5d96986bacf7f645129fe9307dc37d3fb",
+      "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "review_contract_revision": "docs/TRANSLATION.md@a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "reviewer_session_id": "auto-6232711b4aec-reviewer-0bf3a012",
+      "reviewed_at": "2026-11-18T15:21:22Z",
+      "state_revision": "83838844865db22170c261ebc70b85b98c45037cc3d63d1ff0b4beb5d3d3418f",
+      "review_commit": "15c8701c8c9598832738af223fc30f84e16f9fe2",
+      "correction_round": 4,
+      "supersedes_record_id": "34f1dcb405e94377b5d3896e990384e6",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "chunk-001-link-punct-r2",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "The period remains inside the inline link. Move it after the end marker so only «примечания» is linked.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "See the end of the chapter for <!-- bt-inline:000001:start -->notes<!-- bt-inline:000001:end -->",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "В конце главы см. <!-- bt-inline:000001:start -->примечания.<!-- bt-inline:000001:end -->",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "34f1dcb405e94377b5d3896e990384e6",
+              "finding_id": "chunk-001-link-punct-r1"
+            }
+          },
+          {
+            "id": "chunk-001-sentence-stop-r2",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "Resolved: the translation now has a sentence-ending period after «вигилантством».",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "It’s nice to have someone who gets it, someone about his age who understands the strain of balancing school and teenage vigilantism.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "подростковым вигилантством. Разумеется, остальные тоже когда-то проходили через это",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "34f1dcb405e94377b5d3896e990384e6",
+              "finding_id": "chunk-001-sentence-stop-1"
+            }
+          },
+          {
+            "id": "chunk-001-well-meaning-r2",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Resolved: «хорошо справиться» preserves the sense of wanting to perform well, rather than shifting toward achieving success.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "I simply… want to do well.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "хочу хорошо справиться",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "34f1dcb405e94377b5d3896e990384e6",
+              "finding_id": "chunk-001-well-meaning-1"
+            }
+          },
+          {
+            "id": "chunk-001-path-meaning-r2",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Resolved: «это не так» preserves the narrower reference to Alfred’s statement about Bruce, without broadening it to everything being different.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "But that will not be true in my case.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Но в моём случае это не так.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "34f1dcb405e94377b5d3896e990384e6",
+              "finding_id": "chunk-001-path-meaning-1"
+            }
+          },
+          {
+            "id": "chunk-001-curt-register-r2",
+            "category": "register",
+            "severity": "minor",
+            "detail": "Resolved: «суше» conveys Damian’s curt manner without adding the sharper or more hostile tone of «резко».",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Damian responds as swiftly and curtly as possible, trying to get the pleasantries over with as soon as possible.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Дэмиан отвечает как можно быстрее и как можно суше, стараясь поскорее покончить с обменом любезностями.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "34f1dcb405e94377b5d3896e990384e6",
+              "finding_id": "chunk-001-curt-register-1"
+            }
+          },
+          {
+            "id": "chunk-001-nod-style-r2",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Resolved: «наконец кивает» conveys the source naturally without the awkwardly literal «один раз кивает».",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "but eventually nods once.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "но наконец кивает.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "34f1dcb405e94377b5d3896e990384e6",
+              "finding_id": "chunk-001-nod-style-1"
+            }
+          },
+          {
+            "id": "chunk-001-simply-omitted",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The translation omits “simply,” which adds emphasis to Damian’s earnest wish to do well. Retain that nuance, for example with «Я просто… хочу хорошо справиться».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "I simply… want to do well.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "хочу хорошо справиться",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "chunk-001-dialogue-capital",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "After the sentence-ending period in the author tag, the next quoted sentence begins with lowercase «хочу». Capitalize it («Я…») to reflect the new sentence in the source.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“...amongst other things,” he admits. “I simply… want to do well.”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«…помимо прочего, — признаётся он. — хочу хорошо справиться».",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "chunk-002-role-recheck",
+            "category": "omission",
+            "severity": "major",
+            "detail": "The previous omission is repaired: «тебе предстоит замещать» explicitly says Damian will fill in for the assistant. I rechecked this passage against the source.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "You’d be filling in for Timothy Drake’s executive assistant.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "тебе предстоит замещать помощника руководителя Тимоти Дрейка",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "34f1dcb405e94377b5d3896e990384e6",
+              "finding_id": "chunk-002-missing-role"
+            }
+          },
+          {
+            "id": "chunk-002-chuckle-action",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "«Chuckles» indicates a quiet laugh, while «усмехается» describes a smile or smirk and loses the audible laugh. Render the action as a quiet laugh, for example «смеётся» or «хмыкает».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“Alright, alright,” he chuckles. “I won’t keep you in suspense.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Ладно, ладно, — усмехается он. — Не буду томить вас ожиданием.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "chunk-002-aware-vs-learned",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "«I was aware of the opening» means Lucius already knew about the vacancy; «я узнал об этой вакансии» instead says he learned of it. Use wording that preserves prior awareness, such as «я знал об этой вакансии».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "For the sake of full transparency, you should know that I was aware of the opening because it is usually filled by my daughter, Tamara.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Для полной ясности тебе следует знать: я узнал об этой вакансии, потому что обычно её занимает моя дочь Тамара.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "chunk-002-early-informal-you",
+            "category": "register",
+            "severity": "minor",
+            "detail": "The translation switches to informal «ты» in this exchange and continues using it before the source describes Lucius becoming less formal and more personable in block 053. Earlier dialogue uses formal address. Preserve «вы» through the still-professional exchange and switch only when the source signals that change.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "But this isn’t what I wanted,” Damian protests, his tone sharpening. “You said this would be an opportunity to  *learn*  from Drake.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "— Но это не то, чего я хотел, — возражает Дэмиан, и голос его становится резче. — Ты сказал, что это будет возможность *учиться* у Дрейка.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "chunk-003-deadlines-recheck",
+            "category": "omission",
+            "severity": "minor",
+            "detail": "Resolved: the current translation explicitly includes the quarter's deadlines as «основными дедлайнами на квартал».",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "get most of the major decisions and deadlines for the quarter out of the way",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "принять большинство важных решений и разобраться с основными дедлайнами на квартал",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "34f1dcb405e94377b5d3896e990384e6",
+              "finding_id": "chunk-003-deadlines"
+            }
+          },
+          {
+            "id": "chunk-003-adverb-recheck",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Resolved: «говорит она невозмутимо» supplies a complete dialogue tag.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "“You don’t,” she says matter of factly.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Ничего другого у тебя нет», — говорит она невозмутимо.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "34f1dcb405e94377b5d3896e990384e6",
+              "finding_id": "chunk-003-bare-adverb"
+            }
+          },
+          {
+            "id": "chunk-003-knows-better-recheck",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Resolved: «разбирается лучше Тима» conveys believing one understands or knows better, rather than simply possessing more knowledge.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "someone who thinks they know better than him just because they happen to be older",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "кто считает, будто разбирается лучше Тима лишь потому, что старше его",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "34f1dcb405e94377b5d3896e990384e6",
+              "finding_id": "chunk-003-knows-better"
+            }
+          },
+          {
+            "id": "chunk-004-pronoun-recheck",
+            "category": "referent",
+            "severity": "minor",
+            "detail": "Resolved: the current translation avoids assigning the intern a gender before Tim sees the name.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "The contract is already filled in and signed by the other parties; Fox, the intern themself, and their parent, an acknowledgment of their child’s responsibilities.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "самим стажёром и родителем, подтвердившим, что ребёнок отвечает за выполнение своих обязанностей.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "34f1dcb405e94377b5d3896e990384e6",
+              "finding_id": "chunk-004-gender-pronoun"
+            }
+          },
+          {
+            "id": "chunk-004-fumes-recheck",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Resolved: «работы на последних резервах» replaces the awkward calque while preserving the sense of prolonged exhaustion.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "His brain suddenly clicks back into gear after going on fumes for so long, his mind replaying back to him what he just saw.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Мозг Тима вдруг снова включается после столь долгой работы на последних резервах, а сознание прокручивает увиденное.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "34f1dcb405e94377b5d3896e990384e6",
+              "finding_id": "chunk-004-calque-095"
+            }
+          },
+          {
+            "id": "chunk-004-syntax-recheck",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Resolved: the current translation supplies the finite predicate «стоит» and retains the source’s emphasis.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "He looks back over to the printed names and signatures next to them, and there, unmistakably, inexplicably, is Bruce Wayne’s signature next to his son’s.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Он снова смотрит на напечатанные имена и стоящие рядом подписи — и там, несомненно, необъяснимо стоит подпись Брюса Уэйна рядом с подписью его сына.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "34f1dcb405e94377b5d3896e990384e6",
+              "finding_id": "chunk-004-syntax-097"
+            }
+          },
+          {
+            "id": "chunk-005-match-fixed",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The comparison is now grammatical and clearly conveys that nobody else can match the Riddler intellectually; the prior issue is resolved.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "no one else able to match his intellect",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "больше никто не может сравниться с Загадочником по интеллекту",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "34f1dcb405e94377b5d3896e990384e6",
+              "finding_id": "chunk-005-riddler-match"
+            }
+          },
+          {
+            "id": "chunk-005-quote-fixed",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "The second spoken sentence is now enclosed in quotation marks, resolving the prior issue.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "“Cuckoo,” she tells Bluejay and Robin over comms almost instantly. “The answer is a Cuckoo bird.”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Кукушка», — почти сразу говорит она Синей Сойке и Робину по связи. — «Ответ — птица-кукушка».",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "34f1dcb405e94377b5d3896e990384e6",
+              "finding_id": "chunk-005-answer-quotes"
+            }
+          },
+          {
+            "id": "chunk-005-riddler-omission",
+            "category": "omission",
+            "severity": "major",
+            "detail": "The translation stops after the comparison, omitting the source's statement that the Riddler is growing increasingly frustrated. Complete the sentence and restore its ending.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "But with Cardinal so rarely on the streets—and no one else able to match his intellect—Riddler is growing increasingly frustrated.",
+              "occurrence": 0
+            },
+            "translation_anchor": null,
+            "resolves": null
           }
         ]
       },
