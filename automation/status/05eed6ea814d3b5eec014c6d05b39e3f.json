@@ -38,7 +38,7 @@
   },
   "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
   "source_sha256": "12e210ce5a95daf56a97ada583ec15c274780c4ddfa7fb92da6a88c67f7c403d",
-  "updated_at": "2026-11-18T00:43:22.043115+00:00",
+  "updated_at": "2026-11-18T00:43:56.724920+00:00",
   "active": {
     "role": "corrector",
     "chapter": 38,
@@ -179,13 +179,57 @@
   "model_response_diagnostics": {
     "finish_reason": "stop",
     "response_format": "json_object",
-    "response_chars": 462,
+    "response_chars": 689,
     "provider_refusal": false,
-    "prompt_tokens": 8248,
-    "completion_tokens": 713,
-    "total_tokens": 8961,
+    "prompt_tokens": 8224,
+    "completion_tokens": 1530,
+    "total_tokens": 9754,
     "route": "primary",
     "role": "corrector",
     "unit_id": "chapter-000038"
+  },
+  "correction_regression_rejections": [
+    {
+      "unit_id": "chapter-000038",
+      "review_record_id": "475167827a954b8eac60100980883ea8",
+      "finding_id": "style-3",
+      "patch_sha256": "3e5cc28dfbb50ac16950dcea9dead7479091f47c0fff522946571363a8dd3f29",
+      "reason": "new-duplicated-phrase",
+      "at": "2026-11-18T00:43:56.724899+00:00"
+    }
+  ],
+  "last_correction_regression": {
+    "unit_id": "chapter-000038",
+    "finding_id": "style-3",
+    "reason": "new-duplicated-phrase",
+    "evidence": {
+      "count": 8,
+      "examples": [
+        {
+          "tokens": 12,
+          "previous": 1,
+          "candidate": 2,
+          "adjacent": false
+        },
+        {
+          "tokens": 12,
+          "previous": 1,
+          "candidate": 2,
+          "adjacent": false
+        },
+        {
+          "tokens": 12,
+          "previous": 1,
+          "candidate": 2,
+          "adjacent": false
+        },
+        {
+          "tokens": 12,
+          "previous": 1,
+          "candidate": 2,
+          "adjacent": false
+        }
+      ]
+    }
   }
 }
