@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "unit_id": "chapter-000038",
+  "review_record_id": "a4ad5ff812bc4d008202747b9f722521",
+  "source_sha256": "433cbe26cee5137ed0d25867032c35db0a89b88ecb5057440bbc8e2698cafac7",
+  "translation_sha256": "f5b348d95148f2ec7f50fe364d20c2ee3e9562f32b7117fa1a786a31d0f2c77e",
+  "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+  "patches": [
+    {
+      "finding_id": "recheck-style-3",
+      "operation": "replace",
+      "target_anchor": {
+        "quote": "Когда он наконец заговорил, его голос прозвучал тихо, с придыханием:",
+        "occurrence": 0
+      },
+      "replacement": "Когда он наконец говорит, его голос звучит тихо, с придыханием:"
+    },
+    {
+      "finding_id": "recheck-meaning-3",
+      "operation": "replace",
+      "target_anchor": {
+        "quote": "Прости, что всё стало странно.",
+        "occurrence": 0
+      },
+      "replacement": "Прости, что я всё это так странно обставил."
+    },
+    {
+      "finding_id": "recheck-structure-3",
+      "operation": "replace",
+      "target_anchor": {
+        "quote": "Пожалуйста, больше ничего не говори. И так всё плохо. Не делай ещё хуже.",
+        "occurrence": 0
+      },
+      "replacement": "*Пожалуйста, больше ничего не говори. И так всё плохо. Не делай ещё хуже.*"
+    }
+  ],
+  "glossary": [],
+  "style_guide": []
+}
