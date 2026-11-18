@@ -3,7 +3,7 @@
   "job_id": "6232711b4aec0c3664ad3721f1b87061",
   "book_slug": "cardinal-kin",
   "state": "running",
-  "phase": "claimed",
+  "phase": "model-call-reserved",
   "failures": 0,
   "correction_rounds": {
     "chapter-000001": 2,
@@ -15,7 +15,7 @@
   },
   "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
   "source_sha256": "f06b996448766fcf6faa703ced3ca03b63221f4f81bdb4c395619c69ffa353cd",
-  "updated_at": "2026-11-18T15:49:12.995506+00:00",
+  "updated_at": "2026-11-18T15:49:16.060825+00:00",
   "active": {
     "role": "corrector",
     "chapter": 8,
@@ -23,26 +23,21 @@
     "unit_id": "chapter-000008"
   },
   "structural_helper_revision": "4c584fe5534871cd05aa851d9b7bdbfa696d0edd",
-  "model_calls_started": 190,
+  "model_calls_started": 191,
   "prompt_context": {
-    "role": "reviewer",
+    "role": "corrector",
     "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
     "loaded_contracts": [
       "AGENTS.md",
       "docs/TRANSLATION.md",
-      "docs/REVIEWER.md"
+      "docs/TRANSLATOR.md"
     ],
     "glossary_sha256": "ba3e390941710d55f789871f95f40110ef56af4a1348dd907202dcb9ccf4f671",
     "style_guide_sha256": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4",
-    "system_chars": 27925,
-    "user_chars": 25746,
-    "review_context": "independent_session",
-    "execution_mode": "bounded-review-chunks",
-    "review_helper_revision": "review-chunks-source-stable-v1",
-    "incremental_stage_version": 2,
-    "reused_clean_chunks": 0,
-    "chunk_id": "chunk-007",
-    "chunk_count": 7
+    "system_chars": 20126,
+    "user_chars": 13960,
+    "correction_mode": "bounded-review-patches",
+    "batch_finding_count": 2
   },
   "memory_glossary_saved": 40,
   "pending_style": [],
@@ -51,11 +46,11 @@
   },
   "correction_extensions": {},
   "correction_finding_triage": {
-    "unit_id": "chapter-000007",
-    "review_record_id": "34f1dcb405e94377b5d3896e990384e6",
+    "unit_id": "chapter-000008",
+    "review_record_id": "37256be23edf44498b5ebe0686e0eca3",
     "counts": {
-      "required": 10,
-      "adjudicate": 5,
+      "required": 9,
+      "adjudicate": 8,
       "review_required": 0
     }
   },
@@ -717,14 +712,14 @@
   },
   "adaptive_correction_budget": {
     "schema_version": 1,
-    "group_size": 1,
+    "group_size": 2,
     "max_calls_per_checkpoint": 2,
-    "pending_count": 1,
+    "pending_count": 17,
     "risk_class": "mixed",
-    "lower_bound_remaining_calls": 1,
-    "current_selection_size": 1,
-    "unit_id": "chapter-000007",
-    "review_record_id": "34f1dcb405e94377b5d3896e990384e6"
+    "lower_bound_remaining_calls": 6,
+    "current_selection_size": 2,
+    "unit_id": "chapter-000008",
+    "review_record_id": "37256be23edf44498b5ebe0686e0eca3"
   },
   "review_incremental_rebases": [
     {
