@@ -298,12 +298,143 @@
           "type": "резиденция"
         }
       ]
+    },
+    "chunk-002": {
+      "outcome": "CORRECTIONS_REQUIRED",
+      "report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "gender-net",
+            "category": "referent",
+            "severity": "minor",
+            "detail": "The source uses singular “them” for Cardinal, whose gender is explicitly unknown later in this core. «Его» assigns a male gender. Rephrase to preserve the uncertainty, for example «сеть снабжает Кардинала информацией».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Cardinal has some sort of underground network feeding them information",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "снабжающая его информацией",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "missing-q",
+            "category": "omission",
+            "severity": "major",
+            "detail": "Bluejay’s question about where the lead came from is omitted, though Barbara’s reply remains. Restore the question so the exchange is complete.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“Where did the lead come from?”",
+              "occurrence": 0
+            },
+            "translation_anchor": null,
+            "resolves": null
+          },
+          {
+            "id": "age-range",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "“Mid to late twenties” gives a broader age range than «двадцати пяти — двадцати шести», which narrows it to 25–26. Preserve the source’s approximate range.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "in their mid to late twenties at the youngest",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "не меньше двадцати пяти — двадцати шести лет",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "gender-age",
+            "category": "referent",
+            "severity": "minor",
+            "detail": "The source does not identify Cardinal’s gender, and this core explicitly says it is unknown. «Он» resolves that ambiguity; the sentence can be rephrased without a gendered pronoun.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "more likely in their 30s",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "а скорее всего, он уже за тридцать",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "gender-sight",
+            "category": "referent",
+            "severity": "minor",
+            "detail": "The source says there is no clear picture, without assigning Cardinal a gender. «О нём» adds a male-gendered reference; consider a neutral rephrasing such as «чёткого изображения так и нет».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "but no real clear picture.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "но чёткого представления о нём так и нет",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "gender-combat",
+            "category": "referent",
+            "severity": "minor",
+            "detail": "The source again uses gender-neutral “they” for Cardinal, while «разбирался лично» uses masculine agreement. A construction such as «с которыми Кардиналу доводилось разбираться лично» would preserve the uncertainty.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "criminals they’ve personally dealt with",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "с которыми разбирался лично",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "bluejay-name",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "Bluejay is rendered as «Голубая Сойка» here, but the established glossary rendering and its earlier use in this core are «Синяя Сойка». Make the name consistent.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“There’s nothing wrong with it!” Bluejay insists.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«В этом нет ничего плохого!» — настаивает Голубая Сойка.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "style": [],
+      "glossary": []
     }
   },
   "windows": {
     "chunk-001": {
       "source_sha256": "0508675e5160b0770faaf40c849c8c09f5889772c3eccb4f431b7073ba4fea86",
       "translation_sha256": "27133b18c2e0ffaee3c56e031323dbe07c28bb5f84eac3ca3bfaa38c7e3d5103"
+    },
+    "chunk-002": {
+      "source_sha256": "fe58cd0de898c4051cbe51cc1affd23f88d9a89b8483c2f2cc120335d9bee972",
+      "translation_sha256": "118cd54f299c15a43a1bfea9c7db7fdb14e916f95bc717447be10a0a896bd521"
     }
   },
   "accepted_review_record_id": null,
