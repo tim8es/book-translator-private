@@ -3,7 +3,7 @@
   "job_id": "6232711b4aec0c3664ad3721f1b87061",
   "book_slug": "cardinal-kin",
   "state": "running",
-  "phase": "corrector-completed",
+  "phase": "claimed",
   "failures": 0,
   "correction_rounds": {
     "chapter-000001": 2,
@@ -16,8 +16,13 @@
   },
   "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
   "source_sha256": "f06b996448766fcf6faa703ced3ca03b63221f4f81bdb4c395619c69ffa353cd",
-  "updated_at": "2026-11-18T15:52:37.052990+00:00",
-  "active": null,
+  "updated_at": "2026-11-18T15:52:39.893711+00:00",
+  "active": {
+    "role": "reviewer",
+    "chapter": 8,
+    "session_id": "auto-6232711b4aec-reviewer-81544ac5",
+    "unit_id": "chapter-000008"
+  },
   "structural_helper_revision": "4c584fe5534871cd05aa851d9b7bdbfa696d0edd",
   "model_calls_started": 199,
   "prompt_context": {
@@ -686,8 +691,8 @@
   "queue_snapshot": {
     "extracted": 19,
     "reviewed": 2,
-    "awaiting_review": 0,
-    "correction_candidates": 6,
+    "awaiting_review": 1,
+    "correction_candidates": 5,
     "awaiting_promotion": 0
   },
   "review_partition_targets": {
