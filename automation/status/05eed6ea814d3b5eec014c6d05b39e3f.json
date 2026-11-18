@@ -45,7 +45,7 @@
   },
   "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
   "source_sha256": "12e210ce5a95daf56a97ada583ec15c274780c4ddfa7fb92da6a88c67f7c403d",
-  "updated_at": "2026-11-18T04:27:23.640660+00:00",
+  "updated_at": "2026-11-18T04:29:12.614629+00:00",
   "active": {
     "role": "corrector",
     "chapter": 44,
@@ -194,17 +194,43 @@
       "patch_sha256": "176ecb0094abb1b1be0b70f43d6e7111d3621f9d503734cf9af76edd77e0610b",
       "reason": "new-duplicated-phrase",
       "at": "2026-11-18T04:22:49.216759+00:00"
+    },
+    {
+      "unit_id": "chapter-000044",
+      "review_record_id": "6d6b8f1ca2604a74bc23a98c1169846b",
+      "finding_id": "recheck-style-1",
+      "patch_sha256": "9750f42f66eaa28a686a3ad156e5f0692df3d50e632d1abf0c1067b54b79a37d",
+      "reason": "new-duplicated-phrase",
+      "at": "2026-11-18T04:29:12.614610+00:00"
     }
   ],
   "last_correction_regression": {
     "unit_id": "chapter-000044",
-    "finding_id": "style-1",
+    "finding_id": "recheck-style-1",
     "reason": "new-duplicated-phrase",
     "evidence": {
-      "count": 1,
+      "count": 7,
       "examples": [
         {
-          "tokens": 9,
+          "tokens": 12,
+          "previous": 1,
+          "candidate": 2,
+          "adjacent": false
+        },
+        {
+          "tokens": 12,
+          "previous": 1,
+          "candidate": 2,
+          "adjacent": false
+        },
+        {
+          "tokens": 12,
+          "previous": 1,
+          "candidate": 2,
+          "adjacent": false
+        },
+        {
+          "tokens": 12,
           "previous": 1,
           "candidate": 2,
           "adjacent": false
@@ -219,16 +245,17 @@
       "style-1"
     ]
   },
+  "provider_model_route": "primary",
   "model_response_diagnostics": {
     "finish_reason": "stop",
     "response_format": "json_object",
-    "response_chars": 4224,
+    "response_chars": 522,
     "provider_refusal": false,
-    "prompt_tokens": 15831,
-    "completion_tokens": 7715,
-    "total_tokens": 23546,
+    "prompt_tokens": 16745,
+    "completion_tokens": 4975,
+    "total_tokens": 21720,
     "route": "primary",
-    "role": "reviewer",
+    "role": "corrector",
     "unit_id": "chapter-000044"
   }
 }
