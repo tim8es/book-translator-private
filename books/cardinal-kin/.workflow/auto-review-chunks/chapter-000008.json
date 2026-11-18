@@ -294,6 +294,56 @@
       },
       "style": [],
       "glossary": []
+    },
+    "chunk-003": {
+      "outcome": "CORRECTIONS_REQUIRED",
+      "report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "discouraging-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The Russian construction «насколько неуместно и обескураживающе он обращался» is awkward: the adverb «обескураживающе» modifies how he treated Damian, rather than describing the discouraging effect of his behavior. Consider «насколько неуместным и обескураживающим было его поведение по отношению к Дэмиану».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "laying out exactly how inappropriate and discouraging his behavior towards Damian has been.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "перечисляя, насколько неуместно и обескураживающе он обращался с Дэмианом.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "checkins-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Ежедневные сверки» is an unnatural rendering here and suggests reconciliation or verification rather than routine check-ins. Consider «ежедневные встречи» or another natural phrase for their regular check-ins.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "They go through their daily check-ins but it’s purely business",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Они проходят свои ежедневные сверки, но всё это — чисто деловое общение",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "style": [],
+      "glossary": []
     }
   },
   "windows": {
@@ -304,6 +354,10 @@
     "chunk-002": {
       "source_sha256": "a6b3bc2d49f00ad77b2099752c07dc0cbf5a314f70275b4d2d76bf6dde6eb2c6",
       "translation_sha256": "cd187254abb3845f9a81f753ea597d60816e17f07d126556275ef697b97782c3"
+    },
+    "chunk-003": {
+      "source_sha256": "011e10eff534bb281781857e24e4227f87efbd85b9cd528d0786394d8e3c152d",
+      "translation_sha256": "874f9113071b7efc2c4829b475098623e5c259252da2de8d3c0d25cf3de983de"
     }
   },
   "accepted_review_record_id": null,
