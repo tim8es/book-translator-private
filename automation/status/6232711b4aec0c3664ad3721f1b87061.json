@@ -76,9 +76,18 @@
     "role": "reviewer",
     "attempts": 5,
     "code": "http_503",
-    "not_before": "2026-11-19T09:44:59.035228+00:00"
+    "not_before": "2026-11-18T09:44:59.035250+00:00"
   },
   "last_error_code": "http_503",
   "blocked_unit_id": "chapter-000005",
-  "last_error": "model HTTP status 503"
+  "last_error": "model HTTP status 503",
+  "operator_provider_retry_audit": [
+    {
+      "previous_not_before": "2026-11-19T09:44:59.035228+00:00",
+      "requested_not_before": "2026-11-18T09:44:59.035250+00:00",
+      "attempts": 5,
+      "reason": "operator-authorized-retry-after-adaptive-runtime-upgrade",
+      "runtime_revision": "508e7aea7bcc291d3423770d457d1c94c22649fb"
+    }
+  ]
 }
