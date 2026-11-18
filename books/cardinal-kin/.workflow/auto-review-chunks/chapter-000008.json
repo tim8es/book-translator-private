@@ -429,6 +429,75 @@
       },
       "style": [],
       "glossary": []
+    },
+    "chunk-003": {
+      "outcome": "CORRECTIONS_REQUIRED",
+      "report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-discouraging",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The earlier awkward construction has been repaired: «насколько неуместным и обескураживающим было его поведение» correctly describes the effect of his behavior.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "laying out exactly how inappropriate and discouraging his behavior towards Damian has been.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "перечисляя, насколько неуместным и обескураживающим было его поведение по отношению к Дэмиану.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "37256be23edf44498b5ebe0686e0eca3",
+              "finding_id": "chunk-003-discouraging-1"
+            }
+          },
+          {
+            "id": "recheck-checkins",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The earlier unnatural «ежедневные сверки» has been replaced with the natural «ежедневные встречи».",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "They go through their daily check-ins",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Они проводят ежедневные встречи",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "37256be23edf44498b5ebe0686e0eca3",
+              "finding_id": "chunk-003-checkins-1"
+            }
+          },
+          {
+            "id": "purely-business",
+            "category": "omission",
+            "severity": "minor",
+            "detail": "The source says their daily check-ins are purely business, but the translation does not convey that they remain strictly professional.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "but it’s purely business",
+              "occurrence": 0
+            },
+            "translation_anchor": null,
+            "resolves": null
+          }
+        ]
+      },
+      "style": [],
+      "glossary": []
     }
   },
   "windows": {
@@ -439,6 +508,10 @@
     "chunk-002": {
       "source_sha256": "a6b3bc2d49f00ad77b2099752c07dc0cbf5a314f70275b4d2d76bf6dde6eb2c6",
       "translation_sha256": "5b68a5f3f4d55b8fe461fc6f1b59e87507522dc1960cedce9a9c856d2c20d4e8"
+    },
+    "chunk-003": {
+      "source_sha256": "011e10eff534bb281781857e24e4227f87efbd85b9cd528d0786394d8e3c152d",
+      "translation_sha256": "c44b0193836427a98a12cabd159a09c14926767531a083a548decd0dede6f939"
     }
   },
   "accepted_review_record_id": null,
