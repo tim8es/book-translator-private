@@ -73,3 +73,27 @@ Use this file for recurring names, places, organizations, terms, nicknames, titl
 | Red Bull | Ред Булл | организация | Логотип на спортивной сумке Макса. |
 | Lancito | Лэнсито | ласкательное прозвище | Уменьшительная форма имени Лэнс, отображаемая в переписке. |
 | frenado alfonso | френадо альфонсо | имя пользователя | Отображаемое имя собеседника в переписке. |
+| Enzo | Энцо | имя | Упомянут как человек, с которым собеседник собирается пойти на пробежку. |
+| Hollywood Undead | Hollywood Undead | музыкальная группа | Группа, исполняющая песню Everywhere I Go. |
+| Everywhere I Go | Everywhere I Go | название песни | Песня Hollywood Undead в плейлисте Нико. |
+| music i should know | музыка, которую мне стоит знать | название плейлиста | Плейлист, созданный Габи для Нико. |
+| Juice WRLD | Juice WRLD | музыкант | Исполнитель песни Lucid Dreams. |
+| Lucid Dreams | Lucid Dreams | название песни | Песня Juice WRLD, звучащая в машине. |
+| Sons of Charlie | Sons of Charlie | музыкальная группа | Группа, исполняющая песню The Enemy Between My Ears. |
+| The Enemy Between My Ears | The Enemy Between My Ears | название песни | Песня Sons of Charlie, звучащая в машине. |
+| Braunschweig | Брауншвейг | город |  |
+| Porsche | Порше | марка автомобиля |  |
+| Snickers | Snickers | торговая марка | Батончик, который Нико покупает на заправке. |
+| I WANNA BE YOUR SLAVE | I WANNA BE YOUR SLAVE | название песни | Песня Måneskin, звучащая в машине. |
+| Dortmund | Дортмунд | город |  |
+| Moers | Мёрс | город |  |
+| Netherlands | Нидерланды | страна |  |
+| Venlo | Венло | город |  |
+| Eindhoven | Эйндховен | город |  |
+| Belgium | Бельгия | страна |  |
+| Antwerpen | Антверпен | город |  |
+| Brussel | Брюссель | город |  |
+| Europapa | Europapa | название песни | Песня Joost, звучащая в машине. |
+| Running Up That Hill | Running Up That Hill | название песни | Песня Кейт Буш. |
+| Kate Bush | Кейт Буш | музыкант | Исполнительница песни Running Up That Hill. |
+| Stranger Things | Очень странные дела | название сериала | Сериал, в котором звучит Running Up That Hill. |
