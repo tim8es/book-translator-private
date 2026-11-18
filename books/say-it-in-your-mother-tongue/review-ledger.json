@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 113,
+  "next_sequence": 114,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -13318,6 +13318,58 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "3a1afe10010bbd929ba39a89ae200c8001fb10312dd34931d118a846c2e52a55",
+        "style_guide": "eaa08d42f1f5ea55a06553ec9c1d9e5c6f66b62f9bb6f55b653a52f78659dd74"
+      }
+    },
+    {
+      "record_id": "e3e7c01c85e340bc92b06516db3f9cbb",
+      "sequence": 113,
+      "unit_id": "chapter-000042",
+      "outcome": "PASS",
+      "source_sha256": "faeae882275d9415110a38f5bde000e3d176675579c6e83923c4d76dea47294d",
+      "translation_sha256": "cb5ce2ef654679c4458912f773b32894a03b3ab1a7a7f68ebcd590133653543f",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-7d8e9868",
+      "reviewed_at": "2026-11-18T03:36:43Z",
+      "state_revision": "062b938ab194fce6f23bb6cd53ee147843262b48f7907c44a2c08639f769181f",
+      "review_commit": "125871b18371d3c32de191c8616e542f155e5ff3",
+      "correction_round": 1,
+      "supersedes_record_id": "c628a5b63b1c4173a2302f4db0bd134f",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "style-2",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The revised «не разговаривают ни когда…, ни когда…, ни когда…» fixes the awkward coordination identified previously and preserves the source’s repeated negation.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "They don’t speak when the Audi leaves the parking lot, not when they enter an *Autobahn* for which Nico specifically bought an e-vignette, not when they pass the Zürich airport.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Они не разговаривают ни когда «Ауди» выезжает с парковки, ни когда въезжают на *автобан*, для которого Нико специально купил электронную виньетку, ни когда проезжают мимо аэропорта Цюриха.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "c628a5b63b1c4173a2302f4db0bd134f",
+              "finding_id": "style-1"
+            }
           }
         ]
       },
