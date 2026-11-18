@@ -3,7 +3,7 @@
   "job_id": "05eed6ea814d3b5eec014c6d05b39e3f",
   "book_slug": "say-it-in-your-mother-tongue",
   "state": "running",
-  "phase": "correction-batch-staged",
+  "phase": "corrector-completed",
   "failures": 0,
   "correction_rounds": {
     "chapter-000001": 1,
@@ -42,17 +42,13 @@
     "chapter-000042": 1,
     "chapter-000043": 1,
     "chapter-000044": 3,
-    "chapter-000045": 2
+    "chapter-000045": 2,
+    "chapter-000046": 1
   },
   "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
   "source_sha256": "12e210ce5a95daf56a97ada583ec15c274780c4ddfa7fb92da6a88c67f7c403d",
-  "updated_at": "2026-11-18T05:14:40.385300+00:00",
-  "active": {
-    "role": "corrector",
-    "chapter": 46,
-    "session_id": "auto-05eed6ea814d-corrector-ee610aa5",
-    "unit_id": "chapter-000046"
-  },
+  "updated_at": "2026-11-18T05:14:41.995798+00:00",
+  "active": null,
   "recoveries": [
     {
       "action": "auto-retry-corrected-structural-preflight",
@@ -156,7 +152,7 @@
   ],
   "memory_style_saved": 11,
   "glossary_evidence_rejected": 15,
-  "glossary_conflicts_rejected": 1,
+  "glossary_conflicts_rejected": 2,
   "glossary_proposals_deferred": 0,
   "last_review_failure": {
     "unit_id": "chapter-000046",
@@ -304,13 +300,6 @@
       0
     ],
     "action": "operator-attention-no-pass"
-  },
-  "provider_model_route": "primary",
-  "correction_batch_progress": {
-    "unit_id": "chapter-000046",
-    "review_record_id": "5081dff2bbb44e0aa582cf006cc631e9",
-    "completed": 4,
-    "total": 4
   },
   "model_response_diagnostics": {
     "finish_reason": "stop",
