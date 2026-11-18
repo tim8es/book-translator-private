@@ -498,6 +498,84 @@
       },
       "style": [],
       "glossary": []
+    },
+    "chunk-004": {
+      "outcome": "CORRECTIONS_REQUIRED",
+      "report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "arrival-time-r",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Проверено: формулировка «пока доставляли еду» сохраняет исходный интервал ожидания доставки.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Tim busies himself as best he can in the 15 minutes it takes for the food to arrive.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "за те пятнадцать минут, пока доставляли еду",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "37256be23edf44498b5ebe0686e0eca3",
+              "finding_id": "chunk-004-arrival-timing"
+            }
+          },
+          {
+            "id": "awkwardness-r",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Проверено: «Не то чтобы было неловко, но и комфортно тоже не было» естественно передаёт противопоставление в оригинале.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "It isn’t exactly awkward but it’s not comfortable either.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Не то чтобы было неловко, но и комфортно тоже не было.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "37256be23edf44498b5ebe0686e0eca3",
+              "finding_id": "chunk-004-awkward-phrase"
+            }
+          },
+          {
+            "id": "meal-agent",
+            "category": "referent",
+            "severity": "minor",
+            "detail": "В переводе «и тот передал ему его еду» местоимение «тот» допускает прочтение, что еду передал Дэмиан. По контексту Тим передаёт Дэмиану его порцию. Укажите Тима прямо, например: «Дэмиан сел на диван напротив Тима, и Тим передал ему его порцию».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Damian sits on the couch across from Tim as he hands him his food.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Дэмиан сел на диван напротив Тима, и тот передал ему его еду.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "style": [
+        {
+          "evidence": "“But what’s the alternative?”; “And that’s something he will never do.”",
+          "source_pattern": "Tim’s close internal narration uses rhetorical questions and short, emphatic turns.",
+          "translation_approach": "Сохранять риторические вопросы и короткие фразы, не заменяя их разъяснительным пересказом."
+        }
+      ],
+      "glossary": []
     }
   },
   "windows": {
@@ -512,6 +590,10 @@
     "chunk-003": {
       "source_sha256": "011e10eff534bb281781857e24e4227f87efbd85b9cd528d0786394d8e3c152d",
       "translation_sha256": "c44b0193836427a98a12cabd159a09c14926767531a083a548decd0dede6f939"
+    },
+    "chunk-004": {
+      "source_sha256": "e8aa15518c29da168a36e2ffd711272938f59d9c27c5bdfb01f02e120e5c1403",
+      "translation_sha256": "4a91767129046a2f0fe9ac7f3b41738c15a708091a2d5eb08f6c26cddc92d2da"
     }
   },
   "accepted_review_record_id": null,
