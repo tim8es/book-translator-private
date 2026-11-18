@@ -3,7 +3,7 @@
   "job_id": "05eed6ea814d3b5eec014c6d05b39e3f",
   "book_slug": "say-it-in-your-mother-tongue",
   "state": "running",
-  "phase": "claimed",
+  "phase": "model-call-reserved",
   "failures": 1,
   "correction_rounds": {
     "chapter-000001": 1,
@@ -42,7 +42,7 @@
   },
   "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
   "source_sha256": "12e210ce5a95daf56a97ada583ec15c274780c4ddfa7fb92da6a88c67f7c403d",
-  "updated_at": "2026-11-18T03:17:25.003493+00:00",
+  "updated_at": "2026-11-18T03:17:56.161575+00:00",
   "active": {
     "role": "reviewer",
     "chapter": 41,
@@ -71,7 +71,7 @@
   ],
   "structural_span_retries": 1,
   "structural_helper_revision": "4c584fe5534871cd05aa851d9b7bdbfa696d0edd",
-  "model_calls_started": 553,
+  "model_calls_started": 554,
   "prompt_context": {
     "role": "reviewer",
     "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
@@ -83,9 +83,8 @@
     "glossary_sha256": "0ae07202278012f087bc1209a1bf021683d6192b03137396f40ea854e55f4226",
     "style_guide_sha256": "eaa08d42f1f5ea55a06553ec9c1d9e5c6f66b62f9bb6f55b653a52f78659dd74",
     "system_chars": 28761,
-    "user_chars": 47962,
-    "review_context": "independent_session",
-    "anchor_repair": "exact-quote-validation"
+    "user_chars": 42118,
+    "review_context": "independent_session"
   },
   "structural_helper_migrations": [
     {
