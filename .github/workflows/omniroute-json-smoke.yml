@@ -3,6 +3,10 @@ run-name: OmniRoute JSON response validation
 
 on:
   workflow_dispatch:
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/omniroute-json-smoke.yml'
   push:
     branches: [main]
     paths:
@@ -69,3 +73,49 @@ jobs:
           print("Finish reason:", diagnostics.get("finish_reason", "unavailable"))
           print("Output tokens:", diagnostics.get("completion_tokens", "unavailable"))
           PY
+
+  quality-capacity:
+    if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && github.head_ref == 'experiment/quality-capacity-20261118'
+    runs-on: ubuntu-latest
+    timeout-minutes: 70
+    concurrency:
+      group: live-quality-capacity-test
+      cancel-in-progress: false
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Checkout immutable public candidate
+        uses: actions/checkout@v4
+        with:
+          repository: tim8es/book-translator
+          ref: 294494ac4535ecf41abfd8038827a2c17e0fc6a7
+          path: candidate
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Verify exact candidate revision
+        working-directory: candidate
+        run: test "$(git rev-parse HEAD)" = "294494ac4535ecf41abfd8038827a2c17e0fc6a7"
+      - name: Measure two independently reviewed full chapters within 3600 seconds
+        env:
+          OMNIROUTE_BASE_URL: ${{ vars.OMNIROUTE_BASE_URL }}
+          OMNIROUTE_API_KEY: ${{ secrets.OMNIROUTE_API_KEY }}
+          OMNIROUTE_TRANSLATOR_MODEL: ${{ vars.OMNIROUTE_TRANSLATOR_MODEL }}
+          OMNIROUTE_REVIEWER_MODEL: ${{ vars.OMNIROUTE_REVIEWER_MODEL }}
+          OMNIROUTE_CORRECTOR_MODEL: ${{ vars.OMNIROUTE_CORRECTOR_MODEL }}
+          OMNIROUTE_ORCHESTRATOR_MODEL: ${{ vars.OMNIROUTE_ORCHESTRATOR_MODEL || vars.OMNIROUTE_REVIEWER_MODEL }}
+          OMNIROUTE_TRANSLATOR_FALLBACK_MODEL: ${{ vars.OMNIROUTE_TRANSLATOR_FALLBACK_MODEL }}
+          OMNIROUTE_REVIEWER_FALLBACK_MODEL: ${{ vars.OMNIROUTE_REVIEWER_FALLBACK_MODEL }}
+          OMNIROUTE_CORRECTOR_FALLBACK_MODEL: ${{ vars.OMNIROUTE_CORRECTOR_FALLBACK_MODEL }}
+        working-directory: candidate
+        run: python -u automation/quality_capacity_benchmark.py --output "$RUNNER_TEMP/quality-capacity.json"
+      - name: Upload aggregate measures only
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: quality-capacity-metrics
+          path: ${{ runner.temp }}/quality-capacity.json
+          if-no-files-found: warn
+          retention-days: 14
