@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 112,
+  "next_sequence": 113,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -13274,6 +13274,55 @@
       },
       "shared_state_revisions": {
         "glossary": "0ae07202278012f087bc1209a1bf021683d6192b03137396f40ea854e55f4226",
+        "style_guide": "eaa08d42f1f5ea55a06553ec9c1d9e5c6f66b62f9bb6f55b653a52f78659dd74"
+      }
+    },
+    {
+      "record_id": "c628a5b63b1c4173a2302f4db0bd134f",
+      "sequence": 112,
+      "unit_id": "chapter-000042",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "faeae882275d9415110a38f5bde000e3d176675579c6e83923c4d76dea47294d",
+      "translation_sha256": "5db310eb109d847fc4423c810aa49481c99e58bec296b0217208a4282c5ba580",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-65e3fd54",
+      "reviewed_at": "2026-11-18T03:33:30Z",
+      "state_revision": "fd406d798c08457c38728bde5777fa1f743aaf9bff939862106039b4673d1a9f",
+      "review_commit": "57aa53bbfa541647cc6cb9654538141235bc456f",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "style-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The Russian coordination «не разговаривают, когда…, ни когда…, ни когда…» is grammatically awkward: the initial «не» does not pair cleanly with the later «ни когда» clauses. Recast as «не разговаривают ни когда…, ни когда…, ни когда…» or use a natural equivalent such as «молчат, когда…; молчат, когда… и когда…».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "They don’t speak when the Audi leaves the parking lot, not when they enter an *Autobahn* for which Nico specifically bought an e-vignette, not when they pass the Zürich airport.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Они не разговаривают, когда «Ауди» выезжает с парковки, ни когда въезжают на *автобан*, для которого Нико специально купил электронную виньетку, ни когда проезжают мимо аэропорта Цюриха.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "3a1afe10010bbd929ba39a89ae200c8001fb10312dd34931d118a846c2e52a55",
         "style_guide": "eaa08d42f1f5ea55a06553ec9c1d9e5c6f66b62f9bb6f55b653a52f78659dd74"
       }
     }
