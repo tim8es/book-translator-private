@@ -273,6 +273,40 @@
           "type": "имя и фамилия"
         }
       ]
+    },
+    "chunk-003": {
+      "outcome": "CORRECTIONS_REQUIRED",
+      "report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "or-vs-than",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The source asks whether they will write more about this or about the podium. The translation instead asks whether they will write more about this than about the podium, changing the comparison. Consider: «Как думаешь, они больше напишут об этом или о подиуме?»",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Do you think they’ll write more about this or the podium?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Как думаешь, они напишут об этом больше, чем о подиуме?»",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "style": [],
+      "glossary": []
     }
   },
   "windows": {
@@ -283,6 +317,10 @@
     "chunk-002": {
       "source_sha256": "17ba3982a112300e58f8782ea0f54c2952d398df727ed1df60e378a9d1db06fc",
       "translation_sha256": "c76ec31b0ea6934e2637c54248d5b264fbd8bab6fc81cb1971141f4c67a1cafc"
+    },
+    "chunk-003": {
+      "source_sha256": "ce41aa564b9429ee7ddfd9112ac53f608f312efcaaec06da66250623d42b80b5",
+      "translation_sha256": "31dc0353de24fefe1fdfacfe85253e75d00d5acbefcf101340bbb836f6776dc5"
     }
   },
   "accepted_review_record_id": null,
