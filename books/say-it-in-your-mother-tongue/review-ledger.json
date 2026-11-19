@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 153,
+  "next_sequence": 154,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -17497,6 +17497,77 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "1120f576fed22714b46c7276e899bd01c484dd218ca94c8d6fd37306a9c8d8a4",
+        "style_guide": "eaa08d42f1f5ea55a06553ec9c1d9e5c6f66b62f9bb6f55b653a52f78659dd74"
+      }
+    },
+    {
+      "record_id": "4dcf52cc8f1141eb87333a824d810727",
+      "sequence": 153,
+      "unit_id": "chapter-000054",
+      "outcome": "PASS",
+      "source_sha256": "7da06158c68bcfc116af8e69b0857982d4f6f95426bba1b25bd260936534b30f",
+      "translation_sha256": "3647723939429e8a6f5900093155e101d7d1d1fc2c147c8c563026c65a1b32ea",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-0be6a756",
+      "reviewed_at": "2026-11-19T01:38:11Z",
+      "state_revision": "8e4607d833ce2ce750692b6abeb9a5cc42c334a000da88b622865245c080222e",
+      "review_commit": "961ca6c1a2da40d581d3d85b24989a5717f5b864",
+      "correction_round": 2,
+      "supersedes_record_id": "89818c65ebb142bf9a6205edf7981ae1",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "referent-recheck-2",
+            "category": "referent",
+            "severity": "minor",
+            "detail": "Исправлено: «работа автора» не приписывает автору конкретный пол.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "their work!",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "понравилась ли вам работа автора!",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "89818c65ebb142bf9a6205edf7981ae1",
+              "finding_id": "referent-recheck-1"
+            }
+          },
+          {
+            "id": "punctuation-recheck-2",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Исправлено: лишнего пробела перед запятой нет.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "to let the creator know if you enjoyed their work!",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "оставьте комментарий",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "89818c65ebb142bf9a6205edf7981ae1",
+              "finding_id": "punctuation-space-1"
+            }
           }
         ]
       },
