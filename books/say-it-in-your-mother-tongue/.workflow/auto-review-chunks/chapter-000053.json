@@ -448,6 +448,75 @@
       },
       "style": [],
       "glossary": []
+    },
+    "chunk-007": {
+      "outcome": "CORRECTIONS_REQUIRED",
+      "report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "gender-recheck",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Разрешено: в текущем переводе стоит мужская форма «женишься», соответствующая обращению к Максу.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "So, will you marry me?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Так ты женишься на мне?",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "bc6d3911f81e4cc38642b8df17e2553f",
+              "finding_id": "gendered-proposal-1"
+            }
+          },
+          {
+            "id": "box-omission",
+            "category": "omission",
+            "severity": "major",
+            "detail": "Перевод передаёт вопрос о браке, но пропускает, что Чеко придвигает коробочку, открывает её и показывает Максу толстое титановое кольцо. Верните эти действия и описание кольца.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Checo holds out the box a little closer to Max, grinning as he asks again, “So, will you marry me?” He opens the velvet box, showing Max a thick ring made of titanium.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Так ты женишься на мне?",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "known-what",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "«Что знал?» звучит как вопрос о том, что Макс знал, тогда как Checo отвечает на «Я должен был догадаться» вопросом «Known what?» — о чём Макс должен был догадаться. Исправьте, например, на «О чём?» или «Что именно?»",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Known what?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Что знал?",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "style": [],
+      "glossary": []
     }
   },
   "windows": {
@@ -474,6 +543,10 @@
     "chunk-006": {
       "source_sha256": "ac986e9ab46e1fe4d087661a25acb995bd72cda72ef5c3305a577455f471af32",
       "translation_sha256": "a1053e8abe9e7d2c075c622801069462af1a4efd923821b2a291ab4e21ffffb3"
+    },
+    "chunk-007": {
+      "source_sha256": "2c6c8c8cd35bd32827835f7add96af3d9b826481c8e1761ff09a367a9c0c58d7",
+      "translation_sha256": "b570be09744fbe0a80908816184d0b83281b7a260bb48d5cba76d2890a36c485"
     }
   },
   "accepted_review_record_id": null,
