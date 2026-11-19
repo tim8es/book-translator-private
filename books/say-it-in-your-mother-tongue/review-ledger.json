@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 151,
+  "next_sequence": 152,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -17342,6 +17342,71 @@
             },
             "translation_anchor": {
               "quote": "«Я люблю тебя», — говорит Чеко, переводя взгляд с кольца на глаза Макса. — «Теперь мы можем снова целоваться».",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "1120f576fed22714b46c7276e899bd01c484dd218ca94c8d6fd37306a9c8d8a4",
+        "style_guide": "eaa08d42f1f5ea55a06553ec9c1d9e5c6f66b62f9bb6f55b653a52f78659dd74"
+      }
+    },
+    {
+      "record_id": "7b2037c091494f4eafc0aea54fb6ffce",
+      "sequence": 151,
+      "unit_id": "chapter-000054",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "7da06158c68bcfc116af8e69b0857982d4f6f95426bba1b25bd260936534b30f",
+      "translation_sha256": "c919c310ed32ae8cb18463c05258ebc7de1c842ac48cba4071b38ebe8e9a70f8",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "auto-05eed6ea814d-reviewer-a9ed3880",
+      "reviewed_at": "2026-11-19T01:32:02Z",
+      "state_revision": "19589923742596977bcb35f6b7b2e5fbd61549ea95cb0b7d0660483e71b44ff0",
+      "review_commit": "c21e84efd765eb5c2884cd84b25185c65e8befdd",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "punctuation-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "В русском переводе перед придаточным цели с «чтобы» нужна запятая. Добавьте её после слова «комментарий».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "to let the creator know if you enjoyed their work!",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "чтобы автор узнал, понравилась ли вам его работа!",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "referent-1",
+            "category": "referent",
+            "severity": "minor",
+            "detail": "В источнике «their» не указывает на пол автора, тогда как «его» задаёт мужской род. Чтобы сохранить неопределённость, можно написать «понравилась ли вам работа автора».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "their work!",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "его работа!",
               "occurrence": 0
             },
             "resolves": null
