@@ -3,7 +3,7 @@
   "job_id": "05eed6ea814d3b5eec014c6d05b39e3f",
   "book_slug": "say-it-in-your-mother-tongue",
   "state": "running",
-  "phase": "claimed",
+  "phase": "model-call-reserved",
   "failures": 0,
   "correction_rounds": {
     "chapter-000001": 1,
@@ -55,7 +55,7 @@
   },
   "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
   "source_sha256": "12e210ce5a95daf56a97ada583ec15c274780c4ddfa7fb92da6a88c67f7c403d",
-  "updated_at": "2026-11-19T01:36:12.861830+00:00",
+  "updated_at": "2026-11-19T01:36:18.395133+00:00",
   "active": {
     "role": "corrector",
     "chapter": 54,
@@ -84,21 +84,21 @@
   ],
   "structural_span_retries": 1,
   "structural_helper_revision": "4c584fe5534871cd05aa851d9b7bdbfa696d0edd",
-  "model_calls_started": 751,
+  "model_calls_started": 752,
   "prompt_context": {
-    "role": "reviewer",
+    "role": "corrector",
     "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
     "loaded_contracts": [
       "AGENTS.md",
       "docs/TRANSLATION.md",
-      "docs/REVIEWER.md"
+      "docs/TRANSLATOR.md"
     ],
     "glossary_sha256": "1120f576fed22714b46c7276e899bd01c484dd218ca94c8d6fd37306a9c8d8a4",
     "style_guide_sha256": "eaa08d42f1f5ea55a06553ec9c1d9e5c6f66b62f9bb6f55b653a52f78659dd74",
-    "system_chars": 28761,
-    "user_chars": 36227,
-    "review_context": "independent_session",
-    "anchor_repair": "exact-quote-validation"
+    "system_chars": 20126,
+    "user_chars": 28993,
+    "correction_mode": "bounded-review-patches",
+    "batch_finding_count": 2
   },
   "structural_helper_migrations": [
     {
@@ -184,7 +184,7 @@
   },
   "correction_finding_triage": {
     "unit_id": "chapter-000054",
-    "review_record_id": "7b2037c091494f4eafc0aea54fb6ffce",
+    "review_record_id": "89818c65ebb142bf9a6205edf7981ae1",
     "counts": {
       "required": 1,
       "adjudicate": 1,
@@ -818,14 +818,14 @@
   },
   "adaptive_correction_budget": {
     "schema_version": 1,
-    "group_size": 1,
+    "group_size": 2,
     "max_calls_per_checkpoint": 2,
-    "pending_count": 1,
+    "pending_count": 2,
     "risk_class": "mixed",
     "lower_bound_remaining_calls": 1,
-    "current_selection_size": 1,
+    "current_selection_size": 2,
     "unit_id": "chapter-000054",
-    "review_record_id": "7b2037c091494f4eafc0aea54fb6ffce"
+    "review_record_id": "89818c65ebb142bf9a6205edf7981ae1"
   },
   "review_incremental_rebases": [
     {
