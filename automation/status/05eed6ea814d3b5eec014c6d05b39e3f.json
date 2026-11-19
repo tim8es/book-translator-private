@@ -3,7 +3,7 @@
   "job_id": "05eed6ea814d3b5eec014c6d05b39e3f",
   "book_slug": "say-it-in-your-mother-tongue",
   "state": "running",
-  "phase": "review-chunk-staged",
+  "phase": "reviewer-completed",
   "failures": 0,
   "correction_rounds": {
     "chapter-000001": 1,
@@ -54,13 +54,8 @@
   },
   "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
   "source_sha256": "12e210ce5a95daf56a97ada583ec15c274780c4ddfa7fb92da6a88c67f7c403d",
-  "updated_at": "2026-11-19T00:54:34.724133+00:00",
-  "active": {
-    "role": "reviewer",
-    "chapter": 53,
-    "session_id": "auto-05eed6ea814d-reviewer-5747aafd",
-    "unit_id": "chapter-000053"
-  },
+  "updated_at": "2026-11-19T00:54:39.571137+00:00",
+  "active": null,
   "recoveries": [
     {
       "action": "auto-retry-corrected-structural-preflight",
@@ -317,7 +312,6 @@
     "correction_candidates": 18,
     "awaiting_promotion": 0
   },
-  "review_chunk_fallback_unit": "chapter-000053",
   "review_partition_targets": {
     "chapter-000053": {
       "source_sha256": "7ee14f3461238bdd7e7e066553e63d5bdeba5019caeabdea4cbc6fcc60960253",
@@ -450,14 +444,9 @@
         "total_tokens": 202687
       }
     },
-    "accepted_operations": {}
-  },
-  "review_chunk_progress": {
-    "unit_id": "chapter-000053",
-    "source_sha256": "7ee14f3461238bdd7e7e066553e63d5bdeba5019caeabdea4cbc6fcc60960253",
-    "translation_sha256": "13fd99b585d7b312d7519598b93e8c629bc7caecfe471e8db6a25a6f5026f42d",
-    "completed": 7,
-    "total": 7
+    "accepted_operations": {
+      "review_rejected": 1
+    }
   },
   "model_response_diagnostics": {
     "finish_reason": "stop",
@@ -470,5 +459,11 @@
     "route": "primary",
     "role": "reviewer",
     "unit_id": "chapter-000053"
+  },
+  "review_incremental_archive": {
+    "unit_id": "chapter-000053",
+    "review_record_id": "5235464a6071447f9a3a3064cd428c5c",
+    "translation_sha256": "13fd99b585d7b312d7519598b93e8c629bc7caecfe471e8db6a25a6f5026f42d",
+    "clean_chunks": 2
   }
 }
