@@ -173,12 +173,111 @@
           "type": "person"
         }
       ]
+    },
+    "chunk-002": {
+      "outcome": "CORRECTIONS_REQUIRED",
+      "report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "from-you",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The translation omits “from you,” which gives Nico’s thanks a specific personal emphasis. Preserve that this praise is especially meaningful coming from Gabi.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Thank you very much, appreciate that from you.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Большое спасибо, я правда это ценю",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "disbelief-phrase",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Смеясь от недоверия» is an awkward calque here. Render the sense of laughing in disbelief more naturally, without changing the reaction.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "he pauses, laughing in disbelief.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "он делает паузу, смеясь от недоверия.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "spinning-them",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The source says Nico spins both of them around; «кружит его» makes Gabi alone the object of the action. Preserve that they spin together.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "He spins them around, laughing, unable to hold back his tears anymore.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Он кружит его, смеясь и уже не в силах сдерживать слёзы.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "stray-tears",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Случайных слёз» gives “stray tears” an unintended random/accidental sense and sounds unnatural in Russian. Use a natural rendering for a few tears escaping or rolling down his cheeks.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "a few stray tears roll down his cheeks.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "несколько случайных слёз",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "style": [
+        {
+          "evidence": "Перевод сохраняет последовательность: «Клетчатый флаг. Ландо побеждает. Оскар следует за ним почти вплотную. И тут это происходит».",
+          "source_pattern": "Короткие фрагменты и отдельные предложения в описании финиша создают напряжённый, поэтапный ритм: “Checkered flag. Lando wins. Oscar follows close. And then it happens.”",
+          "translation_approach": "Сохранять краткие фрагменты и последовательность событий, чтобы не сглаживать нарастание напряжения."
+        }
+      ],
+      "glossary": [
+        {
+          "notes": "",
+          "original": "Steven Petrik",
+          "translation": "Стивен Петрик",
+          "type": "имя"
+        }
+      ]
     }
   },
   "windows": {
     "chunk-001": {
       "source_sha256": "1e9f7fe5f7c1990f097b17cfc3c0e732dd30e8e38f43a8f22dd15bc9b071bce0",
       "translation_sha256": "426b0bdbc68d8975ff2ccf571426d3c9cdd986d106b5a6d6a14e710e0dd4028a"
+    },
+    "chunk-002": {
+      "source_sha256": "17ba3982a112300e58f8782ea0f54c2952d398df727ed1df60e378a9d1db06fc",
+      "translation_sha256": "89beaedf26109373068446a682cdc475831eaa647c196e9e1aa8c3dea166a231"
     }
   },
   "accepted_review_record_id": null,
