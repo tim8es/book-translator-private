@@ -1,0 +1,186 @@
+{
+  "schema_version": 2,
+  "plan": {
+    "schema_version": 1,
+    "helper_revision": "review-chunks-source-stable-v1",
+    "source_sha256": "7ee14f3461238bdd7e7e066553e63d5bdeba5019caeabdea4cbc6fcc60960253",
+    "translation_sha256": "13fd99b585d7b312d7519598b93e8c629bc7caecfe471e8db6a25a6f5026f42d",
+    "chunks": [
+      {
+        "id": "chunk-001",
+        "source_core": [
+          0,
+          2864
+        ],
+        "translation_core": [
+          0,
+          2877
+        ],
+        "source_window": [
+          0,
+          4668
+        ],
+        "translation_window": [
+          0,
+          4687
+        ]
+      },
+      {
+        "id": "chunk-002",
+        "source_core": [
+          2864,
+          5932
+        ],
+        "translation_core": [
+          2877,
+          5948
+        ],
+        "source_window": [
+          1023,
+          8003
+        ],
+        "translation_window": [
+          1066,
+          7918
+        ]
+      },
+      {
+        "id": "chunk-003",
+        "source_core": [
+          5932,
+          8873
+        ],
+        "translation_core": [
+          5948,
+          8874
+        ],
+        "source_window": [
+          3991,
+          11017
+        ],
+        "translation_window": [
+          4009,
+          11023
+        ]
+      },
+      {
+        "id": "chunk-004",
+        "source_core": [
+          8873,
+          11925
+        ],
+        "translation_core": [
+          8874,
+          11957
+        ],
+        "source_window": [
+          6774,
+          13821
+        ],
+        "translation_window": [
+          6764,
+          13842
+        ]
+      },
+      {
+        "id": "chunk-005",
+        "source_core": [
+          11925,
+          14823
+        ],
+        "translation_core": [
+          11957,
+          14904
+        ],
+        "source_window": [
+          10119,
+          17009
+        ],
+        "translation_window": [
+          10068,
+          17025
+        ]
+      },
+      {
+        "id": "chunk-006",
+        "source_core": [
+          14823,
+          17745
+        ],
+        "translation_core": [
+          14904,
+          17802
+        ],
+        "source_window": [
+          12968,
+          19635
+        ],
+        "translation_window": [
+          12984,
+          19816
+        ]
+      },
+      {
+        "id": "chunk-007",
+        "source_core": [
+          17745,
+          20758
+        ],
+        "translation_core": [
+          17802,
+          20738
+        ],
+        "source_window": [
+          15890,
+          20758
+        ],
+        "translation_window": [
+          15954,
+          20738
+        ]
+      }
+    ]
+  },
+  "unit_id": "chapter-000053",
+  "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+  "binding": {
+    "previous_record_id": "bc6d3911f81e4cc38642b8df17e2553f",
+    "glossary_sha256": "1120f576fed22714b46c7276e899bd01c484dd218ca94c8d6fd37306a9c8d8a4",
+    "style_guide_sha256": "eaa08d42f1f5ea55a06553ec9c1d9e5c6f66b62f9bb6f55b653a52f78659dd74",
+    "reviewer_contract_sha256": "e21e068170b373ed0593c7fa47b2039293af849e93fe53de5bd30b97f3092ff2"
+  },
+  "completed": {
+    "chunk-001": {
+      "outcome": "PASS",
+      "report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": []
+      },
+      "style": [],
+      "glossary": [
+        {
+          "notes": "Сидит рядом с Габи после схода; предлагает ему гарнитуру.",
+          "original": "Steven Petrik",
+          "translation": "Стивен Петрик",
+          "type": "person"
+        }
+      ]
+    }
+  },
+  "windows": {
+    "chunk-001": {
+      "source_sha256": "1e9f7fe5f7c1990f097b17cfc3c0e732dd30e8e38f43a8f22dd15bc9b071bce0",
+      "translation_sha256": "426b0bdbc68d8975ff2ccf571426d3c9cdd986d106b5a6d6a14e710e0dd4028a"
+    }
+  },
+  "accepted_review_record_id": null,
+  "reused": {}
+}
