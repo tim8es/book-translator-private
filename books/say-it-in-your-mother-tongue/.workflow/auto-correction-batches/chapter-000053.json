@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "unit_id": "chapter-000053",
+  "review_record_id": "13671585eb1d49c4a4aa1fc1e6909703",
+  "source_sha256": "7ee14f3461238bdd7e7e066553e63d5bdeba5019caeabdea4cbc6fcc60960253",
+  "translation_sha256": "3231febb5f31f9f772e55a3bae070aa37b5f73802475b2b7f2dcefc827c6a1ff",
+  "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+  "patches": [
+    {
+      "finding_id": "chunk-003-or-vs-than",
+      "operation": "replace",
+      "target_anchor": {
+        "quote": "«Как думаешь, они напишут об этом больше, чем о подиуме?»",
+        "occurrence": 0
+      },
+      "replacement": "«Как думаешь, они больше напишут об этом или о подиуме?»"
+    },
+    {
+      "finding_id": "chunk-004-thing-emphasis",
+      "operation": "replace",
+      "target_anchor": {
+        "quote": "«Знаешь, как бывает в фильмах и сериалах: люди *очень напиваются* в Вегасе и женятся на ком-нибудь, хотя на самом деле вовсе не собираются этого делать?»",
+        "occurrence": 0
+      },
+      "replacement": "«Знаешь, есть такая *штука* в фильмах и сериалах: люди *очень напиваются* в Вегасе и женятся на ком-нибудь, хотя на самом деле вовсе не собираются этого делать?»"
+    }
+  ],
+  "glossary": [],
+  "style_guide": []
+}
