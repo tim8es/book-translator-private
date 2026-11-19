@@ -395,6 +395,59 @@
       },
       "style": [],
       "glossary": []
+    },
+    "chunk-006": {
+      "outcome": "CORRECTIONS_REQUIRED",
+      "report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "punct-recheck",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "Предыдущее замечание исправлено в блоке 095, но осталось в других местах: например, в блоке 092 авторская речь соединена с репликой двоеточием и тире внутри того же абзаца. Аналогичное оформление осталось в блоках 096, 107 и 109; в блоках 101–103 реплики, начинающиеся с тире, также стоят в том же абзаце, а не оформлены отдельными абзацами. Используйте кавычки для встроенных реплик либо вынесите реплики с тире в отдельные абзацы.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Checo licks his lips before he asks, “Could you come back?”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Чеко облизывает губы и спрашивает: — Ты можешь вернуться?",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "bc6d3911f81e4cc38642b8df17e2553f",
+              "finding_id": "dialogue-punctuation-1"
+            }
+          },
+          {
+            "id": "adore-intensity",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "«С безграничным обожанием» добавляет степень чувства: “nothing but adoration” говорит, что в его взгляде — одно лишь обожание, но не утверждает, что оно безгранично. Например: «с одним лишь обожанием».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "He pauses, looking into Max’s eyes with nothing but adoration.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Он замолкает и смотрит Максу в глаза с безграничным обожанием.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "style": [],
+      "glossary": []
     }
   },
   "windows": {
@@ -417,6 +470,10 @@
     "chunk-005": {
       "source_sha256": "a8acfee62f916171b011a0c6b87117d89c0fbae7bc90754ffb90368e57a22d50",
       "translation_sha256": "59f7928054ca0e0f9e98c9b8e1d0f9720a536ec6719ec5e44f0be717d93e4bd6"
+    },
+    "chunk-006": {
+      "source_sha256": "ac986e9ab46e1fe4d087661a25acb995bd72cda72ef5c3305a577455f471af32",
+      "translation_sha256": "a1053e8abe9e7d2c075c622801069462af1a4efd923821b2a291ab4e21ffffb3"
     }
   },
   "accepted_review_record_id": null,
