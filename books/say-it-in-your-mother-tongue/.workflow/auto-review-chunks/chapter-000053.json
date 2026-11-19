@@ -572,6 +572,110 @@
       },
       "style": [],
       "glossary": []
+    },
+    "chunk-007": {
+      "outcome": "CORRECTIONS_REQUIRED",
+      "report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "known-what-r1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Resolved: «О чём?» correctly asks what Max should have guessed, rather than what he knew.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Known what?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "««О чём?»»",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "5235464a6071447f9a3a3064cd428c5c",
+              "finding_id": "chunk-007-known-what"
+            }
+          },
+          {
+            "id": "box-omission-r1",
+            "category": "omission",
+            "severity": "major",
+            "detail": "Resolved: the translation now includes Checo moving the box closer, asking again, opening it, and showing Max the thick titanium ring.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Checo holds out the box a little closer to Max, grinning as he asks again, “So, will you marry me?” He opens the velvet box, showing Max a thick ring made of titanium.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Чеко придвигает коробочку к Максу чуть ближе и, широко улыбаясь, снова спрашивает: «Так ты женишься на мне?» Он открывает бархатную коробочку, показывая Максу толстое титановое кольцо.»",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "5235464a6071447f9a3a3064cd428c5c",
+              "finding_id": "chunk-007-box-omission"
+            }
+          },
+          {
+            "id": "double-quotes",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "The reply has duplicated opening and closing guillemets (««О чём?»»). Remove the extra quotation marks.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Known what?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "««О чём?»»",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "box-quote-scope",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "The translation opens a guillemet before the narration about Checo, then nests another opening guillemet before his spoken question and closes only after the ring description. Correct the quotation marks so they enclose only the dialogue.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Checo holds out the box a little closer to Max, grinning as he asks again, “So, will you marry me?” He opens the velvet box, showing Max a thick ring made of titanium.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Чеко придвигает коробочку к Максу чуть ближе и, широко улыбаясь, снова спрашивает: «Так ты женишься на мне?» Он открывает бархатную коробочку, показывая Максу толстое титановое кольцо.»",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "yes-comma",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "Add the comma after «Да»: the Russian punctuation should read «Да, конечно, блядь».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“Of fucking course,” Max breathes out, laughing as he presses their lips together.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Да конечно, блядь», — выдыхает Макс со смехом и прижимается губами к его губам.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "style": [],
+      "glossary": []
     }
   },
   "windows": {
@@ -598,6 +702,10 @@
     "chunk-006": {
       "source_sha256": "ac986e9ab46e1fe4d087661a25acb995bd72cda72ef5c3305a577455f471af32",
       "translation_sha256": "00316b384135ef5735b10f4f89bcb7e78acfd661ddac729d3c97acfc476fa71c"
+    },
+    "chunk-007": {
+      "source_sha256": "2c6c8c8cd35bd32827835f7add96af3d9b826481c8e1761ff09a367a9c0c58d7",
+      "translation_sha256": "29a32ddef8457eac9e88a34807b96a9b6e0455434284cc8863026f18d8ae6485"
     }
   },
   "accepted_review_record_id": null,
