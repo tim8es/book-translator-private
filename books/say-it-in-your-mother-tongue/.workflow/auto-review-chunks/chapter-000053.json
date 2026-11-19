@@ -244,6 +244,50 @@
       },
       "style": [],
       "glossary": []
+    },
+    "chunk-004": {
+      "outcome": "PASS",
+      "report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "thing-emph-recheck",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Resolved: the translation now renders the colloquial, emphasized “a thing” as «*штука*», preserving the source wording and emphasis.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "You know how it’s like *a thing* people do in movies and TV shows where they get *really drunk* in Vegas and marry someone without actually meaning to do so?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Знаешь, есть такая *штука* в фильмах и сериалах: люди *очень напиваются* в Вегасе и женятся на ком-нибудь, хотя на самом деле вовсе не собираются этого делать?",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "13671585eb1d49c4a4aa1fc1e6909703",
+              "finding_id": "chunk-004-thing-emphasis"
+            }
+          }
+        ]
+      },
+      "style": [],
+      "glossary": [
+        {
+          "notes": "Упоминается в связи с исполнителем, изображающим Элвиса на церемонии.",
+          "original": "Elvis Presley",
+          "translation": "Элвис Пресли",
+          "type": "персона"
+        }
+      ]
     }
   },
   "windows": {
@@ -258,6 +302,10 @@
     "chunk-003": {
       "source_sha256": "ce41aa564b9429ee7ddfd9112ac53f608f312efcaaec06da66250623d42b80b5",
       "translation_sha256": "8dfb2b66d1d096f403cecb59772401332c964768f0836b0a4775520faff67819"
+    },
+    "chunk-004": {
+      "source_sha256": "ca44891fd425b5f4537fc3a0060502b17d5a5a6ecff7078197e56dee5efd93d4",
+      "translation_sha256": "2a13ea4943390d8c5a9c865c9630710533134198b9ab23d4b8e5e1ddba9ea9e9"
     }
   },
   "accepted_review_record_id": null,
