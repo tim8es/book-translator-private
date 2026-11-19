@@ -4,7 +4,7 @@
     "schema_version": 1,
     "helper_revision": "review-chunks-source-stable-v1",
     "source_sha256": "7ee14f3461238bdd7e7e066553e63d5bdeba5019caeabdea4cbc6fcc60960253",
-    "translation_sha256": "3231febb5f31f9f772e55a3bae070aa37b5f73802475b2b7f2dcefc827c6a1ff",
+    "translation_sha256": "1e1de33cf24058787703492b2b47b6693ec25192ce30183a507c0734844c918c",
     "chunks": [
       {
         "id": "chunk-001",
@@ -41,7 +41,7 @@
         ],
         "translation_window": [
           1066,
-          7941
+          7940
         ]
       },
       {
@@ -52,7 +52,7 @@
         ],
         "translation_core": [
           5971,
-          8897
+          8896
         ],
         "source_window": [
           3991,
@@ -60,7 +60,7 @@
         ],
         "translation_window": [
           4009,
-          11116
+          11123
         ]
       },
       {
@@ -70,16 +70,16 @@
           11925
         ],
         "translation_core": [
-          8897,
-          12043
+          8896,
+          12050
         ],
         "source_window": [
           6774,
           13821
         ],
         "translation_window": [
-          6787,
-          13928
+          6786,
+          13935
         ]
       },
       {
@@ -89,16 +89,16 @@
           14823
         ],
         "translation_core": [
-          12043,
-          14960
+          12050,
+          15001
         ],
         "source_window": [
           10119,
           17009
         ],
         "translation_window": [
-          10161,
-          17081
+          10168,
+          16984
         ]
       },
       {
@@ -108,16 +108,16 @@
           17745
         ],
         "translation_core": [
-          14960,
-          17818
+          15001,
+          17738
         ],
         "source_window": [
           12968,
           19635
         ],
         "translation_window": [
-          13070,
-          19752
+          13077,
+          19669
         ]
       },
       {
@@ -127,16 +127,16 @@
           20758
         ],
         "translation_core": [
-          17818,
-          20914
+          17738,
+          20831
         ],
         "source_window": [
           15890,
           20758
         ],
         "translation_window": [
-          16010,
-          20914
+          15911,
+          20831
         ]
       }
     ]
@@ -144,7 +144,7 @@
   "unit_id": "chapter-000053",
   "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
   "binding": {
-    "previous_record_id": "5235464a6071447f9a3a3064cd428c5c",
+    "previous_record_id": "13671585eb1d49c4a4aa1fc1e6909703",
     "glossary_sha256": "1120f576fed22714b46c7276e899bd01c484dd218ca94c8d6fd37306a9c8d8a4",
     "style_guide_sha256": "eaa08d42f1f5ea55a06553ec9c1d9e5c6f66b62f9bb6f55b653a52f78659dd74",
     "reviewer_contract_sha256": "e21e068170b373ed0593c7fa47b2039293af849e93fe53de5bd30b97f3092ff2"
@@ -168,7 +168,7 @@
       "glossary": []
     },
     "chunk-002": {
-      "outcome": "PASS",
+      "outcome": "CORRECTIONS_REQUIRED",
       "report": {
         "evidence_version": 2,
         "context": "independent_session",
@@ -181,501 +181,32 @@
         },
         "findings": [
           {
-            "id": "recheck-thanks",
-            "category": "meaning",
+            "id": "sets-down-again",
+            "category": "omission",
             "severity": "minor",
-            "detail": "Resolved: the current translation preserves the personal emphasis with «от тебя».",
-            "resolved": true,
+            "detail": "The translation omits “again” when Nico sets Gabi down, losing the source’s explicit indication that this happens after he has lifted him. Add “снова” or an equivalent.",
+            "resolved": false,
             "source_anchor": {
-              "quote": "Thank you very much, appreciate that from you.",
+              "quote": "When he sets Gabi down again, the Brazilian leans forward, touching his forehead to Nico’s helmet.",
               "occurrence": 0
             },
             "translation_anchor": {
-              "quote": "Большое спасибо, мне особенно приятно слышать это от тебя",
+              "quote": "Опустив Габи на землю, бразилец наклоняется вперёд и прижимается лбом к шлему Нико.",
               "occurrence": 0
             },
-            "resolves": {
-              "record_id": "5235464a6071447f9a3a3064cd428c5c",
-              "finding_id": "chunk-002-from-you"
-            }
-          },
-          {
-            "id": "recheck-laugh",
-            "category": "style",
-            "severity": "minor",
-            "detail": "Resolved: «недоверчиво смеётся» is a natural rendering of laughing in disbelief.",
-            "resolved": true,
-            "source_anchor": {
-              "quote": "he pauses, laughing in disbelief.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "он делает паузу и недоверчиво смеётся",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "5235464a6071447f9a3a3064cd428c5c",
-              "finding_id": "chunk-002-disbelief-phrase"
-            }
-          },
-          {
-            "id": "recheck-spin",
-            "category": "meaning",
-            "severity": "minor",
-            "detail": "Resolved: «кружит их обоих» preserves that Nico spins himself and Gabi around together.",
-            "resolved": true,
-            "source_anchor": {
-              "quote": "He spins them around, laughing, unable to hold back his tears anymore.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "Он кружит их обоих, смеясь и уже не в силах сдерживать слёзы.",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "5235464a6071447f9a3a3064cd428c5c",
-              "finding_id": "chunk-002-spinning-them"
-            }
-          },
-          {
-            "id": "recheck-tears",
-            "category": "style",
-            "severity": "minor",
-            "detail": "Resolved: «по щекам катятся несколько слезинок» naturally renders the tears rolling down his cheeks.",
-            "resolved": true,
-            "source_anchor": {
-              "quote": "a few stray tears roll down his cheeks.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "как по щекам катятся несколько слезинок",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "5235464a6071447f9a3a3064cd428c5c",
-              "finding_id": "chunk-002-stray-tears"
-            }
+            "resolves": null
           }
         ]
       },
-      "style": [
-        {
-          "evidence": "В переводе сохранены отдельные фрагменты: «Клетчатый флаг.», «Ландо побеждает.», «Оскар следует за ним почти вплотную.» и «И тут это происходит.»",
-          "source_pattern": "The race result is paced through isolated fragments: “Checkered flag.”, “Lando wins.”, “Oscar follows close.”, and “And then it happens.”",
-          "translation_approach": "Сохранять отдельные короткие фразы и их абзацное членение, поддерживая нарастающий ритм эпизода."
-        }
-      ],
+      "style": [],
       "glossary": [
         {
-          "notes": "Сосед Габи во время просмотра гонки; передаёт ему гарнитуру.",
+          "notes": "Полное имя Стивена, упомянутого в сцене гонки.",
           "original": "Steven Petrik",
           "translation": "Стивен Петрик",
-          "type": "имя и фамилия"
-        }
-      ]
-    },
-    "chunk-003": {
-      "outcome": "CORRECTIONS_REQUIRED",
-      "report": {
-        "evidence_version": 2,
-        "context": "independent_session",
-        "checks": {
-          "coverage": true,
-          "meaning": true,
-          "terminology": true,
-          "style": true,
-          "structure": true
-        },
-        "findings": [
-          {
-            "id": "or-vs-than",
-            "category": "meaning",
-            "severity": "minor",
-            "detail": "The source asks whether they will write more about this or about the podium. The translation instead asks whether they will write more about this than about the podium, changing the comparison. Consider: «Как думаешь, они больше напишут об этом или о подиуме?»",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "Do you think they’ll write more about this or the podium?",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "«Как думаешь, они напишут об этом больше, чем о подиуме?»",
-              "occurrence": 0
-            },
-            "resolves": null
-          }
-        ]
-      },
-      "style": [],
-      "glossary": []
-    },
-    "chunk-004": {
-      "outcome": "CORRECTIONS_REQUIRED",
-      "report": {
-        "evidence_version": 2,
-        "context": "independent_session",
-        "checks": {
-          "coverage": true,
-          "meaning": true,
-          "terminology": true,
-          "style": true,
-          "structure": true
-        },
-        "findings": [
-          {
-            "id": "breath-smile",
-            "category": "omission",
-            "severity": "major",
-            "detail": "Verified repair: the translation now includes Fernando’s deep exhalation and inhalation, his soft smile reserved for Lance, and a grammatical sentence.",
-            "resolved": true,
-            "source_anchor": {
-              "quote": "Exhaling deeply, and inhaling even deeply-er, Fernando puts on a soft smile — one reserved for Lance only.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "Глубоко выдохнув, а затем вдохнув ещё глубже, Фернандо мягко улыбается — так он улыбается только Лэнсу.",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "5235464a6071447f9a3a3064cd428c5c",
-              "finding_id": "chunk-004-breath-smile"
-            }
-          },
-          {
-            "id": "playful-show",
-            "category": "style",
-            "severity": "minor",
-            "detail": "Verified repair: «делая вид, будто шутит» is a natural rendering of Lance putting on a show of playfulness.",
-            "resolved": true,
-            "source_anchor": {
-              "quote": "putting on a show of playfulness to hide his genuine surprise",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "делая вид, будто шутит, чтобы скрыть неподдельное удивление",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "5235464a6071447f9a3a3064cd428c5c",
-              "finding_id": "chunk-004-playful-show"
-            }
-          },
-          {
-            "id": "thing-emphasis",
-            "category": "style",
-            "severity": "minor",
-            "detail": "The source colloquially frames this as a *thing* people do and emphasizes that phrase. «Как бывает в фильмах и сериалах» conveys the general trope but drops that wording and emphasis. Consider a natural equivalent such as «есть такая штука в фильмах и сериалах», retaining the emphasis.",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "You know how it’s like *a thing* people do in movies and TV shows where they get *really drunk* in Vegas and marry someone without actually meaning to do so?",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "«Знаешь, как бывает в фильмах и сериалах: люди *очень напиваются* в Вегасе и женятся на ком-нибудь, хотя на самом деле вовсе не собираются этого делать?»",
-              "occurrence": 0
-            },
-            "resolves": null
-          }
-        ]
-      },
-      "style": [],
-      "glossary": [
-        {
-          "notes": "Упомянут как артист, чьим двойником выступает ведущий церемонии.",
-          "original": "Elvis Presley",
-          "translation": "Элвис Пресли",
           "type": "person"
         }
       ]
-    },
-    "chunk-005": {
-      "outcome": "CORRECTIONS_REQUIRED",
-      "report": {
-        "evidence_version": 2,
-        "context": "independent_session",
-        "checks": {
-          "coverage": true,
-          "meaning": true,
-          "terminology": true,
-          "style": true,
-          "structure": true
-        },
-        "findings": [
-          {
-            "id": "phone-ref-r1",
-            "category": "referent",
-            "severity": "minor",
-            "detail": "The prior referent issue is repaired: «к телефону» explicitly identifies the phone as what Max approaches. This recheck addresses only the referent; the separate omission of the screen-hiding action remains unresolved.",
-            "resolved": true,
-            "source_anchor": {
-              "quote": "anytime Max moves a little too close to it.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "когда Макс подходит к телефону хоть немного ближе.",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "5235464a6071447f9a3a3064cd428c5c",
-              "finding_id": "chunk-005-phone-ref-1"
-            }
-          },
-          {
-            "id": "phone-screen",
-            "category": "omission",
-            "severity": "minor",
-            "detail": "The translation omits that Checo hides his phone screen when Max approaches. The remaining «и когда Макс подходит к телефону хоть немного ближе» also leaves the sentence unfinished.",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "hiding his phone screen anytime Max moves a little too close to it.",
-              "occurrence": 0
-            },
-            "translation_anchor": null,
-            "resolves": null
-          }
-        ]
-      },
-      "style": [],
-      "glossary": []
-    },
-    "chunk-006": {
-      "outcome": "CORRECTIONS_REQUIRED",
-      "report": {
-        "evidence_version": 2,
-        "context": "independent_session",
-        "checks": {
-          "coverage": true,
-          "meaning": true,
-          "terminology": true,
-          "style": true,
-          "structure": true
-        },
-        "findings": [
-          {
-            "id": "punctuation-recheck",
-            "category": "structure",
-            "severity": "minor",
-            "detail": "В блоке 092 встроенная реплика теперь оформлена кавычками, но проблема остаётся в блоке 096: после «спрашивает:» стоит тире вместо кавычек. Аналогично оформлены встроенные реплики в блоках 101–103 и 107: повествование и тире-реплики помещены в один абзац. Оформите такие реплики кавычками либо вынесите их в отдельные абзацы.",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "Swallowing loudly, Checo also nods as he asks, “Do you know what today is?”",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "Громко сглотнув, Чеко тоже кивает и спрашивает: — Ты знаешь, какой сегодня день?",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "5235464a6071447f9a3a3064cd428c5c",
-              "finding_id": "chunk-006-punct-recheck"
-            }
-          },
-          {
-            "id": "adoration-recheck",
-            "category": "meaning",
-            "severity": "minor",
-            "detail": "Предыдущая степень «безграничное» исправлена: перевод использует «с одним лишь обожанием», не добавляя утверждения о безграничности чувства. Однако связанная с этим фраза всё ещё требует исправления; см. отдельное замечание об опущенном действии и нарушенной конструкции.",
-            "resolved": true,
-            "source_anchor": {
-              "quote": "He pauses, looking into Max’s eyes with nothing but adoration.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "с одним лишь обожанием",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "5235464a6071447f9a3a3064cd428c5c",
-              "finding_id": "chunk-006-adore-intensity"
-            }
-          },
-          {
-            "id": "look-beat-omitted",
-            "category": "omission",
-            "severity": "major",
-            "detail": "Опущены пауза и действие: Чеко смотрит Максу в глаза. Вместо этого в переводе осталось грамматически оторванное «— с одним лишь обожанием —», которое не передаёт исходную фразу. Восстановите это действие и свяжите его с продолжением реплики.",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "He pauses, looking into Max’s eyes with nothing but adoration.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "И буду рядом, пока ты мне позволяешь. — с одним лишь обожанием — Так вот, *Макс,*",
-              "occurrence": 0
-            },
-            "resolves": null
-          },
-          {
-            "id": "hands-in-pocket",
-            "category": "meaning",
-            "severity": "minor",
-            "detail": "В оригинале Чеко останавливается, уже держа руки в карманах. «Засунув руки в карманы» описывает отдельное действие — будто он помещает их туда после остановки. Лучше передать, что он нервно держит руки в карманах.",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "He doesn’t notice when Checo stops, hands in his pockets nervously, until the man calls out to him,",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "Он не замечает, как Чеко останавливается, нервно засунув руки в карманы, пока тот не окликает его:",
-              "occurrence": 0
-            },
-            "resolves": null
-          },
-          {
-            "id": "confusion-state",
-            "category": "meaning",
-            "severity": "minor",
-            "detail": "Оригинал говорит, что Макс всё ещё так же растерян. Перевод «выглядит таким же озадаченным» подменяет его состояние тем, как он выглядит со стороны.",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "“It’s the fifteenth of May,” he tells Max, who is still as confused as before.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "говорит он Максу, который по-прежнему выглядит таким же озадаченным.",
-              "occurrence": 0
-            },
-            "resolves": null
-          },
-          {
-            "id": "profanity-softened",
-            "category": "register",
-            "severity": "minor",
-            "detail": "«Fuck» — более грубое и экспрессивное ругательство, чем нейтрально-мягкое «чёрт». Сохраните разговорную грубость оригинала.",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "“Fuck, *ten years ago?* I’m getting old.”",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "— Чёрт, *десять лет назад?* Я старею.",
-              "occurrence": 0
-            },
-            "resolves": null
-          },
-          {
-            "id": "shit-ton-register",
-            "category": "register",
-            "severity": "minor",
-            "detail": "«A metric shit ton» — грубое, шутливо-гиперболическое выражение. «Чёртову» смягчает эту грубость; подберите соответствующий по силе разговорный вариант.",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "“A metric shit ton,” Max adds, laughing.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "— Целую чёртову метрическую тонну, — добавляет Макс со смехом.",
-              "occurrence": 0
-            },
-            "resolves": null
-          }
-        ]
-      },
-      "style": [],
-      "glossary": []
-    },
-    "chunk-007": {
-      "outcome": "CORRECTIONS_REQUIRED",
-      "report": {
-        "evidence_version": 2,
-        "context": "independent_session",
-        "checks": {
-          "coverage": true,
-          "meaning": true,
-          "terminology": true,
-          "style": true,
-          "structure": true
-        },
-        "findings": [
-          {
-            "id": "known-what-r1",
-            "category": "meaning",
-            "severity": "minor",
-            "detail": "Resolved: «О чём?» correctly asks what Max should have guessed, rather than what he knew.",
-            "resolved": true,
-            "source_anchor": {
-              "quote": "Known what?",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "««О чём?»»",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "5235464a6071447f9a3a3064cd428c5c",
-              "finding_id": "chunk-007-known-what"
-            }
-          },
-          {
-            "id": "box-omission-r1",
-            "category": "omission",
-            "severity": "major",
-            "detail": "Resolved: the translation now includes Checo moving the box closer, asking again, opening it, and showing Max the thick titanium ring.",
-            "resolved": true,
-            "source_anchor": {
-              "quote": "Checo holds out the box a little closer to Max, grinning as he asks again, “So, will you marry me?” He opens the velvet box, showing Max a thick ring made of titanium.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "«Чеко придвигает коробочку к Максу чуть ближе и, широко улыбаясь, снова спрашивает: «Так ты женишься на мне?» Он открывает бархатную коробочку, показывая Максу толстое титановое кольцо.»",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "5235464a6071447f9a3a3064cd428c5c",
-              "finding_id": "chunk-007-box-omission"
-            }
-          },
-          {
-            "id": "double-quotes",
-            "category": "structure",
-            "severity": "minor",
-            "detail": "The reply has duplicated opening and closing guillemets (««О чём?»»). Remove the extra quotation marks.",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "Known what?",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "««О чём?»»",
-              "occurrence": 0
-            },
-            "resolves": null
-          },
-          {
-            "id": "box-quote-scope",
-            "category": "structure",
-            "severity": "minor",
-            "detail": "The translation opens a guillemet before the narration about Checo, then nests another opening guillemet before his spoken question and closes only after the ring description. Correct the quotation marks so they enclose only the dialogue.",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "Checo holds out the box a little closer to Max, grinning as he asks again, “So, will you marry me?” He opens the velvet box, showing Max a thick ring made of titanium.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "«Чеко придвигает коробочку к Максу чуть ближе и, широко улыбаясь, снова спрашивает: «Так ты женишься на мне?» Он открывает бархатную коробочку, показывая Максу толстое титановое кольцо.»",
-              "occurrence": 0
-            },
-            "resolves": null
-          },
-          {
-            "id": "yes-comma",
-            "category": "structure",
-            "severity": "minor",
-            "detail": "Add the comma after «Да»: the Russian punctuation should read «Да, конечно, блядь».",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "“Of fucking course,” Max breathes out, laughing as he presses their lips together.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "«Да конечно, блядь», — выдыхает Макс со смехом и прижимается губами к его губам.",
-              "occurrence": 0
-            },
-            "resolves": null
-          }
-        ]
-      },
-      "style": [],
-      "glossary": []
     }
   },
   "windows": {
@@ -685,29 +216,14 @@
     },
     "chunk-002": {
       "source_sha256": "17ba3982a112300e58f8782ea0f54c2952d398df727ed1df60e378a9d1db06fc",
-      "translation_sha256": "c76ec31b0ea6934e2637c54248d5b264fbd8bab6fc81cb1971141f4c67a1cafc"
-    },
-    "chunk-003": {
-      "source_sha256": "ce41aa564b9429ee7ddfd9112ac53f608f312efcaaec06da66250623d42b80b5",
-      "translation_sha256": "31dc0353de24fefe1fdfacfe85253e75d00d5acbefcf101340bbb836f6776dc5"
-    },
-    "chunk-004": {
-      "source_sha256": "ca44891fd425b5f4537fc3a0060502b17d5a5a6ecff7078197e56dee5efd93d4",
-      "translation_sha256": "df6b4a6d1b67b2b12a9f87d3c9987bfeb3403350ceb87ca53ceffc45506c1ebb"
-    },
-    "chunk-005": {
-      "source_sha256": "a8acfee62f916171b011a0c6b87117d89c0fbae7bc90754ffb90368e57a22d50",
-      "translation_sha256": "289a1527a47140a1654e1fd0404d3c3adb73ef46ef7ab674aaf6981b4017db53"
-    },
-    "chunk-006": {
-      "source_sha256": "ac986e9ab46e1fe4d087661a25acb995bd72cda72ef5c3305a577455f471af32",
-      "translation_sha256": "00316b384135ef5735b10f4f89bcb7e78acfd661ddac729d3c97acfc476fa71c"
-    },
-    "chunk-007": {
-      "source_sha256": "2c6c8c8cd35bd32827835f7add96af3d9b826481c8e1761ff09a367a9c0c58d7",
-      "translation_sha256": "29a32ddef8457eac9e88a34807b96a9b6e0455434284cc8863026f18d8ae6485"
+      "translation_sha256": "3544c0d982d17a59befce9e9e1e33f019d0cda43b5af7b13d0dc92c72c8495d0"
     }
   },
-  "accepted_review_record_id": "13671585eb1d49c4a4aa1fc1e6909703",
-  "reused": {}
+  "accepted_review_record_id": null,
+  "reused": {
+    "chunk-001": {
+      "from_translation_sha256": "3231febb5f31f9f772e55a3bae070aa37b5f73802475b2b7f2dcefc827c6a1ff",
+      "from_record_id": "13671585eb1d49c4a4aa1fc1e6909703"
+    }
+  }
 }
