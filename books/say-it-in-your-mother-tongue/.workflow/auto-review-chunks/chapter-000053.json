@@ -288,6 +288,43 @@
           "type": "персона"
         }
       ]
+    },
+    "chunk-005": {
+      "outcome": "PASS",
+      "report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "phone-screen-recheck",
+            "category": "omission",
+            "severity": "minor",
+            "detail": "Rechecked the prior finding: the current translation includes Checo hiding the phone screen, and the sentence is complete.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "hiding his phone screen anytime Max moves a little too close to it.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "и прячет экран телефона всякий раз, когда Макс подходит к телефону хоть немного ближе.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "13671585eb1d49c4a4aa1fc1e6909703",
+              "finding_id": "chunk-005-phone-screen"
+            }
+          }
+        ]
+      },
+      "style": [],
+      "glossary": []
     }
   },
   "windows": {
@@ -306,6 +343,10 @@
     "chunk-004": {
       "source_sha256": "ca44891fd425b5f4537fc3a0060502b17d5a5a6ecff7078197e56dee5efd93d4",
       "translation_sha256": "2a13ea4943390d8c5a9c865c9630710533134198b9ab23d4b8e5e1ddba9ea9e9"
+    },
+    "chunk-005": {
+      "source_sha256": "a8acfee62f916171b011a0c6b87117d89c0fbae7bc90754ffb90368e57a22d50",
+      "translation_sha256": "949e503a01cba99592d7426dc58450215c031f70f252a9304a825dee7900904b"
     }
   },
   "accepted_review_record_id": null,
