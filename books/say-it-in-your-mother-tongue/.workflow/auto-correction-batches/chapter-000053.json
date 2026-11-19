@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "unit_id": "chapter-000053",
+  "review_record_id": "5235464a6071447f9a3a3064cd428c5c",
+  "source_sha256": "7ee14f3461238bdd7e7e066553e63d5bdeba5019caeabdea4cbc6fcc60960253",
+  "translation_sha256": "13fd99b585d7b312d7519598b93e8c629bc7caecfe471e8db6a25a6f5026f42d",
+  "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+  "patches": [
+    {
+      "finding_id": "chunk-002-from-you",
+      "operation": "replace",
+      "target_anchor": {
+        "quote": "Большое спасибо, я правда это ценю",
+        "occurrence": 0
+      },
+      "replacement": "Большое спасибо, мне особенно приятно слышать это от тебя"
+    },
+    {
+      "finding_id": "chunk-002-disbelief-phrase",
+      "operation": "replace",
+      "target_anchor": {
+        "quote": "он делает паузу, смеясь от недоверия.",
+        "occurrence": 0
+      },
+      "replacement": "он делает паузу и недоверчиво смеётся."
+    },
+    {
+      "finding_id": "chunk-002-spinning-them",
+      "operation": "replace",
+      "target_anchor": {
+        "quote": "Он кружит его, смеясь и уже не в силах сдерживать слёзы.",
+        "occurrence": 0
+      },
+      "replacement": "Он кружит их обоих, смеясь и уже не в силах сдерживать слёзы."
+    },
+    {
+      "finding_id": "chunk-002-stray-tears",
+      "operation": "replace",
+      "target_anchor": {
+        "quote": "несколько случайных слёз",
+        "occurrence": 0
+      },
+      "replacement": "несколько слезинок"
+    }
+  ],
+  "glossary": [],
+  "style_guide": []
+}
