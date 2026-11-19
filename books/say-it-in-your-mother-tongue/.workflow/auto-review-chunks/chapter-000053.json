@@ -361,6 +361,40 @@
           "type": "имя"
         }
       ]
+    },
+    "chunk-005": {
+      "outcome": "CORRECTIONS_REQUIRED",
+      "report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "phone-ref-1",
+            "category": "referent",
+            "severity": "minor",
+            "detail": "The source says Max moves closer to the phone (\"it\"), but «подходит к нему» refers to Checo. This changes what triggers Checo hiding the screen. Clarify that Max moves closer to the phone or its screen.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "hiding his phone screen anytime Max moves a little too close to it.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "прячет экран телефона каждый раз, когда Макс подходит к нему хоть немного ближе.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "style": [],
+      "glossary": []
     }
   },
   "windows": {
@@ -379,6 +413,10 @@
     "chunk-004": {
       "source_sha256": "ca44891fd425b5f4537fc3a0060502b17d5a5a6ecff7078197e56dee5efd93d4",
       "translation_sha256": "511bf55fecbbf7922dfa9d37bd3b1059b4834c262181150c4e48b29053f99b4b"
+    },
+    "chunk-005": {
+      "source_sha256": "a8acfee62f916171b011a0c6b87117d89c0fbae7bc90754ffb90368e57a22d50",
+      "translation_sha256": "59f7928054ca0e0f9e98c9b8e1d0f9720a536ec6719ec5e44f0be717d93e4bd6"
     }
   },
   "accepted_review_record_id": null,
