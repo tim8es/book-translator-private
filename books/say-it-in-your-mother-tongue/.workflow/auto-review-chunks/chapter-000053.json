@@ -166,12 +166,123 @@
       },
       "style": [],
       "glossary": []
+    },
+    "chunk-002": {
+      "outcome": "PASS",
+      "report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-thanks",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Resolved: the current translation preserves the personal emphasis with «от тебя».",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Thank you very much, appreciate that from you.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Большое спасибо, мне особенно приятно слышать это от тебя",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "5235464a6071447f9a3a3064cd428c5c",
+              "finding_id": "chunk-002-from-you"
+            }
+          },
+          {
+            "id": "recheck-laugh",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Resolved: «недоверчиво смеётся» is a natural rendering of laughing in disbelief.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "he pauses, laughing in disbelief.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "он делает паузу и недоверчиво смеётся",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "5235464a6071447f9a3a3064cd428c5c",
+              "finding_id": "chunk-002-disbelief-phrase"
+            }
+          },
+          {
+            "id": "recheck-spin",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Resolved: «кружит их обоих» preserves that Nico spins himself and Gabi around together.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "He spins them around, laughing, unable to hold back his tears anymore.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Он кружит их обоих, смеясь и уже не в силах сдерживать слёзы.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "5235464a6071447f9a3a3064cd428c5c",
+              "finding_id": "chunk-002-spinning-them"
+            }
+          },
+          {
+            "id": "recheck-tears",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Resolved: «по щекам катятся несколько слезинок» naturally renders the tears rolling down his cheeks.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "a few stray tears roll down his cheeks.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "как по щекам катятся несколько слезинок",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "5235464a6071447f9a3a3064cd428c5c",
+              "finding_id": "chunk-002-stray-tears"
+            }
+          }
+        ]
+      },
+      "style": [
+        {
+          "evidence": "В переводе сохранены отдельные фрагменты: «Клетчатый флаг.», «Ландо побеждает.», «Оскар следует за ним почти вплотную.» и «И тут это происходит.»",
+          "source_pattern": "The race result is paced through isolated fragments: “Checkered flag.”, “Lando wins.”, “Oscar follows close.”, and “And then it happens.”",
+          "translation_approach": "Сохранять отдельные короткие фразы и их абзацное членение, поддерживая нарастающий ритм эпизода."
+        }
+      ],
+      "glossary": [
+        {
+          "notes": "Сосед Габи во время просмотра гонки; передаёт ему гарнитуру.",
+          "original": "Steven Petrik",
+          "translation": "Стивен Петрик",
+          "type": "имя и фамилия"
+        }
+      ]
     }
   },
   "windows": {
     "chunk-001": {
       "source_sha256": "1e9f7fe5f7c1990f097b17cfc3c0e732dd30e8e38f43a8f22dd15bc9b071bce0",
       "translation_sha256": "d540756c08088fdaffaa24353ba8f0f91eb3ca19c21a7ea82333d42d33981b40"
+    },
+    "chunk-002": {
+      "source_sha256": "17ba3982a112300e58f8782ea0f54c2952d398df727ed1df60e378a9d1db06fc",
+      "translation_sha256": "c76ec31b0ea6934e2637c54248d5b264fbd8bab6fc81cb1971141f4c67a1cafc"
     }
   },
   "accepted_review_record_id": null,
