@@ -3,7 +3,7 @@
   "job_id": "05eed6ea814d3b5eec014c6d05b39e3f",
   "book_slug": "say-it-in-your-mother-tongue",
   "state": "running",
-  "phase": "model-retry",
+  "phase": "claimed",
   "failures": 2,
   "correction_rounds": {
     "chapter-000001": 1,
@@ -54,8 +54,13 @@
   },
   "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
   "source_sha256": "12e210ce5a95daf56a97ada583ec15c274780c4ddfa7fb92da6a88c67f7c403d",
-  "updated_at": "2026-11-19T00:51:23.867785+00:00",
-  "active": null,
+  "updated_at": "2026-11-19T00:51:28.777184+00:00",
+  "active": {
+    "role": "reviewer",
+    "chapter": 53,
+    "session_id": "auto-05eed6ea814d-reviewer-5747aafd",
+    "unit_id": "chapter-000053"
+  },
   "recoveries": [
     {
       "action": "auto-retry-corrected-structural-preflight",
@@ -447,6 +452,5 @@
     "route": "primary",
     "role": "reviewer",
     "unit_id": "chapter-000053"
-  },
-  "last_error": "reviewer evidence is invalid: findings[2].translation_anchor: quoted passage occurrence 0 is absent from the current artifact"
+  }
 }
