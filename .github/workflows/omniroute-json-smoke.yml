@@ -91,13 +91,13 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: tim8es/book-translator
-          ref: 1f6537842de571d1e77cf72efce1cc1fa13d5fb5
+          ref: 88901aef7e754c651846f78dfda2356681144e08
           path: candidate
           fetch-depth: 1
           persist-credentials: false
       - name: Verify exact candidate revision
         working-directory: candidate
-        run: test "$(git rev-parse HEAD)" = "1f6537842de571d1e77cf72efce1cc1fa13d5fb5"
+        run: test "$(git rev-parse HEAD)" = "88901aef7e754c651846f78dfda2356681144e08"
       - name: Measure two independently reviewed full chapters within 3600 seconds
         env:
           OMNIROUTE_BASE_URL: ${{ vars.OMNIROUTE_BASE_URL }}
