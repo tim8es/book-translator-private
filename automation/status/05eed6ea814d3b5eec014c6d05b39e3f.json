@@ -3,7 +3,7 @@
   "job_id": "05eed6ea814d3b5eec014c6d05b39e3f",
   "book_slug": "say-it-in-your-mother-tongue",
   "state": "running",
-  "phase": "review-chunk-staged",
+  "phase": "model-call-reserved",
   "failures": 0,
   "correction_rounds": {
     "chapter-000001": 1,
@@ -54,7 +54,7 @@
   },
   "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
   "source_sha256": "12e210ce5a95daf56a97ada583ec15c274780c4ddfa7fb92da6a88c67f7c403d",
-  "updated_at": "2026-11-19T01:03:49.362297+00:00",
+  "updated_at": "2026-11-19T01:03:53.940820+00:00",
   "active": {
     "role": "reviewer",
     "chapter": 53,
@@ -83,7 +83,7 @@
   ],
   "structural_span_retries": 1,
   "structural_helper_revision": "4c584fe5534871cd05aa851d9b7bdbfa696d0edd",
-  "model_calls_started": 726,
+  "model_calls_started": 727,
   "prompt_context": {
     "role": "reviewer",
     "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
@@ -95,13 +95,13 @@
     "glossary_sha256": "1120f576fed22714b46c7276e899bd01c484dd218ca94c8d6fd37306a9c8d8a4",
     "style_guide_sha256": "eaa08d42f1f5ea55a06553ec9c1d9e5c6f66b62f9bb6f55b653a52f78659dd74",
     "system_chars": 27925,
-    "user_chars": 44054,
+    "user_chars": 42957,
     "review_context": "independent_session",
     "execution_mode": "bounded-review-chunks",
     "review_helper_revision": "review-chunks-source-stable-v1",
     "incremental_stage_version": 2,
     "reused_clean_chunks": 0,
-    "chunk_id": "chunk-004",
+    "chunk_id": "chunk-005",
     "chunk_count": 7
   },
   "structural_helper_migrations": [
