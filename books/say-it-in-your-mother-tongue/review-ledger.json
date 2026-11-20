@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 170,
+  "next_sequence": 171,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -18824,6 +18824,73 @@
             "resolves": {
               "record_id": "3160a06336c046ff8b2c717b4bece77f",
               "finding_id": "structure-1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "e29967683f794417927c2453049f0f9d",
+      "sequence": 170,
+      "unit_id": "chapter-000046",
+      "outcome": "PASS",
+      "source_sha256": "5eb40c7657a04768072006c3d09e3e412722114d863dd1168e287a3923a7b5b0",
+      "translation_sha256": "729de63299af397fbe4b2f18f9e378e4a8195a55671116247929558b41ca0bea",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "chatops-say-it-46-reviewer-resume-20261120",
+      "reviewed_at": "2026-11-20T12:23:24Z",
+      "state_revision": "e83328bcc67f2f77530a1a0648ea7dff9a7e5ca607b7677ad924c32c3c213c98",
+      "review_commit": "c1fba14426d56c7a51566800fbdfe8927ca446c2",
+      "correction_round": 4,
+      "supersedes_record_id": "168dd6ff885f49fe9e8e3885370e1f21",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "r046-1",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "Rechecked all 80 source/target blocks. Esteban's question is now a complete separate greeting with appropriate speaker/narration. The surname has consistent accepted form Ферстаппен; the old, conflicting lexical entry in the book-wide glossary must be reconciled by the orchestrator, not by reverting source-faithful chapter prose.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "“What’s up, Verstappen?” Esteban greets Max with a wide grin.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Как дела, Ферстаппен?» — приветствует Макса Эстебан, широко улыбаясь.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "168dd6ff885f49fe9e8e3885370e1f21",
+              "finding_id": "terminology-1-recheck-3"
+            }
+          },
+          {
+            "id": "r046-2",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Rechecked all 80 source/target blocks. Esteban's question is now a complete separate greeting with appropriate speaker/narration. The surname has consistent accepted form Ферстаппен; the old, conflicting lexical entry in the book-wide glossary must be reconciled by the orchestrator, not by reverting source-faithful chapter prose.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "“What’s up, Verstappen?” Esteban greets Max with a wide grin.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Как дела, Ферстаппен?» — приветствует Макса Эстебан, широко улыбаясь.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "168dd6ff885f49fe9e8e3885370e1f21",
+              "finding_id": "meaning-1"
             }
           }
         ]
