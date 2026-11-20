@@ -43,8 +43,16 @@ class StateOnlyDeploymentTests(unittest.TestCase):
             "auto-translate.yml", "auto-provider-retry.yml",
             "book-batch-validation.yml",
             "book-job-monitor.yml", "chat-operations.yml", "final-epub.yml",
-            "omniroute-json-smoke.yml", "tests.yml",
+            "omniroute-json-smoke.yml", "pi-book-translation.yml", "tests.yml",
         })
+        pi = (root / "pi-book-translation.yml").read_text("utf-8")
+        self.assertIn("PI_EXECUTOR_SHA:", pi)
+        self.assertIn("BOOK_TRANSLATOR_LLM_BACKEND: pi", pi)
+        self.assertIn("group: book-operation-", pi)
+        self.assertIn("probe_only:", pi)
+        self.assertIn("continue_automatically:", pi)
+        self.assertNotIn("schedule:", pi)
+        self.assertNotIn("push:", pi)
         auto = (root / "auto-translate.yml").read_text("utf-8")
         self.assertIn("group: book-operation-", auto)
         self.assertIn("max-parallel: 3", auto)
