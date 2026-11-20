@@ -4,17 +4,12 @@
   "book_slug": "say-it-in-your-mother-tongue",
   "source_sha256": "12e210ce5a95daf56a97ada583ec15c274780c4ddfa7fb92da6a88c67f7c403d",
   "state": "running",
-  "phase": "claimed",
+  "phase": "translator-completed",
   "failures": 0,
   "correction_rounds": {},
   "workflow_revision": "8bb30227adc4bb921429611e12a0af803c9b6487",
-  "updated_at": "2026-11-20T15:06:03.368761+00:00",
-  "active": {
-    "role": "translator",
-    "chapter": 6,
-    "session_id": "auto-a7b9e400d5f2-translator-20449755",
-    "unit_id": "chapter-000006"
-  },
+  "updated_at": "2026-11-20T15:06:07.830765+00:00",
+  "active": null,
   "recoveries": [
     {
       "action": "operator-recover-stale-attention-queue-preflight",
@@ -53,24 +48,24 @@
       }
     },
     "accepted_operations": {
-      "translated": 4,
+      "translated": 5,
       "review_pass": 4,
       "reviewed": 4
     }
   },
   "prompt_context": {
-    "role": "reviewer",
+    "role": "translator",
     "workflow_revision": "8bb30227adc4bb921429611e12a0af803c9b6487",
     "loaded_contracts": [
       "AGENTS.md",
       "docs/TRANSLATION.md",
-      "docs/REVIEWER.md"
+      "docs/TRANSLATOR.md"
     ],
     "glossary_sha256": "40783393df9152a0a615f96bb58920b1d1cdb1c2b486cbeedaf8d349c7a39491",
-    "style_guide_sha256": "eaa08d42f1f5ea55a06553ec9c1d9e5c6f66b62f9bb6f55b653a52f78659dd74",
-    "system_chars": 29562,
-    "user_chars": 57463,
-    "review_context": "independent_session"
+    "style_guide_sha256": "169389916f149959f5e6ed87ef8f7eea77346bc95fd5bcc87cbe7581d10752cf",
+    "system_chars": 21423,
+    "user_chars": 52172,
+    "execution_mode": "verified_operator_editorial_candidate"
   },
   "model_calls_started": 5,
   "provider_call_metric": {
