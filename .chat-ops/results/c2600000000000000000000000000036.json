@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "request_id": "c2600000000000000000000000000036",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "dca374e86057818cdc1677c71bdbd574c1d9392571d31a86a99408ddd4023053",
+    "record": {
+      "correction_round": 2,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "meaning",
+            "detail": "Former issue recheck-meaning-1 corrected and rechecked against English messaging. The first-person future denial and the informal lowercase chat style are preserved with accurate speaker labels.",
+            "id": "r027-1",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "recheck-meaning-1",
+              "record_id": "1db4effa63a64229a1ed208cc2be9cf0"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "never been into him<!-- bt-media:000005 -->never will be"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "никогда не западу"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Former issue recheck-style-1 corrected and rechecked against English messaging. The first-person future denial and the informal lowercase chat style are preserved with accurate speaker labels.",
+            "id": "r027-2",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "recheck-style-1",
+              "record_id": "1db4effa63a64229a1ed208cc2be9cf0"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "for sure man<!-- bt-media:000002 -->like i promise<!-- bt-media:000003 -->scouts honor and all"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "точно, чувак"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Further source review identified a tense drift in the adjacent Nico/Gabriel morning sequence. Fourteen affected Russian blocks now use the source's consistent present-tense narration, without changing chronology.",
+            "id": "r027-tense",
+            "resolved": true,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Nico reaches with his hand to Gabriel’s."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Нико тянется к руке Габриэля."
+            }
+          }
+        ]
+      },
+      "record_id": "4a26f4328e56483b9dc3784e387c27e8",
+      "review_commit": "482bf0d2c89eb5e307b5afde3b756fb0359d0847",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewed_at": "2026-11-20T12:21:06Z",
+      "reviewer_session_id": "chatops-say-it-27-reviewer-resume-20261120",
+      "sequence": 167,
+      "source_sha256": "fae0b5d9b21be14461abbce11e210357cc94cde8c23e31a816d1567cd9db8d2f",
+      "state_revision": "e83328bcc67f2f77530a1a0648ea7dff9a7e5ca607b7677ad924c32c3c213c98",
+      "supersedes_record_id": "1db4effa63a64229a1ed208cc2be9cf0",
+      "translation_sha256": "78c9c63ea521d1a86d9d3360e4dd4d3053d1bdce0d943bf7080983417d4fdbc4",
+      "unit_id": "chapter-000027",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741"
+    }
+  },
+  "error": null
+}
