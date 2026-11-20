@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "request_id": "f20261120000c0a1b2c3d4e5f6071860",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "e379474c3b472c42b724eda24beaa33708b0acf15a308a084c24902b699ad386",
+    "record": {
+      "correction_round": 4,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "style",
+            "detail": "Rechecked all 88 source/translation blocks, including the arrival scene. The meaningful italic emphasis on *finally* is preserved as *наконец* in the canonical translation; the prior omission is absent.",
+            "id": "r014-finally",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "style-emphasis-finally-1",
+              "record_id": "2b01c4ccf81c4d59819fbdcd71188c40"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Gabriel yawns, covering his mouth with his hand, before *finally* looking up."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Габриэль зевает, прикрывая рот рукой, и *наконец* поднимает глаза."
+            }
+          }
+        ]
+      },
+      "record_id": "943b3efac189487d9d75ebd2b04b98df",
+      "review_commit": "8c1ba6e54ff3372d129c101a1954b6081ccb35ea",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewed_at": "2026-11-20T09:56:37Z",
+      "reviewer_session_id": "chatops-say-it-14-reviewer-20261120",
+      "sequence": 160,
+      "source_sha256": "4a0fcf754072626130f19f2f950fef4fe75364da3244b50f72d5670a04911462",
+      "state_revision": "d9f45e2a4e23426e00622a8a44517612cc0411e40a7504b40eedd5f28be5c721",
+      "supersedes_record_id": "2b01c4ccf81c4d59819fbdcd71188c40",
+      "translation_sha256": "2d310ef8c1a172eaa9477af857b30844e2714964c46771762e8988abac02c26c",
+      "unit_id": "chapter-000014",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741"
+    }
+  },
+  "error": null
+}
