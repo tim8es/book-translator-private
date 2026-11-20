@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 186,
+  "next_sequence": 187,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -19720,6 +19720,67 @@
           "structure": true
         },
         "findings": []
+      }
+    },
+    {
+      "record_id": "5d8c7bc2a16a4116a925f545fa85781b",
+      "sequence": 186,
+      "unit_id": "chapter-000014",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "4a0fcf754072626130f19f2f950fef4fe75364da3244b50f72d5670a04911462",
+      "translation_sha256": "52f9b24cfbf5f35a0eb251486339f08ed3b80581ba47edcfc621247db1b13e56",
+      "workflow_revision": "8bb30227adc4bb921429611e12a0af803c9b6487",
+      "review_contract_revision": "docs/TRANSLATION.md@8bb30227adc4bb921429611e12a0af803c9b6487",
+      "reviewer_session_id": "chat-20261120-sayit-reviewer-14-c214",
+      "reviewed_at": "2026-11-20T19:13:56Z",
+      "state_revision": "7a28d3cd82ecc0c8d25687338efd48386f32f66e848e6e18d0486e7c343a0b5d",
+      "review_commit": "88662cc13d1aed06ff2582fba92b8d5cc8bd232a",
+      "correction_round": 5,
+      "supersedes_record_id": "943b3efac189487d9d75ebd2b04b98df",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "emphasis-10",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "В исходном блоке 10 слово *anything* выделено курсивом, а русский эквивалент «ничего» не выделен. Верните смысловое выделение.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "he can’t see *anything*",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "поняв, что ничего не видит",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "emphasis-71",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "В исходном блоке 71 акцент *himself* выделен курсивом, а «него самого» в переводе выделение теряет.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "and especially from *himself*",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "и особенно от него самого",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
       }
     }
   ]
