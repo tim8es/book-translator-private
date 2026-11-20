@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "request_id": "f20261120000c0a1b2c3d4e5f6071861",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "f0db15f7065b19c034a509996c0c8f8e7ad07a1bbf0910bb21c0a7adb8d8bafd",
+    "record": {
+      "correction_round": 1,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "terminology",
+            "detail": "The chat handle is consistently rendered as сэр Ланселот; the former spelling сэр Лэнсэлот is gone. Reviewed all 142 blocks and the surrounding dialogue.",
+            "id": "r017-handle-one",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "terminology-1",
+              "record_id": "bc5896b19d7d4a92acfdd64728c95769"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "<!-- bt-inline:000001:start -->sir lancelot<!-- bt-media:000001 --><!-- bt-inline:000001:end -->why are all my friends so weird"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "<!-- bt-inline:000001:start -->сэр Ланселот<!-- bt-media:000001 --><!-- bt-inline:000001:end -->почему все мои друзья такие странные"
+            }
+          },
+          {
+            "category": "terminology",
+            "detail": "The second former variant сэр Лэнселот is also normalized to сэр Ланселот, including the same chat speaker and message.",
+            "id": "r017-handle-two",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "terminology-2",
+              "record_id": "bc5896b19d7d4a92acfdd64728c95769"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "<!-- bt-inline:000001:start -->sir lancelot<!-- bt-media:000001 --><!-- bt-inline:000001:end -->fuck off🖕<!-- bt-media:000002 -->how did u know tho"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "<!-- bt-inline:000001:start -->сэр Ланселот<!-- bt-media:000001 --><!-- bt-inline:000001:end -->пошёл нахуй🖕<!-- bt-media:000002 -->но откуда ты вообще знаешь?"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "The current text restores Christian's elliptical question asking whether Max is okay, rather than incorrectly introducing a question about listening. Max's deliberately evasive 'Listening?' remains intact in the next block.",
+            "id": "r017-question",
+            "resolved": true,
+            "resolves": null,
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "“And are you?”"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "«А ты?»"
+            }
+          },
+          {
+            "category": "referent",
+            "detail": "The current Russian passage correctly has Checo offer to hold Max's cup for Max; the earlier translation reversed the beneficiary and implied Max holds Checo's cup.",
+            "id": "r017-cup",
+            "resolved": true,
+            "resolves": null,
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "He instinctively holds out his hand, wordlessly offering Max that he’ll hold his cup for him."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Он инстинктивно протягивает руку, без слов предлагая взять у Макса чашку."
+            }
+          }
+        ]
+      },
+      "record_id": "f3ff82f467f4475d8778c7a059889835",
+      "review_commit": "a2d77a88990f94b6992eeec8f6d816580de67afa",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewed_at": "2026-11-20T09:59:33Z",
+      "reviewer_session_id": "chatops-say-it-17-reviewer-20261120",
+      "sequence": 161,
+      "source_sha256": "c690aa78d21860ad65414ad40050e53344ce6ffa17018d43da3d3e709f5898e0",
+      "state_revision": "d9f45e2a4e23426e00622a8a44517612cc0411e40a7504b40eedd5f28be5c721",
+      "supersedes_record_id": "bc5896b19d7d4a92acfdd64728c95769",
+      "translation_sha256": "7c0f01077c1df2156ee57e7de49bbed75ba78f15c9766362f5e011577b885dc3",
+      "unit_id": "chapter-000017",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741"
+    }
+  },
+  "error": null
+}
