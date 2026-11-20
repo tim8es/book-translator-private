@@ -19,12 +19,36 @@
     "size_bytes": 91502,
     "paragraphs": 390,
     "literary_review_context": "bounded_context",
-    "translator_acceptance": false,
-    "independent_reviewer_pass": false
+    "translator_acceptance": true,
+    "independent_reviewer_pass": false,
+    "canonical_translation_path": "translated/chapter-12-canonical-ru.md",
+    "canonical_translation_sha256": "4fcae489d7fbf289daf0e55c8f33b89ce88ba129f035ec8e904205980dd33bf1"
   },
   "review_note": "review/chapter-12-local-review.md",
-  "stage_only": true,
-  "official_source_update_executed": false,
-  "official_source_revision_promoted": false,
-  "official_progress_updated": false
+  "stage_only": false,
+  "official_source_update_executed": true,
+  "official_source_revision_promoted": true,
+  "official_progress_updated": true,
+  "active_source_revision": "source-000004",
+  "source_edition_status": "promoted",
+  "source_derived": {
+    "relative_path": "source/You_Feel_Like_Home_workflow_compatible.html",
+    "sha256": "fcc4a94fff8722c9cf1ea891361acca1d15cd4796b56fc7c2e95a38a7b92dac9",
+    "source_format": "html",
+    "changes_from_exact_user_source": "11 footnote anchor URLs made absolute and one h1 changed to h2 to preserve separate summary unit; all readable text unchanged"
+  },
+  "book_state": {
+    "units": 15,
+    "translated": 15,
+    "reviewed": 0,
+    "review_ledger_records": 0,
+    "active_revision": "source-000004"
+  },
+  "preview": {
+    "path": "output/You_Feel_Like_Home_RU_12chapters_PREVIEW.epub",
+    "sha256": "0d99c065f3065a8a36e9731b3f4b8b3c947ffcbd16b8cdd22856a7001b623a93",
+    "size_bytes": 908897,
+    "format": "epub",
+    "reviewed": false
+  }
 }
