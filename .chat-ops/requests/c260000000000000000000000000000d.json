@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "request_id": "c260000000000000000000000000000d",
+  "book_slug": "say-it-in-your-mother-tongue",
+  "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+  "operation": "review-record",
+  "chapter": 37,
+  "session_id": "chatops-say-it-37-reviewer-resume-20261120",
+  "outcome": "PASS",
+  "quality_report": {
+    "evidence_version": 2,
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "id": "r037-wrong",
+        "category": "meaning",
+        "severity": "major",
+        "detail": "Corrected chapter preserves three consecutive turns in the Jos debate: Max says Jos is not wrong, Checo says he is wrong, Max repeats not wrong. The contradictory pronoun/polarity and pride meaning from the earlier draft are absent; complete source/target block and marker comparison performed.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "he… isn’t. Not… not about this.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "он… не ошибается. Не… не в этом",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "072d0e20ce0849e09357c982aea72876",
+          "finding_id": "meaning-recheck-1"
+        }
+      }
+    ]
+  },
+  "source_sha256": "3c4748f66a27267765a11322203469f4422ca1efa7cc1f959d8d2567957dd4b3",
+  "translation_sha256": "46f78cae4e1e9992b3f8499c9ad0cdf43581af06d790182b2f6167036dec56f6",
+  "claim_sha256": "93a2ccca44930e41de6d302c2ccc82c4387d013972465280f55445402f23b2c0"
+}
