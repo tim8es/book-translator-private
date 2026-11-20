@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "request_id": "a8d34f18e0aa4b428dfe07c38fc30191",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "2aece4b75f152dd482ff192453e6932f6a9511a2aa031f85d8c502dab16be888",
+    "record": {
+      "correction_round": 1,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "findings": [
+          {
+            "detail": "Source loneliness passage: Russian grammar corrected to 'Об одиночестве'; rechecked in adjacent dialogue.",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "Source Caleb-as-exposed-target passage: corrected feminine agreement to 'у всех на виду — лёгкая мишень'; subject and threat maintained.",
+            "resolved": true,
+            "severity": "major"
+          },
+          {
+            "detail": "Source Arian's factual retort: replaced 'Это должно быть правдой' with direct 'Это правда'; confirmed tone and modality.",
+            "resolved": true,
+            "severity": "major"
+          },
+          {
+            "detail": "Source Caleb's impossibly bright eyes: restored brightness (невероятно яркими) instead of an invented eye-color claim.",
+            "resolved": true,
+            "severity": "major"
+          },
+          {
+            "detail": "Source 'He storms toward the door': restored forceful movement 'Он бросается к двери' without changing object or sequence.",
+            "resolved": true,
+            "severity": "minor"
+          }
+        ]
+      },
+      "record_id": "591c8a75b9594469a7acd2e5ae08ff21",
+      "review_commit": "07621fdd2cffb790eb1faa6f18c13c5abd0ac5f2",
+      "review_contract_revision": "docs/TRANSLATION.md@db253095d36f245f9531da654b93ab72193d3b97",
+      "reviewed_at": "2026-11-20T23:15:34Z",
+      "reviewer_session_id": "review-chatops-yflh-20261121-round2",
+      "sequence": 5,
+      "source_sha256": "a1e177c2e6daebb65acd48e2b493ac5587edc7e2f4453f26bf59e19c0e001270",
+      "state_revision": "455db4215b5d8014754d34a69f308749e943960ab4422710d0040ac0d8e8da19",
+      "supersedes_record_id": "ad5f20ffd4124fb38da857adb1756151",
+      "translation_sha256": "5d24262e08db1385dc8b23c426bc15c0a3e183e258afba45aefdae0375743449",
+      "unit_id": "chapter-000003",
+      "workflow_revision": "db253095d36f245f9531da654b93ab72193d3b97"
+    }
+  },
+  "error": null
+}
