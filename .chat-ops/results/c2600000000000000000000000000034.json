@@ -1,0 +1,153 @@
+{
+  "schema_version": 1,
+  "request_id": "c2600000000000000000000000000034",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "407a7208e4a5f57c95a64fcd95133829b66030dfc6906e90f827edc82c97b19d",
+    "record": {
+      "correction_round": 4,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "structure",
+            "detail": "Previous structure defect \"recheck-structure-1\" was source-checked against the corrected aligned block. The source action, speaker or grammatical referent is now present without duplication; the accepted translation contains \"садится на пятки и отпускает Макса\". All 109 source/target block markers remain identical.",
+            "id": "r021-1",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "recheck-structure-1",
+              "record_id": "ca68262e256544e7a7b12af24a767b9d"
+            },
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "His breathing is fast, unsteady and shaky, when he sits back on his heels, letting go of Max — of the body *under* him, so warm and willing and entirely *not his to touch*."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "садится на пятки и отпускает Макса"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Previous meaning defect \"referent-1\" was source-checked against the corrected aligned block. The source action, speaker or grammatical referent is now present without duplication; the accepted translation contains \"не думаю, что я её верну\". All 109 source/target block markers remain identical.",
+            "id": "r021-2",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "referent-1",
+              "record_id": "ca68262e256544e7a7b12af24a767b9d"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Yeah, don’t think I’m getting that one back."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "не думаю, что я её верну"
+            }
+          },
+          {
+            "category": "omission",
+            "detail": "Previous omission defect \"omission-1\" was source-checked against the corrected aligned block. The source action, speaker or grammatical referent is now present without duplication; the accepted translation contains \"скрестив руки на груди и вызывающе шагнув навстречу Чеко\". All 109 source/target block markers remain identical.",
+            "id": "r021-3",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "omission-1",
+              "record_id": "ca68262e256544e7a7b12af24a767b9d"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Certainly more than you,” Max folds his arms on his chest, stepping defiantly towards Checo."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "скрестив руки на груди и вызывающе шагнув навстречу Чеко"
+            }
+          },
+          {
+            "category": "structure",
+            "detail": "Previous structure defect \"structure-2\" was source-checked against the corrected aligned block. The source action, speaker or grammatical referent is now present without duplication; the accepted translation contains \"«Это ты нас сравниваешь.\". All 109 source/target block markers remain identical.",
+            "id": "r021-4",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "structure-2",
+              "record_id": "ca68262e256544e7a7b12af24a767b9d"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Certainly more than you,” Max folds his arms on his chest, stepping defiantly towards Checo. “You’re the one comparing the two of us."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "«Это ты нас сравниваешь."
+            }
+          },
+          {
+            "category": "omission",
+            "detail": "Previous omission defect \"omission-2\" was source-checked against the corrected aligned block. The source action, speaker or grammatical referent is now present without duplication; the accepted translation contains \"Его ладонь тёплая\". All 109 source/target block markers remain identical.",
+            "id": "r021-5",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "omission-2",
+              "record_id": "ca68262e256544e7a7b12af24a767b9d"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "The palm of his hand is warm, though the touch still sends shivers down Max’s spine."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Его ладонь тёплая"
+            }
+          },
+          {
+            "category": "structure",
+            "detail": "Previous structure defect \"structure-3\" was source-checked against the corrected aligned block. The source action, speaker or grammatical referent is now present without duplication; the accepted translation contains \"Его ладонь тёплая, но от прикосновения по спине Макса\". All 109 source/target block markers remain identical.",
+            "id": "r021-6",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "structure-3",
+              "record_id": "ca68262e256544e7a7b12af24a767b9d"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "The palm of his hand is warm, though the touch still sends shivers down Max’s spine."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Его ладонь тёплая, но от прикосновения по спине Макса"
+            }
+          }
+        ]
+      },
+      "record_id": "f5e4e605fc3b4a989fb47aae9846b19a",
+      "review_commit": "a1c1af62542b3bb95fc0470136a9fb6f9e55b9a4",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewed_at": "2026-11-20T12:19:21Z",
+      "reviewer_session_id": "chatops-say-it-21-reviewer-resume-20261120",
+      "sequence": 165,
+      "source_sha256": "c67fd840e78920d46f58e6abf12082998ff608f7aee82bbf19611eb0288a65be",
+      "state_revision": "e83328bcc67f2f77530a1a0648ea7dff9a7e5ca607b7677ad924c32c3c213c98",
+      "supersedes_record_id": "ca68262e256544e7a7b12af24a767b9d",
+      "translation_sha256": "bebb3119243e5369acbc16a5fc8a8ad6629d3738ec8c4541843db4f9b8754cf1",
+      "unit_id": "chapter-000021",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741"
+    }
+  },
+  "error": null
+}
