@@ -4,17 +4,12 @@
   "book_slug": "say-it-in-your-mother-tongue",
   "source_sha256": "12e210ce5a95daf56a97ada583ec15c274780c4ddfa7fb92da6a88c67f7c403d",
   "state": "running",
-  "phase": "model-call-reserved",
+  "phase": "provider-backoff",
   "failures": 0,
   "correction_rounds": {},
   "workflow_revision": "8bb30227adc4bb921429611e12a0af803c9b6487",
-  "updated_at": "2026-11-20T16:12:48.313629+00:00",
-  "active": {
-    "role": "reviewer",
-    "chapter": 11,
-    "session_id": "auto-a7b9e400d5f2-reviewer-6b422304",
-    "unit_id": "chapter-000011"
-  },
+  "updated_at": "2026-11-20T16:13:12.410146+00:00",
+  "active": null,
   "recoveries": [
     {
       "action": "operator-recover-stale-attention-queue-preflight",
@@ -68,14 +63,14 @@
     "since": "2026-11-20T14:43:00.485679+00:00",
     "api": {
       "reviewer": {
-        "completed_calls": 17,
+        "completed_calls": 18,
         "responses": 13,
-        "duration_ms": 3002152,
-        "request_chars": 1565552,
+        "duration_ms": 3024658,
+        "request_chars": 1658216,
         "prompt_tokens": 320588,
         "completion_tokens": 261790,
         "total_tokens": 582378,
-        "errors": 4
+        "errors": 5
       }
     },
     "accepted_operations": {
@@ -106,7 +101,7 @@
     "route": "primary",
     "request_chars": 92664,
     "outcome": "http_429",
-    "duration_ms": 22477
+    "duration_ms": 22506
   },
   "provider_call_metrics": [
     {
@@ -283,6 +278,14 @@
       "request_chars": 92664,
       "outcome": "http_429",
       "duration_ms": 22477
+    },
+    {
+      "unit_id": "chapter-000011",
+      "role": "reviewer",
+      "route": "primary",
+      "request_chars": 92664,
+      "outcome": "http_429",
+      "duration_ms": 22506
     }
   ],
   "glossary_evidence_rejected": 4,
@@ -308,10 +311,11 @@
     "chapter": 11,
     "unit_id": "chapter-000011",
     "role": "reviewer",
-    "attempts": 2,
+    "attempts": 3,
     "code": "http_429",
-    "not_before": "2026-11-20T16:12:11.952079+00:00"
+    "not_before": "2026-11-20T16:43:12.410118+00:00"
   },
   "last_error_code": "http_429",
-  "blocked_unit_id": "chapter-000011"
+  "blocked_unit_id": "chapter-000011",
+  "last_error": "model HTTP status 429"
 }
