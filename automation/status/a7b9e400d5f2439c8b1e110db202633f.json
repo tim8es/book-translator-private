@@ -4,12 +4,17 @@
   "book_slug": "say-it-in-your-mother-tongue",
   "source_sha256": "12e210ce5a95daf56a97ada583ec15c274780c4ddfa7fb92da6a88c67f7c403d",
   "state": "running",
-  "phase": "translator-completed",
+  "phase": "claimed",
   "failures": 0,
   "correction_rounds": {},
   "workflow_revision": "8bb30227adc4bb921429611e12a0af803c9b6487",
-  "updated_at": "2026-11-20T23:14:47.362755+00:00",
-  "active": null,
+  "updated_at": "2026-11-20T23:14:52.504308+00:00",
+  "active": {
+    "role": "reviewer",
+    "chapter": 17,
+    "session_id": "auto-a7b9e400d5f2-reviewer-43a9942a",
+    "unit_id": "chapter-000017"
+  },
   "recoveries": [
     {
       "action": "operator-recover-stale-attention-queue-preflight",
@@ -23,9 +28,9 @@
     }
   ],
   "queue_snapshot": {
-    "extracted": 34,
+    "extracted": 33,
     "reviewed": 20,
-    "awaiting_review": 0,
+    "awaiting_review": 1,
     "correction_candidates": 0,
     "awaiting_promotion": 0
   },
