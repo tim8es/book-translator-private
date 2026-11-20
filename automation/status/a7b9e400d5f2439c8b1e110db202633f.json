@@ -4,17 +4,12 @@
   "book_slug": "say-it-in-your-mother-tongue",
   "source_sha256": "12e210ce5a95daf56a97ada583ec15c274780c4ddfa7fb92da6a88c67f7c403d",
   "state": "running",
-  "phase": "claimed",
+  "phase": "translator-completed",
   "failures": 0,
   "correction_rounds": {},
   "workflow_revision": "8bb30227adc4bb921429611e12a0af803c9b6487",
-  "updated_at": "2026-11-20T23:14:42.124183+00:00",
-  "active": {
-    "role": "translator",
-    "chapter": 17,
-    "session_id": "auto-a7b9e400d5f2-translator-a3eefd76",
-    "unit_id": "chapter-000017"
-  },
+  "updated_at": "2026-11-20T23:14:47.362755+00:00",
+  "active": null,
   "recoveries": [
     {
       "action": "operator-recover-stale-attention-queue-preflight",
@@ -79,25 +74,25 @@
       }
     },
     "accepted_operations": {
-      "translated": 10,
+      "translated": 11,
       "review_pass": 8,
       "reviewed": 8,
       "review_rejected": 1
     }
   },
   "prompt_context": {
-    "role": "reviewer",
+    "role": "translator",
     "workflow_revision": "8bb30227adc4bb921429611e12a0af803c9b6487",
     "loaded_contracts": [
       "AGENTS.md",
       "docs/TRANSLATION.md",
-      "docs/REVIEWER.md"
+      "docs/TRANSLATOR.md"
     ],
     "glossary_sha256": "1586b1e7de53e3384cadd516eae64f25e36ca314603ac5b58a5276b8f74a0441",
     "style_guide_sha256": "bf597855cc17f6291a3258b0534545c7689d2771038d387befe5ac8377e94054",
-    "system_chars": 29562,
-    "user_chars": 63102,
-    "review_context": "independent_session"
+    "system_chars": 21423,
+    "user_chars": 67962,
+    "execution_mode": "verified_operator_editorial_candidate"
   },
   "model_calls_started": 18,
   "provider_call_metric": {
@@ -310,16 +305,5 @@
   },
   "unit_protocol_failures": {
     "chapter-000007": 1
-  },
-  "provider_model_route": "primary",
-  "provider_retry": {
-    "chapter": 11,
-    "unit_id": "chapter-000011",
-    "role": "reviewer",
-    "attempts": 3,
-    "code": "http_429",
-    "not_before": "2026-11-20T16:43:12.410118+00:00"
-  },
-  "last_error_code": "http_429",
-  "blocked_unit_id": "chapter-000011"
+  }
 }
