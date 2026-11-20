@@ -4,12 +4,17 @@
   "book_slug": "say-it-in-your-mother-tongue",
   "source_sha256": "12e210ce5a95daf56a97ada583ec15c274780c4ddfa7fb92da6a88c67f7c403d",
   "state": "running",
-  "phase": "provider-backoff",
+  "phase": "claimed",
   "failures": 0,
   "correction_rounds": {},
   "workflow_revision": "8bb30227adc4bb921429611e12a0af803c9b6487",
-  "updated_at": "2026-11-20T16:13:12.410146+00:00",
-  "active": null,
+  "updated_at": "2026-11-20T23:14:42.124183+00:00",
+  "active": {
+    "role": "translator",
+    "chapter": 17,
+    "session_id": "auto-a7b9e400d5f2-translator-a3eefd76",
+    "unit_id": "chapter-000017"
+  },
   "recoveries": [
     {
       "action": "operator-recover-stale-attention-queue-preflight",
@@ -23,10 +28,10 @@
     }
   ],
   "queue_snapshot": {
-    "extracted": 38,
-    "reviewed": 14,
-    "awaiting_review": 1,
-    "correction_candidates": 1,
+    "extracted": 34,
+    "reviewed": 20,
+    "awaiting_review": 0,
+    "correction_candidates": 0,
     "awaiting_promotion": 0
   },
   "memory_glossary_saved": 26,
@@ -316,6 +321,5 @@
     "not_before": "2026-11-20T16:43:12.410118+00:00"
   },
   "last_error_code": "http_429",
-  "blocked_unit_id": "chapter-000011",
-  "last_error": "model HTTP status 429"
+  "blocked_unit_id": "chapter-000011"
 }
