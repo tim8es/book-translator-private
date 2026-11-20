@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 179,
+  "next_sequence": 180,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -19393,6 +19393,38 @@
       "review_commit": "7ace6665a7f4b4af063a9a2d6ed1b76655bf9a3f",
       "correction_round": 1,
       "supersedes_record_id": "f0a13261da1c463aa053b53499459043",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": []
+      },
+      "shared_state_revisions": {
+        "glossary": "40783393df9152a0a615f96bb58920b1d1cdb1c2b486cbeedaf8d349c7a39491",
+        "style_guide": "bf597855cc17f6291a3258b0534545c7689d2771038d387befe5ac8377e94054"
+      }
+    },
+    {
+      "record_id": "1e073c3014f647a89c35f39c8ce4edc7",
+      "sequence": 179,
+      "unit_id": "chapter-000008",
+      "outcome": "PASS",
+      "source_sha256": "5f460ef6e2d85f9e2e9288c5046ef80cdc299068e2df30a714cc363eaaf14818",
+      "translation_sha256": "71c8f71c165d2106d31ce62b3984720c17ab6be1f504992e241091143a47f1d7",
+      "workflow_revision": "8bb30227adc4bb921429611e12a0af803c9b6487",
+      "review_contract_revision": "docs/TRANSLATION.md@8bb30227adc4bb921429611e12a0af803c9b6487",
+      "reviewer_session_id": "auto-a7b9e400d5f2-reviewer-a22f73b8",
+      "reviewed_at": "2026-11-20T15:26:27Z",
+      "state_revision": "713a97392a8b9440be12562c5cf8f0f8414de1b2f6ae4a6cf67f7f711b16e164",
+      "review_commit": "911ab6a1ca142015de67109e8ee404b103f0748e",
+      "correction_round": 2,
+      "supersedes_record_id": "18ab09dc7d4b43eeae9beacfc9775713",
       "quality_report": {
         "evidence_version": 2,
         "context": "independent_session",

@@ -4,17 +4,12 @@
   "book_slug": "say-it-in-your-mother-tongue",
   "source_sha256": "12e210ce5a95daf56a97ada583ec15c274780c4ddfa7fb92da6a88c67f7c403d",
   "state": "running",
-  "phase": "model-call-reserved",
+  "phase": "reviewer-completed",
   "failures": 0,
   "correction_rounds": {},
   "workflow_revision": "8bb30227adc4bb921429611e12a0af803c9b6487",
-  "updated_at": "2026-11-20T15:24:29.957997+00:00",
-  "active": {
-    "role": "reviewer",
-    "chapter": 8,
-    "session_id": "auto-a7b9e400d5f2-reviewer-a22f73b8",
-    "unit_id": "chapter-000008"
-  },
+  "updated_at": "2026-11-20T15:26:28.020353+00:00",
+  "active": null,
   "recoveries": [
     {
       "action": "operator-recover-stale-attention-queue-preflight",
@@ -42,20 +37,20 @@
     "since": "2026-11-20T14:43:00.485679+00:00",
     "api": {
       "reviewer": {
-        "completed_calls": 10,
-        "responses": 9,
-        "duration_ms": 1859218,
-        "request_chars": 929000,
-        "prompt_tokens": 226381,
-        "completion_tokens": 200553,
-        "total_tokens": 426934,
+        "completed_calls": 11,
+        "responses": 10,
+        "duration_ms": 1975065,
+        "request_chars": 1010824,
+        "prompt_tokens": 248171,
+        "completion_tokens": 205487,
+        "total_tokens": 453658,
         "errors": 1
       }
     },
     "accepted_operations": {
       "translated": 7,
-      "review_pass": 6,
-      "reviewed": 6
+      "review_pass": 7,
+      "reviewed": 7
     }
   },
   "prompt_context": {
@@ -74,15 +69,15 @@
   },
   "model_calls_started": 11,
   "provider_call_metric": {
-    "unit_id": "chapter-000007",
+    "unit_id": "chapter-000008",
     "role": "reviewer",
     "route": "primary",
-    "request_chars": 100280,
+    "request_chars": 81824,
     "outcome": "response",
-    "duration_ms": 106217,
-    "prompt_tokens": 28120,
-    "completion_tokens": 4999,
-    "total_tokens": 33119
+    "duration_ms": 115847,
+    "prompt_tokens": 21790,
+    "completion_tokens": 4934,
+    "total_tokens": 26724
   },
   "provider_call_metrics": [
     {
@@ -191,6 +186,17 @@
       "prompt_tokens": 28120,
       "completion_tokens": 4999,
       "total_tokens": 33119
+    },
+    {
+      "unit_id": "chapter-000008",
+      "role": "reviewer",
+      "route": "primary",
+      "request_chars": 81824,
+      "outcome": "response",
+      "duration_ms": 115847,
+      "prompt_tokens": 21790,
+      "completion_tokens": 4934,
+      "total_tokens": 26724
     }
   ],
   "glossary_evidence_rejected": 4,
@@ -216,11 +222,11 @@
     "response_format": "json_object",
     "response_chars": 195,
     "provider_refusal": false,
-    "prompt_tokens": 28120,
-    "completion_tokens": 4999,
-    "total_tokens": 33119,
+    "prompt_tokens": 21790,
+    "completion_tokens": 4934,
+    "total_tokens": 26724,
     "route": "primary",
     "role": "reviewer",
-    "unit_id": "chapter-000007"
+    "unit_id": "chapter-000008"
   }
 }
