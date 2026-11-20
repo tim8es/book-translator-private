@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "request_id": "a8d34f18e0aa4b428dfe07c38fc30191",
+  "book_slug": "you-feel-like-home",
+  "workflow_revision": "db253095d36f245f9531da654b93ab72193d3b97",
+  "operation": "review-record",
+  "chapter": 3,
+  "session_id": "review-chatops-yflh-20261121-round2",
+  "outcome": "PASS",
+  "quality_report": {
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "severity": "minor",
+        "detail": "Source loneliness passage: Russian grammar corrected to 'Об одиночестве'; rechecked in adjacent dialogue.",
+        "resolved": true
+      },
+      {
+        "severity": "major",
+        "detail": "Source Caleb-as-exposed-target passage: corrected feminine agreement to 'у всех на виду — лёгкая мишень'; subject and threat maintained.",
+        "resolved": true
+      },
+      {
+        "severity": "major",
+        "detail": "Source Arian's factual retort: replaced 'Это должно быть правдой' with direct 'Это правда'; confirmed tone and modality.",
+        "resolved": true
+      },
+      {
+        "severity": "major",
+        "detail": "Source Caleb's impossibly bright eyes: restored brightness (невероятно яркими) instead of an invented eye-color claim.",
+        "resolved": true
+      },
+      {
+        "severity": "minor",
+        "detail": "Source 'He storms toward the door': restored forceful movement 'Он бросается к двери' without changing object or sequence.",
+        "resolved": true
+      }
+    ]
+  },
+  "source_sha256": "a1e177c2e6daebb65acd48e2b493ac5587edc7e2f4453f26bf59e19c0e001270",
+  "translation_sha256": "5d24262e08db1385dc8b23c426bc15c0a3e183e258afba45aefdae0375743449",
+  "claim_sha256": "ca7b0cf8548e41051ac4dd482a7b5c885f73cd486f667744634d3df6793be6ae"
+}
