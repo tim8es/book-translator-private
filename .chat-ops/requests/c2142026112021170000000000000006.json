@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "request_id": "c2142026112021170000000000000006",
+  "book_slug": "say-it-in-your-mother-tongue",
+  "workflow_revision": "8bb30227adc4bb921429611e12a0af803c9b6487",
+  "operation": "review-record",
+  "chapter": 14,
+  "session_id": "chat-20261120-sayit-reviewer-14-c214",
+  "outcome": "CORRECTIONS_REQUIRED",
+  "quality_report": {
+    "evidence_version": 2,
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "id": "emphasis-10",
+        "category": "structure",
+        "severity": "minor",
+        "detail": "В исходном блоке 10 слово *anything* выделено курсивом, а русский эквивалент «ничего» не выделен. Верните смысловое выделение.",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "he can’t see *anything*",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "поняв, что ничего не видит",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "emphasis-71",
+        "category": "structure",
+        "severity": "minor",
+        "detail": "В исходном блоке 71 акцент *himself* выделен курсивом, а «него самого» в переводе выделение теряет.",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "and especially from *himself*",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "и особенно от него самого",
+          "occurrence": 0
+        },
+        "resolves": null
+      }
+    ]
+  },
+  "source_sha256": "4a0fcf754072626130f19f2f950fef4fe75364da3244b50f72d5670a04911462",
+  "translation_sha256": "52f9b24cfbf5f35a0eb251486339f08ed3b80581ba47edcfc621247db1b13e56",
+  "claim_sha256": "87bd3c2a4a2d3567ba8e0e245a2c652d6d07c139a3e2bf4deae5a0e9e19ded8d"
+}
