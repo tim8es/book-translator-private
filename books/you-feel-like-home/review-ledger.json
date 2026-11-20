@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "you-feel-like-home",
-  "next_sequence": 10,
+  "next_sequence": 11,
   "records": [
     {
       "record_id": "70b842aa5528406291ad9b4b5929b1a7",
@@ -398,6 +398,49 @@
             "severity": "minor",
             "detail": "Rechecked author note on obsession: recast without falsely assigning the author a gender.",
             "resolved": true
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "7b54eddcfde54a4ca388f97deec37dda",
+      "sequence": 10,
+      "unit_id": "chapter-000006",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "c689a258bf3aaf2dd1478254d56cb639f77edeaafac33d7f543c023f1ceb7e9a",
+      "translation_sha256": "3058db6b8c6c3cedb8c6ab4bac91fd9a21c9a68cc1b935521b20aa9c932dc800",
+      "workflow_revision": "db253095d36f245f9531da654b93ab72193d3b97",
+      "review_contract_revision": "docs/TRANSLATION.md@db253095d36f245f9531da654b93ab72193d3b97",
+      "reviewer_session_id": "review-chatops-yflh-20261121-ch4",
+      "reviewed_at": "2026-11-20T23:30:31Z",
+      "state_revision": "7968a675c7d93ab8f69a0a08cf7cd138c0b5d7a8ed58cdbe693b85269859c8a3",
+      "review_commit": "a1843eff6253f17a830e5a4df254f75cd1eca507",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "major",
+            "detail": "EN 'Riding has always been an unusual skill among British aristocracy' is inverted in RU 'Верховая езда всегда была довольно обычным навыком': change 'обычным' to 'необычным' despite possible authorial oddity.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "EN 'Caleb’s mouth tightens' appears as unnatural RU 'Рот Калеба сжимается'; express tightening of lips or face without changing emotional sense.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "EN 'had earned him more than his share of doubt over the years' rendered literal 'получил больше своей доли сомнений'; recast to natural Russian conveying that others had doubted his suitability.",
+            "resolved": false
           }
         ]
       }
