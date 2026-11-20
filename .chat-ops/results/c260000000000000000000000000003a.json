@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "request_id": "c260000000000000000000000000003a",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "2afdb5ce202ce038d8ae008bba61da010860f930df248a75bc5c255c3614e9a1",
+    "record": {
+      "correction_round": 4,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "structure",
+            "detail": "The existing unresolved source-linked issue recheck-structure-1 was checked in this accepted artifact. All message sender labels including 27/29/31 retain bold styling; the playful failure-at-dating metaphor and singular rookie reference are rendered in natural Russian. Checked all 117 source-order blocks.",
+            "id": "r049-1",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "recheck-structure-1",
+              "record_id": "a58fb31d41b941fa93b6b741e1bef233"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "**Nico****❤****️**<!-- bt-inline:000001:start --><!-- bt-media:000001 --><!-- bt-inline:000001:end -->I wanted to ask you in some better, more special way…"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "**Нико❤️**<!-- bt-inline:000001:start --><!-- bt-media:000001 --><!-- bt-inline:000001:end -->Я хотел спросить тебя"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "The existing unresolved source-linked issue recheck-style-1 was checked in this accepted artifact. All message sender labels including 27/29/31 retain bold styling; the playful failure-at-dating metaphor and singular rookie reference are rendered in natural Russian. Checked all 117 source-order blocks.",
+            "id": "r049-2",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "recheck-style-1",
+              "record_id": "a58fb31d41b941fa93b6b741e1bef233"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "We failed at dating. Have to try again, it seems."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Со свиданиями у нас не заладилось"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "The existing unresolved source-linked issue style-1-new was checked in this accepted artifact. All message sender labels including 27/29/31 retain bold styling; the playful failure-at-dating metaphor and singular rookie reference are rendered in natural Russian. Checked all 117 source-order blocks.",
+            "id": "r049-3",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "style-1-new",
+              "record_id": "a58fb31d41b941fa93b6b741e1bef233"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "who aren’t *his* rookie"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "кроме *его* новичка"
+            }
+          }
+        ]
+      },
+      "record_id": "6bbdae3647aa43a0986351d1ba354a06",
+      "review_commit": "eb816b252350510da96caf11480609f6a504758d",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewed_at": "2026-11-20T12:24:07Z",
+      "reviewer_session_id": "chatops-say-it-49-reviewer-resume-20261120",
+      "sequence": 171,
+      "source_sha256": "3eb2f502e4d9bc3c2ccdadf501ff631dfd96a7dd13316c5656ac3aca30b21929",
+      "state_revision": "e83328bcc67f2f77530a1a0648ea7dff9a7e5ca607b7677ad924c32c3c213c98",
+      "supersedes_record_id": "a58fb31d41b941fa93b6b741e1bef233",
+      "translation_sha256": "af36e65bc0f73fdf05ee19a9ccbf9f04af3e51cc0b2d7d21f065a5483db4e18d",
+      "unit_id": "chapter-000049",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741"
+    }
+  },
+  "error": null
+}
