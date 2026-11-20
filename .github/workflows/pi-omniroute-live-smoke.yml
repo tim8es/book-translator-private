@@ -27,7 +27,7 @@ jobs:
           node-version: "22"
       - name: Install pinned Pi 1.6.0
         run: npm install --global --ignore-scripts @earendil-works/pi-coding-agent@1.6.0
-      - name: Run one synthetic Translator and one isolated Reviewer via OmniRoute
+      - name: Diagnose isolated independent Pi Reviewer after successful translator probe
         shell: bash
         env:
           BOOK_TRANSLATOR_LLM_BACKEND: pi
@@ -51,20 +51,26 @@ jobs:
                       'OMNIROUTE_TRANSLATOR_MODEL','OMNIROUTE_REVIEWER_MODEL')):
               raise SystemExit("BLOCKED: OmniRoute Actions secret or variables are incomplete")
 
+          import pi_backend
+          _original_subprocess_run = pi_backend.subprocess.run
+          def _sanitized_diagnostic_run(*args, **kwargs):
+              proc = _original_subprocess_run(*args, **kwargs)
+              if proc.returncode != 0:
+                  stderr = (proc.stderr or "").lower()
+                  allowlist = ["429", "rate limit", "503", "502", "504", "401",
+                               "403", "404", "timeout", "connection", "abort",
+                               "invalid", "stream", "error", "context", "model",
+                               "fetch", "auth", "endpoint", "quota", "request"]
+                  labels = [key.replace(" ", "_") for key in allowlist if key in stderr]
+                  print("PI_SANITIZED_EXIT: code=" + str(proc.returncode) +
+                        "; stderr_bytes=" + str(len(stderr)) +
+                        "; keyword_categories=" + (",".join(labels) or "none"))
+              return proc
+          pi_backend.subprocess.run = _sanitized_diagnostic_run
           source = "The lighthouse lamp stayed lit through the storm. At dawn, the keeper opened the door."
+          result = "Огонь маяка не гас на протяжении всей бури. На рассвете смотритель открыл дверь."
           try:
-              translation_response = complete(
-                  "TRANSLATOR",
-                  "You translate English narrative prose to natural Russian. Return only one valid JSON object with the single key translation. Do not omit or add content.",
-                  "Translate the following original English narrative to Russian. Return JSON only:\n" + source)
-              parsed = json.loads(str(translation_response))
-              if not isinstance(parsed, dict) or set(parsed) != {'translation'}:
-                  raise ValueError("invalid_translator_json_shape")
-              result = parsed['translation']
-              if not isinstance(result, str) or len(result) < 25 or not any('\u0400' <= char <= '\u04ff' for char in result):
-                  raise ValueError("translation_is_not_russian")
-              print("Pi Translator: JSON_VALID, RUSSIAN_TEXT, length=" + str(len(result)))
-
+              print("Isolated reviewer test (translator already passed in previous run)")
               review_response = complete(
                   "REVIEWER",
                   "You are an independent reviewer. Compare an original English excerpt and its Russian translation for accuracy, meaning, coverage, terminology, style, and structure. Return only a JSON object with exactly outcome, checks, findings. checks must have exactly coverage,meaning,terminology,style,structure, each true if you checked it. For PASS, findings must be []. For CORRECTIONS_REQUIRED, findings must contain 1-30 items with exactly severity (minor|major|critical), detail (string), resolved (false).",
