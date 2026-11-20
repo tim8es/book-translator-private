@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "request_id": "c2600000000000000000000000000039",
+  "book_slug": "say-it-in-your-mother-tongue",
+  "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+  "operation": "review-record",
+  "chapter": 46,
+  "session_id": "chatops-say-it-46-reviewer-resume-20261120",
+  "outcome": "PASS",
+  "quality_report": {
+    "evidence_version": 2,
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "id": "r046-1",
+        "category": "terminology",
+        "severity": "minor",
+        "detail": "Rechecked all 80 source/target blocks. Esteban's question is now a complete separate greeting with appropriate speaker/narration. The surname has consistent accepted form Ферстаппен; the old, conflicting lexical entry in the book-wide glossary must be reconciled by the orchestrator, not by reverting source-faithful chapter prose.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "“What’s up, Verstappen?” Esteban greets Max with a wide grin.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "«Как дела, Ферстаппен?» — приветствует Макса Эстебан, широко улыбаясь.",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "168dd6ff885f49fe9e8e3885370e1f21",
+          "finding_id": "terminology-1-recheck-3"
+        }
+      },
+      {
+        "id": "r046-2",
+        "category": "meaning",
+        "severity": "major",
+        "detail": "Rechecked all 80 source/target blocks. Esteban's question is now a complete separate greeting with appropriate speaker/narration. The surname has consistent accepted form Ферстаппен; the old, conflicting lexical entry in the book-wide glossary must be reconciled by the orchestrator, not by reverting source-faithful chapter prose.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "“What’s up, Verstappen?” Esteban greets Max with a wide grin.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "«Как дела, Ферстаппен?» — приветствует Макса Эстебан, широко улыбаясь.",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "168dd6ff885f49fe9e8e3885370e1f21",
+          "finding_id": "meaning-1"
+        }
+      }
+    ]
+  },
+  "source_sha256": "5eb40c7657a04768072006c3d09e3e412722114d863dd1168e287a3923a7b5b0",
+  "translation_sha256": "729de63299af397fbe4b2f18f9e378e4a8195a55671116247929558b41ca0bea",
+  "claim_sha256": "14712a04370650c09f7edcc45e00d3bd1ba976c7ebf0b9778a64cea526150097"
+}
