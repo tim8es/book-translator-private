@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "request_id": "c2600000000000000000000000000036",
+  "book_slug": "say-it-in-your-mother-tongue",
+  "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+  "operation": "review-record",
+  "chapter": 27,
+  "session_id": "chatops-say-it-27-reviewer-resume-20261120",
+  "outcome": "PASS",
+  "quality_report": {
+    "evidence_version": 2,
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "id": "r027-1",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Former issue recheck-meaning-1 corrected and rechecked against English messaging. The first-person future denial and the informal lowercase chat style are preserved with accurate speaker labels.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "never been into him<!-- bt-media:000005 -->never will be",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "никогда не западу",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "1db4effa63a64229a1ed208cc2be9cf0",
+          "finding_id": "recheck-meaning-1"
+        }
+      },
+      {
+        "id": "r027-2",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Former issue recheck-style-1 corrected and rechecked against English messaging. The first-person future denial and the informal lowercase chat style are preserved with accurate speaker labels.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "for sure man<!-- bt-media:000002 -->like i promise<!-- bt-media:000003 -->scouts honor and all",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "точно, чувак",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "1db4effa63a64229a1ed208cc2be9cf0",
+          "finding_id": "recheck-style-1"
+        }
+      },
+      {
+        "id": "r027-tense",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Further source review identified a tense drift in the adjacent Nico/Gabriel morning sequence. Fourteen affected Russian blocks now use the source's consistent present-tense narration, without changing chronology.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "Nico reaches with his hand to Gabriel’s.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Нико тянется к руке Габриэля.",
+          "occurrence": 0
+        },
+        "resolves": null
+      }
+    ]
+  },
+  "source_sha256": "fae0b5d9b21be14461abbce11e210357cc94cde8c23e31a816d1567cd9db8d2f",
+  "translation_sha256": "78c9c63ea521d1a86d9d3360e4dd4d3053d1bdce0d943bf7080983417d4fdbc4",
+  "claim_sha256": "059f89138df727efbf848c558eea5c594e086153805a75e629f2c6d02cb567ae"
+}
