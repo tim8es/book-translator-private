@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "request_id": "a9d34f18e0aa4b428dfe07c38fc30191",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "f85be64802b16a1606dd063fd07cf206bed6ed99a7fc75b885c3942f88ae06dc",
+    "record": {
+      "correction_round": 1,
+      "outcome": "CORRECTIONS_REQUIRED",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "findings": [
+          {
+            "detail": "EN 'It’s about loneliness' vs RU 'О одиночестве': replace ungrammatical 'О одиночестве' with 'Об одиночестве'.",
+            "resolved": false,
+            "severity": "minor"
+          },
+          {
+            "detail": "EN 'He’s standing in the open, making himself visible and an easy target' vs RU 'делает себя видимой и лёгкой мишенью': wrong feminine agreement for Caleb; correct to 'заметной и лёгкой мишенью' or recast.",
+            "resolved": false,
+            "severity": "major"
+          },
+          {
+            "detail": "EN Arian's 'It’s meant to be true' vs RU 'Это должно быть правдой': unnatural and distorts definite factual retort; use 'Я просто говорю правду' or similarly direct natural Russian.",
+            "resolved": false,
+            "severity": "major"
+          },
+          {
+            "detail": "EN 'Caleb’s eyes are impossibly bright beneath the night sky' vs RU 'глаза Калеба кажутся невозможного цвета': brightness becomes color; restore striking luminosity of eyes.",
+            "resolved": false,
+            "severity": "major"
+          },
+          {
+            "detail": "EN 'He storms toward the door' vs RU 'Он идёт к двери': lose forceful urgency; restore rapid decisive movement.",
+            "resolved": false,
+            "severity": "minor"
+          }
+        ]
+      },
+      "record_id": "ad5f20ffd4124fb38da857adb1756151",
+      "review_commit": "3132182b1250c2a8d4145678ce3774ae4162720d",
+      "review_contract_revision": "docs/TRANSLATION.md@db253095d36f245f9531da654b93ab72193d3b97",
+      "reviewed_at": "2026-11-20T23:10:39Z",
+      "reviewer_session_id": "review-chatops-yflh-20261121",
+      "sequence": 4,
+      "source_sha256": "a1e177c2e6daebb65acd48e2b493ac5587edc7e2f4453f26bf59e19c0e001270",
+      "state_revision": "0e64c372f2890c09f2352eae2d4e359e6da8092a09e942a7e6fbd9d0a91542e7",
+      "supersedes_record_id": null,
+      "translation_sha256": "e9aa53e645e2c379e25ea59136bd5c7d077cac9a0ae8a40e1d928d5d6de4f00e",
+      "unit_id": "chapter-000003",
+      "workflow_revision": "db253095d36f245f9531da654b93ab72193d3b97"
+    }
+  },
+  "error": null
+}

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "you-feel-like-home",
-  "next_sequence": 4,
+  "next_sequence": 5,
   "records": [
     {
       "record_id": "70b842aa5528406291ad9b4b5929b1a7",
@@ -82,6 +82,59 @@
           "structure": true
         },
         "findings": []
+      }
+    },
+    {
+      "record_id": "ad5f20ffd4124fb38da857adb1756151",
+      "sequence": 4,
+      "unit_id": "chapter-000003",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "a1e177c2e6daebb65acd48e2b493ac5587edc7e2f4453f26bf59e19c0e001270",
+      "translation_sha256": "e9aa53e645e2c379e25ea59136bd5c7d077cac9a0ae8a40e1d928d5d6de4f00e",
+      "workflow_revision": "db253095d36f245f9531da654b93ab72193d3b97",
+      "review_contract_revision": "docs/TRANSLATION.md@db253095d36f245f9531da654b93ab72193d3b97",
+      "reviewer_session_id": "review-chatops-yflh-20261121",
+      "reviewed_at": "2026-11-20T23:10:39Z",
+      "state_revision": "0e64c372f2890c09f2352eae2d4e359e6da8092a09e942a7e6fbd9d0a91542e7",
+      "review_commit": "3132182b1250c2a8d4145678ce3774ae4162720d",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "EN 'It’s about loneliness' vs RU 'О одиночестве': replace ungrammatical 'О одиночестве' with 'Об одиночестве'.",
+            "resolved": false
+          },
+          {
+            "severity": "major",
+            "detail": "EN 'He’s standing in the open, making himself visible and an easy target' vs RU 'делает себя видимой и лёгкой мишенью': wrong feminine agreement for Caleb; correct to 'заметной и лёгкой мишенью' or recast.",
+            "resolved": false
+          },
+          {
+            "severity": "major",
+            "detail": "EN Arian's 'It’s meant to be true' vs RU 'Это должно быть правдой': unnatural and distorts definite factual retort; use 'Я просто говорю правду' or similarly direct natural Russian.",
+            "resolved": false
+          },
+          {
+            "severity": "major",
+            "detail": "EN 'Caleb’s eyes are impossibly bright beneath the night sky' vs RU 'глаза Калеба кажутся невозможного цвета': brightness becomes color; restore striking luminosity of eyes.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "EN 'He storms toward the door' vs RU 'Он идёт к двери': lose forceful urgency; restore rapid decisive movement.",
+            "resolved": false
+          }
+        ]
       }
     }
   ]
