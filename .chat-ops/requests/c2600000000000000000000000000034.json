@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "request_id": "c2600000000000000000000000000034",
+  "book_slug": "say-it-in-your-mother-tongue",
+  "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+  "operation": "review-record",
+  "chapter": 21,
+  "session_id": "chatops-say-it-21-reviewer-resume-20261120",
+  "outcome": "PASS",
+  "quality_report": {
+    "evidence_version": 2,
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "id": "r021-1",
+        "category": "structure",
+        "severity": "major",
+        "detail": "Previous structure defect \"recheck-structure-1\" was source-checked against the corrected aligned block. The source action, speaker or grammatical referent is now present without duplication; the accepted translation contains \"садится на пятки и отпускает Макса\". All 109 source/target block markers remain identical.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "His breathing is fast, unsteady and shaky, when he sits back on his heels, letting go of Max — of the body *under* him, so warm and willing and entirely *not his to touch*.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "садится на пятки и отпускает Макса",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "ca68262e256544e7a7b12af24a767b9d",
+          "finding_id": "recheck-structure-1"
+        }
+      },
+      {
+        "id": "r021-2",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Previous meaning defect \"referent-1\" was source-checked against the corrected aligned block. The source action, speaker or grammatical referent is now present without duplication; the accepted translation contains \"не думаю, что я её верну\". All 109 source/target block markers remain identical.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "Yeah, don’t think I’m getting that one back.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "не думаю, что я её верну",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "ca68262e256544e7a7b12af24a767b9d",
+          "finding_id": "referent-1"
+        }
+      },
+      {
+        "id": "r021-3",
+        "category": "omission",
+        "severity": "minor",
+        "detail": "Previous omission defect \"omission-1\" was source-checked against the corrected aligned block. The source action, speaker or grammatical referent is now present without duplication; the accepted translation contains \"скрестив руки на груди и вызывающе шагнув навстречу Чеко\". All 109 source/target block markers remain identical.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "Certainly more than you,” Max folds his arms on his chest, stepping defiantly towards Checo.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "скрестив руки на груди и вызывающе шагнув навстречу Чеко",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "ca68262e256544e7a7b12af24a767b9d",
+          "finding_id": "omission-1"
+        }
+      },
+      {
+        "id": "r021-4",
+        "category": "structure",
+        "severity": "minor",
+        "detail": "Previous structure defect \"structure-2\" was source-checked against the corrected aligned block. The source action, speaker or grammatical referent is now present without duplication; the accepted translation contains \"«Это ты нас сравниваешь.\". All 109 source/target block markers remain identical.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "Certainly more than you,” Max folds his arms on his chest, stepping defiantly towards Checo. “You’re the one comparing the two of us.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "«Это ты нас сравниваешь.",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "ca68262e256544e7a7b12af24a767b9d",
+          "finding_id": "structure-2"
+        }
+      },
+      {
+        "id": "r021-5",
+        "category": "omission",
+        "severity": "minor",
+        "detail": "Previous omission defect \"omission-2\" was source-checked against the corrected aligned block. The source action, speaker or grammatical referent is now present without duplication; the accepted translation contains \"Его ладонь тёплая\". All 109 source/target block markers remain identical.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "The palm of his hand is warm, though the touch still sends shivers down Max’s spine.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Его ладонь тёплая",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "ca68262e256544e7a7b12af24a767b9d",
+          "finding_id": "omission-2"
+        }
+      },
+      {
+        "id": "r021-6",
+        "category": "structure",
+        "severity": "minor",
+        "detail": "Previous structure defect \"structure-3\" was source-checked against the corrected aligned block. The source action, speaker or grammatical referent is now present without duplication; the accepted translation contains \"Его ладонь тёплая, но от прикосновения по спине Макса\". All 109 source/target block markers remain identical.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "The palm of his hand is warm, though the touch still sends shivers down Max’s spine.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Его ладонь тёплая, но от прикосновения по спине Макса",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "ca68262e256544e7a7b12af24a767b9d",
+          "finding_id": "structure-3"
+        }
+      }
+    ]
+  },
+  "source_sha256": "c67fd840e78920d46f58e6abf12082998ff608f7aee82bbf19611eb0288a65be",
+  "translation_sha256": "bebb3119243e5369acbc16a5fc8a8ad6629d3738ec8c4541843db4f9b8754cf1",
+  "claim_sha256": "10a7007aa2e2df6b7a28af2c3b5d18f3767929e12cd93789371cc7383dd9aa47"
+}
