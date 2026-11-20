@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "request_id": "f20261120000c0a1b2c3d4e5f6071855",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "36586ff9952e302fd28f8d0250840db8d922e45591ce31f03c93c7871a94fcb8",
+    "record": {
+      "correction_round": 4,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "meaning",
+            "detail": "Source-linked comparison of all 85 blocks confirms the previous action-like rendering is gone: Lance's eyes are now described as large and glossy, preserving static size and appearance. The adjacent Spanish address and Lancito spelling were also checked against the current glossary.",
+            "id": "r003-eyes",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "meaning-eyes-1",
+              "record_id": "db7f977c44024e90aed6da1be75d4d8f"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "his eyes huge and glossy."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Глаза у него огромные и блестящие."
+            }
+          }
+        ]
+      },
+      "record_id": "1aac18dd4567481b9be7244beb6c8202",
+      "review_commit": "8eaaac340aac894006b7d6fa5786cb225b77954b",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewed_at": "2026-11-20T09:47:47Z",
+      "reviewer_session_id": "chatops-say-it-03-reviewer-20261120",
+      "sequence": 159,
+      "source_sha256": "5dcc58cd47d278abb51a9f145923138455d94915ee7fada8e29237a0ff506e1a",
+      "state_revision": "f3b2419a234422fa5aea0e1cf058b87c200614ec3e836e6b505519e32af11502",
+      "supersedes_record_id": "db7f977c44024e90aed6da1be75d4d8f",
+      "translation_sha256": "dedc9889b70e19a45fa3dfc1f3faff4e180ed1ee74ae2806063e69d268590a74",
+      "unit_id": "chapter-000003",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741"
+    }
+  },
+  "error": null
+}
