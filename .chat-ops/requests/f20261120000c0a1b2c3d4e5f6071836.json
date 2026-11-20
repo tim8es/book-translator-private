@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "request_id": "f20261120000c0a1b2c3d4e5f6071836",
+  "book_slug": "say-it-in-your-mother-tongue",
+  "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+  "operation": "review-record",
+  "chapter": 1,
+  "session_id": "chatops-say-it-01-reviewer-20261120",
+  "outcome": "PASS",
+  "quality_report": {
+    "evidence_version": 2,
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "id": "r001-characters",
+        "category": "terminology",
+        "severity": "minor",
+        "detail": "Resolved: Characters listing consistently uses Nico Hülkenberg, Max Verstappen and Sebastian Vettel in established Russian transliteration; all 20 source blocks were compared.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "<!-- bt-inline:000004:start -->Nico Hülkenberg<!-- bt-inline:000004:end -->",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "<!-- bt-inline:000004:start -->Нико Хюлькенберг<!-- bt-inline:000004:end -->",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "5afbea42bf2e48378791003ce612f1df",
+          "finding_id": "terminology-3-recheck"
+        }
+      },
+      {
+        "id": "recheck-001-gabriel-spelling",
+        "category": "terminology",
+        "severity": "minor",
+        "detail": "Resolved: the Characters list uses Габриэль and the relationship entry uses the same spelling. Dative Габриэлю and genitive Габриэля in the tags are grammatically correct inflected forms, not incompatible spellings.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "<!-- bt-inline:000002:start -->Gabriel Bortoleto/Nico Hülkenberg<!-- bt-inline:000002:end -->",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "<!-- bt-inline:000002:start -->Габриэль Бортолето/Нико Хюлькенберг<!-- bt-inline:000002:end -->",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "5afbea42bf2e48378791003ce612f1df",
+          "finding_id": "terminology-4-recheck"
+        }
+      },
+      {
+        "id": "recheck-001-agentless-tag",
+        "category": "referent",
+        "severity": "minor",
+        "detail": "Resolved: 'mentioned other drivers' is now rendered as the agentless tag «Упомянуты другие гонщики», without inventing a male speaker.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "<!-- bt-inline:000036:start -->mentioned other drivers<!-- bt-inline:000036:end -->",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "<!-- bt-inline:000036:start -->Упомянуты другие гонщики<!-- bt-inline:000036:end -->",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "5afbea42bf2e48378791003ce612f1df",
+          "finding_id": "referent-1-recheck"
+        }
+      }
+    ]
+  },
+  "source_sha256": "f0658fe2766db179f92270fadc997f1c9a0fae476a1ed39296cd960886cc16cf",
+  "translation_sha256": "ea127884b0f09053bb8287f79ef94bae3008e43ea8a19c214fb2a62b7ea8c95d",
+  "claim_sha256": "e34d61498f5badb97f8095ce5b280486af7d084dfad642834ee16e36f9e6a886"
+}
