@@ -51,6 +51,8 @@ class StateOnlyDeploymentTests(unittest.TestCase):
         self.assertIn("group: book-operation-", pi)
         self.assertIn("probe_only:", pi)
         self.assertIn("continue_automatically:", pi)
+        self.assertIn("github.event_name == 'pull_request' || inputs.probe_only", pi)
+        self.assertIn("github.event_name == 'workflow_dispatch' && !inputs.probe_only", pi)
         self.assertNotIn("schedule:", pi)
         self.assertNotIn("push:", pi)
         auto = (root / "auto-translate.yml").read_text("utf-8")
