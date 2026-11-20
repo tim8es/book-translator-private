@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "request_id": "c260000000000000000000000000000f",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "31db0f2076a01b66f4dabaf598acd216b477316324c60f196e1c0d8cea677a4e",
+    "record": {
+      "correction_round": 4,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "meaning",
+            "detail": "The corrected playlist passage explicitly says the Hollywood Undead track starts playing («начинает звучать»), rather than implying that Nico himself begins to play it. The surrounding 107-block scene and chat structure were rechecked.",
+            "id": "r044-song",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "meaning-playlist-1",
+              "record_id": "33b59dd331c04542b635addc78777605"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "as *Everywhere I Go* by Hollywood Undead starts playing."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "и начинает звучать *Everywhere I Go* группы Hollywood Undead."
+            }
+          }
+        ]
+      },
+      "record_id": "45b0e48f969c40e480a8b4575432ce1a",
+      "review_commit": "1d7a235617672bdb12a0abf51cd2e697ac55cc80",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewed_at": "2026-11-20T12:08:17Z",
+      "reviewer_session_id": "chatops-say-it-44-reviewer-resume-20261120",
+      "sequence": 164,
+      "source_sha256": "14414f83d5597f583744af54567f80df0eafa7e54b9163387b0dc6a7e5be4494",
+      "state_revision": "b5a7b4f5972be9d8f08e147e84bf1e237c958e28b53e8ce5be5fde1b5cee151a",
+      "supersedes_record_id": "33b59dd331c04542b635addc78777605",
+      "translation_sha256": "b9efe296c9b3c36b11668e266994c549a27c2a4ebbab2689e1a14d22421dccce",
+      "unit_id": "chapter-000044",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741"
+    }
+  },
+  "error": null
+}
