@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "request_id": "c2600000000000000000000000000035",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "86b68aeb54d1bf6ba77fe6e4204a7f9f231daae69a49c8e82a0bc764b2ed3dac",
+    "record": {
+      "correction_round": 4,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "structure",
+            "detail": "Rechecked source-aligned scene and all 50 blocks; original issue structure-recheck-1 has been corrected in the current Russian artifact. Previous duplication/omission/semantic drift is absent; marked speech emphasis is preserved across the source exchanges.",
+            "id": "r022-1",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "structure-recheck-1",
+              "record_id": "382368b3e73e48159bfb315f07d1e375"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "And why did you do *that*?"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "«И зачем ты *это* сделал?»"
+            }
+          },
+          {
+            "category": "addition",
+            "detail": "Rechecked source-aligned scene and all 50 blocks; original issue addition-1 has been corrected in the current Russian artifact. Previous duplication/omission/semantic drift is absent; marked speech emphasis is preserved across the source exchanges.",
+            "id": "r022-2",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "addition-1",
+              "record_id": "382368b3e73e48159bfb315f07d1e375"
+            },
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "“*Eh*, not really,” Lance chuckles, “like what type of reason is… like this one!"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "«*Э*, не совсем, — смеётся Лэнс."
+            }
+          },
+          {
+            "category": "omission",
+            "detail": "Rechecked source-aligned scene and all 50 blocks; original issue omission-1 has been corrected in the current Russian artifact. Previous duplication/omission/semantic drift is absent; marked speech emphasis is preserved across the source exchanges.",
+            "id": "r022-3",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "omission-1",
+              "record_id": "382368b3e73e48159bfb315f07d1e375"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "“You got a *little something* here,” he points out as he points to his own mouth"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "указывая на собственный рот"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Rechecked source-aligned scene and all 50 blocks; original issue meaning-1 has been corrected in the current Russian artifact. Previous duplication/omission/semantic drift is absent; marked speech emphasis is preserved across the source exchanges.",
+            "id": "r022-4",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "meaning-1",
+              "record_id": "382368b3e73e48159bfb315f07d1e375"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Shaking his head, Lance just says, “I *don’t*.”"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "«Мне *не* нужно»"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Rechecked source-aligned scene and all 50 blocks; original issue meaning-2 has been corrected in the current Russian artifact. Previous duplication/omission/semantic drift is absent; marked speech emphasis is preserved across the source exchanges.",
+            "id": "r022-5",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "meaning-2",
+              "record_id": "382368b3e73e48159bfb315f07d1e375"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "“*Oui*,” Lance nods once, no longer trusting his words to come out right."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "уже не уверенный, что сумеет произнести всё как надо"
+            }
+          }
+        ]
+      },
+      "record_id": "028ed82149be4db985de86759b4b4bec",
+      "review_commit": "efacd8b75e4d5b0f5966a8bc651964f86aaa246e",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewed_at": "2026-11-20T12:20:16Z",
+      "reviewer_session_id": "chatops-say-it-22-reviewer-resume-20261120",
+      "sequence": 166,
+      "source_sha256": "d9da3a32b0bbe334bb05882806ffeaec4856a2387f3d64f4112c339e903999b5",
+      "state_revision": "e83328bcc67f2f77530a1a0648ea7dff9a7e5ca607b7677ad924c32c3c213c98",
+      "supersedes_record_id": "382368b3e73e48159bfb315f07d1e375",
+      "translation_sha256": "e4981804f08980612af659470f77bc233ca8057b9b71854a217504a3849038fd",
+      "unit_id": "chapter-000022",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741"
+    }
+  },
+  "error": null
+}
