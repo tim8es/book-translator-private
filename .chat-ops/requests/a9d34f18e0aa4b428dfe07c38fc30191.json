@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "request_id": "a9d34f18e0aa4b428dfe07c38fc30191",
+  "book_slug": "you-feel-like-home",
+  "workflow_revision": "db253095d36f245f9531da654b93ab72193d3b97",
+  "operation": "review-record",
+  "chapter": 3,
+  "session_id": "review-chatops-yflh-20261121",
+  "outcome": "CORRECTIONS_REQUIRED",
+  "quality_report": {
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "severity": "minor",
+        "detail": "EN 'It’s about loneliness' vs RU 'О одиночестве': replace ungrammatical 'О одиночестве' with 'Об одиночестве'.",
+        "resolved": false
+      },
+      {
+        "severity": "major",
+        "detail": "EN 'He’s standing in the open, making himself visible and an easy target' vs RU 'делает себя видимой и лёгкой мишенью': wrong feminine agreement for Caleb; correct to 'заметной и лёгкой мишенью' or recast.",
+        "resolved": false
+      },
+      {
+        "severity": "major",
+        "detail": "EN Arian's 'It’s meant to be true' vs RU 'Это должно быть правдой': unnatural and distorts definite factual retort; use 'Я просто говорю правду' or similarly direct natural Russian.",
+        "resolved": false
+      },
+      {
+        "severity": "major",
+        "detail": "EN 'Caleb’s eyes are impossibly bright beneath the night sky' vs RU 'глаза Калеба кажутся невозможного цвета': brightness becomes color; restore striking luminosity of eyes.",
+        "resolved": false
+      },
+      {
+        "severity": "minor",
+        "detail": "EN 'He storms toward the door' vs RU 'Он идёт к двери': lose forceful urgency; restore rapid decisive movement.",
+        "resolved": false
+      }
+    ]
+  },
+  "source_sha256": "a1e177c2e6daebb65acd48e2b493ac5587edc7e2f4453f26bf59e19c0e001270",
+  "translation_sha256": "e9aa53e645e2c379e25ea59136bd5c7d077cac9a0ae8a40e1d928d5d6de4f00e",
+  "claim_sha256": "d13cb13e95f2ba4cca5ae700c3716f98426cb3af789a08739e2e2402b96e0c0a"
+}
