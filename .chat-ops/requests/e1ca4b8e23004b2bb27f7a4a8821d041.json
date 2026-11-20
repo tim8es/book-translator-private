@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "request_id": "e1ca4b8e23004b2bb27f7a4a8821d041",
+  "book_slug": "you-feel-like-home",
+  "workflow_revision": "db253095d36f245f9531da654b93ab72193d3b97",
+  "operation": "review-record",
+  "chapter": 5,
+  "session_id": "review-chatops-yflh-20261121-ch3",
+  "outcome": "CORRECTIONS_REQUIRED",
+  "quality_report": {
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "severity": "major",
+        "detail": "EN 'He considers these tournaments beneath his time' vs RU 'Он считает такие турниры ниже своего времени': literal calque is nonsensical in Russian; render as a waste of future king's time or below his dignity.",
+        "resolved": false
+      },
+      {
+        "severity": "minor",
+        "detail": "EN 'Andrew could use a little less scheduling and considerably more sunlight' vs RU 'чуть меньше расписания': awkward literalism; use a natural formulation about less time spent on schedules and more time in the sun.",
+        "resolved": false
+      },
+      {
+        "severity": "major",
+        "detail": "EN 'Caleb’s heart drops, as though something has physically fallen through his chest and landed somewhere beneath his stomach' vs RU 'Сердце Калеба падает, словно физически проваливается куда-то ниже живота': unnatural calque, restore sinking dread with natural Russian figurative language.",
+        "resolved": false
+      },
+      {
+        "severity": "minor",
+        "detail": "EN 'I may not work for the Crown ... But I am the Crown's appointed enforcer' rendered 'назначенный Короной силовой исполнитель': technical bureaucratic calque, wrong dialogue register; convey appointed enforcement authority naturally.",
+        "resolved": false
+      },
+      {
+        "severity": "minor",
+        "detail": "Author note EN 'I’m just way too obsessed with Caleb and Arian' vs RU 'Я совершенно помешана': the original gives no author gender; use neutral grammar such as 'Я просто без ума от Калеба и Ариана'.",
+        "resolved": false
+      }
+    ]
+  },
+  "source_sha256": "778c7a39ad0595582b06020983606e9827313d9b3461f0509864634be5ecfa07",
+  "translation_sha256": "d90f1cad7108f1914baa6f0998ee1e9697d99934b8c89d62175bd47c40a24f76",
+  "claim_sha256": "7fde3fb76cbc6590076e967a548bd6f947852b2202f006bff550635a895c54b8"
+}
