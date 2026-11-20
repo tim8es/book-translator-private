@@ -3,6 +3,10 @@ run-name: Pi book translation ${{ inputs.job_id || 'safe probe' }}
 
 # Explicit manual entrypoint. No cron, push trigger, or book-specific workflow.
 on:
+  # PR only verifies installation and the offline adapter; never calls models.
+  pull_request:
+    paths:
+      - '.github/workflows/pi-book-translation.yml'
   workflow_dispatch:
     inputs:
       probe_only:
@@ -29,7 +33,7 @@ env:
 
 jobs:
   probe:
-    if: ${{ inputs.probe_only }}
+    if: ${{ github.event_name == 'pull_request' || inputs.probe_only }}
     runs-on: ubuntu-latest
     timeout-minutes: 12
     permissions:
@@ -60,7 +64,7 @@ jobs:
           python -m unittest discover -s tests -p test_pi_backend.py -v
 
   prepare:
-    if: ${{ !inputs.probe_only }}
+    if: ${{ github.event_name == 'workflow_dispatch' && !inputs.probe_only }}
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
