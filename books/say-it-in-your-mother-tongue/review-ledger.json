@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 154,
+  "next_sequence": 155,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -17574,6 +17574,54 @@
       "shared_state_revisions": {
         "glossary": "1120f576fed22714b46c7276e899bd01c484dd218ca94c8d6fd37306a9c8d8a4",
         "style_guide": "eaa08d42f1f5ea55a06553ec9c1d9e5c6f66b62f9bb6f55b653a52f78659dd74"
+      }
+    },
+    {
+      "record_id": "762a2e3d6d1a4a24a6bedc7c8b4dfb5f",
+      "sequence": 154,
+      "unit_id": "chapter-000050",
+      "outcome": "PASS",
+      "source_sha256": "18010d26b222c8e7ce74dc96e6cb040575edf476f9db5887131ac0d0d059266c",
+      "translation_sha256": "1b2e1f418cb8afa6c2dddf6698e5202af87ee278a93601d5a4c01ac798ccbad8",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "chatops-say-it-50-reviewer-20261120",
+      "reviewed_at": "2026-11-20T00:36:16Z",
+      "state_revision": "ac2111385266a3430829b0e2807bbf484cefd7b18681277b6b4034588f5251e7",
+      "review_commit": "465da9648307d51f68d5ac21c790dc4835495b91",
+      "correction_round": 4,
+      "supersedes_record_id": "d326ec012a51416390c68a665ea90602",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-050-block64-alignment",
+            "category": "addition",
+            "severity": "major",
+            "detail": "Resolved by source comparison of all 77 ordered blocks: source block 64 has Nico's interrupted question, block 65 contains Gabi's emphatic Yes once, block 66 contains Nico's reply once; former duplicated and misaligned passage is absent.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Nico chuckles, shaking his head. “You won’t let it go, will you?” He watches as Gabi shakes his head. “Alright,” he says, closing his eyes as he asks, “Gabriel, do you want to—”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Нико усмехается и качает головой. «Не отстанешь, да?» Он смотрит, как Габи качает головой. «Ладно», — говорит он, закрывает глаза и спрашивает: «Габриэль, ты хочешь…»",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "d326ec012a51416390c68a665ea90602",
+              "finding_id": "recheck-addition-1"
+            }
+          }
+        ]
       }
     }
   ]

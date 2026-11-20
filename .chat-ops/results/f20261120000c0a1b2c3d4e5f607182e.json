@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "request_id": "f20261120000c0a1b2c3d4e5f607182e",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "ab6bd23dd05714b801db303867a34cc1977fd5297f0d3cc9bd7ac739b22ba6b5",
+    "record": {
+      "correction_round": 4,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "addition",
+            "detail": "Resolved by source comparison of all 77 ordered blocks: source block 64 has Nico's interrupted question, block 65 contains Gabi's emphatic Yes once, block 66 contains Nico's reply once; former duplicated and misaligned passage is absent.",
+            "id": "recheck-050-block64-alignment",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "recheck-addition-1",
+              "record_id": "d326ec012a51416390c68a665ea90602"
+            },
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Nico chuckles, shaking his head. “You won’t let it go, will you?” He watches as Gabi shakes his head. “Alright,” he says, closing his eyes as he asks, “Gabriel, do you want to—”"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Нико усмехается и качает головой. «Не отстанешь, да?» Он смотрит, как Габи качает головой. «Ладно», — говорит он, закрывает глаза и спрашивает: «Габриэль, ты хочешь…»"
+            }
+          }
+        ]
+      },
+      "record_id": "762a2e3d6d1a4a24a6bedc7c8b4dfb5f",
+      "review_commit": "465da9648307d51f68d5ac21c790dc4835495b91",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewed_at": "2026-11-20T00:36:16Z",
+      "reviewer_session_id": "chatops-say-it-50-reviewer-20261120",
+      "sequence": 154,
+      "source_sha256": "18010d26b222c8e7ce74dc96e6cb040575edf476f9db5887131ac0d0d059266c",
+      "state_revision": "ac2111385266a3430829b0e2807bbf484cefd7b18681277b6b4034588f5251e7",
+      "supersedes_record_id": "d326ec012a51416390c68a665ea90602",
+      "translation_sha256": "1b2e1f418cb8afa6c2dddf6698e5202af87ee278a93601d5a4c01ac798ccbad8",
+      "unit_id": "chapter-000050",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741"
+    }
+  },
+  "error": null
+}
