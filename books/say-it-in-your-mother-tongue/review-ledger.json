@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 184,
+  "next_sequence": 185,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -19666,6 +19666,33 @@
             }
           }
         ]
+      }
+    },
+    {
+      "record_id": "702e6451c98248f6ab845afc0ac32517",
+      "sequence": 184,
+      "unit_id": "chapter-000011",
+      "outcome": "PASS",
+      "source_sha256": "8dae5038c78522c5dcb8197ead52d654e098c8c539a63071d30d17bb287520ee",
+      "translation_sha256": "4fea113d37bf6361c0df2077bf03d8b972eabc8bb09f95e64dcf1b695067ff18",
+      "workflow_revision": "8bb30227adc4bb921429611e12a0af803c9b6487",
+      "review_contract_revision": "docs/TRANSLATION.md@8bb30227adc4bb921429611e12a0af803c9b6487",
+      "reviewer_session_id": "chat-20261120-sayit-reviewer-11",
+      "reviewed_at": "2026-11-20T16:45:41Z",
+      "state_revision": "dee4f3d830f88d2147d016a3df348f5528faa4e6826e16f888a6d4c954eb6bf3",
+      "review_commit": "492c927e446a0fe8ba4cf7dceb68bebdefa931f6",
+      "correction_round": 4,
+      "supersedes_record_id": "42076277cfd9440cbc06e29bc2fcc562",
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": []
       }
     }
   ]
