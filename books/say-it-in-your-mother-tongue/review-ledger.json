@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 180,
+  "next_sequence": 181,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -19436,6 +19436,87 @@
           "structure": true
         },
         "findings": []
+      },
+      "shared_state_revisions": {
+        "glossary": "40783393df9152a0a615f96bb58920b1d1cdb1c2b486cbeedaf8d349c7a39491",
+        "style_guide": "bf597855cc17f6291a3258b0534545c7689d2771038d387befe5ac8377e94054"
+      }
+    },
+    {
+      "record_id": "583243ff54dd4b429b75fc390b48b188",
+      "sequence": 180,
+      "unit_id": "chapter-000009",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "edbb26f250a2d3d7859204c1312eaf8e42072f148855a5fc283a60be46eb0cd1",
+      "translation_sha256": "59fd1c52a0d118ee9a5f8271366c756830da8bf54a45d0b577c440fb02bdedf0",
+      "workflow_revision": "8bb30227adc4bb921429611e12a0af803c9b6487",
+      "review_contract_revision": "docs/TRANSLATION.md@8bb30227adc4bb921429611e12a0af803c9b6487",
+      "reviewer_session_id": "auto-a7b9e400d5f2-reviewer-4de7f330",
+      "reviewed_at": "2026-11-20T15:31:29Z",
+      "state_revision": "d8bd835555b921a470a0c038d7e21b3f29d2a7c039235bb4c1d87264c88cc16d",
+      "review_commit": "17ca04dc38af2617cdc7c2155a04923dab3bcbb5",
+      "correction_round": 4,
+      "supersedes_record_id": "290c20480a404c7787db071298883cdf",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "holiday-1",
+            "category": "style",
+            "severity": "major",
+            "detail": "Source: 'What a *lovely holiday*. Why not go somewhere sunny and *less England-y>?'; translation renders it as 'Какие *чудесные каникулы*. Почему бы не поехать куда-нибудь, где солнечнее и *не так по-английски*?', which is ungrammatical in Russian and fails to preserve the source's exclamatory tone.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "What a *lovely holiday*. Why not go somewhere sunny and *less England-y*?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Какие *чудесные каникулы*. Почему бы не поехать куда-нибудь, где солнечнее и *не так по-английски*?",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "hug-1",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Source: 'Wrapping his arms around his own torso, Lance hugs himself tightly.'; translation: 'Обхватив себя руками, Лэнс крепко прижимает их к телу.' The action of hugging himself is changed into pressing arms to his body.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Wrapping his arms around his own torso, Lance hugs himself tightly.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Обхватив себя руками, Лэнс крепко прижимает их к телу.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "tell-1",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Source: 'ill tell fernando you say hi' means Lance will tell Fernando that Esteban says hi; translation: 'передам Фернандо привет от тебя' changes the reported speech and reference.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "ill tell fernando you say hi",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "передам Фернандо привет от тебя",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
       },
       "shared_state_revisions": {
         "glossary": "40783393df9152a0a615f96bb58920b1d1cdb1c2b486cbeedaf8d349c7a39491",
