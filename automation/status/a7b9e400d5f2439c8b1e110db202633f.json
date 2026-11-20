@@ -4,17 +4,12 @@
   "book_slug": "say-it-in-your-mother-tongue",
   "source_sha256": "12e210ce5a95daf56a97ada583ec15c274780c4ddfa7fb92da6a88c67f7c403d",
   "state": "running",
-  "phase": "model-call-reserved",
+  "phase": "reviewer-completed",
   "failures": 0,
   "correction_rounds": {},
   "workflow_revision": "8bb30227adc4bb921429611e12a0af803c9b6487",
-  "updated_at": "2026-11-20T15:47:15.301846+00:00",
-  "active": {
-    "role": "reviewer",
-    "chapter": 10,
-    "session_id": "auto-a7b9e400d5f2-reviewer-da2a2737",
-    "unit_id": "chapter-000010"
-  },
+  "updated_at": "2026-11-20T15:48:41.519852+00:00",
+  "active": null,
   "recoveries": [
     {
       "action": "operator-recover-stale-attention-queue-preflight",
@@ -34,28 +29,54 @@
     "correction_candidates": 1,
     "awaiting_promotion": 0
   },
-  "memory_glossary_saved": 20,
-  "pending_style": [],
+  "memory_glossary_saved": 26,
+  "pending_style": [
+    {
+      "evidence": "The source uses mãe e esposa, Não sei, and Vamos; the translation keeps them unchanged.",
+      "source_pattern": "Portuguese phrases embedded in English dialogue and narration, such as mãe e esposa, Não sei, and Vamos.",
+      "translation_approach": "Retain the Portuguese unchanged within the Russian text."
+    },
+    {
+      "evidence": "The translation keeps Nein and Kaninchen, and renders the explanation of Kaninchen as кролик.",
+      "source_pattern": "German words and terms, such as Nein and Kaninchen.",
+      "translation_approach": "Retain the German term in Russian text, preserving explanation when the source provides it."
+    },
+    {
+      "evidence": "Fernando calls Lance princesa; the translation keeps princesa.",
+      "source_pattern": "Spanish endearment princesa in dialogue.",
+      "translation_approach": "Retain the Spanish form of address unchanged."
+    },
+    {
+      "evidence": "The translation renders these as грёбаный Дарт Вейдер and Сегодня я тебя трахну.",
+      "source_pattern": "Colloquial profanity and crude language in dialogue, such as fucking Darth Vader and I am going to fuck you today.",
+      "translation_approach": "Use blunt, natural Russian colloquial equivalents rather than neutralizing the force."
+    },
+    {
+      "evidence": "The translation retains italics on а может, пять, и правда была, старик, мой, так, and хорошо.",
+      "source_pattern": "Italicized emphasis in dialogue and internal thought, such as or five, really, is, old man, mine, so, and good.",
+      "translation_approach": "Preserve meaningful italics on the corresponding Russian words."
+    }
+  ],
   "role_protocol_failures": {},
   "execution_metrics": {
     "schema_version": 1,
     "since": "2026-11-20T14:43:00.485679+00:00",
     "api": {
       "reviewer": {
-        "completed_calls": 14,
-        "responses": 12,
-        "duration_ms": 2794228,
-        "request_chars": 1286237,
-        "prompt_tokens": 296060,
-        "completion_tokens": 243228,
-        "total_tokens": 539288,
+        "completed_calls": 15,
+        "responses": 13,
+        "duration_ms": 2877967,
+        "request_chars": 1380224,
+        "prompt_tokens": 320588,
+        "completion_tokens": 261790,
+        "total_tokens": 582378,
         "errors": 2
       }
     },
     "accepted_operations": {
       "translated": 9,
-      "review_pass": 7,
-      "reviewed": 7,
+      "review_pass": 8,
+      "reviewed": 8,
       "review_rejected": 1
     }
   },
@@ -78,9 +99,12 @@
     "unit_id": "chapter-000010",
     "role": "reviewer",
     "route": "primary",
-    "request_chars": 96456,
-    "outcome": "http_503",
-    "duration_ms": 300229
+    "request_chars": 93987,
+    "outcome": "response",
+    "duration_ms": 83739,
+    "prompt_tokens": 24528,
+    "completion_tokens": 18562,
+    "total_tokens": 43090
   },
   "provider_call_metrics": [
     {
@@ -230,6 +254,17 @@
       "request_chars": 96456,
       "outcome": "http_503",
       "duration_ms": 300229
+    },
+    {
+      "unit_id": "chapter-000010",
+      "role": "reviewer",
+      "route": "primary",
+      "request_chars": 93987,
+      "outcome": "response",
+      "duration_ms": 83739,
+      "prompt_tokens": 24528,
+      "completion_tokens": 18562,
+      "total_tokens": 43090
     }
   ],
   "glossary_evidence_rejected": 4,
@@ -250,15 +285,16 @@
   "unit_protocol_failures": {
     "chapter-000007": 1
   },
-  "provider_model_route": "primary",
-  "provider_retry": {
-    "chapter": 10,
-    "unit_id": "chapter-000010",
+  "model_response_diagnostics": {
+    "finish_reason": "stop",
+    "response_format": "json_object",
+    "response_chars": 2931,
+    "provider_refusal": false,
+    "prompt_tokens": 24528,
+    "completion_tokens": 18562,
+    "total_tokens": 43090,
+    "route": "primary",
     "role": "reviewer",
-    "attempts": 1,
-    "code": "http_503",
-    "not_before": "2026-11-20T15:46:32.141556+00:00"
-  },
-  "last_error_code": "http_503",
-  "blocked_unit_id": "chapter-000010"
+    "unit_id": "chapter-000010"
+  }
 }
