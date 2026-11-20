@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "request_id": "c260000000000000000000000000000d",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "817f8b1d02a42277105e90b9bf4ccdc841176e357ef94e67773c906ed51b5a96",
+    "record": {
+      "correction_round": 4,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "meaning",
+            "detail": "Corrected chapter preserves three consecutive turns in the Jos debate: Max says Jos is not wrong, Checo says he is wrong, Max repeats not wrong. The contradictory pronoun/polarity and pride meaning from the earlier draft are absent; complete source/target block and marker comparison performed.",
+            "id": "r037-wrong",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "meaning-recheck-1",
+              "record_id": "072d0e20ce0849e09357c982aea72876"
+            },
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "he… isn’t. Not… not about this."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "он… не ошибается. Не… не в этом"
+            }
+          }
+        ]
+      },
+      "record_id": "92c9d092b78f47cc993dad207b81c3a9",
+      "review_commit": "f3808cee8d79ae2d82454691900ad2c710f90965",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewed_at": "2026-11-20T12:07:29Z",
+      "reviewer_session_id": "chatops-say-it-37-reviewer-resume-20261120",
+      "sequence": 162,
+      "source_sha256": "3c4748f66a27267765a11322203469f4422ca1efa7cc1f959d8d2567957dd4b3",
+      "state_revision": "b5a7b4f5972be9d8f08e147e84bf1e237c958e28b53e8ce5be5fde1b5cee151a",
+      "supersedes_record_id": "072d0e20ce0849e09357c982aea72876",
+      "translation_sha256": "46f78cae4e1e9992b3f8499c9ad0cdf43581af06d790182b2f6167036dec56f6",
+      "unit_id": "chapter-000037",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741"
+    }
+  },
+  "error": null
+}

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 162,
+  "next_sequence": 163,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -18083,6 +18083,54 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "92c9d092b78f47cc993dad207b81c3a9",
+      "sequence": 162,
+      "unit_id": "chapter-000037",
+      "outcome": "PASS",
+      "source_sha256": "3c4748f66a27267765a11322203469f4422ca1efa7cc1f959d8d2567957dd4b3",
+      "translation_sha256": "46f78cae4e1e9992b3f8499c9ad0cdf43581af06d790182b2f6167036dec56f6",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "chatops-say-it-37-reviewer-resume-20261120",
+      "reviewed_at": "2026-11-20T12:07:29Z",
+      "state_revision": "b5a7b4f5972be9d8f08e147e84bf1e237c958e28b53e8ce5be5fde1b5cee151a",
+      "review_commit": "f3808cee8d79ae2d82454691900ad2c710f90965",
+      "correction_round": 4,
+      "supersedes_record_id": "072d0e20ce0849e09357c982aea72876",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "r037-wrong",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Corrected chapter preserves three consecutive turns in the Jos debate: Max says Jos is not wrong, Checo says he is wrong, Max repeats not wrong. The contradictory pronoun/polarity and pride meaning from the earlier draft are absent; complete source/target block and marker comparison performed.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "he… isn’t. Not… not about this.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "он… не ошибается. Не… не в этом",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "072d0e20ce0849e09357c982aea72876",
+              "finding_id": "meaning-recheck-1"
+            }
           }
         ]
       }
