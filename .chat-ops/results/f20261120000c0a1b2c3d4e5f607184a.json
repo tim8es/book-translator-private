@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "request_id": "f20261120000c0a1b2c3d4e5f607184a",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "541111689c436397512fcba34be4b8ef74d260b6da0fa4fe9f3719877263ffa8",
+    "record": {
+      "correction_round": 4,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "terminology",
+            "detail": "Source-linked complete 86-block chapter check: Lance's Russian name is now spelled «Лэнс» consistently across the hallway and car exchanges, including all 11 previous «Ланс» variants. The last remaining mismatch explicitly flagged in the prior review is absent.",
+            "id": "r010-lance",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "followup-terminology-2",
+              "record_id": "db1917e286ae4c4287935f8e586d8ebd"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "When they part, Lance mumbles, “maybe we shouldn’t, like, not *here*.”"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Когда они отстраняются друг от друга, Лэнс бормочет: «Может, нам не стоит… ну, не *здесь*»"
+            }
+          }
+        ]
+      },
+      "record_id": "4329e246005049c9aae2042236731f5a",
+      "review_commit": "02941fc9c7c994e1beefa447d82768e30d074953",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewed_at": "2026-11-20T09:43:04Z",
+      "reviewer_session_id": "chatops-say-it-10-reviewer-20261120",
+      "sequence": 157,
+      "source_sha256": "9a277557932fff6ba2d167f2bd79f14e5bc69d22ceb4e92892520e6e7fd714f7",
+      "state_revision": "4e74d24f7ac8cac8832b1979e395c6c0c984c988b8b8ffa6eb63010cf05948de",
+      "supersedes_record_id": "db1917e286ae4c4287935f8e586d8ebd",
+      "translation_sha256": "36007a3819a5c676d3488fe524bba1f1e70f432fc1538ce323718beffab5e72f",
+      "unit_id": "chapter-000010",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741"
+    }
+  },
+  "error": null
+}
