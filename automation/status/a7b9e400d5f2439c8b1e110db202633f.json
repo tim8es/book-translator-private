@@ -4,11 +4,11 @@
   "book_slug": "say-it-in-your-mother-tongue",
   "source_sha256": "12e210ce5a95daf56a97ada583ec15c274780c4ddfa7fb92da6a88c67f7c403d",
   "state": "running",
-  "phase": "claimed",
+  "phase": "model-call-reserved",
   "failures": 0,
   "correction_rounds": {},
   "workflow_revision": "8bb30227adc4bb921429611e12a0af803c9b6487",
-  "updated_at": "2026-11-20T14:58:10.504602+00:00",
+  "updated_at": "2026-11-20T14:58:39.177678+00:00",
   "active": {
     "role": "reviewer",
     "chapter": 4,
@@ -75,20 +75,20 @@
     }
   },
   "prompt_context": {
-    "role": "translator",
+    "role": "reviewer",
     "workflow_revision": "8bb30227adc4bb921429611e12a0af803c9b6487",
     "loaded_contracts": [
       "AGENTS.md",
       "docs/TRANSLATION.md",
-      "docs/TRANSLATOR.md"
+      "docs/REVIEWER.md"
     ],
     "glossary_sha256": "47bd7f86d382b6d4258f44d8862c0e9a0ceb75a551de1c896981f87df42b13ae",
     "style_guide_sha256": "eaa08d42f1f5ea55a06553ec9c1d9e5c6f66b62f9bb6f55b653a52f78659dd74",
-    "system_chars": 21423,
-    "user_chars": 47284,
-    "execution_mode": "verified_operator_editorial_candidate"
+    "system_chars": 29562,
+    "user_chars": 54686,
+    "review_context": "independent_session"
   },
-  "model_calls_started": 3,
+  "model_calls_started": 4,
   "provider_call_metric": {
     "unit_id": "chapter-000003",
     "role": "reviewer",
