@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 177,
+  "next_sequence": 178,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -19327,6 +19327,55 @@
       "shared_state_revisions": {
         "glossary": "40783393df9152a0a615f96bb58920b1d1cdb1c2b486cbeedaf8d349c7a39491",
         "style_guide": "eaa08d42f1f5ea55a06553ec9c1d9e5c6f66b62f9bb6f55b653a52f78659dd74"
+      }
+    },
+    {
+      "record_id": "861615a67f08478b9b3d0358843160fb",
+      "sequence": 177,
+      "unit_id": "chapter-000006",
+      "outcome": "PASS",
+      "source_sha256": "0cb62577b656d2c6519fb08c6ce7911594d3e738578d40339e341164c87d701e",
+      "translation_sha256": "c3fd005c45ece4ddcfa7af50de5361272bb59e61b6596b774fb6f8482d42dc6d",
+      "workflow_revision": "8bb30227adc4bb921429611e12a0af803c9b6487",
+      "review_contract_revision": "docs/TRANSLATION.md@8bb30227adc4bb921429611e12a0af803c9b6487",
+      "reviewer_session_id": "auto-a7b9e400d5f2-reviewer-69c19ca3",
+      "reviewed_at": "2026-11-20T15:08:44Z",
+      "state_revision": "6a3dcfddde90883b2bba1153a555e1886e6c909e0ff045ebfbe05e4c9bfc3ec9",
+      "review_commit": "7af2826d2a67364bb5f4e968a1c9277232b10a36",
+      "correction_round": 1,
+      "supersedes_record_id": "49714b278448432a977c871e5869b170",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "terminology-1",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "The source term 'Red Bull' is rendered in Latin in block 000010 ('банку Red Bull') but as 'Ред Булл'/'Ред Булла' in blocks 000025 and 000030. Unify the rendering (the glossary prescribes 'Ред Булл') for consistency.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "he grabs a can of Red Bull and shoots it back like a shot of tequila",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Макс хватает банку Red Bull и опрокидывает её в себя, как стопку текилы",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "40783393df9152a0a615f96bb58920b1d1cdb1c2b486cbeedaf8d349c7a39491",
+        "style_guide": "169389916f149959f5e6ed87ef8f7eea77346bc95fd5bcc87cbe7581d10752cf"
       }
     }
   ]
