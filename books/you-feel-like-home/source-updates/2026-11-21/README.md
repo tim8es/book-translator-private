@@ -1,28 +1,28 @@
-# Source candidate and Chapter 12 — 2026-11-21
+# You Feel Like Home — November 2026 source edition
 
-This folder is **preserved input and a provisional ChatOps literary artifact**, not an active canonical source revision, not Translator acceptance, and not Reviewer PASS.
+## Durable result
 
-## Preserved artifacts
+The new source edition **source-000004** has been promoted by the book-pinned workflow `db253095d36f245f9531da654b93ab72193d3b97`. The 15 reading-order units are Preface, description, Chapters 1–12 and Afterword. No units were deleted. Every unit currently has machine Translator acceptance, including Chapter 12; **zero units have independent Reviewer PASS**.
 
-- `source/You_Feel_Like_Home.html` — exact uploaded HTML (554,021 bytes, SHA-256 `c602be8c25de25d5f943f4c8de80e5a3df801b6c7fb2eb833204a1df38f92b9c`).
-- `translated/chapter-12-ru-after-review.md` — corrected full Chapter 12 Russian draft (390 narrative paragraphs; 91,502 bytes, SHA-256 `84ffe904e8e96995f9df46825217f36370684072bef1ff585cf52ed8ab573586`).
-- `review/chapter-12-local-review.md` — source-comparison findings from the **same chat context** (`bounded_context`), **not** an independent reviewer record.
-- `source-info.json` — machine-readable provenance and staging status.
+## Preserved inputs and correspondence
 
-## Safe canonical handoff
+- `source/You_Feel_Like_Home.html`: immutable exact user-uploaded original; SHA-256 `c602be8c25de25d5f943f4c8de80e5a3df801b6c7fb2eb833204a1df38f92b9c`.
+- `source/You_Feel_Like_Home_workflow_compatible.html`: derived source used for the active edition; SHA-256 `fcc4a94fff8722c9cf1ea891361acca1d15cd4796b56fc7c2e95a38a7b92dac9`. Its only changes are eleven `#endnotes...` hyperlinks made absolute and replacing the description's top-level `h1` by `h2`. The visible English text remains identical.
+- `source/You_Feel_Like_Home_derived_anchors.html`: earlier candidate retained for provenance.
+- `translated/chapter-12-ru-after-review.md`: earlier local translation review draft, not the accepted canonical bytes.
+- `translated/chapter-12-canonical-ru.md`: complete Chapter 12 translator artifact with four source-aligned scene-break markers, author notes and footnote link; SHA-256 `4fcae489d7fbf289daf0e55c8f33b89ce88ba129f035ec8e904205980dd33bf1`.
+- `translated/preface-ru-updated.md` and `translated/description-ru-updated.md`: metadata and heading updates carried into canonical acceptance.
+- `review/chapter-12-local-review.md`: same-chat source comparison only; **not** an independent review record.
+- `source-comparison.json`: content similarity evidence for 11 old narrative chapters.
 
-The active book revision is `source-000002`, with 14 reading-order units; the supplied HTML contains 12 numbered chapters plus front/back matter. Source revisions and unit identity must be reconciled by the book-pinned engine `db253095d36f245f9531da654b93ab72193d3b97`.
+The attempted candidate `source-000003` was correctly **discarded** because it merged the description into the Preface and would have deleted the old description unit. It is immutable historical provenance. `source-000004` preserved the description separately and promoted with zero deletions.
 
-With that exact engine and a valid checkout of this book-state repository, run:
+## EPUB output
 
-```bash
-python scripts/book.py validate you-feel-like-home
-python scripts/corpus.py verify you-feel-like-home
-python scripts/book.py update-source you-feel-like-home \
-  books/you-feel-like-home/source-updates/2026-11-21/source/You_Feel_Like_Home.html \
-  --stage-only --json
-```
+`output/You_Feel_Like_Home_RU_12chapters_PREVIEW.epub` is a **preview only**, SHA-256 `0d99c065f3065a8a36e9731b3f4b8b3c947ffcbd16b8cdd22856a7001b623a93`, 908,897 bytes. It contains all 15 translated units; `output/manifest.json` is the canonical build identity.
 
-Inspect the complete staged delta. Do not approve deletions without an explicit decision; do not overwrite historical accepted artifacts. Promote only after the workflow gates pass, and then adapt the Chapter 12 draft to its newly allocated canonical unit path, acquire a Translator claim, accept the exact translated artifact, run an independent source-to-translation review, and record/pass review before marking `reviewed`. Re-review unchanged historical chapters separately according to the current ledger.
+## Remaining canonical work
 
-The file snapshots in this folder are deliberately kept outside `source-revisions/`, `progress.json`, and `review-ledger.json`. A commit of these staged files **does not** make Chapter 12 part of the built EPUB.
+A Reviewer must compare all current source and translation units and record current SHA-bound PASS evidence through the pinned workflow; the Orchestrator may then promote each from `translated` to `reviewed`. Only after all 15 are reviewed may the final EPUB be built without `--allow-unreviewed`. Do not promote historical review notes as machine evidence, and do not report the preview as the final reviewed book.
+
+A temporary generic GitHub Actions executor was used to invoke pinned CLI source staging, promotion, translation claims/acceptance and preview assembly. It was **removed** after use to restore the book-state repository's canonical nine-workflow topology. Ongoing work uses the existing standard ChatOps and final EPUB workflows.
