@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "request_id": "e8d34f18e0aa4b428dfe07c38fc30191",
+  "book_slug": "you-feel-like-home",
+  "workflow_revision": "db253095d36f245f9531da654b93ab72193d3b97",
+  "operation": "review-record",
+  "chapter": 4,
+  "session_id": "review-chatops-yflh-20261121-next",
+  "outcome": "CORRECTIONS_REQUIRED",
+  "quality_report": {
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "severity": "minor",
+        "detail": "EN 'son of a senior parliamentary figure' becomes generic 'сын высокопоставленного политика'; preserve the parliamentary connection.",
+        "resolved": false
+      },
+      {
+        "severity": "minor",
+        "detail": "EN 'their breaths brush on each other's faces' loses reciprocity in RU 'дыхание касается лица Калеба'; render both characters' breaths touching the other's face.",
+        "resolved": false
+      },
+      {
+        "severity": "major",
+        "detail": "EN 'Caleb’s heart sinks' translated as calque 'Сердце Калеба падает'; replace with natural Russian preserving sudden emotional sinking.",
+        "resolved": false
+      },
+      {
+        "severity": "minor",
+        "detail": "EN Landon 'squeezing his arm' rendered as 'рука Лэндона мягко сжимает его плечо'; avoid adding shoulder anatomy absent from source.",
+        "resolved": false
+      },
+      {
+        "severity": "minor",
+        "detail": "Later EN 'his hand still resting gently on Caleb’s arm' rendered with ambiguous 'его рука ... на предплечье'; clarify that Landon's hand remains on Caleb's arm, without adding unsupported specificity.",
+        "resolved": false
+      }
+    ]
+  },
+  "source_sha256": "d6ba83bc548c532a0b08815576572c3bd194b4e0ccba4f4e8d6aeb3cd104edfa",
+  "translation_sha256": "82bd950c686056e4f935c4a9df41e6cdcad30c40c064041d50037ef913117ca0",
+  "claim_sha256": "971c13072f1762f25f89eae4eb2acf43fee4377d4b8d9eecab9ab87370164e37"
+}
