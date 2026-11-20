@@ -1,8 +1,14 @@
 {
   "schema_version": 1,
-  "action": "discard",
+  "action": "stage",
   "result": {
-    "revision_id": "source-000003",
-    "state": "discarded"
+    "delta": {
+      "changed": 12,
+      "deleted": 0,
+      "new": 1,
+      "unchanged": 2
+    },
+    "revision_id": "source-000004",
+    "state": "staged"
   }
 }

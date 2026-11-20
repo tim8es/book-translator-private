@@ -1,0 +1,467 @@
+{
+  "base_revisions": {
+    "metadata": "ad2a435cad6de680fda812ae897bd75b026a48c1a1bb2028e1837bc813e5bba1",
+    "progress": "92f590f8b102ea9bbc05356422a15b79faac96f3017dcdf5cae4b6de874e0bf6",
+    "source_manifest": "43f065cb4975e033c610997b554cc0885224c249dc8ccb8b21373764c4b4d1f0"
+  },
+  "created_at": "2026-11-20T22:45:19Z",
+  "deleted_units": [],
+  "delta": {
+    "changed": 12,
+    "deleted": 0,
+    "new": 1,
+    "unchanged": 2
+  },
+  "metadata": {
+    "author": "Hazellury",
+    "chapter_count": 15,
+    "imported_at": "2026-09-14T11:49:16+00:00",
+    "schema_version": 1,
+    "source": {
+      "filename": "source-000004-You_Feel_Like_Home_workflow_compatible.html",
+      "original_filename": "You_Feel_Like_Home_workflow_compatible.html",
+      "revision_id": "source-000004",
+      "sha256": "fcc4a94fff8722c9cf1ea891361acca1d15cd4796b56fc7c2e95a38a7b92dac9",
+      "size_bytes": 554483,
+      "storage_mode": "embedded"
+    },
+    "source_file": "source-000004-You_Feel_Like_Home_workflow_compatible.html",
+    "source_format": "html",
+    "source_language": "en",
+    "source_updated_at": "2026-11-20T22:45:19Z",
+    "target_language": "ru",
+    "title": "You Feel Like Home",
+    "workflow": {
+      "repository": "https://github.com/tim8es/book-translator",
+      "requested_ref": "main",
+      "resolved_revision": "db253095d36f245f9531da654b93ab72193d3b97",
+      "review_evidence": "review-ledger-v1"
+    }
+  },
+  "parent_revision_id": "source-000002",
+  "progress": {
+    "book_slug": "you-feel-like-home",
+    "chapters": [
+      {
+        "number": 1,
+        "slug": "preface",
+        "source_path": "extracted/chapter-000001-source-000004.md",
+        "status": "extracted",
+        "title": "Preface",
+        "translation_path": "translated/chapter-000001-source-000004.md",
+        "unit_id": "chapter-000001"
+      },
+      {
+        "number": 2,
+        "slug": "you-feel-like-home",
+        "source_path": "extracted/chapter-000002-source-000004.md",
+        "status": "extracted",
+        "title": "You Feel Like Home",
+        "translation_path": "translated/chapter-000002-source-000004.md",
+        "unit_id": "chapter-000002"
+      },
+      {
+        "number": 3,
+        "slug": "chapter-1-prologue",
+        "source_path": "extracted/003-chapter-1-prologue.md",
+        "status": "translated",
+        "title": "Chapter 1: Prologue",
+        "translation_acceptance": {
+          "accepted_at": "2026-11-01T23:36:21Z",
+          "accepted_from_progress_revision": "4082d5b410952cea56d95a75da1a79e7a7c8426f1c6f72ae0098a2449aa772f5",
+          "base_commit": null,
+          "base_revision": "4082d5b410952cea56d95a75da1a79e7a7c8426f1c6f72ae0098a2449aa772f5",
+          "claim_id": "884669934828406cbe7c9a6b6ef90e8f",
+          "claim_revision": "1e206630948deed5d86d2afae3a7be68e57fc6537410ff1853bbbac86d26d908",
+          "role": "translator",
+          "schema_version": 1,
+          "session_id": "historical-artifact-reconciliation",
+          "shared_state_revisions": null,
+          "source_sha256": "a1e177c2e6daebb65acd48e2b493ac5587edc7e2f4453f26bf59e19c0e001270",
+          "translation_sha256": "e9aa53e645e2c379e25ea59136bd5c7d077cac9a0ae8a40e1d928d5d6de4f00e",
+          "unit_id": "chapter-000003",
+          "workflow_revision": "db253095d36f245f9531da654b93ab72193d3b97"
+        },
+        "translation_path": "translated/003-chapter-1-prologue.md",
+        "unit_id": "chapter-000003"
+      },
+      {
+        "number": 4,
+        "slug": "chapter-2",
+        "source_path": "extracted/chapter-000004-source-000004.md",
+        "status": "extracted",
+        "title": "Chapter 2",
+        "translation_path": "translated/chapter-000004-source-000004.md",
+        "unit_id": "chapter-000004"
+      },
+      {
+        "number": 5,
+        "slug": "chapter-3-chapter-3",
+        "source_path": "extracted/chapter-000005-source-000004.md",
+        "status": "extracted",
+        "title": "Chapter 3: Chapter 3",
+        "translation_path": "translated/chapter-000005-source-000004.md",
+        "unit_id": "chapter-000005"
+      },
+      {
+        "number": 6,
+        "slug": "chapter-4-chapter-4",
+        "source_path": "extracted/chapter-000006-source-000004.md",
+        "status": "extracted",
+        "title": "Chapter 4: Chapter 4",
+        "translation_path": "translated/chapter-000006-source-000004.md",
+        "unit_id": "chapter-000006"
+      },
+      {
+        "number": 7,
+        "slug": "chapter-5",
+        "source_path": "extracted/chapter-000007-source-000004.md",
+        "status": "extracted",
+        "title": "Chapter 5",
+        "translation_path": "translated/chapter-000007-source-000004.md",
+        "unit_id": "chapter-000007"
+      },
+      {
+        "number": 8,
+        "slug": "chapter-6",
+        "source_path": "extracted/chapter-000008-source-000004.md",
+        "status": "extracted",
+        "title": "Chapter 6",
+        "translation_path": "translated/chapter-000008-source-000004.md",
+        "unit_id": "chapter-000008"
+      },
+      {
+        "number": 9,
+        "slug": "chapter-7",
+        "source_path": "extracted/chapter-000010-source-000004.md",
+        "status": "extracted",
+        "title": "Chapter 7",
+        "translation_path": "translated/chapter-000010-source-000004.md",
+        "unit_id": "chapter-000010"
+      },
+      {
+        "number": 10,
+        "slug": "chapter-8",
+        "source_path": "extracted/chapter-000011-source-000004.md",
+        "status": "extracted",
+        "title": "Chapter 8",
+        "translation_path": "translated/chapter-000011-source-000004.md",
+        "unit_id": "chapter-000011"
+      },
+      {
+        "number": 11,
+        "slug": "chapter-9",
+        "source_path": "extracted/chapter-000012-source-000004.md",
+        "status": "extracted",
+        "title": "Chapter 9",
+        "translation_path": "translated/chapter-000012-source-000004.md",
+        "unit_id": "chapter-000012"
+      },
+      {
+        "number": 12,
+        "slug": "chapter-10",
+        "source_path": "extracted/chapter-000013-source-000004.md",
+        "status": "extracted",
+        "title": "Chapter 10",
+        "translation_path": "translated/chapter-000013-source-000004.md",
+        "unit_id": "chapter-000013"
+      },
+      {
+        "number": 13,
+        "slug": "chapter-11",
+        "source_path": "extracted/chapter-000014-source-000004.md",
+        "status": "extracted",
+        "title": "Chapter 11",
+        "translation_path": "translated/chapter-000014-source-000004.md",
+        "unit_id": "chapter-000014"
+      },
+      {
+        "number": 14,
+        "slug": "chapter-12",
+        "source_path": "extracted/chapter-000016-source-000004.md",
+        "status": "extracted",
+        "title": "Chapter 12",
+        "translation_path": "translated/chapter-000016-source-000004.md",
+        "unit_id": "chapter-000016"
+      },
+      {
+        "number": 15,
+        "slug": "afterword",
+        "source_path": "extracted/009-afterword.md",
+        "status": "translated",
+        "title": "Afterword",
+        "translation_acceptance": {
+          "accepted_at": "2026-11-01T23:41:14Z",
+          "accepted_from_progress_revision": "5b120ca4bf910101faa718ee8e331478acc5e4a3f48e502cee2ed550ecefc69d",
+          "base_commit": null,
+          "base_revision": "5b120ca4bf910101faa718ee8e331478acc5e4a3f48e502cee2ed550ecefc69d",
+          "claim_id": "e71bed2ae6c8458abb43e3a97d28fe23",
+          "claim_revision": "0712dfba7f2bea04f23dced54b7876b1e9da2785f7efa53cf07ad2c5183d87f8",
+          "role": "translator",
+          "schema_version": 1,
+          "session_id": "historical-link-reconciliation-14",
+          "shared_state_revisions": null,
+          "source_sha256": "b4bdeb653bc148720aa49422d5320363a8257cfaccf468cd8b11dfd30131e534",
+          "translation_sha256": "62e8e01967eaf3789ffdbfbcfcfbb90e417eb915dd24b4efbfd34683d6db1b1a",
+          "unit_id": "chapter-000009",
+          "workflow_revision": "db253095d36f245f9531da654b93ab72193d3b97"
+        },
+        "translation_path": "translated/009-afterword.md",
+        "unit_id": "chapter-000009"
+      }
+    ],
+    "schema_version": 1
+  },
+  "revision_id": "source-000004",
+  "schema_version": 1,
+  "source_manifest": {
+    "chapter_count": 15,
+    "extracted": [
+      {
+        "number": 1,
+        "path": "extracted/chapter-000001-source-000004.md",
+        "sha256": "2e3fa07d3bb8e8e1e2604a5e29dad9e6af3e31fac0c3208db7bb740c5ab3887c",
+        "title": "Preface",
+        "unit_id": "chapter-000001"
+      },
+      {
+        "number": 2,
+        "path": "extracted/chapter-000002-source-000004.md",
+        "sha256": "9781a365275cdb46e3e7506c6382678b1dec1416696518419b96aa09e2308eb9",
+        "title": "You Feel Like Home",
+        "unit_id": "chapter-000002"
+      },
+      {
+        "number": 3,
+        "path": "extracted/003-chapter-1-prologue.md",
+        "sha256": "a1e177c2e6daebb65acd48e2b493ac5587edc7e2f4453f26bf59e19c0e001270",
+        "title": "Chapter 1: Prologue",
+        "unit_id": "chapter-000003"
+      },
+      {
+        "number": 4,
+        "path": "extracted/chapter-000004-source-000004.md",
+        "sha256": "d6ba83bc548c532a0b08815576572c3bd194b4e0ccba4f4e8d6aeb3cd104edfa",
+        "title": "Chapter 2",
+        "unit_id": "chapter-000004"
+      },
+      {
+        "number": 5,
+        "path": "extracted/chapter-000005-source-000004.md",
+        "sha256": "778c7a39ad0595582b06020983606e9827313d9b3461f0509864634be5ecfa07",
+        "title": "Chapter 3: Chapter 3",
+        "unit_id": "chapter-000005"
+      },
+      {
+        "number": 6,
+        "path": "extracted/chapter-000006-source-000004.md",
+        "sha256": "c689a258bf3aaf2dd1478254d56cb639f77edeaafac33d7f543c023f1ceb7e9a",
+        "title": "Chapter 4: Chapter 4",
+        "unit_id": "chapter-000006"
+      },
+      {
+        "number": 7,
+        "path": "extracted/chapter-000007-source-000004.md",
+        "sha256": "db101c76ad773b0b165c3aaa2afa1ecc1429424ff7b176f09f7cdb7667ede426",
+        "title": "Chapter 5",
+        "unit_id": "chapter-000007"
+      },
+      {
+        "number": 8,
+        "path": "extracted/chapter-000008-source-000004.md",
+        "sha256": "1774b092134645825329191ac529925fb3ce036918d8e2fb96b6cc16327191e9",
+        "title": "Chapter 6",
+        "unit_id": "chapter-000008"
+      },
+      {
+        "number": 9,
+        "path": "extracted/chapter-000010-source-000004.md",
+        "sha256": "b0b1a5ff78d6ac7cc6fe6173719058fe191eb4dc2aeddb318dedff66847072e5",
+        "title": "Chapter 7",
+        "unit_id": "chapter-000010"
+      },
+      {
+        "number": 10,
+        "path": "extracted/chapter-000011-source-000004.md",
+        "sha256": "284fd7eaa1dbd69109aa9634ce31af0363bd3b5f40e932480c9f7db63fd305af",
+        "title": "Chapter 8",
+        "unit_id": "chapter-000011"
+      },
+      {
+        "number": 11,
+        "path": "extracted/chapter-000012-source-000004.md",
+        "sha256": "49c2ba17344a870463d3aeaa0c2e00c633dc8ae433f710890512efff3b3d307c",
+        "title": "Chapter 9",
+        "unit_id": "chapter-000012"
+      },
+      {
+        "number": 12,
+        "path": "extracted/chapter-000013-source-000004.md",
+        "sha256": "8e6128879515586ee3d13214e18020dc526b4bc6926ccbd21ef6c8a93bb25264",
+        "title": "Chapter 10",
+        "unit_id": "chapter-000013"
+      },
+      {
+        "number": 13,
+        "path": "extracted/chapter-000014-source-000004.md",
+        "sha256": "ef36f5e2af6fea7f098e4c7ddaca8f1e78db3d8c0538ad8ef2d611c84f5ef9dd",
+        "title": "Chapter 11",
+        "unit_id": "chapter-000014"
+      },
+      {
+        "number": 14,
+        "path": "extracted/chapter-000016-source-000004.md",
+        "sha256": "109bd0ec0f745561cf01e9c30b2207aef4d30bf04a634c144213390ff4f9cdae",
+        "title": "Chapter 12",
+        "unit_id": "chapter-000016"
+      },
+      {
+        "number": 15,
+        "path": "extracted/009-afterword.md",
+        "sha256": "b4bdeb653bc148720aa49422d5320363a8257cfaccf468cd8b11dfd30131e534",
+        "title": "Afterword",
+        "unit_id": "chapter-000009"
+      }
+    ],
+    "schema_version": 1,
+    "source_file": "source-000004-You_Feel_Like_Home_workflow_compatible.html",
+    "source_format": "html",
+    "source_sha256": "fcc4a94fff8722c9cf1ea891361acca1d15cd4796b56fc7c2e95a38a7b92dac9",
+    "source_size_bytes": 554483,
+    "source_storage_mode": "embedded"
+  },
+  "units": [
+    {
+      "classification": "changed",
+      "number": 1,
+      "previous_number": 1,
+      "source_path": "extracted/chapter-000001-source-000004.md",
+      "staged_path": "source-revisions/source-000004/corpus/001-chapter-000001.md",
+      "title": "Preface",
+      "unit_id": "chapter-000001"
+    },
+    {
+      "classification": "changed",
+      "number": 2,
+      "previous_number": 2,
+      "source_path": "extracted/chapter-000002-source-000004.md",
+      "staged_path": "source-revisions/source-000004/corpus/002-chapter-000002.md",
+      "title": "You Feel Like Home",
+      "unit_id": "chapter-000002"
+    },
+    {
+      "classification": "unchanged",
+      "number": 3,
+      "source_path": "extracted/003-chapter-1-prologue.md",
+      "staged_path": "source-revisions/source-000004/corpus/003-chapter-000003.md",
+      "title": "Chapter 1: Prologue",
+      "unit_id": "chapter-000003"
+    },
+    {
+      "classification": "changed",
+      "number": 4,
+      "previous_number": 4,
+      "source_path": "extracted/chapter-000004-source-000004.md",
+      "staged_path": "source-revisions/source-000004/corpus/004-chapter-000004.md",
+      "title": "Chapter 2",
+      "unit_id": "chapter-000004"
+    },
+    {
+      "classification": "changed",
+      "number": 5,
+      "previous_number": 5,
+      "source_path": "extracted/chapter-000005-source-000004.md",
+      "staged_path": "source-revisions/source-000004/corpus/005-chapter-000005.md",
+      "title": "Chapter 3: Chapter 3",
+      "unit_id": "chapter-000005"
+    },
+    {
+      "classification": "changed",
+      "number": 6,
+      "previous_number": 6,
+      "source_path": "extracted/chapter-000006-source-000004.md",
+      "staged_path": "source-revisions/source-000004/corpus/006-chapter-000006.md",
+      "title": "Chapter 4: Chapter 4",
+      "unit_id": "chapter-000006"
+    },
+    {
+      "classification": "changed",
+      "number": 7,
+      "previous_number": 7,
+      "source_path": "extracted/chapter-000007-source-000004.md",
+      "staged_path": "source-revisions/source-000004/corpus/007-chapter-000007.md",
+      "title": "Chapter 5",
+      "unit_id": "chapter-000007"
+    },
+    {
+      "classification": "changed",
+      "number": 8,
+      "previous_number": 8,
+      "source_path": "extracted/chapter-000008-source-000004.md",
+      "staged_path": "source-revisions/source-000004/corpus/008-chapter-000008.md",
+      "title": "Chapter 6",
+      "unit_id": "chapter-000008"
+    },
+    {
+      "classification": "changed",
+      "number": 9,
+      "previous_number": 9,
+      "source_path": "extracted/chapter-000010-source-000004.md",
+      "staged_path": "source-revisions/source-000004/corpus/009-chapter-000010.md",
+      "title": "Chapter 7",
+      "unit_id": "chapter-000010"
+    },
+    {
+      "classification": "changed",
+      "number": 10,
+      "previous_number": 10,
+      "source_path": "extracted/chapter-000011-source-000004.md",
+      "staged_path": "source-revisions/source-000004/corpus/010-chapter-000011.md",
+      "title": "Chapter 8",
+      "unit_id": "chapter-000011"
+    },
+    {
+      "classification": "changed",
+      "number": 11,
+      "previous_number": 11,
+      "source_path": "extracted/chapter-000012-source-000004.md",
+      "staged_path": "source-revisions/source-000004/corpus/011-chapter-000012.md",
+      "title": "Chapter 9",
+      "unit_id": "chapter-000012"
+    },
+    {
+      "classification": "changed",
+      "number": 12,
+      "previous_number": 12,
+      "source_path": "extracted/chapter-000013-source-000004.md",
+      "staged_path": "source-revisions/source-000004/corpus/012-chapter-000013.md",
+      "title": "Chapter 10",
+      "unit_id": "chapter-000013"
+    },
+    {
+      "classification": "changed",
+      "number": 13,
+      "previous_number": 13,
+      "source_path": "extracted/chapter-000014-source-000004.md",
+      "staged_path": "source-revisions/source-000004/corpus/013-chapter-000014.md",
+      "title": "Chapter 11",
+      "unit_id": "chapter-000014"
+    },
+    {
+      "classification": "new",
+      "number": 14,
+      "source_path": "extracted/chapter-000016-source-000004.md",
+      "staged_path": "source-revisions/source-000004/corpus/014-chapter-000016.md",
+      "title": "Chapter 12",
+      "unit_id": "chapter-000016"
+    },
+    {
+      "classification": "unchanged",
+      "number": 15,
+      "source_path": "extracted/009-afterword.md",
+      "staged_path": "source-revisions/source-000004/corpus/015-chapter-000009.md",
+      "title": "Afterword",
+      "unit_id": "chapter-000009"
+    }
+  ]
+}
