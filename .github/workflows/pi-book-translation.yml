@@ -1,0 +1,189 @@
+name: Pi book translation (manual pilot)
+run-name: Pi book translation ${{ inputs.job_id || 'safe probe' }}
+
+# Explicit manual entrypoint. No cron, push trigger, or book-specific workflow.
+on:
+  # PR only verifies installation and the offline adapter; never calls models.
+  pull_request:
+    paths:
+      - '.github/workflows/pi-book-translation.yml'
+  workflow_dispatch:
+    inputs:
+      probe_only:
+        description: "Test Pi installation and adapter without model calls or writes"
+        type: boolean
+        required: true
+        default: true
+      job_id:
+        description: "Existing 32-character intake job ID (required if not probe)"
+        type: string
+        required: false
+      continue_automatically:
+        description: "After this checkpoint, dispatch another Pi checkpoint"
+        type: boolean
+        required: true
+        default: false
+
+env:
+  # Reviewed immutable public executor commit. Does not change literary book pins
+  # or the separate locked runtime used by the existing scheduled Auto.
+  PI_EXECUTOR_SHA: ffcc39c1977cd36107510953ad6c689dabd10ab0
+  BOOK_TRANSLATOR_LLM_BACKEND: pi
+  OMNIROUTE_MODEL_CALL_LIMIT: "1500"
+
+jobs:
+  probe:
+    if: ${{ github.event_name == 'pull_request' || inputs.probe_only }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout public Pi adapter at reviewed SHA
+        uses: actions/checkout@v4
+        with:
+          repository: tim8es/book-translator
+          ref: ${{ env.PI_EXECUTOR_SHA }}
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Verify exact executor commit
+        run: test "$(git rev-parse HEAD)" = "$PI_EXECUTOR_SHA"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install pinned Pi without dependency scripts
+        run: npm install --global --ignore-scripts @earendil-works/pi-coding-agent@1.6.0
+      - name: Verify Pi CLI and isolated adapter tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          pi --version
+          python -m unittest discover -s tests -p test_pi_backend.py -v
+
+  prepare:
+    if: ${{ github.event_name == 'workflow_dispatch' && !inputs.probe_only }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    outputs:
+      book_key: ${{ steps.scope.outputs.book_key }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Checkout immutable public Pi executor
+        uses: actions/checkout@v4
+        with:
+          repository: tim8es/book-translator
+          ref: ${{ env.PI_EXECUTOR_SHA }}
+          path: .public-auto-runtime
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Verify executor revision and resolve only the requested book lane
+        id: scope
+        shell: bash
+        env:
+          JOB_ID: ${{ inputs.job_id }}
+          BOOK_TRANSLATOR_STATE_ROOT: ${{ github.workspace }}
+        run: |
+          set -euo pipefail
+          [[ "$JOB_ID" =~ ^[0-9a-f]{32}$ ]] || { echo "::error::Explicit job_id must be 32 lowercase hex characters"; exit 1; }
+          test "$(git -C .public-auto-runtime rev-parse HEAD)" = "$PI_EXECUTOR_SHA"
+          key="$(python .public-auto-runtime/automation/book_runner.py --book-key --job-id "$JOB_ID")"
+          [[ "$key" =~ ^[a-z0-9-]+$ ]] || { echo "::error::Unsafe book key"; exit 1; }
+          echo "book_key=$key" >> "$GITHUB_OUTPUT"
+
+  process:
+    needs: prepare
+    if: ${{ needs.prepare.result == 'success' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    concurrency:
+      # Same book-scoped lock as the original Auto and final EPUB workflow.
+      group: book-operation-${{ needs.prepare.outputs.book_key }}
+      cancel-in-progress: false
+    permissions:
+      contents: write
+      actions: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+      - name: Checkout immutable public Pi executor
+        uses: actions/checkout@v4
+        with:
+          repository: tim8es/book-translator
+          ref: ${{ env.PI_EXECUTOR_SHA }}
+          path: .public-auto-runtime
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Verify immutable executor
+        run: test "$(git -C .public-auto-runtime rev-parse HEAD)" = "$PI_EXECUTOR_SHA"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install pinned Pi CLI
+        run: npm install --global --ignore-scripts @earendil-works/pi-coding-agent@1.6.0
+      - name: One canonical bounded Auto checkpoint with independent Pi role calls
+        id: run
+        shell: bash
+        env:
+          BOOK_TRANSLATOR_STATE_ROOT: ${{ github.workspace }}
+          JOB_ID: ${{ inputs.job_id }}
+          OMNIROUTE_API_KEY: ${{ secrets.OMNIROUTE_API_KEY }}
+          OMNIROUTE_BASE_URL: ${{ vars.OMNIROUTE_BASE_URL }}
+          OMNIROUTE_TRANSLATOR_MODEL: ${{ vars.OMNIROUTE_TRANSLATOR_MODEL }}
+          OMNIROUTE_REVIEWER_MODEL: ${{ vars.OMNIROUTE_REVIEWER_MODEL }}
+          OMNIROUTE_CORRECTOR_MODEL: ${{ vars.OMNIROUTE_CORRECTOR_MODEL }}
+          OMNIROUTE_ORCHESTRATOR_MODEL: ${{ vars.OMNIROUTE_ORCHESTRATOR_MODEL || vars.OMNIROUTE_REVIEWER_MODEL }}
+          OMNIROUTE_TRANSLATOR_FALLBACK_MODEL: ${{ vars.OMNIROUTE_TRANSLATOR_FALLBACK_MODEL }}
+          OMNIROUTE_REVIEWER_FALLBACK_MODEL: ${{ vars.OMNIROUTE_REVIEWER_FALLBACK_MODEL }}
+          OMNIROUTE_CORRECTOR_FALLBACK_MODEL: ${{ vars.OMNIROUTE_CORRECTOR_FALLBACK_MODEL }}
+          PI_AGENT_CONTEXT_WINDOW: ${{ vars.PI_AGENT_CONTEXT_WINDOW || '131072' }}
+          PI_AGENT_MAX_TOKENS: ${{ vars.PI_AGENT_MAX_TOKENS || '32768' }}
+        run: |
+          set -euo pipefail
+          python .public-auto-runtime/automation/book_runner.py --job-id "$JOB_ID"
+
+      - name: Publish verified final EPUB artifact
+        if: steps.run.outputs.done == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: pi-reviewed-epub-${{ inputs.job_id }}
+          path: ${{ steps.run.outputs.artifact }}
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Continue only if explicitly enabled
+        if: steps.run.outputs.continue == 'true' && inputs.continue_automatically
+        env:
+          GH_TOKEN: ${{ github.token }}
+          JOB_ID: ${{ inputs.job_id }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          gh workflow run pi-book-translation.yml --ref main \
+            -f probe_only=false -f job_id="$JOB_ID" -f continue_automatically=true
+
+      - name: Report delayed recovery without switching to the old backend
+        if: steps.run.outputs.retry_at != ''
+        env:
+          RETRY_AT: ${{ steps.run.outputs.retry_at }}
+        run: echo "::warning::Pi job has a durable retry deadline ($RETRY_AT); manual or separate Pi retry dispatch required."
+
+      - name: Surface blocked state
+        if: steps.run.outputs.blocked == 'true'
+        run: |
+          echo "::error::Canonical state blocked; inspect private durable status. No silent workflow upgrade."
+          exit 1

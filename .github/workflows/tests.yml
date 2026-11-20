@@ -85,6 +85,7 @@ jobs:
               "book-job-monitor.yml",
               "chat-operations.yml",
               "final-epub.yml",                    # generic, privacy-gated, pinned public caller
+              "pi-book-translation.yml",           # reusable manual Pi pilot, no cron
               "tests.yml",
           }
           directory = Path(".github/workflows")
@@ -98,7 +99,7 @@ jobs:
                   + "; missing: " + ", ".join(missing)
                   + ". Only reviewed reusable entrypoints are allowed."
               )
-          print("Workflow topology check passed (eight reusable entrypoints).")
+          print("Workflow topology check passed (nine reusable entrypoints).")
           PY
 
       - name: Set up Python 3.12
