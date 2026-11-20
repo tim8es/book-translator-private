@@ -45,7 +45,7 @@ jobs:
           assert request.get("workflow_revision") == pin
           assert request.get("expected_active_revision") == metadata["source"]["revision_id"]
           action = request.get("action")
-          assert action in ("stage", "promote", "discard", "admit")
+          assert action in ("stage", "promote", "discard", "admit", "preview")
           source_path = ""
           revision = ""
           allow_deletions = "false"
@@ -122,6 +122,9 @@ jobs:
           elif [[ "$ACTION" == "discard" ]]; then
             "${cli[@]}" discard-source-update "$BOOK_SLUG" "$REVISION" --json | tee "$RUNNER_TEMP/source-update-result.json"
 
+          elif [[ "$ACTION" == "preview" ]]; then
+            "${cli[@]}" build "$BOOK_SLUG" --format epub --allow-unreviewed --output "You_Feel_Like_Home_RU_12chapters_PREVIEW.epub"
+            "${cli[@]}" build-status "$BOOK_SLUG" --format epub --allow-unreviewed --json | tee "$RUNNER_TEMP/source-update-result.json"
           elif [[ "$ACTION" == "admit" ]]; then
             python - <<'PY'
           import hashlib, json, os, pathlib, re, subprocess
@@ -220,6 +223,7 @@ jobs:
           dest.write_text(json.dumps({"schema_version":1,"action":os.environ["ACTION"],"result":result},ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
           PY
           git add -A -- "books/$BOOK_SLUG"
+          if [[ "$ACTION" == "preview" ]]; then git add -f -- "books/$BOOK_SLUG/output/You_Feel_Like_Home_RU_12chapters_PREVIEW.epub"; fi
           if git diff --cached --quiet; then echo 'No durable changes'; exit 0; fi
           git fetch --quiet origin main
           if ! git diff --quiet HEAD origin/main -- "books/$BOOK_SLUG"; then
