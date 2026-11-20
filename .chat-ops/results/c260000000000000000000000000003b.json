@@ -1,0 +1,229 @@
+{
+  "schema_version": 1,
+  "request_id": "c260000000000000000000000000003b",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "b47a74e2f979cbfb8be0f077107c6b08bb7823b32a39c1cbbec5a4630c77d220",
+    "record": {
+      "correction_round": 4,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "omission",
+            "detail": "Previously identified omission finding chunk-002-sets-down-again was rechecked in source order. The accepted Russian text now preserves the correct actor/referent, omitted events, source emphasis and dialogue boundaries. Specifically checked all 125 aligned blocks and the final proposal scene.",
+            "id": "r053-1",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "chunk-002-sets-down-again",
+              "record_id": "ce87a3fa3a484d62bc0c345525781d62"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "When he sets Gabi down again, the Brazilian leans forward, touching his forehead to Nico’s helmet."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Когда Нико снова опускает Габи на землю"
+            }
+          },
+          {
+            "category": "structure",
+            "detail": "Previously identified structure finding chunk-006-punct-recheck was rechecked in source order. The accepted Russian text now preserves the correct actor/referent, omitted events, source emphasis and dialogue boundaries. Specifically checked all 125 aligned blocks and the final proposal scene.",
+            "id": "r053-2",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "chunk-006-punct-recheck",
+              "record_id": "ce87a3fa3a484d62bc0c345525781d62"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Have you just… proposed to me?"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "он спрашивает: «Ты что, только что… сделал мне предложение?»"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Previously identified meaning finding chunk-006-hands-recheck was rechecked in source order. The accepted Russian text now preserves the correct actor/referent, omitted events, source emphasis and dialogue boundaries. Specifically checked all 125 aligned blocks and the final proposal scene.",
+            "id": "r053-3",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "chunk-006-hands-recheck",
+              "record_id": "ce87a3fa3a484d62bc0c345525781d62"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "He doesn’t notice when Checo stops, hands in his pockets nervously, until the man calls out to him,"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "как Чеко останавливается, нервно держа руки в карманах"
+            }
+          },
+          {
+            "category": "referent",
+            "detail": "Previously identified referent finding chunk-006-confusion-recheck was rechecked in source order. The accepted Russian text now preserves the correct actor/referent, omitted events, source emphasis and dialogue boundaries. Specifically checked all 125 aligned blocks and the final proposal scene.",
+            "id": "r053-4",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "chunk-006-confusion-recheck",
+              "record_id": "ce87a3fa3a484d62bc0c345525781d62"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "“It’s the fifteenth of May,” he tells Max, who is still as confused as before."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "говорит он Максу, который всё ещё так же растерян"
+            }
+          },
+          {
+            "category": "omission",
+            "detail": "Previously identified omission finding chunk-006-checo-stop was rechecked in source order. The accepted Russian text now preserves the correct actor/referent, omitted events, source emphasis and dialogue boundaries. Specifically checked all 125 aligned blocks and the final proposal scene.",
+            "id": "r053-5",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "chunk-006-checo-stop",
+              "record_id": "ce87a3fa3a484d62bc0c345525781d62"
+            },
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "He doesn’t notice when Checo stops"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Он не замечает, как Чеко останавливается"
+            }
+          },
+          {
+            "category": "omission",
+            "detail": "Previously identified omission finding chunk-006-aging-omitted was rechecked in source order. The accepted Russian text now preserves the correct actor/referent, omitted events, source emphasis and dialogue boundaries. Specifically checked all 125 aligned blocks and the final proposal scene.",
+            "id": "r053-6",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "chunk-006-aging-omitted",
+              "record_id": "ce87a3fa3a484d62bc0c345525781d62"
+            },
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Fuck, *ten years ago?* I’m getting old."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "«Блядь, *десять лет назад?* Я старею»"
+            }
+          },
+          {
+            "category": "omission",
+            "detail": "Previously identified omission finding chunk-006-laugh-omitted was rechecked in source order. The accepted Russian text now preserves the correct actor/referent, omitted events, source emphasis and dialogue boundaries. Specifically checked all 125 aligned blocks and the final proposal scene.",
+            "id": "r053-7",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "chunk-006-laugh-omitted",
+              "record_id": "ce87a3fa3a484d62bc0c345525781d62"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Max adds, laughing."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "— добавляет Макс, смеясь."
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Previously identified style finding chunk-006-shaky-voice was rechecked in source order. The accepted Russian text now preserves the correct actor/referent, omitted events, source emphasis and dialogue boundaries. Specifically checked all 125 aligned blocks and the final proposal scene.",
+            "id": "r053-8",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "chunk-006-shaky-voice",
+              "record_id": "ce87a3fa3a484d62bc0c345525781d62"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "his voice as shaky as his knees."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "голос у него дрожит так же, как колени."
+            }
+          },
+          {
+            "category": "structure",
+            "detail": "Previously identified structure finding chunk-006-this-italics was rechecked in source order. The accepted Russian text now preserves the correct actor/referent, omitted events, source emphasis and dialogue boundaries. Specifically checked all 125 aligned blocks and the final proposal scene.",
+            "id": "r053-9",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "chunk-006-this-italics",
+              "record_id": "ce87a3fa3a484d62bc0c345525781d62"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "I barely even knew *who* your name belonged to before *this."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "До *этого* я едва знал"
+            }
+          },
+          {
+            "category": "structure",
+            "detail": "Previously identified structure finding chunk-007-split-dialogue was rechecked in source order. The accepted Russian text now preserves the correct actor/referent, omitted events, source emphasis and dialogue boundaries. Specifically checked all 125 aligned blocks and the final proposal scene.",
+            "id": "r053-10",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "chunk-007-split-dialogue",
+              "record_id": "ce87a3fa3a484d62bc0c345525781d62"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "“I love you,” Checo glances from the ring up, back to Max’s eyes, as he says, “Now we can kiss again.”"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "«Я люблю тебя, — говорит Чеко, переводя взгляд с кольца на глаза Макса. — Теперь мы можем снова целоваться»."
+            }
+          }
+        ]
+      },
+      "record_id": "1eb194d4e4084ea3bbd5bd0628c8e20e",
+      "review_commit": "61f5475bb6ccc08768c6887426dffbae9d5b7898",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewed_at": "2026-11-20T12:25:36Z",
+      "reviewer_session_id": "chatops-say-it-53-reviewer-resume-20261120",
+      "sequence": 172,
+      "source_sha256": "7ee14f3461238bdd7e7e066553e63d5bdeba5019caeabdea4cbc6fcc60960253",
+      "state_revision": "e83328bcc67f2f77530a1a0648ea7dff9a7e5ca607b7677ad924c32c3c213c98",
+      "supersedes_record_id": "ce87a3fa3a484d62bc0c345525781d62",
+      "translation_sha256": "ba12332b05160c09ed552fb4c94406853a063c5254eb3222d9ef1f91f420a360",
+      "unit_id": "chapter-000053",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741"
+    }
+  },
+  "error": null
+}
