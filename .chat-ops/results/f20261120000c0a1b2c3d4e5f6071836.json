@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "request_id": "f20261120000c0a1b2c3d4e5f6071836",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "b66537685040124415f764a169768eb23ff84d0cda7edce7ab957a20e07c7490",
+    "record": {
+      "correction_round": 2,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "terminology",
+            "detail": "Resolved: Characters listing consistently uses Nico Hülkenberg, Max Verstappen and Sebastian Vettel in established Russian transliteration; all 20 source blocks were compared.",
+            "id": "r001-characters",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "terminology-3-recheck",
+              "record_id": "5afbea42bf2e48378791003ce612f1df"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "<!-- bt-inline:000004:start -->Nico Hülkenberg<!-- bt-inline:000004:end -->"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "<!-- bt-inline:000004:start -->Нико Хюлькенберг<!-- bt-inline:000004:end -->"
+            }
+          },
+          {
+            "category": "terminology",
+            "detail": "Resolved: the Characters list uses Габриэль and the relationship entry uses the same spelling. Dative Габриэлю and genitive Габриэля in the tags are grammatically correct inflected forms, not incompatible spellings.",
+            "id": "recheck-001-gabriel-spelling",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "terminology-4-recheck",
+              "record_id": "5afbea42bf2e48378791003ce612f1df"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "<!-- bt-inline:000002:start -->Gabriel Bortoleto/Nico Hülkenberg<!-- bt-inline:000002:end -->"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "<!-- bt-inline:000002:start -->Габриэль Бортолето/Нико Хюлькенберг<!-- bt-inline:000002:end -->"
+            }
+          },
+          {
+            "category": "referent",
+            "detail": "Resolved: 'mentioned other drivers' is now rendered as the agentless tag «Упомянуты другие гонщики», without inventing a male speaker.",
+            "id": "recheck-001-agentless-tag",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "referent-1-recheck",
+              "record_id": "5afbea42bf2e48378791003ce612f1df"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "<!-- bt-inline:000036:start -->mentioned other drivers<!-- bt-inline:000036:end -->"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "<!-- bt-inline:000036:start -->Упомянуты другие гонщики<!-- bt-inline:000036:end -->"
+            }
+          }
+        ]
+      },
+      "record_id": "45ec688cd5994acd928621d79a1f448d",
+      "review_commit": "536cbc4ee02d2cd40f68a06cffa772509607f75b",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewed_at": "2026-11-20T00:42:55Z",
+      "reviewer_session_id": "chatops-say-it-01-reviewer-20261120",
+      "sequence": 155,
+      "source_sha256": "f0658fe2766db179f92270fadc997f1c9a0fae476a1ed39296cd960886cc16cf",
+      "state_revision": "60cbc5d84f59572d428671677dd8615eb2fa76509a3f9f8815690049a6f5e901",
+      "supersedes_record_id": "5afbea42bf2e48378791003ce612f1df",
+      "translation_sha256": "ea127884b0f09053bb8287f79ef94bae3008e43ea8a19c214fb2a62b7ea8c95d",
+      "unit_id": "chapter-000001",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741"
+    }
+  },
+  "error": null
+}
