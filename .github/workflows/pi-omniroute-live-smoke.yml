@@ -27,7 +27,7 @@ jobs:
           node-version: "22"
       - name: Install pinned Pi 1.6.0
         run: npm install --global --ignore-scripts @earendil-works/pi-coding-agent@1.6.0
-      - name: Diagnose isolated independent Pi Reviewer after successful translator probe
+      - name: Repeat sequential Pi Translator and Reviewer with safe failure diagnostics
         shell: bash
         env:
           BOOK_TRANSLATOR_LLM_BACKEND: pi
@@ -68,9 +68,18 @@ jobs:
               return proc
           pi_backend.subprocess.run = _sanitized_diagnostic_run
           source = "The lighthouse lamp stayed lit through the storm. At dawn, the keeper opened the door."
-          result = "Огонь маяка не гас на протяжении всей бури. На рассвете смотритель открыл дверь."
           try:
-              print("Isolated reviewer test (translator already passed in previous run)")
+              translation_response = complete(
+                  "TRANSLATOR",
+                  "You translate English narrative prose to natural Russian. Return only one valid JSON object with the single key translation. Do not omit or add content.",
+                  "Translate the following original English narrative to Russian. Return JSON only:\n" + source)
+              parsed = json.loads(str(translation_response))
+              if not isinstance(parsed, dict) or set(parsed) != {'translation'}:
+                  raise ValueError("invalid_translator_json_shape")
+              result = parsed['translation']
+              if not isinstance(result, str) or len(result) < 25 or not any('\u0400' <= char <= '\u04ff' for char in result):
+                  raise ValueError("translation_is_not_russian")
+              print("Pi Translator: JSON_VALID, RUSSIAN_TEXT, length=" + str(len(result)))
               review_response = complete(
                   "REVIEWER",
                   "You are an independent reviewer. Compare an original English excerpt and its Russian translation for accuracy, meaning, coverage, terminology, style, and structure. Return only a JSON object with exactly outcome, checks, findings. checks must have exactly coverage,meaning,terminology,style,structure, each true if you checked it. For PASS, findings must be []. For CORRECTIONS_REQUIRED, findings must contain 1-30 items with exactly severity (minor|major|critical), detail (string), resolved (false).",
