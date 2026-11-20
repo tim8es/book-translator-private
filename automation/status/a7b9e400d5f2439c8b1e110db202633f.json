@@ -4,17 +4,12 @@
   "book_slug": "say-it-in-your-mother-tongue",
   "source_sha256": "12e210ce5a95daf56a97ada583ec15c274780c4ddfa7fb92da6a88c67f7c403d",
   "state": "running",
-  "phase": "model-call-reserved",
+  "phase": "reviewer-completed",
   "failures": 0,
   "correction_rounds": {},
   "workflow_revision": "8bb30227adc4bb921429611e12a0af803c9b6487",
-  "updated_at": "2026-11-20T14:43:07.203659+00:00",
-  "active": {
-    "role": "reviewer",
-    "chapter": 1,
-    "session_id": "auto-a7b9e400d5f2-reviewer-c142df74",
-    "unit_id": "chapter-000001"
-  },
+  "updated_at": "2026-11-20T14:44:39.434530+00:00",
+  "active": null,
   "recoveries": [
     {
       "action": "operator-recover-stale-attention-queue-preflight",
@@ -40,9 +35,21 @@
   "execution_metrics": {
     "schema_version": 1,
     "since": "2026-11-20T14:43:00.485679+00:00",
-    "api": {},
+    "api": {
+      "reviewer": {
+        "completed_calls": 1,
+        "responses": 1,
+        "duration_ms": 90360,
+        "request_chars": 75637,
+        "prompt_tokens": 21043,
+        "completion_tokens": 9168,
+        "total_tokens": 30211
+      }
+    },
     "accepted_operations": {
-      "translated": 1
+      "translated": 1,
+      "review_pass": 1,
+      "reviewed": 1
     }
   },
   "prompt_context": {
@@ -59,5 +66,45 @@
     "user_chars": 46075,
     "review_context": "independent_session"
   },
-  "model_calls_started": 1
+  "model_calls_started": 1,
+  "provider_call_metric": {
+    "unit_id": "chapter-000001",
+    "role": "reviewer",
+    "route": "primary",
+    "request_chars": 75637,
+    "outcome": "response",
+    "duration_ms": 90360,
+    "prompt_tokens": 21043,
+    "completion_tokens": 9168,
+    "total_tokens": 30211
+  },
+  "provider_call_metrics": [
+    {
+      "unit_id": "chapter-000001",
+      "role": "reviewer",
+      "route": "primary",
+      "request_chars": 75637,
+      "outcome": "response",
+      "duration_ms": 90360,
+      "prompt_tokens": 21043,
+      "completion_tokens": 9168,
+      "total_tokens": 30211
+    }
+  ],
+  "model_response_diagnostics": {
+    "finish_reason": "stop",
+    "response_format": "json_object",
+    "response_chars": 195,
+    "provider_refusal": false,
+    "prompt_tokens": 21043,
+    "completion_tokens": 9168,
+    "total_tokens": 30211,
+    "route": "primary",
+    "role": "reviewer",
+    "unit_id": "chapter-000001"
+  },
+  "glossary_evidence_rejected": 0,
+  "glossary_conflicts_rejected": 0,
+  "glossary_proposals_deferred": 0,
+  "memory_style_saved": 0
 }
