@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "request_id": "41ca4b8e23004b2bb27f7a4a8821d041",
+  "book_slug": "you-feel-like-home",
+  "workflow_revision": "db253095d36f245f9531da654b93ab72193d3b97",
+  "operation": "review-record",
+  "chapter": 5,
+  "session_id": "review-chatops-yflh-20261121-ch3-r2",
+  "outcome": "PASS",
+  "quality_report": {
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "severity": "major",
+        "detail": "Rechecked Andrew's view of the polo tournament: now says it is a waste of his time, preserving the source's assessment without Russian literal calque.",
+        "resolved": true
+      },
+      {
+        "severity": "minor",
+        "detail": "Rechecked Caleb's scheduling/sunlight remark: natural Russian retains both the schedule and sunlight contrast.",
+        "resolved": true
+      },
+      {
+        "severity": "major",
+        "detail": "Rechecked 'Caleb's heart drops' physical image: corrected Russian conveys sinking bodily dread and preserves the impossible downward metaphor.",
+        "resolved": true
+      },
+      {
+        "severity": "minor",
+        "detail": "Rechecked Arian's Crown-appointed enforcer claim: now conveyed as Crown's authorization to enforce its decisions, not a technical title calque.",
+        "resolved": true
+      },
+      {
+        "severity": "minor",
+        "detail": "Rechecked author note on obsession: recast without falsely assigning the author a gender.",
+        "resolved": true
+      }
+    ]
+  },
+  "source_sha256": "778c7a39ad0595582b06020983606e9827313d9b3461f0509864634be5ecfa07",
+  "translation_sha256": "8f455660a88ed552c93e32ea7b3a23c2b7b0973184d83cb3885543322a8ed024",
+  "claim_sha256": "bd238c57d31ce7780b66e482c690f94ffffff124f00757084499ab7f9c76db13"
+}
