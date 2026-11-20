@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "request_id": "f20261120000c0a1b2c3d4e5f6071849",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "b8dc6c41f31f347a20a47d32a912f1f838ccf942a21521f0bd3e77562008e9b2",
+    "record": {
+      "correction_round": 4,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "structure",
+            "detail": "Rechecked original and current chapter: Portuguese/English speech and the tomato/potato pun retain the marked italic emphasis in Russian in their exact source positions.",
+            "id": "r004-emphasis",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "structure-2-recheck",
+              "record_id": "069c204ae2424155a617491969fd606f"
+            },
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "“Yeah, tomato, *potato*,” Max jokes, butchering the phrase ‘*tomato, tomato*’ (*to-may-to, to-mah-to*) on purpose."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "«Ну да, помидор, *картошка*», — шутит Макс, нарочно коверкая выражение «*tomato, tomato*» (*то-мэй-тоу, то-ма-тоу*)."
+            }
+          },
+          {
+            "category": "style",
+            "detail": "The prior awkward Russian calque describing tears escaping eyes was replaced with natural Russian while preserving that the yawning caused the tears.",
+            "id": "r004-tears",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "style-1-new",
+              "record_id": "069c204ae2424155a617491969fd606f"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Few tears escape his eyes as he does so."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "При этом у него на глазах выступает несколько слезинок."
+            }
+          },
+          {
+            "category": "structure",
+            "detail": "Inline 'What?' speech is now enclosed in Russian quotation marks consistent with surrounding prose, rather than a misplaced em dash. Checked surrounding exchange and adjacent reported dialogue.",
+            "id": "r004-dialogue",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "structure-3-new",
+              "record_id": "069c204ae2424155a617491969fd606f"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "“What?” he asks, not really expecting Max to repeat himself."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "«Что?» — спрашивает он, особо не надеясь, что Макс повторит."
+            }
+          }
+        ]
+      },
+      "record_id": "7ad7922cd231437fa49e1a4636e64d7b",
+      "review_commit": "8d5e0a8d0e59041f3cd54052ba8c015551d301f6",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewed_at": "2026-11-20T09:42:54Z",
+      "reviewer_session_id": "chatops-say-it-04-reviewer-20261120",
+      "sequence": 156,
+      "source_sha256": "8f1ed2ca1a8dc1f0a29b8cc33b9d784f7f39a4881ba1d775eb73db0642fc0ade",
+      "state_revision": "4e74d24f7ac8cac8832b1979e395c6c0c984c988b8b8ffa6eb63010cf05948de",
+      "supersedes_record_id": "069c204ae2424155a617491969fd606f",
+      "translation_sha256": "efa6484e8b772f646e41f11225a6c2b4b502ae2639a7c567c1023434493b22ad",
+      "unit_id": "chapter-000004",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741"
+    }
+  },
+  "error": null
+}
