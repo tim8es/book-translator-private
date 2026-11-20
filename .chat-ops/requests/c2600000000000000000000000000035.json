@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "request_id": "c2600000000000000000000000000035",
+  "book_slug": "say-it-in-your-mother-tongue",
+  "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+  "operation": "review-record",
+  "chapter": 22,
+  "session_id": "chatops-say-it-22-reviewer-resume-20261120",
+  "outcome": "PASS",
+  "quality_report": {
+    "evidence_version": 2,
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "id": "r022-1",
+        "category": "structure",
+        "severity": "minor",
+        "detail": "Rechecked source-aligned scene and all 50 blocks; original issue structure-recheck-1 has been corrected in the current Russian artifact. Previous duplication/omission/semantic drift is absent; marked speech emphasis is preserved across the source exchanges.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "And why did you do *that*?",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "«И зачем ты *это* сделал?»",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "382368b3e73e48159bfb315f07d1e375",
+          "finding_id": "structure-recheck-1"
+        }
+      },
+      {
+        "id": "r022-2",
+        "category": "addition",
+        "severity": "major",
+        "detail": "Rechecked source-aligned scene and all 50 blocks; original issue addition-1 has been corrected in the current Russian artifact. Previous duplication/omission/semantic drift is absent; marked speech emphasis is preserved across the source exchanges.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "“*Eh*, not really,” Lance chuckles, “like what type of reason is… like this one!",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "«*Э*, не совсем, — смеётся Лэнс.",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "382368b3e73e48159bfb315f07d1e375",
+          "finding_id": "addition-1"
+        }
+      },
+      {
+        "id": "r022-3",
+        "category": "omission",
+        "severity": "minor",
+        "detail": "Rechecked source-aligned scene and all 50 blocks; original issue omission-1 has been corrected in the current Russian artifact. Previous duplication/omission/semantic drift is absent; marked speech emphasis is preserved across the source exchanges.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "“You got a *little something* here,” he points out as he points to his own mouth",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "указывая на собственный рот",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "382368b3e73e48159bfb315f07d1e375",
+          "finding_id": "omission-1"
+        }
+      },
+      {
+        "id": "r022-4",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Rechecked source-aligned scene and all 50 blocks; original issue meaning-1 has been corrected in the current Russian artifact. Previous duplication/omission/semantic drift is absent; marked speech emphasis is preserved across the source exchanges.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "Shaking his head, Lance just says, “I *don’t*.”",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "«Мне *не* нужно»",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "382368b3e73e48159bfb315f07d1e375",
+          "finding_id": "meaning-1"
+        }
+      },
+      {
+        "id": "r022-5",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Rechecked source-aligned scene and all 50 blocks; original issue meaning-2 has been corrected in the current Russian artifact. Previous duplication/omission/semantic drift is absent; marked speech emphasis is preserved across the source exchanges.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "“*Oui*,” Lance nods once, no longer trusting his words to come out right.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "уже не уверенный, что сумеет произнести всё как надо",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "382368b3e73e48159bfb315f07d1e375",
+          "finding_id": "meaning-2"
+        }
+      }
+    ]
+  },
+  "source_sha256": "d9da3a32b0bbe334bb05882806ffeaec4856a2387f3d64f4112c339e903999b5",
+  "translation_sha256": "e4981804f08980612af659470f77bc233ca8057b9b71854a217504a3849038fd",
+  "claim_sha256": "89a7717e5563e6be99be8dfb1a70f57fe51fc1034b5a5a199ecc2ccaef67c944"
+}
