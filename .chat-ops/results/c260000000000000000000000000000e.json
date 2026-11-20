@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "request_id": "c260000000000000000000000000000e",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "eadbeaa5ad55e8786532c5c5629ddc2873b047b8234c0b0dd67636a4f0ddb690",
+    "record": {
+      "correction_round": 4,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "structure",
+            "detail": "The complete 143-block English/Russian unit was rechecked after the prior review. The internal thought is now italicized, matching the original. The omitted Fernando sentence 'I like this' was also restored in the accepted translation.",
+            "id": "r038-italics",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "recheck-thought-format-135",
+              "record_id": "32e100cae0a9423189168a0f6b0897fe"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "*Please, don’t say anything else. It’s already bad. Don’t make it worse.*"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "*Пожалуйста, больше ничего не говори. И так всё плохо. Не делай ещё хуже.*"
+            }
+          }
+        ]
+      },
+      "record_id": "fe5fb27e3dba4958b9ae8110829f9524",
+      "review_commit": "95daeeeb056727f2783b6f20acc09b0d11bd713c",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewed_at": "2026-11-20T12:08:08Z",
+      "reviewer_session_id": "chatops-say-it-38-reviewer-resume-20261120",
+      "sequence": 163,
+      "source_sha256": "433cbe26cee5137ed0d25867032c35db0a89b88ecb5057440bbc8e2698cafac7",
+      "state_revision": "b5a7b4f5972be9d8f08e147e84bf1e237c958e28b53e8ce5be5fde1b5cee151a",
+      "supersedes_record_id": "32e100cae0a9423189168a0f6b0897fe",
+      "translation_sha256": "3e6bd7c3e221b84289602dddbdb93d93224cf169e2e2e16af8e79887b55fe02e",
+      "unit_id": "chapter-000038",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741"
+    }
+  },
+  "error": null
+}
