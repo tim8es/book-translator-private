@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "you-feel-like-home",
-  "next_sequence": 11,
+  "next_sequence": 12,
   "records": [
     {
       "record_id": "70b842aa5528406291ad9b4b5929b1a7",
@@ -441,6 +441,49 @@
             "severity": "minor",
             "detail": "EN 'had earned him more than his share of doubt over the years' rendered literal 'получил больше своей доли сомнений'; recast to natural Russian conveying that others had doubted his suitability.",
             "resolved": false
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "21a8fa2aedd4444daae1cee8040d65d7",
+      "sequence": 11,
+      "unit_id": "chapter-000006",
+      "outcome": "PASS",
+      "source_sha256": "c689a258bf3aaf2dd1478254d56cb639f77edeaafac33d7f543c023f1ceb7e9a",
+      "translation_sha256": "ffa471fb5c361528947622e3c3c1b708db33ecc5a143a702f88bb1ba0b27b1b4",
+      "workflow_revision": "db253095d36f245f9531da654b93ab72193d3b97",
+      "review_contract_revision": "docs/TRANSLATION.md@db253095d36f245f9531da654b93ab72193d3b97",
+      "reviewer_session_id": "review-chatops-yflh-20261121-ch4-r2",
+      "reviewed_at": "2026-11-20T23:34:41Z",
+      "state_revision": "7aa1619d7be801452f3eba8be2529ac3ee61303efa427f7947256e06a9458776",
+      "review_commit": "95e2ecf82a2462f05f093acf80d938730762f10a",
+      "correction_round": 1,
+      "supersedes_record_id": "7b54eddcfde54a4ca388f97deec37dda",
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "major",
+            "detail": "Source unusual skill for horseback riding: translation now correctly states 'необычным навыком', preserving source meaning rather than reversing it.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Source Caleb’s mouth tightens: corrected idiomatic Russian 'поджимает губы' in original context with Arian's smirk.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Source Arian earned more than his share of doubt: corrected literalism to years of unfairly frequent distrust, maintaining the source's emphasis.",
+            "resolved": true
           }
         ]
       }

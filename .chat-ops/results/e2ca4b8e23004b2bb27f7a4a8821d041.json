@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "request_id": "e2ca4b8e23004b2bb27f7a4a8821d041",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "e08bc819f59ef1d57a869cf07fbff509f339b5a0758837e92e4d76e365a91efe",
+    "record": {
+      "correction_round": 1,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "findings": [
+          {
+            "detail": "Source unusual skill for horseback riding: translation now correctly states 'необычным навыком', preserving source meaning rather than reversing it.",
+            "resolved": true,
+            "severity": "major"
+          },
+          {
+            "detail": "Source Caleb’s mouth tightens: corrected idiomatic Russian 'поджимает губы' in original context with Arian's smirk.",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "Source Arian earned more than his share of doubt: corrected literalism to years of unfairly frequent distrust, maintaining the source's emphasis.",
+            "resolved": true,
+            "severity": "minor"
+          }
+        ]
+      },
+      "record_id": "21a8fa2aedd4444daae1cee8040d65d7",
+      "review_commit": "95e2ecf82a2462f05f093acf80d938730762f10a",
+      "review_contract_revision": "docs/TRANSLATION.md@db253095d36f245f9531da654b93ab72193d3b97",
+      "reviewed_at": "2026-11-20T23:34:41Z",
+      "reviewer_session_id": "review-chatops-yflh-20261121-ch4-r2",
+      "sequence": 11,
+      "source_sha256": "c689a258bf3aaf2dd1478254d56cb639f77edeaafac33d7f543c023f1ceb7e9a",
+      "state_revision": "7aa1619d7be801452f3eba8be2529ac3ee61303efa427f7947256e06a9458776",
+      "supersedes_record_id": "7b54eddcfde54a4ca388f97deec37dda",
+      "translation_sha256": "ffa471fb5c361528947622e3c3c1b708db33ecc5a143a702f88bb1ba0b27b1b4",
+      "unit_id": "chapter-000006",
+      "workflow_revision": "db253095d36f245f9531da654b93ab72193d3b97"
+    }
+  },
+  "error": null
+}
