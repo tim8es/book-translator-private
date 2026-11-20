@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "request_id": "e8d34f18e0aa4b428dfe07c38fc30191",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "26cd40d39e2e7729731a3fcf9f1ef9357356bb35593b3551ccb0e1c3de8af761",
+    "record": {
+      "correction_round": 1,
+      "outcome": "CORRECTIONS_REQUIRED",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "findings": [
+          {
+            "detail": "EN 'son of a senior parliamentary figure' becomes generic 'сын высокопоставленного политика'; preserve the parliamentary connection.",
+            "resolved": false,
+            "severity": "minor"
+          },
+          {
+            "detail": "EN 'their breaths brush on each other's faces' loses reciprocity in RU 'дыхание касается лица Калеба'; render both characters' breaths touching the other's face.",
+            "resolved": false,
+            "severity": "minor"
+          },
+          {
+            "detail": "EN 'Caleb’s heart sinks' translated as calque 'Сердце Калеба падает'; replace with natural Russian preserving sudden emotional sinking.",
+            "resolved": false,
+            "severity": "major"
+          },
+          {
+            "detail": "EN Landon 'squeezing his arm' rendered as 'рука Лэндона мягко сжимает его плечо'; avoid adding shoulder anatomy absent from source.",
+            "resolved": false,
+            "severity": "minor"
+          },
+          {
+            "detail": "Later EN 'his hand still resting gently on Caleb’s arm' rendered with ambiguous 'его рука ... на предплечье'; clarify that Landon's hand remains on Caleb's arm, without adding unsupported specificity.",
+            "resolved": false,
+            "severity": "minor"
+          }
+        ]
+      },
+      "record_id": "48351edd37db4e818c942ad2979dbaa3",
+      "review_commit": "7c20ddb76938f8307aed3f254be186e0bc605065",
+      "review_contract_revision": "docs/TRANSLATION.md@db253095d36f245f9531da654b93ab72193d3b97",
+      "reviewed_at": "2026-11-20T23:18:11Z",
+      "reviewer_session_id": "review-chatops-yflh-20261121-next",
+      "sequence": 6,
+      "source_sha256": "d6ba83bc548c532a0b08815576572c3bd194b4e0ccba4f4e8d6aeb3cd104edfa",
+      "state_revision": "a5fddb2d1d69a7351557a8873614f3cbf94aaab7a641774dd4d1b0d36473ea49",
+      "supersedes_record_id": null,
+      "translation_sha256": "82bd950c686056e4f935c4a9df41e6cdcad30c40c064041d50037ef913117ca0",
+      "unit_id": "chapter-000004",
+      "workflow_revision": "db253095d36f245f9531da654b93ab72193d3b97"
+    }
+  },
+  "error": null
+}

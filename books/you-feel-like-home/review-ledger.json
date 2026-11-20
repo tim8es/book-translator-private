@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "you-feel-like-home",
-  "next_sequence": 6,
+  "next_sequence": 7,
   "records": [
     {
       "record_id": "70b842aa5528406291ad9b4b5929b1a7",
@@ -186,6 +186,59 @@
             "severity": "minor",
             "detail": "Source 'He storms toward the door': restored forceful movement 'Он бросается к двери' without changing object or sequence.",
             "resolved": true
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "48351edd37db4e818c942ad2979dbaa3",
+      "sequence": 6,
+      "unit_id": "chapter-000004",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "d6ba83bc548c532a0b08815576572c3bd194b4e0ccba4f4e8d6aeb3cd104edfa",
+      "translation_sha256": "82bd950c686056e4f935c4a9df41e6cdcad30c40c064041d50037ef913117ca0",
+      "workflow_revision": "db253095d36f245f9531da654b93ab72193d3b97",
+      "review_contract_revision": "docs/TRANSLATION.md@db253095d36f245f9531da654b93ab72193d3b97",
+      "reviewer_session_id": "review-chatops-yflh-20261121-next",
+      "reviewed_at": "2026-11-20T23:18:11Z",
+      "state_revision": "a5fddb2d1d69a7351557a8873614f3cbf94aaab7a641774dd4d1b0d36473ea49",
+      "review_commit": "7c20ddb76938f8307aed3f254be186e0bc605065",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "EN 'son of a senior parliamentary figure' becomes generic 'сын высокопоставленного политика'; preserve the parliamentary connection.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "EN 'their breaths brush on each other's faces' loses reciprocity in RU 'дыхание касается лица Калеба'; render both characters' breaths touching the other's face.",
+            "resolved": false
+          },
+          {
+            "severity": "major",
+            "detail": "EN 'Caleb’s heart sinks' translated as calque 'Сердце Калеба падает'; replace with natural Russian preserving sudden emotional sinking.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "EN Landon 'squeezing his arm' rendered as 'рука Лэндона мягко сжимает его плечо'; avoid adding shoulder anatomy absent from source.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Later EN 'his hand still resting gently on Caleb’s arm' rendered with ambiguous 'его рука ... на предплечье'; clarify that Landon's hand remains on Caleb's arm, without adding unsupported specificity.",
+            "resolved": false
           }
         ]
       }
