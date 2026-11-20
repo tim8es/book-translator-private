@@ -4,17 +4,12 @@
   "book_slug": "say-it-in-your-mother-tongue",
   "source_sha256": "12e210ce5a95daf56a97ada583ec15c274780c4ddfa7fb92da6a88c67f7c403d",
   "state": "running",
-  "phase": "model-call-reserved",
+  "phase": "reviewer-completed",
   "failures": 0,
   "correction_rounds": {},
   "workflow_revision": "8bb30227adc4bb921429611e12a0af803c9b6487",
-  "updated_at": "2026-11-20T14:55:43.947258+00:00",
-  "active": {
-    "role": "reviewer",
-    "chapter": 3,
-    "session_id": "auto-a7b9e400d5f2-reviewer-fb67480d",
-    "unit_id": "chapter-000003"
-  },
+  "updated_at": "2026-11-20T14:57:58.173593+00:00",
+  "active": null,
   "recoveries": [
     {
       "action": "operator-recover-stale-attention-queue-preflight",
@@ -34,28 +29,44 @@
     "correction_candidates": 0,
     "awaiting_promotion": 0
   },
-  "memory_glossary_saved": 0,
-  "pending_style": [],
+  "memory_glossary_saved": 4,
+  "pending_style": [
+    {
+      "evidence": "The source uses princesa and papa; the translation keeps princesa and papa.",
+      "source_pattern": "Spanish words and forms of address embedded in English narration or dialogue, such as princesa and papa.",
+      "translation_approach": "Retain the Spanish unchanged within the Russian text."
+    },
+    {
+      "evidence": "The translation renders driving as *водить*, not as *не*, and daddy as *папочка*.",
+      "source_pattern": "Italicized emphasis in dialogue and narration, such as driving, you’re, not, now, images, and daddy.",
+      "translation_approach": "Preserve meaningful italics on the corresponding Russian words."
+    },
+    {
+      "evidence": "The source phrase What the fuck do you mean egg? becomes Что, блядь, значит „*яйцу*“?; properly fucked becomes как следует оттрахали бы.",
+      "source_pattern": "Colloquial profanity and crude sexual slang in dialogue.",
+      "translation_approach": "Use blunt, natural Russian colloquial equivalents rather than neutralizing the force."
+    }
+  ],
   "role_protocol_failures": {},
   "execution_metrics": {
     "schema_version": 1,
     "since": "2026-11-20T14:43:00.485679+00:00",
     "api": {
       "reviewer": {
-        "completed_calls": 2,
-        "responses": 1,
-        "duration_ms": 374243,
-        "request_chars": 169941,
-        "prompt_tokens": 21043,
-        "completion_tokens": 9168,
-        "total_tokens": 30211,
+        "completed_calls": 3,
+        "responses": 2,
+        "duration_ms": 506449,
+        "request_chars": 264245,
+        "prompt_tokens": 45338,
+        "completion_tokens": 33650,
+        "total_tokens": 78988,
         "errors": 1
       }
     },
     "accepted_operations": {
       "translated": 2,
-      "review_pass": 1,
-      "reviewed": 1
+      "review_pass": 2,
+      "reviewed": 2
     }
   },
   "prompt_context": {
@@ -78,8 +89,11 @@
     "role": "reviewer",
     "route": "primary",
     "request_chars": 94304,
-    "outcome": "http_502",
-    "duration_ms": 283883
+    "outcome": "response",
+    "duration_ms": 132206,
+    "prompt_tokens": 24295,
+    "completion_tokens": 24482,
+    "total_tokens": 48777
   },
   "provider_call_metrics": [
     {
@@ -100,21 +114,33 @@
       "request_chars": 94304,
       "outcome": "http_502",
       "duration_ms": 283883
+    },
+    {
+      "unit_id": "chapter-000003",
+      "role": "reviewer",
+      "route": "primary",
+      "request_chars": 94304,
+      "outcome": "response",
+      "duration_ms": 132206,
+      "prompt_tokens": 24295,
+      "completion_tokens": 24482,
+      "total_tokens": 48777
     }
   ],
-  "glossary_evidence_rejected": 0,
+  "glossary_evidence_rejected": 1,
   "glossary_conflicts_rejected": 0,
   "glossary_proposals_deferred": 0,
   "memory_style_saved": 0,
-  "provider_model_route": "primary",
-  "provider_retry": {
-    "chapter": 3,
-    "unit_id": "chapter-000003",
+  "model_response_diagnostics": {
+    "finish_reason": "stop",
+    "response_format": "json_object",
+    "response_chars": 3210,
+    "provider_refusal": false,
+    "prompt_tokens": 24295,
+    "completion_tokens": 24482,
+    "total_tokens": 48777,
+    "route": "primary",
     "role": "reviewer",
-    "attempts": 1,
-    "code": "http_502",
-    "not_before": "2026-11-20T14:55:10.881244+00:00"
-  },
-  "last_error_code": "http_502",
-  "blocked_unit_id": "chapter-000003"
+    "unit_id": "chapter-000003"
+  }
 }
