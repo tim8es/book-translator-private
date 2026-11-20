@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "book_slug": "you-feel-like-home",
+  "candidate_source": "source/You_Feel_Like_Home.html",
+  "active_revision": "source-000002",
+  "comparison_type": "5-word token-shingle content similarity only; NOT canonical source-revision delta",
+  "preprocessing": "strip HTML tags or Markdown syntax and notes markup; lowercase A-Z tokens; compare unique contiguous five-token windows",
+  "chapters": [
+    {
+      "chapter": 1,
+      "old_words": 4233,
+      "new_words": 4231,
+      "candidate_shingles_found_in_old_pct": 100,
+      "old_shingles_found_in_candidate_pct": 100
+    },
+    {
+      "chapter": 2,
+      "old_words": 4584,
+      "new_words": 4555,
+      "candidate_shingles_found_in_old_pct": 100,
+      "old_shingles_found_in_candidate_pct": 99.4
+    },
+    {
+      "chapter": 3,
+      "old_words": 7884,
+      "new_words": 7797,
+      "candidate_shingles_found_in_old_pct": 100,
+      "old_shingles_found_in_candidate_pct": 98.9
+    },
+    {
+      "chapter": 4,
+      "old_words": 6208,
+      "new_words": 6134,
+      "candidate_shingles_found_in_old_pct": 100,
+      "old_shingles_found_in_candidate_pct": 98.8
+    },
+    {
+      "chapter": 5,
+      "old_words": 5785,
+      "new_words": 5717,
+      "candidate_shingles_found_in_old_pct": 100,
+      "old_shingles_found_in_candidate_pct": 98.8
+    },
+    {
+      "chapter": 6,
+      "old_words": 8606,
+      "new_words": 8582,
+      "candidate_shingles_found_in_old_pct": 100,
+      "old_shingles_found_in_candidate_pct": 99.7
+    },
+    {
+      "chapter": 7,
+      "old_words": 10085,
+      "new_words": 10033,
+      "candidate_shingles_found_in_old_pct": 100,
+      "old_shingles_found_in_candidate_pct": 99.5
+    },
+    {
+      "chapter": 8,
+      "old_words": 7961,
+      "new_words": 7827,
+      "candidate_shingles_found_in_old_pct": 100,
+      "old_shingles_found_in_candidate_pct": 98.3
+    },
+    {
+      "chapter": 9,
+      "old_words": 8556,
+      "new_words": 8505,
+      "candidate_shingles_found_in_old_pct": 100,
+      "old_shingles_found_in_candidate_pct": 99.4
+    },
+    {
+      "chapter": 10,
+      "old_words": 6631,
+      "new_words": 6600,
+      "candidate_shingles_found_in_old_pct": 100,
+      "old_shingles_found_in_candidate_pct": 99.5
+    },
+    {
+      "chapter": 11,
+      "old_words": 6078,
+      "new_words": 6024,
+      "candidate_shingles_found_in_old_pct": 99.9,
+      "old_shingles_found_in_candidate_pct": 99
+    }
+  ],
+  "specific_difference": {
+    "chapter": 11,
+    "old": "Calen goes still.",
+    "candidate": "Caleb goes still.",
+    "classification": "apparent spelling correction; inspect full context before canonical update"
+  },
+  "conclusions": [
+    "The 11 old chapters appear textually nearly identical to the newer HTML despite container-format differences.",
+    "Do not infer SHA-identical source units or transfer accepted translation/review states from these similarity figures.",
+    "Use the pinned update-source --stage-only workflow and inspect the resulting full corpus delta; preserve historical artifacts.",
+    "Chapter 12 appears as an additional numbered narrative unit."
+  ],
+  "official_source_update_executed": false
+}
