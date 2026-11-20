@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "request_id": "f20261120000c0a1b2c3d4e5f6071849",
+  "book_slug": "say-it-in-your-mother-tongue",
+  "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+  "operation": "review-record",
+  "chapter": 4,
+  "session_id": "chatops-say-it-04-reviewer-20261120",
+  "outcome": "PASS",
+  "quality_report": {
+    "evidence_version": 2,
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "id": "r004-emphasis",
+        "category": "structure",
+        "severity": "major",
+        "detail": "Rechecked original and current chapter: Portuguese/English speech and the tomato/potato pun retain the marked italic emphasis in Russian in their exact source positions.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "“Yeah, tomato, *potato*,” Max jokes, butchering the phrase ‘*tomato, tomato*’ (*to-may-to, to-mah-to*) on purpose.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "«Ну да, помидор, *картошка*», — шутит Макс, нарочно коверкая выражение «*tomato, tomato*» (*то-мэй-тоу, то-ма-тоу*).",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "069c204ae2424155a617491969fd606f",
+          "finding_id": "structure-2-recheck"
+        }
+      },
+      {
+        "id": "r004-tears",
+        "category": "style",
+        "severity": "minor",
+        "detail": "The prior awkward Russian calque describing tears escaping eyes was replaced with natural Russian while preserving that the yawning caused the tears.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "Few tears escape his eyes as he does so.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "При этом у него на глазах выступает несколько слезинок.",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "069c204ae2424155a617491969fd606f",
+          "finding_id": "style-1-new"
+        }
+      },
+      {
+        "id": "r004-dialogue",
+        "category": "structure",
+        "severity": "minor",
+        "detail": "Inline 'What?' speech is now enclosed in Russian quotation marks consistent with surrounding prose, rather than a misplaced em dash. Checked surrounding exchange and adjacent reported dialogue.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "“What?” he asks, not really expecting Max to repeat himself.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "«Что?» — спрашивает он, особо не надеясь, что Макс повторит.",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "069c204ae2424155a617491969fd606f",
+          "finding_id": "structure-3-new"
+        }
+      }
+    ]
+  },
+  "source_sha256": "8f1ed2ca1a8dc1f0a29b8cc33b9d784f7f39a4881ba1d775eb73db0642fc0ade",
+  "translation_sha256": "efa6484e8b772f646e41f11225a6c2b4b502ae2639a7c567c1023434493b22ad",
+  "claim_sha256": "8c751cb466a3cf17314bac9aad936934e87d580193b77f3a0fae5edf3d0eaffc"
+}
