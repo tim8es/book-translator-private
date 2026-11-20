@@ -4,12 +4,17 @@
   "book_slug": "say-it-in-your-mother-tongue",
   "source_sha256": "12e210ce5a95daf56a97ada583ec15c274780c4ddfa7fb92da6a88c67f7c403d",
   "state": "running",
-  "phase": "provider-backoff",
+  "phase": "claimed",
   "failures": 0,
   "correction_rounds": {},
   "workflow_revision": "8bb30227adc4bb921429611e12a0af803c9b6487",
-  "updated_at": "2026-11-20T15:57:11.952102+00:00",
-  "active": null,
+  "updated_at": "2026-11-20T16:12:43.459065+00:00",
+  "active": {
+    "role": "reviewer",
+    "chapter": 11,
+    "session_id": "auto-a7b9e400d5f2-reviewer-6b422304",
+    "unit_id": "chapter-000011"
+  },
   "recoveries": [
     {
       "action": "operator-recover-stale-attention-queue-preflight",
@@ -308,6 +313,5 @@
     "not_before": "2026-11-20T16:12:11.952079+00:00"
   },
   "last_error_code": "http_429",
-  "blocked_unit_id": "chapter-000011",
-  "last_error": "model HTTP status 429"
+  "blocked_unit_id": "chapter-000011"
 }
