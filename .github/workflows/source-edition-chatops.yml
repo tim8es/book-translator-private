@@ -16,6 +16,7 @@ jobs:
       source_path: ${{ steps.scope.outputs.source_path }}
       revision: ${{ steps.scope.outputs.revision }}
       allow_deletions: ${{ steps.scope.outputs.allow_deletions }}
+      old_commit: ${{ steps.scope.outputs.old_commit }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -44,10 +45,11 @@ jobs:
           assert request.get("workflow_revision") == pin
           assert request.get("expected_active_revision") == metadata["source"]["revision_id"]
           action = request.get("action")
-          assert action in ("stage", "promote", "discard")
+          assert action in ("stage", "promote", "discard", "admit")
           source_path = ""
           revision = ""
           allow_deletions = "false"
+          old_commit = ""
           if action == "stage":
               source_path = request["source_path"]
               assert source_path.startswith(f"books/{slug}/source-updates/") and source_path.endswith((".html",".epub"))
@@ -59,8 +61,13 @@ jobs:
               revision = request["source_revision"]
               assert re.fullmatch(r"source-[0-9]{6}", revision)
               allow_deletions = "true" if request.get("allow_deletions",False) is True else "false"
+              if action == "admit":
+                  assert revision == metadata["source"]["revision_id"]
+                  old_commit = request["previous_progress_commit"]
+                  assert re.fullmatch(r"[a-f0-9]{40}",old_commit)
+                  assert isinstance(request.get("translation_overrides"),dict)
           with open(os.environ["GITHUB_OUTPUT"],"a") as f:
-              for k,v in (("slug",slug),("pin",pin),("action",action),("source_path",source_path),("revision",revision),("allow_deletions",allow_deletions)):
+              for k,v in (("slug",slug),("pin",pin),("action",action),("source_path",source_path),("revision",revision),("allow_deletions",allow_deletions),("old_commit",old_commit)):
                   f.write(f"{k}={v}\n")
           PY
   execute:
@@ -99,6 +106,7 @@ jobs:
           SOURCE_PATH: ${{ needs.prepare.outputs.source_path }}
           REVISION: ${{ needs.prepare.outputs.revision }}
           ALLOW_DELETIONS: ${{ needs.prepare.outputs.allow_deletions }}
+          OLD_COMMIT: ${{ needs.prepare.outputs.old_commit }}
         run: |
           set -euo pipefail
           test "$(git -C .pinned-book-translator rev-parse HEAD)" = "$PIN"
@@ -111,8 +119,93 @@ jobs:
             args=(promote-source-update "$BOOK_SLUG" "$REVISION" --json)
             if [[ "$ALLOW_DELETIONS" == "true" ]]; then args+=(--allow-deletions); fi
             "${cli[@]}" "${args[@]}" | tee "$RUNNER_TEMP/source-update-result.json"
-          else
+          elif [[ "$ACTION" == "discard" ]]; then
             "${cli[@]}" discard-source-update "$BOOK_SLUG" "$REVISION" --json | tee "$RUNNER_TEMP/source-update-result.json"
+
+          elif [[ "$ACTION" == "admit" ]]; then
+            python - <<'PY'
+          import hashlib, json, os, pathlib, re, subprocess
+          slug=os.environ["BOOK_SLUG"]
+          book=pathlib.Path("books")/slug
+          pin=os.environ["PIN"]
+          request=json.loads((book/".workflow"/"source-update-request.json").read_text("utf8"))
+          old_commit=os.environ["OLD_COMMIT"]
+          assert request["source_revision"]==os.environ["REVISION"]
+          assert request["previous_progress_commit"]==old_commit
+          current=json.loads((book/"progress.json").read_text("utf8"))
+          previous=json.loads(subprocess.check_output(
+              ["git","show",f"{old_commit}:books/{slug}/progress.json"],text=True))
+          old_meta=json.loads(subprocess.check_output(
+              ["git","show",f"{old_commit}:books/{slug}/metadata.json"],text=True))
+          assert old_meta["source"]["revision_id"]==request["previous_source_revision"]
+          assert old_meta["workflow"]["resolved_revision"]==pin
+          old={u["unit_id"]:u for u in previous["chapters"]}
+          overrides=request["translation_overrides"]
+          def sha(b):return hashlib.sha256(b).hexdigest()
+          def toks(s):
+              s=re.sub(r"<!--.*?-->","",s,flags=re.S)
+              return re.findall(r"[a-z]+",s.lower())
+          def shingles(tokens):
+              return set(tuple(tokens[i:i+5]) for i in range(max(0,len(tokens)-4)))
+          work=[]
+          for unit in current["chapters"]:
+              if unit["status"]!="extracted":continue
+              uid=unit["unit_id"];number=unit["number"]
+              if uid in old:
+                  previous_unit=old[uid]
+                  evidence=previous_unit.get("translation_acceptance")
+                  assert previous_unit["status"] in ("translated","reviewed") and evidence,uid
+                  old_src=(book/previous_unit["source_path"]).read_bytes()
+                  old_ru=(book/previous_unit["translation_path"]).read_bytes()
+                  assert sha(old_src)==evidence["source_sha256"],uid
+                  assert sha(old_ru)==evidence["translation_sha256"],uid
+                  # Chapter prose must have near-identical five-token sequences.
+                  if unit["title"].startswith("Chapter "):
+                      new_src=(book/unit["source_path"]).read_text("utf8")
+                      a=shingles(toks(new_src));b=shingles(toks(old_src.decode("utf8")))
+                      ratio=len(a.intersection(b))/max(1,len(a))
+                      assert ratio>=0.995,(uid,ratio)
+                  content=old_ru
+              else:
+                  assert unit["title"]=="Chapter 12",("unexpected new unit",uid)
+                  content=None
+              if uid in overrides:
+                  rel=overrides[uid]
+                  assert isinstance(rel,str) and rel.startswith(
+                      f"books/{slug}/source-updates/") and "/translated/" in rel
+                  assert ".." not in pathlib.PurePosixPath(rel).parts
+                  doc=pathlib.Path(rel)
+                  assert doc.is_file() and not doc.is_symlink()
+                  content=doc.read_bytes()
+              assert content and content.strip(),uid
+              destination=book/unit["translation_path"]
+              assert not destination.exists() and not destination.is_symlink(),uid
+              work.append((number,uid,destination,content))
+          assert len(work)>=1
+          cli=["python",".public-auto-runtime/scripts/pinned_cli.py",
+               "--engine",".pinned-book-translator","--state",".",
+               "--revision",pin,"book"]
+          def command(*args):
+              return subprocess.run(cli+list(map(str,args)),check=True,
+                                    capture_output=True,text=True).stdout
+          accepted=[]
+          for num,uid,dest,content in work:
+              sid="chatops-reuse-"+os.environ["REVISION"]+"-"+str(num)
+              print(f"Claiming and accepting {uid}",flush=True)
+              command("claim",slug,num,"--role","translator","--session-id",sid,"--json")
+              dest.parent.mkdir(parents=True,exist_ok=True)
+              dest.write_bytes(content)
+              result=json.loads(command("accept-translation",slug,num,
+                                        "--session-id",sid,"--json"))
+              assert result["unit_id"]==uid and result["status"]=="translated",(uid,result)
+              command("release",slug,num,"--session-id",sid,"--json")
+              accepted.append({"number":num,"unit_id":uid,"translation_sha256":sha(content)})
+          out=pathlib.Path(os.environ["RUNNER_TEMP"])/"source-update-result.json"
+          out.write_text(json.dumps({"state":"translations_accepted",
+                                     "revision_id":os.environ["REVISION"],
+                                     "units":accepted},ensure_ascii=False)+"\n",encoding="utf8")
+          print(json.dumps({"accepted_count":len(accepted)},ensure_ascii=False))
+          PY
           fi
           "${cli[@]}" validate "$BOOK_SLUG"
           python .public-auto-runtime/scripts/pinned_cli.py --engine .pinned-book-translator --state . --revision "$PIN" corpus verify "$BOOK_SLUG"
