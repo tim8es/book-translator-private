@@ -44,7 +44,7 @@ jobs:
           assert request.get("workflow_revision") == pin
           assert request.get("expected_active_revision") == metadata["source"]["revision_id"]
           action = request.get("action")
-          assert action in ("stage", "promote")
+          assert action in ("stage", "promote", "discard")
           source_path = ""
           revision = ""
           allow_deletions = "false"
@@ -107,10 +107,12 @@ jobs:
           python .public-auto-runtime/scripts/pinned_cli.py --engine .pinned-book-translator --state . --revision "$PIN" corpus verify "$BOOK_SLUG"
           if [[ "$ACTION" == "stage" ]]; then
             "${cli[@]}" update-source "$BOOK_SLUG" "$SOURCE_PATH" --stage-only --json | tee "$RUNNER_TEMP/source-update-result.json"
-          else
+          elif [[ "$ACTION" == "promote" ]]; then
             args=(promote-source-update "$BOOK_SLUG" "$REVISION" --json)
             if [[ "$ALLOW_DELETIONS" == "true" ]]; then args+=(--allow-deletions); fi
             "${cli[@]}" "${args[@]}" | tee "$RUNNER_TEMP/source-update-result.json"
+          else
+            "${cli[@]}" discard-source-update "$BOOK_SLUG" "$REVISION" --json | tee "$RUNNER_TEMP/source-update-result.json"
           fi
           "${cli[@]}" validate "$BOOK_SLUG"
           python .public-auto-runtime/scripts/pinned_cli.py --engine .pinned-book-translator --state . --revision "$PIN" corpus verify "$BOOK_SLUG"
