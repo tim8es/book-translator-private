@@ -2,8 +2,8 @@
   "schema_version": 1,
   "book_slug": "you-feel-like-home",
   "active_revision": "source-000002",
-  "next_sequence": 3,
-  "next_unit_sequence": 15,
+  "next_sequence": 4,
+  "next_unit_sequence": 16,
   "revisions": [
     {
       "revision_id": "source-000001",
@@ -30,6 +30,19 @@
       "source_size_bytes": 191460,
       "snapshot_path": "source-revisions/source-000002/revision.json",
       "delta_path": "source-revisions/source-000002/delta.json"
+    },
+    {
+      "revision_id": "source-000003",
+      "parent_revision_id": "source-000002",
+      "state": "staged",
+      "created_at": "2026-11-20T22:42:40Z",
+      "source_file": "source-000003-You_Feel_Like_Home_derived_anchors.html",
+      "source_format": "html",
+      "source_sha256": "11abc0f453820782d8da8f60cc2369250e4aa10ed9e549b3547610078d72a0bf",
+      "source_storage_mode": "embedded",
+      "source_size_bytes": 554483,
+      "snapshot_path": "source-revisions/source-000003/revision.json",
+      "delta_path": "source-revisions/source-000003/delta.json"
     }
   ]
 }
