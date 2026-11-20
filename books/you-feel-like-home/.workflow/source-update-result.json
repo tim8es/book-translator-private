@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "action": "stage",
+  "action": "promote",
   "result": {
     "delta": {
       "changed": 12,
@@ -9,6 +9,12 @@
       "unchanged": 2
     },
     "revision_id": "source-000004",
-    "state": "staged"
+    "state": "promoted",
+    "state_revisions": {
+      "metadata": "9614b37ac606679f9631054736297de32328b68314b908cd8435d4b78b129ccc",
+      "progress": "d7e4baccdac84f71fe9f49eca417af9bcd4bcb3882802f34156cb975973c55a6",
+      "source_manifest": "8300a900c595f8bcbc824cb2d44a7ea787ee8e1ae3c924f15b934af0546be8be",
+      "source_revisions": "1bc4bcd5c4478bc2a688ebaf705a624a38a646584170ee72a93860e78fcc5d80"
+    }
   }
 }
