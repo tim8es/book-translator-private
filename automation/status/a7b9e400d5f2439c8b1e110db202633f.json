@@ -4,17 +4,12 @@
   "book_slug": "say-it-in-your-mother-tongue",
   "source_sha256": "12e210ce5a95daf56a97ada583ec15c274780c4ddfa7fb92da6a88c67f7c403d",
   "state": "running",
-  "phase": "review-anchor-repair-reserved",
+  "phase": "provider-backoff",
   "failures": 0,
   "correction_rounds": {},
   "workflow_revision": "8bb30227adc4bb921429611e12a0af803c9b6487",
-  "updated_at": "2026-11-20T15:36:30.307816+00:00",
-  "active": {
-    "role": "reviewer",
-    "chapter": 10,
-    "session_id": "auto-a7b9e400d5f2-reviewer-ac80c338",
-    "unit_id": "chapter-000010"
-  },
+  "updated_at": "2026-11-20T15:41:32.141586+00:00",
+  "active": null,
   "recoveries": [
     {
       "action": "operator-recover-stale-attention-queue-preflight",
@@ -42,14 +37,14 @@
     "since": "2026-11-20T14:43:00.485679+00:00",
     "api": {
       "reviewer": {
-        "completed_calls": 13,
+        "completed_calls": 14,
         "responses": 12,
-        "duration_ms": 2493999,
-        "request_chars": 1189781,
+        "duration_ms": 2794228,
+        "request_chars": 1286237,
         "prompt_tokens": 296060,
         "completion_tokens": 243228,
         "total_tokens": 539288,
-        "errors": 1
+        "errors": 2
       }
     },
     "accepted_operations": {
@@ -79,12 +74,9 @@
     "unit_id": "chapter-000010",
     "role": "reviewer",
     "route": "primary",
-    "request_chars": 93987,
-    "outcome": "response",
-    "duration_ms": 232116,
-    "prompt_tokens": 25652,
-    "completion_tokens": 12403,
-    "total_tokens": 38055
+    "request_chars": 96456,
+    "outcome": "http_503",
+    "duration_ms": 300229
   },
   "provider_call_metrics": [
     {
@@ -226,6 +218,14 @@
       "prompt_tokens": 25652,
       "completion_tokens": 12403,
       "total_tokens": 38055
+    },
+    {
+      "unit_id": "chapter-000010",
+      "role": "reviewer",
+      "route": "primary",
+      "request_chars": 96456,
+      "outcome": "http_503",
+      "duration_ms": 300229
     }
   ],
   "glossary_evidence_rejected": 4,
@@ -247,16 +247,15 @@
     "chapter-000007": 1
   },
   "provider_model_route": "primary",
-  "model_response_diagnostics": {
-    "finish_reason": "stop",
-    "response_format": "json_object",
-    "response_chars": 890,
-    "provider_refusal": false,
-    "prompt_tokens": 25652,
-    "completion_tokens": 12403,
-    "total_tokens": 38055,
-    "route": "primary",
+  "provider_retry": {
+    "chapter": 10,
+    "unit_id": "chapter-000010",
     "role": "reviewer",
-    "unit_id": "chapter-000010"
-  }
+    "attempts": 1,
+    "code": "http_503",
+    "not_before": "2026-11-20T15:46:32.141556+00:00"
+  },
+  "last_error": "model HTTP status 503",
+  "last_error_code": "http_503",
+  "blocked_unit_id": "chapter-000010"
 }
