@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 187,
+  "next_sequence": 188,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -19779,6 +19779,73 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "2e00074d5fad47fdbed7c1f48488a022",
+      "sequence": 187,
+      "unit_id": "chapter-000014",
+      "outcome": "PASS",
+      "source_sha256": "4a0fcf754072626130f19f2f950fef4fe75364da3244b50f72d5670a04911462",
+      "translation_sha256": "71f4be0bca689def266a3cdd32a1f85fd9380c4b02e86acd144bf8fcaf075a2c",
+      "workflow_revision": "8bb30227adc4bb921429611e12a0af803c9b6487",
+      "review_contract_revision": "docs/TRANSLATION.md@8bb30227adc4bb921429611e12a0af803c9b6487",
+      "reviewer_session_id": "chat-20261120-sayit-recheck-14-c214",
+      "reviewed_at": "2026-11-20T19:20:27Z",
+      "state_revision": "89a2a07fbd82d193f3b965daf6fd28a88b4ac3d8b9742edb09f1d7129e1cc2f2",
+      "review_commit": "569f55ca3f51f844c95fa240b90821993316cb03",
+      "correction_round": 5,
+      "supersedes_record_id": "5d8c7bc2a16a4116a925f545fa85781b",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "emphasis-10-recheck",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "Смысловое выделение *anything* восстановлено на русском эквиваленте *ничего*; текст повторно сверен с источником.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "he can’t see *anything*",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "поняв, что *ничего* не видит",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "5d8c7bc2a16a4116a925f545fa85781b",
+              "finding_id": "emphasis-10"
+            }
+          },
+          {
+            "id": "emphasis-71-recheck",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "Выделение *himself* восстановлено на *него самого*, исходный акцент сохранён; окружающий фрагмент сверен.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "and especially from *himself*",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "и особенно от *него самого*",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "5d8c7bc2a16a4116a925f545fa85781b",
+              "finding_id": "emphasis-71"
+            }
           }
         ]
       }
