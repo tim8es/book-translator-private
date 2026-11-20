@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "request_id": "41ca4b8e23004b2bb27f7a4a8821d041",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "15eea82cc927b378cf5e6a8c818d1d1d91090cd425daaa12167847d2c61e58d6",
+    "record": {
+      "correction_round": 1,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "findings": [
+          {
+            "detail": "Rechecked Andrew's view of the polo tournament: now says it is a waste of his time, preserving the source's assessment without Russian literal calque.",
+            "resolved": true,
+            "severity": "major"
+          },
+          {
+            "detail": "Rechecked Caleb's scheduling/sunlight remark: natural Russian retains both the schedule and sunlight contrast.",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "Rechecked 'Caleb's heart drops' physical image: corrected Russian conveys sinking bodily dread and preserves the impossible downward metaphor.",
+            "resolved": true,
+            "severity": "major"
+          },
+          {
+            "detail": "Rechecked Arian's Crown-appointed enforcer claim: now conveyed as Crown's authorization to enforce its decisions, not a technical title calque.",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "Rechecked author note on obsession: recast without falsely assigning the author a gender.",
+            "resolved": true,
+            "severity": "minor"
+          }
+        ]
+      },
+      "record_id": "9b2e8e22c6db45b49c3639c0a2d7b7bb",
+      "review_commit": "be1b8861ee685409ba699e8fb6f16262f60e3e19",
+      "review_contract_revision": "docs/TRANSLATION.md@db253095d36f245f9531da654b93ab72193d3b97",
+      "reviewed_at": "2026-11-20T23:28:13Z",
+      "reviewer_session_id": "review-chatops-yflh-20261121-ch3-r2",
+      "sequence": 9,
+      "source_sha256": "778c7a39ad0595582b06020983606e9827313d9b3461f0509864634be5ecfa07",
+      "state_revision": "6ace1f9edc174dc0384563e9d1111fa78cf95e2d03798776bc28b10301a8ead5",
+      "supersedes_record_id": "6d432dedaa4c4cfdae7e4ffe96768b15",
+      "translation_sha256": "8f455660a88ed552c93e32ea7b3a23c2b7b0973184d83cb3885543322a8ed024",
+      "unit_id": "chapter-000005",
+      "workflow_revision": "db253095d36f245f9531da654b93ab72193d3b97"
+    }
+  },
+  "error": null
+}
