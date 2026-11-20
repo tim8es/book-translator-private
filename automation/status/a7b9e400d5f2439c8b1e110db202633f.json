@@ -4,11 +4,11 @@
   "book_slug": "say-it-in-your-mother-tongue",
   "source_sha256": "12e210ce5a95daf56a97ada583ec15c274780c4ddfa7fb92da6a88c67f7c403d",
   "state": "running",
-  "phase": "claimed",
+  "phase": "model-call-reserved",
   "failures": 1,
   "correction_rounds": {},
   "workflow_revision": "8bb30227adc4bb921429611e12a0af803c9b6487",
-  "updated_at": "2026-11-20T15:18:21.961067+00:00",
+  "updated_at": "2026-11-20T15:18:25.499752+00:00",
   "active": {
     "role": "reviewer",
     "chapter": 7,
@@ -71,11 +71,10 @@
     "glossary_sha256": "40783393df9152a0a615f96bb58920b1d1cdb1c2b486cbeedaf8d349c7a39491",
     "style_guide_sha256": "bf597855cc17f6291a3258b0534545c7689d2771038d387befe5ac8377e94054",
     "system_chars": 29562,
-    "user_chars": 73473,
-    "review_context": "independent_session",
-    "schema_repair": "review-report-validation"
+    "user_chars": 70718,
+    "review_context": "independent_session"
   },
-  "model_calls_started": 8,
+  "model_calls_started": 9,
   "provider_call_metric": {
     "unit_id": "chapter-000007",
     "role": "reviewer",
