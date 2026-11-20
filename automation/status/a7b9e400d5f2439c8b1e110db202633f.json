@@ -4,17 +4,12 @@
   "book_slug": "say-it-in-your-mother-tongue",
   "source_sha256": "12e210ce5a95daf56a97ada583ec15c274780c4ddfa7fb92da6a88c67f7c403d",
   "state": "running",
-  "phase": "model-call-reserved",
+  "phase": "reviewer-completed",
   "failures": 0,
   "correction_rounds": {},
   "workflow_revision": "8bb30227adc4bb921429611e12a0af803c9b6487",
-  "updated_at": "2026-11-20T15:01:17.185924+00:00",
-  "active": {
-    "role": "reviewer",
-    "chapter": 5,
-    "session_id": "auto-a7b9e400d5f2-reviewer-a1bb9a98",
-    "unit_id": "chapter-000005"
-  },
+  "updated_at": "2026-11-20T15:05:34.996731+00:00",
+  "active": null,
   "recoveries": [
     {
       "action": "operator-recover-stale-attention-queue-preflight",
@@ -35,58 +30,27 @@
     "awaiting_promotion": 0
   },
   "memory_glossary_saved": 20,
-  "pending_style": [
-    {
-      "evidence": "The source uses princesa and papa; the translation keeps princesa and papa.",
-      "source_pattern": "Spanish words and forms of address embedded in English narration or dialogue, such as princesa and papa.",
-      "translation_approach": "Retain the Spanish unchanged within the Russian text."
-    },
-    {
-      "evidence": "The translation renders driving as *водить*, not as *не*, and daddy as *папочка*.",
-      "source_pattern": "Italicized emphasis in dialogue and narration, such as driving, you’re, not, now, images, and daddy.",
-      "translation_approach": "Preserve meaningful italics on the corresponding Russian words."
-    },
-    {
-      "evidence": "The source phrase What the fuck do you mean egg? becomes Что, блядь, значит „*яйцу*“?; properly fucked becomes как следует оттрахали бы.",
-      "source_pattern": "Colloquial profanity and crude sexual slang in dialogue.",
-      "translation_approach": "Use blunt, natural Russian colloquial equivalents rather than neutralizing the force."
-    },
-    {
-      "evidence": "The translation keeps colega de equipe, anotações, telemetria, motivo, amigo, and cariño in their original languages.",
-      "source_pattern": "Spanish and Portuguese words and forms of address embedded in English narration or dialogue, such as colega de equipe, anotações, telemetria, motivo, amigo, and cariño.",
-      "translation_approach": "Retain the Spanish/Portuguese unchanged within the Russian text."
-    },
-    {
-      "evidence": "The translation retains italics on *просто так*, *Старик*, *можно*, *звука*, *куда угодно, только не на Габриэля*, *непросто*, *он*, *жизнь без работы*, *конечно*, *фыркать да пыхтеть*, *что-нибудь*, and *вот сейчас*.",
-      "source_pattern": "Italicized emphasis in dialogue, narration, and internal thought, such as just because, Old man, ever, peep, anywhere but Gabriel, going through it, he, Unemployed, of course, huff and puff, anything, and now.",
-      "translation_approach": "Preserve meaningful italics on the corresponding Russian words."
-    },
-    {
-      "evidence": "The translation renders Fucking as «Блядь», Oh for fuck's sake as «Да ёб твою мать», fucking source as «мать его», and What the actual fuck as «Что, блядь».",
-      "source_pattern": "Colloquial profanity in dialogue and internal thought, such as Fucking, Oh for fuck's sake, fucking source, and What the actual fuck.",
-      "translation_approach": "Use blunt, natural Russian colloquial equivalents rather than neutralizing the force."
-    }
-  ],
+  "pending_style": [],
   "role_protocol_failures": {},
   "execution_metrics": {
     "schema_version": 1,
     "since": "2026-11-20T14:43:00.485679+00:00",
     "api": {
       "reviewer": {
-        "completed_calls": 4,
-        "responses": 3,
-        "duration_ms": 645867,
-        "request_chars": 348493,
-        "prompt_tokens": 66834,
-        "completion_tokens": 64282,
-        "total_tokens": 131116,
+        "completed_calls": 5,
+        "responses": 4,
+        "duration_ms": 901713,
+        "request_chars": 435518,
+        "prompt_tokens": 90030,
+        "completion_tokens": 73632,
+        "total_tokens": 163662,
         "errors": 1
       }
     },
     "accepted_operations": {
       "translated": 4,
-      "review_pass": 3,
-      "reviewed": 3
+      "review_pass": 4,
+      "reviewed": 4
     }
   },
   "prompt_context": {
@@ -105,15 +69,15 @@
   },
   "model_calls_started": 5,
   "provider_call_metric": {
-    "unit_id": "chapter-000004",
+    "unit_id": "chapter-000005",
     "role": "reviewer",
     "route": "primary",
-    "request_chars": 84248,
+    "request_chars": 87025,
     "outcome": "response",
-    "duration_ms": 139418,
-    "prompt_tokens": 21496,
-    "completion_tokens": 30632,
-    "total_tokens": 52128
+    "duration_ms": 255846,
+    "prompt_tokens": 23196,
+    "completion_tokens": 9350,
+    "total_tokens": 32546
   },
   "provider_call_metrics": [
     {
@@ -156,22 +120,33 @@
       "prompt_tokens": 21496,
       "completion_tokens": 30632,
       "total_tokens": 52128
+    },
+    {
+      "unit_id": "chapter-000005",
+      "role": "reviewer",
+      "route": "primary",
+      "request_chars": 87025,
+      "outcome": "response",
+      "duration_ms": 255846,
+      "prompt_tokens": 23196,
+      "completion_tokens": 9350,
+      "total_tokens": 32546
     }
   ],
   "glossary_evidence_rejected": 4,
   "glossary_conflicts_rejected": 0,
   "glossary_proposals_deferred": 0,
-  "memory_style_saved": 0,
+  "memory_style_saved": 6,
   "model_response_diagnostics": {
     "finish_reason": "stop",
     "response_format": "json_object",
-    "response_chars": 4218,
+    "response_chars": 195,
     "provider_refusal": false,
-    "prompt_tokens": 21496,
-    "completion_tokens": 30632,
-    "total_tokens": 52128,
+    "prompt_tokens": 23196,
+    "completion_tokens": 9350,
+    "total_tokens": 32546,
     "route": "primary",
     "role": "reviewer",
-    "unit_id": "chapter-000004"
+    "unit_id": "chapter-000005"
   }
 }
