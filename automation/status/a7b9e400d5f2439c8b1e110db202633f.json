@@ -4,11 +4,11 @@
   "book_slug": "say-it-in-your-mother-tongue",
   "source_sha256": "12e210ce5a95daf56a97ada583ec15c274780c4ddfa7fb92da6a88c67f7c403d",
   "state": "running",
-  "phase": "model-call-reserved",
+  "phase": "review-schema-repair-reserved",
   "failures": 0,
   "correction_rounds": {},
   "workflow_revision": "8bb30227adc4bb921429611e12a0af803c9b6487",
-  "updated_at": "2026-11-20T15:09:25.940204+00:00",
+  "updated_at": "2026-11-20T15:13:57.191819+00:00",
   "active": {
     "role": "reviewer",
     "chapter": 7,
@@ -42,13 +42,13 @@
     "since": "2026-11-20T14:43:00.485679+00:00",
     "api": {
       "reviewer": {
-        "completed_calls": 6,
-        "responses": 5,
-        "duration_ms": 1048698,
-        "request_chars": 525125,
-        "prompt_tokens": 113175,
-        "completion_tokens": 104307,
-        "total_tokens": 217482,
+        "completed_calls": 7,
+        "responses": 6,
+        "duration_ms": 1318590,
+        "request_chars": 625405,
+        "prompt_tokens": 141295,
+        "completion_tokens": 130389,
+        "total_tokens": 271684,
         "errors": 1
       }
     },
@@ -69,20 +69,21 @@
     "glossary_sha256": "40783393df9152a0a615f96bb58920b1d1cdb1c2b486cbeedaf8d349c7a39491",
     "style_guide_sha256": "bf597855cc17f6291a3258b0534545c7689d2771038d387befe5ac8377e94054",
     "system_chars": 29562,
-    "user_chars": 70718,
-    "review_context": "independent_session"
+    "user_chars": 73473,
+    "review_context": "independent_session",
+    "schema_repair": "review-report-validation"
   },
-  "model_calls_started": 7,
+  "model_calls_started": 8,
   "provider_call_metric": {
-    "unit_id": "chapter-000006",
+    "unit_id": "chapter-000007",
     "role": "reviewer",
     "route": "primary",
-    "request_chars": 89607,
+    "request_chars": 100280,
     "outcome": "response",
-    "duration_ms": 146985,
-    "prompt_tokens": 23145,
-    "completion_tokens": 30675,
-    "total_tokens": 53820
+    "duration_ms": 269892,
+    "prompt_tokens": 28120,
+    "completion_tokens": 26082,
+    "total_tokens": 54202
   },
   "provider_call_metrics": [
     {
@@ -147,22 +148,34 @@
       "prompt_tokens": 23145,
       "completion_tokens": 30675,
       "total_tokens": 53820
+    },
+    {
+      "unit_id": "chapter-000007",
+      "role": "reviewer",
+      "route": "primary",
+      "request_chars": 100280,
+      "outcome": "response",
+      "duration_ms": 269892,
+      "prompt_tokens": 28120,
+      "completion_tokens": 26082,
+      "total_tokens": 54202
     }
   ],
   "glossary_evidence_rejected": 4,
   "glossary_conflicts_rejected": 0,
   "glossary_proposals_deferred": 0,
   "memory_style_saved": 10,
+  "provider_model_route": "primary",
   "model_response_diagnostics": {
     "finish_reason": "stop",
     "response_format": "json_object",
-    "response_chars": 2612,
+    "response_chars": 1359,
     "provider_refusal": false,
-    "prompt_tokens": 23145,
-    "completion_tokens": 30675,
-    "total_tokens": 53820,
+    "prompt_tokens": 28120,
+    "completion_tokens": 26082,
+    "total_tokens": 54202,
     "route": "primary",
     "role": "reviewer",
-    "unit_id": "chapter-000006"
+    "unit_id": "chapter-000007"
   }
 }
