@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 168,
+  "next_sequence": 169,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -18577,6 +18577,187 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "b8447f83007148e98828a0a259a182f2",
+      "sequence": 168,
+      "unit_id": "chapter-000028",
+      "outcome": "PASS",
+      "source_sha256": "2aa4bfa1297c63de89c47e14f31725328fc87be069ca04433c81028827d089f7",
+      "translation_sha256": "a15e45a3d37cc0a07b406b4b39dfb83458db5adf89bec627992d9bacd6f01773",
+      "workflow_revision": "6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "review_contract_revision": "docs/TRANSLATION.md@6a64cd746806b57a0d8fdfbd46798acf37317741",
+      "reviewer_session_id": "chatops-say-it-28-reviewer-resume-20261120",
+      "reviewed_at": "2026-11-20T12:22:02Z",
+      "state_revision": "e83328bcc67f2f77530a1a0648ea7dff9a7e5ca607b7677ad924c32c3c213c98",
+      "review_commit": "2d2a05b58ee6745f284821d141b41af90010979c",
+      "correction_round": 4,
+      "supersedes_record_id": "c7aea54ae2f5497d87fee47818a53d70",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "r028-1",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "Original issue recheck-terminology-1 was rechecked using its exact English source and Russian target anchors. The corrected rendering preserves the required surname spelling within this unit, foreign-language italic emphasis, direct home metaphor, interrupted sexual question, and grammatical age reference. Shared glossary's old alternative surname spelling requires later orchestrator reconciliation; it should not overwrite the internally consistent translation.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "**Verstappen, Max**<!-- bt-media:000001 -->are you seeing Checo<!-- bt-media:000002 -->outside of work i mean",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "**Ферстаппен, Макс**<!-- bt-media:000001 -->ты встречаешься с Чеко",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "c7aea54ae2f5497d87fee47818a53d70",
+              "finding_id": "recheck-terminology-1"
+            }
+          },
+          {
+            "id": "r028-2",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "Original issue recheck-terminology-2 was rechecked using its exact English source and Russian target anchors. The corrected rendering preserves the required surname spelling within this unit, foreign-language italic emphasis, direct home metaphor, interrupted sexual question, and grammatical age reference. Shared glossary's old alternative surname spelling requires later orchestrator reconciliation; it should not overwrite the internally consistent translation.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "<!-- bt-inline:000001:start -->Verstappen, Max<!-- bt-media:000001 --><!-- bt-inline:000001:end -->are you seeing Checo in your private life",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "<!-- bt-inline:000001:start -->Ферстаппен, Макс<!-- bt-media:000001 --><!-- bt-inline:000001:end -->ты встречаешься с Чеко в личной жизни",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "c7aea54ae2f5497d87fee47818a53d70",
+              "finding_id": "recheck-terminology-2"
+            }
+          },
+          {
+            "id": "r028-3",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "Original issue recheck-structure-1 was rechecked using its exact English source and Russian target anchors. The corrected rendering preserves the required surname spelling within this unit, foreign-language italic emphasis, direct home metaphor, interrupted sexual question, and grammatical age reference. Shared glossary's old alternative surname spelling requires later orchestrator reconciliation; it should not overwrite the internally consistent translation.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "“It was, *uh*, it was,” his voice shakes *just* a little when he finally repeats, “*Je crois que je suis amoureux de toi*.”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«*Je crois que je suis amoureux de toi*»",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "c7aea54ae2f5497d87fee47818a53d70",
+              "finding_id": "recheck-structure-1"
+            }
+          },
+          {
+            "id": "r028-4",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "Original issue recheck-structure-2 was rechecked using its exact English source and Russian target anchors. The corrected rendering preserves the required surname spelling within this unit, foreign-language italic emphasis, direct home metaphor, interrupted sexual question, and grammatical age reference. Shared glossary's old alternative surname spelling requires later orchestrator reconciliation; it should not overwrite the internally consistent translation.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "“*Creo que he estado enamorado por ti por años*.”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«*Creo que he estado enamorado por ti por años*»",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "c7aea54ae2f5497d87fee47818a53d70",
+              "finding_id": "recheck-structure-2"
+            }
+          },
+          {
+            "id": "r028-5",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Original issue recheck-meaning-4 was rechecked using its exact English source and Russian target anchors. The corrected rendering preserves the required surname spelling within this unit, foreign-language italic emphasis, direct home metaphor, interrupted sexual question, and grammatical age reference. Shared glossary's old alternative surname spelling requires later orchestrator reconciliation; it should not overwrite the internally consistent translation.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "*“You feel like home,”* he doesn’t say.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "*«Ты для меня как дом»*",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "c7aea54ae2f5497d87fee47818a53d70",
+              "finding_id": "recheck-meaning-4"
+            }
+          },
+          {
+            "id": "r028-6",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "Original issue recheck-terminology-3 was rechecked using its exact English source and Russian target anchors. The corrected rendering preserves the required surname spelling within this unit, foreign-language italic emphasis, direct home metaphor, interrupted sexual question, and grammatical age reference. Shared glossary's old alternative surname spelling requires later orchestrator reconciliation; it should not overwrite the internally consistent translation.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "“Yeah,” Lance groans as he unlocks the phone, “*Verstappen*. What could he want?”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«*Ферстаппен*. Чего ему надо?»",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "c7aea54ae2f5497d87fee47818a53d70",
+              "finding_id": "recheck-terminology-3"
+            }
+          },
+          {
+            "id": "r028-7",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Original issue recheck-meaning-5 was rechecked using its exact English source and Russian target anchors. The corrected rendering preserves the required surname spelling within this unit, foreign-language italic emphasis, direct home metaphor, interrupted sexual question, and grammatical age reference. Shared glossary's old alternative surname spelling requires later orchestrator reconciliation; it should not overwrite the internally consistent translation.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "**Verstappen, Max**<!-- bt-media:000001 -->are you fucking",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "ты трахаешься...",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "c7aea54ae2f5497d87fee47818a53d70",
+              "finding_id": "recheck-meaning-5"
+            }
+          },
+          {
+            "id": "r028-8",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Original issue style-1 was rechecked using its exact English source and Russian target anchors. The corrected rendering preserves the required surname spelling within this unit, foreign-language italic emphasis, direct home metaphor, interrupted sexual question, and grammatical age reference. Shared glossary's old alternative surname spelling requires later orchestrator reconciliation; it should not overwrite the internally consistent translation.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "He’s sure he’s blushing, which feels embarrassing since he *already* turned 35 not that long ago.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "ведь ему *уже* исполнилось 35, причём совсем недавно.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "c7aea54ae2f5497d87fee47818a53d70",
+              "finding_id": "style-1"
+            }
           }
         ]
       }
