@@ -3,14 +3,14 @@
   "job_id": "297fd08ee43deb245fd4a033240ded56",
   "book_slug": "the-happy-prince-and-other-tales",
   "state": "running",
-  "phase": "model-call-reserved",
+  "phase": "correction-batch-staged",
   "failures": 0,
   "correction_rounds": {
     "chapter-000001": 1
   },
   "workflow_revision": "6ed4b4cc777b2e099c08b785aae925b0c5b8296c",
   "source_sha256": "33ba5a6a0441c9af8f63ae495cab0680e3b8baf413c382dd3d6a8ef8a2aecec9",
-  "updated_at": "2026-11-21T18:55:01.220239+00:00",
+  "updated_at": "2026-11-21T18:55:58.726880+00:00",
   "queue_snapshot": {
     "extracted": 4,
     "reviewed": 0,
@@ -43,11 +43,11 @@
   },
   "provider_call_metric": {
     "unit_id": "chapter-000001",
-    "role": "reviewer",
+    "role": "corrector",
     "route": "primary",
-    "request_chars": 75294,
+    "request_chars": 46726,
     "outcome": "response",
-    "duration_ms": 278755
+    "duration_ms": 55464
   },
   "provider_call_metrics": [
     {
@@ -129,6 +129,14 @@
       "request_chars": 75294,
       "outcome": "response",
       "duration_ms": 278755
+    },
+    {
+      "unit_id": "chapter-000001",
+      "role": "corrector",
+      "route": "primary",
+      "request_chars": 46726,
+      "outcome": "response",
+      "duration_ms": 55464
     }
   ],
   "execution_metrics": {
@@ -148,10 +156,10 @@
         "request_chars": 148107
       },
       "corrector": {
-        "completed_calls": 1,
-        "responses": 1,
-        "duration_ms": 34372,
-        "request_chars": 31829
+        "completed_calls": 2,
+        "responses": 2,
+        "duration_ms": 89836,
+        "request_chars": 78555
       }
     },
     "accepted_operations": {
@@ -174,13 +182,20 @@
       "review_required": 0
     }
   },
+  "provider_model_route": "primary",
   "model_response_diagnostics": {
     "finish_reason": "stop",
     "response_format": "pi_prompt_json",
-    "response_chars": 6086,
+    "response_chars": 446,
     "provider_refusal": false,
     "route": "primary",
-    "role": "reviewer",
+    "role": "corrector",
     "unit_id": "chapter-000001"
+  },
+  "correction_batch_progress": {
+    "unit_id": "chapter-000001",
+    "review_record_id": "8b6cbe7be4d641f98b84b9a33a0a6a29",
+    "completed": 2,
+    "total": 2
   }
 }
