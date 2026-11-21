@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "you-feel-like-home",
-  "next_sequence": 21,
+  "next_sequence": 22,
   "records": [
     {
       "record_id": "70b842aa5528406291ad9b4b5929b1a7",
@@ -856,6 +856,33 @@
             "resolved": false
           }
         ]
+      }
+    },
+    {
+      "record_id": "37d6b3d6cf654127967d851d115ddffa",
+      "sequence": 21,
+      "unit_id": "chapter-000016",
+      "outcome": "PASS",
+      "source_sha256": "109bd0ec0f745561cf01e9c30b2207aef4d30bf04a634c144213390ff4f9cdae",
+      "translation_sha256": "4fcae489d7fbf289daf0e55c8f33b89ce88ba129f035ec8e904205980dd33bf1",
+      "workflow_revision": "db253095d36f245f9531da654b93ab72193d3b97",
+      "review_contract_revision": "docs/TRANSLATION.md@db253095d36f245f9531da654b93ab72193d3b97",
+      "reviewer_session_id": "review-chatops-yflh-20261121-ch12",
+      "reviewed_at": "2026-11-21T00:59:07Z",
+      "state_revision": "6e1aed0224901f82306f47404efcc5b21c414db1d26f12537d8679c04d9ac39a",
+      "review_commit": "22d4d7e2d53a4af3f5fdae0024f5d552e6946f5f",
+      "correction_round": 0,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": []
       }
     }
   ]
