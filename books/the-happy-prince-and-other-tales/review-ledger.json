@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "the-happy-prince-and-other-tales",
-  "next_sequence": 2,
+  "next_sequence": 3,
   "records": [
     {
       "record_id": "454ca30d1d7d42ae95dacf0e1de03ba9",
@@ -75,6 +75,109 @@
               "quote": "Рубин выпал из его меча, глаз у него нет, да и золотым он больше не выглядит",
               "occurrence": 0
             },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "02fd8099be0f34fc44c988853a566743b1875ea3866a9e50549a018ffb192c9b",
+        "style_guide": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4"
+      }
+    },
+    {
+      "record_id": "8b6cbe7be4d641f98b84b9a33a0a6a29",
+      "sequence": 2,
+      "unit_id": "chapter-000001",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "38617c6f8bf0323078a9bc41ecb03572a24121bbaa93c3caf3f8b90c18633281",
+      "translation_sha256": "02051e0ca6124e8decf0264ea41681af8f6de0b32aecce3620c844fd2a4bd417",
+      "workflow_revision": "6ed4b4cc777b2e099c08b785aae925b0c5b8296c",
+      "review_contract_revision": "docs/TRANSLATION.md@6ed4b4cc777b2e099c08b785aae925b0c5b8296c",
+      "reviewer_session_id": "auto-297fd08ee43d-reviewer-a1356258",
+      "reviewed_at": "2026-11-21T18:53:30Z",
+      "state_revision": "ad029adbac78fff65626f74f7f7f4b89db447ee6995a610c790d4f991f477384",
+      "review_commit": "8de498c474a84b9bec68e2a595aea56f8f1bd42f",
+      "correction_round": 2,
+      "supersedes_record_id": "454ca30d1d7d42ae95dacf0e1de03ba9",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-referent-1",
+            "category": "referent",
+            "severity": "major",
+            "detail": "Unresolved. The Swallow is male in the source and glossary, but the translation uses feminine agreement in «потому что была влюблена», then repeatedly refers to him with feminine forms elsewhere. Preserve the Swallow's male identity throughout while keeping the Reed female; recast Russian syntax where needed.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "His friends had gone away to Egypt six weeks before, but he had stayed behind",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Его друзья улетели в Египет шесть недель назад, но он остался, потому что была влюблена в прекраснейшую Тростинку.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "454ca30d1d7d42ae95dacf0e1de03ba9",
+              "finding_id": "referent-1"
+            }
+          },
+          {
+            "id": "recheck-meaning-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Resolved. The translation now uses the plural «Тростинок», preserving the source's implication that the river is full of other personified Reeds.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "and indeed the river was quite full of Reeds.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "и впрямь река была полна Тростинок.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "454ca30d1d7d42ae95dacf0e1de03ba9",
+              "finding_id": "meaning-1"
+            }
+          },
+          {
+            "id": "recheck-meaning-2",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Resolved. «Золота на нём больше нет» states that the gold is gone, rather than merely saying the Prince no longer looks golden.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "The ruby has fallen out of his sword, his eyes are gone, and he is golden no longer",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "да и золота на нём больше нет",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "454ca30d1d7d42ae95dacf0e1de03ba9",
+              "finding_id": "meaning-2"
+            }
+          },
+          {
+            "id": "omission-mayor-1",
+            "category": "omission",
+            "severity": "minor",
+            "detail": "The Mayor's observation omits that the ruby has fallen from the sword and the Prince's eyes are gone. Restore those details; the gold-loss statement is present.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "The ruby has fallen out of his sword, his eyes are gone, and he is golden no longer",
+              "occurrence": 0
+            },
+            "translation_anchor": null,
             "resolves": null
           }
         ]
