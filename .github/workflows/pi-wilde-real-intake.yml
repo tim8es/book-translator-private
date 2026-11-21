@@ -34,6 +34,14 @@ jobs:
           path: engine
           fetch-depth: 1
           persist-credentials: false
+      - name: Checkout pinned CC0 Oscar Wilde source
+        uses: actions/checkout@v4
+        with:
+          repository: standardebooks/oscar-wilde_childrens-stories
+          ref: 8147cbf79e01eeee9eeefed80148ecb2dfb06d67
+          path: standard-source
+          fetch-depth: 1
+          persist-credentials: false
       - name: Install Python
         uses: actions/setup-python@v5
         with:
