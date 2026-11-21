@@ -48,7 +48,7 @@ jobs:
           python-version: '3.12'
       - name: Validate authentic source, register Pi-owned intake and dispatch one checkpoint
         env:
-          GH_TOKEN: \${{ github.token }}
+          GH_TOKEN: ${{ github.token }}
         shell: bash
         run: |
           set -euo pipefail
