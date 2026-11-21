@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "request_id": "e9b88b81b5434e18ac6ebc2d15510313",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "76614c549cefa4280bd064dd70485be51eea089003ef9d91dd5337a7a3920aaa",
+    "record": {
+      "correction_round": 1,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "findings": [
+          {
+            "detail": "Chapter heading restored as ## Глава 11, matching the Markdown structure of ## Chapter 11.",
+            "resolved": true,
+            "severity": "major"
+          },
+          {
+            "detail": "Duplicate translated endnotes headings removed, preserving one ### Примечания в конце главы and the bt-anchor.",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "Arian's longer-than-admitted desire is now naturally expressed as 'Я давно тебя хочу — гораздо дольше, чем готов признать'.",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "Original author's self-deprecating 'smut' now uses clear adult register 'попытка написать эротику' without euphemistic flattening.",
+            "resolved": true,
+            "severity": "minor"
+          }
+        ]
+      },
+      "record_id": "e727711edc814ea8a9cc438a74e5963d",
+      "review_commit": "10ee423c37ca27fe39c07d7c5b10fc0fdc365ef9",
+      "review_contract_revision": "docs/TRANSLATION.md@db253095d36f245f9531da654b93ab72193d3b97",
+      "reviewed_at": "2026-11-21T01:01:15Z",
+      "reviewer_session_id": "review-chatops-yflh-20261121-ch11-r2",
+      "sequence": 22,
+      "source_sha256": "ef36f5e2af6fea7f098e4c7ddaca8f1e78db3d8c0538ad8ef2d611c84f5ef9dd",
+      "state_revision": "5eda2e0984d4a73d513307f91b0a5c77a686274dcd1d774a9ab92ce9686f3c4f",
+      "supersedes_record_id": "3f2fb8c8d5984c41adfbd18bdbfc695f",
+      "translation_sha256": "b6bbad2f0e79ad956799b9761f5cb79660d2b841d17acbedd2729050060f2162",
+      "unit_id": "chapter-000014",
+      "workflow_revision": "db253095d36f245f9531da654b93ab72193d3b97"
+    }
+  },
+  "error": null
+}
