@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "request_id": "e96d54b1fa6e47f4a3799bc1ed567212",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "bb5ab9533d3ebac2f90212e1109a92921f60607031fb68621ff38751c513c15a",
+    "record": {
+      "correction_round": 1,
+      "outcome": "CORRECTIONS_REQUIRED",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "findings": [
+          {
+            "detail": "Terminology continuity: source 'The only thing missing is the hat. The one he had worn in Paris' is the black baseball cap from the Prologue; RU 'Не хватает только шляпы' wrongly changes established baseball cap to a hat. Use 'кепки'.",
+            "resolved": false,
+            "severity": "minor"
+          },
+          {
+            "detail": "Source end note uses first person 'Did I just write... Yes, yes I did' without stating author gender; RU 'Я ... написала ... я и сделала' adds unsupported female gender. Recast without gender-specific past tense while retaining playful tone.",
+            "resolved": false,
+            "severity": "minor"
+          }
+        ]
+      },
+      "record_id": "966e46eaeece4db8979ee9bea56c9fcb",
+      "review_commit": "f163380775e96a6156423ff3868c4af6a50f96b4",
+      "review_contract_revision": "docs/TRANSLATION.md@db253095d36f245f9531da654b93ab72193d3b97",
+      "reviewed_at": "2026-11-21T00:51:51Z",
+      "reviewer_session_id": "review-chatops-yflh-20261121-ch9",
+      "sequence": 18,
+      "source_sha256": "49c2ba17344a870463d3aeaa0c2e00c633dc8ae433f710890512efff3b3d307c",
+      "state_revision": "da4faec5479b97b55c0a8e80748a74ad858a24b7532a215f31f47b576f619ba5",
+      "supersedes_record_id": null,
+      "translation_sha256": "95dab3adb739532e963585262f9ee6e362d12cbb90d07ac2319d66f219f1e2b6",
+      "unit_id": "chapter-000012",
+      "workflow_revision": "db253095d36f245f9531da654b93ab72193d3b97"
+    }
+  },
+  "error": null
+}
