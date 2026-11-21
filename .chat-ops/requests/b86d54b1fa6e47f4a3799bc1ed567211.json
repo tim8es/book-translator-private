@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "request_id": "b86d54b1fa6e47f4a3799bc1ed567211",
+  "book_slug": "you-feel-like-home",
+  "workflow_revision": "db253095d36f245f9531da654b93ab72193d3b97",
+  "operation": "review-record",
+  "chapter": 8,
+  "session_id": "review-chatops-yflh-20261121-ch6-r2",
+  "outcome": "PASS",
+  "quality_report": {
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "severity": "major",
+        "detail": "Source convoy encounter describes two casualties; Russian text now correctly has only the two described men, with no invented third body.",
+        "resolved": true
+      },
+      {
+        "severity": "minor",
+        "detail": "Mayfair boutique temporal detail now states that closure applies to the afternoon rather than the entire day.",
+        "resolved": true
+      },
+      {
+        "severity": "minor",
+        "detail": "Recast former passive calque about strangers staring at Caleb into natural Russian without changing subject or situation.",
+        "resolved": true
+      },
+      {
+        "severity": "minor",
+        "detail": "Recast Caleb's emotionally vulnerable profane self-description ('complete fucking mess') idiomatically while retaining his distress and register.",
+        "resolved": true
+      }
+    ]
+  },
+  "source_sha256": "1774b092134645825329191ac529925fb3ce036918d8e2fb96b6cc16327191e9",
+  "translation_sha256": "ec54b4e1ab2a0e20b14227d1ef39ea72377b4238e6051dc4e57010283863e2bd",
+  "claim_sha256": "5f6a93d52be9596e8152b069961882ce2a17c6d80101e36351f7488f2dc9235c"
+}
