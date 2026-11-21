@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "request_id": "202611210048c1818a00fee0ca0188ab",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "80265273acafd84c41a68e1713707551e2476903d22758418678ce85d5a6a30a",
+    "record": {
+      "correction_round": 2,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "meaning",
+            "detail": "Блок 39: усилительное отрицание передано без сужения смысла.",
+            "id": "recheck-meaning-anything-39",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "meaning-anything-39",
+              "record_id": "9f096454b0c24632a192b039ba00eadd"
+            },
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "or… *anything*"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "не в… *чём бы то ни было*"
+            }
+          },
+          {
+            "category": "terminology",
+            "detail": "Блок 49: уменьшительная форма приведена к глоссарию Лэнсито.",
+            "id": "recheck-terminology-lancito-49",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "terminology-lancito-49",
+              "record_id": "9f096454b0c24632a192b039ba00eadd"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "*Lancito*"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "*Лэнсито*"
+            }
+          },
+          {
+            "category": "terminology",
+            "detail": "Блок 81: единая запись Джи-Пи.",
+            "id": "recheck-terminology-gp-81",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "terminology-gp-81",
+              "record_id": "9f096454b0c24632a192b039ba00eadd"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "GP laughs before leaning closer"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "смеётся Джи-Пи, а затем"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Блок 76: калька устранена с сохранением авторского смысла.",
+            "id": "recheck-style-checo-76",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "style-checo-76",
+              "record_id": "9f096454b0c24632a192b039ba00eadd"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "because all he knows is *Checo*"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "потому что сейчас все его мысли заняты только *Чеко*"
+            }
+          }
+        ]
+      },
+      "record_id": "ab2da534858c4900af57e636cc373d9b",
+      "review_commit": "9f7675f8dafab37ca026b485a7659c48f5f3b350",
+      "review_contract_revision": "docs/TRANSLATION.md@8bb30227adc4bb921429611e12a0af803c9b6487",
+      "reviewed_at": "2026-11-21T00:44:14Z",
+      "reviewer_session_id": "chatgpt-sayit-ch18-review-20261121-b",
+      "sequence": 190,
+      "source_sha256": "367c1c1a06fb3f7862e2dbcac943d10d414a12d06165b1aa78f03ad5fce37fed",
+      "state_revision": "5c2150db53a7f8edfd9bc7bc6f9657d7c26e88527aebc845c8e65b619d5cf693",
+      "supersedes_record_id": "9f096454b0c24632a192b039ba00eadd",
+      "translation_sha256": "e517454606a993b6cc8a019297cd780ad61c4c9eaccebf069d5f3f9616c98bb1",
+      "unit_id": "chapter-000018",
+      "workflow_revision": "8bb30227adc4bb921429611e12a0af803c9b6487"
+    }
+  },
+  "error": null
+}
