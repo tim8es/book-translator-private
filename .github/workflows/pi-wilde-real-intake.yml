@@ -1,0 +1,47 @@
+name: Ephemeral Oscar Wilde Pi real-book intake
+# One-shot, isolated from the default-branch workflow topology.
+on:
+  push:
+    branches:
+      - ci/pi-wilde-first-real-book-20261121
+    paths:
+      - ci/pi-wilde-intake-signal.json
+permissions:
+  contents: write
+  actions: write
+jobs:
+  source-and-intake:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - name: Checkout ephemeral test harness (no credentials)
+        uses: actions/checkout@v4
+        with:
+          path: admin
+          persist-credentials: false
+      - name: Checkout state main (write credentials)
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: state
+          fetch-depth: 0
+          persist-credentials: true
+      - name: Checkout exact canonical new-book revision
+        uses: actions/checkout@v4
+        with:
+          repository: tim8es/book-translator
+          ref: 6ed4b4cc777b2e099c08b785aae925b0c5b8296c
+          path: engine
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Install Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate authentic source, register Pi-owned intake and dispatch one checkpoint
+        env:
+          GH_TOKEN: \${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          python admin/ci/pi_wilde_intake.py
