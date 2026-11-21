@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "request_id": "202611210042a18f0daa81fee0ca0188",
+  "book_slug": "say-it-in-your-mother-tongue",
+  "workflow_revision": "8bb30227adc4bb921429611e12a0af803c9b6487",
+  "operation": "review-record",
+  "chapter": 18,
+  "session_id": "chatgpt-sayit-ch18-review-20261121-b",
+  "outcome": "CORRECTIONS_REQUIRED",
+  "quality_report": {
+    "evidence_version": 2,
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "id": "meaning-anything-39",
+        "category": "meaning",
+        "severity": "major",
+        "detail": "В блоке 39 усилительное 'or… anything' передано как 'чём-то ещё', что сужает отрицание. Нужна передача 'ни в… вообще чём-либо', с сохранением запинки персонажа.",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "or… *anything*",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "не в… *чём-то ещё*",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "terminology-lancito-49",
+        "category": "terminology",
+        "severity": "minor",
+        "detail": "В блоке 49 прозвище Lancito оставлено латиницей вопреки закреплённому глоссарию Лэнсито; сверить лексическое решение и унифицировать.",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "*Lancito*",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "*Lancito*",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "terminology-gp-81",
+        "category": "terminology",
+        "severity": "minor",
+        "detail": "В блоке 81 оставлено GP латиницей, хотя в других блоках этой главы применяется Джи-Пи.",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "GP laughs before leaning closer",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "смеётся GP, а затем",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "style-checo-76",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Конструкция блока 76 'всё, что он знает, — это Чеко' звучит калькой; сохранить смысл сосредоточенности Макса на Чеко естественным русским выражением.",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "because all he knows is *Checo*",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "потому что всё, что он знает, — это *Чеко*",
+          "occurrence": 0
+        },
+        "resolves": null
+      }
+    ]
+  },
+  "source_sha256": "367c1c1a06fb3f7862e2dbcac943d10d414a12d06165b1aa78f03ad5fce37fed",
+  "translation_sha256": "97241f793abefd8dd39f7b320144598a26e44cf6a2b0442b85a19041299dee42",
+  "claim_sha256": "4d0469a1be913d896dea9e51393e1f33a8757b106a167b70fcc5c6a60b9a545a"
+}
