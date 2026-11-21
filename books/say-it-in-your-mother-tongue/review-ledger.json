@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 201,
+  "next_sequence": 202,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -20399,6 +20399,67 @@
             },
             "translation_anchor": {
               "quote": "*Безопасный вариант и правда.*",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "1098929836a14a6d9deebf0f2829d610",
+      "sequence": 201,
+      "unit_id": "chapter-000028",
+      "outcome": "PASS",
+      "source_sha256": "2aa4bfa1297c63de89c47e14f31725328fc87be069ca04433c81028827d089f7",
+      "translation_sha256": "2b700de8b672e2ca155b99be8b3e57887d229c17d17bb5fa6f1dbb25cfa2c3cf",
+      "workflow_revision": "8bb30227adc4bb921429611e12a0af803c9b6487",
+      "review_contract_revision": "docs/TRANSLATION.md@8bb30227adc4bb921429611e12a0af803c9b6487",
+      "reviewer_session_id": "chatgpt-sayit-ch28-reviewer-20261121-1723",
+      "reviewed_at": "2026-11-21T14:07:36Z",
+      "state_revision": "51e6a5afba2a6f250a83a07f5d9bff548533ef739e00c961308de8e4b8eabe0f",
+      "review_commit": "178f5fbe4392304d4ababc0b7d6e8808c935abe3",
+      "correction_round": 4,
+      "supersedes_record_id": "b8447f83007148e98828a0a259a182f2",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "r028-correction-49",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Restored Lance's challenge to the word 'good' rather than asking whether it is true.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "is it??",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "и это хорошо??",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "r028-profanity-72",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Restored the coarse language of 'the fuck' without changing the rhetorical question's meaning.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Where the fuck did I even get these?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Да откуда они, блядь, вообще у меня взялись?",
               "occurrence": 0
             },
             "resolves": null

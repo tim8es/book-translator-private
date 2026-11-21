@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "request_id": "202611211730aaaaaaaaaaaaaaaaaaaa",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "e2837edaa0668149d3f2c68b40404938d591e86fd3815b38263136e1d11e2b70",
+    "record": {
+      "correction_round": 4,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "meaning",
+            "detail": "Restored Lance's challenge to the word 'good' rather than asking whether it is true.",
+            "id": "r028-correction-49",
+            "resolved": true,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "is it??"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "и это хорошо??"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Restored the coarse language of 'the fuck' without changing the rhetorical question's meaning.",
+            "id": "r028-profanity-72",
+            "resolved": true,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Where the fuck did I even get these?"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Да откуда они, блядь, вообще у меня взялись?"
+            }
+          }
+        ]
+      },
+      "record_id": "1098929836a14a6d9deebf0f2829d610",
+      "review_commit": "178f5fbe4392304d4ababc0b7d6e8808c935abe3",
+      "review_contract_revision": "docs/TRANSLATION.md@8bb30227adc4bb921429611e12a0af803c9b6487",
+      "reviewed_at": "2026-11-21T14:07:36Z",
+      "reviewer_session_id": "chatgpt-sayit-ch28-reviewer-20261121-1723",
+      "sequence": 201,
+      "source_sha256": "2aa4bfa1297c63de89c47e14f31725328fc87be069ca04433c81028827d089f7",
+      "state_revision": "51e6a5afba2a6f250a83a07f5d9bff548533ef739e00c961308de8e4b8eabe0f",
+      "supersedes_record_id": "b8447f83007148e98828a0a259a182f2",
+      "translation_sha256": "2b700de8b672e2ca155b99be8b3e57887d229c17d17bb5fa6f1dbb25cfa2c3cf",
+      "unit_id": "chapter-000028",
+      "workflow_revision": "8bb30227adc4bb921429611e12a0af803c9b6487"
+    }
+  },
+  "error": null
+}
