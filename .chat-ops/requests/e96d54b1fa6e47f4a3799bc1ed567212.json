@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "request_id": "e96d54b1fa6e47f4a3799bc1ed567212",
+  "book_slug": "you-feel-like-home",
+  "workflow_revision": "db253095d36f245f9531da654b93ab72193d3b97",
+  "operation": "review-record",
+  "chapter": 11,
+  "session_id": "review-chatops-yflh-20261121-ch9",
+  "outcome": "CORRECTIONS_REQUIRED",
+  "quality_report": {
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "severity": "minor",
+        "detail": "Terminology continuity: source 'The only thing missing is the hat. The one he had worn in Paris' is the black baseball cap from the Prologue; RU 'Не хватает только шляпы' wrongly changes established baseball cap to a hat. Use 'кепки'.",
+        "resolved": false
+      },
+      {
+        "severity": "minor",
+        "detail": "Source end note uses first person 'Did I just write... Yes, yes I did' without stating author gender; RU 'Я ... написала ... я и сделала' adds unsupported female gender. Recast without gender-specific past tense while retaining playful tone.",
+        "resolved": false
+      }
+    ]
+  },
+  "source_sha256": "49c2ba17344a870463d3aeaa0c2e00c633dc8ae433f710890512efff3b3d307c",
+  "translation_sha256": "95dab3adb739532e963585262f9ee6e362d12cbb90d07ac2319d66f219f1e2b6",
+  "claim_sha256": "c204bfb90f4802751462b9649ca3933044b8fa3a8a29fce78cf8cb7ec6b6f868"
+}
