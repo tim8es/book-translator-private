@@ -1,0 +1,31 @@
+name: Ephemeral Pi first-story-only supervisor
+on:
+  push:
+    branches:
+      - ci/pi-wilde-first-real-book-20261121
+    paths:
+      - ci/pi-wilde-chapter1-supervisor-signal.json
+
+permissions:
+  contents: read
+  actions: write
+
+jobs:
+  first-story:
+    runs-on: ubuntu-latest
+    timeout-minutes: 210
+    concurrency:
+      group: first-story-pi-pilot-297fd08ee43deb245fd4a033240ded56
+      cancel-in-progress: false
+    steps:
+      - name: Checkout temporary supervisor
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Run strictly bounded first-story supervisor
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          python ci/pi_wilde_chapter1_supervisor.py
