@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "request_id": "d06d54b1fa6e47f4a3799bc1ed567213",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "c03f2adb79f416427fb6a48c4e4a2961d54c76da0e4a32b9a765517593496839",
+    "record": {
+      "correction_round": 0,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "findings": []
+      },
+      "record_id": "e9319530cc03485f9ddaefe139ce604e",
+      "review_commit": "77441007a2fe2bc16378963cdd67574ed6f3fc22",
+      "review_contract_revision": "docs/TRANSLATION.md@db253095d36f245f9531da654b93ab72193d3b97",
+      "reviewed_at": "2026-11-21T00:55:14Z",
+      "reviewer_session_id": "review-chatops-yflh-20261121-ch10",
+      "sequence": 19,
+      "source_sha256": "8e6128879515586ee3d13214e18020dc526b4bc6926ccbd21ef6c8a93bb25264",
+      "state_revision": "dc35b3a955e42241d841002619a0f47a804ac25eeb1f624395e157897c94d867",
+      "supersedes_record_id": null,
+      "translation_sha256": "b5aa62a841170b873c1bc79828ec12f21fef6fcbb02771a239d5e1a0da00304f",
+      "unit_id": "chapter-000013",
+      "workflow_revision": "db253095d36f245f9531da654b93ab72193d3b97"
+    }
+  },
+  "error": null
+}
