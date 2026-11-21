@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "request_id": "079ecb670e354a69a14cb91ddc6f0007",
+  "book_slug": "you-feel-like-home",
+  "workflow_revision": "db253095d36f245f9531da654b93ab72193d3b97",
+  "operation": "review-record",
+  "chapter": 10,
+  "session_id": "review-chatops-yflh-20261121-ch8",
+  "outcome": "CORRECTIONS_REQUIRED",
+  "quality_report": {
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "severity": "major",
+        "detail": "Royal announcement EN 'following a sudden cardiac event' is medically nonspecific; RU 'вследствие внезапного сердечного приступа' asserts a heart attack. Restore nonspecific sudden cardiac problem in official statement.",
+        "resolved": false
+      },
+      {
+        "severity": "minor",
+        "detail": "EN 'receiving private care' in Palace announcement and newspaper recollection becomes RU 'проходит лечение в частном порядке' twice, specifying a treatment that the statement deliberately leaves open. Use neutral wording such as 'получает необходимую помощь в частном порядке'.",
+        "resolved": false
+      },
+      {
+        "severity": "minor",
+        "detail": "EN author note 'I am so thankful to all your comments and support' gives no author's gender; RU 'я безмерно благодарна' adds female gender. Recast neutrally without losing appreciation.",
+        "resolved": false
+      },
+      {
+        "severity": "minor",
+        "detail": "EN 'And unfairly handsome' rendered 'И до возмутительного красив' is ungrammatical; change to idiomatic 'И возмутительно красив'.",
+        "resolved": false
+      }
+    ]
+  },
+  "source_sha256": "284fd7eaa1dbd69109aa9634ce31af0363bd3b5f40e932480c9f7db63fd305af",
+  "translation_sha256": "78f08821ff0f695aeaed57a777464251bccb53a4a3882d3bd0d116cc569296da",
+  "claim_sha256": "9fc3023135bf687b3ad4d25ae01caa482325e8f2550c15cfac65081511426046"
+}
