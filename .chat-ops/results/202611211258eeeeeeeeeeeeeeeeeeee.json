@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "request_id": "202611211258eeeeeeeeeeeeeeeeeeee",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "493ad08ba9a483eaabcdaae6857d2d472711318a845c6495c23507928bc778f9",
+    "record": {
+      "correction_round": 1,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": []
+      },
+      "record_id": "60c82e021757448cad81ebf498cad136",
+      "review_commit": "908c976477262c1395e3f5cab9f3c12f2e5d476e",
+      "review_contract_revision": "docs/TRANSLATION.md@8bb30227adc4bb921429611e12a0af803c9b6487",
+      "reviewed_at": "2026-11-21T12:04:01Z",
+      "reviewer_session_id": "chatgpt-sayit-ch23-reviewer-20261121",
+      "sequence": 196,
+      "source_sha256": "27b6053401561fca0e470757e08b76e86bc6bdf6e892fa0af87db5e66746cdcf",
+      "state_revision": "95e40360239ec1726b7b9cca130b67d42677d25648843b706a0b690d751b305c",
+      "supersedes_record_id": "79d65dc589dd49e096a26be4a89e4d1f",
+      "translation_sha256": "7ed23284250cfb9fdaedcb52ce47d230ce00a2db6037ab3a8bab75a021280c05",
+      "unit_id": "chapter-000023",
+      "workflow_revision": "8bb30227adc4bb921429611e12a0af803c9b6487"
+    }
+  },
+  "error": null
+}
