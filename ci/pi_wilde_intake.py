@@ -151,6 +151,9 @@ def main() -> None:
             "source_workflow_not_pinned")
     data, url = download()
     title, author, spine_count = epub_details(data)
+    derived_slug = re.sub(r"[^\\w\\s-]", "", title.strip().lower())
+    derived_slug = re.sub(r"[\\s_]+", "-", derived_slug).strip("-")[:120].rstrip("-")
+    require(derived_slug == SLUG, "unexpected_canonical_book_slug")
     digest = hashlib.sha256(data).hexdigest()
     print("AUTHENTIC_EPUB_CHECKED size=" + str(len(data)) +
           " spine=" + str(spine_count) + " sha256=" + digest +
