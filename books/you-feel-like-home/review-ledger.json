@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "you-feel-like-home",
-  "next_sequence": 23,
+  "next_sequence": 24,
   "records": [
     {
       "record_id": "70b842aa5528406291ad9b4b5929b1a7",
@@ -928,6 +928,44 @@
           {
             "severity": "minor",
             "detail": "Original author's self-deprecating 'smut' now uses clear adult register 'попытка написать эротику' without euphemistic flattening.",
+            "resolved": true
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "ce83dbaa57564ce8806f55decab4018a",
+      "sequence": 23,
+      "unit_id": "chapter-000012",
+      "outcome": "PASS",
+      "source_sha256": "49c2ba17344a870463d3aeaa0c2e00c633dc8ae433f710890512efff3b3d307c",
+      "translation_sha256": "81e0653242cb3613fe3fd30f9cecde21b1be0e73c0520dbf14a58b905adaeab2",
+      "workflow_revision": "db253095d36f245f9531da654b93ab72193d3b97",
+      "review_contract_revision": "docs/TRANSLATION.md@db253095d36f245f9531da654b93ab72193d3b97",
+      "reviewer_session_id": "review-chatops-yflh-20261121-ch9-r2",
+      "reviewed_at": "2026-11-21T01:02:10Z",
+      "state_revision": "09e35e2aaf190bebd31e4d96237d8694ea2890815825714c97eba4ab12149a53",
+      "review_commit": "c58783e3f76d23c3890b76ae4dcaaa9535ff4bbf",
+      "correction_round": 1,
+      "supersedes_record_id": "966e46eaeece4db8979ee9bea56c9fcb",
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "The black baseball cap from the Paris scene is now correctly called 'кепка' rather than 'шляпа', preserving established terminology.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "The end-of-chapter playful author comment now avoids an unsupported female-gender first-person past tense while preserving its self-deprecating tone.",
             "resolved": true
           }
         ]

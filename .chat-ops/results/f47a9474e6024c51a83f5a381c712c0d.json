@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "request_id": "f47a9474e6024c51a83f5a381c712c0d",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "171261cc7aa00227386886ef8efac34258de560cf2a41cd13ff0724a016640b2",
+    "record": {
+      "correction_round": 1,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "findings": [
+          {
+            "detail": "The black baseball cap from the Paris scene is now correctly called 'кепка' rather than 'шляпа', preserving established terminology.",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "The end-of-chapter playful author comment now avoids an unsupported female-gender first-person past tense while preserving its self-deprecating tone.",
+            "resolved": true,
+            "severity": "minor"
+          }
+        ]
+      },
+      "record_id": "ce83dbaa57564ce8806f55decab4018a",
+      "review_commit": "c58783e3f76d23c3890b76ae4dcaaa9535ff4bbf",
+      "review_contract_revision": "docs/TRANSLATION.md@db253095d36f245f9531da654b93ab72193d3b97",
+      "reviewed_at": "2026-11-21T01:02:10Z",
+      "reviewer_session_id": "review-chatops-yflh-20261121-ch9-r2",
+      "sequence": 23,
+      "source_sha256": "49c2ba17344a870463d3aeaa0c2e00c633dc8ae433f710890512efff3b3d307c",
+      "state_revision": "09e35e2aaf190bebd31e4d96237d8694ea2890815825714c97eba4ab12149a53",
+      "supersedes_record_id": "966e46eaeece4db8979ee9bea56c9fcb",
+      "translation_sha256": "81e0653242cb3613fe3fd30f9cecde21b1be0e73c0520dbf14a58b905adaeab2",
+      "unit_id": "chapter-000012",
+      "workflow_revision": "db253095d36f245f9531da654b93ab72193d3b97"
+    }
+  },
+  "error": null
+}
