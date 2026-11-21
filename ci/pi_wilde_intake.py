@@ -25,7 +25,7 @@ import zipfile
 JOB_ID = "297fd08ee43deb245fd4a033240ded56"
 BOOK_REV = "6ed4b4cc777b2e099c08b785aae925b0c5b8296c"
 BRANCH = "ci/pi-wilde-first-real-book-20261121"
-PAGE = "https://www.gutenberg.org/ebooks/902"
+PAGE = "https://github.com/standardebooks/oscar-wilde_childrens-stories"
 SOURCES = [
     "https://www.gutenberg.org/ebooks/902.epub3.noimages",
     "https://www.gutenberg.org/cache/epub/902/pg902.epub",
@@ -50,24 +50,82 @@ def git(*args: str, check: bool = True) -> subprocess.CompletedProcess:
 
 
 def download() -> tuple[bytes, str]:
-    for source in SOURCES:
-        try:
-            request = urllib.request.Request(
-                source,
-                headers={"User-Agent": "BookTranslator-Actions-EpubPilot/1.0",
-                         "Accept": "application/epub+zip, application/octet-stream;q=0.9"}
-            )
-            with urllib.request.urlopen(request, timeout=30) as response:
-                data = response.read(MAX_SIZE + 1)
-            if 3000 < len(data) <= MAX_SIZE and data[:2] == b"PK":
-                with zipfile.ZipFile(io.BytesIO(data)) as archive:
-                    require(archive.testzip() is None, "zip_corrupt")
-                    require("META-INF/container.xml" in archive.namelist(),
-                            "epub_container_missing")
-                return data, source
-        except Exception as exc:
-            print("DOWNLOAD_CANDIDATE_UNAVAILABLE " + type(exc).__name__, flush=True)
-    raise RuntimeError("no_accessible_authentic_project_gutenberg_epub")
+    """Package the five original 1888 tales from a pinned CC0 source edition.
+
+    GitHub Actions checks out the pinned Standard Ebooks source repository.
+    XHTML source text is preserved byte-for-byte; images, other books and
+    publishing front matter are intentionally not included in this pilot.
+    """
+    source_sha = "8147cbf79e01eeee9eeefed80148ecb2dfb06d67"
+    source_root = ROOT / "standard-source"
+    actual_sha = subprocess.check_output(
+        ["git", "-C", str(source_root), "rev-parse", "HEAD"], text=True).strip()
+    require(actual_sha == source_sha, "standard_ebooks_source_revision_drift")
+    chapters = [
+        "the-happy-prince",
+        "the-nightingale-and-the-rose",
+        "the-selfish-giant",
+        "the-devoted-friend",
+        "the-remarkable-rocket",
+    ]
+    text_root = source_root / "src" / "epub" / "text"
+    src_css = source_root / "src" / "epub" / "css"
+    content = []
+    for name in chapters:
+        file = text_root / (name + ".xhtml")
+        data = file.read_bytes()
+        require(b'xmlns="http://www.w3.org/1999/xhtml"' in data and
+                b"<article " in data and len(data) > 3500,
+                "source_story_missing_or_incomplete")
+        ET.fromstring(data)
+        content.append((name, data))
+    stem = "OPS/"
+    metadata = (
+        '<?xml version="1.0" encoding="utf-8"?>'
+        '<package xmlns="http://www.idpf.org/2007/opf" version="3.0" '
+        'unique-identifier="book-id">'
+        '<metadata xmlns:dc="http://purl.org/dc/elements/1.1/">'
+        '<dc:identifier id="book-id">urn:uuid:2991c9fb-3212-4bb4-9c71-4eef341908a8</dc:identifier>'
+        '<dc:title>The Happy Prince and Other Tales</dc:title>'
+        '<dc:creator>Oscar Wilde</dc:creator>'
+        '<dc:language>en</dc:language>'
+        '<dc:rights>Original text public domain; Standard Ebooks CC0 source edition.</dc:rights>'
+        '<dc:source>https://github.com/standardebooks/oscar-wilde_childrens-stories'
+        '/tree/' + source_sha + '</dc:source>'
+        '</metadata><manifest>'
+        + "".join('<item id="s' + str(i) + '" href="text/' + name +
+                  '.xhtml" media-type="application/xhtml+xml"/>'
+                  for i, (name, _) in enumerate(content, 1))
+        + '<item id="css-core" href="css/core.css" media-type="text/css"/>'
+          '<item id="css-local" href="css/local.css" media-type="text/css"/>'
+          '</manifest><spine>'
+        + "".join('<itemref idref="s' + str(i) + '"/>'
+                  for i in range(1, len(content) + 1))
+        + '</spine></package>'
+    )
+    rootfile = (
+        '<?xml version="1.0" encoding="utf-8"?>'
+        '<container xmlns="urn:oasis:names:tc:opendocument:xmlns:container" '
+        'version="1.0"><rootfiles><rootfile full-path="OPS/content.opf" '
+        'media-type="application/oebps-package+xml"/></rootfiles></container>'
+    )
+    buffer = io.BytesIO()
+    with zipfile.ZipFile(buffer, "w") as z:
+        z.writestr("mimetype", "application/epub+zip",
+                   compress_type=zipfile.ZIP_STORED)
+        z.writestr("META-INF/container.xml", rootfile)
+        z.writestr(stem + "content.opf", metadata)
+        for name, body in content:
+            z.writestr(stem + "text/" + name + ".xhtml", body)
+        for name in ("core.css", "local.css"):
+            z.writestr(stem + "css/" + name, (src_css / name).read_bytes())
+    data = buffer.getvalue()
+    require(3000 < len(data) <= MAX_SIZE and data[:2] == b"PK",
+            "constructed_epub_invalid")
+    with zipfile.ZipFile(io.BytesIO(data)) as archive:
+        require(archive.testzip() is None, "constructed_epub_zip_corrupt")
+    print("PINNED_CC0_SOURCE_VERIFIED stories=" + str(len(content)), flush=True)
+    return data, "https://github.com/standardebooks/oscar-wilde_childrens-stories/tree/" + source_sha
 
 
 def epub_details(data: bytes) -> tuple[str, str, int]:
@@ -180,7 +238,7 @@ def main() -> None:
         "workflow_revision": BOOK_REV,
         "title": title,
         "author": author,
-        "source_filename": "pg902.epub",
+        "source_filename": "oscar-wilde-happy-prince-standardebooks-source.epub",
     }
     owner = {"schema_version": 1, "job_id": JOB_ID,
              "source_sha256": digest, "executor": "pi"}
