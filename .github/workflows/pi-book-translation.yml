@@ -27,7 +27,7 @@ on:
 env:
   # Reviewed immutable public executor commit. Does not change literary book pins
   # or the separate locked runtime used by the existing scheduled Auto.
-  PI_EXECUTOR_SHA: 5013123dbc950c968380a0726da1212b479ab46c
+  PI_EXECUTOR_SHA: 900c05d4358fc048efa57ac19dd1f88d28bae028
   BOOK_TRANSLATOR_LLM_BACKEND: pi
   OMNIROUTE_MODEL_CALL_LIMIT: "1500"
 
@@ -77,6 +77,17 @@ jobs:
           ref: main
           fetch-depth: 0
           persist-credentials: false
+      - name: Refuse live book processing in a public repository
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          visibility="$(gh api "repos/$GITHUB_REPOSITORY" --jq '.visibility')"
+          if [[ "$visibility" != "private" ]]; then
+            echo "::error::Real book Pi jobs require a PRIVATE state repository. Current visibility: $visibility"
+            exit 1
+          fi
       - name: Checkout immutable public Pi executor
         uses: actions/checkout@v4
         with:
@@ -127,6 +138,14 @@ jobs:
           persist-credentials: false
       - name: Verify immutable executor
         run: test "$(git -C .public-auto-runtime rev-parse HEAD)" = "$PI_EXECUTOR_SHA"
+      - name: Reserve Pi executor for this immutable intake
+        env:
+          JOB_ID: ${{ inputs.job_id }}
+          BOOK_TRANSLATOR_STATE_ROOT: ${{ github.workspace }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          python .public-auto-runtime/automation/book_runner.py --admit-pi --job-id "$JOB_ID"
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -176,11 +195,23 @@ jobs:
           gh workflow run pi-book-translation.yml --ref main \
             -f probe_only=false -f job_id="$JOB_ID" -f continue_automatically=true
 
-      - name: Report delayed recovery without switching to the old backend
-        if: steps.run.outputs.retry_at != ''
+      - name: Dispatch bounded Pi provider retry waiter
+        if: steps.run.outputs.retry_at != '' && inputs.continue_automatically
+        env:
+          GH_TOKEN: ${{ github.token }}
+          JOB_ID: ${{ inputs.job_id }}
+          RETRY_AT: ${{ steps.run.outputs.retry_at }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          gh workflow run auto-provider-retry.yml --ref main \
+            -f job_id="$JOB_ID" -f retry_at="$RETRY_AT" -f executor=pi
+
+      - name: Report delayed recovery for manual pilot
+        if: steps.run.outputs.retry_at != '' && !inputs.continue_automatically
         env:
           RETRY_AT: ${{ steps.run.outputs.retry_at }}
-        run: echo "::warning::Pi job has a durable retry deadline ($RETRY_AT); manual or separate Pi retry dispatch required."
+        run: echo "::warning::Durable Pi retry deadline ($RETRY_AT); manual pilot does not auto-dispatch."
 
       - name: Surface blocked state
         if: steps.run.outputs.blocked == 'true'

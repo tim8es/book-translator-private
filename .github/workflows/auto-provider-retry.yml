@@ -12,6 +12,12 @@ on:
         description: "Exact persisted provider_retry.not_before (UTC, ISO8601)"
         type: string
         required: true
+      executor:
+        description: "Verified executor that owns the deferred book job"
+        type: choice
+        required: true
+        default: auto
+        options: [auto, pi]
 
 permissions:
   contents: read
@@ -55,10 +61,11 @@ jobs:
         env:
           JOB_ID: ${{ inputs.job_id }}
           RETRY_AT: ${{ inputs.retry_at }}
+          RETRY_EXECUTOR: ${{ inputs.executor || 'auto' }}
         shell: bash
         run: |
           set -euo pipefail
-          state="$(python automation/book_runner.py --retry-status --job-id "$JOB_ID" --retry-at "$RETRY_AT")"
+          state="$(python automation/book_runner.py --retry-status --job-id "$JOB_ID" --retry-at "$RETRY_AT" --retry-executor "$RETRY_EXECUTOR")"
           echo "eligible=$(jq -r '.eligible' <<< "$state")" >> "$GITHUB_OUTPUT"
           echo "wait_seconds=$(jq -r '.wait_seconds' <<< "$state")" >> "$GITHUB_OUTPUT"
 
@@ -82,18 +89,19 @@ jobs:
         env:
           JOB_ID: ${{ inputs.job_id }}
           RETRY_AT: ${{ inputs.retry_at }}
+          RETRY_EXECUTOR: ${{ inputs.executor || 'auto' }}
         shell: bash
         run: |
           set -euo pipefail
           # A reviewed runtime lock change invalidates the original checkout.
           # Fail closed instead of running a mismatched public engine.
           python automation/runtime_loader.py --verify
-          state="$(python automation/book_runner.py --retry-status --job-id "$JOB_ID" --retry-at "$RETRY_AT")"
+          state="$(python automation/book_runner.py --retry-status --job-id "$JOB_ID" --retry-at "$RETRY_AT" --retry-executor "$RETRY_EXECUTOR")"
           echo "eligible=$(jq -r '.eligible' <<< "$state")" >> "$GITHUB_OUTPUT"
           echo "wait_seconds=$(jq -r '.wait_seconds' <<< "$state")" >> "$GITHUB_OUTPUT"
 
       - name: Dispatch next bounded Auto checkpoint
-        if: steps.latest.outputs.eligible == 'true' && steps.latest.outputs.wait_seconds == '0'
+        if: steps.latest.outputs.eligible == 'true' && steps.latest.outputs.wait_seconds == '0' && inputs.executor != 'pi'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           JOB_ID: ${{ inputs.job_id }}
@@ -101,3 +109,14 @@ jobs:
         run: |
           set -euo pipefail
           gh workflow run auto-translate.yml --ref main -f job_id="$JOB_ID"
+
+      - name: Dispatch next bounded Pi checkpoint
+        if: steps.latest.outputs.eligible == 'true' && steps.latest.outputs.wait_seconds == '0' && inputs.executor == 'pi'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          JOB_ID: ${{ inputs.job_id }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          gh workflow run pi-book-translation.yml --ref main \
+            -f probe_only=false -f job_id="$JOB_ID" -f continue_automatically=true
