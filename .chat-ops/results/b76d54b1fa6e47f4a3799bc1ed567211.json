@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "request_id": "b76d54b1fa6e47f4a3799bc1ed567211",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "7de1b8504a6611789d56798b340edd4554f671a7e07697bd14851de2ec2992e5",
+    "record": {
+      "correction_round": 1,
+      "outcome": "CORRECTIONS_REQUIRED",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "findings": [
+          {
+            "detail": "EN convoy casualties: 'A man is lying beside one of the vehicles ... A few paces from the first body, another man is down, farther ahead' describes TWO people; RU 'В нескольких шагах лежит второй. Дальше — ещё один' incorrectly adds a THIRD casualty. Remove the invented third person.",
+            "resolved": false,
+            "severity": "major"
+          },
+          {
+            "detail": "EN Mayfair boutique 'closed to the public afternoon' vs RU 'закрыли ... на весь день' incorrectly extends closure from afternoon to whole day. Preserve only the afternoon.",
+            "resolved": false,
+            "severity": "minor"
+          },
+          {
+            "detail": "EN 'Caleb has spent the better part of his adult life being stared at by everyone' vs RU 'Калеб рассматривался всеми': passive bureaucratic calque breaks narrative style; change to natural Russian, maintaining being looked at.",
+            "resolved": false,
+            "severity": "minor"
+          },
+          {
+            "detail": "EN Caleb 'You must think I’m a complete fucking mess' vs RU 'ты считаешь меня полным, блядь, бардаком': unnatural literal noun predicate; recast in idiomatic, emotionally vulnerable Russian while retaining profanity.",
+            "resolved": false,
+            "severity": "minor"
+          }
+        ]
+      },
+      "record_id": "72be75c051094334b5ec6363efc46fc9",
+      "review_commit": "4791525ea9048ba38b1c8fbd4deb38429672fd54",
+      "review_contract_revision": "docs/TRANSLATION.md@db253095d36f245f9531da654b93ab72193d3b97",
+      "reviewed_at": "2026-11-21T00:39:32Z",
+      "reviewer_session_id": "review-chatops-yflh-20261121-ch6",
+      "sequence": 13,
+      "source_sha256": "1774b092134645825329191ac529925fb3ce036918d8e2fb96b6cc16327191e9",
+      "state_revision": "030d8b757d3edc91cfaf1107504ca9d745d83d47c843ba72891122ea4f841c70",
+      "supersedes_record_id": null,
+      "translation_sha256": "2e80d1ed3c9ee6ab32866cfe46a41709fdfdf962f415197b8ee68855d7729b94",
+      "unit_id": "chapter-000008",
+      "workflow_revision": "db253095d36f245f9531da654b93ab72193d3b97"
+    }
+  },
+  "error": null
+}
