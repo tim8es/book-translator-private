@@ -3,12 +3,12 @@
   "job_id": "297fd08ee43deb245fd4a033240ded56",
   "book_slug": "the-happy-prince-and-other-tales",
   "state": "running",
-  "phase": "model-call-reserved",
+  "phase": "correction-batch-staged",
   "failures": 0,
   "correction_rounds": {},
   "workflow_revision": "6ed4b4cc777b2e099c08b785aae925b0c5b8296c",
   "source_sha256": "33ba5a6a0441c9af8f63ae495cab0680e3b8baf413c382dd3d6a8ef8a2aecec9",
-  "updated_at": "2026-11-21T18:46:42.605161+00:00",
+  "updated_at": "2026-11-21T18:47:18.614895+00:00",
   "queue_snapshot": {
     "extracted": 4,
     "reviewed": 0,
@@ -41,11 +41,11 @@
   },
   "provider_call_metric": {
     "unit_id": "chapter-000001",
-    "role": "reviewer",
+    "role": "corrector",
     "route": "primary",
-    "request_chars": 72813,
+    "request_chars": 31829,
     "outcome": "response",
-    "duration_ms": 236600
+    "duration_ms": 34372
   },
   "provider_call_metrics": [
     {
@@ -111,6 +111,14 @@
       "request_chars": 72813,
       "outcome": "response",
       "duration_ms": 236600
+    },
+    {
+      "unit_id": "chapter-000001",
+      "role": "corrector",
+      "route": "primary",
+      "request_chars": 31829,
+      "outcome": "response",
+      "duration_ms": 34372
     }
   ],
   "execution_metrics": {
@@ -128,6 +136,12 @@
         "responses": 1,
         "duration_ms": 236600,
         "request_chars": 72813
+      },
+      "corrector": {
+        "completed_calls": 1,
+        "responses": 1,
+        "duration_ms": 34372,
+        "request_chars": 31829
       }
     },
     "accepted_operations": {
@@ -139,15 +153,6 @@
   "memory_glossary_saved": 11,
   "pending_style": [],
   "role_protocol_failures": {},
-  "model_response_diagnostics": {
-    "finish_reason": "stop",
-    "response_format": "pi_prompt_json",
-    "response_chars": 5808,
-    "provider_refusal": false,
-    "route": "primary",
-    "role": "reviewer",
-    "unit_id": "chapter-000001"
-  },
   "correction_extensions": {},
   "correction_finding_triage": {
     "unit_id": "chapter-000001",
@@ -157,5 +162,21 @@
       "adjudicate": 0,
       "review_required": 0
     }
+  },
+  "provider_model_route": "primary",
+  "model_response_diagnostics": {
+    "finish_reason": "stop",
+    "response_format": "pi_prompt_json",
+    "response_chars": 368,
+    "provider_refusal": false,
+    "route": "primary",
+    "role": "corrector",
+    "unit_id": "chapter-000001"
+  },
+  "correction_batch_progress": {
+    "unit_id": "chapter-000001",
+    "review_record_id": "454ca30d1d7d42ae95dacf0e1de03ba9",
+    "completed": 3,
+    "total": 3
   }
 }

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "unit_id": "chapter-000001",
+  "review_record_id": "454ca30d1d7d42ae95dacf0e1de03ba9",
+  "source_sha256": "38617c6f8bf0323078a9bc41ecb03572a24121bbaa93c3caf3f8b90c18633281",
+  "translation_sha256": "d6b8a22ce216dc4b9da205666498cf36c1a36f52a1f1528bf0cf9d409f7d1b5e",
+  "workflow_revision": "6ed4b4cc777b2e099c08b785aae925b0c5b8296c",
+  "patches": [
+    {
+      "finding_id": "referent-1",
+      "operation": "replace",
+      "target_anchor": {
+        "quote": "Её друзья улетели в Египет шесть недель назад, а она осталась",
+        "occurrence": 0
+      },
+      "replacement": "Его друзья улетели в Египет шесть недель назад, но он остался"
+    },
+    {
+      "finding_id": "meaning-1",
+      "operation": "replace",
+      "target_anchor": {
+        "quote": "и впрямь река была полна тростника.",
+        "occurrence": 0
+      },
+      "replacement": "и впрямь река была полна Тростинок."
+    },
+    {
+      "finding_id": "meaning-2",
+      "operation": "replace",
+      "target_anchor": {
+        "quote": "Рубин выпал из его меча, глаз у него нет, да и золотым он больше не выглядит",
+        "occurrence": 0
+      },
+      "replacement": "да и золота на нём больше нет"
+    }
+  ],
+  "glossary": [],
+  "style_guide": []
+}
