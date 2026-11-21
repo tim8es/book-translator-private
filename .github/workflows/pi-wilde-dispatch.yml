@@ -16,7 +16,7 @@ jobs:
       - name: Dispatch exactly one existing Pi checkpoint
         shell: bash
         env:
-          GH_TOKEN: \${{ github.token }}
+          GH_TOKEN: ${{ github.token }}
           JOB_ID: 297fd08ee43deb245fd4a033240ded56
         run: |
           set -euo pipefail
