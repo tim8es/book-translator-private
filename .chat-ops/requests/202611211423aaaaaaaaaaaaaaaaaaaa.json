@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "request_id": "202611211423aaaaaaaaaaaaaaaaaaaa",
+  "book_slug": "say-it-in-your-mother-tongue",
+  "workflow_revision": "8bb30227adc4bb921429611e12a0af803c9b6487",
+  "operation": "review-record",
+  "chapter": 26,
+  "session_id": "chatgpt-sayit-ch26-reviewer-20261121",
+  "outcome": "PASS",
+  "source_sha256": "2bb9d1d7b950cd579c8e1fd49c63b6922dcf08bb0f7e61a5a42b829112aeb0e2",
+  "translation_sha256": "02415f0ca548df9150d1e29e26441de670fa92de41086894ec8b92fd3dbb8643",
+  "claim_sha256": "00034ea3a1b41db8580f6fadd2f50629960c40ca43f1ee11c9ba59821b00c895",
+  "quality_report": {
+    "evidence_version": 2,
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "id": "semantic-correction-69",
+        "category": "meaning",
+        "severity": "major",
+        "detail": "Rechecked the original English: 'hate my guts the same way I do' is self-hatred by Nico, not Nico hating Gabriel. The corrected translation now preserves that and the surrounding love-confession subtext; an earlier review had adopted the opposite reading.",
+        "resolved": true,
+        "resolves": null,
+        "source_anchor": {
+          "quote": "*Why can’t you just hate my guts the same way I do?*",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "*Почему ты не можешь просто ненавидеть меня так же, как я ненавижу себя?*",
+          "occurrence": 0
+        }
+      }
+    ]
+  }
+}
