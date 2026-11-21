@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "request_id": "d6ad54b1fa6e47f4a3799bc1ed567210",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "ee8bbf433d0467b19462c29818b2b70bb7b4221eeb6cff99c68078c0bdbee24c",
+    "record": {
+      "correction_round": 0,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "findings": [
+          {
+            "detail": "Stylistic: 'приятно сворачивалось что-то в животе' in the Landon scene is an overly literal rendering of 'something pleasant curling through Caleb’s stomach'; meaning and scene chronology remain intact. Could be smoothed in a future polish.",
+            "resolved": false,
+            "severity": "minor"
+          },
+          {
+            "detail": "Stylistic: 'линия обзора исчезает' in the corridor intervention literally translates the blocked line of sight; the visual blocking is still correctly conveyed by surrounding sentences.",
+            "resolved": false,
+            "severity": "minor"
+          }
+        ]
+      },
+      "record_id": "96016f826b414e67a74b9b5f0c9d08e4",
+      "review_commit": "d05b369a826ebb6f2c3dd4a017c25d26dd08c1c7",
+      "review_contract_revision": "docs/TRANSLATION.md@db253095d36f245f9531da654b93ab72193d3b97",
+      "reviewed_at": "2026-11-21T00:36:57Z",
+      "reviewer_session_id": "review-chatops-yflh-20261121-ch5",
+      "sequence": 12,
+      "source_sha256": "db101c76ad773b0b165c3aaa2afa1ecc1429424ff7b176f09f7cdb7667ede426",
+      "state_revision": "1e8417062151fb9276584f284ac14b7793ed1ea30b3671d786b6fa1d5ba0a2d8",
+      "supersedes_record_id": null,
+      "translation_sha256": "91b30ca29fbcc14ffdf379e4ed7a58befe36ebff09eeb3cb600ee7cf03f2b9b5",
+      "unit_id": "chapter-000007",
+      "workflow_revision": "db253095d36f245f9531da654b93ab72193d3b97"
+    }
+  },
+  "error": null
+}
