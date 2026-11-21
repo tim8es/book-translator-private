@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "job_id": "a71c2f5f4fb6415d98b46e93a4e320a7",
+  "book_slug": "pi-epub-intake-smoke-november-2026",
+  "state": "done",
+  "phase": "delivered",
+  "failures": 0,
+  "correction_rounds": {},
+  "workflow_revision": "ffcc39c1977cd36107510953ad6c689dabd10ab0",
+  "source_sha256": "d2eab210e2a20621d6e86ab4309df00813ca279db51def0ac5f4e8f235988f78",
+  "updated_at": "2026-11-21T01:00:18.124605+00:00",
+  "queue_snapshot": {
+    "extracted": 0,
+    "reviewed": 1,
+    "awaiting_review": 0,
+    "correction_candidates": 0,
+    "awaiting_promotion": 0
+  },
+  "active": null,
+  "model_calls_started": 2,
+  "prompt_context": {
+    "role": "reviewer",
+    "workflow_revision": "ffcc39c1977cd36107510953ad6c689dabd10ab0",
+    "loaded_contracts": [
+      "AGENTS.md",
+      "docs/TRANSLATION.md",
+      "docs/REVIEWER.md"
+    ],
+    "glossary_sha256": "87c7c257405f2fcdb3f79b0ca7a04f9a071448630e9b8873cebf9ce3002418da",
+    "style_guide_sha256": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4",
+    "system_chars": 29562,
+    "user_chars": 7504,
+    "review_context": "independent_session"
+  },
+  "provider_call_metric": {
+    "unit_id": "chapter-000001",
+    "role": "reviewer",
+    "route": "primary",
+    "request_chars": 37066,
+    "outcome": "response",
+    "duration_ms": 31534
+  },
+  "provider_call_metrics": [
+    {
+      "unit_id": "chapter-000001",
+      "role": "translator",
+      "route": "primary",
+      "request_chars": 25960,
+      "outcome": "response",
+      "duration_ms": 12638
+    },
+    {
+      "unit_id": "chapter-000001",
+      "role": "reviewer",
+      "route": "primary",
+      "request_chars": 37066,
+      "outcome": "response",
+      "duration_ms": 31534
+    }
+  ],
+  "execution_metrics": {
+    "schema_version": 1,
+    "since": "2026-11-21T00:59:42.017956+00:00",
+    "api": {
+      "translator": {
+        "completed_calls": 1,
+        "responses": 1,
+        "duration_ms": 12638,
+        "request_chars": 25960
+      },
+      "reviewer": {
+        "completed_calls": 1,
+        "responses": 1,
+        "duration_ms": 31534,
+        "request_chars": 37066
+      }
+    },
+    "accepted_operations": {
+      "translated": 1,
+      "review_pass": 1,
+      "reviewed": 1
+    }
+  },
+  "memory_glossary_saved": 1,
+  "pending_style": [],
+  "role_protocol_failures": {},
+  "model_response_diagnostics": {
+    "finish_reason": "stop",
+    "response_format": "pi_prompt_json",
+    "response_chars": 761,
+    "provider_refusal": false,
+    "route": "primary",
+    "role": "reviewer",
+    "unit_id": "chapter-000001"
+  },
+  "glossary_evidence_rejected": 0,
+  "glossary_conflicts_rejected": 0,
+  "glossary_proposals_deferred": 0,
+  "memory_style_saved": 4,
+  "artifact_path": "books/pi-epub-intake-smoke-november-2026/output/pi-epub-intake-smoke-november-2026.epub",
+  "artifact_sha256": "704930cc8eb95d744adbfeaac37575e939f49a567dea44ab95553061dde53cb4"
+}
