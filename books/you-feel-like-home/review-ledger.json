@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "you-feel-like-home",
-  "next_sequence": 14,
+  "next_sequence": 15,
   "records": [
     {
       "record_id": "70b842aa5528406291ad9b4b5929b1a7",
@@ -570,6 +570,54 @@
             "severity": "minor",
             "detail": "EN Caleb 'You must think I’m a complete fucking mess' vs RU 'ты считаешь меня полным, блядь, бардаком': unnatural literal noun predicate; recast in idiomatic, emotionally vulnerable Russian while retaining profanity.",
             "resolved": false
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "0af7bc5fec3f4fed84ecb368c1336c9b",
+      "sequence": 14,
+      "unit_id": "chapter-000008",
+      "outcome": "PASS",
+      "source_sha256": "1774b092134645825329191ac529925fb3ce036918d8e2fb96b6cc16327191e9",
+      "translation_sha256": "ec54b4e1ab2a0e20b14227d1ef39ea72377b4238e6051dc4e57010283863e2bd",
+      "workflow_revision": "db253095d36f245f9531da654b93ab72193d3b97",
+      "review_contract_revision": "docs/TRANSLATION.md@db253095d36f245f9531da654b93ab72193d3b97",
+      "reviewer_session_id": "review-chatops-yflh-20261121-ch6-r2",
+      "reviewed_at": "2026-11-21T00:44:27Z",
+      "state_revision": "d0c429f219fff6a8b018bf73f73289521d460599d24f107046655fb69eba882c",
+      "review_commit": "196311489f8cd25c69d83d99337b451d1eb0f692",
+      "correction_round": 1,
+      "supersedes_record_id": "72be75c051094334b5ec6363efc46fc9",
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "major",
+            "detail": "Source convoy encounter describes two casualties; Russian text now correctly has only the two described men, with no invented third body.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Mayfair boutique temporal detail now states that closure applies to the afternoon rather than the entire day.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Recast former passive calque about strangers staring at Caleb into natural Russian without changing subject or situation.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Recast Caleb's emotionally vulnerable profane self-description ('complete fucking mess') idiomatically while retaining his distress and register.",
+            "resolved": true
           }
         ]
       }

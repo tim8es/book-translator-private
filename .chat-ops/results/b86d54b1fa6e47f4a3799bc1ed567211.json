@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "request_id": "b86d54b1fa6e47f4a3799bc1ed567211",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "aa583983a6b58a58539f5f8839e5646256542e27beee7b7c45034c3df717edd9",
+    "record": {
+      "correction_round": 1,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "findings": [
+          {
+            "detail": "Source convoy encounter describes two casualties; Russian text now correctly has only the two described men, with no invented third body.",
+            "resolved": true,
+            "severity": "major"
+          },
+          {
+            "detail": "Mayfair boutique temporal detail now states that closure applies to the afternoon rather than the entire day.",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "Recast former passive calque about strangers staring at Caleb into natural Russian without changing subject or situation.",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "Recast Caleb's emotionally vulnerable profane self-description ('complete fucking mess') idiomatically while retaining his distress and register.",
+            "resolved": true,
+            "severity": "minor"
+          }
+        ]
+      },
+      "record_id": "0af7bc5fec3f4fed84ecb368c1336c9b",
+      "review_commit": "196311489f8cd25c69d83d99337b451d1eb0f692",
+      "review_contract_revision": "docs/TRANSLATION.md@db253095d36f245f9531da654b93ab72193d3b97",
+      "reviewed_at": "2026-11-21T00:44:27Z",
+      "reviewer_session_id": "review-chatops-yflh-20261121-ch6-r2",
+      "sequence": 14,
+      "source_sha256": "1774b092134645825329191ac529925fb3ce036918d8e2fb96b6cc16327191e9",
+      "state_revision": "d0c429f219fff6a8b018bf73f73289521d460599d24f107046655fb69eba882c",
+      "supersedes_record_id": "72be75c051094334b5ec6363efc46fc9",
+      "translation_sha256": "ec54b4e1ab2a0e20b14227d1ef39ea72377b4238e6051dc4e57010283863e2bd",
+      "unit_id": "chapter-000008",
+      "workflow_revision": "db253095d36f245f9531da654b93ab72193d3b97"
+    }
+  },
+  "error": null
+}
