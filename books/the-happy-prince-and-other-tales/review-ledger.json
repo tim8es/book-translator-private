@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "the-happy-prince-and-other-tales",
-  "next_sequence": 3,
+  "next_sequence": 4,
   "records": [
     {
       "record_id": "454ca30d1d7d42ae95dacf0e1de03ba9",
@@ -178,6 +178,141 @@
               "occurrence": 0
             },
             "translation_anchor": null,
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "02fd8099be0f34fc44c988853a566743b1875ea3866a9e50549a018ffb192c9b",
+        "style_guide": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4"
+      }
+    },
+    {
+      "record_id": "92cbd7b66782406d9c82e74e6b9052e5",
+      "sequence": 3,
+      "unit_id": "chapter-000001",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "38617c6f8bf0323078a9bc41ecb03572a24121bbaa93c3caf3f8b90c18633281",
+      "translation_sha256": "c3b7c3c0ddc2e50bea281322778d1278b6fa3ea25f3c29bc305570726c4ea92c",
+      "workflow_revision": "6ed4b4cc777b2e099c08b785aae925b0c5b8296c",
+      "review_contract_revision": "docs/TRANSLATION.md@6ed4b4cc777b2e099c08b785aae925b0c5b8296c",
+      "reviewer_session_id": "auto-297fd08ee43d-reviewer-10b46412",
+      "reviewed_at": "2026-11-21T19:03:17Z",
+      "state_revision": "78d39d75a755dfe38cead7ca9d98cdc7636054f75831990c00daed17c1bf0d2b",
+      "review_commit": "613fad36bde53f4c4b10def3fbf2f96fd26bb378",
+      "correction_round": 3,
+      "supersedes_record_id": "8b6cbe7be4d641f98b84b9a33a0a6a29",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "referent-recheck-1",
+            "category": "referent",
+            "severity": "major",
+            "detail": "Unresolved. The source Swallow is male, but the translation says «Она встретила её» and continues with feminine forms for him. Preserve the Swallow’s male identity throughout, recasting sentences where Russian grammar requires it, while keeping the Reed female.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "He had met her early in the spring as he was flying down the river after a big yellow moth",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Она встретила её ранней весной, когда летела вниз по реке за большой жёлтой молью",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "8b6cbe7be4d641f98b84b9a33a0a6a29",
+              "finding_id": "recheck-referent-1"
+            }
+          },
+          {
+            "id": "omission-recheck-1",
+            "category": "omission",
+            "severity": "minor",
+            "detail": "Resolved: the current translation includes the missing ruby, eyes, and gold details. The broken dialogue formatting is reported separately.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "The ruby has fallen out of his sword, his eyes are gone, and he is golden no longer",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "— Рубин выпал из его меча, глаза пропали.\n— да и золота на нём больше нет, — сказал мэр.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "8b6cbe7be4d641f98b84b9a33a0a6a29",
+              "finding_id": "omission-mayor-1"
+            }
+          },
+          {
+            "id": "meaning-dream-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "In context, the children say they saw angels in their dreams, and the teacher disapproves of children having such dreams. «Мечтают» can instead suggest daydreaming or aspirations; render the source’s meaning of dreaming while asleep.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "for he did not approve of children dreaming.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "потому что не одобрял, когда дети мечтают.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "terminology-town-councillor-1",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "The source refers to a Town Councillor, a member of the municipal council. «Городской советник» can mean an adviser and differs from the later «члены городского совета»; use a consistent rendering such as «член городского совета».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "one of the Town Councillors who wished to gain a reputation for having artistic tastes",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "один из городских советников, желавший прослыть человеком с художественным вкусом",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-dream-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Не допускает, чтобы плакать» is unnatural Russian syntax. Recast idiomatically, preserving the sense that he would never dream of crying.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "The Happy Prince never dreams of crying for anything.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Счастливый Принц и в мыслях не допускает, чтобы плакать из-за чего-нибудь",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "structure-mayor-1",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "The Mayor’s single utterance is split into two dash-led lines, with the second beginning lowercase and separated as if it were another speech. Join and punctuate the clauses as one continuous utterance.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“The ruby has fallen out of his sword, his eyes are gone, and he is golden no longer,” said the Mayor; “in fact, he is little better than a beggar!”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "— Рубин выпал из его меча, глаза пропали.\n— да и золота на нём больше нет, — сказал мэр.",
+              "occurrence": 0
+            },
             "resolves": null
           }
         ]
