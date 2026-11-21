@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "you-feel-like-home",
-  "next_sequence": 17,
+  "next_sequence": 18,
   "records": [
     {
       "record_id": "70b842aa5528406291ad9b4b5929b1a7",
@@ -693,6 +693,54 @@
             "severity": "minor",
             "detail": "EN 'And unfairly handsome' rendered 'И до возмутительного красив' is ungrammatical; change to idiomatic 'И возмутительно красив'.",
             "resolved": false
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "0936f2bd6ba0453090205dbbf75918b7",
+      "sequence": 17,
+      "unit_id": "chapter-000011",
+      "outcome": "PASS",
+      "source_sha256": "284fd7eaa1dbd69109aa9634ce31af0363bd3b5f40e932480c9f7db63fd305af",
+      "translation_sha256": "752b4e14f18297421d3746ddf957f3c40e20e3bdabba2247d5d1ce3689bd9472",
+      "workflow_revision": "db253095d36f245f9531da654b93ab72193d3b97",
+      "review_contract_revision": "docs/TRANSLATION.md@db253095d36f245f9531da654b93ab72193d3b97",
+      "reviewer_session_id": "review-chatops-yflh-20261121-ch8-round2",
+      "reviewed_at": "2026-11-21T00:50:33Z",
+      "state_revision": "0fd455357e0c6df41d7a4194ea636189aa34c0d6650a8f11d0612f508cb76052",
+      "review_commit": "93d2f2dc51702d48ca5591b124437ccfe89ac69d",
+      "correction_round": 1,
+      "supersedes_record_id": "5a72f2ce986348d5b2d28eb06673d95a",
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "major",
+            "detail": "Official royal announcement now says 'вследствие внезапного нарушения работы сердца', retaining the original's nonspecific 'sudden cardiac event' rather than inventing a heart attack.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Both Palace-report and later recollection now say 'получает необходимую помощь в частном порядке', retaining non-specific private care without asserting treatment.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Author gratitude now says 'я безмерно ценю все ваши комментарии и поддержку', without inventing author's gender.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "The description 'And unfairly handsome' now reads grammatical 'И возмутительно красив.'",
+            "resolved": true
           }
         ]
       }
