@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "request_id": "b96d54b1fa6e47f4a3799bc1ed567212",
+  "book_slug": "you-feel-like-home",
+  "workflow_revision": "db253095d36f245f9531da654b93ab72193d3b97",
+  "operation": "review-record",
+  "chapter": 10,
+  "session_id": "translate-chatops-yflh-20261121-ch8",
+  "outcome": "CORRECTIONS_REQUIRED",
+  "quality_report": {
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "severity": "major",
+        "detail": "EN weather at King's funeral 'The rain has barely held off' means rain has not yet begun (it has barely stayed away); RU 'Дождь едва держится' ambiguously implies rain continues. Restore impending but not yet falling rain.",
+        "resolved": false
+      },
+      {
+        "severity": "minor",
+        "detail": "EN 'And unfairly handsome' -> RU 'И до возмутительного красив.' Contains incorrect grammatical form: use 'И до возмущения красив' or 'И возмутительно красив'.",
+        "resolved": false
+      },
+      {
+        "severity": "minor",
+        "detail": "EN authorial introductory note 'I am so thankful' does not specify the author's gender; RU 'я безмерно благодарна' invents female gender. Recast as gender-neutral 'огромное спасибо за все ваши комментарии и поддержку'.",
+        "resolved": false
+      }
+    ]
+  },
+  "source_sha256": "284fd7eaa1dbd69109aa9634ce31af0363bd3b5f40e932480c9f7db63fd305af",
+  "translation_sha256": "78f08821ff0f695aeaed57a777464251bccb53a4a3882d3bd0d116cc569296da"
+}
