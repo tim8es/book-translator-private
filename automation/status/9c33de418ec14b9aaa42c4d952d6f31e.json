@@ -3,9 +3,75 @@
   "job_id": "9c33de418ec14b9aaa42c4d952d6f31e",
   "book_slug": "pi-durable-resume-smoke-20261121",
   "state": "running",
-  "phase": "initialized",
+  "phase": "translator-completed",
   "failures": 0,
   "correction_rounds": {},
   "workflow_revision": "ffcc39c1977cd36107510953ad6c689dabd10ab0",
-  "updated_at": "2026-11-21T00:52:34.348640+00:00"
+  "updated_at": "2026-11-21T00:53:25.695678+00:00",
+  "active": null,
+  "model_calls_started": 1,
+  "prompt_context": {
+    "role": "translator",
+    "workflow_revision": "ffcc39c1977cd36107510953ad6c689dabd10ab0",
+    "loaded_contracts": [
+      "AGENTS.md",
+      "docs/TRANSLATION.md",
+      "docs/TRANSLATOR.md"
+    ],
+    "glossary_sha256": "9f709531b6d062543d5d0e220768406df7b14edde67f8516d2facabeced9a9bd",
+    "style_guide_sha256": "508fed8fa267b0f92b6e5bd8e630e236375c492f8c4356a8cb3d6e6997eb1f18",
+    "system_chars": 21423,
+    "user_chars": 3121
+  },
+  "provider_call_metric": {
+    "unit_id": "chapter-000001",
+    "role": "translator",
+    "route": "primary",
+    "request_chars": 24544,
+    "outcome": "response",
+    "duration_ms": 12912
+  },
+  "provider_call_metrics": [
+    {
+      "unit_id": "chapter-000001",
+      "role": "translator",
+      "route": "primary",
+      "request_chars": 24544,
+      "outcome": "response",
+      "duration_ms": 12912
+    }
+  ],
+  "model_response_diagnostics": {
+    "finish_reason": "stop",
+    "response_format": "pi_prompt_json",
+    "response_chars": 647,
+    "provider_refusal": false,
+    "route": "primary",
+    "role": "translator",
+    "unit_id": "chapter-000001"
+  },
+  "execution_metrics": {
+    "schema_version": 1,
+    "since": "2026-11-21T00:53:25.505856+00:00",
+    "api": {
+      "translator": {
+        "completed_calls": 1,
+        "responses": 1,
+        "duration_ms": 12912,
+        "request_chars": 24544
+      }
+    },
+    "accepted_operations": {
+      "translated": 1
+    }
+  },
+  "memory_glossary_saved": 1,
+  "pending_style": [
+    {
+      "evidence": "Мира ждёт у маяка, затем на рассвете появляются лодки и она улыбается.",
+      "source_pattern": "Краткое повествование от третьего лица в прошедшем времени; события следуют в хронологическом порядке.",
+      "translation_approach": "Сохранять сдержанный тон, лаконичность и последовательность событий."
+    }
+  ],
+  "role_protocol_failures": {}
 }
