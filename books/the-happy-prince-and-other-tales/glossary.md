@@ -6,3 +6,14 @@ Use dictionary forms; classify terms semantically. Type and optional notes use t
 
 | Original | Translation | Type | Notes |
 | --- | --- | --- | --- |
+| Happy Prince | Счастливый Принц | персонаж |  |
+| Swallow | Ласточка | персонаж | Персонаж мужского пола. |
+| Reed | Тростинка | персонаж | Персонаж женского пола. |
+| Egypt | Египет | страна |  |
+| Nile | Нил | река |  |
+| Ghetto | Гетто | район |  |
+| Memnon | Мемнон | мифологическое имя |  |
+| Baalbec | Баальбек | топоним |  |
+| Sphinx | Сфинкс | мифологическое существо |  |
+| God | Бог | Божество |  |
+| Paradise | Рай | Место |  |
