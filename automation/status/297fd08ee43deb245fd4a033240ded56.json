@@ -3,12 +3,12 @@
   "job_id": "297fd08ee43deb245fd4a033240ded56",
   "book_slug": "the-happy-prince-and-other-tales",
   "state": "running",
-  "phase": "model-call-reserved",
+  "phase": "reviewer-completed",
   "failures": 0,
   "correction_rounds": {},
   "workflow_revision": "6ed4b4cc777b2e099c08b785aae925b0c5b8296c",
   "source_sha256": "33ba5a6a0441c9af8f63ae495cab0680e3b8baf413c382dd3d6a8ef8a2aecec9",
-  "updated_at": "2026-11-21T18:40:54.162843+00:00",
+  "updated_at": "2026-11-21T18:44:52.560757+00:00",
   "queue_snapshot": {
     "extracted": 4,
     "reviewed": 0,
@@ -16,12 +16,7 @@
     "correction_candidates": 0,
     "awaiting_promotion": 0
   },
-  "active": {
-    "role": "reviewer",
-    "chapter": 1,
-    "session_id": "auto-297fd08ee43d-reviewer-a3a900fa",
-    "unit_id": "chapter-000001"
-  },
+  "active": null,
   "structural_helper_revision": "4c584fe5534871cd05aa851d9b7bdbfa696d0edd",
   "model_calls_started": 8,
   "prompt_context": {
@@ -40,11 +35,11 @@
   },
   "provider_call_metric": {
     "unit_id": "chapter-000001",
-    "role": "translator",
+    "role": "reviewer",
     "route": "primary",
-    "request_chars": 26361,
+    "request_chars": 72813,
     "outcome": "response",
-    "duration_ms": 43711
+    "duration_ms": 236600
   },
   "provider_call_metrics": [
     {
@@ -102,6 +97,14 @@
       "request_chars": 26361,
       "outcome": "response",
       "duration_ms": 43711
+    },
+    {
+      "unit_id": "chapter-000001",
+      "role": "reviewer",
+      "route": "primary",
+      "request_chars": 72813,
+      "outcome": "response",
+      "duration_ms": 236600
     }
   ],
   "execution_metrics": {
@@ -113,23 +116,30 @@
         "responses": 7,
         "duration_ms": 711896,
         "request_chars": 199393
+      },
+      "reviewer": {
+        "completed_calls": 1,
+        "responses": 1,
+        "duration_ms": 236600,
+        "request_chars": 72813
       }
     },
     "accepted_operations": {
-      "translated": 1
+      "translated": 1,
+      "review_rejected": 1
     }
-  },
-  "model_response_diagnostics": {
-    "finish_reason": "stop",
-    "response_format": "pi_prompt_json",
-    "response_chars": 918,
-    "provider_refusal": false,
-    "route": "primary",
-    "role": "translator",
-    "unit_id": "chapter-000001"
   },
   "glossary_evidence_rejected": 5,
   "memory_glossary_saved": 11,
   "pending_style": [],
-  "role_protocol_failures": {}
+  "role_protocol_failures": {},
+  "model_response_diagnostics": {
+    "finish_reason": "stop",
+    "response_format": "pi_prompt_json",
+    "response_chars": 5808,
+    "provider_refusal": false,
+    "route": "primary",
+    "role": "reviewer",
+    "unit_id": "chapter-000001"
+  }
 }

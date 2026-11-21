@@ -1,6 +1,88 @@
 {
   "schema_version": 1,
   "book_slug": "the-happy-prince-and-other-tales",
-  "next_sequence": 1,
-  "records": []
+  "next_sequence": 2,
+  "records": [
+    {
+      "record_id": "454ca30d1d7d42ae95dacf0e1de03ba9",
+      "sequence": 1,
+      "unit_id": "chapter-000001",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "38617c6f8bf0323078a9bc41ecb03572a24121bbaa93c3caf3f8b90c18633281",
+      "translation_sha256": "d6b8a22ce216dc4b9da205666498cf36c1a36f52a1f1528bf0cf9d409f7d1b5e",
+      "workflow_revision": "6ed4b4cc777b2e099c08b785aae925b0c5b8296c",
+      "review_contract_revision": "docs/TRANSLATION.md@6ed4b4cc777b2e099c08b785aae925b0c5b8296c",
+      "reviewer_session_id": "auto-297fd08ee43d-reviewer-a3a900fa",
+      "reviewed_at": "2026-11-21T18:44:52Z",
+      "state_revision": "4d54d305b821cab0642caaf5a0a9a851a2f889723970d956b433973cae917904",
+      "review_commit": "da37b9ed37f1dd7ef4985032f03f9ac53f158873",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "referent-1",
+            "category": "referent",
+            "severity": "major",
+            "detail": "The Swallow is male in the source and in the established glossary, but this passage uses feminine pronouns; the translation also alternates between feminine and masculine references elsewhere. Preserve the character's male identity consistently, adjusting Russian syntax around the grammatically feminine name as needed.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "His friends had gone away to Egypt six weeks before, but he had stayed behind",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Её друзья улетели в Египет шесть недель назад, а она осталась",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Here “Reeds” refers to the other personified Reeds, reinforcing the joke that the beloved has many relations. The uncountable generic “тростника” loses that implication; use the plural of the established character name, for example «Тростинок».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "and indeed the river was quite full of Reeds.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "и впрямь река была полна тростника.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-2",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The source says the Prince is no longer golden, not merely that he no longer looks golden. The gold has been removed; state that directly.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "The ruby has fallen out of his sword, his eyes are gone, and he is golden no longer",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Рубин выпал из его меча, глаз у него нет, да и золотым он больше не выглядит",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "02fd8099be0f34fc44c988853a566743b1875ea3866a9e50549a018ffb192c9b",
+        "style_guide": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4"
+      }
+    }
+  ]
 }
