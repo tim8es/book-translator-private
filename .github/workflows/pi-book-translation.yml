@@ -77,17 +77,12 @@ jobs:
           ref: main
           fetch-depth: 0
           persist-credentials: false
-      - name: Refuse live book processing in a public repository
-        env:
-          GH_TOKEN: ${{ github.token }}
+      - name: Warn that the state repository may be public
         shell: bash
         run: |
-          set -euo pipefail
-          visibility="$(gh api "repos/$GITHUB_REPOSITORY" --jq '.visibility')"
-          if [[ "$visibility" != "private" ]]; then
-            echo "::error::Real book Pi jobs require a PRIVATE state repository. Current visibility: $visibility"
-            exit 1
-          fi
+          # Public-repository operation is an explicit project choice.
+          # This warning never blocks a manually dispatched Pi checkpoint.
+          echo "::warning::Book source, translated text, review artifacts, and EPUB committed here may be publicly visible. Use only material you are authorized to publish."
       - name: Checkout immutable public Pi executor
         uses: actions/checkout@v4
         with:
