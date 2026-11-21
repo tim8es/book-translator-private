@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "request_id": "e9b88b81b5434e18ac6ebc2d15510313",
+  "book_slug": "you-feel-like-home",
+  "workflow_revision": "db253095d36f245f9531da654b93ab72193d3b97",
+  "operation": "review-record",
+  "chapter": 13,
+  "session_id": "review-chatops-yflh-20261121-ch11-r2",
+  "outcome": "PASS",
+  "quality_report": {
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "severity": "major",
+        "detail": "Chapter heading restored as ## Глава 11, matching the Markdown structure of ## Chapter 11.",
+        "resolved": true
+      },
+      {
+        "severity": "minor",
+        "detail": "Duplicate translated endnotes headings removed, preserving one ### Примечания в конце главы and the bt-anchor.",
+        "resolved": true
+      },
+      {
+        "severity": "minor",
+        "detail": "Arian's longer-than-admitted desire is now naturally expressed as 'Я давно тебя хочу — гораздо дольше, чем готов признать'.",
+        "resolved": true
+      },
+      {
+        "severity": "minor",
+        "detail": "Original author's self-deprecating 'smut' now uses clear adult register 'попытка написать эротику' without euphemistic flattening.",
+        "resolved": true
+      }
+    ]
+  },
+  "source_sha256": "ef36f5e2af6fea7f098e4c7ddaca8f1e78db3d8c0538ad8ef2d611c84f5ef9dd",
+  "translation_sha256": "b6bbad2f0e79ad956799b9761f5cb79660d2b841d17acbedd2729050060f2162",
+  "claim_sha256": "d3e691acef65cbdd12d01339417064e29d7bb580b3cd3a69b685dd1e25fdee29"
+}
