@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "request_id": "f2b88b81b5434e18ac6ebc2d15510313",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "6312d1c4cd8d26d6c2979178d36550dd17c350ca5ab8dcff7a07ba799e8baf4f",
+    "record": {
+      "correction_round": 1,
+      "outcome": "CORRECTIONS_REQUIRED",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "findings": [
+          {
+            "detail": "Structural: EN source begins with Markdown heading '## Chapter 11', accepted RU begins bare 'Глава 11'; restore heading '## Глава 11' for proper EPUB structure.",
+            "resolved": false,
+            "severity": "major"
+          },
+          {
+            "detail": "Source has one 'Chapter End Notes' heading, translated file has two consecutive headings 'Примечания автора к главе' and 'Примечания в конце главы'; remove duplicate without touching bt-anchor.",
+            "resolved": false,
+            "severity": "minor"
+          },
+          {
+            "detail": "Arian's 'I have wanted you for longer than I care to admit' rendered as 'Я хочу тебя гораздо дольше, чем готов признать' has unidiomatic present-tense duration; use 'Я давно тебя хочу — гораздо дольше, чем готов признать' preserving admission.",
+            "resolved": false,
+            "severity": "minor"
+          },
+          {
+            "detail": "Author's 'poor attempt at writing smut' softened to 'попытка написать откровенную сцену'; preserve intentionally self-deprecating explicit register without embellishment.",
+            "resolved": false,
+            "severity": "minor"
+          }
+        ]
+      },
+      "record_id": "3f2fb8c8d5984c41adfbd18bdbfc695f",
+      "review_commit": "77fc2ee00a56183d2231175930f6eb30684e03a7",
+      "review_contract_revision": "docs/TRANSLATION.md@db253095d36f245f9531da654b93ab72193d3b97",
+      "reviewed_at": "2026-11-21T00:57:09Z",
+      "reviewer_session_id": "review-chatops-yflh-20261121-ch11",
+      "sequence": 20,
+      "source_sha256": "ef36f5e2af6fea7f098e4c7ddaca8f1e78db3d8c0538ad8ef2d611c84f5ef9dd",
+      "state_revision": "dc35b3a955e42241d841002619a0f47a804ac25eeb1f624395e157897c94d867",
+      "supersedes_record_id": null,
+      "translation_sha256": "a04fff0e039bca86ab21777c14206025b699b4e30b644d264aeec0db0b7c9391",
+      "unit_id": "chapter-000014",
+      "workflow_revision": "db253095d36f245f9531da654b93ab72193d3b97"
+    }
+  },
+  "error": null
+}
