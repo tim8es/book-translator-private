@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "request_id": "f86d54b1fa6e47f4a3799bc1ed567211",
+  "book_slug": "you-feel-like-home",
+  "workflow_revision": "db253095d36f245f9531da654b93ab72193d3b97",
+  "operation": "review-record",
+  "chapter": 9,
+  "session_id": "review-chatops-yflh-20261121-ch7",
+  "outcome": "PASS",
+  "quality_report": {
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "severity": "minor",
+        "detail": "A few literal Russian idioms remain (e.g. 'Сердце Калеба ... пропускает ... незаслуженный удар' for 'heart skips another unwarranted beat'); this is stylistic and does not change the narrated reaction or relationships.",
+        "resolved": false
+      }
+    ]
+  },
+  "source_sha256": "b0b1a5ff78d6ac7cc6fe6173719058fe191eb4dc2aeddb318dedff66847072e5",
+  "translation_sha256": "7dc75460b644cf4e05ed5a6770d06f38a01418b60b6c1e6daedf0926bdf62828"
+}
