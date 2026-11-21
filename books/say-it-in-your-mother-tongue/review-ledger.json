@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 204,
+  "next_sequence": 205,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -20509,6 +20509,33 @@
       "review_commit": "40defc448653ded61a65081617241706de2ba4b6",
       "correction_round": 1,
       "supersedes_record_id": "034b65641bdd4b25b397e8de7ac4058f",
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": []
+      }
+    },
+    {
+      "record_id": "9efe1b19638942458d7dc9ca5c47edff",
+      "sequence": 204,
+      "unit_id": "chapter-000031",
+      "outcome": "PASS",
+      "source_sha256": "fc53449ab646bb6ed98e0e29230473cc600f3978f3dcacc80f16de60c6a88e0f",
+      "translation_sha256": "bf7f743b52b7f2b74ac4723250039e5a0262f9b4d00b524176be7df6d7e81d7b",
+      "workflow_revision": "8bb30227adc4bb921429611e12a0af803c9b6487",
+      "review_contract_revision": "docs/TRANSLATION.md@8bb30227adc4bb921429611e12a0af803c9b6487",
+      "reviewer_session_id": "chatgpt-20261122-sayit-ch31-reviewer",
+      "reviewed_at": "2026-11-21T23:11:57Z",
+      "state_revision": "3732094c268314b7022ef090a5b4cf321161f77320338af41cca6a2fab6a98ef",
+      "review_commit": "1bc1117269c91da77cbda6980966d8ab98a57bb4",
+      "correction_round": 1,
+      "supersedes_record_id": "8b774e0587744fffb6e3b50f50e0febb",
       "quality_report": {
         "context": "bounded_context",
         "checks": {
