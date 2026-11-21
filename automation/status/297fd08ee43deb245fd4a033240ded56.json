@@ -3,12 +3,12 @@
   "job_id": "297fd08ee43deb245fd4a033240ded56",
   "book_slug": "the-happy-prince-and-other-tales",
   "state": "running",
-  "phase": "model-call-reserved",
+  "phase": "structural-segments-staged",
   "failures": 0,
   "correction_rounds": {},
   "workflow_revision": "6ed4b4cc777b2e099c08b785aae925b0c5b8296c",
   "source_sha256": "33ba5a6a0441c9af8f63ae495cab0680e3b8baf413c382dd3d6a8ef8a2aecec9",
-  "updated_at": "2026-11-21T14:04:53.687061+00:00",
+  "updated_at": "2026-11-21T14:06:28.217718+00:00",
   "queue_snapshot": {
     "extracted": 5,
     "reviewed": 0,
@@ -39,5 +39,52 @@
     "execution_mode": "shared-structural-segments",
     "helper_revision": "4c584fe5534871cd05aa851d9b7bdbfa696d0edd",
     "batch_segment_count": 2
+  },
+  "provider_model_route": "primary",
+  "provider_call_metric": {
+    "unit_id": "chapter-000001",
+    "role": "translator",
+    "route": "primary",
+    "request_chars": 28867,
+    "outcome": "response",
+    "duration_ms": 92748
+  },
+  "provider_call_metrics": [
+    {
+      "unit_id": "chapter-000001",
+      "role": "translator",
+      "route": "primary",
+      "request_chars": 28867,
+      "outcome": "response",
+      "duration_ms": 92748
+    }
+  ],
+  "model_response_diagnostics": {
+    "finish_reason": "stop",
+    "response_format": "pi_prompt_json",
+    "response_chars": 3349,
+    "provider_refusal": false,
+    "route": "primary",
+    "role": "translator",
+    "unit_id": "chapter-000001"
+  },
+  "execution_metrics": {
+    "schema_version": 1,
+    "since": "2026-11-21T14:06:28.217001+00:00",
+    "api": {
+      "translator": {
+        "completed_calls": 1,
+        "responses": 1,
+        "duration_ms": 92748,
+        "request_chars": 28867
+      }
+    },
+    "accepted_operations": {}
+  },
+  "structural_segment_progress": {
+    "unit_id": "chapter-000001",
+    "source_sha256": "38617c6f8bf0323078a9bc41ecb03572a24121bbaa93c3caf3f8b90c18633281",
+    "completed": 2,
+    "total": 13
   }
 }
