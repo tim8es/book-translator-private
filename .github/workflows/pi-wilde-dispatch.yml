@@ -1,0 +1,32 @@
+name: Ephemeral Pi Wilde dispatch diagnostic
+on:
+  push:
+    branches:
+      - ci/pi-wilde-first-real-book-20261121
+    paths:
+      - ci/pi-wilde-dispatch-signal.json
+permissions:
+  contents: read
+  actions: write
+jobs:
+  dispatch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - name: Dispatch exactly one existing Pi checkpoint
+        shell: bash
+        env:
+          GH_TOKEN: \${{ github.token }}
+          JOB_ID: 297fd08ee43deb245fd4a033240ded56
+        run: |
+          set -euo pipefail
+          if gh workflow run pi-book-translation.yml \
+             --repo "$GITHUB_REPOSITORY" --ref main \
+             -f probe_only=false -f job_id="$JOB_ID" \
+             -f continue_automatically=false 2> /tmp/pi-dispatch-error.log; then
+            echo "PI_SINGLE_CHECKPOINT_DISPATCH_SUCCESS"
+          else
+            echo "PI_SINGLE_CHECKPOINT_DISPATCH_FAILED"
+            sed -E 's/[A-Za-z0-9_]{36,}/[redacted]/g' /tmp/pi-dispatch-error.log | head -c 500
+            exit 1
+          fi
