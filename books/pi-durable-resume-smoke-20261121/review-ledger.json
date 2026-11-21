@@ -1,6 +1,39 @@
 {
   "schema_version": 1,
   "book_slug": "pi-durable-resume-smoke-20261121",
-  "next_sequence": 1,
-  "records": []
+  "next_sequence": 2,
+  "records": [
+    {
+      "record_id": "da0e9b3e7aa149ae8a8816cf514c6b0e",
+      "sequence": 1,
+      "unit_id": "chapter-000001",
+      "outcome": "PASS",
+      "source_sha256": "1e7b0c61aba03d09475150125926d23c3cb54404b6da3fdeea19c40fff17f4a4",
+      "translation_sha256": "86b9037ed3a4e19058b5d43b01c205db6fde3e120649f33c68fb760f772c56c3",
+      "workflow_revision": "ffcc39c1977cd36107510953ad6c689dabd10ab0",
+      "review_contract_revision": "docs/TRANSLATION.md@ffcc39c1977cd36107510953ad6c689dabd10ab0",
+      "reviewer_session_id": "auto-9c33de418ec1-reviewer-fbb65375",
+      "reviewed_at": "2026-11-21T00:54:39Z",
+      "state_revision": "f16fa7f3c2dd42cbf6201184f8793bb2bfac1c5fc98af4e841b5962b3f46d8c3",
+      "review_commit": "cb9bd9376ca8acd4b28f166d69947408a758a90d",
+      "correction_round": 0,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": []
+      },
+      "shared_state_revisions": {
+        "glossary": "16dbb58ff3646259aab0713b9d1ff24a02d50050d4758170a5e7c229419c0b52",
+        "style_guide": "508fed8fa267b0f92b6e5bd8e630e236375c492f8c4356a8cb3d6e6997eb1f18"
+      }
+    }
+  ]
 }
