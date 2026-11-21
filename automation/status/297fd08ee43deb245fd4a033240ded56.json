@@ -3,10 +3,23 @@
   "job_id": "297fd08ee43deb245fd4a033240ded56",
   "book_slug": "the-happy-prince-and-other-tales",
   "state": "running",
-  "phase": "initialized",
+  "phase": "claimed",
   "failures": 0,
   "correction_rounds": {},
   "workflow_revision": "6ed4b4cc777b2e099c08b785aae925b0c5b8296c",
   "source_sha256": "33ba5a6a0441c9af8f63ae495cab0680e3b8baf413c382dd3d6a8ef8a2aecec9",
-  "updated_at": "2026-11-21T14:02:40.430612+00:00"
+  "updated_at": "2026-11-21T14:03:46.213390+00:00",
+  "queue_snapshot": {
+    "extracted": 5,
+    "reviewed": 0,
+    "awaiting_review": 0,
+    "correction_candidates": 0,
+    "awaiting_promotion": 0
+  },
+  "active": {
+    "role": "translator",
+    "chapter": 1,
+    "session_id": "auto-297fd08ee43d-translator-b4654a6f",
+    "unit_id": "chapter-000001"
+  }
 }
