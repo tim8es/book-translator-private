@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "request_id": "202611211705eeeeeeeeeeeeeeeeeeee",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "9dffcea01cff8dcfc2676ed4079c81c61d9bce87abdcf97fc64d5347a264a200",
+    "record": {
+      "correction_round": 2,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "meaning",
+            "detail": "Restored the interrogative reply to Max's 'good': Lance challenges whether the situation is good, rather than asking if it is true.",
+            "id": "r027-new-meaning-47",
+            "resolved": true,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "is it??"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "и это хорошо??"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Restored 'safe' as a safe answer option, not abstract safety, preserving the internal contrast with truth.",
+            "id": "r027-new-context-26",
+            "resolved": true,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "*Safe and the truth.*"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "*Безопасный вариант и правда.*"
+            }
+          }
+        ]
+      },
+      "record_id": "46598f95c8ee44c49c386ef2472051f5",
+      "review_commit": "8332d29cbedde3c07bab63e7ce964a0223b65683",
+      "review_contract_revision": "docs/TRANSLATION.md@8bb30227adc4bb921429611e12a0af803c9b6487",
+      "reviewed_at": "2026-11-21T13:59:27Z",
+      "reviewer_session_id": "chatgpt-sayit-ch27-reviewer-20261121-1702",
+      "sequence": 200,
+      "source_sha256": "fae0b5d9b21be14461abbce11e210357cc94cde8c23e31a816d1567cd9db8d2f",
+      "state_revision": "f4ea921da3acd536ae5496753bc7d6f34363445fac4d5f6f63d9bd35a440266c",
+      "supersedes_record_id": "4a26f4328e56483b9dc3784e387c27e8",
+      "translation_sha256": "85043b85582a98dd4e6cf996c37a6d3583e3277749b47dc496c0a624d24b42bc",
+      "unit_id": "chapter-000027",
+      "workflow_revision": "8bb30227adc4bb921429611e12a0af803c9b6487"
+    }
+  },
+  "error": null
+}

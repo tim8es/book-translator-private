@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 200,
+  "next_sequence": 201,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -20338,6 +20338,67 @@
             },
             "translation_anchor": {
               "quote": "*Почему ты не можешь просто ненавидеть меня так же, как я ненавижу себя?*",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "46598f95c8ee44c49c386ef2472051f5",
+      "sequence": 200,
+      "unit_id": "chapter-000027",
+      "outcome": "PASS",
+      "source_sha256": "fae0b5d9b21be14461abbce11e210357cc94cde8c23e31a816d1567cd9db8d2f",
+      "translation_sha256": "85043b85582a98dd4e6cf996c37a6d3583e3277749b47dc496c0a624d24b42bc",
+      "workflow_revision": "8bb30227adc4bb921429611e12a0af803c9b6487",
+      "review_contract_revision": "docs/TRANSLATION.md@8bb30227adc4bb921429611e12a0af803c9b6487",
+      "reviewer_session_id": "chatgpt-sayit-ch27-reviewer-20261121-1702",
+      "reviewed_at": "2026-11-21T13:59:27Z",
+      "state_revision": "f4ea921da3acd536ae5496753bc7d6f34363445fac4d5f6f63d9bd35a440266c",
+      "review_commit": "8332d29cbedde3c07bab63e7ce964a0223b65683",
+      "correction_round": 2,
+      "supersedes_record_id": "4a26f4328e56483b9dc3784e387c27e8",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "r027-new-meaning-47",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Restored the interrogative reply to Max's 'good': Lance challenges whether the situation is good, rather than asking if it is true.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "is it??",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "и это хорошо??",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "r027-new-context-26",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Restored 'safe' as a safe answer option, not abstract safety, preserving the internal contrast with truth.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "*Safe and the truth.*",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "*Безопасный вариант и правда.*",
               "occurrence": 0
             },
             "resolves": null
