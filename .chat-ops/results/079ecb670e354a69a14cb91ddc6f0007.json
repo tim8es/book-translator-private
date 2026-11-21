@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "request_id": "079ecb670e354a69a14cb91ddc6f0007",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "576e614354b603ca1ab02cb1810ae936a925081875f790dbd155ceb118094855",
+    "record": {
+      "correction_round": 1,
+      "outcome": "CORRECTIONS_REQUIRED",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "findings": [
+          {
+            "detail": "Royal announcement EN 'following a sudden cardiac event' is medically nonspecific; RU 'вследствие внезапного сердечного приступа' asserts a heart attack. Restore nonspecific sudden cardiac problem in official statement.",
+            "resolved": false,
+            "severity": "major"
+          },
+          {
+            "detail": "EN 'receiving private care' in Palace announcement and newspaper recollection becomes RU 'проходит лечение в частном порядке' twice, specifying a treatment that the statement deliberately leaves open. Use neutral wording such as 'получает необходимую помощь в частном порядке'.",
+            "resolved": false,
+            "severity": "minor"
+          },
+          {
+            "detail": "EN author note 'I am so thankful to all your comments and support' gives no author's gender; RU 'я безмерно благодарна' adds female gender. Recast neutrally without losing appreciation.",
+            "resolved": false,
+            "severity": "minor"
+          },
+          {
+            "detail": "EN 'And unfairly handsome' rendered 'И до возмутительного красив' is ungrammatical; change to idiomatic 'И возмутительно красив'.",
+            "resolved": false,
+            "severity": "minor"
+          }
+        ]
+      },
+      "record_id": "5a72f2ce986348d5b2d28eb06673d95a",
+      "review_commit": "a2faa996865d2b6eff3215673a97a015396b0871",
+      "review_contract_revision": "docs/TRANSLATION.md@db253095d36f245f9531da654b93ab72193d3b97",
+      "reviewed_at": "2026-11-21T00:48:22Z",
+      "reviewer_session_id": "review-chatops-yflh-20261121-ch8",
+      "sequence": 16,
+      "source_sha256": "284fd7eaa1dbd69109aa9634ce31af0363bd3b5f40e932480c9f7db63fd305af",
+      "state_revision": "16760013374733708ac1e4689802c63428e54d274b763883b9f7fa6681a7bc2f",
+      "supersedes_record_id": null,
+      "translation_sha256": "78f08821ff0f695aeaed57a777464251bccb53a4a3882d3bd0d116cc569296da",
+      "unit_id": "chapter-000011",
+      "workflow_revision": "db253095d36f245f9531da654b93ab72193d3b97"
+    }
+  },
+  "error": null
+}

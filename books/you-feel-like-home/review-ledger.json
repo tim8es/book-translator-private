@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "you-feel-like-home",
-  "next_sequence": 16,
+  "next_sequence": 17,
   "records": [
     {
       "record_id": "70b842aa5528406291ad9b4b5929b1a7",
@@ -647,6 +647,54 @@
           "structure": true
         },
         "findings": []
+      }
+    },
+    {
+      "record_id": "5a72f2ce986348d5b2d28eb06673d95a",
+      "sequence": 16,
+      "unit_id": "chapter-000011",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "284fd7eaa1dbd69109aa9634ce31af0363bd3b5f40e932480c9f7db63fd305af",
+      "translation_sha256": "78f08821ff0f695aeaed57a777464251bccb53a4a3882d3bd0d116cc569296da",
+      "workflow_revision": "db253095d36f245f9531da654b93ab72193d3b97",
+      "review_contract_revision": "docs/TRANSLATION.md@db253095d36f245f9531da654b93ab72193d3b97",
+      "reviewer_session_id": "review-chatops-yflh-20261121-ch8",
+      "reviewed_at": "2026-11-21T00:48:22Z",
+      "state_revision": "16760013374733708ac1e4689802c63428e54d274b763883b9f7fa6681a7bc2f",
+      "review_commit": "a2faa996865d2b6eff3215673a97a015396b0871",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "major",
+            "detail": "Royal announcement EN 'following a sudden cardiac event' is medically nonspecific; RU 'вследствие внезапного сердечного приступа' asserts a heart attack. Restore nonspecific sudden cardiac problem in official statement.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "EN 'receiving private care' in Palace announcement and newspaper recollection becomes RU 'проходит лечение в частном порядке' twice, specifying a treatment that the statement deliberately leaves open. Use neutral wording such as 'получает необходимую помощь в частном порядке'.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "EN author note 'I am so thankful to all your comments and support' gives no author's gender; RU 'я безмерно благодарна' adds female gender. Recast neutrally without losing appreciation.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "EN 'And unfairly handsome' rendered 'И до возмутительного красив' is ungrammatical; change to idiomatic 'И возмутительно красив'.",
+            "resolved": false
+          }
+        ]
       }
     }
   ]
