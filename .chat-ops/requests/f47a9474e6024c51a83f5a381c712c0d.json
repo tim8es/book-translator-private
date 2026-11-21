@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "request_id": "f47a9474e6024c51a83f5a381c712c0d",
+  "book_slug": "you-feel-like-home",
+  "workflow_revision": "db253095d36f245f9531da654b93ab72193d3b97",
+  "operation": "review-record",
+  "chapter": 11,
+  "session_id": "review-chatops-yflh-20261121-ch9-r2",
+  "outcome": "PASS",
+  "quality_report": {
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "severity": "minor",
+        "detail": "The black baseball cap from the Paris scene is now correctly called 'кепка' rather than 'шляпа', preserving established terminology.",
+        "resolved": true
+      },
+      {
+        "severity": "minor",
+        "detail": "The end-of-chapter playful author comment now avoids an unsupported female-gender first-person past tense while preserving its self-deprecating tone.",
+        "resolved": true
+      }
+    ]
+  },
+  "source_sha256": "49c2ba17344a870463d3aeaa0c2e00c633dc8ae433f710890512efff3b3d307c",
+  "translation_sha256": "81e0653242cb3613fe3fd30f9cecde21b1be0e73c0520dbf14a58b905adaeab2",
+  "claim_sha256": "3223d66ae1a5869fc343b03a0a6161ef84e38540b51561bcc3a3a4ca8aa01de0"
+}
