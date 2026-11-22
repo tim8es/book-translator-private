@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "pizza-with-pineapples-itislikethis-motorcycling-rpf",
-  "next_sequence": 20,
+  "next_sequence": 21,
   "records": [
     {
       "record_id": "e8060d96338440d8a139c674168abf15",
@@ -1686,6 +1686,168 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "e9d0fe0ee9f6cfcc148631a81b3fab9a",
+      "sequence": 20,
+      "unit_id": "chapter-000010",
+      "outcome": "PASS",
+      "source_sha256": "2b658e77280d2ab80a7cf2403c6c3e4c762bf369283faad4388900a64f19d7df",
+      "translation_sha256": "5660d10816b3c5cdb972c7833787d4b18e6f18ea8af74cb5fe0245b2c7a20dd0",
+      "workflow_revision": "789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
+      "review_contract_revision": "docs/TRANSLATION.md@789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
+      "reviewer_session_id": "chatops-pizza-rereview-20261123-10-592fb9f8",
+      "reviewed_at": "2026-11-22T23:45:37Z",
+      "state_revision": "5003cb3ae16ba9dd9474e39e7b56962dd489c2d2c00ebaf3d2618b184b20b2aa",
+      "review_commit": "4590ebe157257d428efccc48334a8d30980f5816",
+      "correction_round": 1,
+      "supersedes_record_id": "0a9a5446fa8ce0b743240d59ce917229",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "meaning-030-resolved",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Restores the collision reference rather than claiming a shared fall.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "I know you did not mean to crash.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Знаю, что ты не хотел врезаться в него.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "0a9a5446fa8ce0b743240d59ce917229",
+              "finding_id": "meaning-030"
+            }
+          },
+          {
+            "id": "style-050-resolved",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Restores refusal to let go with natural Russian syntax.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "To let it go, like Marc and Valentino still refused to.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Отпустить её — чего Марк и Валентино до сих пор делать не желали.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "0a9a5446fa8ce0b743240d59ce917229",
+              "finding_id": "style-050"
+            }
+          },
+          {
+            "id": "style-105-resolved",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Expresses one rider among peers instead of an awkward 'different rider'.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "He’s also just another rider on the grid",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Он ведь ещё и просто один из гонщиков на стартовой решётке",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "0a9a5446fa8ce0b743240d59ce917229",
+              "finding_id": "style-105"
+            }
+          },
+          {
+            "id": "referent-111-resolved",
+            "category": "referent",
+            "severity": "minor",
+            "detail": "Removes unsupported reporter gender while preserving Alex's intended jab.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "a jab at the reporter more than anyone.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "скорее чтобы поддеть того, кто задавал вопрос, чем кого-либо ещё.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "0a9a5446fa8ce0b743240d59ce917229",
+              "finding_id": "referent-111"
+            }
+          },
+          {
+            "id": "voice-119-resolved",
+            "category": "voice",
+            "severity": "major",
+            "detail": "Restores Alex as third-person focalizer and corrects narrative person.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "He didn’t think it would go very well.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Алекс не думал, что из этого вышло бы что-то хорошее.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "0a9a5446fa8ce0b743240d59ce917229",
+              "finding_id": "voice-119"
+            }
+          },
+          {
+            "id": "style-158-resolved",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Restores natural teasing request for the person's beach photographs.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Photos of you at the beach?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Твои фотографии на пляже?",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "0a9a5446fa8ce0b743240d59ce917229",
+              "finding_id": "style-158"
+            }
+          },
+          {
+            "id": "meaning-159-resolved",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Restores photographs as object; no suggestion of sending himself.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "I can send some of me, too, if you want.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Но могу прислать и свои фотографии, если хочешь.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "0a9a5446fa8ce0b743240d59ce917229",
+              "finding_id": "meaning-159"
+            }
           }
         ]
       }
