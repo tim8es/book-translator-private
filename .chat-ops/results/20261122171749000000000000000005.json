@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "request_id": "20261122171749000000000000000005",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "404d8e1cef3345ff2817ed1c0b30b94a2023c0dae22fdb3bf8c9fa0b90daf1b3",
+    "record": {
+      "correction_round": 4,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "findings": [
+          {
+            "detail": "Block 116: corrected end-of-chapter notes heading, preserving separation from opening notes and maintaining source structure.",
+            "resolved": true,
+            "severity": "minor"
+          }
+        ]
+      },
+      "record_id": "4fca63818175425ba39b55e974517df8",
+      "review_commit": "68b8e964deb625af8551830a85b6846385da285e",
+      "review_contract_revision": "docs/TRANSLATION.md@8bb30227adc4bb921429611e12a0af803c9b6487",
+      "reviewed_at": "2026-11-22T14:40:01Z",
+      "reviewer_session_id": "chatgpt-20261122-sayit-ch49-reviewer",
+      "sequence": 221,
+      "source_sha256": "3eb2f502e4d9bc3c2ccdadf501ff631dfd96a7dd13316c5656ac3aca30b21929",
+      "state_revision": "3b1a668fd6fe998c1fae8b8add7775b860e8c1364d0ef9a8e9ddc7b5010187f2",
+      "supersedes_record_id": "6bbdae3647aa43a0986351d1ba354a06",
+      "translation_sha256": "6293265e97d342317d9658bec9396083a6bca821657d3488c94564f5acee187d",
+      "unit_id": "chapter-000049",
+      "workflow_revision": "8bb30227adc4bb921429611e12a0af803c9b6487"
+    }
+  },
+  "error": null
+}
