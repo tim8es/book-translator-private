@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "request_id": "e82f6c361ed746d9b3f6cd7babe2a91c",
+  "book_slug": "alligator-bites-never-heal",
+  "workflow_revision": "76604c82cc4345699de9ae5d97bc75e2443e8cb5",
+  "operation": "review-record",
+  "chapter": 4,
+  "session_id": "chatgpt-alligator-20261122-r5",
+  "outcome": "CORRECTIONS_REQUIRED",
+  "quality_report": {
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "severity": "minor",
+        "detail": "Block 000158 after the previous correction: 'бутылочку ... выбрасывает её ... когда он положил его' has a wrong-gender pronoun. In reference to the same protein shake bottle, use 'её' in the recollection as well; recheck the full source/translation line. Earlier eight findings are resolved in this candidate.",
+        "resolved": false
+      }
+    ]
+  },
+  "source_sha256": "f027535c5e1f74e4184cb65346b7b8a4539d775b0690ed2b025ad6aa947547ec",
+  "translation_sha256": "c1cccacc25cee6b7db0d8073f6f5adabfc694ed249b623a6199a9d193bd141c1",
+  "claim_sha256": "1cb4e1a97ed801ece208f02602e2b1a4e656287e1d81cab51bddbfc4481383e4"
+}
