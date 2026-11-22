@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "request_id": "2dcba2213e114f40a427cb78cbed1599",
+  "book_slug": "cardinal-kin",
+  "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
+  "operation": "review-record",
+  "chapter": 18,
+  "session_id": "chat-20261123-cardinal-review18-b",
+  "outcome": "PASS",
+  "quality_report": {
+    "evidence_version": 2,
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "id": "fixed-01",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Желание принадлежать семье передано естественной русской формой «быть своим», сохраняющей раздельный курсив.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "*family,* *belonging,*",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "*семья*, *быть своим*",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "3a3e8640916541c6b9c7ea70a6083c0a",
+          "finding_id": "ch18-belonging"
+        }
+      },
+      {
+        "id": "fixed-02",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Убрана неудачная калька «больные вещи»; восстановлен смысл намеренно обидных слов близким.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "Sometimes we say things to people we care about because we",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Иногда специально говорим обидные слова тем, кто нам дорог",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "3a3e8640916541c6b9c7ea70a6083c0a",
+          "finding_id": "ch18-hurtful-words"
+        }
+      },
+      {
+        "id": "fixed-03",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Убрано добавленное определение «неисчерпаемый», сохранена насмешка Дэмиана о вредности Дрейка.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "your well of willful spite to finally run dry",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "твой запас упрямой вредности",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "3a3e8640916541c6b9c7ea70a6083c0a",
+          "finding_id": "ch18-spite-well"
+        }
+      },
+      {
+        "id": "fixed-04",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Ответ Тима сохраняет словесную перекличку и самоиронию, без искажения смысла словом «злорадство».",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "my willful spite is endless",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Моя упрямая вредность не знает границ",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "3a3e8640916541c6b9c7ea70a6083c0a",
+          "finding_id": "ch18-spite-reply"
+        }
+      },
+      {
+        "id": "fixed-05",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Сохранены авторская пауза и невозможность вспомнить предыдущую встречу; грамматически неудачный оборот исправлен.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "he doesn’t even know when.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Тим не видел их всех вместе в одной комнате с… даже не вспомнить, когда это было в последний раз.",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "3a3e8640916541c6b9c7ea70a6083c0a",
+          "finding_id": "ch18-when"
+        }
+      }
+    ]
+  },
+  "source_sha256": "beb8af0ce3f2d51931838e6c709f1d53df3a5f3a87890ad8f8477af094b1576a",
+  "translation_sha256": "5b3cbd116960dbd0ad54529b13abfbad79229f2c7816080ec1e429efd2b610a0",
+  "claim_sha256": "76e53ce8993495335fd04fc0cd4e7095535369442f1f41bbf1e80d1fc10afb27"
+}
