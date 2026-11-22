@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "request_id": "dac5ab6c210f4c03913bf55e59571018",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "18e9b0976dc217f21ef26c1c937806ace39b57da9a4294ccdb4cd066e3bfce2f",
+    "record": {
+      "correction_round": 1,
+      "outcome": "CORRECTIONS_REQUIRED",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "meaning",
+            "detail": "Слово a Bat здесь обозначает участие Тима в деятельности ночных героев, а не просто принадлежность к семье. Восстановить смысл активного участия в патрулях.",
+            "id": "bat-identity",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "even when he himself became a Bat."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "даже когда он сам стал членом Бэт-семьи."
+            }
+          },
+          {
+            "category": "referent",
+            "detail": "В английском тексте автор не указывает гендер; русское «счастлива» приписывает его без оснований. Передать высказывание нейтрально.",
+            "id": "author-gender-313",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "I literally makes me so happy knowing so many of you are enjoying it."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Я буквально счастлива от того"
+            }
+          },
+          {
+            "category": "referent",
+            "detail": "Английское I originally planned не определяет пол автора; «я планировала» необоснованно задаёт женский род. Перестроить предложение нейтрально.",
+            "id": "author-gender-314",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "I originally planned for 17 chapters"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Сначала я планировала 17 глав"
+            }
+          },
+          {
+            "category": "referent",
+            "detail": "«I've decided» не задаёт гендер, а «я решила» задаёт; в примечании перейти к нейтральной конструкции.",
+            "id": "author-gender-315",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "I've decided to take a break from posting regularly"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Поэтому я решила сделать перерыв"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Фраза «финал получил все необходимые подготовку и развитие» грамматически неверна и затемняет смысл proper build up and fleshing out. Переформулировать естественно.",
+            "id": "ending-grammar-315",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "the ending has all the proper build up and fleshing out it deserves"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "финал получил все необходимые подготовку и развитие"
+            }
+          }
+        ]
+      },
+      "record_id": "f8497690b0374c85a2fbbf11dbbaf971",
+      "review_commit": "4416610b64eb9a37446a1d87960ed6da4dbc0a93",
+      "review_contract_revision": "docs/TRANSLATION.md@a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "reviewed_at": "2026-11-22T18:18:31Z",
+      "reviewer_session_id": "chat-20261122-cardinal-review13-a",
+      "sequence": 43,
+      "source_sha256": "9de468b677782a915a1f0293ccc6f57744209c2bf7fd535bd938dc7804852735",
+      "state_revision": "1349217ee9106a225d56a8d868fcab094cda853342b91af199ed27d98380be20",
+      "supersedes_record_id": null,
+      "translation_sha256": "137d45c318a6dce105a312c8f6c432ab6a1f7d08d428dc22f8f6818e8d3a84dd",
+      "unit_id": "chapter-000013",
+      "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29"
+    }
+  },
+  "error": null
+}
