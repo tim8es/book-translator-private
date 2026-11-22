@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "request_id": "b4eac28bf44c49049cbeb78c442dafe2",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "9fb550c78eb7921ff2ca254ca4b1af8047904cd65fe2d440f61741ae5d76b349",
+    "record": {
+      "correction_round": 1,
+      "outcome": "CORRECTIONS_REQUIRED",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "style",
+            "detail": "Source author's note uses ungendered 'I'm so happy'; current Russian 'я так рада' assigns female grammatical gender with no source basis. Rephrase without guessing author gender while preserving joy and gratitude.",
+            "id": "voice-003",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "I'm so happy you are enjoying this story!"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "я так рада, что вам нравится эта история!"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Literal rendering 'выражение остальной части лица безошибочно просияло от узнавания' is an awkward/unnatural Russian calque. Preserve that Marc recognizes Alex and his face lights up despite covered eyes, in idiomatic literary Russian.",
+            "id": "style-019",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "the way the rest of his expression lit up in recognition was unmistakable"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "выражение остальной части лица безошибочно просияло от узнавания"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Alex says 'I was already done', with a singular subject, but translation says 'мы уже закончили', adding explicit plural 'we' in a scene where Alex conceals who he was speaking to. Preserve singular to avoid changing the implication for Marc.",
+            "id": "meaning-067",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "No worried, I was already done"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Не переживай, мы уже закончили"
+            }
+          }
+        ]
+      },
+      "record_id": "5d26e7c3a7c54acab92ac67400509685",
+      "review_commit": "948347eb96208e4a04fe752ca63835fac04a9afb",
+      "review_contract_revision": "docs/TRANSLATION.md@789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
+      "reviewed_at": "2026-11-22T21:47:00Z",
+      "reviewer_session_id": "chatops-pizza-reviewer-20261123-10",
+      "sequence": 13,
+      "source_sha256": "0d7349626c3e2649517e0a3acc8a1c143f0fcd5694a70f2334eab9f7a443fdba",
+      "state_revision": "7634b82954046946584b9b0ffe609b99d53a2d825ab04766b261e718f3440c15",
+      "supersedes_record_id": null,
+      "translation_sha256": "ebe9e923c9d444b1690c704769d4c58e7c4ffa2a75f5dabec1e9a11dae74e12a",
+      "unit_id": "chapter-000008",
+      "workflow_revision": "789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07"
+    }
+  },
+  "error": null
+}

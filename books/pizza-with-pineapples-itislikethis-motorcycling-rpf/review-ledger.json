@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "pizza-with-pineapples-itislikethis-motorcycling-rpf",
-  "next_sequence": 13,
+  "next_sequence": 14,
   "records": [
     {
       "record_id": "e8060d96338440d8a139c674168abf15",
@@ -741,6 +741,83 @@
               "record_id": "cb08e4bafd0048ef9920ba800e730eeb",
               "finding_id": "meaning-034"
             }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "5d26e7c3a7c54acab92ac67400509685",
+      "sequence": 13,
+      "unit_id": "chapter-000008",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "0d7349626c3e2649517e0a3acc8a1c143f0fcd5694a70f2334eab9f7a443fdba",
+      "translation_sha256": "ebe9e923c9d444b1690c704769d4c58e7c4ffa2a75f5dabec1e9a11dae74e12a",
+      "workflow_revision": "789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
+      "review_contract_revision": "docs/TRANSLATION.md@789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
+      "reviewer_session_id": "chatops-pizza-reviewer-20261123-10",
+      "reviewed_at": "2026-11-22T21:47:00Z",
+      "state_revision": "7634b82954046946584b9b0ffe609b99d53a2d825ab04766b261e718f3440c15",
+      "review_commit": "948347eb96208e4a04fe752ca63835fac04a9afb",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "voice-003",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Source author's note uses ungendered 'I'm so happy'; current Russian 'я так рада' assigns female grammatical gender with no source basis. Rephrase without guessing author gender while preserving joy and gratitude.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "I'm so happy you are enjoying this story!",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "я так рада, что вам нравится эта история!",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-019",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Literal rendering 'выражение остальной части лица безошибочно просияло от узнавания' is an awkward/unnatural Russian calque. Preserve that Marc recognizes Alex and his face lights up despite covered eyes, in idiomatic literary Russian.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "the way the rest of his expression lit up in recognition was unmistakable",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "выражение остальной части лица безошибочно просияло от узнавания",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-067",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Alex says 'I was already done', with a singular subject, but translation says 'мы уже закончили', adding explicit plural 'we' in a scene where Alex conceals who he was speaking to. Preserve singular to avoid changing the implication for Marc.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "No worried, I was already done",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Не переживай, мы уже закончили",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       }
