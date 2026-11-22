@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "cardinal-kin",
-  "next_sequence": 52,
+  "next_sequence": 53,
   "records": [
     {
       "record_id": "75dfa72e2b6148208fd5343b6e384999",
@@ -10092,6 +10092,168 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "e79f8b6018b646ef8a25d8647a30f4f3",
+      "sequence": 52,
+      "unit_id": "chapter-000017",
+      "outcome": "PASS",
+      "source_sha256": "50dd84d4620bd5cfa81d527c68c5b5aed506db4bc5d513adcf1f22a85d1ff597",
+      "translation_sha256": "d0fd03c5f0a77ee158ed32ebf16e4f76454f3f3f26c8ea0abcf094702e09653e",
+      "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "review_contract_revision": "docs/TRANSLATION.md@a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "reviewer_session_id": "chat-20261122-cardinal-review17-b",
+      "reviewed_at": "2026-11-22T20:59:07Z",
+      "state_revision": "1e1f8bb4db47987571aa18d436f9382a590e746fc26025b6e0e5d5b135eb5d8b",
+      "review_commit": "3f2278a1c7329ed00b52718b6e513809f5475cbc",
+      "correction_round": 1,
+      "supersedes_record_id": "d83c72ffb4884ecd83a6d91db4153330",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "verified-01",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Техника боя больше не описывается чуждым для неё словом «неопрятно»; сохраняется неакадемичность движений.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Tim has always fought a bit scrappily.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "В бою Тим всегда был немного грубоват и не слишком изящен.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "d83c72ffb4884ecd83a6d91db4153330",
+              "finding_id": "ch17-scrappy"
+            }
+          },
+          {
+            "id": "verified-02",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Дик по-прежнему избегает прямо произнести смерть Джейсона, сохраняя заминку и эвфемизм.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Jason would’ve been…gone by then",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Джейсона к тому времени уже… не было бы",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "d83c72ffb4884ecd83a6d91db4153330",
+              "finding_id": "ch17-dick-euphemism"
+            }
+          },
+          {
+            "id": "verified-03",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "Сленговое обращение Стеф передано буквально и сохранено в повторе «с этим твинком».",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "rich ass twink next door",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "богатенький твинк по соседству",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "d83c72ffb4884ecd83a6d91db4153330",
+              "finding_id": "ch17-twink"
+            }
+          },
+          {
+            "id": "verified-04",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Возвращён узнаваемый термин exposure therapy, используемый Джейсоном как шутка.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "the exposure therapy begins",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "начинается экспозиционная терапия",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "d83c72ffb4884ecd83a6d91db4153330",
+              "finding_id": "ch17-exposure"
+            }
+          },
+          {
+            "id": "verified-05",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Согласие не менее 75% с необходимостью перемен теперь описано как существующее; поддержка Талии остаётся только чуть выше половины.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "That many already agree the old ways no longer work",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Не меньше трёх четвертей членов Лиги уже согласны, что старые методы больше не работают",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "d83c72ffb4884ecd83a6d91db4153330",
+              "finding_id": "ch17-75percent"
+            }
+          },
+          {
+            "id": "verified-06",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Метафора последнего гвоздя и её буквальная мрачная интерпретация сохранены без кальки.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "the final nail in Ra’s literal coffin",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "последнего гвоздя в гроб Ра’са — в самом буквальном смысле",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "d83c72ffb4884ecd83a6d91db4153330",
+              "finding_id": "ch17-coffin"
+            }
+          },
+          {
+            "id": "verified-07",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Фраза не подразумевает дополнительного ритуального жертвоприношения, лишь готовность использовать жертвы как средство.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Sacrifice is merely another tool she was trained to utilize.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Жертва — всего лишь ещё один инструмент, которым её научили пользоваться.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "d83c72ffb4884ecd83a6d91db4153330",
+              "finding_id": "ch17-sacrifice"
+            }
           }
         ]
       }

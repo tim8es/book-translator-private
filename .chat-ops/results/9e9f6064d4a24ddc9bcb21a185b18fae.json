@@ -1,0 +1,172 @@
+{
+  "schema_version": 1,
+  "request_id": "9e9f6064d4a24ddc9bcb21a185b18fae",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "9b6a10d05b40adb5d2b4576bcab83881d2834d2444c00bdb13e1cb9aded8e2c5",
+    "record": {
+      "correction_round": 1,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "style",
+            "detail": "Техника боя больше не описывается чуждым для неё словом «неопрятно»; сохраняется неакадемичность движений.",
+            "id": "verified-01",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "ch17-scrappy",
+              "record_id": "d83c72ffb4884ecd83a6d91db4153330"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Tim has always fought a bit scrappily."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "В бою Тим всегда был немного грубоват и не слишком изящен."
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Дик по-прежнему избегает прямо произнести смерть Джейсона, сохраняя заминку и эвфемизм.",
+            "id": "verified-02",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "ch17-dick-euphemism",
+              "record_id": "d83c72ffb4884ecd83a6d91db4153330"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Jason would’ve been…gone by then"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Джейсона к тому времени уже… не было бы"
+            }
+          },
+          {
+            "category": "terminology",
+            "detail": "Сленговое обращение Стеф передано буквально и сохранено в повторе «с этим твинком».",
+            "id": "verified-03",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "ch17-twink",
+              "record_id": "d83c72ffb4884ecd83a6d91db4153330"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "rich ass twink next door"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "богатенький твинк по соседству"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Возвращён узнаваемый термин exposure therapy, используемый Джейсоном как шутка.",
+            "id": "verified-04",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "ch17-exposure",
+              "record_id": "d83c72ffb4884ecd83a6d91db4153330"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "the exposure therapy begins"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "начинается экспозиционная терапия"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Согласие не менее 75% с необходимостью перемен теперь описано как существующее; поддержка Талии остаётся только чуть выше половины.",
+            "id": "verified-05",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "ch17-75percent",
+              "record_id": "d83c72ffb4884ecd83a6d91db4153330"
+            },
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "That many already agree the old ways no longer work"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Не меньше трёх четвертей членов Лиги уже согласны, что старые методы больше не работают"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Метафора последнего гвоздя и её буквальная мрачная интерпретация сохранены без кальки.",
+            "id": "verified-06",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "ch17-coffin",
+              "record_id": "d83c72ffb4884ecd83a6d91db4153330"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "the final nail in Ra’s literal coffin"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "последнего гвоздя в гроб Ра’са — в самом буквальном смысле"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Фраза не подразумевает дополнительного ритуального жертвоприношения, лишь готовность использовать жертвы как средство.",
+            "id": "verified-07",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "ch17-sacrifice",
+              "record_id": "d83c72ffb4884ecd83a6d91db4153330"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Sacrifice is merely another tool she was trained to utilize."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Жертва — всего лишь ещё один инструмент, которым её научили пользоваться."
+            }
+          }
+        ]
+      },
+      "record_id": "e79f8b6018b646ef8a25d8647a30f4f3",
+      "review_commit": "3f2278a1c7329ed00b52718b6e513809f5475cbc",
+      "review_contract_revision": "docs/TRANSLATION.md@a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "reviewed_at": "2026-11-22T20:59:07Z",
+      "reviewer_session_id": "chat-20261122-cardinal-review17-b",
+      "sequence": 52,
+      "source_sha256": "50dd84d4620bd5cfa81d527c68c5b5aed506db4bc5d513adcf1f22a85d1ff597",
+      "state_revision": "1e1f8bb4db47987571aa18d436f9382a590e746fc26025b6e0e5d5b135eb5d8b",
+      "supersedes_record_id": "d83c72ffb4884ecd83a6d91db4153330",
+      "translation_sha256": "d0fd03c5f0a77ee158ed32ebf16e4f76454f3f3f26c8ea0abcf094702e09653e",
+      "unit_id": "chapter-000017",
+      "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29"
+    }
+  },
+  "error": null
+}
