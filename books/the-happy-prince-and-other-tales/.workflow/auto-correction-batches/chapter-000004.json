@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "unit_id": "chapter-000004",
+  "review_record_id": "cddecd12939c484caa4f5cf141b0bead",
+  "source_sha256": "64529feb86ea28b4de27d1af64e61fd39dde12b629cce78995b11ae4f5942dd3",
+  "translation_sha256": "58ed402fc0ec9b76a4169f06927bd2ddb63e1d8d2f0484ccfd15ec4cf1b7d69d",
+  "workflow_revision": "6ed4b4cc777b2e099c08b785aae925b0c5b8296c",
+  "patches": [
+    {
+      "finding_id": "meaning-1-recheck",
+      "operation": "replace",
+      "target_anchor": {
+        "quote": "и что-нибудь говорил Но прошу вас, продолжайте рассказ.",
+        "occurrence": 0
+      },
+      "replacement": "а всякий раз, когда молодой человек что-нибудь говорил, критик отвечал: «Фи!» Но прошу вас, продолжайте рассказ."
+    },
+    {
+      "finding_id": "terminology-1-recheck",
+      "operation": "replace",
+      "target_anchor": {
+        "quote": "«Ну, вот и всё», — сказала Коноплянка.",
+        "occurrence": 0
+      },
+      "replacement": "«Ну, вот и всё», — сказал Зеленушка."
+    },
+    {
+      "finding_id": "linnet-102",
+      "operation": "replace",
+      "target_anchor": {
+        "quote": "«Ой, право, не знаю, — ответила Коноплянка. — Да мне и дела нет».",
+        "occurrence": 0
+      },
+      "replacement": "«Ой, право, не знаю, — ответил Зеленушка. — Да мне и дела нет»."
+    }
+  ],
+  "glossary": [
+    {
+      "notes": "Персонаж мужского пола.",
+      "original": "Linnet",
+      "translation": "Зеленушка",
+      "type": "персонаж"
+    }
+  ],
+  "style_guide": []
+}
