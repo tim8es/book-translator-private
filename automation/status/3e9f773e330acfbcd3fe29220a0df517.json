@@ -3,14 +3,14 @@
   "job_id": "3e9f773e330acfbcd3fe29220a0df517",
   "book_slug": "pizza-with-pineapples-itislikethis-motorcycling-rpf",
   "state": "running",
-  "phase": "structural-segments-staged",
+  "phase": "translator-completed",
   "failures": 0,
   "correction_rounds": {
     "chapter-000001": 1
   },
   "workflow_revision": "789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
   "source_sha256": "b806092139439a8a9d5c9297bdc1338fa9e4798cfa81353f9396f66747aa6e96",
-  "updated_at": "2026-11-22T16:51:06.194479+00:00",
+  "updated_at": "2026-11-22T16:51:07.882770+00:00",
   "queue_snapshot": {
     "extracted": 17,
     "reviewed": 0,
@@ -18,12 +18,7 @@
     "correction_candidates": 1,
     "awaiting_promotion": 0
   },
-  "active": {
-    "role": "translator",
-    "chapter": 2,
-    "session_id": "auto-3e9f773e330a-translator-da230145",
-    "unit_id": "chapter-000002"
-  },
+  "active": null,
   "structural_helper_revision": "4c584fe5534871cd05aa851d9b7bdbfa696d0edd",
   "model_calls_started": 10,
   "prompt_context": {
@@ -187,7 +182,7 @@
       }
     },
     "accepted_operations": {
-      "translated": 1,
+      "translated": 2,
       "review_rejected": 2,
       "corrected": 1
     }
@@ -218,7 +213,6 @@
     "unit_id": "chapter-000001",
     "review_record_id": "6b11c2fdd395416996c247194cbcfc77"
   },
-  "provider_model_route": "primary",
   "correction_batch_progress": {
     "unit_id": "chapter-000001",
     "review_record_id": "6b11c2fdd395416996c247194cbcfc77",
@@ -232,11 +226,9 @@
       "structure-1"
     ]
   },
-  "blocked_unit_id": "chapter-000001",
   "unit_protocol_failures": {
     "chapter-000001": 3
   },
-  "last_error_code": "unsafe_correction_exhausted",
   "model_unit_deferral_audit": [
     {
       "unit_id": "chapter-000001",
@@ -258,11 +250,5 @@
     "route": "primary",
     "role": "translator",
     "unit_id": "chapter-000002"
-  },
-  "structural_segment_progress": {
-    "unit_id": "chapter-000002",
-    "source_sha256": "1681269cb658c2960d14c36ed0a460c2a9a78602f472397c3314d1c4304c66b7",
-    "completed": 12,
-    "total": 12
   }
 }
