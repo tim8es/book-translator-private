@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "the-happy-prince-and-other-tales",
-  "next_sequence": 14,
+  "next_sequence": 15,
   "records": [
     {
       "record_id": "454ca30d1d7d42ae95dacf0e1de03ba9",
@@ -1846,6 +1846,96 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "51ae310871b0f58a6a106464514beb5980b2c4ba5e544b46e969a33d53b23a3d",
+        "style_guide": "eeb3e2c12f4e684bad2007ac1e9e1cb44b9fafe7f05420a254e93542b6e89589"
+      }
+    },
+    {
+      "record_id": "ef9089c944d84917a6ee342d7df06ba3",
+      "sequence": 14,
+      "unit_id": "chapter-000004",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "64529feb86ea28b4de27d1af64e61fd39dde12b629cce78995b11ae4f5942dd3",
+      "translation_sha256": "1929e82f5bcf13b16a3aaf4eabee05d219a6097efd4fd0501690d8661cd143df",
+      "workflow_revision": "6ed4b4cc777b2e099c08b785aae925b0c5b8296c",
+      "review_contract_revision": "docs/TRANSLATION.md@6ed4b4cc777b2e099c08b785aae925b0c5b8296c",
+      "reviewer_session_id": "auto-297fd08ee43d-reviewer-fb0e0822",
+      "reviewed_at": "2026-11-22T14:59:07Z",
+      "state_revision": "fb640f701f032b56e2d7cdbfe378a874b1474c13e7b8da783ac0a4c8e12bd353",
+      "review_commit": "338aedf67508c91c95637849493eb07eb015bd28",
+      "correction_round": 3,
+      "supersedes_record_id": "cddecd12939c484caa4f5cf141b0bead",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "meaning-1-recheck-2",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Resolved: the corrected passage clearly attributes «Фи!» to the critic whenever the young man speaks, preserving the exchange.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "whenever the young man made any remark, he always answered ‘Pooh!’",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "когда молодой человек что-нибудь говорил, критик отвечал: «Фи!»",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "cddecd12939c484caa4f5cf141b0bead",
+              "finding_id": "meaning-1-recheck"
+            }
+          },
+          {
+            "id": "terminology-1-recheck-2",
+            "category": "terminology",
+            "severity": "major",
+            "detail": "This passage now consistently uses masculine «Зеленушка», but the supplied glossary still maps “Linnet” to «Коноплянка» and marks the character female. Reconcile the glossary entry with the established male-character rendering; do not alter this corrected passage to force the conflicting entry.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“Well, that is the end,” said the Linnet.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Ну, вот и всё», — сказал Зеленушка.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "cddecd12939c484caa4f5cf141b0bead",
+              "finding_id": "terminology-1-recheck"
+            }
+          },
+          {
+            "id": "linnet-102-recheck",
+            "category": "terminology",
+            "severity": "major",
+            "detail": "This occurrence now uses the same masculine «Зеленушка» rendering, but the supplied “Linnet” glossary entry still conflicts with that rendering and the character’s established gender. Reconcile the glossary rather than reverting the corrected text.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“Oh! I really don’t know,” replied the Linnet; “and I am sure that I don’t care.”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Ой, право, не знаю, — ответил Зеленушка. — Да мне и дела нет».",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "cddecd12939c484caa4f5cf141b0bead",
+              "finding_id": "linnet-102"
+            }
           }
         ]
       },
