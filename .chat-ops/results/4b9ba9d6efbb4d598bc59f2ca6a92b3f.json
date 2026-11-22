@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "request_id": "4b9ba9d6efbb4d598bc59f2ca6a92b3f",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "374dbcf151abc5770c036b4328edf2bfaf915f0f6f47cfe6022d30844f4edab4",
+    "record": {
+      "correction_round": 0,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": []
+      },
+      "record_id": "0a56c00d6a664a2dbf3e678944aba20f",
+      "review_commit": "b65b303cf3f208ee4e444e6d4f6063d9114736bf",
+      "review_contract_revision": "docs/TRANSLATION.md@789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
+      "reviewed_at": "2026-11-22T19:33:33Z",
+      "reviewer_session_id": "chatops-pizza-reviewer-20261122-02",
+      "sequence": 5,
+      "source_sha256": "57cf46c49921c1da0b55e0baf8fb93c92499cbff30883927fffde15a2d6a8442",
+      "state_revision": "0e8a8552027414eab628d698935818a9191fe40c47307f2278335cde26772909",
+      "supersedes_record_id": null,
+      "translation_sha256": "77763814d57fa6bee67a7e205984f5cf520abfe2910a8b7e9770a53651d4384c",
+      "unit_id": "chapter-000018",
+      "workflow_revision": "789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07"
+    }
+  },
+  "error": null
+}
