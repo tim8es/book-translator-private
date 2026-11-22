@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "request_id": "d0f0ee7ce3ee4d899e0bd5b29a8e6c1b",
+  "book_slug": "alligator-bites-never-heal",
+  "workflow_revision": "76604c82cc4345699de9ae5d97bc75e2443e8cb5",
+  "operation": "review-record",
+  "chapter": 11,
+  "session_id": "chatgpt-alligator-20261122-r21",
+  "outcome": "PASS",
+  "quality_report": {
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "severity": "minor",
+        "detail": "Block 000406: excess italics removed; the need and craving remain explicit in unaccented Russian, as in the source.",
+        "resolved": true
+      },
+      {
+        "severity": "minor",
+        "detail": "Block 000420: both emphatic beats restored in Russian (*сам* and *почти два часа*), with the sunscreen reminder's meaning intact.",
+        "resolved": true
+      },
+      {
+        "severity": "major",
+        "detail": "Block 000430: corrected text now means submerging slightly deeper, not drowning; the entire underwater exchange and Shane diving in are retained.",
+        "resolved": true
+      }
+    ]
+  },
+  "source_sha256": "d3a2b49183d0c385760d0e7f24372b3c6a2b0ca00430c925b82951a2985063e5",
+  "translation_sha256": "c11ed2f109da58b6093e1d6ecc43b74f19c7c1275c216accb3f6828e79af159f",
+  "claim_sha256": "ab704b24d4d1dd744caca36249cd456febe9429c781525f3b2b09c2d44dbd6a8"
+}
