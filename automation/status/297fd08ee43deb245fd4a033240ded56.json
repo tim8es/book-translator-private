@@ -3,7 +3,7 @@
   "job_id": "297fd08ee43deb245fd4a033240ded56",
   "book_slug": "the-happy-prince-and-other-tales",
   "state": "running",
-  "phase": "claimed",
+  "phase": "model-call-reserved",
   "failures": 0,
   "correction_rounds": {
     "chapter-000001": 3,
@@ -14,7 +14,7 @@
   },
   "workflow_revision": "6ed4b4cc777b2e099c08b785aae925b0c5b8296c",
   "source_sha256": "33ba5a6a0441c9af8f63ae495cab0680e3b8baf413c382dd3d6a8ef8a2aecec9",
-  "updated_at": "2026-11-22T16:55:01.891232+00:00",
+  "updated_at": "2026-11-22T16:55:05.128827+00:00",
   "queue_snapshot": {
     "extracted": 0,
     "reviewed": 1,
@@ -29,21 +29,22 @@
     "unit_id": "chapter-000005"
   },
   "structural_helper_revision": "4c584fe5534871cd05aa851d9b7bdbfa696d0edd",
-  "model_calls_started": 71,
+  "model_calls_started": 72,
   "prompt_context": {
-    "role": "reviewer",
+    "role": "corrector",
     "workflow_revision": "6ed4b4cc777b2e099c08b785aae925b0c5b8296c",
     "loaded_contracts": [
       "AGENTS.md",
       "docs/TRANSLATION.md",
-      "docs/REVIEWER.md"
+      "docs/TRANSLATOR.md"
     ],
     "glossary_sha256": "87b40b25b0ff2848855267c46da98157481da075d047c4cd67165a28f3414004",
     "style_guide_sha256": "eeb3e2c12f4e684bad2007ac1e9e1cb44b9fafe7f05420a254e93542b6e89589",
-    "system_chars": 29562,
-    "user_chars": 78452,
-    "review_context": "independent_session",
-    "schema_repair": "review-report-validation"
+    "system_chars": 20959,
+    "user_chars": 13244,
+    "correction_mode": "bounded-review-patches",
+    "batch_finding_count": 1,
+    "history_strategy": "replan_anchored_clause"
   },
   "provider_call_metric": {
     "unit_id": "chapter-000005",
@@ -413,9 +414,9 @@
   "correction_extensions": {},
   "correction_finding_triage": {
     "unit_id": "chapter-000005",
-    "review_record_id": "d7065b18a0774a78b50dff07e97ef791",
+    "review_record_id": "3606b8e474d24ef3bf79a26a2041ad13",
     "counts": {
-      "required": 10,
+      "required": 7,
       "adjudicate": 0,
       "review_required": 0
     }
@@ -575,13 +576,13 @@
   "adaptive_correction_budget": {
     "schema_version": 1,
     "group_size": 1,
-    "max_calls_per_checkpoint": 2,
-    "pending_count": 1,
-    "risk_class": "mixed",
-    "lower_bound_remaining_calls": 1,
+    "max_calls_per_checkpoint": 1,
+    "pending_count": 7,
+    "risk_class": "high",
+    "lower_bound_remaining_calls": 3,
     "current_selection_size": 1,
     "unit_id": "chapter-000005",
-    "review_record_id": "d7065b18a0774a78b50dff07e97ef791"
+    "review_record_id": "3606b8e474d24ef3bf79a26a2041ad13"
   },
   "recoveries": [
     {
@@ -594,19 +595,20 @@
   "correction_feedback": {
     "schema_version": 1,
     "unit_id": "chapter-000005",
-    "review_record_id": "d7065b18a0774a78b50dff07e97ef791",
-    "translation_sha256": "add46ecab62955751c495e47bb831d9a1e7c0eb5e0d6c9bfb9a0aa862fb5ea1e",
-    "strategy": "focused_patch",
-    "prior_distinct_rejected_reviews": 1,
-    "recurring_anchored_findings": 0,
+    "review_record_id": "3606b8e474d24ef3bf79a26a2041ad13",
+    "translation_sha256": "4df36ba87f97621c4d63484ed8989a5338be7ab7e54a7f985bd35f7d52ad18c3",
+    "strategy": "replan_anchored_clause",
+    "prior_distinct_rejected_reviews": 2,
+    "recurring_anchored_findings": 1,
     "nonimproving_reviews": false,
     "no_effect_attempts": 0,
     "selected_categories": {
-      "structure": 1
+      "meaning": 1
     },
     "severity_scores_old_to_new": [
       8,
-      16
+      16,
+      13
     ]
   },
   "last_review_failure": {
