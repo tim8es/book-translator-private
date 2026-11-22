@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 208,
+  "next_sequence": 209,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -20617,6 +20617,33 @@
       "review_commit": "98903757fa7085a4a4aba63abf0bace7e7537434",
       "correction_round": 1,
       "supersedes_record_id": "12fda15d55684c77a4f8dbaff2d2844c",
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": []
+      }
+    },
+    {
+      "record_id": "7f5dfafde0cf414492e8306f8163721f",
+      "sequence": 208,
+      "unit_id": "chapter-000035",
+      "outcome": "PASS",
+      "source_sha256": "48bafc32635bd6a9289e000b116cc29ac3155145824fdff19c2d0e89fee94fc7",
+      "translation_sha256": "d40efbe5c03d03a7a8c38d3396d68badae8467d0dc883897249d607674780ea8",
+      "workflow_revision": "8bb30227adc4bb921429611e12a0af803c9b6487",
+      "review_contract_revision": "docs/TRANSLATION.md@8bb30227adc4bb921429611e12a0af803c9b6487",
+      "reviewer_session_id": "chatgpt-20261122-sayit-ch35-reviewer",
+      "reviewed_at": "2026-11-22T13:06:32Z",
+      "state_revision": "6fdd38b4393c33581251f9dd110ab5fc7b6e82a6986acb2ceb67e0b9431ab2fa",
+      "review_commit": "057c15c39ecafd9573393bd985cd2b4ddeb493e1",
+      "correction_round": 2,
+      "supersedes_record_id": "99039f21624f453ca5bcf43ce60e2835",
       "quality_report": {
         "context": "bounded_context",
         "checks": {
