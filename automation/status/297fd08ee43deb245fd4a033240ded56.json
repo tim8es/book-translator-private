@@ -11,7 +11,7 @@
   },
   "workflow_revision": "6ed4b4cc777b2e099c08b785aae925b0c5b8296c",
   "source_sha256": "33ba5a6a0441c9af8f63ae495cab0680e3b8baf413c382dd3d6a8ef8a2aecec9",
-  "updated_at": "2026-11-22T14:00:26.034373+00:00",
+  "updated_at": "2026-11-22T14:00:27.385505+00:00",
   "queue_snapshot": {
     "extracted": 3,
     "reviewed": 0,
@@ -425,15 +425,41 @@
       "patch_sha256": "f17980855e21bbcf3f878333f496c50dd7e40bda46aea69a5199b09b3b147236",
       "reason": "new-duplicated-phrase",
       "at": "2026-11-22T14:00:26.034350+00:00"
+    },
+    {
+      "unit_id": "chapter-000002",
+      "review_record_id": "f99662bbf30f4f98826649d56f1716f7",
+      "finding_id": "recheck-4-v2",
+      "patch_sha256": "452af44331da1a4428535e33e214f5b6bc737e2ac1d773139a14c6f928ddec0f",
+      "reason": "new-duplicated-phrase",
+      "at": "2026-11-22T14:00:27.385479+00:00"
     }
   ],
   "last_correction_regression": {
     "unit_id": "chapter-000002",
-    "finding_id": "recheck-3-v2",
+    "finding_id": "recheck-4-v2",
     "reason": "new-duplicated-phrase",
     "evidence": {
-      "count": 1,
+      "count": 5,
       "examples": [
+        {
+          "tokens": 12,
+          "previous": 1,
+          "candidate": 2,
+          "adjacent": false
+        },
+        {
+          "tokens": 12,
+          "previous": 1,
+          "candidate": 2,
+          "adjacent": false
+        },
+        {
+          "tokens": 12,
+          "previous": 1,
+          "candidate": 2,
+          "adjacent": false
+        },
         {
           "tokens": 12,
           "previous": 1,
