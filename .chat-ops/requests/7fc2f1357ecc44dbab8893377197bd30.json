@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "request_id": "7fc2f1357ecc44dbab8893377197bd30",
+  "book_slug": "pizza-with-pineapples-itislikethis-motorcycling-rpf",
+  "workflow_revision": "789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
+  "operation": "review-record",
+  "chapter": 8,
+  "session_id": "chatops-pizza-reviewer-20261123-11",
+  "outcome": "PASS",
+  "quality_report": {
+    "evidence_version": 2,
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "id": "voice-003-resolved",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Author note retains enthusiasm without unsupported grammatical gender in Russian.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "I'm so happy you are enjoying this story!",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Как же здорово, что вам нравится эта история!",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "5d26e7c3a7c54acab92ac67400509685",
+          "finding_id": "voice-003"
+        }
+      },
+      {
+        "id": "style-019-resolved",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Idiomatically restores Marc's recognition on the visible parts of his face under the bandage.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "the way the rest of his expression lit up in recognition was unmistakable",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "по тому, как просветлело лицо Марка, было ясно: он узнал Алекса",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "5d26e7c3a7c54acab92ac67400509685",
+          "finding_id": "style-019"
+        }
+      },
+      {
+        "id": "meaning-067-resolved",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Restores Alex's singular, intentionally nonrevealing reply to Marc.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "No worried, I was already done",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Не переживай, я уже закончил",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "5d26e7c3a7c54acab92ac67400509685",
+          "finding_id": "meaning-067"
+        }
+      }
+    ]
+  },
+  "source_sha256": "0d7349626c3e2649517e0a3acc8a1c143f0fcd5694a70f2334eab9f7a443fdba",
+  "translation_sha256": "e2d2e083ee64943e86ab23c3d52ed0fab61fe158233c45575616b93d72ff44cf",
+  "claim_sha256": "f4626de4566109f015ad3ea0ee89bfe08c8b9417dd1e5a063d39640ed23ba650"
+}
