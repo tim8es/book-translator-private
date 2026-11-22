@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "request_id": "3c0d76d587a948bead41d9766c988c03",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "5068875c6061245c8f0e9131eb04d6e91528259c56a41c9760bd7f924bf0172e",
+    "record": {
+      "correction_round": 1,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "findings": [
+          {
+            "detail": "Block 000076: the Russian now depicts Shane crumpling/falling onto the ice without inventing unconsciousness; source modality is preserved.",
+            "resolved": true,
+            "severity": "major"
+          },
+          {
+            "detail": "Block 000072: restored the crude border-official sexual-bribery exaggeration as idiomatic Russian, without an ungrammatical body-part construction.",
+            "resolved": true,
+            "severity": "major"
+          },
+          {
+            "detail": "Block 000113: the beads are explicitly identified as Ilya's gift to Shane, resolving pronoun ambiguity.",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "Block 000171: 'prospect cup' now denotes a prospects' event ('Кубок молодых талантов'), rather than a street-avenues false friend.",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "Block 000082: the figurative crash/dashcam judge and jury is now grammatical without adding an actual accident.",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "Block 000046: 'a hit to the head' accurately reads as a blow to the head, without wrongly implying a puck.",
+            "resolved": true,
+            "severity": "minor"
+          }
+        ]
+      },
+      "record_id": "d3c00f7bc79341b78eaa502726bd6bf2",
+      "review_commit": "26c6fe7647c2debd0b5a799b1133e7d118be648f",
+      "review_contract_revision": "docs/TRANSLATION.md@76604c82cc4345699de9ae5d97bc75e2443e8cb5",
+      "reviewed_at": "2026-11-22T19:09:03Z",
+      "reviewer_session_id": "chatgpt-alligator-20261122-r12",
+      "sequence": 13,
+      "source_sha256": "6e3f0e0402acaf0d35a43a0b1f5fe626297ebb1e0bd86ad2b10231f7d9460732",
+      "state_revision": "67a6b1dd92272fdba6a28d23232ba09315990635160e26af66aecb62b6004b74",
+      "supersedes_record_id": "8bc8d0ce00a3452faf49255b29f560ae",
+      "translation_sha256": "81fffb6d00ec81a00c36d65a9d3fb9ccf805f1cac566f7392033b593c4bcb34d",
+      "unit_id": "chapter-000007",
+      "workflow_revision": "76604c82cc4345699de9ae5d97bc75e2443e8cb5"
+    }
+  },
+  "error": null
+}

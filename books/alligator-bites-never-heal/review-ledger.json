@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "alligator-bites-never-heal",
-  "next_sequence": 13,
+  "next_sequence": 14,
   "records": [
     {
       "record_id": "be08d5c17b934579b154d272e933435c",
@@ -558,6 +558,64 @@
             "severity": "minor",
             "detail": "Block 000046: 'You took a hit to the head' means a blow to Shane's head. Russian 'Тебе попали по голове' is unnatural and may imply a puck; render 'Ты получил удар по голове' or equivalent.",
             "resolved": false
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "d3c00f7bc79341b78eaa502726bd6bf2",
+      "sequence": 13,
+      "unit_id": "chapter-000007",
+      "outcome": "PASS",
+      "source_sha256": "6e3f0e0402acaf0d35a43a0b1f5fe626297ebb1e0bd86ad2b10231f7d9460732",
+      "translation_sha256": "81fffb6d00ec81a00c36d65a9d3fb9ccf805f1cac566f7392033b593c4bcb34d",
+      "workflow_revision": "76604c82cc4345699de9ae5d97bc75e2443e8cb5",
+      "review_contract_revision": "docs/TRANSLATION.md@76604c82cc4345699de9ae5d97bc75e2443e8cb5",
+      "reviewer_session_id": "chatgpt-alligator-20261122-r12",
+      "reviewed_at": "2026-11-22T19:09:03Z",
+      "state_revision": "67a6b1dd92272fdba6a28d23232ba09315990635160e26af66aecb62b6004b74",
+      "review_commit": "26c6fe7647c2debd0b5a799b1133e7d118be648f",
+      "correction_round": 1,
+      "supersedes_record_id": "8bc8d0ce00a3452faf49255b29f560ae",
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "major",
+            "detail": "Block 000076: the Russian now depicts Shane crumpling/falling onto the ice without inventing unconsciousness; source modality is preserved.",
+            "resolved": true
+          },
+          {
+            "severity": "major",
+            "detail": "Block 000072: restored the crude border-official sexual-bribery exaggeration as idiomatic Russian, without an ungrammatical body-part construction.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Block 000113: the beads are explicitly identified as Ilya's gift to Shane, resolving pronoun ambiguity.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Block 000171: 'prospect cup' now denotes a prospects' event ('Кубок молодых талантов'), rather than a street-avenues false friend.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Block 000082: the figurative crash/dashcam judge and jury is now grammatical without adding an actual accident.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Block 000046: 'a hit to the head' accurately reads as a blow to the head, without wrongly implying a puck.",
+            "resolved": true
           }
         ]
       }
