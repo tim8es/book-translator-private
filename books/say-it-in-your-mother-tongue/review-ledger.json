@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 224,
+  "next_sequence": 225,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -21225,6 +21225,49 @@
           {
             "severity": "minor",
             "detail": "Restored explicit italics and code-switching in blocks 9, 34, 38, 43, 59, 66 and 72.",
+            "resolved": true
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "65c393669a444c41a4e911ca6f8fbe19",
+      "sequence": 224,
+      "unit_id": "chapter-000052",
+      "outcome": "PASS",
+      "source_sha256": "a12c6f2e5c156de816bdc7cb1a790dc3e3d0c63048959e2a82521f05c23ec05a",
+      "translation_sha256": "5cdc163799a0b4728e23c0370ab1effbd4ccaaf3b17b2e3aa3c2e911245a6aa0",
+      "workflow_revision": "8bb30227adc4bb921429611e12a0af803c9b6487",
+      "review_contract_revision": "docs/TRANSLATION.md@8bb30227adc4bb921429611e12a0af803c9b6487",
+      "reviewer_session_id": "chatgpt-20261122-sayit-ch52-reviewer",
+      "reviewed_at": "2026-11-22T14:48:49Z",
+      "state_revision": "b182cdd7e40e5bda69cc4d5e3db9097652fe4bc329b54eb3d3709d648eed6330",
+      "review_commit": "bd7d1deda4b5508515a2768c1439107d95840090",
+      "correction_round": 1,
+      "supersedes_record_id": "803843bc30884d0bbba6a83647ac2c77",
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Block 4: restored note link text and punctuation to match the source's end-of-chapter reference.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Block 48: corrected 'Packing' to explicitly refer to packing clothes before departure.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Block 55: removed bold formatting erroneously added to LN's sender name inside the inline marker.",
             "resolved": true
           }
         ]

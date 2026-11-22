@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "request_id": "20261122171752000000000000000005",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "00d954e6095e8ccb3f116feb2de2a3cf0fc3750f7ba138817d54cfb5d2426ed0",
+    "record": {
+      "correction_round": 1,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "findings": [
+          {
+            "detail": "Block 4: restored note link text and punctuation to match the source's end-of-chapter reference.",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "Block 48: corrected 'Packing' to explicitly refer to packing clothes before departure.",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "Block 55: removed bold formatting erroneously added to LN's sender name inside the inline marker.",
+            "resolved": true,
+            "severity": "minor"
+          }
+        ]
+      },
+      "record_id": "65c393669a444c41a4e911ca6f8fbe19",
+      "review_commit": "bd7d1deda4b5508515a2768c1439107d95840090",
+      "review_contract_revision": "docs/TRANSLATION.md@8bb30227adc4bb921429611e12a0af803c9b6487",
+      "reviewed_at": "2026-11-22T14:48:49Z",
+      "reviewer_session_id": "chatgpt-20261122-sayit-ch52-reviewer",
+      "sequence": 224,
+      "source_sha256": "a12c6f2e5c156de816bdc7cb1a790dc3e3d0c63048959e2a82521f05c23ec05a",
+      "state_revision": "b182cdd7e40e5bda69cc4d5e3db9097652fe4bc329b54eb3d3709d648eed6330",
+      "supersedes_record_id": "803843bc30884d0bbba6a83647ac2c77",
+      "translation_sha256": "5cdc163799a0b4728e23c0370ab1effbd4ccaaf3b17b2e3aa3c2e911245a6aa0",
+      "unit_id": "chapter-000052",
+      "workflow_revision": "8bb30227adc4bb921429611e12a0af803c9b6487"
+    }
+  },
+  "error": null
+}
