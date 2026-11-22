@@ -1,8 +1,13 @@
 name: Pi book translation (manual pilot)
 run-name: Pi book translation ${{ inputs.job_id || 'safe probe' }}
 
-# Explicit manual entrypoint. No cron, push trigger, or book-specific workflow.
+# Pi is opt-in. A committed, strictly validated request starts one existing Pi job.
+# No cron or book-specific workflow; the normal continuation flag drives later steps.
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'automation/pi-requests/*.json'
   # PR only verifies installation and the offline adapter; never calls models.
   pull_request:
     paths:
@@ -32,6 +37,41 @@ env:
   OMNIROUTE_MODEL_CALL_LIMIT: "1500"
 
 jobs:
+  kickoff:
+    if: ${{ github.event_name == 'push' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    permissions:
+      contents: read
+      actions: write
+    steps:
+      - name: Checkout explicit Pi requests
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Dispatch only verified Pi-owned requests
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BEFORE: ${{ github.event.before }}
+          AFTER: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          mapfile -d '' requests < <(git diff --name-only -z "$BEFORE" "$AFTER" -- 'automation/pi-requests/*.json')
+          for request in "${requests[@]}"; do
+            [[ "$request" =~ ^automation/pi-requests/[0-9a-f]{32}\\.json$ ]] || continue
+            [[ -f "$request" ]] || continue
+            job_id="${request##*/}"
+            job_id="${job_id%.json}"
+            jq -e --arg id "$job_id" 'type == "object" and (.job_id == $id) and (.continue_automatically == true) and ((keys | sort) == ["continue_automatically", "job_id"])' "$request" >/dev/null
+            jq -e --arg id "$job_id" '.schema_version == 1 and .executor == "pi" and .job_id == $id' "intake/auto/$job_id/executor.json" >/dev/null
+            jq -e --arg id "$job_id" '.schema_version == 1 and .state == "running" and .job_id == $id' "automation/status/$job_id.json" >/dev/null
+            echo "Dispatching verified Pi job $job_id with canonical automatic continuation"
+            gh workflow run pi-book-translation.yml --ref main -f probe_only=false -f job_id="$job_id" -f continue_automatically=true
+          done
+
   probe:
     if: ${{ github.event_name == 'pull_request' || inputs.probe_only }}
     runs-on: ubuntu-latest
