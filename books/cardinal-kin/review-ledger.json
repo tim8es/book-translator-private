@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "cardinal-kin",
-  "next_sequence": 45,
+  "next_sequence": 46,
   "records": [
     {
       "record_id": "75dfa72e2b6148208fd5343b6e384999",
@@ -9147,6 +9147,147 @@
               "record_id": "f8497690b0374c85a2fbbf11dbbaf971",
               "finding_id": "ending-grammar-315"
             }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "4c51ec72850d4fb589507326315cfbb4",
+      "sequence": 45,
+      "unit_id": "chapter-000014",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "addf3d3d3292bea5d11660d7724acca476b39fd274472ab30826180c7235810e",
+      "translation_sha256": "8d1119aca010929097c0b13a3fc2e1a7c91646a2f694b52014306246856d85ef",
+      "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "review_contract_revision": "docs/TRANSLATION.md@a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "reviewer_session_id": "chat-20261122-cardinal-review14-a",
+      "reviewed_at": "2026-11-22T18:45:06Z",
+      "state_revision": "d41efc3be252366f9e28e4f78789d445594301c468146482e0c22f14b5a705cd",
+      "review_commit": "c592603fb2124a0bb04d810c082ca957e85aafc3",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "ch14-061-mention",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Дрейк даже не упомянул о вегетарианстве, а перевод говорит, будто он не спросил Дэмиана. Восстановить отсутствие упоминания.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "without even  *mentioning* it to me",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "даже ни разу *не спросив* меня",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "ch14-064-russian",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Почему его интересуем именно мы» неестественно; источник спрашивает, почему он собирает информацию именно об их семье.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "why he’s getting it about us specifically",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "почему его интересуем именно мы",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "ch14-074-intensity",
+            "category": "style",
+            "severity": "minor",
+            "detail": "У автора Дрейк немного подчёркивает интеллект; «выставляет его напоказ» чрезмерно демонстративно.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "if anything he leans into a bit",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "даже выставляет его напоказ",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "ch14-126-table",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Проходящий мимо столик» — неудачная калька; передать близость столика с напитками естественно.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "off a passing refreshment table",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "у проходящего мимо них столика с напитками",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "ch14-159-butler",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Тим обращается к Дэмиану на «ты»; «ваш дворецкий» нарушает устоявшееся обращение.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Al- your butler",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Аль… ваш дворецкий",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "ch14-174-eyes",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Ярко-синие глаза принадлежат Тиму, но перевод после «смотрит ему в глаза» может приписать описание Дэмиану.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Tim’s eyes focus on him properly for the first time since the conference center, bright blue and brimming with intensity.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Тим по-настоящему смотрит ему в глаза — ярко-синие, полные напряжённой силы",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "ch14-176-manor",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Тим убедился, что Дэмиан укрылся внутри поместья, а не просто находится за запертыми воротами.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Damian is safely locked away in Wayne Manor",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Дэмиан благополучно находится за запертыми воротами поместья Уэйнов",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       }
