@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "request_id": "c426ac6f27b845f69e1a7e2d3b8a4224",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "abfa0ced0f7a261eaa0f8b1e6fdbecad33b95338936dd04b4deaa5f92ebd96f6",
+    "record": {
+      "correction_round": 5,
+      "outcome": "CORRECTIONS_REQUIRED",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "omission",
+            "detail": "The phrasing «судя по рассказам братьев Дэмиана» now restores the source attribution to his brothers.",
+            "id": "attribution-restored-20261122",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "recheck-attribution-1",
+              "record_id": "6b1303ae5c2f46a2adae92607e7e7037"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "from what his brothers have told him"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "судя по рассказам братьев Дэмиана"
+            }
+          },
+          {
+            "category": "structure",
+            "detail": "The passage about Drake is now grammatical and includes the CEO role, the privileged-background characterization, and the source's wealthy-social-stratum comparison.",
+            "id": "structure-restored-20261122",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "recheck-structure-1",
+              "record_id": "6b1303ae5c2f46a2adae92607e7e7037"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "He is CEO of Drake Industries, an obvious ‘nepo’ baby"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Он — генеральный директор «Дрейк Индастриз», явный «непо-бейби»"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "«Little falls under that category» refers to the tiny number of things Jason would not do, not to «мелочи»; preserve Damian's sarcastic response to the reckless brother.",
+            "id": "sarcasm-16-20261122",
+            "resolved": false,
+            "resolves": null,
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Little falls under that category"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Мелочи тоже подпадают под эту категорию"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "«If he has any hope of being successful» is specifically about achieving success in future business, rather than vaguely hoping for something. Translate the success explicitly.",
+            "id": "success-25-20261122",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "If he has any hope of being successful"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Если он хоть на что-то надеется в будущем"
+            }
+          }
+        ]
+      },
+      "record_id": "31f86f5216194de2b56a0b88a3a178ee",
+      "review_commit": "0b904b6735d6d38e4b1bfa9a3e111d9bbc7868d2",
+      "review_contract_revision": "docs/TRANSLATION.md@a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "reviewed_at": "2026-11-22T15:20:47Z",
+      "reviewer_session_id": "chat-20261122-cardinal-review-04",
+      "sequence": 28,
+      "source_sha256": "4d370415b6d8e2ff84f0bb4a5633e2dfff9069a3139d5383919c57cdfe737871",
+      "state_revision": "30063eb01863e998d57650bc048b11b5d48a980b5ea41bad7455ee12b2739589",
+      "supersedes_record_id": "6b1303ae5c2f46a2adae92607e7e7037",
+      "translation_sha256": "9449321f9c6ab46ef8f12da9815e2dddc668ac5388be5ff160f180b60077557d",
+      "unit_id": "chapter-000004",
+      "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29"
+    }
+  },
+  "error": null
+}
