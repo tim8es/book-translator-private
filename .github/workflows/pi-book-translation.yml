@@ -32,7 +32,7 @@ on:
 env:
   # Reviewed immutable public executor commit. Does not change literary book pins
   # or the separate locked runtime used by the existing scheduled Auto.
-  PI_EXECUTOR_SHA: 52924180dabcf9e194762f2f7566849e12f7567d
+  PI_EXECUTOR_SHA: 76604c82cc4345699de9ae5d97bc75e2443e8cb5
   BOOK_TRANSLATOR_LLM_BACKEND: pi
   OMNIROUTE_MODEL_CALL_LIMIT: "1500"
 
@@ -219,6 +219,8 @@ jobs:
           BOOK_TRANSLATOR_ADAPTIVE_BUDGET: "on"
           BOOK_TRANSLATOR_COHERENT_BATCHES: "on"
           BOOK_TRANSLATOR_CONTINUE_CORRECTIONS: "on"
+          # Opt-in source/hash-bound feedback and real time-to-PASS metrics.
+          BOOK_TRANSLATOR_CORRECTION_FEEDBACK: "on"
           OMNIROUTE_API_KEY: ${{ secrets.OMNIROUTE_API_KEY }}
           OMNIROUTE_BASE_URL: ${{ vars.OMNIROUTE_BASE_URL }}
           OMNIROUTE_TRANSLATOR_MODEL: ${{ vars.OMNIROUTE_TRANSLATOR_MODEL }}

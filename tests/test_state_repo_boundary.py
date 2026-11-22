@@ -66,6 +66,7 @@ class StateOnlyDeploymentTests(unittest.TestCase):
             "BOOK_TRANSLATOR_ADAPTIVE_BUDGET",
             "BOOK_TRANSLATOR_COHERENT_BATCHES",
             "BOOK_TRANSLATOR_CONTINUE_CORRECTIONS",
+            "BOOK_TRANSLATOR_CORRECTION_FEEDBACK",
         ):
             self.assertIn(f'{variable}: "on"', pi)
         self.assertIn("-f executor=pi", pi)
