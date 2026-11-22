@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "the-happy-prince-and-other-tales",
-  "next_sequence": 13,
+  "next_sequence": 14,
   "records": [
     {
       "record_id": "454ca30d1d7d42ae95dacf0e1de03ba9",
@@ -1718,6 +1718,131 @@
             },
             "translation_anchor": {
               "quote": "«А что стало с Мельником?» — спросила Водяная Крыса.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "51ae310871b0f58a6a106464514beb5980b2c4ba5e544b46e969a33d53b23a3d",
+        "style_guide": "eeb3e2c12f4e684bad2007ac1e9e1cb44b9fafe7f05420a254e93542b6e89589"
+      }
+    },
+    {
+      "record_id": "cddecd12939c484caa4f5cf141b0bead",
+      "sequence": 13,
+      "unit_id": "chapter-000004",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "64529feb86ea28b4de27d1af64e61fd39dde12b629cce78995b11ae4f5942dd3",
+      "translation_sha256": "58ed402fc0ec9b76a4169f06927bd2ddb63e1d8d2f0484ccfd15ec4cf1b7d69d",
+      "workflow_revision": "6ed4b4cc777b2e099c08b785aae925b0c5b8296c",
+      "review_contract_revision": "docs/TRANSLATION.md@6ed4b4cc777b2e099c08b785aae925b0c5b8296c",
+      "reviewer_session_id": "auto-297fd08ee43d-reviewer-68b7ee7c",
+      "reviewed_at": "2026-11-22T14:55:24Z",
+      "state_revision": "03e2a880ef447dcc99ba7b74d245188110a10c0b1a643a0e04e127f0f5d71859",
+      "review_commit": "0eb6e0c579729dc04a632c0225f5ef3d69bcdc6f",
+      "correction_round": 2,
+      "supersedes_record_id": "19a3c1eac6134f38a7aff6959c92c2a2",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "meaning-1-recheck",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "The correction does not preserve the exchange: «и что-нибудь говорил» has no clear attribution, and the critic’s answer, “Pooh!”, is omitted. Restore the meaning that whenever the young man spoke, the critic answered “Pooh!”",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "whenever the young man made any remark, he always answered ‘Pooh!’",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "и что-нибудь говорил Но прошу вас, продолжайте рассказ.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "19a3c1eac6134f38a7aff6959c92c2a2",
+              "finding_id": "meaning-1"
+            }
+          },
+          {
+            "id": "terminology-1-recheck",
+            "category": "terminology",
+            "severity": "major",
+            "detail": "The Linnet is still called «Коноплянка» and referred to with feminine agreement here, despite being the male character previously established as the Green Linnet/«Зеленушка» (and correctly rendered in the changed passage about annoying the Water-rat). The current glossary entry for Linnet also conflicts with that characterization. Reconcile the glossary and use a consistent masculine rendering.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“Well, that is the end,” said the Linnet.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Ну, вот и всё», — сказала Коноплянка.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "19a3c1eac6134f38a7aff6959c92c2a2",
+              "finding_id": "terminology-1"
+            }
+          },
+          {
+            "id": "referent-1-recheck",
+            "category": "referent",
+            "severity": "minor",
+            "detail": "The Water-rat is correctly rendered with the established masculine form and agreement in this passage.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "“Well?” said the Water-rat, after a long pause.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Ну?» — спросил Водяной Крыс после долгого молчания.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "19a3c1eac6134f38a7aff6959c92c2a2",
+              "finding_id": "referent-1"
+            }
+          },
+          {
+            "id": "referent-2-recheck",
+            "category": "referent",
+            "severity": "minor",
+            "detail": "The Water-rat is correctly rendered with the established masculine form and agreement in this passage.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "“But what became of the Miller?” asked the Water-rat.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«А что стало с Мельником?» — спросил Водяной Крыс.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "19a3c1eac6134f38a7aff6959c92c2a2",
+              "finding_id": "referent-2"
+            }
+          },
+          {
+            "id": "linnet-102",
+            "category": "terminology",
+            "severity": "major",
+            "detail": "This is another occurrence of the same male Linnet, but he is again called «Коноплянка» and referred to with feminine agreement. Use the consistent masculine rendering and resolve the conflicting glossary entry.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“Oh! I really don’t know,” replied the Linnet; “and I am sure that I don’t care.”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Ой, право, не знаю, — ответила Коноплянка. — Да мне и дела нет».",
               "occurrence": 0
             },
             "resolves": null
