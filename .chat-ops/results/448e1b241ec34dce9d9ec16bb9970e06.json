@@ -1,0 +1,172 @@
+{
+  "schema_version": 1,
+  "request_id": "448e1b241ec34dce9d9ec16bb9970e06",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "b626341775341ca21bb4da303fe3af283a6bc0774bd04130daf7623d4975f03d",
+    "record": {
+      "correction_round": 1,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "meaning",
+            "detail": "Отсутствие упоминания переведено без подмены на отсутствие вопроса.",
+            "id": "verified-01",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "ch14-061-mention",
+              "record_id": "4c51ec72850d4fb589507326315cfbb4"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "without even  *mentioning* it to me"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "даже словом *не обмолвившись* об этом со мной"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Вопрос о причинах сбора сведений о семье естественно сформулирован.",
+            "id": "verified-02",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "ch14-064-russian",
+              "record_id": "4c51ec72850d4fb589507326315cfbb4"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "why he’s getting it about us specifically"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "почему он собирает сведения именно о нас"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Сохранена сдержанная степень проявления интеллекта Дрейка.",
+            "id": "verified-03",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "ch14-074-intensity",
+              "record_id": "4c51ec72850d4fb589507326315cfbb4"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "if anything he leans into a bit"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "наоборот, слегка его подчёркивает"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Олицетворение проходящего столика устранено.",
+            "id": "verified-04",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "ch14-126-table",
+              "record_id": "4c51ec72850d4fb589507326315cfbb4"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "off a passing refreshment table"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "у столика с напитками, оказавшегося у них на пути"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Обращение к Дэмиану согласовано с диалогами на «ты».",
+            "id": "verified-05",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "ch14-159-butler",
+              "record_id": "4c51ec72850d4fb589507326315cfbb4"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Al- your butler"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Аль… твой дворецкий"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Описание явно отнесено к глазам Тима.",
+            "id": "verified-06",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "ch14-174-eyes",
+              "record_id": "4c51ec72850d4fb589507326315cfbb4"
+            },
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Tim’s eyes focus on him properly for the first time since the conference center, bright blue and brimming with intensity."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Тим по-настоящему встречается с ним взглядом. Его ярко-синие глаза полны напряжённой силы"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Восстановлено пребывание внутри поместья, не просто за воротами.",
+            "id": "verified-07",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "ch14-176-manor",
+              "record_id": "4c51ec72850d4fb589507326315cfbb4"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Damian is safely locked away in Wayne Manor"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Дэмиан благополучно укрылся в поместье Уэйнов"
+            }
+          }
+        ]
+      },
+      "record_id": "ecb6fe393f2f4376a9ac1c76bf062a2e",
+      "review_commit": "52a30fab5d46f8c14735ce2a1b1a1059b5e5b8af",
+      "review_contract_revision": "docs/TRANSLATION.md@a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "reviewed_at": "2026-11-22T18:49:57Z",
+      "reviewer_session_id": "chat-20261122-cardinal-review14-b",
+      "sequence": 46,
+      "source_sha256": "addf3d3d3292bea5d11660d7724acca476b39fd274472ab30826180c7235810e",
+      "state_revision": "2d5a4f87091615fa64ec8475c109c514d23f992067edf58931bfa20416483a6a",
+      "supersedes_record_id": "4c51ec72850d4fb589507326315cfbb4",
+      "translation_sha256": "c5065fcd77f2f59852fa5951127aac474e6136c55bbc28a7abc8aa26906f0ae0",
+      "unit_id": "chapter-000014",
+      "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29"
+    }
+  },
+  "error": null
+}
