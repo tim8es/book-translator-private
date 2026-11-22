@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 223,
+  "next_sequence": 224,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -21182,6 +21182,49 @@
           {
             "severity": "minor",
             "detail": "Block 46: restored italic emphasis on stuffed toy Bunny's name.",
+            "resolved": true
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "93248d20483c4eee8069f6a826ebe8d6",
+      "sequence": 223,
+      "unit_id": "chapter-000051",
+      "outcome": "PASS",
+      "source_sha256": "a11a7469cef998f9f05f10aee379ab75d999ab9d53112c16e08360cd36de7818",
+      "translation_sha256": "3ef32cd78a6e8e8820410ccf7127b4bce843855704aed33984ff0b94fb8bd707",
+      "workflow_revision": "8bb30227adc4bb921429611e12a0af803c9b6487",
+      "review_contract_revision": "docs/TRANSLATION.md@8bb30227adc4bb921429611e12a0af803c9b6487",
+      "reviewer_session_id": "chatgpt-20261122-sayit-ch51-reviewer",
+      "reviewed_at": "2026-11-22T14:46:29Z",
+      "state_revision": "d5a78d9097e356bb580fb28612834e3247e95fc9212e15d169a9dee8abfd939d",
+      "review_commit": "c2854c930cc37e2c6bc51f74e2655409cd441e34",
+      "correction_round": 2,
+      "supersedes_record_id": "fcdd025bb01f41b89e58a9d88850882d",
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Chapter title: used 'ведомый' to preserve the Top Gun wingman reference later in the chapter.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Block 6: removed ambiguous subject reference for Lawrence watching Lance.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Restored explicit italics and code-switching in blocks 9, 34, 38, 43, 59, 66 and 72.",
             "resolved": true
           }
         ]
