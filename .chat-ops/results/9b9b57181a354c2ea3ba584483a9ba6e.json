@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "request_id": "9b9b57181a354c2ea3ba584483a9ba6e",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "3d548239d7ccc551b9cf2a898b0cd92135d0b61467a81bebfc9abfd4ffb1a7bc",
+    "record": {
+      "correction_round": 1,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "referent",
+            "detail": "Восстановлено уточнение, что Дюк даёт девушке максимально возможный возраст; смысл условного оборота сохранён.",
+            "id": "recheck-ch11-age-generosity",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "ch11-age-generosity",
+              "record_id": "0a41f56787ab44b6b9209604572b70ef"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "maybe a college sophomore if he’s being generous"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "может, она на втором курсе колледжа, если дать ей побольше лет"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Восстановлено грубое злословие о семье и устранён грамматический сбой.",
+            "id": "recheck-ch11-family-insult",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "ch11-family-insult",
+              "record_id": "0a41f56787ab44b6b9209604572b70ef"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "hearing some nobody talk shit about his family always makes his blood boil"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "у него всегда закипает кровь, когда какое-то ничтожество поливает грязью его семью"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Томпсон теперь не замечает опасности, как и в метафоре исходника; направление образа сохранено.",
+            "id": "recheck-ch11-blood-in-water",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "ch11-blood-in-water",
+              "record_id": "0a41f56787ab44b6b9209604572b70ef"
+            },
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "seemingly completely unaware of the blood in the water"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "похоже, совершенно не замечая крови в воде"
+            }
+          }
+        ]
+      },
+      "record_id": "2b379eec17a54f8894d5ad13bd18ddf9",
+      "review_commit": "ad3ca87b457a9ce9d25e5bade591158cc23ea55c",
+      "review_contract_revision": "docs/TRANSLATION.md@a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "reviewed_at": "2026-11-22T17:26:42Z",
+      "reviewer_session_id": "chat-20261122-cardinal-review-ch11b",
+      "sequence": 40,
+      "source_sha256": "1bbda76e5671bc3bee4720f6399ba213ca4eda0a575b356d5d9f9de3456e41ae",
+      "state_revision": "6c9e113ba93c83e91a7146bd838a8c0fd0fd6378ff4cb0734ed2b68f990e55fe",
+      "supersedes_record_id": "0a41f56787ab44b6b9209604572b70ef",
+      "translation_sha256": "dedcf3d10f27408a55d270770e835ccab6219f8e80a3b75c6ae276bf7e6aba79",
+      "unit_id": "chapter-000011",
+      "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29"
+    }
+  },
+  "error": null
+}
