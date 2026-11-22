@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "pizza-with-pineapples-itislikethis-motorcycling-rpf",
-  "next_sequence": 22,
+  "next_sequence": 23,
   "records": [
     {
       "record_id": "e8060d96338440d8a139c674168abf15",
@@ -1957,6 +1957,130 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "75560e40cfb54dbeb791ddf02b184750",
+      "sequence": 22,
+      "unit_id": "chapter-000011",
+      "outcome": "PASS",
+      "source_sha256": "fdf626ca2729ea7d61434e8b38def688a7d95d711c1ce2254eb24e7390621a66",
+      "translation_sha256": "d8e4732ff2bc7b62245664ea8c486af002efa73f34cbb9a22ada084bee299ce9",
+      "workflow_revision": "789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
+      "review_contract_revision": "docs/TRANSLATION.md@789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
+      "reviewer_session_id": "chatops-pizza-rereview-20261123-11-17e841c0",
+      "reviewed_at": "2026-11-22T23:49:28Z",
+      "state_revision": "ae22b5e317b9b96986aa4c57d2a59bee17a9c48f17e5190e44d6262a65aedefb",
+      "review_commit": "78543886545ca5e77a78d28ff777963a00b81090",
+      "correction_round": 1,
+      "supersedes_record_id": "858c6e198a9d9df37fd57f3aeb5e6d08",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "meaning-039-resolved",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Restores that the other riders cannot compare with Marc and Vale, rather than reversing it.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "the rest of us can compare to Marc and Vale",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "мы, остальные, могли тягаться с Марком и Вале",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "858c6e198a9d9df37fd57f3aeb5e6d08",
+              "finding_id": "meaning-039"
+            }
+          },
+          {
+            "id": "addition-119-resolved",
+            "category": "addition",
+            "severity": "minor",
+            "detail": "Removes unmentioned milk; keeps cereal mixing as written.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "mixing up a bowl of late-night cereal",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "сосредоточенно помешивая хлопья в миске для позднего перекуса",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "858c6e198a9d9df37fd57f3aeb5e6d08",
+              "finding_id": "addition-119"
+            }
+          },
+          {
+            "id": "modality-163-resolved",
+            "category": "modality",
+            "severity": "minor",
+            "detail": "Restores advisory rather than falsely certain learning of boundaries.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "It is good for him to learn some boundaries, especially from you.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Хорошо бы ему научиться этому, особенно у тебя.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "858c6e198a9d9df37fd57f3aeb5e6d08",
+              "finding_id": "modality-163"
+            }
+          },
+          {
+            "id": "meaning-191-resolved",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Restores the context of Alex doing his personal best as a racer.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "You just have to be your best.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Тебе достаточно показать всё, на что ты способен.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "858c6e198a9d9df37fd57f3aeb5e6d08",
+              "finding_id": "meaning-191"
+            }
+          },
+          {
+            "id": "meaning-197-resolved",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Retains not caring about a person without escalating to romantic love.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "you would not care about me as a person if I sucked as a rider.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "тебе было бы безразлично, какой я человек, если бы я был плохим гонщиком.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "858c6e198a9d9df37fd57f3aeb5e6d08",
+              "finding_id": "meaning-197"
+            }
           }
         ]
       }
