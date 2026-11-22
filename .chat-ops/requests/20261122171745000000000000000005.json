@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "request_id": "20261122171745000000000000000005",
+  "book_slug": "say-it-in-your-mother-tongue",
+  "workflow_revision": "8bb30227adc4bb921429611e12a0af803c9b6487",
+  "operation": "review-record",
+  "chapter": 45,
+  "session_id": "chatgpt-20261122-sayit-ch45-reviewer",
+  "outcome": "PASS",
+  "quality_report": {
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "severity": "minor",
+        "detail": "Block 25: restored italic emphasis on 'just yet' in Checo's hesitation.",
+        "resolved": true
+      },
+      {
+        "severity": "minor",
+        "detail": "Block 26: preserved Dutch idiom in the code-switch while retaining Russian context for the idiomatic price expression.",
+        "resolved": true
+      },
+      {
+        "severity": "minor",
+        "detail": "Block 35: restored emphasis on forever.",
+        "resolved": true
+      }
+    ]
+  },
+  "source_sha256": "26c06cdfd4291e79a4d32bc4aa6c05c11b5c5badf62f6d5415faf153a128100a",
+  "translation_sha256": "bf3db8940ab844f12e1d6a320f74627e7cf83b98b9326080e7150fc9450cdf41",
+  "claim_sha256": "d1be6586097c0b8584e2b70e9c3a02e31f092f0e8852b4ffbe9d88c2bfcc4643"
+}
