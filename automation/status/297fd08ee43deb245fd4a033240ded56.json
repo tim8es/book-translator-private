@@ -11,7 +11,7 @@
   },
   "workflow_revision": "6ed4b4cc777b2e099c08b785aae925b0c5b8296c",
   "source_sha256": "33ba5a6a0441c9af8f63ae495cab0680e3b8baf413c382dd3d6a8ef8a2aecec9",
-  "updated_at": "2026-11-22T13:59:55.873297+00:00",
+  "updated_at": "2026-11-22T14:00:26.034373+00:00",
   "queue_snapshot": {
     "extracted": 3,
     "reviewed": 0,
@@ -44,11 +44,11 @@
   },
   "provider_call_metric": {
     "unit_id": "chapter-000002",
-    "role": "reviewer",
+    "role": "corrector",
     "route": "primary",
-    "request_chars": 65927,
+    "request_chars": 32056,
     "outcome": "response",
-    "duration_ms": 338289
+    "duration_ms": 28221
   },
   "provider_call_metrics": [
     {
@@ -274,6 +274,14 @@
       "request_chars": 65927,
       "outcome": "response",
       "duration_ms": 338289
+    },
+    {
+      "unit_id": "chapter-000002",
+      "role": "corrector",
+      "route": "primary",
+      "request_chars": 32056,
+      "outcome": "response",
+      "duration_ms": 28221
     }
   ],
   "execution_metrics": {
@@ -293,10 +301,10 @@
         "request_chars": 657009
       },
       "corrector": {
-        "completed_calls": 7,
-        "responses": 7,
-        "duration_ms": 303863,
-        "request_chars": 239566
+        "completed_calls": 8,
+        "responses": 8,
+        "duration_ms": 332084,
+        "request_chars": 271622
       }
     },
     "accepted_operations": {
@@ -409,33 +417,23 @@
       "patch_sha256": "cf0c0c5ddce5c0552f3849b103974435c4a88f84090797be7ffd976483434d69",
       "reason": "new-duplicated-phrase",
       "at": "2026-11-22T13:51:47.984646+00:00"
+    },
+    {
+      "unit_id": "chapter-000002",
+      "review_record_id": "f99662bbf30f4f98826649d56f1716f7",
+      "finding_id": "recheck-3-v2",
+      "patch_sha256": "f17980855e21bbcf3f878333f496c50dd7e40bda46aea69a5199b09b3b147236",
+      "reason": "new-duplicated-phrase",
+      "at": "2026-11-22T14:00:26.034350+00:00"
     }
   ],
   "last_correction_regression": {
     "unit_id": "chapter-000002",
-    "finding_id": "recheck-referent-4",
+    "finding_id": "recheck-3-v2",
     "reason": "new-duplicated-phrase",
     "evidence": {
-      "count": 5,
+      "count": 1,
       "examples": [
-        {
-          "tokens": 12,
-          "previous": 1,
-          "candidate": 2,
-          "adjacent": false
-        },
-        {
-          "tokens": 12,
-          "previous": 1,
-          "candidate": 2,
-          "adjacent": false
-        },
-        {
-          "tokens": 12,
-          "previous": 1,
-          "candidate": 2,
-          "adjacent": false
-        },
         {
           "tokens": 12,
           "previous": 1,
@@ -453,13 +451,14 @@
       "recheck-referent-4"
     ]
   },
+  "provider_model_route": "primary",
   "model_response_diagnostics": {
     "finish_reason": "stop",
     "response_format": "pi_prompt_json",
-    "response_chars": 9495,
+    "response_chars": 580,
     "provider_refusal": false,
     "route": "primary",
-    "role": "reviewer",
+    "role": "corrector",
     "unit_id": "chapter-000002"
   }
 }
