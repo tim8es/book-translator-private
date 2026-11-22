@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "request_id": "b8351f715cd74b1c96f8ea242c46ff13",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "55bd7e1ec4d2217a17f9791c3d64caf1e4bec85e96fb064487c8d0a9b159a241",
+    "record": {
+      "correction_round": 1,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "findings": [
+          {
+            "detail": "Block 000006: restored the hockey meaning of trip as an illegal подножка.",
+            "resolved": true,
+            "severity": "major"
+          },
+          {
+            "detail": "Block 000221: corrected the injury-related inability to participate in playoffs; no team elimination implied.",
+            "resolved": true,
+            "severity": "major"
+          },
+          {
+            "detail": "Block 000179: removed invented shoulder/muscle detail from not-as-bulky wording.",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "Block 000238: removed translator-added Markdown emphasis on the song title.",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "Block 000047: replaced unnatural speed calque with restrained faster-than-normal walking.",
+            "resolved": true,
+            "severity": "minor"
+          }
+        ]
+      },
+      "record_id": "aad13b44a27e47478332968626f74c27",
+      "review_commit": "3ee0e86b32e89ba3ee34c6b25a4806cc66f79501",
+      "review_contract_revision": "docs/TRANSLATION.md@76604c82cc4345699de9ae5d97bc75e2443e8cb5",
+      "reviewed_at": "2026-11-22T17:22:40Z",
+      "reviewer_session_id": "chatgpt-alligator-review-20261122-r3",
+      "sequence": 4,
+      "source_sha256": "4d36a835a882623ba7bd0a1a91b400498362f563797a80c9262c6c40ed21192c",
+      "state_revision": "a302e3c94a3e2d2ff03dbc2998eda1d271540476fa44b2859e90996808a6f3ef",
+      "supersedes_record_id": "d2a1cf1d43094eb6ab6ca12505beae5d",
+      "translation_sha256": "9c0d5d454b6aa44eec2dcfd140d44a88528536f67b2f39b3ec1e1ad9ef73a20d",
+      "unit_id": "chapter-000003",
+      "workflow_revision": "76604c82cc4345699de9ae5d97bc75e2443e8cb5"
+    }
+  },
+  "error": null
+}
