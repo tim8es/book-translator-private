@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "request_id": "324a46a0f2fd4ab28bf6f37e54175e83",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "4ee6e1c3fd8b31edc402f7799aa2b504d218498fc90795d6245f05c8d9fa91d5",
+    "record": {
+      "correction_round": 1,
+      "outcome": "CORRECTIONS_REQUIRED",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "style",
+            "detail": "«Принадлежность» как самостоятельное название мечты звучит отвлечённо и неестественно; восстановить желание быть своим в семье, сохранив отдельные курсивные акценты.",
+            "id": "ch18-belonging",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "*family,* *belonging,*"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "*семья*, *принадлежность*"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "«Говорим больные вещи» — лексическая калька. Сохранить намеренное причинение боли близким через слова естественным оборотом.",
+            "id": "ch18-hurtful-words",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Sometimes we say things to people we care about because we"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Иногда специально говорим больные вещи тем, кто нам дорог"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "«Пока иссякнет твой неисчерпаемый источник» добавляет неуместное противоречивое определение, которого нет в оригинале; в источнике это всего лишь насмешка о том, что Дрейк упорно вредничает.",
+            "id": "ch18-spite-well",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "your well of willful spite to finally run dry"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "твой неисчерпаемый источник упрямой злобы"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Willful spite — упрямая вредность, а не злорадство; восстановить самоироничную отсылку к предыдущей реплике Дэмиана без оттенка радости от чужих страданий.",
+            "id": "ch18-spite-reply",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "my willful spite is endless"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Моё упрямое злорадство бесконечно"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "«С… он даже не знает какого времени» грамматически не оформляет оборванную мысль; передать намеренную паузу и невозможность вспомнить дату.",
+            "id": "ch18-when",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "he doesn’t even know when."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "он даже не знает какого времени."
+            }
+          }
+        ]
+      },
+      "record_id": "3a3e8640916541c6b9c7ea70a6083c0a",
+      "review_commit": "c4d97221c0cdd6a0f7bf268d3ace44a3e14de6c7",
+      "review_contract_revision": "docs/TRANSLATION.md@a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "reviewed_at": "2026-11-22T22:03:47Z",
+      "reviewer_session_id": "chat-20261123-cardinal-review18-a",
+      "sequence": 53,
+      "source_sha256": "beb8af0ce3f2d51931838e6c709f1d53df3a5f3a87890ad8f8477af094b1576a",
+      "state_revision": "c50a8d7e51b826249b5b38240ff31fa2d26668d06b0e1b1e86283934c77bea4a",
+      "supersedes_record_id": null,
+      "translation_sha256": "7255098186ab87f3b030e9ee759b9bf9eeaee04c9eafcc7a84b741cffc2fe777",
+      "unit_id": "chapter-000018",
+      "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29"
+    }
+  },
+  "error": null
+}

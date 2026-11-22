@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "cardinal-kin",
-  "next_sequence": 53,
+  "next_sequence": 54,
   "records": [
     {
       "record_id": "75dfa72e2b6148208fd5343b6e384999",
@@ -10254,6 +10254,115 @@
               "record_id": "d83c72ffb4884ecd83a6d91db4153330",
               "finding_id": "ch17-sacrifice"
             }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "3a3e8640916541c6b9c7ea70a6083c0a",
+      "sequence": 53,
+      "unit_id": "chapter-000018",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "beb8af0ce3f2d51931838e6c709f1d53df3a5f3a87890ad8f8477af094b1576a",
+      "translation_sha256": "7255098186ab87f3b030e9ee759b9bf9eeaee04c9eafcc7a84b741cffc2fe777",
+      "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "review_contract_revision": "docs/TRANSLATION.md@a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "reviewer_session_id": "chat-20261123-cardinal-review18-a",
+      "reviewed_at": "2026-11-22T22:03:47Z",
+      "state_revision": "c50a8d7e51b826249b5b38240ff31fa2d26668d06b0e1b1e86283934c77bea4a",
+      "review_commit": "c4d97221c0cdd6a0f7bf268d3ace44a3e14de6c7",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "ch18-belonging",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Принадлежность» как самостоятельное название мечты звучит отвлечённо и неестественно; восстановить желание быть своим в семье, сохранив отдельные курсивные акценты.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "*family,* *belonging,*",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "*семья*, *принадлежность*",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "ch18-hurtful-words",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Говорим больные вещи» — лексическая калька. Сохранить намеренное причинение боли близким через слова естественным оборотом.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Sometimes we say things to people we care about because we",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Иногда специально говорим больные вещи тем, кто нам дорог",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "ch18-spite-well",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Пока иссякнет твой неисчерпаемый источник» добавляет неуместное противоречивое определение, которого нет в оригинале; в источнике это всего лишь насмешка о том, что Дрейк упорно вредничает.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "your well of willful spite to finally run dry",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "твой неисчерпаемый источник упрямой злобы",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "ch18-spite-reply",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Willful spite — упрямая вредность, а не злорадство; восстановить самоироничную отсылку к предыдущей реплике Дэмиана без оттенка радости от чужих страданий.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "my willful spite is endless",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Моё упрямое злорадство бесконечно",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "ch18-when",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«С… он даже не знает какого времени» грамматически не оформляет оборванную мысль; передать намеренную паузу и невозможность вспомнить дату.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "he doesn’t even know when.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "он даже не знает какого времени.",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       }
