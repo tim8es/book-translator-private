@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "pizza-with-pineapples-itislikethis-motorcycling-rpf",
-  "next_sequence": 6,
+  "next_sequence": 7,
   "records": [
     {
       "record_id": "e8060d96338440d8a139c674168abf15",
@@ -226,6 +226,83 @@
           "structure": true
         },
         "findings": []
+      }
+    },
+    {
+      "record_id": "353f127ca51c4c5fae4bf83b67e7c1c4",
+      "sequence": 6,
+      "unit_id": "chapter-000004",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "0ccde151fa7e3a6b179edcc857d3d1e1a84c175714efccf7ac7f3093685f426e",
+      "translation_sha256": "c070d110279d033da51676045c2998262c694aacaef82c9a29193ce4e960bd84",
+      "workflow_revision": "789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
+      "review_contract_revision": "docs/TRANSLATION.md@789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
+      "reviewer_session_id": "chatops-pizza-reviewer-20261122-03",
+      "reviewed_at": "2026-11-22T19:37:29Z",
+      "state_revision": "d318360b24957e4499b38598f56e0fc4ba97b60621af20af21f77cb7355765d0",
+      "review_commit": "3c07071d849e191ca959551aae6e715d48d89b91",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "style-003",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Opening contains awkward Russian calque «принялся неглубоко дышать» instead of natural description of shallow breathing; repair without introducing a change of aspect or action.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "breathing shallowly as he gathered himself",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "принялся неглубоко дышать, пытаясь взять себя в руки",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-055",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Unnatural plural/singular mismatch «жилеты одного из маршалов» in Russian; a single marshal's distinctive fluorescent vest needs natural Russian wording while preserving that Alex sees a track marshal.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "distinctive neon orange vests of one of the track marshals",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "характерные ярко-оранжевые жилеты одного из маршалов трассы",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "register-103",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Character's stressed «Fuck» is weakened to mild «Чёрт», softening deliberate profanity. Restore equivalent intensity consistent with surrounding dialogue.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Fuck, I don’t know how to—",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Чёрт, я не знаю, как...",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
       }
     }
   ]
