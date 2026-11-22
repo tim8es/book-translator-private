@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "request_id": "20261122160237000000000000000005",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "b33aeec8f029e453125173bf4a74fee58fe3988518cb6acf73566f7382f8f170",
+    "record": {
+      "correction_round": 4,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "findings": [
+          {
+            "detail": "Block 90: clarified referent of 'he isn't' without changing the original uncertainty.",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "Block 96: replaced causal 'Из-за тебя' with direct 'Для тебя' to preserve 'For you' in the confession.",
+            "resolved": true,
+            "severity": "minor"
+          }
+        ]
+      },
+      "record_id": "7f8146c8cfed411c8a4c6b2d2fb5c8dd",
+      "review_commit": "14f44dcbaa4cfb019218425ef61e07d19e67f420",
+      "review_contract_revision": "docs/TRANSLATION.md@8bb30227adc4bb921429611e12a0af803c9b6487",
+      "reviewed_at": "2026-11-22T13:14:27Z",
+      "reviewer_session_id": "chatgpt-20261122-sayit-ch37-reviewer",
+      "sequence": 210,
+      "source_sha256": "3c4748f66a27267765a11322203469f4422ca1efa7cc1f959d8d2567957dd4b3",
+      "state_revision": "abfc479f93890db905e9413356937c3954bcc42b1f8476590d2ee6cf8f073dea",
+      "supersedes_record_id": "92c9d092b78f47cc993dad207b81c3a9",
+      "translation_sha256": "bc3d4bdbba7c42b07743968b87802e1ac673136823bcc06159c48885b4f208a6",
+      "unit_id": "chapter-000037",
+      "workflow_revision": "8bb30227adc4bb921429611e12a0af803c9b6487"
+    }
+  },
+  "error": null
+}
