@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "request_id": "8fcfbff54aa84b43a9a8dcc929a8b7cd",
+  "book_slug": "cardinal-kin",
+  "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
+  "operation": "review-record",
+  "chapter": 13,
+  "session_id": "chat-20261122-cardinal-review13-b",
+  "outcome": "PASS",
+  "quality_report": {
+    "evidence_version": 2,
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "id": "resolved-01",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Восстановлен смысл, что Тим сам участвовал в работе ночных защитников, а не просто принадлежал семье.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "even when he himself became a Bat.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "даже когда сам начал выходить на патрули в составе Бэт-семьи",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "f8497690b0374c85a2fbbf11dbbaf971",
+          "finding_id": "bat-identity"
+        }
+      },
+      {
+        "id": "resolved-02",
+        "category": "referent",
+        "severity": "minor",
+        "detail": "Авторское воодушевление передано без навязывания автору гендера.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "I literally makes me so happy knowing so many of you are enjoying it.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Я буквально сияю от счастья, зная, что стольким из вас она нравится",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "f8497690b0374c85a2fbbf11dbbaf971",
+          "finding_id": "author-gender-313"
+        }
+      },
+      {
+        "id": "resolved-03",
+        "category": "referent",
+        "severity": "minor",
+        "detail": "Факты и динамика увеличения числа глав сохранены, необоснованная женская форма устранена.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "I originally planned for 17 chapters",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Изначально в планах было 17 глав, но по мере работы их количество неуклонно росло",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "f8497690b0374c85a2fbbf11dbbaf971",
+          "finding_id": "author-gender-314"
+        }
+      },
+      {
+        "id": "resolved-04",
+        "category": "referent",
+        "severity": "minor",
+        "detail": "Решение взять паузу сохранено, глагол больше не задаёт автору женский род.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "I've decided to take a break from posting regularly",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Поэтому я делаю перерыв в регулярных публикациях",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "f8497690b0374c85a2fbbf11dbbaf971",
+          "finding_id": "author-gender-315"
+        }
+      },
+      {
+        "id": "resolved-05",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Грамматическая ошибка устранена без потери требования должной подготовки и проработки финала.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "the ending has all the proper build up and fleshing out it deserves",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "а финал был как следует подготовлен и проработан",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "f8497690b0374c85a2fbbf11dbbaf971",
+          "finding_id": "ending-grammar-315"
+        }
+      }
+    ]
+  },
+  "source_sha256": "9de468b677782a915a1f0293ccc6f57744209c2bf7fd535bd938dc7804852735",
+  "translation_sha256": "4a895b294731dd92fd3ac2fe4483afef154f13aa25059088f176f082fa143542",
+  "claim_sha256": "0e25818c4a61029559a7697225d380f7981d4a9c3a289a8d1481491de5947da2"
+}
