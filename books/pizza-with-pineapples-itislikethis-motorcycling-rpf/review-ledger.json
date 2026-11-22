@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "pizza-with-pineapples-itislikethis-motorcycling-rpf",
-  "next_sequence": 15,
+  "next_sequence": 16,
   "records": [
     {
       "record_id": "e8060d96338440d8a139c674168abf15",
@@ -904,6 +904,83 @@
               "record_id": "5d26e7c3a7c54acab92ac67400509685",
               "finding_id": "meaning-067"
             }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "bc0ed3d3ddf845a78b9f5ba53cc23524",
+      "sequence": 15,
+      "unit_id": "chapter-000009",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "a5105d0347b84ad596b4f9a8e00aa71b13f802e92753f9d6464344584745b506",
+      "translation_sha256": "febb64b587997057a7a12bdb19905abd6a112b4803a907882f2900499514dacd",
+      "workflow_revision": "789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
+      "review_contract_revision": "docs/TRANSLATION.md@789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
+      "reviewer_session_id": "chatops-pizza-reviewer-20261123-12",
+      "reviewed_at": "2026-11-22T21:57:49Z",
+      "state_revision": "11c57fbb01976c44a93429142e7f01f03f91dee0f22cacf14964781aa1e32795",
+      "review_commit": "6016e00f8501f8c811ab8f7a3571bb0b0d6ff32f",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "style-003",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Source idiom 'they seriously make my day' is translated as the English calque «они правда делают мой день», unnatural in Russian. Render the gratitude and genuinely boosted mood naturally.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "they seriously make my day!",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "они правда делают мой день!",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-063",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Russian «собрал своё тихое сожаление» is a misleading calque of 'gathered his courage, his quiet regret'; retain his courage and subdued regret in natural target syntax.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Alex gathered his courage, his quiet regret.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Алекс собрался с духом, собрал своё тихое сожаление.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-066",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Source deliberately stumbles on 'this easy this'; Russian «эту лёгкость — вот этого» introduces accidental case mismatch. Preserve deliberate fragment/repetition without unintentional grammatical break.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "this easy warmth, this easy comfort, this easy this",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "это лёгкое тепло, это лёгкое утешение, эту лёгкость — вот этого",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       }
