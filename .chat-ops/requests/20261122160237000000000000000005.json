@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "request_id": "20261122160237000000000000000005",
+  "book_slug": "say-it-in-your-mother-tongue",
+  "workflow_revision": "8bb30227adc4bb921429611e12a0af803c9b6487",
+  "operation": "review-record",
+  "chapter": 37,
+  "session_id": "chatgpt-20261122-sayit-ch37-reviewer",
+  "outcome": "PASS",
+  "quality_report": {
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "severity": "minor",
+        "detail": "Block 90: clarified referent of 'he isn't' without changing the original uncertainty.",
+        "resolved": true
+      },
+      {
+        "severity": "minor",
+        "detail": "Block 96: replaced causal 'Из-за тебя' with direct 'Для тебя' to preserve 'For you' in the confession.",
+        "resolved": true
+      }
+    ]
+  },
+  "source_sha256": "3c4748f66a27267765a11322203469f4422ca1efa7cc1f959d8d2567957dd4b3",
+  "translation_sha256": "bc3d4bdbba7c42b07743968b87802e1ac673136823bcc06159c48885b4f208a6",
+  "claim_sha256": "934b1f3e182dd82fb1e8bc2e51810662ff0c696d12af7f2ed75ba29d39d327f7"
+}
