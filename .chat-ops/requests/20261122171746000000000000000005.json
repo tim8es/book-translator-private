@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "request_id": "20261122171746000000000000000005",
+  "book_slug": "say-it-in-your-mother-tongue",
+  "workflow_revision": "8bb30227adc4bb921429611e12a0af803c9b6487",
+  "operation": "review-record",
+  "chapter": 46,
+  "session_id": "chatgpt-20261122-sayit-ch46-reviewer",
+  "outcome": "PASS",
+  "quality_report": {
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "severity": "minor",
+        "detail": "Restored explicit italic emphasis in blocks 6, 18, 21, 23, 47 and 55 and preserved original French code-switch in block 22.",
+        "resolved": true
+      },
+      {
+        "severity": "minor",
+        "detail": "Block 43: maintained stronger original profanity in Nico's exasperated response.",
+        "resolved": true
+      }
+    ]
+  },
+  "source_sha256": "5eb40c7657a04768072006c3d09e3e412722114d863dd1168e287a3923a7b5b0",
+  "translation_sha256": "200debf137c9455302916bc5a575d732d269de016a9995a6104539270e086af3",
+  "claim_sha256": "186780a5672cbac9d6194c73b9527b3a5fe0886712c97e73ed1792d66525ec59"
+}
