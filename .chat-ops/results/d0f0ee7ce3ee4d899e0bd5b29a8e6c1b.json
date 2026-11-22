@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "request_id": "d0f0ee7ce3ee4d899e0bd5b29a8e6c1b",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "ef97c43c34fe3a4dc713495eb73368e2f7d43c644df8e7350b3f0c78a1b2ff10",
+    "record": {
+      "correction_round": 1,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "findings": [
+          {
+            "detail": "Block 000406: excess italics removed; the need and craving remain explicit in unaccented Russian, as in the source.",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "Block 000420: both emphatic beats restored in Russian (*сам* and *почти два часа*), with the sunscreen reminder's meaning intact.",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "Block 000430: corrected text now means submerging slightly deeper, not drowning; the entire underwater exchange and Shane diving in are retained.",
+            "resolved": true,
+            "severity": "major"
+          }
+        ]
+      },
+      "record_id": "e49e84d7de0348748f2e1144ca9ac828",
+      "review_commit": "5dfd04905a5cf474acfeda477f88ea692b3c26c7",
+      "review_contract_revision": "docs/TRANSLATION.md@76604c82cc4345699de9ae5d97bc75e2443e8cb5",
+      "reviewed_at": "2026-11-22T21:36:53Z",
+      "reviewer_session_id": "chatgpt-alligator-20261122-r21",
+      "sequence": 23,
+      "source_sha256": "d3a2b49183d0c385760d0e7f24372b3c6a2b0ca00430c925b82951a2985063e5",
+      "state_revision": "734fa74b2ff200d42264b3da461f6d0bccf9e5d04e437012c8e8c81489e705f0",
+      "supersedes_record_id": "d3c29b2ae02842a49beee941eba1e380",
+      "translation_sha256": "c11ed2f109da58b6093e1d6ecc43b74f19c7c1275c216accb3f6828e79af159f",
+      "unit_id": "chapter-000011",
+      "workflow_revision": "76604c82cc4345699de9ae5d97bc75e2443e8cb5"
+    }
+  },
+  "error": null
+}
