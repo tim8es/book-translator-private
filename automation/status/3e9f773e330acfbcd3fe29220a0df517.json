@@ -3,14 +3,14 @@
   "job_id": "3e9f773e330acfbcd3fe29220a0df517",
   "book_slug": "pizza-with-pineapples-itislikethis-motorcycling-rpf",
   "state": "running",
-  "phase": "correction-batch-staged",
-  "failures": 2,
+  "phase": "model-unit-deferred",
+  "failures": 0,
   "correction_rounds": {
     "chapter-000001": 1
   },
   "workflow_revision": "789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
   "source_sha256": "b806092139439a8a9d5c9297bdc1338fa9e4798cfa81353f9396f66747aa6e96",
-  "updated_at": "2026-11-22T16:50:04.400401+00:00",
+  "updated_at": "2026-11-22T16:50:06.481370+00:00",
   "queue_snapshot": {
     "extracted": 17,
     "reviewed": 0,
@@ -18,12 +18,7 @@
     "correction_candidates": 1,
     "awaiting_promotion": 0
   },
-  "active": {
-    "role": "corrector",
-    "chapter": 1,
-    "session_id": "auto-3e9f773e330a-corrector-c9b8efd3",
-    "unit_id": "chapter-000001"
-  },
+  "active": null,
   "structural_helper_revision": "4c584fe5534871cd05aa851d9b7bdbfa696d0edd",
   "model_calls_started": 9,
   "prompt_context": {
@@ -184,7 +179,7 @@
   "memory_glossary_saved": 5,
   "pending_style": [],
   "role_protocol_failures": {
-    "chapter-000001:corrector": 2
+    "chapter-000001:corrector": 3
   },
   "correction_extensions": {},
   "correction_finding_triage": {
@@ -223,7 +218,7 @@
   },
   "blocked_unit_id": "chapter-000001",
   "unit_protocol_failures": {
-    "chapter-000001": 2
+    "chapter-000001": 3
   },
   "last_error_code": "unsafe_correction_exhausted",
   "model_response_diagnostics": {
@@ -238,12 +233,15 @@
     "role": "corrector",
     "unit_id": "chapter-000001"
   },
-  "correction_isolation": {
-    "unit_id": "chapter-000001",
-    "review_record_id": "6b11c2fdd395416996c247194cbcfc77",
-    "translation_sha256": "c1170e0418a513cf02d7524139a9eb8ad98b50a67592a46de8b8de72a2590717",
-    "finding_ids": [
-      "structure-1"
-    ]
-  }
+  "last_error": "all correction candidates were unsafe; no accepted patch",
+  "model_unit_deferral_audit": [
+    {
+      "unit_id": "chapter-000001",
+      "review_record_id": "6b11c2fdd395416996c247194cbcfc77",
+      "translation_sha256": "c1170e0418a513cf02d7524139a9eb8ad98b50a67592a46de8b8de72a2590717",
+      "error_code": "unsafe_correction_exhausted",
+      "at": "2026-11-22T16:50:06.481354+00:00",
+      "action": "canonical-defer-without-pass"
+    }
+  ]
 }
