@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "request_id": "ed1c0b7d50814c84a2ff2e39a0dd7f43",
+  "book_slug": "pizza-with-pineapples-itislikethis-motorcycling-rpf",
+  "workflow_revision": "789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
+  "operation": "review-record",
+  "chapter": 9,
+  "session_id": "chatops-pizza-reviewer-20261123-13",
+  "outcome": "PASS",
+  "quality_report": {
+    "evidence_version": 2,
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "id": "style-003-resolved",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Replaced the English idiom calque with natural Russian enthusiasm without changing meaning.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "they seriously make my day!",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "они и правда каждый раз поднимают мне настроение!",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "bc0ed3d3ddf845a78b9f5ba53cc23524",
+          "finding_id": "style-003"
+        }
+      },
+      {
+        "id": "style-063-resolved",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Preserves courage and subdued regret in grammatically natural Russian.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "Alex gathered his courage, his quiet regret.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Алекс собрался с духом, ощущая тихое сожаление.",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "bc0ed3d3ddf845a78b9f5ba53cc23524",
+          "finding_id": "style-063"
+        }
+      },
+      {
+        "id": "style-066-resolved",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Preserves the deliberate halting source fragment and repetition with Russian case agreement.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "this easy warmth, this easy comfort, this easy this",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "это лёгкое тепло, это лёгкое утешение, это лёгкое... вот это",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "bc0ed3d3ddf845a78b9f5ba53cc23524",
+          "finding_id": "style-066"
+        }
+      }
+    ]
+  },
+  "source_sha256": "a5105d0347b84ad596b4f9a8e00aa71b13f802e92753f9d6464344584745b506",
+  "translation_sha256": "70f00bf9958dba2d3f1ed150fd266da79d81fc4e53feaae0b743258792c6bdb6",
+  "claim_sha256": "5fc95fb654197bc2f2ba9798168385d96c24af610af144e41f63c8bacf9b2fe2"
+}
