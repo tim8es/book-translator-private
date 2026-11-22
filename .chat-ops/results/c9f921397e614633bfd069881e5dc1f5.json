@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "request_id": "c9f921397e614633bfd069881e5dc1f5",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "def532c270f5e9caf76d7ca8813812f681cf6946a90ad8a860181d407e8b98fc",
+    "record": {
+      "correction_round": 1,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "meaning",
+            "detail": "Restored both Alex's and Marc's reaction to the abrupt emphatic refusal.",
+            "id": "meaning-050-fixed",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "meaning-050",
+              "record_id": "67bb03e5b5954ce9974e0a00cdbc63b0"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "startling both himself and Marc with the vehemence of his answer"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "так резко, что вздрогнули и он сам, и Марк"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "The broader 'shaken' state and 'okay' are preserved without asserting an unsupported physical injury outcome.",
+            "id": "meaning-063-fixed",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "meaning-063",
+              "record_id": "67bb03e5b5954ce9974e0a00cdbc63b0"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Shaken, but okay."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Он был потрясён, но с ним всё было хорошо."
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Removed the unsupported intensifier 'great', retaining the source's understated fragment.",
+            "id": "style-080-fixed",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "style-080",
+              "record_id": "67bb03e5b5954ce9974e0a00cdbc63b0"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "The original performer."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Первым артистом."
+            }
+          }
+        ]
+      },
+      "record_id": "519584fbca8c4d2294addbe513df547b",
+      "review_commit": "b90b50e69e61ec8e597965d5379d4075d9342bd0",
+      "review_contract_revision": "docs/TRANSLATION.md@789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
+      "reviewed_at": "2026-11-22T20:51:19Z",
+      "reviewer_session_id": "chatops-pizza-reviewer-20261122-06",
+      "sequence": 9,
+      "source_sha256": "973bda748898f13a4032abfd5e1eddf29244065580c7db4a401ba0e46fce0b56",
+      "state_revision": "ea54a3ee52d5983715c15a80e2408ed2403c30ce2a8d510bc33ebd8ad0585ff7",
+      "supersedes_record_id": "67bb03e5b5954ce9974e0a00cdbc63b0",
+      "translation_sha256": "c88c633d1dd7f50654488fdbe643d7bb5f516473088388a6c141e93c5628cd4c",
+      "unit_id": "chapter-000005",
+      "workflow_revision": "789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07"
+    }
+  },
+  "error": null
+}

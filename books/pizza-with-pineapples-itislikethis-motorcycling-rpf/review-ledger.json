@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "pizza-with-pineapples-itislikethis-motorcycling-rpf",
-  "next_sequence": 9,
+  "next_sequence": 10,
   "records": [
     {
       "record_id": "e8060d96338440d8a139c674168abf15",
@@ -464,6 +464,92 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "519584fbca8c4d2294addbe513df547b",
+      "sequence": 9,
+      "unit_id": "chapter-000005",
+      "outcome": "PASS",
+      "source_sha256": "973bda748898f13a4032abfd5e1eddf29244065580c7db4a401ba0e46fce0b56",
+      "translation_sha256": "c88c633d1dd7f50654488fdbe643d7bb5f516473088388a6c141e93c5628cd4c",
+      "workflow_revision": "789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
+      "review_contract_revision": "docs/TRANSLATION.md@789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
+      "reviewer_session_id": "chatops-pizza-reviewer-20261122-06",
+      "reviewed_at": "2026-11-22T20:51:19Z",
+      "state_revision": "ea54a3ee52d5983715c15a80e2408ed2403c30ce2a8d510bc33ebd8ad0585ff7",
+      "review_commit": "b90b50e69e61ec8e597965d5379d4075d9342bd0",
+      "correction_round": 1,
+      "supersedes_record_id": "67bb03e5b5954ce9974e0a00cdbc63b0",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "meaning-050-fixed",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Restored both Alex's and Marc's reaction to the abrupt emphatic refusal.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "startling both himself and Marc with the vehemence of his answer",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "так резко, что вздрогнули и он сам, и Марк",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "67bb03e5b5954ce9974e0a00cdbc63b0",
+              "finding_id": "meaning-050"
+            }
+          },
+          {
+            "id": "meaning-063-fixed",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The broader 'shaken' state and 'okay' are preserved without asserting an unsupported physical injury outcome.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Shaken, but okay.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Он был потрясён, но с ним всё было хорошо.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "67bb03e5b5954ce9974e0a00cdbc63b0",
+              "finding_id": "meaning-063"
+            }
+          },
+          {
+            "id": "style-080-fixed",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Removed the unsupported intensifier 'great', retaining the source's understated fragment.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "The original performer.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Первым артистом.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "67bb03e5b5954ce9974e0a00cdbc63b0",
+              "finding_id": "style-080"
+            }
           }
         ]
       }
