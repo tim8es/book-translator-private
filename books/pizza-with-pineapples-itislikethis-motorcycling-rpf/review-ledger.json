@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "pizza-with-pineapples-itislikethis-motorcycling-rpf",
-  "next_sequence": 10,
+  "next_sequence": 11,
   "records": [
     {
       "record_id": "e8060d96338440d8a139c674168abf15",
@@ -552,6 +552,34 @@
             }
           }
         ]
+      }
+    },
+    {
+      "record_id": "6d99941287c44497b761abdb67e948f3",
+      "sequence": 10,
+      "unit_id": "chapter-000006",
+      "outcome": "PASS",
+      "source_sha256": "c8491358b9fccd573eeea28e0d3d557a10eaae433a46ba055674b1353ddc41d2",
+      "translation_sha256": "8be8da6aeb953c811b3cf4b91bb4d949cd3ae7764a5420fbc148f8b78165a814",
+      "workflow_revision": "789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
+      "review_contract_revision": "docs/TRANSLATION.md@789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
+      "reviewer_session_id": "chatops-pizza-reviewer-20261122-07",
+      "reviewed_at": "2026-11-22T20:54:55Z",
+      "state_revision": "60ebd73596beb2c4789bd7be08b7e536651cceb837505eb997257a01c89f456d",
+      "review_commit": "84a212d73c85900d7e52f46c6bdbf1d3598a158f",
+      "correction_round": 0,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": []
       }
     }
   ]
