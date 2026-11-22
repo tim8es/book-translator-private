@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "request_id": "20261122171745000000000000000005",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "ee327114b94eda8717297c820ad622b7021fab78b9fcd0c20cfb1d01bbad50ca",
+    "record": {
+      "correction_round": 3,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "findings": [
+          {
+            "detail": "Block 25: restored italic emphasis on 'just yet' in Checo's hesitation.",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "Block 26: preserved Dutch idiom in the code-switch while retaining Russian context for the idiomatic price expression.",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "Block 35: restored emphasis on forever.",
+            "resolved": true,
+            "severity": "minor"
+          }
+        ]
+      },
+      "record_id": "3e8f351e1e1346228d257ad0004915fc",
+      "review_commit": "3ed9aa6801d801ae31010df906e595783aa2e70a",
+      "review_contract_revision": "docs/TRANSLATION.md@8bb30227adc4bb921429611e12a0af803c9b6487",
+      "reviewed_at": "2026-11-22T14:25:51Z",
+      "reviewer_session_id": "chatgpt-20261122-sayit-ch45-reviewer",
+      "sequence": 217,
+      "source_sha256": "26c06cdfd4291e79a4d32bc4aa6c05c11b5c5badf62f6d5415faf153a128100a",
+      "state_revision": "01790943bf4013d5afb3797a7048e0129038150e05041f0d03696b856616332d",
+      "supersedes_record_id": "76ca5ec098da4c27b9e597fbd6959998",
+      "translation_sha256": "bf3db8940ab844f12e1d6a320f74627e7cf83b98b9326080e7150fc9450cdf41",
+      "unit_id": "chapter-000045",
+      "workflow_revision": "8bb30227adc4bb921429611e12a0af803c9b6487"
+    }
+  },
+  "error": null
+}

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 217,
+  "next_sequence": 218,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -20939,6 +20939,49 @@
           {
             "severity": "minor",
             "detail": "Block 71: restored italic emphasis on a little over the speed limit.",
+            "resolved": true
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "3e8f351e1e1346228d257ad0004915fc",
+      "sequence": 217,
+      "unit_id": "chapter-000045",
+      "outcome": "PASS",
+      "source_sha256": "26c06cdfd4291e79a4d32bc4aa6c05c11b5c5badf62f6d5415faf153a128100a",
+      "translation_sha256": "bf3db8940ab844f12e1d6a320f74627e7cf83b98b9326080e7150fc9450cdf41",
+      "workflow_revision": "8bb30227adc4bb921429611e12a0af803c9b6487",
+      "review_contract_revision": "docs/TRANSLATION.md@8bb30227adc4bb921429611e12a0af803c9b6487",
+      "reviewer_session_id": "chatgpt-20261122-sayit-ch45-reviewer",
+      "reviewed_at": "2026-11-22T14:25:51Z",
+      "state_revision": "01790943bf4013d5afb3797a7048e0129038150e05041f0d03696b856616332d",
+      "review_commit": "3ed9aa6801d801ae31010df906e595783aa2e70a",
+      "correction_round": 3,
+      "supersedes_record_id": "76ca5ec098da4c27b9e597fbd6959998",
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Block 25: restored italic emphasis on 'just yet' in Checo's hesitation.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Block 26: preserved Dutch idiom in the code-switch while retaining Russian context for the idiomatic price expression.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Block 35: restored emphasis on forever.",
             "resolved": true
           }
         ]
