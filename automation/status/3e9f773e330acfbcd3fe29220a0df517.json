@@ -3,12 +3,12 @@
   "job_id": "3e9f773e330acfbcd3fe29220a0df517",
   "book_slug": "pizza-with-pineapples-itislikethis-motorcycling-rpf",
   "state": "running",
-  "phase": "model-call-reserved",
+  "phase": "correction-batch-staged",
   "failures": 0,
   "correction_rounds": {},
   "workflow_revision": "789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
   "source_sha256": "b806092139439a8a9d5c9297bdc1338fa9e4798cfa81353f9396f66747aa6e96",
-  "updated_at": "2026-11-22T16:46:00.725938+00:00",
+  "updated_at": "2026-11-22T16:46:17.891576+00:00",
   "queue_snapshot": {
     "extracted": 17,
     "reviewed": 0,
@@ -42,14 +42,14 @@
   },
   "provider_call_metric": {
     "unit_id": "chapter-000001",
-    "role": "reviewer",
+    "role": "corrector",
     "route": "primary",
-    "request_chars": 41820,
+    "request_chars": 26427,
     "outcome": "response",
-    "duration_ms": 81753,
-    "prompt_tokens": 8596,
-    "completion_tokens": 4442,
-    "total_tokens": 13038
+    "duration_ms": 15714,
+    "prompt_tokens": 5225,
+    "completion_tokens": 561,
+    "total_tokens": 5786
   },
   "provider_call_metrics": [
     {
@@ -84,6 +84,17 @@
       "prompt_tokens": 8596,
       "completion_tokens": 4442,
       "total_tokens": 13038
+    },
+    {
+      "unit_id": "chapter-000001",
+      "role": "corrector",
+      "route": "primary",
+      "request_chars": 26427,
+      "outcome": "response",
+      "duration_ms": 15714,
+      "prompt_tokens": 5225,
+      "completion_tokens": 561,
+      "total_tokens": 5786
     }
   ],
   "execution_metrics": {
@@ -107,6 +118,15 @@
         "prompt_tokens": 8596,
         "completion_tokens": 4442,
         "total_tokens": 13038
+      },
+      "corrector": {
+        "completed_calls": 1,
+        "responses": 1,
+        "duration_ms": 15714,
+        "request_chars": 26427,
+        "prompt_tokens": 5225,
+        "completion_tokens": 561,
+        "total_tokens": 5786
       }
     },
     "accepted_operations": {
@@ -117,18 +137,6 @@
   "memory_glossary_saved": 5,
   "pending_style": [],
   "role_protocol_failures": {},
-  "model_response_diagnostics": {
-    "finish_reason": "stop",
-    "response_format": "json_object",
-    "response_chars": 1333,
-    "provider_refusal": false,
-    "prompt_tokens": 8596,
-    "completion_tokens": 4442,
-    "total_tokens": 13038,
-    "route": "primary",
-    "role": "reviewer",
-    "unit_id": "chapter-000001"
-  },
   "correction_extensions": {},
   "correction_finding_triage": {
     "unit_id": "chapter-000001",
@@ -149,5 +157,24 @@
     "current_selection_size": 1,
     "unit_id": "chapter-000001",
     "review_record_id": "e8060d96338440d8a139c674168abf15"
+  },
+  "provider_model_route": "primary",
+  "model_response_diagnostics": {
+    "finish_reason": "stop",
+    "response_format": "json_object",
+    "response_chars": 123,
+    "provider_refusal": false,
+    "prompt_tokens": 5225,
+    "completion_tokens": 561,
+    "total_tokens": 5786,
+    "route": "primary",
+    "role": "corrector",
+    "unit_id": "chapter-000001"
+  },
+  "correction_batch_progress": {
+    "unit_id": "chapter-000001",
+    "review_record_id": "e8060d96338440d8a139c674168abf15",
+    "completed": 1,
+    "total": 1
   }
 }
