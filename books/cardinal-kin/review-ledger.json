@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "cardinal-kin",
-  "next_sequence": 39,
+  "next_sequence": 40,
   "records": [
     {
       "record_id": "75dfa72e2b6148208fd5343b6e384999",
@@ -8518,6 +8518,83 @@
               "record_id": "aa313d46c1db48849384ee93d1d665e2",
               "finding_id": "chunk-007-time-compare"
             }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "0a41f56787ab44b6b9209604572b70ef",
+      "sequence": 39,
+      "unit_id": "chapter-000011",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "1bbda76e5671bc3bee4720f6399ba213ca4eda0a575b356d5d9f9de3456e41ae",
+      "translation_sha256": "53a2e42e6b0f44303cbca69f2da77e235a26befd7872a13d3d75903822420e05",
+      "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "review_contract_revision": "docs/TRANSLATION.md@a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "reviewer_session_id": "chat-20261122-cardinal-review-ch11",
+      "reviewed_at": "2026-11-22T17:21:01Z",
+      "state_revision": "70db0e4523a4a194c21328c3d17f34b14a89e3c247c29152d6e103f708a7ce52",
+      "review_commit": "e3fea479f424af115f756bdeb89b4af3ac081589",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "ch11-age-generosity",
+            "category": "referent",
+            "severity": "minor",
+            "detail": "В источнике if he’s being generous относится к оценке возраста самой девушкой Дюком; «если повезёт» меняет референт и смысл. Передать как снисходительную оценку Дюка.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "maybe a college sophomore if he’s being generous",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "может, она на втором курсе колледжа, если повезёт",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "ch11-family-insult",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Фраза «от одного только упоминания семьи каким-то ничтожеством» грамматически неестественна и ослабляет прямое злословие о семье; восстановить действие «какой-то никто поливает его семью грязью».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "hearing some nobody talk shit about his family always makes his blood boil",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "от одного только упоминания семьи каким-то ничтожеством у него закипает кровь",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "ch11-blood-in-water",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Метафора «unaware of the blood in the water» обозначает угрозу, которую Томпсон не замечает; «не понимая, что почуял кровь» превращает его в того, кто сам почуял кровь. Исправить референт.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "seemingly completely unaware of the blood in the water",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "явно не понимая, что почуял кровь в воде",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       }

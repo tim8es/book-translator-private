@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "request_id": "a3e7853a0af64b92875b62bb17670e93",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "7013d9242adf305f8e7b2a448cabb860f790d8329aa3c00cce474751e9909451",
+    "record": {
+      "correction_round": 1,
+      "outcome": "CORRECTIONS_REQUIRED",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "referent",
+            "detail": "В источнике if he’s being generous относится к оценке возраста самой девушкой Дюком; «если повезёт» меняет референт и смысл. Передать как снисходительную оценку Дюка.",
+            "id": "ch11-age-generosity",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "maybe a college sophomore if he’s being generous"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "может, она на втором курсе колледжа, если повезёт"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Фраза «от одного только упоминания семьи каким-то ничтожеством» грамматически неестественна и ослабляет прямое злословие о семье; восстановить действие «какой-то никто поливает его семью грязью».",
+            "id": "ch11-family-insult",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "hearing some nobody talk shit about his family always makes his blood boil"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "от одного только упоминания семьи каким-то ничтожеством у него закипает кровь"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Метафора «unaware of the blood in the water» обозначает угрозу, которую Томпсон не замечает; «не понимая, что почуял кровь» превращает его в того, кто сам почуял кровь. Исправить референт.",
+            "id": "ch11-blood-in-water",
+            "resolved": false,
+            "resolves": null,
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "seemingly completely unaware of the blood in the water"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "явно не понимая, что почуял кровь в воде"
+            }
+          }
+        ]
+      },
+      "record_id": "0a41f56787ab44b6b9209604572b70ef",
+      "review_commit": "e3fea479f424af115f756bdeb89b4af3ac081589",
+      "review_contract_revision": "docs/TRANSLATION.md@a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "reviewed_at": "2026-11-22T17:21:01Z",
+      "reviewer_session_id": "chat-20261122-cardinal-review-ch11",
+      "sequence": 39,
+      "source_sha256": "1bbda76e5671bc3bee4720f6399ba213ca4eda0a575b356d5d9f9de3456e41ae",
+      "state_revision": "70db0e4523a4a194c21328c3d17f34b14a89e3c247c29152d6e103f708a7ce52",
+      "supersedes_record_id": null,
+      "translation_sha256": "53a2e42e6b0f44303cbca69f2da77e235a26befd7872a13d3d75903822420e05",
+      "unit_id": "chapter-000011",
+      "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29"
+    }
+  },
+  "error": null
+}
