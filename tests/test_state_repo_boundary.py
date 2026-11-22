@@ -79,10 +79,10 @@ class StateOnlyDeploymentTests(unittest.TestCase):
         self.assertIn("github.event_name == 'push'", pi)
         self.assertIn("Dispatch only verified Pi-owned requests", pi)
         self.assertIn(' .executor == "pi"', pi)
-        self.assertIn(' .state == "running"', pi)
+        self.assertIn('.state == "running"', pi)
         # A prior blocked job may dispatch only after a fresh canonical
         # resume-auto marker; never by changing a Pi request alone.
-        self.assertIn(' .state == "blocked"', pi)
+        self.assertIn('.state == "blocked"', pi)
         self.assertIn('.phase == "model-blocked"', pi)
         self.assertIn('.active == null', pi)
         self.assertIn('auto-control.json', pi)
