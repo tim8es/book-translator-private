@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "alligator-bites-never-heal",
-  "next_sequence": 22,
+  "next_sequence": 23,
   "records": [
     {
       "record_id": "be08d5c17b934579b154d272e933435c",
@@ -1005,6 +1005,39 @@
             "severity": "major",
             "detail": "Block 000430: source 'lets himself sink a little' means Ilya voluntarily submerges slightly; 'даёт себе немного утонуть в глубину' falsely implies drowning and is unnatural. Use 'даёт себе немного погрузиться глубже' while preserving scene.",
             "resolved": false
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "13b22a62c47d487099419e5d52d9e2a3",
+      "sequence": 22,
+      "unit_id": "chapter-000012",
+      "outcome": "PASS",
+      "source_sha256": "7da06158c68bcfc116af8e69b0857982d4f6f95426bba1b25bd260936534b30f",
+      "translation_sha256": "605f0952d5b0eeff88050c958a86273f4ac1c988cc45377349e7ca9c97caea80",
+      "workflow_revision": "76604c82cc4345699de9ae5d97bc75e2443e8cb5",
+      "review_contract_revision": "docs/TRANSLATION.md@76604c82cc4345699de9ae5d97bc75e2443e8cb5",
+      "reviewer_session_id": "chatgpt-alligator-20261122-r20",
+      "reviewed_at": "2026-11-22T21:30:09Z",
+      "state_revision": "009f9d32a49f9c4d2fca5c134b04c6840796fb21e554d3ac46bf66180a94f7e0",
+      "review_commit": "73ed35099db75abfefaa7a1aad9b820a5209d883",
+      "correction_round": 0,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Two-block afterword checked against full source: heading translated; archive comment request preserved; inline link delimiters unchanged.",
+            "resolved": true
           }
         ]
       }

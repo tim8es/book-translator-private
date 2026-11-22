@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "request_id": "f9651e09f025420eb6791abf8389c1ba",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "345ebd28b9aebd1ab675f8207ffcb73b17f9830ed51ea9a131bbf6935846dc9c",
+    "record": {
+      "correction_round": 0,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "findings": [
+          {
+            "detail": "Two-block afterword checked against full source: heading translated; archive comment request preserved; inline link delimiters unchanged.",
+            "resolved": true,
+            "severity": "minor"
+          }
+        ]
+      },
+      "record_id": "13b22a62c47d487099419e5d52d9e2a3",
+      "review_commit": "73ed35099db75abfefaa7a1aad9b820a5209d883",
+      "review_contract_revision": "docs/TRANSLATION.md@76604c82cc4345699de9ae5d97bc75e2443e8cb5",
+      "reviewed_at": "2026-11-22T21:30:09Z",
+      "reviewer_session_id": "chatgpt-alligator-20261122-r20",
+      "sequence": 22,
+      "source_sha256": "7da06158c68bcfc116af8e69b0857982d4f6f95426bba1b25bd260936534b30f",
+      "state_revision": "009f9d32a49f9c4d2fca5c134b04c6840796fb21e554d3ac46bf66180a94f7e0",
+      "supersedes_record_id": null,
+      "translation_sha256": "605f0952d5b0eeff88050c958a86273f4ac1c988cc45377349e7ca9c97caea80",
+      "unit_id": "chapter-000012",
+      "workflow_revision": "76604c82cc4345699de9ae5d97bc75e2443e8cb5"
+    }
+  },
+  "error": null
+}
