@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "request_id": "7fc2f1357ecc44dbab8893377197bd30",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "aec23f09234ac11e438283136284698aeeb9370442c3c648efe791ec720cef3f",
+    "record": {
+      "correction_round": 1,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "style",
+            "detail": "Author note retains enthusiasm without unsupported grammatical gender in Russian.",
+            "id": "voice-003-resolved",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "voice-003",
+              "record_id": "5d26e7c3a7c54acab92ac67400509685"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "I'm so happy you are enjoying this story!"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Как же здорово, что вам нравится эта история!"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Idiomatically restores Marc's recognition on the visible parts of his face under the bandage.",
+            "id": "style-019-resolved",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "style-019",
+              "record_id": "5d26e7c3a7c54acab92ac67400509685"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "the way the rest of his expression lit up in recognition was unmistakable"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "по тому, как просветлело лицо Марка, было ясно: он узнал Алекса"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Restores Alex's singular, intentionally nonrevealing reply to Marc.",
+            "id": "meaning-067-resolved",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "meaning-067",
+              "record_id": "5d26e7c3a7c54acab92ac67400509685"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "No worried, I was already done"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Не переживай, я уже закончил"
+            }
+          }
+        ]
+      },
+      "record_id": "0c993df81cb5403fa1a438b3103b298d",
+      "review_commit": "b8959a6629d76225a32232390dd6e62f1bbeab39",
+      "review_contract_revision": "docs/TRANSLATION.md@789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
+      "reviewed_at": "2026-11-22T21:52:17Z",
+      "reviewer_session_id": "chatops-pizza-reviewer-20261123-11",
+      "sequence": 14,
+      "source_sha256": "0d7349626c3e2649517e0a3acc8a1c143f0fcd5694a70f2334eab9f7a443fdba",
+      "state_revision": "eea308f0a2567f576472c9f3ae5ab97ee3490ea755e8579e6e51f2caa659b712",
+      "supersedes_record_id": "5d26e7c3a7c54acab92ac67400509685",
+      "translation_sha256": "e2d2e083ee64943e86ab23c3d52ed0fab61fe158233c45575616b93d72ff44cf",
+      "unit_id": "chapter-000008",
+      "workflow_revision": "789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07"
+    }
+  },
+  "error": null
+}
