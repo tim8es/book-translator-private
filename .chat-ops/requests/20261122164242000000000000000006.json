@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "request_id": "20261122164242000000000000000006",
+  "book_slug": "say-it-in-your-mother-tongue",
+  "workflow_revision": "8bb30227adc4bb921429611e12a0af803c9b6487",
+  "operation": "review-record",
+  "chapter": 42,
+  "session_id": "chatgpt-20261122-sayit-ch42-reviewer",
+  "outcome": "CORRECTIONS_REQUIRED",
+  "quality_report": {
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "severity": "minor",
+        "detail": "Block 22: source emphasizes 'this', but translation has no corresponding emphasis. Restore the italic on 'так'.",
+        "resolved": false
+      },
+      {
+        "severity": "minor",
+        "detail": "Block 82: source emphasizes 'too' regarding Gabriel's happiness; restore italic on 'слишком'.",
+        "resolved": false
+      }
+    ]
+  },
+  "source_sha256": "faeae882275d9415110a38f5bde000e3d176675579c6e83923c4d76dea47294d",
+  "translation_sha256": "1fe3f9bc94c13ccc65190759131883586d39b9926411b0142cc781dbd6c27ff4",
+  "claim_sha256": "2b06b6ef93939efbd609a15ec3e18b495052cc942205ff879be087eb7db07bc2"
+}
