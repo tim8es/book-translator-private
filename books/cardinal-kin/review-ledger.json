@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "cardinal-kin",
-  "next_sequence": 34,
+  "next_sequence": 35,
   "records": [
     {
       "record_id": "75dfa72e2b6148208fd5343b6e384999",
@@ -7696,6 +7696,336 @@
               "record_id": "c2ed4a4ebb6340ab9c239f25026349ac",
               "finding_id": "chunk-005-riddler-omission"
             }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "8870f214415c438fbf9463553ecd8585",
+      "sequence": 34,
+      "unit_id": "chapter-000008",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "046f155efc220f63ca6cc74edb78872a8d69460adf63b448b32a75ff6a5acf1d",
+      "translation_sha256": "42e79a41fb3d4bb5f6dfd4a485b8692db06497dee6e5d6c4b9f3317f5e9f3ea0",
+      "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "review_contract_revision": "docs/TRANSLATION.md@a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "reviewer_session_id": "chat-20261122-cardinal-review-08",
+      "reviewed_at": "2026-11-22T15:51:16Z",
+      "state_revision": "bf41fd901fa7451a555ba65d9b6bb051ea438bff69aa6c4a27270bc894ca8a9b",
+      "review_commit": "d01377cf3ca4f30bfe8025d6ab5a9330ba0de8f1",
+      "correction_round": 3,
+      "supersedes_record_id": "6e04ab7ec7104d66b8f96d8a79b415eb",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "ck8-check-01",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The current translation rechecks and corrects the previously identified meaning issue at the cited passage.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "It’s rare for Damian to see such deliberate neutrality anymore, not a hint of feeling to be found…it reminds him a bit too much of his grandfather.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "намеренно бесстрастный взгляд",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "6e04ab7ec7104d66b8f96d8a79b415eb",
+              "finding_id": "chunk-001-neutral-recheck"
+            }
+          },
+          {
+            "id": "ck8-check-02",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "The current translation rechecks and corrects the previously identified terminology issue at the cited passage.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Honestly, watching Tam deal with idiots is probably the most entertaining thing yet.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "как Тэм расправляется с идиотами",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "6e04ab7ec7104d66b8f96d8a79b415eb",
+              "finding_id": "chunk-001-tam-7"
+            }
+          },
+          {
+            "id": "ck8-check-03",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "The current translation rechecks and corrects the previously identified terminology issue at the cited passage.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "when he needs something from Tam",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "когда ему что-то нужно от Тэм",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "6e04ab7ec7104d66b8f96d8a79b415eb",
+              "finding_id": "chunk-001-tam-8"
+            }
+          },
+          {
+            "id": "ck8-check-04",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "The current translation rechecks and corrects the previously identified terminology issue at the cited passage.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "A few minutes later, the arguing dies down and Tam peaks her head out of the office.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "и Тэм высовывает голову из кабинета",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "6e04ab7ec7104d66b8f96d8a79b415eb",
+              "finding_id": "chunk-001-tam-20"
+            }
+          },
+          {
+            "id": "ck8-check-05",
+            "category": "omission",
+            "severity": "major",
+            "detail": "The current translation rechecks and corrects the previously identified omission issue at the cited passage.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Tamara is clearly not above calling out  *anybody’s*  bullshit, including her boss.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Тамара явно не стесняется прямо говорить *кому угодно*, что тот несёт хуйню, даже собственному начальнику",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "6e04ab7ec7104d66b8f96d8a79b415eb",
+              "finding_id": "chunk-001-argument-omit"
+            }
+          },
+          {
+            "id": "ck8-check-06",
+            "category": "omission",
+            "severity": "major",
+            "detail": "The current translation rechecks and corrects the previously identified omission issue at the cited passage.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "It’s rare for Damian to see such deliberate neutrality anymore, not a hint of feeling to be found…it reminds him a bit too much of his grandfather.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Это слишком сильно напоминает ему деда",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "6e04ab7ec7104d66b8f96d8a79b415eb",
+              "finding_id": "chunk-001-grandfather-omit"
+            }
+          },
+          {
+            "id": "ck8-check-07",
+            "category": "omission",
+            "severity": "minor",
+            "detail": "The current translation rechecks and corrects the previously identified omission issue at the cited passage.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "but it’s important that they happen",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "но важно, чтобы они обязательно проходили и чтобы вы оба были в курсе дел",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "6e04ab7ec7104d66b8f96d8a79b415eb",
+              "finding_id": "chunk-002-checkins-1"
+            }
+          },
+          {
+            "id": "ck8-check-08",
+            "category": "omission",
+            "severity": "minor",
+            "detail": "The current translation rechecks and corrects the previously identified omission issue at the cited passage.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Damian is set on seeing this through to the end no matter what.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "твёрдо намерен довести дело до конца, что бы ни случилось",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "6e04ab7ec7104d66b8f96d8a79b415eb",
+              "finding_id": "chunk-002-resolve-1"
+            }
+          },
+          {
+            "id": "ck8-check-09",
+            "category": "omission",
+            "severity": "minor",
+            "detail": "The current translation rechecks and corrects the previously identified omission issue at the cited passage.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "but it’s purely business",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "но те остаются сугубо деловыми",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "6e04ab7ec7104d66b8f96d8a79b415eb",
+              "finding_id": "chunk-003-purely-business"
+            }
+          },
+          {
+            "id": "ck8-check-10",
+            "category": "referent",
+            "severity": "minor",
+            "detail": "The current translation rechecks and corrects the previously identified referent issue at the cited passage.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Damian sits on the couch across from Tim as he hands him his food.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "и Тим передаёт ему его порцию",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "6e04ab7ec7104d66b8f96d8a79b415eb",
+              "finding_id": "chunk-004-meal-agent"
+            }
+          },
+          {
+            "id": "ck8-check-11",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The current translation rechecks and corrects the previously identified style issue at the cited passage.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Tim wants to smile at the subtle way Damian relaxes enough to ask a question he genuinely doesn’t understand.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Тиму хочется улыбнуться, когда Дэмиан настолько расслабляется",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "6e04ab7ec7104d66b8f96d8a79b415eb",
+              "finding_id": "chunk-005-tense-recheck"
+            }
+          },
+          {
+            "id": "ck8-check-12",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The current translation rechecks and corrects the previously identified meaning issue at the cited passage.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Tim wants to smile at the subtle way Damian relaxes enough to ask a question he genuinely doesn’t understand.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "решается задать вопрос о том, чего искренне не понимает",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "6e04ab7ec7104d66b8f96d8a79b415eb",
+              "finding_id": "chunk-005-question-meaning"
+            }
+          },
+          {
+            "id": "ck8-check-13",
+            "category": "referent",
+            "severity": "minor",
+            "detail": "The current translation rechecks and corrects the previously identified referent issue at the cited passage.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Tim honestly can’t tell what Damian is reading off his expression and body language.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "по выражению лица и языку тела самого Тима",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "6e04ab7ec7104d66b8f96d8a79b415eb",
+              "finding_id": "chunk-005-pronoun-ambig"
+            }
+          },
+          {
+            "id": "ck8-check-14",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The current translation rechecks and corrects the previously identified style issue at the cited passage.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "“Just Drake is fine,” he decides quickly.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Просто Дрейк подойдёт",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "6e04ab7ec7104d66b8f96d8a79b415eb",
+              "finding_id": "chunk-005-drake-phrasing"
+            }
+          },
+          {
+            "id": "ck8-check-15",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Remaining awkward job title «его ассистентом руководителя» is not idiomatic in Russian; choose «помощником генерального директора» while preserving the executive function.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "I’m his executive assistant for the summer,",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Этим летом я работаю его ассистентом руководителя",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "6e04ab7ec7104d66b8f96d8a79b415eb",
+              "finding_id": "chunk-006-job-title-calque"
+            }
+          },
+          {
+            "id": "ck8-bats-143",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The new wording «одна из Бэт-семьи» is ungrammatical; use a construction such as «часть Бэт-семьи» to preserve Barbara's membership.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "she’s still one of the Bats",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "она всё ещё одна из Бэт-семьи",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       }
