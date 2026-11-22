@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "request_id": "20261122171744000000000000000005",
+  "book_slug": "say-it-in-your-mother-tongue",
+  "workflow_revision": "8bb30227adc4bb921429611e12a0af803c9b6487",
+  "operation": "review-record",
+  "chapter": 44,
+  "session_id": "chatgpt-20261122-sayit-ch44-reviewer",
+  "outcome": "PASS",
+  "quality_report": {
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "severity": "minor",
+        "detail": "Block 53: restored italic sound effect on the new-message ding.",
+        "resolved": true
+      },
+      {
+        "severity": "minor",
+        "detail": "Block 71: restored italic emphasis on a little over the speed limit.",
+        "resolved": true
+      }
+    ]
+  },
+  "source_sha256": "14414f83d5597f583744af54567f80df0eafa7e54b9163387b0dc6a7e5be4494",
+  "translation_sha256": "ff771b422054089a5a9c921f2e2d5231f21d7b48e6ab082acc168c9b3ed31b50",
+  "claim_sha256": "20e344f040d01c870e535763a587444a18733af8f1ba5d8c48741bcaea4e6fd1"
+}
