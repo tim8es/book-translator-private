@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "request_id": "20261122171748000000000000000005",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "79287ba4d4ad4b728f17496f9d69febd04a31e67454179f701938ebe1d9d4d3b",
+    "record": {
+      "correction_round": 2,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "findings": [
+          {
+            "detail": "Block 32: repaired the referent in the statement about Hamilton touching what Fernando considers his.",
+            "resolved": true,
+            "severity": "major"
+          },
+          {
+            "detail": "Block 60: repaired misleading self-directed chest reference to Max's chest.",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "Block 62: replaced unwarranted implication of personal guilt with compensating for the disappointment.",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "Blocks 4 and 65: repaired note navigation and the end-notes heading.",
+            "resolved": true,
+            "severity": "minor"
+          }
+        ]
+      },
+      "record_id": "0ce0ada4692d4aff81dc6947615cf94b",
+      "review_commit": "afb9f55a78a1403f82aa8cfe8fa3ab99110ebbb8",
+      "review_contract_revision": "docs/TRANSLATION.md@8bb30227adc4bb921429611e12a0af803c9b6487",
+      "reviewed_at": "2026-11-22T14:37:50Z",
+      "reviewer_session_id": "chatgpt-20261122-sayit-ch48-reviewer",
+      "sequence": 220,
+      "source_sha256": "a4f3490324d4a14a39491d92a47ea5e1325aad05926faddf42ea02cf2fdd09d3",
+      "state_revision": "bb1350db595e45b881284cd2c0253c28a1e14b169ac05eb930a666906e6ebbaa",
+      "supersedes_record_id": "f2e8b1aee990465badb42eb11a41bf19",
+      "translation_sha256": "5b328ad48d067e90e47f6cbac51910117e0c7e8139c05d1287627dc23ce5aa34",
+      "unit_id": "chapter-000048",
+      "workflow_revision": "8bb30227adc4bb921429611e12a0af803c9b6487"
+    }
+  },
+  "error": null
+}
