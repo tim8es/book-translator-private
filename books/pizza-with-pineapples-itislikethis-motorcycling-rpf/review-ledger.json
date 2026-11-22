@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "pizza-with-pineapples-itislikethis-motorcycling-rpf",
-  "next_sequence": 2,
+  "next_sequence": 3,
   "records": [
     {
       "record_id": "e8060d96338440d8a139c674168abf15",
@@ -41,6 +41,74 @@
             },
             "translation_anchor": {
               "quote": "Часть 1 из",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "a2c8b04a21681da6835bc6b4ba80b1bcaeb493942c1e62484afeb62ad575dc3e",
+        "style_guide": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4"
+      }
+    },
+    {
+      "record_id": "6b11c2fdd395416996c247194cbcfc77",
+      "sequence": 2,
+      "unit_id": "chapter-000001",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "fdae27d9884c16da2a3d6bb3002b1192aa7c777297a5e12e238a7a59720338ca",
+      "translation_sha256": "c1170e0418a513cf02d7524139a9eb8ad98b50a67592a46de8b8de72a2590717",
+      "workflow_revision": "789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
+      "review_contract_revision": "docs/TRANSLATION.md@789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
+      "reviewer_session_id": "auto-3e9f773e330a-reviewer-14c9464c",
+      "reviewed_at": "2026-11-22T16:47:50Z",
+      "state_revision": "2e39f727c14dd1cacf034c94d8624ab5755c2eb537df01f8425bb7250cc4c913",
+      "review_commit": "6a7b9dd8a41d7ac89c5a09647ae355ee97517243",
+      "correction_round": 2,
+      "supersedes_record_id": "e8060d96338440d8a139c674168abf15",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "style-2",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The earlier grammatical issue is fixed: «Часть 1 серии: Начинки для пиццы» is a valid construction. Recheck resolved.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Part 1 of <!-- bt-inline:000001:start -->Pizza Toppings",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Часть 1 серии:  <!-- bt-inline:000001:start -->Начинки для пиццы",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "e8060d96338440d8a139c674168abf15",
+              "finding_id": "style-1"
+            }
+          },
+          {
+            "id": "structure-1",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "There are two spaces between the colon and the inline title marker, whereas the source has one separator. Remove the extra space.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Part 1 of <!-- bt-inline:000001:start -->Pizza Toppings",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Часть 1 серии:  <!-- bt-inline:000001:start -->Начинки для пиццы",
               "occurrence": 0
             },
             "resolves": null
