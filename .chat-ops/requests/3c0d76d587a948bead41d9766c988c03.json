@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "request_id": "3c0d76d587a948bead41d9766c988c03",
+  "book_slug": "alligator-bites-never-heal",
+  "workflow_revision": "76604c82cc4345699de9ae5d97bc75e2443e8cb5",
+  "operation": "review-record",
+  "chapter": 7,
+  "session_id": "chatgpt-alligator-20261122-r12",
+  "outcome": "PASS",
+  "quality_report": {
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "severity": "major",
+        "detail": "Block 000076: the Russian now depicts Shane crumpling/falling onto the ice without inventing unconsciousness; source modality is preserved.",
+        "resolved": true
+      },
+      {
+        "severity": "major",
+        "detail": "Block 000072: restored the crude border-official sexual-bribery exaggeration as idiomatic Russian, without an ungrammatical body-part construction.",
+        "resolved": true
+      },
+      {
+        "severity": "minor",
+        "detail": "Block 000113: the beads are explicitly identified as Ilya's gift to Shane, resolving pronoun ambiguity.",
+        "resolved": true
+      },
+      {
+        "severity": "minor",
+        "detail": "Block 000171: 'prospect cup' now denotes a prospects' event ('Кубок молодых талантов'), rather than a street-avenues false friend.",
+        "resolved": true
+      },
+      {
+        "severity": "minor",
+        "detail": "Block 000082: the figurative crash/dashcam judge and jury is now grammatical without adding an actual accident.",
+        "resolved": true
+      },
+      {
+        "severity": "minor",
+        "detail": "Block 000046: 'a hit to the head' accurately reads as a blow to the head, without wrongly implying a puck.",
+        "resolved": true
+      }
+    ]
+  },
+  "source_sha256": "6e3f0e0402acaf0d35a43a0b1f5fe626297ebb1e0bd86ad2b10231f7d9460732",
+  "translation_sha256": "81fffb6d00ec81a00c36d65a9d3fb9ccf805f1cac566f7392033b593c4bcb34d",
+  "claim_sha256": "72da0f26c221c4e4771ddb3e97149051d658d057abd0fad280bf9c6de5bda54c"
+}
