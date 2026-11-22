@@ -189,12 +189,18 @@ jobs:
           node-version: "22"
       - name: Install pinned Pi CLI
         run: npm install --global --ignore-scripts @earendil-works/pi-coding-agent@1.6.0
-      - name: One canonical bounded Auto checkpoint with independent Pi role calls
+      - name: Bounded batch of canonical Pi checkpoints with independent role calls
         id: run
         shell: bash
         env:
           BOOK_TRANSLATOR_STATE_ROOT: ${{ github.workspace }}
           JOB_ID: ${{ inputs.job_id }}
+          # These are existing reviewed public-runtime adapters, not literary
+          # contract changes. They preserve all canonical acceptance checks.
+          BOOK_TRANSLATOR_INCREMENTAL_REVIEW: "on"
+          BOOK_TRANSLATOR_ADAPTIVE_BUDGET: "on"
+          BOOK_TRANSLATOR_COHERENT_BATCHES: "on"
+          BOOK_TRANSLATOR_CONTINUE_CORRECTIONS: "on"
           OMNIROUTE_API_KEY: ${{ secrets.OMNIROUTE_API_KEY }}
           OMNIROUTE_BASE_URL: ${{ vars.OMNIROUTE_BASE_URL }}
           OMNIROUTE_TRANSLATOR_MODEL: ${{ vars.OMNIROUTE_TRANSLATOR_MODEL }}
@@ -208,7 +214,9 @@ jobs:
           PI_AGENT_MAX_TOKENS: ${{ vars.PI_AGENT_MAX_TOKENS || '32768' }}
         run: |
           set -euo pipefail
-          python .public-auto-runtime/automation/book_runner.py --job-id "$JOB_ID"
+          # The shared --batch runner bounds work to five checkpoints or 10
+          # minutes before the next dispatch, and stops on backoff or drift.
+          python .public-auto-runtime/automation/book_runner.py --batch --job-id "$JOB_ID"
 
       - name: Publish verified final EPUB artifact
         if: steps.run.outputs.done == 'true'
