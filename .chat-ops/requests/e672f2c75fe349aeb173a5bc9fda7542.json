@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "request_id": "e672f2c75fe349aeb173a5bc9fda7542",
+  "book_slug": "cardinal-kin",
+  "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
+  "operation": "review-record",
+  "chapter": 12,
+  "session_id": "chat-20261122-cardinal-review12-a",
+  "outcome": "CORRECTIONS_REQUIRED",
+  "quality_report": {
+    "evidence_version": 2,
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "id": "recheck-061-calque",
+        "category": "style",
+        "severity": "minor",
+        "detail": "«Для более намётанного глаза Дэмиана» — неестественная калька; сохранить сравнительную наблюдательность Дэмиана при естественном русском синтаксисе.",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "To Damian’s more trained eye, Drake just looked so…",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Для более намётанного глаза Дэмиана Дрейк выглядел",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "recheck-159-call-me",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "I go by Tim означает просьбу обращаться к нему «Тим» вместо «Тимоти», а «Меня зовут Тим» сообщает другое имя, хотя полное имя Тимоти известно. Исправить на «Зовите меня Тим».",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "I go by Tim.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Меня зовут Тим",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "recheck-207-calque",
+        "category": "style",
+        "severity": "minor",
+        "detail": "«Я мог бы стать столь многим» неидиоматично для русского и ухудшает литературную цитату. Нужна естественная передача сожаления о множестве нереализованных возможностей.",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "I should have been a great many things",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Я мог бы стать столь многим",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "recheck-226-secret",
+        "category": "addition",
+        "severity": "minor",
+        "detail": "Источник говорит лишь о гражданском госте, но перевод добавляет, что он «не посвящён в их тайну». Не усиливать факты, которых в этом предложении нет.",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "their civilian guest notwithstanding",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "гостя, не посвящённого в их тайну",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "recheck-281-author-gender",
+        "category": "referent",
+        "severity": "minor",
+        "detail": "Английский «When I was writing» не определяет гендер автора. В переводе «когда я писала» без оснований установлен женский род; передать нейтральной конструкцией.",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "When I was writing, they just kinda came out",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Когда я писала, они как-то сами всплыли",
+          "occurrence": 0
+        },
+        "resolves": null
+      }
+    ]
+  },
+  "source_sha256": "238a571f26f8f6a4a9c6beb12b31495c37e9a29593d27182e9b0a5df8f349698",
+  "translation_sha256": "bf5dc94a3ea0a4b2c8502edb6e52949629351d00a50e9cbf8634ed8933d61e3e",
+  "claim_sha256": "0f236989af76b033bd98812b2796cae7d592e80e3d747ac347cea361a0d22086"
+}
