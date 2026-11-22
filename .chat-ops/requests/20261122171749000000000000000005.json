@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "request_id": "20261122171749000000000000000005",
+  "book_slug": "say-it-in-your-mother-tongue",
+  "workflow_revision": "8bb30227adc4bb921429611e12a0af803c9b6487",
+  "operation": "review-record",
+  "chapter": 49,
+  "session_id": "chatgpt-20261122-sayit-ch49-reviewer",
+  "outcome": "PASS",
+  "quality_report": {
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "severity": "minor",
+        "detail": "Block 116: corrected end-of-chapter notes heading, preserving separation from opening notes and maintaining source structure.",
+        "resolved": true
+      }
+    ]
+  },
+  "source_sha256": "3eb2f502e4d9bc3c2ccdadf501ff631dfd96a7dd13316c5656ac3aca30b21929",
+  "translation_sha256": "6293265e97d342317d9658bec9396083a6bca821657d3488c94564f5acee187d",
+  "claim_sha256": "50cd5f859f664408a83f501effc3ecfad19a70444876a1a8ad80af00de71960f"
+}
