@@ -40,4 +40,4 @@ Use dictionary forms; classify terms semantically. Type and optional notes use t
 | Green Linnet | Зеленушка | персонаж | Персонаж мужского пола. |
 | Hans | Ганс | персонаж | Персонаж мужского пола. |
 | Miller | мельник | персонаж | Обозначение Хью-мельника. |
-| Linnet | Коноплянка | персонаж | Персонаж женского пола. |
+| Linnet | Зеленушка | персонаж | Персонаж мужского пола. |
