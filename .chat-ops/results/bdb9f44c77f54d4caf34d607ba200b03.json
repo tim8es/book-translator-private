@@ -1,0 +1,381 @@
+{
+  "schema_version": 1,
+  "request_id": "bdb9f44c77f54d4caf34d607ba200b03",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "607366046a96266252f49d0a7c8e1dd88f555fcc314d696cdacdf3f998eac223",
+    "record": {
+      "correction_round": 3,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "terminology",
+            "detail": "Словарная статья исправлена на форму «Кардинал»; в тексте форма именительного падежа соответствует исходнику.",
+            "id": "recheck-01",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "chunk-001-glossary-cardinal",
+              "record_id": "aa313d46c1db48849384ee93d1d665e2"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Ever since she first became Oracle, Cardinal has been a constant in her work."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "С тех пор как Барбара стала Оракулом, Кардинал постоянно присутствует"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Теперь использовано естественное «род занятий в обычной жизни».",
+            "id": "recheck-02",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "chunk-002-civilian-job",
+              "record_id": "aa313d46c1db48849384ee93d1d665e2"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "gender, ethnicity, motivations, civilian job/hobbies"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "род занятий в обычной жизни"
+            }
+          },
+          {
+            "category": "omission",
+            "detail": "Восстановлен полный перечень неизвестного: пол, этническое происхождение, мотивы, гражданская деятельность и увлечения.",
+            "id": "recheck-03",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "chunk-002-missing-details",
+              "record_id": "aa313d46c1db48849384ee93d1d665e2"
+            },
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "That’s it. That’s all they know. As for everything else—gender, ethnicity, motivations, civilian job/hobbies—they’re completely in the dark."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "пол, этническое происхождение, мотивы, род занятий в обычной жизни и увлечения Кардинала"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Защита Кардинала Джейсоном передана как открыто высказываемая поддержка.",
+            "id": "recheck-04",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "chunk-002-vocal-defender",
+              "record_id": "aa313d46c1db48849384ee93d1d665e2"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Jason has been one of their most vocal defenders ever since"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "один из тех, кто громче всех вступается за Кардинала"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Энтузиазм Джейсона передан без негативного оттенка «разглагольствовать».",
+            "id": "recheck-05",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "chunk-002-rave-diction",
+              "record_id": "aa313d46c1db48849384ee93d1d665e2"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "“Because male cardinals are more cool!” Jason continues to rave."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "с жаром продолжает Джейсон"
+            }
+          },
+          {
+            "category": "omission",
+            "detail": "Полностью восстановлены реплика Синей Сойки и авторская ремарка.",
+            "id": "recheck-06",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "chunk-003-dialogue-omitted",
+              "record_id": "aa313d46c1db48849384ee93d1d665e2"
+            },
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "“Don’t blame me! I didn’t even know,” Bluejay immediately defends himself."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "«Не вини меня! Я и сам не знал», — тут же защищается Синяя Сойка."
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Тщательный труд отражён словом «кропотливо».",
+            "id": "recheck-07",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "chunk-004-painstakingly",
+              "record_id": "aa313d46c1db48849384ee93d1d665e2"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "For the last few years, Tim has painstakingly worked to be seen as an ally to these people, steadily building up a network of street kids, homeless people, working girls, and others."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Последние несколько лет Тим кропотливо старался"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Неестественная калька заменена естественным обозначением мысленного запоминания.",
+            "id": "recheck-08",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "chunk-004-filing-info",
+              "record_id": "aa313d46c1db48849384ee93d1d665e2"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Tim nods, filing the info away."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Тим кивает, мысленно отмечая эти сведения."
+            }
+          },
+          {
+            "category": "terminology",
+            "detail": "Имя «Синяя Сойка» согласовано с глоссарием.",
+            "id": "recheck-09",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "chunk-005-term-bluejay-129",
+              "record_id": "aa313d46c1db48849384ee93d1d665e2"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Sure enough, not 5 minutes later, the Bats arrive— Batman, Bluejay, Spoiler, and Robin."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "И действительно, не проходит и пяти минут, как прибывают Бэты — Бэтмен, Синяя Сойка, Спойлер и Робин."
+            }
+          },
+          {
+            "category": "omission",
+            "detail": "Восстановлены время прибытия и все четыре участника группы.",
+            "id": "recheck-10",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "chunk-005-omit-arrival-129",
+              "record_id": "aa313d46c1db48849384ee93d1d665e2"
+            },
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Sure enough, not 5 minutes later, the Bats arrive— Batman, Bluejay, Spoiler, and Robin."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "И действительно, не проходит и пяти минут, как прибывают Бэты — Бэтмен, Синяя Сойка, Спойлер и Робин."
+            }
+          },
+          {
+            "category": "terminology",
+            "detail": "Имя Синей Сойки приведено к закреплённому написанию.",
+            "id": "recheck-11",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "chunk-005-term-bluejay-132",
+              "record_id": "aa313d46c1db48849384ee93d1d665e2"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "He passes the time listening to their conversation, holding himself back from laughing as Bluejay and Spoiler argue over which Star Wars trilogy is best."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Синяя Сойка и Спойлер спорят"
+            }
+          },
+          {
+            "category": "omission",
+            "detail": "Восстановлено прослушивание разговора, сдерживаемый смех и спор о трилогиях.",
+            "id": "recheck-12",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "chunk-005-omit-banter-132",
+              "record_id": "aa313d46c1db48849384ee93d1d665e2"
+            },
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "He passes the time listening to their conversation, holding himself back from laughing as Bluejay and Spoiler argue over which Star Wars trilogy is best."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Тим коротает время, прислушиваясь к их разговору, и с трудом сдерживает смех"
+            }
+          },
+          {
+            "category": "terminology",
+            "detail": "Сохранено закреплённое имя «Синяя Сойка».",
+            "id": "recheck-13",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "chunk-005-term-bluejay-135",
+              "record_id": "aa313d46c1db48849384ee93d1d665e2"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Bluejay, Spoiler. Outflank them. Clear?"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Синяя Сойка, Спойлер, обходите их с флангов."
+            }
+          },
+          {
+            "category": "omission",
+            "detail": "Восстановлены Спойлер, приказ обойти с флангов и вопрос Бэтмена.",
+            "id": "recheck-14",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "chunk-005-omit-orders-135",
+              "record_id": "aa313d46c1db48849384ee93d1d665e2"
+            },
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Bluejay, Spoiler. Outflank them. Clear?"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Синяя Сойка, Спойлер, обходите их с флангов. Ясно?"
+            }
+          },
+          {
+            "category": "omission",
+            "detail": "Полностью восстановлено предложение об обучении Джейсона нунчакам в последний год как Робина.",
+            "id": "recheck-15",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "chunk-006-omit-nunchucks",
+              "record_id": "aa313d46c1db48849384ee93d1d665e2"
+            },
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "In his last year as Robin, B started training him with a pair of nunchucks that quickly became his primary weapon."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "В последний год, когда он был Робином, Б. начал учить его обращаться с парой нунчаков, и те быстро стали его основным оружием."
+            }
+          },
+          {
+            "category": "structure",
+            "detail": "Предложение теперь грамматически завершено и соединено с последующим рассказом.",
+            "id": "recheck-16",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "chunk-006-broken-nunchucks",
+              "record_id": "aa313d46c1db48849384ee93d1d665e2"
+            },
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Tim has never been particularly fond of them himself, but he can’t deny the easy grace and strength Jason uses them with."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Сам Тим никогда особенно не любил нунчаки"
+            }
+          },
+          {
+            "category": "addition",
+            "detail": "Удалён лишний термин после завершённого перевода предложения.",
+            "id": "recheck-17",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "chunk-006-extra-grapple",
+              "record_id": "aa313d46c1db48849384ee93d1d665e2"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Batman stows away his grappling gun on his belt and faces Robin, standing still, patiently waiting for Damian to find his words."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Бэтмен убирает гарпунный пистолет на пояс и поворачивается к Робину"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Восстановлено сравнение времени, проведённого Дэмианом в Готэме, с прежним периодом.",
+            "id": "recheck-18",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "chunk-007-time-compare",
+              "record_id": "aa313d46c1db48849384ee93d1d665e2"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "The extra time he’s had in Gotham as compared to before has been good for him; Damian is a better and more well rounded individual."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "То, что он провёл в Готэме больше времени, чем прежде"
+            }
+          }
+        ]
+      },
+      "record_id": "1a54965f2a054406b94657617cf22bc5",
+      "review_commit": "d012a5dd39427096686e83bae72619eca41b2dbf",
+      "review_contract_revision": "docs/TRANSLATION.md@a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "reviewed_at": "2026-11-22T16:38:34Z",
+      "reviewer_session_id": "chat-20261122-cardinal-review-09-new",
+      "sequence": 38,
+      "source_sha256": "667284ef59c10f7475f1bd9f4d7eebcc2f6611d1b523ecf00aec4450a16b8e8d",
+      "state_revision": "b9b065fda4f86332b88f954e0b1493f0528e9b7144685c123d954519e2620e72",
+      "supersedes_record_id": "aa313d46c1db48849384ee93d1d665e2",
+      "translation_sha256": "2fc2eff2f173ac7d27b97fc1703ad066f46b596c64255481c4b780af9b053227",
+      "unit_id": "chapter-000009",
+      "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29"
+    }
+  },
+  "error": null
+}
