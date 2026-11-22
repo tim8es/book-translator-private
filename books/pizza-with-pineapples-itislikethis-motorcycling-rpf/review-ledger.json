@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "pizza-with-pineapples-itislikethis-motorcycling-rpf",
-  "next_sequence": 18,
+  "next_sequence": 19,
   "records": [
     {
       "record_id": "e8060d96338440d8a139c674168abf15",
@@ -1288,6 +1288,263 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "bdc66ead04bc4367a66d9cf98e4c4dda",
+      "sequence": 18,
+      "unit_id": "chapter-000003",
+      "outcome": "PASS",
+      "source_sha256": "6cd0ff696ffbec2ac9b9dcf7f998aaf9aed5f944e226c6df5b8f81001ed54144",
+      "translation_sha256": "99aa4740fe9baab30649c7815d4d424e1fd3621c56b4a97c667da8718aa59bfd",
+      "workflow_revision": "789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
+      "review_contract_revision": "docs/TRANSLATION.md@789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
+      "reviewer_session_id": "chatops-pizza-re-review-20261123-02",
+      "reviewed_at": "2026-11-22T23:14:51Z",
+      "state_revision": "2e98aa9e057f5fa50fda2fac30a85a0ffc22fb8f6bfec2574a680187692a5b50",
+      "review_commit": "82781fbc8d3a3715855554e1d7f5e50687195554",
+      "correction_round": 1,
+      "supersedes_record_id": "e318d69550c94bea9a513be30ccb53ab",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "like-043-resolved",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Verified revised rendering against the original passage and adjacent context; prior issue resolved.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "He really does like you",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Ты ему и правда нравишься",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "e318d69550c94bea9a513be30ccb53ab",
+              "finding_id": "like-043"
+            }
+          },
+          {
+            "id": "like-044-resolved",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Verified revised rendering against the original passage and adjacent context; prior issue resolved.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "I don’t like him back",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "А он мне не нравится.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "e318d69550c94bea9a513be30ccb53ab",
+              "finding_id": "like-044"
+            }
+          },
+          {
+            "id": "like-049-resolved",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Verified revised rendering against the original passage and adjacent context; prior issue resolved.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "I don’t get why he likes you so much, either",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "я и сам не понимаю, почему ты ему настолько нравишься.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "e318d69550c94bea9a513be30ccb53ab",
+              "finding_id": "like-049"
+            }
+          },
+          {
+            "id": "calque-069-resolved",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Verified revised rendering against the original passage and adjacent context; prior issue resolved.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "They only tell me after",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Мне говорят только потом, — сказал Валентино. — Пока всё решается, я ни о чём не знаю.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "e318d69550c94bea9a513be30ccb53ab",
+              "finding_id": "calque-069"
+            }
+          },
+          {
+            "id": "calque-075-resolved",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Verified revised rendering against the original passage and adjacent context; prior issue resolved.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Always am a good excuse.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "На меня всегда удобно всё свалить.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "e318d69550c94bea9a513be30ccb53ab",
+              "finding_id": "calque-075"
+            }
+          },
+          {
+            "id": "nickname-090-resolved",
+            "category": "terminology",
+            "severity": "major",
+            "detail": "Verified revised rendering against the original passage and adjacent context; prior issue resolved.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Yes. Tola, for short.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Да. А сокращённо — Тола.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "e318d69550c94bea9a513be30ccb53ab",
+              "finding_id": "nickname-090"
+            }
+          },
+          {
+            "id": "grammar-096-resolved",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Verified revised rendering against the original passage and adjacent context; prior issue resolved.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "tucking his phone away as soon as the contact was set.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "убирая телефон сразу после того, как сохранил контакт.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "e318d69550c94bea9a513be30ccb53ab",
+              "finding_id": "grammar-096"
+            }
+          },
+          {
+            "id": "repeat-100-resolved",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Verified revised rendering against the original passage and adjacent context; prior issue resolved.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Stared and stared and stared.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Смотрел, смотрел и смотрел.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "e318d69550c94bea9a513be30ccb53ab",
+              "finding_id": "repeat-100"
+            }
+          },
+          {
+            "id": "referent-101-resolved",
+            "category": "referent",
+            "severity": "major",
+            "detail": "Verified revised rendering against the original passage and adjacent context; prior issue resolved.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Had certainly liked him more than Alex, back then.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Тогда Марк определённо нравился Валентино больше, чем Алекс.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "e318d69550c94bea9a513be30ccb53ab",
+              "finding_id": "referent-101"
+            }
+          },
+          {
+            "id": "like-103-resolved",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Verified revised rendering against the original passage and adjacent context; prior issue resolved.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "I used to like you more back when I didn’t know you, too.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Ты и мне больше нравился, когда я тебя ещё не знал.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "e318d69550c94bea9a513be30ccb53ab",
+              "finding_id": "like-103"
+            }
+          },
+          {
+            "id": "meaning-071-resolved",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Verified revised rendering against the original passage and adjacent context; prior issue resolved.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "You see how they treat me with Lorenzo",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Ты видишь, как они обходились со мной в истории с Лоренсо",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "e318d69550c94bea9a513be30ccb53ab",
+              "finding_id": "meaning-071"
+            }
+          },
+          {
+            "id": "structure-110-resolved",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "Verified revised rendering against the original passage and adjacent context; prior issue resolved.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "maybe if you reconsider my contact name, I can consider this.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "может, если ты передумаешь насчёт того, как записать меня в контактах, я подумаю над этим.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "e318d69550c94bea9a513be30ccb53ab",
+              "finding_id": "structure-110"
+            }
           }
         ]
       }
