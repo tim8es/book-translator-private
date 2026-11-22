@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "request_id": "0de5750998bf672bae3c570c45992870",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "9865cdd316a5acc2445c98f418624cffda7ca6b93bd93523e758b2f7ae437474",
+    "record": {
+      "correction_round": 0,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "findings": []
+      },
+      "record_id": "fa595ec96f9644129f988ce868bd12a0",
+      "review_commit": "3360a2184242f49944142338db7dabd0517ad002",
+      "review_contract_revision": "docs/TRANSLATION.md@a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "reviewed_at": "2026-11-22T15:54:10Z",
+      "reviewer_session_id": "chat-20261122-cardinal-afterword-review-27",
+      "sequence": 36,
+      "source_sha256": "4d9b3c35fdbee7568a823e51bc2a346417833c43e51e291d94593ba3ca04094e",
+      "state_revision": "01d76b287c0afd1369683bbb9bb12310ab21a73005dfdbdbded04de81609fa4a",
+      "supersedes_record_id": null,
+      "translation_sha256": "d26bfad07cc932ce6e80e4444ec405d5cc6438ce101073e7787a2e29a9effbbc",
+      "unit_id": "chapter-000027",
+      "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29"
+    }
+  },
+  "error": null
+}

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "cardinal-kin",
-  "next_sequence": 36,
+  "next_sequence": 37,
   "records": [
     {
       "record_id": "75dfa72e2b6148208fd5343b6e384999",
@@ -8095,6 +8095,33 @@
             }
           }
         ]
+      }
+    },
+    {
+      "record_id": "fa595ec96f9644129f988ce868bd12a0",
+      "sequence": 36,
+      "unit_id": "chapter-000027",
+      "outcome": "PASS",
+      "source_sha256": "4d9b3c35fdbee7568a823e51bc2a346417833c43e51e291d94593ba3ca04094e",
+      "translation_sha256": "d26bfad07cc932ce6e80e4444ec405d5cc6438ce101073e7787a2e29a9effbbc",
+      "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "review_contract_revision": "docs/TRANSLATION.md@a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "reviewer_session_id": "chat-20261122-cardinal-afterword-review-27",
+      "reviewed_at": "2026-11-22T15:54:10Z",
+      "state_revision": "01d76b287c0afd1369683bbb9bb12310ab21a73005dfdbdbded04de81609fa4a",
+      "review_commit": "3360a2184242f49944142338db7dabd0517ad002",
+      "correction_round": 0,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": []
       }
     }
   ]
