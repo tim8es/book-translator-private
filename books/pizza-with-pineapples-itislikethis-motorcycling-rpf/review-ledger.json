@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "pizza-with-pineapples-itislikethis-motorcycling-rpf",
-  "next_sequence": 11,
+  "next_sequence": 12,
   "records": [
     {
       "record_id": "e8060d96338440d8a139c674168abf15",
@@ -580,6 +580,83 @@
           "structure": true
         },
         "findings": []
+      }
+    },
+    {
+      "record_id": "cb08e4bafd0048ef9920ba800e730eeb",
+      "sequence": 11,
+      "unit_id": "chapter-000007",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "951305d50bf19c68adc905adedd4de297a6e492c8d26826238e9e4c3b473ad31",
+      "translation_sha256": "e327078d16fa67bb266487a54f51aa293f2ec32c4e2553c57a5c4ec517adb289",
+      "workflow_revision": "789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
+      "review_contract_revision": "docs/TRANSLATION.md@789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
+      "reviewer_session_id": "chatops-pizza-reviewer-20261122-08",
+      "reviewed_at": "2026-11-22T20:57:59Z",
+      "state_revision": "6a69558c23ecb8bacf66c12510ba52fce1f04daca31a683ef12ad70a3f77bffd",
+      "review_commit": "80bcea6eceb2b8724c4de22e4c9ccfdc12fcc680",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "meaning-025",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Source states Alex wishes he actually could be shocked by this question, but isn't; translated wording inserts 'say' and turns this into something he wants to claim verbally. Preserve his internal inability to feel surprised.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "He wished he could be shocked at the question. Wasn’t.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Ему хотелось бы сказать, что вопрос его ошеломил. Но нет.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-033",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The source says most people cannot compare with nine-time world champion Valentino; Russian «не с чем сравнивать» instead implies a lack of objects to compare. Restore 'cannot compare to him' without overstating.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "So I think most people can’t compare, really.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Так что, думаю, большинству здесь не с чем сравнивать.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-034",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The source asserts the humiliation ritual wasn't really about Valentino, but the translation says it wasn't only about Valentino, implying he remained one of its real targets. Preserve the source's contrast with wider disrespect of MotoGP.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "This whole humiliation ritual wasn’t really about Valentino",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Вся эта церемония унижения на самом деле касалась не только Валентино.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
       }
     }
   ]
