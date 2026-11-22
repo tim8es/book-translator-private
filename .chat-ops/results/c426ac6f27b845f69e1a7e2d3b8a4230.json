@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "request_id": "c426ac6f27b845f69e1a7e2d3b8a4230",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "568173f9cc21196dfc86a793f06e291c7f5273e1a072f7cd3eaf6ab1d91b613b",
+    "record": {
+      "correction_round": 5,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "meaning",
+            "detail": "Damian now makes clear that almost nothing is excluded by Jason's joking warning, rather than referring to trifles.",
+            "id": "sarcasm-16-resolved-20261122",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "sarcasm-16-20261122",
+              "record_id": "31f86f5216194de2b56a0b88a3a178ee"
+            },
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Little falls under that category"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Да под это почти ничего не подпадает"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Damian's explicit hope of succeeding is restored with «рассчитывает когда-нибудь добиться успеха».",
+            "id": "success-25-resolved-20261122",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "success-25-20261122",
+              "record_id": "31f86f5216194de2b56a0b88a3a178ee"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "If he has any hope of being successful"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Если он рассчитывает когда-нибудь добиться успеха"
+            }
+          }
+        ]
+      },
+      "record_id": "b6c279600020430e970e853fa13108f5",
+      "review_commit": "fffc32e9d76c6ad551f68b6f4908f5936789281c",
+      "review_contract_revision": "docs/TRANSLATION.md@a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "reviewed_at": "2026-11-22T15:23:56Z",
+      "reviewer_session_id": "chat-20261122-cardinal-review-04b",
+      "sequence": 29,
+      "source_sha256": "4d370415b6d8e2ff84f0bb4a5633e2dfff9069a3139d5383919c57cdfe737871",
+      "state_revision": "01e3ec3339d0044afe5f8beed94dc79c5cf9963cc8ee95a72cebc7df1dd60483",
+      "supersedes_record_id": "31f86f5216194de2b56a0b88a3a178ee",
+      "translation_sha256": "2578c2c8e7d177d212ea829df22c38900ace6c2bf258eec4b6eb244030f4ddac",
+      "unit_id": "chapter-000004",
+      "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29"
+    }
+  },
+  "error": null
+}
