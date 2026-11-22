@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 215,
+  "next_sequence": 216,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -20858,6 +20858,49 @@
           {
             "severity": "minor",
             "detail": "Block 50: restored italic emphasis on already sipping coffee.",
+            "resolved": true
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "b6e3caf4bd1a44aca54f02cc00fd8f15",
+      "sequence": 215,
+      "unit_id": "chapter-000042",
+      "outcome": "PASS",
+      "source_sha256": "faeae882275d9415110a38f5bde000e3d176675579c6e83923c4d76dea47294d",
+      "translation_sha256": "dd4ec95bb405a7e3efdab59791afbc9e0c0b8d7aa0e2dc31075317a1efc93bec",
+      "workflow_revision": "8bb30227adc4bb921429611e12a0af803c9b6487",
+      "review_contract_revision": "docs/TRANSLATION.md@8bb30227adc4bb921429611e12a0af803c9b6487",
+      "reviewer_session_id": "chatgpt-20261122-sayit-ch42-reviewer-final",
+      "reviewed_at": "2026-11-22T13:37:04Z",
+      "state_revision": "52b3e919bab0f29aa9ce6e074c80e1f3bb1465666b69297168a5feceb4b916ee",
+      "review_commit": "eeb9633230c4fd97b605c74da4777f3970f6bf21",
+      "correction_round": 2,
+      "supersedes_record_id": "3cb49bfb55d444089e424257bb9b32d2",
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Block 22: rechecked earlier missing emphasis and confirmed italic on 'Так' matches the source 'this'.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Block 82: rechecked earlier missing emphasis and confirmed italic on 'слишком' matches source 'too'.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Block 45: verified restored description of Gabriel's face and reaction.",
             "resolved": true
           }
         ]

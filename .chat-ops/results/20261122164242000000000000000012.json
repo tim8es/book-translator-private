@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "request_id": "20261122164242000000000000000012",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "13636a409aaa26485be414951c0afeb05bc348d72731cd35fab35a7c5b40d88a",
+    "record": {
+      "correction_round": 2,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "findings": [
+          {
+            "detail": "Block 22: rechecked earlier missing emphasis and confirmed italic on 'Так' matches the source 'this'.",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "Block 82: rechecked earlier missing emphasis and confirmed italic on 'слишком' matches source 'too'.",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "Block 45: verified restored description of Gabriel's face and reaction.",
+            "resolved": true,
+            "severity": "minor"
+          }
+        ]
+      },
+      "record_id": "b6e3caf4bd1a44aca54f02cc00fd8f15",
+      "review_commit": "eeb9633230c4fd97b605c74da4777f3970f6bf21",
+      "review_contract_revision": "docs/TRANSLATION.md@8bb30227adc4bb921429611e12a0af803c9b6487",
+      "reviewed_at": "2026-11-22T13:37:04Z",
+      "reviewer_session_id": "chatgpt-20261122-sayit-ch42-reviewer-final",
+      "sequence": 215,
+      "source_sha256": "faeae882275d9415110a38f5bde000e3d176675579c6e83923c4d76dea47294d",
+      "state_revision": "52b3e919bab0f29aa9ce6e074c80e1f3bb1465666b69297168a5feceb4b916ee",
+      "supersedes_record_id": "3cb49bfb55d444089e424257bb9b32d2",
+      "translation_sha256": "dd4ec95bb405a7e3efdab59791afbc9e0c0b8d7aa0e2dc31075317a1efc93bec",
+      "unit_id": "chapter-000042",
+      "workflow_revision": "8bb30227adc4bb921429611e12a0af803c9b6487"
+    }
+  },
+  "error": null
+}
