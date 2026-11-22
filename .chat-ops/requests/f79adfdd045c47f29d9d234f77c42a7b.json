@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "request_id": "f79adfdd045c47f29d9d234f77c42a7b",
+  "book_slug": "alligator-bites-never-heal",
+  "workflow_revision": "76604c82cc4345699de9ae5d97bc75e2443e8cb5",
+  "operation": "review-record",
+  "chapter": 9,
+  "session_id": "chatgpt-alligator-20261122-r16",
+  "outcome": "CORRECTIONS_REQUIRED",
+  "quality_report": {
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "severity": "minor",
+        "detail": "Blocks 000193, 000198 and 000200: prior ticking cadence, heart/maw metaphor and handjob specificity have been corrected against source.",
+        "resolved": true
+      },
+      {
+        "severity": "minor",
+        "detail": "Block 000290: ankle-kissing and hand placement now read naturally without changing action.",
+        "resolved": true
+      },
+      {
+        "severity": "minor",
+        "detail": "Block 000203: 'единственное время, когда Илья вообще сидел спокойно, — когда лежал ...' still creates a sitting-versus-lying contradiction in Russian. Replace 'сидел спокойно' with 'оставался неподвижным' or 'не шевелился', preserving the sense that he was still in his mother's lap.",
+        "resolved": false
+      }
+    ]
+  },
+  "source_sha256": "b1a3073f0193f948f34dd2952527880eddad9a72901899e48c2e10a2d117b80b",
+  "translation_sha256": "9d509fdb89f152e141e83cf6e26d62fe9d503f94d4174c9e72bc9fdbb5a0a6a1",
+  "claim_sha256": "a97db6767b2982199674fdd4c2595adb90749a3c0355ff3a84fa5f1711647318"
+}
