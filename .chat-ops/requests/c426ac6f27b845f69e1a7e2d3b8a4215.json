@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "request_id": "c426ac6f27b845f69e1a7e2d3b8a4215",
+  "book_slug": "cardinal-kin",
+  "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
+  "operation": "review-record",
+  "chapter": 2,
+  "session_id": "chat-20261122-cardinal-review-02",
+  "outcome": "PASS",
+  "quality_report": {
+    "evidence_version": 2,
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "id": "style-1-resolved-20261122",
+        "category": "style",
+        "severity": "minor",
+        "detail": "The previously ungrammatical author attribution is corrected to «автора Yellow_sprouts»; full 14-block source comparison confirms the linked creator attribution and every other block remain faithful.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "by <!-- bt-inline:000002:start -->Yellow_sprouts<!-- bt-inline:000002:end -->",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "автора <!-- bt-inline:000002:start -->Yellow_sprouts<!-- bt-inline:000002:end -->",
+          "occurrence": 0
+        },
+        "resolves": {
+          "finding_id": "style-1"
+        }
+      }
+    ]
+  },
+  "source_sha256": "a5939058bc010e5b6072b62dc1b76cf7876db3d781763182b3338f3ef11d7f7a",
+  "translation_sha256": "d9bb9e7df3ced5fb0f3b4ed78acd4864654dcaaa540ef43ef318e3c7dc47dc70",
+  "claim_sha256": "40a80f3b5fd518b46a99508c5ac642e1a16db6b72bfce40d957dd75bda9a784f"
+}
