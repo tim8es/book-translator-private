@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "request_id": "b418c6a133dc4a76b9cb7f4f59cba718",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "ecb46f86de21b96907e8977ff85ccff2790047d3b4315d4f7bc2a81ffbda6113",
+    "record": {
+      "correction_round": 3,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "style",
+            "detail": "The corrected position is naturally «помощник генерального директора», accurately identifying the executive assistant role.",
+            "id": "ck8-final-1",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "ck8-check-15",
+              "record_id": "8870f214415c438fbf9463553ecd8585"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "I’m his executive assistant for the summer,"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Этим летом я работаю помощником генерального директора"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "The revised «часть Бэт-семьи» is grammatical and correctly identifies Barbara as a Bat-family member.",
+            "id": "ck8-final-2",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "ck8-bats-143",
+              "record_id": "8870f214415c438fbf9463553ecd8585"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "she’s still one of the Bats"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "она всё ещё часть Бэт-семьи"
+            }
+          }
+        ]
+      },
+      "record_id": "d95b0dc9d85144b999ae74f03786b062",
+      "review_commit": "bc68a477214eeeaa73e4b67fa3a7e82ad446b1be",
+      "review_contract_revision": "docs/TRANSLATION.md@a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "reviewed_at": "2026-11-22T15:53:43Z",
+      "reviewer_session_id": "chat-20261122-cardinal-review-08b",
+      "sequence": 35,
+      "source_sha256": "046f155efc220f63ca6cc74edb78872a8d69460adf63b448b32a75ff6a5acf1d",
+      "state_revision": "90b5f925570bba09b445239a18ae7109fcc2878c41cc7e77b183554ebeb94257",
+      "supersedes_record_id": "8870f214415c438fbf9463553ecd8585",
+      "translation_sha256": "144888cbe672fd7ed07cdc495c4d1f214f83a78e6c7fa1c112bab73e908c20d9",
+      "unit_id": "chapter-000008",
+      "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29"
+    }
+  },
+  "error": null
+}
