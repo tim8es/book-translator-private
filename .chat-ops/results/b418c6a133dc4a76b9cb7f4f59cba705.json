@@ -1,0 +1,172 @@
+{
+  "schema_version": 1,
+  "request_id": "b418c6a133dc4a76b9cb7f4f59cba705",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "c740066c5ea992fbea6ce5d77f0543e89e41421a0fc23150231cb7b7c4978ed8",
+    "record": {
+      "correction_round": 4,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "structure",
+            "detail": "Перенесена точка за пределы встроенной ссылки; связанный текст ограничен словом «примечания».",
+            "id": "ck7-fix-01",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "chunk-001-link-punct-r2",
+              "record_id": "c2ed4a4ebb6340ab9c239f25026349ac"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "See the end of the chapter for <!-- bt-inline:000001:start -->notes<!-- bt-inline:000001:end -->"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "<!-- bt-inline:000001:start -->примечания<!-- bt-inline:000001:end -->."
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "В восстановленной реплике присутствует «Я просто…», сохраняющее оттенок искренности и акцент simply.",
+            "id": "ck7-fix-02",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "chunk-001-simply-omitted",
+              "record_id": "c2ed4a4ebb6340ab9c239f25026349ac"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "I simply… want to do well."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Я просто… хочу хорошо справиться"
+            }
+          },
+          {
+            "category": "structure",
+            "detail": "Начало самостоятельного речевого предложения восстановлено с прописной буквой «Я».",
+            "id": "ck7-fix-03",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "chunk-001-dialogue-capital",
+              "record_id": "c2ed4a4ebb6340ab9c239f25026349ac"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "“...amongst other things,” he admits. “I simply… want to do well.”"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Я просто… хочу хорошо справиться"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Глагол «посмеивается» передаёт тихий смешок, а не немое усмехание.",
+            "id": "ck7-fix-04",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "chunk-002-chuckle-action",
+              "record_id": "c2ed4a4ebb6340ab9c239f25026349ac"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "“Alright, alright,” he chuckles. “I won’t keep you in suspense."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Ладно, ладно, — посмеивается он"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Сохранено знание о вакансии до разговора, а не момент узнавания о ней.",
+            "id": "ck7-fix-05",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "chunk-002-aware-vs-learned",
+              "record_id": "c2ed4a4ebb6340ab9c239f25026349ac"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "For the sake of full transparency, you should know that I was aware of the opening because it is usually filled by my daughter, Tamara."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "я уже знал об этой вакансии"
+            }
+          },
+          {
+            "category": "register",
+            "detail": "До перехода Люциуса к менее формальному обращению употреблено «вы», как в остальном деловом разговоре.",
+            "id": "ck7-fix-06",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "chunk-002-early-informal-you",
+              "record_id": "c2ed4a4ebb6340ab9c239f25026349ac"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "But this isn’t what I wanted,” Damian protests, his tone sharpening. “You said this would be an opportunity to  *learn*  from Drake."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "— Вы сказали, что это будет возможность *учиться* у Дрейка"
+            }
+          },
+          {
+            "category": "omission",
+            "detail": "Восстановлено ранее пропущенное указание, что Загадочник всё больше раздражается.",
+            "id": "ck7-fix-07",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "chunk-005-riddler-omission",
+              "record_id": "c2ed4a4ebb6340ab9c239f25026349ac"
+            },
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "But with Cardinal so rarely on the streets—and no one else able to match his intellect—Riddler is growing increasingly frustrated."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "поэтому тот раздражается всё сильнее"
+            }
+          }
+        ]
+      },
+      "record_id": "9c71569bbdfb4cf9adf2c0cb36ba39d9",
+      "review_commit": "08594df30883bf80e83d89d24f992f547e71ca3b",
+      "review_contract_revision": "docs/TRANSLATION.md@a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "reviewed_at": "2026-11-22T15:46:22Z",
+      "reviewer_session_id": "chat-20261122-cardinal-review-07",
+      "sequence": 33,
+      "source_sha256": "fcc6f238fbc3a881a68755e9796c0a618c579ec0d33c92b4d56c6f4f0df5ee97",
+      "state_revision": "0dec8c6fe3d3473f826b10604f0dd482718e46aeccc5497acf633bac05474dc1",
+      "supersedes_record_id": "c2ed4a4ebb6340ab9c239f25026349ac",
+      "translation_sha256": "8dc7da90b730b2115bf1f406d8fbe4f9020106baf6a7535434ce24733f103562",
+      "unit_id": "chapter-000007",
+      "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29"
+    }
+  },
+  "error": null
+}
