@@ -3,14 +3,14 @@
   "job_id": "297fd08ee43deb245fd4a033240ded56",
   "book_slug": "the-happy-prince-and-other-tales",
   "state": "running",
-  "phase": "model-call-reserved",
+  "phase": "structural-segments-staged",
   "failures": 0,
   "correction_rounds": {
     "chapter-000001": 3
   },
   "workflow_revision": "6ed4b4cc777b2e099c08b785aae925b0c5b8296c",
   "source_sha256": "33ba5a6a0441c9af8f63ae495cab0680e3b8baf413c382dd3d6a8ef8a2aecec9",
-  "updated_at": "2026-11-22T13:29:53.127386+00:00",
+  "updated_at": "2026-11-22T13:30:57.429884+00:00",
   "queue_snapshot": {
     "extracted": 4,
     "reviewed": 0,
@@ -46,9 +46,9 @@
     "unit_id": "chapter-000002",
     "role": "translator",
     "route": "primary",
-    "request_chars": 29393,
+    "request_chars": 27294,
     "outcome": "response",
-    "duration_ms": 76170
+    "duration_ms": 62476
   },
   "provider_call_metrics": [
     {
@@ -210,6 +210,14 @@
       "request_chars": 29393,
       "outcome": "response",
       "duration_ms": 76170
+    },
+    {
+      "unit_id": "chapter-000002",
+      "role": "translator",
+      "route": "primary",
+      "request_chars": 27294,
+      "outcome": "response",
+      "duration_ms": 62476
     }
   ],
   "execution_metrics": {
@@ -217,10 +225,10 @@
     "since": "2026-11-21T14:06:28.217001+00:00",
     "api": {
       "translator": {
-        "completed_calls": 11,
-        "responses": 11,
-        "duration_ms": 1256203,
-        "request_chars": 316326
+        "completed_calls": 12,
+        "responses": 12,
+        "duration_ms": 1318679,
+        "request_chars": 343620
       },
       "reviewer": {
         "completed_calls": 5,
@@ -316,13 +324,13 @@
   "structural_segment_progress": {
     "unit_id": "chapter-000002",
     "source_sha256": "ac673f3de46b3bb3deee620554b9628ae1f70f52db9b18a541ec5253d3b4fa06",
-    "completed": 8,
+    "completed": 9,
     "total": 9
   },
   "model_response_diagnostics": {
     "finish_reason": "stop",
     "response_format": "pi_prompt_json",
-    "response_chars": 3163,
+    "response_chars": 931,
     "provider_refusal": false,
     "route": "primary",
     "role": "translator",
