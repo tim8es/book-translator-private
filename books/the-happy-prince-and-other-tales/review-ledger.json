@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "the-happy-prince-and-other-tales",
-  "next_sequence": 17,
+  "next_sequence": 18,
   "records": [
     {
       "record_id": "454ca30d1d7d42ae95dacf0e1de03ba9",
@@ -2249,6 +2249,281 @@
             },
             "translation_anchor": {
               "quote": "Какой же я успех!",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "87b40b25b0ff2848855267c46da98157481da075d047c4cd67165a28f3414004",
+        "style_guide": "eeb3e2c12f4e684bad2007ac1e9e1cb44b9fafe7f05420a254e93542b6e89589"
+      }
+    },
+    {
+      "record_id": "d7065b18a0774a78b50dff07e97ef791",
+      "sequence": 17,
+      "unit_id": "chapter-000005",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "7fd1447d49ac2d5d7a53d879e99009bcd8263770d04d2ab6c675c47fc76fcc88",
+      "translation_sha256": "add46ecab62955751c495e47bb831d9a1e7c0eb5e0d6c9bfb9a0aa862fb5ea1e",
+      "workflow_revision": "6ed4b4cc777b2e099c08b785aae925b0c5b8296c",
+      "review_contract_revision": "docs/TRANSLATION.md@6ed4b4cc777b2e099c08b785aae925b0c5b8296c",
+      "reviewer_session_id": "auto-297fd08ee43d-reviewer-8bfd74e2",
+      "reviewed_at": "2026-11-22T16:13:31Z",
+      "state_revision": "1022f0b259b5f7bd9db4dabba6f03ac320319522680e9387c5783b218cc09bab",
+      "review_commit": "9e22c141722d47786859d4033e76981187839cd6",
+      "correction_round": 2,
+      "supersedes_record_id": "a81589a5aa5b43a89b347edc2c5140cd",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-meaning-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Исправлено: «Rose-dance» передано как «танец роз», а не как цветовой оттенок.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "The bride and bridegroom were to dance the Rose-dance together, and the King had promised to play the flute.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Жених и невеста должны были вместе станцевать танец роз, а король обещал играть на флейте.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "a81589a5aa5b43a89b347edc2c5140cd",
+              "finding_id": "meaning-1"
+            }
+          },
+          {
+            "id": "recheck-referent-1",
+            "category": "referent",
+            "severity": "minor",
+            "detail": "Исправлено: личное местоимение и глагол отнесены к персонажу женского пола.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "But the Catherine Wheel shook her head. “Romance is dead, Romance is dead, Romance is dead,” she murmured.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Но колесо Екатерины покачало головой. «Романтика умерла, романтика умерла, романтика умерла», — пробормотала она.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "a81589a5aa5b43a89b347edc2c5140cd",
+              "finding_id": "referent-1"
+            }
+          },
+          {
+            "id": "recheck-referent-2",
+            "category": "referent",
+            "severity": "major",
+            "detail": "В этом предложении исправлено обращение с Ракетой как с персонажем мужского пола. В других местах главы остаются отдельные ошибки согласования, указанные ниже.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "He always coughed before he made any observation, so as to attract attention.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Он всегда кашлял, прежде чем высказать какое-нибудь замечание, чтобы привлечь к себе внимание.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "a81589a5aa5b43a89b347edc2c5140cd",
+              "finding_id": "referent-2"
+            }
+          },
+          {
+            "id": "recheck-meaning-2",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Проблема остаётся: «Bad» и «Grand» подменены словами «ужасная» и «прекрасная», которые по-русски не звучат похоже. Нужна формулировка, которая сохраняет комическое самовнушение Ракеты и делает её утверждение о сходстве звучания правдоподобным.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Bad and Grand sound very much the same, indeed they often are the same,",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Ужасная» и «прекрасная» звучат очень похоже, да и вообще часто означают одно и то же",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "a81589a5aa5b43a89b347edc2c5140cd",
+              "finding_id": "meaning-2"
+            }
+          },
+          {
+            "id": "recheck-terminology-1",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "Проблема остаётся: «Стрекозёл» выдумывает отсутствующую в источнике игру слов. В другом месте персонаж уже назван обычной «стрекозой»; используйте это обозначение последовательно, сохранив мужские личные местоимения там, где это уместно.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“Then you should certainly lecture on Philosophy,” said the Dragonfly; and he spread a pair of lovely gauze wings",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "— Тогда вам непременно следует читать лекции по философии, — сказал Стрекозёл; он расправил пару чудесных прозрачных крыльев и взмыл в небо.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "a81589a5aa5b43a89b347edc2c5140cd",
+              "finding_id": "terminology-1"
+            }
+          },
+          {
+            "id": "recheck-style-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Исправлено: хвастливое «What a success I am!» передано естественным русским оборотом.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "What a success I am!",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Какой же я успешный!",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "a81589a5aa5b43a89b347edc2c5140cd",
+              "finding_id": "style-1"
+            }
+          },
+          {
+            "id": "referent-catherine-2",
+            "category": "referent",
+            "severity": "minor",
+            "detail": "Колесо Екатерины — персонаж женского пола, но здесь названо «оно». Передайте личное местоимение как «она»; грамматическое согласование с существительным «колесо» можно сохранить там, где оно требуется.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "She was one of those people who think that, if you say the same thing over and over a great many times, it becomes true in the end.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Оно было из тех, кто думает: если повторять одно и то же много-много раз, в конце концов это станет правдой.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "referent-rocket-early",
+            "category": "referent",
+            "severity": "major",
+            "detail": "Ракета — персонаж мужского пола, однако здесь она говорит о себе как о женщине («сказала она»). Исправьте личные отсылки к Ракете на мужские; такая же ошибка повторяется и в других местах главы.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“Ahem! ahem!” he said, and everybody listened except the poor Catherine Wheel, who was still shaking her head, and murmuring, “Romance is dead.”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Кхе-кхе!» — сказала она, и все прислушались, кроме бедного колеса Екатерины, которое всё ещё качало головой и бормотало: «Романтика умерла».",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "referent-rocket-first-person",
+            "category": "referent",
+            "severity": "major",
+            "detail": "Мужской персонаж говорит о себе формой женского рода: «Я говорила». Исправьте эту и другие формы прошедшего времени в его репликах, включая «я сказала», на мужской род.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“I was saying,” continued the Rocket",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Я говорила, — продолжила ракета, — я говорила... О чём это я говорила?»",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "referent-rocket-ending",
+            "category": "referent",
+            "severity": "major",
+            "detail": "В финале мужская Ракета вновь названа «её», а далее повествование использует женские формы «она» и «воскликнула». Исправьте личные отсылки к персонажу на мужские, сохраняя женское грамматическое согласование только там, где оно обусловлено существительным «ракета».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "But nobody saw him.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Но никто её не видел.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "addition-performance-1",
+            "category": "addition",
+            "severity": "minor",
+            "detail": "Перевод добавляет, что выступление было первым; в источнике сказано лишь о её большом публичном выступлении. Уберите неподтверждённое «первого».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "When she made her great public appearance she spun round nineteen times before she went out, and each time that she did so she threw into the air seven pink stars.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Во время своего первого большого выступления она прокрутилась девятнадцать раз, прежде чем погасла, и каждый раз выбрасывала в воздух семь розовых звёзд.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "omission-waddle-1",
+            "category": "omission",
+            "severity": "minor",
+            "detail": "Уточнение «waddle» — комически переваливающаяся походка Утки — сведено к общей «походке». Сохраните конкретную особенность, из-за которой её считали красавицей.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "She had yellow legs, and webbed feet, and was considered a great beauty on account of her waddle.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "У неё были жёлтые лапки и перепончатые ступни; её считали настоящей красавицей благодаря её походке.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-go-off-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "«Could not go off» означает, что отсыревший фейерверк не мог сработать, а не просто не мог взлететь. Передайте, что Ракета вовсе не запустилась или не сработала.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "He was so damp with crying that he could not go off at all.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Она так промокла от слёз, что вовсе не могла взлететь.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "structure-quotes-1",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "Прямая речь открывается кавычками, но не закрывается перед словами автора и последующим повествованием. Восстановите границу прямой речи, чтобы повествование не выглядело частью реплики.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“Well, I said Pylotechnic,” answered the Rocket, in a severe tone of voice",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Ну, я сказала „пилотехнического“, — сурово ответила ракета, и бенгальский огонь почувствовал себя таким раздавленным",
               "occurrence": 0
             },
             "resolves": null
