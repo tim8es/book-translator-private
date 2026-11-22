@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "request_id": "14f853f57da343e899f94a190a8e9729",
+  "book_slug": "cardinal-kin",
+  "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
+  "operation": "review-record",
+  "chapter": 16,
+  "session_id": "chat-20261122-cardinal-review16-a",
+  "outcome": "CORRECTIONS_REQUIRED",
+  "quality_report": {
+    "evidence_version": 2,
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "id": "ch16-dream-shift",
+        "category": "style",
+        "severity": "minor",
+        "detail": "«Немного сдвинутый день» звучит как неудачная калька shifted; сохранить странное ощущение едва изменённой реальности естественными средствами русского языка.",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "*Duke’s dreams feel like just another day—only… shifted.*",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "*Сны Дюка похожи на ещё один обычный день — только… немного сдвинутый.*",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "ch16-crying",
+        "category": "style",
+        "severity": "minor",
+        "detail": "«Плачет над частью катастрофы» и «чуточку страстнее» неестественны для narratorial emotional intensity; передать плач из-за пережитого и пылкий характер без новых оттенков.",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "which part of this whole disaster he’s crying about",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "над какой именно частью этой катастрофы",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "ch16-little-wing",
+        "category": "style",
+        "severity": "minor",
+        "detail": "«Малыш Крыло» — неграмматичный буквальный перевод ласкового прозвища Little Wing. Передать коротким естественным русским обращением, сохранив образ крыла.",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "“Little Wing?” Dick murmurs.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "«Малыш Крыло?» — негромко зовёт Дик.",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "ch16-idiot-emphasis",
+        "category": "structure",
+        "severity": "minor",
+        "detail": "В оригинале курсив выделяет именно *idiot*, тогда как перевод сместил курсив на всё определение. Вернуть точку интонационного акцента.",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "self-sacrificing  *idiot,”*",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "*идиот, готовый всем пожертвовать*",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "ch16-reference-314",
+        "category": "referent",
+        "severity": "major",
+        "detail": "В последней фразе исходника именно Брюс осознаёт собственную неудачу, а Дэмиан ощущает, как это осознание давит на отца; русская конструкция с безличным «осознать» размывает субъекта, а «его» создаёт неоднозначность. Уточнить обоих референтов.",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "Damian can practically feel the weight of that starting to crush him",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "значит ощутить тяжесть, которая, как Дэмиан почти чувствует, уже начинает его раздавливать",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "ch16-possibility-328",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "После вопроса о сохранённых воспоминаниях Брюс подтверждает принципиальную возможность. «Должен быть способ» добавляет конкретное подразумеваемое решение вместо общей модальности возможности. Передать неопределённое утверждение.",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "“It must be possible.”",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "«Должен быть способ».",
+          "occurrence": 0
+        },
+        "resolves": null
+      }
+    ]
+  },
+  "source_sha256": "2a2b47744574379b1ff9b044e7353790356af191da594cff4bbd7df56ff419d8",
+  "translation_sha256": "0eecb5ce8d78f207b399f725efbaebde9de10fcfcd342b63af60610fb0fc9d94",
+  "claim_sha256": "dbbe6b2470923178428ca5c10f28de32f3a0655e06a12f90c2b7b5926d15a43a"
+}
