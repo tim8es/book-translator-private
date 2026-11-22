@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "request_id": "51a4bea8939e4fa48a224d84355ce57a",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "840a637cf42a047c810c24e4fff958ec49920dfe96b5ed6260164484a418fae2",
+    "record": {
+      "correction_round": 1,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "findings": [
+          {
+            "detail": "Block 000047: corrected Boston hoodie ownership: it belongs to Ilya, not Montreal player Shane.",
+            "resolved": true,
+            "severity": "major"
+          },
+          {
+            "detail": "Block 000095: repaired the implication that a cleaning service is coming to clean the vomit-stained carpet, not remove the carpet.",
+            "resolved": true,
+            "severity": "major"
+          },
+          {
+            "detail": "Block 000147: restored four deliberately fused units of the stream of consciousness ('too much / too much / not enough / too much') inside the original italic emphasis.",
+            "resolved": true,
+            "severity": "minor"
+          }
+        ]
+      },
+      "record_id": "78c64c4aba854d20910195932c0edb5d",
+      "review_commit": "73262a729ecec92ccca2a848516ca5848a6aa965",
+      "review_contract_revision": "docs/TRANSLATION.md@76604c82cc4345699de9ae5d97bc75e2443e8cb5",
+      "reviewed_at": "2026-11-22T18:22:57Z",
+      "reviewer_session_id": "chatgpt-alligator-20261122-r8",
+      "sequence": 9,
+      "source_sha256": "5fed06ab37ea92a5c5b4c057716176609a8e887227bcb82cf5481fe43b14698c",
+      "state_revision": "e0913e3d1ce64c011a98ccc558bde2f6afadf6fefa0ee7fb39418ca29d0185c8",
+      "supersedes_record_id": "8043ff00ca53487aaefe163b8fc8270d",
+      "translation_sha256": "c9faefb82210f0034d65dd0de534833f62f3f99951a1270ccd02153095493084",
+      "unit_id": "chapter-000005",
+      "workflow_revision": "76604c82cc4345699de9ae5d97bc75e2443e8cb5"
+    }
+  },
+  "error": null
+}
