@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "alligator-bites-never-heal",
-  "next_sequence": 19,
+  "next_sequence": 20,
   "records": [
     {
       "record_id": "be08d5c17b934579b154d272e933435c",
@@ -856,6 +856,59 @@
             "severity": "minor",
             "detail": "Original XHTML block and inline markers match the 328-block source; chapter headings, author notes, dialogue, scene divider and emphasis were retained.",
             "resolved": true
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "9f2cbd9e72684c6684e4527d9c087794",
+      "sequence": 19,
+      "unit_id": "chapter-000010",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "2d7c479b8ed3b3c5f494400b624e92151c78b1cf82e23f16d6cd293443e89f20",
+      "translation_sha256": "5ad93b1b33c6ec2fcf031a61521aefecb7aeff6d9998599d657723dcac19bc62",
+      "workflow_revision": "76604c82cc4345699de9ae5d97bc75e2443e8cb5",
+      "review_contract_revision": "docs/TRANSLATION.md@76604c82cc4345699de9ae5d97bc75e2443e8cb5",
+      "reviewer_session_id": "chatgpt-alligator-20261122-r17",
+      "reviewed_at": "2026-11-22T21:10:37Z",
+      "state_revision": "b904230f8fd0bc6bbdb13b3fe8481b2c755a0e07e88b7c68da6ff5c2317c9850",
+      "review_commit": "cb928babf8068c981a552959b021ef2f8aa3bde0",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "major",
+            "detail": "Block 000398: source says Shane does NOT look ready to reject the boyfriend label ('it doesn’t look like Shane is questioning the concept. Like he’s about to rebuke it'); target 'Будто готов отвергнуть её' reverses the intended lack of rejection. Restore negative scope in Russian.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Block 000172: 'Мама всё говорила о Уимблдоне' is grammatically wrong. Use 'об Уимблдоне'.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Block 000256: 'Он был таким уважительным' is an unnatural calque for 'He was so respectful'. Choose natural Russian while preserving the respectful behavior without added claims.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Block 000305: 'And seemingly impossible' belongs to the narrator, not Ilya's spoken dialogue. End the quotation after 'интересно' and render impossibility in narrative voice.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Block 000493: 'Шейн над ним, как ангел, у самых волос' is grammatically awkward and assigns an uncertain spatial interpretation to source's intentionally fragmentary angel/voice/hair image. Preserve fragmentary tenderness and quiet without forcing a new physical arrangement.",
+            "resolved": false
           }
         ]
       }
