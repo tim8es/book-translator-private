@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "pizza-with-pineapples-itislikethis-motorcycling-rpf",
-  "next_sequence": 21,
+  "next_sequence": 22,
   "records": [
     {
       "record_id": "e8060d96338440d8a139c674168abf15",
@@ -1848,6 +1848,115 @@
               "record_id": "0a9a5446fa8ce0b743240d59ce917229",
               "finding_id": "meaning-159"
             }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "858c6e198a9d9df37fd57f3aeb5e6d08",
+      "sequence": 21,
+      "unit_id": "chapter-000011",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "fdf626ca2729ea7d61434e8b38def688a7d95d711c1ce2254eb24e7390621a66",
+      "translation_sha256": "76ffbdb97e15db4f0aaff7aa9030d7b1bbf2604539b89da9116f33747addd509",
+      "workflow_revision": "789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
+      "review_contract_revision": "docs/TRANSLATION.md@789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
+      "reviewer_session_id": "chatops-pizza-reviewer-20261123-11-2cb7d9fd",
+      "reviewed_at": "2026-11-22T23:47:32Z",
+      "state_revision": "41a3c38e9046ede108172a25f12ac7c62b0d68d425f4e8d8437c0e5da9e66cc1",
+      "review_commit": "7234aa610570df4790e33ba1bba067905ffd1cee",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "meaning-039",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Reverses 'the rest of us cannot compare with Marc and Vale' into having no one to compare with.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "the rest of us can compare to Marc and Vale",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "нам, остальным, было с кем сравниваться, когда речь о Марке и Вале",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "addition-119",
+            "category": "addition",
+            "severity": "minor",
+            "detail": "The source mentions a bowl of cereal but does not specify milk; avoid adding an unsupported ingredient.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "mixing up a bowl of late-night cereal",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "смешивая поздний перекус — хлопья с молоком в миске",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "modality-163",
+            "category": "modality",
+            "severity": "minor",
+            "detail": "Normative 'it is good for him to learn boundaries' became certain future 'he will learn'; keep advisory modality.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "It is good for him to learn some boundaries, especially from you.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Хорошо, что он научится, особенно у тебя.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-191",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Racing-performance encouragement 'be your best' generalized into becoming the best version of oneself.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "You just have to be your best.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Тебе достаточно быть лучшей версией себя.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-197",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Source 'care about me as a person' is intensified into love, changing the vulnerable emotional subtext.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "you would not care about me as a person if I sucked as a rider.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "ты бы не любил меня как человека, если бы я был плохим гонщиком.",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       }
