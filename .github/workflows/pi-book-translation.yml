@@ -67,7 +67,33 @@ jobs:
             job_id="${job_id%.json}"
             jq -e --arg id "$job_id" 'type == "object" and (.job_id == $id) and (.continue_automatically == true) and ((keys | sort) == ["continue_automatically", "job_id"])' "$request" >/dev/null
             jq -e --arg id "$job_id" '.schema_version == 1 and .executor == "pi" and .job_id == $id' "intake/auto/$job_id/executor.json" >/dev/null
-            jq -e --arg id "$job_id" '.schema_version == 1 and .state == "running" and .job_id == $id' "automation/status/$job_id.json" >/dev/null
+            status_path="automation/status/$job_id.json"
+            jq -e --arg id "$job_id" '.schema_version == 1 and .job_id == $id' "$status_path" >/dev/null
+            if ! jq -e '.state == "running"' "$status_path" >/dev/null; then
+              # A blocked Pi job may be woken ONLY by a later canonical ChatOps
+              # resume-auto marker. The runner still applies its own stricter
+              # source, claim, review and operator-resume checks.
+              jq -e '.state == "blocked" and .phase == "model-blocked" and .active == null and .failures >= 3' "$status_path" >/dev/null || continue
+              slug="$(jq -r '.book_slug' "$status_path")"
+              [[ "$slug" =~ ^[a-z0-9][a-z0-9-]{0,99}$ ]] || continue
+              control="books/$slug/.workflow/auto-control.json"
+              [[ -f "$control" ]] || continue
+              jq -e '.schema_version == 1 and .mode == "auto" and (.updated_by | type == "string" and length > 0)' "$control" >/dev/null || continue
+              BLOCKED_AT="$(jq -r '.updated_at' "$status_path")"
+              RESUMED_AT="$(jq -r '.updated_at' "$control")"
+              export BLOCKED_AT RESUMED_AT
+              python - <<'PY'
+              import os
+              from datetime import datetime, timezone
+              def stamp(text):
+                  value = datetime.fromisoformat(text.replace("Z", "+00:00"))
+                  if value.tzinfo is None:
+                      raise ValueError("resume timestamp must be timezone-aware")
+                  return value.astimezone(timezone.utc)
+              if stamp(os.environ["RESUMED_AT"]) <= stamp(os.environ["BLOCKED_AT"]):
+                  raise SystemExit("No fresh canonical resume-auto for blocked Pi job")
+              PY
+            fi
             echo "Dispatching verified Pi job $job_id with canonical automatic continuation"
             gh workflow run pi-book-translation.yml --ref main -f probe_only=false -f job_id="$job_id" -f continue_automatically=true
           done
