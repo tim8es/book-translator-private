@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "request_id": "20261122171748000000000000000005",
+  "book_slug": "say-it-in-your-mother-tongue",
+  "workflow_revision": "8bb30227adc4bb921429611e12a0af803c9b6487",
+  "operation": "review-record",
+  "chapter": 48,
+  "session_id": "chatgpt-20261122-sayit-ch48-reviewer",
+  "outcome": "PASS",
+  "quality_report": {
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "severity": "major",
+        "detail": "Block 32: repaired the referent in the statement about Hamilton touching what Fernando considers his.",
+        "resolved": true
+      },
+      {
+        "severity": "minor",
+        "detail": "Block 60: repaired misleading self-directed chest reference to Max's chest.",
+        "resolved": true
+      },
+      {
+        "severity": "minor",
+        "detail": "Block 62: replaced unwarranted implication of personal guilt with compensating for the disappointment.",
+        "resolved": true
+      },
+      {
+        "severity": "minor",
+        "detail": "Blocks 4 and 65: repaired note navigation and the end-notes heading.",
+        "resolved": true
+      }
+    ]
+  },
+  "source_sha256": "a4f3490324d4a14a39491d92a47ea5e1325aad05926faddf42ea02cf2fdd09d3",
+  "translation_sha256": "5b328ad48d067e90e47f6cbac51910117e0c7e8139c05d1287627dc23ce5aa34",
+  "claim_sha256": "b4bfdba797f5b81c4007f91dd60e113f701bfbc61df821357ed7b49b987ce082"
+}
