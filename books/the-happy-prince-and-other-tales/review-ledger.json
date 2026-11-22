@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "the-happy-prince-and-other-tales",
-  "next_sequence": 7,
+  "next_sequence": 8,
   "records": [
     {
       "record_id": "454ca30d1d7d42ae95dacf0e1de03ba9",
@@ -862,6 +862,207 @@
             },
             "translation_anchor": {
               "quote": "«Мне нужна всего одна красная роза, — воскликнул Соловей, — только одна красная роза! Неужели нет способа ее добыть?»",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "c23f6ebd01997bb7cb0719f1bfb7fe95453b0a09637b2f7d7d60acf44cd4afa6",
+        "style_guide": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4"
+      }
+    },
+    {
+      "record_id": "f99662bbf30f4f98826649d56f1716f7",
+      "sequence": 7,
+      "unit_id": "chapter-000002",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "ac673f3de46b3bb3deee620554b9628ae1f70f52db9b18a541ec5253d3b4fa06",
+      "translation_sha256": "66344694eaea20335af84a3b73f43271d09ebf877603c482eb555bde37aed335",
+      "workflow_revision": "6ed4b4cc777b2e099c08b785aae925b0c5b8296c",
+      "review_contract_revision": "docs/TRANSLATION.md@6ed4b4cc777b2e099c08b785aae925b0c5b8296c",
+      "reviewer_session_id": "auto-297fd08ee43d-reviewer-1251995b",
+      "reviewed_at": "2026-11-22T13:58:36Z",
+      "state_revision": "2f062a3aa68df83245767e87e605d8740afd3fbedff797608d3fa8d84156eaf2",
+      "review_commit": "bf22424bf561edfb9fdcc0d010db9fb40d81642d",
+      "correction_round": 3,
+      "supersedes_record_id": "c9bed0a6189749c5bd490699a506ea7b",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-3-v2",
+            "category": "referent",
+            "severity": "major",
+            "detail": "This repeated exhortation still refers to the female Nightingale with masculine «тот» and «прижался». Use feminine agreement.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "rose’s heart remained white, for only a Nightingale’s heart’s-blood can crimson the heart of a rose.\n\nAnd the Tree cried to the Nightingale to press closer against the thorn.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "И Дерево взывало к Соловью, чтобы тот прижался теснее к шипу. «Прижмись теснее, маленький Соловей, — взывало Дерево, — иначе наступит День, прежде чем роза будет готова».",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "c9bed0a6189749c5bd490699a506ea7b",
+              "finding_id": "recheck-referent-3"
+            }
+          },
+          {
+            "id": "recheck-4-v2",
+            "category": "referent",
+            "severity": "major",
+            "detail": "The Nightingale's action is still expressed with masculine «прижался». Use feminine agreement.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "So the Nightingale pressed closer against the thorn, and the thorn touched her heart, and a fierce pang of pain shot through her.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "И Соловей прижался теснее к шипу, и шип коснулся её сердца, и острая боль пронзила её.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "c9bed0a6189749c5bd490699a506ea7b",
+              "finding_id": "recheck-referent-4"
+            }
+          },
+          {
+            "id": "recheck-5-v2",
+            "category": "referent",
+            "severity": "major",
+            "detail": "Rechecked: «не ответила» and «лежала мёртвая» now correctly use feminine agreement for the Nightingale.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "but the Nightingale made no answer, for she was lying dead in the long grass, with the thorn in her heart.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Но Соловей не ответила, ибо лежала мёртвая в высокой траве, с шипом в сердце.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "c9bed0a6189749c5bd490699a506ea7b",
+              "finding_id": "recheck-referent-5"
+            }
+          },
+          {
+            "id": "recheck-6-v2",
+            "category": "referent",
+            "severity": "major",
+            "detail": "The Nightingale's flight is still expressed with masculine «подлетел». Use feminine agreement.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "So the Nightingale flew over to the Rose-tree that was growing round the old sundial.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "И Соловей подлетел к кусту роз, что рос вокруг старых солнечных часов.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "c9bed0a6189749c5bd490699a506ea7b",
+              "finding_id": "referent-6"
+            }
+          },
+          {
+            "id": "recheck-7-v2",
+            "category": "referent",
+            "severity": "major",
+            "detail": "The Nightingale's flight is still expressed with masculine «подлетел». Use feminine agreement.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "So the Nightingale flew over to the Rose-tree that was growing beneath the Student’s window.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "И Соловей подлетел к кусту роз, что рос под окном Студента.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "c9bed0a6189749c5bd490699a506ea7b",
+              "finding_id": "referent-7"
+            }
+          },
+          {
+            "id": "recheck-8-v2",
+            "category": "referent",
+            "severity": "major",
+            "detail": "The Nightingale's speech is still introduced with masculine «сказал». Use feminine agreement.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“Tell it to me,” said the Nightingale, “I am not afraid.”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Расскажи, — сказал Соловей, — я не боюсь».",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "c9bed0a6189749c5bd490699a506ea7b",
+              "finding_id": "referent-8"
+            }
+          },
+          {
+            "id": "recheck-9-v2",
+            "category": "referent",
+            "severity": "major",
+            "detail": "The Nightingale's speech is still introduced with masculine «воскликнул». Use feminine agreement.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“Death is a great price to pay for a red rose,” cried the Nightingale",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Смерть — великая цена за красную розу, — воскликнул Соловей, — а Жизнь всем очень дорога.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "c9bed0a6189749c5bd490699a506ea7b",
+              "finding_id": "referent-9"
+            }
+          },
+          {
+            "id": "recheck-10-v2",
+            "category": "referent",
+            "severity": "major",
+            "detail": "The Nightingale's speech is still introduced with masculine «воскликнул». Use feminine agreement.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“One red rose is all I want,” cried the Nightingale, “only one red rose! Is there no way by which I can get it?”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Мне нужна всего одна красная роза, — воскликнул Соловей, — только одна красная роза!",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "c9bed0a6189749c5bd490699a506ea7b",
+              "finding_id": "referent-10"
+            }
+          },
+          {
+            "id": "meaning-pomegranate-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The source names pomegranates (the fruit). In «жемчугом ... гранатами», the pairing strongly suggests pearls and garnet gemstones. Make the fruit sense explicit, for example «плодами граната».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Pearls and pomegranates cannot buy it, nor is it set forth in the marketplace.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Ни жемчугом, ни гранатами её не купить, и на рынке её не выставляют.",
               "occurrence": 0
             },
             "resolves": null
