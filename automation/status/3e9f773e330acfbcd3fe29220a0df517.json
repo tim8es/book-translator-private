@@ -3,22 +3,27 @@
   "job_id": "3e9f773e330acfbcd3fe29220a0df517",
   "book_slug": "pizza-with-pineapples-itislikethis-motorcycling-rpf",
   "state": "running",
-  "phase": "reviewer-completed",
+  "phase": "claimed",
   "failures": 0,
   "correction_rounds": {
     "chapter-000001": 1
   },
   "workflow_revision": "789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
   "source_sha256": "b806092139439a8a9d5c9297bdc1338fa9e4798cfa81353f9396f66747aa6e96",
-  "updated_at": "2026-11-22T16:55:23.410562+00:00",
+  "updated_at": "2026-11-22T16:55:39.645688+00:00",
   "queue_snapshot": {
     "extracted": 16,
-    "reviewed": 0,
-    "awaiting_review": 1,
+    "reviewed": 1,
+    "awaiting_review": 0,
     "correction_candidates": 1,
     "awaiting_promotion": 0
   },
-  "active": null,
+  "active": {
+    "role": "translator",
+    "chapter": 3,
+    "session_id": "auto-3e9f773e330a-translator-963f653c",
+    "unit_id": "chapter-000003"
+  },
   "structural_helper_revision": "4c584fe5534871cd05aa851d9b7bdbfa696d0edd",
   "model_calls_started": 13,
   "prompt_context": {
