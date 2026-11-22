@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "request_id": "3ac6b4ef253b4f1c83fdcbe1fe3b9643",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "e6c226557cd2d16db60e4e9a22e4849c292f8c1538aa31474245ca9888589dd8",
+    "record": {
+      "correction_round": 2,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "structure",
+            "detail": "The previously duplicated space after the series label has been removed; source and corrected translation now have a single separator. Rechecked all 22 prefatory blocks, linked spans, titles, tags, dates, and counts.",
+            "id": "structure-1-resolved",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "structure-1",
+              "record_id": "6b11c2fdd395416996c247194cbcfc77"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Part 1 of <!-- bt-inline:000001:start -->Pizza Toppings"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Часть 1 серии: <!-- bt-inline:000001:start -->Начинки для пиццы"
+            }
+          }
+        ]
+      },
+      "record_id": "f0bf466939a24e8b855dbf5552b06240",
+      "review_commit": "2155d028a0b0908b6c4196dd0be57cb3a0710e0f",
+      "review_contract_revision": "docs/TRANSLATION.md@789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
+      "reviewed_at": "2026-11-22T19:30:00Z",
+      "reviewer_session_id": "chatops-pizza-reviewer-20261122-01",
+      "sequence": 4,
+      "source_sha256": "fdae27d9884c16da2a3d6bb3002b1192aa7c777297a5e12e238a7a59720338ca",
+      "state_revision": "5b9c48bbe901074478dd6270111e9a2e189223fdc87e2c8ef616f2e112c2705f",
+      "supersedes_record_id": "6b11c2fdd395416996c247194cbcfc77",
+      "translation_sha256": "724848af3856e539d92c82dc5276a0170ff8727749893608cd8881aa7ad9555b",
+      "unit_id": "chapter-000001",
+      "workflow_revision": "789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07"
+    }
+  },
+  "error": null
+}
