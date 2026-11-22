@@ -57,6 +57,17 @@ class StateOnlyDeploymentTests(unittest.TestCase):
         self.assertNotIn('if [[ "$visibility" != "private" ]]', pi)
         self.assertIn("--admit-pi --job-id", pi)
         self.assertIn("steps.run.outputs.retry_at != '' && inputs.continue_automatically", pi)
+        # Pi uses the same bounded, crash-safe multi-checkpoint runner as Auto.
+        # No extra workflow dispatch, unsafe re-review shortcut, or PASS bypass.
+        self.assertIn('book_runner.py --batch --job-id "$JOB_ID"', pi)
+        self.assertNotIn('book_runner.py --job-id "$JOB_ID"', pi)
+        for variable in (
+            "BOOK_TRANSLATOR_INCREMENTAL_REVIEW",
+            "BOOK_TRANSLATOR_ADAPTIVE_BUDGET",
+            "BOOK_TRANSLATOR_COHERENT_BATCHES",
+            "BOOK_TRANSLATOR_CONTINUE_CORRECTIONS",
+        ):
+            self.assertIn(f'{variable}: "on"', pi)
         self.assertIn("-f executor=pi", pi)
         self.assertIn("github.event_name == 'pull_request' || inputs.probe_only", pi)
         self.assertIn("github.event_name == 'workflow_dispatch' && !inputs.probe_only", pi)
