@@ -3,14 +3,14 @@
   "job_id": "3e9f773e330acfbcd3fe29220a0df517",
   "book_slug": "pizza-with-pineapples-itislikethis-motorcycling-rpf",
   "state": "running",
-  "phase": "claimed",
+  "phase": "model-call-reserved",
   "failures": 1,
   "correction_rounds": {
     "chapter-000001": 1
   },
   "workflow_revision": "789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
   "source_sha256": "b806092139439a8a9d5c9297bdc1338fa9e4798cfa81353f9396f66747aa6e96",
-  "updated_at": "2026-11-22T17:08:50.528911+00:00",
+  "updated_at": "2026-11-22T17:08:53.202457+00:00",
   "queue_snapshot": {
     "extracted": 15,
     "reviewed": 1,
@@ -25,7 +25,7 @@
     "unit_id": "chapter-000003"
   },
   "structural_helper_revision": "4c584fe5534871cd05aa851d9b7bdbfa696d0edd",
-  "model_calls_started": 17,
+  "model_calls_started": 18,
   "prompt_context": {
     "role": "reviewer",
     "workflow_revision": "789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
@@ -37,9 +37,8 @@
     "glossary_sha256": "ec2ddfe752a2ae38406e257ae9ddaa1620ab2aa0551610c9960f8aed68aeb781",
     "style_guide_sha256": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4",
     "system_chars": 29562,
-    "user_chars": 58948,
-    "review_context": "independent_session",
-    "schema_repair": "review-report-validation"
+    "user_chars": 50811,
+    "review_context": "independent_session"
   },
   "provider_call_metric": {
     "unit_id": "chapter-000003",
