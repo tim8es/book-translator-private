@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "alligator-bites-never-heal",
-  "next_sequence": 16,
+  "next_sequence": 17,
   "records": [
     {
       "record_id": "be08d5c17b934579b154d272e933435c",
@@ -712,6 +712,59 @@
             "severity": "minor",
             "detail": "Block 000212 rechecked: the author's informal statement identifies a favorite previously read fic in natural Russian.",
             "resolved": true
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "c6e6a033786c4c6da7172e79dbac7767",
+      "sequence": 16,
+      "unit_id": "chapter-000009",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "b1a3073f0193f948f34dd2952527880eddad9a72901899e48c2e10a2d117b80b",
+      "translation_sha256": "15437e6d018babb75edd7d0e62d78a8e98aa98b02f947dfc0b351ffa335001af",
+      "workflow_revision": "76604c82cc4345699de9ae5d97bc75e2443e8cb5",
+      "review_contract_revision": "docs/TRANSLATION.md@76604c82cc4345699de9ae5d97bc75e2443e8cb5",
+      "reviewer_session_id": "chatgpt-alligator-20261122-r15",
+      "reviewed_at": "2026-11-22T20:53:14Z",
+      "state_revision": "d62c75538310279ff24e70a72c2db0486a57ca68c737d8b6e020d718a4c2402c",
+      "review_commit": "3f020f1cbbfd787ed7e507da0895518dd4a54f03",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Block 000193: source 'Tick, tick, tick, tick' audibly echoes the heartbeat, while four spoken 'Галочка' lose the ticking sound. Retain the checklist completion and heartbeat cadence.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Block 000198: 'a gaping maw in his heart' is a wound inside the heart; 'зияющей пастью на месте сердца' makes the heart itself absent. Preserve image of a gaping hole within the heart.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Block 000200: original 'lazy handjobs' does not explicitly say mutual stimulation; target 'взаимной дрочке' introduces reciprocity. Remove unsupported specificity.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Block 000203: 'кажется, лишь когда ... он когда-нибудь бывал' is grammatically awkward and obscures source's single recollection of calm in mother's lap. Retain soft uncertainty and make a natural Russian sentence.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Block 000290: Russian 'обхватывает мокрыми руками' has no object, resulting in unintended syntactic incompleteness; source depicts Ilya swimming to Shane and kissing his ankle. Restore a natural faithful action without inventing additional actions.",
+            "resolved": false
           }
         ]
       }
