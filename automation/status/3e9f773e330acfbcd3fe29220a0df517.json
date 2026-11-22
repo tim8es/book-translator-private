@@ -3,12 +3,12 @@
   "job_id": "3e9f773e330acfbcd3fe29220a0df517",
   "book_slug": "pizza-with-pineapples-itislikethis-motorcycling-rpf",
   "state": "running",
-  "phase": "claimed",
+  "phase": "model-call-reserved",
   "failures": 0,
   "correction_rounds": {},
   "workflow_revision": "789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
   "source_sha256": "b806092139439a8a9d5c9297bdc1338fa9e4798cfa81353f9396f66747aa6e96",
-  "updated_at": "2026-11-22T16:44:16.513354+00:00",
+  "updated_at": "2026-11-22T16:44:19.573076+00:00",
   "queue_snapshot": {
     "extracted": 17,
     "reviewed": 0,
@@ -23,22 +23,20 @@
     "unit_id": "chapter-000001"
   },
   "structural_helper_revision": "4c584fe5534871cd05aa851d9b7bdbfa696d0edd",
-  "model_calls_started": 3,
+  "model_calls_started": 4,
   "prompt_context": {
-    "role": "translator",
+    "role": "reviewer",
     "workflow_revision": "789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
     "loaded_contracts": [
       "AGENTS.md",
       "docs/TRANSLATION.md",
-      "docs/TRANSLATOR.md"
+      "docs/REVIEWER.md"
     ],
-    "glossary_sha256": "9dd124e1fb678ee734ec358050dd94b8f911be9c9068b96e3949eac4555fdd05",
+    "glossary_sha256": "a2c8b04a21681da6835bc6b4ba80b1bcaeb493942c1e62484afeb62ad575dc3e",
     "style_guide_sha256": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4",
-    "system_chars": 21668,
-    "user_chars": 4216,
-    "execution_mode": "shared-structural-segments",
-    "helper_revision": "4c584fe5534871cd05aa851d9b7bdbfa696d0edd",
-    "batch_segment_count": 1
+    "system_chars": 29562,
+    "user_chars": 12258,
+    "review_context": "independent_session"
   },
   "provider_call_metric": {
     "unit_id": "chapter-000001",
