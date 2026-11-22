@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "alligator-bites-never-heal",
-  "next_sequence": 18,
+  "next_sequence": 19,
   "records": [
     {
       "record_id": "be08d5c17b934579b154d272e933435c",
@@ -808,6 +808,54 @@
             "severity": "minor",
             "detail": "Block 000203: 'единственное время, когда Илья вообще сидел спокойно, — когда лежал ...' still creates a sitting-versus-lying contradiction in Russian. Replace 'сидел спокойно' with 'оставался неподвижным' or 'не шевелился', preserving the sense that he was still in his mother's lap.",
             "resolved": false
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "002cd52c57e34eb496810d8f5be19fdc",
+      "sequence": 18,
+      "unit_id": "chapter-000009",
+      "outcome": "PASS",
+      "source_sha256": "b1a3073f0193f948f34dd2952527880eddad9a72901899e48c2e10a2d117b80b",
+      "translation_sha256": "1fae2ac9a61bb0fb9e030daffe8f082c4b4e66e4a0e6eac18abef06303916dd0",
+      "workflow_revision": "76604c82cc4345699de9ae5d97bc75e2443e8cb5",
+      "review_contract_revision": "docs/TRANSLATION.md@76604c82cc4345699de9ae5d97bc75e2443e8cb5",
+      "reviewer_session_id": "chatgpt-alligator-20261122-r17",
+      "reviewed_at": "2026-11-22T20:59:34Z",
+      "state_revision": "01e20573db5b04252cccafe6fe07be06409fe71d86c80129ffdf0861957681c2",
+      "review_commit": "db426fdc5528e1ecc80fbfccebed288392f2bd71",
+      "correction_round": 2,
+      "supersedes_record_id": "c766cc10d0c14859baf1307b192d4aec",
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Blocks 000193, 000198, 000200: final text preserves heartbeat-like ticking, image of a gaping maw in the heart, and unspecific handjobs without invented reciprocity.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Block 000203: final correction now expresses physical stillness on the mother's lap without contradicting the lying position, checked against the original.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Block 000290: ankle kiss and hand placement are now syntactically complete in Russian, with no additional action.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Original XHTML block and inline markers match the 328-block source; chapter headings, author notes, dialogue, scene divider and emphasis were retained.",
+            "resolved": true
           }
         ]
       }

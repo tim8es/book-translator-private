@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "request_id": "fd91f996ac934c5b8e87d87a3c6740a8",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "b0535aea4e70945739d38356ef2e8fbdad61b24bf1c1bf75344dee4aa4c22d70",
+    "record": {
+      "correction_round": 2,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "findings": [
+          {
+            "detail": "Blocks 000193, 000198, 000200: final text preserves heartbeat-like ticking, image of a gaping maw in the heart, and unspecific handjobs without invented reciprocity.",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "Block 000203: final correction now expresses physical stillness on the mother's lap without contradicting the lying position, checked against the original.",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "Block 000290: ankle kiss and hand placement are now syntactically complete in Russian, with no additional action.",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "Original XHTML block and inline markers match the 328-block source; chapter headings, author notes, dialogue, scene divider and emphasis were retained.",
+            "resolved": true,
+            "severity": "minor"
+          }
+        ]
+      },
+      "record_id": "002cd52c57e34eb496810d8f5be19fdc",
+      "review_commit": "db426fdc5528e1ecc80fbfccebed288392f2bd71",
+      "review_contract_revision": "docs/TRANSLATION.md@76604c82cc4345699de9ae5d97bc75e2443e8cb5",
+      "reviewed_at": "2026-11-22T20:59:34Z",
+      "reviewer_session_id": "chatgpt-alligator-20261122-r17",
+      "sequence": 18,
+      "source_sha256": "b1a3073f0193f948f34dd2952527880eddad9a72901899e48c2e10a2d117b80b",
+      "state_revision": "01e20573db5b04252cccafe6fe07be06409fe71d86c80129ffdf0861957681c2",
+      "supersedes_record_id": "c766cc10d0c14859baf1307b192d4aec",
+      "translation_sha256": "1fae2ac9a61bb0fb9e030daffe8f082c4b4e66e4a0e6eac18abef06303916dd0",
+      "unit_id": "chapter-000009",
+      "workflow_revision": "76604c82cc4345699de9ae5d97bc75e2443e8cb5"
+    }
+  },
+  "error": null
+}
