@@ -3,14 +3,14 @@
   "job_id": "297fd08ee43deb245fd4a033240ded56",
   "book_slug": "the-happy-prince-and-other-tales",
   "state": "running",
-  "phase": "model-call-reserved",
+  "phase": "correction-batch-staged",
   "failures": 0,
   "correction_rounds": {
     "chapter-000001": 3
   },
   "workflow_revision": "6ed4b4cc777b2e099c08b785aae925b0c5b8296c",
   "source_sha256": "33ba5a6a0441c9af8f63ae495cab0680e3b8baf413c382dd3d6a8ef8a2aecec9",
-  "updated_at": "2026-11-22T13:38:23.886764+00:00",
+  "updated_at": "2026-11-22T13:39:42.827823+00:00",
   "queue_snapshot": {
     "extracted": 3,
     "reviewed": 0,
@@ -43,11 +43,11 @@
   },
   "provider_call_metric": {
     "unit_id": "chapter-000002",
-    "role": "reviewer",
+    "role": "corrector",
     "route": "primary",
-    "request_chars": 60916,
+    "request_chars": 34041,
     "outcome": "response",
-    "duration_ms": 300051
+    "duration_ms": 77024
   },
   "provider_call_metrics": [
     {
@@ -225,6 +225,14 @@
       "request_chars": 60916,
       "outcome": "response",
       "duration_ms": 300051
+    },
+    {
+      "unit_id": "chapter-000002",
+      "role": "corrector",
+      "route": "primary",
+      "request_chars": 34041,
+      "outcome": "response",
+      "duration_ms": 77024
     }
   ],
   "execution_metrics": {
@@ -244,10 +252,10 @@
         "request_chars": 447636
       },
       "corrector": {
-        "completed_calls": 4,
-        "responses": 4,
-        "duration_ms": 159546,
-        "request_chars": 139933
+        "completed_calls": 5,
+        "responses": 5,
+        "duration_ms": 236570,
+        "request_chars": 173974
       }
     },
     "accepted_operations": {
@@ -328,13 +336,20 @@
     "action": "operator-attention-no-pass"
   },
   "glossary_conflicts_rejected": 1,
+  "provider_model_route": "primary",
   "model_response_diagnostics": {
     "finish_reason": "stop",
     "response_format": "pi_prompt_json",
-    "response_chars": 7762,
+    "response_chars": 681,
     "provider_refusal": false,
     "route": "primary",
-    "role": "reviewer",
+    "role": "corrector",
     "unit_id": "chapter-000002"
+  },
+  "correction_batch_progress": {
+    "unit_id": "chapter-000002",
+    "review_record_id": "c894f1bfc80442eda8e2c4c2ec9cf7e9",
+    "completed": 3,
+    "total": 7
   }
 }
