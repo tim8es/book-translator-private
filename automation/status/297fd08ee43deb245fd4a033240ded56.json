@@ -3,7 +3,7 @@
   "job_id": "297fd08ee43deb245fd4a033240ded56",
   "book_slug": "the-happy-prince-and-other-tales",
   "state": "running",
-  "phase": "model-call-reserved",
+  "phase": "reviewer-completed",
   "failures": 0,
   "correction_rounds": {
     "chapter-000001": 3,
@@ -12,7 +12,7 @@
   },
   "workflow_revision": "6ed4b4cc777b2e099c08b785aae925b0c5b8296c",
   "source_sha256": "33ba5a6a0441c9af8f63ae495cab0680e3b8baf413c382dd3d6a8ef8a2aecec9",
-  "updated_at": "2026-11-22T14:28:40.836751+00:00",
+  "updated_at": "2026-11-22T14:30:52.213628+00:00",
   "queue_snapshot": {
     "extracted": 2,
     "reviewed": 0,
@@ -20,12 +20,7 @@
     "correction_candidates": 2,
     "awaiting_promotion": 0
   },
-  "active": {
-    "role": "reviewer",
-    "chapter": 3,
-    "session_id": "auto-297fd08ee43d-reviewer-1586704c",
-    "unit_id": "chapter-000003"
-  },
+  "active": null,
   "structural_helper_revision": "4c584fe5534871cd05aa851d9b7bdbfa696d0edd",
   "model_calls_started": 38,
   "prompt_context": {
@@ -44,11 +39,11 @@
   },
   "provider_call_metric": {
     "unit_id": "chapter-000003",
-    "role": "corrector",
+    "role": "reviewer",
     "route": "primary",
-    "request_chars": 35955,
+    "request_chars": 56840,
     "outcome": "response",
-    "duration_ms": 17085
+    "duration_ms": 129664
   },
   "provider_call_metrics": [
     {
@@ -346,6 +341,14 @@
       "request_chars": 35955,
       "outcome": "response",
       "duration_ms": 17085
+    },
+    {
+      "unit_id": "chapter-000003",
+      "role": "reviewer",
+      "route": "primary",
+      "request_chars": 56840,
+      "outcome": "response",
+      "duration_ms": 129664
     }
   ],
   "execution_metrics": {
@@ -359,10 +362,10 @@
         "request_chars": 433622
       },
       "reviewer": {
-        "completed_calls": 12,
-        "responses": 12,
-        "duration_ms": 3363555,
-        "request_chars": 837950
+        "completed_calls": 13,
+        "responses": 13,
+        "duration_ms": 3493219,
+        "request_chars": 894790
       },
       "corrector": {
         "completed_calls": 10,
@@ -373,7 +376,7 @@
     },
     "accepted_operations": {
       "translated": 3,
-      "review_rejected": 9,
+      "review_rejected": 10,
       "corrected": 7
     }
   },
@@ -544,10 +547,10 @@
   "model_response_diagnostics": {
     "finish_reason": "stop",
     "response_format": "pi_prompt_json",
-    "response_chars": 375,
+    "response_chars": 5803,
     "provider_refusal": false,
     "route": "primary",
-    "role": "corrector",
+    "role": "reviewer",
     "unit_id": "chapter-000003"
   }
 }

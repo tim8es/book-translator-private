@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "the-happy-prince-and-other-tales",
-  "next_sequence": 10,
+  "next_sequence": 11,
   "records": [
     {
       "record_id": "454ca30d1d7d42ae95dacf0e1de03ba9",
@@ -1411,6 +1411,166 @@
               "quote": "мой сад, который называется Раем",
               "occurrence": 0
             },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "2dfafadd4d5ffa3aa2ecb297fb1d1220e2a65d68d15acbfd8ec91438c2b45161",
+        "style_guide": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4"
+      }
+    },
+    {
+      "record_id": "3126fbcc89174c88b31856bcad5c7d7f",
+      "sequence": 10,
+      "unit_id": "chapter-000003",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "963cf80938be370d292c50ae217db486800e9b9dd69d8765eb864663be669a51",
+      "translation_sha256": "112cf62b9c468cfd0be92c23f616d25ab938f835c4f31c1a5d3d08bf2360ee53",
+      "workflow_revision": "6ed4b4cc777b2e099c08b785aae925b0c5b8296c",
+      "review_contract_revision": "docs/TRANSLATION.md@6ed4b4cc777b2e099c08b785aae925b0c5b8296c",
+      "reviewer_session_id": "auto-297fd08ee43d-reviewer-1586704c",
+      "reviewed_at": "2026-11-22T14:30:52Z",
+      "state_revision": "fd40a5fefee23793222f32159f50734b3db065d8093904024f3f6b07e552c1cf",
+      "review_commit": "0ae8b228f0ddef8940f1784b597fcd87ac2977c6",
+      "correction_round": 2,
+      "supersedes_record_id": "cf615b6c080d428ea3a6a966daf78766",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-meaning-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Resolved: «всё, что ему было сказать» preserves the source's meaning that he had said all he had to say.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "After the seven years were over he had said all that he had to say",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Когда семь лет миновали, он сказал всё, что ему было сказать",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "cf615b6c080d428ea3a6a966daf78766",
+              "finding_id": "meaning-1"
+            }
+          },
+          {
+            "id": "recheck-style-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Resolved: «ведь он был не слишком разговорчив» is natural Russian and conveys the source's understated joke about his limited conversation.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "for his conversation was limited",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "ведь он был не слишком разговорчив",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "cf615b6c080d428ea3a6a966daf78766",
+              "finding_id": "style-1"
+            }
+          },
+          {
+            "id": "recheck-referent-1",
+            "category": "referent",
+            "severity": "minor",
+            "detail": "Resolved: the feminine subject «Снежная стихия» and verb «укрыла» preserve the female personification.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "The Snow covered up the grass with her great white cloak",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Снежная стихия укрыла траву своим огромным белым плащом",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "cf615b6c080d428ea3a6a966daf78766",
+              "finding_id": "referent-1"
+            }
+          },
+          {
+            "id": "recheck-meaning-2",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Resolved: «сланцевых плиток» preserves the source's specific slate detail. The missing action and duration in this sentence are reported separately.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Every day for three hours he rattled on the roof of the castle till he broke most of the slates",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "сланцевых плиток",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "cf615b6c080d428ea3a6a966daf78766",
+              "finding_id": "meaning-2"
+            }
+          },
+          {
+            "id": "recheck-meaning-3",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Resolved: «взял его одной рукой» preserves the source's image of the Giant taking the boy in one hand.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "And the Giant stole up behind him and took him gently in his hand",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Великан подкрался к нему сзади и бережно взял его одной рукой и посадил на дерево.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "cf615b6c080d428ea3a6a966daf78766",
+              "finding_id": "meaning-3"
+            }
+          },
+          {
+            "id": "recheck-meaning-4",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Resolved: «мой сад, который и есть Рай» preserves the source's identification of the garden as Paradise.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "my garden, which is Paradise",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "мой сад, который и есть Рай",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "cf615b6c080d428ea3a6a966daf78766",
+              "finding_id": "meaning-4"
+            }
+          },
+          {
+            "id": "omission-hail-roof-1",
+            "category": "omission",
+            "severity": "major",
+            "detail": "The translation omits that Hail rattled on the castle roof for three hours each day. It begins the sentence at «пока не разбил», leaving a fragment. Restore the daily roof-rattling action and duration before the existing result.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Every day for three hours he rattled on the roof of the castle till he broke most of the slates",
+              "occurrence": 0
+            },
+            "translation_anchor": null,
             "resolves": null
           }
         ]
