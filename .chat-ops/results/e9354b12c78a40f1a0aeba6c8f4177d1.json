@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "request_id": "e9354b12c78a40f1a0aeba6c8f4177d1",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "c5c6198c976eb4dacff269d663daeb180f66f6d0b73e2c1d9d052062c433c9db",
+    "record": {
+      "correction_round": 0,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "findings": []
+      },
+      "record_id": "be08d5c17b934579b154d272e933435c",
+      "review_commit": "46121e2a651fd5bf5f1f16c34db56e167a8e30d7",
+      "review_contract_revision": "docs/TRANSLATION.md@76604c82cc4345699de9ae5d97bc75e2443e8cb5",
+      "reviewed_at": "2026-11-22T16:40:24Z",
+      "reviewer_session_id": "chatgpt-alligator-review-20261122-r1",
+      "sequence": 1,
+      "source_sha256": "d7f3868ad728b69b3123ae0d78e2aa0d1b8bba22932f79b6e249f156c628f489",
+      "state_revision": "93e0eabdedaa6e78c1dda14a818d95a590c4381d54d5fa459bf5b4d402018c03",
+      "supersedes_record_id": null,
+      "translation_sha256": "0efd09528bb5cc607b6cb7babefc138a5f236e1a1e6fb0730388ec7a1326130c",
+      "unit_id": "chapter-000001",
+      "workflow_revision": "76604c82cc4345699de9ae5d97bc75e2443e8cb5"
+    }
+  },
+  "error": null
+}

@@ -1,6 +1,34 @@
 {
   "schema_version": 1,
   "book_slug": "alligator-bites-never-heal",
-  "next_sequence": 1,
-  "records": []
+  "next_sequence": 2,
+  "records": [
+    {
+      "record_id": "be08d5c17b934579b154d272e933435c",
+      "sequence": 1,
+      "unit_id": "chapter-000001",
+      "outcome": "PASS",
+      "source_sha256": "d7f3868ad728b69b3123ae0d78e2aa0d1b8bba22932f79b6e249f156c628f489",
+      "translation_sha256": "0efd09528bb5cc607b6cb7babefc138a5f236e1a1e6fb0730388ec7a1326130c",
+      "workflow_revision": "76604c82cc4345699de9ae5d97bc75e2443e8cb5",
+      "review_contract_revision": "docs/TRANSLATION.md@76604c82cc4345699de9ae5d97bc75e2443e8cb5",
+      "reviewer_session_id": "chatgpt-alligator-review-20261122-r1",
+      "reviewed_at": "2026-11-22T16:40:24Z",
+      "state_revision": "93e0eabdedaa6e78c1dda14a818d95a590c4381d54d5fa459bf5b4d402018c03",
+      "review_commit": "46121e2a651fd5bf5f1f16c34db56e167a8e30d7",
+      "correction_round": 0,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": []
+      }
+    }
+  ]
 }
