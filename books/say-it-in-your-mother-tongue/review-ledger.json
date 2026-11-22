@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 218,
+  "next_sequence": 219,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -20982,6 +20982,44 @@
           {
             "severity": "minor",
             "detail": "Block 35: restored emphasis on forever.",
+            "resolved": true
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "52e32478b61840e6ad80e433f90e2b21",
+      "sequence": 218,
+      "unit_id": "chapter-000046",
+      "outcome": "PASS",
+      "source_sha256": "5eb40c7657a04768072006c3d09e3e412722114d863dd1168e287a3923a7b5b0",
+      "translation_sha256": "200debf137c9455302916bc5a575d732d269de016a9995a6104539270e086af3",
+      "workflow_revision": "8bb30227adc4bb921429611e12a0af803c9b6487",
+      "review_contract_revision": "docs/TRANSLATION.md@8bb30227adc4bb921429611e12a0af803c9b6487",
+      "reviewer_session_id": "chatgpt-20261122-sayit-ch46-reviewer",
+      "reviewed_at": "2026-11-22T14:30:13Z",
+      "state_revision": "c0ce036e038d18fdd491ce540064d5ab088b13c170c438e8a32aa76e630cd010",
+      "review_commit": "30ec1f2fe7f597865eb6823e234f6cad793552c1",
+      "correction_round": 4,
+      "supersedes_record_id": "e29967683f794417927c2453049f0f9d",
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Restored explicit italic emphasis in blocks 6, 18, 21, 23, 47 and 55 and preserved original French code-switch in block 22.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Block 43: maintained stronger original profanity in Nico's exasperated response.",
             "resolved": true
           }
         ]

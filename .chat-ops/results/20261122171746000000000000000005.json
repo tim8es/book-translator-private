@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "request_id": "20261122171746000000000000000005",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "c8d12c7584efad2a3f385fadffaadd31b785df775dc85f25e1fb6cc73b120a23",
+    "record": {
+      "correction_round": 4,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "findings": [
+          {
+            "detail": "Restored explicit italic emphasis in blocks 6, 18, 21, 23, 47 and 55 and preserved original French code-switch in block 22.",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "Block 43: maintained stronger original profanity in Nico's exasperated response.",
+            "resolved": true,
+            "severity": "minor"
+          }
+        ]
+      },
+      "record_id": "52e32478b61840e6ad80e433f90e2b21",
+      "review_commit": "30ec1f2fe7f597865eb6823e234f6cad793552c1",
+      "review_contract_revision": "docs/TRANSLATION.md@8bb30227adc4bb921429611e12a0af803c9b6487",
+      "reviewed_at": "2026-11-22T14:30:13Z",
+      "reviewer_session_id": "chatgpt-20261122-sayit-ch46-reviewer",
+      "sequence": 218,
+      "source_sha256": "5eb40c7657a04768072006c3d09e3e412722114d863dd1168e287a3923a7b5b0",
+      "state_revision": "c0ce036e038d18fdd491ce540064d5ab088b13c170c438e8a32aa76e630cd010",
+      "supersedes_record_id": "e29967683f794417927c2453049f0f9d",
+      "translation_sha256": "200debf137c9455302916bc5a575d732d269de016a9995a6104539270e086af3",
+      "unit_id": "chapter-000046",
+      "workflow_revision": "8bb30227adc4bb921429611e12a0af803c9b6487"
+    }
+  },
+  "error": null
+}
