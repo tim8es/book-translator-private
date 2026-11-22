@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "alligator-bites-never-heal",
-  "next_sequence": 14,
+  "next_sequence": 15,
   "records": [
     {
       "record_id": "be08d5c17b934579b154d272e933435c",
@@ -616,6 +616,54 @@
             "severity": "minor",
             "detail": "Block 000046: 'a hit to the head' accurately reads as a blow to the head, without wrongly implying a puck.",
             "resolved": true
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "98ce01f5e1c54d199978edc8ec312b5b",
+      "sequence": 14,
+      "unit_id": "chapter-000008",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "29f27caaac10b4203e5d86202970ed1856d701ccd0b1430e476b47c5b16592f1",
+      "translation_sha256": "cb9d93b78dd46c6d945768d5edeea7ed93869de4b8e0cca55cb738a4598d304d",
+      "workflow_revision": "76604c82cc4345699de9ae5d97bc75e2443e8cb5",
+      "review_contract_revision": "docs/TRANSLATION.md@76604c82cc4345699de9ae5d97bc75e2443e8cb5",
+      "reviewer_session_id": "chatgpt-alligator-20261122-r13",
+      "reviewed_at": "2026-11-22T19:35:43Z",
+      "state_revision": "cd2de39935cf40f8336d28e53a3f224839a564528c25641c0ddc97a98faeabe7",
+      "review_commit": "905c8744e396680a31125d12518a369fda9a9468",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "major",
+            "detail": "Block 000113: 'You’re hurting my feelings' is emotional hurt, whereas 'Ты делаешь мне больно' may imply physical injury. Restore an unambiguous emotional meaning, e.g. 'Ты меня обижаешь'.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Block 000143: 'the same half-dozen fantasies' loses the original count of roughly six recurrent fantasies in 'одну из неизменных фантазий'. Restore 'полудюжины' while retaining the repeated nature.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Block 000165: 'give his heart time to calm down and move on' becomes 'успокоиться и забыть его', adding a stronger explicit forgetting. Prefer 'успокоиться и двигаться дальше'.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Block 000212: 'одна из самых любимых вещей, которые мне доводилось читать' is unnatural Russian for 'one of my favorite things I've ever read'; render as a favorite fic/story while retaining the author's affectionate informal voice.",
+            "resolved": false
           }
         ]
       }

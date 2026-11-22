@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "request_id": "12d46684c19f43a2a88878c6f7dcc943",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "9bf37acc277a458dafb2198b37d71f5ad5cfbc0e9d98528f14ba154f36ae2901",
+    "record": {
+      "correction_round": 1,
+      "outcome": "CORRECTIONS_REQUIRED",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "findings": [
+          {
+            "detail": "Block 000113: 'You’re hurting my feelings' is emotional hurt, whereas 'Ты делаешь мне больно' may imply physical injury. Restore an unambiguous emotional meaning, e.g. 'Ты меня обижаешь'.",
+            "resolved": false,
+            "severity": "major"
+          },
+          {
+            "detail": "Block 000143: 'the same half-dozen fantasies' loses the original count of roughly six recurrent fantasies in 'одну из неизменных фантазий'. Restore 'полудюжины' while retaining the repeated nature.",
+            "resolved": false,
+            "severity": "minor"
+          },
+          {
+            "detail": "Block 000165: 'give his heart time to calm down and move on' becomes 'успокоиться и забыть его', adding a stronger explicit forgetting. Prefer 'успокоиться и двигаться дальше'.",
+            "resolved": false,
+            "severity": "minor"
+          },
+          {
+            "detail": "Block 000212: 'одна из самых любимых вещей, которые мне доводилось читать' is unnatural Russian for 'one of my favorite things I've ever read'; render as a favorite fic/story while retaining the author's affectionate informal voice.",
+            "resolved": false,
+            "severity": "minor"
+          }
+        ]
+      },
+      "record_id": "98ce01f5e1c54d199978edc8ec312b5b",
+      "review_commit": "905c8744e396680a31125d12518a369fda9a9468",
+      "review_contract_revision": "docs/TRANSLATION.md@76604c82cc4345699de9ae5d97bc75e2443e8cb5",
+      "reviewed_at": "2026-11-22T19:35:43Z",
+      "reviewer_session_id": "chatgpt-alligator-20261122-r13",
+      "sequence": 14,
+      "source_sha256": "29f27caaac10b4203e5d86202970ed1856d701ccd0b1430e476b47c5b16592f1",
+      "state_revision": "cd2de39935cf40f8336d28e53a3f224839a564528c25641c0ddc97a98faeabe7",
+      "supersedes_record_id": null,
+      "translation_sha256": "cb9d93b78dd46c6d945768d5edeea7ed93869de4b8e0cca55cb738a4598d304d",
+      "unit_id": "chapter-000008",
+      "workflow_revision": "76604c82cc4345699de9ae5d97bc75e2443e8cb5"
+    }
+  },
+  "error": null
+}
