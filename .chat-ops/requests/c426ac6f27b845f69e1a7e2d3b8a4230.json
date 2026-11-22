@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "request_id": "c426ac6f27b845f69e1a7e2d3b8a4230",
+  "book_slug": "cardinal-kin",
+  "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
+  "operation": "review-record",
+  "chapter": 4,
+  "session_id": "chat-20261122-cardinal-review-04b",
+  "outcome": "PASS",
+  "quality_report": {
+    "evidence_version": 2,
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "id": "sarcasm-16-resolved-20261122",
+        "category": "meaning",
+        "severity": "major",
+        "detail": "Damian now makes clear that almost nothing is excluded by Jason's joking warning, rather than referring to trifles.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "Little falls under that category",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Да под это почти ничего не подпадает",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "31f86f5216194de2b56a0b88a3a178ee",
+          "finding_id": "sarcasm-16-20261122"
+        }
+      },
+      {
+        "id": "success-25-resolved-20261122",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Damian's explicit hope of succeeding is restored with «рассчитывает когда-нибудь добиться успеха».",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "If he has any hope of being successful",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Если он рассчитывает когда-нибудь добиться успеха",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "31f86f5216194de2b56a0b88a3a178ee",
+          "finding_id": "success-25-20261122"
+        }
+      }
+    ]
+  },
+  "source_sha256": "4d370415b6d8e2ff84f0bb4a5633e2dfff9069a3139d5383919c57cdfe737871",
+  "translation_sha256": "2578c2c8e7d177d212ea829df22c38900ace6c2bf258eec4b6eb244030f4ddac",
+  "claim_sha256": "04786d20816b2efc7617b48d2fe384f10c42a0ce96c4a808bd8d4517b60dee04"
+}
