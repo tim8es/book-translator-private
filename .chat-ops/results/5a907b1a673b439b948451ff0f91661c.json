@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "request_id": "5a907b1a673b439b948451ff0f91661c",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "1b6e5b71814efdd3facbd75138ec720173353be55e929646ab748155a3faa280",
+    "record": {
+      "correction_round": 1,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "style",
+            "detail": "Corrected the calqued verb phrase to natural Russian without changing the original ongoing shallow breathing.",
+            "id": "style-003-recheck",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "style-003",
+              "record_id": "353f127ca51c4c5fae4bf83b67e7c1c4"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "breathing shallowly as he gathered himself"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "дышал поверхностно, пытаясь взять себя в руки"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Resolved Russian plural/singular mismatch while preserving visual identification of one track marshal.",
+            "id": "style-055-recheck",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "style-055",
+              "record_id": "353f127ca51c4c5fae4bf83b67e7c1c4"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "distinctive neon orange vests of one of the track marshals"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "характерный ярко-оранжевый жилет одного из маршалов трассы"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Restored the original speaker's stressed profanity and checked it against dialogue register.",
+            "id": "register-103-recheck",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "register-103",
+              "record_id": "353f127ca51c4c5fae4bf83b67e7c1c4"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Fuck, I don’t know how to—"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Блядь, я не знаю, как..."
+            }
+          }
+        ]
+      },
+      "record_id": "ab9b4bf0ea5645cf8376a602938ad969",
+      "review_commit": "0e8b2e9d25ddc15f90a8364c29113be11a49b6f4",
+      "review_contract_revision": "docs/TRANSLATION.md@789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
+      "reviewed_at": "2026-11-22T19:43:09Z",
+      "reviewer_session_id": "chatops-pizza-reviewer-20261122-04",
+      "sequence": 7,
+      "source_sha256": "0ccde151fa7e3a6b179edcc857d3d1e1a84c175714efccf7ac7f3093685f426e",
+      "state_revision": "e7549a70e62a7b4f779f4d3fecfc216dc3d028f268590ae3cde0fafa8f92cf2d",
+      "supersedes_record_id": "353f127ca51c4c5fae4bf83b67e7c1c4",
+      "translation_sha256": "9509dff9f1abec4860a0d643d0d14d0a18d555d2e4429944d5bbfba13cbf2360",
+      "unit_id": "chapter-000004",
+      "workflow_revision": "789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07"
+    }
+  },
+  "error": null
+}

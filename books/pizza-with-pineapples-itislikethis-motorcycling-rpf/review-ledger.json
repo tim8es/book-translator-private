@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "pizza-with-pineapples-itislikethis-motorcycling-rpf",
-  "next_sequence": 7,
+  "next_sequence": 8,
   "records": [
     {
       "record_id": "e8060d96338440d8a139c674168abf15",
@@ -301,6 +301,92 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "ab9b4bf0ea5645cf8376a602938ad969",
+      "sequence": 7,
+      "unit_id": "chapter-000004",
+      "outcome": "PASS",
+      "source_sha256": "0ccde151fa7e3a6b179edcc857d3d1e1a84c175714efccf7ac7f3093685f426e",
+      "translation_sha256": "9509dff9f1abec4860a0d643d0d14d0a18d555d2e4429944d5bbfba13cbf2360",
+      "workflow_revision": "789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
+      "review_contract_revision": "docs/TRANSLATION.md@789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
+      "reviewer_session_id": "chatops-pizza-reviewer-20261122-04",
+      "reviewed_at": "2026-11-22T19:43:09Z",
+      "state_revision": "e7549a70e62a7b4f779f4d3fecfc216dc3d028f268590ae3cde0fafa8f92cf2d",
+      "review_commit": "0e8b2e9d25ddc15f90a8364c29113be11a49b6f4",
+      "correction_round": 1,
+      "supersedes_record_id": "353f127ca51c4c5fae4bf83b67e7c1c4",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "style-003-recheck",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Corrected the calqued verb phrase to natural Russian without changing the original ongoing shallow breathing.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "breathing shallowly as he gathered himself",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "дышал поверхностно, пытаясь взять себя в руки",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "353f127ca51c4c5fae4bf83b67e7c1c4",
+              "finding_id": "style-003"
+            }
+          },
+          {
+            "id": "style-055-recheck",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Resolved Russian plural/singular mismatch while preserving visual identification of one track marshal.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "distinctive neon orange vests of one of the track marshals",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "характерный ярко-оранжевый жилет одного из маршалов трассы",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "353f127ca51c4c5fae4bf83b67e7c1c4",
+              "finding_id": "style-055"
+            }
+          },
+          {
+            "id": "register-103-recheck",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Restored the original speaker's stressed profanity and checked it against dialogue register.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Fuck, I don’t know how to—",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Блядь, я не знаю, как...",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "353f127ca51c4c5fae4bf83b67e7c1c4",
+              "finding_id": "register-103"
+            }
           }
         ]
       }
