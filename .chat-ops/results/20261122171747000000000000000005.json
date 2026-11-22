@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "request_id": "20261122171747000000000000000005",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "7cd0025ca9de7f26ab8a9eab0c4322d13719ac7dce014767dabab139137864d6",
+    "record": {
+      "correction_round": 3,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "findings": [
+          {
+            "detail": "Block 4: removed repeated reference to more notes while keeping the original inline marker and intended navigation.",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "Block 46: restored dialogue punctuation without changing Gabriel's reaction.",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "Block 52: labeled end-of-chapter notes distinctly from introductory notes.",
+            "resolved": true,
+            "severity": "minor"
+          }
+        ]
+      },
+      "record_id": "d11a47fdd14942808f6714c3b61dd9cf",
+      "review_commit": "d1594ab5a4fc2aa9751377482d66c75da663b601",
+      "review_contract_revision": "docs/TRANSLATION.md@8bb30227adc4bb921429611e12a0af803c9b6487",
+      "reviewed_at": "2026-11-22T14:32:49Z",
+      "reviewer_session_id": "chatgpt-20261122-sayit-ch47-reviewer",
+      "sequence": 219,
+      "source_sha256": "d4f24782cb4a00e135a1de9e403e639e749beb532e629bb1e4b4ff6af715fcc0",
+      "state_revision": "53e8660f2cce85f167807174bcc21926c68ce61e20115449889ae8bea47975b1",
+      "supersedes_record_id": "f486ee75cdca4068b02d9b0874e0583e",
+      "translation_sha256": "4776db3b9b492d0929f4a85ec4ece1d3c3e77b71494d99c2ba6adeb463a49567",
+      "unit_id": "chapter-000047",
+      "workflow_revision": "8bb30227adc4bb921429611e12a0af803c9b6487"
+    }
+  },
+  "error": null
+}

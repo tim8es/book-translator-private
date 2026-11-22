@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 219,
+  "next_sequence": 220,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -21020,6 +21020,49 @@
           {
             "severity": "minor",
             "detail": "Block 43: maintained stronger original profanity in Nico's exasperated response.",
+            "resolved": true
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "d11a47fdd14942808f6714c3b61dd9cf",
+      "sequence": 219,
+      "unit_id": "chapter-000047",
+      "outcome": "PASS",
+      "source_sha256": "d4f24782cb4a00e135a1de9e403e639e749beb532e629bb1e4b4ff6af715fcc0",
+      "translation_sha256": "4776db3b9b492d0929f4a85ec4ece1d3c3e77b71494d99c2ba6adeb463a49567",
+      "workflow_revision": "8bb30227adc4bb921429611e12a0af803c9b6487",
+      "review_contract_revision": "docs/TRANSLATION.md@8bb30227adc4bb921429611e12a0af803c9b6487",
+      "reviewer_session_id": "chatgpt-20261122-sayit-ch47-reviewer",
+      "reviewed_at": "2026-11-22T14:32:49Z",
+      "state_revision": "53e8660f2cce85f167807174bcc21926c68ce61e20115449889ae8bea47975b1",
+      "review_commit": "d1594ab5a4fc2aa9751377482d66c75da663b601",
+      "correction_round": 3,
+      "supersedes_record_id": "f486ee75cdca4068b02d9b0874e0583e",
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Block 4: removed repeated reference to more notes while keeping the original inline marker and intended navigation.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Block 46: restored dialogue punctuation without changing Gabriel's reaction.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Block 52: labeled end-of-chapter notes distinctly from introductory notes.",
             "resolved": true
           }
         ]
