@@ -61,7 +61,16 @@ class StateOnlyDeploymentTests(unittest.TestCase):
         self.assertIn("github.event_name == 'pull_request' || inputs.probe_only", pi)
         self.assertIn("github.event_name == 'workflow_dispatch' && !inputs.probe_only", pi)
         self.assertNotIn("schedule:", pi)
-        self.assertNotIn("push:", pi)
+        # Pi remains opt-in: the only push trigger is a committed explicit
+        # request, verified against the Pi-owned immutable intake before dispatch.
+        self.assertIn("push:", pi)
+        self.assertIn("'automation/pi-requests/*.json'", pi)
+        self.assertIn("github.event_name == 'push'", pi)
+        self.assertIn("Dispatch only verified Pi-owned requests", pi)
+        self.assertIn(' .executor == "pi"', pi)
+        self.assertIn(' .state == "running"', pi)
+        self.assertIn("gh workflow run pi-book-translation.yml --ref main", pi)
+        self.assertIn("-f continue_automatically=true", pi)
         auto = (root / "auto-translate.yml").read_text("utf-8")
         self.assertIn("group: book-operation-", auto)
         self.assertIn("max-parallel: 3", auto)
