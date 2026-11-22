@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "request_id": "f79adfdd045c47f29d9d234f77c42a7b",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "fa2e5adf642401d0c6e19d42ed704a7c9aedd95847c1cfa755300dfe3ed43c4b",
+    "record": {
+      "correction_round": 2,
+      "outcome": "CORRECTIONS_REQUIRED",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "findings": [
+          {
+            "detail": "Blocks 000193, 000198 and 000200: prior ticking cadence, heart/maw metaphor and handjob specificity have been corrected against source.",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "Block 000290: ankle-kissing and hand placement now read naturally without changing action.",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "Block 000203: 'единственное время, когда Илья вообще сидел спокойно, — когда лежал ...' still creates a sitting-versus-lying contradiction in Russian. Replace 'сидел спокойно' with 'оставался неподвижным' or 'не шевелился', preserving the sense that he was still in his mother's lap.",
+            "resolved": false,
+            "severity": "minor"
+          }
+        ]
+      },
+      "record_id": "c766cc10d0c14859baf1307b192d4aec",
+      "review_commit": "a25b881bce516a791f432bfd041d2ab809b3218d",
+      "review_contract_revision": "docs/TRANSLATION.md@76604c82cc4345699de9ae5d97bc75e2443e8cb5",
+      "reviewed_at": "2026-11-22T20:56:39Z",
+      "reviewer_session_id": "chatgpt-alligator-20261122-r16",
+      "sequence": 17,
+      "source_sha256": "b1a3073f0193f948f34dd2952527880eddad9a72901899e48c2e10a2d117b80b",
+      "state_revision": "1cfcd72edf5ff074f7a3f71e82482482ac0afe2b6d2691944477d2cb3c6a9692",
+      "supersedes_record_id": "c6e6a033786c4c6da7172e79dbac7767",
+      "translation_sha256": "9d509fdb89f152e141e83cf6e26d62fe9d503f94d4174c9e72bc9fdbb5a0a6a1",
+      "unit_id": "chapter-000009",
+      "workflow_revision": "76604c82cc4345699de9ae5d97bc75e2443e8cb5"
+    }
+  },
+  "error": null
+}
