@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "cardinal-kin",
-  "next_sequence": 37,
+  "next_sequence": 38,
   "records": [
     {
       "record_id": "75dfa72e2b6148208fd5343b6e384999",
@@ -8110,6 +8110,33 @@
       "reviewed_at": "2026-11-22T15:54:10Z",
       "state_revision": "01d76b287c0afd1369683bbb9bb12310ab21a73005dfdbdbded04de81609fa4a",
       "review_commit": "3360a2184242f49944142338db7dabd0517ad002",
+      "correction_round": 0,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": []
+      }
+    },
+    {
+      "record_id": "1a327d3b49f440998d8b7b30d1bd02cb",
+      "sequence": 37,
+      "unit_id": "chapter-000010",
+      "outcome": "PASS",
+      "source_sha256": "7091127b3f5142510f75a8d060b29a8baebdad5faf9c203c6de10c4091a109df",
+      "translation_sha256": "69cb5223b10a64c366bace7be6110d4d999405ca128336254a0c63ee980749b8",
+      "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "review_contract_revision": "docs/TRANSLATION.md@a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "reviewer_session_id": "chat-20261122-cardinal-review-10b",
+      "reviewed_at": "2026-11-22T16:27:02Z",
+      "state_revision": "107f6ff9d3abc6b370da4d6d7d27b17c6cb5d0d686e46041fb3ee0629edb3de8",
+      "review_commit": "f1bf960358d61971b2901e822a1cb3c0d7a97414",
       "correction_round": 0,
       "supersedes_record_id": null,
       "quality_report": {

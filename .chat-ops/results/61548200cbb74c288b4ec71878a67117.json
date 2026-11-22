@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "request_id": "61548200cbb74c288b4ec71878a67117",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "663639423fdd9b557b0f63a4b2074a35c2bad650a0b7ef58ec29302c02f4ab27",
+    "record": {
+      "correction_round": 0,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "findings": []
+      },
+      "record_id": "1a327d3b49f440998d8b7b30d1bd02cb",
+      "review_commit": "f1bf960358d61971b2901e822a1cb3c0d7a97414",
+      "review_contract_revision": "docs/TRANSLATION.md@a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "reviewed_at": "2026-11-22T16:27:02Z",
+      "reviewer_session_id": "chat-20261122-cardinal-review-10b",
+      "sequence": 37,
+      "source_sha256": "7091127b3f5142510f75a8d060b29a8baebdad5faf9c203c6de10c4091a109df",
+      "state_revision": "107f6ff9d3abc6b370da4d6d7d27b17c6cb5d0d686e46041fb3ee0629edb3de8",
+      "supersedes_record_id": null,
+      "translation_sha256": "69cb5223b10a64c366bace7be6110d4d999405ca128336254a0c63ee980749b8",
+      "unit_id": "chapter-000010",
+      "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29"
+    }
+  },
+  "error": null
+}
