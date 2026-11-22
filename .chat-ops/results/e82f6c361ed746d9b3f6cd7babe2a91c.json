@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "request_id": "e82f6c361ed746d9b3f6cd7babe2a91c",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "0d0202061cfe9c003435c0704439bc4db19cad3cbc789e60a4c58cb951c07060",
+    "record": {
+      "correction_round": 2,
+      "outcome": "CORRECTIONS_REQUIRED",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "findings": [
+          {
+            "detail": "Block 000158 after the previous correction: 'бутылочку ... выбрасывает её ... когда он положил его' has a wrong-gender pronoun. In reference to the same protein shake bottle, use 'её' in the recollection as well; recheck the full source/translation line. Earlier eight findings are resolved in this candidate.",
+            "resolved": false,
+            "severity": "minor"
+          }
+        ]
+      },
+      "record_id": "c195099c896e4258990d56195f8be06f",
+      "review_commit": "403bb10388f1ecfcc5632a5db33d37e695448f1b",
+      "review_contract_revision": "docs/TRANSLATION.md@76604c82cc4345699de9ae5d97bc75e2443e8cb5",
+      "reviewed_at": "2026-11-22T18:02:10Z",
+      "reviewer_session_id": "chatgpt-alligator-20261122-r5",
+      "sequence": 6,
+      "source_sha256": "f027535c5e1f74e4184cb65346b7b8a4539d775b0690ed2b025ad6aa947547ec",
+      "state_revision": "fc6b5d7ceb6dac8787cc13cc7e5a7a5b4507e798194327930e9856f079a0a236",
+      "supersedes_record_id": "88d8e9d5177b40ceaeef0ce5fcd2c25c",
+      "translation_sha256": "c1cccacc25cee6b7db0d8073f6f5adabfc694ed249b623a6199a9d193bd141c1",
+      "unit_id": "chapter-000004",
+      "workflow_revision": "76604c82cc4345699de9ae5d97bc75e2443e8cb5"
+    }
+  },
+  "error": null
+}

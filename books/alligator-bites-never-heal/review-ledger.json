@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "alligator-bites-never-heal",
-  "next_sequence": 6,
+  "next_sequence": 7,
   "records": [
     {
       "record_id": "be08d5c17b934579b154d272e933435c",
@@ -226,6 +226,39 @@
           {
             "severity": "minor",
             "detail": "Block 000137: the Russian phrase about the swollen tongue 'который ему ... проткнули собственные зубы' is grammatically misleading; make the physical agent (his teeth) clear while preserving 'apparently'.",
+            "resolved": false
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "c195099c896e4258990d56195f8be06f",
+      "sequence": 6,
+      "unit_id": "chapter-000004",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "f027535c5e1f74e4184cb65346b7b8a4539d775b0690ed2b025ad6aa947547ec",
+      "translation_sha256": "c1cccacc25cee6b7db0d8073f6f5adabfc694ed249b623a6199a9d193bd141c1",
+      "workflow_revision": "76604c82cc4345699de9ae5d97bc75e2443e8cb5",
+      "review_contract_revision": "docs/TRANSLATION.md@76604c82cc4345699de9ae5d97bc75e2443e8cb5",
+      "reviewer_session_id": "chatgpt-alligator-20261122-r5",
+      "reviewed_at": "2026-11-22T18:02:10Z",
+      "state_revision": "fc6b5d7ceb6dac8787cc13cc7e5a7a5b4507e798194327930e9856f079a0a236",
+      "review_commit": "403bb10388f1ecfcc5632a5db33d37e695448f1b",
+      "correction_round": 2,
+      "supersedes_record_id": "88d8e9d5177b40ceaeef0ce5fcd2c25c",
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Block 000158 after the previous correction: 'бутылочку ... выбрасывает её ... когда он положил его' has a wrong-gender pronoun. In reference to the same protein shake bottle, use 'её' in the recollection as well; recheck the full source/translation line. Earlier eight findings are resolved in this candidate.",
             "resolved": false
           }
         ]
