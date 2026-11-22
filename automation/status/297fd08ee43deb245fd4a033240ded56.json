@@ -3,7 +3,7 @@
   "job_id": "297fd08ee43deb245fd4a033240ded56",
   "book_slug": "the-happy-prince-and-other-tales",
   "state": "running",
-  "phase": "model-call-reserved",
+  "phase": "correction-batch-staged",
   "failures": 0,
   "correction_rounds": {
     "chapter-000001": 3,
@@ -11,7 +11,7 @@
   },
   "workflow_revision": "6ed4b4cc777b2e099c08b785aae925b0c5b8296c",
   "source_sha256": "33ba5a6a0441c9af8f63ae495cab0680e3b8baf413c382dd3d6a8ef8a2aecec9",
-  "updated_at": "2026-11-22T14:00:27.385505+00:00",
+  "updated_at": "2026-11-22T14:00:28.707613+00:00",
   "queue_snapshot": {
     "extracted": 3,
     "reviewed": 0,
@@ -471,10 +471,10 @@
   },
   "correction_regression_deferred": {
     "unit_id": "chapter-000002",
-    "review_record_id": "c9bed0a6189749c5bd490699a506ea7b",
+    "review_record_id": "f99662bbf30f4f98826649d56f1716f7",
     "unapplied_finding_ids": [
-      "recheck-referent-3",
-      "recheck-referent-4"
+      "recheck-3-v2",
+      "recheck-4-v2"
     ]
   },
   "provider_model_route": "primary",
@@ -486,5 +486,11 @@
     "route": "primary",
     "role": "corrector",
     "unit_id": "chapter-000002"
+  },
+  "correction_batch_progress": {
+    "unit_id": "chapter-000002",
+    "review_record_id": "f99662bbf30f4f98826649d56f1716f7",
+    "completed": 1,
+    "total": 8
   }
 }
