@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "pizza-with-pineapples-itislikethis-motorcycling-rpf",
-  "next_sequence": 17,
+  "next_sequence": 18,
   "records": [
     {
       "record_id": "e8060d96338440d8a139c674168abf15",
@@ -1067,6 +1067,227 @@
               "record_id": "bc0ed3d3ddf845a78b9f5ba53cc23524",
               "finding_id": "style-066"
             }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "e318d69550c94bea9a513be30ccb53ab",
+      "sequence": 17,
+      "unit_id": "chapter-000003",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "6cd0ff696ffbec2ac9b9dcf7f998aaf9aed5f944e226c6df5b8f81001ed54144",
+      "translation_sha256": "5c337b44d81d36e36196bdd91b5e57b0d419d8528804f9ba103f5f86ba30e4bb",
+      "workflow_revision": "789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
+      "review_contract_revision": "docs/TRANSLATION.md@789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
+      "reviewer_session_id": "chatops-pizza-review-20261123-0211",
+      "reviewed_at": "2026-11-22T23:09:35Z",
+      "state_revision": "e72301d915bdd9bee11a0d4023e537133232f98333c8ea007fa3309e96c81c0b",
+      "review_commit": "02d424836971f86b8b46807704db75b13ee043f7",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "like-043",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Source 'like' means liking, not a declaration of love.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "He really does like you",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Он и правда тебя любит",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "like-044",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Reciprocal not liking wrongly escalates to not loving.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "I don’t like him back",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "А я его не люблю",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "like-049",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "'Likes you so much' becomes 'loves you', a different emotional assertion.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "I don’t get why he likes you so much, either",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "я и сам не понимаю, почему он так сильно любит тебя",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "calque-069",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Unidiomatic Russian 'во время' obscures Yamaha informing Valentino only after decisions.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "They only tell me after",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Мне говорят только потом",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "calque-075",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Literal calque 'I am always a good excuse' does not convey being a convenient scapegoat.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Always am a good excuse.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Я всегда хорошее оправдание",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "nickname-090",
+            "category": "terminology",
+            "severity": "major",
+            "detail": "'Tola' is a stable coined contact nickname from The Tolerable One; Russian 'Сно' alters its identity.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Yes. Tola, for short.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Да. Коротко — Сно",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "grammar-096",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Russian participial construction around saving the contact is ungrammatical.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "tucking his phone away as soon as the contact was set.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "убирая телефон, едва сохранил контакт",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "repeat-100",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Threefold deliberate source repetition is shortened to two beats.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Stared and stared and stared.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Смотрел и смотрел.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "referent-101",
+            "category": "referent",
+            "severity": "major",
+            "detail": "Who liked whom is reversed/obscured: Valentino liked Marc more than Alex before 2015.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Had certainly liked him more than Alex, back then.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Тогда он точно нравился ему больше, чем Алекс.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "like-103",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "'Used to like you' is unnecessarily intensified into 'used to love you'.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "I used to like you more back when I didn’t know you, too.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Я и сам больше любил тебя, когда ещё не знал",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-071",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Yamaha's treatment of Valentino in relation to Lorenzo is rendered as treatment of the two riders as a pair.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "You see how they treat me with Lorenzo",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Ты видишь, как они обходятся со мной и Лоренсо",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "structure-110",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "Dialogue quotation style switches from Russian dash-led speech to guillemets at block 71; interrupted speech in block 110 is additionally awkward.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "maybe if you reconsider my contact name, I can consider this.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«может, если ты передумаешь насчёт того, как записать меня в контактах, я подумаю над этим»",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       }
