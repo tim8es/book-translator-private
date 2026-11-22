@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 216,
+  "next_sequence": 217,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -20901,6 +20901,44 @@
           {
             "severity": "minor",
             "detail": "Block 45: verified restored description of Gabriel's face and reaction.",
+            "resolved": true
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "5a480ea3a5c9494ab12baa5e91d875a0",
+      "sequence": 216,
+      "unit_id": "chapter-000044",
+      "outcome": "PASS",
+      "source_sha256": "14414f83d5597f583744af54567f80df0eafa7e54b9163387b0dc6a7e5be4494",
+      "translation_sha256": "ff771b422054089a5a9c921f2e2d5231f21d7b48e6ab082acc168c9b3ed31b50",
+      "workflow_revision": "8bb30227adc4bb921429611e12a0af803c9b6487",
+      "review_contract_revision": "docs/TRANSLATION.md@8bb30227adc4bb921429611e12a0af803c9b6487",
+      "reviewer_session_id": "chatgpt-20261122-sayit-ch44-reviewer",
+      "reviewed_at": "2026-11-22T14:23:09Z",
+      "state_revision": "aa923d398616d1588db1f0f247f03fc2eee899a40c4de5ce404d6053e6507db0",
+      "review_commit": "d7f76f1ee6fe454ec54f919e1bcd1937f1d5b4c6",
+      "correction_round": 4,
+      "supersedes_record_id": "45b0e48f969c40e480a8b4575432ce1a",
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Block 53: restored italic sound effect on the new-message ding.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Block 71: restored italic emphasis on a little over the speed limit.",
             "resolved": true
           }
         ]

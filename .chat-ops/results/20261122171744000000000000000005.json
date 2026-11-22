@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "request_id": "20261122171744000000000000000005",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "83f6d8e7a94f7ca8a57a093e9145a22fc0f554cc67de6763182608520fabbc22",
+    "record": {
+      "correction_round": 4,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "findings": [
+          {
+            "detail": "Block 53: restored italic sound effect on the new-message ding.",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "Block 71: restored italic emphasis on a little over the speed limit.",
+            "resolved": true,
+            "severity": "minor"
+          }
+        ]
+      },
+      "record_id": "5a480ea3a5c9494ab12baa5e91d875a0",
+      "review_commit": "d7f76f1ee6fe454ec54f919e1bcd1937f1d5b4c6",
+      "review_contract_revision": "docs/TRANSLATION.md@8bb30227adc4bb921429611e12a0af803c9b6487",
+      "reviewed_at": "2026-11-22T14:23:09Z",
+      "reviewer_session_id": "chatgpt-20261122-sayit-ch44-reviewer",
+      "sequence": 216,
+      "source_sha256": "14414f83d5597f583744af54567f80df0eafa7e54b9163387b0dc6a7e5be4494",
+      "state_revision": "aa923d398616d1588db1f0f247f03fc2eee899a40c4de5ce404d6053e6507db0",
+      "supersedes_record_id": "45b0e48f969c40e480a8b4575432ce1a",
+      "translation_sha256": "ff771b422054089a5a9c921f2e2d5231f21d7b48e6ab082acc168c9b3ed31b50",
+      "unit_id": "chapter-000044",
+      "workflow_revision": "8bb30227adc4bb921429611e12a0af803c9b6487"
+    }
+  },
+  "error": null
+}
