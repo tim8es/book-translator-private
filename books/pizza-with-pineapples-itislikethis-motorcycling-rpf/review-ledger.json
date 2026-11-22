@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "pizza-with-pineapples-itislikethis-motorcycling-rpf",
-  "next_sequence": 19,
+  "next_sequence": 20,
   "records": [
     {
       "record_id": "e8060d96338440d8a139c674168abf15",
@@ -1545,6 +1545,147 @@
               "record_id": "e318d69550c94bea9a513be30ccb53ab",
               "finding_id": "structure-110"
             }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "0a9a5446fa8ce0b743240d59ce917229",
+      "sequence": 19,
+      "unit_id": "chapter-000010",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "2b658e77280d2ab80a7cf2403c6c3e4c762bf369283faad4388900a64f19d7df",
+      "translation_sha256": "dad43d28ec93908ffaae8a53b51349851e289ec600e0879a6c6ce6f079bf30c2",
+      "workflow_revision": "789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
+      "review_contract_revision": "docs/TRANSLATION.md@789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
+      "reviewer_session_id": "chatops-pizza-reviewer-20261123-10-2da501aa",
+      "reviewed_at": "2026-11-22T23:43:22Z",
+      "state_revision": "c12a8e6002be863ab545db019f783598c2d92451313c0689b73abeea44391858",
+      "review_commit": "46208cdf90dbfa7ba0364d3c7c4b721bc4bd57f8",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "meaning-030",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Crash into Luca is paraphrased as falling together, implying a shared fall rather than the original collision.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "I know you did not mean to crash.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Знаю, что ты не хотел падать вместе с ним.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-050",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Double-negative calque obscures the refusal to relinquish a grudge.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "To let it go, like Marc and Valentino still refused to.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Отпустить то, за что Марк и Валентино до сих пор отказывались перестать держаться.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-105",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Literal 'another rider on the grid' reads as another/different racer rather than one of Luca's peers in the field.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "He’s also just another rider on the grid",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Он ещё и просто другой гонщик на стартовой решётке",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "referent-111",
+            "category": "referent",
+            "severity": "minor",
+            "detail": "Original does not specify reporter gender; the Russian feminine form adds unsupported detail.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "a jab at the reporter more than anyone.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "скорее чтобы уколоть журналистку, чем кого-либо ещё.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "voice-119",
+            "category": "voice",
+            "severity": "major",
+            "detail": "Third-person Alex perspective accidentally switches to first-person narrator.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "He didn’t think it would go very well.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Не думаю, что из этого вышло бы что-то хорошее.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-158",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Unidiomatic 'photos of you' calque; preserve teasing request for Valentino's beach photos.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Photos of you at the beach?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Фотографии тебя на пляже?",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-159",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Russian 'send myself' leaves out the photo object and suggests sending the person instead.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "I can send some of me, too, if you want.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Но могу прислать и себя, если хочешь.",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       }
