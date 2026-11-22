@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "alligator-bites-never-heal",
-  "next_sequence": 12,
+  "next_sequence": 13,
   "records": [
     {
       "record_id": "be08d5c17b934579b154d272e933435c",
@@ -500,6 +500,64 @@
             "severity": "minor",
             "detail": "Block 000159: 'afterglow' now conveys relaxed post-sexual bliss in natural Russian, with the tease about Shane's inability to savor it.",
             "resolved": true
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "8bc8d0ce00a3452faf49255b29f560ae",
+      "sequence": 12,
+      "unit_id": "chapter-000007",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "6e3f0e0402acaf0d35a43a0b1f5fe626297ebb1e0bd86ad2b10231f7d9460732",
+      "translation_sha256": "c2c194faf79742c5636eaf910a563181ed21b62305859114352b6f5bb2e11076",
+      "workflow_revision": "76604c82cc4345699de9ae5d97bc75e2443e8cb5",
+      "review_contract_revision": "docs/TRANSLATION.md@76604c82cc4345699de9ae5d97bc75e2443e8cb5",
+      "reviewer_session_id": "chatgpt-alligator-20261122-r11",
+      "reviewed_at": "2026-11-22T19:03:11Z",
+      "state_revision": "573fce075bb9a4ce7d165d36b076b8a4d10d6e0a5dcfc832168b413c8ee47c3e",
+      "review_commit": "5b5a760408b1be668648cd14d32dec4ba8d71692",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "major",
+            "detail": "Block 000076: 'he’s crumpled on the ice' conveys Shane's crumpled, collapsed position, not confirmed loss of consciousness. The Russian 'лежит без сознания на льду' invents a clinical condition. Correct to e.g. 'лежит, рухнув на лёд' preserving uncertainty.",
+            "resolved": false
+          },
+          {
+            "severity": "major",
+            "detail": "Block 000072: 'He’ll suck every dick at the border if necessary' is a vulgar exaggeration about bribing officials sexually; Russian 'отсосёт каждому члену на границе' has incorrect case/meaning and reads as a nonsensical anatomical object. Restore natural crude meaning, e.g. 'отсосёт всем пограничникам, если понадобится'.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Block 000113: 'Ilya’s gifted beads' are the beads Ilya gave Shane; 'шарики, которые подарил ему Илья' has an ambiguous pronoun and risks saying Ilya gifted them to himself. Specify the recipient Shane.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Block 000171: 'prospect cup' means a prospects/developing-player event, not 'Кубок проспектов' (street avenues). Render as 'Кубок молодых талантов' or preserve the English named event with context, avoiding false-friend calque.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Block 000082: 'Yuna, the all-seeing judge and jury of the dashboard camera' is a humorous imagined car-crash/dashcam metaphor. 'Юна — всевидящие судья и присяжные в лице автомобильного регистратора' is grammatically awkward and conflates person with a dashcam; clarify the visual metaphor without adding an actual accident.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Block 000046: 'You took a hit to the head' means a blow to Shane's head. Russian 'Тебе попали по голове' is unnatural and may imply a puck; render 'Ты получил удар по голове' or equivalent.",
+            "resolved": false
           }
         ]
       }
