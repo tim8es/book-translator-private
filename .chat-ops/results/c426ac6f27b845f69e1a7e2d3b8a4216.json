@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "request_id": "c426ac6f27b845f69e1a7e2d3b8a4216",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "9274ce4cd370060c4c2fbd5597732780e4575ad38174b070c80373ab69ceec6f",
+    "record": {
+      "correction_round": 1,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "style",
+            "detail": "The previously ungrammatical author attribution is corrected to «автора Yellow_sprouts»; full 14-block source comparison confirms the linked creator attribution and every other block remain faithful.",
+            "id": "style-1-resolved-20261122",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "style-1",
+              "record_id": "2f01a016dd684f35a1082ed4baf7d450"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "by <!-- bt-inline:000002:start -->Yellow_sprouts<!-- bt-inline:000002:end -->"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "автора <!-- bt-inline:000002:start -->Yellow_sprouts<!-- bt-inline:000002:end -->"
+            }
+          }
+        ]
+      },
+      "record_id": "28de4dc274cf4e74a70d5c3d207675ae",
+      "review_commit": "48bd387ab13eab3250289f994565e493553915a4",
+      "review_contract_revision": "docs/TRANSLATION.md@a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "reviewed_at": "2026-11-22T15:15:53Z",
+      "reviewer_session_id": "chat-20261122-cardinal-review-02",
+      "sequence": 27,
+      "source_sha256": "a5939058bc010e5b6072b62dc1b76cf7876db3d781763182b3338f3ef11d7f7a",
+      "state_revision": "6eb7715c8b19dd23f551d066c35a48e8fa2330d5f9ddd1eea5246a292f099c7d",
+      "supersedes_record_id": "2f01a016dd684f35a1082ed4baf7d450",
+      "translation_sha256": "d9bb9e7df3ced5fb0f3b4ed78acd4864654dcaaa540ef43ef318e3c7dc47dc70",
+      "unit_id": "chapter-000002",
+      "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29"
+    }
+  },
+  "error": null
+}

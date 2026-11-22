@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "cardinal-kin",
-  "next_sequence": 27,
+  "next_sequence": 28,
   "records": [
     {
       "record_id": "75dfa72e2b6148208fd5343b6e384999",
@@ -6801,6 +6801,54 @@
       "shared_state_revisions": {
         "glossary": "a3504667819897478c9f8db2b2cb830e4c5886f496f4af3b68223301b5c70c71",
         "style_guide": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4"
+      }
+    },
+    {
+      "record_id": "28de4dc274cf4e74a70d5c3d207675ae",
+      "sequence": 27,
+      "unit_id": "chapter-000002",
+      "outcome": "PASS",
+      "source_sha256": "a5939058bc010e5b6072b62dc1b76cf7876db3d781763182b3338f3ef11d7f7a",
+      "translation_sha256": "d9bb9e7df3ced5fb0f3b4ed78acd4864654dcaaa540ef43ef318e3c7dc47dc70",
+      "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "review_contract_revision": "docs/TRANSLATION.md@a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "reviewer_session_id": "chat-20261122-cardinal-review-02",
+      "reviewed_at": "2026-11-22T15:15:53Z",
+      "state_revision": "6eb7715c8b19dd23f551d066c35a48e8fa2330d5f9ddd1eea5246a292f099c7d",
+      "review_commit": "48bd387ab13eab3250289f994565e493553915a4",
+      "correction_round": 1,
+      "supersedes_record_id": "2f01a016dd684f35a1082ed4baf7d450",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "style-1-resolved-20261122",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The previously ungrammatical author attribution is corrected to «автора Yellow_sprouts»; full 14-block source comparison confirms the linked creator attribution and every other block remain faithful.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "by <!-- bt-inline:000002:start -->Yellow_sprouts<!-- bt-inline:000002:end -->",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "автора <!-- bt-inline:000002:start -->Yellow_sprouts<!-- bt-inline:000002:end -->",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "2f01a016dd684f35a1082ed4baf7d450",
+              "finding_id": "style-1"
+            }
+          }
+        ]
       }
     }
   ]
