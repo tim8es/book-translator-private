@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "request_id": "71f5706a950e44a98178ce50b64db6cf",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "7fe2a4da11d31018628d24a39cbca7a211c4096aa20b2694967e42cebc6510b6",
+    "record": {
+      "correction_round": 1,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "findings": [
+          {
+            "detail": "Block 000113 rechecked against source: the corrected 'Ты меня обижаешь' preserves emotional hurt rather than physical pain.",
+            "resolved": true,
+            "severity": "major"
+          },
+          {
+            "detail": "Block 000143 rechecked: 'всё те же полдюжины фантазий' preserves source recurrence and quantity.",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "Block 000165 rechecked: 'успокоиться и двигаться дальше' preserves moving on without adding definite forgetting.",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "Block 000212 rechecked: the author's informal statement identifies a favorite previously read fic in natural Russian.",
+            "resolved": true,
+            "severity": "minor"
+          }
+        ]
+      },
+      "record_id": "c9e9e6bbc2b4479d95a8e5c96cd0c01e",
+      "review_commit": "8216da98a1547a39a01b1d5f15e94378629837d3",
+      "review_contract_revision": "docs/TRANSLATION.md@76604c82cc4345699de9ae5d97bc75e2443e8cb5",
+      "reviewed_at": "2026-11-22T19:38:17Z",
+      "reviewer_session_id": "chatgpt-alligator-20261122-r14",
+      "sequence": 15,
+      "source_sha256": "29f27caaac10b4203e5d86202970ed1856d701ccd0b1430e476b47c5b16592f1",
+      "state_revision": "cac7c3806e430f63f15822bff30446dcdc383e4267bd75e80930468861fd0556",
+      "supersedes_record_id": "98ce01f5e1c54d199978edc8ec312b5b",
+      "translation_sha256": "8d3178af95e4e48193b660718cdeca30b73458ea7dd77b67baa3aa2ae94eaf47",
+      "unit_id": "chapter-000008",
+      "workflow_revision": "76604c82cc4345699de9ae5d97bc75e2443e8cb5"
+    }
+  },
+  "error": null
+}
