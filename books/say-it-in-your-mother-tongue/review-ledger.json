@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 212,
+  "next_sequence": 213,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -20749,6 +20749,39 @@
           {
             "severity": "minor",
             "detail": "Block 13: restored italic emphasis on the character's quiet hum.",
+            "resolved": true
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "7de4cd2504d048649ad759d6d4dd5d94",
+      "sequence": 212,
+      "unit_id": "chapter-000041",
+      "outcome": "PASS",
+      "source_sha256": "3dd265fb0cdcb0c05be4eea9e975c8efe9fa7737e1dd87d0d412daee3f1a87bc",
+      "translation_sha256": "f10187d73442058c2a2d4c7dd6be6dcebb0a177e3e235861b1d2eb0b454f610c",
+      "workflow_revision": "8bb30227adc4bb921429611e12a0af803c9b6487",
+      "review_contract_revision": "docs/TRANSLATION.md@8bb30227adc4bb921429611e12a0af803c9b6487",
+      "reviewer_session_id": "chatgpt-20261122-sayit-ch41-reviewer",
+      "reviewed_at": "2026-11-22T13:25:37Z",
+      "state_revision": "cd0f9a792ebb172b95cc821b5e479a89aeeba78a5f34ea5770e9928bcde9d2b5",
+      "review_commit": "887875aee168498438dc1215ad29faaca6cb997b",
+      "correction_round": 2,
+      "supersedes_record_id": "24e76790149141b2a05970f174be9095",
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Block 54: corrected subject of the proposal, retaining 'ask to be your boyfriend' rather than asking Lance to be Fernando's boyfriend.",
             "resolved": true
           }
         ]
