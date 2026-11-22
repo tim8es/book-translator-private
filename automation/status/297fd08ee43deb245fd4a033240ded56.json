@@ -3,7 +3,7 @@
   "job_id": "297fd08ee43deb245fd4a033240ded56",
   "book_slug": "the-happy-prince-and-other-tales",
   "state": "running",
-  "phase": "model-call-reserved",
+  "phase": "correction-batch-staged",
   "failures": 0,
   "correction_rounds": {
     "chapter-000001": 3,
@@ -13,7 +13,7 @@
   },
   "workflow_revision": "6ed4b4cc777b2e099c08b785aae925b0c5b8296c",
   "source_sha256": "33ba5a6a0441c9af8f63ae495cab0680e3b8baf413c382dd3d6a8ef8a2aecec9",
-  "updated_at": "2026-11-22T16:04:43.707580+00:00",
+  "updated_at": "2026-11-22T16:05:27.666695+00:00",
   "queue_snapshot": {
     "extracted": 0,
     "reviewed": 1,
@@ -49,19 +49,11 @@
     "unit_id": "chapter-000005",
     "role": "corrector",
     "route": "primary",
-    "request_chars": 32494,
+    "request_chars": 37620,
     "outcome": "response",
-    "duration_ms": 12298
+    "duration_ms": 42483
   },
   "provider_call_metrics": [
-    {
-      "unit_id": "chapter-000002",
-      "role": "translator",
-      "route": "primary",
-      "request_chars": 29207,
-      "outcome": "response",
-      "duration_ms": 66055
-    },
     {
       "unit_id": "chapter-000002",
       "role": "translator",
@@ -373,6 +365,14 @@
       "request_chars": 32494,
       "outcome": "response",
       "duration_ms": 12298
+    },
+    {
+      "unit_id": "chapter-000005",
+      "role": "corrector",
+      "route": "primary",
+      "request_chars": 37620,
+      "outcome": "response",
+      "duration_ms": 42483
     }
   ],
   "execution_metrics": {
@@ -392,10 +392,10 @@
         "request_chars": 1495326
       },
       "corrector": {
-        "completed_calls": 16,
-        "responses": 16,
-        "duration_ms": 543558,
-        "request_chars": 549106
+        "completed_calls": 17,
+        "responses": 17,
+        "duration_ms": 586041,
+        "request_chars": 586726
       }
     },
     "accepted_operations": {
@@ -586,7 +586,7 @@
   "correction_batch_progress": {
     "unit_id": "chapter-000005",
     "review_record_id": "a81589a5aa5b43a89b347edc2c5140cd",
-    "completed": 3,
+    "completed": 6,
     "total": 6
   },
   "recoveries": [
@@ -620,7 +620,7 @@
   "model_response_diagnostics": {
     "finish_reason": "stop",
     "response_format": "pi_prompt_json",
-    "response_chars": 205,
+    "response_chars": 563,
     "provider_refusal": false,
     "route": "primary",
     "role": "corrector",
