@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "request_id": "1813b47f685842af86003957669f7dcc",
+  "book_slug": "pizza-with-pineapples-itislikethis-motorcycling-rpf",
+  "workflow_revision": "789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
+  "operation": "review-record",
+  "chapter": 7,
+  "session_id": "chatops-pizza-reviewer-20261122-08",
+  "outcome": "CORRECTIONS_REQUIRED",
+  "quality_report": {
+    "evidence_version": 2,
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "id": "meaning-025",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Source states Alex wishes he actually could be shocked by this question, but isn't; translated wording inserts 'say' and turns this into something he wants to claim verbally. Preserve his internal inability to feel surprised.",
+        "source_anchor": {
+          "quote": "He wished he could be shocked at the question. Wasn’t.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Ему хотелось бы сказать, что вопрос его ошеломил. Но нет.",
+          "occurrence": 0
+        },
+        "resolved": false,
+        "resolves": null
+      },
+      {
+        "id": "meaning-033",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "The source says most people cannot compare with nine-time world champion Valentino; Russian «не с чем сравнивать» instead implies a lack of objects to compare. Restore 'cannot compare to him' without overstating.",
+        "source_anchor": {
+          "quote": "So I think most people can’t compare, really.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Так что, думаю, большинству здесь не с чем сравнивать.",
+          "occurrence": 0
+        },
+        "resolved": false,
+        "resolves": null
+      },
+      {
+        "id": "meaning-034",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "The source asserts the humiliation ritual wasn't really about Valentino, but the translation says it wasn't only about Valentino, implying he remained one of its real targets. Preserve the source's contrast with wider disrespect of MotoGP.",
+        "source_anchor": {
+          "quote": "This whole humiliation ritual wasn’t really about Valentino",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Вся эта церемония унижения на самом деле касалась не только Валентино.",
+          "occurrence": 0
+        },
+        "resolved": false,
+        "resolves": null
+      }
+    ]
+  },
+  "source_sha256": "951305d50bf19c68adc905adedd4de297a6e492c8d26826238e9e4c3b473ad31",
+  "translation_sha256": "e327078d16fa67bb266487a54f51aa293f2ec32c4e2553c57a5c4ec517adb289",
+  "claim_sha256": "6cabfa3383023a7c52f8e8cb05480d745ee4e15ad4001c3dd106451151a80916"
+}
