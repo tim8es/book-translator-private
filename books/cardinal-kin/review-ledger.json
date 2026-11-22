@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "cardinal-kin",
-  "next_sequence": 51,
+  "next_sequence": 52,
   "records": [
     {
       "record_id": "75dfa72e2b6148208fd5343b6e384999",
@@ -9951,6 +9951,147 @@
               "record_id": "8de6cc6f1bcf4b7da9deeba6e60eb2c4",
               "finding_id": "ch16-possibility-328"
             }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "d83c72ffb4884ecd83a6d91db4153330",
+      "sequence": 51,
+      "unit_id": "chapter-000017",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "50dd84d4620bd5cfa81d527c68c5b5aed506db4bc5d513adcf1f22a85d1ff597",
+      "translation_sha256": "19a1fdb20d20cb36c9963864d3bcf5479152b35e52d447b88ff932fbb782edd0",
+      "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "review_contract_revision": "docs/TRANSLATION.md@a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "reviewer_session_id": "chat-20261122-cardinal-review17-a",
+      "reviewed_at": "2026-11-22T20:53:52Z",
+      "state_revision": "7699d9f1f961645dd9410e8893d8992127a9d8bc6839586072ec9064e904e142",
+      "review_commit": "339d30c5cfafc10f51cc20af510ee4de9c55453d",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "ch17-scrappy",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Источник scrappily описывает неровную, неакадемичную манеру боя, а «неопрятно» звучит как оценка внешнего вида. Подобрать естественную характеристику техники.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Tim has always fought a bit scrappily.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Тим всегда дрался несколько неопрятно, почти по-уличному.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "ch17-dick-euphemism",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Dick uses hesitant euphemism «gone» to avoid directly saying dead; «мёртв» removes his deliberate pause and reluctance.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Jason would’ve been…gone by then",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Джейсон к тому времени был бы… мёртв",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "ch17-twink",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "Steph's explicit slang «twink» is lost in generic «тощий красавчик». Preserve her teasing queer-inflected slang and repetition rather than neutralizing it.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "rich ass twink next door",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "богатенький тощий красавчик по соседству",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "ch17-exposure",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Exposure therapy» is a recognizable joking medical phrase; «терапия контактом» sounds like literal calque. Use a natural Russian expression retaining the joke.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "the exposure therapy begins",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "начинаем терапию контактом",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "ch17-75percent",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "The English says 75% already agree old ways don't work; translation changes this into a future requirement («должны согласиться»), obscuring why those who favor change still oppose Talia.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "That many already agree the old ways no longer work",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Столько человек уже должны согласиться, что прежние методы не работают",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "ch17-coffin",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Последний гвоздь для буквального гроба» is an awkward calque. Preserve the macabre wordplay 'final nail in Ra’s literal coffin' in natural Russian.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "the final nail in Ra’s literal coffin",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "последнего гвоздя для буквального гроба Ра’са",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "ch17-sacrifice",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Plain 'Sacrifice' here denotes willingness to sacrifice lives or people for strategy, not specifically religious ritual; «жертвоприношение» incorrectly ritualizes it.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Sacrifice is merely another tool she was trained to utilize.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Жертвоприношение — всего лишь ещё один инструмент, которым её научили пользоваться.",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       }
