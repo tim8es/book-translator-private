@@ -3,7 +3,7 @@
   "job_id": "297fd08ee43deb245fd4a033240ded56",
   "book_slug": "the-happy-prince-and-other-tales",
   "state": "running",
-  "phase": "structural-segments-staged",
+  "phase": "translator-completed",
   "failures": 0,
   "correction_rounds": {
     "chapter-000001": 3,
@@ -11,7 +11,7 @@
   },
   "workflow_revision": "6ed4b4cc777b2e099c08b785aae925b0c5b8296c",
   "source_sha256": "33ba5a6a0441c9af8f63ae495cab0680e3b8baf413c382dd3d6a8ef8a2aecec9",
-  "updated_at": "2026-11-22T14:15:39.424160+00:00",
+  "updated_at": "2026-11-22T14:15:40.854307+00:00",
   "queue_snapshot": {
     "extracted": 3,
     "reviewed": 0,
@@ -19,12 +19,7 @@
     "correction_candidates": 2,
     "awaiting_promotion": 0
   },
-  "active": {
-    "role": "translator",
-    "chapter": 3,
-    "session_id": "auto-297fd08ee43d-translator-2d5a9a7c",
-    "unit_id": "chapter-000003"
-  },
+  "active": null,
   "structural_helper_revision": "4c584fe5534871cd05aa851d9b7bdbfa696d0edd",
   "model_calls_started": 33,
   "prompt_context": {
@@ -341,13 +336,13 @@
       }
     },
     "accepted_operations": {
-      "translated": 2,
+      "translated": 3,
       "review_rejected": 8,
       "corrected": 6
     }
   },
   "glossary_evidence_rejected": 6,
-  "memory_glossary_saved": 18,
+  "memory_glossary_saved": 28,
   "pending_style": [],
   "role_protocol_failures": {},
   "correction_extensions": {},
@@ -417,7 +412,7 @@
     ],
     "action": "operator-attention-no-pass"
   },
-  "glossary_conflicts_rejected": 1,
+  "glossary_conflicts_rejected": 2,
   "correction_regression_rejections": [
     {
       "unit_id": "chapter-000002",
@@ -509,13 +504,6 @@
       "recheck-3-v2",
       "recheck-4-v2"
     ]
-  },
-  "provider_model_route": "primary",
-  "structural_segment_progress": {
-    "unit_id": "chapter-000003",
-    "source_sha256": "963cf80938be370d292c50ae217db486800e9b9dd69d8765eb864663be669a51",
-    "completed": 7,
-    "total": 7
   },
   "model_response_diagnostics": {
     "finish_reason": "stop",
