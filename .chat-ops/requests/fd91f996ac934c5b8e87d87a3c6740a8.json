@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "request_id": "fd91f996ac934c5b8e87d87a3c6740a8",
+  "book_slug": "alligator-bites-never-heal",
+  "workflow_revision": "76604c82cc4345699de9ae5d97bc75e2443e8cb5",
+  "operation": "review-record",
+  "chapter": 9,
+  "session_id": "chatgpt-alligator-20261122-r17",
+  "outcome": "PASS",
+  "quality_report": {
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "severity": "minor",
+        "detail": "Blocks 000193, 000198, 000200: final text preserves heartbeat-like ticking, image of a gaping maw in the heart, and unspecific handjobs without invented reciprocity.",
+        "resolved": true
+      },
+      {
+        "severity": "minor",
+        "detail": "Block 000203: final correction now expresses physical stillness on the mother's lap without contradicting the lying position, checked against the original.",
+        "resolved": true
+      },
+      {
+        "severity": "minor",
+        "detail": "Block 000290: ankle kiss and hand placement are now syntactically complete in Russian, with no additional action.",
+        "resolved": true
+      },
+      {
+        "severity": "minor",
+        "detail": "Original XHTML block and inline markers match the 328-block source; chapter headings, author notes, dialogue, scene divider and emphasis were retained.",
+        "resolved": true
+      }
+    ]
+  },
+  "source_sha256": "b1a3073f0193f948f34dd2952527880eddad9a72901899e48c2e10a2d117b80b",
+  "translation_sha256": "1fae2ac9a61bb0fb9e030daffe8f082c4b4e66e4a0e6eac18abef06303916dd0",
+  "claim_sha256": "fefcb0f74c92957c1e9126167bf47cd0b36f563192e9a336ed6530e35499830f"
+}
