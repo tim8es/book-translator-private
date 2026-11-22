@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "request_id": "60083e5a39c947b49a2b79ee18c68708",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "1275e20053736e0ea120a2babe48992c0b13640b5d467836c933e79ff37a007c",
+    "record": {
+      "correction_round": 1,
+      "outcome": "CORRECTIONS_REQUIRED",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "style",
+            "detail": "«Дважды смотрит» — буквальная калька double-takes; передать, что Робин поражён неожиданным появлением незнакомца.",
+            "id": "ch15-double-take",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Robin double-takes at the sudden, unfamiliar presence"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Робин от неожиданности дважды смотрит на незнакомца"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "«Угрожающе выставляет боевой шест над собой» звучит неестественно и сбивает пространственную сцену. Сохранить предупреждающий жест Кардинала с лестницы.",
+            "id": "ch15-bo-staff",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Cardinal brandishes his bo-staff warningly above him"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Кардинал угрожающе выставляет боевой шест над собой"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Going easy on me означает, что Найтвинг щадит Тима/сражается не в полную силу; «со мной щадит силы» допускает неверное объяснение, будто он бережёт себя. Передать объект прямо.",
+            "id": "ch15-holding-back",
+            "resolved": false,
+            "resolves": null,
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "He’s going easy on me"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Он со мной щадит силы"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Far better fighter указывает на превосходство Дика в боевом мастерстве, а «сильнее» может означать физическую силу; уточнить именно искусство боя.",
+            "id": "ch15-better-fighter",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Dick is usually a far better fighter than him"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Обычно Дик гораздо сильнее его в бою"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Bleed for them означает пролитие собственной крови ради Бэтов, но «проливать за них кровь» по-русски можно принять за убийства ради них. Восстановить жертвенный смысл.",
+            "id": "ch15-own-blood",
+            "resolved": false,
+            "resolves": null,
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "was ready and willing to bleed for them"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "был готов и хотел проливать за них кровь"
+            }
+          }
+        ]
+      },
+      "record_id": "3dfad0b33ff949e185c4b3f1c33a2165",
+      "review_commit": "e7b85a836d6e0331b93c8ffcec64bdcdb74ce172",
+      "review_contract_revision": "docs/TRANSLATION.md@a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "reviewed_at": "2026-11-22T18:59:50Z",
+      "reviewer_session_id": "chat-20261122-cardinal-review15-a",
+      "sequence": 47,
+      "source_sha256": "5012034b211443601e24d91f1a93f6cfca52a71d29a8f92a5844538ba6a781f8",
+      "state_revision": "297d71e6e100f7e880f4ab934334abdf84447413969e4c3a36e30c37adf77d23",
+      "supersedes_record_id": null,
+      "translation_sha256": "ab0d9254383ea7cfafb6eae10c4d1c6b033b182c1ed90f1a83d5100b3924c2d5",
+      "unit_id": "chapter-000015",
+      "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29"
+    }
+  },
+  "error": null
+}

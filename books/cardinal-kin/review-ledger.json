@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "cardinal-kin",
-  "next_sequence": 47,
+  "next_sequence": 48,
   "records": [
     {
       "record_id": "75dfa72e2b6148208fd5343b6e384999",
@@ -9450,6 +9450,115 @@
               "record_id": "4c51ec72850d4fb589507326315cfbb4",
               "finding_id": "ch14-176-manor"
             }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "3dfad0b33ff949e185c4b3f1c33a2165",
+      "sequence": 47,
+      "unit_id": "chapter-000015",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "5012034b211443601e24d91f1a93f6cfca52a71d29a8f92a5844538ba6a781f8",
+      "translation_sha256": "ab0d9254383ea7cfafb6eae10c4d1c6b033b182c1ed90f1a83d5100b3924c2d5",
+      "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "review_contract_revision": "docs/TRANSLATION.md@a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "reviewer_session_id": "chat-20261122-cardinal-review15-a",
+      "reviewed_at": "2026-11-22T18:59:50Z",
+      "state_revision": "297d71e6e100f7e880f4ab934334abdf84447413969e4c3a36e30c37adf77d23",
+      "review_commit": "e7b85a836d6e0331b93c8ffcec64bdcdb74ce172",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "ch15-double-take",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Дважды смотрит» — буквальная калька double-takes; передать, что Робин поражён неожиданным появлением незнакомца.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Robin double-takes at the sudden, unfamiliar presence",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Робин от неожиданности дважды смотрит на незнакомца",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "ch15-bo-staff",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Угрожающе выставляет боевой шест над собой» звучит неестественно и сбивает пространственную сцену. Сохранить предупреждающий жест Кардинала с лестницы.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Cardinal brandishes his bo-staff warningly above him",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Кардинал угрожающе выставляет боевой шест над собой",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "ch15-holding-back",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Going easy on me означает, что Найтвинг щадит Тима/сражается не в полную силу; «со мной щадит силы» допускает неверное объяснение, будто он бережёт себя. Передать объект прямо.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "He’s going easy on me",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Он со мной щадит силы",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "ch15-better-fighter",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Far better fighter указывает на превосходство Дика в боевом мастерстве, а «сильнее» может означать физическую силу; уточнить именно искусство боя.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Dick is usually a far better fighter than him",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Обычно Дик гораздо сильнее его в бою",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "ch15-own-blood",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Bleed for them означает пролитие собственной крови ради Бэтов, но «проливать за них кровь» по-русски можно принять за убийства ради них. Восстановить жертвенный смысл.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "was ready and willing to bleed for them",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "был готов и хотел проливать за них кровь",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       }
