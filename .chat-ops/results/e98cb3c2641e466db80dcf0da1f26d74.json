@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "request_id": "e98cb3c2641e466db80dcf0da1f26d74",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "c5f22654c1b6990cd1910ee61218166547cf284560022f2f0065d38e006161e1",
+    "record": {
+      "correction_round": 1,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "style",
+            "detail": "Калька устранена, сохранено, что более опытный взгляд Дэмиана замечает скрытую печаль Дрейка.",
+            "id": "resolved-01",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "recheck-061-calque",
+              "record_id": "fb8a2bed624b4bb2980785e203087ef0"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "To Damian’s more trained eye, Drake just looked so…"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Но более наблюдательный Дэмиан заметил: Дрейк выглядел просто… *печальным*."
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Просьба обращаться к герою по короткому имени вместо Тимоти передана точно.",
+            "id": "resolved-02",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "recheck-159-call-me",
+              "record_id": "fb8a2bed624b4bb2980785e203087ef0"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "I go by Tim."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Зовите меня Тим"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Литературная цитата стала естественнее по-русски, сохранив несбывшиеся возможности.",
+            "id": "resolved-03",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "recheck-207-calque",
+              "record_id": "fb8a2bed624b4bb2980785e203087ef0"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "I should have been a great many things"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Я мог бы стать кем угодно"
+            }
+          },
+          {
+            "category": "addition",
+            "detail": "Удалено неподтверждённое уточнение о том, что гость посвящён или не посвящён в тайну семьи.",
+            "id": "resolved-04",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "recheck-226-secret",
+              "record_id": "fb8a2bed624b4bb2980785e203087ef0"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "their civilian guest notwithstanding"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "даже если бы рядом не было гражданского гостя"
+            }
+          },
+          {
+            "category": "referent",
+            "detail": "Нейтральная формулировка сохраняет первое лицо автора без приписывания ему пола.",
+            "id": "resolved-05",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "recheck-281-author-gender",
+              "record_id": "fb8a2bed624b4bb2980785e203087ef0"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "When I was writing, they just kinda came out"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Пока шла работа над главой, они как-то сами всплыли, и я не сомневаюсь, что Джейсон сразу бы узнал обе цитаты"
+            }
+          }
+        ]
+      },
+      "record_id": "89cffc65bfd24a37a096a99c8d981697",
+      "review_commit": "1cb62b574d839bde67da4b25be4d9c01ed6ca765",
+      "review_contract_revision": "docs/TRANSLATION.md@a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "reviewed_at": "2026-11-22T18:02:32Z",
+      "reviewer_session_id": "chat-20261122-cardinal-review12-b",
+      "sequence": 42,
+      "source_sha256": "238a571f26f8f6a4a9c6beb12b31495c37e9a29593d27182e9b0a5df8f349698",
+      "state_revision": "0a1ade02b7cb8fa893ad2c239d525aee2efff8696915149d1c4429c53112c8c1",
+      "supersedes_record_id": "fb8a2bed624b4bb2980785e203087ef0",
+      "translation_sha256": "e6c5ab1c90dadcf15b01f87aa1be989db4a10dc35f9b6a6b2485c1a1720b6a34",
+      "unit_id": "chapter-000012",
+      "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29"
+    }
+  },
+  "error": null
+}
