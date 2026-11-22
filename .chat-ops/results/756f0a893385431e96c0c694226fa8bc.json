@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "request_id": "756f0a893385431e96c0c694226fa8bc",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "7a8706fd34499acd35649dde74b92afcb3d3c7d168085b750676cd56a6a0c2c6",
+    "record": {
+      "correction_round": 1,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "meaning",
+            "detail": "Restored Alex's internal inability to be surprised instead of implying he wanted to claim surprise.",
+            "id": "meaning-025-fixed",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "meaning-025",
+              "record_id": "cb08e4bafd0048ef9920ba800e730eeb"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "He wished he could be shocked at the question. Wasn’t."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Ему хотелось бы удивиться такому вопросу. Но он не удивился."
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Restored the source's comparison with Valentino rather than a supposed lack of anything to compare.",
+            "id": "meaning-033-fixed",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "meaning-033",
+              "record_id": "cb08e4bafd0048ef9920ba800e730eeb"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "So I think most people can’t compare, really."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Так что, думаю, большинству с ним просто не сравниться."
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Restored wider institutional target of the humiliation ritual, rather than suggesting it was also truly about Valentino.",
+            "id": "meaning-034-fixed",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "meaning-034",
+              "record_id": "cb08e4bafd0048ef9920ba800e730eeb"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "This whole humiliation ritual wasn’t really about Valentino"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Вся эта церемония унижения на самом деле касалась вовсе не Валентино."
+            }
+          }
+        ]
+      },
+      "record_id": "06fb3ac1a36a485bbc5a6377127f1212",
+      "review_commit": "d5f45a98260616c141375215d29e2774562fe3f2",
+      "review_contract_revision": "docs/TRANSLATION.md@789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
+      "reviewed_at": "2026-11-22T21:02:23Z",
+      "reviewer_session_id": "chatops-pizza-reviewer-20261122-09",
+      "sequence": 12,
+      "source_sha256": "951305d50bf19c68adc905adedd4de297a6e492c8d26826238e9e4c3b473ad31",
+      "state_revision": "bbb4902b5914caffb54874330477770e810b7fe707ae4d407fa3b58580ce7509",
+      "supersedes_record_id": "cb08e4bafd0048ef9920ba800e730eeb",
+      "translation_sha256": "f6bae9f361a93bcfb93c7f3c8280de7d0bef47a153e5d60009516b78c6d3690b",
+      "unit_id": "chapter-000007",
+      "workflow_revision": "789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07"
+    }
+  },
+  "error": null
+}

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "pizza-with-pineapples-itislikethis-motorcycling-rpf",
-  "next_sequence": 12,
+  "next_sequence": 13,
   "records": [
     {
       "record_id": "e8060d96338440d8a139c674168abf15",
@@ -655,6 +655,92 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "06fb3ac1a36a485bbc5a6377127f1212",
+      "sequence": 12,
+      "unit_id": "chapter-000007",
+      "outcome": "PASS",
+      "source_sha256": "951305d50bf19c68adc905adedd4de297a6e492c8d26826238e9e4c3b473ad31",
+      "translation_sha256": "f6bae9f361a93bcfb93c7f3c8280de7d0bef47a153e5d60009516b78c6d3690b",
+      "workflow_revision": "789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
+      "review_contract_revision": "docs/TRANSLATION.md@789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
+      "reviewer_session_id": "chatops-pizza-reviewer-20261122-09",
+      "reviewed_at": "2026-11-22T21:02:23Z",
+      "state_revision": "bbb4902b5914caffb54874330477770e810b7fe707ae4d407fa3b58580ce7509",
+      "review_commit": "d5f45a98260616c141375215d29e2774562fe3f2",
+      "correction_round": 1,
+      "supersedes_record_id": "cb08e4bafd0048ef9920ba800e730eeb",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "meaning-025-fixed",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Restored Alex's internal inability to be surprised instead of implying he wanted to claim surprise.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "He wished he could be shocked at the question. Wasn’t.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Ему хотелось бы удивиться такому вопросу. Но он не удивился.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "cb08e4bafd0048ef9920ba800e730eeb",
+              "finding_id": "meaning-025"
+            }
+          },
+          {
+            "id": "meaning-033-fixed",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Restored the source's comparison with Valentino rather than a supposed lack of anything to compare.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "So I think most people can’t compare, really.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Так что, думаю, большинству с ним просто не сравниться.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "cb08e4bafd0048ef9920ba800e730eeb",
+              "finding_id": "meaning-033"
+            }
+          },
+          {
+            "id": "meaning-034-fixed",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Restored wider institutional target of the humiliation ritual, rather than suggesting it was also truly about Valentino.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "This whole humiliation ritual wasn’t really about Valentino",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Вся эта церемония унижения на самом деле касалась вовсе не Валентино.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "cb08e4bafd0048ef9920ba800e730eeb",
+              "finding_id": "meaning-034"
+            }
           }
         ]
       }
