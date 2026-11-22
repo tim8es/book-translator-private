@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "alligator-bites-never-heal",
-  "next_sequence": 3,
+  "next_sequence": 4,
   "records": [
     {
       "record_id": "be08d5c17b934579b154d272e933435c",
@@ -55,6 +55,59 @@
           "structure": true
         },
         "findings": []
+      }
+    },
+    {
+      "record_id": "d2a1cf1d43094eb6ab6ca12505beae5d",
+      "sequence": 3,
+      "unit_id": "chapter-000003",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "4d36a835a882623ba7bd0a1a91b400498362f563797a80c9262c6c40ed21192c",
+      "translation_sha256": "e1b6627092fd749b00242093195b75146389b6005bd264f284c68f3ab5e74002",
+      "workflow_revision": "76604c82cc4345699de9ae5d97bc75e2443e8cb5",
+      "review_contract_revision": "docs/TRANSLATION.md@76604c82cc4345699de9ae5d97bc75e2443e8cb5",
+      "reviewer_session_id": "chatgpt-alligator-review-20261122-r2",
+      "reviewed_at": "2026-11-22T17:19:27Z",
+      "state_revision": "c296f558fa465521ace0c69d1fa99a6ba1a1fdbcac4a93d7e4e2cb7a04557c28",
+      "review_commit": "063131e25ea38a36b5bbfc5110aa5698bae4b425",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "major",
+            "detail": "Block 000006: hockey 'trip' is an illegal tripping action; 'будто Илья споткнулся' incorrectly makes Ilya stumble. Translate as suspected подножка.",
+            "resolved": false
+          },
+          {
+            "severity": "major",
+            "detail": "Block 000221: 'I’m out for the playoffs' means Ilya cannot play while injured, not that the team has been eliminated; 'Я вылетел из плей-офф' shifts the meaning.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Block 000179: 'not as bulky' does not mention particular shoulders/muscles; avoid invented anatomical detail.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Block 000238: remove translator-added italics around song title; original has no italics.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Block 000047: correct awkward Russian calque 'с лишь чуть более ненормальной скоростью' while preserving rushed restrained walking.",
+            "resolved": false
+          }
+        ]
       }
     }
   ]
