@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "request_id": "8fcfbff54aa84b43a9a8dcc929a8b7cd",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "ffa9b46ccf8d354b5bd2f3dc976d2e95a9427026150fd188e6653f6204e6a0ff",
+    "record": {
+      "correction_round": 1,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "meaning",
+            "detail": "Восстановлен смысл, что Тим сам участвовал в работе ночных защитников, а не просто принадлежал семье.",
+            "id": "resolved-01",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "bat-identity",
+              "record_id": "f8497690b0374c85a2fbbf11dbbaf971"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "even when he himself became a Bat."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "даже когда сам начал выходить на патрули в составе Бэт-семьи"
+            }
+          },
+          {
+            "category": "referent",
+            "detail": "Авторское воодушевление передано без навязывания автору гендера.",
+            "id": "resolved-02",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "author-gender-313",
+              "record_id": "f8497690b0374c85a2fbbf11dbbaf971"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "I literally makes me so happy knowing so many of you are enjoying it."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Я буквально сияю от счастья, зная, что стольким из вас она нравится"
+            }
+          },
+          {
+            "category": "referent",
+            "detail": "Факты и динамика увеличения числа глав сохранены, необоснованная женская форма устранена.",
+            "id": "resolved-03",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "author-gender-314",
+              "record_id": "f8497690b0374c85a2fbbf11dbbaf971"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "I originally planned for 17 chapters"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Изначально в планах было 17 глав, но по мере работы их количество неуклонно росло"
+            }
+          },
+          {
+            "category": "referent",
+            "detail": "Решение взять паузу сохранено, глагол больше не задаёт автору женский род.",
+            "id": "resolved-04",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "author-gender-315",
+              "record_id": "f8497690b0374c85a2fbbf11dbbaf971"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "I've decided to take a break from posting regularly"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Поэтому я делаю перерыв в регулярных публикациях"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Грамматическая ошибка устранена без потери требования должной подготовки и проработки финала.",
+            "id": "resolved-05",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "ending-grammar-315",
+              "record_id": "f8497690b0374c85a2fbbf11dbbaf971"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "the ending has all the proper build up and fleshing out it deserves"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "а финал был как следует подготовлен и проработан"
+            }
+          }
+        ]
+      },
+      "record_id": "d872da069f5b4a99bbc80ed3c66f0862",
+      "review_commit": "365a11edf1bd67cedf1ddf4a2626f5dde56e8dc2",
+      "review_contract_revision": "docs/TRANSLATION.md@a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "reviewed_at": "2026-11-22T18:23:47Z",
+      "reviewer_session_id": "chat-20261122-cardinal-review13-b",
+      "sequence": 44,
+      "source_sha256": "9de468b677782a915a1f0293ccc6f57744209c2bf7fd535bd938dc7804852735",
+      "state_revision": "5b0ad74a7b9081bf57f408c6b616c0d07bb6e1fdc51af7381d537568d8b332be",
+      "supersedes_record_id": "f8497690b0374c85a2fbbf11dbbaf971",
+      "translation_sha256": "4a895b294731dd92fd3ac2fe4483afef154f13aa25059088f176f082fa143542",
+      "unit_id": "chapter-000013",
+      "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29"
+    }
+  },
+  "error": null
+}
