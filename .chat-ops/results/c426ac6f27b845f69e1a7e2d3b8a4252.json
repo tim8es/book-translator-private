@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "request_id": "c426ac6f27b845f69e1a7e2d3b8a4252",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "1d24512537beeade572094aac242131607d153e7108099480e378dc47039d88b",
+    "record": {
+      "correction_round": 4,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "terminology",
+            "detail": "The final ambiguous «Бэтов» reference now consistently identifies the Bat-family as «Бэт-семьи», matching the source and the other corrected uses in this section.",
+            "id": "ck5-bats-79-fixed",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "bats-family-79-20261122",
+              "record_id": "34390640a5cd43c68fc4e99922de67d1"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "her ambition proves a detriment to Gotham or the Bats"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "её амбиции могут обернуться бедой для Готэма или Бэт-семьи"
+            }
+          }
+        ]
+      },
+      "record_id": "6524945747e74d72b7a51983a55b67db",
+      "review_commit": "e4812aafd31fb5ce34d509c19e72697742d24f1e",
+      "review_contract_revision": "docs/TRANSLATION.md@a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "reviewed_at": "2026-11-22T15:35:52Z",
+      "reviewer_session_id": "chat-20261122-cardinal-review-05b",
+      "sequence": 31,
+      "source_sha256": "b13d3a92f1556dea465905b35f22abe2281204254f681894bbdb15140d1a1ec2",
+      "state_revision": "e8cc907c81878b4f622c0956e075ed1d654917476cf17cba6fce5904dd858fe2",
+      "supersedes_record_id": "34390640a5cd43c68fc4e99922de67d1",
+      "translation_sha256": "49876514be3af87d25afb2f97d3104a418ff03df4087de7170580bebfd3a5b5f",
+      "unit_id": "chapter-000005",
+      "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29"
+    }
+  },
+  "error": null
+}
