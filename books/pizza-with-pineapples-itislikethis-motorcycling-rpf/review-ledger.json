@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "pizza-with-pineapples-itislikethis-motorcycling-rpf",
-  "next_sequence": 8,
+  "next_sequence": 9,
   "records": [
     {
       "record_id": "e8060d96338440d8a139c674168abf15",
@@ -387,6 +387,83 @@
               "record_id": "353f127ca51c4c5fae4bf83b67e7c1c4",
               "finding_id": "register-103"
             }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "67bb03e5b5954ce9974e0a00cdbc63b0",
+      "sequence": 8,
+      "unit_id": "chapter-000005",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "973bda748898f13a4032abfd5e1eddf29244065580c7db4a401ba0e46fce0b56",
+      "translation_sha256": "740746fb54054c428f659e35d521f8efb51844170053cc8a9bee2cd513393997",
+      "workflow_revision": "789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
+      "review_contract_revision": "docs/TRANSLATION.md@789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
+      "reviewer_session_id": "chatops-pizza-reviewer-20261122-05",
+      "reviewed_at": "2026-11-22T20:45:58Z",
+      "state_revision": "569428f6b65e9304196eadb7ab4eff5378f7a0b14b7c5131b3080dbe129aa30f",
+      "review_commit": "13801aee7d2d9edfbb9cd1241c1dadd16bd2f525",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "meaning-050",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The emphatic refusal explicitly startles both Alex AND Marc, but the Russian text only says Alex himself was startled. Restore Marc's immediate startled reaction.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "startling both himself and Marc with the vehemence of his answer",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "и сам испугался резкости своего ответа",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-063",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The source says Valentino was 'Shaken, but okay', which can encompass being shaken/upset; the Russian narrows this to 'he was frightened, but physically unharmed'. Preserve the broader shaken state without adding a certainty of no injury.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Shaken, but okay.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Он испугался, но не пострадал.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-080",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The source's 'The original performer' is presented as a brief understated fragment; the translation introduces 'great' (великим), adding explicit praise and altering the original restrained phrasing. Remove the unsupported adjective.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "The original performer.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Первым великим артистом.",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       }
