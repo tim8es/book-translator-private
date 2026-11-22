@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "request_id": "04f50a3b34ce4d7fa876cf645c54c94e",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "c97ddb573f24582435105a317c96c2fab6a5348572cd20c319d00b77091e41e8",
+    "record": {
+      "correction_round": 1,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "style",
+            "detail": "Убрана буквальная калька double-take; сохранено удивление Робина от внезапного появления неизвестного союзника.",
+            "id": "fixed-01",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "ch15-double-take",
+              "record_id": "3dfad0b33ff949e185c4b3f1c33a2165"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Robin double-takes at the sudden, unfamiliar presence"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Робин, поражённый внезапным появлением незнакомца, невольно оглядывается на него ещё раз"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Положение Кардинала над Синей Сойкой и предостерегающий жест шеста теперь переданы без неестественного оборота.",
+            "id": "fixed-02",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "ch15-bo-staff",
+              "record_id": "3dfad0b33ff949e185c4b3f1c33a2165"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Cardinal brandishes his bo-staff warningly above him"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Кардинал сверху угрожающе взмахивает боевым шестом"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Внутренняя реплика Тима прямо указывает, что Дик сражается не в полную силу против него.",
+            "id": "fixed-03",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "ch15-holding-back",
+              "record_id": "3dfad0b33ff949e185c4b3f1c33a2165"
+            },
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "He’s going easy on me"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "*Он меня щадит*"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Превосходство Дика обозначает боевое мастерство, а не просто физическую силу.",
+            "id": "fixed-04",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "ch15-better-fighter",
+              "record_id": "3dfad0b33ff949e185c4b3f1c33a2165"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Dick is usually a far better fighter than him"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Обычно Дик гораздо искуснее его в бою"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Смысл bleed for them теперь однозначно указывает на готовность Тима пожертвовать собой ради Бэтов.",
+            "id": "fixed-05",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "ch15-own-blood",
+              "record_id": "3dfad0b33ff949e185c4b3f1c33a2165"
+            },
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "was ready and willing to bleed for them"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "был готов и хотел пролить ради них собственную кровь"
+            }
+          }
+        ]
+      },
+      "record_id": "5b48f558efd24bedb2e16a243d79843d",
+      "review_commit": "1b4e182a6f75c8d23208d987781b29228f74935a",
+      "review_contract_revision": "docs/TRANSLATION.md@a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "reviewed_at": "2026-11-22T19:04:28Z",
+      "reviewer_session_id": "chat-20261122-cardinal-review15-b",
+      "sequence": 48,
+      "source_sha256": "5012034b211443601e24d91f1a93f6cfca52a71d29a8f92a5844538ba6a781f8",
+      "state_revision": "f82f911cf1cd94eedecd5872ac3a68f08fb2a7bea3fa11bac3235d47b916481a",
+      "supersedes_record_id": "3dfad0b33ff949e185c4b3f1c33a2165",
+      "translation_sha256": "cb3ecf0b780a54468ba58978e4f312130068957c0d48285559aad97141f23807",
+      "unit_id": "chapter-000015",
+      "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29"
+    }
+  },
+  "error": null
+}

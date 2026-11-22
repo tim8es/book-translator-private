@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "cardinal-kin",
-  "next_sequence": 48,
+  "next_sequence": 49,
   "records": [
     {
       "record_id": "75dfa72e2b6148208fd5343b6e384999",
@@ -9559,6 +9559,130 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "5b48f558efd24bedb2e16a243d79843d",
+      "sequence": 48,
+      "unit_id": "chapter-000015",
+      "outcome": "PASS",
+      "source_sha256": "5012034b211443601e24d91f1a93f6cfca52a71d29a8f92a5844538ba6a781f8",
+      "translation_sha256": "cb3ecf0b780a54468ba58978e4f312130068957c0d48285559aad97141f23807",
+      "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "review_contract_revision": "docs/TRANSLATION.md@a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "reviewer_session_id": "chat-20261122-cardinal-review15-b",
+      "reviewed_at": "2026-11-22T19:04:28Z",
+      "state_revision": "f82f911cf1cd94eedecd5872ac3a68f08fb2a7bea3fa11bac3235d47b916481a",
+      "review_commit": "1b4e182a6f75c8d23208d987781b29228f74935a",
+      "correction_round": 1,
+      "supersedes_record_id": "3dfad0b33ff949e185c4b3f1c33a2165",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "fixed-01",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Убрана буквальная калька double-take; сохранено удивление Робина от внезапного появления неизвестного союзника.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Robin double-takes at the sudden, unfamiliar presence",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Робин, поражённый внезапным появлением незнакомца, невольно оглядывается на него ещё раз",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "3dfad0b33ff949e185c4b3f1c33a2165",
+              "finding_id": "ch15-double-take"
+            }
+          },
+          {
+            "id": "fixed-02",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Положение Кардинала над Синей Сойкой и предостерегающий жест шеста теперь переданы без неестественного оборота.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Cardinal brandishes his bo-staff warningly above him",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Кардинал сверху угрожающе взмахивает боевым шестом",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "3dfad0b33ff949e185c4b3f1c33a2165",
+              "finding_id": "ch15-bo-staff"
+            }
+          },
+          {
+            "id": "fixed-03",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Внутренняя реплика Тима прямо указывает, что Дик сражается не в полную силу против него.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "He’s going easy on me",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "*Он меня щадит*",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "3dfad0b33ff949e185c4b3f1c33a2165",
+              "finding_id": "ch15-holding-back"
+            }
+          },
+          {
+            "id": "fixed-04",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Превосходство Дика обозначает боевое мастерство, а не просто физическую силу.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Dick is usually a far better fighter than him",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Обычно Дик гораздо искуснее его в бою",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "3dfad0b33ff949e185c4b3f1c33a2165",
+              "finding_id": "ch15-better-fighter"
+            }
+          },
+          {
+            "id": "fixed-05",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Смысл bleed for them теперь однозначно указывает на готовность Тима пожертвовать собой ради Бэтов.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "was ready and willing to bleed for them",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "был готов и хотел пролить ради них собственную кровь",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "3dfad0b33ff949e185c4b3f1c33a2165",
+              "finding_id": "ch15-own-blood"
+            }
           }
         ]
       }
