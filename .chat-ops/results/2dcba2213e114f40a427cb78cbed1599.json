@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "request_id": "2dcba2213e114f40a427cb78cbed1599",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "bc218c9f4edb431cd4ac790e38e2dd4a17001c2bab231b31f1afbc2857f9ee6e",
+    "record": {
+      "correction_round": 1,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "style",
+            "detail": "Желание принадлежать семье передано естественной русской формой «быть своим», сохраняющей раздельный курсив.",
+            "id": "fixed-01",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "ch18-belonging",
+              "record_id": "3a3e8640916541c6b9c7ea70a6083c0a"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "*family,* *belonging,*"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "*семья*, *быть своим*"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Убрана неудачная калька «больные вещи»; восстановлен смысл намеренно обидных слов близким.",
+            "id": "fixed-02",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "ch18-hurtful-words",
+              "record_id": "3a3e8640916541c6b9c7ea70a6083c0a"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Sometimes we say things to people we care about because we"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Иногда специально говорим обидные слова тем, кто нам дорог"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Убрано добавленное определение «неисчерпаемый», сохранена насмешка Дэмиана о вредности Дрейка.",
+            "id": "fixed-03",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "ch18-spite-well",
+              "record_id": "3a3e8640916541c6b9c7ea70a6083c0a"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "your well of willful spite to finally run dry"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "твой запас упрямой вредности"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Ответ Тима сохраняет словесную перекличку и самоиронию, без искажения смысла словом «злорадство».",
+            "id": "fixed-04",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "ch18-spite-reply",
+              "record_id": "3a3e8640916541c6b9c7ea70a6083c0a"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "my willful spite is endless"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Моя упрямая вредность не знает границ"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Сохранены авторская пауза и невозможность вспомнить предыдущую встречу; грамматически неудачный оборот исправлен.",
+            "id": "fixed-05",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "ch18-when",
+              "record_id": "3a3e8640916541c6b9c7ea70a6083c0a"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "he doesn’t even know when."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Тим не видел их всех вместе в одной комнате с… даже не вспомнить, когда это было в последний раз."
+            }
+          }
+        ]
+      },
+      "record_id": "bf0bd998e17e4485ae97625579d6125b",
+      "review_commit": "e58a529d301ab94832b007e9c60581f8ad4b5ebc",
+      "review_contract_revision": "docs/TRANSLATION.md@a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "reviewed_at": "2026-11-22T22:09:30Z",
+      "reviewer_session_id": "chat-20261123-cardinal-review18-b",
+      "sequence": 54,
+      "source_sha256": "beb8af0ce3f2d51931838e6c709f1d53df3a5f3a87890ad8f8477af094b1576a",
+      "state_revision": "fb7197bf92b34127da100400400b4a754a05a812e2c007e149770312618d6c80",
+      "supersedes_record_id": "3a3e8640916541c6b9c7ea70a6083c0a",
+      "translation_sha256": "5b3cbd116960dbd0ad54529b13abfbad79229f2c7816080ec1e429efd2b610a0",
+      "unit_id": "chapter-000018",
+      "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29"
+    }
+  },
+  "error": null
+}
