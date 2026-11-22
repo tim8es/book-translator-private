@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "request_id": "60083e5a39c947b49a2b79ee18c68708",
+  "book_slug": "cardinal-kin",
+  "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
+  "operation": "review-record",
+  "chapter": 15,
+  "session_id": "chat-20261122-cardinal-review15-a",
+  "outcome": "CORRECTIONS_REQUIRED",
+  "quality_report": {
+    "evidence_version": 2,
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "id": "ch15-double-take",
+        "category": "style",
+        "severity": "minor",
+        "detail": "«Дважды смотрит» — буквальная калька double-takes; передать, что Робин поражён неожиданным появлением незнакомца.",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "Robin double-takes at the sudden, unfamiliar presence",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Робин от неожиданности дважды смотрит на незнакомца",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "ch15-bo-staff",
+        "category": "style",
+        "severity": "minor",
+        "detail": "«Угрожающе выставляет боевой шест над собой» звучит неестественно и сбивает пространственную сцену. Сохранить предупреждающий жест Кардинала с лестницы.",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "Cardinal brandishes his bo-staff warningly above him",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Кардинал угрожающе выставляет боевой шест над собой",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "ch15-holding-back",
+        "category": "meaning",
+        "severity": "major",
+        "detail": "Going easy on me означает, что Найтвинг щадит Тима/сражается не в полную силу; «со мной щадит силы» допускает неверное объяснение, будто он бережёт себя. Передать объект прямо.",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "He’s going easy on me",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Он со мной щадит силы",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "ch15-better-fighter",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Far better fighter указывает на превосходство Дика в боевом мастерстве, а «сильнее» может означать физическую силу; уточнить именно искусство боя.",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "Dick is usually a far better fighter than him",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Обычно Дик гораздо сильнее его в бою",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "ch15-own-blood",
+        "category": "meaning",
+        "severity": "major",
+        "detail": "Bleed for them означает пролитие собственной крови ради Бэтов, но «проливать за них кровь» по-русски можно принять за убийства ради них. Восстановить жертвенный смысл.",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "was ready and willing to bleed for them",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "был готов и хотел проливать за них кровь",
+          "occurrence": 0
+        },
+        "resolves": null
+      }
+    ]
+  },
+  "source_sha256": "5012034b211443601e24d91f1a93f6cfca52a71d29a8f92a5844538ba6a781f8",
+  "translation_sha256": "ab0d9254383ea7cfafb6eae10c4d1c6b033b182c1ed90f1a83d5100b3924c2d5",
+  "claim_sha256": "a469e678c27a2037bda19e191e5c96fdd05770f590d9abe51647173bb74c2f41"
+}
