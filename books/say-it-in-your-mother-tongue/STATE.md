@@ -4,10 +4,10 @@ Deterministic projection of authoritative Workflow completion state.
 
 ## Revisions
 
-- workflow: `6a64cd746806b57a0d8fdfbd46798acf37317741`
-- metadata: `baba994e78398f7df4b83cef8ea34160c295f5529f271b5542a62dc789369b68`
-- progress: `75594b44e849315227fbfaf7756628e041e8cdd705bcb4af5bd43d2237771f3b`
-- review ledger: `b47a74e2f979cbfb8be0f077107c6b08bb7823b32a39c1cbbec5a4630c77d220`
+- workflow: `8bb30227adc4bb921429611e12a0af803c9b6487`
+- metadata: `bb7edf54af518d717371155d2f686495ce3fd95394b58a9e53a8f063c0ea6c72`
+- progress: `340340c99ed578b49a7e1de3f27cae9a33506f6d58c6f0f3581fa5176e80c284`
+- review ledger: `00d954e6095e8ccb3f116feb2de2a3cf0fc3750f7ba138817d54cfb5d2426ed0`
 
 ## Lifecycle
 
