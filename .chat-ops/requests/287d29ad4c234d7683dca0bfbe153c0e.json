@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "request_id": "287d29ad4c234d7683dca0bfbe153c0e",
+  "book_slug": "alligator-bites-never-heal",
+  "workflow_revision": "76604c82cc4345699de9ae5d97bc75e2443e8cb5",
+  "operation": "review-record",
+  "chapter": 9,
+  "session_id": "chatgpt-alligator-20261122-r15",
+  "outcome": "CORRECTIONS_REQUIRED",
+  "quality_report": {
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "severity": "minor",
+        "detail": "Block 000193: source 'Tick, tick, tick, tick' audibly echoes the heartbeat, while four spoken 'Галочка' lose the ticking sound. Retain the checklist completion and heartbeat cadence.",
+        "resolved": false
+      },
+      {
+        "severity": "minor",
+        "detail": "Block 000198: 'a gaping maw in his heart' is a wound inside the heart; 'зияющей пастью на месте сердца' makes the heart itself absent. Preserve image of a gaping hole within the heart.",
+        "resolved": false
+      },
+      {
+        "severity": "minor",
+        "detail": "Block 000200: original 'lazy handjobs' does not explicitly say mutual stimulation; target 'взаимной дрочке' introduces reciprocity. Remove unsupported specificity.",
+        "resolved": false
+      },
+      {
+        "severity": "minor",
+        "detail": "Block 000203: 'кажется, лишь когда ... он когда-нибудь бывал' is grammatically awkward and obscures source's single recollection of calm in mother's lap. Retain soft uncertainty and make a natural Russian sentence.",
+        "resolved": false
+      },
+      {
+        "severity": "minor",
+        "detail": "Block 000290: Russian 'обхватывает мокрыми руками' has no object, resulting in unintended syntactic incompleteness; source depicts Ilya swimming to Shane and kissing his ankle. Restore a natural faithful action without inventing additional actions.",
+        "resolved": false
+      }
+    ]
+  },
+  "source_sha256": "b1a3073f0193f948f34dd2952527880eddad9a72901899e48c2e10a2d117b80b",
+  "translation_sha256": "15437e6d018babb75edd7d0e62d78a8e98aa98b02f947dfc0b351ffa335001af",
+  "claim_sha256": "3ffc55540a8d995057170830c38a22c6853d6fc0e509eed498c85fa2dda83061"
+}
