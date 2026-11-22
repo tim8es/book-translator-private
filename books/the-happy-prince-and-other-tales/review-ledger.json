@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "the-happy-prince-and-other-tales",
-  "next_sequence": 15,
+  "next_sequence": 16,
   "records": [
     {
       "record_id": "454ca30d1d7d42ae95dacf0e1de03ba9",
@@ -1941,6 +1941,193 @@
       },
       "shared_state_revisions": {
         "glossary": "51ae310871b0f58a6a106464514beb5980b2c4ba5e544b46e969a33d53b23a3d",
+        "style_guide": "eeb3e2c12f4e684bad2007ac1e9e1cb44b9fafe7f05420a254e93542b6e89589"
+      }
+    },
+    {
+      "record_id": "3c253885626240b699eddad23379bbe5",
+      "sequence": 15,
+      "unit_id": "chapter-000004",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "64529feb86ea28b4de27d1af64e61fd39dde12b629cce78995b11ae4f5942dd3",
+      "translation_sha256": "1929e82f5bcf13b16a3aaf4eabee05d219a6097efd4fd0501690d8661cd143df",
+      "workflow_revision": "6ed4b4cc777b2e099c08b785aae925b0c5b8296c",
+      "review_contract_revision": "docs/TRANSLATION.md@6ed4b4cc777b2e099c08b785aae925b0c5b8296c",
+      "reviewer_session_id": "auto-297fd08ee43d-reviewer-339d5b27",
+      "reviewed_at": "2026-11-22T15:46:59Z",
+      "state_revision": "fb640f701f032b56e2d7cdbfe378a874b1474c13e7b8da783ac0a4c8e12bd353",
+      "review_commit": "9fab3bdf7756614b5770c2b76f51042fa7b6d81f",
+      "correction_round": 4,
+      "supersedes_record_id": "ef9089c944d84917a6ee342d7df06ba3",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "linnet-recheck-end-1",
+            "category": "terminology",
+            "severity": "major",
+            "detail": "The current glossary identifies Linnet as «Зеленушка» and marks the character male. This passage uses that rendering with masculine agreement; after rechecking the source and unchanged translation, the prior terminology issue is resolved through glossary reconciliation.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "“Well, that is the end,” said the Linnet.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Ну, вот и всё», — сказал Зеленушка.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "ef9089c944d84917a6ee342d7df06ba3",
+              "finding_id": "terminology-1-recheck-2",
+              "recheck_reason": "glossary_reconciliation",
+              "glossary_revision": "63b6bb33bc0ce590a2ac9b50adb032ff1d247555b17d599278aad9ac959d8d08"
+            }
+          },
+          {
+            "id": "linnet-recheck-end-2",
+            "category": "terminology",
+            "severity": "major",
+            "detail": "The current glossary identifies Linnet as «Зеленушка» and marks the character male. This passage uses that rendering with masculine agreement; after rechecking the source and unchanged translation, the prior terminology issue is resolved through glossary reconciliation.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "“Oh! I really don’t know,” replied the Linnet; “and I am sure that I don’t care.”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Ой, право, не знаю, — ответил Зеленушка. — Да мне и дела нет».",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "ef9089c944d84917a6ee342d7df06ba3",
+              "finding_id": "linnet-102-recheck",
+              "recheck_reason": "glossary_reconciliation",
+              "glossary_revision": "63b6bb33bc0ce590a2ac9b50adb032ff1d247555b17d599278aad9ac959d8d08"
+            }
+          },
+          {
+            "id": "meaning-common-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "“Have everything in common” means that friends share everything; «делить всё поровну» specifically says they divide it into equal portions. Render the shared-ownership idea without adding an equal-division claim, for example «у настоящих друзей всё должно быть общим».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Real friends should have everything in common",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Настоящие друзья должны делить всё поровну",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "register-hans-1",
+            "category": "register",
+            "severity": "minor",
+            "detail": "Hans addresses the Miller deferentially elsewhere in this unit, but «твоё» switches to familiar address here without a source cue for a change in their relationship. Keep the established formal address, e.g. «ваше доброе мнение».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "I would much sooner have your good opinion than my silver buttons, any day",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Я всегда предпочту твоё доброе мнение своим серебряным пуговицам",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "water-rat-gender-1",
+            "category": "terminology",
+            "severity": "major",
+            "detail": "The Water-rat is male in the source and in the established glossary and translation; the feminine «сказала Водяная Крыса» changes the character's gender. Retain the established masculine name and agreement.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“It is quite evident then that you have no sympathy in your nature,” said the Water-rat.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Значит, у тебя вовсе нет сострадания», — сказала Водяная Крыса.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "water-rat-gender-2",
+            "category": "terminology",
+            "severity": "major",
+            "detail": "The source has the male Water-rat speak here, but the translation uses the feminine «взвизгнула Водяная Крыса». Keep masculine characterization and agreement consistent with the glossary and the rest of the unit.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“The what?” screamed the Water-rat.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Что?» — взвизгнула Водяная Крыса.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "water-rat-gender-3",
+            "category": "terminology",
+            "severity": "major",
+            "detail": "The source has the male Water-rat speak here, but the translation again uses feminine agreement («сказала Водяная Крыса»). Retain the established masculine name and agreement.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“Well, really,” said the Water-rat, in a very angry manner, “I think you should have told me that before you began.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Ну, право же, — очень сердито сказала Водяная Крыса, — думаю, тебе следовало предупредить меня об этом, прежде чем начинать.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "linnet-name-1",
+            "category": "terminology",
+            "severity": "major",
+            "detail": "This is the male Linnet, whose established glossary rendering is «Зеленушка». The passage switches to «Коноплянка» and feminine «заметила»; keep the established name and characterization.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“I am afraid you don’t quite see the moral of the story,” remarked the Linnet.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Боюсь, ты не совсем понял мораль этой истории», — заметила Коноплянка.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "linnet-name-2",
+            "category": "terminology",
+            "severity": "major",
+            "detail": "This is the same male Linnet, but the translation again uses «Коноплянка» and feminine «сказала» instead of the established glossary rendering «Зеленушка» with masculine characterization.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“Certainly,” said the Linnet.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Разумеется», — сказала Коноплянка.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "63b6bb33bc0ce590a2ac9b50adb032ff1d247555b17d599278aad9ac959d8d08",
         "style_guide": "eeb3e2c12f4e684bad2007ac1e9e1cb44b9fafe7f05420a254e93542b6e89589"
       }
     }
