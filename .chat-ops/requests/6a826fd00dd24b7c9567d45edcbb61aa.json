@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "request_id": "6a826fd00dd24b7c9567d45edcbb61aa",
+  "book_slug": "pizza-with-pineapples-itislikethis-motorcycling-rpf",
+  "workflow_revision": "789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
+  "operation": "review-record",
+  "chapter": 5,
+  "session_id": "chatops-pizza-reviewer-20261122-05",
+  "outcome": "CORRECTIONS_REQUIRED",
+  "quality_report": {
+    "evidence_version": 2,
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "id": "meaning-050",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "The emphatic refusal explicitly startles both Alex AND Marc, but the Russian text only says Alex himself was startled. Restore Marc's immediate startled reaction.",
+        "source_anchor": {
+          "quote": "startling both himself and Marc with the vehemence of his answer",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "и сам испугался резкости своего ответа",
+          "occurrence": 0
+        },
+        "resolved": false,
+        "resolves": null
+      },
+      {
+        "id": "meaning-063",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "The source says Valentino was 'Shaken, but okay', which can encompass being shaken/upset; the Russian narrows this to 'he was frightened, but physically unharmed'. Preserve the broader shaken state without adding a certainty of no injury.",
+        "source_anchor": {
+          "quote": "Shaken, but okay.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Он испугался, но не пострадал.",
+          "occurrence": 0
+        },
+        "resolved": false,
+        "resolves": null
+      },
+      {
+        "id": "style-080",
+        "category": "style",
+        "severity": "minor",
+        "detail": "The source's 'The original performer' is presented as a brief understated fragment; the translation introduces 'great' (великим), adding explicit praise and altering the original restrained phrasing. Remove the unsupported adjective.",
+        "source_anchor": {
+          "quote": "The original performer.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Первым великим артистом.",
+          "occurrence": 0
+        },
+        "resolved": false,
+        "resolves": null
+      }
+    ]
+  },
+  "source_sha256": "973bda748898f13a4032abfd5e1eddf29244065580c7db4a401ba0e46fce0b56",
+  "translation_sha256": "740746fb54054c428f659e35d521f8efb51844170053cc8a9bee2cd513393997",
+  "claim_sha256": "b0344c21622832b5d2db1caf9885016fd3dd76cf6c297186c0b18def0fc079f3"
+}
