@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "request_id": "20261122164242000000000000000012",
+  "book_slug": "say-it-in-your-mother-tongue",
+  "workflow_revision": "8bb30227adc4bb921429611e12a0af803c9b6487",
+  "operation": "review-record",
+  "chapter": 42,
+  "session_id": "chatgpt-20261122-sayit-ch42-reviewer-final",
+  "outcome": "PASS",
+  "quality_report": {
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "severity": "minor",
+        "detail": "Block 22: rechecked earlier missing emphasis and confirmed italic on 'Так' matches the source 'this'.",
+        "resolved": true
+      },
+      {
+        "severity": "minor",
+        "detail": "Block 82: rechecked earlier missing emphasis and confirmed italic on 'слишком' matches source 'too'.",
+        "resolved": true
+      },
+      {
+        "severity": "minor",
+        "detail": "Block 45: verified restored description of Gabriel's face and reaction.",
+        "resolved": true
+      }
+    ]
+  },
+  "source_sha256": "faeae882275d9415110a38f5bde000e3d176675579c6e83923c4d76dea47294d",
+  "translation_sha256": "dd4ec95bb405a7e3efdab59791afbc9e0c0b8d7aa0e2dc31075317a1efc93bec",
+  "claim_sha256": "13b28bb5b4f73da31f60742c4a06bc733604fc8cccda62f6ae56267e5d3d65ce"
+}
