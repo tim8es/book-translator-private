@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "the-happy-prince-and-other-tales",
-  "next_sequence": 11,
+  "next_sequence": 12,
   "records": [
     {
       "record_id": "454ca30d1d7d42ae95dacf0e1de03ba9",
@@ -1572,6 +1572,58 @@
             },
             "translation_anchor": null,
             "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "2dfafadd4d5ffa3aa2ecb297fb1d1220e2a65d68d15acbfd8ec91438c2b45161",
+        "style_guide": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4"
+      }
+    },
+    {
+      "record_id": "59937c732ae948af9ed96d192022f040",
+      "sequence": 11,
+      "unit_id": "chapter-000003",
+      "outcome": "PASS",
+      "source_sha256": "963cf80938be370d292c50ae217db486800e9b9dd69d8765eb864663be669a51",
+      "translation_sha256": "755520333603acd5587051867744c62eed0244f57a9743278a4838fcb1638256",
+      "workflow_revision": "6ed4b4cc777b2e099c08b785aae925b0c5b8296c",
+      "review_contract_revision": "docs/TRANSLATION.md@6ed4b4cc777b2e099c08b785aae925b0c5b8296c",
+      "reviewer_session_id": "auto-297fd08ee43d-reviewer-af0a7aaa",
+      "reviewed_at": "2026-11-22T14:34:34Z",
+      "state_revision": "712e37fd3bebff2738ec1110b4fd53065c38e267529d9315a1d522cf3579f31d",
+      "review_commit": "b80251457e4dc0a1e37540dc8fb8f06a9f64f522",
+      "correction_round": 2,
+      "supersedes_record_id": "3126fbcc89174c88b31856bcad5c7d7f",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-omission-hail-roof-1",
+            "category": "omission",
+            "severity": "major",
+            "detail": "Resolved: «Каждый день по три часа он грохотал по крыше замка» restores the daily action and its duration before the result.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Every day for three hours he rattled on the roof of the castle till he broke most of the slates",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Каждый день по три часа он грохотал по крыше замка, пока не разбил большую часть сланцевых плиток",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "3126fbcc89174c88b31856bcad5c7d7f",
+              "finding_id": "omission-hail-roof-1"
+            }
           }
         ]
       },

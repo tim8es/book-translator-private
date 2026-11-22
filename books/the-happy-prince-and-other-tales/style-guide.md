@@ -59,3 +59,9 @@ Add recurring characters as needed.
 ## Review notes
 
 - 
+
+## Automated reviewed stylistic decisions
+
+| Source pattern / context | Target-language approach | Reason / evidence |
+| --- | --- | --- |
+| Seasons and weather forces are personified as named figures, with gendered references. | Preserve the personification and gender cues in Russian, using natural grammatical forms. | “The Snow covered up the grass with her great white cloak”; “Then they invited the North Wind to stay with them, and he came.” |
