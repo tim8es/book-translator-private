@@ -6,3 +6,8 @@ Use dictionary forms; classify terms semantically. Type and optional notes use t
 
 | Original | Translation | Type | Notes |
 | --- | --- | --- | --- |
+| Alex Márquez | Алекс Маркес | персонаж |  |
+| Valentino Rossi | Валентино Росси | персонаж |  |
+| Marc Márquez | Марк Маркес | персонаж |  |
+| Luca Marini | Лука Марини | персонаж |  |
+| Francesco Bagnaia | Франческо Баньяя | персонаж |  |

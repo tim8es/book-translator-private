@@ -3,12 +3,12 @@
   "job_id": "3e9f773e330acfbcd3fe29220a0df517",
   "book_slug": "pizza-with-pineapples-itislikethis-motorcycling-rpf",
   "state": "running",
-  "phase": "structural-segments-staged",
+  "phase": "translator-completed",
   "failures": 0,
   "correction_rounds": {},
   "workflow_revision": "789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
   "source_sha256": "b806092139439a8a9d5c9297bdc1338fa9e4798cfa81353f9396f66747aa6e96",
-  "updated_at": "2026-11-22T16:43:59.437941+00:00",
+  "updated_at": "2026-11-22T16:44:01.077162+00:00",
   "queue_snapshot": {
     "extracted": 18,
     "reviewed": 0,
@@ -16,12 +16,7 @@
     "correction_candidates": 0,
     "awaiting_promotion": 0
   },
-  "active": {
-    "role": "translator",
-    "chapter": 1,
-    "session_id": "auto-3e9f773e330a-translator-faf07bac",
-    "unit_id": "chapter-000001"
-  },
+  "active": null,
   "structural_helper_revision": "4c584fe5534871cd05aa851d9b7bdbfa696d0edd",
   "model_calls_started": 3,
   "prompt_context": {
@@ -40,7 +35,6 @@
     "helper_revision": "4c584fe5534871cd05aa851d9b7bdbfa696d0edd",
     "batch_segment_count": 1
   },
-  "provider_model_route": "primary",
   "provider_call_metric": {
     "unit_id": "chapter-000001",
     "role": "translator",
@@ -90,13 +84,9 @@
         "total_tokens": 14319
       }
     },
-    "accepted_operations": {}
-  },
-  "structural_segment_progress": {
-    "unit_id": "chapter-000001",
-    "source_sha256": "fdae27d9884c16da2a3d6bb3002b1192aa7c777297a5e12e238a7a59720338ca",
-    "completed": 42,
-    "total": 42
+    "accepted_operations": {
+      "translated": 1
+    }
   },
   "model_response_diagnostics": {
     "finish_reason": "stop",
@@ -109,5 +99,8 @@
     "route": "primary",
     "role": "translator",
     "unit_id": "chapter-000001"
-  }
+  },
+  "memory_glossary_saved": 5,
+  "pending_style": [],
+  "role_protocol_failures": {}
 }
