@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "request_id": "e579a3cd2f5048c38b9f6a1700e4ac62",
+  "book_slug": "alligator-bites-never-heal",
+  "workflow_revision": "76604c82cc4345699de9ae5d97bc75e2443e8cb5",
+  "operation": "review-record",
+  "chapter": 3,
+  "session_id": "chatgpt-alligator-review-20261122-r2",
+  "outcome": "CORRECTIONS_REQUIRED",
+  "quality_report": {
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": false,
+      "terminology": true,
+      "style": false,
+      "structure": true
+    },
+    "findings": [
+      {
+        "severity": "major",
+        "detail": "Block 000006: hockey 'Shane initially thinks it’s a trip' means he initially suspects a tripping infraction; 'будто Илья споткнулся' changes a hockey foul to a spontaneous stumble. Correct to 'будто Илье поставили подножку' or equivalent.",
+        "resolved": false
+      },
+      {
+        "severity": "major",
+        "detail": "Block 000221: 'I’m out for the playoffs' means the injured Ilya is sidelined for the playoffs, NOT that his team has been eliminated. Replace 'Я вылетел из плей-офф' with an unambiguous injury-bound rendering.",
+        "resolved": false
+      },
+      {
+        "severity": "minor",
+        "detail": "Block 000179 adds specific shoulders and muscles absent from 'not as bulky'; preserve the deliberately unspecific physical description.",
+        "resolved": false
+      },
+      {
+        "severity": "minor",
+        "detail": "Block 000238 adds italic emphasis around a song title that is not italicized in the source; remove inserted Markdown asterisks.",
+        "resolved": false
+      },
+      {
+        "severity": "minor",
+        "detail": "Block 000047 has an awkward Russian calque 'с лишь чуть более ненормальной скоростью'; revise to a natural mildly humorous description without changing the rushed but restrained movement.",
+        "resolved": false
+      }
+    ]
+  },
+  "source_sha256": "4d36a835a882623ba7bd0a1a91b400498362f563797a80c9262c6c40ed21192c",
+  "translation_sha256": "e1b6627092fd749b00242093195b75146389b6005bd264f284c68f3ab5e74002",
+  "claim_sha256": "aac7a333551ad29facbfbe8d3e722567d212cc406999766e1ed15b87d408de00"
+}
