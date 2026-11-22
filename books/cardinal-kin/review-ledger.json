@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "cardinal-kin",
-  "next_sequence": 30,
+  "next_sequence": 31,
   "records": [
     {
       "record_id": "75dfa72e2b6148208fd5343b6e384999",
@@ -7013,6 +7013,412 @@
               "record_id": "31f86f5216194de2b56a0b88a3a178ee",
               "finding_id": "success-25-20261122"
             }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "34390640a5cd43c68fc4e99922de67d1",
+      "sequence": 30,
+      "unit_id": "chapter-000005",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "b13d3a92f1556dea465905b35f22abe2281204254f681894bbdb15140d1a1ec2",
+      "translation_sha256": "a5e2746f9252279d9a9445f4c5d52f1e52c8ae5da1c639ae76f392e1e043cdf5",
+      "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "review_contract_revision": "docs/TRANSLATION.md@a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "reviewer_session_id": "chat-20261122-cardinal-review-05",
+      "reviewed_at": "2026-11-22T15:30:55Z",
+      "state_revision": "35f34a5e0582721e5037b21124730bbb99487a2d44e41aa43c2c2d350b2a2d02",
+      "review_commit": "d3700545ab24e98d2772148ed3660e6b6c80169d",
+      "correction_round": 4,
+      "supersedes_record_id": "eb2f16d1b4094626af65ae8d929fc077",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "ck5-fix-01",
+            "category": "referent",
+            "severity": "major",
+            "detail": "Rechecked the same source passage and corrected the previously reported discrepancy in the canonical Russian translation.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Damian held himself back, corrected Tim calmly and moved on, even though Tim is sure he knew he did it on purpose.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Дэмиан понял, что Тим нарочно назвал его не тем именем",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "eb2f16d1b4094626af65ae8d929fc077",
+              "finding_id": "chunk-001-pronoun-recheck"
+            }
+          },
+          {
+            "id": "ck5-fix-02",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Rechecked the same source passage and corrected the previously reported discrepancy in the canonical Russian translation.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Tim did everything he could to treat Damian as he would if Fox had introduced any other prominent child—with patience and a touch of provocation.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "как с любым другим известным ребёнком",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "eb2f16d1b4094626af65ae8d929fc077",
+              "finding_id": "chunk-001-prominent-child"
+            }
+          },
+          {
+            "id": "ck5-fix-03",
+            "category": "referent",
+            "severity": "major",
+            "detail": "Rechecked the same source passage and corrected the previously reported discrepancy in the canonical Russian translation.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "The photos are one of his few direct connections to the bats.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Эти фотографии — одна из немногих его прямых связей с Бэт-семьёй",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "eb2f16d1b4094626af65ae8d929fc077",
+              "finding_id": "chunk-002-recheck-bats"
+            }
+          },
+          {
+            "id": "ck5-fix-04",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Rechecked the same source passage and corrected the previously reported discrepancy in the canonical Russian translation.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "His breath hisses between clenched teeth as he raises his head in slight shock.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Он с шипением выдыхает сквозь стиснутые зубы",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "eb2f16d1b4094626af65ae8d929fc077",
+              "finding_id": "chunk-002-recheck-breath"
+            }
+          },
+          {
+            "id": "ck5-fix-05",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "Rechecked the same source passage and corrected the previously reported discrepancy in the canonical Russian translation.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "“Surprise.” He doesn’t even need to see her face to know Pru is smirking smugly.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Сюрприз». Ему даже не нужно видеть её лица",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "eb2f16d1b4094626af65ae8d929fc077",
+              "finding_id": "chunk-002-recheck-surprise"
+            }
+          },
+          {
+            "id": "ck5-fix-06",
+            "category": "referent",
+            "severity": "major",
+            "detail": "Rechecked the same source passage and corrected the previously reported discrepancy in the canonical Russian translation.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "he knows the Bats would track him down if they could.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "члены Бэт-семьи выследили бы его, если бы смогли",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "eb2f16d1b4094626af65ae8d929fc077",
+              "finding_id": "chunk-002-bats-meaning"
+            }
+          },
+          {
+            "id": "ck5-fix-07",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Rechecked the same source passage and corrected the previously reported discrepancy in the canonical Russian translation.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Tim planned to avoid them completely, but then the team got caught up in an explosion.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "команду накрыл взрыв",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "eb2f16d1b4094626af65ae8d929fc077",
+              "finding_id": "chunk-002-explosion-idiom"
+            }
+          },
+          {
+            "id": "ck5-fix-08",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Rechecked the same source passage and corrected the previously reported discrepancy in the canonical Russian translation.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "He’s on the move.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Он куда-то отправился",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "eb2f16d1b4094626af65ae8d929fc077",
+              "finding_id": "chunk-003-move-idiom"
+            }
+          },
+          {
+            "id": "ck5-fix-09",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Rechecked the same source passage and corrected the previously reported discrepancy in the canonical Russian translation.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Pru accepts a glass of water from Tim and sips it slowly, staring into its depths intently.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "пристально глядя на воду в стакане",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "eb2f16d1b4094626af65ae8d929fc077",
+              "finding_id": "chunk-003-water-gaze"
+            }
+          },
+          {
+            "id": "ck5-fix-10",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Rechecked the same source passage and corrected the previously reported discrepancy in the canonical Russian translation.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "That means Ra’s is either hiding something, or going off the books, both potentially problematic.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "и то и другое может создать проблемы",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "eb2f16d1b4094626af65ae8d929fc077",
+              "finding_id": "chunk-003-problematic-force"
+            }
+          },
+          {
+            "id": "ck5-fix-11",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Rechecked the same source passage and corrected the previously reported discrepancy in the canonical Russian translation.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "He doesn’t know who the beacon calls to, though he probably suspects Pru or one of his mother’s soldiers.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "сигнал адресован Пру или кому-то из солдат его матери",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "eb2f16d1b4094626af65ae8d929fc077",
+              "finding_id": "chunk-003-beacon-referent"
+            }
+          },
+          {
+            "id": "ck5-fix-12",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Rechecked the same source passage and corrected the previously reported discrepancy in the canonical Russian translation.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "to every recorded Lazarus Pit",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "каждую учтённую Яму Лазаря",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "eb2f16d1b4094626af65ae8d929fc077",
+              "finding_id": "chunk-004-pit-doc"
+            }
+          },
+          {
+            "id": "ck5-fix-13",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Rechecked the same source passage and corrected the previously reported discrepancy in the canonical Russian translation.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "There are whispers in the underground about Cardinal.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "В подполье шепчутся о Кардинале",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "eb2f16d1b4094626af65ae8d929fc077",
+              "finding_id": "chunk-004-whisper-calque"
+            }
+          },
+          {
+            "id": "ck5-fix-14",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Rechecked the same source passage and corrected the previously reported discrepancy in the canonical Russian translation.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Pru shakes her head, her gaze low. “I’m not sure.”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Я не уверена",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "eb2f16d1b4094626af65ae8d929fc077",
+              "finding_id": "chunk-004-uncertain-pru"
+            }
+          },
+          {
+            "id": "ck5-fix-15",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Rechecked the same source passage and corrected the previously reported discrepancy in the canonical Russian translation.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Reenacting the same plan he executed before, Cardinal and Pru went around the world to every recorded Lazarus Pit and set explosives at each.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Кардинал решил повторить план, который уже осуществлял прежде",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "eb2f16d1b4094626af65ae8d929fc077",
+              "finding_id": "chunk-004-dangling-plan"
+            }
+          },
+          {
+            "id": "ck5-fix-16",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Rechecked the same source passage and corrected the previously reported discrepancy in the canonical Russian translation.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Tim favors Talia over Ra's anyday, but he knows Talia’s character.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Тим без колебаний предпочёл бы Талию Ра’су",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "eb2f16d1b4094626af65ae8d929fc077",
+              "finding_id": "chunk-004-talia-calque"
+            }
+          },
+          {
+            "id": "ck5-fix-17",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Rechecked the same source passage and corrected the previously reported discrepancy in the canonical Russian translation.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Tim isn’t naive enough to think he’s gone completely unnoticed, but he’s confident his identity is secure.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "его настоящее имя остаётся в тайне",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "eb2f16d1b4094626af65ae8d929fc077",
+              "finding_id": "chunk-004-identity-secret"
+            }
+          },
+          {
+            "id": "ck5-fix-18",
+            "category": "register",
+            "severity": "minor",
+            "detail": "Rechecked the same source passage and corrected the previously reported discrepancy in the canonical Russian translation.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "So Tim is on his own if shit hits the fan. Wonderful.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "если всё пойдёт через жопу",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "eb2f16d1b4094626af65ae8d929fc077",
+              "finding_id": "chunk-004-coarse-register"
+            }
+          },
+          {
+            "id": "ck5-fix-19",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Rechecked the same source passage and corrected the previously reported discrepancy in the canonical Russian translation.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Tim outright scoffs at that, “Yah, right.”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Тим лишь презрительно фыркает в ответ",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "eb2f16d1b4094626af65ae8d929fc077",
+              "finding_id": "chunk-004-scoffs-calque"
+            }
+          },
+          {
+            "id": "bats-family-79-20261122",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "In the threat-to-Gotham paragraph, «Бэтов» remains an unclear colloquial rendering of the Bat-family. Use the established «Бэт-семьи» form for consistent identification.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "her ambition proves a detriment to Gotham or the Bats",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "её амбиции могут обернуться бедой для Готэма или Бэтов",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       }
