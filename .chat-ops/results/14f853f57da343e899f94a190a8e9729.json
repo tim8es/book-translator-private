@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "request_id": "14f853f57da343e899f94a190a8e9729",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "7bf9c20da43f32e64b690e66508939b3107ee53992ff92de7bfd5dc623add1a7",
+    "record": {
+      "correction_round": 1,
+      "outcome": "CORRECTIONS_REQUIRED",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "style",
+            "detail": "«Немного сдвинутый день» звучит как неудачная калька shifted; сохранить странное ощущение едва изменённой реальности естественными средствами русского языка.",
+            "id": "ch16-dream-shift",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "*Duke’s dreams feel like just another day—only… shifted.*"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "*Сны Дюка похожи на ещё один обычный день — только… немного сдвинутый.*"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "«Плачет над частью катастрофы» и «чуточку страстнее» неестественны для narratorial emotional intensity; передать плач из-за пережитого и пылкий характер без новых оттенков.",
+            "id": "ch16-crying",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "which part of this whole disaster he’s crying about"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "над какой именно частью этой катастрофы"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "«Малыш Крыло» — неграмматичный буквальный перевод ласкового прозвища Little Wing. Передать коротким естественным русским обращением, сохранив образ крыла.",
+            "id": "ch16-little-wing",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "“Little Wing?” Dick murmurs."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "«Малыш Крыло?» — негромко зовёт Дик."
+            }
+          },
+          {
+            "category": "structure",
+            "detail": "В оригинале курсив выделяет именно *idiot*, тогда как перевод сместил курсив на всё определение. Вернуть точку интонационного акцента.",
+            "id": "ch16-idiot-emphasis",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "self-sacrificing  *idiot,”*"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "*идиот, готовый всем пожертвовать*"
+            }
+          },
+          {
+            "category": "referent",
+            "detail": "В последней фразе исходника именно Брюс осознаёт собственную неудачу, а Дэмиан ощущает, как это осознание давит на отца; русская конструкция с безличным «осознать» размывает субъекта, а «его» создаёт неоднозначность. Уточнить обоих референтов.",
+            "id": "ch16-reference-314",
+            "resolved": false,
+            "resolves": null,
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Damian can practically feel the weight of that starting to crush him"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "значит ощутить тяжесть, которая, как Дэмиан почти чувствует, уже начинает его раздавливать"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "После вопроса о сохранённых воспоминаниях Брюс подтверждает принципиальную возможность. «Должен быть способ» добавляет конкретное подразумеваемое решение вместо общей модальности возможности. Передать неопределённое утверждение.",
+            "id": "ch16-possibility-328",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "“It must be possible.”"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "«Должен быть способ»."
+            }
+          }
+        ]
+      },
+      "record_id": "8de6cc6f1bcf4b7da9deeba6e60eb2c4",
+      "review_commit": "0af69617bec560a759b75c8797b10711a94e6f33",
+      "review_contract_revision": "docs/TRANSLATION.md@a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "reviewed_at": "2026-11-22T19:31:34Z",
+      "reviewer_session_id": "chat-20261122-cardinal-review16-a",
+      "sequence": 49,
+      "source_sha256": "2a2b47744574379b1ff9b044e7353790356af191da594cff4bbd7df56ff419d8",
+      "state_revision": "448838dc0ad97eff24c67e81e09da502ae3da1fd7f6004f252cf6ba2b343f2cb",
+      "supersedes_record_id": null,
+      "translation_sha256": "0eecb5ce8d78f207b399f725efbaebde9de10fcfcd342b63af60610fb0fc9d94",
+      "unit_id": "chapter-000016",
+      "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29"
+    }
+  },
+  "error": null
+}

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "cardinal-kin",
-  "next_sequence": 49,
+  "next_sequence": 50,
   "records": [
     {
       "record_id": "75dfa72e2b6148208fd5343b6e384999",
@@ -9683,6 +9683,131 @@
               "record_id": "3dfad0b33ff949e185c4b3f1c33a2165",
               "finding_id": "ch15-own-blood"
             }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "8de6cc6f1bcf4b7da9deeba6e60eb2c4",
+      "sequence": 49,
+      "unit_id": "chapter-000016",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "2a2b47744574379b1ff9b044e7353790356af191da594cff4bbd7df56ff419d8",
+      "translation_sha256": "0eecb5ce8d78f207b399f725efbaebde9de10fcfcd342b63af60610fb0fc9d94",
+      "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "review_contract_revision": "docs/TRANSLATION.md@a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "reviewer_session_id": "chat-20261122-cardinal-review16-a",
+      "reviewed_at": "2026-11-22T19:31:34Z",
+      "state_revision": "448838dc0ad97eff24c67e81e09da502ae3da1fd7f6004f252cf6ba2b343f2cb",
+      "review_commit": "0af69617bec560a759b75c8797b10711a94e6f33",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "ch16-dream-shift",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Немного сдвинутый день» звучит как неудачная калька shifted; сохранить странное ощущение едва изменённой реальности естественными средствами русского языка.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "*Duke’s dreams feel like just another day—only… shifted.*",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "*Сны Дюка похожи на ещё один обычный день — только… немного сдвинутый.*",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "ch16-crying",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Плачет над частью катастрофы» и «чуточку страстнее» неестественны для narratorial emotional intensity; передать плач из-за пережитого и пылкий характер без новых оттенков.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "which part of this whole disaster he’s crying about",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "над какой именно частью этой катастрофы",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "ch16-little-wing",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Малыш Крыло» — неграмматичный буквальный перевод ласкового прозвища Little Wing. Передать коротким естественным русским обращением, сохранив образ крыла.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“Little Wing?” Dick murmurs.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Малыш Крыло?» — негромко зовёт Дик.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "ch16-idiot-emphasis",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "В оригинале курсив выделяет именно *idiot*, тогда как перевод сместил курсив на всё определение. Вернуть точку интонационного акцента.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "self-sacrificing  *idiot,”*",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "*идиот, готовый всем пожертвовать*",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "ch16-reference-314",
+            "category": "referent",
+            "severity": "major",
+            "detail": "В последней фразе исходника именно Брюс осознаёт собственную неудачу, а Дэмиан ощущает, как это осознание давит на отца; русская конструкция с безличным «осознать» размывает субъекта, а «его» создаёт неоднозначность. Уточнить обоих референтов.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Damian can practically feel the weight of that starting to crush him",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "значит ощутить тяжесть, которая, как Дэмиан почти чувствует, уже начинает его раздавливать",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "ch16-possibility-328",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "После вопроса о сохранённых воспоминаниях Брюс подтверждает принципиальную возможность. «Должен быть способ» добавляет конкретное подразумеваемое решение вместо общей модальности возможности. Передать неопределённое утверждение.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“It must be possible.”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Должен быть способ».",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       }
