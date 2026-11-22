@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "alligator-bites-never-heal",
-  "next_sequence": 10,
+  "next_sequence": 11,
   "records": [
     {
       "record_id": "be08d5c17b934579b154d272e933435c",
@@ -414,6 +414,49 @@
             "severity": "minor",
             "detail": "Block 000147: restored four deliberately fused units of the stream of consciousness ('too much / too much / not enough / too much') inside the original italic emphasis.",
             "resolved": true
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "e0ac76e382a94489b93056090f698fc4",
+      "sequence": 10,
+      "unit_id": "chapter-000006",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "31df68a50336f00e220184e956013ae4542ca26cb54f4fe631681b411d012693",
+      "translation_sha256": "02a0360d306ba38362d29a3fb5425a8651f9200f13e71c2182817404dac560ef",
+      "workflow_revision": "76604c82cc4345699de9ae5d97bc75e2443e8cb5",
+      "review_contract_revision": "docs/TRANSLATION.md@76604c82cc4345699de9ae5d97bc75e2443e8cb5",
+      "reviewer_session_id": "chatgpt-alligator-20261122-r9",
+      "reviewed_at": "2026-11-22T18:43:35Z",
+      "state_revision": "7485a853b43fc354477d4239a2ca3d5ad85d80058fad9f3cfcb5738fcdb3608f",
+      "review_commit": "92e54e68c99f4a3f83dc36b26c0f672750a73179",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "major",
+            "detail": "Block 000205: 'Pike, he had broken foot during finals last year' names a broken foot (стопа), whereas Russian 'со сломанной ногой' changes the precise injured body part. Correct to 'со сломанной стопой' or comparable explicit foot wording.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Block 000024: Ilya's 'Gimme kiss' is a request for Shane to kiss him, while 'Дай поцеловать' asks permission for Ilya to kiss Shane. Change to 'Поцелуй меня' / 'Дай поцелуй' preserving the speaker's initiative.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Block 000159: afterglow is the restful pleasurable after-sex state, not an 'aftertaste of orgasm'; 'послевкусие оргазма' creates a misleading literal calque and the claim it 'получается' плохо becomes unnatural. Use natural Russian for postcoital ease/bliss without overexplaining.",
+            "resolved": false
           }
         ]
       }
