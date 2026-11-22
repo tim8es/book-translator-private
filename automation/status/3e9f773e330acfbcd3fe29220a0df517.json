@@ -3,12 +3,12 @@
   "job_id": "3e9f773e330acfbcd3fe29220a0df517",
   "book_slug": "pizza-with-pineapples-itislikethis-motorcycling-rpf",
   "state": "running",
-  "phase": "model-call-reserved",
+  "phase": "reviewer-completed",
   "failures": 0,
   "correction_rounds": {},
   "workflow_revision": "789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
   "source_sha256": "b806092139439a8a9d5c9297bdc1338fa9e4798cfa81353f9396f66747aa6e96",
-  "updated_at": "2026-11-22T16:44:19.573076+00:00",
+  "updated_at": "2026-11-22T16:45:42.798306+00:00",
   "queue_snapshot": {
     "extracted": 17,
     "reviewed": 0,
@@ -16,12 +16,7 @@
     "correction_candidates": 0,
     "awaiting_promotion": 0
   },
-  "active": {
-    "role": "reviewer",
-    "chapter": 1,
-    "session_id": "auto-3e9f773e330a-reviewer-fe64e1d9",
-    "unit_id": "chapter-000001"
-  },
+  "active": null,
   "structural_helper_revision": "4c584fe5534871cd05aa851d9b7bdbfa696d0edd",
   "model_calls_started": 4,
   "prompt_context": {
@@ -40,14 +35,14 @@
   },
   "provider_call_metric": {
     "unit_id": "chapter-000001",
-    "role": "translator",
+    "role": "reviewer",
     "route": "primary",
-    "request_chars": 25884,
+    "request_chars": 41820,
     "outcome": "response",
-    "duration_ms": 9841,
-    "prompt_tokens": 4960,
-    "completion_tokens": 269,
-    "total_tokens": 5229
+    "duration_ms": 81753,
+    "prompt_tokens": 8596,
+    "completion_tokens": 4442,
+    "total_tokens": 13038
   },
   "provider_call_metrics": [
     {
@@ -71,6 +66,17 @@
       "prompt_tokens": 4960,
       "completion_tokens": 269,
       "total_tokens": 5229
+    },
+    {
+      "unit_id": "chapter-000001",
+      "role": "reviewer",
+      "route": "primary",
+      "request_chars": 41820,
+      "outcome": "response",
+      "duration_ms": 81753,
+      "prompt_tokens": 8596,
+      "completion_tokens": 4442,
+      "total_tokens": 13038
     }
   ],
   "execution_metrics": {
@@ -85,25 +91,35 @@
         "prompt_tokens": 10618,
         "completion_tokens": 3701,
         "total_tokens": 14319
+      },
+      "reviewer": {
+        "completed_calls": 1,
+        "responses": 1,
+        "duration_ms": 81753,
+        "request_chars": 41820,
+        "prompt_tokens": 8596,
+        "completion_tokens": 4442,
+        "total_tokens": 13038
       }
     },
     "accepted_operations": {
-      "translated": 1
+      "translated": 1,
+      "review_rejected": 1
     }
-  },
-  "model_response_diagnostics": {
-    "finish_reason": "stop",
-    "response_format": "json_object",
-    "response_chars": 120,
-    "provider_refusal": false,
-    "prompt_tokens": 4960,
-    "completion_tokens": 269,
-    "total_tokens": 5229,
-    "route": "primary",
-    "role": "translator",
-    "unit_id": "chapter-000001"
   },
   "memory_glossary_saved": 5,
   "pending_style": [],
-  "role_protocol_failures": {}
+  "role_protocol_failures": {},
+  "model_response_diagnostics": {
+    "finish_reason": "stop",
+    "response_format": "json_object",
+    "response_chars": 1333,
+    "provider_refusal": false,
+    "prompt_tokens": 8596,
+    "completion_tokens": 4442,
+    "total_tokens": 13038,
+    "route": "primary",
+    "role": "reviewer",
+    "unit_id": "chapter-000001"
+  }
 }

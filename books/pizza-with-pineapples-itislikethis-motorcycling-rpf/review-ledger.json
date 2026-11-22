@@ -1,6 +1,56 @@
 {
   "schema_version": 1,
   "book_slug": "pizza-with-pineapples-itislikethis-motorcycling-rpf",
-  "next_sequence": 1,
-  "records": []
+  "next_sequence": 2,
+  "records": [
+    {
+      "record_id": "e8060d96338440d8a139c674168abf15",
+      "sequence": 1,
+      "unit_id": "chapter-000001",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "fdae27d9884c16da2a3d6bb3002b1192aa7c777297a5e12e238a7a59720338ca",
+      "translation_sha256": "c7e1000ab49c4cdc2207db3211ce3850516456dc82b0679cab96cf4fa32408a7",
+      "workflow_revision": "789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
+      "review_contract_revision": "docs/TRANSLATION.md@789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
+      "reviewer_session_id": "auto-3e9f773e330a-reviewer-fe64e1d9",
+      "reviewed_at": "2026-11-22T16:45:42Z",
+      "state_revision": "00818777a7a180cb872679880901af4558cb405b82ac714f2adead2678de8720",
+      "review_commit": "94e94b3588afac2ff5756b69cc82528f85cf9379",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "style-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The series title is rendered as «Начинки для пиццы», but «Часть 1 из Начинки для пиццы» does not form a grammatical Russian construction: «из» requires the title to be declined, or the sentence should be rephrased to leave the title unchanged, for example «Часть 1 серии „Начинки для пиццы“».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Part 1 of",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Часть 1 из",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "a2c8b04a21681da6835bc6b4ba80b1bcaeb493942c1e62484afeb62ad575dc3e",
+        "style_guide": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4"
+      }
+    }
+  ]
 }
