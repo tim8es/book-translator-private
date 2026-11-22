@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "say-it-in-your-mother-tongue",
-  "next_sequence": 222,
+  "next_sequence": 223,
   "records": [
     {
       "record_id": "175981a73412449d9d1b40a875c9e343",
@@ -21144,6 +21144,44 @@
           {
             "severity": "minor",
             "detail": "Block 116: corrected end-of-chapter notes heading, preserving separation from opening notes and maintaining source structure.",
+            "resolved": true
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "3952dc129e3543e0898ada3d37a14ff8",
+      "sequence": 222,
+      "unit_id": "chapter-000050",
+      "outcome": "PASS",
+      "source_sha256": "18010d26b222c8e7ce74dc96e6cb040575edf476f9db5887131ac0d0d059266c",
+      "translation_sha256": "22607f7befab806cb1d18160e9583579b13b863fb3fa5f20e5a3e02401db964d",
+      "workflow_revision": "8bb30227adc4bb921429611e12a0af803c9b6487",
+      "review_contract_revision": "docs/TRANSLATION.md@8bb30227adc4bb921429611e12a0af803c9b6487",
+      "reviewer_session_id": "chatgpt-20261122-sayit-ch50-reviewer",
+      "reviewed_at": "2026-11-22T14:42:22Z",
+      "state_revision": "b1da260909dd22b19f1dfb7c2ada01d4177ea851cc892d3fa5895dba597697ee",
+      "review_commit": "f4335fe2a997af576f74875937c22b8f970d960b",
+      "correction_round": 4,
+      "supersedes_record_id": "762a2e3d6d1a4a24a6bedc7c8b4dfb5f",
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Block 12: restored italic emphasis on the speaker's hell.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Block 46: restored italic emphasis on stuffed toy Bunny's name.",
             "resolved": true
           }
         ]
