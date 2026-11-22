@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "the-happy-prince-and-other-tales",
-  "next_sequence": 4,
+  "next_sequence": 5,
   "records": [
     {
       "record_id": "454ca30d1d7d42ae95dacf0e1de03ba9",
@@ -311,6 +311,166 @@
             },
             "translation_anchor": {
               "quote": "— Рубин выпал из его меча, глаза пропали.\n— да и золота на нём больше нет, — сказал мэр.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "02fd8099be0f34fc44c988853a566743b1875ea3866a9e50549a018ffb192c9b",
+        "style_guide": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4"
+      }
+    },
+    {
+      "record_id": "df74841d3e8f48ddbf0b3852754caec1",
+      "sequence": 4,
+      "unit_id": "chapter-000001",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "38617c6f8bf0323078a9bc41ecb03572a24121bbaa93c3caf3f8b90c18633281",
+      "translation_sha256": "aa146e620c883d06ff1c17120f8a012eda0d3607d30ffab13f2287f3a7215d5d",
+      "workflow_revision": "6ed4b4cc777b2e099c08b785aae925b0c5b8296c",
+      "review_contract_revision": "docs/TRANSLATION.md@6ed4b4cc777b2e099c08b785aae925b0c5b8296c",
+      "reviewer_session_id": "auto-297fd08ee43d-reviewer-bb8ec41a",
+      "reviewed_at": "2026-11-22T13:18:07Z",
+      "state_revision": "c3c26964a53c08f5d185d4effc3000995ece4ca217659285568d3b274d956863",
+      "review_commit": "d8ca38e3dc41410950ad508858d31f22e7810433",
+      "correction_round": 4,
+      "supersedes_record_id": "92cbd7b66782406d9c82e74e6b9052e5",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "ref-r1",
+            "category": "referent",
+            "severity": "major",
+            "detail": "Unresolved recheck: the first clause now uses masculine forms for the Swallow, but the appended duplicate clause changes the subject to feminine forms («пленилась», «остановилась»). Preserve the Swallow’s male identity.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "He had met her early in the spring as he was flying down the river after a big yellow moth, and had been so attracted by her slender waist that he had stopped to talk to her.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "поговорить с ней., и так пленилась её тонкой талией, что остановилась поговорить с ней.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "92cbd7b66782406d9c82e74e6b9052e5",
+              "finding_id": "referent-recheck-1"
+            }
+          },
+          {
+            "id": "dream-r1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Resolved: the translation now makes clear that the children dream while asleep.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "for he did not approve of children dreaming.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "потому что не одобрял, когда детям снились сны.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "92cbd7b66782406d9c82e74e6b9052e5",
+              "finding_id": "meaning-dream-1"
+            }
+          },
+          {
+            "id": "term-r1",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "Resolved: «член городского совета» identifies a municipal councillor and is consistent with the later wording.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "one of the Town Councillors who wished to gain a reputation for having artistic tastes",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "один из членов городского совета, желавший прослыть человеком с художественным вкусом",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "92cbd7b66782406d9c82e74e6b9052e5",
+              "finding_id": "terminology-town-councillor-1"
+            }
+          },
+          {
+            "id": "style-r1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Resolved: the Russian phrasing is idiomatic and preserves the sense that the Prince would never think of crying over anything.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "The Happy Prince never dreams of crying for anything.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Счастливый Принц и не подумал бы плакать из-за чего бы то ни было",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "92cbd7b66782406d9c82e74e6b9052e5",
+              "finding_id": "style-dream-1"
+            }
+          },
+          {
+            "id": "struct-r1",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "Resolved: the Mayor’s remarks now form one continuous paragraph and one coherent turn of speech, with the speech tag interrupting it.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "“The ruby has fallen out of his sword, his eyes are gone, and he is golden no longer,” said the Mayor; “in fact, he is little better than a beggar!”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "— Рубин выпал из его меча, глаза пропали, да и золота на нём больше нет, — сказал мэр. — Словом, он немногим лучше нищего!",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "92cbd7b66782406d9c82e74e6b9052e5",
+              "finding_id": "structure-mayor-1"
+            }
+          },
+          {
+            "id": "dup-1",
+            "category": "addition",
+            "severity": "minor",
+            "detail": "The translation repeats the Swallow’s encounter with the Reed, although the source describes it only once. Remove the appended duplicate clause and its malformed punctuation.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "He had met her early in the spring as he was flying down the river after a big yellow moth, and had been so attracted by her slender waist that he had stopped to talk to her.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "и так пленилась её тонкой талией, что остановилась поговорить с ней.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "swallow-gender",
+            "category": "referent",
+            "severity": "major",
+            "detail": "The source identifies the Swallow as male, but the translation repeatedly uses feminine personal forms for him. This is explicit at his death, where «она поцеловала» and «упала» refer to the Swallow. Preserve his male identity throughout, recasting sentences as needed for Russian grammar.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "And he kissed the Happy Prince on the lips, and fell down dead at his feet.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "И она поцеловала Счастливого Принца в губы и упала замертво к его ногам.",
               "occurrence": 0
             },
             "resolves": null
