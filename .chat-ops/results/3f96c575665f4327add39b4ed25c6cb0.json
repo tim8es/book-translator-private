@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "request_id": "3f96c575665f4327add39b4ed25c6cb0",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "07b09cb7d67702064937ef28ace5dc1a2d5b1eafdd52c76732957ce468f96f4d",
+    "record": {
+      "correction_round": 1,
+      "outcome": "CORRECTIONS_REQUIRED",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "findings": [
+          {
+            "detail": "Block 000047: 'his stupid fucking Boston hoodie' is the Boston-club hoodie worn by Ilya, not Shane's own clothing; the translation 'в свою ... бостонскую толстовку' assigns it to Shane, who plays for Montreal. Correct possession without inventing clothing ownership.",
+            "resolved": false,
+            "severity": "major"
+          },
+          {
+            "detail": "Block 000095: 'cleaners can't come for the carpet until tomorrow' refers to cleaning the vomit-stained bedroom carpet, not cleaners coming to take the carpet away; 'приедут за ковром' misstates the expected action. Use 'приехать почистить ковёр' or equivalent.",
+            "resolved": false,
+            "severity": "major"
+          },
+          {
+            "detail": "Block 000147: 'toomuchtoomuchnotenoughtoomuch' deliberately repeats too much twice, not enough once, too much once. Current italicized Russian 'слишкоммногослишкоммаломногослишком' loses this repetition and semantic pattern. Restore all four fused segments inside the original emphasis.",
+            "resolved": false,
+            "severity": "minor"
+          }
+        ]
+      },
+      "record_id": "8043ff00ca53487aaefe163b8fc8270d",
+      "review_commit": "bc46fa62c9f5512375e5f44bcae95a658b6256b3",
+      "review_contract_revision": "docs/TRANSLATION.md@76604c82cc4345699de9ae5d97bc75e2443e8cb5",
+      "reviewed_at": "2026-11-22T18:19:16Z",
+      "reviewer_session_id": "chatgpt-alligator-20261122-r7",
+      "sequence": 8,
+      "source_sha256": "5fed06ab37ea92a5c5b4c057716176609a8e887227bcb82cf5481fe43b14698c",
+      "state_revision": "2117987735639bad2ccbf1a944dae2f5f69e7a1cfd07e890bfa72d897812eebf",
+      "supersedes_record_id": null,
+      "translation_sha256": "3c02b2a0aa4d3f9018c84f307b1d615628cff4528370b03e08bfab1bf7b808db",
+      "unit_id": "chapter-000005",
+      "workflow_revision": "76604c82cc4345699de9ae5d97bc75e2443e8cb5"
+    }
+  },
+  "error": null
+}
