@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "request_id": "324a46a0f2fd4ab28bf6f37e54175e83",
+  "book_slug": "cardinal-kin",
+  "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
+  "operation": "review-record",
+  "chapter": 18,
+  "session_id": "chat-20261123-cardinal-review18-a",
+  "outcome": "CORRECTIONS_REQUIRED",
+  "quality_report": {
+    "evidence_version": 2,
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "id": "ch18-belonging",
+        "category": "style",
+        "severity": "minor",
+        "detail": "«Принадлежность» как самостоятельное название мечты звучит отвлечённо и неестественно; восстановить желание быть своим в семье, сохранив отдельные курсивные акценты.",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "*family,* *belonging,*",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "*семья*, *принадлежность*",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "ch18-hurtful-words",
+        "category": "style",
+        "severity": "minor",
+        "detail": "«Говорим больные вещи» — лексическая калька. Сохранить намеренное причинение боли близким через слова естественным оборотом.",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "Sometimes we say things to people we care about because we",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Иногда специально говорим больные вещи тем, кто нам дорог",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "ch18-spite-well",
+        "category": "style",
+        "severity": "minor",
+        "detail": "«Пока иссякнет твой неисчерпаемый источник» добавляет неуместное противоречивое определение, которого нет в оригинале; в источнике это всего лишь насмешка о том, что Дрейк упорно вредничает.",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "your well of willful spite to finally run dry",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "твой неисчерпаемый источник упрямой злобы",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "ch18-spite-reply",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Willful spite — упрямая вредность, а не злорадство; восстановить самоироничную отсылку к предыдущей реплике Дэмиана без оттенка радости от чужих страданий.",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "my willful spite is endless",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Моё упрямое злорадство бесконечно",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "ch18-when",
+        "category": "style",
+        "severity": "minor",
+        "detail": "«С… он даже не знает какого времени» грамматически не оформляет оборванную мысль; передать намеренную паузу и невозможность вспомнить дату.",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "he doesn’t even know when.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "он даже не знает какого времени.",
+          "occurrence": 0
+        },
+        "resolves": null
+      }
+    ]
+  },
+  "source_sha256": "beb8af0ce3f2d51931838e6c709f1d53df3a5f3a87890ad8f8477af094b1576a",
+  "translation_sha256": "7255098186ab87f3b030e9ee759b9bf9eeaee04c9eafcc7a84b741cffc2fe777",
+  "claim_sha256": "50bf38d43f958a0f197fdcea07cee057a78aab40363b17aa6c4ffcf803fee986"
+}
