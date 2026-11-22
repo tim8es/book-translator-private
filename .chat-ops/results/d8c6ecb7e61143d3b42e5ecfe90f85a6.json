@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "request_id": "d8c6ecb7e61143d3b42e5ecfe90f85a6",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "ce3643932faba21ada91ba6fca86790328f852651b9d5a756b6f0802bf36d5fc",
+    "record": {
+      "correction_round": 2,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "findings": [
+          {
+            "detail": "Block 000114: privacy/secrecy rhetorical question restored ('Have I told anyone? No').",
+            "resolved": true,
+            "severity": "major"
+          },
+          {
+            "detail": "Block 000037: restored the intended sexual-erection meaning rather than physically standing.",
+            "resolved": true,
+            "severity": "major"
+          },
+          {
+            "detail": "Blocks 000058–000060: whey/pea protein insult rendered as colloquial weakling joke, not literal anatomy.",
+            "resolved": true,
+            "severity": "major"
+          },
+          {
+            "detail": "Blocks 000176/000178: the direct 'Lost' / 'You lost a game' hockey taunts corrected.",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "Block 000136: restored Ilya-as-franchise metaphor.",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "Block 000158: protein-shake container and both Russian pronouns now agree, including disposal in paper recycling two days earlier.",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "Blocks 000185/000187: corrected church-pew image and neutral/tender account of a past memory.",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "Block 000137: clarified that Ilya's own teeth punctured his swollen tongue.",
+            "resolved": true,
+            "severity": "minor"
+          }
+        ]
+      },
+      "record_id": "de160e9720774c21853f7e2fa5c1da84",
+      "review_commit": "a2d00b2636914b7f13de220e21aa5733573b1b8a",
+      "review_contract_revision": "docs/TRANSLATION.md@76604c82cc4345699de9ae5d97bc75e2443e8cb5",
+      "reviewed_at": "2026-11-22T18:06:29Z",
+      "reviewer_session_id": "chatgpt-alligator-20261122-r6",
+      "sequence": 7,
+      "source_sha256": "f027535c5e1f74e4184cb65346b7b8a4539d775b0690ed2b025ad6aa947547ec",
+      "state_revision": "dedcd1c9f304f0bc730b4dfcadd2790c3fe6fcc30179eed6acc679781c6578c7",
+      "supersedes_record_id": "c195099c896e4258990d56195f8be06f",
+      "translation_sha256": "de3592f7a15c1534d2eabd5cd70567d658402fc34a1694b536a71fdff39bb3c6",
+      "unit_id": "chapter-000004",
+      "workflow_revision": "76604c82cc4345699de9ae5d97bc75e2443e8cb5"
+    }
+  },
+  "error": null
+}
