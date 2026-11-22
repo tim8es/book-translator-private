@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "request_id": "bb47e925c9ce47b0bde246930c031bfc",
+  "book_slug": "alligator-bites-never-heal",
+  "workflow_revision": "76604c82cc4345699de9ae5d97bc75e2443e8cb5",
+  "operation": "review-record",
+  "chapter": 4,
+  "session_id": "chatgpt-alligator-20261122-r4",
+  "outcome": "CORRECTIONS_REQUIRED",
+  "quality_report": {
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "severity": "major",
+        "detail": "Block 000114: 'have i told 1 person no' is 'Have I told even one person? No'; Russian 'я кому-нибудь хоть 1 человеку говорил нет' wrongly says he told a person 'no'. Restore seven-year secrecy and rhetorical question with 'нет' as a separate answer.",
+        "resolved": false
+      },
+      {
+        "severity": "major",
+        "detail": "Block 000037: 'Could you even get hard' refers to an erection; 'Ты вообще способен встать' reads as physically standing. Correct to unambiguous colloquial sexual response.",
+        "resolved": false
+      },
+      {
+        "severity": "major",
+        "detail": "Blocks 000058–000060: 'way' is Ilya's misspelling of whey, while 'not pussy' is an insult directed at pea protein being for weaklings, NOT 'не из киски'. Restore the insulting joke and Shane's response.",
+        "resolved": false
+      },
+      {
+        "severity": "minor",
+        "detail": "Blocks 000176/000178: 'Lost.' / 'You lost a game.' are direct taunting corrections of Shane; 'Проигранной' / 'Ты после проигранной игры' is awkward and less precise. Render 'Проиграл.' / 'Ты проиграл матч.' or equivalent.",
+        "resolved": false
+      },
+      {
+        "severity": "minor",
+        "detail": "Block 000136: 'he's a business—and more than that, he's a franchise' portrays Ilya himself as a franchise, not only its face ('лицо целой франшизы'). Restore the metaphor.",
+        "resolved": false
+      },
+      {
+        "severity": "minor",
+        "detail": "Block 000158: 'rinses it out and puts it in recycling bin' refers to empty protein shake container, not an explicitly named glass ('стакан'). Avoid inventing a glass.",
+        "resolved": false
+      },
+      {
+        "severity": "minor",
+        "detail": "Blocks 000185/000187: 'like he's in a pew' is an uncomfortable kneeling-in-church image, but 'в церковной скамье' reads as sitting inside a bench; 'A man did this for him once' is a tender memory and 'с ним так поступил' sounds negatively coercive. Adjust literal imagery without adding facts.",
+        "resolved": false
+      },
+      {
+        "severity": "minor",
+        "detail": "Block 000137: the Russian phrase about the swollen tongue 'который ему ... проткнули собственные зубы' is grammatically misleading; make the physical agent (his teeth) clear while preserving 'apparently'.",
+        "resolved": false
+      }
+    ]
+  },
+  "source_sha256": "f027535c5e1f74e4184cb65346b7b8a4539d775b0690ed2b025ad6aa947547ec",
+  "translation_sha256": "a9794b627f38c2dd506b61cdaa70372feab5e074b0ad7ebc07a1feb231bceb34",
+  "claim_sha256": "a12f6d410599fa303eaff53e6c4c1b09a07031ded59a647cfa2ab615781c3e5b"
+}
