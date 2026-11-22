@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "request_id": "fbc3168c5868439aac1218f321203b14",
+  "book_slug": "pizza-with-pineapples-itislikethis-motorcycling-rpf",
+  "workflow_revision": "789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
+  "operation": "review-record",
+  "chapter": 4,
+  "session_id": "chatops-pizza-reviewer-20261122-03",
+  "outcome": "CORRECTIONS_REQUIRED",
+  "quality_report": {
+    "evidence_version": 2,
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "id": "style-003",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Opening contains awkward Russian calque «принялся неглубоко дышать» instead of natural description of shallow breathing; repair without introducing a change of aspect or action.",
+        "source_anchor": {
+          "quote": "breathing shallowly as he gathered himself",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "принялся неглубоко дышать, пытаясь взять себя в руки",
+          "occurrence": 0
+        },
+        "resolved": false,
+        "resolves": null
+      },
+      {
+        "id": "style-055",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Unnatural plural/singular mismatch «жилеты одного из маршалов» in Russian; a single marshal's distinctive fluorescent vest needs natural Russian wording while preserving that Alex sees a track marshal.",
+        "source_anchor": {
+          "quote": "distinctive neon orange vests of one of the track marshals",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "характерные ярко-оранжевые жилеты одного из маршалов трассы",
+          "occurrence": 0
+        },
+        "resolved": false,
+        "resolves": null
+      },
+      {
+        "id": "register-103",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Character's stressed «Fuck» is weakened to mild «Чёрт», softening deliberate profanity. Restore equivalent intensity consistent with surrounding dialogue.",
+        "source_anchor": {
+          "quote": "Fuck, I don’t know how to—",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Чёрт, я не знаю, как...",
+          "occurrence": 0
+        },
+        "resolved": false,
+        "resolves": null
+      }
+    ]
+  },
+  "source_sha256": "0ccde151fa7e3a6b179edcc857d3d1e1a84c175714efccf7ac7f3093685f426e",
+  "translation_sha256": "c070d110279d033da51676045c2998262c694aacaef82c9a29193ce4e960bd84",
+  "claim_sha256": "36573dd0b546459abfb13f6f910b37340948e6e9708f67a066c2bd68bb0ed2bb"
+}
