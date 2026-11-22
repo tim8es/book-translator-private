@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "the-happy-prince-and-other-tales",
-  "next_sequence": 16,
+  "next_sequence": 17,
   "records": [
     {
       "record_id": "454ca30d1d7d42ae95dacf0e1de03ba9",
@@ -2128,6 +2128,135 @@
       },
       "shared_state_revisions": {
         "glossary": "63b6bb33bc0ce590a2ac9b50adb032ff1d247555b17d599278aad9ac959d8d08",
+        "style_guide": "eeb3e2c12f4e684bad2007ac1e9e1cb44b9fafe7f05420a254e93542b6e89589"
+      }
+    },
+    {
+      "record_id": "a81589a5aa5b43a89b347edc2c5140cd",
+      "sequence": 16,
+      "unit_id": "chapter-000005",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "7fd1447d49ac2d5d7a53d879e99009bcd8263770d04d2ab6c675c47fc76fcc88",
+      "translation_sha256": "15c68008fe500a9970d1abfc692fd1e7c9df80c494eafddd6c2064c327f8b147",
+      "workflow_revision": "6ed4b4cc777b2e099c08b785aae925b0c5b8296c",
+      "review_contract_revision": "docs/TRANSLATION.md@6ed4b4cc777b2e099c08b785aae925b0c5b8296c",
+      "reviewer_session_id": "auto-297fd08ee43d-reviewer-ac9763dc",
+      "reviewed_at": "2026-11-22T16:03:30Z",
+      "state_revision": "a6a4d45daf67ac22c238395e23b875dda3a7caf9363d1b444aef94883bc55640",
+      "review_commit": "dd48066beb36b920025c671a2c9067ad45012800",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "meaning-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "“Rose-dance” refers to a rose dance, not a dance that is pink. “Розовый танец” changes the image; render the rose element, for example as “танец роз”.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "The bride and bridegroom were to dance the Rose-dance together, and the King had promised to play the flute.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Жених и невеста должны были вместе станцевать розовый танец, а король обещал играть на флейте.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "referent-1",
+            "category": "referent",
+            "severity": "minor",
+            "detail": "The source and glossary identify the Catherine Wheel as female, but the translation uses the neuter “оно” and “пробормотало” for her. Preserve her personal gender in the reference, for example “пробормотала она”; the noun can retain its natural grammatical agreement.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "But the Catherine Wheel shook her head. “Romance is dead, Romance is dead, Romance is dead,” she murmured.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Но колесо Екатерины покачало головой. «Романтика умерла, романтика умерла, романтика умерла», — пробормотало оно.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "referent-2",
+            "category": "referent",
+            "severity": "major",
+            "detail": "The Rocket is male in the source and in the glossary, but is referred to as female here; the translation later switches to masculine references. Keep the Rocket’s personal references masculine consistently, while retaining feminine agreement where it is required by the noun “ракета”.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "He always coughed before he made any observation, so as to attract attention.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Она всегда кашляла, прежде чем высказать какое-нибудь замечание, чтобы привлечь к себе внимание.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-2",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The translation changes “Grand” to “Замечательная” and then claims that “Плохая” and “замечательная” sound alike, which does not work in Russian. Preserve the Rocket’s deliberate mishearing and self-delusion with a Russian wording whose meanings contrast but whose sounds make the claim plausible.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“Bad Rocket? Bad Rocket?” he said, as he whirled through the air; “impossible! Grand Rocket, that is what the man said. Bad and Grand sound very much the same, indeed they often are the same,” and he fell into the mud.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "— Плохая ракета? Плохая? — сказал он, пролетая по воздуху. — Невозможно! «Замечательная ракета» — вот что сказал тот человек. «Плохая» и «замечательная» звучат очень похоже, да и вообще часто означают одно и то же, — и он шлёпнулся в грязь.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "terminology-1",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "“Стрекозёл” invents a conspicuous goat-evoking name that is not present in the source. Use the ordinary Russian “стрекоза”; the character’s male references can be preserved separately where Russian syntax allows.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "said a Dragonfly, who was sitting on the top of a large brown bulrush",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "сказал Стрекозёл, сидевший на верхушке высокого бурого камыша.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "“Какой же я успех!” is an awkward calque and does not work naturally as a Russian boast. Recast it to preserve the Rocket’s self-congratulation in idiomatic Russian, for example “Какой же я успешный!”",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "What a success I am!",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Какой же я успех!",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "87b40b25b0ff2848855267c46da98157481da075d047c4cd67165a28f3414004",
         "style_guide": "eeb3e2c12f4e684bad2007ac1e9e1cb44b9fafe7f05420a254e93542b6e89589"
       }
     }
