@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "request_id": "9360745e12e34f578c71450f012fe535",
+  "book_slug": "pizza-with-pineapples-itislikethis-motorcycling-rpf",
+  "workflow_revision": "789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
+  "operation": "review-record",
+  "chapter": 9,
+  "session_id": "chatops-pizza-reviewer-20261123-12",
+  "outcome": "CORRECTIONS_REQUIRED",
+  "quality_report": {
+    "evidence_version": 2,
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "id": "style-003",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Source idiom 'they seriously make my day' is translated as the English calque «они правда делают мой день», unnatural in Russian. Render the gratitude and genuinely boosted mood naturally.",
+        "source_anchor": {
+          "quote": "they seriously make my day!",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "они правда делают мой день!",
+          "occurrence": 0
+        },
+        "resolved": false,
+        "resolves": null
+      },
+      {
+        "id": "style-063",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Russian «собрал своё тихое сожаление» is a misleading calque of 'gathered his courage, his quiet regret'; retain his courage and subdued regret in natural target syntax.",
+        "source_anchor": {
+          "quote": "Alex gathered his courage, his quiet regret.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Алекс собрался с духом, собрал своё тихое сожаление.",
+          "occurrence": 0
+        },
+        "resolved": false,
+        "resolves": null
+      },
+      {
+        "id": "style-066",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Source deliberately stumbles on 'this easy this'; Russian «эту лёгкость — вот этого» introduces accidental case mismatch. Preserve deliberate fragment/repetition without unintentional grammatical break.",
+        "source_anchor": {
+          "quote": "this easy warmth, this easy comfort, this easy this",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "это лёгкое тепло, это лёгкое утешение, эту лёгкость — вот этого",
+          "occurrence": 0
+        },
+        "resolved": false,
+        "resolves": null
+      }
+    ]
+  },
+  "source_sha256": "a5105d0347b84ad596b4f9a8e00aa71b13f802e92753f9d6464344584745b506",
+  "translation_sha256": "febb64b587997057a7a12bdb19905abd6a112b4803a907882f2900499514dacd",
+  "claim_sha256": "288b2b76a247b95bb0d1a747104777e74597d8568c875ff4be8ac39ac52fe328"
+}
