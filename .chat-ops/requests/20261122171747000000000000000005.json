@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "request_id": "20261122171747000000000000000005",
+  "book_slug": "say-it-in-your-mother-tongue",
+  "workflow_revision": "8bb30227adc4bb921429611e12a0af803c9b6487",
+  "operation": "review-record",
+  "chapter": 47,
+  "session_id": "chatgpt-20261122-sayit-ch47-reviewer",
+  "outcome": "PASS",
+  "quality_report": {
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "severity": "minor",
+        "detail": "Block 4: removed repeated reference to more notes while keeping the original inline marker and intended navigation.",
+        "resolved": true
+      },
+      {
+        "severity": "minor",
+        "detail": "Block 46: restored dialogue punctuation without changing Gabriel's reaction.",
+        "resolved": true
+      },
+      {
+        "severity": "minor",
+        "detail": "Block 52: labeled end-of-chapter notes distinctly from introductory notes.",
+        "resolved": true
+      }
+    ]
+  },
+  "source_sha256": "d4f24782cb4a00e135a1de9e403e639e749beb532e629bb1e4b4ff6af715fcc0",
+  "translation_sha256": "4776db3b9b492d0929f4a85ec4ece1d3c3e77b71494d99c2ba6adeb463a49567",
+  "claim_sha256": "86923f1af6b78f77cbd2b66af24687a899fe346fa10a43c0c8d4556c8f6dfb2f"
+}
