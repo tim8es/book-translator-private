@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "request_id": "c426ac6f27b845f69e1a7e2d3b8a4264",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "5cc1fd8d23044fa7058362c7d2ae1a30afad3adad77ceb2479020ddd76d7fa0b",
+    "record": {
+      "correction_round": 4,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "style",
+            "detail": "All narration and dialogue tags in breakfast blocks 52–71 now match the source's present tense. Past tense inside character dialogue correctly remains historical.",
+            "id": "ck6-tense-restored",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "tense-recheck-1",
+              "record_id": "528b82d43eef471fa072e4085e9ea644"
+            },
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Jason scoffs, chewing a mouthful."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Джейсон фыркает, продолжая жевать с набитым ртом."
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Replaced the unnatural «принадлежишь к семье» phrasing and misleading vigilante calque with natural Russian preserving the family's nocturnal crime-fighting and irregular schedule.",
+            "id": "ck6-family-style",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "style-calque-1",
+              "record_id": "528b82d43eef471fa072e4085e9ea644"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "when you’re a family of nocturnal vigilantes"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "когда твоя семья по ночам борется с преступностью"
+            }
+          }
+        ]
+      },
+      "record_id": "8589c85adc8b4ab7b169e4e265905707",
+      "review_commit": "4b241deb95cf6f128a4de74dedf5631e0d0ba512",
+      "review_contract_revision": "docs/TRANSLATION.md@a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "reviewed_at": "2026-11-22T15:40:06Z",
+      "reviewer_session_id": "chat-20261122-cardinal-review-06",
+      "sequence": 32,
+      "source_sha256": "c1e68c26ededb32a64501b82e30122d41b6c06ebe832dff5c13b8a67ad143d36",
+      "state_revision": "d92f34def023b392e831e1b325ad682a916b2bd7b4a59a232b5e3e373bdb4178",
+      "supersedes_record_id": "528b82d43eef471fa072e4085e9ea644",
+      "translation_sha256": "74c64ca09296b4baaecc7663a08c5deef04dd37f74c00a0e98b2c08007a5c414",
+      "unit_id": "chapter-000006",
+      "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29"
+    }
+  },
+  "error": null
+}

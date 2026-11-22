@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "cardinal-kin",
-  "next_sequence": 32,
+  "next_sequence": 33,
   "records": [
     {
       "record_id": "75dfa72e2b6148208fd5343b6e384999",
@@ -7466,6 +7466,73 @@
             "resolves": {
               "record_id": "34390640a5cd43c68fc4e99922de67d1",
               "finding_id": "bats-family-79-20261122"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "8589c85adc8b4ab7b169e4e265905707",
+      "sequence": 32,
+      "unit_id": "chapter-000006",
+      "outcome": "PASS",
+      "source_sha256": "c1e68c26ededb32a64501b82e30122d41b6c06ebe832dff5c13b8a67ad143d36",
+      "translation_sha256": "74c64ca09296b4baaecc7663a08c5deef04dd37f74c00a0e98b2c08007a5c414",
+      "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "review_contract_revision": "docs/TRANSLATION.md@a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "reviewer_session_id": "chat-20261122-cardinal-review-06",
+      "reviewed_at": "2026-11-22T15:40:06Z",
+      "state_revision": "d92f34def023b392e831e1b325ad682a916b2bd7b4a59a232b5e3e373bdb4178",
+      "review_commit": "4b241deb95cf6f128a4de74dedf5631e0d0ba512",
+      "correction_round": 4,
+      "supersedes_record_id": "528b82d43eef471fa072e4085e9ea644",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "ck6-tense-restored",
+            "category": "style",
+            "severity": "major",
+            "detail": "All narration and dialogue tags in breakfast blocks 52–71 now match the source's present tense. Past tense inside character dialogue correctly remains historical.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Jason scoffs, chewing a mouthful.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Джейсон фыркает, продолжая жевать с набитым ртом.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "528b82d43eef471fa072e4085e9ea644",
+              "finding_id": "tense-recheck-1"
+            }
+          },
+          {
+            "id": "ck6-family-style",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Replaced the unnatural «принадлежишь к семье» phrasing and misleading vigilante calque with natural Russian preserving the family's nocturnal crime-fighting and irregular schedule.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "when you’re a family of nocturnal vigilantes",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "когда твоя семья по ночам борется с преступностью",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "528b82d43eef471fa072e4085e9ea644",
+              "finding_id": "style-calque-1"
             }
           }
         ]
