@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "alligator-bites-never-heal",
-  "next_sequence": 21,
+  "next_sequence": 22,
   "records": [
     {
       "record_id": "be08d5c17b934579b154d272e933435c",
@@ -962,6 +962,49 @@
             "severity": "minor",
             "detail": "Block 000493 rechecked: fragmentary 'Совсем близко к его волосам, словно ангел над ним' preserves emotional image without declaring Shane above him; ambient quiet and details retained.",
             "resolved": true
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "d3c29b2ae02842a49beee941eba1e380",
+      "sequence": 21,
+      "unit_id": "chapter-000011",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "d3a2b49183d0c385760d0e7f24372b3c6a2b0ca00430c925b82951a2985063e5",
+      "translation_sha256": "d6676e225c24514d73f7fb7524ffa0dc2345b42fb7974c1ce4cde87be5ad6a99",
+      "workflow_revision": "76604c82cc4345699de9ae5d97bc75e2443e8cb5",
+      "review_contract_revision": "docs/TRANSLATION.md@76604c82cc4345699de9ae5d97bc75e2443e8cb5",
+      "reviewer_session_id": "chatgpt-alligator-20261122-r19",
+      "reviewed_at": "2026-11-22T21:30:06Z",
+      "state_revision": "009f9d32a49f9c4d2fca5c134b04c6840796fb21e554d3ac46bf66180a94f7e0",
+      "review_commit": "e758e36fe83a5bfc759859e434f81ef661372847",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Block 000406: source has no typographic emphasis for 'needs this'; Russian draft introduces italics around 'нужно'. Keep the narrator's force but avoid unsupported emphasis.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Block 000420: source emphasizes both 'did' and 'is' in 'Shane did ask ... and it is getting close to two'; Russian renders first italic but loses second emphatic reminder about the time. Restore both rhetorical beats.",
+            "resolved": false
+          },
+          {
+            "severity": "major",
+            "detail": "Block 000430: source 'lets himself sink a little' means Ilya voluntarily submerges slightly; 'даёт себе немного утонуть в глубину' falsely implies drowning and is unnatural. Use 'даёт себе немного погрузиться глубже' while preserving scene.",
+            "resolved": false
           }
         ]
       }
