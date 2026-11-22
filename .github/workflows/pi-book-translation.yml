@@ -61,7 +61,7 @@ jobs:
           set -euo pipefail
           mapfile -d '' requests < <(git diff --name-only -z "$BEFORE" "$AFTER" -- 'automation/pi-requests/*.json')
           for request in "${requests[@]}"; do
-            [[ "$request" =~ ^automation/pi-requests/[0-9a-f]{32}\\.json$ ]] || continue
+            [[ "$request" =~ ^automation/pi-requests/[0-9a-f]{32}\.json$ ]] || continue
             [[ -f "$request" ]] || continue
             job_id="${request##*/}"
             job_id="${job_id%.json}"
