@@ -4,7 +4,7 @@ Use this file for recurring names, places, organizations, terms, nicknames, titl
 
 | Original | Translation | Type | Notes |
 | --- | --- | --- | --- |
-| Cardinal | Кардинала | кодовое имя | В заголовке Cardinal Kin передано как «Родня Кардинала»; сохранять прописную букву и склонять по контексту. |
+| Cardinal | Кардинал | кодовое имя | В заголовке Cardinal Kin передано как «Родня Кардинала»; сохранять прописную букву и склонять по контексту. |
 | Archive of Our Own | Архиве нашего собственного | название сайта | Форма из этого фрагмента: «в Архиве нашего собственного». |
 | Red Robin | Красный Робин | linked proper name | Paired source and target EPUB name link; inflect in context. |
 | Tim Drake | Тим Дрейк | linked proper name | Paired source and target EPUB name link; inflect in context. |
