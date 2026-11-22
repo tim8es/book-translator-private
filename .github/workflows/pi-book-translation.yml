@@ -82,17 +82,9 @@ jobs:
               BLOCKED_AT="$(jq -r '.updated_at' "$status_path")"
               RESUMED_AT="$(jq -r '.updated_at' "$control")"
               export BLOCKED_AT RESUMED_AT
-              python - <<'PY'
-              import os
-              from datetime import datetime, timezone
-              def stamp(text):
-                  value = datetime.fromisoformat(text.replace("Z", "+00:00"))
-                  if value.tzinfo is None:
-                      raise ValueError("resume timestamp must be timezone-aware")
-                  return value.astimezone(timezone.utc)
-              if stamp(os.environ["RESUMED_AT"]) <= stamp(os.environ["BLOCKED_AT"]):
-                  raise SystemExit("No fresh canonical resume-auto for blocked Pi job")
-              PY
+              # One-line Python avoids shell here-document indentation inside
+              # the nested Actions YAML and requires offset-aware timestamps.
+              python -c 'import os; from datetime import datetime; a=datetime.fromisoformat(os.environ["RESUMED_AT"].replace("Z","+00:00")); b=datetime.fromisoformat(os.environ["BLOCKED_AT"].replace("Z","+00:00")); assert a.tzinfo is not None and b.tzinfo is not None and a>b, "No fresh canonical resume-auto for blocked Pi job"'
             fi
             echo "Dispatching verified Pi job $job_id with canonical automatic continuation"
             gh workflow run pi-book-translation.yml --ref main -f probe_only=false -f job_id="$job_id" -f continue_automatically=true
