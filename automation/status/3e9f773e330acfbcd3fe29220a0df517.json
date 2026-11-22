@@ -3,14 +3,14 @@
   "job_id": "3e9f773e330acfbcd3fe29220a0df517",
   "book_slug": "pizza-with-pineapples-itislikethis-motorcycling-rpf",
   "state": "running",
-  "phase": "structural-segments-staged",
+  "phase": "translator-completed",
   "failures": 0,
   "correction_rounds": {
     "chapter-000001": 1
   },
   "workflow_revision": "789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
   "source_sha256": "b806092139439a8a9d5c9297bdc1338fa9e4798cfa81353f9396f66747aa6e96",
-  "updated_at": "2026-11-22T17:00:29.163031+00:00",
+  "updated_at": "2026-11-22T17:00:30.872906+00:00",
   "queue_snapshot": {
     "extracted": 16,
     "reviewed": 1,
@@ -18,12 +18,7 @@
     "correction_candidates": 1,
     "awaiting_promotion": 0
   },
-  "active": {
-    "role": "translator",
-    "chapter": 3,
-    "session_id": "auto-3e9f773e330a-translator-963f653c",
-    "unit_id": "chapter-000003"
-  },
+  "active": null,
   "structural_helper_revision": "4c584fe5534871cd05aa851d9b7bdbfa696d0edd",
   "model_calls_started": 15,
   "prompt_context": {
@@ -242,14 +237,14 @@
       }
     },
     "accepted_operations": {
-      "translated": 2,
+      "translated": 3,
       "review_rejected": 2,
       "corrected": 1,
       "review_pass": 1,
       "reviewed": 1
     }
   },
-  "memory_glossary_saved": 5,
+  "memory_glossary_saved": 10,
   "pending_style": [],
   "role_protocol_failures": {
     "chapter-000001:corrector": 3
@@ -305,13 +300,6 @@
   "glossary_conflicts_rejected": 0,
   "glossary_proposals_deferred": 0,
   "memory_style_saved": 0,
-  "provider_model_route": "primary",
-  "structural_segment_progress": {
-    "unit_id": "chapter-000003",
-    "source_sha256": "6cd0ff696ffbec2ac9b9dcf7f998aaf9aed5f944e226c6df5b8f81001ed54144",
-    "completed": 113,
-    "total": 113
-  },
   "model_response_diagnostics": {
     "finish_reason": "stop",
     "response_format": "json_object",

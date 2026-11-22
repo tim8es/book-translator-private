@@ -11,3 +11,8 @@ Use dictionary forms; classify terms semantically. Type and optional notes use t
 | Marc Márquez | Марк Маркес | персонаж |  |
 | Luca Marini | Лука Марини | персонаж |  |
 | Francesco Bagnaia | Франческо Баньяя | персонаж |  |
+| Misano | Мизано | место | Гоночный автодром. |
+| Argentina | Аргентина | место | Упоминается в контексте гонок. |
+| COTA | COTA | гоночная трасса |  |
+| Yamaha | Yamaha | производитель мотоциклов |  |
+| Quartararo | Куартараро | персонаж |  |
