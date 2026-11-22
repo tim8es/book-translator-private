@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "request_id": "534aab5b35df4e1f96d0ec6c3eed9331",
+  "book_slug": "cardinal-kin",
+  "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
+  "operation": "review-record",
+  "chapter": 16,
+  "session_id": "chat-20261122-cardinal-review16-b",
+  "outcome": "PASS",
+  "quality_report": {
+    "evidence_version": 2,
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "id": "resolved-01",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Сохранено ощущение слегка изменившейся повседневной реальности без буквального «сдвинутого дня».",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "*Duke’s dreams feel like just another day—only… shifted.*",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "*Сны Дюка похожи на ещё один обычный день — только… чуть-чуть иной.*",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "8de6cc6f1bcf4b7da9deeba6e60eb2c4",
+          "finding_id": "ch16-dream-shift"
+        }
+      },
+      {
+        "id": "resolved-02",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Восстановлена естественная русская фраза о причине слёз, а «пылче» сохраняет сравнение эмоциональности Дэмиана.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "which part of this whole disaster he’s crying about",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "не может понять, что именно во всей этой катастрофе заставило его расплакаться",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "8de6cc6f1bcf4b7da9deeba6e60eb2c4",
+          "finding_id": "ch16-crying"
+        }
+      },
+      {
+        "id": "resolved-03",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Ласковое Little Wing передано идиоматичным прозвищем с тем же образом крыла.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "“Little Wing?” Dick murmurs.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "«Крылышко?» — негромко зовёт Дик.",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "8de6cc6f1bcf4b7da9deeba6e60eb2c4",
+          "finding_id": "ch16-little-wing"
+        }
+      },
+      {
+        "id": "resolved-04",
+        "category": "structure",
+        "severity": "minor",
+        "detail": "Слово «идиот» снова единственная интонационно выделенная часть реплики.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "self-sacrificing  *idiot,”*",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "самоотверженный *идиот*",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "8de6cc6f1bcf4b7da9deeba6e60eb2c4",
+          "finding_id": "ch16-idiot-emphasis"
+        }
+      },
+      {
+        "id": "resolved-05",
+        "category": "referent",
+        "severity": "major",
+        "detail": "Субъекты осознания и переживания разведены: Брюс осознаёт забытого ребёнка, Дэмиан наблюдает, как груз осознания давит на Брюса.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "Damian can practically feel the weight of that starting to crush him",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Дэмиан почти физически чувствует, как тяжесть этого открытия начинает давить на отца",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "8de6cc6f1bcf4b7da9deeba6e60eb2c4",
+          "finding_id": "ch16-reference-314"
+        }
+      },
+      {
+        "id": "resolved-06",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Общее утверждение о возможности сохранено без добавления конкретного способа восстановления.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "“It must be possible.”",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "«Это должно быть возможно».",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "8de6cc6f1bcf4b7da9deeba6e60eb2c4",
+          "finding_id": "ch16-possibility-328"
+        }
+      }
+    ]
+  },
+  "source_sha256": "2a2b47744574379b1ff9b044e7353790356af191da594cff4bbd7df56ff419d8",
+  "translation_sha256": "c8d35cad175246ef2a961c5d1de85233c8f05312380003e2d68c165416ae3311",
+  "claim_sha256": "05b14f846ba19cf0c25fb29a51b5c66e5bb8cb9d8bf8659672be175ff4c1d406"
+}
