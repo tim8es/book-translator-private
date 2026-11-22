@@ -6,3 +6,8 @@ Use dictionary forms; classify terms semantically. Type and optional notes use t
 
 | Original | Translation | Type | Notes |
 | --- | --- | --- | --- |
+| Alligator Bites Never Heal | Укусы аллигатора никогда не заживают | Название произведения | |
+| Ilya Rozanov | Илья Розанов | Персонаж | |
+| Shane Hollander | Шейн Холландер | Персонаж | |
+| Marlow | Марлоу | Персонаж | |
+| Sidney Crosby | Сидни Кросби | Реальный человек | |
