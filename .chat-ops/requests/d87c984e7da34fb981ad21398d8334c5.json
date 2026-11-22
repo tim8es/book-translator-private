@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "request_id": "d87c984e7da34fb981ad21398d8334c5",
+  "book_slug": "alligator-bites-never-heal",
+  "workflow_revision": "76604c82cc4345699de9ae5d97bc75e2443e8cb5",
+  "operation": "review-record",
+  "chapter": 6,
+  "session_id": "chatgpt-alligator-20261122-r10",
+  "outcome": "PASS",
+  "quality_report": {
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "severity": "major",
+        "detail": "Block 000205: 'broken foot' is now exactly rendered as a broken foot ('сломанная стопа'), not an unspecified broken leg.",
+        "resolved": true
+      },
+      {
+        "severity": "minor",
+        "detail": "Block 000024: Ilya explicitly asks Shane to kiss him ('Поцелуй меня'), preserving the speaker's initiative from 'Gimme kiss'.",
+        "resolved": true
+      },
+      {
+        "severity": "minor",
+        "detail": "Block 000159: 'afterglow' now conveys relaxed post-sexual bliss in natural Russian, with the tease about Shane's inability to savor it.",
+        "resolved": true
+      }
+    ]
+  },
+  "source_sha256": "31df68a50336f00e220184e956013ae4542ca26cb54f4fe631681b411d012693",
+  "translation_sha256": "07c3355ee528bd684e9633b2c2c7fb978ce1b51e6c7ed9fbc1ebc52cd4c96623",
+  "claim_sha256": "b5c1da1ea0534911bb59c35489d69fcadc0ee357fa18d7c99fcac509af7fee93"
+}
