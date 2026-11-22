@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "request_id": "20261122171752000000000000000005",
+  "book_slug": "say-it-in-your-mother-tongue",
+  "workflow_revision": "8bb30227adc4bb921429611e12a0af803c9b6487",
+  "operation": "review-record",
+  "chapter": 52,
+  "session_id": "chatgpt-20261122-sayit-ch52-reviewer",
+  "outcome": "PASS",
+  "quality_report": {
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "severity": "minor",
+        "detail": "Block 4: restored note link text and punctuation to match the source's end-of-chapter reference.",
+        "resolved": true
+      },
+      {
+        "severity": "minor",
+        "detail": "Block 48: corrected 'Packing' to explicitly refer to packing clothes before departure.",
+        "resolved": true
+      },
+      {
+        "severity": "minor",
+        "detail": "Block 55: removed bold formatting erroneously added to LN's sender name inside the inline marker.",
+        "resolved": true
+      }
+    ]
+  },
+  "source_sha256": "a12c6f2e5c156de816bdc7cb1a790dc3e3d0c63048959e2a82521f05c23ec05a",
+  "translation_sha256": "5cdc163799a0b4728e23c0370ab1effbd4ccaaf3b17b2e3aa3c2e911245a6aa0",
+  "claim_sha256": "3e9c3044c506b2d06fe4ff34f49028716ba42d63f8323a435bd47eaa0de28eaa"
+}
