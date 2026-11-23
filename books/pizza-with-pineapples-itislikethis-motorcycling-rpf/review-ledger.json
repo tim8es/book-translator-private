@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "pizza-with-pineapples-itislikethis-motorcycling-rpf",
-  "next_sequence": 27,
+  "next_sequence": 28,
   "records": [
     {
       "record_id": "e8060d96338440d8a139c674168abf15",
@@ -2547,6 +2547,99 @@
               "record_id": "1cc9b36f19baf3cb17c7771b5d41056d",
               "finding_id": "style-145"
             }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "96331438976ff9dccd47dc365cc8888e",
+      "sequence": 27,
+      "unit_id": "chapter-000014",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "6e78814ebcc710a025f1826847ed5e003923a4725ebd73193d59f339a3f9e354",
+      "translation_sha256": "244370a4deb7f6e795f6d885b07d8044d7973ed4d017295543ec7133e00dccf6",
+      "workflow_revision": "789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
+      "review_contract_revision": "docs/TRANSLATION.md@789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
+      "reviewer_session_id": "chatops-pizza-reviewer-20261123-14-6bea4019",
+      "reviewed_at": "2026-11-23T19:23:28Z",
+      "state_revision": "1feb113b314e9b98a259d6a052d0c84f78633424a0d03fa083829b7510218dd7",
+      "review_commit": "2d3eb98e45a44c71877ae5ccc8b9ffc013ebdafb",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "modality-097",
+            "category": "modality",
+            "severity": "minor",
+            "detail": "The characters know exactly who is knocking; Russian 'может быть' weakens their certainty.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "both knowing exactly who it must be.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "оба прекрасно понимая, кто это может быть.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-127",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "English hurt covers physical and emotional pain; Russian wrongly restricts it to bodily injury.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "A bit like he looked whenever Alex got hurt, really hurt, the kind of hurt Marc couldn’t easily fix with an apology or a bandaid.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Примерно таким Марк выглядел, когда Алекс получал травму, серьёзную травму, такую, которую Марк не мог легко исправить извинением или пластырем.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "negation-128",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "The English negated qualifying fragment is transformed into an affirmative statement.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Not really. Not like this.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "По-настоящему. Не такой.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-139",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Literal calque for Valentino being a major but not exclusive cause is clumsy Russian.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Valentino was a big part of it, but not all.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "тот занимал важную часть ситуации, но не всю.",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       }
