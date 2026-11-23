@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "cardinal-kin",
-  "next_sequence": 55,
+  "next_sequence": 56,
   "records": [
     {
       "record_id": "75dfa72e2b6148208fd5343b6e384999",
@@ -10487,6 +10487,64 @@
               "record_id": "3a3e8640916541c6b9c7ea70a6083c0a",
               "finding_id": "ch18-when"
             }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "a64a2f51a14d4bf3a46d960a6a59c7e8",
+      "sequence": 55,
+      "unit_id": "chapter-000019",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "b1753ce49943c6221284d6dba9782d22c25983bf2ff4484bf1e8a01c3f9a30d5",
+      "translation_sha256": "598b047b417d944f0a7eeb36f31e026833956cfd9c85582c017d83831bfa7a9a",
+      "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "review_contract_revision": "docs/TRANSLATION.md@a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "reviewer_session_id": "chat-20261123-cardinal-review19-first",
+      "reviewed_at": "2026-11-23T19:09:27Z",
+      "state_revision": "5c94859a636780f59d7df2242d4c318644d8b42c",
+      "review_commit": "d41730f6aa12f4eaee64ea745c1f6f19a7dd9091",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "major",
+            "resolved": false,
+            "detail": "Block 12: 'a pain of his own making' denotes suffering from one's own choices, while 'боль, причинённая самому себе' risks implying direct self-injury. Replace with 'Брат, которому причиняют боль собственные поступки.'"
+          },
+          {
+            "severity": "minor",
+            "resolved": false,
+            "detail": "Block 7: 'Гораздо более разные' is an unnatural literal calque; recast the contrast between believing and witnessing."
+          },
+          {
+            "severity": "minor",
+            "resolved": false,
+            "detail": "Blocks 103–104: 'And always will' continues the friendship's caring; 'И останется всегда' no longer expresses that ongoing care clearly."
+          },
+          {
+            "severity": "minor",
+            "resolved": false,
+            "detail": "Block 143: 'хватит смирения' sounds like a false-friend/awkward literal rendering of joking 'enough humility'; express a humbling sparring session naturally."
+          },
+          {
+            "severity": "minor",
+            "resolved": false,
+            "detail": "Block 161: 'как он знает, что возможно' is syntactically broken; retain the conviction that a better state is achievable."
+          },
+          {
+            "severity": "major",
+            "resolved": false,
+            "detail": "Block 308: 'а попытки уклониться от ответа — словно кислотой обжигающими горло' is grammatically invalid and obscures the serum causing evasions to sting the throat like acid."
           }
         ]
       }
