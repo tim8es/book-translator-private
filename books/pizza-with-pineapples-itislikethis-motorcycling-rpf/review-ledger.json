@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "pizza-with-pineapples-itislikethis-motorcycling-rpf",
-  "next_sequence": 23,
+  "next_sequence": 24,
   "records": [
     {
       "record_id": "e8060d96338440d8a139c674168abf15",
@@ -2081,6 +2081,115 @@
               "record_id": "858c6e198a9d9df37fd57f3aeb5e6d08",
               "finding_id": "meaning-197"
             }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "86ac2f63aa2b5341b6e9eee038b02970",
+      "sequence": 23,
+      "unit_id": "chapter-000012",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "e397eda0bb4cb9e421ee6683cbb1cf9a42c6004114a2441353629fc8d43a07d7",
+      "translation_sha256": "b68c0ae5078aee8336ed603ac2bd2a31ed497d1a39708a387ff676281e6274a0",
+      "workflow_revision": "789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
+      "review_contract_revision": "docs/TRANSLATION.md@789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
+      "reviewer_session_id": "chatops-pizza-reviewer-20261123-12-4e86c8d9",
+      "reviewed_at": "2026-11-23T19:10:44Z",
+      "state_revision": "3c65166407347ab2eae85db27afbb9953333f3c81ab0d194f81a29f1076c021f",
+      "review_commit": "565f844a64e98f701a3a8aa98114ed167b94e23c",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "style-021",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Clumsy Russian calque 'tired his head' loses the natural mental-exhaustion wording.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "It had been mentally exhausting",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Это страшно утомило его голову",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "negation-033",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "The Russian 'could not be nobodies to one another' reverses the original claim that they cannot publicly have any meaningful relationship.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "they could never be anything to each other, not even for an instant.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "они не могли быть друг другу никем, даже на мгновение.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "meaning-050",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Original is to get over existing feelings for Valentino; 'stop falling in love' changes this to preventing new infatuation.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Get over Valentino.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Перестанет влюбляться в Валентино.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-102",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Unnatural adjectival infinitive 'учить было раздражающе' obscures Valentino's teasing condition.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "If you were annoying to teach, I would not.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Если бы учить тебя было раздражающе, я бы не стал.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-131",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Literal 'some part of him would want to move' creates an awkward subject in Russian.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "no matter how much part of Alex might want to move closer.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "как бы сильно ни хотелось какой-то его части придвинуться.",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       }
