@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "request_id": "4680f656461d3f31060e1b4e7eb91339",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "2577afe18545eaab0cad4f8510664123c7d06b976914873e33c186b8418391fa",
+    "record": {
+      "correction_round": 1,
+      "outcome": "CORRECTIONS_REQUIRED",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "style",
+            "detail": "Курсивное выделение nice отсутствует в русском переводе.",
+            "id": "style-117",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "but it certainly isn’t *nice*"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "но приятной её точно не назовёшь"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "В русском тексте добавлен курсив, отсутствующий в оригинале.",
+            "id": "style-184",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "they have no idea who he is…not really."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Не *по-настоящему*."
+            }
+          },
+          {
+            "category": "style",
+            "detail": "В русском тексте добавлено выделение «Я», которого нет в оригинале.",
+            "id": "style-254",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "But that doesn’t change the fact that we want you here… I want you here."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Но это не меняет того, что мы хотим видеть тебя здесь… *Я* хочу, чтобы ты был здесь."
+            }
+          },
+          {
+            "category": "style",
+            "detail": "В русском тексте добавлен курсив всего выражения, отсутствующий в оригинале.",
+            "id": "style-364",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Love is a double-edged sword, he recalls telling Damian..."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "*Любовь — обоюдоострый меч*, вспоминает он собственные слова, сказанные Дэмиану…"
+            }
+          }
+        ]
+      },
+      "record_id": "df66e95e2c064f2abd11d3e4279fcad9",
+      "review_commit": "7ad982f3920e83dddc3a148e8c74bcbac6f01b07",
+      "review_contract_revision": "docs/TRANSLATION.md@a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "reviewed_at": "2026-11-23T21:27:32Z",
+      "reviewer_session_id": "chat-20261124-cardinal-ch024-review-bounded",
+      "sequence": 65,
+      "source_sha256": "1c988555d25104d38307c7ef17f875783b6f3b4d4e3e4a917bd52aed2ad45419",
+      "state_revision": "4ce6697c1abfc8202d92ffb850fde7e629ecc1189431f8e17995d1585807de42",
+      "supersedes_record_id": null,
+      "translation_sha256": "c81b9756eff605d428c39bc13006855b7403797aaa688c4c9c00d2ec6d4802df",
+      "unit_id": "chapter-000024",
+      "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29"
+    }
+  },
+  "error": null
+}
