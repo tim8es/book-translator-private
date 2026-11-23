@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "request_id": "7fad8c0e5c757c67db6bf3ade47a62f3",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "3c6adf375ba074087f37791b4ca0be7917b5d75d16ce0706452b94a74ac4984e",
+    "record": {
+      "correction_round": 1,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "style",
+            "detail": "Курсив акцентного слова nice восстановлен в переводе.",
+            "id": "verified-style-117",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "style-117",
+              "record_id": "df66e95e2c064f2abd11d3e4279fcad9"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "but it certainly isn’t *nice*"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "но *приятной* её точно не назовёшь"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Убрано добавленное переводом выделение, сохраняется авторская пауза.",
+            "id": "verified-style-184",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "style-184",
+              "record_id": "df66e95e2c064f2abd11d3e4279fcad9"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "they have no idea who he is…not really."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Не по-настоящему."
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Убрано не предусмотренное оригиналом выделение местоимения Я.",
+            "id": "verified-style-254",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "style-254",
+              "record_id": "df66e95e2c064f2abd11d3e4279fcad9"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "But that doesn’t change the fact that we want you here… I want you here."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Но это не меняет того, что мы хотим видеть тебя здесь… Я хочу, чтобы ты был здесь."
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Убрано выделение фразы, отсутствующее в оригинале.",
+            "id": "verified-style-364",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "style-364",
+              "record_id": "df66e95e2c064f2abd11d3e4279fcad9"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Love is a double-edged sword, he recalls telling Damian..."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Любовь — обоюдоострый меч, вспоминает он собственные слова, сказанные Дэмиану…"
+            }
+          }
+        ]
+      },
+      "record_id": "aaee16378edb40439828db58b99f12d5",
+      "review_commit": "ce3367218ce0dd797917edeb85daa980346b0e9a",
+      "review_contract_revision": "docs/TRANSLATION.md@a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "reviewed_at": "2026-11-23T21:31:39Z",
+      "reviewer_session_id": "chat-20261124-cardinal-ch024-review-fixed",
+      "sequence": 67,
+      "source_sha256": "1c988555d25104d38307c7ef17f875783b6f3b4d4e3e4a917bd52aed2ad45419",
+      "state_revision": "f1e50d29e6866abcba4b35374a8a1c7e46ee2e136f1d4379f4405bcf38d2b4af",
+      "supersedes_record_id": "df66e95e2c064f2abd11d3e4279fcad9",
+      "translation_sha256": "482823cccf46342007c0f6fd0f1d6adf44e769ff54e2997e0f20c409b7aa8f43",
+      "unit_id": "chapter-000024",
+      "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29"
+    }
+  },
+  "error": null
+}

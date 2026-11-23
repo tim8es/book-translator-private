@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "cardinal-kin",
-  "next_sequence": 67,
+  "next_sequence": 68,
   "records": [
     {
       "record_id": "75dfa72e2b6148208fd5343b6e384999",
@@ -11269,6 +11269,111 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "aaee16378edb40439828db58b99f12d5",
+      "sequence": 67,
+      "unit_id": "chapter-000024",
+      "outcome": "PASS",
+      "source_sha256": "1c988555d25104d38307c7ef17f875783b6f3b4d4e3e4a917bd52aed2ad45419",
+      "translation_sha256": "482823cccf46342007c0f6fd0f1d6adf44e769ff54e2997e0f20c409b7aa8f43",
+      "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "review_contract_revision": "docs/TRANSLATION.md@a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "reviewer_session_id": "chat-20261124-cardinal-ch024-review-fixed",
+      "reviewed_at": "2026-11-23T21:31:39Z",
+      "state_revision": "f1e50d29e6866abcba4b35374a8a1c7e46ee2e136f1d4379f4405bcf38d2b4af",
+      "review_commit": "ce3367218ce0dd797917edeb85daa980346b0e9a",
+      "correction_round": 1,
+      "supersedes_record_id": "df66e95e2c064f2abd11d3e4279fcad9",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "verified-style-117",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Курсив акцентного слова nice восстановлен в переводе.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "but it certainly isn’t *nice*",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "но *приятной* её точно не назовёшь",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "df66e95e2c064f2abd11d3e4279fcad9",
+              "finding_id": "style-117"
+            }
+          },
+          {
+            "id": "verified-style-184",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Убрано добавленное переводом выделение, сохраняется авторская пауза.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "they have no idea who he is…not really.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Не по-настоящему.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "df66e95e2c064f2abd11d3e4279fcad9",
+              "finding_id": "style-184"
+            }
+          },
+          {
+            "id": "verified-style-254",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Убрано не предусмотренное оригиналом выделение местоимения Я.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "But that doesn’t change the fact that we want you here… I want you here.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Но это не меняет того, что мы хотим видеть тебя здесь… Я хочу, чтобы ты был здесь.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "df66e95e2c064f2abd11d3e4279fcad9",
+              "finding_id": "style-254"
+            }
+          },
+          {
+            "id": "verified-style-364",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Убрано выделение фразы, отсутствующее в оригинале.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Love is a double-edged sword, he recalls telling Damian...",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Любовь — обоюдоострый меч, вспоминает он собственные слова, сказанные Дэмиану…",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "df66e95e2c064f2abd11d3e4279fcad9",
+              "finding_id": "style-364"
+            }
           }
         ]
       }
