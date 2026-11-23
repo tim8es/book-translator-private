@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "cardinal-kin",
-  "next_sequence": 58,
+  "next_sequence": 59,
   "records": [
     {
       "record_id": "75dfa72e2b6148208fd5343b6e384999",
@@ -10637,6 +10637,54 @@
           "structure": true
         },
         "findings": []
+      }
+    },
+    {
+      "record_id": "7bd38c8c58c745738c8fd11a6e29f5e1",
+      "sequence": 58,
+      "unit_id": "chapter-000021",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "0c7852c59587accff2615078df04f9625d90027cff8732ce57e87509f5808261",
+      "translation_sha256": "c3b98ba424c16d1552401ea8a0ebc8171360baff8977f4b91ff24a78443a8287",
+      "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "review_contract_revision": "docs/TRANSLATION.md@a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "reviewer_session_id": "chat-20261123-cardinal-ch021-review1",
+      "reviewed_at": "2026-11-23T20:19:37Z",
+      "state_revision": "913b744c1ba3cee1e475a319a464caf6e172a8fa",
+      "review_commit": "306add8d6747ab4320fe8be550e755ac179410f6",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "major",
+            "detail": "Block 104: English 'has to fend for himself' describes managing/coping without help, but Russian 'обязан защищать себя сам' narrows it to self-defense. Use 'вынужден справляться со всем в одиночку' or equivalent.",
+            "resolved": false
+          },
+          {
+            "severity": "major",
+            "detail": "Block 230: 'So much for staying off Ra’s radar' means the attempt to avoid Ra's attention has failed; 'Вот и получилось остаться незамеченным' can assert success. Preserve the bitter failure/irony explicitly.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Block 153: 'не кто иная, как сама Талия' is grammatically ungainly; use 'не кто иной, как Талия аль Гул' or simple 'сама Талия аль Гул'.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Block 271: 'Why give your life for a stranger?' uses singular and Tim's individual sacrifice, but 'ради чужих людей' shifts to plural. Keep singular 'ради чужого человека'.",
+            "resolved": false
+          }
+        ]
       }
     }
   ]
