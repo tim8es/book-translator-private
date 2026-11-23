@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "request_id": "e6090f7982844fe5dd1d7afea02bf9f6",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "9b130426d61ed8ef1e76e524a679874cc6be0cdd610b3094557e095d00651dfd",
+    "record": {
+      "correction_round": 1,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "style",
+            "detail": "Курсив восстановлен без смыслового изменения.",
+            "id": "verified-style-63",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "style-63",
+              "record_id": "98a4cc24025e419692c08118b8ce80a7"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "They don’t know anything *about* the situation, not really."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Они ведь почти ничего *о ней* не знают."
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Лишний курсив удалён, высказывание сохранено.",
+            "id": "verified-style-91",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "style-91",
+              "record_id": "98a4cc24025e419692c08118b8ce80a7"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "“But it did happen,” Damian insists, his voice breaking slightly."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "— Но это было, — настаивает Дэмиан; голос его слегка надламывается."
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Акцент на be восстановлен, смысл сохранён.",
+            "id": "verified-style-210",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "style-210",
+              "record_id": "98a4cc24025e419692c08118b8ce80a7"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "There couldn't exactly *be* tension when Talia was so MIA."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Да и как вообще могло *быть* напряжение, если Талия постоянно пропадала неизвестно где."
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Убрано не предусмотренное оригиналом усиление оценки.",
+            "id": "verified-tone-174",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "tone-174",
+              "record_id": "98a4cc24025e419692c08118b8ce80a7"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "“She is *evil.”*"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "— Она *злая*."
+            }
+          }
+        ]
+      },
+      "record_id": "1a50083f172e43eba1db7341cb3739eb",
+      "review_commit": "f7d03d0a12b97ada21ca687fa27c56eb698f096e",
+      "review_contract_revision": "docs/TRANSLATION.md@a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "reviewed_at": "2026-11-23T21:20:41Z",
+      "reviewer_session_id": "chat-20261124-cardinal-ch025-review-corrections",
+      "sequence": 64,
+      "source_sha256": "8ef1289a3b25b63d2d46b23ce7c21f9274ef966fef67fe5c601911a94d0c8fc6",
+      "state_revision": "e3348b11185c80742c0cb0edbb089f7a5c81916c64732fc5c8b51351c118aea3",
+      "supersedes_record_id": "98a4cc24025e419692c08118b8ce80a7",
+      "translation_sha256": "71d92f252c3c00487e1853fc64db8dc0fe74b632db0d7f8250b751747a8d495f",
+      "unit_id": "chapter-000025",
+      "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29"
+    }
+  },
+  "error": null
+}

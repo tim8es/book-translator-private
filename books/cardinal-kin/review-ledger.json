@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "cardinal-kin",
-  "next_sequence": 64,
+  "next_sequence": 65,
   "records": [
     {
       "record_id": "75dfa72e2b6148208fd5343b6e384999",
@@ -10978,6 +10978,111 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "1a50083f172e43eba1db7341cb3739eb",
+      "sequence": 64,
+      "unit_id": "chapter-000025",
+      "outcome": "PASS",
+      "source_sha256": "8ef1289a3b25b63d2d46b23ce7c21f9274ef966fef67fe5c601911a94d0c8fc6",
+      "translation_sha256": "71d92f252c3c00487e1853fc64db8dc0fe74b632db0d7f8250b751747a8d495f",
+      "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "review_contract_revision": "docs/TRANSLATION.md@a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "reviewer_session_id": "chat-20261124-cardinal-ch025-review-corrections",
+      "reviewed_at": "2026-11-23T21:20:41Z",
+      "state_revision": "e3348b11185c80742c0cb0edbb089f7a5c81916c64732fc5c8b51351c118aea3",
+      "review_commit": "f7d03d0a12b97ada21ca687fa27c56eb698f096e",
+      "correction_round": 1,
+      "supersedes_record_id": "98a4cc24025e419692c08118b8ce80a7",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "verified-style-63",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Курсив восстановлен без смыслового изменения.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "They don’t know anything *about* the situation, not really.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Они ведь почти ничего *о ней* не знают.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "98a4cc24025e419692c08118b8ce80a7",
+              "finding_id": "style-63"
+            }
+          },
+          {
+            "id": "verified-style-91",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Лишний курсив удалён, высказывание сохранено.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "“But it did happen,” Damian insists, his voice breaking slightly.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "— Но это было, — настаивает Дэмиан; голос его слегка надламывается.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "98a4cc24025e419692c08118b8ce80a7",
+              "finding_id": "style-91"
+            }
+          },
+          {
+            "id": "verified-style-210",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Акцент на be восстановлен, смысл сохранён.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "There couldn't exactly *be* tension when Talia was so MIA.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Да и как вообще могло *быть* напряжение, если Талия постоянно пропадала неизвестно где.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "98a4cc24025e419692c08118b8ce80a7",
+              "finding_id": "style-210"
+            }
+          },
+          {
+            "id": "verified-tone-174",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Убрано не предусмотренное оригиналом усиление оценки.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "“She is *evil.”*",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "— Она *злая*.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "98a4cc24025e419692c08118b8ce80a7",
+              "finding_id": "tone-174"
+            }
           }
         ]
       }
