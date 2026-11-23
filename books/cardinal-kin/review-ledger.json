@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "cardinal-kin",
-  "next_sequence": 56,
+  "next_sequence": 57,
   "records": [
     {
       "record_id": "75dfa72e2b6148208fd5343b6e384999",
@@ -10545,6 +10545,69 @@
             "severity": "major",
             "resolved": false,
             "detail": "Block 308: 'а попытки уклониться от ответа — словно кислотой обжигающими горло' is grammatically invalid and obscures the serum causing evasions to sting the throat like acid."
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "f74901ad092343e9af4c37b262497888",
+      "sequence": 56,
+      "unit_id": "chapter-000019",
+      "outcome": "PASS",
+      "source_sha256": "b1753ce49943c6221284d6dba9782d22c25983bf2ff4484bf1e8a01c3f9a30d5",
+      "translation_sha256": "151b6a86a9698402985bb40c824b92996c00a31d4954fd3ceb1884a210d66517",
+      "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "review_contract_revision": "docs/TRANSLATION.md@a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "reviewer_session_id": "chat-20261123-cardinal-review19-followup",
+      "reviewed_at": "2026-11-23T19:13:22Z",
+      "state_revision": "a955ad72a233f681254bfbd69d823cbff100e1ec",
+      "review_commit": "dbc1a088be54a42706fa3559a7eaf394eb75f559",
+      "correction_round": 1,
+      "supersedes_record_id": "a64a2f51a14d4bf3a46d960a6a59c7e8",
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "major",
+            "detail": "Block 12: self-created suffering restored without implying intentional direct self-harm; independently rechecked against source.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Block 7: unnatural calque replaced while preserving belief-versus-witness distinction.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Blocks 103-104: lasting nature of caring friendship restored; source comparison checked.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Block 143: joking reference to a humbling sparring session naturally rendered.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Block 161: syntactic calque fixed without changing conviction or determination.",
+            "resolved": true
+          },
+          {
+            "severity": "major",
+            "detail": "Block 308: serum's effect on evasion and throat burning restored with correct Russian syntax.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Block 5: surrounding text smoothed; protected inline link label and marker remained unchanged.",
+            "resolved": true
           }
         ]
       }
