@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "pizza-with-pineapples-itislikethis-motorcycling-rpf",
-  "next_sequence": 32,
+  "next_sequence": 33,
   "records": [
     {
       "record_id": "e8060d96338440d8a139c674168abf15",
@@ -3071,6 +3071,111 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "bf18786933da6ad71bb5f6ece9e761d4",
+      "sequence": 32,
+      "unit_id": "chapter-000016",
+      "outcome": "PASS",
+      "source_sha256": "f910c7c5485e69059075e8584d835835fd1f2b92086805f1283c250989a4a52e",
+      "translation_sha256": "83d80f173bb6246b12c0eaf788415f21ba4b1eb3f5865060c4d0c3f3086db9af",
+      "workflow_revision": "789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
+      "review_contract_revision": "docs/TRANSLATION.md@789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
+      "reviewer_session_id": "chatops-pizza-rereview-20261123-16-341e0788",
+      "reviewed_at": "2026-11-23T20:09:05Z",
+      "state_revision": "4659f764b431feaa63ed7e6a5fbcbbe816543cc9aabab7dcf46754580d7be3f0",
+      "review_commit": "a51f44e0cd615a8b0bdc33e22367e806188f0773",
+      "correction_round": 1,
+      "supersedes_record_id": "222dec99b082e0822d6507c0b9b4c70b",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "meaning-089-resolved",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Replaced hypothetical harm with actual continued emotional hurt.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "and so he still hurt you.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "и потому он продолжал причинять тебе боль.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "222dec99b082e0822d6507c0b9b4c70b",
+              "finding_id": "meaning-089"
+            }
+          },
+          {
+            "id": "meaning-098-resolved",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Explicitly preserves negative assessment of Valentino's emotional vulnerability.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "No. I’m sure it’s not.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Нет. Уверен, для тебя в этом мало приятного.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "222dec99b082e0822d6507c0b9b4c70b",
+              "finding_id": "meaning-098"
+            }
+          },
+          {
+            "id": "meaning-106-resolved",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Correctly conveys unpleasant reconciliation instead of boring reconciliation.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "This will not be fun.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Ничего приятного в этом не будет.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "222dec99b082e0822d6507c0b9b4c70b",
+              "finding_id": "meaning-106"
+            }
+          },
+          {
+            "id": "referent-114-resolved",
+            "category": "referent",
+            "severity": "major",
+            "detail": "Clarified that Marc, not Alex, matched Valentino's nine titles.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "As a prize for equalling my nine championships.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "В награду Марку за то, что он сравнялся со мной по числу чемпионских титулов.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "222dec99b082e0822d6507c0b9b4c70b",
+              "finding_id": "referent-114"
+            }
           }
         ]
       }
