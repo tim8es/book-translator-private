@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "pizza-with-pineapples-itislikethis-motorcycling-rpf",
-  "next_sequence": 29,
+  "next_sequence": 30,
   "records": [
     {
       "record_id": "e8060d96338440d8a139c674168abf15",
@@ -2745,6 +2745,115 @@
               "record_id": "96331438976ff9dccd47dc365cc8888e",
               "finding_id": "style-139"
             }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "e5655ad3ec01ec1edbe65710f0b37a0e",
+      "sequence": 29,
+      "unit_id": "chapter-000015",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "2e7db4fe324777b282fd1179b4f355b93c9a8372ddd5e80e9e72a4bbf9cf0268",
+      "translation_sha256": "4734ba62b35bbf7b44e732dd6f7cd5acfc4d4e6cb0adc5b6335bc6ccb447fc8f",
+      "workflow_revision": "789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
+      "review_contract_revision": "docs/TRANSLATION.md@789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
+      "reviewer_session_id": "chatops-pizza-reviewer-20261123-15-e421f517",
+      "reviewed_at": "2026-11-23T19:30:22Z",
+      "state_revision": "edd8a3d99c95d9cdaed011112970df3952a30af0666cd89739a0670d41567357",
+      "review_commit": "033d7fb7951d6b4b712493908300c6477613c36f",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "style-007",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Russian temporal phrase lacks a grammatical subject; the period after the race arrived too soon.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "After the race also came far too soon.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "После гонки тоже наступило слишком быстро.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-046",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Unnatural Russian grammar 'то, что я доверяю тебе' weakens the emphatic trust statement.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "because this is something *I* am trusting you with.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "потому что это то, что *я* доверяю тебе.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-075",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Russian has a broken case construction listing reasons Marc can oppose.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Their difficulties, their past, their families, their situations",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Их трудностей, прошлого, семей, обстоятельств",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "modality-089",
+            "category": "modality",
+            "severity": "minor",
+            "detail": "Original says Valentino presently does not want this, not that he will not in the future.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "He doesn’t.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Он не захочет.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "referent-101",
+            "category": "referent",
+            "severity": "minor",
+            "detail": "English first-person author note does not establish gender; Russian chooses feminine past tense.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "I went through five different scenarios and eventually settled on this, but I'm still not sure it lives up to the task.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Я перебрала пять разных сценариев и в конце концов остановилась на этом, но до сих пор не уверена, что он справляется со своей задачей.",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       }
