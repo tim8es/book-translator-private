@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "request_id": "4d334e0e81b221f41ae46d62957a5e18",
+  "book_slug": "cardinal-kin",
+  "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
+  "operation": "review-record",
+  "chapter": 24,
+  "session_id": "chat-20261124-cardinal-ch024-review-bounded",
+  "outcome": "CORRECTIONS_REQUIRED",
+  "quality_report": {
+    "evidence_version": 2,
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "id": "style-117",
+        "category": "style",
+        "severity": "minor",
+        "detail": "В переводе потеряно авторское выделение nice курсивом.",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "but it certainly isn’t *nice*",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "но приятной её точно не назовёшь",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "style-184",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Курсив на «по-настоящему» добавлен переводом без выделения в оригинале.",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "they have no idea who he is…not really.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Не *по-настоящему*.",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "style-254",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Курсив на местоимении «Я» отсутствует в исходной реплике Дика.",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "but that doesn’t change the fact that we want you here… I want you here.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "но это не меняет того, что мы хотим видеть тебя здесь… *Я* хочу, чтобы ты был здесь.",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "style-364",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Курсив, выделяющий всё выражение «Любовь — обоюдоострый меч», добавлен в перевод без основания в оригинале.",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "Love is a double-edged sword, he recalls telling Damian...",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "*Любовь — обоюдоострый меч*, вспоминает он собственные слова, сказанные Дэмиану…",
+          "occurrence": 0
+        },
+        "resolves": null
+      }
+    ]
+  },
+  "source_sha256": "1c988555d25104d38307c7ef17f875783b6f3b4d4e3e4a917bd52aed2ad45419",
+  "translation_sha256": "c81b9756eff605d428c39bc13006855b7403797aaa688c4c9c00d2ec6d4802df",
+  "claim_sha256": "ae6bb55cbff691f93d34ffaaf766e5c7a20284270ee08f744b4ff7aab1b99349"
+}
