@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "cardinal-kin",
-  "next_sequence": 61,
+  "next_sequence": 62,
   "records": [
     {
       "record_id": "75dfa72e2b6148208fd5343b6e384999",
@@ -10779,6 +10779,59 @@
             "severity": "major",
             "detail": "Block 260: 'I couldn't help it. I didn't want to...' expresses inability to prevent what happened or to help herself, whereas 'не смогла ничего сделать' can imply she simply failed to act. Render 'Я не могла ничего с этим поделать' or equivalent, preserving broken delivery and regret.",
             "resolved": false
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "8477e8722fc34c2eab940b53f4af09a0",
+      "sequence": 61,
+      "unit_id": "chapter-000022",
+      "outcome": "PASS",
+      "source_sha256": "c8b72b5c19f8cc877354f7be41c6044bf60f10e755b0fd465b7f542bc3e590e7",
+      "translation_sha256": "d33c45d34de06a116c3b640d069aee1aafbf34bd38a61b35aca4ebb83853bf8a",
+      "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "review_contract_revision": "docs/TRANSLATION.md@a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "reviewer_session_id": "chat-20261123-cardinal-ch022-review2",
+      "reviewed_at": "2026-11-23T20:38:34Z",
+      "state_revision": "73c8a9884244c0301c87bd086ac0fb2315e714f8",
+      "review_commit": "7f43967d73c8f73b0ed01c3d4e1a6bde822e3d56",
+      "correction_round": 1,
+      "supersedes_record_id": "6a6b296da4174c1094243b2acc60efa6",
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "major",
+            "detail": "Block 12: source 'software' restored as Russian 'программное обеспечение'; old physical-equipment substitution removed.",
+            "resolved": true
+          },
+          {
+            "severity": "major",
+            "detail": "Block 25: Bruce's conditional denial of discovery now explicit, negation and tactical cause preserved.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Block 197: coarse speech and bright-yellow costume rendered with natural syntax and equivalent emphasis.",
+            "resolved": true
+          },
+          {
+            "severity": "major",
+            "detail": "Block 260: Pru's inability to avert what happened and her unwillingness to betray preserved with broken speech.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Block 131 punctuation and Red nickname in block 260 additionally checked against source.",
+            "resolved": true
           }
         ]
       }
