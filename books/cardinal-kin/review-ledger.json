@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "cardinal-kin",
-  "next_sequence": 60,
+  "next_sequence": 61,
   "records": [
     {
       "record_id": "75dfa72e2b6148208fd5343b6e384999",
@@ -10731,6 +10731,54 @@
             "severity": "minor",
             "detail": "Block 271: singular 'a stranger' restored as 'чужого человека', without changing rhetorical target.",
             "resolved": true
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "6a6b296da4174c1094243b2acc60efa6",
+      "sequence": 60,
+      "unit_id": "chapter-000022",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "c8b72b5c19f8cc877354f7be41c6044bf60f10e755b0fd465b7f542bc3e590e7",
+      "translation_sha256": "cefa3824500c31f524a8ce318007773b0a675e8f233f8a79b8897b5d6687d376",
+      "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "review_contract_revision": "docs/TRANSLATION.md@a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "reviewer_session_id": "chat-20261123-cardinal-ch022-review1",
+      "reviewed_at": "2026-11-23T20:34:23Z",
+      "state_revision": "42d152d7f975f1ace6c13825b8e95b3d9125dfb1",
+      "review_commit": "5459316a5bd5f8791df5ac50d77e4744bab3be2b",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "major",
+            "detail": "Block 12: English 'whatever software they have in there' means software, not physical equipment ('какое бы оборудование'). Correct to software/programs and preserve lack of electronic signature.",
+            "resolved": false
+          },
+          {
+            "severity": "major",
+            "detail": "Block 25: 'Not if we draw them out' negates Dick's prediction that they will be discovered. Russian 'Только если мы не выманим их наружу' is an awkward conditional with risk of inverted meaning. Explicitly render 'Не обнаружат, если мы выманим их наружу'.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Block 197: 'bright fucking yellow' is stressed profanity about a conspicuously yellow costume; 'ярко-*жёлтом, блядь*, костюме' is unnatural Russian syntax. Keep the blunt force with natural punctuation.",
+            "resolved": false
+          },
+          {
+            "severity": "major",
+            "detail": "Block 260: 'I couldn't help it. I didn't want to...' expresses inability to prevent what happened or to help herself, whereas 'не смогла ничего сделать' can imply she simply failed to act. Render 'Я не могла ничего с этим поделать' or equivalent, preserving broken delivery and regret.",
+            "resolved": false
           }
         ]
       }
