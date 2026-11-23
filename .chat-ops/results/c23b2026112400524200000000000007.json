@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "request_id": "c23b2026112400524200000000000007",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "32278311027fbe40d30fc43e9bfb1f2faed610ad78dbb44c1f2dc547561a9718",
+    "record": {
+      "correction_round": 1,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "style",
+            "detail": "Block 17: replaced literal smoke-and-mirrors calque with faithful Russian expression for the perimeter distraction.",
+            "id": "idiom-17",
+            "resolved": true,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "nothing but smoke and mirrors"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "всего лишь отвлекающий манёвр"
+            }
+          },
+          {
+            "category": "voice",
+            "detail": "Block 188: restored the affectionate nickname little Red with a Russian diminutive.",
+            "id": "nickname-188",
+            "resolved": true,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "little Red"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Красненький"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Block 281: restored steel trap idiom's inability to keep secrets under truth serum.",
+            "id": "secrecy-281",
+            "resolved": true,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "you aren’t exactly a steel trap at the moment"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "ты не очень-то умеешь держать язык за зубами"
+            }
+          },
+          {
+            "category": "modality",
+            "detail": "Block 288: restored contrast between simple factual statement and commitment to make the promise true, without unsupported claim of reality-altering powers.",
+            "id": "promise-288",
+            "resolved": true,
+            "resolves": null,
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "as if he were just speaking a fact, not promising a reality"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "словно он просто констатирует факт, а не обещает, что так и будет"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Block 289: preserved parallel repetition in natural Russian prose without awkward phrasing.",
+            "id": "parallel-289",
+            "resolved": true,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "It won’t be that easy. It won’t be simple."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Это будет нелегко. Это будет непросто."
+            }
+          }
+        ]
+      },
+      "record_id": "19491385b6044ae08d33d7fb886e2322",
+      "review_commit": "7d742beb99a71144b92db097cfa91e8b44ae100e",
+      "review_contract_revision": "docs/TRANSLATION.md@a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "reviewed_at": "2026-11-23T21:53:14Z",
+      "reviewer_session_id": "chat-20261124-cardinal-ch023-review2",
+      "sequence": 69,
+      "source_sha256": "921574752ff3f822827c37cc9cb26ac3fa85cb94aee0f735fa0335a5d3c8ad1b",
+      "state_revision": "5ab2b55b16c56e733116e67c5b5871ddebf155dd87c0f607a2d8e7fc0016c6fb",
+      "supersedes_record_id": "07e0ce32f102427583da05a03d9ff4f9",
+      "translation_sha256": "40dc7fbb84cc2c26cfd5cbeeb439295f1ab78d13ef94d0beeccfe49a54af14e0",
+      "unit_id": "chapter-000023",
+      "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29"
+    }
+  },
+  "error": null
+}

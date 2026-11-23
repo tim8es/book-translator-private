@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "cardinal-kin",
-  "next_sequence": 69,
+  "next_sequence": 70,
   "records": [
     {
       "record_id": "75dfa72e2b6148208fd5343b6e384999",
@@ -11479,6 +11479,115 @@
               "record_id": "c99735f9b891413bb4f0988d74e190cb",
               "finding_id": "emphasis-431"
             }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "19491385b6044ae08d33d7fb886e2322",
+      "sequence": 69,
+      "unit_id": "chapter-000023",
+      "outcome": "PASS",
+      "source_sha256": "921574752ff3f822827c37cc9cb26ac3fa85cb94aee0f735fa0335a5d3c8ad1b",
+      "translation_sha256": "40dc7fbb84cc2c26cfd5cbeeb439295f1ab78d13ef94d0beeccfe49a54af14e0",
+      "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "review_contract_revision": "docs/TRANSLATION.md@a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "reviewer_session_id": "chat-20261124-cardinal-ch023-review2",
+      "reviewed_at": "2026-11-23T21:53:14Z",
+      "state_revision": "5ab2b55b16c56e733116e67c5b5871ddebf155dd87c0f607a2d8e7fc0016c6fb",
+      "review_commit": "7d742beb99a71144b92db097cfa91e8b44ae100e",
+      "correction_round": 1,
+      "supersedes_record_id": "07e0ce32f102427583da05a03d9ff4f9",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "idiom-17",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Block 17: replaced literal smoke-and-mirrors calque with faithful Russian expression for the perimeter distraction.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "nothing but smoke and mirrors",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "всего лишь отвлекающий манёвр",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "nickname-188",
+            "category": "voice",
+            "severity": "minor",
+            "detail": "Block 188: restored the affectionate nickname little Red with a Russian diminutive.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "little Red",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Красненький",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "secrecy-281",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Block 281: restored steel trap idiom's inability to keep secrets under truth serum.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "you aren’t exactly a steel trap at the moment",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "ты не очень-то умеешь держать язык за зубами",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "promise-288",
+            "category": "modality",
+            "severity": "major",
+            "detail": "Block 288: restored contrast between simple factual statement and commitment to make the promise true, without unsupported claim of reality-altering powers.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "as if he were just speaking a fact, not promising a reality",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "словно он просто констатирует факт, а не обещает, что так и будет",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "parallel-289",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Block 289: preserved parallel repetition in natural Russian prose without awkward phrasing.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "It won’t be that easy. It won’t be simple.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Это будет нелегко. Это будет непросто.",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       }
