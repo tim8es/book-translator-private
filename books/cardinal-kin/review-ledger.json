@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "cardinal-kin",
-  "next_sequence": 66,
+  "next_sequence": 67,
   "records": [
     {
       "record_id": "75dfa72e2b6148208fd5343b6e384999",
@@ -11173,6 +11173,99 @@
             },
             "translation_anchor": {
               "quote": "*Любовь — обоюдоострый меч*, вспоминает он собственные слова, сказанные Дэмиану…",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "c99735f9b891413bb4f0988d74e190cb",
+      "sequence": 66,
+      "unit_id": "chapter-000026",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "f79caa960199f9e0ffbff2d03c6f87301b710afa9e8560e8d0146ac5cb8d4e16",
+      "translation_sha256": "6a6a5587673bbe9f38650ca474e010ba84b90eeb72628d7b321275c69efe5fbe",
+      "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "review_contract_revision": "docs/TRANSLATION.md@a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "reviewer_session_id": "chat-20261124-cardinal-ch026-review",
+      "reviewed_at": "2026-11-23T21:28:28Z",
+      "state_revision": "4ce6697c1abfc8202d92ffb850fde7e629ecc1189431f8e17995d1585807de42",
+      "review_commit": "cc5d82cf4595c1d980a007d06aec264b7c43adb8",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "meaning-131",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Spar with me? asks for combat training, not a generic contest. Use «Поспаррингуешь со мной?» or comparable close rendering.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“Spar with me?”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "— Посоревнуемся?",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "emphasis-262",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The emphatic italic in *awwwing* was lost; retain it on «а-а-ах» in the target.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "ignoring the others *awwwing* at the sight.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "игнорируя умилённое «а-а-ах» окружающих.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "emphasis-418",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The emphatic *not* was lost. Keep the negation and emphasis while retaining the warning about being blamed if Tim falls.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "I am *not* getting blamed for you falling off the roof.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Ещё не хватало, чтобы меня обвинили, если ты свалишься с крыши.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "emphasis-431",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The emphatic italic action *tsks* is lost. Keep the italic in the same paragraph without changing meaning.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Tim *tsks*.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Тим недовольно цокает языком.",
               "occurrence": 0
             },
             "resolves": null

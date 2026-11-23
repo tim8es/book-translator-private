@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "request_id": "b291cadfe4646ba8bade34a9dc0b879e",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "0fffd840028adfd80a41afb6c9dd8c697b7dc2128b37e926ec29f175f08fd7fc",
+    "record": {
+      "correction_round": 1,
+      "outcome": "CORRECTIONS_REQUIRED",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "meaning",
+            "detail": "Spar with me? asks for combat training, not a generic contest. Use «Поспаррингуешь со мной?» or comparable close rendering.",
+            "id": "meaning-131",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "“Spar with me?”"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "— Посоревнуемся?"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "The emphatic italic in *awwwing* was lost; retain it on «а-а-ах» in the target.",
+            "id": "emphasis-262",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "ignoring the others *awwwing* at the sight."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "игнорируя умилённое «а-а-ах» окружающих."
+            }
+          },
+          {
+            "category": "style",
+            "detail": "The emphatic *not* was lost. Keep the negation and emphasis while retaining the warning about being blamed if Tim falls.",
+            "id": "emphasis-418",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "I am *not* getting blamed for you falling off the roof."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Ещё не хватало, чтобы меня обвинили, если ты свалишься с крыши."
+            }
+          },
+          {
+            "category": "style",
+            "detail": "The emphatic italic action *tsks* is lost. Keep the italic in the same paragraph without changing meaning.",
+            "id": "emphasis-431",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Tim *tsks*."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Тим недовольно цокает языком."
+            }
+          }
+        ]
+      },
+      "record_id": "c99735f9b891413bb4f0988d74e190cb",
+      "review_commit": "cc5d82cf4595c1d980a007d06aec264b7c43adb8",
+      "review_contract_revision": "docs/TRANSLATION.md@a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "reviewed_at": "2026-11-23T21:28:28Z",
+      "reviewer_session_id": "chat-20261124-cardinal-ch026-review",
+      "sequence": 66,
+      "source_sha256": "f79caa960199f9e0ffbff2d03c6f87301b710afa9e8560e8d0146ac5cb8d4e16",
+      "state_revision": "4ce6697c1abfc8202d92ffb850fde7e629ecc1189431f8e17995d1585807de42",
+      "supersedes_record_id": null,
+      "translation_sha256": "6a6a5587673bbe9f38650ca474e010ba84b90eeb72628d7b321275c69efe5fbe",
+      "unit_id": "chapter-000026",
+      "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29"
+    }
+  },
+  "error": null
+}
