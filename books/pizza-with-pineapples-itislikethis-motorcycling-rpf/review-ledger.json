@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "pizza-with-pineapples-itislikethis-motorcycling-rpf",
-  "next_sequence": 25,
+  "next_sequence": 26,
   "records": [
     {
       "record_id": "e8060d96338440d8a139c674168abf15",
@@ -2314,6 +2314,115 @@
               "record_id": "86ac2f63aa2b5341b6e9eee038b02970",
               "finding_id": "style-131"
             }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "1cc9b36f19baf3cb17c7771b5d41056d",
+      "sequence": 25,
+      "unit_id": "chapter-000013",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "b96c0cf82bd48eabfdd4585dc2d6ba35a966e4c0b5c8f081b62709167c07ee8f",
+      "translation_sha256": "cc097ca78bc5f3d93b27924c64d0bffec6da860c6bf27dcc9c951e5c7c5dc991",
+      "workflow_revision": "789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
+      "review_contract_revision": "docs/TRANSLATION.md@789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
+      "reviewer_session_id": "chatops-pizza-reviewer-20261123-13-3cd2ef9e",
+      "reviewed_at": "2026-11-23T19:16:38Z",
+      "state_revision": "6486742dd19d2ac7d0ce17870777a87b035860f0a4c3c4601189abce30112f8a",
+      "review_commit": "85450e2766215f0248b841dc1ddf0fdfd9f402f3",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "location-063",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Valentino is cornered against countertops, not between them; preserve the physical arrangement.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "cornering him against the plastic counters of his private motorhome",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "загоняя его в угол между пластиковыми столешницами его личного автодома",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "referent-083",
+            "category": "referent",
+            "severity": "major",
+            "detail": "Ambiguous Russian 'руку Валентино' reads as Valentino's hand instead of Alex's hand being placed on Valentino's waist.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "brought one of his hands to rest on Valentino’s waist.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "положил руку Валентино на талию.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-093",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Stumbling calque and double 'как' distort Alex's emphatic question and original hesitation.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "That I like you for, what, your money and fame, like some random fan?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Что ты нравишься мне из-за, чего, денег и славы, как какому-то случайному фанату?",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-133",
+            "category": "style",
+            "severity": "minor",
+            "detail": "A literal 'own trickle of fear' sounds accidentally comic rather than preserving the subtle current of fear.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "along with its own uncurrent of fear.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "а под ней — собственная струйка страха.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-145",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Russian 'ты немного смущаешь' lacks a natural target for the teasing line.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "you are a bit embarrassing",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "ты немного смущаешь",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       }
