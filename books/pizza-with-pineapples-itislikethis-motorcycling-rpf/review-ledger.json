@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "pizza-with-pineapples-itislikethis-motorcycling-rpf",
-  "next_sequence": 30,
+  "next_sequence": 31,
   "records": [
     {
       "record_id": "e8060d96338440d8a139c674168abf15",
@@ -2854,6 +2854,130 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "012703ae6b5453f3f4567d06ec6f3e1d",
+      "sequence": 30,
+      "unit_id": "chapter-000015",
+      "outcome": "PASS",
+      "source_sha256": "2e7db4fe324777b282fd1179b4f355b93c9a8372ddd5e80e9e72a4bbf9cf0268",
+      "translation_sha256": "157a8c1e0804b70b95502c05ad85be4935bd92e2ee8b5df439e0551b9ac0da94",
+      "workflow_revision": "789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
+      "review_contract_revision": "docs/TRANSLATION.md@789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
+      "reviewer_session_id": "chatops-pizza-rereview-20261123-15-ae5f9a0a",
+      "reviewed_at": "2026-11-23T19:33:14Z",
+      "state_revision": "b5c3457f487dd5bbca70f647df9addcd4b91259d711072cb9bc99d66aa0728e4",
+      "review_commit": "98f0e7022a1fd34d2cdf92d8f9757c996acbeb71",
+      "correction_round": 1,
+      "supersedes_record_id": "e5655ad3ec01ec1edbe65710f0b37a0e",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "style-007-resolved",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Restored explicit time subject to the post-race transition.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "After the race also came far too soon.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Но и момент после гонки наступил слишком быстро.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "e5655ad3ec01ec1edbe65710f0b37a0e",
+              "finding_id": "style-007"
+            }
+          },
+          {
+            "id": "style-046-resolved",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Restored an idiomatic, emphatic first-person statement of trust.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "because this is something *I* am trusting you with.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "потому что *я* доверяю тебе нечто очень важное.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "e5655ad3ec01ec1edbe65710f0b37a0e",
+              "finding_id": "style-046"
+            }
+          },
+          {
+            "id": "style-075-resolved",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Corrected case and coherent enumerated obstacles without changing Marc's implied advantage.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Their difficulties, their past, their families, their situations",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "с трудностями, с прошлым, с семьями, с обстоятельствами.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "e5655ad3ec01ec1edbe65710f0b37a0e",
+              "finding_id": "style-075"
+            }
+          },
+          {
+            "id": "modality-089-resolved",
+            "category": "modality",
+            "severity": "minor",
+            "detail": "Restored present-tense fact of Valentino's wishes.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "He doesn’t.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Он этого не хочет.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "e5655ad3ec01ec1edbe65710f0b37a0e",
+              "finding_id": "modality-089"
+            }
+          },
+          {
+            "id": "referent-101-resolved",
+            "category": "referent",
+            "severity": "minor",
+            "detail": "Removed unsupported author gender while keeping authorial uncertainty.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "I went through five different scenarios and eventually settled on this, but I'm still not sure it lives up to the task.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Пришлось перебрать пять разных сценариев и в конце концов остановиться на этом, но до сих пор нет уверенности, что получилось как надо.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "e5655ad3ec01ec1edbe65710f0b37a0e",
+              "finding_id": "referent-101"
+            }
           }
         ]
       }
