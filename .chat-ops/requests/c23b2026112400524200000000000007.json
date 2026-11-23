@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "request_id": "c23b2026112400524200000000000007",
+  "book_slug": "cardinal-kin",
+  "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
+  "operation": "review-record",
+  "chapter": 23,
+  "session_id": "chat-20261124-cardinal-ch023-review2",
+  "outcome": "PASS",
+  "quality_report": {
+    "evidence_version": 2,
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "id": "idiom-17",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Block 17: replaced literal smoke-and-mirrors calque with faithful Russian expression for the perimeter distraction.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "nothing but smoke and mirrors",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "всего лишь отвлекающий манёвр",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "nickname-188",
+        "category": "voice",
+        "severity": "minor",
+        "detail": "Block 188: restored the affectionate nickname little Red with a Russian diminutive.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "little Red",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Красненький",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "secrecy-281",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Block 281: restored steel trap idiom's inability to keep secrets under truth serum.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "you aren’t exactly a steel trap at the moment",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "ты не очень-то умеешь держать язык за зубами",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "promise-288",
+        "category": "modality",
+        "severity": "major",
+        "detail": "Block 288: restored contrast between simple factual statement and commitment to make the promise true, without unsupported claim of reality-altering powers.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "as if he were just speaking a fact, not promising a reality",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "словно он просто констатирует факт, а не обещает, что так и будет",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "parallel-289",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Block 289: preserved parallel repetition in natural Russian prose without awkward phrasing.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "It won’t be that easy. It won’t be simple.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Это будет нелегко. Это будет непросто.",
+          "occurrence": 0
+        },
+        "resolves": null
+      }
+    ]
+  },
+  "source_sha256": "921574752ff3f822827c37cc9cb26ac3fa85cb94aee0f735fa0335a5d3c8ad1b",
+  "translation_sha256": "40dc7fbb84cc2c26cfd5cbeeb439295f1ab78d13ef94d0beeccfe49a54af14e0",
+  "claim_sha256": "07c4db07176efebff12b527d912fcb18a33327ba9fddc04886af78287c8683fd"
+}
