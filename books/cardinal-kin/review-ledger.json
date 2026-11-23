@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "cardinal-kin",
-  "next_sequence": 57,
+  "next_sequence": 58,
   "records": [
     {
       "record_id": "75dfa72e2b6148208fd5343b6e384999",
@@ -10610,6 +10610,33 @@
             "resolved": true
           }
         ]
+      }
+    },
+    {
+      "record_id": "8ad06b4a28e74b84b6b72834a0ae5139",
+      "sequence": 57,
+      "unit_id": "chapter-000020",
+      "outcome": "PASS",
+      "source_sha256": "58402afa599c80139420073973847e6376669f8832e5616ac97d67d0644de53c",
+      "translation_sha256": "6be40ac67a28ea6b3724e5d81c757861b2c92de1a2d41a22845eb6597d00d863",
+      "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "review_contract_revision": "docs/TRANSLATION.md@a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "reviewer_session_id": "chat-20261123-cardinal-ch020-review1",
+      "reviewed_at": "2026-11-23T19:27:21Z",
+      "state_revision": "26563dacb954520121a5ba9ec3132ae1e541c6b1",
+      "review_commit": "8d87e9a87cd762f6882c01e3cb99253de3dd81f3",
+      "correction_round": 0,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": []
       }
     }
   ]
