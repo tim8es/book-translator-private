@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "pizza-with-pineapples-itislikethis-motorcycling-rpf",
-  "next_sequence": 33,
+  "next_sequence": 34,
   "records": [
     {
       "record_id": "e8060d96338440d8a139c674168abf15",
@@ -3176,6 +3176,115 @@
               "record_id": "222dec99b082e0822d6507c0b9b4c70b",
               "finding_id": "referent-114"
             }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "f87d03a02026ac1c34083fbea36b6ec7",
+      "sequence": 33,
+      "unit_id": "chapter-000017",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "9ff1a86176e9f0a0229846e1f51c9f970ce8c34eac89df4b91502058dcd60145",
+      "translation_sha256": "0c0c25ddbcd8a797129ad8a7005cfbecdfb165548a41ef9d280fc8b9e693c684",
+      "workflow_revision": "789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
+      "review_contract_revision": "docs/TRANSLATION.md@789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
+      "reviewer_session_id": "chatops-pizza-reviewer-20261123-17-145112d8",
+      "reviewed_at": "2026-11-23T20:11:38Z",
+      "state_revision": "e41c95c891fc307d1b903e034ce3e9843321110e8ab0d82cb95b7a3ad677c894",
+      "review_commit": "5a4dcb8fbb83a9b84f234bd48e401a8f29f86b69",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "style-041",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Russian 'Вале на тебя расстроится' is ungrammatical and weakens the conversational joke.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Vale will be upset with you",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Вале на тебя расстроится",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "style-071",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The Russian wording says the tone 'fell short of outright rudeness by just a little' in an awkward and misleading way.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "His tone wasn’t quite rude, but only just.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Его тон не был откровенно грубым — но совсем чуть-чуть до этого не дотягивал.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "register-149",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Target 'приятели' suggests a warmer relationship than the deliberately restrained 'acquaintances' Alex hesitantly considers.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "they could be . . . hmm, acquaintances . . . ?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "смогут стать... хм, приятелями?",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "referent-150",
+            "category": "referent",
+            "severity": "major",
+            "detail": "Source passive implies Alex has not been begrudged by Valentino for putting Marc first; Russian unjustifiably broadens it to no one ever resenting Alex.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "much like he’d never been begrudged—",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "точно так же как никто никогда не сердился на Алекса за...",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "referent-160",
+            "category": "referent",
+            "severity": "minor",
+            "detail": "Valentino wants Luca to get used to their romance early; impersonal Russian obscures whose adjustment he means.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Best get him used to it early, no?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Так лучше привыкать пораньше, нет?",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       }
