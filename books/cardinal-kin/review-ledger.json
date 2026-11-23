@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "cardinal-kin",
-  "next_sequence": 62,
+  "next_sequence": 63,
   "records": [
     {
       "record_id": "75dfa72e2b6148208fd5343b6e384999",
@@ -10832,6 +10832,59 @@
             "severity": "minor",
             "detail": "Block 131 punctuation and Red nickname in block 260 additionally checked against source.",
             "resolved": true
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "07e0ce32f102427583da05a03d9ff4f9",
+      "sequence": 62,
+      "unit_id": "chapter-000023",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "921574752ff3f822827c37cc9cb26ac3fa85cb94aee0f735fa0335a5d3c8ad1b",
+      "translation_sha256": "2e4aa33c2f8f90c783e796fea9d7f76553f36d4338b5a3694a86d87ab1fc3d90",
+      "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "review_contract_revision": "docs/TRANSLATION.md@a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "reviewer_session_id": "chat-20261123-cardinal-ch023-review1",
+      "reviewed_at": "2026-11-23T20:48:46Z",
+      "state_revision": "4560b13b17dcaf0d970707adadfd2342faf4f40e",
+      "review_commit": "32e69d242e87119b291ffe2545a24472631e4b2c",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Block 17: 'smoke and mirrors' is idiomatic deception; Russian 'дым и зеркала' is an unidiomatic calque. Use 'всего лишь обман/спектакль' keeping illusion and detection.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Block 188: 'little Red' is an affectionate nickname for Tim; 'маленький Красный' sounds like a literal physical description. Preserve affectionate address in idiomatic Russian.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Block 281: 'you aren't exactly a steel trap' implies Tim cannot keep secrets/mouth shut under truth serum, not a literal fortress. Use a natural Russian idiom about the inability to keep one's tongue.",
+            "resolved": false
+          },
+          {
+            "severity": "major",
+            "detail": "Block 288: 'as if he were just speaking a fact, not promising a reality' is a contrast between factual statement and promise to make it true; Russian 'клянётся изменить реальность' adds an unsupported claim about changing reality/timeline. Restore promise-versus-fact nuance.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Block 289: 'It won't be that easy. It won't be simple' is rendered awkwardly as 'Легко не будет. Просто тоже не будет'; polish to natural Russian without losing parallel repetition.",
+            "resolved": false
           }
         ]
       }
