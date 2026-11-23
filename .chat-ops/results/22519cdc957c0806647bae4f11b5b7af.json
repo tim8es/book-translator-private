@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "request_id": "22519cdc957c0806647bae4f11b5b7af",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "ce740ee4481c38c377485cf0cf0789516ade0576ab42a768e951d73e261411d7",
+    "record": {
+      "correction_round": 1,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "meaning",
+            "detail": "Combat sparring request now translated directly; surrounding scene and speaker preserved.",
+            "id": "fixed-meaning-131",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "meaning-131",
+              "record_id": "c99735f9b891413bb4f0988d74e190cb"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "“Spar with me?”"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "— Поспаррингуешь со мной?"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Original italic on the group’s affectionate exclamation restored in Russian.",
+            "id": "fixed-emphasis-262",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "emphasis-262",
+              "record_id": "c99735f9b891413bb4f0988d74e190cb"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "ignoring the others *awwwing* at the sight."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "игнорируя умилённое *«а-а-ах»* окружающих."
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Emphasized refusal to be blamed now reproduces negation and force of source.",
+            "id": "fixed-emphasis-418",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "emphasis-418",
+              "record_id": "c99735f9b891413bb4f0988d74e190cb"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "I am *not* getting blamed for you falling off the roof."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Я *не* собираюсь выслушивать обвинения, если ты свалишься с крыши."
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Emphasis restored to Tim's impatient tongue-click action.",
+            "id": "fixed-emphasis-431",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "emphasis-431",
+              "record_id": "c99735f9b891413bb4f0988d74e190cb"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Tim *tsks*."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Тим недовольно *цокает* языком."
+            }
+          }
+        ]
+      },
+      "record_id": "f04c32b858ad4b20a635d03b8ce6e257",
+      "review_commit": "a90edf62be37ed453ece4ec877756c55d353589f",
+      "review_contract_revision": "docs/TRANSLATION.md@a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "reviewed_at": "2026-11-23T21:32:40Z",
+      "reviewer_session_id": "chat-20261124-cardinal-ch026-review2",
+      "sequence": 68,
+      "source_sha256": "f79caa960199f9e0ffbff2d03c6f87301b710afa9e8560e8d0146ac5cb8d4e16",
+      "state_revision": "17793fbf9278ffed76eeadd269b61c19dd7ae1923b4a2d8eb8a2a46dbf3d2c1c",
+      "supersedes_record_id": "c99735f9b891413bb4f0988d74e190cb",
+      "translation_sha256": "42eb181680df72f92ac0e5021427e0eda988389fecace48ba49d26a38c029fd0",
+      "unit_id": "chapter-000026",
+      "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29"
+    }
+  },
+  "error": null
+}
