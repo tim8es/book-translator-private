@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "pizza-with-pineapples-itislikethis-motorcycling-rpf",
-  "next_sequence": 24,
+  "next_sequence": 25,
   "records": [
     {
       "record_id": "e8060d96338440d8a139c674168abf15",
@@ -2190,6 +2190,130 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "2bfc9b9db85f42f179cf7c3a64b67b1b",
+      "sequence": 24,
+      "unit_id": "chapter-000012",
+      "outcome": "PASS",
+      "source_sha256": "e397eda0bb4cb9e421ee6683cbb1cf9a42c6004114a2441353629fc8d43a07d7",
+      "translation_sha256": "e1b795e8a23101983ad6ec2419f534e1de71f9bed98b9997201891499eeb7ec8",
+      "workflow_revision": "789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
+      "review_contract_revision": "docs/TRANSLATION.md@789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
+      "reviewer_session_id": "chatops-pizza-rereview-20261123-12-cc858ab5",
+      "reviewed_at": "2026-11-23T19:13:58Z",
+      "state_revision": "5f59238bb176bfd661f69a79afbfc21c11b9a4ce0fb6a6be951e032cbb69350c",
+      "review_commit": "024cc923c24b1d092ffa546a8bb67e30931f207c",
+      "correction_round": 1,
+      "supersedes_record_id": "86ac2f63aa2b5341b6e9eee038b02970",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "style-021-resolved",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Replaced unnatural head-exhaustion calque with natural expression of mental strain.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "It had been mentally exhausting",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Разговор его здорово вымотал",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "86ac2f63aa2b5341b6e9eee038b02970",
+              "finding_id": "style-021"
+            }
+          },
+          {
+            "id": "negation-033-resolved",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Corrected inverse negation; publicly they cannot have a meaningful relationship.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "they could never be anything to each other, not even for an instant.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "они не могли ничего значить друг для друга — даже на миг.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "86ac2f63aa2b5341b6e9eee038b02970",
+              "finding_id": "negation-033"
+            }
+          },
+          {
+            "id": "meaning-050-resolved",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Restored getting over already existing feelings rather than preventing new attraction.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Get over Valentino.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Разлюбит Валентино.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "86ac2f63aa2b5341b6e9eee038b02970",
+              "finding_id": "meaning-050"
+            }
+          },
+          {
+            "id": "style-102-resolved",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Restored Valentino's teasing conditional in idiomatic Russian.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "If you were annoying to teach, I would not.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Если бы меня раздражало тебя учить, я бы и не стал.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "86ac2f63aa2b5341b6e9eee038b02970",
+              "finding_id": "style-102"
+            }
+          },
+          {
+            "id": "style-131-resolved",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Restored narrator focus and natural Russian syntactic subject.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "no matter how much part of Alex might want to move closer.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "хотя какая-то его часть отчаянно хотела придвинуться ближе.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "86ac2f63aa2b5341b6e9eee038b02970",
+              "finding_id": "style-131"
+            }
           }
         ]
       }
