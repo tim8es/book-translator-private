@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "request_id": "2304a9eb9ede445154b0ca14952b73b8",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "3ec6ace38af3c5c0282deb0dca0e6d344adef83bb5632ad5ac064d2700502b61",
+    "record": {
+      "correction_round": 1,
+      "outcome": "CORRECTIONS_REQUIRED",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "style",
+            "detail": "Сохранить курсивное выделение слова about, обозначающее акцент автора; в переводе выделение исчезло.",
+            "id": "style-63",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "They don’t know anything *about* the situation, not really."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Они ведь почти ничего о ней не знают."
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Убрать добавленное в переводе курсивное выделение слова «было»: оригинал этого акцента не содержит.",
+            "id": "style-91",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "“But it did happen,” Damian insists, his voice breaking slightly."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "— Но это *было*, — настаивает Дэмиан; голос его слегка надламывается."
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Восстановить выделение курсивом слова be в реплике внутреннего монолога, не нарушая русскую естественность.",
+            "id": "style-210",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "There couldn't exactly *be* tension when Talia was so MIA."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Да и откуда бы взяться этому напряжению, если Талия постоянно пропадала неизвестно где."
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Английское She is evil не требует усиления до «зло во плоти»; передать оценку без добавленной степени экспрессии.",
+            "id": "tone-174",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "“She is *evil.”*"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "— Она *зло во плоти*."
+            }
+          }
+        ]
+      },
+      "record_id": "98a4cc24025e419692c08118b8ce80a7",
+      "review_commit": "53f989cc15f53bfc6bbfeff82ef147ab8a8b553c",
+      "review_contract_revision": "docs/TRANSLATION.md@a973f29e9bfba255056b5196a5a2943578d1cc29",
+      "reviewed_at": "2026-11-23T21:15:36Z",
+      "reviewer_session_id": "chat-20261124-cardinal-ch025-review-bounded",
+      "sequence": 63,
+      "source_sha256": "8ef1289a3b25b63d2d46b23ce7c21f9274ef966fef67fe5c601911a94d0c8fc6",
+      "state_revision": "7d186053285d07c6876917ef50063cc6a28a57b9489971112a832a52805ab665",
+      "supersedes_record_id": null,
+      "translation_sha256": "4a2a8fcfa0eca2b348fc1e5bdc2e5c36e8f78a5b7cbeb13c14e9d051768de34e",
+      "unit_id": "chapter-000025",
+      "workflow_revision": "a973f29e9bfba255056b5196a5a2943578d1cc29"
+    }
+  },
+  "error": null
+}
