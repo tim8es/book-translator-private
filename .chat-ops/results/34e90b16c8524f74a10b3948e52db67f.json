@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "request_id": "34e90b16c8524f74a10b3948e52db67f",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "2c10af68537dd6f399188625f5e4b2f6f98e0f8b786ecb85e0022051e9d75dd8",
+    "record": {
+      "correction_round": 1,
+      "outcome": "CORRECTIONS_REQUIRED",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "findings": [
+          {
+            "detail": "Абз. 4: The taste of acid — вкус кислоты, а не ощущение ожога. Вернуть вкусовое ощущение.",
+            "resolved": false,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абз. 5: wiping his mouth with the back of his sleeve — неестественное «тыльной стороной рукава»; передать естественно «вытирая рот рукавом».",
+            "resolved": false,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абз. 38: His stomach dropped — идиоматическое ощущение испуга; «В животе всё ухнуло вниз» тяжеловесная калька. «У него всё внутри оборвалось».",
+            "resolved": false,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абз. 62: в описании дымовых капсул добавлены газ и утверждение, что «всё взорвалось». В оригинале резкое шипение давления и вспышка света вокруг героя, без утверждения о взрыве всего вокруг. Убрать добавленные физические детали.",
+            "resolved": false,
+            "severity": "major"
+          },
+          {
+            "detail": "Абз. 65: «В следующий удар сердца» — неестественная калька; «Через удар сердца» сохраняет образ и мгновенность.",
+            "resolved": false,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абз. 79: cuckoo bird — кукушка, а не обязательно кукушонок; сохранить исходный образ подмены без возрастного уточнения.",
+            "resolved": false,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абз. 113: описание обычного состояния оружейного хранилища необоснованно переключается с прошедшего времени на настоящее. Согласовать время.",
+            "resolved": false,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абз. 129: a fall in battle не обязательно означает гибель. «Гибель в бою» конкретизирует исходник; заменить на «падение в бою».",
+            "resolved": false,
+            "severity": "major"
+          },
+          {
+            "detail": "Абз. 129: breathless, soundless laugh — неестественное «лишённом дыхания смешке». Передать как «беззвучном смешке, от которого перехватило дыхание» либо близкое естественное выражение без добавления нового события.",
+            "resolved": false,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абз. 137: low and familiar — низкий и знакомый голос; перевод «тихий» выбирает только громкость, теряя низкий регистр рычания. Уточнить.",
+            "resolved": false,
+            "severity": "minor"
+          }
+        ]
+      },
+      "record_id": "97aa5c500ad0483d80082005daa0099f",
+      "review_commit": "a01ca95580c30190e87750915792a7aafac6f547",
+      "review_contract_revision": "docs/TRANSLATION.md@20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "reviewed_at": "2026-11-24T20:32:12Z",
+      "reviewer_session_id": "chat-robin-r02-23d8fa05",
+      "sequence": 3,
+      "source_sha256": "ec2d67efb2248296424c534eb4b226cd6591d932390715d5b6c2313a91062ff1",
+      "state_revision": "13aed2c27a48c016d8900c296a879acb767b4a56e8fa04244ce5176e78e85420",
+      "supersedes_record_id": null,
+      "translation_sha256": "b459bb0cbdd01c378404dc8be5da948cbc9bcfaf9c518d1d61fb46163e607355",
+      "unit_id": "chapter-000002",
+      "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a"
+    }
+  },
+  "error": null
+}

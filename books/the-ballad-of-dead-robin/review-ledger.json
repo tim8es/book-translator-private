@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "the-ballad-of-dead-robin",
-  "next_sequence": 3,
+  "next_sequence": 4,
   "records": [
     {
       "record_id": "b395b5cc6d41470387aa4d8dfe6853d7",
@@ -85,6 +85,84 @@
             "severity": "minor",
             "detail": "Добавленное усиление отчаянной устранено.",
             "resolved": true
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "97aa5c500ad0483d80082005daa0099f",
+      "sequence": 3,
+      "unit_id": "chapter-000002",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "ec2d67efb2248296424c534eb4b226cd6591d932390715d5b6c2313a91062ff1",
+      "translation_sha256": "b459bb0cbdd01c378404dc8be5da948cbc9bcfaf9c518d1d61fb46163e607355",
+      "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "review_contract_revision": "docs/TRANSLATION.md@20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "reviewer_session_id": "chat-robin-r02-23d8fa05",
+      "reviewed_at": "2026-11-24T20:32:12Z",
+      "state_revision": "13aed2c27a48c016d8900c296a879acb767b4a56e8fa04244ce5176e78e85420",
+      "review_commit": "a01ca95580c30190e87750915792a7aafac6f547",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Абз. 4: The taste of acid — вкус кислоты, а не ощущение ожога. Вернуть вкусовое ощущение.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 5: wiping his mouth with the back of his sleeve — неестественное «тыльной стороной рукава»; передать естественно «вытирая рот рукавом».",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 38: His stomach dropped — идиоматическое ощущение испуга; «В животе всё ухнуло вниз» тяжеловесная калька. «У него всё внутри оборвалось».",
+            "resolved": false
+          },
+          {
+            "severity": "major",
+            "detail": "Абз. 62: в описании дымовых капсул добавлены газ и утверждение, что «всё взорвалось». В оригинале резкое шипение давления и вспышка света вокруг героя, без утверждения о взрыве всего вокруг. Убрать добавленные физические детали.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 65: «В следующий удар сердца» — неестественная калька; «Через удар сердца» сохраняет образ и мгновенность.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 79: cuckoo bird — кукушка, а не обязательно кукушонок; сохранить исходный образ подмены без возрастного уточнения.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 113: описание обычного состояния оружейного хранилища необоснованно переключается с прошедшего времени на настоящее. Согласовать время.",
+            "resolved": false
+          },
+          {
+            "severity": "major",
+            "detail": "Абз. 129: a fall in battle не обязательно означает гибель. «Гибель в бою» конкретизирует исходник; заменить на «падение в бою».",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 129: breathless, soundless laugh — неестественное «лишённом дыхания смешке». Передать как «беззвучном смешке, от которого перехватило дыхание» либо близкое естественное выражение без добавления нового события.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 137: low and familiar — низкий и знакомый голос; перевод «тихий» выбирает только громкость, теряя низкий регистр рычания. Уточнить.",
+            "resolved": false
           }
         ]
       }
