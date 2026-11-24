@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "one-does-not-monsieur",
-  "next_sequence": 2,
+  "next_sequence": 3,
   "records": [
     {
       "record_id": "c4b03697d25541ea8d3070ad34e8c878",
@@ -28,6 +28,54 @@
           "structure": true
         },
         "findings": []
+      }
+    },
+    {
+      "record_id": "0098c773ab774eb8bb130e5458a93ad9",
+      "sequence": 2,
+      "unit_id": "chapter-000002",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "b1e2aea2c293bbdfe3de23d5b538b53a878a9beccf232e092a21450d38592196",
+      "translation_sha256": "d34ee97eb42fb0505421147fc215ea3bee0d5e740eb1ebc111a38401205693c6",
+      "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "review_contract_revision": "docs/TRANSLATION.md@20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "reviewer_session_id": "chatops-arrival-r2-20261124",
+      "reviewed_at": "2026-11-24T20:46:00Z",
+      "state_revision": "f290931d787162c90fb9dbaed9ed643b1539ccd7b96abb6383d98e929bdaeaa6",
+      "review_commit": "dfd658f6f2bbcfcde7b1b51682700f4571a5935c",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "major",
+            "detail": "Блок 35: dressed that face — перевязывала раны на лице прадеда, а не просто ухаживала за лицом. Важна связь со шрамом и огнём Конти.",
+            "resolved": false
+          },
+          {
+            "severity": "major",
+            "detail": "Блок 145: their own house had made — речь о роде Конти; нынешнее 'их собственный род' двусмысленно указывает на Бланшмеров. Half his face burnt off — половина лица сгорела, а не только обожжена до неузнаваемости.",
+            "resolved": false
+          },
+          {
+            "severity": "major",
+            "detail": "Блок 150: миску Ариан берёт у Мирека, а не у себя; нынешняя местоименная конструкция скрывает действие.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Блоки 11, 28, 56, 64, 72, 81, 88, 98, 106, 108, 118, 133, 141, 157, 160, 163, 179, 181, 187, 211–212, 215: исправить локальные кальки, двусмысленности и неточности; в частности высокие надбровья, под морем, порядок старшинства, макароны вместо пирожных, завтра через неделю, wait up без указания ожидания перед сном.",
+            "resolved": false
+          }
+        ]
       }
     }
   ]
