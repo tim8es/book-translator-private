@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "one-does-not-monsieur",
-  "next_sequence": 8,
+  "next_sequence": 9,
   "records": [
     {
       "record_id": "c4b03697d25541ea8d3070ad34e8c878",
@@ -251,6 +251,49 @@
           {
             "severity": "minor",
             "detail": "Остальные исправления второго цикла сверены с оригиналом; структура и последовательность не нарушены. Число 13 сохранено как счёт слов оригинала.",
+            "resolved": true
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "7129c6fe38b34b0fbedb3570bcc56423",
+      "sequence": 8,
+      "unit_id": "chapter-000003",
+      "outcome": "PASS",
+      "source_sha256": "f5d13567a8ad3359524cd0988c23fbc8e70d746d013fb71bd23c3074688abf4d",
+      "translation_sha256": "5b68d7c3c9f9cce18454b86c521d3e5ca53846844da89fa9f9a02e16d7b68c55",
+      "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "review_contract_revision": "docs/TRANSLATION.md@20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "reviewer_session_id": "chatops-hogwarts-review-r4-20261125",
+      "reviewed_at": "2026-11-24T22:21:15Z",
+      "state_revision": "0db12804763319aff3ee0080f1ecca54114c1966af3a8cb15423b39cc5fb7b93",
+      "review_commit": "49626c372b8ccb8993d662443505666c477d0bfb",
+      "correction_round": 3,
+      "supersedes_record_id": "c984082ea035439f8d3a69dfac479b71",
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "major",
+            "detail": "Блок 37: отсутствие нужды и внезапное желание теперь разграничены; убрано добавленное описание птицы. Сверено с исходным блоком и соседними абзацами.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Блоки 251 и 334: восстановлены исходное ограничение числа взглядов и субъект действия. Все остальные исправления второго цикла повторно проверены в предыдущем ревью. Всего 378 блоков, 16 разделителей сцен, позиции якоря и ссылки совпадают; предупреждений preflight нет.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Число 13 в блоке 343 сохранено по английскому оригиналу: русские реплики имеют иной счёт слов. Лаконичность героя не изменена ради подгонки количества.",
             "resolved": true
           }
         ]
