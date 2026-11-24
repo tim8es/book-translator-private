@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "book_slug": "the-ballad-of-dead-robin",
+  "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+  "chapter": 3,
+  "request_id": "07a46f128b9c4d85a017f23e649bc501",
+  "operation": "review-record",
+  "session_id": "chat-robin-r03-f83d1568",
+  "outcome": "PASS",
+  "source_sha256": "3c4994087bad38be989691a3dc43412ecd9abd2114e5f0f5f36c11223a25befb",
+  "translation_sha256": "27240eb76a17a2b761652b835ea00b0557c4c07899ef1d9a455504837aa2f191",
+  "claim_sha256": "f8eba22f24469aefc6643a23868bf578fde7427f9af69d4e9631e725b42da8ec",
+  "quality_report": {
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "severity": "minor",
+        "detail": "Перепроверены исправленные места двух предыдущих циклов (17 и 7 групп замечаний) по исходнику. Смысловые и грамматические дефекты устранены; в том числе сохранены интенсивность страха, сравнение телосложения, отчуждение от знакомых лиц, недоверие к собственному восприятию, продолжающееся напряжение и внезапность нападения. Все 126 абзацев сохранены, последовательность исходника и ранее проверенные неизменённые фрагменты сохранены.",
+        "resolved": true
+      }
+    ]
+  }
+}
