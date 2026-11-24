@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "the-ballad-of-dead-robin",
-  "next_sequence": 4,
+  "next_sequence": 5,
   "records": [
     {
       "record_id": "b395b5cc6d41470387aa4d8dfe6853d7",
@@ -162,6 +162,74 @@
           {
             "severity": "minor",
             "detail": "Абз. 137: low and familiar — низкий и знакомый голос; перевод «тихий» выбирает только громкость, теряя низкий регистр рычания. Уточнить.",
+            "resolved": false
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "87486722347440168e2a72a1b7c58ec8",
+      "sequence": 4,
+      "unit_id": "chapter-000002",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "ec2d67efb2248296424c534eb4b226cd6591d932390715d5b6c2313a91062ff1",
+      "translation_sha256": "8f9f6277cb772d75986a637bfedba178312d2bc3559d327bc4d167e26b1597c5",
+      "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "review_contract_revision": "docs/TRANSLATION.md@20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "reviewer_session_id": "chat-robin-r02-893e5061",
+      "reviewed_at": "2026-11-24T20:46:09Z",
+      "state_revision": "524cddf70a6be52f32573ae76e793c5c90d382ff08f3f59930758ae2d577dfbf",
+      "review_commit": "a53b1af2e540df036763cff6ecef65b5fad780b1",
+      "correction_round": 2,
+      "supersedes_record_id": "97aa5c500ad0483d80082005daa0099f",
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Все десять замечаний предыдущего ревью повторно проверены по соответствующим абзацам и устранены.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 43: bleeding — «истекал кровью» неоправданно усиливает степень кровопотери. Передать «был ранен и кровоточил» или «у него шла кровь» без усиления.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 57: He knew this city, knew it like his own fingers. Потерян намеренный повтор «знал». Восстановить: «Он знал этот город, знал его как свои пять пальцев».",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 59: If it’s settled — условие передано как установленный факт («Раз всё решено»). Вернуть «Если всё решено».",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 62: при исправлении предыдущего замечания пропало указание на давление (a sharp hiss of pressure). Сохранить ощущение резкого выброса под давлением, не добавляя материал или новые события.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 104: синтаксическая двусмысленность «которой умел воспользоваться только он, спрятанной» затрудняет чтение. Вынести характеристику подпрограммы в естественную конструкцию без изменения содержания.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 127: dry-eyed at first — калька «сначала сухими глазами». Передать естественное «поначалу не плача», сохраняя отсутствие слёз.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 137: «голос, рычащий, выплёвывающий» синтаксически тяжеловесно. Сохранить рычание и низкий знакомый голос в естественной конструкции.",
             "resolved": false
           }
         ]
