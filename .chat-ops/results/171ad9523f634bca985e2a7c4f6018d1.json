@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "request_id": "171ad9523f634bca985e2a7c4f6018d1",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "5662ed961909934908acee0daf9f9c8e80801c0b297da815aa1148a974e0600d",
+    "record": {
+      "correction_round": 2,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "findings": [
+          {
+            "detail": "Повторно проверены все 143 абзаца. Замечания первого цикла (10) и второго цикла (7) закрыты: исправлены интенсивность кровотечения, повтор knew, условие if, описание шипения и давления без уточнения вещества, синтаксис описания подпрограммы, отсутствие слёз и низкий голос. Повествовательная последовательность, имена, реплики и абзацы сохранены.",
+            "resolved": true,
+            "severity": "minor"
+          }
+        ]
+      },
+      "record_id": "e7e47e07eaa34c809f6b011b157387be",
+      "review_commit": "0095f69f0ffd6ea5aeba02cd2d466cf1d89cd79b",
+      "review_contract_revision": "docs/TRANSLATION.md@20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "reviewed_at": "2026-11-24T21:47:41Z",
+      "reviewer_session_id": "chat-robin-r02-06c2c3f3",
+      "sequence": 5,
+      "source_sha256": "ec2d67efb2248296424c534eb4b226cd6591d932390715d5b6c2313a91062ff1",
+      "state_revision": "57da09711d505c1d24a6ede02dea81c45be4e866283ce0448345d05628e8a3b5",
+      "supersedes_record_id": "87486722347440168e2a72a1b7c58ec8",
+      "translation_sha256": "d8dc0fdd5aedd7f758ed6164a3e28313c3fd02a12eba6dafb2aa40ec9500354b",
+      "unit_id": "chapter-000002",
+      "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a"
+    }
+  },
+  "error": null
+}
