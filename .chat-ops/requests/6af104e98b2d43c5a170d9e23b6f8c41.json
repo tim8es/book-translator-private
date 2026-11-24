@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "book_slug": "the-ballad-of-dead-robin",
+  "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+  "chapter": 1,
+  "request_id": "6af104e98b2d43c5a170d9e23b6f8c41",
+  "operation": "review-record",
+  "session_id": "chat-robin-r01-59d0f8c4",
+  "outcome": "CORRECTIONS_REQUIRED",
+  "source_sha256": "ef08719db830473241ea6799df7d9d27fde5f439a1428e466a1db65ef582dbfd",
+  "translation_sha256": "a5dc848aed752b503e0f81cf68c41b8f3bb59e04e0e4c3295993448e383435e3",
+  "claim_sha256": "2721c5cd14fa2016f924dc4693020ea09bc79fd061b1586cc26bcdd55ade80c2",
+  "quality_report": {
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": false,
+      "terminology": false,
+      "style": false,
+      "structure": true
+    },
+    "findings": [
+      {
+        "severity": "minor",
+        "detail": "В метках Protective Batfamily, Protective Jason Todd, Protective Dick Grayson, Protective Bruce Wayne перевод «защищает своих» добавляет ограничение объекта защиты, отсутствующее в исходнике. Передать свойство защищать/оберегать без добавления объекта.",
+        "resolved": false
+      },
+      {
+        "severity": "minor",
+        "detail": "В аннотации «Может быть, в его глазах Тим и был ребёнком» ослаблено exactly that. Передать усиление: «Может быть, в его глазах Тим именно ребёнком и был».",
+        "resolved": false
+      },
+      {
+        "severity": "minor",
+        "detail": "В «with a need» добавлено «отчаянной», усиливающее исходник без прямого основания. Сохранить потребность без добавленного определения.",
+        "resolved": false
+      }
+    ]
+  }
+}
