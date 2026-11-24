@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "request_id": "b10c8a2d5e6f4190a3c7d4e8f201b569",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "4e07b4892e1a627522d0d8a42d5a2a40ea76b9106968346ade81abed713483d0",
+    "record": {
+      "correction_round": 1,
+      "outcome": "CORRECTIONS_REQUIRED",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "findings": [
+          {
+            "detail": "В метках Protective Batfamily, Protective Jason Todd, Protective Dick Grayson, Protective Bruce Wayne «защищает своих» добавляет объект защиты. Передать свойство оберегать без добавления объекта.",
+            "resolved": false,
+            "severity": "minor"
+          },
+          {
+            "detail": "В аннотации «Может быть, в его глазах Тим и был ребёнком» ослаблено exactly that. Передать «Может быть, в его глазах Тим именно ребёнком и был».",
+            "resolved": false,
+            "severity": "minor"
+          },
+          {
+            "detail": "В «with a need» добавлено «отчаянной» без прямого основания. Убрать усиление.",
+            "resolved": false,
+            "severity": "minor"
+          }
+        ]
+      },
+      "record_id": "b395b5cc6d41470387aa4d8dfe6853d7",
+      "review_commit": "d15ec551ea8d08609fbd826dbd82193d268f0dc7",
+      "review_contract_revision": "docs/TRANSLATION.md@20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "reviewed_at": "2026-11-24T20:02:11Z",
+      "reviewer_session_id": "chat-robin-r01-ae87c249",
+      "sequence": 1,
+      "source_sha256": "ef08719db830473241ea6799df7d9d27fde5f439a1428e466a1db65ef582dbfd",
+      "state_revision": "62b6b13c9eb703cf6d63fba977dab861acde5a1ae97f1fd2444e224d9af5decd",
+      "supersedes_record_id": null,
+      "translation_sha256": "a5dc848aed752b503e0f81cf68c41b8f3bb59e04e0e4c3295993448e383435e3",
+      "unit_id": "chapter-000001",
+      "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a"
+    }
+  },
+  "error": null
+}

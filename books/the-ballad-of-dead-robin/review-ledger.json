@@ -1,6 +1,50 @@
 {
   "schema_version": 1,
   "book_slug": "the-ballad-of-dead-robin",
-  "next_sequence": 1,
-  "records": []
+  "next_sequence": 2,
+  "records": [
+    {
+      "record_id": "b395b5cc6d41470387aa4d8dfe6853d7",
+      "sequence": 1,
+      "unit_id": "chapter-000001",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "ef08719db830473241ea6799df7d9d27fde5f439a1428e466a1db65ef582dbfd",
+      "translation_sha256": "a5dc848aed752b503e0f81cf68c41b8f3bb59e04e0e4c3295993448e383435e3",
+      "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "review_contract_revision": "docs/TRANSLATION.md@20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "reviewer_session_id": "chat-robin-r01-ae87c249",
+      "reviewed_at": "2026-11-24T20:02:11Z",
+      "state_revision": "62b6b13c9eb703cf6d63fba977dab861acde5a1ae97f1fd2444e224d9af5decd",
+      "review_commit": "d15ec551ea8d08609fbd826dbd82193d268f0dc7",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "В метках Protective Batfamily, Protective Jason Todd, Protective Dick Grayson, Protective Bruce Wayne «защищает своих» добавляет объект защиты. Передать свойство оберегать без добавления объекта.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "В аннотации «Может быть, в его глазах Тим и был ребёнком» ослаблено exactly that. Передать «Может быть, в его глазах Тим именно ребёнком и был».",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "В «with a need» добавлено «отчаянной» без прямого основания. Убрать усиление.",
+            "resolved": false
+          }
+        ]
+      }
+    }
+  ]
 }
