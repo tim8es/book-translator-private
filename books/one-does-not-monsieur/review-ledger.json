@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "one-does-not-monsieur",
-  "next_sequence": 3,
+  "next_sequence": 4,
   "records": [
     {
       "record_id": "c4b03697d25541ea8d3070ad34e8c878",
@@ -73,6 +73,44 @@
           {
             "severity": "minor",
             "detail": "Блоки 11, 28, 56, 64, 72, 81, 88, 98, 106, 108, 118, 133, 141, 157, 160, 163, 179, 181, 187, 211–212, 215: исправить локальные кальки, двусмысленности и неточности; в частности высокие надбровья, под морем, порядок старшинства, макароны вместо пирожных, завтра через неделю, wait up без указания ожидания перед сном.",
+            "resolved": false
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "ab8ef256186e4d9b8728d4d4d7e028d8",
+      "sequence": 3,
+      "unit_id": "chapter-000002",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "b1e2aea2c293bbdfe3de23d5b538b53a878a9beccf232e092a21450d38592196",
+      "translation_sha256": "cdfa75bac75bc72c69b19e1f7975a05481de4e1dcc8d44aa3a15d36f3c024418",
+      "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "review_contract_revision": "docs/TRANSLATION.md@20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "reviewer_session_id": "chatops-arrival-r3-20261124",
+      "reviewed_at": "2026-11-24T20:47:58Z",
+      "state_revision": "2acd4020308ca2c22d54b0ed993ca3a21ca0993bc8f1647e8ca9fdb71d82c3a1",
+      "review_commit": "11adc0726aba15f74f76f79062b220d29d487c6f",
+      "correction_round": 2,
+      "supersedes_record_id": "0098c773ab774eb8bb130e5458a93ad9",
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Все три существенных замечания предыдущего ревью (35, 145, 150) устранены; смысл восстановлен.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Блок 28: нарушено согласование числа у олицетворённых обстоятельств (что-нибудь / им / они). Блок 163: повтор 'сидевшая ... сидела' и пропущена запятая. Блок 160: пропущена закрывающая запятая после 'лодочкой'. Блок 157: 'их зажгли' имеет неявный антецедент; уточнить свечи. Блок 56: убрать двусмысленность 'вдохнул его'.",
             "resolved": false
           }
         ]
