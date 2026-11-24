@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "one-does-not-monsieur",
-  "next_sequence": 6,
+  "next_sequence": 7,
   "records": [
     {
       "record_id": "c4b03697d25541ea8d3070ad34e8c878",
@@ -169,6 +169,49 @@
       "review_commit": "9f5e21229e7243c540808cf12022d5a82344778c",
       "correction_round": 1,
       "supersedes_record_id": null
+    },
+    {
+      "record_id": "e1fcdece26204d63928e34bce67b4c2b",
+      "sequence": 6,
+      "unit_id": "chapter-000003",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "f5d13567a8ad3359524cd0988c23fbc8e70d746d013fb71bd23c3074688abf4d",
+      "translation_sha256": "331c37080cfe2521d4ec90a8a586847a0cdedab8e705b92d4a2e9d14ac44e884",
+      "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "review_contract_revision": "docs/TRANSLATION.md@20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "reviewer_session_id": "chatops-hogwarts-review-r2-20261125",
+      "reviewed_at": "2026-11-24T22:17:25Z",
+      "state_revision": "4960400d88502a30139b6ab0958f38b9984bf787326a32140ac8bcbce082a788",
+      "review_commit": "a76a587ed627c18748bc0d0fbe0414da61af2f5f",
+      "correction_round": 2,
+      "supersedes_record_id": "0eed1c5ac2c34c668c1ead1ccc101755",
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "major",
+            "detail": "Блок 37: want any of it — не приходилось нуждаться ни в чём из перечисленного, а не испытывать желания обладать. Сохранить контраст с внезапным желанием.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Блоки 9, 37, 40, 50, 54, 57, 83, 96, 99, 110, 126, 130, 137, 147, 166, 181, 197, 208, 242, 251, 254, 274, 276, 285, 287, 288, 298, 310, 311, 318, 320, 333, 334, 361: исправить повторения, смысловые кальки, неестественный синтаксис и неточные образы; в 251 сохранить смысл единичного случая, в 310 не называть реакцию улыбкой, в 361 сохранить незавершённый вопрос Ронсара.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "378/378 блоков сопоставлены; в блоке 343 сохранено число 13, относящееся к словам английского оригинала. Русские реплики дают другое число слов; намеренно сохранена лаконичность и авторское число, без добавления слов.",
+            "resolved": true
+          }
+        ]
+      }
     }
   ]
 }
