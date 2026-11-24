@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "book_slug": "the-ballad-of-dead-robin",
+  "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+  "chapter": 3,
+  "request_id": "a3e8c013ba5e406da3c4e9718653091c",
+  "operation": "review-record",
+  "session_id": "chat-robin-r03-92d7b902",
+  "outcome": "CORRECTIONS_REQUIRED",
+  "source_sha256": "3c4994087bad38be989691a3dc43412ecd9abd2114e5f0f5f36c11223a25befb",
+  "translation_sha256": "d77e90779f72222022b7c42de17eea12940d1e0071f9710949a0703e54d1fdd0",
+  "claim_sha256": "ef5042347cbfd24613024bd93fa0e17d0e8ee83f6a37eb3b8ab43d6204c51c9c",
+  "quality_report": {
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "severity": "minor",
+        "detail": "Предыдущий отчёт перепроверен: 17 групп замечаний обработаны, однако в абзацах 82 и 88 после правок остаются синтаксические дефекты; они отдельно перечислены ниже.",
+        "resolved": true
+      },
+      {
+        "severity": "minor",
+        "detail": "Абз. 20: «телосложением ближе к Брюсу» — грамматически неполное сравнение. Сравнивать именно телосложение.",
+        "resolved": false
+      },
+      {
+        "severity": "minor",
+        "detail": "Абз. 52: terrified ослаблено до «боялся». Восстановить сильный страх.",
+        "resolved": false
+      },
+      {
+        "severity": "minor",
+        "detail": "Абз. 82: исправление сохранило смысл, но создало синтаксически неверную конструкцию «ответы, которые Тим не был уверен, что сумеет увидеть сам». Передать недоверие к собственному восприятию без нарушения управления.",
+        "resolved": false
+      },
+      {
+        "severity": "minor",
+        "detail": "Абз. 88: «но не тех, кого он знал» сбивает согласование с «лицами». Сохранить парадокс знакомых, но чужих лиц.",
+        "resolved": false
+      },
+      {
+        "severity": "minor",
+        "detail": "Абз. 92: stopped cold — сердце внезапно замерло; не утверждать буквальную остановку сердца и его охлаждение.",
+        "resolved": false
+      },
+      {
+        "severity": "minor",
+        "detail": "Абз. 101: It's been a rough time связано с продолжающимся напряжением; «Тяжёлые были времена» уводит в законченный период. Сохранить связь с настоящим.",
+        "resolved": false
+      },
+      {
+        "severity": "major",
+        "detail": "Абз. 118: was suddenly upon him означает внезапное нападение, а не просто появление рядом. Сохранить резкость нападения; последующее действие не менять.",
+        "resolved": false
+      }
+    ]
+  }
+}
