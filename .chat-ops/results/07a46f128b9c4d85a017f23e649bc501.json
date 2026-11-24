@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "request_id": "07a46f128b9c4d85a017f23e649bc501",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "257b3e485a96ce7da440823c8de44c736df255c6a4842ede61208f89d9efe067",
+    "record": {
+      "correction_round": 2,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "findings": [
+          {
+            "detail": "Перепроверены исправленные места двух предыдущих циклов (17 и 7 групп замечаний) по исходнику. Смысловые и грамматические дефекты устранены; в том числе сохранены интенсивность страха, сравнение телосложения, отчуждение от знакомых лиц, недоверие к собственному восприятию, продолжающееся напряжение и внезапность нападения. Все 126 абзацев сохранены, последовательность исходника и ранее проверенные неизменённые фрагменты сохранены.",
+            "resolved": true,
+            "severity": "minor"
+          }
+        ]
+      },
+      "record_id": "ffd600edeeca4bc182d3fb92a502ae4f",
+      "review_commit": "357c5ac7937b9de71de27d2922572ac304f955a6",
+      "review_contract_revision": "docs/TRANSLATION.md@20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "reviewed_at": "2026-11-24T22:21:53Z",
+      "reviewer_session_id": "chat-robin-r03-f83d1568",
+      "sequence": 8,
+      "source_sha256": "3c4994087bad38be989691a3dc43412ecd9abd2114e5f0f5f36c11223a25befb",
+      "state_revision": "9511b13b07a8148af72a8329bc12a264de9f82414e3d76d76e05f8313007f0f2",
+      "supersedes_record_id": "dbf182ae7af542d89ef93ec68ce3b66d",
+      "translation_sha256": "27240eb76a17a2b761652b835ea00b0557c4c07899ef1d9a455504837aa2f191",
+      "unit_id": "chapter-000003",
+      "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a"
+    }
+  },
+  "error": null
+}
