@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "book_slug": "the-ballad-of-dead-robin",
+  "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+  "chapter": 1,
+  "request_id": "e10a8e6f42d14b7c9a503e8f16d2b409",
+  "operation": "review-record",
+  "session_id": "chat-robin-r01-d20a8e6f",
+  "outcome": "PASS",
+  "source_sha256": "ef08719db830473241ea6799df7d9d27fde5f439a1428e466a1db65ef582dbfd",
+  "translation_sha256": "8b6d6563350bfffc62edd2fc5e2868e04318cb33bb055365b90d4faee5dd9a8a",
+  "claim_sha256": "dd67a1f81b537c515b50b2a030b6271b2b3bd9c706713ef69981ea500b8d7ec4",
+  "quality_report": {
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "severity": "minor",
+        "detail": "Повторное сравнение подтвердило устранение добавленного объекта защиты в четырёх метках.",
+        "resolved": true
+      },
+      {
+        "severity": "minor",
+        "detail": "Смысловой акцент exactly that восстановлен.",
+        "resolved": true
+      },
+      {
+        "severity": "minor",
+        "detail": "Добавленное усиление отчаянной устранено.",
+        "resolved": true
+      }
+    ]
+  }
+}
