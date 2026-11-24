@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "one-does-not-monsieur",
-  "next_sequence": 4,
+  "next_sequence": 5,
   "records": [
     {
       "record_id": "c4b03697d25541ea8d3070ad34e8c878",
@@ -112,6 +112,44 @@
             "severity": "minor",
             "detail": "Блок 28: нарушено согласование числа у олицетворённых обстоятельств (что-нибудь / им / они). Блок 163: повтор 'сидевшая ... сидела' и пропущена запятая. Блок 160: пропущена закрывающая запятая после 'лодочкой'. Блок 157: 'их зажгли' имеет неявный антецедент; уточнить свечи. Блок 56: убрать двусмысленность 'вдохнул его'.",
             "resolved": false
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "3eb35480e8bd4302a45133ca44d9da2b",
+      "sequence": 4,
+      "unit_id": "chapter-000002",
+      "outcome": "PASS",
+      "source_sha256": "b1e2aea2c293bbdfe3de23d5b538b53a878a9beccf232e092a21450d38592196",
+      "translation_sha256": "248161869c0236382622993bda9ce1f721d26b051ee9c8453dc3dd54dde8428c",
+      "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "review_contract_revision": "docs/TRANSLATION.md@20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "reviewer_session_id": "chatops-arrival-r4-20261124",
+      "reviewed_at": "2026-11-24T20:49:22Z",
+      "state_revision": "84b58f7f36f735f3cbf8a8927b7d707a788fb6a4fa1e6ab2a5b20c88cfae9f3f",
+      "review_commit": "6d8ed2f8cd5e7541efabfadf4e09cf5c8ad68aa1",
+      "correction_round": 2,
+      "supersedes_record_id": "ab8ef256186e4d9b8728d4d4d7e028d8",
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "major",
+            "detail": "Замечания первого ревью в блоках 35, 145 и 150 исправлены, повторно сопоставлены с оригиналом: перевязка раны, принадлежность огня роду Конти и обмен мисками восстановлены.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "После двух циклов исправлений повторно проверены 25 изменённых блоков, согласование и пунктуация в блоках 28, 56, 157, 160, 163. Сохранены все 260 блоков, семь границ сцен, ссылка и якорь примечаний. Остальных существенных замечаний не выявлено.",
+            "resolved": true
           }
         ]
       }
