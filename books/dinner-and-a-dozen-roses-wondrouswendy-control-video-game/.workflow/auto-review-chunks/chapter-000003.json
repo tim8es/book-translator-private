@@ -190,12 +190,77 @@
       },
       "style": [],
       "glossary": []
+    },
+    "chunk-002": {
+      "outcome": "CORRECTIONS_REQUIRED",
+      "report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "drive-detail",
+            "category": "omission",
+            "severity": "minor",
+            "detail": "The source specifies that they could drive to the mountains; «поехать в горы» leaves out that travel-by-car detail. Preserve it, for example: «съездить на машине в горы».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "We could drive up to the mountains next spring.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Мы могли бы поехать в горы следующей весной.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "speech-punct",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "The Russian punctuation breaks a single continuous utterance into mismatched quoted fragments. In this interrupted sentence, keep the quotation open and set off the authorial words with dashes: «Ты, должно быть, Купидон, — говорит Дарлинг, обнимая Тренча за талию, — потому что у меня сердечки в глазах, когда я смотрю на тебя».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“You must be Cupid,” Darling says, wrapping an arm around Trench’s waist, “because I have hearts in my eyes for you.”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Ты, должно быть, Купидон», — говорит Дарлинг, обнимая Тренча за талию, «потому что у меня сердечки в глазах, когда я смотрю на тебя».",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "style": [
+        {
+          "evidence": "Blocks 030 and 040.",
+          "source_pattern": "Close third-person narration follows Darling’s emotional responses, using figurative phrasing such as his stomach being full of butterflies and Trench setting his heart ablaze.",
+          "translation_approach": "Maintain the close focus on Darling and preserve the emotional imagery without explaining or flattening it."
+        },
+        {
+          "evidence": "Blocks 047 and 059.",
+          "source_pattern": "Romantic dialogue is conversational and self-conscious, with playful wordplay and hesitant, disfluent phrasing.",
+          "translation_approach": "Preserve the speakers’ casual teasing, awkward pauses, and playful puns in natural Russian."
+        }
+      ],
+      "glossary": []
     }
   },
   "windows": {
     "chunk-001": {
       "source_sha256": "5108bc81e8de2d067f499afb88905a7796db745b90558426114da23a2d05b96b",
       "translation_sha256": "e51ae2985faf6bb6862d3a797413c6fbe6b866260da59a337b55ab1ba0570540"
+    },
+    "chunk-002": {
+      "source_sha256": "bf96e43b39c74881723ab3da740bb7e1b05bba012ba9ff0974f2c77154e7c4a2",
+      "translation_sha256": "f449d4e955881821e2bae62c763b78c93ea5f9605a674bb1484ec3523d2b4b7b"
     }
   },
   "accepted_review_record_id": null,
