@@ -3,7 +3,7 @@
   "job_id": "7737b663533fb070de6d205aa2ef3feb",
   "book_slug": "dinner-and-a-dozen-roses-wondrouswendy-control-video-game",
   "state": "running",
-  "phase": "model-call-reserved",
+  "phase": "correction-batch-staged",
   "failures": 2,
   "correction_rounds": {
     "chapter-000003": 3,
@@ -11,7 +11,7 @@
   },
   "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
   "source_sha256": "365a5fa793b0ef0e326a5c02d052e13819731cb2a080addcefd3ca0550049289",
-  "updated_at": "2026-11-25T08:49:10.587331+00:00",
+  "updated_at": "2026-11-25T08:49:52.810597+00:00",
   "queue_snapshot": {
     "extracted": 1,
     "reviewed": 1,
@@ -49,20 +49,12 @@
     "route": "primary",
     "request_chars": 29016,
     "outcome": "response",
-    "duration_ms": 30248,
+    "duration_ms": 40825,
     "prompt_tokens": 5928,
-    "completion_tokens": 1200,
-    "total_tokens": 7128
+    "completion_tokens": 1115,
+    "total_tokens": 7043
   },
   "provider_call_metrics": [
-    {
-      "unit_id": "chapter-000003",
-      "role": "reviewer",
-      "route": "primary",
-      "request_chars": 80044,
-      "outcome": "http_503",
-      "duration_ms": 300191
-    },
     {
       "unit_id": "chapter-000003",
       "role": "reviewer",
@@ -485,6 +477,17 @@
       "prompt_tokens": 5928,
       "completion_tokens": 1200,
       "total_tokens": 7128
+    },
+    {
+      "unit_id": "chapter-000004",
+      "role": "corrector",
+      "route": "primary",
+      "request_chars": 29016,
+      "outcome": "response",
+      "duration_ms": 40825,
+      "prompt_tokens": 5928,
+      "completion_tokens": 1115,
+      "total_tokens": 7043
     }
   ],
   "execution_metrics": {
@@ -511,13 +514,13 @@
         "errors": 3
       },
       "corrector": {
-        "completed_calls": 20,
-        "responses": 20,
-        "duration_ms": 367421,
-        "request_chars": 601669,
-        "prompt_tokens": 124780,
-        "completion_tokens": 14155,
-        "total_tokens": 138935
+        "completed_calls": 21,
+        "responses": 21,
+        "duration_ms": 408246,
+        "request_chars": 630685,
+        "prompt_tokens": 130708,
+        "completion_tokens": 15270,
+        "total_tokens": 145978
       },
       "orchestrator": {
         "completed_calls": 1,
@@ -682,10 +685,18 @@
     "response_chars": 275,
     "provider_refusal": false,
     "prompt_tokens": 5928,
-    "completion_tokens": 1200,
-    "total_tokens": 7128,
+    "completion_tokens": 1115,
+    "total_tokens": 7043,
     "route": "primary",
     "role": "corrector",
     "unit_id": "chapter-000004"
+  },
+  "correction_isolation": {
+    "unit_id": "chapter-000004",
+    "review_record_id": "84d007b5b4874ee896ffee48c3e97b80",
+    "translation_sha256": "35df49ea25a6bfe6aab0f9ce992eacaff51ee2fc629568a70e480f6ac6263c64",
+    "finding_ids": [
+      "recheck-style-1"
+    ]
   }
 }
