@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "dinner-and-a-dozen-roses-wondrouswendy-control-video-game",
-  "next_sequence": 7,
+  "next_sequence": 8,
   "records": [
     {
       "record_id": "7f32a1dafcda42798f71de4318e8f1a7",
@@ -1370,6 +1370,77 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "e23835e8ce7e8c28aa846ecd8284cacf65703460677b3bdb848dda91fc3064e2",
+        "style_guide": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4"
+      }
+    },
+    {
+      "record_id": "84d007b5b4874ee896ffee48c3e97b80",
+      "sequence": 7,
+      "unit_id": "chapter-000004",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "905a274b6d5fdcbfe124ffcaae97d423caecfb6b34b10e2a421acce82651e98d",
+      "translation_sha256": "35df49ea25a6bfe6aab0f9ce992eacaff51ee2fc629568a70e480f6ac6263c64",
+      "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "review_contract_revision": "docs/TRANSLATION.md@20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "reviewer_session_id": "auto-7737b663533f-reviewer-c922c323",
+      "reviewed_at": "2026-11-25T08:47:43Z",
+      "state_revision": "6282f3d025920ac00669a3339da478f1b937135508f1b9b15846ffe419495d47",
+      "review_commit": "e2c4eae89267f638c599a5e91ba78ef2539b9161",
+      "correction_round": 2,
+      "supersedes_record_id": "7371f257b5aa4ef994ab8e8ca3f6ea02",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-omission-1",
+            "category": "omission",
+            "severity": "minor",
+            "detail": "Resolved: «к этому моменту» preserves the scope conveyed by so far.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "If you enjoyed the story so far, please leave a comment!",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Если к этому моменту история вам понравилась, оставьте комментарий!",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "7371f257b5aa4ef994ab8e8ca3f6ea02",
+              "finding_id": "omission-1"
+            }
+          },
+          {
+            "id": "recheck-style-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Unresolved: a comma is needed after the linked phrase and before the subordinate clause introduced by чтобы.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Please <!-- bt-inline:000001:start -->drop by the Archive and comment<!-- bt-inline:000001:end --> to let the creator know if you enjoyed their work!",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Пожалуйста, <!-- bt-inline:000001:start -->загляните в Архив и оставьте комментарий<!-- bt-inline:000001:end --> чтобы автор узнал, понравилась ли вам работа!",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "7371f257b5aa4ef994ab8e8ca3f6ea02",
+              "finding_id": "style-1"
+            }
           }
         ]
       },

@@ -3,7 +3,7 @@
   "job_id": "7737b663533fb070de6d205aa2ef3feb",
   "book_slug": "dinner-and-a-dozen-roses-wondrouswendy-control-video-game",
   "state": "running",
-  "phase": "model-call-reserved",
+  "phase": "reviewer-completed",
   "failures": 0,
   "correction_rounds": {
     "chapter-000003": 3,
@@ -11,7 +11,7 @@
   },
   "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
   "source_sha256": "365a5fa793b0ef0e326a5c02d052e13819731cb2a080addcefd3ca0550049289",
-  "updated_at": "2026-11-25T08:46:26.076676+00:00",
+  "updated_at": "2026-11-25T08:47:43.201183+00:00",
   "queue_snapshot": {
     "extracted": 1,
     "reviewed": 1,
@@ -19,12 +19,7 @@
     "correction_candidates": 1,
     "awaiting_promotion": 0
   },
-  "active": {
-    "role": "reviewer",
-    "chapter": 4,
-    "session_id": "auto-7737b663533f-reviewer-c922c323",
-    "unit_id": "chapter-000004"
-  },
+  "active": null,
   "structural_helper_revision": "4c584fe5534871cd05aa851d9b7bdbfa696d0edd",
   "model_calls_started": 55,
   "prompt_context": {
@@ -43,27 +38,16 @@
   },
   "provider_call_metric": {
     "unit_id": "chapter-000004",
-    "role": "corrector",
+    "role": "reviewer",
     "route": "primary",
-    "request_chars": 28709,
+    "request_chars": 41490,
     "outcome": "response",
-    "duration_ms": 12484,
-    "prompt_tokens": 5850,
-    "completion_tokens": 348,
-    "total_tokens": 6198
+    "duration_ms": 75175,
+    "prompt_tokens": 8464,
+    "completion_tokens": 4064,
+    "total_tokens": 12528
   },
   "provider_call_metrics": [
-    {
-      "unit_id": "chapter-000002",
-      "role": "reviewer",
-      "route": "primary",
-      "request_chars": 37828,
-      "outcome": "response",
-      "duration_ms": 16085,
-      "prompt_tokens": 7438,
-      "completion_tokens": 791,
-      "total_tokens": 8229
-    },
     {
       "unit_id": "chapter-000003",
       "role": "translator",
@@ -483,6 +467,17 @@
       "prompt_tokens": 5850,
       "completion_tokens": 348,
       "total_tokens": 6198
+    },
+    {
+      "unit_id": "chapter-000004",
+      "role": "reviewer",
+      "route": "primary",
+      "request_chars": 41490,
+      "outcome": "response",
+      "duration_ms": 75175,
+      "prompt_tokens": 8464,
+      "completion_tokens": 4064,
+      "total_tokens": 12528
     }
   ],
   "execution_metrics": {
@@ -499,13 +494,13 @@
         "total_tokens": 125645
       },
       "reviewer": {
-        "completed_calls": 19,
-        "responses": 16,
-        "duration_ms": 2940899,
-        "request_chars": 1082609,
-        "prompt_tokens": 188769,
-        "completion_tokens": 120002,
-        "total_tokens": 308771,
+        "completed_calls": 20,
+        "responses": 17,
+        "duration_ms": 3016074,
+        "request_chars": 1124099,
+        "prompt_tokens": 197233,
+        "completion_tokens": 124066,
+        "total_tokens": 321299,
         "errors": 3
       },
       "corrector": {
@@ -528,7 +523,7 @@
       "translated": 3,
       "review_pass": 1,
       "reviewed": 1,
-      "review_rejected": 5,
+      "review_rejected": 6,
       "corrected": 4
     }
   },
@@ -656,23 +651,23 @@
       "at": "2026-11-25T08:29:59.242658+00:00"
     }
   ],
-  "model_response_diagnostics": {
-    "finish_reason": "stop",
-    "response_format": "json_object",
-    "response_chars": 267,
-    "provider_refusal": false,
-    "prompt_tokens": 5850,
-    "completion_tokens": 348,
-    "total_tokens": 6198,
-    "route": "primary",
-    "role": "corrector",
-    "unit_id": "chapter-000004"
-  },
   "correction_overlap_deferred": {
     "unit_id": "chapter-000004",
     "review_record_id": "7371f257b5aa4ef994ab8e8ca3f6ea02",
     "unapplied_finding_ids": [
       "style-1"
     ]
+  },
+  "model_response_diagnostics": {
+    "finish_reason": "stop",
+    "response_format": "json_object",
+    "response_chars": 2208,
+    "provider_refusal": false,
+    "prompt_tokens": 8464,
+    "completion_tokens": 4064,
+    "total_tokens": 12528,
+    "route": "primary",
+    "role": "reviewer",
+    "unit_id": "chapter-000004"
   }
 }
