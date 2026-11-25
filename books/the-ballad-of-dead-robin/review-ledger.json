@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "the-ballad-of-dead-robin",
-  "next_sequence": 12,
+  "next_sequence": 13,
   "records": [
     {
       "record_id": "b395b5cc6d41470387aa4d8dfe6853d7",
@@ -762,6 +762,129 @@
             "severity": "major",
             "detail": "Абз. 125: guns — огнестрельное оружие, а не любое оружие. Сохранить противопоставление власти, вооружённости и взаимной поддержки.",
             "resolved": false
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "05c50cc12ea54bd198b902beaae63b56",
+      "sequence": 12,
+      "unit_id": "chapter-000005",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "06f3cbfab1fd35285383a55caaa54458b9490d5fed096b2afac5505b44bb8592",
+      "translation_sha256": "2e03c0e91c83c113e90083d99436f5f9f4e70b61ba77bdcf92f85f66ed860090",
+      "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "review_contract_revision": "docs/TRANSLATION.md@20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "reviewer_session_id": "chat-robin-r05-c8161d20",
+      "reviewed_at": "2026-11-25T06:30:58Z",
+      "state_revision": "c442a2b24664e16561d4bad9cc34f53d157fd1887da4a853f05e040fd8c7cd14",
+      "review_commit": "7ccf9e7cf4bc5fdeecdb395b8f49732dcd03c28b",
+      "correction_round": 2,
+      "supersedes_record_id": "a6e151b32f7147848cf7856d846cb30a",
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Абз. 24: сохранить повтор «Он был похож» между двумя отдельными абзацами.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 35: сохранить повтор something и согласовать сказуемые «был ... надломлен».",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 38: surrender в данном внутреннем конфликте естественнее передать как отказ от сопротивления, а не военную капитуляцию.",
+            "resolved": true
+          },
+          {
+            "severity": "major",
+            "detail": "Абз. 42: tear out its throat — вырвать горло; «перегрызть» меняет описанный образ.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 50: смысл half-choked восстановлен, но при исправлении возникло нарушение падежного согласования «полусмех — звуком». Нужна грамматически цельная конструкция: «Это было наполовину сдавленное восклицание, наполовину смех — звук, не имеющий ничего общего со здравым рассудком».",
+            "resolved": false
+          },
+          {
+            "severity": "major",
+            "detail": "Абз. 52: нарушена условность might have been a smile if not for; восстановить грамматически полноценную условную конструкцию.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 58: turned в контексте ухода — развернулся, а не только отвернулся.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 73: сохранить анафору He needed — «Ему нужно было ...».",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 78: deliberate sip — осознанный, намеренный глоток; неспешность не выражает намеренности.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 85: «на его собственный слух» и «изношенно» — кальки; сохранить обессиленный голос и образ истощённости.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 86: «явно не впечатлённый» — калька; передать скептическую реакцию.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 89: It wouldn't matter — «это не имело бы значения», а не утверждение, что ничего бы не изменилось.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 95: words tasted wrong — сохранить ощущение неправильности слов через естественную вкусовую метафору.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 97: сохранить повтор He remembered, не опускать субъект.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 99: jagged piece — зазубренный осколок, сохранить характер края.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 108: master liar — непревзойдённый лжец; сохранить степень владения обманом.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 116: прежняя калька заменена, однако «на задворках кухни» вводит нежелательную пространственную ассоциацию. Сохранить образ призрака, таящегося в дальних уголках кухни.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 123: сохранить резкую паузу между именем и окликом.",
+            "resolved": true
+          },
+          {
+            "severity": "major",
+            "detail": "Абз. 125: guns — огнестрельное оружие, а не любое оружие. Сохранить противопоставление власти, вооружённости и взаимной поддержки.",
+            "resolved": true
           }
         ]
       }
