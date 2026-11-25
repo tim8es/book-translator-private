@@ -1,0 +1,133 @@
+{
+  "schema_version": 1,
+  "request_id": "035a6174b8d94c8ea216f0359dc47b12",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "668a09d6a1615daa1fc0e1a1cbcd4d8e5f6039fc18eefec41cb13c6c760b6825",
+    "record": {
+      "correction_round": 1,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "findings": [
+          {
+            "detail": "Абз. 13: самостоятельное повествовательное предложение после реплики требует точки и прописной буквы.",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абз. 19: сохранить полное повторение «Это был не Джейсон».",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абз. 30: Stripped from him относится к снаряжению; «его лишили всего» расширяет утверждение за пределы исходника.",
+            "resolved": true,
+            "severity": "major"
+          },
+          {
+            "detail": "Абз. 35: неверный порядок слов «должно что-то быть»; естественное «должно быть что-то».",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абз. 37: оборот с «словно» относится к неподвижности Тима, не к биению сердца; развести предложения.",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абз. 42: «осторожными переговорами с тенями» — тяжёлая калька; сохранить метафору осторожного взаимодействия с тенями.",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абз. 61: every theory he had не «все возможные теории», а все имевшиеся у него версии.",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абз. 75: «с занесённой кистью» может подразумевать замах; кисть наготове.",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абз. 76: «кадры их жизней» — грамматическая калька; кадры из их жизни.",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абз. 80: «насмешливую усмешку» — тавтология; сохранить sneer как презрительную усмешку.",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абз. 81: lost означает растерянность, а не потерю дороги; сохранить полное повторение отрицания.",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абз. 93: «извращённая часть его» — калька, передать внутреннюю болезненную мысль без нового оценочного смысла.",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абз. 96: флешка давит в кармане, не на сам карман; восстановить телесное ощущение веса.",
+            "resolved": true,
+            "severity": "major"
+          },
+          {
+            "detail": "Абз. 98: сохранить прошедшее время повествования.",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абз. 112: wax polish — воск для полировки, а «полиролью» неудачная форма; сохранить запах.",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абз. 122: нарушено управление и согласование «затем овладело горе» и «насколько глубокие ненависть и отчаяние». Восстановить последовательность эмоций и глубину способности брата испытывать ненависть и отчаяние.",
+            "resolved": true,
+            "severity": "major"
+          },
+          {
+            "detail": "Абз. 128: «мысли ... метались в возмущении при виде» — калька; сохранить возмущённое удивление Джейсона ростом Дэмиена.",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абз. 133: «грудь сжала смесь» — двусмысленный субъект; сохранить сочетание облегчения и тревоги.",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абз. 147: small smile — лёгкая, едва заметная улыбка, а не обязательно слабая.",
+            "resolved": true,
+            "severity": "minor"
+          }
+        ]
+      },
+      "record_id": "4a46fb3f13b5436f9ade1ab12390c0de",
+      "review_commit": "6f5d973d0be2b9f6c5af60c77fcc1b2731b8c646",
+      "review_contract_revision": "docs/TRANSLATION.md@20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "reviewed_at": "2026-11-25T17:33:38Z",
+      "reviewer_session_id": "chat-robin-r06-f1494053",
+      "sequence": 15,
+      "source_sha256": "2530f3fa3175878f9c190482d80b0791d149f820d24047ed4af697832790455b",
+      "state_revision": "3b7c6c98c7fb3c07c2a364525dd91f9a1444968dd59a7afdf87d89c104cc8308",
+      "supersedes_record_id": "fa17a453421d43299eb08ca8b6bff4b5",
+      "translation_sha256": "fbe789ace69d82060017c2a03ece0b5e42fb9e5bf7709c377d1c9afb307deda4",
+      "unit_id": "chapter-000006",
+      "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a"
+    }
+  },
+  "error": null
+}
