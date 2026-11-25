@@ -44,7 +44,15 @@ class StateOnlyDeploymentTests(unittest.TestCase):
             "book-batch-validation.yml",
             "book-job-monitor.yml", "chat-operations.yml", "final-epub.yml",
             "omniroute-json-smoke.yml", "pi-book-translation.yml", "tests.yml",
+            "executor-transfer.yml",
         })
+        transfer = (root / "executor-transfer.yml").read_text("utf-8")
+        self.assertIn("TRANSFER_RUNTIME_SHA:", transfer)
+        self.assertIn("group: book-operation-", transfer)
+        self.assertIn("executor_transfer.py", transfer)
+        self.assertIn("REQUEST_BLOB", transfer)
+        self.assertIn("gh workflow run pi-book-translation.yml", transfer)
+        self.assertIn("gh workflow run auto-translate.yml", transfer)
         pi = (root / "pi-book-translation.yml").read_text("utf-8")
         self.assertIn("PI_EXECUTOR_SHA:", pi)
         self.assertIn("BOOK_TRANSLATOR_LLM_BACKEND: pi", pi)
