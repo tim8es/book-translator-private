@@ -3,12 +3,12 @@
   "job_id": "7737b663533fb070de6d205aa2ef3feb",
   "book_slug": "dinner-and-a-dozen-roses-wondrouswendy-control-video-game",
   "state": "running",
-  "phase": "claimed",
+  "phase": "model-call-reserved",
   "failures": 0,
   "correction_rounds": {},
   "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
   "source_sha256": "365a5fa793b0ef0e326a5c02d052e13819731cb2a080addcefd3ca0550049289",
-  "updated_at": "2026-11-25T07:19:16.144476+00:00",
+  "updated_at": "2026-11-25T07:19:19.186545+00:00",
   "queue_snapshot": {
     "extracted": 2,
     "reviewed": 1,
@@ -23,22 +23,20 @@
     "unit_id": "chapter-000003"
   },
   "structural_helper_revision": "4c584fe5534871cd05aa851d9b7bdbfa696d0edd",
-  "model_calls_started": 16,
+  "model_calls_started": 17,
   "prompt_context": {
-    "role": "translator",
+    "role": "reviewer",
     "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
     "loaded_contracts": [
       "AGENTS.md",
       "docs/TRANSLATION.md",
-      "docs/TRANSLATOR.md"
+      "docs/REVIEWER.md"
     ],
-    "glossary_sha256": "02f17a1de3ac1023c93e6933a729587638a7401ac1f19a65dfd5f79e1304170b",
+    "glossary_sha256": "e23835e8ce7e8c28aa846ecd8284cacf65703460677b3bdb848dda91fc3064e2",
     "style_guide_sha256": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4",
-    "system_chars": 21895,
-    "user_chars": 10011,
-    "execution_mode": "shared-structural-segments",
-    "helper_revision": "4c584fe5534871cd05aa851d9b7bdbfa696d0edd",
-    "batch_segment_count": 26
+    "system_chars": 29562,
+    "user_chars": 50482,
+    "review_context": "independent_session"
   },
   "provider_call_metric": {
     "unit_id": "chapter-000003",
