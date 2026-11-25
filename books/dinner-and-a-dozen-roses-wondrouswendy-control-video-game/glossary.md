@@ -22,3 +22,6 @@ Use dictionary forms; classify terms semantically. Type and optional notes use t
 | Zachariah Trench | Захария Тренч | персонаж |  |
 | Altered Item | Изменённый предмет | термин вселенной |  |
 | Head of Research | Глава исследований | должность |  |
+| Archive of Our Own | Archive of Our Own | сайт |  |
+| Control (Video Game) | Control (видеоигра) | фэндом |  |
+| The Days of Thunder | Дни грома | название серии |  |
