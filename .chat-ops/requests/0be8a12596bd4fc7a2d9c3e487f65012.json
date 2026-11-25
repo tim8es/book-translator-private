@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "book_slug": "the-ballad-of-dead-robin",
+  "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+  "chapter": 4,
+  "request_id": "0be8a12596bd4fc7a2d9c3e487f65012",
+  "operation": "review-record",
+  "session_id": "chat-robin-r04-bbf08cfd",
+  "outcome": "PASS",
+  "source_sha256": "f0a3cffb409c53b5e4d81382bd51bfdab2ff6dbdc279d11c7705741c83ac1a5b",
+  "translation_sha256": "ccac27eb6d9180af0fbc83be8b97230dd4bf499bd39ae897d4470ff7ad7abbce",
+  "claim_sha256": "63d946e5ef75b26255070bf985ace0f8325b15d581120df6cc230e2093dd9e43",
+  "quality_report": {
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "severity": "minor",
+        "detail": "Все 20 групп замечаний предыдущего ревью перепроверены по соответствующим абзацам принятой редакции. Восстановлены защитная тревога, участие Джейсона в похоронах, точная степень уверенности, повтор и интенсивность извинения; стилистические и грамматические дефекты устранены. Резкий обрыв обращения передан конструкцией «начал было» с многоточием. 119 абзацев сохранены; неизменённые места проверены в предыдущем полном сравнении. Существенных нерешённых замечаний нет.",
+        "resolved": true
+      }
+    ]
+  }
+}
