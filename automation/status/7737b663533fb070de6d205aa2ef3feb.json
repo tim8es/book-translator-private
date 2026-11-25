@@ -3,15 +3,15 @@
   "job_id": "7737b663533fb070de6d205aa2ef3feb",
   "book_slug": "dinner-and-a-dozen-roses-wondrouswendy-control-video-game",
   "state": "running",
-  "phase": "correction-batch-staged",
+  "phase": "corrector-completed",
   "failures": 0,
   "correction_rounds": {
-    "chapter-000003": 4,
+    "chapter-000003": 5,
     "chapter-000004": 1
   },
   "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
   "source_sha256": "365a5fa793b0ef0e326a5c02d052e13819731cb2a080addcefd3ca0550049289",
-  "updated_at": "2026-11-25T18:05:42.110610+00:00",
+  "updated_at": "2026-11-25T18:05:43.894697+00:00",
   "queue_snapshot": {
     "extracted": 0,
     "reviewed": 3,
@@ -19,12 +19,7 @@
     "correction_candidates": 1,
     "awaiting_promotion": 0
   },
-  "active": {
-    "role": "corrector",
-    "chapter": 3,
-    "session_id": "auto-7737b663533f-corrector-f032a894",
-    "unit_id": "chapter-000003"
-  },
+  "active": null,
   "structural_helper_revision": "4c584fe5534871cd05aa851d9b7bdbfa696d0edd",
   "model_calls_started": 86,
   "prompt_context": {
@@ -483,7 +478,7 @@
       "review_pass": 3,
       "reviewed": 3,
       "review_rejected": 9,
-      "corrected": 5
+      "corrected": 6
     },
     "runtime_revisions": {
       "6db024fa3dada95d745527f911678327201d924c": {
@@ -510,7 +505,7 @@
         },
         "accepted_operations": {
           "review_rejected": 2,
-          "corrected": 1
+          "corrected": 2
         }
       }
     }
@@ -551,7 +546,7 @@
   "glossary_proposals_deferred": 0,
   "memory_style_saved": 0,
   "correction_extensions": {
-    "chapter-000003": 1
+    "chapter-000003": 2
   },
   "correction_finding_triage": {
     "unit_id": "chapter-000003",
@@ -743,29 +738,6 @@
       7,
       13
     ]
-  },
-  "provider_model_route": "primary",
-  "correction_batch_progress": {
-    "unit_id": "chapter-000003",
-    "review_record_id": "7018fd3fc5594cb2bf97484ec7414e1e",
-    "completed": 12,
-    "total": 13
-  },
-  "correction_isolation": {
-    "unit_id": "chapter-000003",
-    "review_record_id": "7018fd3fc5594cb2bf97484ec7414e1e",
-    "translation_sha256": "2a7194a9b11197901c0c0aae1edd65ff0b0c90247aa4fa3ef2f6fd1000a763f3",
-    "finding_ids": [
-      "chunk-002-flow-41"
-    ]
-  },
-  "correction_orchestrator_decision": {
-    "unit_id": "chapter-000003",
-    "review_record_id": "7018fd3fc5594cb2bf97484ec7414e1e",
-    "translation_sha256": "2a7194a9b11197901c0c0aae1edd65ff0b0c90247aa4fa3ef2f6fd1000a763f3",
-    "strategy": "isolate_remaining",
-    "outcome": "accepted",
-    "duration_ms": 7648
   },
   "model_response_diagnostics": {
     "finish_reason": "stop",
