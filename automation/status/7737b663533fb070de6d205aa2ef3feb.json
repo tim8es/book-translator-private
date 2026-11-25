@@ -3,12 +3,12 @@
   "job_id": "7737b663533fb070de6d205aa2ef3feb",
   "book_slug": "dinner-and-a-dozen-roses-wondrouswendy-control-video-game",
   "state": "running",
-  "phase": "model-call-reserved",
+  "phase": "correction-batch-staged",
   "failures": 0,
   "correction_rounds": {},
   "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
   "source_sha256": "365a5fa793b0ef0e326a5c02d052e13819731cb2a080addcefd3ca0550049289",
-  "updated_at": "2026-11-25T07:33:03.622907+00:00",
+  "updated_at": "2026-11-25T07:33:05.280106+00:00",
   "queue_snapshot": {
     "extracted": 2,
     "reviewed": 1,
@@ -382,5 +382,26 @@
         }
       ]
     }
+  },
+  "correction_batch_progress": {
+    "unit_id": "chapter-000003",
+    "review_record_id": "48f97c88697a4401b927c43f7b2be7a7",
+    "completed": 0,
+    "total": 2
+  },
+  "correction_regression_deferred": {
+    "unit_id": "chapter-000003",
+    "review_record_id": "48f97c88697a4401b927c43f7b2be7a7",
+    "unapplied_finding_ids": [
+      "style-tense-1"
+    ]
+  },
+  "correction_isolation": {
+    "unit_id": "chapter-000003",
+    "review_record_id": "48f97c88697a4401b927c43f7b2be7a7",
+    "translation_sha256": "3ef0e015c512d0a245acf5b34ac3cc956f5c5db056f2c03a6b51a42bc5478135",
+    "finding_ids": [
+      "style-tense-1"
+    ]
   }
 }
