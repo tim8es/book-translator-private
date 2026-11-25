@@ -8,7 +8,7 @@
   "correction_rounds": {},
   "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
   "source_sha256": "365a5fa793b0ef0e326a5c02d052e13819731cb2a080addcefd3ca0550049289",
-  "updated_at": "2026-11-25T07:32:48.821027+00:00",
+  "updated_at": "2026-11-25T07:33:03.622907+00:00",
   "queue_snapshot": {
     "extracted": 2,
     "reviewed": 1,
@@ -42,14 +42,14 @@
   },
   "provider_call_metric": {
     "unit_id": "chapter-000003",
-    "role": "reviewer",
+    "role": "corrector",
     "route": "primary",
-    "request_chars": 80044,
+    "request_chars": 29548,
     "outcome": "response",
-    "duration_ms": 166443,
-    "prompt_tokens": 19361,
-    "completion_tokens": 18447,
-    "total_tokens": 37808
+    "duration_ms": 13055,
+    "prompt_tokens": 6088,
+    "completion_tokens": 490,
+    "total_tokens": 6578
   },
   "provider_call_metrics": [
     {
@@ -246,6 +246,17 @@
       "prompt_tokens": 19361,
       "completion_tokens": 18447,
       "total_tokens": 37808
+    },
+    {
+      "unit_id": "chapter-000003",
+      "role": "corrector",
+      "route": "primary",
+      "request_chars": 29548,
+      "outcome": "response",
+      "duration_ms": 13055,
+      "prompt_tokens": 6088,
+      "completion_tokens": 490,
+      "total_tokens": 6578
     }
   ],
   "execution_metrics": {
@@ -270,6 +281,15 @@
         "completion_tokens": 19238,
         "total_tokens": 46037,
         "errors": 1
+      },
+      "corrector": {
+        "completed_calls": 1,
+        "responses": 1,
+        "duration_ms": 13055,
+        "request_chars": 29548,
+        "prompt_tokens": 6088,
+        "completion_tokens": 490,
+        "total_tokens": 6578
       }
     },
     "accepted_operations": {
@@ -303,18 +323,6 @@
   "glossary_conflicts_rejected": 0,
   "glossary_proposals_deferred": 0,
   "memory_style_saved": 0,
-  "model_response_diagnostics": {
-    "finish_reason": "stop",
-    "response_format": "json_object",
-    "response_chars": 4445,
-    "provider_refusal": false,
-    "prompt_tokens": 19361,
-    "completion_tokens": 18447,
-    "total_tokens": 37808,
-    "route": "primary",
-    "role": "reviewer",
-    "unit_id": "chapter-000003"
-  },
   "correction_extensions": {},
   "correction_finding_triage": {
     "unit_id": "chapter-000003",
@@ -335,5 +343,44 @@
     "current_selection_size": 1,
     "unit_id": "chapter-000003",
     "review_record_id": "48f97c88697a4401b927c43f7b2be7a7"
+  },
+  "provider_model_route": "primary",
+  "model_response_diagnostics": {
+    "finish_reason": "stop",
+    "response_format": "json_object",
+    "response_chars": 267,
+    "provider_refusal": false,
+    "prompt_tokens": 6088,
+    "completion_tokens": 490,
+    "total_tokens": 6578,
+    "route": "primary",
+    "role": "corrector",
+    "unit_id": "chapter-000003"
+  },
+  "correction_regression_rejections": [
+    {
+      "unit_id": "chapter-000003",
+      "review_record_id": "48f97c88697a4401b927c43f7b2be7a7",
+      "finding_id": "style-tense-1",
+      "patch_sha256": "fbc5aff37876bae2f323c88187e6b9e13a9d0229df2a70407a0ec039d841e524",
+      "reason": "new-duplicated-phrase",
+      "at": "2026-11-25T07:33:03.622900+00:00"
+    }
+  ],
+  "last_correction_regression": {
+    "unit_id": "chapter-000003",
+    "finding_id": "style-tense-1",
+    "reason": "new-duplicated-phrase",
+    "evidence": {
+      "count": 1,
+      "examples": [
+        {
+          "tokens": 7,
+          "previous": 1,
+          "candidate": 2,
+          "adjacent": false
+        }
+      ]
+    }
   }
 }
