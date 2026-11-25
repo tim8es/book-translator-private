@@ -251,6 +251,120 @@
         }
       ],
       "glossary": []
+    },
+    "chunk-003": {
+      "outcome": "CORRECTIONS_REQUIRED",
+      "report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "mouth-referent",
+            "category": "referent",
+            "severity": "major",
+            "detail": "«Свой рот» в русской конструкции скорее относится к Тренчу, обозначенному словом «ему», и может означать, что он исследует собственный рот. В источнике речь о рте Дарлинга; уточните объект действия.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "to let him explore his mouth.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "чтобы позволить ему исследовать свой рот.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "guilty-meaning",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "«Тайных» меняет смысл guilty pleasures: в источнике речь об удовольствиях, которым обычно предаются с чувством вины или неловкости, а не обязательно скрывают.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Chocolate’s another one of his many guilty pleasures.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Шоколад — ещё одно из его многочисленных тайных удовольствий.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "caramel-calque",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Богатая карамельная начинка» звучит как буквальная калька rich filling. В русском естественнее передать насыщенность вкуса, например «насыщенная карамельная начинка».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "smooth chocolate with a rich caramel filling.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "гладкий шоколад с богатой карамельной начинкой.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "jaw-style",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Держит Дарлинга за челюсть» по-русски звучит физически резко и неестественно в этой нежной сцене. Переформулируйте так, чтобы сохранить интимное прикосновение и не создать впечатление грубого захвата.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Trench holds Darling’s jaw and strokes his bottom lip with his thumb.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Тренч держит Дарлинга за челюсть и проводит большим пальцем по его нижней губе.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "coy-tone",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "«Застенчивое» передаёт робость, тогда как coy wink в этом флиртующем контексте скорее означает игривое или лукавое подмигивание.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "with a coy wink.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "с застенчивым подмигиванием",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "mouth-feeding",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Кормит Дарлинга ртом» — неестественная по-русски формулировка и неясно описывает действие. Переформулируйте так, чтобы естественно передать, что Тренч предлагает конфету Дарлингу своим ртом.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "he feeds it to Darling with his mouth.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "он кормит Дарлинга ртом.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "style": [],
+      "glossary": []
     }
   },
   "windows": {
@@ -261,6 +375,10 @@
     "chunk-002": {
       "source_sha256": "bf96e43b39c74881723ab3da740bb7e1b05bba012ba9ff0974f2c77154e7c4a2",
       "translation_sha256": "f449d4e955881821e2bae62c763b78c93ea5f9605a674bb1484ec3523d2b4b7b"
+    },
+    "chunk-003": {
+      "source_sha256": "6a5050bac7b7bb91edcb8bd4076f449c846cc5f289a23decc449335aff61ac80",
+      "translation_sha256": "3af0eb9edbe630fce08c62f810151b35801de2b7a07939b5fa99d82211a68b5e"
     }
   },
   "accepted_review_record_id": null,
