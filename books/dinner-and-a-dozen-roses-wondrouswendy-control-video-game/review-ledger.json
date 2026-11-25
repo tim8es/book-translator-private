@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "dinner-and-a-dozen-roses-wondrouswendy-control-video-game",
-  "next_sequence": 2,
+  "next_sequence": 3,
   "records": [
     {
       "record_id": "7f32a1dafcda42798f71de4318e8f1a7",
@@ -32,6 +32,71 @@
       },
       "shared_state_revisions": {
         "glossary": "02f17a1de3ac1023c93e6933a729587638a7401ac1f19a65dfd5f79e1304170b",
+        "style_guide": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4"
+      }
+    },
+    {
+      "record_id": "48f97c88697a4401b927c43f7b2be7a7",
+      "sequence": 2,
+      "unit_id": "chapter-000003",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "4aa522e689154037898d3dadc650f4e44a02b31396a1f6e52126e9ce1eddad21",
+      "translation_sha256": "3ef0e015c512d0a245acf5b34ac3cc956f5c5db056f2c03a6b51a42bc5478135",
+      "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "review_contract_revision": "docs/TRANSLATION.md@20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "reviewer_session_id": "auto-7737b663533f-reviewer-cb3cb255",
+      "reviewed_at": "2026-11-25T07:32:41Z",
+      "state_revision": "f9c90c051216fce643328366e731208c8548729b4b2eecd9480a188af0265cc3",
+      "review_commit": "76804daeb0045f196f71db6f7e975c4e3fa7386b",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "style-tense-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The paragraph switches from past to present tense mid-narration: the opening 'дрожал и трепетал... умолял... было всё равно... был нужен' is followed by present-tense 'притягивает... хочет... впиваются'. The source is present tense throughout this passage, so the past-tense opening creates an inconsistent narrative tense; render the first sentences in present tense.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "When he’s shaking and trembling from Trench’s teasing, Darling begs to be taken.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Когда от дразнящих ласк Тренча Дарлинг весь дрожал и трепетал, он умолял взять его.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "structure-dialogue-1",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "Dialogue punctuation is inconsistent: earlier direct speech uses «...» (e.g., block 000032), but from block 000107 onward it is marked with an em dash. The source uses quotation marks consistently, so the target punctuation should be unified.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“I’m yours,” Casper moans, burying his hand into Zachariah’s hair.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "— Я твой, — стонет Каспер, запуская руку в волосы Захарии.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "e23835e8ce7e8c28aa846ecd8284cacf65703460677b3bdb848dda91fc3064e2",
         "style_guide": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4"
       }
     }
