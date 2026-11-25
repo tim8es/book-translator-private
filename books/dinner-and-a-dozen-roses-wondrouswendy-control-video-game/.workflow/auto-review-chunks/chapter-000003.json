@@ -1,0 +1,203 @@
+{
+  "schema_version": 2,
+  "plan": {
+    "schema_version": 1,
+    "helper_revision": "review-chunks-source-stable-v1",
+    "source_sha256": "4aa522e689154037898d3dadc650f4e44a02b31396a1f6e52126e9ce1eddad21",
+    "translation_sha256": "3a03d7f7f40f7aa6ca10e86980313789d3284f5f1fa1d810bca0db98bc794ed7",
+    "chunks": [
+      {
+        "id": "chunk-001",
+        "source_core": [
+          0,
+          4851
+        ],
+        "translation_core": [
+          0,
+          4771
+        ],
+        "source_window": [
+          0,
+          6847
+        ],
+        "translation_window": [
+          0,
+          6673
+        ]
+      },
+      {
+        "id": "chunk-002",
+        "source_core": [
+          4851,
+          9848
+        ],
+        "translation_core": [
+          4771,
+          9734
+        ],
+        "source_window": [
+          2892,
+          11650
+        ],
+        "translation_window": [
+          2904,
+          11596
+        ]
+      },
+      {
+        "id": "chunk-003",
+        "source_core": [
+          9848,
+          14715
+        ],
+        "translation_core": [
+          9734,
+          14680
+        ],
+        "source_window": [
+          8030,
+          16608
+        ],
+        "translation_window": [
+          7831,
+          16584
+        ]
+      },
+      {
+        "id": "chunk-004",
+        "source_core": [
+          14715,
+          19733
+        ],
+        "translation_core": [
+          14680,
+          19697
+        ],
+        "source_window": [
+          12597,
+          19733
+        ],
+        "translation_window": [
+          12569,
+          19697
+        ]
+      }
+    ]
+  },
+  "unit_id": "chapter-000003",
+  "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+  "binding": {
+    "previous_record_id": "48f97c88697a4401b927c43f7b2be7a7",
+    "glossary_sha256": "e23835e8ce7e8c28aa846ecd8284cacf65703460677b3bdb848dda91fc3064e2",
+    "style_guide_sha256": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4",
+    "reviewer_contract_sha256": "696b93f44170ff93256e74e6d61dca38b9c208d502a4042186056054393351d4"
+  },
+  "completed": {
+    "chunk-001": {
+      "outcome": "CORRECTIONS_REQUIRED",
+      "report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "single-status",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "«Был одинок» can describe feeling lonely, while the source says Darling was single in the relationship-status sense. Consider «не состоял в отношениях» to preserve that distinction.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "When Darling was single, it used to bother him how obvious they were, but now it’s his turn to gloat on Single’s Awareness Day.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Когда Дарлинг был одинок, его раздражало, как явно они всё демонстрируют, но теперь его очередь злорадствовать в День осведомлённости одиночек.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "excitement-tone",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The translation renders excitement as «волнение», then immediately says «нервничает», making the two distinct source states sound nearly synonymous. Consider «Несмотря на радостное предвкушение, он нервничает».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Despite his excitement, he’s nervous.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Несмотря на волнение, он нервничает.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "darling-phrase",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Наряжать своего дорогого» sounds like an awkward calque in this context. Use a natural affectionate equivalent such as «наряжать своего любимого», while retaining the intimate tone.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Trench has great taste, knowing exactly how he likes to dress up his darling.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "У Тренча прекрасный вкус: он точно знает, как ему нравится наряжать своего дорогого.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "salary-grammar",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Их зарплаты позволяют им не просто комфорт» is ungrammatical and obscures the point that their salaries provide more than mere comfort. Recast naturally, for example: «Их зарплаты дают им больше, чем просто комфорт, но…»",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Their salaries allow them more than mere comfort, but Darling’s not working at the Bureau for a paycheck alone.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Их зарплаты позволяют им не просто комфорт, но Дарлинг работает в Бюро не только ради денег.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "hostess-role",
+            "category": "referent",
+            "severity": "minor",
+            "detail": "«Хозяйка зала» suggests an owner or person in charge of the room, rather than the restaurant hostess who greets and guides Darling. Consider «хостес» or «сотрудница, встречающая гостей».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Darling steps off the elevator into the restaurant lobby. A hostess smiles, greets him, and gestures for him to follow her.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Дарлинг выходит из лифта в вестибюль ресторана. Хозяйка зала улыбается, приветствует его и жестом приглашает следовать за ней.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "style": [],
+      "glossary": []
+    }
+  },
+  "windows": {
+    "chunk-001": {
+      "source_sha256": "5108bc81e8de2d067f499afb88905a7796db745b90558426114da23a2d05b96b",
+      "translation_sha256": "e51ae2985faf6bb6862d3a797413c6fbe6b866260da59a337b55ab1ba0570540"
+    }
+  },
+  "accepted_review_record_id": null,
+  "reused": {}
+}
