@@ -238,6 +238,212 @@
       },
       "style": [],
       "glossary": []
+    },
+    "chunk-003": {
+      "outcome": "CORRECTIONS_REQUIRED",
+      "report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "move-fixed",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Исправлено: «тянется поставить» передаёт начавшееся движение Дарлинга.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "When they part, Darling moves to set down the flowers, but Trench stops him.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Когда они отстраняются, Дарлинг тянется поставить цветы, но Тренч останавливает его.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "79aa481e3d0b47fb818e1c6119f4c08a",
+              "finding_id": "chunk-003-move-intent"
+            }
+          },
+          {
+            "id": "clothing-fixed",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Исправлено: «по очереди снимать по одному предмету одежды» звучит естественно и сохраняет смысл источника.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "As much as Darling enjoys Trench frantically undressing him, there’s something about taking turns removing a layer of clothing one at a time.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Как бы Дарлингу ни нравилось, когда Тренч лихорадочно раздевает его, в том, чтобы по очереди снимать по одному предмету одежды, есть что-то особенное.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "79aa481e3d0b47fb818e1c6119f4c08a",
+              "finding_id": "chunk-003-clothing-phrase"
+            }
+          },
+          {
+            "id": "skin-fixed",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Исправлено: «как понемногу обнажается кожа» передаёт образ без прежней кальки.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "the thrill of seeing skin revealed little by little",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "волнение от того, как понемногу обнажается кожа",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "79aa481e3d0b47fb818e1c6119f4c08a",
+              "finding_id": "chunk-003-skin-calque"
+            }
+          },
+          {
+            "id": "path-fixed",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Исправлено: перевод говорит о следовании по дорожке из лепестков, а не о ходьбе непосредственно по лепесткам.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "They follow the petals to reach the bedroom.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Они идут по дорожке из лепестков в спальню.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "79aa481e3d0b47fb818e1c6119f4c08a",
+              "finding_id": "chunk-003-petal-path"
+            }
+          },
+          {
+            "id": "spine-fixed",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Исправлено: «по ней пробегает дрожь» передаёт естественный русский оборот для дрожи, пробегающей по спине.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "A hand roams his back, sending a shiver down his spine.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Рука скользит по его спине, и по ней пробегает дрожь.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "79aa481e3d0b47fb818e1c6119f4c08a",
+              "finding_id": "chunk-003-spine-shiver"
+            }
+          },
+          {
+            "id": "hot-boss",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Горячий начальник» звучит как калька и может означать вспыльчивого начальника. В этом кокетливом контексте hot означает привлекательного; передайте это естественным русским выражением, сохранив игривый тон.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "I meant more than just that—dressed up, going on a date, but no one knew I was meeting my hot boss for dinner...",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Я имел в виду больше, чем просто это — нарядился, иду на свидание, но никто не знал, что я встречаюсь со своим горячим начальником за ужином…",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "laugh-verb",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "«Усмехается» описывает скорее выражение лица, тогда как источник говорит о слышимом смешке, подчёркнутом сравнением звука с низким раскатом. Выберите глагол, передающий звук смешка.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Trench chuckles in his ear, the sound a deep, satisfying rumble.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Тренч усмехается ему в ухо — звук низкий, глубокий и приятный.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "dialogue-punct",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "Прямая речь с авторскими словами внутри оформлена неестественно для русской пунктуации: реплика закрывается перед словами автора и открывается вновь. Оформите её как непрерывную реплику с разрывом авторскими словами, например: «У нас ещё выходные, — говорит Тренч, — но сначала я обещал тебе десерт, верно?»",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“We have the weekend too,” Trench says, “but first, I promised you dessert, didn’t I?”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«У нас ещё выходные», — говорит Тренч, «но сначала я обещал тебе десерт, верно?»",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "negative-idiom",
+            "category": "style",
+            "severity": "minor",
+            "detail": "В русском естественнее употребить отрицательное местоимение: «никогда ни с кем этого не делал».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Darling has never done this with someone, and it’s like exploring new and exciting territory.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Дарлинг никогда не делал этого с кем-то, и это похоже на исследование новой и волнующей территории.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "wear-and-tear",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Следы износа» звучит механически применительно к телу и шрамам. Передайте естественнее смысл следов, оставленных службой и пережитым, сохранив то, что Дарлинг находит их возбуждающими.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Darling can’t help but find the wear and tear so hot and appealing.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Дарлинг не может не считать эти следы износа невероятно возбуждающими и привлекательными.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "style": [
+        {
+          "evidence": "Благодарность Дарлинга Тренчу за приготовленный вечер сменяется прямым флиртом о том, что Тренч будет трахать его всю ночь.",
+          "source_pattern": "В сцене нежные романтические жесты и игривые реплики переходят в откровенную эротическую прозу.",
+          "translation_approach": "Сохранять переход между ласковым и прямым регистром, не смягчая откровенные формулировки и не усиливая сентиментальность."
+        }
+      ],
+      "glossary": [
+        {
+          "notes": "Краткая форма имени Захария, используется в обращении.",
+          "original": "Zach",
+          "translation": "Зак",
+          "type": "персонаж"
+        }
+      ]
     }
   },
   "windows": {
@@ -248,6 +454,10 @@
     "chunk-002": {
       "source_sha256": "bf96e43b39c74881723ab3da740bb7e1b05bba012ba9ff0974f2c77154e7c4a2",
       "translation_sha256": "6bb1980d127b9d848e852534dc7a214199fabbc5d44bcd75838230e69d6f2b73"
+    },
+    "chunk-003": {
+      "source_sha256": "6a5050bac7b7bb91edcb8bd4076f449c846cc5f289a23decc449335aff61ac80",
+      "translation_sha256": "4a46ce708f607ed4d288db713f10e2914498fdb7019b27956aef7d0b8b1fc62c"
     }
   },
   "accepted_review_record_id": null,
