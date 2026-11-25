@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "dinner-and-a-dozen-roses-wondrouswendy-control-video-game",
-  "next_sequence": 12,
+  "next_sequence": 13,
   "records": [
     {
       "record_id": "7f32a1dafcda42798f71de4318e8f1a7",
@@ -2022,6 +2022,348 @@
               "record_id": "5533eff919ac416ba62658d62312fefb",
               "finding_id": "chunk-004-dialogue-0112"
             }
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "e3d06a13a71a3bc05de349283ad9fefe1d847956eeccc7a259d7d154e881d140",
+        "style_guide": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4"
+      }
+    },
+    {
+      "record_id": "7018fd3fc5594cb2bf97484ec7414e1e",
+      "sequence": 12,
+      "unit_id": "chapter-000003",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "4aa522e689154037898d3dadc650f4e44a02b31396a1f6e52126e9ce1eddad21",
+      "translation_sha256": "2a7194a9b11197901c0c0aae1edd65ff0b0c90247aa4fa3ef2f6fd1000a763f3",
+      "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "review_contract_revision": "docs/TRANSLATION.md@20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "reviewer_session_id": "auto-7737b663533f-reviewer-9af55d99",
+      "reviewed_at": "2026-11-25T18:00:50Z",
+      "state_revision": "689c2ae6926ecf307a6773ec3f91d285b10a9cf3a3cbcf0b90f80f8b83b65e6f",
+      "review_commit": "5c929cf397888a4db43751655c4323cf1726d716",
+      "correction_round": 7,
+      "supersedes_record_id": "79aa481e3d0b47fb818e1c6119f4c08a",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "chunk-002-reveal-31",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "«В его руке оказывается» makes the bouquet sound as if it suddenly appears. The source says Trench turns to reveal a bouquet he is already holding; rephrase to preserve that action.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Trench turns to reveal a bouquet of red roses held in his hand.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Тренч оборачивается, и в его руке оказывается букет красных роз.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "chunk-002-attend-44",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "“Went to” says they attended the same university; «поступили» specifically says they entered or were admitted. Use a rendering such as «учились в одном и том же женском университете».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Yeah, I think they actually went to the same all-women’s university.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Да, кажется, они даже поступили в один и тот же женский университет",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "chunk-002-flow-41",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Разговор течёт так гладко» is an awkward calque in Russian. Prefer a natural equivalent such as «разговор идёт так легко» while preserving the sense of ease.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "The conversation flows so smoothly; it’s so easy to spill his heart out to Zachariah, to reveal so much about his past, the good, the bad, and even the ugly.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Разговор течёт так гладко; так легко излить душу Захарии, рассказать так много о своём прошлом — о хорошем, плохом и даже неприглядном.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "chunk-002-haunts-49",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "“Old haunts” refers to familiar places he used to frequent, not necessarily places he considers favorites. «Любимые» adds an unsupported judgment; use a more neutral rendering.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "I could show you all my old haunts.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Я мог бы показать тебе все свои старые любимые места.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "chunk-002-obliges-56",
+            "category": "register",
+            "severity": "minor",
+            "detail": "«Подчиняется» makes Darling sound as though he is submitting or obeying. “Obliges” here means he willingly complies with the request; choose a lighter equivalent.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Grinning, Darling obliges.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Улыбаясь, Дарлинг подчиняется.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "chunk-003-move-fixed",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Исправлено: «тянется поставить» передаёт начавшееся движение Дарлинга.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "When they part, Darling moves to set down the flowers, but Trench stops him.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Когда они отстраняются, Дарлинг тянется поставить цветы, но Тренч останавливает его.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "79aa481e3d0b47fb818e1c6119f4c08a",
+              "finding_id": "chunk-003-move-intent"
+            }
+          },
+          {
+            "id": "chunk-003-clothing-fixed",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Исправлено: «по очереди снимать по одному предмету одежды» звучит естественно и сохраняет смысл источника.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "As much as Darling enjoys Trench frantically undressing him, there’s something about taking turns removing a layer of clothing one at a time.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Как бы Дарлингу ни нравилось, когда Тренч лихорадочно раздевает его, в том, чтобы по очереди снимать по одному предмету одежды, есть что-то особенное.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "79aa481e3d0b47fb818e1c6119f4c08a",
+              "finding_id": "chunk-003-clothing-phrase"
+            }
+          },
+          {
+            "id": "chunk-003-skin-fixed",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Исправлено: «как понемногу обнажается кожа» передаёт образ без прежней кальки.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "the thrill of seeing skin revealed little by little",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "волнение от того, как понемногу обнажается кожа",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "79aa481e3d0b47fb818e1c6119f4c08a",
+              "finding_id": "chunk-003-skin-calque"
+            }
+          },
+          {
+            "id": "chunk-003-path-fixed",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Исправлено: перевод говорит о следовании по дорожке из лепестков, а не о ходьбе непосредственно по лепесткам.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "They follow the petals to reach the bedroom.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Они идут по дорожке из лепестков в спальню.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "79aa481e3d0b47fb818e1c6119f4c08a",
+              "finding_id": "chunk-003-petal-path"
+            }
+          },
+          {
+            "id": "chunk-003-spine-fixed",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Исправлено: «по ней пробегает дрожь» передаёт естественный русский оборот для дрожи, пробегающей по спине.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "A hand roams his back, sending a shiver down his spine.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Рука скользит по его спине, и по ней пробегает дрожь.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "79aa481e3d0b47fb818e1c6119f4c08a",
+              "finding_id": "chunk-003-spine-shiver"
+            }
+          },
+          {
+            "id": "chunk-003-hot-boss",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Горячий начальник» звучит как калька и может означать вспыльчивого начальника. В этом кокетливом контексте hot означает привлекательного; передайте это естественным русским выражением, сохранив игривый тон.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "I meant more than just that—dressed up, going on a date, but no one knew I was meeting my hot boss for dinner...",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Я имел в виду больше, чем просто это — нарядился, иду на свидание, но никто не знал, что я встречаюсь со своим горячим начальником за ужином…",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "chunk-003-laugh-verb",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "«Усмехается» описывает скорее выражение лица, тогда как источник говорит о слышимом смешке, подчёркнутом сравнением звука с низким раскатом. Выберите глагол, передающий звук смешка.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Trench chuckles in his ear, the sound a deep, satisfying rumble.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Тренч усмехается ему в ухо — звук низкий, глубокий и приятный.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "chunk-003-dialogue-punct",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "Прямая речь с авторскими словами внутри оформлена неестественно для русской пунктуации: реплика закрывается перед словами автора и открывается вновь. Оформите её как непрерывную реплику с разрывом авторскими словами, например: «У нас ещё выходные, — говорит Тренч, — но сначала я обещал тебе десерт, верно?»",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“We have the weekend too,” Trench says, “but first, I promised you dessert, didn’t I?”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«У нас ещё выходные», — говорит Тренч, «но сначала я обещал тебе десерт, верно?»",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "chunk-003-negative-idiom",
+            "category": "style",
+            "severity": "minor",
+            "detail": "В русском естественнее употребить отрицательное местоимение: «никогда ни с кем этого не делал».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Darling has never done this with someone, and it’s like exploring new and exciting territory.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Дарлинг никогда не делал этого с кем-то, и это похоже на исследование новой и волнующей территории.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "chunk-003-wear-and-tear",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Следы износа» звучит механически применительно к телу и шрамам. Передайте естественнее смысл следов, оставленных службой и пережитым, сохранив то, что Дарлинг находит их возбуждающими.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Darling can’t help but find the wear and tear so hot and appealing.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Дарлинг не может не считать эти следы износа невероятно возбуждающими и привлекательными.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "chunk-004-tense-tail-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The earlier clauses in this passage now use the present tense, but the final clause still shifts from the source’s present «Trench grinds» to the Russian past «Тренч медленно вжимался». Recast the action consistently in the present.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Their eyes remained locked, foreheads pressed together, as Trench grinds into him slow, sinking deep.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Их взгляды не размыкались, лбы соприкасались, пока Тренч медленно вжимался в него, входя глубоко.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "79aa481e3d0b47fb818e1c6119f4c08a",
+              "finding_id": "chunk-004-tense-0102"
+            }
+          },
+          {
+            "id": "chunk-004-dialogue-style-1",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "Dialogue in this passage uses em dashes, while the nearby dialogue in the chapter uses guillemets (for example, «Я твой»). The formatting remains inconsistent; unify it across the chapter.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“What’s on your mind?” Trench asks as he kisses his temple.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«О чём задумался?» — спрашивает Тренч, целуя его в висок.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "79aa481e3d0b47fb818e1c6119f4c08a",
+              "finding_id": "chunk-004-dialogue-0112"
+            }
+          },
+          {
+            "id": "chunk-004-leverage-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "The source describes Darling gripping Zachariah’s shoulders for leverage. «Давая ему опору» can instead suggest that Darling is supporting Zachariah. Rephrase to make clear that Darling is using the grip for his own leverage.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "His fingers dig into Zachariah’s shoulders, holding him for leverage.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Пальцы Дарлинга впиваются в плечи Захарии, давая ему опору.",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       },
