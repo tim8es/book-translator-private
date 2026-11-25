@@ -3,12 +3,12 @@
   "job_id": "7737b663533fb070de6d205aa2ef3feb",
   "book_slug": "dinner-and-a-dozen-roses-wondrouswendy-control-video-game",
   "state": "running",
-  "phase": "claimed",
+  "phase": "model-call-reserved",
   "failures": 0,
   "correction_rounds": {},
   "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
   "source_sha256": "365a5fa793b0ef0e326a5c02d052e13819731cb2a080addcefd3ca0550049289",
-  "updated_at": "2026-11-25T07:32:45.197889+00:00",
+  "updated_at": "2026-11-25T07:32:48.821027+00:00",
   "queue_snapshot": {
     "extracted": 2,
     "reviewed": 1,
@@ -23,20 +23,22 @@
     "unit_id": "chapter-000003"
   },
   "structural_helper_revision": "4c584fe5534871cd05aa851d9b7bdbfa696d0edd",
-  "model_calls_started": 18,
+  "model_calls_started": 19,
   "prompt_context": {
-    "role": "reviewer",
+    "role": "corrector",
     "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
     "loaded_contracts": [
       "AGENTS.md",
       "docs/TRANSLATION.md",
-      "docs/REVIEWER.md"
+      "docs/TRANSLATOR.md"
     ],
     "glossary_sha256": "e23835e8ce7e8c28aa846ecd8284cacf65703460677b3bdb848dda91fc3064e2",
     "style_guide_sha256": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4",
-    "system_chars": 29562,
-    "user_chars": 50482,
-    "review_context": "independent_session"
+    "system_chars": 21186,
+    "user_chars": 8362,
+    "correction_mode": "bounded-review-patches",
+    "batch_finding_count": 1,
+    "history_strategy": "off"
   },
   "provider_call_metric": {
     "unit_id": "chapter-000003",
@@ -312,5 +314,26 @@
     "route": "primary",
     "role": "reviewer",
     "unit_id": "chapter-000003"
+  },
+  "correction_extensions": {},
+  "correction_finding_triage": {
+    "unit_id": "chapter-000003",
+    "review_record_id": "48f97c88697a4401b927c43f7b2be7a7",
+    "counts": {
+      "required": 1,
+      "adjudicate": 1,
+      "review_required": 0
+    }
+  },
+  "adaptive_correction_budget": {
+    "schema_version": 1,
+    "group_size": 1,
+    "max_calls_per_checkpoint": 2,
+    "pending_count": 2,
+    "risk_class": "mixed",
+    "lower_bound_remaining_calls": 1,
+    "current_selection_size": 1,
+    "unit_id": "chapter-000003",
+    "review_record_id": "48f97c88697a4401b927c43f7b2be7a7"
   }
 }
