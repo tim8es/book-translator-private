@@ -5,7 +5,17 @@
   "source_sha256": "4aa522e689154037898d3dadc650f4e44a02b31396a1f6e52126e9ce1eddad21",
   "translation_sha256": "3ef0e015c512d0a245acf5b34ac3cc956f5c5db056f2c03a6b51a42bc5478135",
   "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
-  "patches": [],
+  "patches": [
+    {
+      "finding_id": "structure-dialogue-1",
+      "operation": "replace",
+      "target_anchor": {
+        "quote": "— Я твой, — стонет Каспер, запуская руку в волосы Захарии.",
+        "occurrence": 0
+      },
+      "replacement": "«Я твой», — стонет Каспер, запуская руку в волосы Захарии."
+    }
+  ],
   "glossary": [],
   "style_guide": []
 }
