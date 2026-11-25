@@ -3,12 +3,12 @@
   "job_id": "7737b663533fb070de6d205aa2ef3feb",
   "book_slug": "dinner-and-a-dozen-roses-wondrouswendy-control-video-game",
   "state": "running",
-  "phase": "provider-backoff",
+  "phase": "claimed",
   "failures": 0,
   "correction_rounds": {},
   "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
   "source_sha256": "365a5fa793b0ef0e326a5c02d052e13819731cb2a080addcefd3ca0550049289",
-  "updated_at": "2026-11-25T07:24:20.855122+00:00",
+  "updated_at": "2026-11-25T07:29:49.315013+00:00",
   "queue_snapshot": {
     "extracted": 2,
     "reviewed": 1,
@@ -16,7 +16,12 @@
     "correction_candidates": 0,
     "awaiting_promotion": 0
   },
-  "active": null,
+  "active": {
+    "role": "reviewer",
+    "chapter": 3,
+    "session_id": "auto-7737b663533f-reviewer-cb3cb255",
+    "unit_id": "chapter-000003"
+  },
   "structural_helper_revision": "4c584fe5534871cd05aa851d9b7bdbfa696d0edd",
   "model_calls_started": 17,
   "prompt_context": {
@@ -290,7 +295,6 @@
     "code": "http_503",
     "not_before": "2026-11-25T07:29:20.855096+00:00"
   },
-  "last_error": "model HTTP status 503",
   "last_error_code": "http_503",
   "blocked_unit_id": "chapter-000003"
 }
