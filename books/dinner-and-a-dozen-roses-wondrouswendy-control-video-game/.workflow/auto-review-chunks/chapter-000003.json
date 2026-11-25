@@ -4,7 +4,7 @@
     "schema_version": 1,
     "helper_revision": "review-chunks-source-stable-v1",
     "source_sha256": "4aa522e689154037898d3dadc650f4e44a02b31396a1f6e52126e9ce1eddad21",
-    "translation_sha256": "dda46d4cc6daa919dd9c19f559e3dc3de558dad8de4cfbcec1a6a60d8cc0f126",
+    "translation_sha256": "2a7194a9b11197901c0c0aae1edd65ff0b0c90247aa4fa3ef2f6fd1000a763f3",
     "chunks": [
       {
         "id": "chunk-001",
@@ -41,7 +41,7 @@
         ],
         "translation_window": [
           2887,
-          11636
+          11634
         ]
       },
       {
@@ -52,7 +52,7 @@
         ],
         "translation_core": [
           9753,
-          14786
+          14789
         ],
         "source_window": [
           8030,
@@ -60,7 +60,7 @@
         ],
         "translation_window": [
           7839,
-          16693
+          16696
         ]
       },
       {
@@ -70,16 +70,16 @@
           19733
         ],
         "translation_core": [
-          14786,
-          19802
+          14789,
+          19792
         ],
         "source_window": [
           12597,
           19733
         ],
         "translation_window": [
-          12643,
-          19802
+          12641,
+          19792
         ]
       }
     ]
@@ -87,7 +87,7 @@
   "unit_id": "chapter-000003",
   "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
   "binding": {
-    "previous_record_id": "5533eff919ac416ba62658d62312fefb",
+    "previous_record_id": "79aa481e3d0b47fb818e1c6119f4c08a",
     "glossary_sha256": "e3d06a13a71a3bc05de349283ad9fefe1d847956eeccc7a259d7d154e881d140",
     "style_guide_sha256": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4",
     "reviewer_contract_sha256": "696b93f44170ff93256e74e6d61dca38b9c208d502a4042186056054393351d4"
@@ -142,62 +142,6 @@
       ]
     },
     "chunk-002": {
-      "outcome": "PASS",
-      "report": {
-        "evidence_version": 2,
-        "context": "independent_session",
-        "checks": {
-          "coverage": true,
-          "meaning": true,
-          "terminology": true,
-          "style": true,
-          "structure": true
-        },
-        "findings": [
-          {
-            "id": "love-intensity-res",
-            "category": "meaning",
-            "severity": "minor",
-            "detail": "The rendering was updated to convey delight and enthusiasm.",
-            "resolved": true,
-            "source_anchor": {
-              "quote": "It would feel embarrassing if he didn’t love it.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "Ему было бы неловко, если бы он не был от этого в восторге.",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "5533eff919ac416ba62658d62312fefb",
-              "finding_id": "chunk-002-love-intensity"
-            }
-          },
-          {
-            "id": "ugly-calque-res",
-            "category": "style",
-            "severity": "minor",
-            "detail": "The literal calque was replaced with a natural phrasing.",
-            "resolved": true,
-            "source_anchor": {
-              "quote": "to reveal so much about his past, the good, the bad, and even the ugly.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "рассказать так много о своём прошлом — о хорошем, плохом и даже неприглядном.",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "5533eff919ac416ba62658d62312fefb",
-              "finding_id": "chunk-002-ugly-calque"
-            }
-          }
-        ]
-      },
-      "style": [],
-      "glossary": []
-    },
-    "chunk-003": {
       "outcome": "CORRECTIONS_REQUIRED",
       "report": {
         "evidence_version": 2,
@@ -211,168 +155,84 @@
         },
         "findings": [
           {
-            "id": "move-intent",
+            "id": "reveal-31",
             "category": "meaning",
             "severity": "minor",
-            "detail": "«Уже собирается поставить» передаёт намерение, тогда как источник описывает, что Дарлинг уже движется, чтобы поставить цветы. Передайте начавшееся движение, например: «Дарлинг уже тянется поставить букет, но Тренч останавливает его».",
+            "detail": "«В его руке оказывается» makes the bouquet sound as if it suddenly appears. The source says Trench turns to reveal a bouquet he is already holding; rephrase to preserve that action.",
             "resolved": false,
             "source_anchor": {
-              "quote": "When they part, Darling moves to set down the flowers, but Trench stops him.",
+              "quote": "Trench turns to reveal a bouquet of red roses held in his hand.",
               "occurrence": 0
             },
             "translation_anchor": {
-              "quote": "Когда они отстраняются, Дарлинг уже собирается поставить цветы, но Тренч останавливает его.",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "5533eff919ac416ba62658d62312fefb",
-              "finding_id": "chunk-003-move-intent"
-            }
-          },
-          {
-            "id": "jaw-touch",
-            "category": "addition",
-            "severity": "minor",
-            "detail": "Прежнее добавление «бережно» исправлено: в текущем переводе его нет.",
-            "resolved": true,
-            "source_anchor": {
-              "quote": "Trench holds Darling’s jaw and strokes his bottom lip with his thumb.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "Тренч держит Дарлинга за подбородок и проводит большим пальцем по его нижней губе.",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "5533eff919ac416ba62658d62312fefb",
-              "finding_id": "chunk-003-jaw-tenderness"
-            }
-          },
-          {
-            "id": "clothing-phrase",
-            "category": "style",
-            "severity": "minor",
-            "detail": "Оборот «по очереди снимать слой одежды за раз» по-прежнему избыточен и неестественен. Достаточно, например, «по очереди снимать по одному предмету одежды».",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "As much as Darling enjoys Trench frantically undressing him, there’s something about taking turns removing a layer of clothing one at a time.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "Как бы Дарлингу ни нравилось, когда Тренч лихорадочно раздевает его, есть что-то особенное в том, чтобы по очереди снимать слой одежды за раз.",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "5533eff919ac416ba62658d62312fefb",
-              "finding_id": "chunk-003-clothing-phrase"
-            }
-          },
-          {
-            "id": "skin-calque",
-            "category": "style",
-            "severity": "minor",
-            "detail": "«Как кожа открывается мало-помалу» остаётся калькированным и неестественным оборотом. Передайте постепенно открывающуюся кожу естественнее, например: «волнения от того, как понемногу обнажается кожа».",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "the thrill of seeing skin revealed little by little",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "волнение от того, как кожа открывается мало-помалу",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "5533eff919ac416ba62658d62312fefb",
-              "finding_id": "chunk-003-skin-calque"
-            }
-          },
-          {
-            "id": "petal-path",
-            "category": "style",
-            "severity": "minor",
-            "detail": "«Идут по лепесткам до спальни» звучит так, будто герои идут непосредственно по лепесткам, и неестественно описывает следование по оставленной дорожке. Лучше: «Они идут по дорожке из лепестков в спальню».",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "They follow the petals to reach the bedroom.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "Они идут по лепесткам до спальни.",
+              "quote": "Тренч оборачивается, и в его руке оказывается букет красных роз.",
               "occurrence": 0
             },
             "resolves": null
           },
           {
-            "id": "spine-shiver",
-            "category": "style",
+            "id": "attend-44",
+            "category": "meaning",
             "severity": "minor",
-            "detail": "«Вызывая дрожь по позвоночнику» — неестественная калька английского оборота. Естественнее, например: «по его спине пробегает дрожь».",
+            "detail": "“Went to” says they attended the same university; «поступили» specifically says they entered or were admitted. Use a rendering such as «учились в одном и том же женском университете».",
             "resolved": false,
             "source_anchor": {
-              "quote": "A hand roams his back, sending a shiver down his spine.",
+              "quote": "Yeah, I think they actually went to the same all-women’s university.",
               "occurrence": 0
             },
             "translation_anchor": {
-              "quote": "Рука скользит по его спине, вызывая дрожь по позвоночнику.",
+              "quote": "Да, кажется, они даже поступили в один и тот же женский университет",
               "occurrence": 0
             },
             "resolves": null
-          }
-        ]
-      },
-      "style": [],
-      "glossary": []
-    },
-    "chunk-004": {
-      "outcome": "CORRECTIONS_REQUIRED",
-      "report": {
-        "evidence_version": 2,
-        "context": "independent_session",
-        "checks": {
-          "coverage": true,
-          "meaning": true,
-          "terminology": true,
-          "style": true,
-          "structure": true
-        },
-        "findings": [
-          {
-            "id": "tense-0102",
-            "category": "style",
-            "severity": "minor",
-            "detail": "The source narrates this passage in the present tense («he’s shaking», «Darling begs», «He doesn’t care», «he needs», «Darling pulls», «He wants», «His fingers dig»), but the translation shifts to past tense («дрожал», «трепетал», «умолял», «было всё равно», «был ему нужен») and mixes tenses inside the same block («притягивает», «хочет», «впиваются» next to «не размыкались», «вжимался»). Render the passage consistently in the present tense to match the source.",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "When he’s shaking and trembling from Trench’s teasing, Darling begs to be taken. He doesn’t care how desperate he sounds, he needs Trench like he needs air.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "Когда от дразнящих ласк Тренча Дарлинг весь дрожал и трепетал, он умолял взять его. Ему было всё равно, насколько отчаянно он звучит: Тренч был ему нужен, как воздух.",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "5533eff919ac416ba62658d62312fefb",
-              "finding_id": "chunk-004-tense-0102"
-            }
           },
           {
-            "id": "dialogue-0112",
-            "category": "structure",
+            "id": "flow-41",
+            "category": "style",
             "severity": "minor",
-            "detail": "Dialogue punctuation is inconsistent within the translation: earlier dialogue uses quotation marks («Костюм отлично на тебе сидит, Каспер», «Я твой»), while this block and the following dialogue use em dashes (— О чём задумался? —). Unify the dialogue formatting across the chapter.",
+            "detail": "«Разговор течёт так гладко» is an awkward calque in Russian. Prefer a natural equivalent such as «разговор идёт так легко» while preserving the sense of ease.",
             "resolved": false,
             "source_anchor": {
-              "quote": "“What’s on your mind?” Trench asks as he kisses his temple.",
+              "quote": "The conversation flows so smoothly; it’s so easy to spill his heart out to Zachariah, to reveal so much about his past, the good, the bad, and even the ugly.",
               "occurrence": 0
             },
             "translation_anchor": {
-              "quote": "— О чём задумался? — спрашивает Тренч, целуя его в висок.",
+              "quote": "Разговор течёт так гладко; так легко излить душу Захарии, рассказать так много о своём прошлом — о хорошем, плохом и даже неприглядном.",
               "occurrence": 0
             },
-            "resolves": {
-              "record_id": "5533eff919ac416ba62658d62312fefb",
-              "finding_id": "chunk-004-dialogue-0112"
-            }
+            "resolves": null
+          },
+          {
+            "id": "haunts-49",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "“Old haunts” refers to familiar places he used to frequent, not necessarily places he considers favorites. «Любимые» adds an unsupported judgment; use a more neutral rendering.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "I could show you all my old haunts.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Я мог бы показать тебе все свои старые любимые места.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "obliges-56",
+            "category": "register",
+            "severity": "minor",
+            "detail": "«Подчиняется» makes Darling sound as though he is submitting or obeying. “Obliges” here means he willingly complies with the request; choose a lighter equivalent.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Grinning, Darling obliges.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Улыбаясь, Дарлинг подчиняется.",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       },
@@ -387,17 +247,14 @@
     },
     "chunk-002": {
       "source_sha256": "bf96e43b39c74881723ab3da740bb7e1b05bba012ba9ff0974f2c77154e7c4a2",
-      "translation_sha256": "c9283ac84a36e3b418e02a95930a099d0bfd210597d8cfa18100c35ca34255fc"
-    },
-    "chunk-003": {
-      "source_sha256": "6a5050bac7b7bb91edcb8bd4076f449c846cc5f289a23decc449335aff61ac80",
-      "translation_sha256": "782deee3292ec693622c0704fb70099c8c33daef263abde6cbaaeedf393584e2"
-    },
-    "chunk-004": {
-      "source_sha256": "4d1423a1f161866c4e97077eb6a2215565e0138b68543ca5c22ea1ef74dc314b",
-      "translation_sha256": "6fbd0ea562011eb01f3d07bbe6729963050f40c2628071b8b21b6e01758f49e0"
+      "translation_sha256": "6bb1980d127b9d848e852534dc7a214199fabbc5d44bcd75838230e69d6f2b73"
     }
   },
-  "accepted_review_record_id": "79aa481e3d0b47fb818e1c6119f4c08a",
-  "reused": {}
+  "accepted_review_record_id": null,
+  "reused": {
+    "chunk-001": {
+      "from_translation_sha256": "dda46d4cc6daa919dd9c19f559e3dc3de558dad8de4cfbcec1a6a60d8cc0f126",
+      "from_record_id": "79aa481e3d0b47fb818e1c6119f4c08a"
+    }
+  }
 }
