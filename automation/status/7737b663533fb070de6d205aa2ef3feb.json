@@ -3,15 +3,15 @@
   "job_id": "7737b663533fb070de6d205aa2ef3feb",
   "book_slug": "dinner-and-a-dozen-roses-wondrouswendy-control-video-game",
   "state": "running",
-  "phase": "model-call-reserved",
-  "failures": 1,
+  "phase": "model-retry",
+  "failures": 2,
   "correction_rounds": {
     "chapter-000003": 3,
     "chapter-000004": 1
   },
   "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
   "source_sha256": "365a5fa793b0ef0e326a5c02d052e13819731cb2a080addcefd3ca0550049289",
-  "updated_at": "2026-11-25T12:53:15.903102+00:00",
+  "updated_at": "2026-11-25T12:56:49.641085+00:00",
   "queue_snapshot": {
     "extracted": 0,
     "reviewed": 2,
@@ -19,12 +19,7 @@
     "correction_candidates": 0,
     "awaiting_promotion": 0
   },
-  "active": {
-    "role": "reviewer",
-    "chapter": 3,
-    "session_id": "auto-7737b663533f-reviewer-471c9d08",
-    "unit_id": "chapter-000003"
-  },
+  "active": null,
   "structural_helper_revision": "4c584fe5534871cd05aa851d9b7bdbfa696d0edd",
   "model_calls_started": 66,
   "prompt_context": {
@@ -53,23 +48,12 @@
     "route": "primary",
     "request_chars": 52345,
     "outcome": "response",
-    "duration_ms": 104435,
-    "prompt_tokens": 13075,
-    "completion_tokens": 18061,
-    "total_tokens": 31136
+    "duration_ms": 211629,
+    "prompt_tokens": 12699,
+    "completion_tokens": 8839,
+    "total_tokens": 21538
   },
   "provider_call_metrics": [
-    {
-      "unit_id": "chapter-000003",
-      "role": "reviewer",
-      "route": "primary",
-      "request_chars": 53276,
-      "outcome": "response",
-      "duration_ms": 105245,
-      "prompt_tokens": 12191,
-      "completion_tokens": 5708,
-      "total_tokens": 17899
-    },
     {
       "unit_id": "chapter-000003",
       "role": "reviewer",
@@ -495,6 +479,17 @@
       "prompt_tokens": 13075,
       "completion_tokens": 18061,
       "total_tokens": 31136
+    },
+    {
+      "unit_id": "chapter-000003",
+      "role": "reviewer",
+      "route": "primary",
+      "request_chars": 52345,
+      "outcome": "response",
+      "duration_ms": 211629,
+      "prompt_tokens": 12699,
+      "completion_tokens": 8839,
+      "total_tokens": 21538
     }
   ],
   "execution_metrics": {
@@ -511,13 +506,13 @@
         "total_tokens": 125645
       },
       "reviewer": {
-        "completed_calls": 27,
-        "responses": 23,
-        "duration_ms": 3593314,
-        "request_chars": 1469391,
-        "prompt_tokens": 270355,
-        "completion_tokens": 197006,
-        "total_tokens": 467361,
+        "completed_calls": 28,
+        "responses": 24,
+        "duration_ms": 3804943,
+        "request_chars": 1521736,
+        "prompt_tokens": 283054,
+        "completion_tokens": 205845,
+        "total_tokens": 488899,
         "errors": 4
       },
       "corrector": {
@@ -550,12 +545,12 @@
   "unit_protocol_failures": {
     "chapter-000001": 3,
     "chapter-000004": 3,
-    "chapter-000003": 1
+    "chapter-000003": 2
   },
   "role_protocol_failures": {
     "chapter-000001:translator": 3,
     "chapter-000004:corrector": 3,
-    "chapter-000003:reviewer": 1
+    "chapter-000003:reviewer": 2
   },
   "model_unit_deferral_audit": [
     {
@@ -722,29 +717,30 @@
     "total": 4
   },
   "provider_model_route": "primary",
-  "model_response_diagnostics": {
-    "finish_reason": "stop",
-    "response_format": "json_object",
-    "response_chars": 4180,
-    "provider_refusal": false,
-    "prompt_tokens": 13075,
-    "completion_tokens": 18061,
-    "total_tokens": 31136,
-    "route": "primary",
-    "role": "reviewer",
-    "unit_id": "chapter-000003"
-  },
   "blocked_unit_id": "chapter-000003",
   "last_review_failure": {
     "unit_id": "chapter-000003",
-    "at": "2026-11-25T12:53:08.614104+00:00",
-    "model_call": 65,
+    "at": "2026-11-25T12:56:49.641054+00:00",
+    "model_call": 66,
     "kind": "anchor_absent",
     "finding_index": 0,
     "field": "source_anchor"
   },
   "review_failure_counts": {
-    "chapter-000003:anchor_absent": 1
+    "chapter-000003:anchor_absent": 2
   },
-  "last_error_code": "review_evidence_invalid"
+  "last_error_code": "review_evidence_invalid",
+  "model_response_diagnostics": {
+    "finish_reason": "stop",
+    "response_format": "json_object",
+    "response_chars": 3795,
+    "provider_refusal": false,
+    "prompt_tokens": 12699,
+    "completion_tokens": 8839,
+    "total_tokens": 21538,
+    "route": "primary",
+    "role": "reviewer",
+    "unit_id": "chapter-000003"
+  },
+  "last_error": "reviewer evidence is invalid: findings[0].source_anchor: quoted passage occurrence 0 is absent from the current artifact"
 }
