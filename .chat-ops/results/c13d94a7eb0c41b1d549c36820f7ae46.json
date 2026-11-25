@@ -1,0 +1,133 @@
+{
+  "schema_version": 1,
+  "request_id": "c13d94a7eb0c41b1d549c36820f7ae46",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "22a7c0704c545bf5cb6fa4c603577c640317e506acf789ea8e5348ff97a828e8",
+    "record": {
+      "correction_round": 1,
+      "outcome": "CORRECTIONS_REQUIRED",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "findings": [
+          {
+            "detail": "Абз. 7: surfing — движение на волнах; убрать тяжеловесное сочетание «плыл по волнам в глубоких водах».",
+            "resolved": false,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абз. 36: grinned — улыбка, не обязательно насмешка; fast — частое дыхание, а не его тяжесть.",
+            "resolved": false,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абз. 41: восстановить анафору «Мы не знаем».",
+            "resolved": false,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абз. 62: I'll burn myself — активное действие, а не непроизвольное «сгорю сам». Сохранить агентность персонажа.",
+            "resolved": false,
+            "severity": "major"
+          },
+          {
+            "detail": "Абз. 65: gaming — видеоигры; late evenings — неоднократные вечера, а не просто игра до позднего часа.",
+            "resolved": false,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абз. 70: muted — приглушённые шаги, не абсолютная бесшумность.",
+            "resolved": false,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абз. 85: breath caught — дыхание перехватило, не намеренная задержка дыхания.",
+            "resolved": false,
+            "severity": "major"
+          },
+          {
+            "detail": "Абз. 86: восстановить тройное повторение «Он должен был».",
+            "resolved": false,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абз. 91: ties to his name — связь имени с местом; «привести сюда от его имени» искажает метафору.",
+            "resolved": false,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абз. 92: peering up — взгляд снизу вверх, несмотря на рост Дэмиена.",
+            "resolved": false,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абз. 107: create any space — увеличить дистанцию; «освободить себе пространство» тяжеловесно.",
+            "resolved": false,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абз. 114: самостоятельный переспрос «Жучки?», а не предложный падеж.",
+            "resolved": false,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абз. 115: устранить тавтологию «насмешливый смешок» без изменения тона.",
+            "resolved": false,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абз. 122: Here it is — узнавание предмета/наступившего момента, не окончательное «вот и всё», которое дублирует последующую мысль.",
+            "resolved": false,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абз. 143: palpable — осязаемая опасность, убрать добавленное «почти».",
+            "resolved": false,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абз. 144: бросил его в Яму Лазаря; явно обозначить место, согласно предыдущей терминологии.",
+            "resolved": false,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абз. 152: восстановить единую метафору истрепавшихся и оборвавшихся нитей связи.",
+            "resolved": false,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абз. 163: «тяжесть его присутствия наполняла пространство властностью» — неестественная калька.",
+            "resolved": false,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абз. 166: устранить бессоюзное соединение самостоятельного предложения запятой.",
+            "resolved": false,
+            "severity": "minor"
+          }
+        ]
+      },
+      "record_id": "c81203dc650a4f219a8bfcf6de1f5789",
+      "review_commit": "d8c32a64a7ea2b9ba7354b9b088af36b37f3279b",
+      "review_contract_revision": "docs/TRANSLATION.md@20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "reviewed_at": "2026-11-25T20:01:55Z",
+      "reviewer_session_id": "chat-robin-r08-b02c8396",
+      "sequence": 18,
+      "source_sha256": "05522627a5e459e89190dda92526cf169020cb12d7692ef56bdbf0633b6f3716",
+      "state_revision": "6e5a869deb4d2012cb9ead3974112c929e8a93899228db6d36373d9a24c4a7c5",
+      "supersedes_record_id": null,
+      "translation_sha256": "86b30d33c89a6a14b4665ba87a95f4538ed4b032d7501f7751092cabbd3390f8",
+      "unit_id": "chapter-000008",
+      "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a"
+    }
+  },
+  "error": null
+}
