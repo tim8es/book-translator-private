@@ -272,12 +272,126 @@
           "type": "персонаж"
         }
       ]
+    },
+    "chunk-002": {
+      "outcome": "CORRECTIONS_REQUIRED",
+      "report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "drive-recheck",
+            "category": "omission",
+            "severity": "minor",
+            "detail": "Resolved: the current translation preserves the detail that they would drive to the mountains with «съездить на машине в горы».",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "We could drive up to the mountains next spring.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Мы могли бы съездить на машине в горы следующей весной.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "971d19ff4a7642c0a11d3300e2ec90d8",
+              "finding_id": "chunk-002-drive-detail"
+            }
+          },
+          {
+            "id": "speech-recheck",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "Resolved: the current Russian punctuation keeps this as one continuous utterance, setting off the authorial words with dashes.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "“You must be Cupid,” Darling says, wrapping an arm around Trench’s waist, “because I have hearts in my eyes for you.”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Ты, должно быть, Купидон, — говорит Дарлинг, обнимая Тренча за талию, — потому что у меня сердечки в глазах, когда я смотрю на тебя».",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "971d19ff4a7642c0a11d3300e2ec90d8",
+              "finding_id": "chunk-002-speech-punct"
+            }
+          },
+          {
+            "id": "hostess-term",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "«Хозяйка зала» can suggest the owner or manager of the room, rather than the restaurant hostess who leaves them. Consider «Хостес уходит, и Дарлинг подходит к Тренчу у перил…».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "The hostess leaves them, so Darling joins Trench at the railing, his stomach full of butterflies.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Хозяйка зала оставляет их, и Дарлинг присоединяется к Тренчу у перил; в животе у него порхают бабочки.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "makeout-force",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "«Целовались» may flatten the colloquial implication of a more passionate make-out session. Consider a target-language wording that preserves that intensity, such as «страстно целовались».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "while they made out",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "пока они целовались",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "nested-quotes",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "Use Russian nested quotation marks for the spoken word «yes»: «Ты бы закатил глаза, если бы я сказал „да“?»",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Would you roll your eyes if I said yes?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Ты бы закатил глаза, если бы я сказал «да»?»",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "style": [
+        {
+          "evidence": "“You… You really shouldn’t have…” and “You must be Cupid”",
+          "source_pattern": "Romantic dialogue uses hesitant repetition and playful, familiar jokes.",
+          "translation_approach": "Preserve the hesitations and playful tone without explaining or polishing away the joke."
+        }
+      ],
+      "glossary": []
     }
   },
   "windows": {
     "chunk-001": {
       "source_sha256": "5108bc81e8de2d067f499afb88905a7796db745b90558426114da23a2d05b96b",
       "translation_sha256": "63be722bbe319c763ab29486ff45c9201e54d37c616a38e3b12c9f79f6bf71f5"
+    },
+    "chunk-002": {
+      "source_sha256": "bf96e43b39c74881723ab3da740bb7e1b05bba012ba9ff0974f2c77154e7c4a2",
+      "translation_sha256": "73c994eff83e148768e447161756e26890a254eb4643148d2cf785d2c6a31ce7"
     }
   },
   "accepted_review_record_id": null,
