@@ -322,6 +322,62 @@
       },
       "style": [],
       "glossary": []
+    },
+    "chunk-004": {
+      "outcome": "CORRECTIONS_REQUIRED",
+      "report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "tense-0102",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The source narrates this passage in the present tense («he’s shaking», «Darling begs», «He doesn’t care», «he needs», «Darling pulls», «He wants», «His fingers dig»), but the translation shifts to past tense («дрожал», «трепетал», «умолял», «было всё равно», «был ему нужен») and mixes tenses inside the same block («притягивает», «хочет», «впиваются» next to «не размыкались», «вжимался»). Render the passage consistently in the present tense to match the source.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "When he’s shaking and trembling from Trench’s teasing, Darling begs to be taken. He doesn’t care how desperate he sounds, he needs Trench like he needs air.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Когда от дразнящих ласк Тренча Дарлинг весь дрожал и трепетал, он умолял взять его. Ему было всё равно, насколько отчаянно он звучит: Тренч был ему нужен, как воздух.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "5533eff919ac416ba62658d62312fefb",
+              "finding_id": "chunk-004-tense-0102"
+            }
+          },
+          {
+            "id": "dialogue-0112",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "Dialogue punctuation is inconsistent within the translation: earlier dialogue uses quotation marks («Костюм отлично на тебе сидит, Каспер», «Я твой»), while this block and the following dialogue use em dashes (— О чём задумался? —). Unify the dialogue formatting across the chapter.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“What’s on your mind?” Trench asks as he kisses his temple.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "— О чём задумался? — спрашивает Тренч, целуя его в висок.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "5533eff919ac416ba62658d62312fefb",
+              "finding_id": "chunk-004-dialogue-0112"
+            }
+          }
+        ]
+      },
+      "style": [],
+      "glossary": []
     }
   },
   "windows": {
@@ -336,6 +392,10 @@
     "chunk-003": {
       "source_sha256": "6a5050bac7b7bb91edcb8bd4076f449c846cc5f289a23decc449335aff61ac80",
       "translation_sha256": "782deee3292ec693622c0704fb70099c8c33daef263abde6cbaaeedf393584e2"
+    },
+    "chunk-004": {
+      "source_sha256": "4d1423a1f161866c4e97077eb6a2215565e0138b68543ca5c22ea1ef74dc314b",
+      "translation_sha256": "6fbd0ea562011eb01f3d07bbe6729963050f40c2628071b8b21b6e01758f49e0"
     }
   },
   "accepted_review_record_id": null,
