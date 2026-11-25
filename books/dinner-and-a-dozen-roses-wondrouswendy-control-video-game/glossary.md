@@ -6,3 +6,4 @@ Use dictionary forms; classify terms semantically. Type and optional notes use t
 
 | Original | Translation | Type | Notes |
 | --- | --- | --- | --- |
+| Casper Darling | Каспер Дарлинг | персонаж |  |
