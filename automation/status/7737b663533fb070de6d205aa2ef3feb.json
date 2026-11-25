@@ -3,12 +3,12 @@
   "job_id": "7737b663533fb070de6d205aa2ef3feb",
   "book_slug": "dinner-and-a-dozen-roses-wondrouswendy-control-video-game",
   "state": "running",
-  "phase": "claimed",
+  "phase": "model-call-reserved",
   "failures": 0,
   "correction_rounds": {},
   "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
   "source_sha256": "365a5fa793b0ef0e326a5c02d052e13819731cb2a080addcefd3ca0550049289",
-  "updated_at": "2026-11-25T07:12:15.190512+00:00",
+  "updated_at": "2026-11-25T07:12:48.143239+00:00",
   "queue_snapshot": {
     "extracted": 4,
     "reviewed": 0,
@@ -23,7 +23,7 @@
     "unit_id": "chapter-000002"
   },
   "structural_helper_revision": "4c584fe5534871cd05aa851d9b7bdbfa696d0edd",
-  "model_calls_started": 12,
+  "model_calls_started": 13,
   "prompt_context": {
     "role": "translator",
     "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
@@ -35,11 +35,10 @@
     "glossary_sha256": "9dd124e1fb678ee734ec358050dd94b8f911be9c9068b96e3949eac4555fdd05",
     "style_guide_sha256": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4",
     "system_chars": 21895,
-    "user_chars": 4223,
-    "execution_mode": "shared-structural-json-repair",
+    "user_chars": 4671,
+    "execution_mode": "shared-structural-segments",
     "helper_revision": "4c584fe5534871cd05aa851d9b7bdbfa696d0edd",
-    "batch_segment_count": 1,
-    "repair_code": "unsafe_segment"
+    "batch_segment_count": 9
   },
   "provider_model_route": "primary",
   "provider_call_metric": {
