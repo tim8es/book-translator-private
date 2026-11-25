@@ -251,12 +251,150 @@
           "type": "место"
         }
       ]
+    },
+    "chunk-002": {
+      "outcome": "CORRECTIONS_REQUIRED",
+      "report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "hostess-recheck",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "Rechecked: the current «Хостес уходит» correctly identifies the restaurant hostess and resolves the prior finding.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "The hostess leaves them, so Darling joins Trench at the railing, his stomach full of butterflies.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Хостес уходит, и Дарлинг подходит к Тренчу у перил; в животе у него порхают бабочки.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "3cbb5554ad3e4cbf84e408791ff813a6",
+              "finding_id": "chunk-002-hostess-term"
+            }
+          },
+          {
+            "id": "makeout-recheck",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Rechecked: «страстно целовались» preserves the more passionate implication of “made out” and resolves the prior finding.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "I sat there and stared at the screen the whole time while they made out",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "я сидел там и всё время пялился в экран, пока они страстно целовались",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "3cbb5554ad3e4cbf84e408791ff813a6",
+              "finding_id": "chunk-002-makeout-force"
+            }
+          },
+          {
+            "id": "nested-recheck",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "Rechecked: Russian nested quotation marks are used for «да», resolving the prior finding.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Would you roll your eyes if I said yes?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Ты бы закатил глаза, если бы я сказал „да“?»",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "3cbb5554ad3e4cbf84e408791ff813a6",
+              "finding_id": "chunk-002-nested-quotes"
+            }
+          },
+          {
+            "id": "takeout-agreement",
+            "category": "style",
+            "severity": "minor",
+            "detail": "The predicate «прекрасно» does not agree with the coordinated subject «еда на вынос и ... фильм». Use a grammatical construction such as «тоже были бы прекрасны» or «тоже было бы здорово».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Takeout and a rented movie would have been great, too",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Еда на вынос и взятый напрокат фильм тоже были бы прекрасно",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "love-intensity",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "“Love it” conveys stronger enthusiasm than «не нравилось», which means “didn’t like it.” Preserve the affection or delight, for example with «не обожал этого».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "It would feel embarrassing if he didn’t love it.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Ему было бы неловко, если бы ему это не нравилось.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "ugly-calque",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Уродливом» is an awkwardly literal rendering here and suggests physical ugliness. Use a natural equivalent for the difficult or unpleasant parts of his past, such as «неприглядном».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "to reveal so much about his past, the good, the bad, and even the ugly.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "рассказать так много о своём прошлом — хорошем, плохом и даже уродливом.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "style": [
+        {
+          "evidence": "“You… You really shouldn’t have…”; “I got something for you. Well us. Me and you.”",
+          "source_pattern": "Darling’s dialogue includes hesitations, repetitions, and self-corrections.",
+          "translation_approach": "Preserve the pauses and uneven, conversational delivery rather than smoothing it into polished speech."
+        },
+        {
+          "evidence": "“You must be Cupid,” Darling says, “because I have hearts in my eyes for you.”",
+          "source_pattern": "The romantic dialogue uses playful, deliberately corny wordplay.",
+          "translation_approach": "Keep the playful tone and the joke’s function in natural Russian rather than making the line more elegant or earnest."
+        }
+      ],
+      "glossary": []
     }
   },
   "windows": {
     "chunk-001": {
       "source_sha256": "5108bc81e8de2d067f499afb88905a7796db745b90558426114da23a2d05b96b",
       "translation_sha256": "3903a2e13b16aa7f1b34b839d6f81c12e98fbbdf5cb772262712a519371b8ef5"
+    },
+    "chunk-002": {
+      "source_sha256": "bf96e43b39c74881723ab3da740bb7e1b05bba012ba9ff0974f2c77154e7c4a2",
+      "translation_sha256": "baab8b37278dad0288bd561745524b9091bc17c9654ea36f3ad0b5173778e01b"
     }
   },
   "accepted_review_record_id": null,
