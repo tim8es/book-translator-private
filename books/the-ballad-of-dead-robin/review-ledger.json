@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "the-ballad-of-dead-robin",
-  "next_sequence": 17,
+  "next_sequence": 18,
   "records": [
     {
       "record_id": "b395b5cc6d41470387aa4d8dfe6853d7",
@@ -1367,6 +1367,119 @@
             "severity": "minor",
             "detail": "Абз. 164: shatter focus — разрушить сосредоточенность, сбить концентрацию; «рассеять сосредоточенность» неестественно.",
             "resolved": false
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "d8f61603a713492d83e7f8fa7a59de7e",
+      "sequence": 17,
+      "unit_id": "chapter-000007",
+      "outcome": "PASS",
+      "source_sha256": "8302f3215ec173a812124b5fe5701ac469b9a36aa1fc857849840decca30cacb",
+      "translation_sha256": "7afd7bb1cb583f7dcb362c6370e4a9e89cdd028be2006ec3f7966f9b64131026",
+      "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "review_contract_revision": "docs/TRANSLATION.md@20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "reviewer_session_id": "chat-robin-r07-cf162d30",
+      "reviewed_at": "2026-11-25T17:45:01Z",
+      "state_revision": "237b3ffbadbb15776c818cd731271c3e1b708c0dbad52c653bc495a329adcf9d",
+      "review_commit": "3227c4c12953001ee22c25c81246c25f5994dcc5",
+      "correction_round": 1,
+      "supersedes_record_id": "6fdd79b3f3d84418b4c6c9bbcf25d641",
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Абз. 8: lightly относится к непринуждённому тону, а не к легкомысленности персонажа.",
+            "resolved": true
+          },
+          {
+            "severity": "major",
+            "detail": "Абз. 28: перечисление действий после «сдерживался, чтобы не» теряет единое синтаксическое управление и может читаться как уже совершённые действия. Сохранить намерение преследовать и запереть двойника.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 45: trapped указывает на несвободу в обстоятельствах, а не просто попадание в них; восстановить образ заложника обстоятельств.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 54: dull light trapped — запертый под поверхностью свет, а не бьющийся; не добавлять движение.",
+            "resolved": true
+          },
+          {
+            "severity": "major",
+            "detail": "Абз. 63: грамматически ошибочное «всё, чему ... — это тому»; сохранить противопоставление сына и подчинённого.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 73: smile slipped и пустота лица требуют естественной формулировки; «узнавание отозвалось в самых костях» — калька.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 76: естественно передать затуманившееся периферическое зрение.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 78: several feet — небольшое расстояние, не несколько шагов; сохранить образ наблюдения из-за собственных глаз.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 79: сохранить начальное тире внутри цитаты письма.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 82: восстановить полную анафору «Я не знаю».",
+            "resolved": true
+          },
+          {
+            "severity": "major",
+            "detail": "Абз. 84: would go — предположение о вероятном поведении Дюка; настоящее категорическое «пойдёт» ослабляет условность. Сохранить её.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 92: «чувствовал себя отдалённым от самого себя» и «из-за своих глаз» — неестественные кальки; сохранить диссоциативное отчуждение.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 97: грамматически отделить падение чёлки от деепричастного оборота.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 121, 123, 125: vigilante — самозваный защитник/борец с преступностью, а «линчеватель» подразумевает внесудебные расправы и в этом контексте вводит неподтверждённый оттенок.",
+            "resolved": true
+          },
+          {
+            "severity": "major",
+            "detail": "Абз. 122: couldn't act on it означает, что Тим не мог поступить в соответствии с чувством вины, а не бессилие изменить само чувство.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 125: curdled — надежда сгустилась в скорбь, а не буквально свернулась.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 164: shatter focus — разрушить сосредоточенность, сбить концентрацию; «рассеять сосредоточенность» неестественно.",
+            "resolved": true
           }
         ]
       }
