@@ -2,8 +2,8 @@
   "schema_version": 1,
   "job_id": "7737b663533fb070de6d205aa2ef3feb",
   "book_slug": "dinner-and-a-dozen-roses-wondrouswendy-control-video-game",
-  "state": "running",
-  "phase": "reviewer-completed",
+  "state": "blocked",
+  "phase": "attention-requires-operator",
   "failures": 0,
   "correction_rounds": {
     "chapter-000003": 3,
@@ -11,11 +11,11 @@
   },
   "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
   "source_sha256": "365a5fa793b0ef0e326a5c02d052e13819731cb2a080addcefd3ca0550049289",
-  "updated_at": "2026-11-25T13:03:19.569130+00:00",
+  "updated_at": "2026-11-25T13:03:23.560948+00:00",
   "queue_snapshot": {
     "extracted": 0,
-    "reviewed": 2,
-    "awaiting_review": 1,
+    "reviewed": 3,
+    "awaiting_review": 0,
     "correction_candidates": 1,
     "awaiting_promotion": 0
   },
@@ -690,9 +690,7 @@
     "total": 1
   },
   "attention_units": [
-    "chapter-000001",
-    "chapter-000003",
-    "chapter-000004"
+    "chapter-000003"
   ],
   "recoveries": [
     {
@@ -723,5 +721,7 @@
     "route": "primary",
     "role": "reviewer",
     "unit_id": "chapter-000004"
-  }
+  },
+  "blocked_unit_id": "chapter-000003",
+  "last_error": "Canonical needs-attention queue contains unresolved units; EPUB is not complete."
 }
