@@ -1,0 +1,142 @@
+name: Transfer book executor
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'automation/executor-transfer-requests/*.json'
+  workflow_dispatch:
+    inputs:
+      job_id:
+        description: Existing intake job ID with a committed transfer request
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+env:
+  TRANSFER_RUNTIME_SHA: 26169f5ee2e4e1472df56c8465544f0a9f131fde
+
+jobs:
+  select:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.plan.outputs.matrix }}
+      has_jobs: ${{ steps.plan.outputs.has_jobs }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Resolve exact request blobs and book lanes
+        id: plan
+        env:
+          EVENT: ${{ github.event_name }}
+          BEFORE: ${{ github.event.before }}
+          AFTER: ${{ github.sha }}
+          JOB_ID: ${{ inputs.job_id }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json, os, re, subprocess
+          from pathlib import Path
+          def git(*args):
+              return subprocess.check_output(["git", *args], text=True).strip()
+          if os.environ["EVENT"] == "workflow_dispatch":
+              job = os.environ["JOB_ID"]
+              if not re.fullmatch(r"[0-9a-f]{32}", job):
+                  raise SystemExit("Invalid job ID")
+              paths = [f"automation/executor-transfer-requests/{job}.json"]
+          else:
+              paths = git("diff", "--name-only", os.environ["BEFORE"],
+                          os.environ["AFTER"], "--",
+                          "automation/executor-transfer-requests/").splitlines()
+          rows = []
+          for path in paths:
+              match = re.fullmatch(r"automation/executor-transfer-requests/([0-9a-f]{32})\.json", path)
+              if not match or not Path(path).is_file():
+                  continue
+              job = match[1]
+              blob = git("rev-parse", f"{os.environ['AFTER']}:{path}")
+              if git("rev-parse", f"HEAD:{path}") != blob:
+                  raise SystemExit("Transfer request changed while queued")
+              request = json.loads(Path(path).read_text())
+              status = json.loads(Path(f"automation/status/{job}.json").read_text())
+              slug = status.get("book_slug")
+              if (not isinstance(slug, str) or not re.fullmatch(r"[^\W_][\w-]{0,99}", slug)
+                      or request.get("job_id") != job or request.get("book_slug") != slug):
+                  raise SystemExit("Invalid transfer book lane")
+              if request.get("to_executor") == "pi" and not re.fullmatch(r"[a-z0-9-]+", slug):
+                  raise SystemExit("Current Pi workflow requires an ASCII book lane")
+              rows.append({"job_id": job, "book_key": slug, "request_blob": blob})
+          with open(os.environ["GITHUB_OUTPUT"], "a") as out:
+              print("matrix=" + json.dumps({"include": rows}, ensure_ascii=True), file=out)
+              print("has_jobs=" + ("true" if rows else "false"), file=out)
+          PY
+
+  transfer:
+    needs: select
+    if: needs.select.outputs.has_jobs == 'true'
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJSON(needs.select.outputs.matrix) }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    concurrency:
+      group: book-operation-${{ matrix.book_key }}
+      cancel-in-progress: false
+    permissions:
+      contents: write
+      actions: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/checkout@v4
+        with:
+          repository: tim8es/book-translator
+          ref: ${{ env.TRANSFER_RUNTIME_SHA }}
+          path: .public-transfer-runtime
+          persist-credentials: false
+      - name: Apply exact canonical executor transfer
+        id: handoff
+        shell: bash
+        env:
+          BOOK_TRANSLATOR_STATE_ROOT: ${{ github.workspace }}
+          JOB_ID: ${{ matrix.job_id }}
+          BOOK_KEY: ${{ matrix.book_key }}
+          REQUEST_BLOB: ${{ matrix.request_blob }}
+        run: |
+          set -euo pipefail
+          test "$(git -C .public-transfer-runtime rev-parse HEAD)" = "$TRANSFER_RUNTIME_SHA"
+          test "$(git rev-parse "HEAD:automation/executor-transfer-requests/$JOB_ID.json")" = "$REQUEST_BLOB"
+          test "$(python .public-transfer-runtime/automation/book_runner.py --book-key --job-id "$JOB_ID")" = "$BOOK_KEY"
+          target="$(python .public-transfer-runtime/automation/executor_transfer.py --job-id "$JOB_ID")"
+          [[ "$target" == "pi" || "$target" == "auto" ]]
+          echo "target=$target" >> "$GITHUB_OUTPUT"
+      - name: Dispatch selected executor
+        env:
+          GH_TOKEN: ${{ github.token }}
+          JOB_ID: ${{ matrix.job_id }}
+          TARGET: ${{ steps.handoff.outputs.target }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ "$TARGET" == "pi" ]]; then
+            gh workflow run pi-book-translation.yml --ref main -f probe_only=false -f job_id="$JOB_ID" -f continue_automatically=true
+          elif [[ "$TARGET" == "auto" ]]; then
+            gh workflow run auto-translate.yml --ref main -f job_id="$JOB_ID"
+          else
+            exit 1
+          fi
