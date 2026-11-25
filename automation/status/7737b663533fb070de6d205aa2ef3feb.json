@@ -3,14 +3,14 @@
   "job_id": "7737b663533fb070de6d205aa2ef3feb",
   "book_slug": "dinner-and-a-dozen-roses-wondrouswendy-control-video-game",
   "state": "running",
-  "phase": "review-chunk-staged",
+  "phase": "reviewer-completed",
   "failures": 0,
   "correction_rounds": {
     "chapter-000003": 2
   },
   "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
   "source_sha256": "365a5fa793b0ef0e326a5c02d052e13819731cb2a080addcefd3ca0550049289",
-  "updated_at": "2026-11-25T08:26:10.671283+00:00",
+  "updated_at": "2026-11-25T08:26:14.589759+00:00",
   "queue_snapshot": {
     "extracted": 2,
     "reviewed": 1,
@@ -18,12 +18,7 @@
     "correction_candidates": 0,
     "awaiting_promotion": 0
   },
-  "active": {
-    "role": "reviewer",
-    "chapter": 3,
-    "session_id": "auto-7737b663533f-reviewer-a752b1f5",
-    "unit_id": "chapter-000003"
-  },
+  "active": null,
   "structural_helper_revision": "4c584fe5534871cd05aa851d9b7bdbfa696d0edd",
   "model_calls_started": 38,
   "prompt_context": {
@@ -500,7 +495,7 @@
       "translated": 2,
       "review_pass": 1,
       "reviewed": 1,
-      "review_rejected": 2,
+      "review_rejected": 3,
       "corrected": 2
     }
   },
@@ -598,11 +593,10 @@
   },
   "review_incremental_archive": {
     "unit_id": "chapter-000003",
-    "review_record_id": "971d19ff4a7642c0a11d3300e2ec90d8",
-    "translation_sha256": "3a03d7f7f40f7aa6ca10e86980313789d3284f5f1fa1d810bca0db98bc794ed7",
+    "review_record_id": "3cbb5554ad3e4cbf84e408791ff813a6",
+    "translation_sha256": "6a370037642ce4d3794dc6d5c5bcb4a2bec2c1e256415757bc080cda0b501138",
     "clean_chunks": 0
   },
-  "review_chunk_fallback_unit": "chapter-000003",
   "review_incremental_rebases": [
     {
       "unit_id": "chapter-000003",
@@ -613,13 +607,6 @@
       "at": "2026-11-25T08:16:01.020781+00:00"
     }
   ],
-  "review_chunk_progress": {
-    "unit_id": "chapter-000003",
-    "source_sha256": "4aa522e689154037898d3dadc650f4e44a02b31396a1f6e52126e9ce1eddad21",
-    "translation_sha256": "6a370037642ce4d3794dc6d5c5bcb4a2bec2c1e256415757bc080cda0b501138",
-    "completed": 4,
-    "total": 4
-  },
   "model_response_diagnostics": {
     "finish_reason": "stop",
     "response_format": "json_object",
