@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "request_id": "66ad37a814bc4dfea72059cd36ae1845",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "6c608e8e4935708f3605aeff36afeb8e893c1b18e275dd1f1ed43d4e648826e5",
+    "record": {
+      "correction_round": 1,
+      "outcome": "CORRECTIONS_REQUIRED",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "findings": [
+          {
+            "detail": "Абз. 11: «перед ним плавали» — местоимение неясно после «зрение»; восстановить «перед глазами». Raw о звуке не обязательно «отчаянный»; передать надорванный, грубый звук.",
+            "resolved": false,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абз. 16: terrified ослаблено до «испуганное». Передать ужас.",
+            "resolved": false,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абз. 19: protective fear заменено «почти паническим страхом», что вводит отсутствующую степень паники и теряет защитный характер тревоги. Восстановить страх за безопасность Тима без усиления.",
+            "resolved": false,
+            "severity": "major"
+          },
+          {
+            "detail": "Абз. 22: «слишком потерян» — калька; передать растерянность без изменения смысла.",
+            "resolved": false,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абз. 24: «прищурился хищным взглядом» грамматически неестественно. Сохранить хищный прищур.",
+            "resolved": false,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абз. 30: the rest of us — остальные из говорящей группы, включая Джейсона; «все остальные» утрачивает значимое признание собственной роли. Восстановить «когда мы все остальные тебя похоронили».",
+            "resolved": false,
+            "severity": "major"
+          },
+          {
+            "detail": "Абз. 46: «не отводил взгляда, не дрогнув, изучал» — нарушено синтаксическое соединение действий; сохранить спокойный, неотступный взгляд.",
+            "resolved": false,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абз. 55: I’m so sorry — усиление повторного извинения утрачено в простом «Прости». Восстановить усиление.",
+            "resolved": false,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абз. 57: обрыв обращения Jay— передан многоточием вместо резкого обрыва. Сохранить прерывание реплики.",
+            "resolved": false,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абз. 73: «взрывной голос» — неудачная калька; сохранить внезапный взрыв грубого голоса.",
+            "resolved": false,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абз. 77: сохранить анафорический повтор «Он знает», значимый для настойчивости реплики.",
+            "resolved": false,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абз. 87: pressed into him — «ощущался» ослабляет телесное давление пола при каждом шаге; восстановить.",
+            "resolved": false,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абз. 90: «ничто из этого не твоя вина» — калька. Передать «ни в чём из этого ты не виноват», сохраняя паузу и повтор.",
+            "resolved": false,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абз. 99: «преодолеть последние разделявшие их шаги» — буквальная калька. Передать сокращение оставшегося расстояния.",
+            "resolved": false,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абз. 100: baked bread не уточняет свежесть; убрать добавленное «свежеиспечённого».",
+            "resolved": false,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абз. 101: «рука ... запуталась» создаёт случайность, а tangled carefully — осторожное намеренное движение пальцев в волосах.",
+            "resolved": false,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абз. 106: palpable — осязаемо, а не «почти осязаемо»; убрать добавленную неуверенность. В описании удовольствия сохранить фактическую интенсивность исходника.",
+            "resolved": false,
+            "severity": "major"
+          },
+          {
+            "detail": "Абз. 108: unrelenting относится к непрекращающейся боли; «безжалостная» смещает акцент. Восстановить непрерывность.",
+            "resolved": false,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абз. 112: «крик, который не издал ни звука» грамматически неестественно. Сохранить беззвучность крика.",
+            "resolved": false,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абз. 117: «обострить рассеянное восприятие» — тяжёлая калька; передать попытку холодом вернуть ясность притупившимся чувствам.",
+            "resolved": false,
+            "severity": "minor"
+          }
+        ]
+      },
+      "record_id": "752cf691762f4ce593c1fd65030238cf",
+      "review_commit": "8cbc0533b6be96322bd80a055559cce8ac2b08af",
+      "review_contract_revision": "docs/TRANSLATION.md@20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "reviewed_at": "2026-11-25T05:44:31Z",
+      "reviewer_session_id": "chat-robin-r04-55fc2697",
+      "sequence": 9,
+      "source_sha256": "f0a3cffb409c53b5e4d81382bd51bfdab2ff6dbdc279d11c7705741c83ac1a5b",
+      "state_revision": "86d74d103d6e85ef371701a978947be3e2257569807481ede86c3fdd3e2c4674",
+      "supersedes_record_id": null,
+      "translation_sha256": "9a3c03523ab2da4dfa7c1c5c551e0fcfcb5494541887880f27a55e4425b0e75e",
+      "unit_id": "chapter-000004",
+      "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a"
+    }
+  },
+  "error": null
+}
