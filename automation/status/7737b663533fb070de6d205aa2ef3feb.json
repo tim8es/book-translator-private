@@ -3,14 +3,15 @@
   "job_id": "7737b663533fb070de6d205aa2ef3feb",
   "book_slug": "dinner-and-a-dozen-roses-wondrouswendy-control-video-game",
   "state": "running",
-  "phase": "correction-batch-staged",
+  "phase": "corrector-completed",
   "failures": 0,
   "correction_rounds": {
-    "chapter-000003": 3
+    "chapter-000003": 3,
+    "chapter-000004": 1
   },
   "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
   "source_sha256": "365a5fa793b0ef0e326a5c02d052e13819731cb2a080addcefd3ca0550049289",
-  "updated_at": "2026-11-25T08:46:16.412171+00:00",
+  "updated_at": "2026-11-25T08:46:18.405322+00:00",
   "queue_snapshot": {
     "extracted": 1,
     "reviewed": 1,
@@ -18,12 +19,7 @@
     "correction_candidates": 2,
     "awaiting_promotion": 0
   },
-  "active": {
-    "role": "corrector",
-    "chapter": 4,
-    "session_id": "auto-7737b663533f-corrector-af1ebc00",
-    "unit_id": "chapter-000004"
-  },
+  "active": null,
   "structural_helper_revision": "4c584fe5534871cd05aa851d9b7bdbfa696d0edd",
   "model_calls_started": 54,
   "prompt_context": {
@@ -530,7 +526,7 @@
       "review_pass": 1,
       "reviewed": 1,
       "review_rejected": 5,
-      "corrected": 3
+      "corrected": 4
     }
   },
   "structural_protocol_fallback_units": {
@@ -657,13 +653,6 @@
       "at": "2026-11-25T08:29:59.242658+00:00"
     }
   ],
-  "provider_model_route": "primary",
-  "correction_batch_progress": {
-    "unit_id": "chapter-000004",
-    "review_record_id": "7371f257b5aa4ef994ab8e8ca3f6ea02",
-    "completed": 1,
-    "total": 2
-  },
   "model_response_diagnostics": {
     "finish_reason": "stop",
     "response_format": "json_object",
@@ -680,14 +669,6 @@
     "unit_id": "chapter-000004",
     "review_record_id": "7371f257b5aa4ef994ab8e8ca3f6ea02",
     "unapplied_finding_ids": [
-      "style-1"
-    ]
-  },
-  "correction_isolation": {
-    "unit_id": "chapter-000004",
-    "review_record_id": "7371f257b5aa4ef994ab8e8ca3f6ea02",
-    "translation_sha256": "a2519d0270ce23a470413d1e61583cb455df884c13f60d67f3d64f60ed937d2a",
-    "finding_ids": [
       "style-1"
     ]
   }
