@@ -385,6 +385,164 @@
         }
       ],
       "glossary": []
+    },
+    "chunk-003": {
+      "outcome": "CORRECTIONS_REQUIRED",
+      "report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-mouth",
+            "category": "referent",
+            "severity": "major",
+            "detail": "Исправление внесено: перевод теперь передаёт, что Тренч исследует рот Дарлинга, и предложение не сливается со следующим.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Trench kisses him then, causing Darling to sigh and part his lips to let him explore his mouth.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Тренч целует его, заставляя Дарлинга вздохнуть и приоткрыть губы, чтобы Тренч мог исследовать рот Дарлинга.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "3cbb5554ad3e4cbf84e408791ff813a6",
+              "finding_id": "chunk-003-mouth-ref"
+            }
+          },
+          {
+            "id": "recheck-dress",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Исправлено: обстоятельство «каждый день» теперь связано с глагольной группой без ошибочной запятой.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Trench dresses to impress every day, but the sight always takes Darling’s breath away.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Тренч каждый день одевается так, чтобы произвести впечатление, но при виде него у Дарлинга всегда захватывает дух.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "3cbb5554ad3e4cbf84e408791ff813a6",
+              "finding_id": "chunk-003-dress-comma"
+            }
+          },
+          {
+            "id": "recheck-love",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Исправлено: «занятия любовью» передаёт конкретный смысл love-making, а не только чувство любви.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Maybe it’s the thrill of seeing skin revealed little by little, maybe it’s the unspoken promise of a long night of slow, sensual love-making.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Может быть, это волнение от того, как кожа открывается мало-помалу, а может быть — невысказанное обещание долгой ночи медленных, чувственных занятий любовью.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "3cbb5554ad3e4cbf84e408791ff813a6",
+              "finding_id": "chunk-003-love-making"
+            }
+          },
+          {
+            "id": "recheck-punct",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "Исправлено: действие с вдохом отделено от следующей реплики прямой речи.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "“This is…” Darling takes a shaky breath, “this is wonderful, Zach, thank you.”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Это…» — Дарлинг делает дрожащий вдох. «Это чудесно, Зак, спасибо».",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "3cbb5554ad3e4cbf84e408791ff813a6",
+              "finding_id": "chunk-003-dialogue-punct"
+            }
+          },
+          {
+            "id": "move-intent",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "В оригинале Дарлинг уже движется, чтобы поставить цветы; «хочет поставить» передаёт только намерение. Сохраните начатое движение или попытку поставить букет.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "When they part, Darling moves to set down the flowers, but Trench stops him.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Когда они отстраняются, Дарлинг хочет поставить цветы, но Тренч останавливает его.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "jaw-tenderness",
+            "category": "addition",
+            "severity": "minor",
+            "detail": "«Бережно» добавляет не указанную в оригинале манеру прикосновения. В источнике сказано, что Тренч держит Дарлинга за челюсть и проводит большим пальцем по нижней губе; не уточняйте жест как бережный без опоры на текст.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Trench holds Darling’s jaw and strokes his bottom lip with his thumb.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Тренч бережно придерживает Дарлинга за подбородок и проводит большим пальцем по его нижней губе.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "clothing-phrase",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«По очереди снимать слой одежды за раз» звучит неестественно и избыточно сочетает «по очереди» с «за раз». Передайте, что они по очереди снимают по одному предмету одежды.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "As much as Darling enjoys Trench frantically undressing him, there’s something about taking turns removing a layer of clothing one at a time.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Как бы Дарлингу ни нравилось, когда Тренч лихорадочно раздевает его, есть что-то особенное в том, чтобы по очереди снимать слой одежды за раз.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "skin-calque",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Кожа открывается» звучит как буквальная калька и неестественно описывает постепенное обнажение. Перестройте фразу, например: «как постепенно обнажается кожа».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "the thrill of seeing skin revealed little by little",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "волнение от того, как кожа открывается мало-помалу",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "style": [],
+      "glossary": []
     }
   },
   "windows": {
@@ -395,6 +553,10 @@
     "chunk-002": {
       "source_sha256": "bf96e43b39c74881723ab3da740bb7e1b05bba012ba9ff0974f2c77154e7c4a2",
       "translation_sha256": "baab8b37278dad0288bd561745524b9091bc17c9654ea36f3ad0b5173778e01b"
+    },
+    "chunk-003": {
+      "source_sha256": "6a5050bac7b7bb91edcb8bd4076f449c846cc5f289a23decc449335aff61ac80",
+      "translation_sha256": "65828e02360e00341941eca278bd7e02baf01350784e19a4ec3e8341ed9938a6"
     }
   },
   "accepted_review_record_id": null,
