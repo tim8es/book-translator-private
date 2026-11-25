@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "request_id": "0be8a12596bd4fc7a2d9c3e487f65012",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "e7fcb76fa2becf5920b4cb3b8f37b2d5c9372da3decfd8c8f2ac9cc6514bc7b9",
+    "record": {
+      "correction_round": 1,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "findings": [
+          {
+            "detail": "Все 20 групп замечаний предыдущего ревью перепроверены по соответствующим абзацам принятой редакции. Восстановлены защитная тревога, участие Джейсона в похоронах, точная степень уверенности, повтор и интенсивность извинения; стилистические и грамматические дефекты устранены. Резкий обрыв обращения передан конструкцией «начал было» с многоточием. 119 абзацев сохранены; неизменённые места проверены в предыдущем полном сравнении. Существенных нерешённых замечаний нет.",
+            "resolved": true,
+            "severity": "minor"
+          }
+        ]
+      },
+      "record_id": "c0deab63bcc14515bc21c8ac48b3afe2",
+      "review_commit": "47ea0d0f647b70764b1fcee724d33f0c74a8de8a",
+      "review_contract_revision": "docs/TRANSLATION.md@20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "reviewed_at": "2026-11-25T05:47:03Z",
+      "reviewer_session_id": "chat-robin-r04-bbf08cfd",
+      "sequence": 10,
+      "source_sha256": "f0a3cffb409c53b5e4d81382bd51bfdab2ff6dbdc279d11c7705741c83ac1a5b",
+      "state_revision": "4a3d28d2063b275bb61cc89aa41d7c471e96b3a472e0682cf1d290a1dc5f3ae9",
+      "supersedes_record_id": "752cf691762f4ce593c1fd65030238cf",
+      "translation_sha256": "ccac27eb6d9180af0fbc83be8b97230dd4bf499bd39ae897d4470ff7ad7abbce",
+      "unit_id": "chapter-000004",
+      "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a"
+    }
+  },
+  "error": null
+}

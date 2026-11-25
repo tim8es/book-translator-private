@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "the-ballad-of-dead-robin",
-  "next_sequence": 10,
+  "next_sequence": 11,
   "records": [
     {
       "record_id": "b395b5cc6d41470387aa4d8dfe6853d7",
@@ -606,6 +606,39 @@
             "severity": "minor",
             "detail": "Абз. 117: «обострить рассеянное восприятие» — тяжёлая калька; передать попытку холодом вернуть ясность притупившимся чувствам.",
             "resolved": false
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "c0deab63bcc14515bc21c8ac48b3afe2",
+      "sequence": 10,
+      "unit_id": "chapter-000004",
+      "outcome": "PASS",
+      "source_sha256": "f0a3cffb409c53b5e4d81382bd51bfdab2ff6dbdc279d11c7705741c83ac1a5b",
+      "translation_sha256": "ccac27eb6d9180af0fbc83be8b97230dd4bf499bd39ae897d4470ff7ad7abbce",
+      "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "review_contract_revision": "docs/TRANSLATION.md@20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "reviewer_session_id": "chat-robin-r04-bbf08cfd",
+      "reviewed_at": "2026-11-25T05:47:03Z",
+      "state_revision": "4a3d28d2063b275bb61cc89aa41d7c471e96b3a472e0682cf1d290a1dc5f3ae9",
+      "review_commit": "47ea0d0f647b70764b1fcee724d33f0c74a8de8a",
+      "correction_round": 1,
+      "supersedes_record_id": "752cf691762f4ce593c1fd65030238cf",
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Все 20 групп замечаний предыдущего ревью перепроверены по соответствующим абзацам принятой редакции. Восстановлены защитная тревога, участие Джейсона в похоронах, точная степень уверенности, повтор и интенсивность извинения; стилистические и грамматические дефекты устранены. Резкий обрыв обращения передан конструкцией «начал было» с многоточием. 119 абзацев сохранены; неизменённые места проверены в предыдущем полном сравнении. Существенных нерешённых замечаний нет.",
+            "resolved": true
           }
         ]
       }
