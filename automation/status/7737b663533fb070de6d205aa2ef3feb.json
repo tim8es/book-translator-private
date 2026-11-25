@@ -3,12 +3,12 @@
   "job_id": "7737b663533fb070de6d205aa2ef3feb",
   "book_slug": "dinner-and-a-dozen-roses-wondrouswendy-control-video-game",
   "state": "running",
-  "phase": "model-call-reserved",
+  "phase": "reviewer-completed",
   "failures": 0,
   "correction_rounds": {},
   "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
   "source_sha256": "365a5fa793b0ef0e326a5c02d052e13819731cb2a080addcefd3ca0550049289",
-  "updated_at": "2026-11-25T07:13:37.748712+00:00",
+  "updated_at": "2026-11-25T07:13:55.543108+00:00",
   "queue_snapshot": {
     "extracted": 3,
     "reviewed": 0,
@@ -16,12 +16,7 @@
     "correction_candidates": 0,
     "awaiting_promotion": 0
   },
-  "active": {
-    "role": "reviewer",
-    "chapter": 2,
-    "session_id": "auto-7737b663533f-reviewer-3ed3be5f",
-    "unit_id": "chapter-000002"
-  },
+  "active": null,
   "structural_helper_revision": "4c584fe5534871cd05aa851d9b7bdbfa696d0edd",
   "model_calls_started": 14,
   "prompt_context": {
@@ -40,14 +35,14 @@
   },
   "provider_call_metric": {
     "unit_id": "chapter-000002",
-    "role": "translator",
+    "role": "reviewer",
     "route": "primary",
-    "request_chars": 26566,
+    "request_chars": 37828,
     "outcome": "response",
-    "duration_ms": 40279,
-    "prompt_tokens": 5155,
-    "completion_tokens": 1701,
-    "total_tokens": 6856
+    "duration_ms": 16085,
+    "prompt_tokens": 7438,
+    "completion_tokens": 791,
+    "total_tokens": 8229
   },
   "provider_call_metrics": [
     {
@@ -192,6 +187,17 @@
       "prompt_tokens": 5155,
       "completion_tokens": 1701,
       "total_tokens": 6856
+    },
+    {
+      "unit_id": "chapter-000002",
+      "role": "reviewer",
+      "route": "primary",
+      "request_chars": 37828,
+      "outcome": "response",
+      "duration_ms": 16085,
+      "prompt_tokens": 7438,
+      "completion_tokens": 791,
+      "total_tokens": 8229
     }
   ],
   "execution_metrics": {
@@ -206,10 +212,21 @@
         "prompt_tokens": 66779,
         "completion_tokens": 9993,
         "total_tokens": 76772
+      },
+      "reviewer": {
+        "completed_calls": 1,
+        "responses": 1,
+        "duration_ms": 16085,
+        "request_chars": 37828,
+        "prompt_tokens": 7438,
+        "completion_tokens": 791,
+        "total_tokens": 8229
       }
     },
     "accepted_operations": {
-      "translated": 1
+      "translated": 1,
+      "review_pass": 1,
+      "reviewed": 1
     }
   },
   "structural_protocol_fallback_units": {
@@ -230,18 +247,22 @@
       "action": "canonical-defer-untranslated-without-acceptance"
     }
   ],
+  "memory_glossary_saved": 1,
+  "pending_style": [],
   "model_response_diagnostics": {
     "finish_reason": "stop",
     "response_format": "json_object",
-    "response_chars": 710,
+    "response_chars": 367,
     "provider_refusal": false,
-    "prompt_tokens": 5155,
-    "completion_tokens": 1701,
-    "total_tokens": 6856,
+    "prompt_tokens": 7438,
+    "completion_tokens": 791,
+    "total_tokens": 8229,
     "route": "primary",
-    "role": "translator",
+    "role": "reviewer",
     "unit_id": "chapter-000002"
   },
-  "memory_glossary_saved": 1,
-  "pending_style": []
+  "glossary_evidence_rejected": 0,
+  "glossary_conflicts_rejected": 0,
+  "glossary_proposals_deferred": 0,
+  "memory_style_saved": 0
 }
