@@ -167,12 +167,91 @@
       },
       "style": [],
       "glossary": []
+    },
+    "chunk-002": {
+      "outcome": "CORRECTIONS_REQUIRED",
+      "report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "takeout-agree",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Predicate agreement has been corrected to «были бы прекрасным вариантом».",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Takeout and a rented movie would have been great, too",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Еда на вынос и взятый напрокат фильм тоже были бы прекрасным вариантом",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "1b3e36eef4c24b0da42907ea795566b8",
+              "finding_id": "chunk-002-takeout-agreement"
+            }
+          },
+          {
+            "id": "love-intensity",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "“Love it” conveys stronger enthusiasm than «не нравилось», which means “didn’t like it.” Preserve the affection or delight, for example with «не обожал этого».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "It would feel embarrassing if he didn’t love it.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Ему было бы неловко, если бы ему это не нравилось.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "1b3e36eef4c24b0da42907ea795566b8",
+              "finding_id": "chunk-002-love-intensity"
+            }
+          },
+          {
+            "id": "ugly-calque",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Уродливом» is an awkwardly literal rendering here and suggests physical ugliness. Use a natural equivalent for the difficult or unpleasant parts of his past, such as «неприглядном».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "to reveal so much about his past, the good, the bad, and even the ugly.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "рассказать так много о своём прошлом — хорошем, плохом и даже уродливом.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "1b3e36eef4c24b0da42907ea795566b8",
+              "finding_id": "chunk-002-ugly-calque"
+            }
+          }
+        ]
+      },
+      "style": [],
+      "glossary": []
     }
   },
   "windows": {
     "chunk-001": {
       "source_sha256": "5108bc81e8de2d067f499afb88905a7796db745b90558426114da23a2d05b96b",
       "translation_sha256": "fe8b8e1d88834d3340c26f6457b68bb26dd7bbff070bfbbfb7139944be62db66"
+    },
+    "chunk-002": {
+      "source_sha256": "bf96e43b39c74881723ab3da740bb7e1b05bba012ba9ff0974f2c77154e7c4a2",
+      "translation_sha256": "158a69ea7625843ee6c2486efc383ffb2c4f1dbe5125da046f63e7eef5bb7146"
     }
   },
   "accepted_review_record_id": null,
