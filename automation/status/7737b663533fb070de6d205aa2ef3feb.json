@@ -3,12 +3,14 @@
   "job_id": "7737b663533fb070de6d205aa2ef3feb",
   "book_slug": "dinner-and-a-dozen-roses-wondrouswendy-control-video-game",
   "state": "running",
-  "phase": "correction-batch-staged",
+  "phase": "corrector-completed",
   "failures": 0,
-  "correction_rounds": {},
+  "correction_rounds": {
+    "chapter-000003": 1
+  },
   "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
   "source_sha256": "365a5fa793b0ef0e326a5c02d052e13819731cb2a080addcefd3ca0550049289",
-  "updated_at": "2026-11-25T07:33:18.310813+00:00",
+  "updated_at": "2026-11-25T07:33:20.134179+00:00",
   "queue_snapshot": {
     "extracted": 2,
     "reviewed": 1,
@@ -16,12 +18,7 @@
     "correction_candidates": 1,
     "awaiting_promotion": 0
   },
-  "active": {
-    "role": "corrector",
-    "chapter": 3,
-    "session_id": "auto-7737b663533f-corrector-6694d0a8",
-    "unit_id": "chapter-000003"
-  },
+  "active": null,
   "structural_helper_revision": "4c584fe5534871cd05aa851d9b7bdbfa696d0edd",
   "model_calls_started": 20,
   "prompt_context": {
@@ -307,7 +304,8 @@
       "translated": 2,
       "review_pass": 1,
       "reviewed": 1,
-      "review_rejected": 1
+      "review_rejected": 1,
+      "corrected": 1
     }
   },
   "structural_protocol_fallback_units": {
@@ -355,7 +353,6 @@
     "unit_id": "chapter-000003",
     "review_record_id": "48f97c88697a4401b927c43f7b2be7a7"
   },
-  "provider_model_route": "primary",
   "correction_regression_rejections": [
     {
       "unit_id": "chapter-000003",
@@ -382,24 +379,10 @@
       ]
     }
   },
-  "correction_batch_progress": {
-    "unit_id": "chapter-000003",
-    "review_record_id": "48f97c88697a4401b927c43f7b2be7a7",
-    "completed": 1,
-    "total": 2
-  },
   "correction_regression_deferred": {
     "unit_id": "chapter-000003",
     "review_record_id": "48f97c88697a4401b927c43f7b2be7a7",
     "unapplied_finding_ids": [
-      "style-tense-1"
-    ]
-  },
-  "correction_isolation": {
-    "unit_id": "chapter-000003",
-    "review_record_id": "48f97c88697a4401b927c43f7b2be7a7",
-    "translation_sha256": "3ef0e015c512d0a245acf5b34ac3cc956f5c5db056f2c03a6b51a42bc5478135",
-    "finding_ids": [
       "style-tense-1"
     ]
   },
