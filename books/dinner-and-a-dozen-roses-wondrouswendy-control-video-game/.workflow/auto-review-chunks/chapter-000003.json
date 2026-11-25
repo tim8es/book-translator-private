@@ -382,6 +382,186 @@
         }
       ],
       "glossary": []
+    },
+    "chunk-003": {
+      "outcome": "CORRECTIONS_REQUIRED",
+      "report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "mouth-ref",
+            "category": "referent",
+            "severity": "major",
+            "detail": "Повторная проверка: исправление не внесено. Русский текст обрывается и сливается в «приоткрыть губы, рот Дарлинга Рука скользит…»; действие, в котором Тренч исследует рот Дарлинга, отсутствует. Восстановите эту часть и границу между предложениями.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "to let him explore his mouth.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "приоткрыть губы, рот Дарлинга Рука скользит по его спине",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "971d19ff4a7642c0a11d3300e2ec90d8",
+              "finding_id": "chunk-003-mouth-referent"
+            }
+          },
+          {
+            "id": "guilty-meaning",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Повторная проверка: проблема исправлена. «Предаётся с чувством вины» передаёт смысл guilty pleasures, не сводя его к тайному или скрываемому удовольствию.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Chocolate’s another one of his many guilty pleasures.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Шоколад — ещё одно из его многочисленных удовольствий, которым он предаётся с чувством вины.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "971d19ff4a7642c0a11d3300e2ec90d8",
+              "finding_id": "chunk-003-guilty-meaning"
+            }
+          },
+          {
+            "id": "caramel-style",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Повторная проверка: проблема исправлена; формулировка «насыщенная карамельная начинка» естественно передаёт rich caramel filling.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "smooth chocolate with a rich caramel filling.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "гладкий шоколад с насыщенной карамельной начинкой.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "971d19ff4a7642c0a11d3300e2ec90d8",
+              "finding_id": "chunk-003-caramel-calque"
+            }
+          },
+          {
+            "id": "jaw-style",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Повторная проверка: проблема исправлена. «Бережно придерживает за подбородок» передаёт нежное прикосновение и не создаёт прежнего впечатления резкого захвата.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Trench holds Darling’s jaw and strokes his bottom lip with his thumb.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Тренч бережно придерживает Дарлинга за подбородок и проводит большим пальцем по его нижней губе.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "971d19ff4a7642c0a11d3300e2ec90d8",
+              "finding_id": "chunk-003-jaw-style"
+            }
+          },
+          {
+            "id": "coy-tone",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Повторная проверка: проблема исправлена. «Игривое подмигивание» соответствует флиртующему тону coy wink.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "with a coy wink.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "с игривым подмигиванием предлагает Дарлинг.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "971d19ff4a7642c0a11d3300e2ec90d8",
+              "finding_id": "chunk-003-coy-tone"
+            }
+          },
+          {
+            "id": "mouth-feed",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Повторная проверка: прежняя неестественная формулировка исправлена. «Передавая её губами» понятно передаёт способ, которым Тренч предлагает конфету.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "he feeds it to Darling with his mouth.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "он угощает Дарлинга конфетой, передавая её губами.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "971d19ff4a7642c0a11d3300e2ec90d8",
+              "finding_id": "chunk-003-mouth-feeding"
+            }
+          },
+          {
+            "id": "dress-comma",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Запятая перед «каждый день» неуместно отделяет обстоятельство от «одевается, чтобы производить впечатление» и делает фразу сбивчивой. Перестройте предложение или перенесите обстоятельство.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Trench dresses to impress every day, but the sight always takes Darling’s breath away.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Тренч одевается, чтобы производить впечатление, каждый день, но этот вид всегда захватывает дух Дарлинга.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "love-making",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "«Чувственная любовь» обозначает скорее чувство, чем занятие любовью; так теряется конкретный смысл love-making и формулировка звучит неестественно. Передайте обещание долгой ночи медленной, чувственной близости или занятий любовью.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "the unspoken promise of a long night of slow, sensual love-making.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "невысказанное обещание долгой ночи медленной, чувственной любви.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "dialogue-punct",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "Здесь слова о вдохе — авторское действие, а не глагол речи; нынешняя запятая связывает его с продолжением прямой речи некорректно. Разделите реплики и действие подходящей русской пунктуацией.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“This is…” Darling takes a shaky breath, “this is wonderful, Zach, thank you.”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "«Это…» — Дарлинг делает дрожащий вдох, «это чудесно, Зак, спасибо».",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "style": [],
+      "glossary": []
     }
   },
   "windows": {
@@ -392,6 +572,10 @@
     "chunk-002": {
       "source_sha256": "bf96e43b39c74881723ab3da740bb7e1b05bba012ba9ff0974f2c77154e7c4a2",
       "translation_sha256": "73c994eff83e148768e447161756e26890a254eb4643148d2cf785d2c6a31ce7"
+    },
+    "chunk-003": {
+      "source_sha256": "6a5050bac7b7bb91edcb8bd4076f449c846cc5f289a23decc449335aff61ac80",
+      "translation_sha256": "06f64833e75313bc8fa7c23838b2d9e67d022eb2935ddbd961d1d077775cf4c6"
     }
   },
   "accepted_review_record_id": null,
