@@ -3,7 +3,7 @@
   "job_id": "7737b663533fb070de6d205aa2ef3feb",
   "book_slug": "dinner-and-a-dozen-roses-wondrouswendy-control-video-game",
   "state": "running",
-  "phase": "review-chunk-staged",
+  "phase": "reviewer-completed",
   "failures": 0,
   "correction_rounds": {
     "chapter-000003": 5,
@@ -11,7 +11,7 @@
   },
   "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
   "source_sha256": "365a5fa793b0ef0e326a5c02d052e13819731cb2a080addcefd3ca0550049289",
-  "updated_at": "2026-11-25T18:14:07.076303+00:00",
+  "updated_at": "2026-11-25T18:14:11.027958+00:00",
   "queue_snapshot": {
     "extracted": 0,
     "reviewed": 3,
@@ -19,12 +19,7 @@
     "correction_candidates": 0,
     "awaiting_promotion": 0
   },
-  "active": {
-    "role": "reviewer",
-    "chapter": 3,
-    "session_id": "auto-7737b663533f-reviewer-dc1a44bb",
-    "unit_id": "chapter-000003"
-  },
+  "active": null,
   "structural_helper_revision": "4c584fe5534871cd05aa851d9b7bdbfa696d0edd",
   "model_calls_started": 90,
   "prompt_context": {
@@ -474,7 +469,7 @@
       "translated": 3,
       "review_pass": 3,
       "reviewed": 3,
-      "review_rejected": 9,
+      "review_rejected": 10,
       "corrected": 6
     },
     "runtime_revisions": {
@@ -501,7 +496,7 @@
           }
         },
         "accepted_operations": {
-          "review_rejected": 2,
+          "review_rejected": 3,
           "corrected": 2
         }
       }
@@ -630,8 +625,8 @@
   },
   "review_incremental_archive": {
     "unit_id": "chapter-000003",
-    "review_record_id": "7018fd3fc5594cb2bf97484ec7414e1e",
-    "translation_sha256": "2a7194a9b11197901c0c0aae1edd65ff0b0c90247aa4fa3ef2f6fd1000a763f3",
+    "review_record_id": "ab92d8c651dc419ab01d102e1e9d2b91",
+    "translation_sha256": "68193022d600ad229d8e336725b5c8a16597a82a9a72c2258e59ced064eb9c18",
     "clean_chunks": 1
   },
   "review_incremental_rebases": [
@@ -743,14 +738,6 @@
       7,
       13
     ]
-  },
-  "review_chunk_fallback_unit": "chapter-000003",
-  "review_chunk_progress": {
-    "unit_id": "chapter-000003",
-    "source_sha256": "4aa522e689154037898d3dadc650f4e44a02b31396a1f6e52126e9ce1eddad21",
-    "translation_sha256": "68193022d600ad229d8e336725b5c8a16597a82a9a72c2258e59ced064eb9c18",
-    "completed": 4,
-    "total": 4
   },
   "model_response_diagnostics": {
     "finish_reason": "stop",
