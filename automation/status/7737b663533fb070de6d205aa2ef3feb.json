@@ -3,14 +3,14 @@
   "job_id": "7737b663533fb070de6d205aa2ef3feb",
   "book_slug": "dinner-and-a-dozen-roses-wondrouswendy-control-video-game",
   "state": "running",
-  "phase": "correction-batch-staged",
+  "phase": "model-call-reserved",
   "failures": 0,
   "correction_rounds": {
     "chapter-000003": 2
   },
   "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
   "source_sha256": "365a5fa793b0ef0e326a5c02d052e13819731cb2a080addcefd3ca0550049289",
-  "updated_at": "2026-11-25T08:27:25.588097+00:00",
+  "updated_at": "2026-11-25T08:27:28.792309+00:00",
   "queue_snapshot": {
     "extracted": 2,
     "reviewed": 1,
@@ -25,7 +25,7 @@
     "unit_id": "chapter-000003"
   },
   "structural_helper_revision": "4c584fe5534871cd05aa851d9b7bdbfa696d0edd",
-  "model_calls_started": 40,
+  "model_calls_started": 41,
   "prompt_context": {
     "role": "corrector",
     "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
@@ -37,7 +37,7 @@
     "glossary_sha256": "e23835e8ce7e8c28aa846ecd8284cacf65703460677b3bdb848dda91fc3064e2",
     "style_guide_sha256": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4",
     "system_chars": 21186,
-    "user_chars": 6763,
+    "user_chars": 7475,
     "correction_mode": "bounded-review-patches",
     "batch_finding_count": 1,
     "history_strategy": "off"
@@ -560,9 +560,9 @@
     "schema_version": 1,
     "group_size": 1,
     "max_calls_per_checkpoint": 1,
-    "pending_count": 7,
+    "pending_count": 6,
     "risk_class": "high",
-    "lower_bound_remaining_calls": 3,
+    "lower_bound_remaining_calls": 2,
     "current_selection_size": 1,
     "unit_id": "chapter-000003",
     "review_record_id": "3cbb5554ad3e4cbf84e408791ff813a6"
