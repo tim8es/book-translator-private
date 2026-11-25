@@ -4,7 +4,7 @@
     "schema_version": 1,
     "helper_revision": "review-chunks-source-stable-v1",
     "source_sha256": "4aa522e689154037898d3dadc650f4e44a02b31396a1f6e52126e9ce1eddad21",
-    "translation_sha256": "773fc5427ca89217d0ff11c2b2d0d52c8770e77a38aefdaf9a439e1c01f202af",
+    "translation_sha256": "dda46d4cc6daa919dd9c19f559e3dc3de558dad8de4cfbcec1a6a60d8cc0f126",
     "chunks": [
       {
         "id": "chunk-001",
@@ -22,7 +22,7 @@
         ],
         "translation_window": [
           0,
-          6658
+          6672
         ]
       },
       {
@@ -33,7 +33,7 @@
         ],
         "translation_core": [
           4763,
-          9739
+          9753
         ],
         "source_window": [
           2892,
@@ -41,7 +41,7 @@
         ],
         "translation_window": [
           2887,
-          11627
+          11636
         ]
       },
       {
@@ -51,16 +51,16 @@
           14715
         ],
         "translation_core": [
-          9739,
-          14777
+          9753,
+          14786
         ],
         "source_window": [
           8030,
           16608
         ],
         "translation_window": [
-          7825,
-          16684
+          7839,
+          16693
         ]
       },
       {
@@ -70,16 +70,16 @@
           19733
         ],
         "translation_core": [
-          14777,
-          19793
+          14786,
+          19802
         ],
         "source_window": [
           12597,
           19733
         ],
         "translation_window": [
-          12634,
-          19793
+          12643,
+          19802
         ]
       }
     ]
@@ -87,7 +87,7 @@
   "unit_id": "chapter-000003",
   "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
   "binding": {
-    "previous_record_id": "1b3e36eef4c24b0da42907ea795566b8",
+    "previous_record_id": "5533eff919ac416ba62658d62312fefb",
     "glossary_sha256": "e3d06a13a71a3bc05de349283ad9fefe1d847956eeccc7a259d7d154e881d140",
     "style_guide_sha256": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4",
     "reviewer_contract_sha256": "696b93f44170ff93256e74e6d61dca38b9c208d502a4042186056054393351d4"
@@ -105,332 +105,49 @@
           "style": true,
           "structure": true
         },
-        "findings": [
-          {
-            "id": "off-on-fixed",
-            "category": "style",
-            "severity": "minor",
-            "detail": "Prior awkward «то сходящиеся, то расходящиеся» recast is now natural: «Дарлинг с интересом наблюдал, как менялись отношения Карлы Вон и Хьюберта Тана: они то сходились, то расходились».",
-            "resolved": true,
-            "source_anchor": {
-              "quote": "Every year since they started working at the Bureau, Darling has found the evolution of Carla Vaughn and Hubert Tan’s off and on relationship to be fascinating.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "Каждый год с тех пор, как они начали работать в Бюро, Дарлинг с интересом наблюдал за тем, как менялись отношения Карлы Вон и Хьюберта Тана: они то сходились, то расходились.",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "1b3e36eef4c24b0da42907ea795566b8",
-              "finding_id": "chunk-001-off-on-wording"
-            }
-          },
-          {
-            "id": "salary-fixed",
-            "category": "style",
-            "severity": "minor",
-            "detail": "Prior stiff calque «Зарплаты дают им больше, чем просто комфорт» replaced with natural «Их зарплаты позволяют им жить более чем комфортно».",
-            "resolved": true,
-            "source_anchor": {
-              "quote": "Their salaries allow them more than mere comfort, but Darling’s not working at the Bureau for a paycheck alone.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "Их зарплаты позволяют им жить более чем комфортно, но Дарлинг работает в Бюро не только ради денег.",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "1b3e36eef4c24b0da42907ea795566b8",
-              "finding_id": "chunk-001-salary-idiom"
-            }
-          },
-          {
-            "id": "anniversary-fixed",
-            "category": "style",
-            "severity": "minor",
-            "detail": "Prior awkward «отметить годовщину — один год» replaced with natural «отметить первую годовщину».",
-            "resolved": true,
-            "source_anchor": {
-              "quote": "He pined for Zachariah for years, and now they’re about to celebrate their one year anniversary alongside Valentine’s Day.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "Он годами томился по Захарии, и теперь они собираются отметить первую годовщину вместе с Днём святого Валентина.",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "1b3e36eef4c24b0da42907ea795566b8",
-              "finding_id": "chunk-001-anniversary-phrase"
-            }
-          }
-        ]
+        "findings": []
       },
-      "style": [],
-      "glossary": []
-    },
-    "chunk-002": {
-      "outcome": "CORRECTIONS_REQUIRED",
-      "report": {
-        "evidence_version": 2,
-        "context": "independent_session",
-        "checks": {
-          "coverage": true,
-          "meaning": true,
-          "terminology": true,
-          "style": true,
-          "structure": true
+      "style": [
+        {
+          "evidence": "He wants gossip. He wants people to wonder—where’s Darling going? Who’s his date?",
+          "source_pattern": "Internal thoughts and emotional reactions rendered in short, vivid sentences",
+          "translation_approach": "Передача динамичных размышлений и эмоционального возбуждения персонажа краткими экспрессивными синтаксическими конструкциями"
+        }
+      ],
+      "glossary": [
+        {
+          "notes": "Помощница Дарлинга в Бюро",
+          "original": "Carla Vaughn",
+          "translation": "Карла Вон",
+          "type": "персонаж"
         },
-        "findings": [
-          {
-            "id": "takeout-agree",
-            "category": "style",
-            "severity": "minor",
-            "detail": "Predicate agreement has been corrected to «были бы прекрасным вариантом».",
-            "resolved": true,
-            "source_anchor": {
-              "quote": "Takeout and a rented movie would have been great, too",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "Еда на вынос и взятый напрокат фильм тоже были бы прекрасным вариантом",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "1b3e36eef4c24b0da42907ea795566b8",
-              "finding_id": "chunk-002-takeout-agreement"
-            }
-          },
-          {
-            "id": "love-intensity",
-            "category": "meaning",
-            "severity": "minor",
-            "detail": "“Love it” conveys stronger enthusiasm than «не нравилось», which means “didn’t like it.” Preserve the affection or delight, for example with «не обожал этого».",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "It would feel embarrassing if he didn’t love it.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "Ему было бы неловко, если бы ему это не нравилось.",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "1b3e36eef4c24b0da42907ea795566b8",
-              "finding_id": "chunk-002-love-intensity"
-            }
-          },
-          {
-            "id": "ugly-calque",
-            "category": "style",
-            "severity": "minor",
-            "detail": "«Уродливом» is an awkwardly literal rendering here and suggests physical ugliness. Use a natural equivalent for the difficult or unpleasant parts of his past, such as «неприглядном».",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "to reveal so much about his past, the good, the bad, and even the ugly.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "рассказать так много о своём прошлом — хорошем, плохом и даже уродливом.",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "1b3e36eef4c24b0da42907ea795566b8",
-              "finding_id": "chunk-002-ugly-calque"
-            }
-          }
-        ]
-      },
-      "style": [],
-      "glossary": []
-    },
-    "chunk-003": {
-      "outcome": "CORRECTIONS_REQUIRED",
-      "report": {
-        "evidence_version": 2,
-        "context": "independent_session",
-        "checks": {
-          "coverage": true,
-          "meaning": true,
-          "terminology": true,
-          "style": true,
-          "structure": true
+        {
+          "notes": "Помощник Дарлинга в Бюро",
+          "original": "Hubert Tan",
+          "translation": "Хьюберт Тан",
+          "type": "персонаж"
         },
-        "findings": [
-          {
-            "id": "move-intent",
-            "category": "meaning",
-            "severity": "minor",
-            "detail": "В оригинале Дарлинг уже начинает движение («moves to set down»), чтобы поставить букет, тогда как «хочет поставить» передаёт только нереализованное намерение. Замечание остаётся неисправленным в текущем тексте перевода.",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "When they part, Darling moves to set down the flowers, but Trench stops him.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "Когда они отстраняются, Дарлинг хочет поставить цветы, но Тренч останавливает его.",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "1b3e36eef4c24b0da42907ea795566b8",
-              "finding_id": "chunk-003-move-intent"
-            }
-          },
-          {
-            "id": "jaw-tenderness",
-            "category": "addition",
-            "severity": "minor",
-            "detail": "Слово «бережно» добавлено без опоры на оригинал («holds Darling’s jaw and strokes his bottom lip with his thumb»). В текущем тексте перевода не исправлено.",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "Trench holds Darling’s jaw and strokes his bottom lip with his thumb.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "Тренч бережно придерживает Дарлинга за подбородок и проводит большим пальцем по его нижней губе.",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "1b3e36eef4c24b0da42907ea795566b8",
-              "finding_id": "chunk-003-jaw-tenderness"
-            }
-          },
-          {
-            "id": "clothing-phrase",
-            "category": "style",
-            "severity": "minor",
-            "detail": "Оборот «по очереди снимать слой одежды за раз» остаётся стилистически избыточным и неестественным. Текст не был скорректирован.",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "As much as Darling enjoys Trench frantically undressing him, there’s something about taking turns removing a layer of clothing one at a time.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "Как бы Дарлингу ни нравилось, когда Тренч лихорадочно раздевает его, есть что-то особенное в том, чтобы по очереди снимать слой одежды за раз.",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "1b3e36eef4c24b0da42907ea795566b8",
-              "finding_id": "chunk-003-clothing-phrase"
-            }
-          },
-          {
-            "id": "skin-calque",
-            "category": "style",
-            "severity": "minor",
-            "detail": "Выражение «как кожа открывается мало-помалу» является калькой («seeing skin revealed little by little») и по-прежнему присутствует в тексте.",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "the thrill of seeing skin revealed little by little",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "волнение от того, как кожа открывается мало-помалу",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "1b3e36eef4c24b0da42907ea795566b8",
-              "finding_id": "chunk-003-skin-calque"
-            }
-          }
-        ]
-      },
-      "style": [],
-      "glossary": []
-    },
-    "chunk-004": {
-      "outcome": "CORRECTIONS_REQUIRED",
-      "report": {
-        "evidence_version": 2,
-        "context": "independent_session",
-        "checks": {
-          "coverage": true,
-          "meaning": true,
-          "terminology": true,
-          "style": true,
-          "structure": true
+        {
+          "notes": "Водитель Тренча",
+          "original": "Joseph Martin",
+          "translation": "Джозеф Мартин",
+          "type": "персонаж"
         },
-        "findings": [
-          {
-            "id": "tense-0102",
-            "category": "style",
-            "severity": "minor",
-            "detail": "The source narrates this passage in the present tense («he’s shaking», «Darling begs», «He doesn’t care», «he needs», «Darling pulls», «He wants», «His fingers dig»), but the translation shifts to past tense («дрожал», «трепетал», «умолял», «было всё равно», «был ему нужен») and mixes tenses inside the same block («притягивает», «хочет», «впиваются» next to «не размыкались», «вжимался»). Render the passage consistently in the present tense to match the source.",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "When he’s shaking and trembling from Trench’s teasing, Darling begs to be taken. He doesn’t care how desperate he sounds, he needs Trench like he needs air.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "Когда от дразнящих ласк Тренча Дарлинг весь дрожал и трепетал, он умолял взять его. Ему было всё равно, насколько отчаянно он звучит: Тренч был ему нужен, как воздух.",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "1b3e36eef4c24b0da42907ea795566b8",
-              "finding_id": "chunk-004-tense-recheck"
-            }
-          },
-          {
-            "id": "dialogue-0112",
-            "category": "structure",
-            "severity": "minor",
-            "detail": "Dialogue punctuation is inconsistent within the translation: earlier dialogue uses quotation marks («Костюм отлично на тебе сидит, Каспер», «Я твой»), while this block and the following dialogue use em dashes (— О чём задумался? —). Unify the dialogue formatting across the chapter.",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "“What’s on your mind?” Trench asks as he kisses his temple.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "— О чём задумался? — спрашивает Тренч, целуя его в висок.",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "1b3e36eef4c24b0da42907ea795566b8",
-              "finding_id": "chunk-004-dialogue-recheck"
-            }
-          },
-          {
-            "id": "memories-0116",
-            "category": "meaning",
-            "severity": "minor",
-            "detail": "Verified repair: the previous «столько прекрасных воспоминаний» has been replaced by «прекрасные воспоминания»; the current wording no longer inflates the quantity implied by “some great memories”.",
-            "resolved": true,
-            "source_anchor": {
-              "quote": "We’ve made some great memories.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "У нас остались прекрасные воспоминания.",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "1b3e36eef4c24b0da42907ea795566b8",
-              "finding_id": "chunk-004-memories-amount"
-            }
-          }
-        ]
-      },
-      "style": [],
-      "glossary": []
+        {
+          "notes": "Штаб-квартира Бюро в Нью-Йорке",
+          "original": "Oldest House",
+          "translation": "Старейший дом",
+          "type": "место"
+        }
+      ]
     }
   },
   "windows": {
     "chunk-001": {
       "source_sha256": "5108bc81e8de2d067f499afb88905a7796db745b90558426114da23a2d05b96b",
-      "translation_sha256": "fe8b8e1d88834d3340c26f6457b68bb26dd7bbff070bfbbfb7139944be62db66"
-    },
-    "chunk-002": {
-      "source_sha256": "bf96e43b39c74881723ab3da740bb7e1b05bba012ba9ff0974f2c77154e7c4a2",
-      "translation_sha256": "158a69ea7625843ee6c2486efc383ffb2c4f1dbe5125da046f63e7eef5bb7146"
-    },
-    "chunk-003": {
-      "source_sha256": "6a5050bac7b7bb91edcb8bd4076f449c846cc5f289a23decc449335aff61ac80",
-      "translation_sha256": "65828e02360e00341941eca278bd7e02baf01350784e19a4ec3e8341ed9938a6"
-    },
-    "chunk-004": {
-      "source_sha256": "4d1423a1f161866c4e97077eb6a2215565e0138b68543ca5c22ea1ef74dc314b",
-      "translation_sha256": "6fbd0ea562011eb01f3d07bbe6729963050f40c2628071b8b21b6e01758f49e0"
+      "translation_sha256": "97caafa34b1300374468e0804ff7ebaa525e980a7a0e4ac1fc616b329ac7d6c2"
     }
   },
-  "accepted_review_record_id": "5533eff919ac416ba62658d62312fefb",
+  "accepted_review_record_id": null,
   "reused": {}
 }
