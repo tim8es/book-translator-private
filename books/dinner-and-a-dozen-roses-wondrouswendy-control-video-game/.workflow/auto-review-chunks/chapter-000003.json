@@ -4,7 +4,7 @@
     "schema_version": 1,
     "helper_revision": "review-chunks-source-stable-v1",
     "source_sha256": "4aa522e689154037898d3dadc650f4e44a02b31396a1f6e52126e9ce1eddad21",
-    "translation_sha256": "3a03d7f7f40f7aa6ca10e86980313789d3284f5f1fa1d810bca0db98bc794ed7",
+    "translation_sha256": "6a370037642ce4d3794dc6d5c5bcb4a2bec2c1e256415757bc080cda0b501138",
     "chunks": [
       {
         "id": "chunk-001",
@@ -14,7 +14,7 @@
         ],
         "translation_core": [
           0,
-          4771
+          4798
         ],
         "source_window": [
           0,
@@ -22,7 +22,7 @@
         ],
         "translation_window": [
           0,
-          6673
+          6700
         ]
       },
       {
@@ -32,16 +32,16 @@
           9848
         ],
         "translation_core": [
-          4771,
-          9734
+          4798,
+          9772
         ],
         "source_window": [
           2892,
           11650
         ],
         "translation_window": [
-          2904,
-          11596
+          2919,
+          11622
         ]
       },
       {
@@ -51,16 +51,16 @@
           14715
         ],
         "translation_core": [
-          9734,
-          14680
+          9772,
+          14762
         ],
         "source_window": [
           8030,
           16608
         ],
         "translation_window": [
-          7831,
-          16584
+          7858,
+          16669
         ]
       },
       {
@@ -70,16 +70,16 @@
           19733
         ],
         "translation_core": [
-          14680,
-          19697
+          14762,
+          19782
         ],
         "source_window": [
           12597,
           19733
         ],
         "translation_window": [
-          12569,
-          19697
+          12629,
+          19782
         ]
       }
     ]
@@ -87,7 +87,7 @@
   "unit_id": "chapter-000003",
   "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
   "binding": {
-    "previous_record_id": "48f97c88697a4401b927c43f7b2be7a7",
+    "previous_record_id": "971d19ff4a7642c0a11d3300e2ec90d8",
     "glossary_sha256": "e23835e8ce7e8c28aa846ecd8284cacf65703460677b3bdb848dda91fc3064e2",
     "style_guide_sha256": "25730bf7d906cf82f3f17f9417dfa66d565db5dce136b7f8da7fcba848b217c4",
     "reviewer_contract_sha256": "696b93f44170ff93256e74e6d61dca38b9c208d502a4042186056054393351d4"
@@ -107,131 +107,144 @@
         },
         "findings": [
           {
-            "id": "single-status",
+            "id": "recheck-single",
             "category": "meaning",
             "severity": "minor",
-            "detail": "«Был одинок» can describe feeling lonely, while the source says Darling was single in the relationship-status sense. Consider «не состоял в отношениях» to preserve that distinction.",
+            "detail": "Resolved: «не состоял в отношениях» preserves the relationship-status sense of “single.”",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "When Darling was single, it used to bother him how obvious they were, but now it’s his turn to gloat on Single’s Awareness Day.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Когда Дарлинг не состоял в отношениях, его раздражало, как явно они всё демонстрировали, но теперь его очередь злорадствовать в День осведомлённости одиночек.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "971d19ff4a7642c0a11d3300e2ec90d8",
+              "finding_id": "chunk-001-single-status"
+            }
+          },
+          {
+            "id": "recheck-excitement",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Resolved: «радостное предвкушение» distinguishes excitement from the nervousness that follows.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Despite his excitement, he’s nervous.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Несмотря на радостное предвкушение, он нервничает.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "971d19ff4a7642c0a11d3300e2ec90d8",
+              "finding_id": "chunk-001-excitement-tone"
+            }
+          },
+          {
+            "id": "recheck-darling",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Resolved: «своего любимого» is a natural affectionate rendering in this context.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Trench has great taste, knowing exactly how he likes to dress up his darling.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "У Тренча прекрасный вкус: он точно знает, как ему нравится наряжать своего любимого.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "971d19ff4a7642c0a11d3300e2ec90d8",
+              "finding_id": "chunk-001-darling-phrase"
+            }
+          },
+          {
+            "id": "recheck-salary",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Resolved: the revised sentence is grammatical and preserves the point about their salaries.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Their salaries allow them more than mere comfort, but Darling’s not working at the Bureau for a paycheck alone.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Их зарплаты дают им больше, чем просто комфорт, но Дарлинг работает в Бюро не только ради денег.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "971d19ff4a7642c0a11d3300e2ec90d8",
+              "finding_id": "chunk-001-salary-grammar"
+            }
+          },
+          {
+            "id": "recheck-hostess",
+            "category": "referent",
+            "severity": "minor",
+            "detail": "Resolved: «хостес» correctly identifies the restaurant employee who greets and guides Darling.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Darling steps off the elevator into the restaurant lobby. A hostess smiles, greets him, and gestures for him to follow her.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Дарлинг выходит из лифта в вестибюль ресторана. Хостес улыбается, приветствует его и жестом приглашает следовать за ней.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "971d19ff4a7642c0a11d3300e2ec90d8",
+              "finding_id": "chunk-001-hostess-role"
+            }
+          },
+          {
+            "id": "pneumatic-tube",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Пневматическая труба прибывает» звучит так, будто в кабинет доставляют саму трубу. Передайте, что записка приходит по пневмопочте (например, в капсуле), чтобы сохранить смысл и избежать буквального калечного сочетания.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "On Valentine’s Day, a pneumatic tube with a note from the Director arrives at Darling’s office.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "В День святого Валентина в кабинет Дарлинга прибывает пневматическая труба с запиской от Директора.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "obvious-display",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "«Всё демонстрировали» добавляет не названное в оригинале действие и неясный объект «всё». Источник говорит лишь, что они были очевидны; переформулируйте без этого уточнения, сохранив исходную неопределённость.",
             "resolved": false,
             "source_anchor": {
               "quote": "When Darling was single, it used to bother him how obvious they were, but now it’s his turn to gloat on Single’s Awareness Day.",
               "occurrence": 0
             },
             "translation_anchor": {
-              "quote": "Когда Дарлинг был одинок, его раздражало, как явно они всё демонстрируют, но теперь его очередь злорадствовать в День осведомлённости одиночек.",
+              "quote": "Когда Дарлинг не состоял в отношениях, его раздражало, как явно они всё демонстрировали, но теперь его очередь злорадствовать в День осведомлённости одиночек.",
               "occurrence": 0
             },
             "resolves": null
           },
           {
-            "id": "excitement-tone",
-            "category": "meaning",
-            "severity": "minor",
-            "detail": "The translation renders excitement as «волнение», then immediately says «нервничает», making the two distinct source states sound nearly synonymous. Consider «Несмотря на радостное предвкушение, он нервничает».",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "Despite his excitement, he’s nervous.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "Несмотря на волнение, он нервничает.",
-              "occurrence": 0
-            },
-            "resolves": null
-          },
-          {
-            "id": "darling-phrase",
+            "id": "romantic-prowess",
             "category": "style",
             "severity": "minor",
-            "detail": "«Наряжать своего дорогого» sounds like an awkward calque in this context. Use a natural affectionate equivalent such as «наряжать своего любимого», while retaining the intimate tone.",
+            "detail": "«Романтическая доблесть» звучит героически и неестественно, тогда как “romantic prowess” здесь шутливо описывает его успехи или умение в романтических делах. Выберите более естественную формулировку без такого пафоса.",
             "resolved": false,
             "source_anchor": {
-              "quote": "Trench has great taste, knowing exactly how he likes to dress up his darling.",
+              "quote": "Maybe his display of romantic prowess will inspire them to make up.",
               "occurrence": 0
             },
             "translation_anchor": {
-              "quote": "У Тренча прекрасный вкус: он точно знает, как ему нравится наряжать своего дорогого.",
-              "occurrence": 0
-            },
-            "resolves": null
-          },
-          {
-            "id": "salary-grammar",
-            "category": "style",
-            "severity": "minor",
-            "detail": "«Их зарплаты позволяют им не просто комфорт» is ungrammatical and obscures the point that their salaries provide more than mere comfort. Recast naturally, for example: «Их зарплаты дают им больше, чем просто комфорт, но…»",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "Their salaries allow them more than mere comfort, but Darling’s not working at the Bureau for a paycheck alone.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "Их зарплаты позволяют им не просто комфорт, но Дарлинг работает в Бюро не только ради денег.",
-              "occurrence": 0
-            },
-            "resolves": null
-          },
-          {
-            "id": "hostess-role",
-            "category": "referent",
-            "severity": "minor",
-            "detail": "«Хозяйка зала» suggests an owner or person in charge of the room, rather than the restaurant hostess who greets and guides Darling. Consider «хостес» or «сотрудница, встречающая гостей».",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "Darling steps off the elevator into the restaurant lobby. A hostess smiles, greets him, and gestures for him to follow her.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "Дарлинг выходит из лифта в вестибюль ресторана. Хозяйка зала улыбается, приветствует его и жестом приглашает следовать за ней.",
-              "occurrence": 0
-            },
-            "resolves": null
-          }
-        ]
-      },
-      "style": [],
-      "glossary": []
-    },
-    "chunk-002": {
-      "outcome": "CORRECTIONS_REQUIRED",
-      "report": {
-        "evidence_version": 2,
-        "context": "independent_session",
-        "checks": {
-          "coverage": true,
-          "meaning": true,
-          "terminology": true,
-          "style": true,
-          "structure": true
-        },
-        "findings": [
-          {
-            "id": "drive-detail",
-            "category": "omission",
-            "severity": "minor",
-            "detail": "The source specifies that they could drive to the mountains; «поехать в горы» leaves out that travel-by-car detail. Preserve it, for example: «съездить на машине в горы».",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "We could drive up to the mountains next spring.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "Мы могли бы поехать в горы следующей весной.",
-              "occurrence": 0
-            },
-            "resolves": null
-          },
-          {
-            "id": "speech-punct",
-            "category": "structure",
-            "severity": "minor",
-            "detail": "The Russian punctuation breaks a single continuous utterance into mismatched quoted fragments. In this interrupted sentence, keep the quotation open and set off the authorial words with dashes: «Ты, должно быть, Купидон, — говорит Дарлинг, обнимая Тренча за талию, — потому что у меня сердечки в глазах, когда я смотрю на тебя».",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "“You must be Cupid,” Darling says, wrapping an arm around Trench’s waist, “because I have hearts in my eyes for you.”",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "«Ты, должно быть, Купидон», — говорит Дарлинг, обнимая Тренча за талию, «потому что у меня сердечки в глазах, когда я смотрю на тебя».",
+              "quote": "Может быть, его демонстрация романтической доблести вдохновит их помириться.",
               "occurrence": 0
             },
             "resolves": null
@@ -240,229 +253,33 @@
       },
       "style": [
         {
-          "evidence": "Blocks 030 and 040.",
-          "source_pattern": "Close third-person narration follows Darling’s emotional responses, using figurative phrasing such as his stomach being full of butterflies and Trench setting his heart ablaze.",
-          "translation_approach": "Maintain the close focus on Darling and preserve the emotional imagery without explaining or flattening it."
-        },
-        {
-          "evidence": "Blocks 047 and 059.",
-          "source_pattern": "Romantic dialogue is conversational and self-conscious, with playful wordplay and hesitant, disfluent phrasing.",
-          "translation_approach": "Preserve the speakers’ casual teasing, awkward pauses, and playful puns in natural Russian."
+          "evidence": "He wants gossip. He wants people to wonder—where’s Darling going? Who’s his date?",
+          "source_pattern": "Близкая к Дарлингу фокализация, самодовольные ироничные замечания и короткие повторяющиеся фразы создают лёгкий комический тон.",
+          "translation_approach": "Сохранять близкую фокализацию и короткие выразительные повторы; передавать самодовольство героя с юмором, не добавляя торжественного пафоса."
         }
       ],
-      "glossary": []
-    },
-    "chunk-003": {
-      "outcome": "CORRECTIONS_REQUIRED",
-      "report": {
-        "evidence_version": 2,
-        "context": "independent_session",
-        "checks": {
-          "coverage": true,
-          "meaning": true,
-          "terminology": true,
-          "style": true,
-          "structure": true
-        },
-        "findings": [
-          {
-            "id": "mouth-referent",
-            "category": "referent",
-            "severity": "major",
-            "detail": "«Свой рот» в русской конструкции скорее относится к Тренчу, обозначенному словом «ему», и может означать, что он исследует собственный рот. В источнике речь о рте Дарлинга; уточните объект действия.",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "to let him explore his mouth.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "чтобы позволить ему исследовать свой рот.",
-              "occurrence": 0
-            },
-            "resolves": null
-          },
-          {
-            "id": "guilty-meaning",
-            "category": "meaning",
-            "severity": "minor",
-            "detail": "«Тайных» меняет смысл guilty pleasures: в источнике речь об удовольствиях, которым обычно предаются с чувством вины или неловкости, а не обязательно скрывают.",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "Chocolate’s another one of his many guilty pleasures.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "Шоколад — ещё одно из его многочисленных тайных удовольствий.",
-              "occurrence": 0
-            },
-            "resolves": null
-          },
-          {
-            "id": "caramel-calque",
-            "category": "style",
-            "severity": "minor",
-            "detail": "«Богатая карамельная начинка» звучит как буквальная калька rich filling. В русском естественнее передать насыщенность вкуса, например «насыщенная карамельная начинка».",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "smooth chocolate with a rich caramel filling.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "гладкий шоколад с богатой карамельной начинкой.",
-              "occurrence": 0
-            },
-            "resolves": null
-          },
-          {
-            "id": "jaw-style",
-            "category": "style",
-            "severity": "minor",
-            "detail": "«Держит Дарлинга за челюсть» по-русски звучит физически резко и неестественно в этой нежной сцене. Переформулируйте так, чтобы сохранить интимное прикосновение и не создать впечатление грубого захвата.",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "Trench holds Darling’s jaw and strokes his bottom lip with his thumb.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "Тренч держит Дарлинга за челюсть и проводит большим пальцем по его нижней губе.",
-              "occurrence": 0
-            },
-            "resolves": null
-          },
-          {
-            "id": "coy-tone",
-            "category": "meaning",
-            "severity": "minor",
-            "detail": "«Застенчивое» передаёт робость, тогда как coy wink в этом флиртующем контексте скорее означает игривое или лукавое подмигивание.",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "with a coy wink.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "с застенчивым подмигиванием",
-              "occurrence": 0
-            },
-            "resolves": null
-          },
-          {
-            "id": "mouth-feeding",
-            "category": "style",
-            "severity": "minor",
-            "detail": "«Кормит Дарлинга ртом» — неестественная по-русски формулировка и неясно описывает действие. Переформулируйте так, чтобы естественно передать, что Тренч предлагает конфету Дарлингу своим ртом.",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "he feeds it to Darling with his mouth.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "он кормит Дарлинга ртом.",
-              "occurrence": 0
-            },
-            "resolves": null
-          }
-        ]
-      },
-      "style": [],
-      "glossary": []
-    },
-    "chunk-004": {
-      "outcome": "CORRECTIONS_REQUIRED",
-      "report": {
-        "evidence_version": 2,
-        "context": "independent_session",
-        "checks": {
-          "coverage": true,
-          "meaning": true,
-          "terminology": true,
-          "style": true,
-          "structure": true
-        },
-        "findings": [
-          {
-            "id": "tense-recheck",
-            "category": "style",
-            "severity": "minor",
-            "detail": "The tense problem remains. The source narration is present tense here, but the translation shifts into past tense in this sentence and the following one («Ему было всё равно... Тренч был ему нужен...»), before returning to present. Render these sentences consistently in the present tense.",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "When he’s shaking and trembling from Trench’s teasing, Darling begs to be taken.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "Когда от дразнящих ласк Тренча Дарлинг весь дрожал и трепетал, он умолял взять его.",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "48f97c88697a4401b927c43f7b2be7a7",
-              "finding_id": "style-tense-1"
-            }
-          },
-          {
-            "id": "dialogue-recheck",
-            "category": "structure",
-            "severity": "minor",
-            "detail": "Dialogue punctuation remains inconsistent: the translation uses quotation marks for dialogue in blocks 000084–000090 and 000107, but switches to em dashes from block 000112 onward. Unify the dialogue formatting across the translation.",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "“What’s on your mind?” Trench asks as he kisses his temple.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "— О чём задумался? — спрашивает Тренч, целуя его в висок.",
-              "occurrence": 0
-            },
-            "resolves": {
-              "record_id": "48f97c88697a4401b927c43f7b2be7a7",
-              "finding_id": "structure-dialogue-1"
-            }
-          },
-          {
-            "id": "mouth-trail",
-            "category": "style",
-            "severity": "minor",
-            "detail": "«Рот Тренча следует за следом» is awkwardly redundant in Russian. Rephrase naturally while preserving the image of his mouth following the path left by the rose.",
-            "resolved": false,
-            "source_anchor": {
-              "quote": "His mouth follows the trail left behind by the rose.",
-              "occurrence": 0
-            },
-            "translation_anchor": {
-              "quote": "Рот Тренча следует за следом, оставленным розой.",
-              "occurrence": 0
-            },
-            "resolves": null
-          }
-        ]
-      },
-      "style": [
+      "glossary": [
         {
-          "evidence": "The core uses present-tense narration such as “Darling begs to be taken” and “He tilts his head,” alongside fragments such as “Such a simple, loaded question.”",
-          "source_pattern": "Close third-person narration, generally in the present tense, with short fragments amid intimate, sensual description and playful dialogue.",
-          "translation_approach": "Preserve the close perspective and present-tense movement; retain fragments where they carry the source rhythm and keep the shifts between tenderness, sensuality, and playfulness."
+          "notes": "",
+          "original": "Carla Vaughn",
+          "translation": "Карла Вон",
+          "type": "персонаж"
+        },
+        {
+          "notes": "",
+          "original": "Hubert Tan",
+          "translation": "Хьюберт Тан",
+          "type": "персонаж"
         }
-      ],
-      "glossary": []
+      ]
     }
   },
   "windows": {
     "chunk-001": {
       "source_sha256": "5108bc81e8de2d067f499afb88905a7796db745b90558426114da23a2d05b96b",
-      "translation_sha256": "e51ae2985faf6bb6862d3a797413c6fbe6b866260da59a337b55ab1ba0570540"
-    },
-    "chunk-002": {
-      "source_sha256": "bf96e43b39c74881723ab3da740bb7e1b05bba012ba9ff0974f2c77154e7c4a2",
-      "translation_sha256": "f449d4e955881821e2bae62c763b78c93ea5f9605a674bb1484ec3523d2b4b7b"
-    },
-    "chunk-003": {
-      "source_sha256": "6a5050bac7b7bb91edcb8bd4076f449c846cc5f289a23decc449335aff61ac80",
-      "translation_sha256": "3af0eb9edbe630fce08c62f810151b35801de2b7a07939b5fa99d82211a68b5e"
-    },
-    "chunk-004": {
-      "source_sha256": "4d1423a1f161866c4e97077eb6a2215565e0138b68543ca5c22ea1ef74dc314b",
-      "translation_sha256": "49724cec63a8461d97a48039cc107ec9b2ecbaf59bdedf5693a39c6b52ac53fe"
+      "translation_sha256": "63be722bbe319c763ab29486ff45c9201e54d37c616a38e3b12c9f79f6bf71f5"
     }
   },
-  "accepted_review_record_id": "971d19ff4a7642c0a11d3300e2ec90d8",
+  "accepted_review_record_id": null,
   "reused": {}
 }
