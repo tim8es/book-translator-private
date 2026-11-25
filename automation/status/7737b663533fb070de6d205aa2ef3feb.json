@@ -3,7 +3,7 @@
   "job_id": "7737b663533fb070de6d205aa2ef3feb",
   "book_slug": "dinner-and-a-dozen-roses-wondrouswendy-control-video-game",
   "state": "running",
-  "phase": "correction-batch-staged",
+  "phase": "orchestrator-advice-reserved",
   "failures": 0,
   "correction_rounds": {
     "chapter-000003": 4,
@@ -11,7 +11,7 @@
   },
   "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
   "source_sha256": "365a5fa793b0ef0e326a5c02d052e13819731cb2a080addcefd3ca0550049289",
-  "updated_at": "2026-11-25T18:01:52.131442+00:00",
+  "updated_at": "2026-11-25T18:01:53.968533+00:00",
   "queue_snapshot": {
     "extracted": 0,
     "reviewed": 3,
@@ -26,7 +26,7 @@
     "unit_id": "chapter-000003"
   },
   "structural_helper_revision": "4c584fe5534871cd05aa851d9b7bdbfa696d0edd",
-  "model_calls_started": 79,
+  "model_calls_started": 80,
   "prompt_context": {
     "role": "corrector",
     "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
@@ -578,10 +578,10 @@
     "schema_version": 1,
     "group_size": 2,
     "max_calls_per_checkpoint": 2,
-    "pending_count": 13,
+    "pending_count": 6,
     "risk_class": "mixed",
-    "lower_bound_remaining_calls": 5,
-    "current_selection_size": 7,
+    "lower_bound_remaining_calls": 2,
+    "current_selection_size": 2,
     "unit_id": "chapter-000003",
     "review_record_id": "7018fd3fc5594cb2bf97484ec7414e1e"
   },
@@ -781,5 +781,12 @@
     "finding_ids": [
       "chunk-002-flow-41"
     ]
+  },
+  "correction_orchestrator_decision": {
+    "unit_id": "chapter-000003",
+    "review_record_id": "7018fd3fc5594cb2bf97484ec7414e1e",
+    "translation_sha256": "2a7194a9b11197901c0c0aae1edd65ff0b0c90247aa4fa3ef2f6fd1000a763f3",
+    "strategy": "batch_remaining",
+    "outcome": "reserved"
   }
 }
