@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "event_id": "6a7ccebcc02c4f41835219e71895425a",
+  "action": "cleanup_requested",
+  "unit_id": "chapter-000004",
+  "claim_revision": "b5736ae68dc1f0ab42adde857adca869993d565a",
+  "claim": {
+    "schema_version": 1,
+    "claim_id": "7ee73f2125ae48538ce4486a12e03f94",
+    "unit_id": "chapter-000004",
+    "role": "translator",
+    "session_id": "chatops-goblet-t2-20261125",
+    "base_revision": "d9277dae7739fe259f176b0afdf25908fe6909f5da254a455e986b79afe000c4",
+    "base_commit": "22ac23e147950b8eb09b8763f8df5b11c6015e9c",
+    "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+    "claimed_at": "2026-11-24T22:26:05Z",
+    "expires_at": "2026-11-24T23:26:05Z"
+  },
+  "occurred_at": "2026-11-26T10:19:10Z",
+  "reason": "lease_expired",
+  "detail": "ChatOps resume: expired translator claim"
+}
