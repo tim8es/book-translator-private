@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "event_id": "e9b41d7c2a814df4aa53b8b563e20a17",
+  "action": "release_requested",
+  "unit_id": "chapter-000011",
+  "claim_revision": "befa6d9fdb3762e633f0c123c7f15056f5d62018",
+  "claim": {
+    "schema_version": 1,
+    "claim_id": "35e7828c54684389a0ebdb95df314c03",
+    "unit_id": "chapter-000011",
+    "role": "reviewer",
+    "session_id": "chat-robin-r11-1026a121",
+    "base_revision": "40a00079084d886e2bc234a8c7d7e466b84730d0c09dc58990243dceefd97e8a",
+    "base_commit": "22b5132e06551e4830ac991ffe90ea0ba1c2828f",
+    "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+    "claimed_at": "2026-11-26T10:23:25Z",
+    "expires_at": "2026-11-26T11:23:25Z"
+  },
+  "occurred_at": "2026-11-26T11:08:25Z",
+  "reason": "owner_release",
+  "detail": "Operator explicitly authorized release of abandoned ChatOps reviewer session chat-robin-r11-1026a121; release on behalf of the terminated session, not lease expiry. No review or translation accepted."
+}
