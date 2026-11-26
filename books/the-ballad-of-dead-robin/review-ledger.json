@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "the-ballad-of-dead-robin",
-  "next_sequence": 41,
+  "next_sequence": 42,
   "records": [
     {
       "record_id": "b395b5cc6d41470387aa4d8dfe6853d7",
@@ -5203,6 +5203,254 @@
             },
             "translation_anchor": {
               "quote": "присутствие разрасталось",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "2860e14718b247ce91936895fe9aa7b5",
+      "sequence": 41,
+      "unit_id": "chapter-000015",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "ee2b3d3fd839e63cdf0c09ceb730907a2e96fa57f42bb4274a8434db07e5d8b4",
+      "translation_sha256": "6f28cff0a1a620448262c6fbcb2b0397930e27cde2a3a4605714688093a36a0a",
+      "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "review_contract_revision": "docs/TRANSLATION.md@20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "reviewer_session_id": "chatops-recheck-6ad2f290a34c42ddac3e796bf5a015b1",
+      "reviewed_at": "2026-11-26T17:02:46Z",
+      "state_revision": "8e5686fbcb6aa8ca7ee41d48c2eb761f26ed0049d7803fb0051bc1ca09801cce",
+      "review_commit": "672e1fd8c44a0b53c39c05ddc850aef0e2a76349",
+      "correction_round": 2,
+      "supersedes_record_id": "580c4138abf84dec8069d49c713b68ef",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-hand-gesture",
+            "category": "omission",
+            "severity": "minor",
+            "detail": "Восстановлено положение руки у бока.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Tim’s fingers flexed at his side.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Тим согнул пальцы опущенной руки.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "580c4138abf84dec8069d49c713b68ef",
+              "finding_id": "hand-gesture"
+            }
+          },
+          {
+            "id": "recheck-sightline",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Восстановлена цель взгляда; следующая реплика подтверждает, что Слэйд пытается увидеть Тима.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "eyes flicking past Damian, trying, Tim realized, to look through him",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "скользнув взглядом мимо Дэмиена, пытаясь, как понял Тим, разглядеть Тима сквозь него",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "580c4138abf84dec8069d49c713b68ef",
+              "finding_id": "sightline"
+            }
+          },
+          {
+            "id": "recheck-thought-syntax",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Внутренняя реплика и сопровождающая мысль синтаксически отделены.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "He was protecting you, the thought cut through him.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Он защищал тебя — эта мысль пронзила Тима.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "580c4138abf84dec8069d49c713b68ef",
+              "finding_id": "thought-syntax"
+            }
+          },
+          {
+            "id": "recheck-resolve",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Восстановлена естественная идиома.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Tim drew a deep breath, gathering his resolve",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Тим глубоко вдохнул, собираясь с духом",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "580c4138abf84dec8069d49c713b68ef",
+              "finding_id": "resolve"
+            }
+          },
+          {
+            "id": "recheck-cheer-tone",
+            "category": "register",
+            "severity": "minor",
+            "detail": "Передано веселье без усиления насмешки.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "a smooth and amused voice slid in from the side",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "сбоку раздался плавный голос с оттенком веселья",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "580c4138abf84dec8069d49c713b68ef",
+              "finding_id": "cheer-tone"
+            }
+          },
+          {
+            "id": "recheck-invasion",
+            "category": "register",
+            "severity": "minor",
+            "detail": "Восстановлено ощущение нежеланного вторжения без психологической канцелярской лексики.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "hot, intimate, invasive",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "горячее, интимное, непрошеное",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "580c4138abf84dec8069d49c713b68ef",
+              "finding_id": "invasion"
+            }
+          },
+          {
+            "id": "recheck-invasive-voice",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Передана насильственность вторжения голоса.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Ra’s invasive voice slipped into his mind",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Голос Ра’са вторгался в его разум",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "580c4138abf84dec8069d49c713b68ef",
+              "finding_id": "invasive-voice"
+            }
+          },
+          {
+            "id": "recheck-fight-view",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Восстановлено прерывистое зрительное восприятие.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Out of the corner of his eye, Tim caught glimpses of Damian",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Краем глаза Тим то и дело видел Дэмиена",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "580c4138abf84dec8069d49c713b68ef",
+              "finding_id": "fight-view"
+            }
+          },
+          {
+            "id": "recheck-body-motion",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Передано ощущение невесомости и переход к падению.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "His body lurched backward, weightless and then he was falling.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Его тело рванулось назад, на миг стало невесомым — и он полетел вниз.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "580c4138abf84dec8069d49c713b68ef",
+              "finding_id": "body-motion"
+            }
+          },
+          {
+            "id": "signature",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "В подписи автора сохранить латинский инициал B; это подпись, а не слово для перевода.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Enjoy!Yours B",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Приятного чтения! Ваш(а) Б",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "chaos-collocation",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Сочетание «живое от хаоса» калькировано; образ живого, наполненного хаосом явления передать естественно: «нечто пылающее, в чём бурлил хаос».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "something burning, something alive with chaos",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "нечто пылающее, живое от хаоса",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "gaze-idiom",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Drinking Tim in передаёт жадное созерцание, а не буквальное впитывание персонажа. Передать «жадно разглядывая Тима».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "drinking Tim in as if the blade at his neck",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "жадно впитывая Тима",
               "occurrence": 0
             },
             "resolves": null
