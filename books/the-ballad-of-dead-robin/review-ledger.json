@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "the-ballad-of-dead-robin",
-  "next_sequence": 26,
+  "next_sequence": 27,
   "records": [
     {
       "record_id": "b395b5cc6d41470387aa4d8dfe6853d7",
@@ -2634,6 +2634,64 @@
             "severity": "major",
             "detail": "Абз. 193: his favorite little bird относится к Ра’су, которого говорящий обозначает в третьем лице; «от своей любимой птички» грамматически двусмысленно и может относиться к говорящей фигуре. Указать «от его любимой птички» без дополнительной интерпретации.",
             "resolved": false
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "2c57d0a9ea2d43eea15b8f4cc641f326",
+      "sequence": 26,
+      "unit_id": "chapter-000011",
+      "outcome": "PASS",
+      "source_sha256": "b4a6f4f06bc0b299ed746440d5fc32683efd9c92d76c6efee0b2274e4aeb7e7c",
+      "translation_sha256": "201718a1ed40364a45b974508c912314b831c33487dd43226e0070d5719b9a0f",
+      "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "review_contract_revision": "docs/TRANSLATION.md@20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "reviewer_session_id": "chat-robin-r11-1126b227",
+      "reviewed_at": "2026-11-26T11:16:28Z",
+      "state_revision": "705c35c4fba08ed61024a5c79559e1d7fb93f34f",
+      "review_commit": "e7d37caf289116c7be03667cd7e8d115d12a5dd2",
+      "correction_round": 2,
+      "supersedes_record_id": "590ab1b933e84df4a9dc7950621a56b4",
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Абз. 35: footsteps stuttering и сбившееся дыхание — два параллельных признака паники; «стук ... сливался» вводит отсутствующее в исходнике слияние звуков. Передать два действия.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 91: chest rose with a deep, unsteady breath — единичный вдох, не длительное «вздымалась».",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 114: устранить неудобное соседство двух «что» без изменения предположения Дюка.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 139: предыдущая правка сохранила повтор «к нему, впившись в него». Сделать субъектом взгляда глаза/взгляд и сохранить остроту и отсутствие моргания.",
+            "resolved": true
+          },
+          {
+            "severity": "major",
+            "detail": "Абз. 151: незакрытое замечание предыдущего ревью: видео обращено к самому себе (абз. 112), поэтому требуется «Если ты смотришь это видео, значит, я мёртв» вместо «вы».",
+            "resolved": true
+          },
+          {
+            "severity": "major",
+            "detail": "Абз. 193: his favorite little bird относится к Ра’су, которого говорящий обозначает в третьем лице; «от своей любимой птички» грамматически двусмысленно и может относиться к говорящей фигуре. Указать «от его любимой птички» без дополнительной интерпретации.",
+            "resolved": true
           }
         ]
       }
