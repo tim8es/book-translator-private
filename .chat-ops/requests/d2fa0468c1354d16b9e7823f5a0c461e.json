@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "request_id": "d2fa0468c1354d16b9e7823f5a0c461e",
+  "book_slug": "the-ballad-of-dead-robin",
+  "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+  "operation": "review-record",
+  "chapter": 13,
+  "session_id": "chatops-recheck-f71c9e2436a84f89bc5200a4d1e637bd",
+  "outcome": "PASS",
+  "quality_report": {
+    "evidence_version": 2,
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "id": "recheck-lost-agency",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Возвращена роль Тима в утрате; формулировка сохраняет неумышленность и образ утраченного дома.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "something he’d once owned and misplaced",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "чем-то, что когда-то ему принадлежало, а потом он потерял",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "944ecf00ac914a8ca08490a43d540274",
+          "finding_id": "lost-agency"
+        }
+      },
+      {
+        "id": "recheck-sensory-image",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Возвращены ощущение иголочек и метафора расцветания; случайный повтор исчез.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "His fingers tingled faintly as sensation crept back in, pins and needles blooming under his skin.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "В пальцах едва заметно покалывало: к ним постепенно возвращалась чувствительность, под кожей словно расцветали иголочки.",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "944ecf00ac914a8ca08490a43d540274",
+          "finding_id": "sensory-image"
+        }
+      },
+      {
+        "id": "recheck-firearm",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Восстановлен точный класс оружия без необоснованного указания модели.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "whether Alfred was carrying a firearm",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "было ли у Альфреда огнестрельное оружие",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "944ecf00ac914a8ca08490a43d540274",
+          "finding_id": "firearm"
+        }
+      },
+      {
+        "id": "recheck-gun",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Сохранена связь с предыдущим упоминанием оружия и факт готовности Альфреда.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "Alfred already had his gun out.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Альфред уже достал огнестрельное оружие.",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "944ecf00ac914a8ca08490a43d540274",
+          "finding_id": "gun"
+        }
+      },
+      {
+        "id": "recheck-idiom",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Русский устойчивый оборот передаёт попытку сохранить самообладание.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "as if trying to keep himself together",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "словно пытаясь держать себя в руках",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "944ecf00ac914a8ca08490a43d540274",
+          "finding_id": "idiom"
+        }
+      },
+      {
+        "id": "recheck-intention",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Восстановлено указание на режиссёрскую роль; авторское примечание сохранено.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "I decided to direct a movie",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "я решил(а) выступить режиссёром фильма",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "944ecf00ac914a8ca08490a43d540274",
+          "finding_id": "intention"
+        }
+      }
+    ]
+  },
+  "source_sha256": "2a909ac2e053d4fd431a5388f3b0db254e6a2c457ff691ffe73d6138341ed794",
+  "translation_sha256": "45645b839fa69a39a21b8d12c73ffa1205aa8d172d10217f6cb66592e84f9388",
+  "claim_sha256": "814b50e84842462196c27f325ab4db6a212053f60a816843efc1965abfd59bc8"
+}
