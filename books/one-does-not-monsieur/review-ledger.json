@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "one-does-not-monsieur",
-  "next_sequence": 17,
+  "next_sequence": 18,
   "records": [
     {
       "record_id": "c4b03697d25541ea8d3070ad34e8c878",
@@ -2344,6 +2344,168 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "f0ecab8fd0f8445db0998b1a6698d984",
+      "sequence": 17,
+      "unit_id": "chapter-000006",
+      "outcome": "PASS",
+      "source_sha256": "f2bd50532aa3a020b7aa7da3d5efe52e6e9944fdb53dab2485858fe3290ccc99",
+      "translation_sha256": "4b4a447cf299a00534a849aeedec94759b63ec39572de552fd0cfc93a367a388",
+      "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "review_contract_revision": "docs/TRANSLATION.md@20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "reviewer_session_id": "chatops-odnm-r6-final-9e1e384a",
+      "reviewed_at": "2026-11-26T12:25:16Z",
+      "state_revision": "2d92855b5fa17f5d3f486db300ce67fbcb4fd3c6",
+      "review_commit": "e91fc314e40890ebf8f9ddf6861c3fe3cad98297",
+      "correction_round": 1,
+      "supersedes_record_id": "ff610bc71ec54714bfb429b994ccbb3c",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "r3-r2-bow",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Bowyer теперь явно обозначает изготовителя луков; контекст подарка и растяжки сохранён.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "from the bowyer at Romorantin",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "работы мастера по изготовлению луков из Роморантена",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "ff610bc71ec54714bfb429b994ccbb3c",
+              "finding_id": "r2-bow"
+            }
+          },
+          {
+            "id": "r3-r2-camp-bed",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Обособленный оборот закрыт; бумаги и чтение относятся к Эндрю, дверной проём сохранён.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "he slept across Caleb’s door for a fortnight on a camp bed, with his Ministry papers, and read them aloud to him.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "на походной кровати, поставленной поперёк дверного проёма комнаты Калеба, со своими министерскими бумагами и читал их ему вслух.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "ff610bc71ec54714bfb429b994ccbb3c",
+              "finding_id": "r2-camp-bed"
+            }
+          },
+          {
+            "id": "r3-r2-clerks",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "Оба упоминания относятся к секретарю; последовательность событий сохранена.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "The clerk spoke again and held the watch up higher. Still he did not move. It was only when the clerk started bowing",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Секретарь заговорил снова и поднял часы выше. Тот по-прежнему не двигался. Лишь когда секретарь принялся кланяться",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "ff610bc71ec54714bfb429b994ccbb3c",
+              "finding_id": "r2-clerks"
+            }
+          },
+          {
+            "id": "r3-r2-halloween",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "Написание согласовано с предыдущими упоминаниями, дни недели сохранены.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "on the Tuesday and the Wednesday after Halloween",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "во вторник и среду после Хеллоуина",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "ff610bc71ec54714bfb429b994ccbb3c",
+              "finding_id": "r2-halloween"
+            }
+          },
+          {
+            "id": "r3-clerk-ahead",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "Термин и комический повтор сохранены.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "with the clerk going on ahead of him and coming back and going on ahead again",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "а секретарь забегал вперёд, возвращался и снова забегал вперёд",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "ff610bc71ec54714bfb429b994ccbb3c",
+              "finding_id": "clerk-ahead"
+            }
+          },
+          {
+            "id": "r3-halloween-buttons",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "Воспоминание и название праздника сохранены.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Andrew had done up his buttons in the carriage on Halloween.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Эндрю застёгивал ему пуговицы в карете на Хеллоуин.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "ff610bc71ec54714bfb429b994ccbb3c",
+              "finding_id": "halloween-buttons"
+            }
+          },
+          {
+            "id": "r3-watch-afternoon",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Уточнение времени после полудня восстановлено; дата и четверть часа сохранены.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "at a quarter past four on the afternoon their grandfather died",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "в четверть пятого пополудни в тот день, когда умер их дед",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "ff610bc71ec54714bfb429b994ccbb3c",
+              "finding_id": "watch-afternoon"
+            }
           }
         ]
       }
