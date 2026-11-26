@@ -1,0 +1,247 @@
+{
+  "schema_version": 1,
+  "request_id": "e35bdbf08b0747aba59cc4e637a8424a",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "0ed04541f365696a76b5b7e50c8461a01f50fc11ae0061274e10591f57856bfe",
+    "record": {
+      "correction_round": 1,
+      "outcome": "CORRECTIONS_REQUIRED",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "independent_session",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "register",
+            "detail": "Обсценное fuck off смягчено до «идите на хрен»; сохранить резкость авторского примечания.",
+            "id": "author-register",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "fuck off, or I will rip your head off."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "идите на хрен, иначе я вам головы оторву."
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Soul-stirring не означает обязательно страшные дела; Дюк спрашивает о захватывающих делах, а не о леденящих душу.",
+            "id": "case-interest",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Got any soul-stirring cases on the table?"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Есть у тебя на столе какие-нибудь леденящие душу дела?"
+            }
+          },
+          {
+            "category": "omission",
+            "detail": "В исходнике именно лезвие кинжала тёмное и мокрое от крови. Восстановить эту деталь.",
+            "id": "dagger-blade",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "the dagger still clenched in his hand, its blade dark and wet from blood"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "всё ещё сжимая в руке кинжал, тёмный и мокрый от крови"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Пальцы на спусковых крючках и рукоятях свидетельствуют о готовности, а не о сжатии спусковых крючков. Восстановить различие между удержанием оружия и выстрелом.",
+            "id": "weapon-hold",
+            "resolved": false,
+            "resolves": null,
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "weapons were raised, fingers tight on triggers and hilts"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "оружие поднято, пальцы крепко сжимают рукояти и спусковые крючки"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "«Вошло в один с ними мир» — калька; сохранить ощущение вторжения чуждого существа в их мир.",
+            "id": "world-entry",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "something ancient and wrong had stepped into the world with them"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "нечто древнее и неправильное вошло в один с ними мир"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "«Сжались с собственнической хваткой» синтаксически неестественно. Передать усиление хватки, подчёркивающее присвоение Тима.",
+            "id": "possessive-grip",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "His fingers tightened, possessive."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Его пальцы сжались с собственнической хваткой."
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "В непосредственно соседней фразе речь о том, что Тим сделает Клариона могущественнее; власть сужает power до господства. Сохранить сквозную связь с магическим могуществом: «единственное, что имело для него значение, — могущество. Могущество и хаос».",
+            "id": "power-motive",
+            "resolved": false,
+            "resolves": null,
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "because all that mattered to him was power. Power, and chaos."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "потому что единственное, что имело для него значение, — это власть. Власть и хаос."
+            }
+          },
+          {
+            "category": "terminology",
+            "detail": "Продолжить то же значение личного магического могущества, не переключаясь на политическую власть.",
+            "id": "power-hunger",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "His eyes burned with hunger for power."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Его глаза горели жаждой власти."
+            }
+          },
+          {
+            "category": "terminology",
+            "detail": "Сохранить мотив обретения могущества, установленный в разговоре с Кларионом.",
+            "id": "power-fate",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "In your hunger for power, you chose to defy Fate itself."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "В жажде власти ты решил бросить вызов самой Судьбе."
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Damn near impossible — практически невозможно, а не просто чертовски трудно. Восстановить степень невозможности.",
+            "id": "near-impossible",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "the things that were damn near impossible to predict"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "то, что было чертовски трудно предугадать"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Ключевой повтор Believed подчёркивает прошедшее время и утраченное доверие. В переводе повтор переведён в настоящее время, что ломает драматический акцент. Исправить обе реплики: «Верил, что я тебя поймаю, птенчик». «Верил».",
+            "id": "past-belief",
+            "resolved": false,
+            "resolves": null,
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Believed I’d catch you, Baby Bird.”\n\nBelieved."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Веришь, что я тебя поймаю, птенчик.\n\nВеришь."
+            }
+          },
+          {
+            "category": "style",
+            "detail": "«Ударило его словно в грудь» — нарушенная конструкция сравнения. Передать «Воспоминание обрушилось на него, словно удар в грудь».",
+            "id": "memory-impact",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "The memory hit him like a strike to the chest."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Воспоминание ударило его словно в грудь."
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Идиома too smart for his own good значит, что ум оборачивается против самого Тима, а не абстрактное собственное благо.",
+            "id": "own-good",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "too smart for his own good"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "слишком умный для собственного блага"
+            }
+          }
+        ]
+      },
+      "record_id": "f7bcbf803d1943ceb74275573e8c973a",
+      "review_commit": "4e4e9a4d6f2ff6769d2763b7a87d35103de2f990",
+      "review_contract_revision": "docs/TRANSLATION.md@20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "reviewed_at": "2026-11-26T13:59:15Z",
+      "reviewer_session_id": "chatops-review-c713d5a2e0a24d4fb82cf73c9155de60",
+      "sequence": 34,
+      "source_sha256": "7c64d0cbd5e1e0db5813d92b15a6eab726871297778d741a0ee0c6b0168f74d5",
+      "state_revision": "fd2086a6480c6d4550c645c3f39c76d3c8f2e9aeb9cbfbd04a35557b6f66104e",
+      "supersedes_record_id": null,
+      "translation_sha256": "d154a1e5c4fd22d747180f3e413bdffef3120e4c2809d0a1dd9b0469f413f07c",
+      "unit_id": "chapter-000017",
+      "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a"
+    }
+  },
+  "error": null
+}
