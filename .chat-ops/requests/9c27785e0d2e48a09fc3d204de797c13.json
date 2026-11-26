@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "request_id": "9c27785e0d2e48a09fc3d204de797c13",
+  "book_slug": "the-ballad-of-dead-robin",
+  "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+  "operation": "review-record",
+  "chapter": 13,
+  "session_id": "chatops-review-c670b7d184ec42c0bd9e6cc912a1f4e7",
+  "outcome": "CORRECTIONS_REQUIRED",
+  "quality_report": {
+    "evidence_version": 2,
+    "context": "independent_session",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "id": "lost-agency",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "what he had once owned and misplaced сохраняет собственную роль Тима в утрате дома; «потом потерялось» убирает эту роль. Передать «что когда-то ему принадлежало, а потом он сам потерял» без усиления вины.",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "something he’d once owned and misplaced",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "чем-то, что когда-то ему принадлежало, а потом потерялось",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "sensory-image",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Утрачена метафора иголочек и появилась случайная тавтология «покалывало… покалывание». Передать вторую часть как «под кожей расцветали иголочки».",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "His fingers tingled faintly as sensation crept back in, pins and needles blooming under his skin.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "В пальцах едва заметно покалывало, когда к ним постепенно возвращалась чувствительность, под кожей расцветало покалывание.",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "firearm",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Firearm означает огнестрельное оружие, а не любое оружие; восстановить уточнение «огнестрельное оружие» или «пистолет» только если тип установлен контекстом.",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "whether Alfred was carrying a firearm",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "было ли у Альфреда оружие",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "gun",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Gun во второй отсылке также относится к огнестрельному оружию; общее «оружие» стирает связь с конкретной угрозой. Уточнить «огнестрельное оружие».",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "Alfred already had his gun out.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Альфред уже достал оружие.",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "idiom",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Ненамеренная калька нарушает устойчивый русский оборот; заменить на «словно пытаясь держать себя в руках».",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "as if trying to keep himself together",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "словно пытаясь удержать себя в руках",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "intention",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Direct a movie — выступить режиссёром, а «снять фильм» не указывает эту роль; восстановить точность авторского примечания.",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "I decided to direct a movie",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "я решил(а) снять фильм",
+          "occurrence": 0
+        },
+        "resolves": null
+      }
+    ]
+  },
+  "source_sha256": "2a909ac2e053d4fd431a5388f3b0db254e6a2c457ff691ffe73d6138341ed794",
+  "translation_sha256": "a862c77b97d23eafb01b1885460e7ef3224ad667003d89f6d86f879ed73a4745",
+  "claim_sha256": "aa39221a065655c68551d01203b30f9d482510a8a752ede8eb5d1dbfea5d1c72"
+}
