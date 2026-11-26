@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "the-ballad-of-dead-robin",
-  "next_sequence": 43,
+  "next_sequence": 44,
   "records": [
     {
       "record_id": "b395b5cc6d41470387aa4d8dfe6853d7",
@@ -5539,6 +5539,92 @@
             "resolves": {
               "record_id": "2b8034a7d97a456f9323e472cfe3b717",
               "finding_id": "presence-collocation"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "385455b30a9b48239ef5c89092a58dee",
+      "sequence": 43,
+      "unit_id": "chapter-000016",
+      "outcome": "PASS",
+      "source_sha256": "200d57957a07b4369078d701bc4430dd27893addeb7415bd10f82a993638a573",
+      "translation_sha256": "eda5d91a0b48c1421a2de4a2342f18a265f4ec5359cdc61f92797300a1acaa34",
+      "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "review_contract_revision": "docs/TRANSLATION.md@20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "reviewer_session_id": "chatops-recheck-e86f625b2b5b4e44b7b38c01a0016b01",
+      "reviewed_at": "2026-11-26T17:05:28Z",
+      "state_revision": "40c632c4289b3c20ad61f2a7168029c4389664e5a2943c467d9f1c386fe74e39",
+      "review_commit": "4df2c8d6a900fe0aae84860f587b319d95a847ff",
+      "correction_round": 2,
+      "supersedes_record_id": "5f3fdab593c045f8abf7742994493a8e",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-fury-collocation",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Переданы резкий переход и исходная метафора жара.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Dick snapped into white-hot fury.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Дик окончательно сорвался — ярость раскалилась добела.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "5f3fdab593c045f8abf7742994493a8e",
+              "finding_id": "fury-collocation"
+            }
+          },
+          {
+            "id": "recheck-freeze-grammar",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Устранена грамматическая ошибка, сохранены неподвижность и сравнение.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Dick stood frozen, like a statue",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Дик застыл на месте, словно статуя",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "5f3fdab593c045f8abf7742994493a8e",
+              "finding_id": "freeze-grammar"
+            }
+          },
+          {
+            "id": "recheck-explosive-preposition",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Предлог приведён к нормативной форме без изменения содержания.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "pushing off the ground with explosive force",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "со взрывной силой оттолкнувшись от земли",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "5f3fdab593c045f8abf7742994493a8e",
+              "finding_id": "explosive-preposition"
             }
           }
         ]

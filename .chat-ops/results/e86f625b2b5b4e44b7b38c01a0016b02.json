@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "request_id": "e86f625b2b5b4e44b7b38c01a0016b02",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "37ae5a6c7f50e3cc49495acd4c435c7ea0bac7cea44b4288683e1faee21fd3e2",
+    "record": {
+      "correction_round": 2,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "style",
+            "detail": "Переданы резкий переход и исходная метафора жара.",
+            "id": "recheck-fury-collocation",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "fury-collocation",
+              "record_id": "5f3fdab593c045f8abf7742994493a8e"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Dick snapped into white-hot fury."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Дик окончательно сорвался — ярость раскалилась добела."
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Устранена грамматическая ошибка, сохранены неподвижность и сравнение.",
+            "id": "recheck-freeze-grammar",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "freeze-grammar",
+              "record_id": "5f3fdab593c045f8abf7742994493a8e"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Dick stood frozen, like a statue"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Дик застыл на месте, словно статуя"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Предлог приведён к нормативной форме без изменения содержания.",
+            "id": "recheck-explosive-preposition",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "explosive-preposition",
+              "record_id": "5f3fdab593c045f8abf7742994493a8e"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "pushing off the ground with explosive force"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "со взрывной силой оттолкнувшись от земли"
+            }
+          }
+        ]
+      },
+      "record_id": "385455b30a9b48239ef5c89092a58dee",
+      "review_commit": "4df2c8d6a900fe0aae84860f587b319d95a847ff",
+      "review_contract_revision": "docs/TRANSLATION.md@20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "reviewed_at": "2026-11-26T17:05:28Z",
+      "reviewer_session_id": "chatops-recheck-e86f625b2b5b4e44b7b38c01a0016b01",
+      "sequence": 43,
+      "source_sha256": "200d57957a07b4369078d701bc4430dd27893addeb7415bd10f82a993638a573",
+      "state_revision": "40c632c4289b3c20ad61f2a7168029c4389664e5a2943c467d9f1c386fe74e39",
+      "supersedes_record_id": "5f3fdab593c045f8abf7742994493a8e",
+      "translation_sha256": "eda5d91a0b48c1421a2de4a2342f18a265f4ec5359cdc61f92797300a1acaa34",
+      "unit_id": "chapter-000016",
+      "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a"
+    }
+  },
+  "error": null
+}
