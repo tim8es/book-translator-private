@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "the-river-gate-paired-synthetic-benchmark",
-  "next_sequence": 2,
+  "next_sequence": 3,
   "records": [
     {
       "record_id": "2220d3faed7d44259bc3a61a0d7f33c1",
@@ -16,6 +16,34 @@
       "reviewed_at": "2026-11-26T13:47:26Z",
       "state_revision": "f77037e6ba97d55749055616137e1cc5d1473b0300aaaf8b32913381e8ef9cc4",
       "review_commit": "3c36ed98ce156802951eb50762c4a8b9f9030f50",
+      "correction_round": 0,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": []
+      }
+    },
+    {
+      "record_id": "87a50ba436a24ee19ae1f60d850b0843",
+      "sequence": 2,
+      "unit_id": "chapter-000002",
+      "outcome": "PASS",
+      "source_sha256": "111df3a625a31178e283a75740369888e84ca763899a192cad7d1321b0fb3103",
+      "translation_sha256": "2b140ae3e241f7bdbc9e71a2f8e99828e2b3c63659d9534aced5681471f8fdcc",
+      "workflow_revision": "3f3b77838cd34e61124337bc2f5a1a2ad5add2fb",
+      "review_contract_revision": "docs/TRANSLATION.md@3f3b77838cd34e61124337bc2f5a1a2ad5add2fb",
+      "reviewer_session_id": "chatops-river-gate-independent-review-20261126-a6e7bdc1",
+      "reviewed_at": "2026-11-26T13:50:29Z",
+      "state_revision": "769e1ac5d0b4e292bae3a261d184c2edc65d216cba07e970ad7ca6a21ff90494",
+      "review_commit": "d2b63772df0517465aa3c36329c6a37a0862bc93",
       "correction_round": 0,
       "supersedes_record_id": null,
       "quality_report": {

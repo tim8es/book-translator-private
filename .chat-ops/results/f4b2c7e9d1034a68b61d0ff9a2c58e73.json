@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "request_id": "f4b2c7e9d1034a68b61d0ff9a2c58e73",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "92ad6c4370b85935cb7726043eba1a16c8fa5d79db34145813f113220d7f4596",
+    "record": {
+      "correction_round": 0,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "independent_session",
+        "evidence_version": 2,
+        "findings": []
+      },
+      "record_id": "87a50ba436a24ee19ae1f60d850b0843",
+      "review_commit": "d2b63772df0517465aa3c36329c6a37a0862bc93",
+      "review_contract_revision": "docs/TRANSLATION.md@3f3b77838cd34e61124337bc2f5a1a2ad5add2fb",
+      "reviewed_at": "2026-11-26T13:50:29Z",
+      "reviewer_session_id": "chatops-river-gate-independent-review-20261126-a6e7bdc1",
+      "sequence": 2,
+      "source_sha256": "111df3a625a31178e283a75740369888e84ca763899a192cad7d1321b0fb3103",
+      "state_revision": "769e1ac5d0b4e292bae3a261d184c2edc65d216cba07e970ad7ca6a21ff90494",
+      "supersedes_record_id": null,
+      "translation_sha256": "2b140ae3e241f7bdbc9e71a2f8e99828e2b3c63659d9534aced5681471f8fdcc",
+      "unit_id": "chapter-000002",
+      "workflow_revision": "3f3b77838cd34e61124337bc2f5a1a2ad5add2fb"
+    }
+  },
+  "error": null
+}
