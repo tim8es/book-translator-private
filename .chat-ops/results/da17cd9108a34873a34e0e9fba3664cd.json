@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "request_id": "da17cd9108a34873a34e0e9fba3664cd",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "9b8bda0e44d1dc9283be118a01a44d468cc783aeaf42df5e22048fe8ab2b8adc",
+    "record": {
+      "correction_round": 1,
+      "outcome": "CORRECTIONS_REQUIRED",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "meaning",
+            "detail": "Сердцебиение Майка ощущается при соприкосновении с грудью Уилла, а не внутри груди Уилла. Исправить пространственное отношение.",
+            "id": "heartbeat-location",
+            "resolved": false,
+            "resolves": null,
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "the beat of his heart against Will's chest"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "биение его сердца, которое Уилл чувствует у себя в груди"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Awe — потрясённое, благоговейное восхищение, не просто восторг. Сохранить оттенок изумления перед увиденным.",
+            "id": "awe-register",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "He's in complete awe."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Он в полном восторге."
+            }
+          },
+          {
+            "category": "omission",
+            "detail": "Утрачена конкретная зрительная деталь heap: конечности образуют бесформенную груду. Восстановить образ без усиления.",
+            "id": "limbs-image",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "a heap of contorted limbs"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "со сломанной шеей и исковерканными конечностями"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Калька «к изгибу спины» неидиоматична для описания движения руки; передать направление по спине естественным русским оборотом.",
+            "id": "back-phrase",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "before letting one slide down to the curve of his back"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "а затем одна из его рук скользит к изгибу спины Уилла"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Безличный оборот «словно им можно восхищаться» создаёт неестественное звучание; передать взгляд Майка на Уилла как на человека, достойного восхищения, без добавленной оценки.",
+            "id": "admiration-phrase",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "like he's something to be admired"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "словно им можно восхищаться."
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Кальки «закатившиеся глаза возвращаются в нормальное положение» и «открывается ... цвет их радужек» вводят техническое описание вместо непосредственно увиденного цвета глаз. Сохранить движение глаз и метафору дома естественным языком.",
+            "id": "eyes-color",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "his eyes roll back to reveal the beautiful hazel that immediately brings Mike home."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Закатившиеся глаза возвращаются в нормальное положение, и снова открывается прекрасный ореховый цвет их радужек, при виде которого Майк сразу чувствует себя дома."
+            }
+          }
+        ]
+      },
+      "record_id": "60d478d58a19467d94659b0cd756fe94",
+      "review_commit": "807e4c9e5d2bc13c0c9b2080764bb19d90fca77b",
+      "review_contract_revision": "docs/TRANSLATION.md@b7402c04f53fe5f73049de7528a99f56021925c4",
+      "reviewed_at": "2026-11-26T18:40:21Z",
+      "reviewer_session_id": "chatops-you-didnt-lose-me-reviewer-20261126",
+      "sequence": 1,
+      "source_sha256": "a53fc694b7a359329649208fc45a453a15c8ca0d9f839ff89cf6b1701dd13ee1",
+      "state_revision": "e7547c7193938c8a948fad70b1e483f54d9d4c2b2e3bc197d98e3f4caaa45a2e",
+      "supersedes_record_id": null,
+      "translation_sha256": "643365907a3bf2461b3020c39787a3617c11c8ef147cc4721542531c0cf80261",
+      "unit_id": "chapter-000001",
+      "workflow_revision": "b7402c04f53fe5f73049de7528a99f56021925c4"
+    }
+  },
+  "error": null
+}
