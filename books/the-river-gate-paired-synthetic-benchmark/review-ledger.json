@@ -1,6 +1,35 @@
 {
   "schema_version": 1,
   "book_slug": "the-river-gate-paired-synthetic-benchmark",
-  "next_sequence": 1,
-  "records": []
+  "next_sequence": 2,
+  "records": [
+    {
+      "record_id": "2220d3faed7d44259bc3a61a0d7f33c1",
+      "sequence": 1,
+      "unit_id": "chapter-000001",
+      "outcome": "PASS",
+      "source_sha256": "a9113bd04a7d095a31743eebd6cf5c1c65a472f0016f2995ac8175a391082314",
+      "translation_sha256": "f9ddeccf9a6ee2894d30bdbb513c6fcaf06f8913d4506a623238a1c324f34d44",
+      "workflow_revision": "3f3b77838cd34e61124337bc2f5a1a2ad5add2fb",
+      "review_contract_revision": "docs/TRANSLATION.md@3f3b77838cd34e61124337bc2f5a1a2ad5add2fb",
+      "reviewer_session_id": "chatops-river-gate-independent-review-20261126-a6e7bdc1",
+      "reviewed_at": "2026-11-26T13:47:26Z",
+      "state_revision": "f77037e6ba97d55749055616137e1cc5d1473b0300aaaf8b32913381e8ef9cc4",
+      "review_commit": "3c36ed98ce156802951eb50762c4a8b9f9030f50",
+      "correction_round": 0,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": []
+      }
+    }
+  ]
 }
