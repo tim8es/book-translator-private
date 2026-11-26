@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "the-ballad-of-dead-robin",
-  "next_sequence": 31,
+  "next_sequence": 32,
   "records": [
     {
       "record_id": "b395b5cc6d41470387aa4d8dfe6853d7",
@@ -3083,6 +3083,124 @@
           {
             "severity": "minor",
             "detail": "Абзац 167: «Unlike him, terror froze the faces around him» противопоставляет отсутствие ужаса у Тима ужасу окружающих. «В отличие от него, на лицах» — грамматически несопоставимые элементы; «А на лицах остальных застыл ужас».",
+            "resolved": false
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "fe5488638c4c401d802c69df48caa9a0",
+      "sequence": 31,
+      "unit_id": "chapter-000014",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "6961ab65be3bfd06c11606a6098a24e138c40a1302e431652799a5611576f34d",
+      "translation_sha256": "151889b37aad440300c4d0e87da606d227dfc441e5f18318b8031045d56b34c2",
+      "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "review_contract_revision": "docs/TRANSLATION.md@20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "reviewer_session_id": "chatops-d087be115bf440b6b308415bf6c43a15-reviewer",
+      "reviewed_at": "2026-11-26T13:43:55Z",
+      "state_revision": "5f597d010b8fc1c93a184c0d142e395ee0fcb26f9f0baa89bb1924dc68547606",
+      "review_commit": "efaae781145911ab3e34094d7d1be88a94c2eb97",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Абз. 7: off-camera near Bruce — звук в помещении рядом с Брюсом, не за пределами изображения на экране; «Рядом с Брюсом послышался судорожный вдох, но он не мог отвести взгляд». Terrified передать как «ужасно боялся».",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 18: «мёртвый Робин ему бесполезен» — неестественное управление; «от мёртвого Робина ему никакой пользы».",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 35: crushing any sound — «заглушая любой звук, прежде чем тот мог вырваться», а не «давя любой звук».",
+            "resolved": false
+          },
+          {
+            "severity": "major",
+            "detail": "Абз. 47: hadn’t trusted any of them — речь об отсутствии доверия, а не только о том, что Тим не доверил им информацию. «И он никому из них не доверял».",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 50: «как в свете глаза Джейсона блестели ... цветом» — перестроить: «как глаза Джейсона на свету отливали болезненной, ядовитой зеленью» без добавления источника света.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 66: «слишком понимающие» о глазах — калька too aware; «слишком яркие, слишком проницательные».",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 74: lightly — непринуждённо, с лёгкостью, а не легкомысленно; сохранить угрозу на фоне непринуждённого тона.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 91: flatly — сухо, отрывисто, без эмоционального оттенка; «безучастно» добавляет безразличие.",
+            "resolved": false
+          },
+          {
+            "severity": "major",
+            "detail": "Абз. 95: power в устах магического существа допускает силу и могущество, а не только политическую власть; «Кроме могущества. Могущество — это всё» лучше сохраняет широкий смысл.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 116: unfinished business — «у меня ещё не сведены счёты с дедушкой» или «у меня с дедушкой ещё остались незаконченные дела»; убрать канцелярскую кальку «голос ... обнаружив резкость».",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 123: «плечи обрели привычную собранность» — неестественная калька; передать, как плечи приняли привычное сдержанное положение.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 129: worn in — обмотки уже приношенные/привычно сидящие, а не «разношенные» как обувь.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 156: «He’d been chasing him» продолжает метафору предыдущего абзаца; сохранить лексический повтор «Он гнался за ним», не разрывая противопоставление.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 159: «свёрнутый клинок» буквально неясно; сохранить образ напряжённого, готового к удару оружия, например «словно клинок, готовый сорваться с места».",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 171: ghost sensation — остаточное ощущение прикосновения, не обязательно тепла; убрать добавленную конкретизацию.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 196: hadn’t been subtle — напряжение было явным, не «слишком явным» (добавленная степень).",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 202: set of his shoulders — напряжённое положение плеч, не обязательно расправленные плечи.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 211: Trust you with what — «В чём тебе доверять, Красный?»; устранить неестественное «доверять в чём» и сохранить обращение.",
             "resolved": false
           }
         ]
