@@ -317,8 +317,19 @@ jobs:
           request="${changed[0]}"
           [[ "$request" =~ ^automation/quality-qualification/[0-9a-f]{32}\.json$ ]]
           [[ -f "$request" ]]
-          jq -e --arg rev "$PI_QUALITY_EXECUTOR_SHA" 'type == "object" and (keys == ["revision","schema_version"] or keys == ["profile","revision","schema_version"]) and .schema_version == 1 and .revision == $rev and ((.profile // "smoke") == "smoke" or .profile == "extended" or .profile == "routes")' "$request" >/dev/null
-          echo "profile=$(jq -r '.profile // "smoke"' "$request")" >> "$GITHUB_OUTPUT"
+          jq -e --arg rev "$PI_QUALITY_EXECUTOR_SHA" 'type == "object" and .schema_version == 1 and .revision == $rev and (
+            ((keys == ["revision","schema_version"] or keys == ["profile","revision","schema_version"]) and ((.profile // "smoke") == "smoke" or .profile == "extended" or .profile == "routes"))
+            or (keys == ["chatops_commit","chatops_job","profile","revision","schema_version","source_sha256"] and .profile == "paired" and (.chatops_commit | type == "string" and test("^[0-9a-f]{40}$")) and (.chatops_job | type == "string" and test("^[0-9a-f]{32}$")) and (.source_sha256 | type == "string" and test("^[0-9a-f]{64}$")))
+          )' "$request" >/dev/null
+          profile="$(jq -r '.profile // "smoke"' "$request")"
+          echo "profile=$profile" >> "$GITHUB_OUTPUT"
+          if [[ "$profile" == "paired" ]]; then
+            chatops_commit="$(jq -r '.chatops_commit' "$request")"
+            git merge-base --is-ancestor "$chatops_commit" "$AFTER"
+            echo "chatops_commit=$chatops_commit" >> "$GITHUB_OUTPUT"
+            echo "chatops_job=$(jq -r '.chatops_job' "$request")" >> "$GITHUB_OUTPUT"
+            echo "source_sha256=$(jq -r '.source_sha256' "$request")" >> "$GITHUB_OUTPUT"
+          fi
           echo "enabled=true" >> "$GITHUB_OUTPUT"
       - uses: actions/checkout@v4
         if: steps.request.outputs.enabled == 'true'
@@ -326,6 +337,8 @@ jobs:
           repository: tim8es/book-translator
           ref: ${{ env.PI_QUALITY_EXECUTOR_SHA }}
           path: .quality-runtime
+          # Paired benchmark must resolve the historical literary pin.
+          fetch-depth: 0
           persist-credentials: false
       - uses: actions/setup-python@v5
         if: steps.request.outputs.enabled == 'true'
@@ -341,6 +354,10 @@ jobs:
       - name: Qualify actual runner and models against authored known-defect fixture
         if: steps.request.outputs.enabled == 'true'
         env:
+          QUALIFICATION_PROFILE: ${{ steps.request.outputs.profile }}
+          CHATOPS_COMMIT: ${{ steps.request.outputs.chatops_commit }}
+          CHATOPS_JOB: ${{ steps.request.outputs.chatops_job }}
+          SOURCE_SHA256: ${{ steps.request.outputs.source_sha256 }}
           OMNIROUTE_API_KEY: ${{ secrets.OMNIROUTE_API_KEY }}
           OMNIROUTE_BASE_URL: ${{ vars.OMNIROUTE_BASE_URL }}
           OMNIROUTE_TRANSLATOR_MODEL: ${{ vars.OMNIROUTE_TRANSLATOR_MODEL }}
@@ -354,7 +371,18 @@ jobs:
         run: |
           set -euo pipefail
           test -n "$OMNIROUTE_API_KEY"
-          python .quality-runtime/automation/quality_qualification.py --revision "$PI_QUALITY_EXECUTOR_SHA" --profile "${{ steps.request.outputs.profile }}" --output "$RUNNER_TEMP/quality-qualification.json"
+          if [[ "$QUALIFICATION_PROFILE" == "paired" ]]; then
+            # A separate read-only state snapshot; never expose repository
+            # credentials or the current production checkout to literary workers.
+            git worktree add --detach "$RUNNER_TEMP/paired-chatops" "$CHATOPS_COMMIT"
+            python .quality-runtime/automation/paired_quality_qualification.py \
+              --executor-revision "$PI_QUALITY_EXECUTOR_SHA" \
+              --chatops-root "$RUNNER_TEMP/paired-chatops" \
+              --chatops-commit "$CHATOPS_COMMIT" --chatops-job "$CHATOPS_JOB" \
+              --source-sha256 "$SOURCE_SHA256" --output "$RUNNER_TEMP/quality-qualification.json"
+          else
+            python .quality-runtime/automation/quality_qualification.py --revision "$PI_QUALITY_EXECUTOR_SHA" --profile "$QUALIFICATION_PROFILE" --output "$RUNNER_TEMP/quality-qualification.json"
+          fi
       - name: Publish sanitized qualification results
         if: always() && steps.request.outputs.enabled == 'true'
         uses: actions/upload-artifact@v4
