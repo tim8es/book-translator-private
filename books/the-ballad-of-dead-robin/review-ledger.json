@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "the-ballad-of-dead-robin",
-  "next_sequence": 39,
+  "next_sequence": 40,
   "records": [
     {
       "record_id": "b395b5cc6d41470387aa4d8dfe6853d7",
@@ -4517,6 +4517,368 @@
             },
             "translation_anchor": {
               "quote": "с настойчивостью позвал он",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "5f3fdab593c045f8abf7742994493a8e",
+      "sequence": 39,
+      "unit_id": "chapter-000016",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "200d57957a07b4369078d701bc4430dd27893addeb7415bd10f82a993638a573",
+      "translation_sha256": "ab98f457623abd6b2892edfda6e454fa52188b0c7d7bddc240a29ab665cb1f9c",
+      "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "review_contract_revision": "docs/TRANSLATION.md@20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "reviewer_session_id": "chatops-recheck-a308b6f61c3b4ac4a8b03cb88e946e07",
+      "reviewed_at": "2026-11-26T16:00:29Z",
+      "state_revision": "b3296beea43fe4dacbb160aa434864e95ed73719831c84ec4cb357faf26dd0ff",
+      "review_commit": "ce47b90be826318ad088824f3f9086b5e49e9fbc",
+      "correction_round": 2,
+      "supersedes_record_id": "93a9463c9e54435da4a1014749949a17",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-signature",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "Латинские инициалы восстановлены.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "With love,BM",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "С любовью, BM",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "93a9463c9e54435da4a1014749949a17",
+              "finding_id": "signature"
+            }
+          },
+          {
+            "id": "recheck-blood-color",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Образ крови и цветовая параллель восстановлены.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "slick and darkened with red, mirroring the colour of his suit",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "скользкие, потемневшие от крови, под цвет его костюма",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "93a9463c9e54435da4a1014749949a17",
+              "finding_id": "blood-color"
+            }
+          },
+          {
+            "id": "recheck-impact",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Удар спиной о стекло передан как событие.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "back slammed against a window high above",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "ударившегося спиной об окно высоко наверху",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "93a9463c9e54435da4a1014749949a17",
+              "finding_id": "impact"
+            }
+          },
+          {
+            "id": "recheck-eyes",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Сохранён контраст между наигранной улыбкой и взглядом.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "forcing a careless grin that didn’t reach his eyes",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "выдавив беспечную улыбку, но глаза его не улыбались",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "93a9463c9e54435da4a1014749949a17",
+              "finding_id": "eyes"
+            }
+          },
+          {
+            "id": "recheck-finger",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Сохранена готовность, без неестественного определения пальца.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "finger tight on the trigger, ready to fire at the slightest movement",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "палец замер на спусковом крючке — Джейсон был готов выстрелить при малейшем движении",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "93a9463c9e54435da4a1014749949a17",
+              "finding_id": "finger"
+            }
+          },
+          {
+            "id": "recheck-turn-away",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Движение уклонения передано верно.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "who barely managed to twist away",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "который едва успел увернуться",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "93a9463c9e54435da4a1014749949a17",
+              "finding_id": "turn-away"
+            }
+          },
+          {
+            "id": "recheck-weapon-owner",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Устранена ошибочная привязка палок к Брюсу.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Dick watched grimly as Bruce struck again and again, his grip tightening around his escrima sticks",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Дик, всё крепче сжимая свои палки эскрима, мрачно смотрел, как Брюс бил снова и снова",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "93a9463c9e54435da4a1014749949a17",
+              "finding_id": "weapon-owner"
+            }
+          },
+          {
+            "id": "recheck-weapon-weight",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Тавтология устранена, ощущение веса и непривычности сохранены.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "The weight of the weapon settled into his hand immediately—solid, unfamiliar.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Оружие сразу легло в руку ощутимой, непривычной тяжестью.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "93a9463c9e54435da4a1014749949a17",
+              "finding_id": "weapon-weight"
+            }
+          },
+          {
+            "id": "recheck-processing",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Сохранена попытка осмысления слов в состоянии шока.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "trying to force Slade’s words through the fog in his head",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "пытаясь сквозь туман в голове осмыслить слова Слэйда",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "93a9463c9e54435da4a1014749949a17",
+              "finding_id": "processing"
+            }
+          },
+          {
+            "id": "recheck-teeth-idiom",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Смысл раздражения восстановлен.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "that always set Dick’s teeth on edge",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "которая всегда раздражала Дика до скрежета зубов",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "93a9463c9e54435da4a1014749949a17",
+              "finding_id": "teeth-idiom"
+            }
+          },
+          {
+            "id": "recheck-fatigue",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Телесное ощущение усталости передано естественно.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "exhaustion tugging at his limbs",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "руки и ноги отяжелели от усталости",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "93a9463c9e54435da4a1014749949a17",
+              "finding_id": "fatigue"
+            }
+          },
+          {
+            "id": "recheck-face",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Сохранены отсутствие выражения и недоступность эмоций.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "face unreadable, blank expression",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "по его лицу невозможно было что-либо прочесть, выражение оставалось пустым",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "93a9463c9e54435da4a1014749949a17",
+              "finding_id": "face"
+            }
+          },
+          {
+            "id": "recheck-distance",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Пространственный образ передан без кальки.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "The blade gleamed inches from his vision",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Клинок блеснул в нескольких дюймах от его глаз",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "93a9463c9e54435da4a1014749949a17",
+              "finding_id": "distance"
+            }
+          },
+          {
+            "id": "recheck-do-anything",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Восстановлена готовность совершить любое действие.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Dick would have done anything to rewrite it",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Дик сделал бы что угодно, лишь бы переписать её",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "93a9463c9e54435da4a1014749949a17",
+              "finding_id": "do-anything"
+            }
+          },
+          {
+            "id": "recheck-urgency",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Передана тревожная срочность в сочетании с дрожью голоса.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "he called urgently",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "с тревогой позвал он",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "93a9463c9e54435da4a1014749949a17",
+              "finding_id": "urgency"
+            }
+          },
+          {
+            "id": "fury-collocation",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Сорвался в ярость» — неестественная калька. Передать резкий переход и метафору жара: «Дик окончательно сорвался — ярость раскалилась добела».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Dick snapped into white-hot fury.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Дик сорвался в раскалённую добела ярость.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "freeze-grammar",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Грамматически нарушено сочетание «стоял застыв». Передать неподвижность: «Дик застыл на месте, словно статуя» (продолжение о словах Слэйда сохранить).",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Dick stood frozen, like a statue",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Дик стоял застыв, словно статуя",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "explosive-preposition",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Нормативное сочетание перед группой согласных: «со взрывной силой».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "pushing off the ground with explosive force",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "с взрывной силой оттолкнувшись от земли",
               "occurrence": 0
             },
             "resolves": null
