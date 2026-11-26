@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "request_id": "b7411a7285aa4a57b56ea590e36b6a51",
+  "book_slug": "dinner-and-a-dozen-roses-wondrouswendy-control-video-game",
+  "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+  "operation": "review-record",
+  "chapter": 3,
+  "session_id": "chatops-dinner-20261126-review",
+  "outcome": "PASS",
+  "quality_report": {
+    "evidence_version": 2,
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "id": "chatops-recheck-1",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Калька устранена; сохранены непринуждённость разговора и доверительность признания.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "The conversation flows so smoothly; it’s so easy to spill his heart out to Zachariah, to reveal so much about his past, the good, the bad, and even the ugly.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Беседа идёт непринуждённо; так легко излить душу Захарии, рассказать так много о своём прошлом — о хорошем, плохом и даже неприглядном.",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "ab92d8c651dc419ab01d102e1e9d2b91",
+          "finding_id": "chunk-002-flow-41"
+        }
+      },
+      {
+        "id": "chatops-recheck-2",
+        "category": "structure",
+        "severity": "minor",
+        "detail": "Лишние кавычки и точка удалены; реплика и последующее повествование разделены правильно.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "“Yeah, I think they actually went to the same all-women’s university.”",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "«Да, кажется, они и правда учились в одном и том же женском университете».",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "ab92d8c651dc419ab01d102e1e9d2b91",
+          "finding_id": "chunk-002-quotes-44"
+        }
+      },
+      {
+        "id": "chatops-recheck-3",
+        "category": "referent",
+        "severity": "minor",
+        "detail": "Реакция однозначно относится к Дарлингу, как в оригинале.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "A hand roams his back, sending a shiver down his spine.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Рука скользит по его спине, и у Дарлинга по позвоночнику пробегает дрожь.",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "ab92d8c651dc419ab01d102e1e9d2b91",
+          "finding_id": "chunk-003-back-shiver"
+        }
+      },
+      {
+        "id": "chatops-recheck-4",
+        "category": "structure",
+        "severity": "minor",
+        "detail": "Удвоенные кавычки удалены, содержание обеих реплик сохранено.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "“Well yes, of course.” Darling snorts. “I meant more than just that—dressed up, going on a date, but no one knew I was meeting my hot boss for dinner...”",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "«Ну да, конечно». Дарлинг фыркает. «Я имел в виду не только то, что нарядился и иду на свидание, но и то, что никто не знал: за ужином я встречусь со своим чертовски привлекательным начальником…»",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "ab92d8c651dc419ab01d102e1e9d2b91",
+          "finding_id": "chunk-003-double-quotes"
+        }
+      },
+      {
+        "id": "chatops-recheck-5",
+        "category": "structure",
+        "severity": "minor",
+        "detail": "Прямая речь оформлена кавычками; соседние реплики приведены к тому же оформлению без перестановки абзацев.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "Casper’s thoughts shift back to this moment. He smiles. “Just thinking about what a year it’s been. How far we’ve come.”",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Мысли Каспера возвращаются к этому мгновению. Он улыбается. «Просто думаю о том, каким был этот год. О том, как далеко мы зашли».",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "ab92d8c651dc419ab01d102e1e9d2b91",
+          "finding_id": "chunk-004-dialogue-style"
+        }
+      }
+    ]
+  },
+  "source_sha256": "4aa522e689154037898d3dadc650f4e44a02b31396a1f6e52126e9ce1eddad21",
+  "translation_sha256": "bfc4621df631408dfc70d5825b852f1a25355cb4a1064ba729adf5e7f884f1dc",
+  "claim_sha256": "fe544d21428beb0417af008db4fd91457b5ae3663d6477cd41c97493585fe6d3"
+}
