@@ -1,0 +1,153 @@
+{
+  "schema_version": 1,
+  "request_id": "20835f1ca16c47e8b84e16461bf5538a",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "4ab1f19d648a494b654658c1343ca38394a2715f471ad02ed27cb922f4c9a0b8",
+    "record": {
+      "correction_round": 1,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "meaning",
+            "detail": "Сердцебиение ощущается через соприкосновение груди с Майком, пространственная связь восстановлена.",
+            "id": "heartbeat-location",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "heartbeat-location",
+              "record_id": "60d478d58a19467d94659b0cd756fe94"
+            },
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "the beat of his heart against Will's chest"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "биение его сердца, которое Уилл чувствует, прижавшись к нему грудью"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Передано благоговейное восхищение, контраст с первоначальным потрясением сохранён.",
+            "id": "awe-register",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "awe-register",
+              "record_id": "60d478d58a19467d94659b0cd756fe94"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "He's in complete awe."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Его охватывает благоговейное восхищение."
+            }
+          },
+          {
+            "category": "omission",
+            "detail": "Образ груды исковерканных конечностей восстановлен; последовательность действия сохранена.",
+            "id": "limbs-image",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "limbs-image",
+              "record_id": "60d478d58a19467d94659b0cd756fe94"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "a heap of contorted limbs"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "со сломанной шеей, превратившись в груду исковерканных конечностей"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Естественно передано движение руки вниз к пояснице.",
+            "id": "back-phrase",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "back-phrase",
+              "record_id": "60d478d58a19467d94659b0cd756fe94"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "before letting one slide down to the curve of his back"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "а затем одна его рука скользит вниз, к пояснице Уилла"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Выражение лица Майка передано как восхищение Уиллом, без безличной кальки.",
+            "id": "admiration-phrase",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "admiration-phrase",
+              "record_id": "60d478d58a19467d94659b0cd756fe94"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "like he's something to be admired"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "словно Уилл достоин восхищения."
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Возврат взгляда и ореховый цвет глаз переданы без технической кальки; образ дома сохранён.",
+            "id": "eyes-color",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "eyes-color",
+              "record_id": "60d478d58a19467d94659b0cd756fe94"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "his eyes roll back to reveal the beautiful hazel that immediately brings Mike home."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Его закатившиеся глаза опускаются, и Майк снова видит их прекрасный ореховый цвет, сразу чувствуя себя дома."
+            }
+          }
+        ]
+      },
+      "record_id": "cf1888c7feae494a9a0d33b37fc4415f",
+      "review_commit": "1397e50738932a405ecd101494f811533806b911",
+      "review_contract_revision": "docs/TRANSLATION.md@b7402c04f53fe5f73049de7528a99f56021925c4",
+      "reviewed_at": "2026-11-26T18:50:52Z",
+      "reviewer_session_id": "chatops-you-didnt-lose-me-recheck-20261126",
+      "sequence": 2,
+      "source_sha256": "a53fc694b7a359329649208fc45a453a15c8ca0d9f839ff89cf6b1701dd13ee1",
+      "state_revision": "ac3b1ed5a327a0a800555f308c9b496cc5d7d510400d2a0e8136f59766682d51",
+      "supersedes_record_id": "60d478d58a19467d94659b0cd756fe94",
+      "translation_sha256": "ae397e952eef86ff1ba0fe06e7945a24ac5dafee7d40cd3cb8471b0beb47c0f1",
+      "unit_id": "chapter-000001",
+      "workflow_revision": "b7402c04f53fe5f73049de7528a99f56021925c4"
+    }
+  },
+  "error": null
+}
