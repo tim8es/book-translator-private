@@ -1,0 +1,104 @@
+{
+  "created_at": "2026-11-26T12:36:25Z",
+  "delta": {
+    "changed": 0,
+    "deleted": 0,
+    "new": 2,
+    "unchanged": 0
+  },
+  "metadata": {
+    "author": "Synthetic Fixture",
+    "chapter_count": 2,
+    "imported_at": "2026-11-26T12:36:25+00:00",
+    "schema_version": 1,
+    "source": {
+      "filename": "source.epub",
+      "original_filename": "source.epub",
+      "revision_id": "source-000001",
+      "sha256": "f125a1a02efd128eb2fe7085ed353455504d3cad10cfe406cf618979e50e12d5",
+      "size_bytes": 2055,
+      "storage_mode": "embedded"
+    },
+    "source_file": "source.epub",
+    "source_format": "epub",
+    "source_language": "en",
+    "target_language": "ru",
+    "title": "The River Gate - Paired Synthetic Benchmark",
+    "workflow": {
+      "repository": "https://github.com/tim8es/book-translator",
+      "requested_ref": "3f3b77838cd34e61124337bc2f5a1a2ad5add2fb",
+      "resolved_revision": "3f3b77838cd34e61124337bc2f5a1a2ad5add2fb",
+      "review_evidence": "review-ledger-v1"
+    }
+  },
+  "parent_revision_id": null,
+  "progress": {
+    "book_slug": "the-river-gate-paired-synthetic-benchmark",
+    "chapters": [
+      {
+        "number": 1,
+        "slug": "chapter-one",
+        "source_path": "extracted/001-chapter-one.md",
+        "status": "extracted",
+        "title": "Chapter One",
+        "translation_path": "translated/001-chapter-one.md",
+        "unit_id": "chapter-000001"
+      },
+      {
+        "number": 2,
+        "slug": "chapter-two",
+        "source_path": "extracted/002-chapter-two.md",
+        "status": "extracted",
+        "title": "Chapter Two",
+        "translation_path": "translated/002-chapter-two.md",
+        "unit_id": "chapter-000002"
+      }
+    ],
+    "schema_version": 1
+  },
+  "revision_id": "source-000001",
+  "schema_version": 1,
+  "source_manifest": {
+    "chapter_count": 2,
+    "extracted": [
+      {
+        "number": 1,
+        "path": "extracted/001-chapter-one.md",
+        "sha256": "a9113bd04a7d095a31743eebd6cf5c1c65a472f0016f2995ac8175a391082314",
+        "title": "Chapter One",
+        "unit_id": "chapter-000001"
+      },
+      {
+        "number": 2,
+        "path": "extracted/002-chapter-two.md",
+        "sha256": "111df3a625a31178e283a75740369888e84ca763899a192cad7d1321b0fb3103",
+        "title": "Chapter Two",
+        "unit_id": "chapter-000002"
+      }
+    ],
+    "schema_version": 1,
+    "source_file": "source.epub",
+    "source_format": "epub",
+    "source_sha256": "f125a1a02efd128eb2fe7085ed353455504d3cad10cfe406cf618979e50e12d5",
+    "source_size_bytes": 2055,
+    "source_storage_mode": "embedded"
+  },
+  "units": [
+    {
+      "classification": "initial",
+      "number": 1,
+      "source_path": "extracted/001-chapter-one.md",
+      "staged_path": "source-revisions/source-000001/corpus/001-chapter-000001.md",
+      "title": "Chapter One",
+      "unit_id": "chapter-000001"
+    },
+    {
+      "classification": "initial",
+      "number": 2,
+      "source_path": "extracted/002-chapter-two.md",
+      "staged_path": "source-revisions/source-000001/corpus/002-chapter-000002.md",
+      "title": "Chapter Two",
+      "unit_id": "chapter-000002"
+    }
+  ]
+}
