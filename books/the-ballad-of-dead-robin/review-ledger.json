@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "the-ballad-of-dead-robin",
-  "next_sequence": 38,
+  "next_sequence": 39,
   "records": [
     {
       "record_id": "b395b5cc6d41470387aa4d8dfe6853d7",
@@ -4251,6 +4251,275 @@
             "severity": "minor",
             "detail": "Абз. 211: вопрос о доверии и обращение сохранены в связи с ответом в абз. 213.",
             "resolved": true
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "93a9463c9e54435da4a1014749949a17",
+      "sequence": 38,
+      "unit_id": "chapter-000016",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "200d57957a07b4369078d701bc4430dd27893addeb7415bd10f82a993638a573",
+      "translation_sha256": "c436d8250b9446c1dfb13dc131e6b36889d9adb57d776496c85647d0a662cbbd",
+      "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "review_contract_revision": "docs/TRANSLATION.md@20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "reviewer_session_id": "chatops-review-7db20c963a954a05969e0fda64a3b16e",
+      "reviewed_at": "2026-11-26T15:16:38Z",
+      "state_revision": "24601a27a0b6627dceda6ce12b9c8839ee5abc70428c4ea7943d5ddff474b805",
+      "review_commit": "3f1ae1c8fd0dcb1070d3e9f5b15976d9d01f51f4",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "signature",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "Подпись автора BM сохранить латиницей.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "With love,BM",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "С любовью, БМ",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "blood-color",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Неестественное «потемневшие от красного». Передать цвет крови и параллель с костюмом: «скользкие, потемневшие от крови, под цвет его костюма».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "slick and darkened with red, mirroring the colour of his suit",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "скользкие, потемневшие от красного, под цвет его костюма",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "impact",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Back slammed against a window описывает удар спиной о стекло, не просто положение прижатого человека. Восстановить динамику удара.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "back slammed against a window high above",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "прижатого спиной к окну высоко наверху",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "eyes",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Калька «улыбку, не коснувшуюся глаз»; «выдавив беспечную улыбку, но глаза остались серьёзными» сохраняет контраст.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "forcing a careless grin that didn’t reach his eyes",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "выдавив беспечную улыбку, не коснувшуюся глаз",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "finger",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Палец не может лежать напряжённо; передать готовность в движении и положении пальца без кальки.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "finger tight on the trigger, ready to fire at the slightest movement",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "палец напряжённо лежал на спусковом крючке, готовый выстрелить при малейшем движении",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "turn-away",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Twist away здесь означает увернуться всем телом, а не отвернуться от угрозы.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "who barely managed to twist away",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "который едва успел отвернуться",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "weapon-owner",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Сжатие палок эскрима относится к Дику, который наблюдает за Брюсом. В русском деепричастие внутри придаточного грамматически связывает действие с Брюсом. Явно указать Дика: «Дик мрачно наблюдал, всё крепче сжимая палки эскрима, как Брюс наносит удар за ударом».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Dick watched grimly as Bruce struck again and again, his grip tightening around his escrima sticks",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Дик мрачно смотрел, как Брюс бил снова и снова, всё сильнее сжимая свои палки эскрима",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "weapon-weight",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Вес назван увесистым, возникает тавтология. Передать ощутимую тяжесть и непривычность оружия.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "The weight of the weapon settled into his hand immediately—solid, unfamiliar.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Вес оружия сразу ощутился в руке — увесистый, непривычный.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "processing",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Дик пытается осмыслить слова Слэйда сквозь туман сознания, а не пробить туман словами как орудием.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "trying to force Slade’s words through the fog in his head",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "пытаясь пробиться словами Слэйда сквозь туман в собственной голове",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "teeth-idiom",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Set one's teeth on edge — раздражать до скрежета зубов, а не физически сводить зубы. Передать раздражение.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "that always set Dick’s teeth on edge",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "от которой у Дика всегда сводило зубы",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "fatigue",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Калька «усталость оттягивала руки и ноги». Передать тяжесть усталых конечностей: «руки и ноги отяжелели от усталости».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "exhaustion tugging at his limbs",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "усталость оттягивала руки и ноги",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "face",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Лицо было нечитаемым» — калька. Передать невозможность прочитать выражение лица.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "face unreadable, blank expression",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "лицо было нечитаемым, выражение — пустым",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "distance",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Неестественная пространственная связь «в нескольких дюймах от его взгляда». Передать близость клинка к глазам с сохранением субъективного замедления.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "The blade gleamed inches from his vision",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Клинок блеснул в нескольких дюймах от его взгляда",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "do-anything",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Would have done anything означает готовность сделать что угодно, а не отдать что угодно; восстановить акцент на действии.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Dick would have done anything to rewrite it",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Дик отдал бы что угодно, лишь бы переписать её",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "urgency",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Urgently — срочно, с тревогой, а не просто настойчиво; сохранить напряжение и дрожь.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "he called urgently",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "с настойчивостью позвал он",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       }
