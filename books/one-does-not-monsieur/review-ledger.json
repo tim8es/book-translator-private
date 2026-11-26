@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "one-does-not-monsieur",
-  "next_sequence": 16,
+  "next_sequence": 17,
   "records": [
     {
       "record_id": "c4b03697d25541ea8d3070ad34e8c878",
@@ -1865,6 +1865,482 @@
             },
             "translation_anchor": {
               "quote": "утром на Хэллоуин",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "ff610bc71ec54714bfb429b994ccbb3c",
+      "sequence": 16,
+      "unit_id": "chapter-000006",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "f2bd50532aa3a020b7aa7da3d5efe52e6e9944fdb53dab2485858fe3290ccc99",
+      "translation_sha256": "dd051f6b63e74fe5912bc0c503d434ced7525b48ca6f0861d6236f5c69763871",
+      "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "review_contract_revision": "docs/TRANSLATION.md@20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "reviewer_session_id": "chatops-odnm-r6-repeat-69b2d41e",
+      "reviewed_at": "2026-11-26T12:22:40Z",
+      "state_revision": "ae218bd97f88f84ad173ed1522678b32a5af0f97",
+      "review_commit": "ba7010091eddded63aa1b5367bb3416fc0b63dce",
+      "correction_round": 1,
+      "supersedes_record_id": "afcbba61216c47678a2c7c199e36f585",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "r2-matilda",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Повторно сопоставлено с исходным фрагментом и соседним контекстом; замечание устранено.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "which meant that she was out of her scarlet, off duty and, for a whole weekend, nobody’s but theirs.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "что означало: она сняла алую мантию, была не при исполнении и на целые выходные принадлежала только им.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "afcbba61216c47678a2c7c199e36f585",
+              "finding_id": "matilda"
+            }
+          },
+          {
+            "id": "r2-dark",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Повторно сопоставлено с исходным фрагментом и соседним контекстом; замечание устранено.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "He was very tall and very dark, and his face had not slept.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Он был очень высок и черноволос, и лицо его не знало сна.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "afcbba61216c47678a2c7c199e36f585",
+              "finding_id": "dark"
+            }
+          },
+          {
+            "id": "r2-linen",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Повторно сопоставлено с исходным фрагментом и соседним контекстом; замечание устранено.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "because she would not eat a birthday dinner off anybody else’s",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "потому что не собиралась обедать в день рождения за столом с чужой скатертью",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "afcbba61216c47678a2c7c199e36f585",
+              "finding_id": "linen"
+            }
+          },
+          {
+            "id": "r2-stillroom-jelly",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Повторно сопоставлено с исходным фрагментом и соседним контекстом; замечание устранено.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "two pots of quince jelly from the stillroom",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "две баночки айвового желе из комнаты для домашних заготовок",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "afcbba61216c47678a2c7c199e36f585",
+              "finding_id": "stillroom-jelly"
+            }
+          },
+          {
+            "id": "r2-stillroom-candles",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "Повторно сопоставлено с исходным фрагментом и соседним контекстом; замечание устранено.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "two tall beeswax candles from the stillroom at Blanchemer",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "две высокие свечи из пчелиного воска из комнаты для домашних заготовок в Бланшмере",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "afcbba61216c47678a2c7c199e36f585",
+              "finding_id": "stillroom-candles"
+            }
+          },
+          {
+            "id": "r2-bow",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Слово «мастер-лучник» всё ещё обозначает стрелка или мастера стрельбы, а не изготовителя луков. Уточнить.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "from the bowyer at Romorantin",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "работы мастера-лучника из Роморантена",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "afcbba61216c47678a2c7c199e36f585",
+              "finding_id": "bow"
+            }
+          },
+          {
+            "id": "r2-camp-bed",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Дверной проём восстановлен, однако теперь не закрыт обособленный оборот и бумаги синтаксически относятся к комнате. Восстановить связь с Эндрю.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "he slept across Caleb’s door for a fortnight on a camp bed, with his Ministry papers, and read them aloud to him.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "на походной кровати, поставленной поперёк дверного проёма комнаты Калеба со своими министерскими бумагами и читал их ему вслух.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "afcbba61216c47678a2c7c199e36f585",
+              "finding_id": "camp-bed"
+            }
+          },
+          {
+            "id": "r2-parcel",
+            "category": "referent",
+            "severity": "major",
+            "detail": "Повторно сопоставлено с исходным фрагментом и соседним контекстом; замечание устранено.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "She slid it down the table to Eleanor, wrapped in green paper and tied with green ribbon in her neatest bow",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Она подвинула Элеоноре по столу свёрток в зелёной бумаге, перевязанный зелёной лентой с самым аккуратным из её бантов",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "afcbba61216c47678a2c7c199e36f585",
+              "finding_id": "parcel"
+            }
+          },
+          {
+            "id": "r2-cloak",
+            "category": "referent",
+            "severity": "major",
+            "detail": "Повторно сопоставлено с исходным фрагментом и соседним контекстом; замечание устранено.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "A cloak he does not trouble to fasten.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Плащ не удосуживается застегнуть.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "afcbba61216c47678a2c7c199e36f585",
+              "finding_id": "cloak"
+            }
+          },
+          {
+            "id": "r2-stairwell",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Повторно сопоставлено с исходным фрагментом и соседним контекстом; замечание устранено.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "come down the well of the swinging stair",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "спускался к нему в темноте по колодцу поворотной лестницы",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "afcbba61216c47678a2c7c199e36f585",
+              "finding_id": "stairwell"
+            }
+          },
+          {
+            "id": "r2-soup",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Повторно сопоставлено с исходным фрагментом и соседним контекстом; замечание устранено.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "which Eleanor pronounced better than anything to be had in the rue Montorgueil",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "который, по словам Элеоноры, был лучше всего того, что можно было найти на улице Монторгёй",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "afcbba61216c47678a2c7c199e36f585",
+              "finding_id": "soup"
+            }
+          },
+          {
+            "id": "r2-mouthfuls",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Повторно сопоставлено с исходным фрагментом и соседним контекстом; замечание устранено.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "between mouthfuls she watched the window",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "между кусочками баранины наблюдала за окном",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "afcbba61216c47678a2c7c199e36f585",
+              "finding_id": "mouthfuls"
+            }
+          },
+          {
+            "id": "r2-stillroom-memory",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "Повторно сопоставлено с исходным фрагментом и соседним контекстом; замечание устранено.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "In the stillroom. When we were eight.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "В комнате для домашних заготовок. Когда нам было восемь.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "afcbba61216c47678a2c7c199e36f585",
+              "finding_id": "stillroom-memory"
+            }
+          },
+          {
+            "id": "r2-father",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Повторно сопоставлено с исходным фрагментом и соседним контекстом; замечание устранено.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "what little had ever pleased him had been Arian.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "всё то немногое, что когда-либо радовало его, сводилось к Ариану.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "afcbba61216c47678a2c7c199e36f585",
+              "finding_id": "father"
+            }
+          },
+          {
+            "id": "r2-distance",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Повторно сопоставлено с исходным фрагментом и соседним контекстом; замечание устранено.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "It was the better part of two miles",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "было почти две мили",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "afcbba61216c47678a2c7c199e36f585",
+              "finding_id": "distance"
+            }
+          },
+          {
+            "id": "r2-coronation",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Повторно сопоставлено с исходным фрагментом и соседним контекстом; замечание устранено.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "He had stood behind three foreign coronations for the Ministry",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "От имени Министерства он содействовал проведению трёх иностранных коронаций",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "afcbba61216c47678a2c7c199e36f585",
+              "finding_id": "coronation"
+            }
+          },
+          {
+            "id": "r2-ermine",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Повторно сопоставлено с исходным фрагментом и соседним контекстом; замечание устранено.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "“It was ermine,” said Andrew.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "— Это был горностаевый мех, — сказал Эндрю.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "afcbba61216c47678a2c7c199e36f585",
+              "finding_id": "ermine"
+            }
+          },
+          {
+            "id": "r2-clerks",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "Два оставшихся употребления «чиновник» в том же абзаце требуют исправления на «секретарь».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "The clerk spoke again and held the watch up higher. Still he did not move. It was only when the clerk started bowing",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Чиновник заговорил снова и поднял часы выше. Тот по-прежнему не двигался. Лишь когда чиновник принялся кланяться",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "afcbba61216c47678a2c7c199e36f585",
+              "finding_id": "clerks"
+            }
+          },
+          {
+            "id": "r2-clerk-breakfast",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "Повторно сопоставлено с исходным фрагментом и соседним контекстом; замечание устранено.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "gave them to a clerk to take down to the village by the first owl.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "передал секретарю, чтобы тот отнёс их в деревню к первой совиной почте.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "afcbba61216c47678a2c7c199e36f585",
+              "finding_id": "clerk-breakfast"
+            }
+          },
+          {
+            "id": "r2-clerk-last",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "Повторно сопоставлено с исходным фрагментом и соседним контекстом; замечание устранено.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "only the clerk had hurried.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "торопился только секретарь.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "afcbba61216c47678a2c7c199e36f585",
+              "finding_id": "clerk-last"
+            }
+          },
+          {
+            "id": "r2-halloween",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "Первое употребление исправлено, однако здесь написание не унифицировано.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "on the Tuesday and the Wednesday after Halloween",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "во вторник и среду после Хэллоуина",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "afcbba61216c47678a2c7c199e36f585",
+              "finding_id": "halloween"
+            }
+          },
+          {
+            "id": "clerk-ahead",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "Третье оставшееся употребление обозначает того же секретаря.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "with the clerk going on ahead of him and coming back and going on ahead again",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "а чиновник забегал вперёд, возвращался и снова забегал вперёд",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "halloween-buttons",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "Унифицировать с другими употреблениями.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Andrew had done up his buttons in the carriage on Halloween.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Эндрю застёгивал ему пуговицы в карете на Хэллоуин.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "watch-afternoon",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Утеряно уточнение, что часы остановились после полудня.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "at a quarter past four on the afternoon their grandfather died",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "в четверть пятого в тот день, когда умер их дед",
               "occurrence": 0
             },
             "resolves": null
