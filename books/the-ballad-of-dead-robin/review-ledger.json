@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "the-ballad-of-dead-robin",
-  "next_sequence": 33,
+  "next_sequence": 34,
   "records": [
     {
       "record_id": "b395b5cc6d41470387aa4d8dfe6853d7",
@@ -3324,6 +3324,179 @@
             },
             "translation_anchor": {
               "quote": "я решил(а) снять фильм",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "580c4138abf84dec8069d49c713b68ef",
+      "sequence": 33,
+      "unit_id": "chapter-000015",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "ee2b3d3fd839e63cdf0c09ceb730907a2e96fa57f42bb4274a8434db07e5d8b4",
+      "translation_sha256": "83af62f12755417962d669ec3e1376af4a8d3b9c8e8142de1cff475442a9c8ee",
+      "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "review_contract_revision": "docs/TRANSLATION.md@20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "reviewer_session_id": "chatops-review-3894ad8b6cf44d1793cb26519f24c66c",
+      "reviewed_at": "2026-11-26T13:56:28Z",
+      "state_revision": "fd2086a6480c6d4550c645c3f39c76d3c8f2e9aeb9cbfbd04a35557b6f66104e",
+      "review_commit": "dfe8801578c73e5138883f5e60fcc8786fee7b1b",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "independent_session",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "hand-gesture",
+            "category": "omission",
+            "severity": "minor",
+            "detail": "Утрачено положение руки у бока, важное для телесной реакции. Передать «Тим согнул пальцы опущенной руки» или «Тим пошевелил пальцами у бедра».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Tim’s fingers flexed at his side.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Пальцы Тима согнулись.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "sightline",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Слэйд пытается разглядеть Тима за заслонившим его Дэмиеном, не психологически прочитать Дэмиена. Следующий абзац подтверждает цель взгляда. Передать «словно пытаясь разглядеть Тима сквозь него».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "eyes flicking past Damian, trying, Tim realized, to look through him",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "скользнув взглядом мимо Дэмиена, пытаясь, как понял Тим, увидеть его насквозь",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "thought-syntax",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Нарушен естественный синтаксис введения внутренней реплики. Передать «Он защищал тебя, — пронзила Тима мысль».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "He was protecting you, the thought cut through him.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Он защищал тебя, пронзила его мысль.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "resolve",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Неверная сочетаемость «собираясь с решимостью». Передать «собираясь с духом» или «собравшись с силами».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Tim drew a deep breath, gathering his resolve",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Тим глубоко вдохнул, собираясь с решимостью",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "cheer-tone",
+            "category": "register",
+            "severity": "minor",
+            "detail": "В насмешке Слэйда amused означает прежде всего, что его происходящее забавляет; «вкрадчивый, насмешливый» добавляет откровенно насмешливую окраску. Передать «плавный голос с оттенком веселья».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "a smooth and amused voice slid in from the side",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "сбоку раздался вкрадчивый, насмешливый голос",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "invasion",
+            "category": "register",
+            "severity": "minor",
+            "detail": "Психологическая лексика «вторгающееся в личное пространство» не соответствует тесному телесному образу. Передать «горячее, интимное, непрошеное».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "hot, intimate, invasive",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "горячее, интимное, вторгающееся в личное пространство",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "invasive-voice",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Назойливый ослабляет образ насильственного проникновения в сознание. Передать «Голос Ра’са вторгался в его разум».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Ra’s invasive voice slipped into his mind",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Назойливый голос Ра’са проникал в его разум",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "fight-view",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Улавливал отдельные мелькания Дэмиена» — калька, в оригинале герой время от времени видит происходящую рядом схватку. Передать «Краем глаза Тим то и дело видел Дэмиена».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Out of the corner of his eye, Tim caught glimpses of Damian",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Краем глаза Тим улавливал отдельные мелькания Дэмиена",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "body-motion",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Подчеркнуть ощущение невесомости, а не буквальное изменение веса тела: «тело рванулось назад, на миг стало невесомым — и он полетел вниз».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "His body lurched backward, weightless and then he was falling.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Его тело рванулось назад, потеряло вес, а затем он падал.",
               "occurrence": 0
             },
             "resolves": null
