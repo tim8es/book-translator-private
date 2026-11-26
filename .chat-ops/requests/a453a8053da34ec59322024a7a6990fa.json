@@ -1,0 +1,250 @@
+{
+  "schema_version": 1,
+  "request_id": "a453a8053da34ec59322024a7a6990fa",
+  "book_slug": "the-ballad-of-dead-robin",
+  "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+  "operation": "review-record",
+  "chapter": 18,
+  "session_id": "chatops-review-11c973cbd5194e27a1f5cc84a6078fa1",
+  "outcome": "CORRECTIONS_REQUIRED",
+  "quality_report": {
+    "evidence_version": 2,
+    "context": "independent_session",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "id": "rigid-pride",
+        "category": "style",
+        "severity": "minor",
+        "detail": "«Негнущаяся гордость» — калька. Сохранить напряжённую, горделивую осанку без неестественной сочетаемости.",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "pulled his shoulders back with rigid pride",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "расправил плечи с негнущейся гордостью",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "appearances",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Keep up appearances означает поддерживать внешнюю видимость благополучия, а не просто соблюдать приличия. Передать «лишь бы сохранить видимость благополучия».",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "even if it was only to keep up appearances at some charity banquet",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "пусть даже лишь для того, чтобы соблюсти приличия на каком-нибудь благотворительном банкете",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "dream-anaphora",
+        "category": "style",
+        "severity": "minor",
+        "detail": "В начале ряда мечтаний намеренно повторено Dream трижды; русский текст оставляет только одно повторение. Восстановить анафору: «Снилось, что он летит рядом с Диком. Снилось, что Брюс…».",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "Dream that he was Robin again. Dream that he was flying beside Dick. Dream that Bruce smiled at him",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Снилось, что он снова Робин. Что он летит рядом с Диком. Что Брюс улыбается ему",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "literature",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Teaching предполагает обучение, а не просто рассказ; сохранить роль Джейсона как наставника.",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "That Jason sat with him, teaching him about literature.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Что Джейсон сидит с ним и рассказывает ему о литературе.",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "identity-expectation",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Вопрос о том, кем он должен быть в глазах семьи, превратился в вопрос, кем его ожидают увидеть. Сохранить мотив навязанной идентичности: «Кем они ждут, что он будет?» или «Кем, по их мнению, он должен быть?»",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "Who did they expect him to be?",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Кем они ожидали его увидеть?",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "held-hand",
+        "category": "referent",
+        "severity": "minor",
+        "detail": "В исходнике рука удерживает его руку, а не Тима целиком. Уточнить объект действия.",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "He couldn’t squeeze the hand holding his.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Не мог сжать руку, державшую его.",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "gratitude",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Тихая благодарность за то, что голос не дрогнул, заменена радостью и тайностью. Передать «Он был благодарен за то, что голос не дрогнул» без добавленного эмоционального подъёма.",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "He was quietly grateful that his voice didn’t shake.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Втайне обрадовался, что голос не дрогнул.",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "promise-scope",
+        "category": "meaning",
+        "severity": "major",
+        "detail": "Never gave up on you охватывает веру в Тима и отказ отречься от него, а не только поиски исчезнувшего сына; добавленное «пока искал тебя» ограничивает важное заверение. Передать более широко: «я никогда не ставил на тебе крест, Тим».",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "I never gave up on you, Tim.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "я никогда не сдавался, пока искал тебя, Тим.",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "authority-tone",
+        "category": "style",
+        "severity": "minor",
+        "detail": "«Заговорила авторитетно» — неестественная калька. Передать уверенность и вес слов: «но заговорила с уверенностью знатока» либо «но голос её звучал веско».",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "Zatanna smiled understandingly but spoke with authority.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Затанна понимающе улыбнулась, но заговорила авторитетно.",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "bat-address",
+        "category": "terminology",
+        "severity": "minor",
+        "detail": "Bats — групповое прозвище семьи Бэтмена. «Мышек» теряет указание на летучих мышей и добавляет уменьшительность. Передать «без летучих мышей Лига уже не та».",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "the League isn’t the same without the bats.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "без мышек Лига уже не та.",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "jaylad",
+        "category": "voice",
+        "severity": "minor",
+        "detail": "Jaylad — ласковое обращение Брюса, не нейтральное сокращение Jay. Сохранить дополнительный оттенок родительской нежности, например «Прости, Джей, сынок».",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "Sorry, Jaylad,",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Прости, Джей,",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "two-drives",
+        "category": "meaning",
+        "severity": "major",
+        "detail": "Автор поясняет сюжет с двумя флешками и двумя сообщениями; «одна… а затем со вторым» теряет вторую флешку и превращает её в смену сообщения. Восстановить явное противопоставление двух носителей, не меняя сюжет.",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "Tim had 2 flash drives. 1 with his first message, and then with his second message",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "у Тима было две флешки. Одна с его первым сообщением, а затем со вторым сообщением",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "magic-power",
+        "category": "meaning",
+        "severity": "major",
+        "detail": "В авторском пояснении оба употребления power обозначают одно и то же — могущество, увеличиваемое магическим связыванием души. Русский вариант разрывает связь между желанием власти и получением силы. Передать одним термином «могущество».",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "he wanted power, and if he could get Tim to give him his soul himself, he would get more power",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "он хотел власти, и если бы смог заставить Тима самостоятельно отдать ему душу, то получил бы больше силы",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "signature",
+        "category": "structure",
+        "severity": "minor",
+        "detail": "Автор подписывается латинскими инициалами BM, это подпись псевдонима Barefoot Mouse. Сохранить исходную графику, не превращать её в кириллическую аббревиатуру.",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "With love,BM",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "С любовью, БМ",
+          "occurrence": 0
+        },
+        "resolves": null
+      }
+    ]
+  },
+  "source_sha256": "03b3d07325b5fd3c7ec27ed60b227aa34b20d4b12491242d1dae58408f7759fd",
+  "translation_sha256": "f935f2032a4a0c9342161d3c88155973e8686946124343f31f6c66a2b51a439c",
+  "claim_sha256": "28eeeb0649a88ff845af6ed13ac58149fe5a2c8819ccbe7b5bc02c145d912937"
+}
