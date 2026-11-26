@@ -34,7 +34,7 @@ env:
   # Reviewed immutable public executor commit. Does not change literary book pins
   # or the separate locked runtime used by the existing scheduled Auto.
   PI_EXECUTOR_SHA: 55026044d45fb1d2b7768b5c69dd9f85993bb31f
-  PI_QUALITY_EXECUTOR_SHA: b26186e70dbe1bdc0bcd8caad971732e3acc8120
+  PI_QUALITY_EXECUTOR_SHA: c445e7ed90bdfe0caf8a1240a941539a5c6518bd
   BOOK_TRANSLATOR_LLM_BACKEND: pi
   OMNIROUTE_MODEL_CALL_LIMIT: "1500"
 
@@ -317,7 +317,7 @@ jobs:
           request="${changed[0]}"
           [[ "$request" =~ ^automation/quality-qualification/[0-9a-f]{32}\.json$ ]]
           [[ -f "$request" ]]
-          jq -e --arg rev "$PI_QUALITY_EXECUTOR_SHA" 'type == "object" and (keys == ["revision","schema_version"] or keys == ["profile","revision","schema_version"]) and .schema_version == 1 and .revision == $rev and ((.profile // "smoke") == "smoke" or .profile == "extended")' "$request" >/dev/null
+          jq -e --arg rev "$PI_QUALITY_EXECUTOR_SHA" 'type == "object" and (keys == ["revision","schema_version"] or keys == ["profile","revision","schema_version"]) and .schema_version == 1 and .revision == $rev and ((.profile // "smoke") == "smoke" or .profile == "extended" or .profile == "routes")' "$request" >/dev/null
           echo "profile=$(jq -r '.profile // "smoke"' "$request")" >> "$GITHUB_OUTPUT"
           echo "enabled=true" >> "$GITHUB_OUTPUT"
       - uses: actions/checkout@v4
