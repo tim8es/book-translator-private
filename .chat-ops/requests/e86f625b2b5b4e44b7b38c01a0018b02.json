@@ -1,0 +1,292 @@
+{
+  "schema_version": 1,
+  "request_id": "e86f625b2b5b4e44b7b38c01a0018b02",
+  "book_slug": "the-ballad-of-dead-robin",
+  "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+  "operation": "review-record",
+  "chapter": 18,
+  "session_id": "chatops-recheck-e86f625b2b5b4e44b7b38c01a0018b01",
+  "outcome": "PASS",
+  "source_sha256": "03b3d07325b5fd3c7ec27ed60b227aa34b20d4b12491242d1dae58408f7759fd",
+  "translation_sha256": "c3457c392ab7ba5df8340bd29d9339ec72c870f3bfb77f4e6c09437b23bd4279",
+  "claim_sha256": "8b1a2ac2f89b14f8eb7e999a88640809225aeab6dcbaa58a4c2f3fc3cf3814a6",
+  "quality_report": {
+    "evidence_version": 2,
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "id": "recheck-rigid-pride",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Сохранены напряжённость и гордая осанка.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "pulled his shoulders back with rigid pride",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "расправил плечи с гордой напряжённостью",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "65ac9534c35c46f68cce0434d61675ca",
+          "finding_id": "rigid-pride"
+        }
+      },
+      {
+        "id": "recheck-appearances",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Восстановлен мотив поддержания внешней видимости благополучия.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "even if it was only to keep up appearances at some charity banquet",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "пусть даже лишь для того, чтобы сохранить видимость благополучия на каком-нибудь благотворительном банкете",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "65ac9534c35c46f68cce0434d61675ca",
+          "finding_id": "appearances"
+        }
+      },
+      {
+        "id": "recheck-dream-anaphora",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Восстановлены все три повторения и ритм воспоминаний.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "Dream that he was Robin again. Dream that he was flying beside Dick. Dream that Bruce smiled at him",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Снилось, что он снова Робин. Снилось, что он летит рядом с Диком. Снилось, что Брюс улыбается ему",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "65ac9534c35c46f68cce0434d61675ca",
+          "finding_id": "dream-anaphora"
+        }
+      },
+      {
+        "id": "recheck-literature",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Восстановлена роль Джейсона как наставника.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "That Jason sat with him, teaching him about literature.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Что Джейсон сидит рядом с ним и учит его разбираться в литературе.",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "65ac9534c35c46f68cce0434d61675ca",
+          "finding_id": "literature"
+        }
+      },
+      {
+        "id": "recheck-identity-expectation",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Передано ожидание определённой идентичности, а не внешнего вида.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "Who did they expect him to be?",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Кем, по их мнению, он должен был быть?",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "65ac9534c35c46f68cce0434d61675ca",
+          "finding_id": "identity-expectation"
+        }
+      },
+      {
+        "id": "recheck-held-hand",
+        "category": "referent",
+        "severity": "minor",
+        "detail": "Уточнён объект удерживания.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "He couldn’t squeeze the hand holding his.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Не мог сжать руку, державшую его руку.",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "65ac9534c35c46f68cce0434d61675ca",
+          "finding_id": "held-hand"
+        }
+      },
+      {
+        "id": "recheck-gratitude",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Восстановлена благодарность вместо радости и скрытности.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "He was quietly grateful that his voice didn’t shake.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Он был благодарен за то, что голос не дрогнул.",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "65ac9534c35c46f68cce0434d61675ca",
+          "finding_id": "gratitude"
+        }
+      },
+      {
+        "id": "recheck-promise-scope",
+        "category": "meaning",
+        "severity": "major",
+        "detail": "Сохранено заверение в том, что Брюс не отказывался от Тима, без ограничения только поисками.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "I never gave up on you, Tim.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "я никогда не ставил на тебе крест, Тим.",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "65ac9534c35c46f68cce0434d61675ca",
+          "finding_id": "promise-scope"
+        }
+      },
+      {
+        "id": "recheck-authority-tone",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Передана уверенность и вес слов без кальки.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "Zatanna smiled understandingly but spoke with authority.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Затанна понимающе улыбнулась, но голос её прозвучал веско.",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "65ac9534c35c46f68cce0434d61675ca",
+          "finding_id": "authority-tone"
+        }
+      },
+      {
+        "id": "recheck-bat-address",
+        "category": "terminology",
+        "severity": "minor",
+        "detail": "Восстановлено групповое прозвище семьи Бэтмена.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "the League isn’t the same without the bats.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "без летучих мышей Лига уже не та.",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "65ac9534c35c46f68cce0434d61675ca",
+          "finding_id": "bat-address"
+        }
+      },
+      {
+        "id": "recheck-jaylad",
+        "category": "voice",
+        "severity": "minor",
+        "detail": "Сохранено ласковое родительское обращение.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "Sorry, Jaylad,",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Прости, Джей, сынок,",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "65ac9534c35c46f68cce0434d61675ca",
+          "finding_id": "jaylad"
+        }
+      },
+      {
+        "id": "recheck-two-drives",
+        "category": "meaning",
+        "severity": "major",
+        "detail": "Восстановлено различие двух физических носителей.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "Tim had 2 flash drives. 1 with his first message, and then with his second message",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "у Тима было две флешки. Одна с его первым сообщением, а другая — со вторым сообщением",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "65ac9534c35c46f68cce0434d61675ca",
+          "finding_id": "two-drives"
+        }
+      },
+      {
+        "id": "recheck-magic-power",
+        "category": "meaning",
+        "severity": "major",
+        "detail": "В обоих случаях передано магическое могущество, сохранена причинная связь.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "he wanted power, and if he could get Tim to give him his soul himself, he would get more power",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "он хотел могущества, и если бы сумел добиться, чтобы Тим сам отдал ему душу, то обрёл бы ещё больше могущества",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "65ac9534c35c46f68cce0434d61675ca",
+          "finding_id": "magic-power"
+        }
+      },
+      {
+        "id": "recheck-signature",
+        "category": "structure",
+        "severity": "minor",
+        "detail": "Сохранена латинская авторская подпись.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "With love,BM",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "С любовью, BM",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "65ac9534c35c46f68cce0434d61675ca",
+          "finding_id": "signature"
+        }
+      }
+    ]
+  }
+}
