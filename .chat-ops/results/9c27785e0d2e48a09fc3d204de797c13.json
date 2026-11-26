@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "request_id": "9c27785e0d2e48a09fc3d204de797c13",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "e1015cc08cd851ee4becb6694802616d0f505d5c437410f2358b1ce194b05958",
+    "record": {
+      "correction_round": 2,
+      "outcome": "CORRECTIONS_REQUIRED",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "independent_session",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "meaning",
+            "detail": "what he had once owned and misplaced сохраняет собственную роль Тима в утрате дома; «потом потерялось» убирает эту роль. Передать «что когда-то ему принадлежало, а потом он сам потерял» без усиления вины.",
+            "id": "lost-agency",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "something he’d once owned and misplaced"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "чем-то, что когда-то ему принадлежало, а потом потерялось"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Утрачена метафора иголочек и появилась случайная тавтология «покалывало… покалывание». Передать вторую часть как «под кожей расцветали иголочки».",
+            "id": "sensory-image",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "His fingers tingled faintly as sensation crept back in, pins and needles blooming under his skin."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "В пальцах едва заметно покалывало, когда к ним постепенно возвращалась чувствительность, под кожей расцветало покалывание."
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Firearm означает огнестрельное оружие, а не любое оружие; восстановить уточнение «огнестрельное оружие» или «пистолет» только если тип установлен контекстом.",
+            "id": "firearm",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "whether Alfred was carrying a firearm"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "было ли у Альфреда оружие"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Gun во второй отсылке также относится к огнестрельному оружию; общее «оружие» стирает связь с конкретной угрозой. Уточнить «огнестрельное оружие».",
+            "id": "gun",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Alfred already had his gun out."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Альфред уже достал оружие."
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Ненамеренная калька нарушает устойчивый русский оборот; заменить на «словно пытаясь держать себя в руках».",
+            "id": "idiom",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "as if trying to keep himself together"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "словно пытаясь удержать себя в руках"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Direct a movie — выступить режиссёром, а «снять фильм» не указывает эту роль; восстановить точность авторского примечания.",
+            "id": "intention",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "I decided to direct a movie"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "я решил(а) снять фильм"
+            }
+          }
+        ]
+      },
+      "record_id": "944ecf00ac914a8ca08490a43d540274",
+      "review_commit": "e1692c400ae338464b243ae835199645d85aa4e8",
+      "review_contract_revision": "docs/TRANSLATION.md@20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "reviewed_at": "2026-11-26T13:53:03Z",
+      "reviewer_session_id": "chatops-review-c670b7d184ec42c0bd9e6cc912a1f4e7",
+      "sequence": 32,
+      "source_sha256": "2a909ac2e053d4fd431a5388f3b0db254e6a2c457ff691ffe73d6138341ed794",
+      "state_revision": "fd2086a6480c6d4550c645c3f39c76d3c8f2e9aeb9cbfbd04a35557b6f66104e",
+      "supersedes_record_id": "f566c469159140f2968257c8bb9c4e9b",
+      "translation_sha256": "a862c77b97d23eafb01b1885460e7ef3224ad667003d89f6d86f879ed73a4745",
+      "unit_id": "chapter-000013",
+      "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a"
+    }
+  },
+  "error": null
+}
