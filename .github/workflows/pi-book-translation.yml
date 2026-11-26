@@ -34,7 +34,7 @@ env:
   # Reviewed immutable public executor commit. Does not change literary book pins
   # or the separate locked runtime used by the existing scheduled Auto.
   PI_EXECUTOR_SHA: 55026044d45fb1d2b7768b5c69dd9f85993bb31f
-  PI_QUALITY_EXECUTOR_SHA: b7402c04f53fe5f73049de7528a99f56021925c4
+  PI_QUALITY_EXECUTOR_SHA: 2aaa2c053e2aeb723c68141fc6b0f0bfbbcaf0d8
   BOOK_TRANSLATOR_LLM_BACKEND: pi
   OMNIROUTE_MODEL_CALL_LIMIT: "1500"
 
@@ -318,7 +318,7 @@ jobs:
           [[ "$request" =~ ^automation/quality-qualification/[0-9a-f]{32}\.json$ ]]
           [[ -f "$request" ]]
           jq -e --arg rev "$PI_QUALITY_EXECUTOR_SHA" 'type == "object" and .schema_version == 1 and .revision == $rev and (
-            ((keys == ["revision","schema_version"] or keys == ["profile","revision","schema_version"]) and ((.profile // "smoke") == "smoke" or .profile == "extended" or .profile == "routes"))
+            ((keys == ["revision","schema_version"] or keys == ["profile","revision","schema_version"]) and ((.profile // "smoke") == "smoke" or .profile == "extended" or .profile == "routes" or .profile == "long-agent"))
             or (keys == ["chatops_commit","chatops_job","profile","revision","schema_version","source_sha256"] and .profile == "paired" and (.chatops_commit | type == "string" and test("^[0-9a-f]{40}$")) and (.chatops_job | type == "string" and test("^[0-9a-f]{32}$")) and (.source_sha256 | type == "string" and test("^[0-9a-f]{64}$")))
           )' "$request" >/dev/null
           profile="$(jq -r '.profile // "smoke"' "$request")"
