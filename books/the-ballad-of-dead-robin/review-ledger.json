@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "the-ballad-of-dead-robin",
-  "next_sequence": 42,
+  "next_sequence": 43,
   "records": [
     {
       "record_id": "b395b5cc6d41470387aa4d8dfe6853d7",
@@ -5454,6 +5454,92 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "566f7856ac9849a38251ad71d5494486",
+      "sequence": 42,
+      "unit_id": "chapter-000017",
+      "outcome": "PASS",
+      "source_sha256": "7c64d0cbd5e1e0db5813d92b15a6eab726871297778d741a0ee0c6b0168f74d5",
+      "translation_sha256": "be3d36c6523684af0768369692cebbd597a9a6f1c4d9c98ae63ca32e8999e6bb",
+      "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "review_contract_revision": "docs/TRANSLATION.md@20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "reviewer_session_id": "chatops-recheck-e86f625b2b5b4e44b7b38c01a0017b01",
+      "reviewed_at": "2026-11-26T17:04:19Z",
+      "state_revision": "8e5686fbcb6aa8ca7ee41d48c2eb761f26ed0049d7803fb0051bc1ca09801cce",
+      "review_commit": "1c0679d8e89437f3bb07401c1642e5f8d7a80419",
+      "correction_round": 2,
+      "supersedes_record_id": "2b8034a7d97a456f9323e472cfe3b717",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-signature",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "Подпись сохранена в исходной латинской графике.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Enjoy!BM",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Приятного чтения! BM",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "2b8034a7d97a456f9323e472cfe3b717",
+              "finding_id": "signature"
+            }
+          },
+          {
+            "id": "recheck-power-link",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "Восстановлена лексическая связь между сравнительной степенью и повтором существительного «могущество».",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "And you will make me more powerful",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "И ты сделаешь меня могущественнее",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "2b8034a7d97a456f9323e472cfe3b717",
+              "finding_id": "power-link"
+            }
+          },
+          {
+            "id": "recheck-presence-collocation",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Нарастающее ощущение магического присутствия передано без кальки, соседние образы сохранены.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "his presence swelling",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "его присутствие ощущалось всё сильнее",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "2b8034a7d97a456f9323e472cfe3b717",
+              "finding_id": "presence-collocation"
+            }
           }
         ]
       }

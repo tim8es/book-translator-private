@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "request_id": "e86f625b2b5b4e44b7b38c01a0017b02",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "c4055e3feec13b87c71961359a556dd5eb0b2d0b3f90df2fa16b59521d33cad2",
+    "record": {
+      "correction_round": 2,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "structure",
+            "detail": "Подпись сохранена в исходной латинской графике.",
+            "id": "recheck-signature",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "signature",
+              "record_id": "2b8034a7d97a456f9323e472cfe3b717"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Enjoy!BM"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Приятного чтения! BM"
+            }
+          },
+          {
+            "category": "terminology",
+            "detail": "Восстановлена лексическая связь между сравнительной степенью и повтором существительного «могущество».",
+            "id": "recheck-power-link",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "power-link",
+              "record_id": "2b8034a7d97a456f9323e472cfe3b717"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "And you will make me more powerful"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "И ты сделаешь меня могущественнее"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Нарастающее ощущение магического присутствия передано без кальки, соседние образы сохранены.",
+            "id": "recheck-presence-collocation",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "presence-collocation",
+              "record_id": "2b8034a7d97a456f9323e472cfe3b717"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "his presence swelling"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "его присутствие ощущалось всё сильнее"
+            }
+          }
+        ]
+      },
+      "record_id": "566f7856ac9849a38251ad71d5494486",
+      "review_commit": "1c0679d8e89437f3bb07401c1642e5f8d7a80419",
+      "review_contract_revision": "docs/TRANSLATION.md@20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "reviewed_at": "2026-11-26T17:04:19Z",
+      "reviewer_session_id": "chatops-recheck-e86f625b2b5b4e44b7b38c01a0017b01",
+      "sequence": 42,
+      "source_sha256": "7c64d0cbd5e1e0db5813d92b15a6eab726871297778d741a0ee0c6b0168f74d5",
+      "state_revision": "8e5686fbcb6aa8ca7ee41d48c2eb761f26ed0049d7803fb0051bc1ca09801cce",
+      "supersedes_record_id": "2b8034a7d97a456f9323e472cfe3b717",
+      "translation_sha256": "be3d36c6523684af0768369692cebbd597a9a6f1c4d9c98ae63ca32e8999e6bb",
+      "unit_id": "chapter-000017",
+      "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a"
+    }
+  },
+  "error": null
+}
