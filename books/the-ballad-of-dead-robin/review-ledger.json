@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "the-ballad-of-dead-robin",
-  "next_sequence": 40,
+  "next_sequence": 41,
   "records": [
     {
       "record_id": "b395b5cc6d41470387aa4d8dfe6853d7",
@@ -4879,6 +4879,330 @@
             },
             "translation_anchor": {
               "quote": "с взрывной силой оттолкнувшись от земли",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "2b8034a7d97a456f9323e472cfe3b717",
+      "sequence": 40,
+      "unit_id": "chapter-000017",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "7c64d0cbd5e1e0db5813d92b15a6eab726871297778d741a0ee0c6b0168f74d5",
+      "translation_sha256": "05ea5fa9e8cc01d497f95bdbe2d0685eac3c4c94dd0723430895464f8408fb82",
+      "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "review_contract_revision": "docs/TRANSLATION.md@20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "reviewer_session_id": "chatops-recheck-d8e2b573c4a94c85b92f61de803417a1",
+      "reviewed_at": "2026-11-26T16:52:10Z",
+      "state_revision": "83b2cea74408b9080948b35364768680dc136e7aa284fb385a30dce1b096d7ed",
+      "review_commit": "b574c0f975a694b2f97b178b844ab0c25c149aeb",
+      "correction_round": 2,
+      "supersedes_record_id": "f7bcbf803d1943ceb74275573e8c973a",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-author-register",
+            "category": "register",
+            "severity": "minor",
+            "detail": "Восстановлена исходная степень обсценности и резкость угрозы.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "fuck off, or I will rip your head off.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "идите на хуй, иначе я вам головы оторву.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "f7bcbf803d1943ceb74275573e8c973a",
+              "finding_id": "author-register"
+            }
+          },
+          {
+            "id": "recheck-case-interest",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Восстановлена характеристика интересных дел без добавления ужаса.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Got any soul-stirring cases on the table?",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Есть у тебя на столе какие-нибудь захватывающие дела?",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "f7bcbf803d1943ceb74275573e8c973a",
+              "finding_id": "case-interest"
+            }
+          },
+          {
+            "id": "recheck-dagger-blade",
+            "category": "omission",
+            "severity": "minor",
+            "detail": "Возвращена точная характеристика лезвия.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "the dagger still clenched in his hand, its blade dark and wet from blood",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "всё ещё сжимая в руке кинжал, лезвие которого потемнело и намокло от крови",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "f7bcbf803d1943ceb74275573e8c973a",
+              "finding_id": "dagger-blade"
+            }
+          },
+          {
+            "id": "recheck-weapon-hold",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Положение пальцев теперь обозначает готовность, а не нажатие.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "weapons were raised, fingers tight on triggers and hilts",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "оружие поднято, пальцы крепко охватывают рукояти и напряжённо замерли на спусковых крючках",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "f7bcbf803d1943ceb74275573e8c973a",
+              "finding_id": "weapon-hold"
+            }
+          },
+          {
+            "id": "recheck-world-entry",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Устранена калька, сохранена чуждость присутствия.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "something ancient and wrong had stepped into the world with them",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "нечто древнее и противоестественное вторглось в их мир",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "f7bcbf803d1943ceb74275573e8c973a",
+              "finding_id": "world-entry"
+            }
+          },
+          {
+            "id": "recheck-possessive-grip",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Восстановлена динамика усиливающейся хватки и собственнический подтекст.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "His fingers tightened, possessive.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Его пальцы сжались крепче, словно подчёркивая своё право на Тима.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "f7bcbf803d1943ceb74275573e8c973a",
+              "finding_id": "possessive-grip"
+            }
+          },
+          {
+            "id": "recheck-power-motive",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Повтор могущества соответствует магическому мотиву.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "because all that mattered to him was power. Power, and chaos.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "потому что единственное, что имело для него значение, — могущество. Могущество и хаос.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "f7bcbf803d1943ceb74275573e8c973a",
+              "finding_id": "power-motive"
+            }
+          },
+          {
+            "id": "recheck-power-hunger",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "Сохранён тот же магический мотив.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "His eyes burned with hunger for power.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Его глаза горели жаждой могущества.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "f7bcbf803d1943ceb74275573e8c973a",
+              "finding_id": "power-hunger"
+            }
+          },
+          {
+            "id": "recheck-power-fate",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "Сохранена терминологическая связь с предыдущими репликами.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "In your hunger for power, you chose to defy Fate itself.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "В жажде могущества ты решил бросить вызов самой Судьбе.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "f7bcbf803d1943ceb74275573e8c973a",
+              "finding_id": "power-fate"
+            }
+          },
+          {
+            "id": "recheck-near-impossible",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Восстановлена степень невозможности.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "the things that were damn near impossible to predict",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "то, что было почти невозможно предугадать",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "f7bcbf803d1943ceb74275573e8c973a",
+              "finding_id": "near-impossible"
+            }
+          },
+          {
+            "id": "recheck-past-belief",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Восстановлены прошедшее время, изолированный повтор и драматический акцент.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Believed I’d catch you, Baby Bird.”\n\nBelieved.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Верил, что я тебя поймаю, птенчик.\n\nВерил.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "f7bcbf803d1943ceb74275573e8c973a",
+              "finding_id": "past-belief"
+            }
+          },
+          {
+            "id": "recheck-memory-impact",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Восстановлено естественное сравнение.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "The memory hit him like a strike to the chest.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Воспоминание обрушилось на него, словно удар в грудь.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "f7bcbf803d1943ceb74275573e8c973a",
+              "finding_id": "memory-impact"
+            }
+          },
+          {
+            "id": "recheck-own-good",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Сохранён идиоматический смысл ума, вредящего самому персонажу.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "too smart for his own good",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "слишком умный — себе же во вред",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "f7bcbf803d1943ceb74275573e8c973a",
+              "finding_id": "own-good"
+            }
+          },
+          {
+            "id": "signature",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "Сохранить латинскую подпись автора BM, как в соседних главах.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Enjoy!BM",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Приятного чтения! БМ",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "power-link",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "Непосредственно перед повтором «могущество» сравнительное powerful передано «сильнее». Для восстановления намеренного лексического повтора перевести «И ты сделаешь меня могущественнее».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "And you will make me more powerful",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "И ты сделаешь меня сильнее",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "presence-collocation",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Присутствие разрасталось» — синтаксическая калька, не передающая естественно ощущение нарастающего магического присутствия. Передать «его присутствие ощущалось всё сильнее».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "his presence swelling",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "присутствие разрасталось",
               "occurrence": 0
             },
             "resolves": null

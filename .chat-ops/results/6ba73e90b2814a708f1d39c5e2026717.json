@@ -1,0 +1,334 @@
+{
+  "schema_version": 1,
+  "request_id": "6ba73e90b2814a708f1d39c5e2026717",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "791da67ca59899ef167c7ab04faaee294d1d1324cbd712367901caea785dc543",
+    "record": {
+      "correction_round": 2,
+      "outcome": "CORRECTIONS_REQUIRED",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "register",
+            "detail": "Восстановлена исходная степень обсценности и резкость угрозы.",
+            "id": "recheck-author-register",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "author-register",
+              "record_id": "f7bcbf803d1943ceb74275573e8c973a"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "fuck off, or I will rip your head off."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "идите на хуй, иначе я вам головы оторву."
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Восстановлена характеристика интересных дел без добавления ужаса.",
+            "id": "recheck-case-interest",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "case-interest",
+              "record_id": "f7bcbf803d1943ceb74275573e8c973a"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Got any soul-stirring cases on the table?"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Есть у тебя на столе какие-нибудь захватывающие дела?"
+            }
+          },
+          {
+            "category": "omission",
+            "detail": "Возвращена точная характеристика лезвия.",
+            "id": "recheck-dagger-blade",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "dagger-blade",
+              "record_id": "f7bcbf803d1943ceb74275573e8c973a"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "the dagger still clenched in his hand, its blade dark and wet from blood"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "всё ещё сжимая в руке кинжал, лезвие которого потемнело и намокло от крови"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Положение пальцев теперь обозначает готовность, а не нажатие.",
+            "id": "recheck-weapon-hold",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "weapon-hold",
+              "record_id": "f7bcbf803d1943ceb74275573e8c973a"
+            },
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "weapons were raised, fingers tight on triggers and hilts"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "оружие поднято, пальцы крепко охватывают рукояти и напряжённо замерли на спусковых крючках"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Устранена калька, сохранена чуждость присутствия.",
+            "id": "recheck-world-entry",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "world-entry",
+              "record_id": "f7bcbf803d1943ceb74275573e8c973a"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "something ancient and wrong had stepped into the world with them"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "нечто древнее и противоестественное вторглось в их мир"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Восстановлена динамика усиливающейся хватки и собственнический подтекст.",
+            "id": "recheck-possessive-grip",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "possessive-grip",
+              "record_id": "f7bcbf803d1943ceb74275573e8c973a"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "His fingers tightened, possessive."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Его пальцы сжались крепче, словно подчёркивая своё право на Тима."
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Повтор могущества соответствует магическому мотиву.",
+            "id": "recheck-power-motive",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "power-motive",
+              "record_id": "f7bcbf803d1943ceb74275573e8c973a"
+            },
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "because all that mattered to him was power. Power, and chaos."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "потому что единственное, что имело для него значение, — могущество. Могущество и хаос."
+            }
+          },
+          {
+            "category": "terminology",
+            "detail": "Сохранён тот же магический мотив.",
+            "id": "recheck-power-hunger",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "power-hunger",
+              "record_id": "f7bcbf803d1943ceb74275573e8c973a"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "His eyes burned with hunger for power."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Его глаза горели жаждой могущества."
+            }
+          },
+          {
+            "category": "terminology",
+            "detail": "Сохранена терминологическая связь с предыдущими репликами.",
+            "id": "recheck-power-fate",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "power-fate",
+              "record_id": "f7bcbf803d1943ceb74275573e8c973a"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "In your hunger for power, you chose to defy Fate itself."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "В жажде могущества ты решил бросить вызов самой Судьбе."
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Восстановлена степень невозможности.",
+            "id": "recheck-near-impossible",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "near-impossible",
+              "record_id": "f7bcbf803d1943ceb74275573e8c973a"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "the things that were damn near impossible to predict"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "то, что было почти невозможно предугадать"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Восстановлены прошедшее время, изолированный повтор и драматический акцент.",
+            "id": "recheck-past-belief",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "past-belief",
+              "record_id": "f7bcbf803d1943ceb74275573e8c973a"
+            },
+            "severity": "major",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Believed I’d catch you, Baby Bird.”\n\nBelieved."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Верил, что я тебя поймаю, птенчик.\n\nВерил."
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Восстановлено естественное сравнение.",
+            "id": "recheck-memory-impact",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "memory-impact",
+              "record_id": "f7bcbf803d1943ceb74275573e8c973a"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "The memory hit him like a strike to the chest."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Воспоминание обрушилось на него, словно удар в грудь."
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Сохранён идиоматический смысл ума, вредящего самому персонажу.",
+            "id": "recheck-own-good",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "own-good",
+              "record_id": "f7bcbf803d1943ceb74275573e8c973a"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "too smart for his own good"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "слишком умный — себе же во вред"
+            }
+          },
+          {
+            "category": "structure",
+            "detail": "Сохранить латинскую подпись автора BM, как в соседних главах.",
+            "id": "signature",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Enjoy!BM"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Приятного чтения! БМ"
+            }
+          },
+          {
+            "category": "terminology",
+            "detail": "Непосредственно перед повтором «могущество» сравнительное powerful передано «сильнее». Для восстановления намеренного лексического повтора перевести «И ты сделаешь меня могущественнее».",
+            "id": "power-link",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "And you will make me more powerful"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "И ты сделаешь меня сильнее"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "«Присутствие разрасталось» — синтаксическая калька, не передающая естественно ощущение нарастающего магического присутствия. Передать «его присутствие ощущалось всё сильнее».",
+            "id": "presence-collocation",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "his presence swelling"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "присутствие разрасталось"
+            }
+          }
+        ]
+      },
+      "record_id": "2b8034a7d97a456f9323e472cfe3b717",
+      "review_commit": "b574c0f975a694b2f97b178b844ab0c25c149aeb",
+      "review_contract_revision": "docs/TRANSLATION.md@20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "reviewed_at": "2026-11-26T16:52:10Z",
+      "reviewer_session_id": "chatops-recheck-d8e2b573c4a94c85b92f61de803417a1",
+      "sequence": 40,
+      "source_sha256": "7c64d0cbd5e1e0db5813d92b15a6eab726871297778d741a0ee0c6b0168f74d5",
+      "state_revision": "83b2cea74408b9080948b35364768680dc136e7aa284fb385a30dce1b096d7ed",
+      "supersedes_record_id": "f7bcbf803d1943ceb74275573e8c973a",
+      "translation_sha256": "05ea5fa9e8cc01d497f95bdbe2d0685eac3c4c94dd0723430895464f8408fb82",
+      "unit_id": "chapter-000017",
+      "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a"
+    }
+  },
+  "error": null
+}
