@@ -1,0 +1,128 @@
+{
+  "schema_version": 1,
+  "request_id": "bc5e2917d6a8469e80c31f2b74d95a02",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "f5a74c7634ed105ca64a499189231dc209549b4bb296c1a9a4ce2d815497e89c",
+    "record": {
+      "correction_round": 1,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "findings": [
+          {
+            "detail": "Абз. 7: пространственная привязка вдоха к Брюсу восстановлена, степень страха передана.",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абз. 18: идиоматически передана бесполезность мёртвого Робина.",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абз. 35: образ подавленного звука сохранён, калька устранена.",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абз. 47: отсутствие доверия передано прямо, без подмены действием.",
+            "resolved": true,
+            "severity": "major"
+          },
+          {
+            "detail": "Абз. 50: цвет и болезненно-ядовитый оттенок сохранены.",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абз. 66: проницательность взгляда передана естественно.",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абз. 74: непринуждённый тон угрозы сохранён.",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абз. 91: сухая реплика без добавленного безразличия.",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абз. 95: могущество сохраняет более широкий смысл power.",
+            "resolved": true,
+            "severity": "major"
+          },
+          {
+            "detail": "Абз. 116: скрытая резкость проступает; незавершённый конфликт с дедушкой передан.",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абз. 123: восстановлена привычная сдержанная осанка.",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абз. 129: приношенные обмотки передают worn in.",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абз. 156: лексический повтор предыдущего абзаца восстановлен.",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абз. 159: напряжённость рук и образ готового к удару клинка переданы.",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абз. 171: удалено необоснованное тепло, остаточное ощущение сохранено.",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абз. 196: лишняя степень явности удалена.",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абз. 202: положение плеч без добавленного расправления.",
+            "resolved": true,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абз. 211: вопрос о доверии и обращение сохранены в связи с ответом в абз. 213.",
+            "resolved": true,
+            "severity": "minor"
+          }
+        ]
+      },
+      "record_id": "893e177b9ef14f00abdc01a9951292f2",
+      "review_commit": "f094d52dd81050ab3a0302648780240caab5608a",
+      "review_contract_revision": "docs/TRANSLATION.md@20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "reviewed_at": "2026-11-26T14:53:19Z",
+      "reviewer_session_id": "chatops-recheck-a7e4c92d186b4f8a95d0c3e614b72f09",
+      "sequence": 37,
+      "source_sha256": "6961ab65be3bfd06c11606a6098a24e138c40a1302e431652799a5611576f34d",
+      "state_revision": "2a7700fd1587f7f30a55752f3deecd8a4664be84ac50433d92e91dee759cc80b",
+      "supersedes_record_id": "fe5488638c4c401d802c69df48caa9a0",
+      "translation_sha256": "5629b73205ad49ef25fed4ee108905a616b37f8e6387265096d63ca0ae675f55",
+      "unit_id": "chapter-000014",
+      "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a"
+    }
+  },
+  "error": null
+}
