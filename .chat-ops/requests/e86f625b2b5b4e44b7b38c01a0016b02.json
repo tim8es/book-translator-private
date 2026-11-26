@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "request_id": "e86f625b2b5b4e44b7b38c01a0016b02",
+  "book_slug": "the-ballad-of-dead-robin",
+  "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+  "operation": "review-record",
+  "chapter": 16,
+  "session_id": "chatops-recheck-e86f625b2b5b4e44b7b38c01a0016b01",
+  "outcome": "PASS",
+  "source_sha256": "200d57957a07b4369078d701bc4430dd27893addeb7415bd10f82a993638a573",
+  "translation_sha256": "eda5d91a0b48c1421a2de4a2342f18a265f4ec5359cdc61f92797300a1acaa34",
+  "claim_sha256": "1170f7c388e0cc5f902e738246649642c25ac5424d6962704427757fdcc71eda",
+  "quality_report": {
+    "evidence_version": 2,
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "id": "recheck-fury-collocation",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Переданы резкий переход и исходная метафора жара.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "Dick snapped into white-hot fury.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Дик окончательно сорвался — ярость раскалилась добела.",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "5f3fdab593c045f8abf7742994493a8e",
+          "finding_id": "fury-collocation"
+        }
+      },
+      {
+        "id": "recheck-freeze-grammar",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Устранена грамматическая ошибка, сохранены неподвижность и сравнение.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "Dick stood frozen, like a statue",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Дик застыл на месте, словно статуя",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "5f3fdab593c045f8abf7742994493a8e",
+          "finding_id": "freeze-grammar"
+        }
+      },
+      {
+        "id": "recheck-explosive-preposition",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Предлог приведён к нормативной форме без изменения содержания.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "pushing off the ground with explosive force",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "со взрывной силой оттолкнувшись от земли",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "5f3fdab593c045f8abf7742994493a8e",
+          "finding_id": "explosive-preposition"
+        }
+      }
+    ]
+  }
+}
