@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "one-does-not-monsieur",
-  "next_sequence": 9,
+  "next_sequence": 10,
   "records": [
     {
       "record_id": "c4b03697d25541ea8d3070ad34e8c878",
@@ -295,6 +295,79 @@
             "severity": "minor",
             "detail": "Число 13 в блоке 343 сохранено по английскому оригиналу: русские реплики имеют иной счёт слов. Лаконичность героя не изменена ради подгонки количества.",
             "resolved": true
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "1bddec33564d4bc482b141dc7a0bc505",
+      "sequence": 9,
+      "unit_id": "chapter-000004",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "fdec7dab6acd2f55eb24646c5b2484837ab80f64822034c36f31adaea430a552",
+      "translation_sha256": "a9ed487f861075c4c8b39566f4cb0d4b1da1680a1e66e3587873e8a840214799",
+      "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "review_contract_revision": "docs/TRANSLATION.md@20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "reviewer_session_id": "chatops-odnm-20261126-r4-b4997efc",
+      "reviewed_at": "2026-11-26T10:24:00Z",
+      "state_revision": "a2f7179728c72f43a46b666fe8efe2e4aabf972f",
+      "review_commit": "1bcc382725e1b00d56fb8979de1181d0c809ea32",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Строка 83: three breaths — три вдоха, а не три вздоха; сохранить нейтральную меру времени.",
+            "resolved": false
+          },
+          {
+            "severity": "major",
+            "detail": "Строка 117: «другой лист — того» нарушает согласование; развернув салфетку, он открыл лежавший в ней лист. The breath the boy had drawn — вдох, не вздох.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Строка 253: «великого исполнения» — калька; передать bare hand against bare hand естественно, сохраняя противопоставление перчаткам.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Строки 293 и 297: восстановить курсив в русских репликах, выделенных в оригинале.",
+            "resolved": false
+          },
+          {
+            "severity": "major",
+            "detail": "Строка 319: as if the door were Arian’s не содержит собственного дома. Убрать добавленную деталь; исправить согласование в «каждому из них эта улыбка предназначалась одному».",
+            "resolved": false
+          },
+          {
+            "severity": "major",
+            "detail": "Строка 329: в «искусствах, которыми его и обожгли» местоимение двусмысленно указывает на Калеба. В оригинале речь о прадеде, которому обожгли лицо в Лионе.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Строка 365: «Так близко не стоят к джентльмену» — ненормативная сочетаемость.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Строка 463: poor inducement — слабый довод/стимул, а не обещание; сохранить иронию.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Строка 513: «пока он горел ... что тот освещал» — тяжёлое местоименное повторение, уточнить, что свет исходил от языка пламени.",
+            "resolved": false
           }
         ]
       }
