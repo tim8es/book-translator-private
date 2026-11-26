@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "revision_id": "source-000001",
+  "parent_revision_id": null,
+  "created_at": "2026-11-26T18:29:45Z",
+  "metadata": {
+    "schema_version": 1,
+    "title": "You Didn't Lose Me",
+    "author": "madnotwise, purescent",
+    "source_language": "en",
+    "target_language": "ru",
+    "source_format": "pdf",
+    "source_file": "You_Didnt_Lose_Me.pdf",
+    "chapter_count": 1,
+    "imported_at": "2026-11-26T18:29:45Z",
+    "workflow": {
+      "repository": "https://github.com/tim8es/book-translator",
+      "requested_ref": "main",
+      "resolved_revision": "b7402c04f53fe5f73049de7528a99f56021925c4",
+      "review_evidence": "review-ledger-v1"
+    },
+    "source": {
+      "storage_mode": "embedded",
+      "filename": "You_Didnt_Lose_Me.pdf",
+      "size_bytes": 120532,
+      "sha256": "705ba950881c3a3ad500d02e34569a34b8703b26c353104e31e4b149c4424a9c",
+      "original_filename": "You_Didnt_Lose_Me.pdf",
+      "revision_id": "source-000001"
+    }
+  },
+  "progress": {
+    "schema_version": 1,
+    "book_slug": "you-didnt-lose-me",
+    "chapters": [
+      {
+        "unit_id": "chapter-000001",
+        "number": 1,
+        "title": "You Didn't Lose Me",
+        "slug": "you-didnt-lose-me",
+        "source_path": "extracted/001-you-didnt-lose-me.md",
+        "translation_path": "translated/001-you-didnt-lose-me.md",
+        "status": "extracted"
+      }
+    ]
+  },
+  "source_manifest": {
+    "schema_version": 1,
+    "source_file": "You_Didnt_Lose_Me.pdf",
+    "source_format": "pdf",
+    "source_sha256": "705ba950881c3a3ad500d02e34569a34b8703b26c353104e31e4b149c4424a9c",
+    "chapter_count": 1,
+    "extracted": [
+      {
+        "unit_id": "chapter-000001",
+        "number": 1,
+        "title": "You Didn't Lose Me",
+        "path": "extracted/001-you-didnt-lose-me.md",
+        "sha256": "a53fc694b7a359329649208fc45a453a15c8ca0d9f839ff89cf6b1701dd13ee1"
+      }
+    ],
+    "source_storage_mode": "embedded",
+    "source_size_bytes": 120532
+  },
+  "delta": {
+    "unchanged": 0,
+    "changed": 0,
+    "new": 1,
+    "deleted": 0
+  },
+  "units": [
+    {
+      "unit_id": "chapter-000001",
+      "number": 1,
+      "title": "You Didn't Lose Me",
+      "classification": "initial",
+      "source_path": "extracted/001-you-didnt-lose-me.md",
+      "staged_path": "source-revisions/source-000001/corpus/001-chapter-000001.md"
+    }
+  ]
+}
