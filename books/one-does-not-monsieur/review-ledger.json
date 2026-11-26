@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "one-does-not-monsieur",
-  "next_sequence": 12,
+  "next_sequence": 13,
   "records": [
     {
       "record_id": "c4b03697d25541ea8d3070ad34e8c878",
@@ -856,6 +856,33 @@
             "resolves": null
           }
         ]
+      }
+    },
+    {
+      "record_id": "3b47c8aebf9840d5aa7e92852ca40870",
+      "sequence": 12,
+      "unit_id": "chapter-000007",
+      "outcome": "PASS",
+      "source_sha256": "75c5e70f818edc6ea55fd793bcd0b42e42f799f5b3ce6bbbc39227808e01e0f9",
+      "translation_sha256": "2bd4d6d27b1181746d1d94d91db1edee44ad7f50f07a400c5c0090a493e1f09d",
+      "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "review_contract_revision": "docs/TRANSLATION.md@20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "reviewer_session_id": "chatops-odnm-r7-20261126-e658f2ad",
+      "reviewed_at": "2026-11-26T11:36:16Z",
+      "state_revision": "63a96e8ab178abf77d9e6b2328194883ca0e6c85",
+      "review_commit": "9ee17f9a9ab65b56bd0856d1e413c66c27c143ce",
+      "correction_round": 0,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": []
       }
     }
   ]
