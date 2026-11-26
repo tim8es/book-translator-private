@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "the-ballad-of-dead-robin",
-  "next_sequence": 29,
+  "next_sequence": 30,
   "records": [
     {
       "record_id": "b395b5cc6d41470387aa4d8dfe6853d7",
@@ -2833,6 +2833,114 @@
             "severity": "minor",
             "detail": "Абз. 4: личный голос восстановлен, но «сегодня я решаю» меняет завершённое решение (decided) на настоящее время. Передать оба действия в прошедшем времени, не утверждая пол автора; допустима принятая в предыдущих главах форма «закончил(а) ... решил(а)».",
             "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 10: amused — насмешливое довольство, не просто весёлость; передать оттенок взгляда Клариона.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 11: устранить нарушение связи сравнения улыбки с клинком, сохранив образ предупреждения.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 18: razor-focused — предельно сосредоточенный; «сосредоточенный с остротой бритвы» — калька.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 23: «тщательно выдержанную сдержанность» — тавтология, сделать формулировку естественной.",
+            "resolved": true
+          },
+          {
+            "severity": "major",
+            "detail": "Абз. 25: явно передать, что Дюк и Дэмиен решили поступить в университет, причём Дэмиен ещё заканчивает школу; криминальную психологию выбрал Дюк.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 30: «Со смерти Тима» заменить естественным «После смерти Тима».",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 55: clinging to reason — Брюс цепляется за доводы рассудка, а не за способность оставаться в здравом уме.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 67: «молитва, которую он не заслуживал произносить» — синтаксическая калька; сохранить идею недостойности.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 80: clean and ruthless о голосе, врезающемся в сознание, — точно и безжалостно, не «чисто».",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 86: названия на корешках тиснёные, не «вытесненные»; сохранить облупившееся золото.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 121: исправить управление в «с уверенностью, которой ... чувствовал»: «с уверенностью, которой ... не ощущал в полной мере».",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 134: «ощутил его неправильность» — неестественная калька, передать противоестественность Клариона без добавления фактов.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 152: smooth voice — ровный/вкрадчивый голос; «гладкий» применительно к голосу здесь калька.",
+            "resolved": true
+          },
+          {
+            "severity": "major",
+            "detail": "Абз. 263: survival означает выживание, а не спасение; противопоставление воскрешения, выживания и подмены существенно для объяснения механизма.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 269: нарушено согласование «взгляд знакомых голубых глаз, те самые»; перестроить фразу, сохранив узнавание собственных глаз в зеркалах.",
+            "resolved": true
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "ce00c57ba0f34d679fa5aba9188a4190",
+      "sequence": 29,
+      "unit_id": "chapter-000012",
+      "outcome": "PASS",
+      "source_sha256": "1a78f79ae1095e6786a8bf47c582afab06b556f563bd33c0a524863c0e46199d",
+      "translation_sha256": "e14d8a3c7f804302b4818f15363e73776e8c18b9eafa6932714f8e9d35a9dfef",
+      "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "review_contract_revision": "docs/TRANSLATION.md@20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "reviewer_session_id": "chat-robin-r12-1126c004",
+      "reviewed_at": "2026-11-26T11:31:37Z",
+      "state_revision": "b116a975718d0e44cd9ba782d72c795c8cef5f5c",
+      "review_commit": "b3a30af699d2a447584105b9eba8c5391545e37d",
+      "correction_round": 2,
+      "supersedes_record_id": "1e6b4d2bb1bc4acfa3da81cb98d3f54e",
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Абз. 4: личный голос восстановлен, но «сегодня я решаю» меняет завершённое решение (decided) на настоящее время. Передать оба действия в прошедшем времени, не утверждая пол автора; допустима принятая в предыдущих главах форма «закончил(а) ... решил(а)».",
+            "resolved": true
           },
           {
             "severity": "minor",
