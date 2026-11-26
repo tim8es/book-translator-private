@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "one-does-not-monsieur",
-  "next_sequence": 14,
+  "next_sequence": 15,
   "records": [
     {
       "record_id": "c4b03697d25541ea8d3070ad34e8c878",
@@ -1398,6 +1398,111 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "abfa3cb3d5bf4aca954e09d9f79f3ec2",
+      "sequence": 14,
+      "unit_id": "chapter-000005",
+      "outcome": "PASS",
+      "source_sha256": "25b1d063de10ceaa991e44b27353c35038e4aa47ab2da75f01935bcb41e430cb",
+      "translation_sha256": "0b626dbdfc8c4149f6a4f789ff8ffc03f31c29910fcd156e40ba86ba44347b19",
+      "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "review_contract_revision": "docs/TRANSLATION.md@20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "reviewer_session_id": "chatops-odnm-r5-final-4f876c2d",
+      "reviewed_at": "2026-11-26T11:41:59Z",
+      "state_revision": "9a28ffec81e4c69d2a26807cbbd126fc6cd1ed95",
+      "review_commit": "594bfea3b3bab00c0bca68dc0659acb985337c66",
+      "correction_round": 2,
+      "supersedes_record_id": "77a0da2a9ad847f298871aba4f9c7e06",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "r3-r2-stairs",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Свет направлен на следующую ступень; противопоставление, пространственная последовательность и контекст выемки и провала сохранены.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "The light was always a step ahead of him, on the stair he was about to take and never the one he was on.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Свет неизменно падал на ступень впереди — на ту, на которую ему предстояло ступить, а не на ту, на которой он стоял.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "77a0da2a9ad847f298871aba4f9c7e06",
+              "finding_id": "r2-stairs"
+            }
+          },
+          {
+            "id": "r3-r2-stairs-down",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Повтор образа провала и три последующих поворота переданы точно; связь с подъёмом сохранена.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "drew him over the gap and down the next three turns after it",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "перевёл его через провал и дальше вниз, ещё на три поворота",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "77a0da2a9ad847f298871aba4f9c7e06",
+              "finding_id": "r2-stairs-down"
+            }
+          },
+          {
+            "id": "r3-lunch",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Восстановлено направление движения на обед, а не время окончания действия.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "He followed him to luncheon",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Он последовал за ним на обед",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "77a0da2a9ad847f298871aba4f9c7e06",
+              "finding_id": "lunch"
+            }
+          },
+          {
+            "id": "r3-dragon-books",
+            "category": "referent",
+            "severity": "major",
+            "detail": "Восстановлен точный референт: повреждены именно книги о драконах, а не вся библиотека. Ответ Калеба в следующем абзаце согласован.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Every one in that library has been gutted.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Все книги о драконах в той библиотеке выпотрошены.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "77a0da2a9ad847f298871aba4f9c7e06",
+              "finding_id": "dragon-books"
+            }
           }
         ]
       }
