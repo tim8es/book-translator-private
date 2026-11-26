@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "one-does-not-monsieur",
-  "next_sequence": 11,
+  "next_sequence": 12,
   "records": [
     {
       "record_id": "c4b03697d25541ea8d3070ad34e8c878",
@@ -441,6 +441,419 @@
             "severity": "minor",
             "detail": "Строка 513: устранён неясный референт, образ пламени сохранён.",
             "resolved": true
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "46c59d9b906a41b88f7f715e7ee26aac",
+      "sequence": 11,
+      "unit_id": "chapter-000005",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "25b1d063de10ceaa991e44b27353c35038e4aa47ab2da75f01935bcb41e430cb",
+      "translation_sha256": "bdbda69a2ec33855f611bdb2fb67f2f0675e695bdbb3876d5e9179e3a15495c1",
+      "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "review_contract_revision": "docs/TRANSLATION.md@20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "reviewer_session_id": "chatops-odnm-r5-874f763b",
+      "reviewed_at": "2026-11-26T11:29:38Z",
+      "state_revision": "d38da9fec981f73cd03bd9a9f520a2388b11db47",
+      "review_commit": "75d7d030046e211915a7e2cab519244051b849b6",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "walk",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Длительность прогулки перенесена на характеристику лужайки; сохранить долгий путь вверх по ней.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "the long walk up the lawn",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "по дороге через длинную лужайку",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "farewell",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Неестественное обращение: передать прощание с обоими близнецами.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "“*À bientôt*, both of you.”",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "— *À bientôt*, оба.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "distance",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Речь о постепенном сокращении расстояния, не об уступке. В этом же абзаце ballroom’s length — длина зала, как в предыдущей главе.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "given the distance up a yard at a time",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "стал уступать это расстояние по ярду за раз",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "distance-start",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Length переведено как ширина; согласовать с предыдущей главой.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "All week he had kept a ballroom’s length between them",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Всю неделю он держался от него на расстоянии ширины бального зала",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "procession",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Нарушено согласование конструкции; сохранить сравнение и румянец.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "with the seniors around him like a flock of anxious doves and his colour high",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "окружённый старшекурсниками, словно стайкой встревоженных голубок, и раскрасневшийся",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "stairs",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "Gap — провал на месте ступени, а не просвет; исправить также падеж в предшествующем предложении.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Where a step had gone altogether on the fourth turn, it lay on the gap until Caleb was over it.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Там, где на четвёртом повороте ступенька вовсе исчезла, свет лежал на просвете, пока Калеб не переступил его.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "stairs-down",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Восстановить повтор образа провала вместо отсутствующей ступени.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "a step ahead, in the dip and on the gap",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "на ступень впереди, в выемке и на просвете",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "afternoon",
+            "category": "meaning",
+            "severity": "major",
+            "detail": "For an afternoon — на вторую половину дня; не весь день.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "for an afternoon by his little brother",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "на весь день после обеда",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "letter",
+            "category": "addition",
+            "severity": "major",
+            "detail": "Добавлены оценка «как ни странно» и усилитель; сохранить повтор I find.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "I find I do not mind it. I find I am curious.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Как ни странно, я ничего не имею против. Мне даже любопытно.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "charm",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Set him — не задавали в качестве упражнения; не утверждение, что его не учили.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "a charm nobody had ever set him",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "заклятие, которому его никто никогда не учил",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "horse-1",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "Паломино — соловая масть; в принятых предыдущих главах «соловые лошади/кони». Исправить и неестественный предлог.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "the palominos were out in the last of the sun",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "золотистые лошади стояли на последних лучах солнца",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "horse-2",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "Согласовать с принятыми главами: соловые лошади.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "the palominos stamping in their paddock",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "золотистые лошади топали в своём загоне",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "portkey-1",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "В предыдущей главе Portkey — «портал». Сохранить установленное решение.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "the ten o’clock Portkey",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "десятичасовым портключом",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "portkey-2",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "Согласовать с «порталом».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "by a Portkey that set him down in the rain",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "портключом, который высадил его под дождём",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "portkey-office",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "Согласовать название учреждения с ранее принятым переводом Portkey.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "I have written to the Portkey Office.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Я написал в Бюро портключей.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "maman-1",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "В предшествующих главах Maman в повествовании передано как «маман»; восстановить речевой регистр.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "every story Maman had ever told about Papa",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "во всех историях, какие мама когда-либо рассказывала о папе",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "maman-2",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "Сохранить «маман».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "the shop in Aix that Maman liked",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "из лавки в Эксе, которую любила мама",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "maman-3",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "Сохранить «маман».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "He read as he read to Maman when she had a headache",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Он читал так, как читал маме, когда у неё болела голова",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "reading",
+            "category": "referent",
+            "severity": "major",
+            "detail": "Место относится к читаемому отрывку, а не к реальному местоположению героев; уточнить без изменения метафоры.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Somewhere about the mouth of the cave the heat came back down his side.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Где-то у входа в пещеру тепло вновь разлилось по его боку.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "table",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "It — расстояние между персонажами, которое, по ожиданию Калеба, продержится четверть часа.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "gave it a quarter of an hour",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "дал ему четверть часа",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "hand",
+            "category": "style",
+            "severity": "major",
+            "detail": "Грамматически неудачная калька; восстановить длительность осознанного действия.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "for perhaps the last half of it, and had done it anyway.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "пожалуй, вторую половину этого он прекрасно понимал, что делает, и всё равно сделал.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "hare",
+            "category": "referent",
+            "severity": "major",
+            "detail": "Явно назвать первый объект взгляда — зайца, чтобы не спутать с Калебом.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "who looked at it, and at him, with eyes like saucers",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "та посмотрела на него, потом на Калеба глазами величиной с блюдца",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "hare-paws",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Деепричастие ошибочно делает мёртвого зайца субъектом действия; лапы сложены охотником.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "It lay on a bed of bracken with its paws laid tidily together",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Он лежал на подстилке из папоротника, аккуратно сложив лапы",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "dining-quote",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Согласовать повтор цитаты с эпиграфом, сохранить книжную интонацию.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "a family who ate what was brought and kept its door shut was held in those parts to have behaved very ill",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "семья, которая ест принесённое и не отворяет двери, считается в тех краях поступившей весьма дурно",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       }
