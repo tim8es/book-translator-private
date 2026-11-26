@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "request_id": "ad42d6d9362c4b83a5b68c760a062b94",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "4d95491e710378f351867cfb9e3f1f74dacb7b4b10de6e81da4eeae2abed5c17",
+    "record": {
+      "correction_round": 1,
+      "outcome": "CORRECTIONS_REQUIRED",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "findings": [
+          {
+            "detail": "Абзац 10: «I don't have life» передано как «у меня нет личной жизни», что неоправданно сужает шутку до личных отношений. Заменить на «у меня нет жизни».",
+            "resolved": false,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абзац 39: «anchored in a way Tim very much was not» описывает психологическую устойчивость Дэмиена в противоположность дезориентированному Тиму. «он твёрдо стоял на ногах» переносит противопоставление на физическую позу. Передать: «во взгляде чувствовалась та уверенность, которой самому Тиму так не хватало».",
+            "resolved": false,
+            "severity": "major"
+          },
+          {
+            "detail": "Абзац 44: «pins and needles blooming under his skin» не содержит количества. Убрать добавленное «тысячи», сохранить образ покалывания.",
+            "resolved": false,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абзац 60: «It startled even himself» означает, что собственный смех застал его врасплох; «испугало» усиливает эмоцию. «until his throat burned» — жжение, а не першение. Исправить: «Он и сам вздрогнул от неожиданности» и «пока горло не запылало».",
+            "resolved": false,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абзац 88: «revved the engine» — повысил обороты двигателя. «взревел двигателем» — ненамеренная калька. Заменить на «дал газу».",
+            "resolved": false,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абзац 115: «screwed this up» — разговорное, но менее грубое, чем «всё просрали». Предпочтительно «Мы ведь и правда всё запороли, да?».",
+            "resolved": false,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абзац 161: «might have remained» — возможность, а не уверенное следствие; «так и стоял бы» несколько усиливает определённость. Восстановить «Тим, возможно, так и остался бы стоять там».",
+            "resolved": false,
+            "severity": "minor"
+          },
+          {
+            "detail": "Абзац 167: «Unlike him, terror froze the faces around him» противопоставляет отсутствие ужаса у Тима ужасу окружающих. «В отличие от него, на лицах» — грамматически несопоставимые элементы; «А на лицах остальных застыл ужас».",
+            "resolved": false,
+            "severity": "minor"
+          }
+        ]
+      },
+      "record_id": "f566c469159140f2968257c8bb9c4e9b",
+      "review_commit": "c22253e2fac8a56eb2206815694016df628a6d31",
+      "review_contract_revision": "docs/TRANSLATION.md@20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "reviewed_at": "2026-11-26T13:31:37Z",
+      "reviewer_session_id": "chatops-f83b6a4071924eb9a9d3741d85a02cc6-reviewer",
+      "sequence": 30,
+      "source_sha256": "2a909ac2e053d4fd431a5388f3b0db254e6a2c457ff691ffe73d6138341ed794",
+      "state_revision": "0f71fc6217af5c1f0d0c7519d69de62af3513695f369345feb58d224d3935518",
+      "supersedes_record_id": null,
+      "translation_sha256": "13cc219155293719b69916b626c2ad809e00ad48350fc9e0eedd49fdaa2e154d",
+      "unit_id": "chapter-000013",
+      "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a"
+    }
+  },
+  "error": null
+}
