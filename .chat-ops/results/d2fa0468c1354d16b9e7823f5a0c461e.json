@@ -1,0 +1,153 @@
+{
+  "schema_version": 1,
+  "request_id": "d2fa0468c1354d16b9e7823f5a0c461e",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "931d6bd4c62344a20586a1147ef48046c8484f081693ba2f06604a899aa16630",
+    "record": {
+      "correction_round": 2,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "meaning",
+            "detail": "Возвращена роль Тима в утрате; формулировка сохраняет неумышленность и образ утраченного дома.",
+            "id": "recheck-lost-agency",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "lost-agency",
+              "record_id": "944ecf00ac914a8ca08490a43d540274"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "something he’d once owned and misplaced"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "чем-то, что когда-то ему принадлежало, а потом он потерял"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Возвращены ощущение иголочек и метафора расцветания; случайный повтор исчез.",
+            "id": "recheck-sensory-image",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "sensory-image",
+              "record_id": "944ecf00ac914a8ca08490a43d540274"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "His fingers tingled faintly as sensation crept back in, pins and needles blooming under his skin."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "В пальцах едва заметно покалывало: к ним постепенно возвращалась чувствительность, под кожей словно расцветали иголочки."
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Восстановлен точный класс оружия без необоснованного указания модели.",
+            "id": "recheck-firearm",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "firearm",
+              "record_id": "944ecf00ac914a8ca08490a43d540274"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "whether Alfred was carrying a firearm"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "было ли у Альфреда огнестрельное оружие"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Сохранена связь с предыдущим упоминанием оружия и факт готовности Альфреда.",
+            "id": "recheck-gun",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "gun",
+              "record_id": "944ecf00ac914a8ca08490a43d540274"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Alfred already had his gun out."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Альфред уже достал огнестрельное оружие."
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Русский устойчивый оборот передаёт попытку сохранить самообладание.",
+            "id": "recheck-idiom",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "idiom",
+              "record_id": "944ecf00ac914a8ca08490a43d540274"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "as if trying to keep himself together"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "словно пытаясь держать себя в руках"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Восстановлено указание на режиссёрскую роль; авторское примечание сохранено.",
+            "id": "recheck-intention",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "intention",
+              "record_id": "944ecf00ac914a8ca08490a43d540274"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "I decided to direct a movie"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "я решил(а) выступить режиссёром фильма"
+            }
+          }
+        ]
+      },
+      "record_id": "2c53fc126369475a8136cf599acbf28d",
+      "review_commit": "e939cb14ceebea8142e7a3259dbcfe5e20a62ddf",
+      "review_contract_revision": "docs/TRANSLATION.md@20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "reviewed_at": "2026-11-26T14:27:03Z",
+      "reviewer_session_id": "chatops-recheck-f71c9e2436a84f89bc5200a4d1e637bd",
+      "sequence": 36,
+      "source_sha256": "2a909ac2e053d4fd431a5388f3b0db254e6a2c457ff691ffe73d6138341ed794",
+      "state_revision": "90adf0d3e418862d13f2a4da96baadd6f0baa21514ea8d0477cf790c73d8a98f",
+      "supersedes_record_id": "944ecf00ac914a8ca08490a43d540274",
+      "translation_sha256": "45645b839fa69a39a21b8d12c73ffa1205aa8d172d10217f6cb66592e84f9388",
+      "unit_id": "chapter-000013",
+      "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a"
+    }
+  },
+  "error": null
+}
