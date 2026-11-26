@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "request_id": "e86f625b2b5b4e44b7b38c01a0015b05",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "1c6fb701137eb11c3a089728c98901767b14eb76ae09b9e926579a40dfb3ee7b",
+    "record": {
+      "correction_round": 2,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "structure",
+            "detail": "Авторский инициал сохранён в латинской графике.",
+            "id": "recheck-signature",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "signature",
+              "record_id": "2860e14718b247ce91936895fe9aa7b5"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Enjoy!Yours B"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Приятного чтения! Ваш(а) B"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Восстановлен образ пылающего хаоса без неестественной сочетаемости.",
+            "id": "recheck-chaos-collocation",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "chaos-collocation",
+              "record_id": "2860e14718b247ce91936895fe9aa7b5"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "something burning, something alive with chaos"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "нечто пылающее, в чём бурлил хаос"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Передано жадное созерцание персонажа, сохранена исходная интенсивность взгляда.",
+            "id": "recheck-gaze-idiom",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "gaze-idiom",
+              "record_id": "2860e14718b247ce91936895fe9aa7b5"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "drinking Tim in as if the blade at his neck"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "жадно разглядывая Тима"
+            }
+          }
+        ]
+      },
+      "record_id": "b9a2a4c9302e47538971020620862987",
+      "review_commit": "e5ffacc78d6557156216628b2117cc2fa8fb115e",
+      "review_contract_revision": "docs/TRANSLATION.md@20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "reviewed_at": "2026-11-26T17:07:34Z",
+      "reviewer_session_id": "chatops-recheck-e86f625b2b5b4e44b7b38c01a0015b04",
+      "sequence": 45,
+      "source_sha256": "ee2b3d3fd839e63cdf0c09ceb730907a2e96fa57f42bb4274a8434db07e5d8b4",
+      "state_revision": "ec4ba5eb07a1bca457ffde8c22ddd1874f0018e2ebedb733132e283baf2edd77",
+      "supersedes_record_id": "2860e14718b247ce91936895fe9aa7b5",
+      "translation_sha256": "2ed49a1609165ee1e0c07d4a99727aba1de19175c0afcee485960da5e03fda30",
+      "unit_id": "chapter-000015",
+      "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a"
+    }
+  },
+  "error": null
+}

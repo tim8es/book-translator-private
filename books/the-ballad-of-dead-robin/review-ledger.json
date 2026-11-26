@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "the-ballad-of-dead-robin",
-  "next_sequence": 45,
+  "next_sequence": 46,
   "records": [
     {
       "record_id": "b395b5cc6d41470387aa4d8dfe6853d7",
@@ -5920,6 +5920,92 @@
             "resolves": {
               "record_id": "65ac9534c35c46f68cce0434d61675ca",
               "finding_id": "signature"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "b9a2a4c9302e47538971020620862987",
+      "sequence": 45,
+      "unit_id": "chapter-000015",
+      "outcome": "PASS",
+      "source_sha256": "ee2b3d3fd839e63cdf0c09ceb730907a2e96fa57f42bb4274a8434db07e5d8b4",
+      "translation_sha256": "2ed49a1609165ee1e0c07d4a99727aba1de19175c0afcee485960da5e03fda30",
+      "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "review_contract_revision": "docs/TRANSLATION.md@20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "reviewer_session_id": "chatops-recheck-e86f625b2b5b4e44b7b38c01a0015b04",
+      "reviewed_at": "2026-11-26T17:07:34Z",
+      "state_revision": "ec4ba5eb07a1bca457ffde8c22ddd1874f0018e2ebedb733132e283baf2edd77",
+      "review_commit": "e5ffacc78d6557156216628b2117cc2fa8fb115e",
+      "correction_round": 2,
+      "supersedes_record_id": "2860e14718b247ce91936895fe9aa7b5",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "recheck-signature",
+            "category": "structure",
+            "severity": "minor",
+            "detail": "Авторский инициал сохранён в латинской графике.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Enjoy!Yours B",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Приятного чтения! Ваш(а) B",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "2860e14718b247ce91936895fe9aa7b5",
+              "finding_id": "signature"
+            }
+          },
+          {
+            "id": "recheck-chaos-collocation",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Восстановлен образ пылающего хаоса без неестественной сочетаемости.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "something burning, something alive with chaos",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "нечто пылающее, в чём бурлил хаос",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "2860e14718b247ce91936895fe9aa7b5",
+              "finding_id": "chaos-collocation"
+            }
+          },
+          {
+            "id": "recheck-gaze-idiom",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Передано жадное созерцание персонажа, сохранена исходная интенсивность взгляда.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "drinking Tim in as if the blade at his neck",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "жадно разглядывая Тима",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "2860e14718b247ce91936895fe9aa7b5",
+              "finding_id": "gaze-idiom"
             }
           }
         ]
