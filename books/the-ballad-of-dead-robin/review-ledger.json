@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "the-ballad-of-dead-robin",
-  "next_sequence": 25,
+  "next_sequence": 26,
   "records": [
     {
       "record_id": "b395b5cc6d41470387aa4d8dfe6853d7",
@@ -2575,6 +2575,64 @@
           {
             "severity": "minor",
             "detail": "Абз. 208: tight with restraint and tension — голос напряжённый от сдерживания эмоций; убрать тавтологию.",
+            "resolved": false
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "590ab1b933e84df4a9dc7950621a56b4",
+      "sequence": 25,
+      "unit_id": "chapter-000011",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "b4a6f4f06bc0b299ed746440d5fc32683efd9c92d76c6efee0b2274e4aeb7e7c",
+      "translation_sha256": "39f13edf84c29a0df20d3c2370bad3263c850c30a129ef59a0d7cda0773641f2",
+      "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "review_contract_revision": "docs/TRANSLATION.md@20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "reviewer_session_id": "chat-robin-r11-1126b184",
+      "reviewed_at": "2026-11-26T11:13:36Z",
+      "state_revision": "ea50ddaad871a585ddbf39f7214c1abac71e98a6",
+      "review_commit": "c6d5eb798ced829f5bd5290822150634370cab4e",
+      "correction_round": 2,
+      "supersedes_record_id": "fa47b726c5db400ab38db8f8aa6c82e0",
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Абз. 35: footsteps stuttering и сбившееся дыхание — два параллельных признака паники; «стук ... сливался» вводит отсутствующее в исходнике слияние звуков. Передать два действия.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 91: chest rose with a deep, unsteady breath — единичный вдох, не длительное «вздымалась».",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 114: устранить неудобное соседство двух «что» без изменения предположения Дюка.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 139: предыдущая правка сохранила повтор «к нему, впившись в него». Сделать субъектом взгляда глаза/взгляд и сохранить остроту и отсутствие моргания.",
+            "resolved": false
+          },
+          {
+            "severity": "major",
+            "detail": "Абз. 151: незакрытое замечание предыдущего ревью: видео обращено к самому себе (абз. 112), поэтому требуется «Если ты смотришь это видео, значит, я мёртв» вместо «вы».",
+            "resolved": false
+          },
+          {
+            "severity": "major",
+            "detail": "Абз. 193: his favorite little bird относится к Ра’су, которого говорящий обозначает в третьем лице; «от своей любимой птички» грамматически двусмысленно и может относиться к говорящей фигуре. Указать «от его любимой птички» без дополнительной интерпретации.",
             "resolved": false
           }
         ]
