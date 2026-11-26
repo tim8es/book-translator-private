@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "the-ballad-of-dead-robin",
-  "next_sequence": 27,
+  "next_sequence": 28,
   "records": [
     {
       "record_id": "b395b5cc6d41470387aa4d8dfe6853d7",
@@ -2692,6 +2692,114 @@
             "severity": "major",
             "detail": "Абз. 193: his favorite little bird относится к Ра’су, которого говорящий обозначает в третьем лице; «от своей любимой птички» грамматически двусмысленно и может относиться к говорящей фигуре. Указать «от его любимой птички» без дополнительной интерпретации.",
             "resolved": true
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "e3fa405b958c456f8b2fa4b4ea27fd62",
+      "sequence": 27,
+      "unit_id": "chapter-000012",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "1a78f79ae1095e6786a8bf47c582afab06b556f563bd33c0a524863c0e46199d",
+      "translation_sha256": "7776fa3ca29dc104f52b79f71aad5dad77bf53aa9236a95439a0d10485b42cba",
+      "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "review_contract_revision": "docs/TRANSLATION.md@20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "reviewer_session_id": "chat-robin-r12-1126b401",
+      "reviewed_at": "2026-11-26T11:23:26Z",
+      "state_revision": "83c57e446f910dfe9323cd5cb5d3875ea00df61a",
+      "review_commit": "3228c4e679c554ce713c04535b4c7b32c945ebce",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Абз. 4: автор сам решил опубликовать главу сегодня; «как и было решено» звучит безлично. Сохранить личный голос, не добавляя неподтверждённый род автора.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 10: amused — насмешливое довольство, не просто весёлость; передать оттенок взгляда Клариона.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 11: устранить нарушение связи сравнения улыбки с клинком, сохранив образ предупреждения.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 18: razor-focused — предельно сосредоточенный; «сосредоточенный с остротой бритвы» — калька.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 23: «тщательно выдержанную сдержанность» — тавтология, сделать формулировку естественной.",
+            "resolved": false
+          },
+          {
+            "severity": "major",
+            "detail": "Абз. 25: явно передать, что Дюк и Дэмиен решили поступить в университет, причём Дэмиен ещё заканчивает школу; криминальную психологию выбрал Дюк.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 30: «Со смерти Тима» заменить естественным «После смерти Тима».",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 55: clinging to reason — Брюс цепляется за доводы рассудка, а не за способность оставаться в здравом уме.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 67: «молитва, которую он не заслуживал произносить» — синтаксическая калька; сохранить идею недостойности.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 80: clean and ruthless о голосе, врезающемся в сознание, — точно и безжалостно, не «чисто».",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 86: названия на корешках тиснёные, не «вытесненные»; сохранить облупившееся золото.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 121: исправить управление в «с уверенностью, которой ... чувствовал»: «с уверенностью, которой ... не ощущал в полной мере».",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 134: «ощутил его неправильность» — неестественная калька, передать противоестественность Клариона без добавления фактов.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 152: smooth voice — ровный/вкрадчивый голос; «гладкий» применительно к голосу здесь калька.",
+            "resolved": false
+          },
+          {
+            "severity": "major",
+            "detail": "Абз. 263: survival означает выживание, а не спасение; противопоставление воскрешения, выживания и подмены существенно для объяснения механизма.",
+            "resolved": false
+          },
+          {
+            "severity": "minor",
+            "detail": "Абз. 269: нарушено согласование «взгляд знакомых голубых глаз, те самые»; перестроить фразу, сохранив узнавание собственных глаз в зеркалах.",
+            "resolved": false
           }
         ]
       }
