@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "one-does-not-monsieur",
-  "next_sequence": 10,
+  "next_sequence": 11,
   "records": [
     {
       "record_id": "c4b03697d25541ea8d3070ad34e8c878",
@@ -368,6 +368,79 @@
             "severity": "minor",
             "detail": "Строка 513: «пока он горел ... что тот освещал» — тяжёлое местоименное повторение, уточнить, что свет исходил от языка пламени.",
             "resolved": false
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "d36978b24c114c3c9e5f56802d8b2d63",
+      "sequence": 10,
+      "unit_id": "chapter-000004",
+      "outcome": "PASS",
+      "source_sha256": "fdec7dab6acd2f55eb24646c5b2484837ab80f64822034c36f31adaea430a552",
+      "translation_sha256": "d4c8079258858df7266c7a543e40fc7b1b816316f6f73bb1b6f14bce642b6519",
+      "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "review_contract_revision": "docs/TRANSLATION.md@20521f143dbd0b06e9c10a60428cf6c0e02d330a",
+      "reviewer_session_id": "chatops-odnm-20261126-r4-2-35618c6c",
+      "reviewed_at": "2026-11-26T10:48:14Z",
+      "state_revision": "f03276a8bec6c5f30e7c80dfd17a0cc4d5133bfe",
+      "review_commit": "58e9fbbd1405224476993f86cc83f0e9f6ef6379",
+      "correction_round": 1,
+      "supersedes_record_id": "1bddec33564d4bc482b141dc7a0bc505",
+      "quality_report": {
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "severity": "minor",
+            "detail": "Строка 83: три вдоха вместо трёх вздохов; действие и длительность сохранены.",
+            "resolved": true
+          },
+          {
+            "severity": "major",
+            "detail": "Строка 117: согласование восстановлено, положение листа внутри салфетки и вдох переданы верно.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Строка 253: литературное сравнение с концертным залом и хлопки без перчаток сохранены.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Строки 293, 297: курсив восстановлен в нужных словах.",
+            "resolved": true
+          },
+          {
+            "severity": "major",
+            "detail": "Строка 319: устранены добавленный собственный дом и грамматическая неловкость; сравнение и распределение улыбок восстановлены.",
+            "resolved": true
+          },
+          {
+            "severity": "major",
+            "detail": "Строка 329: явно назван прадед, которому обожгли лицо; референт исправлен.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Строка 365: нормативная сочетаемость, учтивый регистр и обращение сохранены.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Строка 463: слабый довод вместо обещания; сохранена ирония.",
+            "resolved": true
+          },
+          {
+            "severity": "minor",
+            "detail": "Строка 513: устранён неясный референт, образ пламени сохранён.",
+            "resolved": true
           }
         ]
       }
