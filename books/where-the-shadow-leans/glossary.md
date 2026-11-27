@@ -87,3 +87,15 @@ Use dictionary forms; classify terms semantically. Type and optional notes use t
 | blood-wine | кровяное вино | напиток |  |
 | Tesoro | Tesoro | обращение | Сохранить итальянское обращение в письме тёти Ариана. |
 | Zia | Zia | подпись | Сохранить итальянское обозначение тёти в подписи письма. |
+| Valentina Caruso | Валентина Карузо | имя |  |
+| Oriane de Chardon | Орианна де Шардон | имя |  |
+| Arch-Chancellor | архиканцлер | должность |  |
+| Treasury | Казначейство | учреждение |  |
+| Chancellery | Канцелярия | учреждение |  |
+| Lowmere Exchange | Лоумирская биржа | учреждение |  |
+| Master Shaper | мастер-формовщик | титул |  |
+| Undergate | Нижние ворота | топоним |  |
+| Hall of the Chain | Зал цепи | топоним |  |
+| distanza | distanza | танец | Партнёры не касаются друг друга; сохранить курсив. |
+| Mevrouw | Mevrouw | обращение | Сохранять авторский курсив. |
+| WILLING | WILLING — СОГЛАСЕН ПО СВОЕЙ ВОЛЕ | шифр | Сохранять английское слово в контексте буквенно-числового шифра. |
