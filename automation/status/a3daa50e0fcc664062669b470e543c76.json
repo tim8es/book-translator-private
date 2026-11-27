@@ -2,11 +2,30 @@
   "schema_version": 1,
   "job_id": "a3daa50e0fcc664062669b470e543c76",
   "book_slug": "the-ballad-of-dead-robin",
-  "state": "paused",
-  "phase": "paused-for-chatops",
+  "state": "done",
+  "phase": "reconciled-completed",
   "failures": 0,
   "correction_rounds": {},
   "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
   "source_sha256": "a3daa50e0fcc664062669b470e543c76190d2381e5a408f68d0fda014e36a9be",
-  "updated_at": "2026-11-23T22:39:32.131940+00:00"
+  "updated_at": "2026-11-27T16:32:30.666969+00:00",
+  "completion_reconciliation": {
+    "previous_state": "paused",
+    "previous_phase": "paused-for-chatops",
+    "previous_updated_at": "2026-11-23T22:39:32.131940+00:00",
+    "previous_error": null,
+    "previous_active": null,
+    "book_tree": "7513232a70f6d3ccd8a6635354e2783aa53ba44e"
+  },
+  "artifact_path": "books/the-ballad-of-dead-robin/output/the-ballad-of-dead-robin.epub",
+  "artifact_sha256": "0bde28190b741779973924fee9cb26dfd323a19be23a46b52f7a052321a4a0a6",
+  "review_provenance": "independent",
+  "active": null,
+  "queue_snapshot": {
+    "extracted": 0,
+    "reviewed": 18,
+    "awaiting_review": 0,
+    "correction_candidates": 0,
+    "awaiting_promotion": 0
+  }
 }
