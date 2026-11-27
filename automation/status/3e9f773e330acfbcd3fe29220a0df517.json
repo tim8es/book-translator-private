@@ -2,28 +2,23 @@
   "schema_version": 1,
   "job_id": "3e9f773e330acfbcd3fe29220a0df517",
   "book_slug": "pizza-with-pineapples-itislikethis-motorcycling-rpf",
-  "state": "running",
-  "phase": "model-call-reserved",
+  "state": "done",
+  "phase": "reconciled-completed",
   "failures": 1,
   "correction_rounds": {
     "chapter-000001": 1
   },
   "workflow_revision": "789ce50017e87ccd0d0aa17ce84d9c0e0f5edc07",
   "source_sha256": "b806092139439a8a9d5c9297bdc1338fa9e4798cfa81353f9396f66747aa6e96",
-  "updated_at": "2026-11-22T17:08:53.202457+00:00",
+  "updated_at": "2026-11-27T16:25:56.996729+00:00",
   "queue_snapshot": {
-    "extracted": 15,
-    "reviewed": 1,
-    "awaiting_review": 1,
-    "correction_candidates": 1,
+    "extracted": 0,
+    "reviewed": 18,
+    "awaiting_review": 0,
+    "correction_candidates": 0,
     "awaiting_promotion": 0
   },
-  "active": {
-    "role": "reviewer",
-    "chapter": 3,
-    "session_id": "auto-3e9f773e330a-reviewer-5eed94b0",
-    "unit_id": "chapter-000003"
-  },
+  "active": null,
   "structural_helper_revision": "4c584fe5534871cd05aa851d9b7bdbfa696d0edd",
   "model_calls_started": 18,
   "prompt_context": {
@@ -340,7 +335,6 @@
     "role": "reviewer",
     "unit_id": "chapter-000003"
   },
-  "blocked_unit_id": "chapter-000003",
   "last_review_failure": {
     "unit_id": "chapter-000003",
     "at": "2026-11-22T17:08:47.548762+00:00",
@@ -352,5 +346,20 @@
   "review_failure_counts": {
     "chapter-000003:anchor_absent": 1
   },
-  "last_error_code": "review_evidence_invalid"
+  "completion_reconciliation": {
+    "previous_state": "running",
+    "previous_phase": "model-call-reserved",
+    "previous_updated_at": "2026-11-22T17:08:53.202457+00:00",
+    "previous_error": null,
+    "previous_active": {
+      "role": "reviewer",
+      "chapter": 3,
+      "session_id": "auto-3e9f773e330a-reviewer-5eed94b0",
+      "unit_id": "chapter-000003"
+    },
+    "book_tree": "36ccad08be2fdd455f26a1946deb48be51635980"
+  },
+  "artifact_path": "books/pizza-with-pineapples-itislikethis-motorcycling-rpf/output/pizza-with-pineapples-itislikethis-motorcycling-rpf.epub",
+  "artifact_sha256": "0dd729f60339869e44c5580b80f4872a229defa59b485a2a4bc673f628f525a0",
+  "review_provenance": "independent"
 }
