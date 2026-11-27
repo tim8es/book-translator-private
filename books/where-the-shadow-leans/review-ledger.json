@@ -1,6 +1,100 @@
 {
   "schema_version": 1,
   "book_slug": "where-the-shadow-leans",
-  "next_sequence": 1,
-  "records": []
+  "next_sequence": 2,
+  "records": [
+    {
+      "record_id": "077f125bfedf43d6ad100bf1826c6ad5",
+      "sequence": 1,
+      "unit_id": "chapter-000001",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "1a9db9b74b7c88739725b663ebb6e06e0ed799b51780b183320cbb2e814f6c07",
+      "translation_sha256": "790de7a8a7f44164570ca8a2597e238d918f3e7612b7fef656c8f1fcc664ac83",
+      "workflow_revision": "61bb656dd1d16165466c1e034542d87a32de637a",
+      "review_contract_revision": "docs/TRANSLATION.md@61bb656dd1d16165466c1e034542d87a32de637a",
+      "reviewer_session_id": "chatops-shadow-review-20261127-01",
+      "reviewed_at": "2026-11-27T17:43:26Z",
+      "state_revision": "3021dc89963667f3450d1001d249bccc165745570791afa6f71930b280c01ee8",
+      "review_commit": "30cd51067b05b1177053ee6102f28f9ce7a1c648",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "gender-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Английский текст не сообщает пол автора. В русском варианте добавлено женское согласование; следует сохранить неопределённость, перестроив фразу.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Every choice I tried felt wrong",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Ни один из вариантов, которые я пробовала, не казался мне правильным",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "gender-2",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Женский род в благодарности не подтверждён оригиналом; использовать нейтральную синтаксическую конструкцию.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "I am very grateful to everyone reading.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "я очень благодарна всем, кто читает.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "tag-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Protective обозначает готовность защищать, а не только заботиться; сохранить это в обоих тегах.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "protective older brother",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "заботливый старший брат",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "tag-2",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Protective означает защищающих старших сестёр, а не просто заботливых.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Protective Older Sisters",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Заботливые старшие сёстры",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      }
+    }
+  ]
 }

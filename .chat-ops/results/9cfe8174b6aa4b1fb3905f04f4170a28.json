@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "request_id": "9cfe8174b6aa4b1fb3905f04f4170a28",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "4c5e4edb4ce890fc8b2540b3a985755ef9092ce010ae05837ad9de0534f7915a",
+    "record": {
+      "correction_round": 1,
+      "outcome": "CORRECTIONS_REQUIRED",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "meaning",
+            "detail": "Английский текст не сообщает пол автора. В русском варианте добавлено женское согласование; следует сохранить неопределённость, перестроив фразу.",
+            "id": "gender-1",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Every choice I tried felt wrong"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Ни один из вариантов, которые я пробовала, не казался мне правильным"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Женский род в благодарности не подтверждён оригиналом; использовать нейтральную синтаксическую конструкцию.",
+            "id": "gender-2",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "I am very grateful to everyone reading."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "я очень благодарна всем, кто читает."
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Protective обозначает готовность защищать, а не только заботиться; сохранить это в обоих тегах.",
+            "id": "tag-1",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "protective older brother"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "заботливый старший брат"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Protective означает защищающих старших сестёр, а не просто заботливых.",
+            "id": "tag-2",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Protective Older Sisters"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Заботливые старшие сёстры"
+            }
+          }
+        ]
+      },
+      "record_id": "077f125bfedf43d6ad100bf1826c6ad5",
+      "review_commit": "30cd51067b05b1177053ee6102f28f9ce7a1c648",
+      "review_contract_revision": "docs/TRANSLATION.md@61bb656dd1d16165466c1e034542d87a32de637a",
+      "reviewed_at": "2026-11-27T17:43:26Z",
+      "reviewer_session_id": "chatops-shadow-review-20261127-01",
+      "sequence": 1,
+      "source_sha256": "1a9db9b74b7c88739725b663ebb6e06e0ed799b51780b183320cbb2e814f6c07",
+      "state_revision": "3021dc89963667f3450d1001d249bccc165745570791afa6f71930b280c01ee8",
+      "supersedes_record_id": null,
+      "translation_sha256": "790de7a8a7f44164570ca8a2597e238d918f3e7612b7fef656c8f1fcc664ac83",
+      "unit_id": "chapter-000001",
+      "workflow_revision": "61bb656dd1d16165466c1e034542d87a32de637a"
+    }
+  },
+  "error": null
+}
