@@ -29,13 +29,18 @@ on:
         type: boolean
         required: true
         default: false
+      initialize_only:
+        description: "Initialize a new HTML book without model calls or automatic continuation"
+        type: boolean
+        required: false
+        default: false
 
 env:
   # Reviewed immutable public executor commit. Does not change literary book pins
   # or the separate locked runtime used by the existing scheduled Auto.
   PI_EXECUTOR_SHA: 55026044d45fb1d2b7768b5c69dd9f85993bb31f
   # New HTML intake only; preserve the existing EPUB and qualification runtimes.
-  PI_HTML_EXECUTOR_SHA: 61bb656dd1d16165466c1e034542d87a32de637a
+  PI_HTML_EXECUTOR_SHA: b66adc6806df041cc176cf794a60b01787ae3645
   PI_QUALITY_EXECUTOR_SHA: 63f7683dc6f4d0b028a5bdbbf8fcf910879043cb
   BOOK_TRANSLATOR_LLM_BACKEND: pi
   OMNIROUTE_MODEL_CALL_LIMIT: "1500"
@@ -69,7 +74,8 @@ jobs:
             [[ -f "$request" ]] || continue
             job_id="${request##*/}"
             job_id="${job_id%.json}"
-            jq -e --arg id "$job_id" 'type == "object" and (.job_id == $id) and (.continue_automatically == true) and ((keys | sort) == ["continue_automatically", "job_id"])' "$request" >/dev/null
+            jq -e --arg id "$job_id" 'type == "object" and (.job_id == $id) and (((.continue_automatically == true) and ((keys | sort) == ["continue_automatically", "job_id"])) or ((.continue_automatically == false) and (.initialize_only == true) and ((keys | sort) == ["continue_automatically", "initialize_only", "job_id"])))' "$request" >/dev/null
+            initialize="$(jq -r '.initialize_only // false' "$request")"
             jq -e --arg id "$job_id" '.schema_version == 1 and .executor == "pi" and .job_id == $id' "intake/auto/$job_id/executor.json" >/dev/null
             status_path="automation/status/$job_id.json"
             if [[ ! -e "$status_path" ]]; then
@@ -80,7 +86,15 @@ jobs:
               format="$(jq -r '.source_format' "$intake")"
               jq -e --arg id "$job_id" --arg digest "$digest" '.schema_version == 1 and .job_id == $id and .executor == "pi" and .source_sha256 == $digest' "intake/auto/$job_id/executor.json" >/dev/null
               test "$(sha256sum "intake/auto/$job_id/source.$format" | cut -d ' ' -f 1)" = "$digest"
-              gh workflow run pi-book-translation.yml --ref main -f probe_only=false -f job_id="$job_id" -f continue_automatically=true
+              if [[ "$initialize" == true ]]; then
+                gh workflow run pi-book-translation.yml --ref main -f probe_only=false -f job_id="$job_id" -f continue_automatically=false -f initialize_only=true
+              else
+                gh workflow run pi-book-translation.yml --ref main -f probe_only=false -f job_id="$job_id" -f continue_automatically=true
+              fi
+              continue
+            fi
+            if [[ "$initialize" == true ]]; then
+              echo "Initialization-only request already has durable status; no model call or replay"
               continue
             fi
             jq -e --arg id "$job_id" '.schema_version == 1 and .job_id == $id' "$status_path" >/dev/null
@@ -178,10 +192,20 @@ jobs:
         shell: bash
         env:
           JOB_ID: ${{ inputs.job_id }}
+          INITIALIZE_ONLY: ${{ inputs.initialize_only }}
+          CONTINUE_AUTOMATICALLY: ${{ inputs.continue_automatically }}
         run: |
           set -euo pipefail
           [[ "$JOB_ID" =~ ^[0-9a-f]{32}$ ]]
+          if [[ "$INITIALIZE_ONLY" == true ]]; then
+            test "$CONTINUE_AUTOMATICALLY" = false
+            test ! -e "automation/status/$JOB_ID.json"
+            test -f "intake/auto/$JOB_ID/executor.json"
+          fi
           format="$(jq -er '.source_format // "epub"' "intake/auto/$JOB_ID/request.json")"
+          if [[ "$INITIALIZE_ONLY" == true ]]; then
+            [[ "$format" == html || "$format" == xhtml ]]
+          fi
           case "$format" in
             epub) sha="$PI_EXECUTOR_SHA" ;;
             html|xhtml) sha="$PI_HTML_EXECUTOR_SHA" ;;
@@ -262,12 +286,29 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Initialize new HTML workspace without model credentials
+        if: inputs.initialize_only
+        env:
+          JOB_ID: ${{ inputs.job_id }}
+          BOOK_TRANSLATOR_STATE_ROOT: ${{ github.workspace }}
+          CONTINUE_AUTOMATICALLY: ${{ inputs.continue_automatically }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$CONTINUE_AUTOMATICALLY" = false
+          test ! -e "automation/status/$JOB_ID.json"
+          # Dedicated public entrypoint cannot dispatch any literary role.
+          python .public-auto-runtime/automation/book_runner.py --initialize-pi-html-only --job-id "$JOB_ID"
+          jq -e '.state == "running" and .phase == "initialized" and (.model_calls_started // 0) == 0' "automation/status/$JOB_ID.json" >/dev/null
       - uses: actions/setup-node@v4
+        if: ${{ !inputs.initialize_only }}
         with:
           node-version: "22"
       - name: Install pinned Pi CLI
+        if: ${{ !inputs.initialize_only }}
         run: npm install --global --ignore-scripts @earendil-works/pi-coding-agent@1.6.0
       - name: Bounded batch of canonical Pi checkpoints with independent role calls
+        if: ${{ !inputs.initialize_only }}
         id: run
         shell: bash
         env:
@@ -299,7 +340,7 @@ jobs:
           python .public-auto-runtime/automation/book_runner.py --batch --job-id "$JOB_ID"
 
       - name: Publish verified final EPUB artifact
-        if: steps.run.outputs.done == 'true'
+        if: ${{ !inputs.initialize_only && steps.run.outputs.done == 'true' }}
         uses: actions/upload-artifact@v4
         with:
           name: pi-reviewed-epub-${{ inputs.job_id }}
@@ -308,7 +349,7 @@ jobs:
           retention-days: 30
 
       - name: Continue only if explicitly enabled
-        if: steps.run.outputs.continue == 'true' && inputs.continue_automatically
+        if: ${{ !inputs.initialize_only && steps.run.outputs.continue == 'true' && inputs.continue_automatically }}
         env:
           GH_TOKEN: ${{ github.token }}
           JOB_ID: ${{ inputs.job_id }}
@@ -319,7 +360,7 @@ jobs:
             -f probe_only=false -f job_id="$JOB_ID" -f continue_automatically=true
 
       - name: Dispatch bounded Pi provider retry waiter
-        if: steps.run.outputs.retry_at != '' && inputs.continue_automatically
+        if: ${{ !inputs.initialize_only && steps.run.outputs.retry_at != '' && inputs.continue_automatically }}
         env:
           GH_TOKEN: ${{ github.token }}
           JOB_ID: ${{ inputs.job_id }}
@@ -331,13 +372,13 @@ jobs:
             -f job_id="$JOB_ID" -f retry_at="$RETRY_AT" -f executor=pi
 
       - name: Report delayed recovery for manual pilot
-        if: steps.run.outputs.retry_at != '' && !inputs.continue_automatically
+        if: ${{ !inputs.initialize_only && steps.run.outputs.retry_at != '' && !inputs.continue_automatically }}
         env:
           RETRY_AT: ${{ steps.run.outputs.retry_at }}
         run: echo "::warning::Durable Pi retry deadline ($RETRY_AT); manual pilot does not auto-dispatch."
 
       - name: Surface blocked state
-        if: steps.run.outputs.blocked == 'true'
+        if: ${{ !inputs.initialize_only && steps.run.outputs.blocked == 'true' }}
         run: |
           echo "::error::Canonical state blocked; inspect private durable status. No silent workflow upgrade."
           exit 1
