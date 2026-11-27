@@ -2,15 +2,15 @@
   "schema_version": 1,
   "job_id": "ed29a03c00540e66d6846fd802b04f55",
   "book_slug": "theres-no-pretending",
-  "state": "blocked",
-  "phase": "attention-requires-operator",
+  "state": "done",
+  "phase": "reconciled-completed",
   "failures": 0,
   "correction_rounds": {
     "chapter-000002": 3
   },
   "workflow_revision": "871e937b5d7075613c4e55c1ecfc07af700af8bc",
   "source_sha256": "1e94a92096552a75265f8c5e73562e8ad4d28bb8a8a28f1db25b4a4107e374cf",
-  "updated_at": "2026-11-16T14:36:25.244067+00:00",
+  "updated_at": "2026-11-27T16:32:48.403063+00:00",
   "active": null,
   "model_calls_started": 81,
   "prompt_context": {
@@ -61,9 +61,6 @@
   "unit_protocol_failures": {
     "chapter-000002": 8
   },
-  "deferred_review_units": [
-    "chapter-000002"
-  ],
   "model_review_deferral_audit": [
     {
       "unit_id": "chapter-000002",
@@ -89,9 +86,25 @@
     "role": "reviewer",
     "unit_id": "chapter-000002"
   },
-  "blocked_unit_id": "chapter-000002",
   "attention_units": [
     "chapter-000002"
   ],
-  "last_error": "Canonical needs-attention queue contains unresolved units; EPUB is not complete."
+  "completion_reconciliation": {
+    "previous_state": "blocked",
+    "previous_phase": "attention-requires-operator",
+    "previous_updated_at": "2026-11-16T14:36:25.244067+00:00",
+    "previous_error": "Canonical needs-attention queue contains unresolved units; EPUB is not complete.",
+    "previous_active": null,
+    "book_tree": "3c4b5e5c66e999f6f26a6a1cd78c007774ddb73e"
+  },
+  "artifact_path": "books/theres-no-pretending/output/theres-no-pretending.epub",
+  "artifact_sha256": "c4167563ef01ecf1038ad4219486019465839de90412a4ff3ae9ad2b66c421b9",
+  "review_provenance": "independent",
+  "queue_snapshot": {
+    "extracted": 0,
+    "reviewed": 2,
+    "awaiting_review": 0,
+    "correction_candidates": 0,
+    "awaiting_promotion": 0
+  }
 }
