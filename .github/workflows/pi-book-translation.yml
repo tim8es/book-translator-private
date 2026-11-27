@@ -34,7 +34,7 @@ env:
   # Reviewed immutable public executor commit. Does not change literary book pins
   # or the separate locked runtime used by the existing scheduled Auto.
   PI_EXECUTOR_SHA: 55026044d45fb1d2b7768b5c69dd9f85993bb31f
-  PI_QUALITY_EXECUTOR_SHA: 984d9a611f7b597096611c1c45cfacec40a4dbd6
+  PI_QUALITY_EXECUTOR_SHA: f1a7ac6d75f35df00b001bf10d6ac1c67a922f63
   BOOK_TRANSLATOR_LLM_BACKEND: pi
   OMNIROUTE_MODEL_CALL_LIMIT: "1500"
 
@@ -381,6 +381,10 @@ jobs:
               --chatops-commit "$CHATOPS_COMMIT" --chatops-job "$CHATOPS_JOB" \
               --source-sha256 "$SOURCE_SHA256" --output "$RUNNER_TEMP/quality-qualification.json"
           else
+            # The four-role usage probe passed; measure this isolated long trial only.
+            if [[ "$QUALIFICATION_PROFILE" == "long-agent" ]]; then
+              export BOOK_TRANSLATOR_PI_USAGE_EVENTS=on
+            fi
             python .quality-runtime/automation/quality_qualification.py --revision "$PI_QUALITY_EXECUTOR_SHA" --profile "$QUALIFICATION_PROFILE" --output "$RUNNER_TEMP/quality-qualification.json"
           fi
       - name: Publish sanitized qualification results
