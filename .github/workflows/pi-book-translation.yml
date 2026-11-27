@@ -40,7 +40,7 @@ env:
   # or the separate locked runtime used by the existing scheduled Auto.
   PI_EXECUTOR_SHA: 55026044d45fb1d2b7768b5c69dd9f85993bb31f
   # New HTML intake only; preserve the existing EPUB and qualification runtimes.
-  PI_HTML_EXECUTOR_SHA: 61bb656dd1d16165466c1e034542d87a32de637a
+  PI_HTML_EXECUTOR_SHA: a4d860d7e6bfb32114d489c86219f1cdd3e89428
   PI_QUALITY_EXECUTOR_SHA: 63f7683dc6f4d0b028a5bdbbf8fcf910879043cb
   BOOK_TRANSLATOR_LLM_BACKEND: pi
   OMNIROUTE_MODEL_CALL_LIMIT: "1500"
@@ -297,24 +297,8 @@ jobs:
           set -euo pipefail
           test "$CONTINUE_AUTOMATICALLY" = false
           test ! -e "automation/status/$JOB_ID.json"
-          PYTHONPATH=.public-auto-runtime/automation python - <<'PY'
-          import os
-          import book_runner as runner
-          job = runner.safe_id(os.environ["JOB_ID"])
-          request = runner.request_for(job)
-          if request.get("source_format") not in {"html", "xhtml"}:
-              raise SystemExit("Initialization-only requires HTML/XHTML")
-          source = runner.intake_source(job, request)
-          title, author = runner.intake_identity(source, request)
-          slug, existing = runner.locate_book(title, author, request.get("source_filename", source.name),
-              request["target_language"], source_sha256=request["source_sha256"])
-          if existing or (runner.ROOT / "books" / slug).exists() or runner.status_path(job).exists():
-              raise SystemExit("Initialization-only cannot resume an existing book")
-          if runner.selection_executor(job) != "pi":
-              raise SystemExit("Initialization-only requires explicit Pi ownership")
-          PY
-          # The single checkpoint initializes a new workspace and returns before model work.
-          python .public-auto-runtime/automation/book_runner.py --job-id "$JOB_ID"
+          # Dedicated public entrypoint cannot dispatch any literary role.
+          python .public-auto-runtime/automation/book_runner.py --initialize-pi-html-only --job-id "$JOB_ID"
           jq -e '.state == "running" and .phase == "initialized" and (.model_calls_started // 0) == 0' "automation/status/$JOB_ID.json" >/dev/null
       - uses: actions/setup-node@v4
         if: ${{ !inputs.initialize_only }}
