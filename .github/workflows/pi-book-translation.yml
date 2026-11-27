@@ -34,6 +34,8 @@ env:
   # Reviewed immutable public executor commit. Does not change literary book pins
   # or the separate locked runtime used by the existing scheduled Auto.
   PI_EXECUTOR_SHA: 55026044d45fb1d2b7768b5c69dd9f85993bb31f
+  # New HTML intake only; preserve the existing EPUB and qualification runtimes.
+  PI_HTML_EXECUTOR_SHA: 61bb656dd1d16165466c1e034542d87a32de637a
   PI_QUALITY_EXECUTOR_SHA: 63f7683dc6f4d0b028a5bdbbf8fcf910879043cb
   BOOK_TRANSLATOR_LLM_BACKEND: pi
   OMNIROUTE_MODEL_CALL_LIMIT: "1500"
@@ -70,6 +72,17 @@ jobs:
             jq -e --arg id "$job_id" 'type == "object" and (.job_id == $id) and (.continue_automatically == true) and ((keys | sort) == ["continue_automatically", "job_id"])' "$request" >/dev/null
             jq -e --arg id "$job_id" '.schema_version == 1 and .executor == "pi" and .job_id == $id' "intake/auto/$job_id/executor.json" >/dev/null
             status_path="automation/status/$job_id.json"
+            if [[ ! -e "$status_path" ]]; then
+              # New HTML intake requires an explicit, source-bound Pi marker.
+              intake="intake/auto/$job_id/request.json"
+              jq -e --arg id "$job_id" '.schema_version == 1 and .job_id == $id and (.source_format == "html" or .source_format == "xhtml") and (.source_sha256 | test("^[0-9a-f]{64}$"))' "$intake" >/dev/null
+              digest="$(jq -r '.source_sha256' "$intake")"
+              format="$(jq -r '.source_format' "$intake")"
+              jq -e --arg id "$job_id" --arg digest "$digest" '.schema_version == 1 and .job_id == $id and .executor == "pi" and .source_sha256 == $digest' "intake/auto/$job_id/executor.json" >/dev/null
+              test "$(sha256sum "intake/auto/$job_id/source.$format" | cut -d ' ' -f 1)" = "$digest"
+              gh workflow run pi-book-translation.yml --ref main -f probe_only=false -f job_id="$job_id" -f continue_automatically=true
+              continue
+            fi
             jq -e --arg id "$job_id" '.schema_version == 1 and .job_id == $id' "$status_path" >/dev/null
             if ! jq -e '.state == "running"' "$status_path" >/dev/null; then
               # A blocked Pi job may be woken ONLY by a later canonical ChatOps
@@ -122,6 +135,22 @@ jobs:
           set -euo pipefail
           pi --version
           python -m unittest discover -s tests -p test_pi_backend.py -v
+      - name: Checkout immutable HTML Pi executor for offline verification
+        uses: actions/checkout@v4
+        with:
+          repository: tim8es/book-translator
+          ref: ${{ env.PI_HTML_EXECUTOR_SHA }}
+          path: .html-runtime
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Verify HTML admission and extraction without calling models
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C .html-runtime rev-parse HEAD)" = "$PI_HTML_EXECUTOR_SHA"
+          cd .html-runtime
+          python -m unittest discover -s tests -p 'test_html*.py' -v
+          python -m unittest discover -s tests -p test_pi_backend.py -v
 
   prepare:
     if: ${{ github.event_name == 'workflow_dispatch' && !inputs.probe_only }}
@@ -131,6 +160,7 @@ jobs:
       contents: read
     outputs:
       book_key: ${{ steps.scope.outputs.book_key }}
+      executor_sha: ${{ steps.route.outputs.executor_sha }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -143,11 +173,26 @@ jobs:
           # Public-repository operation is an explicit project choice.
           # This warning never blocks a manually dispatched Pi checkpoint.
           echo "::warning::Book source, translated text, review artifacts, and EPUB committed here may be publicly visible. Use only material you are authorized to publish."
+      - name: Select immutable runtime for the requested source format
+        id: route
+        shell: bash
+        env:
+          JOB_ID: ${{ inputs.job_id }}
+        run: |
+          set -euo pipefail
+          [[ "$JOB_ID" =~ ^[0-9a-f]{32}$ ]]
+          format="$(jq -er '.source_format // "epub"' "intake/auto/$JOB_ID/request.json")"
+          case "$format" in
+            epub) sha="$PI_EXECUTOR_SHA" ;;
+            html|xhtml) sha="$PI_HTML_EXECUTOR_SHA" ;;
+            *) echo "::error::Unsupported Pi intake source format"; exit 1 ;;
+          esac
+          echo "executor_sha=$sha" >> "$GITHUB_OUTPUT"
       - name: Checkout immutable public Pi executor
         uses: actions/checkout@v4
         with:
           repository: tim8es/book-translator
-          ref: ${{ env.PI_EXECUTOR_SHA }}
+          ref: ${{ steps.route.outputs.executor_sha }}
           path: .public-auto-runtime
           fetch-depth: 1
           persist-credentials: false
@@ -160,7 +205,7 @@ jobs:
         run: |
           set -euo pipefail
           [[ "$JOB_ID" =~ ^[0-9a-f]{32}$ ]] || { echo "::error::Explicit job_id must be 32 lowercase hex characters"; exit 1; }
-          test "$(git -C .public-auto-runtime rev-parse HEAD)" = "$PI_EXECUTOR_SHA"
+          test "$(git -C .public-auto-runtime rev-parse HEAD)" = "${{ steps.route.outputs.executor_sha }}"
           key="$(python .public-auto-runtime/automation/book_runner.py --book-key --job-id "$JOB_ID")"
           [[ "$key" =~ ^[a-z0-9-]+$ ]] || { echo "::error::Unsafe book key"; exit 1; }
           echo "book_key=$key" >> "$GITHUB_OUTPUT"
@@ -187,12 +232,25 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: tim8es/book-translator
-          ref: ${{ env.PI_EXECUTOR_SHA }}
+          ref: ${{ needs.prepare.outputs.executor_sha }}
           path: .public-auto-runtime
           fetch-depth: 1
           persist-credentials: false
       - name: Verify immutable executor
-        run: test "$(git -C .public-auto-runtime rev-parse HEAD)" = "$PI_EXECUTOR_SHA"
+        shell: bash
+        env:
+          JOB_ID: ${{ inputs.job_id }}
+          EXPECTED_SHA: ${{ needs.prepare.outputs.executor_sha }}
+        run: |
+          set -euo pipefail
+          [[ "$JOB_ID" =~ ^[0-9a-f]{32}$ ]]
+          format="$(jq -er '.source_format // "epub"' "intake/auto/$JOB_ID/request.json")"
+          case "$format" in
+            epub) test "$EXPECTED_SHA" = "$PI_EXECUTOR_SHA" ;;
+            html|xhtml) test "$EXPECTED_SHA" = "$PI_HTML_EXECUTOR_SHA" ;;
+            *) exit 1 ;;
+          esac
+          test "$(git -C .public-auto-runtime rev-parse HEAD)" = "$EXPECTED_SHA"
       - name: Reserve Pi executor for this immutable intake
         env:
           JOB_ID: ${{ inputs.job_id }}
