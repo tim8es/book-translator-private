@@ -2,8 +2,8 @@
   "schema_version": 1,
   "job_id": "7737b663533fb070de6d205aa2ef3feb",
   "book_slug": "dinner-and-a-dozen-roses-wondrouswendy-control-video-game",
-  "state": "blocked",
-  "phase": "attention-requires-operator",
+  "state": "done",
+  "phase": "reconciled-completed",
   "failures": 0,
   "correction_rounds": {
     "chapter-000003": 5,
@@ -11,12 +11,12 @@
   },
   "workflow_revision": "20521f143dbd0b06e9c10a60428cf6c0e02d330a",
   "source_sha256": "365a5fa793b0ef0e326a5c02d052e13819731cb2a080addcefd3ca0550049289",
-  "updated_at": "2026-11-25T18:14:14.885868+00:00",
+  "updated_at": "2026-11-27T16:53:28.760104+00:00",
   "queue_snapshot": {
     "extracted": 0,
-    "reviewed": 3,
+    "reviewed": 4,
     "awaiting_review": 0,
-    "correction_candidates": 1,
+    "correction_candidates": 0,
     "awaiting_promotion": 0
   },
   "active": null,
@@ -748,6 +748,15 @@
     "role": "reviewer",
     "unit_id": "chapter-000003"
   },
-  "blocked_unit_id": "chapter-000003",
-  "last_error": "Canonical needs-attention queue contains unresolved units; EPUB is not complete."
+  "completion_reconciliation": {
+    "previous_state": "blocked",
+    "previous_phase": "attention-requires-operator",
+    "previous_updated_at": "2026-11-25T18:14:14.885868+00:00",
+    "previous_error": "Canonical needs-attention queue contains unresolved units; EPUB is not complete.",
+    "previous_active": null,
+    "book_tree": "678256d048e0423e172946d266f70aea85d6d0f1"
+  },
+  "artifact_path": "books/dinner-and-a-dozen-roses-wondrouswendy-control-video-game/output/dinner-and-a-dozen-roses-wondrouswendy-control-video-game.epub",
+  "artifact_sha256": "47183dd666aab1a96ab3917d7d09a8845200860e9b00db7a6f6d7a4fa64ce782",
+  "review_provenance": "independent"
 }
