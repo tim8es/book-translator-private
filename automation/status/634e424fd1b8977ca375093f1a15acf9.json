@@ -2,10 +2,18 @@
   "schema_version": 1,
   "job_id": "634e424fd1b8977ca375093f1a15acf9",
   "state": "blocked",
-  "phase": "operator-intervention-required",
+  "phase": "completion-reconciliation-preflight-failed",
   "failures": 1,
-  "last_error": "JobError: canonical CLI rejected operation: ERROR: Cannot extract EPUB spine document text/part0001.html: Unsupported semantic HTML element <img>; extraction would lose structure\n",
-  "book_slug": null,
+  "last_error": "Pinned build-status did not confirm the current reviewed EPUB",
+  "book_slug": "reckless-leather-chrome-book-1",
   "correction_rounds": {},
-  "updated_at": "2026-11-08T23:33:02.728380+00:00"
+  "updated_at": "2026-11-27T16:32:34.260471+00:00",
+  "completion_reconciliation_failure": {
+    "previous_state": "blocked",
+    "previous_phase": "operator-intervention-required",
+    "previous_error": "JobError: canonical CLI rejected operation: ERROR: Cannot extract EPUB spine document text/part0001.html: Unsupported semantic HTML element <img>; extraction would lose structure\n"
+  },
+  "source_sha256": "c74821fb3271a341a2cea6cb7d70e5b45e90e1286668d45169984402adbf5684",
+  "workflow_revision": "d87bf1672a59b86e30ede996a99df28bdf47b36f",
+  "reconciliation_failed_tree": "a818017f64cf7b9848835e6e79e022337516c2d1"
 }
