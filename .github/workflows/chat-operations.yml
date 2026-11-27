@@ -14,6 +14,10 @@ permissions:
   contents: write
   actions: write
 
+# ChatOps transport release is separate from Auto, Pi, and each book's literary pin.
+env:
+  CHATOPS_EXECUTOR_SHA: d0eb5887f6ee85fddd20177a47838463ac506f78
+
 jobs:
   discover:
     if: github.ref == 'refs/heads/main'
@@ -31,10 +35,13 @@ jobs:
       - uses: actions/setup-python@v7
         with:
           python-version: '3.12'
-      - name: Resolve single immutable public executor version
+      - name: Resolve immutable ChatOps executor version
         id: pin
         shell: bash
-        run: echo "sha=$(python automation/runtime_loader.py --print-revision)" >> "$GITHUB_OUTPUT"
+        run: |
+          set -euo pipefail
+          [[ "$CHATOPS_EXECUTOR_SHA" =~ ^[0-9a-f]{40}$ ]]
+          echo "sha=$CHATOPS_EXECUTOR_SHA" >> "$GITHUB_OUTPUT"
       - name: Checkout public queue-discovery engine
         uses: actions/checkout@v7
         with:
@@ -43,8 +50,9 @@ jobs:
           path: .public-auto-runtime
           fetch-depth: 1
           persist-credentials: false
-      - name: Verify public executor matches shared lock
-        run: python automation/runtime_loader.py --verify
+      - name: Verify immutable ChatOps discovery checkout
+        shell: bash
+        run: test "$(git -C .public-auto-runtime rev-parse HEAD)" = "$CHATOPS_EXECUTOR_SHA"
       - name: Find pending requests grouped by book
         id: scope
         run: python .public-auto-runtime/scripts/chat_ops_discover.py --root . --github-output "$GITHUB_OUTPUT"
@@ -81,8 +89,14 @@ jobs:
           path: books-repo/.public-auto-runtime
           fetch-depth: 1
           persist-credentials: false
-      - name: Check execution revision against latest book-state lock
-        run: python books-repo/automation/runtime_loader.py --verify
+      - name: Verify immutable ChatOps execution checkout
+        shell: bash
+        env:
+          DISCOVERED_SHA: ${{ needs.discover.outputs.engine_sha }}
+        run: |
+          set -euo pipefail
+          test "$DISCOVERED_SHA" = "$CHATOPS_EXECUTOR_SHA"
+          test "$(git -C books-repo/.public-auto-runtime rev-parse HEAD)" = "$CHATOPS_EXECUTOR_SHA"
       - name: Execute book-scoped canonical ChatOps operations
         shell: bash
         env:
