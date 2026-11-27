@@ -2,11 +2,30 @@
   "schema_version": 1,
   "job_id": "ac37df793a0a6b348c42de5376ce0e3d",
   "book_slug": "alligator-bites-never-heal",
-  "state": "paused",
-  "phase": "paused-for-chatops",
+  "state": "done",
+  "phase": "reconciled-completed",
   "failures": 0,
   "correction_rounds": {},
   "workflow_revision": "76604c82cc4345699de9ae5d97bc75e2443e8cb5",
   "source_sha256": "43529829c619158421654d1f871f2864b38ccc64502621c0a90d55a29ed03b39",
-  "updated_at": "2026-11-22T16:20:23.488326+00:00"
+  "updated_at": "2026-11-27T16:26:18.832101+00:00",
+  "completion_reconciliation": {
+    "previous_state": "paused",
+    "previous_phase": "paused-for-chatops",
+    "previous_updated_at": "2026-11-22T16:20:23.488326+00:00",
+    "previous_error": null,
+    "previous_active": null,
+    "book_tree": "04698cbd7c5638f55559748fcbb0069b65830ce8"
+  },
+  "artifact_path": "books/alligator-bites-never-heal/output/alligator-bites-never-heal.epub",
+  "artifact_sha256": "f9dcfd9e71aa6e076e929572baed77db7f4f3a659b4978947c71a75b49f13bb1",
+  "review_provenance": "independent",
+  "active": null,
+  "queue_snapshot": {
+    "extracted": 0,
+    "reviewed": 12,
+    "awaiting_review": 0,
+    "correction_candidates": 0,
+    "awaiting_promotion": 0
+  }
 }
