@@ -3,11 +3,29 @@
   "job_id": "50954b1c4bcbc49ef2535ec81a677cf7",
   "book_slug": "theres-no-pretending",
   "source_sha256": "1e94a92096552a75265f8c5e73562e8ad4d28bb8a8a28f1db25b4a4107e374cf",
-  "state": "blocked",
-  "phase": "operator-intervention-required",
+  "state": "done",
+  "phase": "reconciled-completed",
   "failures": 1,
   "correction_rounds": {},
   "workflow_revision": "871e937b5d7075613c4e55c1ecfc07af700af8bc",
-  "updated_at": "2026-11-16T13:46:50.090493+00:00",
-  "last_error": "JobError: canonical CLI rejected operation: d\"], \"profile\": \"orchestrator\", \"role\": \"orchestrator\", \"state_revisions\": {\"glossary\": \"f02e6becb2861881659733c55614d24b49ee0a6906fa607fb2db0ceb6b8d35ad\", \"metadata\": \"4a35b11b3470b563f1f9c79bbffc5ec4d90d01f55b9683042fd11957a1f1ee13\", \"progress\": \"c32b08efe5e13e1beac4e9b0632ce4ef5cc4b1e35eb71fa0b73ef81bd"
+  "updated_at": "2026-11-27T16:25:58.803231+00:00",
+  "completion_reconciliation": {
+    "previous_state": "blocked",
+    "previous_phase": "operator-intervention-required",
+    "previous_updated_at": "2026-11-16T13:46:50.090493+00:00",
+    "previous_error": "JobError: canonical CLI rejected operation: d\"], \"profile\": \"orchestrator\", \"role\": \"orchestrator\", \"state_revisions\": {\"glossary\": \"f02e6becb2861881659733c55614d24b49ee0a6906fa607fb2db0ceb6b8d35ad\", \"metadata\": \"4a35b11b3470b563f1f9c79bbffc5ec4d90d01f55b9683042fd11957a1f1ee13\", \"progress\": \"c32b08efe5e13e1beac4e9b0632ce4ef5cc4b1e35eb71fa0b73ef81bd",
+    "previous_active": null,
+    "book_tree": "3c4b5e5c66e999f6f26a6a1cd78c007774ddb73e"
+  },
+  "artifact_path": "books/theres-no-pretending/output/theres-no-pretending.epub",
+  "artifact_sha256": "c4167563ef01ecf1038ad4219486019465839de90412a4ff3ae9ad2b66c421b9",
+  "review_provenance": "independent",
+  "active": null,
+  "queue_snapshot": {
+    "extracted": 0,
+    "reviewed": 2,
+    "awaiting_review": 0,
+    "correction_candidates": 0,
+    "awaiting_promotion": 0
+  }
 }
