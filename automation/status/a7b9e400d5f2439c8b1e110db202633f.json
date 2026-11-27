@@ -3,18 +3,13 @@
   "job_id": "a7b9e400d5f2439c8b1e110db202633f",
   "book_slug": "say-it-in-your-mother-tongue",
   "source_sha256": "12e210ce5a95daf56a97ada583ec15c274780c4ddfa7fb92da6a88c67f7c403d",
-  "state": "running",
-  "phase": "model-call-reserved",
+  "state": "done",
+  "phase": "reconciled-completed",
   "failures": 0,
   "correction_rounds": {},
   "workflow_revision": "8bb30227adc4bb921429611e12a0af803c9b6487",
-  "updated_at": "2026-11-20T23:14:57.535959+00:00",
-  "active": {
-    "role": "reviewer",
-    "chapter": 17,
-    "session_id": "auto-a7b9e400d5f2-reviewer-43a9942a",
-    "unit_id": "chapter-000017"
-  },
+  "updated_at": "2026-11-27T17:30:24.319638+00:00",
+  "active": null,
   "recoveries": [
     {
       "action": "operator-recover-stale-attention-queue-preflight",
@@ -28,9 +23,9 @@
     }
   ],
   "queue_snapshot": {
-    "extracted": 33,
-    "reviewed": 20,
-    "awaiting_review": 1,
+    "extracted": 0,
+    "reviewed": 54,
+    "awaiting_review": 0,
     "correction_candidates": 0,
     "awaiting_promotion": 0
   },
@@ -310,5 +305,21 @@
   },
   "unit_protocol_failures": {
     "chapter-000007": 1
-  }
+  },
+  "completion_reconciliation": {
+    "previous_state": "running",
+    "previous_phase": "model-call-reserved",
+    "previous_updated_at": "2026-11-20T23:14:57.535959+00:00",
+    "previous_error": null,
+    "previous_active": {
+      "role": "reviewer",
+      "chapter": 17,
+      "session_id": "auto-a7b9e400d5f2-reviewer-43a9942a",
+      "unit_id": "chapter-000017"
+    },
+    "book_tree": "4d4632f69fe25ece0ed69d1f068c9c8ea88dfabe"
+  },
+  "artifact_path": "books/say-it-in-your-mother-tongue/output/say-it-in-your-mother-tongue.epub",
+  "artifact_sha256": "07551310db14e04050e8ee5b13687fe08191c5c8a244482326c2e42454287a68",
+  "review_provenance": "independent"
 }
