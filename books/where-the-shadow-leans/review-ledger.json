@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "where-the-shadow-leans",
-  "next_sequence": 2,
+  "next_sequence": 3,
   "records": [
     {
       "record_id": "077f125bfedf43d6ad100bf1826c6ad5",
@@ -92,6 +92,111 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "3ca37f965b7e474ba64d00535a3e3eb2",
+      "sequence": 2,
+      "unit_id": "chapter-000001",
+      "outcome": "PASS",
+      "source_sha256": "1a9db9b74b7c88739725b663ebb6e06e0ed799b51780b183320cbb2e814f6c07",
+      "translation_sha256": "223b1569f90100063755e03507ee12c76a71caaebe1089df8b2b54643070aa60",
+      "workflow_revision": "61bb656dd1d16165466c1e034542d87a32de637a",
+      "review_contract_revision": "docs/TRANSLATION.md@61bb656dd1d16165466c1e034542d87a32de637a",
+      "reviewer_session_id": "chatops-shadow-review-20261127-01b",
+      "reviewed_at": "2026-11-27T18:29:57Z",
+      "state_revision": "f4fa2fbd8bd21d0507d1e9bf3c39c7506e4228e45ebc9f2e646c9700b8b8c9c7",
+      "review_commit": "89d7314f0b8680941e30492b6123ca5fc4ccefe3",
+      "correction_round": 1,
+      "supersedes_record_id": "077f125bfedf43d6ad100bf1826c6ad5",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "gender-1-recheck",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Необоснованное гендерное согласование устранено; сохранены выбор и субъективная оценка.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Every choice I tried felt wrong",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Ни один из опробованных мной вариантов не казался мне правильным",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "077f125bfedf43d6ad100bf1826c6ad5",
+              "finding_id": "gender-1"
+            }
+          },
+          {
+            "id": "gender-2-recheck",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Благодарность передана без добавления гендерного признака.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "I am very grateful to everyone reading.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "моя огромная благодарность всем, кто читает.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "077f125bfedf43d6ad100bf1826c6ad5",
+              "finding_id": "gender-2"
+            }
+          },
+          {
+            "id": "tag-1-recheck",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Восстановлен смысл защиты.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "protective older brother",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "старший брат, готовый защитить",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "077f125bfedf43d6ad100bf1826c6ad5",
+              "finding_id": "tag-1"
+            }
+          },
+          {
+            "id": "tag-2-recheck",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Восстановлен смысл защиты.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Protective Older Sisters",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Старшие сёстры, готовые защитить",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "077f125bfedf43d6ad100bf1826c6ad5",
+              "finding_id": "tag-2"
+            }
           }
         ]
       }

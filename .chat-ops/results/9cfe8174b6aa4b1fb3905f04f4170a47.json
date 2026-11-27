@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "request_id": "9cfe8174b6aa4b1fb3905f04f4170a47",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "a9836bf8998c28cf4444b8aa1ad7d1fe871e8fb7980d85433363ee4ae64c7ff6",
+    "record": {
+      "correction_round": 1,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "meaning",
+            "detail": "Необоснованное гендерное согласование устранено; сохранены выбор и субъективная оценка.",
+            "id": "gender-1-recheck",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "gender-1",
+              "record_id": "077f125bfedf43d6ad100bf1826c6ad5"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Every choice I tried felt wrong"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Ни один из опробованных мной вариантов не казался мне правильным"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Благодарность передана без добавления гендерного признака.",
+            "id": "gender-2-recheck",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "gender-2",
+              "record_id": "077f125bfedf43d6ad100bf1826c6ad5"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "I am very grateful to everyone reading."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "моя огромная благодарность всем, кто читает."
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Восстановлен смысл защиты.",
+            "id": "tag-1-recheck",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "tag-1",
+              "record_id": "077f125bfedf43d6ad100bf1826c6ad5"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "protective older brother"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "старший брат, готовый защитить"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Восстановлен смысл защиты.",
+            "id": "tag-2-recheck",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "tag-2",
+              "record_id": "077f125bfedf43d6ad100bf1826c6ad5"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Protective Older Sisters"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Старшие сёстры, готовые защитить"
+            }
+          }
+        ]
+      },
+      "record_id": "3ca37f965b7e474ba64d00535a3e3eb2",
+      "review_commit": "89d7314f0b8680941e30492b6123ca5fc4ccefe3",
+      "review_contract_revision": "docs/TRANSLATION.md@61bb656dd1d16165466c1e034542d87a32de637a",
+      "reviewed_at": "2026-11-27T18:29:57Z",
+      "reviewer_session_id": "chatops-shadow-review-20261127-01b",
+      "sequence": 2,
+      "source_sha256": "1a9db9b74b7c88739725b663ebb6e06e0ed799b51780b183320cbb2e814f6c07",
+      "state_revision": "f4fa2fbd8bd21d0507d1e9bf3c39c7506e4228e45ebc9f2e646c9700b8b8c9c7",
+      "supersedes_record_id": "077f125bfedf43d6ad100bf1826c6ad5",
+      "translation_sha256": "223b1569f90100063755e03507ee12c76a71caaebe1089df8b2b54643070aa60",
+      "unit_id": "chapter-000001",
+      "workflow_revision": "61bb656dd1d16165466c1e034542d87a32de637a"
+    }
+  },
+  "error": null
+}
