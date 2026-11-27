@@ -32,8 +32,8 @@ Use dictionary forms; classify terms semantically. Type and optional notes use t
 | High Paladin | верховный паладин | титул |  |
 | Sovereign | Владыка | титул |  |
 | Consigliere | консильери | титул |  |
-| Dornhöhle | Дорнхёле | топоним | Сохранять исходное различие названий Dornhöhle и Durnhollow. |
-| Durnhollow | Дёрнхоллоу | топоним |  |
+| Dornhöhle | Дорнхёле | топоним | Название Твердынь; Durnhollow — придворная алорийская форма того же названия (раздел 7). |
+| Durnhollow | Дёрнхоллоу | топоним | Придворное название Дорнхёле. |
 | Seventh Chamber | Седьмая палата | учреждение |  |
 | Castel Nerezza | Кастель-Нерецца | топоним |  |
 | Twilight Accord | Сумеречное соглашение | договор | Краткая форма — Соглашение. |
@@ -43,7 +43,7 @@ Use dictionary forms; classify terms semantically. Type and optional notes use t
 | Highland March | Нагорная марка | топоним |  |
 | Old Meridian | Старый Меридиан | топоним |  |
 | Long Eclipse | Долгое затмение | событие |  |
-| Ashward | Эшвард | организация |  |
+| Ashward | Эшвард | род / политический дом | Дом Карузо; занимает одно место в Совете Девяти. |
 | Underglow | Нижнее сияние | топоним |  |
 | Kessel Pass | перевал Кессель | топоним |  |
 | Chalmont | Шальмон | топоним |  |
@@ -52,7 +52,7 @@ Use dictionary forms; classify terms semantically. Type and optional notes use t
 | Aether | эфир | магическое вещество |  |
 | Leaning | Склонение | ритуал | Оспаривание власти или печати с обращением к теням. |
 | cold-iron | холодное железо | материал |  |
-| deep-trench | глубинный эфир | материал |  |
+| deep-trench Aether | глубинный эфир | магическое вещество | deep-trench — глубинный, в контексте сорта кристаллов. |
 | sunshine | солнечный свет | вещество | В контексте Нижнего сияния и гавани — название пыли, а не обычный солнечный свет. |
 | signet | печатка | предмет | Кольцо с личной печатью; отличать от оттиска seal. |
 | Sanctuary | Святилище | топоним |  |
@@ -70,3 +70,10 @@ Use dictionary forms; classify terms semantically. Type and optional notes use t
 | So I shall stand here | Значит, я останусь здесь | повторяющаяся фраза | Связь между запиской Матильды и решением Калеба удерживать позицию. |
 | Prächtig | Prächtig | повторяющаяся реплика | Сохранять немецкое слово и авторский курсив. |
 | Mio | Mio | повторяющаяся реплика | Сохранять итальянское слово, когда его значение раскрывается самим текстом. |
+| Citadel | Цитадель | топоним |  |
+| Vesperia | Весперия | топоним |  |
+| Solar Throne | Солнечный трон | институт власти |  |
+| Nauplion | Навплион | топоним |  |
+| Maartje Bosboom | Маартье Босбом | имя |  |
+| Master Brandt | мастер Брандт | имя / титул |  |
+| Corentin | Корентен | имя | Фейский курьер. |
