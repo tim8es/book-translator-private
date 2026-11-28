@@ -1,0 +1,267 @@
+{
+  "schema_version": 1,
+  "request_id": "d003a9f35e124b67a80c1d2e4f7b6935",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "8797f521d44eec9509c6cf771dd6715225e912da137d769fe366f18294cff76e",
+    "record": {
+      "correction_round": 1,
+      "outcome": "CORRECTIONS_REQUIRED",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "style",
+            "detail": "Калька: привкус не может порошиться. Передать ощущение сухого порошка во рту, например «Затхлый, пыльный привкус».",
+            "id": "taste",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "stale, powdery taste"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Затхлый, порошащийся привкус"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Неестественное управление глагола. «Сюда не доходит свет».",
+            "id": "reach",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Here the light does not reach."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Сюда не достигает свет."
+            }
+          },
+          {
+            "category": "terminology",
+            "detail": "Закреплённый в глоссарии Lyssois — лиссуаский язык. «перевод с лиссуаского».",
+            "id": "lyssois",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "translated from the Lyssois"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "перевод с языка Лиса"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Сезон — сквозной мотив, повторённый при отказе от короны в разделе 23; сохранить «этот сезон размышлений», включая последующую реплику героя «Период размышлений».",
+            "id": "season",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "this season of reflection"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "этот период размышлений"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Тяжёлая калька глагольного образа; передать обратное движение расходящихся в воде чернил без отвлечённого «обращающие вспять своё растекание».",
+            "id": "ink",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "like ink running backwards into water"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "словно чернила, обращающие вспять своё растекание в воде"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Неграмматичное двойное отрицание. «который, очевидно, не знал, что ему досталось, да и не придавал этому значения».",
+            "id": "face",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "who plainly neither knew what he had nor cared"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "который, очевидно, ни не знал, что ему досталось, ни не придавал этому значения"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Неестественное согласование: «вино было из урожая исключительного года» либо «это было превосходное вино» с сохранением значения урожая.",
+            "id": "vintage",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "it was an exceptional vintage"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "вино было исключительного урожая"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Unspeakable — неописуемо ужасные, а не очереди, которые нельзя выразить. «в очередях, которые иначе как чудовищными не назовёшь».",
+            "id": "queue",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "queues I can only describe as unspeakable"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "в очередях, которые я могу описать лишь как невыразимые"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Принц здесь член королевского дома, не князь; сохранить самоироничное сравнение с собственным выкупом Калеба. «за неё можно было выкупить короля, во всяком случае принца».",
+            "id": "ransom",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "a king’s ransom, or at any rate a prince’s"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "королевского выкупа или уж во всяком случае княжеского"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Осознанное уклонение от взгляда, не просто отсутствие зрительного контакта. «экипаж, избегавший его взгляда».",
+            "id": "crew",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "the crew who would not meet his eye"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "экипаж, не встречавшийся с ним взглядом"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Калька, смещающая сравнение тяжести и внешнего вида. «куда тяжелее, чем можно было предположить по виду».",
+            "id": "ring",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "heavier than it had any right to look"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "на вид вовсе не заслуживавший того, чтобы быть таким тяжёлым"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Синтаксическая калька. «Нить света единожды обежала руны».",
+            "id": "light",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "A thread of light ran once around them"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Нить света раз пробежала вокруг них"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Буквальное «я обнаруживаю» портит сухую шутку о руке. «Боюсь, я к ней довольно привязан».",
+            "id": "attached",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "I find I am rather attached to it."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Я обнаруживаю, что довольно к ней привязан."
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Отпрянуть — резкое испуганное движение, источник описывает постепенное спокойное отступление. «одна за другой отступили».",
+            "id": "shadow",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "drew back one by one"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "одна за другой отпрянули"
+            }
+          }
+        ]
+      },
+      "record_id": "dd5568ad298348f081b48afc691c2334",
+      "review_commit": "55fe83202a1e96ff2d4188da70368d0345c18865",
+      "review_contract_revision": "docs/TRANSLATION.md@61bb656dd1d16165466c1e034542d87a32de637a",
+      "reviewed_at": "2026-11-28T15:19:41Z",
+      "reviewer_session_id": "chatops-shadow-review-003-c003bf7e",
+      "sequence": 6,
+      "shared_state_revisions": {
+        "glossary": "278e54d3650aedfc992f517ea198924966d35be817d0d4ade4b0a9228d92dc15",
+        "style_guide": "321044c1fa335f5d6459715a531d5d5094c7cdc7d133167bea969142ffffca45"
+      },
+      "source_sha256": "aae9c8adb28a5d3e2b158c5e86414e101cc145d5bd8b8e715d1073034ab48f55",
+      "state_revision": "4a78e964ba4a7bb36ced8c98f510a833060413fc50c2d0d0ffea3337eb1bd869",
+      "supersedes_record_id": null,
+      "translation_sha256": "02f5f8f29845e52cb30b2990e51e557f384c1a186ff45a073667ad53a83c6b8e",
+      "unit_id": "chapter-000003",
+      "workflow_revision": "61bb656dd1d16165466c1e034542d87a32de637a"
+    }
+  },
+  "error": null
+}

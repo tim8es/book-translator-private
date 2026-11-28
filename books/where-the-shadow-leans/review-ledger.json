@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "where-the-shadow-leans",
-  "next_sequence": 6,
+  "next_sequence": 7,
   "records": [
     {
       "record_id": "077f125bfedf43d6ad100bf1826c6ad5",
@@ -486,6 +486,263 @@
             },
             "translation_anchor": {
               "quote": "Это первое, чему их учат о них самих.",
+              "occurrence": 0
+            },
+            "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "278e54d3650aedfc992f517ea198924966d35be817d0d4ade4b0a9228d92dc15",
+        "style_guide": "321044c1fa335f5d6459715a531d5d5094c7cdc7d133167bea969142ffffca45"
+      }
+    },
+    {
+      "record_id": "dd5568ad298348f081b48afc691c2334",
+      "sequence": 6,
+      "unit_id": "chapter-000003",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "aae9c8adb28a5d3e2b158c5e86414e101cc145d5bd8b8e715d1073034ab48f55",
+      "translation_sha256": "02f5f8f29845e52cb30b2990e51e557f384c1a186ff45a073667ad53a83c6b8e",
+      "workflow_revision": "61bb656dd1d16165466c1e034542d87a32de637a",
+      "review_contract_revision": "docs/TRANSLATION.md@61bb656dd1d16165466c1e034542d87a32de637a",
+      "reviewer_session_id": "chatops-shadow-review-003-c003bf7e",
+      "reviewed_at": "2026-11-28T15:19:41Z",
+      "state_revision": "4a78e964ba4a7bb36ced8c98f510a833060413fc50c2d0d0ffea3337eb1bd869",
+      "review_commit": "55fe83202a1e96ff2d4188da70368d0345c18865",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "taste",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Калька: привкус не может порошиться. Передать ощущение сухого порошка во рту, например «Затхлый, пыльный привкус».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "stale, powdery taste",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Затхлый, порошащийся привкус",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "reach",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Неестественное управление глагола. «Сюда не доходит свет».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Here the light does not reach.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Сюда не достигает свет.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "lyssois",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "Закреплённый в глоссарии Lyssois — лиссуаский язык. «перевод с лиссуаского».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "translated from the Lyssois",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "перевод с языка Лиса",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "season",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Сезон — сквозной мотив, повторённый при отказе от короны в разделе 23; сохранить «этот сезон размышлений», включая последующую реплику героя «Период размышлений».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "this season of reflection",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "этот период размышлений",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "ink",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Тяжёлая калька глагольного образа; передать обратное движение расходящихся в воде чернил без отвлечённого «обращающие вспять своё растекание».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "like ink running backwards into water",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "словно чернила, обращающие вспять своё растекание в воде",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "face",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Неграмматичное двойное отрицание. «который, очевидно, не знал, что ему досталось, да и не придавал этому значения».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "who plainly neither knew what he had nor cared",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "который, очевидно, ни не знал, что ему досталось, ни не придавал этому значения",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "vintage",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Неестественное согласование: «вино было из урожая исключительного года» либо «это было превосходное вино» с сохранением значения урожая.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "it was an exceptional vintage",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "вино было исключительного урожая",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "queue",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Unspeakable — неописуемо ужасные, а не очереди, которые нельзя выразить. «в очередях, которые иначе как чудовищными не назовёшь».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "queues I can only describe as unspeakable",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "в очередях, которые я могу описать лишь как невыразимые",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "ransom",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Принц здесь член королевского дома, не князь; сохранить самоироничное сравнение с собственным выкупом Калеба. «за неё можно было выкупить короля, во всяком случае принца».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "a king’s ransom, or at any rate a prince’s",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "королевского выкупа или уж во всяком случае княжеского",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "crew",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Осознанное уклонение от взгляда, не просто отсутствие зрительного контакта. «экипаж, избегавший его взгляда».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "the crew who would not meet his eye",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "экипаж, не встречавшийся с ним взглядом",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "ring",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Калька, смещающая сравнение тяжести и внешнего вида. «куда тяжелее, чем можно было предположить по виду».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "heavier than it had any right to look",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "на вид вовсе не заслуживавший того, чтобы быть таким тяжёлым",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "light",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Синтаксическая калька. «Нить света единожды обежала руны».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "A thread of light ran once around them",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Нить света раз пробежала вокруг них",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "attached",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Буквальное «я обнаруживаю» портит сухую шутку о руке. «Боюсь, я к ней довольно привязан».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "I find I am rather attached to it.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Я обнаруживаю, что довольно к ней привязан.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "shadow",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Отпрянуть — резкое испуганное движение, источник описывает постепенное спокойное отступление. «одна за другой отступили».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "drew back one by one",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "одна за другой отпрянули",
               "occurrence": 0
             },
             "resolves": null
