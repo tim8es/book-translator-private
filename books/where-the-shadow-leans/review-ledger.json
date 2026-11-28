@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "where-the-shadow-leans",
-  "next_sequence": 3,
+  "next_sequence": 4,
   "records": [
     {
       "record_id": "077f125bfedf43d6ad100bf1826c6ad5",
@@ -197,6 +197,83 @@
               "record_id": "077f125bfedf43d6ad100bf1826c6ad5",
               "finding_id": "tag-2"
             }
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "35416e5cb94a494eb2029e9aa1114d83",
+      "sequence": 3,
+      "unit_id": "chapter-000026",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "cf091b734138c48e8e179cc7c7f09fb270680890a27fb0be2b5c70df0c41a527",
+      "translation_sha256": "f444da09576c1c57450309de4b320e1f673906feae18e679ace07a3c926b649d",
+      "workflow_revision": "61bb656dd1d16165466c1e034542d87a32de637a",
+      "review_contract_revision": "docs/TRANSLATION.md@61bb656dd1d16165466c1e034542d87a32de637a",
+      "reviewer_session_id": "chatops-shadow-026-review-491af207",
+      "reviewed_at": "2026-11-28T12:36:28Z",
+      "state_revision": "13713fc73116f95a32705b765465482af338a03e",
+      "review_commit": "548008f93792328af808cc490aca26f4c273bc4e",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "burn-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "«Обгорают» обозначает преимущественно солнечный ожог, тогда как burn передаёт губительное действие солнечного света на вампиров; сохранить буквальный образ горения.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "burn in sunlight",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "обгорают на солнечном свету",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "ritual-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "В описании обряда stand обозначает, что главы домов стоят в зале; «собираются» опускает это положение участников.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "the heads of the great houses stand in the great hall",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "главы великих домов собираются в большом зале",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "closing-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Заключительная просьба синтаксически неполна: «сообщить автору, если» не называет, что сообщить. Перестроить условие без потери вежливого приглашения к комментарию.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "to let the creator know if you enjoyed their work!",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "чтобы сообщить автору, если вам понравилась эта работа!",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       }
