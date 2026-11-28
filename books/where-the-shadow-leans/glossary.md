@@ -115,3 +115,10 @@ Use dictionary forms; classify terms semantically. Type and optional notes use t
 | Ettore Caruso | Этторе Карузо | имя | Брат дона Сальваторе. |
 | Ruggero Caruso | Руджеро Карузо | имя | Внук дона Сальваторе. |
 | nonno | nonno | обращение | Итальянское обращение Валентины к деду; сохранять курсив. |
+| Altezza | Altezza | обращение | Итальянское обращение Энцо к Калебу; значение «Высочество» раскрывается в диалоге раздела 23. Сохранить курсив. |
+| Hall of Petitions | Зал прошений | помещение |  |
+| Article of the Sun | статья о солнце | закон |  |
+| Order of the Crowning | Чин коронации | церемониальный регламент |  |
+| Statutes | Статуты | свод законов |  |
+| Keeper of the Statutes | хранитель Статутов | должность |  |
+| First Light | Первый свет | праздник |  |
