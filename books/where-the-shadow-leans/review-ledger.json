@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "where-the-shadow-leans",
-  "next_sequence": 5,
+  "next_sequence": 6,
   "records": [
     {
       "record_id": "077f125bfedf43d6ad100bf1826c6ad5",
@@ -360,6 +360,135 @@
               "record_id": "35416e5cb94a494eb2029e9aa1114d83",
               "finding_id": "closing-1"
             }
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "278e54d3650aedfc992f517ea198924966d35be817d0d4ade4b0a9228d92dc15",
+        "style_guide": "321044c1fa335f5d6459715a531d5d5094c7cdc7d133167bea969142ffffca45"
+      }
+    },
+    {
+      "record_id": "216a89f7377b43bdb72228841424924b",
+      "sequence": 5,
+      "unit_id": "chapter-000002",
+      "outcome": "CORRECTIONS_REQUIRED",
+      "source_sha256": "c2db5ab9659a5202426258984d9cf4a837b5a0d505a86a63ce52c6981a84248c",
+      "translation_sha256": "4cc627065a5e59600774abca2de64a8411861a81e3471d3ec696c6c5ce9894b2",
+      "workflow_revision": "61bb656dd1d16165466c1e034542d87a32de637a",
+      "review_contract_revision": "docs/TRANSLATION.md@61bb656dd1d16165466c1e034542d87a32de637a",
+      "reviewer_session_id": "chatops-shadow-002-review-ab54d71e",
+      "reviewed_at": "2026-11-28T14:49:31Z",
+      "state_revision": "4a78e964ba4a7bb36ced8c98f510a833060413fc50c2d0d0ffea3337eb1bd869",
+      "review_commit": "19995f043311e05422fa8befcd13d09b6228e622",
+      "correction_round": 1,
+      "supersedes_record_id": null,
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "wine-1",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "Устоявшийся термин blood-wine переведён иначе, чем в актуальном глоссарии; заменить на «кровяное вино».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "pouring blood-wine",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "наливала кровавое вино",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "afternoon-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Afternoon — время после полудня, тогда как «полдень» обозначает сам полдень и противоречит фразе о солнце, не дававшем тепла с полудня. Передать образ летнего послеполуденного времени.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "a summer afternoon someone had left there and forgotten",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "летний полдень, который кто-то оставил здесь и забыл",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "species-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "What I was указывает на природу персонажа (принадлежность к Теневым домам), а не личность. Сохранить различие, например «я сказал ему, что я такое».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "I told him what I was",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "я сказал ему, кто я",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "sunburst-1",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "В следующем предложении повтор sunburst заменён общим «знак»; утрачивается намеренный повтор образа лучистого солнца. Восстановить обозначение солнца.",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "Livia knew that sunburst.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Ливия знала этот знак.",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "grief-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "«Пока отгорюешь» вводит разговорное обобщённое второе лицо вместо сдержанного афористического высказывания повествователя. Например, «династия не ждёт, пока утихнет скорбь».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "a dynasty does not wait upon grief",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "династия не ждёт, пока отгорюешь",
+              "occurrence": 0
+            },
+            "resolves": null
+          },
+          {
+            "id": "lesson-1",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Калька «учат о них самих» нарушает русское управление; сохранить смысл первого урока о собственной природе, например «Это первое, что им рассказывают о них самих».",
+            "resolved": false,
+            "source_anchor": {
+              "quote": "It is the first thing they are taught about themselves.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Это первое, чему их учат о них самих.",
+              "occurrence": 0
+            },
+            "resolves": null
           }
         ]
       },

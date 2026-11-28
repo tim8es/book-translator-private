@@ -1,0 +1,139 @@
+{
+  "schema_version": 1,
+  "request_id": "b37cf3ab7d6c4c9dbeb799f14a6b56a2",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "b97a8fac72ac783b79278639c3faa7033b86dd92c385e91cdf723fbeaac5b387",
+    "record": {
+      "correction_round": 1,
+      "outcome": "CORRECTIONS_REQUIRED",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "terminology",
+            "detail": "Устоявшийся термин blood-wine переведён иначе, чем в актуальном глоссарии; заменить на «кровяное вино».",
+            "id": "wine-1",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "pouring blood-wine"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "наливала кровавое вино"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Afternoon — время после полудня, тогда как «полдень» обозначает сам полдень и противоречит фразе о солнце, не дававшем тепла с полудня. Передать образ летнего послеполуденного времени.",
+            "id": "afternoon-1",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "a summer afternoon someone had left there and forgotten"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "летний полдень, который кто-то оставил здесь и забыл"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "What I was указывает на природу персонажа (принадлежность к Теневым домам), а не личность. Сохранить различие, например «я сказал ему, что я такое».",
+            "id": "species-1",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "I told him what I was"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "я сказал ему, кто я"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "В следующем предложении повтор sunburst заменён общим «знак»; утрачивается намеренный повтор образа лучистого солнца. Восстановить обозначение солнца.",
+            "id": "sunburst-1",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Livia knew that sunburst."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Ливия знала этот знак."
+            }
+          },
+          {
+            "category": "style",
+            "detail": "«Пока отгорюешь» вводит разговорное обобщённое второе лицо вместо сдержанного афористического высказывания повествователя. Например, «династия не ждёт, пока утихнет скорбь».",
+            "id": "grief-1",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "a dynasty does not wait upon grief"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "династия не ждёт, пока отгорюешь"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Калька «учат о них самих» нарушает русское управление; сохранить смысл первого урока о собственной природе, например «Это первое, что им рассказывают о них самих».",
+            "id": "lesson-1",
+            "resolved": false,
+            "resolves": null,
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "It is the first thing they are taught about themselves."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Это первое, чему их учат о них самих."
+            }
+          }
+        ]
+      },
+      "record_id": "216a89f7377b43bdb72228841424924b",
+      "review_commit": "19995f043311e05422fa8befcd13d09b6228e622",
+      "review_contract_revision": "docs/TRANSLATION.md@61bb656dd1d16165466c1e034542d87a32de637a",
+      "reviewed_at": "2026-11-28T14:49:31Z",
+      "reviewer_session_id": "chatops-shadow-002-review-ab54d71e",
+      "sequence": 5,
+      "shared_state_revisions": {
+        "glossary": "278e54d3650aedfc992f517ea198924966d35be817d0d4ade4b0a9228d92dc15",
+        "style_guide": "321044c1fa335f5d6459715a531d5d5094c7cdc7d133167bea969142ffffca45"
+      },
+      "source_sha256": "c2db5ab9659a5202426258984d9cf4a837b5a0d505a86a63ce52c6981a84248c",
+      "state_revision": "4a78e964ba4a7bb36ced8c98f510a833060413fc50c2d0d0ffea3337eb1bd869",
+      "supersedes_record_id": null,
+      "translation_sha256": "4cc627065a5e59600774abca2de64a8411861a81e3471d3ec696c6c5ce9894b2",
+      "unit_id": "chapter-000002",
+      "workflow_revision": "61bb656dd1d16165466c1e034542d87a32de637a"
+    }
+  },
+  "error": null
+}
