@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "book_slug": "where-the-shadow-leans",
-  "next_sequence": 7,
+  "next_sequence": 8,
   "records": [
     {
       "record_id": "077f125bfedf43d6ad100bf1826c6ad5",
@@ -746,6 +746,153 @@
               "occurrence": 0
             },
             "resolves": null
+          }
+        ]
+      },
+      "shared_state_revisions": {
+        "glossary": "278e54d3650aedfc992f517ea198924966d35be817d0d4ade4b0a9228d92dc15",
+        "style_guide": "321044c1fa335f5d6459715a531d5d5094c7cdc7d133167bea969142ffffca45"
+      }
+    },
+    {
+      "record_id": "2df89598611646adaeb258a867bbc942",
+      "sequence": 7,
+      "unit_id": "chapter-000002",
+      "outcome": "PASS",
+      "source_sha256": "c2db5ab9659a5202426258984d9cf4a837b5a0d505a86a63ce52c6981a84248c",
+      "translation_sha256": "54556b67ec871f32874a6268f7b0c6742e171eaf3b5a970f0a6c00e1fb796958",
+      "workflow_revision": "61bb656dd1d16165466c1e034542d87a32de637a",
+      "review_contract_revision": "docs/TRANSLATION.md@61bb656dd1d16165466c1e034542d87a32de637a",
+      "reviewer_session_id": "chatops-shadow-002-review-5a0835d2",
+      "reviewed_at": "2026-11-28T16:17:01Z",
+      "state_revision": "20c2583e66123f4fad68d1cdfd747bbff943e8bf0bf7e77e68422028e1c97596",
+      "review_commit": "022092b781cba258c9cf18757fc9bdfffade4c8f",
+      "correction_round": 1,
+      "supersedes_record_id": "216a89f7377b43bdb72228841424924b",
+      "quality_report": {
+        "evidence_version": 2,
+        "context": "bounded_context",
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "terminology": true,
+          "style": true,
+          "structure": true
+        },
+        "findings": [
+          {
+            "id": "wine-1-recheck",
+            "category": "terminology",
+            "severity": "minor",
+            "detail": "Восстановлен закреплённый термин.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "pouring blood-wine",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "наливала кровяное вино",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "216a89f7377b43bdb72228841424924b",
+              "finding_id": "wine-1"
+            }
+          },
+          {
+            "id": "afternoon-1-recheck",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Сохранена временная характеристика образа после полудня; противопоставление холодному солнцу не нарушено.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "a summer afternoon someone had left there and forgotten",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "летний день после полудня, который кто-то оставил здесь и забыл",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "216a89f7377b43bdb72228841424924b",
+              "finding_id": "afternoon-1"
+            }
+          },
+          {
+            "id": "species-1-recheck",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Восстановлено указание на природу, а не личность героя; сохранён детский голос.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "I told him what I was",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "я сказал ему, что я такое",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "216a89f7377b43bdb72228841424924b",
+              "finding_id": "species-1"
+            }
+          },
+          {
+            "id": "sunburst-1-recheck",
+            "category": "meaning",
+            "severity": "minor",
+            "detail": "Возвращён конкретный повтор образа солнца на воротнике.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "Livia knew that sunburst.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Ливия знала это лучистое солнце.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "216a89f7377b43bdb72228841424924b",
+              "finding_id": "sunburst-1"
+            }
+          },
+          {
+            "id": "grief-1-recheck",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Восстановлен сдержанный афористический регистр.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "a dynasty does not wait upon grief",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "династия не ждёт, пока утихнет скорбь",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "216a89f7377b43bdb72228841424924b",
+              "finding_id": "grief-1"
+            }
+          },
+          {
+            "id": "lesson-1-recheck",
+            "category": "style",
+            "severity": "minor",
+            "detail": "Исправлено управление; сохранён смысл первого урока о природе детей Теневых домов.",
+            "resolved": true,
+            "source_anchor": {
+              "quote": "It is the first thing they are taught about themselves.",
+              "occurrence": 0
+            },
+            "translation_anchor": {
+              "quote": "Это первое, что им рассказывают о них самих.",
+              "occurrence": 0
+            },
+            "resolves": {
+              "record_id": "216a89f7377b43bdb72228841424924b",
+              "finding_id": "lesson-1"
+            }
           }
         ]
       },

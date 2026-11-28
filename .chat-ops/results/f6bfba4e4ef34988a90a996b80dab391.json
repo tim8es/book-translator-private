@@ -1,0 +1,157 @@
+{
+  "schema_version": 1,
+  "request_id": "f6bfba4e4ef34988a90a996b80dab391",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "46c745727765c738e93004cc63a899184d7ede98aa4b58b45b59c2864af95248",
+    "record": {
+      "correction_round": 1,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "terminology",
+            "detail": "Восстановлен закреплённый термин.",
+            "id": "wine-1-recheck",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "wine-1",
+              "record_id": "216a89f7377b43bdb72228841424924b"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "pouring blood-wine"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "наливала кровяное вино"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Сохранена временная характеристика образа после полудня; противопоставление холодному солнцу не нарушено.",
+            "id": "afternoon-1-recheck",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "afternoon-1",
+              "record_id": "216a89f7377b43bdb72228841424924b"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "a summer afternoon someone had left there and forgotten"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "летний день после полудня, который кто-то оставил здесь и забыл"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Восстановлено указание на природу, а не личность героя; сохранён детский голос.",
+            "id": "species-1-recheck",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "species-1",
+              "record_id": "216a89f7377b43bdb72228841424924b"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "I told him what I was"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "я сказал ему, что я такое"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Возвращён конкретный повтор образа солнца на воротнике.",
+            "id": "sunburst-1-recheck",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "sunburst-1",
+              "record_id": "216a89f7377b43bdb72228841424924b"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "Livia knew that sunburst."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Ливия знала это лучистое солнце."
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Восстановлен сдержанный афористический регистр.",
+            "id": "grief-1-recheck",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "grief-1",
+              "record_id": "216a89f7377b43bdb72228841424924b"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "a dynasty does not wait upon grief"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "династия не ждёт, пока утихнет скорбь"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Исправлено управление; сохранён смысл первого урока о природе детей Теневых домов.",
+            "id": "lesson-1-recheck",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "lesson-1",
+              "record_id": "216a89f7377b43bdb72228841424924b"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "It is the first thing they are taught about themselves."
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "Это первое, что им рассказывают о них самих."
+            }
+          }
+        ]
+      },
+      "record_id": "2df89598611646adaeb258a867bbc942",
+      "review_commit": "022092b781cba258c9cf18757fc9bdfffade4c8f",
+      "review_contract_revision": "docs/TRANSLATION.md@61bb656dd1d16165466c1e034542d87a32de637a",
+      "reviewed_at": "2026-11-28T16:17:01Z",
+      "reviewer_session_id": "chatops-shadow-002-review-5a0835d2",
+      "sequence": 7,
+      "shared_state_revisions": {
+        "glossary": "278e54d3650aedfc992f517ea198924966d35be817d0d4ade4b0a9228d92dc15",
+        "style_guide": "321044c1fa335f5d6459715a531d5d5094c7cdc7d133167bea969142ffffca45"
+      },
+      "source_sha256": "c2db5ab9659a5202426258984d9cf4a837b5a0d505a86a63ce52c6981a84248c",
+      "state_revision": "20c2583e66123f4fad68d1cdfd747bbff943e8bf0bf7e77e68422028e1c97596",
+      "supersedes_record_id": "216a89f7377b43bdb72228841424924b",
+      "translation_sha256": "54556b67ec871f32874a6268f7b0c6742e171eaf3b5a970f0a6c00e1fb796958",
+      "unit_id": "chapter-000002",
+      "workflow_revision": "61bb656dd1d16165466c1e034542d87a32de637a"
+    }
+  },
+  "error": null
+}
