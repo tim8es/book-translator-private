@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "request_id": "d026a9f35e124b67a80c1d2e4f7b6935",
+  "book_slug": "where-the-shadow-leans",
+  "workflow_revision": "61bb656dd1d16165466c1e034542d87a32de637a",
+  "operation": "review-record",
+  "chapter": 26,
+  "session_id": "chatops-shadow-review-026-c026bf7e",
+  "outcome": "PASS",
+  "quality_report": {
+    "evidence_version": 2,
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "id": "burn-1-recheck",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Восстановлен буквальный образ горения от солнечного света; следующее предложение сохраняет причинную связь с кристаллом.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "burn in sunlight",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "горят на солнечном свету",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "35416e5cb94a494eb2029e9aa1114d83",
+          "finding_id": "burn-1"
+        }
+      },
+      {
+        "id": "ritual-1-recheck",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Восстановлено положение глав домов при выборе Владыки; порядок обряда сохранён.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "the heads of the great houses stand in the great hall",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "главы великих домов стоят в большом зале",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "35416e5cb94a494eb2029e9aa1114d83",
+          "finding_id": "ritual-1"
+        }
+      },
+      {
+        "id": "closing-1-recheck",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Условие и приглашение к комментарию теперь грамматически завершены; ссылка сохранена.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "to let the creator know if you enjoyed their work!",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "если вам понравилась эта работа, и дайте автору об этом знать!",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "35416e5cb94a494eb2029e9aa1114d83",
+          "finding_id": "closing-1"
+        }
+      }
+    ]
+  },
+  "source_sha256": "cf091b734138c48e8e179cc7c7f09fb270680890a27fb0be2b5c70df0c41a527",
+  "translation_sha256": "aa8765f45d455317739d5a9f18689fac730fab412c4533895fd1330a8a2d3cbb",
+  "claim_sha256": "db1794f737fbe2fd2eff5fba36f65854b5b0993d0a532a306952797d7bfaafb8"
+}
