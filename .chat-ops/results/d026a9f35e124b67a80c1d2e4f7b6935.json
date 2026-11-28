@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "request_id": "d026a9f35e124b67a80c1d2e4f7b6935",
+  "status": "ok",
+  "operation": "review-record",
+  "result": {
+    "ledger_revision": "b986abd1902e7acfef9f6873c1c2f50f7ca99c2a123b26f674b5e6bdac7c3cb6",
+    "record": {
+      "correction_round": 1,
+      "outcome": "PASS",
+      "quality_report": {
+        "checks": {
+          "coverage": true,
+          "meaning": true,
+          "structure": true,
+          "style": true,
+          "terminology": true
+        },
+        "context": "bounded_context",
+        "evidence_version": 2,
+        "findings": [
+          {
+            "category": "meaning",
+            "detail": "Восстановлен буквальный образ горения от солнечного света; следующее предложение сохраняет причинную связь с кристаллом.",
+            "id": "burn-1-recheck",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "burn-1",
+              "record_id": "35416e5cb94a494eb2029e9aa1114d83"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "burn in sunlight"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "горят на солнечном свету"
+            }
+          },
+          {
+            "category": "meaning",
+            "detail": "Восстановлено положение глав домов при выборе Владыки; порядок обряда сохранён.",
+            "id": "ritual-1-recheck",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "ritual-1",
+              "record_id": "35416e5cb94a494eb2029e9aa1114d83"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "the heads of the great houses stand in the great hall"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "главы великих домов стоят в большом зале"
+            }
+          },
+          {
+            "category": "style",
+            "detail": "Условие и приглашение к комментарию теперь грамматически завершены; ссылка сохранена.",
+            "id": "closing-1-recheck",
+            "resolved": true,
+            "resolves": {
+              "finding_id": "closing-1",
+              "record_id": "35416e5cb94a494eb2029e9aa1114d83"
+            },
+            "severity": "minor",
+            "source_anchor": {
+              "occurrence": 0,
+              "quote": "to let the creator know if you enjoyed their work!"
+            },
+            "translation_anchor": {
+              "occurrence": 0,
+              "quote": "если вам понравилась эта работа, и дайте автору об этом знать!"
+            }
+          }
+        ]
+      },
+      "record_id": "66c80175167449d1b847db8e8328901f",
+      "review_commit": "838e8c5ec3357c56c51c58ca1e4f94ba13e494ef",
+      "review_contract_revision": "docs/TRANSLATION.md@61bb656dd1d16165466c1e034542d87a32de637a",
+      "reviewed_at": "2026-11-28T14:47:36Z",
+      "reviewer_session_id": "chatops-shadow-review-026-c026bf7e",
+      "sequence": 4,
+      "shared_state_revisions": {
+        "glossary": "278e54d3650aedfc992f517ea198924966d35be817d0d4ade4b0a9228d92dc15",
+        "style_guide": "321044c1fa335f5d6459715a531d5d5094c7cdc7d133167bea969142ffffca45"
+      },
+      "source_sha256": "cf091b734138c48e8e179cc7c7f09fb270680890a27fb0be2b5c70df0c41a527",
+      "state_revision": "bbb984f1d696759ef93df27a87ffa7bcc75f6c65ad752f23c500ca0353f973e5",
+      "supersedes_record_id": "35416e5cb94a494eb2029e9aa1114d83",
+      "translation_sha256": "aa8765f45d455317739d5a9f18689fac730fab412c4533895fd1330a8a2d3cbb",
+      "unit_id": "chapter-000026",
+      "workflow_revision": "61bb656dd1d16165466c1e034542d87a32de637a"
+    }
+  },
+  "error": null
+}
