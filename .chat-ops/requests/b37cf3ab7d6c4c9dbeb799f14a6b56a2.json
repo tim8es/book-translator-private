@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "request_id": "b37cf3ab7d6c4c9dbeb799f14a6b56a2",
+  "book_slug": "where-the-shadow-leans",
+  "workflow_revision": "61bb656dd1d16165466c1e034542d87a32de637a",
+  "operation": "review-record",
+  "chapter": 2,
+  "session_id": "chatops-shadow-002-review-ab54d71e",
+  "outcome": "CORRECTIONS_REQUIRED",
+  "quality_report": {
+    "evidence_version": 2,
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "id": "wine-1",
+        "category": "terminology",
+        "severity": "minor",
+        "detail": "Устоявшийся термин blood-wine переведён иначе, чем в актуальном глоссарии; заменить на «кровяное вино».",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "pouring blood-wine",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "наливала кровавое вино",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "afternoon-1",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Afternoon — время после полудня, тогда как «полдень» обозначает сам полдень и противоречит фразе о солнце, не дававшем тепла с полудня. Передать образ летнего послеполуденного времени.",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "a summer afternoon someone had left there and forgotten",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "летний полдень, который кто-то оставил здесь и забыл",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "species-1",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "What I was указывает на природу персонажа (принадлежность к Теневым домам), а не личность. Сохранить различие, например «я сказал ему, что я такое».",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "I told him what I was",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "я сказал ему, кто я",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "sunburst-1",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "В следующем предложении повтор sunburst заменён общим «знак»; утрачивается намеренный повтор образа лучистого солнца. Восстановить обозначение солнца.",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "Livia knew that sunburst.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Ливия знала этот знак.",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "grief-1",
+        "category": "style",
+        "severity": "minor",
+        "detail": "«Пока отгорюешь» вводит разговорное обобщённое второе лицо вместо сдержанного афористического высказывания повествователя. Например, «династия не ждёт, пока утихнет скорбь».",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "a dynasty does not wait upon grief",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "династия не ждёт, пока отгорюешь",
+          "occurrence": 0
+        },
+        "resolves": null
+      },
+      {
+        "id": "lesson-1",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Калька «учат о них самих» нарушает русское управление; сохранить смысл первого урока о собственной природе, например «Это первое, что им рассказывают о них самих».",
+        "resolved": false,
+        "source_anchor": {
+          "quote": "It is the first thing they are taught about themselves.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Это первое, чему их учат о них самих.",
+          "occurrence": 0
+        },
+        "resolves": null
+      }
+    ]
+  },
+  "source_sha256": "c2db5ab9659a5202426258984d9cf4a837b5a0d505a86a63ce52c6981a84248c",
+  "translation_sha256": "4cc627065a5e59600774abca2de64a8411861a81e3471d3ec696c6c5ce9894b2",
+  "claim_sha256": "90962fae1cfe9be1db31337c15b332dfbd6c2af2c5bddffeee0aa9413361d0f6"
+}
