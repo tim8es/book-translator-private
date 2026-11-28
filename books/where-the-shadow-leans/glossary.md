@@ -105,3 +105,9 @@ Use dictionary forms; classify terms semantically. Type and optional notes use t
 | Eighth Chamber | Восьмая палата | учреждение |  |
 | Ottavia | Оттавия | имя |  |
 | Zio | Zio | обращение | Итальянское обращение Ариана к дяде. |
+| Loch Aird | Лох-Эрд | топоним |  |
+| Aude de Vair | Од де Вэр | имя |  |
+| Court of Lys | двор Лиса | политическое образование |  |
+| Ishbel | Ишбел | имя | Сестра Пола. |
+| Morag | Мораг | имя | Сестра Пола. |
+| emphatically | решительно | повторяющаяся формулировка | Помета писца Твердынь при заключении союза; повтор в разделе 19. |
