@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "request_id": "f6bfba4e4ef34988a90a996b80dab391",
+  "book_slug": "where-the-shadow-leans",
+  "workflow_revision": "61bb656dd1d16165466c1e034542d87a32de637a",
+  "operation": "review-record",
+  "chapter": 2,
+  "session_id": "chatops-shadow-002-review-5a0835d2",
+  "outcome": "PASS",
+  "quality_report": {
+    "evidence_version": 2,
+    "context": "bounded_context",
+    "checks": {
+      "coverage": true,
+      "meaning": true,
+      "terminology": true,
+      "style": true,
+      "structure": true
+    },
+    "findings": [
+      {
+        "id": "wine-1-recheck",
+        "category": "terminology",
+        "severity": "minor",
+        "detail": "Восстановлен закреплённый термин.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "pouring blood-wine",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "наливала кровяное вино",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "216a89f7377b43bdb72228841424924b",
+          "finding_id": "wine-1"
+        }
+      },
+      {
+        "id": "afternoon-1-recheck",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Сохранена временная характеристика образа после полудня; противопоставление холодному солнцу не нарушено.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "a summer afternoon someone had left there and forgotten",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "летний день после полудня, который кто-то оставил здесь и забыл",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "216a89f7377b43bdb72228841424924b",
+          "finding_id": "afternoon-1"
+        }
+      },
+      {
+        "id": "species-1-recheck",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Восстановлено указание на природу, а не личность героя; сохранён детский голос.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "I told him what I was",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "я сказал ему, что я такое",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "216a89f7377b43bdb72228841424924b",
+          "finding_id": "species-1"
+        }
+      },
+      {
+        "id": "sunburst-1-recheck",
+        "category": "meaning",
+        "severity": "minor",
+        "detail": "Возвращён конкретный повтор образа солнца на воротнике.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "Livia knew that sunburst.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Ливия знала это лучистое солнце.",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "216a89f7377b43bdb72228841424924b",
+          "finding_id": "sunburst-1"
+        }
+      },
+      {
+        "id": "grief-1-recheck",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Восстановлен сдержанный афористический регистр.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "a dynasty does not wait upon grief",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "династия не ждёт, пока утихнет скорбь",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "216a89f7377b43bdb72228841424924b",
+          "finding_id": "grief-1"
+        }
+      },
+      {
+        "id": "lesson-1-recheck",
+        "category": "style",
+        "severity": "minor",
+        "detail": "Исправлено управление; сохранён смысл первого урока о природе детей Теневых домов.",
+        "resolved": true,
+        "source_anchor": {
+          "quote": "It is the first thing they are taught about themselves.",
+          "occurrence": 0
+        },
+        "translation_anchor": {
+          "quote": "Это первое, что им рассказывают о них самих.",
+          "occurrence": 0
+        },
+        "resolves": {
+          "record_id": "216a89f7377b43bdb72228841424924b",
+          "finding_id": "lesson-1"
+        }
+      }
+    ]
+  },
+  "source_sha256": "c2db5ab9659a5202426258984d9cf4a837b5a0d505a86a63ce52c6981a84248c",
+  "translation_sha256": "54556b67ec871f32874a6268f7b0c6742e171eaf3b5a970f0a6c00e1fb796958",
+  "claim_sha256": "1cb0f195c37d5af7e66a3987d466125b04a98c9be02dd4d815ea1889eba6d076"
+}
